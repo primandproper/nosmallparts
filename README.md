@@ -1,2 +1,3 @@
-# nosmallparts
-a website for friends
+# playwrong
+
+funny website
