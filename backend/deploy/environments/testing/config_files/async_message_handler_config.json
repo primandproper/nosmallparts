@@ -1,0 +1,127 @@
+{
+	"storage": {
+		"filesystem": {
+			"rootDirectory": "/tmp"
+		},
+		"bucketName": "userdata",
+		"provider": "filesystem"
+	},
+	"queues": {
+		"dataChangesTopicName": "data_changes",
+		"outboundEmailsTopicName": "outbound_emails",
+		"searchIndexRequestsTopicName": "search_index_requests",
+		"userDataAggregationTopicName": "user_data_aggregation_requests",
+		"webhookExecutionRequestsTopicName": "webhook_execution_requests"
+	},
+	"encoding": {
+		"contentType": ""
+	},
+	"events": {
+		"consumers": {
+			"provider": "redis",
+			"sqs": {
+				"queueAddress": ""
+			},
+			"pubSub": {
+				"projectID": ""
+			},
+			"redis": {
+				"username": "",
+				"queueAddress": [
+					"worker_queue:6379"
+				]
+			}
+		},
+		"publishers": {
+			"provider": "redis",
+			"sqs": {
+				"queueAddress": ""
+			},
+			"pubSub": {
+				"projectID": ""
+			},
+			"redis": {
+				"username": "",
+				"queueAddress": [
+					"worker_queue:6379"
+				]
+			}
+		}
+	},
+	"observability": {
+		"logging": {
+			"serviceName": "async_message_handler",
+			"level": "info",
+			"provider": "slog"
+		},
+		"metrics": {
+			"serviceName": "async_message_handler"
+		},
+		"tracing": {
+			"otelgrpc": {
+				"collector_endpoint": "http://tracing-server:14268/api/traces"
+			},
+			"service_name": "async_message_handler",
+			"provider": "otelgrpc",
+			"spanCollectionProbability": 1
+		}
+	},
+	"email": {
+		"sendgrid": null,
+		"mailgun": null,
+		"mailjet": null,
+		"provider": "",
+		"circuitBreakerConfig": {
+			"name": "",
+			"circuitBreakerErrorPercentage": 0,
+			"circuitBreakerMinimumOccurrenceThreshold": 0
+		}
+	},
+	"analytics": {
+		"segment": null,
+		"posthog": null,
+		"rudderstack": null,
+		"provider": "",
+		"circuitBreaker": {
+			"name": "feature_flagger",
+			"circuitBreakerErrorPercentage": 0.5,
+			"circuitBreakerMinimumOccurrenceThreshold": 100
+		}
+	},
+	"search": {
+		"algolia": null,
+		"elasticsearch": null,
+		"provider": "",
+		"circuitBreakerConfig": {
+			"name": "feature_flagger",
+			"circuitBreakerErrorPercentage": 0.5,
+			"circuitBreakerMinimumOccurrenceThreshold": 100
+		}
+	},
+	"database": {
+		"oauth2TokenEncryptionKey": "HEREISA32CHARSECRETWHICHISMADEUP",
+		"provider": "",
+		"connectionDetails": {
+			"username": "dbuser",
+			"password": "hunter2",
+			"database": "dinner-done-better",
+			"hostname": "pgdatabase",
+			"port": 5432,
+			"disableSSL": true
+		},
+		"writeConnectionDetails": {
+			"username": "dbuser",
+			"password": "hunter2",
+			"database": "dinner-done-better",
+			"hostname": "pgdatabase",
+			"port": 5432,
+			"disableSSL": true
+		},
+		"migrations": null,
+		"maxPingAttempts": 50,
+		"pingWaitPeriod": 1500000000,
+		"debug": true,
+		"logQueries": true,
+		"runMigrations": true
+	}
+}

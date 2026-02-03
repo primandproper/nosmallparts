@@ -1,0 +1,35 @@
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: dinner-done-better-job-meal-plan-task-creator
+spec:
+  concurrencyPolicy: Replace
+  schedule: "*/5 * * * *" # every 5 minutes
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: meal-plan-task-creator
+              image: dinner-done-better-job-meal-plan-task-creator
+              imagePullPolicy: Always
+              env:
+                - name: "CONFIGURATION_FILEPATH"
+                  value: "/etc/service-config.json"
+                - name: "DINNER_DONE_BETTER_DATA_CHANGES_TOPIC_NAME"
+                  value: "data_changes"
+                - name: "DINNER_DONE_BETTER_OBSERVABILITY_METRICS_OTEL_SERVICE_NAME"
+                  value: "dinner_done_better_job_meal_plan_task_creator"
+                - name: "DINNER_DONE_BETTER_OBSERVABILITY_TRACING_TRACING_SERVICE_NAME"
+                  value: "dinner_done_better_job_meal_plan_task_creator"
+              volumeMounts:
+                - name: "config"
+                  mountPath: "/etc/service-config.json"
+                  subPath: "config.json"
+          restartPolicy: OnFailure
+          volumes:
+            - name: "config"
+              configMap:
+                name: "dinner-done-better-job-meal-plan-task-creator-config"
+---

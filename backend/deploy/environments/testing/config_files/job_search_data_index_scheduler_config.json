@@ -1,0 +1,85 @@
+{
+	"queues": {
+		"dataChangesTopicName": "data_changes",
+		"outboundEmailsTopicName": "outbound_emails",
+		"searchIndexRequestsTopicName": "search_index_requests",
+		"userDataAggregationTopicName": "user_data_aggregation_requests",
+		"webhookExecutionRequestsTopicName": "webhook_execution_requests"
+	},
+	"events": {
+		"consumers": {
+			"provider": "redis",
+			"sqs": {
+				"queueAddress": ""
+			},
+			"pubSub": {
+				"projectID": ""
+			},
+			"redis": {
+				"username": "",
+				"queueAddress": [
+					"worker_queue:6379"
+				]
+			}
+		},
+		"publishers": {
+			"provider": "redis",
+			"sqs": {
+				"queueAddress": ""
+			},
+			"pubSub": {
+				"projectID": ""
+			},
+			"redis": {
+				"username": "",
+				"queueAddress": [
+					"worker_queue:6379"
+				]
+			}
+		}
+	},
+	"observability": {
+		"logging": {
+			"serviceName": "search_data_index_scheduler",
+			"level": "info",
+			"provider": "slog"
+		},
+		"metrics": {
+			"serviceName": "search_data_index_scheduler"
+		},
+		"tracing": {
+			"otelgrpc": {
+				"collector_endpoint": "http://tracing-server:14268/api/traces"
+			},
+			"service_name": "search_data_index_scheduler",
+			"provider": "otelgrpc",
+			"spanCollectionProbability": 1
+		}
+	},
+	"database": {
+		"oauth2TokenEncryptionKey": "HEREISA32CHARSECRETWHICHISMADEUP",
+		"provider": "",
+		"connectionDetails": {
+			"username": "dbuser",
+			"password": "hunter2",
+			"database": "dinner-done-better",
+			"hostname": "pgdatabase",
+			"port": 5432,
+			"disableSSL": true
+		},
+		"writeConnectionDetails": {
+			"username": "dbuser",
+			"password": "hunter2",
+			"database": "dinner-done-better",
+			"hostname": "pgdatabase",
+			"port": 5432,
+			"disableSSL": true
+		},
+		"migrations": null,
+		"maxPingAttempts": 50,
+		"pingWaitPeriod": 1500000000,
+		"debug": true,
+		"logQueries": true,
+		"runMigrations": true
+	}
+}

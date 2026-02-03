@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package waitlists;
+
+import "waitlists/waitlists_service_types.proto";
+
+option go_package = "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/waitlists";
+
+service WaitlistsService {
+  rpc CreateWaitlist(CreateWaitlistRequest) returns (CreateWaitlistResponse);
+  rpc GetWaitlist(GetWaitlistRequest) returns (GetWaitlistResponse);
+  rpc GetWaitlists(GetWaitlistsRequest) returns (GetWaitlistsResponse);
+  rpc GetActiveWaitlists(GetActiveWaitlistsRequest) returns (GetActiveWaitlistsResponse);
+  rpc UpdateWaitlist(UpdateWaitlistRequest) returns (UpdateWaitlistResponse);
+  rpc ArchiveWaitlist(ArchiveWaitlistRequest) returns (ArchiveWaitlistResponse);
+  rpc WaitlistIsNotExpired(WaitlistIsNotExpiredRequest) returns (WaitlistIsNotExpiredResponse);
+  rpc CreateWaitlistSignup(CreateWaitlistSignupRequest) returns (CreateWaitlistSignupResponse);
+  rpc GetWaitlistSignup(GetWaitlistSignupRequest) returns (GetWaitlistSignupResponse);
+  rpc GetWaitlistSignupsForWaitlist(GetWaitlistSignupsForWaitlistRequest) returns (GetWaitlistSignupsForWaitlistResponse);
+  rpc UpdateWaitlistSignup(UpdateWaitlistSignupRequest) returns (UpdateWaitlistSignupResponse);
+  rpc ArchiveWaitlistSignup(ArchiveWaitlistSignupRequest) returns (ArchiveWaitlistSignupResponse);
+}

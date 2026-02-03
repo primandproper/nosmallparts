@@ -1,0 +1,55 @@
+# Binaries for programs and plugins
+*.exe
+*.dll
+*.so
+*.dylib
+*.zip
+
+# Test binary, build with "go test -c"
+*.test
+
+# Output of the go coverage tool
+*.out
+
+# IDEs
+../.idea
+.vscode/
+
+# Vim
+*.swp
+
+# OSX
+.DS_Store
+
+# Go
+vendor
+
+# Log files
+*.log
+
+# go test profiles
+*.coverprofile
+*.profile
+
+# terraform
+**/.terraform/*
+**/.terraform.lock.hcl
+*.tfstate
+*.tfstate.*
+
+# TLS certificates
+*.pem
+*.key
+
+cmd/tools/db_initializer/dump.sql
+cmd/playground/*.go
+
+artifacts/
+*.wasm
+
+deploy/environments/localdev/generated
+
+cmd/services/demo
+main
+
+TODO.md

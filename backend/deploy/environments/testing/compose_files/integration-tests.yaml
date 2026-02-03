@@ -1,0 +1,58 @@
+---
+services:
+  redis:
+    logging:
+      driver: none
+    hostname: worker_queue
+    image: redis:7-bullseye
+    container_name: redis
+    ports:
+      - '6379:6379'
+    command: ["redis-server", "--cluster-enabled yes"]
+  postgres:
+    logging:
+      driver: none
+    container_name: postgres
+    hostname: pgdatabase
+    image: postgres:17
+    environment:
+      POSTGRES_DB: 'dinner-done-better'
+      POSTGRES_PASSWORD: 'hunter2'
+      POSTGRES_USER: 'dbuser'
+    ports:
+      - '5432:5432'
+  api_server:
+    hostname: api_server
+    container_name: integration_tests_server
+    depends_on:
+      - postgres
+      - redis
+    links:
+      - postgres
+      - redis
+    environment:
+      USE_NOOP_LOGGER: 'nope'
+      CONFIGURATION_FILEPATH: '/etc/config'
+    ports:
+      - '8000:8000'
+    build:
+      context: '../../../../'
+      dockerfile: 'deploy/environments/testing/dockerfiles/integration-server.Dockerfile'
+    volumes:
+      - source: '../config_files/integration-tests-config.json'
+        target: '/etc/config'
+        type: 'bind'
+  tests:
+    environment:
+      TARGET_ADDRESS: 'http://api_server:8000'
+      TARGET_DATABASE: 'postgres://dbuser:hunter2@pgdatabase:5432/dinner-done-better?sslmode=disable'
+    depends_on:
+      - postgres
+      - redis
+    links:
+      - postgres
+      - api_server
+    build:
+      context: '../../../../'
+      dockerfile: 'deploy/environments/testing/dockerfiles/integration-tests.Dockerfile'
+    container_name: 'integration_tests'

@@ -1,0 +1,1483 @@
+package identity
+
+import (
+	"context"
+	"database/sql"
+	"errors"
+	"fmt"
+	"strings"
+	"time"
+
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/authorization"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/audit"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/identity"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/filtering"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/identifiers"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/keys"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/identity/generated"
+
+	"github.com/jackc/pgx/v5/pgconn"
+)
+
+const (
+	resourceTypeUsers = "users"
+
+	// https://www.postgresql.org/docs/current/errcodes-appendix.html
+	postgresDuplicateEntryErrorCode = "23505"
+)
+
+var (
+	_ identity.UserDataManager = (*repository)(nil)
+)
+
+// GetUser fetches a user.
+func (r *repository) GetUser(ctx context.Context, userID string) (*identity.User, error) {
+	ctx, span := r.tracer.StartSpan(ctx)
+	defer span.End()
+
+	logger := r.logger.Clone()
+
+	if userID == "" {
+		return nil, database.ErrInvalidIDProvided
+	}
+	logger = logger.WithValue(keys.UserIDKey, userID)
+	tracing.AttachToSpan(span, keys.UserIDKey, userID)
+
+	result, err := r.generatedQuerier.GetUserByID(ctx, r.db, userID)
+	if err != nil {
+		return nil, observability.PrepareAndLogError(err, logger, span, "getting user")
+	}
+
+	u := &identity.User{
+		CreatedAt:                  result.CreatedAt,
+		PasswordLastChangedAt:      database.TimePointerFromNullTime(result.PasswordLastChangedAt),
+		LastUpdatedAt:              database.TimePointerFromNullTime(result.LastUpdatedAt),
+		LastAcceptedTermsOfService: database.TimePointerFromNullTime(result.LastAcceptedTermsOfService),
+		LastAcceptedPrivacyPolicy:  database.TimePointerFromNullTime(result.LastAcceptedPrivacyPolicy),
+		TwoFactorSecretVerifiedAt:  database.TimePointerFromNullTime(result.TwoFactorSecretVerifiedAt),
+		Birthday:                   database.TimePointerFromNullTime(result.Birthday),
+		ArchivedAt:                 database.TimePointerFromNullTime(result.ArchivedAt),
+		AccountStatusExplanation:   result.UserAccountStatusExplanation,
+		TwoFactorSecret:            result.TwoFactorSecret,
+		HashedPassword:             result.HashedPassword,
+		ID:                         result.ID,
+		AccountStatus:              result.UserAccountStatus,
+		Username:                   result.Username,
+		FirstName:                  result.FirstName,
+		LastName:                   result.LastName,
+		EmailAddress:               result.EmailAddress,
+		EmailAddressVerifiedAt:     database.TimePointerFromNullTime(result.EmailAddressVerifiedAt),
+		AvatarSrc:                  database.StringPointerFromNullString(result.AvatarSrc),
+		ServiceRole:                result.ServiceRole,
+		RequiresPasswordChange:     result.RequiresPasswordChange,
+	}
+
+	return u, nil
+}
+
+// GetUserWithUnverifiedTwoFactorSecret fetches a user with an unverified 2FA secret.
+func (r *repository) GetUserWithUnverifiedTwoFactorSecret(ctx context.Context, userID string) (*identity.User, error) {
+	ctx, span := r.tracer.StartSpan(ctx)
+	defer span.End()
+
+	if userID == "" {
+		return nil, database.ErrInvalidIDProvided
+	}
+	tracing.AttachToSpan(span, keys.UserIDKey, userID)
+
+	result, err := r.generatedQuerier.GetUserWithUnverifiedTwoFactor(ctx, r.db, userID)
+	if err != nil {
+		return nil, observability.PrepareError(err, span, "getting user with unverified two factor")
+	}
+
+	u := &identity.User{
+		CreatedAt:                  result.CreatedAt,
+		PasswordLastChangedAt:      database.TimePointerFromNullTime(result.PasswordLastChangedAt),
+		LastUpdatedAt:              database.TimePointerFromNullTime(result.LastUpdatedAt),
+		LastAcceptedTermsOfService: database.TimePointerFromNullTime(result.LastAcceptedTermsOfService),
+		LastAcceptedPrivacyPolicy:  database.TimePointerFromNullTime(result.LastAcceptedPrivacyPolicy),
+		TwoFactorSecretVerifiedAt:  database.TimePointerFromNullTime(result.TwoFactorSecretVerifiedAt),
+		Birthday:                   database.TimePointerFromNullTime(result.Birthday),
+		ArchivedAt:                 database.TimePointerFromNullTime(result.ArchivedAt),
+		AccountStatusExplanation:   result.UserAccountStatusExplanation,
+		TwoFactorSecret:            result.TwoFactorSecret,
+		HashedPassword:             result.HashedPassword,
+		ID:                         result.ID,
+		AccountStatus:              result.UserAccountStatus,
+		Username:                   result.Username,
+		FirstName:                  result.FirstName,
+		LastName:                   result.LastName,
+		EmailAddress:               result.EmailAddress,
+		EmailAddressVerifiedAt:     database.TimePointerFromNullTime(result.EmailAddressVerifiedAt),
+		AvatarSrc:                  database.StringPointerFromNullString(result.AvatarSrc),
+		ServiceRole:                result.ServiceRole,
+		RequiresPasswordChange:     result.RequiresPasswordChange,
+	}
+
+	return u, nil
+}
+
+// GetUserByUsername fetches a user by their username.
+func (r *repository) GetUserByUsername(ctx context.Context, username string) (*identity.User, error) {
+	ctx, span := r.tracer.StartSpan(ctx)
+	defer span.End()
+
+	if username == "" {
+		return nil, database.ErrEmptyInputProvided
+	}
+	tracing.AttachToSpan(span, keys.UsernameKey, username)
+
+	result, err := r.generatedQuerier.GetUserByUsername(ctx, r.db, username)
+	if err != nil {
+		return nil, observability.PrepareError(err, span, "getting user by username")
+	}
+
+	u := &identity.User{
+		CreatedAt:                  result.CreatedAt,
+		PasswordLastChangedAt:      database.TimePointerFromNullTime(result.PasswordLastChangedAt),
+		LastUpdatedAt:              database.TimePointerFromNullTime(result.LastUpdatedAt),
+		LastAcceptedTermsOfService: database.TimePointerFromNullTime(result.LastAcceptedTermsOfService),
+		LastAcceptedPrivacyPolicy:  database.TimePointerFromNullTime(result.LastAcceptedPrivacyPolicy),
+		TwoFactorSecretVerifiedAt:  database.TimePointerFromNullTime(result.TwoFactorSecretVerifiedAt),
+		Birthday:                   database.TimePointerFromNullTime(result.Birthday),
+		ArchivedAt:                 database.TimePointerFromNullTime(result.ArchivedAt),
+		AccountStatusExplanation:   result.UserAccountStatusExplanation,
+		TwoFactorSecret:            result.TwoFactorSecret,
+		HashedPassword:             result.HashedPassword,
+		ID:                         result.ID,
+		AccountStatus:              result.UserAccountStatus,
+		Username:                   result.Username,
+		FirstName:                  result.FirstName,
+		LastName:                   result.LastName,
+		EmailAddress:               result.EmailAddress,
+		EmailAddressVerifiedAt:     database.TimePointerFromNullTime(result.EmailAddressVerifiedAt),
+		AvatarSrc:                  database.StringPointerFromNullString(result.AvatarSrc),
+		ServiceRole:                result.ServiceRole,
+		RequiresPasswordChange:     result.RequiresPasswordChange,
+	}
+
+	return u, nil
+}
+
+// GetAdminUserByUsername fetches a user by their username.
+func (r *repository) GetAdminUserByUsername(ctx context.Context, username string) (*identity.User, error) {
+	ctx, span := r.tracer.StartSpan(ctx)
+	defer span.End()
+
+	if username == "" {
+		return nil, database.ErrEmptyInputProvided
+	}
+	tracing.AttachToSpan(span, keys.UsernameKey, username)
+
+	result, err := r.generatedQuerier.GetAdminUserByUsername(ctx, r.db, username)
+	if err != nil {
+		if errors.Is(err, sql.ErrNoRows) {
+			return nil, err
+		}
+		return nil, observability.PrepareError(err, span, "getting admin user by username")
+	}
+
+	u := &identity.User{
+		CreatedAt:                  result.CreatedAt,
+		PasswordLastChangedAt:      database.TimePointerFromNullTime(result.PasswordLastChangedAt),
+		LastUpdatedAt:              database.TimePointerFromNullTime(result.LastUpdatedAt),
+		LastAcceptedTermsOfService: database.TimePointerFromNullTime(result.LastAcceptedTermsOfService),
+		LastAcceptedPrivacyPolicy:  database.TimePointerFromNullTime(result.LastAcceptedPrivacyPolicy),
+		TwoFactorSecretVerifiedAt:  database.TimePointerFromNullTime(result.TwoFactorSecretVerifiedAt),
+		Birthday:                   database.TimePointerFromNullTime(result.Birthday),
+		ArchivedAt:                 database.TimePointerFromNullTime(result.ArchivedAt),
+		AccountStatusExplanation:   result.UserAccountStatusExplanation,
+		TwoFactorSecret:            result.TwoFactorSecret,
+		HashedPassword:             result.HashedPassword,
+		ID:                         result.ID,
+		AccountStatus:              result.UserAccountStatus,
+		Username:                   result.Username,
+		FirstName:                  result.FirstName,
+		LastName:                   result.LastName,
+		EmailAddress:               result.EmailAddress,
+		EmailAddressVerifiedAt:     database.TimePointerFromNullTime(result.EmailAddressVerifiedAt),
+		AvatarSrc:                  database.StringPointerFromNullString(result.AvatarSrc),
+		ServiceRole:                result.ServiceRole,
+		RequiresPasswordChange:     result.RequiresPasswordChange,
+	}
+
+	return u, nil
+}
+
+// GetUserByEmail fetches a user by their email.
+func (r *repository) GetUserByEmail(ctx context.Context, email string) (*identity.User, error) {
+	ctx, span := r.tracer.StartSpan(ctx)
+	defer span.End()
+
+	if email == "" {
+		return nil, database.ErrEmptyInputProvided
+	}
+	tracing.AttachToSpan(span, keys.UserEmailAddressKey, email)
+
+	result, err := r.generatedQuerier.GetUserByEmail(ctx, r.db, email)
+	if err != nil {
+		return nil, observability.PrepareError(err, span, "getting user by email")
+	}
+
+	u := &identity.User{
+		CreatedAt:                  result.CreatedAt,
+		PasswordLastChangedAt:      database.TimePointerFromNullTime(result.PasswordLastChangedAt),
+		LastUpdatedAt:              database.TimePointerFromNullTime(result.LastUpdatedAt),
+		LastAcceptedTermsOfService: database.TimePointerFromNullTime(result.LastAcceptedTermsOfService),
+		LastAcceptedPrivacyPolicy:  database.TimePointerFromNullTime(result.LastAcceptedPrivacyPolicy),
+		TwoFactorSecretVerifiedAt:  database.TimePointerFromNullTime(result.TwoFactorSecretVerifiedAt),
+		Birthday:                   database.TimePointerFromNullTime(result.Birthday),
+		ArchivedAt:                 database.TimePointerFromNullTime(result.ArchivedAt),
+		AccountStatusExplanation:   result.UserAccountStatusExplanation,
+		TwoFactorSecret:            result.TwoFactorSecret,
+		HashedPassword:             result.HashedPassword,
+		ID:                         result.ID,
+		AccountStatus:              result.UserAccountStatus,
+		Username:                   result.Username,
+		FirstName:                  result.FirstName,
+		LastName:                   result.LastName,
+		EmailAddress:               result.EmailAddress,
+		EmailAddressVerifiedAt:     database.TimePointerFromNullTime(result.EmailAddressVerifiedAt),
+		AvatarSrc:                  database.StringPointerFromNullString(result.AvatarSrc),
+		ServiceRole:                result.ServiceRole,
+		RequiresPasswordChange:     result.RequiresPasswordChange,
+	}
+
+	return u, nil
+}
+
+// SearchForUsersByUsername fetches a list of users whose usernames begin with a given query.
+func (r *repository) SearchForUsersByUsername(ctx context.Context, usernameQuery string, filter *filtering.QueryFilter) (*filtering.QueryFilteredResult[identity.User], error) {
+	ctx, span := r.tracer.StartSpan(ctx)
+	defer span.End()
+
+	logger := r.logger.WithSpan(span)
+
+	if usernameQuery == "" {
+		return nil, database.ErrEmptyInputProvided
+	}
+	tracing.AttachToSpan(span, keys.SearchQueryKey, usernameQuery)
+	logger = logger.WithValue(keys.UsernameKey, usernameQuery)
+
+	if filter == nil {
+		filter = filtering.DefaultQueryFilter()
+	}
+	tracing.AttachQueryFilterToSpan(span, filter)
+	filter.AttachToLogger(logger)
+
+	results, err := r.generatedQuerier.SearchUsersByUsername(ctx, r.db, &generated.SearchUsersByUsernameParams{
+		CreatedBefore:   database.NullTimeFromTimePointer(filter.CreatedBefore),
+		CreatedAfter:    database.NullTimeFromTimePointer(filter.CreatedAfter),
+		UpdatedBefore:   database.NullTimeFromTimePointer(filter.UpdatedBefore),
+		UpdatedAfter:    database.NullTimeFromTimePointer(filter.UpdatedAfter),
+		Cursor:          database.NullStringFromStringPointer(filter.Cursor),
+		ResultLimit:     database.NullInt32FromUint8Pointer(filter.MaxResponseSize),
+		IncludeArchived: database.NullBoolFromBoolPointer(filter.IncludeArchived),
+		Username:        usernameQuery,
+	})
+	if err != nil {
+		return nil, observability.PrepareError(err, span, "querying database for users")
+	}
+
+	var (
+		users                     = []*identity.User{}
+		filteredCount, totalCount uint64
+	)
+	for _, result := range results {
+		filteredCount = uint64(result.FilteredCount)
+		totalCount = uint64(result.TotalCount)
+
+		users = append(users, &identity.User{
+			CreatedAt:                  result.CreatedAt,
+			PasswordLastChangedAt:      database.TimePointerFromNullTime(result.PasswordLastChangedAt),
+			LastUpdatedAt:              database.TimePointerFromNullTime(result.LastUpdatedAt),
+			LastAcceptedTermsOfService: database.TimePointerFromNullTime(result.LastAcceptedTermsOfService),
+			LastAcceptedPrivacyPolicy:  database.TimePointerFromNullTime(result.LastAcceptedPrivacyPolicy),
+			TwoFactorSecretVerifiedAt:  database.TimePointerFromNullTime(result.TwoFactorSecretVerifiedAt),
+			Birthday:                   database.TimePointerFromNullTime(result.Birthday),
+			ArchivedAt:                 database.TimePointerFromNullTime(result.ArchivedAt),
+			AccountStatusExplanation:   result.UserAccountStatusExplanation,
+			TwoFactorSecret:            result.TwoFactorSecret,
+			HashedPassword:             result.HashedPassword,
+			ID:                         result.ID,
+			AccountStatus:              result.UserAccountStatus,
+			Username:                   result.Username,
+			FirstName:                  result.FirstName,
+			LastName:                   result.LastName,
+			EmailAddress:               result.EmailAddress,
+			EmailAddressVerifiedAt:     database.TimePointerFromNullTime(result.EmailAddressVerifiedAt),
+			AvatarSrc:                  database.StringPointerFromNullString(result.AvatarSrc),
+			ServiceRole:                result.ServiceRole,
+			RequiresPasswordChange:     result.RequiresPasswordChange,
+		})
+	}
+
+	if len(users) == 0 {
+		return nil, sql.ErrNoRows
+	}
+
+	x := filtering.NewQueryFilteredResult(users, filteredCount, totalCount, func(t *identity.User) string {
+		return t.ID
+	}, filter)
+
+	return x, nil
+}
+
+// GetUsers fetches a list of users from the database that meet a particular filter.
+func (r *repository) GetUsers(ctx context.Context, filter *filtering.QueryFilter) (*filtering.QueryFilteredResult[identity.User], error) {
+	ctx, span := r.tracer.StartSpan(ctx)
+	defer span.End()
+
+	logger := r.logger.Clone()
+
+	if filter == nil {
+		filter = filtering.DefaultQueryFilter()
+	}
+	tracing.AttachQueryFilterToSpan(span, filter)
+	filter.AttachToLogger(logger) // TODO: is assignment necessary here? if not, make consistent
+
+	results, err := r.generatedQuerier.GetUsers(ctx, r.db, &generated.GetUsersParams{
+		CreatedBefore:   database.NullTimeFromTimePointer(filter.CreatedBefore),
+		CreatedAfter:    database.NullTimeFromTimePointer(filter.CreatedAfter),
+		UpdatedBefore:   database.NullTimeFromTimePointer(filter.UpdatedBefore),
+		UpdatedAfter:    database.NullTimeFromTimePointer(filter.UpdatedAfter),
+		Cursor:          database.NullStringFromStringPointer(filter.Cursor),
+		ResultLimit:     database.NullInt32FromUint8Pointer(filter.MaxResponseSize),
+		IncludeArchived: database.NullBoolFromBoolPointer(filter.IncludeArchived),
+	})
+	if err != nil {
+		return nil, observability.PrepareError(err, span, "scanning user")
+	}
+
+	var (
+		data                      = []*identity.User{}
+		filteredCount, totalCount uint64
+	)
+	for _, result := range results {
+		u := &identity.User{
+			CreatedAt:                  result.CreatedAt,
+			PasswordLastChangedAt:      database.TimePointerFromNullTime(result.PasswordLastChangedAt),
+			LastUpdatedAt:              database.TimePointerFromNullTime(result.LastUpdatedAt),
+			LastAcceptedTermsOfService: database.TimePointerFromNullTime(result.LastAcceptedTermsOfService),
+			LastAcceptedPrivacyPolicy:  database.TimePointerFromNullTime(result.LastAcceptedPrivacyPolicy),
+			TwoFactorSecretVerifiedAt:  database.TimePointerFromNullTime(result.TwoFactorSecretVerifiedAt),
+			Birthday:                   database.TimePointerFromNullTime(result.Birthday),
+			ArchivedAt:                 database.TimePointerFromNullTime(result.ArchivedAt),
+			AccountStatusExplanation:   result.UserAccountStatusExplanation,
+			TwoFactorSecret:            result.TwoFactorSecret,
+			HashedPassword:             result.HashedPassword,
+			ID:                         result.ID,
+			AccountStatus:              result.UserAccountStatus,
+			Username:                   result.Username,
+			FirstName:                  result.FirstName,
+			LastName:                   result.LastName,
+			EmailAddress:               result.EmailAddress,
+			EmailAddressVerifiedAt:     database.TimePointerFromNullTime(result.EmailAddressVerifiedAt),
+			AvatarSrc:                  database.StringPointerFromNullString(result.AvatarSrc),
+			ServiceRole:                result.ServiceRole,
+			RequiresPasswordChange:     result.RequiresPasswordChange,
+		}
+
+		data = append(data, u)
+		filteredCount = uint64(result.FilteredCount)
+		totalCount = uint64(result.TotalCount)
+	}
+
+	x := filtering.NewQueryFilteredResult(
+		data,
+		filteredCount,
+		totalCount,
+		func(t *identity.User) string {
+			return t.ID
+		},
+		filter,
+	)
+
+	return x, nil
+}
+
+// GetUsersForAccount fetches a list of users from the database that meet a particular filter.
+func (r *repository) GetUsersForAccount(ctx context.Context, accountID string, filter *filtering.QueryFilter) (x *filtering.QueryFilteredResult[identity.User], err error) {
+	ctx, span := r.tracer.StartSpan(ctx)
+	defer span.End()
+
+	logger := r.logger.Clone()
+
+	if accountID == "" {
+		return nil, database.ErrInvalidIDProvided
+	}
+	logger = logger.WithValue(keys.AccountIDKey, accountID)
+	tracing.AttachToSpan(span, keys.AccountIDKey, accountID)
+
+	if filter == nil {
+		filter = filtering.DefaultQueryFilter()
+	}
+	tracing.AttachQueryFilterToSpan(span, filter)
+	filter.AttachToLogger(logger)
+
+	x = &filtering.QueryFilteredResult[identity.User]{
+		Pagination: filter.ToPagination(),
+	}
+
+	results, err := r.generatedQuerier.GetUsersForAccount(ctx, r.db, &generated.GetUsersForAccountParams{
+		BelongsToAccount: accountID,
+		CreatedBefore:    database.NullTimeFromTimePointer(filter.CreatedBefore),
+		CreatedAfter:     database.NullTimeFromTimePointer(filter.CreatedAfter),
+		UpdatedBefore:    database.NullTimeFromTimePointer(filter.UpdatedBefore),
+		UpdatedAfter:     database.NullTimeFromTimePointer(filter.UpdatedAfter),
+		Cursor:           database.NullStringFromStringPointer(filter.Cursor),
+		ResultLimit:      database.NullInt32FromUint8Pointer(filter.MaxResponseSize),
+		IncludeArchived:  database.NullBoolFromBoolPointer(filter.IncludeArchived),
+	})
+	if err != nil {
+		return nil, observability.PrepareError(err, span, "scanning user")
+	}
+
+	for _, result := range results {
+		u := &identity.User{
+			CreatedAt:                  result.CreatedAt,
+			PasswordLastChangedAt:      database.TimePointerFromNullTime(result.PasswordLastChangedAt),
+			LastUpdatedAt:              database.TimePointerFromNullTime(result.LastUpdatedAt),
+			LastAcceptedTermsOfService: database.TimePointerFromNullTime(result.LastAcceptedTermsOfService),
+			LastAcceptedPrivacyPolicy:  database.TimePointerFromNullTime(result.LastAcceptedPrivacyPolicy),
+			TwoFactorSecretVerifiedAt:  database.TimePointerFromNullTime(result.TwoFactorSecretVerifiedAt),
+			Birthday:                   database.TimePointerFromNullTime(result.Birthday),
+			ArchivedAt:                 database.TimePointerFromNullTime(result.ArchivedAt),
+			AccountStatusExplanation:   result.UserAccountStatusExplanation,
+			TwoFactorSecret:            result.TwoFactorSecret,
+			HashedPassword:             result.HashedPassword,
+			ID:                         result.ID,
+			AccountStatus:              result.UserAccountStatus,
+			Username:                   result.Username,
+			FirstName:                  result.FirstName,
+			LastName:                   result.LastName,
+			EmailAddress:               result.EmailAddress,
+			EmailAddressVerifiedAt:     database.TimePointerFromNullTime(result.EmailAddressVerifiedAt),
+			AvatarSrc:                  database.StringPointerFromNullString(result.AvatarSrc),
+			ServiceRole:                result.ServiceRole,
+			RequiresPasswordChange:     result.RequiresPasswordChange,
+		}
+
+		x.Data = append(x.Data, u)
+		x.FilteredCount = uint64(result.FilteredCount)
+		x.TotalCount = uint64(result.TotalCount)
+	}
+
+	return x, nil
+}
+
+// GetUsersWithIDs fetches a list of users from the database that meet a particular filter.
+func (r *repository) GetUsersWithIDs(ctx context.Context, ids []string) (x []*identity.User, err error) {
+	ctx, span := r.tracer.StartSpan(ctx)
+	defer span.End()
+
+	logger := r.logger.WithValue("user_id_count", len(ids))
+
+	results, err := r.generatedQuerier.GetUsersWithIDs(ctx, r.db, ids)
+	if err != nil {
+		return nil, observability.PrepareAndLogError(err, logger, span, "scanning user")
+	}
+
+	for _, result := range results {
+		u := &identity.User{
+			CreatedAt:                  result.CreatedAt,
+			PasswordLastChangedAt:      database.TimePointerFromNullTime(result.PasswordLastChangedAt),
+			LastUpdatedAt:              database.TimePointerFromNullTime(result.LastUpdatedAt),
+			LastAcceptedTermsOfService: database.TimePointerFromNullTime(result.LastAcceptedTermsOfService),
+			LastAcceptedPrivacyPolicy:  database.TimePointerFromNullTime(result.LastAcceptedPrivacyPolicy),
+			TwoFactorSecretVerifiedAt:  database.TimePointerFromNullTime(result.TwoFactorSecretVerifiedAt),
+			Birthday:                   database.TimePointerFromNullTime(result.Birthday),
+			ArchivedAt:                 database.TimePointerFromNullTime(result.ArchivedAt),
+			AccountStatusExplanation:   result.UserAccountStatusExplanation,
+			TwoFactorSecret:            result.TwoFactorSecret,
+			HashedPassword:             result.HashedPassword,
+			ID:                         result.ID,
+			AccountStatus:              result.UserAccountStatus,
+			Username:                   result.Username,
+			FirstName:                  result.FirstName,
+			LastName:                   result.LastName,
+			EmailAddress:               result.EmailAddress,
+			EmailAddressVerifiedAt:     database.TimePointerFromNullTime(result.EmailAddressVerifiedAt),
+			AvatarSrc:                  database.StringPointerFromNullString(result.AvatarSrc),
+			ServiceRole:                result.ServiceRole,
+			RequiresPasswordChange:     result.RequiresPasswordChange,
+		}
+
+		x = append(x, u)
+	}
+
+	return x, nil
+}
+
+// GetUserIDsThatNeedSearchIndexing fetches a list of valid vessels from the database that meet a particular filter.
+func (r *repository) GetUserIDsThatNeedSearchIndexing(ctx context.Context) ([]string, error) {
+	ctx, span := r.tracer.StartSpan(ctx)
+	defer span.End()
+
+	results, err := r.generatedQuerier.GetUserIDsNeedingIndexing(ctx, r.db)
+	if err != nil {
+		return nil, observability.PrepareError(err, span, "executing users list retrieval query")
+	}
+
+	return results, nil
+}
+
+// MarkUserAsIndexed updates a particular user's last_indexed_at value.
+func (r *repository) MarkUserAsIndexed(ctx context.Context, userID string) error {
+	ctx, span := r.tracer.StartSpan(ctx)
+	defer span.End()
+
+	logger := r.logger.Clone()
+
+	if userID == "" {
+		return database.ErrInvalidIDProvided
+	}
+	logger = logger.WithValue(keys.UserIDKey, userID)
+	tracing.AttachToSpan(span, keys.UserIDKey, userID)
+
+	if _, err := r.generatedQuerier.UpdateUserLastIndexedAt(ctx, r.db, userID); err != nil {
+		return observability.PrepareAndLogError(err, logger, span, "marking user as indexed")
+	}
+
+	logger.Info("user marked as indexed")
+
+	return nil
+}
+
+// CreateUser creates a user. TODO: this should return an account as well.
+func (r *repository) CreateUser(ctx context.Context, input *identity.UserDatabaseCreationInput) (*identity.User, error) {
+	ctx, span := r.tracer.StartSpan(ctx)
+	defer span.End()
+
+	if input == nil {
+		return nil, database.ErrNilInputProvided
+	}
+
+	tracing.AttachToSpan(span, keys.UsernameKey, input.Username)
+	logger := r.logger.WithValues(map[string]any{
+		keys.UsernameKey:               input.Username,
+		keys.UserEmailAddressKey:       input.EmailAddress,
+		keys.AccountInvitationTokenKey: input.InvitationToken,
+		"destination_account":          input.DestinationAccountID,
+	})
+
+	// begin user creation transaction
+	tx, err := r.db.BeginTx(ctx, nil)
+	if err != nil {
+		return nil, observability.PrepareError(err, span, "beginning transaction")
+	}
+
+	token, err := r.secretGenerator.GenerateBase64EncodedString(ctx, 32)
+	if err != nil {
+		r.RollbackTransaction(ctx, tx)
+		return nil, observability.PrepareError(err, span, "generating email verification token")
+	}
+
+	if err = r.generatedQuerier.CreateUser(ctx, tx, &generated.CreateUserParams{
+		ID:                            input.ID,
+		FirstName:                     input.FirstName,
+		LastName:                      input.LastName,
+		Username:                      input.Username,
+		EmailAddress:                  input.EmailAddress,
+		HashedPassword:                input.HashedPassword,
+		TwoFactorSecret:               input.TwoFactorSecret,
+		AvatarSrc:                     database.NullStringFromStringPointer(input.AvatarSrc),
+		UserAccountStatus:             string(identity.UnverifiedAccountStatus),
+		Birthday:                      database.NullTimeFromTimePointer(input.Birthday),
+		ServiceRole:                   authorization.ServiceUserRole.String(),
+		EmailAddressVerificationToken: database.NullStringFromString(token),
+		TwoFactorSecretVerifiedAt:     sql.NullTime{},
+		UserAccountStatusExplanation:  "",
+		RequiresPasswordChange:        false,
+	}); err != nil {
+		r.RollbackTransaction(ctx, tx)
+
+		var pgErr *pgconn.PgError
+		if errors.As(err, &pgErr) {
+			if pgErr.Code == postgresDuplicateEntryErrorCode {
+				return nil, database.ErrUserAlreadyExists
+			}
+		}
+
+		return nil, observability.PrepareError(err, span, "creating user")
+	}
+
+	hasValidInvite := input.InvitationToken != "" && input.DestinationAccountID != ""
+
+	user := &identity.User{
+		ID:              input.ID,
+		FirstName:       input.FirstName,
+		LastName:        input.LastName,
+		Username:        input.Username,
+		EmailAddress:    input.EmailAddress,
+		HashedPassword:  input.HashedPassword,
+		TwoFactorSecret: input.TwoFactorSecret,
+		AccountStatus:   string(identity.UnverifiedAccountStatus),
+		Birthday:        input.Birthday,
+		ServiceRole:     authorization.ServiceUserRole.String(),
+		CreatedAt:       r.CurrentTime(),
+	}
+	logger = logger.WithValue(keys.UserIDKey, user.ID)
+	tracing.AttachToSpan(span, keys.UserIDKey, user.ID)
+
+	if _, err = r.auditLogEntryRepo.CreateAuditLogEntry(ctx, tx, &audit.AuditLogEntryDatabaseCreationInput{
+		ID:            identifiers.New(),
+		ResourceType:  resourceTypeUsers,
+		RelevantID:    input.ID,
+		EventType:     audit.AuditLogEventTypeCreated,
+		BelongsToUser: input.ID,
+	}); err != nil {
+		r.RollbackTransaction(ctx, tx)
+		return nil, observability.PrepareError(err, span, "creating audit log entry")
+	}
+
+	if strings.TrimSpace(input.AccountName) == "" {
+		input.AccountName = fmt.Sprintf("%s's cool account", input.Username)
+	}
+
+	account, err := r.createAccountForUser(ctx, tx, hasValidInvite, input.AccountName, user.ID)
+	if err != nil {
+		r.RollbackTransaction(ctx, tx)
+		return nil, observability.PrepareAndLogError(err, logger, span, "creating account for new user")
+	}
+	logger = logger.WithValue(keys.AccountIDKey, account.ID)
+	logger.Debug("account created")
+
+	if hasValidInvite {
+		if err = r.acceptInvitationForUser(ctx, tx, input); err != nil {
+			r.RollbackTransaction(ctx, tx)
+			return nil, observability.PrepareAndLogError(err, logger, span, "accepting account invitations")
+		}
+		logger.Debug("accepted invitation and joined account for user")
+	}
+
+	if err = r.attachInvitationsToUser(ctx, tx, user.EmailAddress, user.ID); err != nil {
+		r.RollbackTransaction(ctx, tx)
+		logger = logger.WithValue("email_address", user.EmailAddress).WithValue("user_id", user.ID)
+		return nil, observability.PrepareAndLogError(err, logger, span, "attaching existing invitations to new user")
+	}
+
+	if err = tx.Commit(); err != nil {
+		return nil, observability.PrepareAndLogError(err, logger, span, "committing transaction")
+	}
+
+	logger.Debug("user and account created")
+
+	return user, nil
+}
+
+func (r *repository) createAccountForUser(ctx context.Context, querier database.SQLQueryExecutorAndTransactionManager, hasValidInvite bool, accountName, userID string) (*identity.Account, error) {
+	ctx, span := r.tracer.StartSpan(ctx)
+	defer span.End()
+
+	// standard registration: we need to create the account
+	accountID := identifiers.New()
+	tracing.AttachToSpan(span, keys.AccountIDKey, accountID)
+
+	hn := accountName
+	if accountName == "" {
+		hn = fmt.Sprintf("%s_default", userID)
+	}
+
+	accountCreationInput := &identity.AccountDatabaseCreationInput{
+		ID:            accountID,
+		Name:          hn,
+		BelongsToUser: userID,
+	}
+
+	// create the account.
+	if err := r.generatedQuerier.CreateAccount(ctx, querier, &generated.CreateAccountParams{
+		City:              accountCreationInput.City,
+		Name:              accountCreationInput.Name,
+		BillingStatus:     identity.UnpaidAccountBillingStatus,
+		ContactPhone:      accountCreationInput.ContactPhone,
+		AddressLine1:      accountCreationInput.AddressLine1,
+		AddressLine2:      accountCreationInput.AddressLine2,
+		ID:                accountCreationInput.ID,
+		State:             accountCreationInput.State,
+		ZipCode:           accountCreationInput.ZipCode,
+		Country:           accountCreationInput.Country,
+		BelongsToUser:     accountCreationInput.BelongsToUser,
+		Latitude:          database.NullStringFromFloat64Pointer(accountCreationInput.Latitude),
+		Longitude:         database.NullStringFromFloat64Pointer(accountCreationInput.Longitude),
+		WebhookHmacSecret: accountCreationInput.WebhookEncryptionKey,
+	}); err != nil {
+		r.RollbackTransaction(ctx, querier)
+		return nil, observability.PrepareError(err, span, "creating account")
+	}
+
+	if _, err := r.auditLogEntryRepo.CreateAuditLogEntry(ctx, querier, &audit.AuditLogEntryDatabaseCreationInput{
+		BelongsToAccount: &accountCreationInput.ID,
+		ID:               identifiers.New(),
+		ResourceType:     resourceTypeAccounts,
+		RelevantID:       accountCreationInput.ID,
+		EventType:        audit.AuditLogEventTypeCreated,
+		BelongsToUser:    accountCreationInput.BelongsToUser,
+	}); err != nil {
+		r.RollbackTransaction(ctx, querier)
+		return nil, observability.PrepareError(err, span, "creating audit log entry")
+	}
+
+	accountMembershipID := identifiers.New()
+	if err := r.generatedQuerier.CreateAccountUserMembershipForNewUser(ctx, querier, &generated.CreateAccountUserMembershipForNewUserParams{
+		ID:               accountMembershipID,
+		BelongsToUser:    userID,
+		BelongsToAccount: accountID,
+		AccountRole:      authorization.AccountAdminRole.String(),
+		DefaultAccount:   !hasValidInvite,
+	}); err != nil {
+		r.RollbackTransaction(ctx, querier)
+		return nil, observability.PrepareError(err, span, "writing account user membership")
+	}
+
+	if _, err := r.auditLogEntryRepo.CreateAuditLogEntry(ctx, querier, &audit.AuditLogEntryDatabaseCreationInput{
+		BelongsToAccount: &accountCreationInput.ID,
+		ID:               identifiers.New(),
+		ResourceType:     resourceTypeAccountUserMemberships,
+		RelevantID:       accountMembershipID,
+		EventType:        audit.AuditLogEventTypeCreated,
+		BelongsToUser:    accountCreationInput.BelongsToUser,
+	}); err != nil {
+		r.RollbackTransaction(ctx, querier)
+		return nil, observability.PrepareError(err, span, "creating audit log entry")
+	}
+
+	account := &identity.Account{
+		CreatedAt:            r.CurrentTime(),
+		Longitude:            accountCreationInput.Longitude,
+		Latitude:             accountCreationInput.Latitude,
+		State:                accountCreationInput.State,
+		ContactPhone:         accountCreationInput.ContactPhone,
+		City:                 accountCreationInput.City,
+		AddressLine1:         accountCreationInput.AddressLine1,
+		ZipCode:              accountCreationInput.ZipCode,
+		Country:              accountCreationInput.Country,
+		BillingStatus:        identity.UnpaidAccountBillingStatus,
+		AddressLine2:         accountCreationInput.AddressLine2,
+		BelongsToUser:        accountCreationInput.BelongsToUser,
+		ID:                   accountCreationInput.ID,
+		Name:                 accountCreationInput.Name,
+		WebhookEncryptionKey: accountCreationInput.WebhookEncryptionKey,
+		Members:              nil,
+	}
+
+	return account, nil
+}
+
+// UpdateUserUsername updates a user's username.
+func (r *repository) UpdateUserUsername(ctx context.Context, userID, newUsername string) error {
+	ctx, span := r.tracer.StartSpan(ctx)
+	defer span.End()
+
+	logger := r.logger.Clone()
+
+	if userID == "" {
+		return database.ErrInvalidIDProvided
+	}
+	logger = logger.WithValue(keys.UserIDKey, userID)
+	tracing.AttachToSpan(span, keys.UserIDKey, userID)
+
+	if newUsername == "" {
+		return database.ErrEmptyInputProvided
+	}
+	logger = logger.WithValue(keys.UsernameKey, newUsername)
+	tracing.AttachToSpan(span, keys.UsernameKey, newUsername)
+
+	tx, err := r.db.BeginTx(ctx, nil)
+	if err != nil {
+		return observability.PrepareAndLogError(err, logger, span, "beginning transaction")
+	}
+
+	user, err := r.GetUser(ctx, userID)
+	if err != nil {
+		return observability.PrepareAndLogError(err, logger, span, "fetching user")
+	}
+
+	if _, err = r.generatedQuerier.UpdateUserUsername(ctx, tx, &generated.UpdateUserUsernameParams{
+		Username: newUsername,
+		ID:       userID,
+	}); err != nil {
+		r.RollbackTransaction(ctx, tx)
+		return observability.PrepareAndLogError(err, logger, span, "updating username")
+	}
+
+	if _, err = r.auditLogEntryRepo.CreateAuditLogEntry(ctx, tx, &audit.AuditLogEntryDatabaseCreationInput{
+		ID:            identifiers.New(),
+		ResourceType:  resourceTypeUsers,
+		RelevantID:    userID,
+		EventType:     audit.AuditLogEventTypeUpdated,
+		BelongsToUser: userID,
+		Changes: map[string]*audit.ChangeLog{
+			"username": {
+				OldValue: user.Username,
+				NewValue: newUsername,
+			},
+		},
+	}); err != nil {
+		r.RollbackTransaction(ctx, tx)
+		return observability.PrepareError(err, span, "creating audit log entry")
+	}
+
+	if err = tx.Commit(); err != nil {
+		return observability.PrepareAndLogError(err, logger, span, "committing transaction")
+	}
+
+	logger.Info("username updated")
+
+	return nil
+}
+
+// UpdateUserEmailAddress updates a user's username.
+func (r *repository) UpdateUserEmailAddress(ctx context.Context, userID, newEmailAddress string) error {
+	ctx, span := r.tracer.StartSpan(ctx)
+	defer span.End()
+
+	if userID == "" {
+		return database.ErrInvalidIDProvided
+	}
+	logger := r.logger.WithValue(keys.UserEmailAddressKey, newEmailAddress).WithValue(keys.UserIDKey, userID)
+	tracing.AttachToSpan(span, keys.UserIDKey, userID)
+
+	if newEmailAddress == "" {
+		return database.ErrEmptyInputProvided
+	}
+	tracing.AttachToSpan(span, keys.UserEmailAddressKey, newEmailAddress)
+
+	tx, err := r.db.BeginTx(ctx, nil)
+	if err != nil {
+		return observability.PrepareAndLogError(err, logger, span, "beginning transaction")
+	}
+
+	user, err := r.GetUser(ctx, userID)
+	if err != nil {
+		return observability.PrepareAndLogError(err, logger, span, "fetching user")
+	}
+
+	if _, err = r.generatedQuerier.UpdateUserEmailAddress(ctx, tx, &generated.UpdateUserEmailAddressParams{
+		EmailAddress: newEmailAddress,
+		ID:           userID,
+	}); err != nil {
+		r.RollbackTransaction(ctx, tx)
+		return observability.PrepareAndLogError(err, logger, span, "updating user email address")
+	}
+
+	if _, err = r.auditLogEntryRepo.CreateAuditLogEntry(ctx, tx, &audit.AuditLogEntryDatabaseCreationInput{
+		ID:            identifiers.New(),
+		ResourceType:  resourceTypeUsers,
+		RelevantID:    userID,
+		EventType:     audit.AuditLogEventTypeUpdated,
+		BelongsToUser: userID,
+		Changes: map[string]*audit.ChangeLog{
+			"email_address": {
+				OldValue: user.EmailAddress,
+				NewValue: newEmailAddress,
+			},
+		},
+	}); err != nil {
+		r.RollbackTransaction(ctx, tx)
+		return observability.PrepareError(err, span, "creating audit log entry")
+	}
+
+	if err = tx.Commit(); err != nil {
+		return observability.PrepareAndLogError(err, logger, span, "committing transaction")
+	}
+
+	logger.Info("user email address updated")
+
+	return nil
+}
+
+// UpdateUserDetails updates a user's username.
+func (r *repository) UpdateUserDetails(ctx context.Context, userID string, input *identity.UserDetailsDatabaseUpdateInput) error {
+	ctx, span := r.tracer.StartSpan(ctx)
+	defer span.End()
+
+	if input == nil {
+		return database.ErrEmptyInputProvided
+	}
+
+	if userID == "" {
+		return database.ErrInvalidIDProvided
+	}
+	tracing.AttachToSpan(span, keys.UserIDKey, userID)
+	logger := r.logger.WithValue(keys.UserIDKey, userID)
+
+	tx, err := r.db.BeginTx(ctx, nil)
+	if err != nil {
+		return observability.PrepareAndLogError(err, logger, span, "beginning transaction")
+	}
+
+	user, err := r.GetUser(ctx, userID)
+	if err != nil {
+		return observability.PrepareAndLogError(err, logger, span, "fetching user")
+	}
+
+	if _, err = r.generatedQuerier.UpdateUserDetails(ctx, tx, &generated.UpdateUserDetailsParams{
+		FirstName: input.FirstName,
+		LastName:  input.LastName,
+		Birthday:  database.NullTimeFromTime(input.Birthday),
+		ID:        userID,
+	}); err != nil {
+		r.RollbackTransaction(ctx, tx)
+		return observability.PrepareAndLogError(err, logger, span, "updating user details")
+	}
+
+	changes := map[string]*audit.ChangeLog{}
+	if input.FirstName != user.FirstName {
+		changes["first_name"] = &audit.ChangeLog{NewValue: input.FirstName, OldValue: user.FirstName}
+	}
+
+	if input.LastName != user.LastName {
+		changes["last_name"] = &audit.ChangeLog{NewValue: input.LastName, OldValue: user.LastName}
+	}
+
+	if input.Birthday.Format(time.Kitchen) != user.Birthday.Format(time.Kitchen) {
+		changes["birthday"] = &audit.ChangeLog{NewValue: input.Birthday.Format(time.Kitchen), OldValue: user.Birthday.Format(time.Kitchen)}
+	}
+
+	if _, err = r.auditLogEntryRepo.CreateAuditLogEntry(ctx, tx, &audit.AuditLogEntryDatabaseCreationInput{
+		ID:            identifiers.New(),
+		ResourceType:  resourceTypeUsers,
+		RelevantID:    userID,
+		EventType:     audit.AuditLogEventTypeUpdated,
+		BelongsToUser: userID,
+		Changes:       changes,
+	}); err != nil {
+		r.RollbackTransaction(ctx, tx)
+		return observability.PrepareError(err, span, "creating audit log entry")
+	}
+
+	if err = tx.Commit(); err != nil {
+		return observability.PrepareAndLogError(err, logger, span, "committing transaction")
+	}
+
+	logger.Info("user details updated")
+
+	return nil
+}
+
+// UpdateUserAvatar updates a user's avatar source.
+func (r *repository) UpdateUserAvatar(ctx context.Context, userID, newAvatarSrc string) error {
+	ctx, span := r.tracer.StartSpan(ctx)
+	defer span.End()
+
+	if newAvatarSrc == "" {
+		return database.ErrEmptyInputProvided
+	}
+
+	if userID == "" {
+		return database.ErrInvalidIDProvided
+	}
+	tracing.AttachToSpan(span, keys.UserIDKey, userID)
+	logger := r.logger.WithValue(keys.UserIDKey, userID)
+
+	tx, err := r.db.BeginTx(ctx, nil)
+	if err != nil {
+		return observability.PrepareAndLogError(err, logger, span, "beginning transaction")
+	}
+
+	if _, err = r.generatedQuerier.UpdateUserAvatarSrc(ctx, tx, &generated.UpdateUserAvatarSrcParams{
+		AvatarSrc: database.NullStringFromString(newAvatarSrc),
+		ID:        userID,
+	}); err != nil {
+		r.RollbackTransaction(ctx, tx)
+		return observability.PrepareAndLogError(err, logger, span, "updating user avatar")
+	}
+
+	if _, err = r.auditLogEntryRepo.CreateAuditLogEntry(ctx, tx, &audit.AuditLogEntryDatabaseCreationInput{
+		ID:            identifiers.New(),
+		ResourceType:  resourceTypeUsers,
+		RelevantID:    userID,
+		EventType:     audit.AuditLogEventTypeUpdated,
+		BelongsToUser: userID,
+		Changes: map[string]*audit.ChangeLog{
+			"avatar": {},
+		},
+	}); err != nil {
+		r.RollbackTransaction(ctx, tx)
+		return observability.PrepareError(err, span, "creating audit log entry")
+	}
+
+	if err = tx.Commit(); err != nil {
+		return observability.PrepareAndLogError(err, logger, span, "committing transaction")
+	}
+
+	logger.Info("user avatar updated")
+
+	return nil
+}
+
+// UpdateUserPassword updates a user's passwords hash in the database.
+func (r *repository) UpdateUserPassword(ctx context.Context, userID, newHash string) error {
+	ctx, span := r.tracer.StartSpan(ctx)
+	defer span.End()
+
+	if newHash == "" {
+		return database.ErrEmptyInputProvided
+	}
+
+	if userID == "" {
+		return database.ErrInvalidIDProvided
+	}
+	tracing.AttachToSpan(span, keys.UserIDKey, userID)
+	logger := r.logger.WithValue(keys.UserIDKey, userID)
+
+	tx, err := r.db.BeginTx(ctx, nil)
+	if err != nil {
+		return observability.PrepareAndLogError(err, logger, span, "beginning transaction")
+	}
+
+	if _, err = r.generatedQuerier.UpdateUserPassword(ctx, tx, &generated.UpdateUserPasswordParams{
+		HashedPassword: newHash,
+		ID:             userID,
+	}); err != nil {
+		r.RollbackTransaction(ctx, tx)
+		return observability.PrepareAndLogError(err, logger, span, "updating user password")
+	}
+
+	if _, err = r.auditLogEntryRepo.CreateAuditLogEntry(ctx, tx, &audit.AuditLogEntryDatabaseCreationInput{
+		ID:            identifiers.New(),
+		ResourceType:  resourceTypeUsers,
+		RelevantID:    userID,
+		EventType:     audit.AuditLogEventTypeUpdated,
+		BelongsToUser: userID,
+		Changes: map[string]*audit.ChangeLog{
+			"password": {},
+		},
+	}); err != nil {
+		r.RollbackTransaction(ctx, tx)
+		return observability.PrepareError(err, span, "creating audit log entry")
+	}
+
+	if err = tx.Commit(); err != nil {
+		return observability.PrepareAndLogError(err, logger, span, "committing transaction")
+	}
+
+	logger.Info("user password updated")
+
+	return nil
+}
+
+// UpdateUserTwoFactorSecret marks a user's two factor secret as validated.
+func (r *repository) UpdateUserTwoFactorSecret(ctx context.Context, userID, newSecret string) error {
+	ctx, span := r.tracer.StartSpan(ctx)
+	defer span.End()
+
+	if newSecret == "" {
+		return database.ErrEmptyInputProvided
+	}
+
+	if userID == "" {
+		return database.ErrInvalidIDProvided
+	}
+	tracing.AttachToSpan(span, keys.UserIDKey, userID)
+	logger := r.logger.WithValue(keys.UserIDKey, userID)
+
+	tx, err := r.db.BeginTx(ctx, nil)
+	if err != nil {
+		return observability.PrepareAndLogError(err, logger, span, "beginning transaction")
+	}
+
+	if _, err = r.generatedQuerier.UpdateUserTwoFactorSecret(ctx, tx, &generated.UpdateUserTwoFactorSecretParams{
+		TwoFactorSecret: newSecret,
+		ID:              userID,
+	}); err != nil {
+		r.RollbackTransaction(ctx, tx)
+		return observability.PrepareAndLogError(err, logger, span, "updating user 2FA secret")
+	}
+
+	if _, err = r.auditLogEntryRepo.CreateAuditLogEntry(ctx, tx, &audit.AuditLogEntryDatabaseCreationInput{
+		ID:            identifiers.New(),
+		ResourceType:  resourceTypeUsers,
+		RelevantID:    userID,
+		EventType:     audit.AuditLogEventTypeUpdated,
+		BelongsToUser: userID,
+		Changes: map[string]*audit.ChangeLog{
+			"two_factor_secret": {},
+		},
+	}); err != nil {
+		r.RollbackTransaction(ctx, tx)
+		return observability.PrepareError(err, span, "creating audit log entry")
+	}
+
+	if err = tx.Commit(); err != nil {
+		return observability.PrepareAndLogError(err, logger, span, "committing transaction")
+	}
+
+	logger.Info("user two factor secret updated")
+
+	return nil
+}
+
+// MarkUserTwoFactorSecretAsVerified marks a user's two factor secret as validated.
+func (r *repository) MarkUserTwoFactorSecretAsVerified(ctx context.Context, userID string) error {
+	ctx, span := r.tracer.StartSpan(ctx)
+	defer span.End()
+
+	if userID == "" {
+		return database.ErrInvalidIDProvided
+	}
+	tracing.AttachToSpan(span, keys.UserIDKey, userID)
+	logger := r.logger.WithValue(keys.UserIDKey, userID)
+
+	tx, err := r.db.BeginTx(ctx, nil)
+	if err != nil {
+		return observability.PrepareAndLogError(err, logger, span, "beginning transaction")
+	}
+
+	if err = r.generatedQuerier.MarkTwoFactorSecretAsVerified(ctx, tx, userID); err != nil {
+		return observability.PrepareAndLogError(err, logger, span, "writing verified two factor status to database")
+	}
+
+	if _, err = r.auditLogEntryRepo.CreateAuditLogEntry(ctx, tx, &audit.AuditLogEntryDatabaseCreationInput{
+		ID:            identifiers.New(),
+		ResourceType:  resourceTypeUsers,
+		RelevantID:    userID,
+		EventType:     audit.AuditLogEventTypeUpdated,
+		BelongsToUser: userID,
+		Changes: map[string]*audit.ChangeLog{
+			"two_factor_secret": {
+				OldValue: "unverified",
+				NewValue: "verified",
+			},
+		},
+	}); err != nil {
+		r.RollbackTransaction(ctx, tx)
+		return observability.PrepareError(err, span, "creating audit log entry")
+	}
+
+	if err = tx.Commit(); err != nil {
+		return observability.PrepareAndLogError(err, logger, span, "committing transaction")
+	}
+
+	logger.Info("user two factor secret verified")
+
+	return nil
+}
+
+// MarkUserTwoFactorSecretAsUnverified marks a user's two factor secret as unverified.
+func (r *repository) MarkUserTwoFactorSecretAsUnverified(ctx context.Context, userID, newSecret string) error {
+	ctx, span := r.tracer.StartSpan(ctx)
+	defer span.End()
+
+	if newSecret == "" {
+		return database.ErrEmptyInputProvided
+	}
+
+	if userID == "" {
+		return database.ErrInvalidIDProvided
+	}
+	tracing.AttachToSpan(span, keys.UserIDKey, userID)
+	logger := r.logger.WithValue(keys.UserIDKey, userID)
+
+	tx, err := r.db.BeginTx(ctx, nil)
+	if err != nil {
+		return observability.PrepareAndLogError(err, logger, span, "beginning transaction")
+	}
+
+	if err = r.generatedQuerier.MarkTwoFactorSecretAsUnverified(ctx, r.db, &generated.MarkTwoFactorSecretAsUnverifiedParams{
+		TwoFactorSecret: newSecret,
+		ID:              userID,
+	}); err != nil {
+		return observability.PrepareAndLogError(err, logger, span, "writing verified two factor status to database")
+	}
+
+	if _, err = r.auditLogEntryRepo.CreateAuditLogEntry(ctx, tx, &audit.AuditLogEntryDatabaseCreationInput{
+		ID:            identifiers.New(),
+		ResourceType:  resourceTypeUsers,
+		RelevantID:    userID,
+		EventType:     audit.AuditLogEventTypeArchived,
+		BelongsToUser: userID,
+	}); err != nil {
+		r.RollbackTransaction(ctx, tx)
+		return observability.PrepareError(err, span, "creating audit log entry")
+	}
+
+	if _, err = r.auditLogEntryRepo.CreateAuditLogEntry(ctx, tx, &audit.AuditLogEntryDatabaseCreationInput{
+		ID:            identifiers.New(),
+		ResourceType:  resourceTypeUsers,
+		RelevantID:    userID,
+		EventType:     audit.AuditLogEventTypeCreated,
+		BelongsToUser: userID,
+		Changes: map[string]*audit.ChangeLog{
+			"two_factor_secret": {
+				OldValue: "verified",
+				NewValue: "unverified",
+			},
+		},
+	}); err != nil {
+		r.RollbackTransaction(ctx, tx)
+		return observability.PrepareError(err, span, "creating audit log entry")
+	}
+
+	if err = tx.Commit(); err != nil {
+		return observability.PrepareAndLogError(err, logger, span, "committing transaction")
+	}
+
+	logger.Info("user two factor secret unverified")
+
+	return nil
+}
+
+// ArchiveUser archives a user.
+func (r *repository) ArchiveUser(ctx context.Context, userID string) error {
+	ctx, span := r.tracer.StartSpan(ctx)
+	defer span.End()
+
+	if userID == "" {
+		return database.ErrInvalidIDProvided
+	}
+	tracing.AttachToSpan(span, keys.UserIDKey, userID)
+	logger := r.logger.WithValue(keys.UserIDKey, userID)
+
+	// begin archive user transaction
+	tx, err := r.db.BeginTx(ctx, nil)
+	if err != nil {
+		return observability.PrepareAndLogError(err, logger, span, "beginning transaction")
+	}
+
+	changed, err := r.generatedQuerier.ArchiveUser(ctx, tx, userID)
+	if err != nil {
+		r.RollbackTransaction(ctx, tx)
+		return observability.PrepareAndLogError(err, logger, span, "archiving user")
+	}
+
+	if changed == 0 {
+		return sql.ErrNoRows
+	}
+
+	if _, err = r.auditLogEntryRepo.CreateAuditLogEntry(ctx, tx, &audit.AuditLogEntryDatabaseCreationInput{
+		ID:            identifiers.New(),
+		ResourceType:  resourceTypeUsers,
+		RelevantID:    userID,
+		EventType:     audit.AuditLogEventTypeArchived,
+		BelongsToUser: userID,
+	}); err != nil {
+		r.RollbackTransaction(ctx, tx)
+		return observability.PrepareError(err, span, "creating audit log entry")
+	}
+
+	if _, err = r.generatedQuerier.ArchiveUserMemberships(ctx, tx, userID); err != nil {
+		r.RollbackTransaction(ctx, tx)
+		return observability.PrepareAndLogError(err, logger, span, "archiving user account memberships")
+	}
+
+	if err = tx.Commit(); err != nil {
+		return observability.PrepareAndLogError(err, logger, span, "committing transaction")
+	}
+
+	return nil
+}
+
+func (r *repository) GetEmailAddressVerificationTokenForUser(ctx context.Context, userID string) (string, error) {
+	ctx, span := r.tracer.StartSpan(ctx)
+	defer span.End()
+
+	if userID == "" {
+		return "", database.ErrInvalidIDProvided
+	}
+	tracing.AttachToSpan(span, keys.UserIDKey, userID)
+
+	result, err := r.generatedQuerier.GetEmailVerificationTokenByUserID(ctx, r.db, userID)
+	if err != nil {
+		return "", observability.PrepareError(err, span, "getting user by email address verification token")
+	}
+
+	return result.String, nil
+}
+
+func (r *repository) GetUserByEmailAddressVerificationToken(ctx context.Context, token string) (*identity.User, error) {
+	ctx, span := r.tracer.StartSpan(ctx)
+	defer span.End()
+
+	if token == "" {
+		return nil, database.ErrEmptyInputProvided
+	}
+
+	result, err := r.generatedQuerier.GetUserByEmailAddressVerificationToken(ctx, r.db, database.NullStringFromString(token))
+	if err != nil {
+		return nil, observability.PrepareError(err, span, "getting user by email address verification token")
+	}
+
+	u := &identity.User{
+		CreatedAt:                  result.CreatedAt,
+		PasswordLastChangedAt:      database.TimePointerFromNullTime(result.PasswordLastChangedAt),
+		LastUpdatedAt:              database.TimePointerFromNullTime(result.LastUpdatedAt),
+		LastAcceptedTermsOfService: database.TimePointerFromNullTime(result.LastAcceptedTermsOfService),
+		LastAcceptedPrivacyPolicy:  database.TimePointerFromNullTime(result.LastAcceptedPrivacyPolicy),
+		TwoFactorSecretVerifiedAt:  database.TimePointerFromNullTime(result.TwoFactorSecretVerifiedAt),
+		AvatarSrc:                  database.StringPointerFromNullString(result.AvatarSrc),
+		Birthday:                   database.TimePointerFromNullTime(result.Birthday),
+		ArchivedAt:                 database.TimePointerFromNullTime(result.ArchivedAt),
+		AccountStatusExplanation:   result.UserAccountStatusExplanation,
+		TwoFactorSecret:            result.TwoFactorSecret,
+		HashedPassword:             result.HashedPassword,
+		ID:                         result.ID,
+		AccountStatus:              result.UserAccountStatus,
+		Username:                   result.Username,
+		FirstName:                  result.FirstName,
+		LastName:                   result.LastName,
+		EmailAddress:               result.EmailAddress,
+		EmailAddressVerifiedAt:     database.TimePointerFromNullTime(result.EmailAddressVerifiedAt),
+		ServiceRole:                result.ServiceRole,
+		RequiresPasswordChange:     result.RequiresPasswordChange,
+	}
+
+	return u, nil
+}
+
+func (r *repository) MarkUserEmailAddressAsVerified(ctx context.Context, userID, token string) error {
+	ctx, span := r.tracer.StartSpan(ctx)
+	defer span.End()
+
+	logger := r.logger.Clone()
+
+	if userID == "" {
+		return database.ErrInvalidIDProvided
+	}
+	logger = logger.WithValue(keys.UserIDKey, userID)
+
+	if token == "" {
+		return database.ErrEmptyInputProvided
+	}
+
+	tx, err := r.db.BeginTx(ctx, nil)
+	if err != nil {
+		return observability.PrepareAndLogError(err, logger, span, "beginning transaction")
+	}
+
+	if err = r.generatedQuerier.MarkEmailAddressAsVerified(ctx, tx, &generated.MarkEmailAddressAsVerifiedParams{
+		ID:                            userID,
+		EmailAddressVerificationToken: database.NullStringFromString(token),
+	}); err != nil {
+		r.RollbackTransaction(ctx, tx)
+		if errors.Is(err, sql.ErrNoRows) {
+			return err
+		}
+
+		return observability.PrepareAndLogError(err, logger, span, "writing verified email address status to database")
+	}
+
+	if _, err = r.auditLogEntryRepo.CreateAuditLogEntry(ctx, tx, &audit.AuditLogEntryDatabaseCreationInput{
+		ID:            identifiers.New(),
+		ResourceType:  resourceTypeUsers,
+		RelevantID:    userID,
+		EventType:     audit.AuditLogEventTypeUpdated,
+		BelongsToUser: userID,
+		Changes: map[string]*audit.ChangeLog{
+			"email_address_verification": {
+				OldValue: "unverified",
+				NewValue: "verified",
+			},
+		},
+	}); err != nil {
+		r.RollbackTransaction(ctx, tx)
+		return observability.PrepareError(err, span, "creating audit log entry")
+	}
+
+	if _, err = r.generatedQuerier.SetUserAccountStatus(ctx, tx, &generated.SetUserAccountStatusParams{
+		UserAccountStatus:            string(identity.GoodStandingUserAccountStatus),
+		UserAccountStatusExplanation: "verified email address",
+		ID:                           userID,
+	}); err != nil {
+		r.RollbackTransaction(ctx, tx)
+		return observability.PrepareAndLogError(err, logger, span, "updating user account status")
+	}
+
+	if err = tx.Commit(); err != nil {
+		return observability.PrepareAndLogError(err, logger, span, "committing transaction")
+	}
+
+	return nil
+}
+
+func (r *repository) MarkUserEmailAddressAsUnverified(ctx context.Context, userID string) error {
+	ctx, span := r.tracer.StartSpan(ctx)
+	defer span.End()
+
+	logger := r.logger.Clone()
+
+	if userID == "" {
+		return database.ErrInvalidIDProvided
+	}
+	logger = logger.WithValue(keys.UserIDKey, userID)
+
+	tx, err := r.db.BeginTx(ctx, nil)
+	if err != nil {
+		return err
+	}
+
+	if err = r.generatedQuerier.MarkEmailAddressAsUnverified(ctx, tx, userID); err != nil {
+		if errors.Is(err, sql.ErrNoRows) {
+			r.RollbackTransaction(ctx, tx)
+			return err
+		}
+
+		r.RollbackTransaction(ctx, tx)
+		return observability.PrepareAndLogError(err, logger, span, "writing email address verification status to database")
+	}
+
+	if _, err = r.auditLogEntryRepo.CreateAuditLogEntry(ctx, tx, &audit.AuditLogEntryDatabaseCreationInput{
+		ID:            identifiers.New(),
+		ResourceType:  resourceTypeUsers,
+		RelevantID:    userID,
+		EventType:     audit.AuditLogEventTypeUpdated,
+		BelongsToUser: userID,
+		Changes: map[string]*audit.ChangeLog{
+			"email_address_verification": {
+				OldValue: "verified",
+				NewValue: "unverified",
+			},
+		},
+	}); err != nil {
+		r.RollbackTransaction(ctx, tx)
+		return observability.PrepareError(err, span, "creating audit log entry")
+	}
+
+	if _, err = r.generatedQuerier.SetUserAccountStatus(ctx, tx, &generated.SetUserAccountStatusParams{
+		UserAccountStatus:            string(identity.UnverifiedAccountStatus),
+		UserAccountStatusExplanation: "unverified email address",
+		ID:                           userID,
+	}); err != nil {
+		r.RollbackTransaction(ctx, tx)
+		return observability.PrepareAndLogError(err, logger, span, "updating user account status")
+	}
+
+	if err = tx.Commit(); err != nil {
+		return observability.PrepareAndLogError(err, logger, span, "committing transaction")
+	}
+
+	return nil
+}
+
+func (r *repository) UpdateUserAccountStatus(ctx context.Context, userID string, input *identity.UserAccountStatusUpdateInput) error {
+	ctx, span := r.tracer.StartSpan(ctx)
+	defer span.End()
+
+	if userID == "" {
+		return database.ErrInvalidIDProvided
+	}
+
+	logger := r.logger.WithValue(keys.UserIDKey, userID)
+	tracing.AttachToSpan(span, keys.UserIDKey, userID)
+
+	rowsChanged, err := r.generatedQuerier.SetUserAccountStatus(ctx, r.db, &generated.SetUserAccountStatusParams{
+		UserAccountStatus:            input.NewStatus,
+		UserAccountStatusExplanation: input.Reason,
+		ID:                           input.TargetUserID,
+	})
+	if err != nil {
+		return observability.PrepareAndLogError(err, logger, span, "user status update")
+	}
+
+	if rowsChanged == 0 {
+		return sql.ErrNoRows
+	}
+
+	logger.Info("user account status updated")
+
+	return nil
+}

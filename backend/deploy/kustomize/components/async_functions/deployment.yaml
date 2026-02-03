@@ -1,0 +1,43 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dinner-done-better-async-message-handler-deployment
+  labels:
+    app: dinner-done-better-backend
+    app.kubernetes.io/name: dinner-done-better-backend-services
+spec:
+  progressDeadlineSeconds: 1200
+  selector:
+    matchLabels:
+      app: dinner-done-better-backend
+      app.kubernetes.io/name: dinner-done-better-backend-services
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: dinner-done-better-backend
+        app.kubernetes.io/name: dinner-done-better-backend-services
+    spec:
+      containers:
+        - name: dinner-done-better-async-message-handler
+          image: dinner-done-better-async-message-handler
+          imagePullPolicy: Always
+          env:
+            - name: "CONFIGURATION_FILEPATH"
+              value: "/etc/service-config.json"
+            - name: "RUNNING_IN_KUBERNETES"
+              value: "true"
+            - name: "DINNER_DONE_BETTER_OBSERVABILITY_METRICS_OTEL_SERVICE_NAME"
+              value: "dinner_done_better_async_function_handler"
+            - name: "DINNER_DONE_BETTER_OBSERVABILITY_TRACING_TRACING_SERVICE_NAME"
+              value: "dinner_done_better_async_function_handler"
+          volumeMounts:
+            - name: "config"
+              mountPath: "/etc/service-config.json"
+              subPath: "config.json"
+      volumes:
+        - name: "config"
+          configMap:
+            name: "dinner-done-better-async-message-handler-config"
+---

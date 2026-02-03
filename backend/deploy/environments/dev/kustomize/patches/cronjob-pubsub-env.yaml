@@ -1,0 +1,42 @@
+# PubSub topic environment variables for CronJobs
+# Applied via JSON patch to inject pubsub topic names from configmap
+- op: add
+  path: "/spec/jobTemplate/spec/template/spec/containers/0/env/-"
+  value:
+    name: DINNER_DONE_BETTER_QUEUES_DATA_CHANGES_TOPIC_NAME
+    valueFrom:
+      configMapKeyRef:
+        name: pubsub-topic-names
+        key: data_changes
+- op: add
+  path: "/spec/jobTemplate/spec/template/spec/containers/0/env/-"
+  value:
+    name: DINNER_DONE_BETTER_QUEUES_OUTBOUND_EMAILS_TOPIC_NAME
+    valueFrom:
+      configMapKeyRef:
+        name: pubsub-topic-names
+        key: outbound_emails
+- op: add
+  path: "/spec/jobTemplate/spec/template/spec/containers/0/env/-"
+  value:
+    name: DINNER_DONE_BETTER_QUEUES_SEARCH_INDEX_REQUESTS_TOPIC_NAME
+    valueFrom:
+      configMapKeyRef:
+        name: pubsub-topic-names
+        key: search_index_requests
+- op: add
+  path: "/spec/jobTemplate/spec/template/spec/containers/0/env/-"
+  value:
+    name: DINNER_DONE_BETTER_QUEUES_USER_DATA_AGGREGATION_TOPIC_NAME
+    valueFrom:
+      configMapKeyRef:
+        name: pubsub-topic-names
+        key: user_data_aggregator
+- op: add
+  path: "/spec/jobTemplate/spec/template/spec/containers/0/env/-"
+  value:
+    name: DINNER_DONE_BETTER_QUEUES_WEBHOOK_EXECUTION_REQUESTS_TOPIC_NAME
+    valueFrom:
+      configMapKeyRef:
+        name: pubsub-topic-names
+        key: webhook_execution_requests

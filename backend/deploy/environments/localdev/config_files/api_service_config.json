@@ -1,0 +1,249 @@
+{
+	"queues": {
+		"dataChangesTopicName": "data_changes",
+		"outboundEmailsTopicName": "outbound_emails",
+		"searchIndexRequestsTopicName": "search_index_requests",
+		"userDataAggregationTopicName": "user_data_aggregation_requests",
+		"webhookExecutionRequestsTopicName": "webhook_execution_requests"
+	},
+	"appleAppSiteAssociation": {},
+	"routing": {
+		"chiConfig": {
+			"serviceName": "dinner_done_better",
+			"enableCORSForLocalhost": true
+		},
+		"provider": "chi"
+	},
+	"encoding": {
+		"contentType": "application/json"
+	},
+	"events": {
+		"consumers": {
+			"provider": "redis",
+			"sqs": {
+				"queueAddress": ""
+			},
+			"pubSub": {
+				"projectID": ""
+			},
+			"redis": {
+				"username": "",
+				"queueAddress": [
+					"worker_queue:6379"
+				]
+			}
+		},
+		"publishers": {
+			"provider": "redis",
+			"sqs": {
+				"queueAddress": ""
+			},
+			"pubSub": {
+				"projectID": ""
+			},
+			"redis": {
+				"username": "",
+				"queueAddress": [
+					"worker_queue:6379"
+				]
+			}
+		}
+	},
+	"observability": {
+		"logging": {
+			"serviceName": "dinner_done_better",
+			"level": "debug",
+			"otelslog": {
+				"endpointURL": "otel_collector:4317",
+				"insecure": true,
+				"timeout": 3000000000
+			},
+			"provider": "otelslog"
+		},
+		"metrics": {
+			"otelgrpc": {
+				"metricsCollectorEndpoint": "otel_collector:4317",
+				"collectionInterval": 1000000000,
+				"insecure": true,
+				"enableRuntimeMetrics": false,
+				"enableHostMetrics": false
+			},
+			"serviceName": "dinner_done_better",
+			"provider": "otelgrpc"
+		},
+		"tracing": {
+			"otelgrpc": {
+				"collector_endpoint": "otel_collector:4317",
+				"insecure": true
+			},
+			"service_name": "dinner_done_better",
+			"provider": "otelgrpc",
+			"spanCollectionProbability": 1
+		}
+	},
+	"grpc": {
+		"port": 0
+	},
+	"meta": {
+		"runMode": "development",
+		"debug": true
+	},
+	"email": {
+		"sendgrid": null,
+		"mailgun": null,
+		"mailjet": null,
+		"provider": "",
+		"circuitBreakerConfig": {
+			"name": "",
+			"circuitBreakerErrorPercentage": 0,
+			"circuitBreakerMinimumOccurrenceThreshold": 0
+		}
+	},
+	"analytics": {
+		"segment": null,
+		"posthog": null,
+		"rudderstack": null,
+		"provider": "",
+		"circuitBreaker": {
+			"name": "feature_flagger",
+			"circuitBreakerErrorPercentage": 0.5,
+			"circuitBreakerMinimumOccurrenceThreshold": 100
+		}
+	},
+	"search": {
+		"algolia": {
+			"appID": "",
+			"writeAPIKey": "",
+			"timeout": 0
+		},
+		"elasticsearch": null,
+		"provider": "algolia",
+		"circuitBreakerConfig": {
+			"name": "dev_text_searcher",
+			"circuitBreakerErrorPercentage": 0.5,
+			"circuitBreakerMinimumOccurrenceThreshold": 100
+		}
+	},
+	"featureFlags": {
+		"launchDarkly": null,
+		"posthog": null,
+		"provider": "",
+		"circuitBreakingConfig": {
+			"name": "feature_flagger",
+			"circuitBreakerErrorPercentage": 0.5,
+			"circuitBreakerMinimumOccurrenceThreshold": 100
+		}
+	},
+	"http": {
+		"startupDeadline": 60000000000,
+		"port": 8000,
+		"debug": true
+	},
+	"auth": {
+		"sso": {
+			"google": {}
+		},
+		"tokens": {
+			"provider": "",
+			"audience": "",
+			"base64EncodedSigningKey": "",
+			"maxAccessTokenLifetime": 0,
+			"maxRefreshTokenLifetime": 0
+		}
+	},
+	"database": {
+		"oauth2TokenEncryptionKey": "HEREISA32CHARSECRETWHICHISMADEUP",
+		"provider": "",
+		"connectionDetails": {
+			"username": "dbuser",
+			"password": "hunter2",
+			"database": "dinner-done-better",
+			"hostname": "pgdatabase",
+			"port": 5432,
+			"disableSSL": true
+		},
+		"writeConnectionDetails": {
+			"username": "dbuser",
+			"password": "hunter2",
+			"database": "dinner-done-better",
+			"hostname": "pgdatabase",
+			"port": 5432,
+			"disableSSL": true
+		},
+		"migrations": null,
+		"maxPingAttempts": 50,
+		"pingWaitPeriod": 1000000000,
+		"debug": true,
+		"logQueries": true,
+		"runMigrations": true
+	},
+	"services": {
+		"users": {
+			"publicMediaURLPrefix": "",
+			"uploads": {
+				"storageConfig": {
+					"filesystem": {
+						"rootDirectory": "/uploads"
+					},
+					"bucketName": "avatars",
+					"uploadFilenameKey": "avatar",
+					"provider": "filesystem"
+				},
+				"debug": true
+			}
+		},
+		"dataPrivacy": {
+			"uploads": {
+				"storageConfig": {
+					"filesystem": {
+						"rootDirectory": "/tmp"
+					},
+					"bucketName": "userdata",
+					"provider": "filesystem"
+				},
+				"debug": false
+			}
+		},
+		"uploadedMedia": {
+			"uploads": {
+				"storageConfig": {
+					"filesystem": {
+						"rootDirectory": "/uploads"
+					},
+					"bucketName": "avatars",
+					"uploadFilenameKey": "avatar",
+					"provider": "filesystem"
+				},
+				"debug": true
+			}
+		},
+		"auth": {
+			"tokens": {
+				"provider": "paseto",
+				"audience": "https://api.dinnerdonebetter.dev",
+				"base64EncodedSigningKey": "SEVSRUlTQTMyQ0hBUlNFQ1JFVFdISUNISVNNQURFVVA=",
+				"maxAccessTokenLifetime": 0,
+				"maxRefreshTokenLifetime": 0
+			},
+			"sso": {
+				"google": {
+					"callbackURL": "https://app.dinnerdonebetter.dev/auth/google/callback"
+				}
+			},
+			"oauth2": {
+				"domain": "http://localhost:9000",
+				"accessTokenLifespan": 3600000000000,
+				"refreshTokenLifespan": 3600000000000,
+				"debug": false
+			},
+			"jwtLifetime": 300000000000,
+			"debug": true,
+			"enableUserSignup": true,
+			"minimumUsernameLength": 3,
+			"minimumPasswordLength": 8
+		},
+		"oauth2Clients": {
+			"creationEnabled": false
+		}
+	}
+}

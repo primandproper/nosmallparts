@@ -1,0 +1,53 @@
+{
+	"cookies": {
+		"domain": "",
+		"cookieName": " ",
+		"base64EncodedHashKey": " ",
+		"base64EncodedBlockKey": " ",
+		"lifetime": 0,
+		"secureOnly": false
+	},
+	"apiServiceConfig": {
+		"httpAPIServerURL": "",
+		"grpcAPIServerURL": "",
+		"oauth2APIClientID": "",
+		"oauth2APIClientSecret": ""
+	},
+	"routing": {
+		"chiConfig": {
+			"serviceName": "dinner_done_better",
+			"enableCORSForLocalhost": true
+		},
+		"provider": "chi"
+	},
+	"encoding": {
+		"contentType": "application/json"
+	},
+	"observability": {
+		"logging": {
+			"serviceName": "admin_webapp",
+			"level": "info",
+			"provider": "slog"
+		},
+		"metrics": {
+			"serviceName": "admin_webapp"
+		},
+		"tracing": {
+			"otelgrpc": {
+				"collector_endpoint": "http://tracing-server:14268/api/traces"
+			},
+			"service_name": "admin_webapp",
+			"provider": "otelgrpc",
+			"spanCollectionProbability": 1
+		}
+	},
+	"meta": {
+		"runMode": "testing",
+		"debug": false
+	},
+	"server": {
+		"startupDeadline": 60000000000,
+		"port": 8000,
+		"debug": false
+	}
+}

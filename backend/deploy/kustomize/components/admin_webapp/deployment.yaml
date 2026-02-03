@@ -1,0 +1,60 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dinner-done-better-admin-webapp-deployment
+  labels:
+    app: dinner-done-better-admin-webapp
+    app.kubernetes.io/name: dinner-done-better-admin-webapp
+spec:
+  progressDeadlineSeconds: 1200
+  selector:
+    matchLabels:
+      app: dinner-done-better-admin-webapp
+      app.kubernetes.io/name: dinner-done-better-admin-webapp
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: dinner-done-better-admin-webapp
+        app.kubernetes.io/name: dinner-done-better-admin-webapp
+    spec:
+      containers:
+        - name: dinner-done-better-admin-webapp
+          image: dinner-done-better-admin-webapp
+          imagePullPolicy: Always
+          env:
+            - name: "CONFIGURATION_FILEPATH"
+              value: "/etc/service-config.json"
+            - name: "RUNNING_IN_KUBERNETES"
+              value: "true"
+            - name: "DINNER_DONE_BETTER_OBSERVABILITY_METRICS_OTEL_SERVICE_NAME"
+              value: "dinner_done_better_admin_webapp"
+            - name: "DINNER_DONE_BETTER_OBSERVABILITY_TRACING_TRACING_SERVICE_NAME"
+              value: "dinner_done_better_admin_webapp"
+          volumeMounts:
+            - name: "config"
+              mountPath: "/etc/service-config.json"
+              subPath: "config.json"
+          ports:
+            - containerPort: 8888
+              name: http
+          livenessProbe:
+            httpGet:
+              path: "/login"
+              port: 8888
+            initialDelaySeconds: 15
+            periodSeconds: 10
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: "/login"
+              port: 8888
+            initialDelaySeconds: 10
+            periodSeconds: 5
+            failureThreshold: 3
+      volumes:
+        - name: "config"
+          configMap:
+            name: "dinner-done-better-admin-webapp-config"
+---

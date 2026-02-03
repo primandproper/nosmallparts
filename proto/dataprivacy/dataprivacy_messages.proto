@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package dataprivacy;
+
+import "identity/identity_messages.proto";
+import "settings/settings_messages.proto";
+import "webhooks/webhooks_messages.proto";
+
+option go_package = "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/dataprivacy";
+
+message UserDataCollection {
+  string report_id = 1;
+  identity.DataCollection identity_data_collection = 2;
+  settings.DataCollection settings_data_collection = 3;
+  webhooks.DataCollection webhooks_data_collection = 4;
+}

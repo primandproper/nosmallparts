@@ -1,0 +1,10 @@
+# Segment analytics environment variable for CronJobs
+# Applied via JSON patch to inject Segment API token
+- op: add
+  path: "/spec/jobTemplate/spec/template/spec/containers/0/env/-"
+  value:
+    name: DINNER_DONE_BETTER_ANALYTICS_SEGMENT_API_TOKEN
+    valueFrom:
+      secretKeyRef:
+        name: api-service-secrets
+        key: SEGMENT_API_TOKEN

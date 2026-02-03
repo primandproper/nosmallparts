@@ -1,0 +1,18 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: dinner-done-better-api-svc
+  labels:
+    app: dinner-done-better-backend
+    app.kubernetes.io/name: dinner-done-better-backend
+spec:
+  selector:
+    app.kubernetes.io/name: dinner-done-better-backend
+  ports:
+    - name: http
+      port: 8000
+      protocol: TCP
+      targetPort: http
+  type: ClusterIP
+---

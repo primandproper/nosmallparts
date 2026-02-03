@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package issue_reports;
+
+import "issue_reports/issue_reports_service_types.proto";
+
+option go_package = "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/issue_reports";
+
+service IssueReportsService {
+  rpc CreateIssueReport(CreateIssueReportRequest) returns (CreateIssueReportResponse);
+  rpc GetIssueReport(GetIssueReportRequest) returns (GetIssueReportResponse);
+  rpc GetIssueReports(GetIssueReportsRequest) returns (GetIssueReportsResponse);
+  rpc GetIssueReportsForAccount(GetIssueReportsForAccountRequest) returns (GetIssueReportsForAccountResponse);
+  rpc GetIssueReportsForTable(GetIssueReportsForTableRequest) returns (GetIssueReportsForTableResponse);
+  rpc GetIssueReportsForRecord(GetIssueReportsForRecordRequest) returns (GetIssueReportsForRecordResponse);
+  rpc UpdateIssueReport(UpdateIssueReportRequest) returns (UpdateIssueReportResponse);
+  rpc ArchiveIssueReport(ArchiveIssueReportRequest) returns (ArchiveIssueReportResponse);
+}

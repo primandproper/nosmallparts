@@ -1,0 +1,32 @@
+# Kubernetes-specific hostname overrides for CronJobs
+# These override the docker-compose hostnames in the generated config files
+- op: add
+  path: "/spec/jobTemplate/spec/template/spec/containers/0/env/-"
+  value:
+    name: DINNER_DONE_BETTER_DATABASE_CONNECTION_DETAILS_HOST
+    value: "postgres-postgresql.localdev.svc.cluster.local"
+- op: add
+  path: "/spec/jobTemplate/spec/template/spec/containers/0/env/-"
+  value:
+    name: DINNER_DONE_BETTER_EVENTS_CONSUMER_REDIS_QUEUE_ADDRESSES
+    value: "redis-master.localdev.svc.cluster.local:6379"
+- op: add
+  path: "/spec/jobTemplate/spec/template/spec/containers/0/env/-"
+  value:
+    name: DINNER_DONE_BETTER_EVENTS_PUBLISHER_REDIS_QUEUE_ADDRESSES
+    value: "redis-master.localdev.svc.cluster.local:6379"
+- op: add
+  path: "/spec/jobTemplate/spec/template/spec/containers/0/env/-"
+  value:
+    name: DINNER_DONE_BETTER_OBSERVABILITY_LOGGING_OTEL_SLOG_COLLECTOR_ENDPOINT
+    value: "otel-collector-svc.localdev.svc.cluster.local:4317"
+- op: add
+  path: "/spec/jobTemplate/spec/template/spec/containers/0/env/-"
+  value:
+    name: DINNER_DONE_BETTER_OBSERVABILITY_METRICS_OTEL_COLLECTOR_ENDPOINT
+    value: "otel-collector-svc.localdev.svc.cluster.local:4317"
+- op: add
+  path: "/spec/jobTemplate/spec/template/spec/containers/0/env/-"
+  value:
+    name: DINNER_DONE_BETTER_OBSERVABILITY_TRACING_OTELGRPC_COLLECTOR_ENDPOINT
+    value: "otel-collector-svc.localdev.svc.cluster.local:4317"

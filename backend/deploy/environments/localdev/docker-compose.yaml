@@ -1,0 +1,111 @@
+---
+services:
+  redis:
+    hostname: worker_queue
+    image: redis:7-bullseye
+    container_name: redis
+    ports:
+      - '6379:6379'
+    command: ["redis-server", "--cluster-enabled yes"]
+
+  postgres:
+    container_name: postgres
+    hostname: pgdatabase
+    image: postgres:17
+    environment:
+      POSTGRES_DB: 'dinner-done-better'
+      POSTGRES_PASSWORD: 'hunter2'
+      POSTGRES_USER: 'dbuser'
+    ports:
+      - '5432:5432'
+
+  jaeger:
+    image: jaegertracing/all-in-one:1.64.0
+    restart: always
+    ports:
+      - "16686:16686"
+      - "14268:14268"
+      - "14250:14250"
+
+  prometheus:
+    container_name: prometheus
+    image: prom/prometheus:v3.0.1
+    restart: always
+    volumes:
+      - source: 'config_files/prometheus.yml'
+        target: '/etc/prometheus/prometheus.yml'
+        type: 'bind'
+    ports:
+      - "9090:9090"
+
+  loki:
+    image: grafana/loki:3.1.0
+    ports:
+      - "3100:3100"
+    command: -config.file=/etc/loki/local-config.yaml
+    volumes:
+      - source: 'config_files/loki_config.yaml'
+        target: '/etc/loki/local-config.yaml'
+        type: 'bind'
+
+  grafana:
+    image: grafana/grafana:11.4.0-ubuntu
+    restart: unless-stopped
+    volumes:
+      - source: 'config_files/grafana/grafana.ini'
+        target: '/etc/grafana/grafana.ini'
+        type: 'bind'
+      - source: 'config_files/grafana/datasources'
+        target: '/etc/grafana/provisioning/datasources'
+        type: 'bind'
+    environment:
+      - "GF_SECURITY_ADMIN_USER=admin"
+      - "GF_SECURITY_ADMIN_PASSWORD=hunter2"
+    ports:
+      - '3000:3000'
+
+  otel_collector:
+    image: otel/opentelemetry-collector-contrib:0.115.1
+    restart: on-failure:3
+    command:
+      - "--config"
+      - "/conf/config.yaml"
+    depends_on:
+      - "prometheus"
+      - "jaeger"
+    ports:
+      - "1888:1888" # pprof extension
+      - "8888:8888" # Prometheus metrics exposed by the collector
+      - "8889:8889" # Prometheus exporter metrics
+      - "13133:13133" # health_check extension
+      - "4317:4317" # OTLP gRPC receiver
+      - "55679:55679" # zpages extension
+    volumes:
+      - source: 'config_files/otel_collector_config.yaml'
+        target: '/conf/config.yaml'
+        type: 'bind'
+
+  api_server:
+    hostname: api_server
+    restart: on-failure:3
+    depends_on:
+      - "postgres"
+      - "redis"
+      - "loki"
+      - "otel_collector"
+    links:
+      - "postgres"
+      - "redis"
+      - "otel_collector"
+    environment:
+      USE_NOOP_LOGGER: 'nope'
+      CONFIGURATION_FILEPATH: '/etc/config'
+    ports:
+      - '8000:8000'
+    build:
+      context: '../../../'
+      dockerfile: 'deploy/dockerfiles/api_server.Dockerfile'
+    volumes:
+      - source: 'config_files/api_service_config.json'
+        target: '/etc/config'
+        type: 'bind'

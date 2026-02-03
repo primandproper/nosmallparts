@@ -1,0 +1,67 @@
+{
+	"cookies": {
+		"domain": "",
+		"cookieName": " ",
+		"base64EncodedHashKey": " ",
+		"base64EncodedBlockKey": " ",
+		"lifetime": 0,
+		"secureOnly": false
+	},
+	"apiServiceConfig": {
+		"httpAPIServerURL": "",
+		"grpcAPIServerURL": "",
+		"oauth2APIClientID": "",
+		"oauth2APIClientSecret": ""
+	},
+	"routing": {
+		"chiConfig": {
+			"serviceName": "dinner_done_better",
+			"enableCORSForLocalhost": true
+		},
+		"provider": "chi"
+	},
+	"encoding": {
+		"contentType": "application/json"
+	},
+	"observability": {
+		"logging": {
+			"serviceName": "admin_webapp",
+			"level": "debug",
+			"otelslog": {
+				"endpointURL": "otel_collector:4317",
+				"insecure": true,
+				"timeout": 3000000000
+			},
+			"provider": "otelslog"
+		},
+		"metrics": {
+			"otelgrpc": {
+				"metricsCollectorEndpoint": "otel_collector:4317",
+				"collectionInterval": 1000000000,
+				"insecure": true,
+				"enableRuntimeMetrics": false,
+				"enableHostMetrics": false
+			},
+			"serviceName": "admin_webapp",
+			"provider": "otelgrpc"
+		},
+		"tracing": {
+			"otelgrpc": {
+				"collector_endpoint": "otel_collector:4317",
+				"insecure": true
+			},
+			"service_name": "admin_webapp",
+			"provider": "otelgrpc",
+			"spanCollectionProbability": 1
+		}
+	},
+	"meta": {
+		"runMode": "development",
+		"debug": true
+	},
+	"server": {
+		"startupDeadline": 60000000000,
+		"port": 8000,
+		"debug": true
+	}
+}

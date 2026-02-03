@@ -1,0 +1,46 @@
+{
+	"observability": {
+		"logging": {
+			"serviceName": "db_cleaner",
+			"level": "info",
+			"provider": "slog"
+		},
+		"metrics": {
+			"serviceName": "db_cleaner"
+		},
+		"tracing": {
+			"otelgrpc": {
+				"collector_endpoint": "http://tracing-server:14268/api/traces"
+			},
+			"service_name": "db_cleaner",
+			"provider": "otelgrpc",
+			"spanCollectionProbability": 1
+		}
+	},
+	"database": {
+		"oauth2TokenEncryptionKey": "HEREISA32CHARSECRETWHICHISMADEUP",
+		"provider": "",
+		"connectionDetails": {
+			"username": "dbuser",
+			"password": "hunter2",
+			"database": "dinner-done-better",
+			"hostname": "pgdatabase",
+			"port": 5432,
+			"disableSSL": true
+		},
+		"writeConnectionDetails": {
+			"username": "dbuser",
+			"password": "hunter2",
+			"database": "dinner-done-better",
+			"hostname": "pgdatabase",
+			"port": 5432,
+			"disableSSL": true
+		},
+		"migrations": null,
+		"maxPingAttempts": 50,
+		"pingWaitPeriod": 1500000000,
+		"debug": true,
+		"logQueries": true,
+		"runMigrations": true
+	}
+}

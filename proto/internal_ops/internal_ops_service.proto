@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package internalops;
+
+import "internal_ops/internal_ops_service_types.proto";
+
+option go_package = "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/internalops";
+
+service InternalOperations {
+  rpc PublishArbitraryQueueMessage(PublishArbitraryQueueMessageRequest) returns (PublishArbitraryQueueMessageResponse);
+}

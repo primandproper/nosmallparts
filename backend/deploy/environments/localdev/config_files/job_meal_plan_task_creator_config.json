@@ -1,0 +1,110 @@
+{
+	"queues": {
+		"dataChangesTopicName": "data_changes",
+		"outboundEmailsTopicName": "outbound_emails",
+		"searchIndexRequestsTopicName": "search_index_requests",
+		"userDataAggregationTopicName": "user_data_aggregation_requests",
+		"webhookExecutionRequestsTopicName": "webhook_execution_requests"
+	},
+	"analytics": {
+		"segment": null,
+		"posthog": null,
+		"rudderstack": null,
+		"provider": "",
+		"circuitBreaker": {
+			"name": "feature_flagger",
+			"circuitBreakerErrorPercentage": 0.5,
+			"circuitBreakerMinimumOccurrenceThreshold": 100
+		}
+	},
+	"events": {
+		"consumers": {
+			"provider": "redis",
+			"sqs": {
+				"queueAddress": ""
+			},
+			"pubSub": {
+				"projectID": ""
+			},
+			"redis": {
+				"username": "",
+				"queueAddress": [
+					"worker_queue:6379"
+				]
+			}
+		},
+		"publishers": {
+			"provider": "redis",
+			"sqs": {
+				"queueAddress": ""
+			},
+			"pubSub": {
+				"projectID": ""
+			},
+			"redis": {
+				"username": "",
+				"queueAddress": [
+					"worker_queue:6379"
+				]
+			}
+		}
+	},
+	"observability": {
+		"logging": {
+			"serviceName": "meal_plan_task_creator",
+			"level": "debug",
+			"otelslog": {
+				"endpointURL": "otel_collector:4317",
+				"insecure": true,
+				"timeout": 3000000000
+			},
+			"provider": "otelslog"
+		},
+		"metrics": {
+			"otelgrpc": {
+				"metricsCollectorEndpoint": "otel_collector:4317",
+				"collectionInterval": 1000000000,
+				"insecure": true,
+				"enableRuntimeMetrics": false,
+				"enableHostMetrics": false
+			},
+			"serviceName": "meal_plan_task_creator",
+			"provider": "otelgrpc"
+		},
+		"tracing": {
+			"otelgrpc": {
+				"collector_endpoint": "otel_collector:4317",
+				"insecure": true
+			},
+			"service_name": "meal_plan_task_creator",
+			"provider": "otelgrpc",
+			"spanCollectionProbability": 1
+		}
+	},
+	"database": {
+		"oauth2TokenEncryptionKey": "HEREISA32CHARSECRETWHICHISMADEUP",
+		"provider": "",
+		"connectionDetails": {
+			"username": "dbuser",
+			"password": "hunter2",
+			"database": "dinner-done-better",
+			"hostname": "pgdatabase",
+			"port": 5432,
+			"disableSSL": true
+		},
+		"writeConnectionDetails": {
+			"username": "dbuser",
+			"password": "hunter2",
+			"database": "dinner-done-better",
+			"hostname": "pgdatabase",
+			"port": 5432,
+			"disableSSL": true
+		},
+		"migrations": null,
+		"maxPingAttempts": 50,
+		"pingWaitPeriod": 1000000000,
+		"debug": true,
+		"logQueries": true,
+		"runMigrations": true
+	}
+}
