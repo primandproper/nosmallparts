@@ -11,7 +11,7 @@ const (
 	defaultHTTPPort = 8000
 	defaultGRPCPort = 8001
 	maxAttempts     = 50
-	otelServiceName = "dinner_done_better"
+	otelServiceName = "no_small_parts"
 
 	/* #nosec G101 */
 	debugCookieHashKey = "HEREISA32CHARSECRETWHICHISMADEUP"

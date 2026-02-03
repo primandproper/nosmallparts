@@ -288,9 +288,6 @@ The codebase follows a clean architecture approach with a framework-like platfor
 │   │   └── sqlc_struct_checker/      # Database struct validation
 │   └── workers/         # Background job processors
 │       ├── db_cleaner/  # Database cleanup jobs
-│       ├── meal_plan_finalizer/      # Meal plan processing
-│       ├── meal_plan_grocery_list_initializer/ # Grocery list generation
-│       ├── meal_plan_task_creator/   # Task creation from meal plans
 │       └── search_data_index_scheduler/ # Search indexing jobs
 ├── deploy/              # Deployment configurations
 │   ├── dockerfiles/     # Container build definitions

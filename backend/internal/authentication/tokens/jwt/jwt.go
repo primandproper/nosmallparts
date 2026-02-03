@@ -14,7 +14,7 @@ import (
 )
 
 const (
-	issuer = "dinner-done-better"
+	issuer = "no-small-parts"
 )
 
 type (

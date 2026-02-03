@@ -19,7 +19,7 @@ import (
 )
 
 const (
-	serverNamespace = "dinner_done_better_api"
+	serverNamespace = "no_small_parts_api"
 	loggerName      = "api_server"
 )
 

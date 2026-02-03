@@ -157,7 +157,7 @@ func (a *AsyncDataChangeMessageHandler) handleOutboundNotifications(
 		return errors.New("nil data change message")
 	}
 
-	envCfg := email.GetConfigForEnvironment(os.Getenv("DINNER_DONE_BETTER_SERVICE_ENVIRONMENT"))
+	envCfg := email.GetConfigForEnvironment(os.Getenv("NO_SMALL_PARTS_SERVICE_ENVIRONMENT"))
 	if envCfg == nil {
 		return observability.PrepareAndLogError(email.ErrMissingEnvCfg, a.logger, span, "getting environment queuesConfig")
 	}

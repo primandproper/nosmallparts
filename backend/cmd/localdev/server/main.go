@@ -6,7 +6,6 @@ import (
 	"log"
 	"os"
 	"strings"
-	"time"
 
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/authentication"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/authorization"
@@ -28,19 +27,6 @@ const (
 	// createMealPlansAndVotes controls whether meal plans and votes are created during localdev startup.
 	// Set to true via environment variable CREATE_MEAL_PLANS_AND_VOTES=true to enable.
 )
-
-var (
-	createMealPlansAndVotes = true // os.Getenv("CREATE_MEAL_PLANS_AND_VOTES") == "true"
-)
-
-func cloneTime(t time.Time) time.Time {
-	t, parseErr := time.Parse(time.RFC3339, t.Format(time.RFC3339))
-	if parseErr != nil {
-		panic(parseErr)
-	}
-
-	return t
-}
 
 func main() {
 	ctx := context.Background()

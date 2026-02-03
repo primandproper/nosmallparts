@@ -34,7 +34,7 @@ import (
 )
 
 func main() {
- u, err := url.Parse("https://api.dinnerdonebetter.dev")
+ u, err := url.Parse("https://api.nosmall.parts")
  if err != nil {
   panic(err)
  }

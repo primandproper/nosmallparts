@@ -39,7 +39,7 @@ const (
 	// ProductionRunMode is the run mode for a production environment.
 	ProductionRunMode runMode = "production"
 
-	EnvVarPrefix = "DINNER_DONE_BETTER_"
+	EnvVarPrefix = "NO_SMALL_PARTS_"
 
 	// ConfigurationFilePathEnvVarKey is the env var key we use to indicate where the config file is located.
 	ConfigurationFilePathEnvVarKey = "CONFIGURATION_FILEPATH"

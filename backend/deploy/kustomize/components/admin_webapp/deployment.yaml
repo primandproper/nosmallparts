@@ -2,36 +2,36 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: dinner-done-better-admin-webapp-deployment
+  name: no-small-parts-admin-webapp-deployment
   labels:
-    app: dinner-done-better-admin-webapp
-    app.kubernetes.io/name: dinner-done-better-admin-webapp
+    app: no-small-parts-admin-webapp
+    app.kubernetes.io/name: no-small-parts-admin-webapp
 spec:
   progressDeadlineSeconds: 1200
   selector:
     matchLabels:
-      app: dinner-done-better-admin-webapp
-      app.kubernetes.io/name: dinner-done-better-admin-webapp
+      app: no-small-parts-admin-webapp
+      app.kubernetes.io/name: no-small-parts-admin-webapp
   replicas: 1
   template:
     metadata:
       labels:
-        app: dinner-done-better-admin-webapp
-        app.kubernetes.io/name: dinner-done-better-admin-webapp
+        app: no-small-parts-admin-webapp
+        app.kubernetes.io/name: no-small-parts-admin-webapp
     spec:
       containers:
-        - name: dinner-done-better-admin-webapp
-          image: dinner-done-better-admin-webapp
+        - name: no-small-parts-admin-webapp
+          image: no-small-parts-admin-webapp
           imagePullPolicy: Always
           env:
             - name: "CONFIGURATION_FILEPATH"
               value: "/etc/service-config.json"
             - name: "RUNNING_IN_KUBERNETES"
               value: "true"
-            - name: "DINNER_DONE_BETTER_OBSERVABILITY_METRICS_OTEL_SERVICE_NAME"
-              value: "dinner_done_better_admin_webapp"
-            - name: "DINNER_DONE_BETTER_OBSERVABILITY_TRACING_TRACING_SERVICE_NAME"
-              value: "dinner_done_better_admin_webapp"
+            - name: "NO_SMALL_PARTS_OBSERVABILITY_METRICS_OTEL_SERVICE_NAME"
+              value: "no_small_parts_admin_webapp"
+            - name: "NO_SMALL_PARTS_OBSERVABILITY_TRACING_TRACING_SERVICE_NAME"
+              value: "no_small_parts_admin_webapp"
           volumeMounts:
             - name: "config"
               mountPath: "/etc/service-config.json"
@@ -56,5 +56,5 @@ spec:
       volumes:
         - name: "config"
           configMap:
-            name: "dinner-done-better-admin-webapp-config"
+            name: "no-small-parts-admin-webapp-config"
 ---

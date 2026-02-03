@@ -15,15 +15,12 @@ import (
 
 // EnvironmentConfigSet contains a way of rendering a set of every config for a given environment to a given folder.
 type EnvironmentConfigSet struct {
-	RootConfig                               *APIServiceConfig
-	APIServiceConfigPath                     string
-	DBCleanerConfigPath                      string
-	MealPlanFinalizerConfigPath              string
-	MealPlanGroceryListInitializerConfigPath string
-	MealPlanTaskCreatorConfigPath            string
-	SearchDataIndexSchedulerConfigPath       string
-	AsyncMessageHandlerConfigPath            string
-	AdminWebappConfigPath                    string
+	RootConfig                         *APIServiceConfig
+	APIServiceConfigPath               string
+	DBCleanerConfigPath                string
+	SearchDataIndexSchedulerConfigPath string
+	AsyncMessageHandlerConfigPath      string
+	AdminWebappConfigPath              string
 }
 
 func stringOrDefault(s, defaultStr string) string {
@@ -57,13 +54,10 @@ func writeFile(p string, content []byte) error {
 }
 
 const (
-	dbcConfigObservabilityServiceName   = "db_cleaner"
-	mpfConfigObservabilityServiceName   = "meal_plan_finalizer"
-	mpgliConfigObservabilityServiceName = "meal_plan_grocery_list_initializer"
-	mptcConfigObservabilityServiceName  = "meal_plan_task_creator"
-	sdisConfigObservabilityServiceName  = "search_data_index_scheduler"
-	amhConfigObservabilityServiceName   = "async_message_handler"
-	awaConfigObservabilityServiceName   = "admin_webapp"
+	dbcConfigObservabilityServiceName  = "db_cleaner"
+	sdisConfigObservabilityServiceName = "search_data_index_scheduler"
+	amhConfigObservabilityServiceName  = "async_message_handler"
+	awaConfigObservabilityServiceName  = "admin_webapp"
 )
 
 func (s *EnvironmentConfigSet) Render(outputDir string, pretty, validate bool) error {
@@ -87,38 +81,6 @@ func (s *EnvironmentConfigSet) Render(outputDir string, pretty, validate bool) e
 	dbcConfig.Observability.Tracing.ServiceName = dbcConfigObservabilityServiceName
 	dbcConfig.Observability.Metrics.ServiceName = dbcConfigObservabilityServiceName
 	dbcConfig.Observability.Logging.ServiceName = dbcConfigObservabilityServiceName
-
-	mpfConfig := &MealPlanFinalizerConfig{
-		Observability: s.RootConfig.Observability,
-		Events:        s.RootConfig.Events,
-		Database:      s.RootConfig.Database,
-		Queues:        s.RootConfig.Queues,
-	}
-	mpfConfig.Observability.Tracing.ServiceName = mpfConfigObservabilityServiceName
-	mpfConfig.Observability.Metrics.ServiceName = mpfConfigObservabilityServiceName
-	mpfConfig.Observability.Logging.ServiceName = mpfConfigObservabilityServiceName
-
-	mpgliConfig := &MealPlanGroceryListInitializerConfig{
-		Observability: s.RootConfig.Observability,
-		Analytics:     s.RootConfig.Analytics,
-		Events:        s.RootConfig.Events,
-		Database:      s.RootConfig.Database,
-		Queues:        s.RootConfig.Queues,
-	}
-	mpgliConfig.Observability.Tracing.ServiceName = mpgliConfigObservabilityServiceName
-	mpgliConfig.Observability.Metrics.ServiceName = mpgliConfigObservabilityServiceName
-	mpgliConfig.Observability.Logging.ServiceName = mpgliConfigObservabilityServiceName
-
-	mptcConfig := &MealPlanTaskCreatorConfig{
-		Observability: s.RootConfig.Observability,
-		Analytics:     s.RootConfig.Analytics,
-		Events:        s.RootConfig.Events,
-		Database:      s.RootConfig.Database,
-		Queues:        s.RootConfig.Queues,
-	}
-	mptcConfig.Observability.Tracing.ServiceName = mptcConfigObservabilityServiceName
-	mptcConfig.Observability.Metrics.ServiceName = mptcConfigObservabilityServiceName
-	mptcConfig.Observability.Logging.ServiceName = mptcConfigObservabilityServiceName
 
 	sdisConfig := &SearchDataIndexSchedulerConfig{
 		Observability: s.RootConfig.Observability,
@@ -168,9 +130,6 @@ func (s *EnvironmentConfigSet) Render(outputDir string, pretty, validate bool) e
 		allConfigs := []validation.ValidatableWithContext{
 			s.RootConfig,
 			dbcConfig,
-			mpfConfig,
-			mpgliConfig,
-			mptcConfig,
 			sdisConfig,
 			amhConfig,
 			awaConfig,
@@ -188,13 +147,10 @@ func (s *EnvironmentConfigSet) Render(outputDir string, pretty, validate bool) e
 	}
 
 	pathToConfigMap := map[string][]byte{
-		path.Join(outputDir, stringOrDefault(s.DBCleanerConfigPath, "job_db_cleaner_config.json")):                                              renderJSON(dbcConfig, pretty),
-		path.Join(outputDir, stringOrDefault(s.MealPlanFinalizerConfigPath, "job_meal_plan_finalizer_config.json")):                             renderJSON(mpfConfig, pretty),
-		path.Join(outputDir, stringOrDefault(s.MealPlanGroceryListInitializerConfigPath, "job_meal_plan_grocery_list_initializer_config.json")): renderJSON(mpgliConfig, pretty),
-		path.Join(outputDir, stringOrDefault(s.MealPlanTaskCreatorConfigPath, "job_meal_plan_task_creator_config.json")):                        renderJSON(mptcConfig, pretty),
-		path.Join(outputDir, stringOrDefault(s.SearchDataIndexSchedulerConfigPath, "job_search_data_index_scheduler_config.json")):              renderJSON(sdisConfig, pretty),
-		path.Join(outputDir, stringOrDefault(s.AsyncMessageHandlerConfigPath, "async_message_handler_config.json")):                             renderJSON(amhConfig, pretty),
-		path.Join(outputDir, stringOrDefault(s.AdminWebappConfigPath, "admin_webapp_config.json")):                                              renderJSON(awaConfig, pretty),
+		path.Join(outputDir, stringOrDefault(s.DBCleanerConfigPath, "job_db_cleaner_config.json")):                                 renderJSON(dbcConfig, pretty),
+		path.Join(outputDir, stringOrDefault(s.SearchDataIndexSchedulerConfigPath, "job_search_data_index_scheduler_config.json")): renderJSON(sdisConfig, pretty),
+		path.Join(outputDir, stringOrDefault(s.AsyncMessageHandlerConfigPath, "async_message_handler_config.json")):                renderJSON(amhConfig, pretty),
+		path.Join(outputDir, stringOrDefault(s.AdminWebappConfigPath, "admin_webapp_config.json")):                                 renderJSON(awaConfig, pretty),
 	}
 
 	for p, b := range pathToConfigMap {

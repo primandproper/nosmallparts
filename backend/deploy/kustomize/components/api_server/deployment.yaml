@@ -2,27 +2,27 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: dinner-done-better-service-api-deployment
+  name: no-small-parts-service-api-deployment
   labels:
-    app: dinner-done-better-backend
-    app.kubernetes.io/name: dinner-done-better-backend
+    app: no-small-parts-backend
+    app.kubernetes.io/name: no-small-parts-backend
 spec:
   progressDeadlineSeconds: 1200
   selector:
     matchLabels:
-      app: dinner-done-better-backend
-      app.kubernetes.io/name: dinner-done-better-backend
+      app: no-small-parts-backend
+      app.kubernetes.io/name: no-small-parts-backend
   replicas: 1
   template:
     metadata:
       labels:
-        app: dinner-done-better-backend
-        app.kubernetes.io/name: dinner-done-better-backend
+        app: no-small-parts-backend
+        app.kubernetes.io/name: no-small-parts-backend
     spec:
       containers:
         # this is the API server container
-        - name: dinner-done-better-service-api
-          image: dinner-done-better-service-api
+        - name: no-small-parts-service-api
+          image: no-small-parts-service-api
           imagePullPolicy: Always
           env:
             - name: "CONFIGURATION_FILEPATH"
@@ -51,5 +51,5 @@ spec:
       volumes:
         - name: "config"
           configMap:
-            name: "dinner-done-better-service-api-config"
+            name: "no-small-parts-service-api-config"
 ---

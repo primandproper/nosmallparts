@@ -44,7 +44,7 @@ var (
 	localdevPostgresDBConnectionDetails = databasecfg.ConnectionDetails{
 		Username:   "dbuser",
 		Password:   "hunter2",
-		Database:   "dinner-done-better",
+		Database:   "no-small-parts",
 		Host:       "pgdatabase",
 		Port:       5432,
 		DisableSSL: true,
@@ -185,7 +185,7 @@ func buildLocalDevConfig() *config.APIServiceConfig {
 				},
 				SSO: authservice.SSOConfigs{
 					Google: authservice.GoogleSSOConfig{
-						CallbackURL: "https://app.dinnerdonebetter.dev/auth/google/callback",
+						CallbackURL: "https://app.nosmall.parts/auth/google/callback",
 					},
 				},
 				Debug:                 true,
@@ -195,7 +195,7 @@ func buildLocalDevConfig() *config.APIServiceConfig {
 				TokenLifetime:         5 * time.Minute,
 				Tokens: tokenscfg.Config{
 					Provider:                tokenscfg.ProviderPASETO,
-					Audience:                "https://api.dinnerdonebetter.dev",
+					Audience:                "https://api.nosmall.parts",
 					Base64EncodedSigningKey: base64.URLEncoding.EncodeToString([]byte(testutils.Example32ByteKey)),
 				},
 			},

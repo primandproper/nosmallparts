@@ -3,7 +3,7 @@ apiVersion: skaffold/v4beta11
 kind: Config
 
 metadata:
-  name: dinner-done-better-backend
+  name: no-small-parts-backend
 
 profiles:
   - name: localdev
@@ -16,7 +16,7 @@ profiles:
         sha256: {}
       artifacts:
         # backend artifacts (ko)
-        - image: dinner-done-better-service-api
+        - image: no-small-parts-service-api
           ko:
             dir: .
             flags:
@@ -27,7 +27,7 @@ profiles:
             main: ./cmd/services/api/http
             fromImage: golang:1.25-trixie
 
-        - image: dinner-done-better-job-db-cleaner
+        - image: no-small-parts-job-db-cleaner
           ko:
             dir: .
             flags:
@@ -38,40 +38,7 @@ profiles:
             main: ./cmd/workers/db_cleaner
             fromImage: golang:1.25-trixie
 
-        - image: dinner-done-better-job-meal-plan-finalizer
-          ko:
-            dir: .
-            flags:
-              - -trimpath
-            ldflags:
-              - -s -w
-              - -extldflags "-static"
-            main: ./cmd/workers/meal_plan_finalizer
-            fromImage: golang:1.25-trixie
-
-        - image: dinner-done-better-job-meal-plan-grocery-list-init
-          ko:
-            dir: .
-            flags:
-              - -trimpath
-            ldflags:
-              - -s -w
-              - -extldflags "-static"
-            main: ./cmd/workers/meal_plan_grocery_list_initializer
-            fromImage: golang:1.25-trixie
-
-        - image: dinner-done-better-job-meal-plan-task-creator
-          ko:
-            dir: .
-            flags:
-              - -trimpath
-            ldflags:
-              - -s -w
-              - -extldflags "-static"
-            main: ./cmd/workers/meal_plan_task_creator
-            fromImage: golang:1.25-trixie
-
-        - image: dinner-done-better-job-search-data-index-scheduler
+        - image: no-small-parts-job-search-data-index-scheduler
           ko:
             dir: .
             flags:
@@ -82,7 +49,7 @@ profiles:
             main: ./cmd/workers/search_data_index_scheduler
             fromImage: golang:1.25-trixie
 
-        - image: dinner-done-better-admin-webapp
+        - image: no-small-parts-admin-webapp
           ko:
             dir: .
             flags:
@@ -93,7 +60,7 @@ profiles:
             main: ./cmd/services/admin
             fromImage: golang:1.25-trixie
 
-        - image: dinner-done-better-mcp-server
+        - image: no-small-parts-mcp-server
           ko:
             dir: .
             flags:
@@ -117,11 +84,11 @@ profiles:
         defaultNamespace: localdev
     portForward:
       - resourceType: Service
-        resourceName: dinner-done-better-api-svc
+        resourceName: no-small-parts-api-svc
         namespace: localdev
         port: 8000
       - resourceType: Service
-        resourceName: dinner-done-better-admin-webapp-svc
+        resourceName: no-small-parts-admin-webapp-svc
         namespace: localdev
         port: 8888
 
@@ -131,7 +98,7 @@ profiles:
         sha256: {}
       artifacts:
         # backend artifacts (ko)
-        - image: us-central1-docker.pkg.dev/dinner-done-better-dev/containers/dinner-done-better-service-api
+        - image: us-central1-docker.pkg.dev/no-small-parts-dev/containers/no-small-parts-service-api
           ko:
             dir: .
             flags:
@@ -142,7 +109,7 @@ profiles:
             main: ./cmd/services/api/http
             fromImage: golang:1.25-trixie
 
-        - image: us-central1-docker.pkg.dev/dinner-done-better-dev/containers/dinner-done-better-job-db-cleaner
+        - image: us-central1-docker.pkg.dev/no-small-parts-dev/containers/no-small-parts-job-db-cleaner
           ko:
             dir: .
             flags:
@@ -153,40 +120,7 @@ profiles:
             main: ./cmd/workers/db_cleaner
             fromImage: golang:1.25-trixie
 
-        - image: us-central1-docker.pkg.dev/dinner-done-better-dev/containers/dinner-done-better-job-meal-plan-finalizer
-          ko:
-            dir: .
-            flags:
-              - -trimpath
-            ldflags:
-              - -s -w
-              - -extldflags "-static"
-            main: ./cmd/workers/meal_plan_finalizer
-            fromImage: golang:1.25-trixie
-
-        - image: us-central1-docker.pkg.dev/dinner-done-better-dev/containers/dinner-done-better-job-meal-plan-grocery-list-init
-          ko:
-            dir: .
-            flags:
-              - -trimpath
-            ldflags:
-              - -s -w
-              - -extldflags "-static"
-            main: ./cmd/workers/meal_plan_grocery_list_initializer
-            fromImage: golang:1.25-trixie
-
-        - image: us-central1-docker.pkg.dev/dinner-done-better-dev/containers/dinner-done-better-job-meal-plan-task-creator
-          ko:
-            dir: .
-            flags:
-              - -trimpath
-            ldflags:
-              - -s -w
-              - -extldflags "-static"
-            main: ./cmd/workers/meal_plan_task_creator
-            fromImage: golang:1.25-trixie
-
-        - image: us-central1-docker.pkg.dev/dinner-done-better-dev/containers/dinner-done-better-job-search-data-index-scheduler
+        - image: us-central1-docker.pkg.dev/no-small-parts-dev/containers/no-small-parts-job-search-data-index-scheduler
           ko:
             dir: .
             flags:
@@ -197,7 +131,7 @@ profiles:
             main: ./cmd/workers/search_data_index_scheduler
             fromImage: golang:1.25-trixie
 
-        - image: us-central1-docker.pkg.dev/dinner-done-better-dev/containers/dinner-done-better-async-message-handler
+        - image: us-central1-docker.pkg.dev/no-small-parts-dev/containers/no-small-parts-async-message-handler
           ko:
             dir: .
             flags:
@@ -208,7 +142,7 @@ profiles:
             main: ./cmd/functions/async_message_handler
             fromImage: golang:1.25-trixie
 
-        - image: us-central1-docker.pkg.dev/dinner-done-better-dev/containers/dinner-done-better-admin-webapp
+        - image: us-central1-docker.pkg.dev/no-small-parts-dev/containers/no-small-parts-admin-webapp
           ko:
             dir: .
             flags:

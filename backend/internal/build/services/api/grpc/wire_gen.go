@@ -23,7 +23,7 @@ import (
 	tracingcfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing/config"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/qrcodes"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/random"
-	grpc14 "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/server/grpc"
+	grpc13 "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/server/grpc"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/uploads/objectstorage"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/auditlogentries"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/auth"
@@ -43,12 +43,12 @@ import (
 	grpc4 "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/identity/grpc"
 	grpc5 "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/internalops/grpc"
 	grpc6 "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/issuereports/grpc"
-	grpc8 "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/notifications/grpc"
-	grpc9 "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/oauth/grpc"
-	grpc10 "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/settings/grpc"
-	grpc11 "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/uploadedmedia/grpc"
-	grpc13 "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/waitlists/grpc"
-	grpc12 "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/webhooks/grpc"
+	grpc7 "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/notifications/grpc"
+	grpc8 "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/oauth/grpc"
+	grpc9 "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/settings/grpc"
+	grpc10 "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/uploadedmedia/grpc"
+	grpc12 "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/waitlists/grpc"
+	grpc11 "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/webhooks/grpc"
 )
 
 // Injectors from build.go:
@@ -124,15 +124,15 @@ func Build(ctx context.Context, cfg *config.APIServiceConfig) (*GRPCService, err
 	issuereportsRepository := issue_reports.ProvideIssueReportsRepository(logger, tracerProvider, repository, client)
 	issueReportsServiceServer := grpc6.NewService(logger, tracerProvider, issuereportsRepository)
 	notificationsRepository := notifications.ProvideNotificationsRepository(logger, tracerProvider, repository, client)
-	userNotificationsServiceServer := grpc8.NewService(logger, tracerProvider, notificationsRepository)
+	userNotificationsServiceServer := grpc7.NewService(logger, tracerProvider, notificationsRepository)
 	oauthRepository := oauth.ProvideOAuthRepository(logger, tracerProvider, repository, databasecfgConfig, client)
 	oAuth2Manager, err := manager2.NewOAuth2Manager(ctx, logger, tracerProvider, generator, v, publisherProvider, oauthRepository, queuesConfig)
 	if err != nil {
 		return nil, err
 	}
-	oAuthServiceServer := grpc9.NewService(logger, tracerProvider, oAuth2Manager)
+	oAuthServiceServer := grpc8.NewService(logger, tracerProvider, oAuth2Manager)
 	settingsRepository := settings.ProvideSettingsRepository(logger, tracerProvider, repository, client)
-	settingsServiceServer := grpc10.NewService(logger, tracerProvider, settingsRepository)
+	settingsServiceServer := grpc9.NewService(logger, tracerProvider, settingsRepository)
 	uploadedmediaRepository := uploadedmedia.ProvideUploadedMediaRepository(logger, tracerProvider, repository, client)
 	configConfig := &servicesConfig.UploadedMedia
 	config2 := &configConfig.Uploads
@@ -142,29 +142,29 @@ func Build(ctx context.Context, cfg *config.APIServiceConfig) (*GRPCService, err
 		return nil, err
 	}
 	uploadManager := objectstorage.ProvideUploadManager(uploader)
-	uploadedMediaServiceServer := grpc11.NewService(logger, tracerProvider, uploadedmediaRepository, uploadManager)
+	uploadedMediaServiceServer := grpc10.NewService(logger, tracerProvider, uploadedmediaRepository, uploadManager)
 	webhooksRepository := webhooks.ProvideWebhooksRepository(logger, tracerProvider, repository, client)
-	webhooksServiceServer := grpc12.NewService(logger, tracerProvider, webhooksRepository)
+	webhooksServiceServer := grpc11.NewService(logger, tracerProvider, webhooksRepository)
 	waitlistsRepository := waitlists.ProvideWaitlistsRepository(logger, tracerProvider, client)
-	waitlistsServiceServer := grpc13.NewService(logger, tracerProvider, waitlistsRepository)
+	waitlistsServiceServer := grpc12.NewService(logger, tracerProvider, waitlistsRepository)
 	grpcConfig := &cfg.GRPCServer
 	oAuth2Config := &authenticationConfig.OAuth2
 	manageManager := authentication2.ProvideOAuth2ClientManager(logger, tracerProvider, oAuth2Config, oauthRepository)
 	authMethodPermissions := grpc2.ProvideMethodPermissions()
 	identityMethodPermissions := grpc4.ProvideMethodPermissions()
 	issueReportsMethodPermissions := grpc6.ProvideMethodPermissions()
-	notificationsMethodPermissions := grpc8.ProvideMethodPermissions()
-	oAuthMethodPermissions := grpc9.ProvideMethodPermissions()
-	settingsMethodPermissions := grpc10.ProvideMethodPermissions()
-	uploadedMediaMethodPermissions := grpc11.ProvideMethodPermissions()
-	waitlistsMethodPermissions := grpc13.ProvideMethodPermissions()
-	webhooksMethodPermissions := grpc12.ProvideMethodPermissions()
+	notificationsMethodPermissions := grpc7.ProvideMethodPermissions()
+	oAuthMethodPermissions := grpc8.ProvideMethodPermissions()
+	settingsMethodPermissions := grpc9.ProvideMethodPermissions()
+	uploadedMediaMethodPermissions := grpc10.ProvideMethodPermissions()
+	waitlistsMethodPermissions := grpc12.ProvideMethodPermissions()
+	webhooksMethodPermissions := grpc11.ProvideMethodPermissions()
 	methodPermissionsMap := AggregateMethodPermissions(authMethodPermissions, identityMethodPermissions, issueReportsMethodPermissions, notificationsMethodPermissions, oAuthMethodPermissions, settingsMethodPermissions, uploadedMediaMethodPermissions, waitlistsMethodPermissions, webhooksMethodPermissions)
 	authInterceptor := interceptors.ProvideAuthInterceptor(tracerProvider, logger, identityRepository, manageManager, methodPermissionsMap)
 	v2 := BuildUnaryServerInterceptors(authInterceptor)
 	v3 := BuildStreamServerInterceptors()
 	v4 := BuildRegistrationFuncs(auditServiceServer, authServiceServer, dataPrivacyServiceServer, identityServiceServer, internalOperationsServer, issueReportsServiceServer, userNotificationsServiceServer, oAuthServiceServer, settingsServiceServer, uploadedMediaServiceServer, waitlistsServiceServer, webhooksServiceServer)
-	server, err := grpc14.NewGRPCServer(grpcConfig, logger, v2, v3, v4...)
+	server, err := grpc13.NewGRPCServer(grpcConfig, logger, v2, v3, v4...)
 	if err != nil {
 		return nil, err
 	}

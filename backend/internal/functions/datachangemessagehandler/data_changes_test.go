@@ -284,7 +284,7 @@ func TestAsyncDataChangeMessageHandler_handleOutboundNotifications(T *testing.T)
 
 	T.Run("user signed up event", func(t *testing.T) {
 		// Set environment variable needed for email configuration
-		t.Setenv("DINNER_DONE_BETTER_SERVICE_ENVIRONMENT", "testing")
+		t.Setenv("NO_SMALL_PARTS_SERVICE_ENVIRONMENT", "testing")
 
 		handler, identityRepo, _, _, _, analyticsEventReporter, _, _, _, decoder := buildTestAsyncDataChangeMessageHandler(t)
 
@@ -322,7 +322,7 @@ func TestAsyncDataChangeMessageHandler_handleOutboundNotifications(T *testing.T)
 
 	T.Run("with user fetch error", func(t *testing.T) {
 		// Set environment variable needed for email configuration
-		t.Setenv("DINNER_DONE_BETTER_SERVICE_ENVIRONMENT", "testing")
+		t.Setenv("NO_SMALL_PARTS_SERVICE_ENVIRONMENT", "testing")
 
 		handler, identityRepo, _, _, _, _, _, _, _, _ := buildTestAsyncDataChangeMessageHandler(t)
 
@@ -347,7 +347,7 @@ func TestAsyncDataChangeMessageHandler_handleOutboundNotifications(T *testing.T)
 
 	T.Run("unhandled event type", func(t *testing.T) {
 		// Set environment variable needed for email configuration
-		t.Setenv("DINNER_DONE_BETTER_SERVICE_ENVIRONMENT", "testing")
+		t.Setenv("NO_SMALL_PARTS_SERVICE_ENVIRONMENT", "testing")
 
 		handler, identityRepo, _, _, _, _, _, _, _, _ := buildTestAsyncDataChangeMessageHandler(t)
 

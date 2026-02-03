@@ -31,7 +31,7 @@ func BuildFakeIssueReport() *types.IssueReport {
 		ID:               BuildFakeID(),
 		IssueType:        fake.RandomString([]string{"bug", "feature_request", "data_quality", "performance", "other"}),
 		Details:          fake.Sentence(20),
-		RelevantTable:    fake.RandomString([]string{"recipes", "meals", "users", "accounts", "ingredients"}),
+		RelevantTable:    fake.RandomString([]string{"users", "accounts", "ingredients"}),
 		RelevantRecordID: BuildFakeID(),
 		CreatedAt:        BuildFakeTime(),
 		LastUpdatedAt:    nil,
@@ -46,7 +46,7 @@ func BuildFakeIssueReportCreationRequestInput() *types.IssueReportCreationReques
 	return &types.IssueReportCreationRequestInput{
 		IssueType:        fake.RandomString([]string{"bug", "feature_request", "data_quality", "performance", "other"}),
 		Details:          fake.Sentence(20),
-		RelevantTable:    fake.RandomString([]string{"recipes", "meals", "users", "accounts", "ingredients"}),
+		RelevantTable:    fake.RandomString([]string{"users", "accounts", "ingredients"}),
 		RelevantRecordID: BuildFakeID(),
 	}
 }
@@ -57,7 +57,7 @@ func BuildFakeIssueReportDatabaseCreationInput() *types.IssueReportDatabaseCreat
 		ID:               BuildFakeID(),
 		IssueType:        fake.RandomString([]string{"bug", "feature_request", "data_quality", "performance", "other"}),
 		Details:          fake.Sentence(20),
-		RelevantTable:    fake.RandomString([]string{"recipes", "meals", "users", "accounts", "ingredients"}),
+		RelevantTable:    fake.RandomString([]string{"users", "accounts", "ingredients"}),
 		RelevantRecordID: BuildFakeID(),
 		CreatedByUser:    BuildFakeID(),
 		BelongsToAccount: BuildFakeID(),
@@ -68,7 +68,7 @@ func BuildFakeIssueReportDatabaseCreationInput() *types.IssueReportDatabaseCreat
 func BuildFakeIssueReportUpdateRequestInput() *types.IssueReportUpdateRequestInput {
 	issueType := fake.RandomString([]string{"bug", "feature_request", "data_quality", "performance", "other"})
 	details := fake.Sentence(20)
-	relevantTable := fake.RandomString([]string{"recipes", "meals", "users", "accounts", "ingredients"})
+	relevantTable := fake.RandomString([]string{"users", "accounts", "ingredients"})
 	relevantRecordID := BuildFakeID()
 
 	return &types.IssueReportUpdateRequestInput{

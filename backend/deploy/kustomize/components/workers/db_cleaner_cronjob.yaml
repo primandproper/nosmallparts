@@ -2,7 +2,7 @@
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: dinner-done-better-job-db-cleaner
+  name: no-small-parts-job-db-cleaner
 spec:
   concurrencyPolicy: Replace
   schedule: "0 0 1,8,15,22 * *" # At midnight on day-of-month 1, 8, 15, and 22.”
@@ -13,15 +13,15 @@ spec:
           restartPolicy: OnFailure
           containers:
             - name: db-cleaner
-              image: dinner-done-better-job-db-cleaner
+              image: no-small-parts-job-db-cleaner
               imagePullPolicy: Always
               env:
                 - name: "CONFIGURATION_FILEPATH"
                   value: "/etc/service-config.json"
-                - name: "DINNER_DONE_BETTER_OBSERVABILITY_METRICS_OTEL_SERVICE_NAME"
-                  value: "dinner_done_better_job_db_cleaner"
-                - name: "DINNER_DONE_BETTER_OBSERVABILITY_TRACING_TRACING_SERVICE_NAME"
-                  value: "dinner_done_better_job_db_cleaner"
+                - name: "NO_SMALL_PARTS_OBSERVABILITY_METRICS_OTEL_SERVICE_NAME"
+                  value: "no_small_parts_job_db_cleaner"
+                - name: "NO_SMALL_PARTS_OBSERVABILITY_TRACING_TRACING_SERVICE_NAME"
+                  value: "no_small_parts_job_db_cleaner"
               volumeMounts:
                 - name: "config"
                   mountPath: "/etc/service-config.json"
@@ -29,5 +29,5 @@ spec:
           volumes:
             - name: "config"
               configMap:
-                name: "dinner-done-better-job-db-cleaner-config"
+                name: "no-small-parts-job-db-cleaner-config"
 ---

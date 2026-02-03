@@ -62,7 +62,7 @@
 		"connectionDetails": {
 			"username": "dbuser",
 			"password": "hunter2",
-			"database": "dinner-done-better",
+			"database": "no-small-parts",
 			"hostname": "pgdatabase",
 			"port": 5432,
 			"disableSSL": true
@@ -70,7 +70,7 @@
 		"writeConnectionDetails": {
 			"username": "dbuser",
 			"password": "hunter2",
-			"database": "dinner-done-better",
+			"database": "no-small-parts",
 			"hostname": "pgdatabase",
 			"port": 5432,
 			"disableSSL": true

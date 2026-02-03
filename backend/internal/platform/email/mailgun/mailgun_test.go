@@ -16,7 +16,7 @@ import (
 )
 
 const (
-	exampleDomain = "dinnerdonebetter.dev"
+	exampleDomain = "nosmall.parts"
 )
 
 type sendMessageResponse struct {

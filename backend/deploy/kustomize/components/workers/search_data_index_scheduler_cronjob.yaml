@@ -2,7 +2,7 @@
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: dinner-done-better-job-search-data-index-scheduler
+  name: no-small-parts-job-search-data-index-scheduler
 spec:
   concurrencyPolicy: Replace
   schedule: "*/30 * * * *" # every 30 minutes
@@ -12,17 +12,17 @@ spec:
         spec:
           containers:
             - name: search-data-index-scheduler
-              image: dinner-done-better-job-search-data-index-scheduler
+              image: no-small-parts-job-search-data-index-scheduler
               imagePullPolicy: Always
               env:
                 - name: "CONFIGURATION_FILEPATH"
                   value: "/etc/service-config.json"
                 - name: "SEARCH_INDEXING_TOPIC_NAME"
                   value: "search_index_requests"
-                - name: "DINNER_DONE_BETTER_OBSERVABILITY_METRICS_OTEL_SERVICE_NAME"
-                  value: "dinner_done_better_job_search_data_index_scheduler"
-                - name: "DINNER_DONE_BETTER_OBSERVABILITY_TRACING_TRACING_SERVICE_NAME"
-                  value: "dinner_done_better_job_search_data_index_scheduler"
+                - name: "NO_SMALL_PARTS_OBSERVABILITY_METRICS_OTEL_SERVICE_NAME"
+                  value: "no_small_parts_job_search_data_index_scheduler"
+                - name: "NO_SMALL_PARTS_OBSERVABILITY_TRACING_TRACING_SERVICE_NAME"
+                  value: "no_small_parts_job_search_data_index_scheduler"
               volumeMounts:
                 - name: "config"
                   mountPath: "/etc/service-config.json"
@@ -31,5 +31,5 @@ spec:
           volumes:
             - name: "config"
               configMap:
-                name: "dinner-done-better-job-search-data-index-scheduler-config"
+                name: "no-small-parts-job-search-data-index-scheduler-config"
 ---

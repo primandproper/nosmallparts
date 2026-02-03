@@ -2,13 +2,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: dinner-done-better-api-svc
+  name: no-small-parts-api-svc
   labels:
-    app: dinner-done-better-backend
-    app.kubernetes.io/name: dinner-done-better-backend
+    app: no-small-parts-backend
+    app.kubernetes.io/name: no-small-parts-backend
 spec:
   selector:
-    app.kubernetes.io/name: dinner-done-better-backend
+    app.kubernetes.io/name: no-small-parts-backend
   ports:
     - name: http
       port: 8000

@@ -9,7 +9,7 @@
 	"appleAppSiteAssociation": {},
 	"routing": {
 		"chiConfig": {
-			"serviceName": "dinner_done_better",
+			"serviceName": "no_small_parts",
 			"enableCORSForLocalhost": true
 		},
 		"provider": "chi"
@@ -51,7 +51,7 @@
 	},
 	"observability": {
 		"logging": {
-			"serviceName": "dinner_done_better",
+			"serviceName": "no_small_parts",
 			"level": "debug",
 			"otelslog": {
 				"endpointURL": "otel_collector:4317",
@@ -68,7 +68,7 @@
 				"enableRuntimeMetrics": false,
 				"enableHostMetrics": false
 			},
-			"serviceName": "dinner_done_better",
+			"serviceName": "no_small_parts",
 			"provider": "otelgrpc"
 		},
 		"tracing": {
@@ -76,7 +76,7 @@
 				"collector_endpoint": "otel_collector:4317",
 				"insecure": true
 			},
-			"service_name": "dinner_done_better",
+			"service_name": "no_small_parts",
 			"provider": "otelgrpc",
 			"spanCollectionProbability": 1
 		}
@@ -157,7 +157,7 @@
 		"connectionDetails": {
 			"username": "dbuser",
 			"password": "hunter2",
-			"database": "dinner-done-better",
+			"database": "no-small-parts",
 			"hostname": "pgdatabase",
 			"port": 5432,
 			"disableSSL": true
@@ -165,7 +165,7 @@
 		"writeConnectionDetails": {
 			"username": "dbuser",
 			"password": "hunter2",
-			"database": "dinner-done-better",
+			"database": "no-small-parts",
 			"hostname": "pgdatabase",
 			"port": 5432,
 			"disableSSL": true
@@ -220,14 +220,14 @@
 		"auth": {
 			"tokens": {
 				"provider": "paseto",
-				"audience": "https://api.dinnerdonebetter.dev",
+				"audience": "https://api.nosmall.parts",
 				"base64EncodedSigningKey": "SEVSRUlTQTMyQ0hBUlNFQ1JFVFdISUNISVNNQURFVVA=",
 				"maxAccessTokenLifetime": 0,
 				"maxRefreshTokenLifetime": 0
 			},
 			"sso": {
 				"google": {
-					"callbackURL": "https://app.dinnerdonebetter.dev/auth/google/callback"
+					"callbackURL": "https://app.nosmall.parts/auth/google/callback"
 				}
 			},
 			"oauth2": {

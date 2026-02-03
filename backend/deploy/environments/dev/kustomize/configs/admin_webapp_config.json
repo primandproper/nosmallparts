@@ -15,7 +15,7 @@
 	},
 	"routing": {
 		"chiConfig": {
-			"serviceName": "dinner_done_better",
+			"serviceName": "no_small_parts",
 			"enableCORSForLocalhost": true
 		},
 		"provider": "chi"

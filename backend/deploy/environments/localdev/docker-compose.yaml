@@ -13,7 +13,7 @@ services:
     hostname: pgdatabase
     image: postgres:17
     environment:
-      POSTGRES_DB: 'dinner-done-better'
+      POSTGRES_DB: 'no-small-parts'
       POSTGRES_PASSWORD: 'hunter2'
       POSTGRES_USER: 'dbuser'
     ports:

@@ -1,6 +1,6 @@
 resource "google_storage_bucket" "user_data_storage" {
   provider                    = google
-  name                        = "userdata.dinnerdonebetter.dev"
+  name                        = "userdata.nosmall.parts"
   location                    = "US"
   uniform_bucket_level_access = false
   force_destroy               = true
@@ -15,7 +15,7 @@ resource "google_storage_bucket" "user_data_storage" {
   }
 
   cors {
-    origin          = ["https://dinnerdonebetter.dev]"]
+    origin          = ["https://nosmall.parts]"]
     method          = ["GET", "HEAD", "PUT", "POST", "DELETE"]
     response_header = ["*"]
     max_age_seconds = 3600

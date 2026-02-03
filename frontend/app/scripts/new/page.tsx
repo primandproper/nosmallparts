@@ -44,17 +44,6 @@ function ScriptEditorContent() {
     }
   }, [draftId]);
 
-  // Auto-save draft every 30 seconds if there are changes
-  useEffect(() => {
-    if (!title) return;
-
-    const timer = setInterval(() => {
-      handleSaveDraft(true);
-    }, 30000);
-
-    return () => clearInterval(timer);
-  }, [title, handleSaveDraft]);
-
   const handleAddCast = () => {
     if (!newCastName.trim()) return;
 
@@ -167,6 +156,17 @@ function ScriptEditorContent() {
     },
     [title, description, author, cast, lines, currentId]
   );
+
+  // Auto-save draft every 30 seconds if there are changes
+  useEffect(() => {
+    if (!title) return;
+
+    const timer = setInterval(() => {
+      handleSaveDraft(true);
+    }, 30000);
+
+    return () => clearInterval(timer);
+  }, [title, handleSaveDraft]);
 
   const handlePublish = async () => {
     if (!title.trim()) {

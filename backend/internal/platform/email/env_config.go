@@ -27,10 +27,10 @@ var (
 	envConfigsMapHat sync.Mutex
 	envConfigsMap    = map[string]*EnvironmentConfig{
 		"dev": {
-			baseURL:                             "https://www.dinnerdonebetter.dev",
-			outboundInvitesEmailAddress:         "noreply@dinnerdonebetter.dev",
-			passwordResetCreationEmailAddress:   "noreply@dinnerdonebetter.dev",
-			passwordResetRedemptionEmailAddress: "noreply@dinnerdonebetter.dev",
+			baseURL:                             "https://www.nosmall.parts",
+			outboundInvitesEmailAddress:         "noreply@nosmall.parts",
+			passwordResetCreationEmailAddress:   "noreply@nosmall.parts",
+			passwordResetRedemptionEmailAddress: "noreply@nosmall.parts",
 		},
 		defaultEnv: {
 			baseURL:                             "https://not.real.lol",

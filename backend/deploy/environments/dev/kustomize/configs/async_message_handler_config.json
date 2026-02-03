@@ -1,9 +1,9 @@
 {
 	"storage": {
 		"gcpConfig": {
-			"bucketName": "userdata.dinnerdonebetter.dev"
+			"bucketName": "userdata.nosmall.parts"
 		},
-		"bucketName": "userdata.dinnerdonebetter.dev",
+		"bucketName": "userdata.nosmall.parts",
 		"provider": "gcp"
 	},
 	"queues": {
@@ -23,7 +23,7 @@
 				"queueAddress": ""
 			},
 			"pubSub": {
-				"projectID": "dinner-done-better-dev"
+				"projectID": "no-small-parts-dev"
 			},
 			"redis": {
 				"username": "",
@@ -36,7 +36,7 @@
 				"queueAddress": ""
 			},
 			"pubSub": {
-				"projectID": "dinner-done-better-dev"
+				"projectID": "no-small-parts-dev"
 			},
 			"redis": {
 				"username": "",
@@ -122,7 +122,7 @@
 		"connectionDetails": {
 			"username": "api_db_user",
 			"password": "",
-			"database": "dinner-done-better",
+			"database": "no-small-parts",
 			"hostname": "",
 			"port": 5432,
 			"disableSSL": false
@@ -130,7 +130,7 @@
 		"writeConnectionDetails": {
 			"username": "api_db_user",
 			"password": "",
-			"database": "dinner-done-better",
+			"database": "no-small-parts",
 			"hostname": "",
 			"port": 5432,
 			"disableSSL": false

@@ -280,15 +280,15 @@ formatters:
     gci:
       sections:
         - standard
-        - prefix(github.com/dinnerdonebetter/backend)
-        - prefix(github.com/dinnerdonebetter)
+        - prefix(github.com/verygoodsoftwarenotvirus/nosmallparts)
+        - prefix(github.com/verygoodsoftwarenotvirus)
         - default
       custom-order: true
     gofmt:
       simplify: true
     goimports:
       local-prefixes:
-        - github.com/dinnerdonebetter/backend
+        - github.com/verygoodsoftwarenotvirus/nosmallparts
   exclusions:
     generated: lax
     paths:

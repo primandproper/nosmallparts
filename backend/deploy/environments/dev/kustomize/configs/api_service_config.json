@@ -7,11 +7,11 @@
 		"webhookExecutionRequestsTopicName": ""
 	},
 	"appleAppSiteAssociation": {
-		"bundleID": "com.dinnerdonebetter.ios"
+		"bundleID": "com.nosmallparts.ios"
 	},
 	"routing": {
 		"chiConfig": {
-			"serviceName": "dinner_done_better",
+			"serviceName": "no_small_parts",
 			"enableCORSForLocalhost": true
 		},
 		"provider": "chi"
@@ -26,7 +26,7 @@
 				"queueAddress": ""
 			},
 			"pubSub": {
-				"projectID": "dinner-done-better-dev"
+				"projectID": "no-small-parts-dev"
 			},
 			"redis": {
 				"username": "",
@@ -39,7 +39,7 @@
 				"queueAddress": ""
 			},
 			"pubSub": {
-				"projectID": "dinner-done-better-dev"
+				"projectID": "no-small-parts-dev"
 			},
 			"redis": {
 				"username": "",
@@ -49,7 +49,7 @@
 	},
 	"observability": {
 		"logging": {
-			"serviceName": "dinner_done_better",
+			"serviceName": "no_small_parts",
 			"level": "debug",
 			"otelslog": {
 				"endpointURL": "otel-collector-svc.dev.svc.cluster.local:4317",
@@ -66,7 +66,7 @@
 				"enableRuntimeMetrics": false,
 				"enableHostMetrics": false
 			},
-			"serviceName": "dinner_done_better",
+			"serviceName": "no_small_parts",
 			"provider": "otelgrpc"
 		},
 		"tracing": {
@@ -74,7 +74,7 @@
 				"collector_endpoint": "otel-collector-svc.dev.svc.cluster.local:4317",
 				"insecure": true
 			},
-			"service_name": "dinner_done_better",
+			"service_name": "no_small_parts",
 			"provider": "otelgrpc",
 			"spanCollectionProbability": 1
 		}
@@ -159,7 +159,7 @@
 		"connectionDetails": {
 			"username": "api_db_user",
 			"password": "",
-			"database": "dinner-done-better",
+			"database": "no-small-parts",
 			"hostname": "",
 			"port": 5432,
 			"disableSSL": false
@@ -167,7 +167,7 @@
 		"writeConnectionDetails": {
 			"username": "api_db_user",
 			"password": "",
-			"database": "dinner-done-better",
+			"database": "no-small-parts",
 			"hostname": "",
 			"port": 5432,
 			"disableSSL": false
@@ -181,14 +181,14 @@
 	},
 	"services": {
 		"users": {
-			"publicMediaURLPrefix": "https://media.dinnerdonebetter.dev/avatars",
+			"publicMediaURLPrefix": "https://media.nosmall.parts/avatars",
 			"uploads": {
 				"storageConfig": {
 					"gcpConfig": {
-						"bucketName": "media.dinnerdonebetter.dev"
+						"bucketName": "media.nosmall.parts"
 					},
 					"bucketPrefix": "avatars/",
-					"bucketName": "media.dinnerdonebetter.dev",
+					"bucketName": "media.nosmall.parts",
 					"uploadFilenameKey": "avatar",
 					"provider": "gcp"
 				},
@@ -199,9 +199,9 @@
 			"uploads": {
 				"storageConfig": {
 					"gcpConfig": {
-						"bucketName": "userdata.dinnerdonebetter.dev"
+						"bucketName": "userdata.nosmall.parts"
 					},
-					"bucketName": "userdata.dinnerdonebetter.dev",
+					"bucketName": "userdata.nosmall.parts",
 					"provider": "gcp"
 				},
 				"debug": false
@@ -211,10 +211,10 @@
 			"uploads": {
 				"storageConfig": {
 					"gcpConfig": {
-						"bucketName": "media.dinnerdonebetter.dev"
+						"bucketName": "media.nosmall.parts"
 					},
 					"bucketPrefix": "avatars/",
-					"bucketName": "media.dinnerdonebetter.dev",
+					"bucketName": "media.nosmall.parts",
 					"uploadFilenameKey": "avatar",
 					"provider": "gcp"
 				},
@@ -224,7 +224,7 @@
 		"auth": {
 			"tokens": {
 				"provider": "paseto",
-				"audience": "https://api.dinnerdonebetter.dev",
+				"audience": "https://api.nosmall.parts",
 				"base64EncodedSigningKey": "",
 				"maxAccessTokenLifetime": 0,
 				"maxRefreshTokenLifetime": 0
@@ -233,7 +233,7 @@
 				"google": {}
 			},
 			"oauth2": {
-				"domain": "https://dinnerdonebetter.dev",
+				"domain": "https://nosmall.parts",
 				"accessTokenLifespan": 3600000000000,
 				"refreshTokenLifespan": 3600000000000,
 				"debug": false

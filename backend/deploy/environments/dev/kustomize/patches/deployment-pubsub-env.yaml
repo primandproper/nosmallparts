@@ -3,7 +3,7 @@
 - op: add
   path: "/spec/template/spec/containers/0/env/-"
   value:
-    name: DINNER_DONE_BETTER_QUEUES_DATA_CHANGES_TOPIC_NAME
+    name: NO_SMALL_PARTS_QUEUES_DATA_CHANGES_TOPIC_NAME
     valueFrom:
       configMapKeyRef:
         name: pubsub-topic-names
@@ -11,7 +11,7 @@
 - op: add
   path: "/spec/template/spec/containers/0/env/-"
   value:
-    name: DINNER_DONE_BETTER_QUEUES_OUTBOUND_EMAILS_TOPIC_NAME
+    name: NO_SMALL_PARTS_QUEUES_OUTBOUND_EMAILS_TOPIC_NAME
     valueFrom:
       configMapKeyRef:
         name: pubsub-topic-names
@@ -19,7 +19,7 @@
 - op: add
   path: "/spec/template/spec/containers/0/env/-"
   value:
-    name: DINNER_DONE_BETTER_QUEUES_SEARCH_INDEX_REQUESTS_TOPIC_NAME
+    name: NO_SMALL_PARTS_QUEUES_SEARCH_INDEX_REQUESTS_TOPIC_NAME
     valueFrom:
       configMapKeyRef:
         name: pubsub-topic-names
@@ -27,7 +27,7 @@
 - op: add
   path: "/spec/template/spec/containers/0/env/-"
   value:
-    name: DINNER_DONE_BETTER_QUEUES_USER_DATA_AGGREGATION_TOPIC_NAME
+    name: NO_SMALL_PARTS_QUEUES_USER_DATA_AGGREGATION_TOPIC_NAME
     valueFrom:
       configMapKeyRef:
         name: pubsub-topic-names
@@ -35,7 +35,7 @@
 - op: add
   path: "/spec/template/spec/containers/0/env/-"
   value:
-    name: DINNER_DONE_BETTER_QUEUES_WEBHOOK_EXECUTION_REQUESTS_TOPIC_NAME
+    name: NO_SMALL_PARTS_QUEUES_WEBHOOK_EXECUTION_REQUESTS_TOPIC_NAME
     valueFrom:
       configMapKeyRef:
         name: pubsub-topic-names

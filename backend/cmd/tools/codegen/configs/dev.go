@@ -38,7 +38,7 @@ import (
 )
 
 const (
-	gcpProjectID = "dinner-done-better-dev"
+	gcpProjectID = "no-small-parts-dev"
 )
 
 func buildDevEnvironmentServerConfig() *config.APIServiceConfig {
@@ -47,10 +47,10 @@ func buildDevEnvironmentServerConfig() *config.APIServiceConfig {
 		Storage: objectstorage.Config{
 			UploadFilenameKey: "avatar",
 			Provider:          objectstorage.GCPCloudStorageProvider,
-			BucketName:        "media.dinnerdonebetter.dev",
+			BucketName:        "media.nosmall.parts",
 			BucketPrefix:      "avatars/",
 			GCP: &objectstorage.GCPConfig{
-				BucketName: "media.dinnerdonebetter.dev",
+				BucketName: "media.nosmall.parts",
 			},
 		},
 	}
@@ -133,7 +133,7 @@ func buildDevEnvironmentServerConfig() *config.APIServiceConfig {
 			ConnectionDetails: databasecfg.ConnectionDetails{
 				Username:   "api_db_user",
 				Password:   "",
-				Database:   "dinner-done-better",
+				Database:   "no-small-parts",
 				Host:       "",
 				Port:       5432,
 				DisableSSL: false,
@@ -141,7 +141,7 @@ func buildDevEnvironmentServerConfig() *config.APIServiceConfig {
 			WriteConnectionDetails: databasecfg.ConnectionDetails{
 				Username:   "api_db_user",
 				Password:   "",
-				Database:   "dinner-done-better",
+				Database:   "no-small-parts",
 				Host:       "",
 				Port:       5432,
 				DisableSSL: false,
@@ -180,7 +180,7 @@ func buildDevEnvironmentServerConfig() *config.APIServiceConfig {
 		Services: config.ServicesConfig{
 			Auth: authservice.Config{
 				OAuth2: authservice.OAuth2Config{
-					Domain:               "https://dinnerdonebetter.dev",
+					Domain:               "https://nosmall.parts",
 					AccessTokenLifespan:  time.Hour,
 					RefreshTokenLifespan: time.Hour,
 					Debug:                false,
@@ -191,7 +191,7 @@ func buildDevEnvironmentServerConfig() *config.APIServiceConfig {
 				MinimumPasswordLength: 8,
 				Tokens: tokenscfg.Config{
 					Provider:                tokenscfg.ProviderPASETO,
-					Audience:                "https://api.dinnerdonebetter.dev",
+					Audience:                "https://api.nosmall.parts",
 					Base64EncodedSigningKey: "",
 				},
 				TokenLifetime: 5 * time.Minute,
@@ -199,15 +199,15 @@ func buildDevEnvironmentServerConfig() *config.APIServiceConfig {
 			DataPrivacy: dataprivacycfg.Config{
 				Uploads: uploadscfg.Config{
 					Storage: objectstorage.Config{
-						GCP:        &objectstorage.GCPConfig{BucketName: "userdata.dinnerdonebetter.dev"},
-						BucketName: "userdata.dinnerdonebetter.dev",
+						GCP:        &objectstorage.GCPConfig{BucketName: "userdata.nosmall.parts"},
+						BucketName: "userdata.nosmall.parts",
 						Provider:   objectstorage.GCPCloudStorageProvider,
 					},
 					Debug: false,
 				},
 			},
 			Users: identitycfg.Config{
-				PublicMediaURLPrefix: "https://media.dinnerdonebetter.dev/avatars",
+				PublicMediaURLPrefix: "https://media.nosmall.parts/avatars",
 				Uploads:              uploadsConfig,
 			},
 			UploadedMedia: uploadedmediacfg.Config{
@@ -220,7 +220,7 @@ func buildDevEnvironmentServerConfig() *config.APIServiceConfig {
 		// BundleID: Your iOS app bundle identifier (e.g., "com.dinnerdonebetter.ios")
 		AppleAppSiteAssociation: config.AppleAppSiteAssociationConfig{
 			TeamID:   "", // TODO: Set your Apple Developer Team ID
-			BundleID: "com.dinnerdonebetter.ios",
+			BundleID: "com.nosmallparts.ios",
 		},
 	}
 

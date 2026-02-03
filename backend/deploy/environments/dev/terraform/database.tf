@@ -1,5 +1,5 @@
 locals {
-  database_name = "dinner-done-better"
+  database_name = "no-small-parts"
 }
 
 resource "google_sql_database_instance" "dev" {
@@ -50,7 +50,7 @@ resource "google_sql_database_instance" "dev" {
 }
 
 resource "google_sql_ssl_cert" "client_cert" {
-  common_name = "dinner-done-better-dev"
+  common_name = "no-small-parts-dev"
   instance    = google_sql_database_instance.dev.name
 }
 
