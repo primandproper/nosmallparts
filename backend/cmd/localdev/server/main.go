@@ -24,8 +24,6 @@ import (
 
 const (
 	apiConfigurationFilepath = "deploy/environments/testing/config_files/integration-tests-config.json"
-	// createMealPlansAndVotes controls whether meal plans and votes are created during localdev startup.
-	// Set to true via environment variable CREATE_MEAL_PLANS_AND_VOTES=true to enable.
 )
 
 func main() {

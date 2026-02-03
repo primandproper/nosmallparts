@@ -86,7 +86,7 @@ format_proto:
 # PATHS
 # Exclude monolithic {domain}/{domain}.proto files (they're duplicates of the split files)
 # But keep common.proto and filtering.proto at the root, and uploaded_media.proto (hasn't been split yet)
-PROTO_FILES_PATH          := $(shell find proto -name "*.proto" -type f ! -path "proto/audit/audit.proto" ! -path "proto/auth/auth.proto" ! -path "proto/dataprivacy/dataprivacy.proto" ! -path "proto/identity/identity.proto" ! -path "proto/internal_ops/internal_ops.proto" ! -path "proto/issue_reports/issue_reports.proto" ! -path "proto/mealplanning/mealplanning.proto" ! -path "proto/notifications/notifications.proto" ! -path "proto/oauth/oauth.proto" ! -path "proto/settings/settings.proto" ! -path "proto/waitlists/waitlists.proto" ! -path "proto/webhooks/webhooks.proto")
+PROTO_FILES_PATH          := $(shell find proto -name "*.proto" -type f ! -path "proto/audit/audit.proto" ! -path "proto/auth/auth.proto" ! -path "proto/dataprivacy/dataprivacy.proto" ! -path "proto/identity/identity.proto" ! -path "proto/internal_ops/internal_ops.proto" ! -path "proto/issue_reports/issue_reports.proto" ! -path "proto/notifications/notifications.proto" ! -path "proto/oauth/oauth.proto" ! -path "proto/settings/settings.proto" ! -path "proto/waitlists/waitlists.proto" ! -path "proto/webhooks/webhooks.proto")
 PROTO_GO_OUTPUT_PATH      := backend
 PROTO_OUTPUT_BACKEND_PATH := backend/internal/grpc
 BACKEND_MODULE_NAME       := github.com/verygoodsoftwarenotvirus/nosmallparts/backend

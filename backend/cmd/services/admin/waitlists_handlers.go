@@ -65,7 +65,7 @@ func (s *AdminFrontendServer) WaitlistsList(_ http.ResponseWriter, req *http.Req
 			TableID: "waitlists-table",
 			Palette: &design.StandardPalette,
 			Fields: []string{
-				"MealPlanTaskID",
+				"ID",
 				"Name",
 				"Description",
 				"ValidUntil",
@@ -158,7 +158,7 @@ func (s *AdminFrontendServer) WaitlistsSearch(_ http.ResponseWriter, req *http.R
 		TableID: "waitlists-table",
 		Palette: &design.StandardPalette,
 		Fields: []string{
-			"MealPlanTaskID",
+			"ID",
 			"Name",
 			"Description",
 			"ValidUntil",
@@ -210,7 +210,7 @@ func (s *AdminFrontendServer) WaitlistPage(_ http.ResponseWriter, req *http.Requ
 
 	waitlistID := s.waitlistIDRouteParamFetcher(req)
 	if waitlistID == "" {
-		return page("Waitlists", s.renderWaitlistsError("Error: No waitlist MealPlanTaskID provided")), nil
+		return page("Waitlists", s.renderWaitlistsError("Error: No waitlist ID provided")), nil
 	}
 
 	waitlistRes, err := c.GetWaitlist(ctx, &waitlistssvc.GetWaitlistRequest{WaitlistId: waitlistID})
@@ -353,7 +353,7 @@ func (s *AdminFrontendServer) WaitlistSignupsForWaitlist(_ http.ResponseWriter, 
 			g.Attr("class", "text-center py-4"),
 			ghtml.P(
 				ghtml.Class(fmt.Sprintf("%s text-sm", design.TextColor(design.StandardPalette.Warning))),
-				g.Text("Error: No waitlist MealPlanTaskID provided"),
+				g.Text("Error: No waitlist ID provided"),
 			),
 		), nil
 	}
@@ -400,7 +400,7 @@ func (s *AdminFrontendServer) WaitlistSignupsForWaitlist(_ http.ResponseWriter, 
 		TableID: "waitlist-signups-table",
 		Palette: &design.StandardPalette,
 		Fields: []string{
-			"MealPlanTaskID",
+			"ID",
 			"Notes",
 			"BelongsToUser",
 			"BelongsToAccount",
@@ -409,8 +409,8 @@ func (s *AdminFrontendServer) WaitlistSignupsForWaitlist(_ http.ResponseWriter, 
 			"ArchivedAt",
 		},
 		FieldReplacements: map[string]string{
-			"BelongsToUser":    "User MealPlanTaskID",
-			"BelongsToAccount": "Account MealPlanTaskID",
+			"BelongsToUser":    "User ID",
+			"BelongsToAccount": "Account ID",
 		},
 		FieldRenderers: map[string]components.FieldRenderer{
 			"CreatedAt":     renderTimestamp,

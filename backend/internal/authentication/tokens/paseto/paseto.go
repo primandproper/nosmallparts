@@ -74,7 +74,7 @@ func (s *signer) IssueToken(ctx context.Context, user tokens.User, expiry time.D
 	return tokenString, nil
 }
 
-// ParseUserIDFromToken parses a AccessToken and returns the associated user MealPlanTaskID.
+// ParseUserIDFromToken parses a AccessToken and returns the associated user ID.
 func (s *signer) ParseUserIDFromToken(ctx context.Context, providedToken string) (string, error) {
 	_, span := s.tracer.StartSpan(ctx)
 	defer span.End()

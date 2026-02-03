@@ -18,7 +18,7 @@ const (
 	exampleQuantity = 3
 )
 
-// BuildFakeID builds a fake MealPlanTaskID.
+// BuildFakeID builds a fake ID.
 func BuildFakeID() string {
 	return identifiers.New()
 }

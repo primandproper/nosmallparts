@@ -124,7 +124,7 @@ func TestQuerier_ServiceSettingConfigurationExists(T *testing.T) {
 func TestQuerier_GetServiceSettingConfiguration(T *testing.T) {
 	T.Parallel()
 
-	T.Run("with invalid service setting configuration MealPlanTaskID", func(t *testing.T) {
+	T.Run("with invalid service setting configuration ID", func(t *testing.T) {
 		t.Parallel()
 
 		ctx := t.Context()
@@ -139,7 +139,7 @@ func TestQuerier_GetServiceSettingConfiguration(T *testing.T) {
 func TestQuerier_GetServiceSettingConfigurationForUserByName(T *testing.T) {
 	T.Parallel()
 
-	T.Run("with invalid service setting MealPlanTaskID", func(t *testing.T) {
+	T.Run("with invalid service setting ID", func(t *testing.T) {
 		t.Parallel()
 
 		ctx := t.Context()
@@ -171,7 +171,7 @@ func TestQuerier_GetServiceSettingConfigurationForAccountByName(T *testing.T) {
 func TestQuerier_GetServiceSettingConfigurationsForUser(T *testing.T) {
 	T.Parallel()
 
-	T.Run("with invalid user MealPlanTaskID", func(t *testing.T) {
+	T.Run("with invalid user ID", func(t *testing.T) {
 		t.Parallel()
 
 		ctx := t.Context()
@@ -214,7 +214,7 @@ func TestQuerier_UpdateServiceSettingConfiguration(T *testing.T) {
 func TestQuerier_ArchiveServiceSettingConfiguration(T *testing.T) {
 	T.Parallel()
 
-	T.Run("with invalid service setting MealPlanTaskID", func(t *testing.T) {
+	T.Run("with invalid service setting ID", func(t *testing.T) {
 		t.Parallel()
 
 		ctx := t.Context()

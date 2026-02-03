@@ -19,7 +19,7 @@ import (
 func checkUploadedMediaEquality(t *testing.T, expected, actual *uploadedmedia.UploadedMedia) {
 	t.Helper()
 
-	assert.NotEmpty(t, actual.ID, "expected UploadedMedia to have MealPlanTaskID")
+	assert.NotEmpty(t, actual.ID, "expected UploadedMedia to have ID")
 	assert.NotZero(t, actual.CreatedAt, "expected UploadedMedia to have CreatedAt")
 
 	assert.Equal(t, expected.StoragePath, actual.StoragePath, "expected UploadedMedia StoragePath")
@@ -104,7 +104,7 @@ func TestUploadedMedia_Reading(T *testing.T) {
 		assert.NotNil(t, retrieved)
 	})
 
-	T.Run("nonexistent MealPlanTaskID", func(t *testing.T) {
+	T.Run("nonexistent ID", func(t *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
@@ -294,7 +294,7 @@ func TestUploadedMedia_Updating(T *testing.T) {
 		assert.Equal(t, newMimeType, retrieved.Result.MimeType)
 	})
 
-	T.Run("nonexistent MealPlanTaskID", func(t *testing.T) {
+	T.Run("nonexistent ID", func(t *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
@@ -369,7 +369,7 @@ func TestUploadedMedia_Archiving(T *testing.T) {
 		assert.Nil(t, retrieved)
 	})
 
-	T.Run("nonexistent MealPlanTaskID", func(t *testing.T) {
+	T.Run("nonexistent ID", func(t *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 

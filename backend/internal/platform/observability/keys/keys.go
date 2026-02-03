@@ -104,25 +104,25 @@ const (
 	// UseDatabaseKey is the standard key for referring to whether or not the database was used in search.
 	UseDatabaseKey = "use_database"
 
-	// ServiceSettingIDKey is the standard key for referring to a service setting's MealPlanTaskID.
+	// ServiceSettingIDKey is the standard key for referring to a service setting's ID.
 	ServiceSettingIDKey = "service_setting" + idSuffix
 
-	// ServiceSettingNameKey is the standard key for referring to a service setting's MealPlanTaskID.
+	// ServiceSettingNameKey is the standard key for referring to a service setting's ID.
 	ServiceSettingNameKey = "service_setting.name"
 
-	// ServiceSettingConfigurationIDKey is the standard key for referring to a service setting configuration's MealPlanTaskID.
+	// ServiceSettingConfigurationIDKey is the standard key for referring to a service setting configuration's ID.
 	ServiceSettingConfigurationIDKey = "service_setting_configuration" + idSuffix
 
 	// ServiceSettingConfigurationNameKey is the standard key for referring to a service setting configuration's Name.
 	ServiceSettingConfigurationNameKey = "service_setting_configuration.name"
 
-	// OAuth2ClientIDKey is the standard key for referring to an OAuth2 client's database MealPlanTaskID.
+	// OAuth2ClientIDKey is the standard key for referring to an OAuth2 client's database ID.
 	OAuth2ClientIDKey = "oauth2_clients" + idSuffix
 
-	// OAuth2ClientClientIDKey is the standard key for referring to an OAuth2 client's client MealPlanTaskID.
+	// OAuth2ClientClientIDKey is the standard key for referring to an OAuth2 client's client ID.
 	OAuth2ClientClientIDKey = "oauth2_clients.client_id"
 
-	// OAuth2ClientTokenIDKey is the standard key for referring to an OAuth2 client token's MealPlanTaskID.
+	// OAuth2ClientTokenIDKey is the standard key for referring to an OAuth2 client token's ID.
 	/* #nosec G101 */
 	OAuth2ClientTokenIDKey = "oauth2_client_tokens" + idSuffix
 

@@ -39,22 +39,13 @@ flowchart LR
     Database("Database")
     DataChangesQueue("Data Changes Queue")
     DataChangesWorker("Data Changes Worker")
-    MealPlanFinalizerWorker("Meal Plan Finalizer")
-    MealPlanGroceryListInitializerWorker("Grocery List Initializer")
-    MealPlanTaskCreatorWorker("Meal Plan Task Creator")
     OutboundEmailerWorker("Outbound Emailer")
     SearchDataIndexSchedulerWorker("Data Index Scheduler")
     SearchDataIndexerWorker("Search Data Indexer")
     PublicInternet-->APIServer
-    Cron-->MealPlanGroceryListInitializerWorker
     Cron-->SearchDataIndexSchedulerWorker
-    Cron-->MealPlanTaskCreatorWorker
-    Cron-->MealPlanFinalizerWorker
     DataChangesWorker-->OutboundEmailerWorker
     DataChangesWorker-->SearchDataIndexerWorker
-    MealPlanGroceryListInitializerWorker-.->DataChangesQueue
-    MealPlanTaskCreatorWorker-.->DataChangesQueue
-    MealPlanFinalizerWorker-.->DataChangesQueue
     SearchDataIndexSchedulerWorker-->SearchDataIndexerWorker
     SearchDataIndexerWorker-->Algolia
     DataChangesQueue-->DataChangesWorker

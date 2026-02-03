@@ -141,7 +141,7 @@ func (s *serviceImpl) Upload(stream uploadedmediasvc.UploadedMediaService_Upload
 
 	logger = logger.WithValue("size_bytes", totalSize)
 
-	// Generate unique MealPlanTaskID for the file
+	// Generate unique ID for the file
 	fileID := identifiers.New()
 
 	// Construct storage path: bucket/userID/fileID/objectName

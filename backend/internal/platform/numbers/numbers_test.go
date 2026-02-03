@@ -296,7 +296,7 @@ func TestScaleToYield(T *testing.T) {
 		assert.Equal(t, expected, result)
 	})
 
-	T.Run("scale fractional ingredient", func(t *testing.T) {
+	T.Run("scale fractional", func(t *testing.T) {
 		t.Parallel()
 
 		result := ScaleToYield(0.5, 4, 8)

@@ -19,7 +19,7 @@ import (
 func checkWaitlistEquality(t *testing.T, expected, actual *waitlists.Waitlist) {
 	t.Helper()
 
-	assert.NotEmpty(t, actual.ID, "expected Waitlist to have MealPlanTaskID")
+	assert.NotEmpty(t, actual.ID, "expected Waitlist to have ID")
 	assert.NotZero(t, actual.CreatedAt, "expected Waitlist to have CreatedAt")
 
 	assert.Equal(t, expected.Name, actual.Name, "expected Waitlist Name")
@@ -30,7 +30,7 @@ func checkWaitlistEquality(t *testing.T, expected, actual *waitlists.Waitlist) {
 func checkWaitlistSignupEquality(t *testing.T, expected, actual *waitlists.WaitlistSignup) {
 	t.Helper()
 
-	assert.NotEmpty(t, actual.ID, "expected WaitlistSignup to have MealPlanTaskID")
+	assert.NotEmpty(t, actual.ID, "expected WaitlistSignup to have ID")
 	assert.NotZero(t, actual.CreatedAt, "expected WaitlistSignup to have CreatedAt")
 
 	assert.Equal(t, expected.Notes, actual.Notes, "expected WaitlistSignup Notes")
@@ -103,7 +103,7 @@ func createWaitlistSignupForTest(t *testing.T, testClient client.Client, waitlis
 
 	signup := grpcconverters.ConvertGRPCWaitlistSignupToWaitlistSignup(retrievedSignup.Result)
 	// Verify retrieved signup matches created signup
-	assert.Equal(t, converted.ID, signup.ID, "expected WaitlistSignup MealPlanTaskID to match")
+	assert.Equal(t, converted.ID, signup.ID, "expected WaitlistSignup ID to match")
 	assert.Equal(t, converted.Notes, signup.Notes, "expected WaitlistSignup Notes to match")
 	assert.Equal(t, converted.BelongsToWaitlist, signup.BelongsToWaitlist, "expected WaitlistSignup BelongsToWaitlist to match")
 	assert.Equal(t, converted.BelongsToUser, signup.BelongsToUser, "expected WaitlistSignup BelongsToUser to match")
@@ -162,7 +162,7 @@ func TestWaitlists_Reading(T *testing.T) {
 		assert.NotNil(t, retrieved)
 	})
 
-	T.Run("nonexistent MealPlanTaskID", func(t *testing.T) {
+	T.Run("nonexistent ID", func(t *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
@@ -275,7 +275,7 @@ func TestWaitlists_Updating(T *testing.T) {
 		assert.WithinDuration(t, newValidUntil, grpcconverters.ConvertGRPCWaitlistToWaitlist(retrieved.Result).ValidUntil, time.Second)
 	})
 
-	T.Run("nonexistent MealPlanTaskID", func(t *testing.T) {
+	T.Run("nonexistent ID", func(t *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
@@ -350,7 +350,7 @@ func TestWaitlists_IsNotExpired(T *testing.T) {
 		assert.True(t, result.IsNotExpired)
 	})
 
-	T.Run("nonexistent MealPlanTaskID", func(t *testing.T) {
+	T.Run("nonexistent ID", func(t *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
@@ -391,7 +391,7 @@ func TestWaitlistSignups_Creating(T *testing.T) {
 		require.Error(t, err)
 	})
 
-	T.Run("nonexistent waitlist MealPlanTaskID", func(t *testing.T) {
+	T.Run("nonexistent waitlist ID", func(t *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
@@ -431,7 +431,7 @@ func TestWaitlistSignups_Reading(T *testing.T) {
 		assert.NotNil(t, retrieved)
 	})
 
-	T.Run("nonexistent MealPlanTaskID", func(t *testing.T) {
+	T.Run("nonexistent ID", func(t *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
@@ -519,7 +519,7 @@ func TestWaitlistSignups_Updating(T *testing.T) {
 		assert.Equal(t, newNotes, retrieved.Result.Notes)
 	})
 
-	T.Run("nonexistent MealPlanTaskID", func(t *testing.T) {
+	T.Run("nonexistent ID", func(t *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 

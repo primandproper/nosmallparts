@@ -301,7 +301,7 @@ func TestAccounts_Inviting(T *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
-		// create the inviting user and get the account MealPlanTaskID to send invites for
+		// create the inviting user and get the account ID to send invites for
 		_, testClient := createUserAndClientForTest(t)
 		accountRes, err := testClient.GetActiveAccount(ctx, &authsvc.GetActiveAccountRequest{})
 		require.NoError(t, err)
@@ -391,11 +391,11 @@ func TestAccounts_Inviting(T *testing.T) {
 		require.NotNil(t, webhook)
 	})
 
-	T.Run("invite user via token and invite MealPlanTaskID", func(t *testing.T) {
+	T.Run("invite user via token and invite ID", func(t *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
-		// create the inviting user and get the account MealPlanTaskID to send invites for
+		// create the inviting user and get the account ID to send invites for
 		_, testClient := createUserAndClientForTest(t)
 		accountRes, err := testClient.GetActiveAccount(ctx, &authsvc.GetActiveAccountRequest{})
 		require.NoError(t, err)
@@ -476,7 +476,7 @@ func TestAccounts_Inviting(T *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
-		// create the inviting user and get the account MealPlanTaskID to send invites for
+		// create the inviting user and get the account ID to send invites for
 		_, testClient := createUserAndClientForTest(t)
 
 		// create a webhook (to demonstrate access with later)
@@ -554,7 +554,7 @@ func TestAccounts_Inviting(T *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
-		// create the inviting user and get the account MealPlanTaskID to send invites for
+		// create the inviting user and get the account ID to send invites for
 		_, testClient := createUserAndClientForTest(t)
 
 		// create a user to invite
@@ -619,7 +619,7 @@ func TestAccounts_OwnershipTransfer(T *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
-		// create the inviting user and get the account MealPlanTaskID to send invites for
+		// create the inviting user and get the account ID to send invites for
 		ogUser, testClient := createUserAndClientForTest(t)
 		accountRes, err := testClient.GetActiveAccount(ctx, &authsvc.GetActiveAccountRequest{})
 		require.NoError(t, err)
@@ -676,7 +676,7 @@ func TestAccounts_UsersHaveBackupAccountCreatedForThemWhenRemovedFromLastAccount
 		t.Parallel()
 		ctx := t.Context()
 
-		// create the inviting user and get the account MealPlanTaskID to send invites for
+		// create the inviting user and get the account ID to send invites for
 		testUser, testClient := createUserAndClientForTest(t)
 		accountRes, err := testClient.GetActiveAccount(ctx, &authsvc.GetActiveAccountRequest{})
 		require.NoError(t, err)

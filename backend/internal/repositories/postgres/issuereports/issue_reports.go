@@ -472,7 +472,7 @@ func (r *repository) ArchiveIssueReport(ctx context.Context, issueReportID strin
 		return sql.ErrNoRows
 	}
 
-	// Note: We don't have account MealPlanTaskID here, so we'll create audit log without it
+	// Note: We don't have account ID here, so we'll create audit log without it
 	if _, err = r.auditLogEntryRepo.CreateAuditLogEntry(ctx, tx, &audit.AuditLogEntryDatabaseCreationInput{
 		ID:           identifiers.New(),
 		ResourceType: resourceTypeIssueReports,

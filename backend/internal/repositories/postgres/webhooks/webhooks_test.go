@@ -128,7 +128,7 @@ func TestQuerier_Integration_Webhooks(t *testing.T) {
 func TestQuerier_GetWebhook(T *testing.T) {
 	T.Parallel()
 
-	T.Run("with invalid webhook MealPlanTaskID", func(t *testing.T) {
+	T.Run("with invalid webhook ID", func(t *testing.T) {
 		t.Parallel()
 
 		exampleAccountID := fakes.BuildFakeID()
@@ -141,7 +141,7 @@ func TestQuerier_GetWebhook(T *testing.T) {
 		assert.Nil(t, actual)
 	})
 
-	T.Run("with invalid account MealPlanTaskID", func(t *testing.T) {
+	T.Run("with invalid account ID", func(t *testing.T) {
 		t.Parallel()
 
 		exampleWebhook := fakes.BuildFakeWebhook()
@@ -158,7 +158,7 @@ func TestQuerier_GetWebhook(T *testing.T) {
 func TestQuerier_GetWebhooks(T *testing.T) {
 	T.Parallel()
 
-	T.Run("with invalid account MealPlanTaskID", func(t *testing.T) {
+	T.Run("with invalid account ID", func(t *testing.T) {
 		t.Parallel()
 
 		ctx := t.Context()
@@ -200,7 +200,7 @@ func TestQuerier_createWebhookTriggerEvent(T *testing.T) {
 		assert.Nil(t, created)
 	})
 
-	T.Run("with missing account MealPlanTaskID", func(t *testing.T) {
+	T.Run("with missing account ID", func(t *testing.T) {
 		t.Parallel()
 
 		ctx := t.Context()
@@ -218,7 +218,7 @@ func TestQuerier_createWebhookTriggerEvent(T *testing.T) {
 func TestQuerier_ArchiveWebhook(T *testing.T) {
 	T.Parallel()
 
-	T.Run("with invalid webhook MealPlanTaskID", func(t *testing.T) {
+	T.Run("with invalid webhook ID", func(t *testing.T) {
 		t.Parallel()
 
 		exampleAccountID := fakes.BuildFakeID()
@@ -229,7 +229,7 @@ func TestQuerier_ArchiveWebhook(T *testing.T) {
 		assert.Error(t, c.ArchiveWebhook(ctx, "", exampleAccountID))
 	})
 
-	T.Run("with invalid account MealPlanTaskID", func(t *testing.T) {
+	T.Run("with invalid account ID", func(t *testing.T) {
 		t.Parallel()
 
 		exampleWebhookID := fakes.BuildFakeID()
@@ -244,7 +244,7 @@ func TestQuerier_ArchiveWebhook(T *testing.T) {
 func TestQuerier_ArchiveWebhookTriggerEvent(T *testing.T) {
 	T.Parallel()
 
-	T.Run("with invalid webhook MealPlanTaskID", func(t *testing.T) {
+	T.Run("with invalid webhook ID", func(t *testing.T) {
 		t.Parallel()
 
 		exampleAccountID := fakes.BuildFakeID()
@@ -255,7 +255,7 @@ func TestQuerier_ArchiveWebhookTriggerEvent(T *testing.T) {
 		assert.Error(t, c.ArchiveWebhookTriggerEvent(ctx, "", exampleAccountID))
 	})
 
-	T.Run("with invalid webhook trigger event MealPlanTaskID", func(t *testing.T) {
+	T.Run("with invalid webhook trigger event ID", func(t *testing.T) {
 		t.Parallel()
 
 		exampleWebhookID := fakes.BuildFakeID()

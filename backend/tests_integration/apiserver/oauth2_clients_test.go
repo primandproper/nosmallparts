@@ -16,7 +16,7 @@ import (
 func checkOAuth2ClientEquality(t *testing.T, expected, actual *oauth.OAuth2Client) {
 	t.Helper()
 
-	assert.NotEmpty(t, actual.ID, "expected OAuth2Client to have MealPlanTaskID")
+	assert.NotEmpty(t, actual.ID, "expected OAuth2Client to have ID")
 	assert.NotZero(t, actual.CreatedAt, "expected OAuth2Client to have CreatedAt")
 
 	assert.Equal(t, expected.Name, actual.Name, "expected OAuth2Client Name")
@@ -137,7 +137,7 @@ func TestOAuth2Clients_Reading(T *testing.T) {
 		assert.Error(t, err)
 	})
 
-	T.Run("invalid MealPlanTaskID", func(t *testing.T) {
+	T.Run("invalid ID", func(t *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
@@ -175,7 +175,7 @@ func TestOAuth2Clients_Archiving(T *testing.T) {
 		assert.Error(t, err)
 	})
 
-	T.Run("invalid MealPlanTaskID", func(t *testing.T) {
+	T.Run("invalid ID", func(t *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 

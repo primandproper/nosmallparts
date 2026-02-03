@@ -235,9 +235,6 @@ linters:
         path: internal/platform/uploads/images/mock.go
       - linters:
           - forcetypeassert
-        path: internal/businesslogic/grocerylistpreparation/mocks.go
-      - linters:
-          - forcetypeassert
         path: internal/database/database_mock.go
       - linters:
           - gosec

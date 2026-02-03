@@ -101,7 +101,7 @@ func (r *repository) CreatePasswordResetToken(ctx context.Context, input *auth.P
 	return x, nil
 }
 
-// RedeemPasswordResetToken redeems a password reset token from the database by its MealPlanTaskID.
+// RedeemPasswordResetToken redeems a password reset token from the database by its ID.
 func (r *repository) RedeemPasswordResetToken(ctx context.Context, passwordResetTokenID string) error {
 	ctx, span := r.tracer.StartSpan(ctx)
 	defer span.End()

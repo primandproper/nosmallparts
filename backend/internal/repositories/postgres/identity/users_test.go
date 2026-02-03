@@ -234,7 +234,7 @@ func TestQuerier_GetUser(T *testing.T) {
 func TestQuerier_GetUserWithUnverifiedTwoFactorSecret(T *testing.T) {
 	T.Parallel()
 
-	T.Run("with invalid user MealPlanTaskID", func(t *testing.T) {
+	T.Run("with invalid user ID", func(t *testing.T) {
 		t.Parallel()
 
 		ctx := t.Context()
@@ -309,7 +309,7 @@ func TestQuerier_SearchForUsersByUsername(T *testing.T) {
 func TestQuerier_MarkUserAsIndexed(T *testing.T) {
 	T.Parallel()
 
-	T.Run("with invalid MealPlanTaskID", func(t *testing.T) {
+	T.Run("with invalid ID", func(t *testing.T) {
 		t.Parallel()
 
 		ctx := t.Context()
@@ -380,7 +380,7 @@ func TestQuerier_UpdateUserAvatar(T *testing.T) {
 func TestQuerier_UpdateUserPassword(T *testing.T) {
 	T.Parallel()
 
-	T.Run("with invalid user MealPlanTaskID", func(t *testing.T) {
+	T.Run("with invalid user ID", func(t *testing.T) {
 		t.Parallel()
 
 		exampleHashedPassword := "$argon2i$v=19$m=64,t=10,p=4$RjFtMmRmU2lGYU9CMk1mMw$cuGR9AhTczPR6xDOSAMW+SvEYFyLEIS+7nlRdC9f6ys"
@@ -406,7 +406,7 @@ func TestQuerier_UpdateUserPassword(T *testing.T) {
 func TestQuerier_UpdateUserTwoFactorSecret(T *testing.T) {
 	T.Parallel()
 
-	T.Run("with invalid user MealPlanTaskID", func(t *testing.T) {
+	T.Run("with invalid user ID", func(t *testing.T) {
 		t.Parallel()
 
 		exampleUser := fakes.BuildFakeUser()
@@ -432,7 +432,7 @@ func TestQuerier_UpdateUserTwoFactorSecret(T *testing.T) {
 func TestQuerier_MarkUserTwoFactorSecretAsVerified(T *testing.T) {
 	T.Parallel()
 
-	T.Run("with invalid user MealPlanTaskID", func(t *testing.T) {
+	T.Run("with invalid user ID", func(t *testing.T) {
 		t.Parallel()
 
 		ctx := t.Context()
@@ -445,7 +445,7 @@ func TestQuerier_MarkUserTwoFactorSecretAsVerified(T *testing.T) {
 func TestQuerier_MarkUserTwoFactorSecretAsUnverified(T *testing.T) {
 	T.Parallel()
 
-	T.Run("with invalid user MealPlanTaskID", func(t *testing.T) {
+	T.Run("with invalid user ID", func(t *testing.T) {
 		t.Parallel()
 
 		ctx := t.Context()
@@ -469,7 +469,7 @@ func TestQuerier_MarkUserTwoFactorSecretAsUnverified(T *testing.T) {
 func TestQuerier_ArchiveUser(T *testing.T) {
 	T.Parallel()
 
-	T.Run("with invalid user MealPlanTaskID", func(t *testing.T) {
+	T.Run("with invalid user ID", func(t *testing.T) {
 		t.Parallel()
 
 		ctx := t.Context()
@@ -510,7 +510,7 @@ func TestQuerier_GetUserByEmailAddressVerificationToken(T *testing.T) {
 func TestQuerier_MarkUserEmailAddressAsVerified(T *testing.T) {
 	T.Parallel()
 
-	T.Run("with missing user MealPlanTaskID", func(t *testing.T) {
+	T.Run("with missing user ID", func(t *testing.T) {
 		t.Parallel()
 
 		exampleInput := authfakes.BuildFakeEmailAddressVerificationRequestInput()

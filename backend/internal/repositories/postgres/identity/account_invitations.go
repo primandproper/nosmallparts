@@ -683,12 +683,12 @@ func (r *repository) setInvitationStatus(ctx context.Context, querier database.S
 	return nil
 }
 
-// CancelAccountInvitation cancels an account invitation by its MealPlanTaskID with a note.
+// CancelAccountInvitation cancels an account invitation by its ID with a note.
 func (r *repository) CancelAccountInvitation(ctx context.Context, accountID, accountInvitationID, note string) error {
 	return r.setInvitationStatus(ctx, r.db, accountInvitationID, note, string(identity.CancelledAccountInvitationStatus))
 }
 
-// AcceptAccountInvitation accepts an account invitation by its MealPlanTaskID with a note.
+// AcceptAccountInvitation accepts an account invitation by its ID with a note.
 func (r *repository) AcceptAccountInvitation(ctx context.Context, accountID, accountInvitationID, token, note string) error {
 	ctx, span := r.tracer.StartSpan(ctx)
 	defer span.End()
@@ -742,7 +742,7 @@ func (r *repository) AcceptAccountInvitation(ctx context.Context, accountID, acc
 	return nil
 }
 
-// RejectAccountInvitation rejects an account invitation by its MealPlanTaskID with a note.
+// RejectAccountInvitation rejects an account invitation by its ID with a note.
 func (r *repository) RejectAccountInvitation(ctx context.Context, accountID, accountInvitationID, note string) error {
 	return r.setInvitationStatus(ctx, r.db, accountInvitationID, note, string(identity.RejectedAccountInvitationStatus))
 }

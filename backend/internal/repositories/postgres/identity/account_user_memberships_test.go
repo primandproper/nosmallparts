@@ -89,7 +89,7 @@ func TestQuerier_Integration_AccountUserMemberships(t *testing.T) {
 func TestQuerier_BuildSessionContextDataForUser(T *testing.T) {
 	T.Parallel()
 
-	T.Run("with invalid user MealPlanTaskID", func(t *testing.T) {
+	T.Run("with invalid user ID", func(t *testing.T) {
 		t.Parallel()
 
 		ctx := t.Context()
@@ -104,7 +104,7 @@ func TestQuerier_BuildSessionContextDataForUser(T *testing.T) {
 func TestQuerier_GetDefaultAccountIDForUser(T *testing.T) {
 	T.Parallel()
 
-	T.Run("with invalid user MealPlanTaskID", func(t *testing.T) {
+	T.Run("with invalid user ID", func(t *testing.T) {
 		t.Parallel()
 
 		ctx := t.Context()
@@ -119,7 +119,7 @@ func TestQuerier_GetDefaultAccountIDForUser(T *testing.T) {
 func TestQuerier_MarkAccountAsUserDefault(T *testing.T) {
 	T.Parallel()
 
-	T.Run("with invalid user MealPlanTaskID", func(t *testing.T) {
+	T.Run("with invalid user ID", func(t *testing.T) {
 		t.Parallel()
 
 		ctx := t.Context()
@@ -130,7 +130,7 @@ func TestQuerier_MarkAccountAsUserDefault(T *testing.T) {
 		assert.Error(t, c.MarkAccountAsUserDefault(ctx, "", exampleAccount.ID))
 	})
 
-	T.Run("with invalid account MealPlanTaskID", func(t *testing.T) {
+	T.Run("with invalid account ID", func(t *testing.T) {
 		t.Parallel()
 
 		ctx := t.Context()
@@ -145,7 +145,7 @@ func TestQuerier_MarkAccountAsUserDefault(T *testing.T) {
 func TestQuerier_UserIsMemberOfAccount(T *testing.T) {
 	T.Parallel()
 
-	T.Run("with invalid user MealPlanTaskID", func(t *testing.T) {
+	T.Run("with invalid user ID", func(t *testing.T) {
 		t.Parallel()
 
 		ctx := t.Context()
@@ -158,7 +158,7 @@ func TestQuerier_UserIsMemberOfAccount(T *testing.T) {
 		assert.Error(t, err)
 	})
 
-	T.Run("with invalid account MealPlanTaskID", func(t *testing.T) {
+	T.Run("with invalid account ID", func(t *testing.T) {
 		t.Parallel()
 
 		ctx := t.Context()
@@ -218,7 +218,7 @@ func TestSQLQuerier_addUserToAccount(T *testing.T) {
 func TestQuerier_RemoveUserFromAccount(T *testing.T) {
 	T.Parallel()
 
-	T.Run("with invalid user MealPlanTaskID", func(t *testing.T) {
+	T.Run("with invalid user ID", func(t *testing.T) {
 		t.Parallel()
 
 		ctx := t.Context()
@@ -229,7 +229,7 @@ func TestQuerier_RemoveUserFromAccount(T *testing.T) {
 		assert.Error(t, c.RemoveUserFromAccount(ctx, "", exampleAccount.ID))
 	})
 
-	T.Run("with invalid account MealPlanTaskID", func(t *testing.T) {
+	T.Run("with invalid account ID", func(t *testing.T) {
 		t.Parallel()
 
 		ctx := t.Context()

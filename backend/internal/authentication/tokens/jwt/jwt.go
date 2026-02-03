@@ -53,7 +53,7 @@ func (s *signer) IssueToken(ctx context.Context, user tokens.User, expiry time.D
 		"aud": s.audience,                                                 /* audience, i.e. server address */
 		"iss": issuer,                                                     /* issuer */
 		"sub": user.GetID(),                                               /* subject */
-		"jti": identifiers.New(),                                          /* JWT MealPlanTaskID */
+		"jti": identifiers.New(),                                          /* JWT ID */
 	})
 
 	tokenString, err := token.SignedString(s.signingKey)
@@ -65,7 +65,7 @@ func (s *signer) IssueToken(ctx context.Context, user tokens.User, expiry time.D
 	return tokenString, nil
 }
 
-// ParseUserIDFromToken parses a AccessToken and returns the associated user MealPlanTaskID.
+// ParseUserIDFromToken parses a AccessToken and returns the associated user ID.
 func (s *signer) ParseUserIDFromToken(ctx context.Context, token string) (string, error) {
 	_, span := s.tracer.StartSpan(ctx)
 	defer span.End()

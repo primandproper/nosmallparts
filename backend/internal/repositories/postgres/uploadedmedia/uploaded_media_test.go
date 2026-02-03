@@ -117,7 +117,7 @@ func TestQuerier_Integration_UploadedMedia(t *testing.T) {
 func TestQuerier_GetUploadedMedia(T *testing.T) {
 	T.Parallel()
 
-	T.Run("with invalid uploaded media MealPlanTaskID", func(t *testing.T) {
+	T.Run("with invalid uploaded media ID", func(t *testing.T) {
 		t.Parallel()
 
 		ctx := t.Context()
@@ -132,7 +132,7 @@ func TestQuerier_GetUploadedMedia(T *testing.T) {
 func TestQuerier_GetUploadedMediaWithIDs(T *testing.T) {
 	T.Parallel()
 
-	T.Run("with empty MealPlanTaskID list", func(t *testing.T) {
+	T.Run("with empty ID list", func(t *testing.T) {
 		t.Parallel()
 
 		ctx := t.Context()
@@ -143,7 +143,7 @@ func TestQuerier_GetUploadedMediaWithIDs(T *testing.T) {
 		assert.Nil(t, actual)
 	})
 
-	T.Run("with nil MealPlanTaskID list", func(t *testing.T) {
+	T.Run("with nil ID list", func(t *testing.T) {
 		t.Parallel()
 
 		ctx := t.Context()
@@ -158,7 +158,7 @@ func TestQuerier_GetUploadedMediaWithIDs(T *testing.T) {
 func TestQuerier_GetUploadedMediaForUser(T *testing.T) {
 	T.Parallel()
 
-	T.Run("with invalid user MealPlanTaskID", func(t *testing.T) {
+	T.Run("with invalid user ID", func(t *testing.T) {
 		t.Parallel()
 
 		ctx := t.Context()
@@ -239,7 +239,7 @@ func TestQuerier_UpdateUploadedMedia(T *testing.T) {
 func TestQuerier_ArchiveUploadedMedia(T *testing.T) {
 	T.Parallel()
 
-	T.Run("with invalid uploaded media MealPlanTaskID", func(t *testing.T) {
+	T.Run("with invalid uploaded media ID", func(t *testing.T) {
 		t.Parallel()
 
 		ctx := t.Context()

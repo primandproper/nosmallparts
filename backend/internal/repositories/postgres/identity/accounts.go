@@ -292,7 +292,7 @@ func (r *repository) CreateAccount(ctx context.Context, input *identity.AccountD
 	return account, nil
 }
 
-// UpdateAccount updates a particular account. Note that UpdateAccount expects the provided input to have a valid MealPlanTaskID.
+// UpdateAccount updates a particular account. Note that UpdateAccount expects the provided input to have a valid ID.
 func (r *repository) UpdateAccount(ctx context.Context, updated *identity.Account) error {
 	ctx, span := r.tracer.StartSpan(ctx)
 	defer span.End()
@@ -429,7 +429,7 @@ func buildChangesForAccount(account, updated *identity.Account) map[string]*audi
 	return changes
 }
 
-// ArchiveAccount archives an account from the database by its MealPlanTaskID.
+// ArchiveAccount archives an account from the database by its ID.
 func (r *repository) ArchiveAccount(ctx context.Context, accountID, ownerID string) error {
 	ctx, span := r.tracer.StartSpan(ctx)
 	defer span.End()

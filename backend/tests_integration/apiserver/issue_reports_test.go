@@ -18,7 +18,7 @@ import (
 func checkIssueReportEquality(t *testing.T, expected, actual *issuereports.IssueReport) {
 	t.Helper()
 
-	assert.NotEmpty(t, actual.ID, "expected IssueReport to have MealPlanTaskID")
+	assert.NotEmpty(t, actual.ID, "expected IssueReport to have ID")
 	assert.NotZero(t, actual.CreatedAt, "expected IssueReport to have CreatedAt")
 
 	assert.Equal(t, expected.IssueType, actual.IssueType, "expected IssueReport IssueType")
@@ -106,7 +106,7 @@ func TestIssueReports_Reading(T *testing.T) {
 		assert.NotNil(t, retrieved)
 	})
 
-	T.Run("nonexistent MealPlanTaskID", func(t *testing.T) {
+	T.Run("nonexistent ID", func(t *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
@@ -202,7 +202,7 @@ func TestIssueReports_ListingForTable(T *testing.T) {
 		_, testClient := createUserAndClientForTest(t)
 
 		// Create some issue reports with specific table names
-		tableName := "recipes"
+		tableName := "users"
 		for range exampleQuantity {
 			exampleIssueReport := issuereportfakes.BuildFakeIssueReport()
 			exampleIssueReport.RelevantTable = tableName
@@ -240,8 +240,8 @@ func TestIssueReports_ListingForRecord(T *testing.T) {
 
 		_, testClient := createUserAndClientForTest(t)
 
-		// Create some issue reports with specific table name and record MealPlanTaskID
-		tableName := "recipes"
+		// Create some issue reports with specific table name and record ID
+		tableName := "users"
 		recordID := "test-record-123"
 		for range exampleQuantity {
 			exampleIssueReport := issuereportfakes.BuildFakeIssueReport()
@@ -295,7 +295,7 @@ func TestIssueReports_Updating(T *testing.T) {
 		assert.Equal(t, newDetails, updated.Updated.Details)
 	})
 
-	T.Run("nonexistent MealPlanTaskID", func(t *testing.T) {
+	T.Run("nonexistent ID", func(t *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 

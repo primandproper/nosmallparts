@@ -505,7 +505,7 @@ func (q *repository) UpdateServiceSettingConfiguration(ctx context.Context, upda
 	return nil
 }
 
-// ArchiveServiceSettingConfiguration archives a service setting configuration from the database by its MealPlanTaskID.
+// ArchiveServiceSettingConfiguration archives a service setting configuration from the database by its ID.
 func (q *repository) ArchiveServiceSettingConfiguration(ctx context.Context, serviceSettingConfigurationID string) error {
 	ctx, span := q.tracer.StartSpan(ctx)
 	defer span.End()

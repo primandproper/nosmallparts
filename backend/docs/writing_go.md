@@ -133,7 +133,7 @@ The project uses `golangci-lint` with custom configuration:
 ### Structs
 
 - **Configuration structs**: End with `Config` (e.g., `APIServiceConfig`, `DatabaseConfig`)
-- **Domain entities**: Use clear business terms (e.g., `MealPlan`, `Recipe`, `ValidIngredient`)
+- **Domain entities**: Use clear business terms
 
 ### Constants and Variables
 
@@ -361,7 +361,7 @@ The codebase follows a clean architecture approach with a framework-like platfor
 
 ### Platform as Framework Philosophy
 
-**`internal/platform`** is designed as a complete, reusable toolkit that could theoretically support any application - not just meal planning. Think of it as an internal framework providing:
+**`internal/platform`** is designed as a complete, reusable toolkit that could theoretically support any application. Think of it as an internal framework providing:
 
 - **Infrastructure abstractions**: Database clients, message queues, caching
 - **Utilities**: ID generation, encoding, compression, cryptography  
@@ -369,7 +369,7 @@ The codebase follows a clean architecture approach with a framework-like platfor
 - **Search capabilities**: Text indexing, vector search (future-ready)
 - **File handling**: Upload management and processing
 
-The goal is that everything needed to build the business logic exists in platform, but nothing meal-planning-specific lives there.
+The goal is that everything needed to build the business logic exists in platform.
 
 ### Package Import Rules
 

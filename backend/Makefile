@@ -17,10 +17,7 @@ WIRE_TARGETS           := internal/build/services/api/grpc \
 	 internal/build/services/api/http \
 	 internal/build/functions/data_change_message_handler \
 	 internal/build/jobs/db_cleaner \
-	 internal/build/jobs/search_data_index_scheduler \
-	 internal/build/jobs/meal_plan_finalizer \
-	 internal/build/jobs/meal_plan_grocery_list_initializer \
-	 internal/build/jobs/meal_plan_task_creator
+	 internal/build/jobs/search_data_index_scheduler
 
 # COMPUTED
 TOTAL_PACKAGE_LIST    := `go list $(THIS)/...`
