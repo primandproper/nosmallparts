@@ -67,6 +67,10 @@ func NewMigrator(logger logging.Logger, tracerProvider tracing.TracerProvider, d
 			Description: "uploaded media table",
 			RawQuery:    fetchMigration("00010_uploaded_media"),
 		},
+		{
+			Description: "play scripts tables",
+			RawQuery:    fetchMigration("00011_play_scripts"),
+		},
 	}
 
 	return pgmigrations.NewMigrator(logger, tracerProvider, db, config, migrations)

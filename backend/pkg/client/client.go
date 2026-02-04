@@ -15,6 +15,7 @@ import (
 	issuereportsgrpc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/issue_reports"
 	notificationsgrpc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/notifications"
 	oauthgrpc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/oauth"
+	playscriptsgrpc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/playscripts"
 	settingsgrpc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/settings"
 	uploadedmediagrpc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/uploaded_media"
 	waitlistsgrpc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/waitlists"
@@ -43,6 +44,7 @@ type Client interface {
 	issuereportsgrpc.IssueReportsServiceClient
 	notificationsgrpc.UserNotificationsServiceClient
 	oauthgrpc.OAuthServiceClient
+	playscriptsgrpc.PlayScriptsServiceClient
 	settingsgrpc.SettingsServiceClient
 	uploadedmediagrpc.UploadedMediaServiceClient
 	waitlistsgrpc.WaitlistsServiceClient
@@ -58,6 +60,7 @@ type client struct {
 	issuereportsgrpc.IssueReportsServiceClient
 	notificationsgrpc.UserNotificationsServiceClient
 	oauthgrpc.OAuthServiceClient
+	playscriptsgrpc.PlayScriptsServiceClient
 	settingsgrpc.SettingsServiceClient
 	uploadedmediagrpc.UploadedMediaServiceClient
 	waitlistsgrpc.WaitlistsServiceClient
@@ -80,6 +83,7 @@ func BuildClient(grpcServerAddress string, opts ...grpc.DialOption) (Client, err
 		IssueReportsServiceClient:      issuereportsgrpc.NewIssueReportsServiceClient(conn),
 		UserNotificationsServiceClient: notificationsgrpc.NewUserNotificationsServiceClient(conn),
 		OAuthServiceClient:             oauthgrpc.NewOAuthServiceClient(conn),
+		PlayScriptsServiceClient:       playscriptsgrpc.NewPlayScriptsServiceClient(conn),
 		SettingsServiceClient:          settingsgrpc.NewSettingsServiceClient(conn),
 		UploadedMediaServiceClient:     uploadedmediagrpc.NewUploadedMediaServiceClient(conn),
 		WaitlistsServiceClient:         waitlistsgrpc.NewWaitlistsServiceClient(conn),

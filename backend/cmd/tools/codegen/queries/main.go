@@ -46,6 +46,9 @@ func main() {
 		"internal/repositories/postgres/waitlists/sqlc_queries/waitlist_signups.sql":              buildWaitlistSignupsQueries(databaseToUse),
 		"internal/repositories/postgres/issuereports/sqlc_queries/issue_reports.sql":              buildIssueReportsQueries(databaseToUse),
 		"internal/repositories/postgres/uploadedmedia/sqlc_queries/uploaded_media.sql":            buildUploadedMediaQueries(databaseToUse),
+		"internal/repositories/postgres/playscripts/sqlc_queries/play_scripts.sql":                buildPlayScriptsQueries(databaseToUse),
+		"internal/repositories/postgres/playscripts/sqlc_queries/play_script_cast_members.sql":    buildPlayScriptCastMembersQueries(databaseToUse),
+		"internal/repositories/postgres/playscripts/sqlc_queries/play_script_lines.sql":           buildPlayScriptLinesQueries(databaseToUse),
 	}
 
 	checkOnly := *checkOnlyFlag

@@ -22,7 +22,7 @@ func (q *Queries) DeleteExpiredOAuth2ClientTokens(ctx context.Context, db DBTX) 
 }
 
 const destroyAllData = `-- name: DestroyAllData :exec
-TRUNCATE account_invitations, account_user_memberships, accounts, audit_log_entries, issue_reports, oauth2_client_tokens, oauth2_clients, password_reset_tokens, service_setting_configurations, service_settings, uploaded_media, user_notifications, users, waitlist_signups, waitlists, webhook_trigger_events, webhooks CASCADE
+TRUNCATE account_invitations, account_user_memberships, accounts, audit_log_entries, issue_reports, oauth2_client_tokens, oauth2_clients, password_reset_tokens, play_script_cast_members, play_script_lines, play_scripts, service_setting_configurations, service_settings, uploaded_media, user_notifications, users, waitlist_signups, waitlists, webhook_trigger_events, webhooks CASCADE
 `
 
 func (q *Queries) DestroyAllData(ctx context.Context, db DBTX) error {

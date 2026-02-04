@@ -61,6 +61,9 @@ var (
 		ArchiveIssueReportsPermission,
 		CreateWebhookTriggerEventsPermission,
 		ArchiveWebhookTriggerEventsPermission,
+		CreatePlayScriptsPermission,
+		UpdatePlayScriptsPermission,
+		ArchivePlayScriptsPermission,
 	}
 
 	// AccountMemberPermissions is every account member permission.
@@ -89,6 +92,7 @@ var (
 		CreateWaitlistSignupsPermission,
 		UpdateWaitlistSignupsPermission,
 		ArchiveWaitlistSignupsPermission,
+		ReadPlayScriptsPermission,
 	}
 )
 

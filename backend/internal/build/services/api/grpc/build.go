@@ -30,6 +30,7 @@ import (
 	issuereportsrepo "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/issuereports"
 	notificationsrepo "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/notifications"
 	oauthrepo "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/oauth"
+	playscriptsrepo "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/playscripts"
 	settingsrepo "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/settings"
 	uploadedmediarepo "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/uploadedmedia"
 	waitlistsrepo "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/waitlists"
@@ -44,6 +45,7 @@ import (
 	issuereportssvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/issuereports/grpc"
 	notificationssvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/notifications/grpc"
 	oauthsvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/oauth/grpc"
+	playscriptssvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/playscripts/grpc"
 	settingssvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/settings/grpc"
 	uploadedmediacfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/uploadedmedia/config"
 	uploadedmediasvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/uploadedmedia/grpc"
@@ -81,6 +83,7 @@ func Build(
 		identityrepo.IDRepoProviders,
 		issuereportsrepo.IssueReportsRepoProviders,
 		notificationsrepo.NotifRepoProviders,
+		playscriptsrepo.PlayScriptsRepoProviders,
 		settingsrepo.SettingsRepoProviders,
 		uploadedmediarepo.UploadedMediaRepoProviders,
 		webhooksrepo.WebhookProviders,
@@ -95,6 +98,7 @@ func Build(
 		internalopssvc.InternalOpsSvcProviders,
 		issuereportssvc.IssueReportSvcProviders,
 		notificationssvc.NotifsSvcProviders,
+		playscriptssvc.PlayScriptsSvcProviders,
 		settingssvc.SettingSvcProviders,
 		uploadedmediasvc.UploadedMediaSvcProviders,
 		webhookssvc.WebhookSvcProviders,

@@ -90,6 +90,7 @@ PROTO_FILES_PATH          := $(shell find proto -name "*.proto" -type f ! -path 
 PROTO_GO_OUTPUT_PATH      := backend
 PROTO_OUTPUT_BACKEND_PATH := backend/internal/grpc
 BACKEND_MODULE_NAME       := github.com/verygoodsoftwarenotvirus/nosmallparts/backend
+PROTO_TS_OUTPUT_PATH      := frontend/generated
 
 .PHONY: proto_golang
 proto_golang: ensure_protoc_installed ensure_protoc-gen-go_installed ensure_protoc-gen-go-grpc_installed
@@ -102,5 +103,18 @@ proto_golang: ensure_protoc_installed ensure_protoc-gen-go_installed ensure_prot
 		$(PROTO_FILES_PATH);
 	(cd backend && $(MAKE) format_golang)
 
+.PHONY: proto_typescript
+proto_typescript: ensure_protoc_installed
+	mkdir -p $(PROTO_TS_OUTPUT_PATH)
+	protoc --plugin=./frontend/node_modules/.bin/protoc-gen-ts_proto \
+		--ts_proto_out=$(PROTO_TS_OUTPUT_PATH) \
+		--ts_proto_opt=esModuleInterop=true \
+		--ts_proto_opt=outputServices=nice-grpc \
+		--ts_proto_opt=outputServices=generic-definitions \
+		--ts_proto_opt=useExactTypes=false \
+		--ts_proto_opt=snakeToCamel=true \
+		--proto_path proto/ \
+		$(PROTO_FILES_PATH)
+
 .PHONY: proto
-proto: format_proto proto_golang
+proto: format_proto proto_golang proto_typescript

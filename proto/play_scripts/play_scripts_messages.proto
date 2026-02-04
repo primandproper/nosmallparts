@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+package play_scripts;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/play_scripts";
+
+// ScrollMode controls how long lines are displayed to performers
+// UNSPECIFIED defaults to AUTO in converters (matches database default)
+enum ScrollMode {
+  SCROLL_MODE_UNSPECIFIED = 0; // Treated as AUTO
+  SCROLL_MODE_AUTO = 1; // Auto-scroll at specified WPM
+  SCROLL_MODE_MANUAL = 2; // Manual scroll control
+}
+
+message DataCollection {
+  map<string, PlayScript> play_scripts = 1;
+}
+
+message PlayScript {
+  google.protobuf.Timestamp created_at = 1;
+  google.protobuf.Timestamp archived_at = 2;
+  google.protobuf.Timestamp last_updated_at = 3;
+  string id = 4;
+  string title = 5;
+  string description = 6;
+  string author = 7;
+  bool is_public = 8;
+  repeated PlayScriptCastMember cast_members = 9;
+  repeated PlayScriptLine lines = 10;
+  string created_by_user = 11;
+  string belongs_to_account = 12;
+}
+
+message PlayScriptCastMember {
+  google.protobuf.Timestamp created_at = 1;
+  string id = 2;
+  string play_script_id = 3;
+  string name = 4;
+  int32 sort_order = 5;
+}
+
+message PlayScriptLine {
+  google.protobuf.Timestamp created_at = 1;
+  string id = 2;
+  string play_script_id = 3;
+  string cast_member_id = 4;
+  string line_text = 5;
+  int32 line_index = 6;
+  string direction = 7;
+  ScrollMode scroll_mode = 8;
+  int32 auto_scroll_wpm = 9;
+}

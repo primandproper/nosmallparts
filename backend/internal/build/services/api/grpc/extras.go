@@ -11,6 +11,7 @@ import (
 	issuereportssvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/issue_reports"
 	notificationssvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/notifications"
 	oauthsvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/oauth"
+	playscriptssvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/playscripts"
 	settingssvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/settings"
 	uploadedmediasvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/uploaded_media"
 	waitlistssvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/waitlists"
@@ -27,6 +28,7 @@ import (
 	issuereportsgrpc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/issuereports/grpc"
 	notificationsgrpc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/notifications/grpc"
 	oauthgrpc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/oauth/grpc"
+	playscriptsgrpc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/playscripts/grpc"
 	settingsgrpc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/settings/grpc"
 	uploadedmediagrpc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/uploadedmedia/grpc"
 	waitlistsgrpc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/waitlists/grpc"
@@ -44,6 +46,7 @@ func BuildRegistrationFuncs(
 	issueReportsService issuereportssvc.IssueReportsServiceServer,
 	notificationsService notificationssvc.UserNotificationsServiceServer,
 	oauthService oauthsvc.OAuthServiceServer,
+	playScriptsService playscriptssvc.PlayScriptsServiceServer,
 	settingsService settingssvc.SettingsServiceServer,
 	uploadedMediaService uploadedmediasvc.UploadedMediaServiceServer,
 	waitlistsService waitlistssvc.WaitlistsServiceServer,
@@ -59,6 +62,7 @@ func BuildRegistrationFuncs(
 			issuereportssvc.RegisterIssueReportsServiceServer(server, issueReportsService)
 			notificationssvc.RegisterUserNotificationsServiceServer(server, notificationsService)
 			oauthsvc.RegisterOAuthServiceServer(server, oauthService)
+			playscriptssvc.RegisterPlayScriptsServiceServer(server, playScriptsService)
 			settingssvc.RegisterSettingsServiceServer(server, settingsService)
 			uploadedmediasvc.RegisterUploadedMediaServiceServer(server, uploadedMediaService)
 			waitlistssvc.RegisterWaitlistsServiceServer(server, waitlistsService)
@@ -104,6 +108,7 @@ func AggregateMethodPermissions(
 	issuereportsPermissions issuereportsgrpc.IssueReportsMethodPermissions,
 	notificationsPermissions notificationsgrpc.NotificationsMethodPermissions,
 	oauthPermissions oauthgrpc.OAuthMethodPermissions,
+	playscriptsPermissions playscriptsgrpc.PlayScriptsMethodPermissions,
 	settingsPermissions settingsgrpc.SettingsMethodPermissions,
 	uploadedmediaPermissions uploadedmediagrpc.UploadedMediaMethodPermissions,
 	waitlistsPermissions waitlistsgrpc.WaitlistsMethodPermissions,
@@ -125,6 +130,9 @@ func AggregateMethodPermissions(
 		result[method] = perms
 	}
 	for method, perms := range oauthPermissions {
+		result[method] = perms
+	}
+	for method, perms := range playscriptsPermissions {
 		result[method] = perms
 	}
 	for method, perms := range settingsPermissions {
