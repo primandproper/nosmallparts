@@ -25,6 +25,7 @@ import (
 	routingcfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/routing/config"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/search/text/algolia"
 	textsearchcfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/search/text/config"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/server/grpc"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/server/http"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/testutils"
 	uploadscfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/uploads/config"
@@ -45,7 +46,7 @@ var (
 		Username:   "dbuser",
 		Password:   "hunter2",
 		Database:   "no-small-parts",
-		Host:       "pgdatabase",
+		Host:       "postgres",
 		Port:       5432,
 		DisableSSL: true,
 	}
@@ -163,6 +164,9 @@ func buildLocalDevConfig() *config.APIServiceConfig {
 			Debug:           true,
 			Port:            defaultHTTPPort,
 			StartupDeadline: time.Minute,
+		},
+		GRPCServer: grpc.Config{
+			Port: defaultGRPCPort,
 		},
 		Database: databasecfg.Config{
 			OAuth2TokenEncryptionKey: localOAuth2TokenEncryptionKey,

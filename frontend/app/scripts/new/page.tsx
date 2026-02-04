@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
-import { PlayLine, CastMember, getConfig, saveDraft, getDraft, deleteDraft } from '@/lib/types';
+import { PlayLine, CastMember, saveDraft, getDraft, deleteDraft } from '@/lib/types';
 import {
   groupLinesByIndex,
   getSortedLineIndices,
@@ -188,13 +188,14 @@ function ScriptEditorContent() {
 
     setIsPublishing(true);
     try {
-      const res = await fetch(`${getConfig().serverUrl}/api/scripts`, {
+      const res = await fetch('/api/play-scripts', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           title: title.trim(),
           description: description.trim(),
-          author: author.trim() || undefined,
+          author: author.trim() || '',
+          isPublic: true, // Publishing makes it public
           cast,
           lines,
         }),

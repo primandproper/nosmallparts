@@ -118,3 +118,8 @@ proto_typescript: ensure_protoc_installed
 
 .PHONY: proto
 proto: format_proto proto_golang proto_typescript
+
+# Docker targets for running the full stack
+.PHONY: run
+run:
+	$(CONTAINER_RUNNER) compose up --build

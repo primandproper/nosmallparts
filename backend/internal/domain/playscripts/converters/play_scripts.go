@@ -79,15 +79,15 @@ func ConvertPlayScriptToPlayScriptDatabaseCreationInput(x *types.PlayScript) *ty
 }
 
 // ConvertCastMemberCreationInputsToDatabaseInputs converts a slice of PlayScriptCastMemberCreationInput to database creation inputs.
-func ConvertCastMemberCreationInputsToDatabaseInputs(playScriptID string, inputs []*types.PlayScriptCastMemberCreationInput) ([]*types.PlayScriptCastMemberDatabaseCreationInput, map[string]string) {
-	result := make([]*types.PlayScriptCastMemberDatabaseCreationInput, len(inputs))
+func ConvertCastMemberCreationInputsToDatabaseInputs(playScriptID string, inputs []*types.PlayScriptCastMemberCreationInput) (dbInputs []*types.PlayScriptCastMemberDatabaseCreationInput, idMapping map[string]string) {
+	dbInputs = make([]*types.PlayScriptCastMemberDatabaseCreationInput, len(inputs))
 	// Map from client-provided ID to generated database ID
-	idMapping := make(map[string]string, len(inputs))
+	idMapping = make(map[string]string, len(inputs))
 
 	for i, input := range inputs {
 		dbID := identifiers.New()
 		idMapping[input.ID] = dbID
-		result[i] = &types.PlayScriptCastMemberDatabaseCreationInput{
+		dbInputs[i] = &types.PlayScriptCastMemberDatabaseCreationInput{
 			ID:           dbID,
 			PlayScriptID: playScriptID,
 			Name:         input.Name,
@@ -95,7 +95,7 @@ func ConvertCastMemberCreationInputsToDatabaseInputs(playScriptID string, inputs
 		}
 	}
 
-	return result, idMapping
+	return dbInputs, idMapping
 }
 
 // ConvertLineCreationInputsToDatabaseInputs converts a slice of PlayScriptLineCreationRequestInput to database creation inputs.

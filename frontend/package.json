@@ -16,10 +16,13 @@
     "format:check": "prettier --check ."
   },
   "dependencies": {
+    "@bufbuild/protobuf": "^2.0.0",
+    "@grpc/grpc-js": "^1.10.0",
     "@livekit/components-react": "^2.0.0",
     "@livekit/components-styles": "^1.2.0",
     "livekit-client": "^2.0.0",
     "next": "14.1.0",
+    "nice-grpc": "^2.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "uuid": "^9.0.0"
