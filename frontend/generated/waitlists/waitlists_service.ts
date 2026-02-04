@@ -5,7 +5,7 @@
 // source: waitlists/waitlists_service.proto
 
 /* eslint-disable */
-import type { CallContext, CallOptions } from "nice-grpc-common";
+import type { CallContext, CallOptions } from 'nice-grpc-common';
 import {
   ArchiveWaitlistRequest,
   ArchiveWaitlistResponse,
@@ -31,17 +31,17 @@ import {
   UpdateWaitlistSignupResponse,
   WaitlistIsNotExpiredRequest,
   WaitlistIsNotExpiredResponse,
-} from "./waitlists_service_types";
+} from './waitlists_service_types';
 
-export const protobufPackage = "waitlists";
+export const protobufPackage = 'waitlists';
 
 export type WaitlistsServiceDefinition = typeof WaitlistsServiceDefinition;
 export const WaitlistsServiceDefinition = {
-  name: "WaitlistsService",
-  fullName: "waitlists.WaitlistsService",
+  name: 'WaitlistsService',
+  fullName: 'waitlists.WaitlistsService',
   methods: {
     createWaitlist: {
-      name: "CreateWaitlist",
+      name: 'CreateWaitlist',
       requestType: CreateWaitlistRequest,
       requestStream: false,
       responseType: CreateWaitlistResponse,
@@ -49,7 +49,7 @@ export const WaitlistsServiceDefinition = {
       options: {},
     },
     getWaitlist: {
-      name: "GetWaitlist",
+      name: 'GetWaitlist',
       requestType: GetWaitlistRequest,
       requestStream: false,
       responseType: GetWaitlistResponse,
@@ -57,7 +57,7 @@ export const WaitlistsServiceDefinition = {
       options: {},
     },
     getWaitlists: {
-      name: "GetWaitlists",
+      name: 'GetWaitlists',
       requestType: GetWaitlistsRequest,
       requestStream: false,
       responseType: GetWaitlistsResponse,
@@ -65,7 +65,7 @@ export const WaitlistsServiceDefinition = {
       options: {},
     },
     getActiveWaitlists: {
-      name: "GetActiveWaitlists",
+      name: 'GetActiveWaitlists',
       requestType: GetActiveWaitlistsRequest,
       requestStream: false,
       responseType: GetActiveWaitlistsResponse,
@@ -73,7 +73,7 @@ export const WaitlistsServiceDefinition = {
       options: {},
     },
     updateWaitlist: {
-      name: "UpdateWaitlist",
+      name: 'UpdateWaitlist',
       requestType: UpdateWaitlistRequest,
       requestStream: false,
       responseType: UpdateWaitlistResponse,
@@ -81,7 +81,7 @@ export const WaitlistsServiceDefinition = {
       options: {},
     },
     archiveWaitlist: {
-      name: "ArchiveWaitlist",
+      name: 'ArchiveWaitlist',
       requestType: ArchiveWaitlistRequest,
       requestStream: false,
       responseType: ArchiveWaitlistResponse,
@@ -89,7 +89,7 @@ export const WaitlistsServiceDefinition = {
       options: {},
     },
     waitlistIsNotExpired: {
-      name: "WaitlistIsNotExpired",
+      name: 'WaitlistIsNotExpired',
       requestType: WaitlistIsNotExpiredRequest,
       requestStream: false,
       responseType: WaitlistIsNotExpiredResponse,
@@ -97,7 +97,7 @@ export const WaitlistsServiceDefinition = {
       options: {},
     },
     createWaitlistSignup: {
-      name: "CreateWaitlistSignup",
+      name: 'CreateWaitlistSignup',
       requestType: CreateWaitlistSignupRequest,
       requestStream: false,
       responseType: CreateWaitlistSignupResponse,
@@ -105,7 +105,7 @@ export const WaitlistsServiceDefinition = {
       options: {},
     },
     getWaitlistSignup: {
-      name: "GetWaitlistSignup",
+      name: 'GetWaitlistSignup',
       requestType: GetWaitlistSignupRequest,
       requestStream: false,
       responseType: GetWaitlistSignupResponse,
@@ -113,7 +113,7 @@ export const WaitlistsServiceDefinition = {
       options: {},
     },
     getWaitlistSignupsForWaitlist: {
-      name: "GetWaitlistSignupsForWaitlist",
+      name: 'GetWaitlistSignupsForWaitlist',
       requestType: GetWaitlistSignupsForWaitlistRequest,
       requestStream: false,
       responseType: GetWaitlistSignupsForWaitlistResponse,
@@ -121,7 +121,7 @@ export const WaitlistsServiceDefinition = {
       options: {},
     },
     updateWaitlistSignup: {
-      name: "UpdateWaitlistSignup",
+      name: 'UpdateWaitlistSignup',
       requestType: UpdateWaitlistSignupRequest,
       requestStream: false,
       responseType: UpdateWaitlistSignupResponse,
@@ -129,7 +129,7 @@ export const WaitlistsServiceDefinition = {
       options: {},
     },
     archiveWaitlistSignup: {
-      name: "ArchiveWaitlistSignup",
+      name: 'ArchiveWaitlistSignup',
       requestType: ArchiveWaitlistSignupRequest,
       requestStream: false,
       responseType: ArchiveWaitlistSignupResponse,
@@ -142,109 +142,113 @@ export const WaitlistsServiceDefinition = {
 export interface WaitlistsServiceImplementation<CallContextExt = {}> {
   createWaitlist(
     request: CreateWaitlistRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<CreateWaitlistResponse>>;
   getWaitlist(
     request: GetWaitlistRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<GetWaitlistResponse>>;
   getWaitlists(
     request: GetWaitlistsRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<GetWaitlistsResponse>>;
   getActiveWaitlists(
     request: GetActiveWaitlistsRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<GetActiveWaitlistsResponse>>;
   updateWaitlist(
     request: UpdateWaitlistRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<UpdateWaitlistResponse>>;
   archiveWaitlist(
     request: ArchiveWaitlistRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<ArchiveWaitlistResponse>>;
   waitlistIsNotExpired(
     request: WaitlistIsNotExpiredRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<WaitlistIsNotExpiredResponse>>;
   createWaitlistSignup(
     request: CreateWaitlistSignupRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<CreateWaitlistSignupResponse>>;
   getWaitlistSignup(
     request: GetWaitlistSignupRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<GetWaitlistSignupResponse>>;
   getWaitlistSignupsForWaitlist(
     request: GetWaitlistSignupsForWaitlistRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<GetWaitlistSignupsForWaitlistResponse>>;
   updateWaitlistSignup(
     request: UpdateWaitlistSignupRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<UpdateWaitlistSignupResponse>>;
   archiveWaitlistSignup(
     request: ArchiveWaitlistSignupRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<ArchiveWaitlistSignupResponse>>;
 }
 
 export interface WaitlistsServiceClient<CallOptionsExt = {}> {
   createWaitlist(
     request: DeepPartial<CreateWaitlistRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<CreateWaitlistResponse>;
   getWaitlist(
     request: DeepPartial<GetWaitlistRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<GetWaitlistResponse>;
   getWaitlists(
     request: DeepPartial<GetWaitlistsRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<GetWaitlistsResponse>;
   getActiveWaitlists(
     request: DeepPartial<GetActiveWaitlistsRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<GetActiveWaitlistsResponse>;
   updateWaitlist(
     request: DeepPartial<UpdateWaitlistRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<UpdateWaitlistResponse>;
   archiveWaitlist(
     request: DeepPartial<ArchiveWaitlistRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<ArchiveWaitlistResponse>;
   waitlistIsNotExpired(
     request: DeepPartial<WaitlistIsNotExpiredRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<WaitlistIsNotExpiredResponse>;
   createWaitlistSignup(
     request: DeepPartial<CreateWaitlistSignupRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<CreateWaitlistSignupResponse>;
   getWaitlistSignup(
     request: DeepPartial<GetWaitlistSignupRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<GetWaitlistSignupResponse>;
   getWaitlistSignupsForWaitlist(
     request: DeepPartial<GetWaitlistSignupsForWaitlistRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<GetWaitlistSignupsForWaitlistResponse>;
   updateWaitlistSignup(
     request: DeepPartial<UpdateWaitlistSignupRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<UpdateWaitlistSignupResponse>;
   archiveWaitlistSignup(
     request: DeepPartial<ArchiveWaitlistSignupRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<ArchiveWaitlistSignupResponse>;
 }
 
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 
-export type DeepPartial<T> = T extends Builtin ? T
-  : T extends globalThis.Array<infer U> ? globalThis.Array<DeepPartial<U>>
-  : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>>
-  : T extends {} ? { [K in keyof T]?: DeepPartial<T[K]> }
-  : Partial<T>;
+export type DeepPartial<T> = T extends Builtin
+  ? T
+  : T extends globalThis.Array<infer U>
+    ? globalThis.Array<DeepPartial<U>>
+    : T extends ReadonlyArray<infer U>
+      ? ReadonlyArray<DeepPartial<U>>
+      : T extends {}
+        ? { [K in keyof T]?: DeepPartial<T[K]> }
+        : Partial<T>;

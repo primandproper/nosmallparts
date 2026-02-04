@@ -5,7 +5,7 @@
 // source: identity/identity_service.proto
 
 /* eslint-disable */
-import type { CallContext, CallOptions } from "nice-grpc-common";
+import type { CallContext, CallOptions } from 'nice-grpc-common';
 import {
   AcceptAccountInvitationRequest,
   AcceptAccountInvitationResponse,
@@ -63,17 +63,17 @@ import {
   UpdateUserUsernameResponse,
   UploadUserAvatarRequest,
   UploadUserAvatarResponse,
-} from "./identity_service_types";
+} from './identity_service_types';
 
-export const protobufPackage = "identity";
+export const protobufPackage = 'identity';
 
 export type IdentityServiceDefinition = typeof IdentityServiceDefinition;
 export const IdentityServiceDefinition = {
-  name: "IdentityService",
-  fullName: "identity.IdentityService",
+  name: 'IdentityService',
+  fullName: 'identity.IdentityService',
   methods: {
     adminUpdateUserStatus: {
-      name: "AdminUpdateUserStatus",
+      name: 'AdminUpdateUserStatus',
       requestType: AdminUpdateUserStatusRequest,
       requestStream: false,
       responseType: AdminUpdateUserStatusResponse,
@@ -81,7 +81,7 @@ export const IdentityServiceDefinition = {
       options: {},
     },
     acceptAccountInvitation: {
-      name: "AcceptAccountInvitation",
+      name: 'AcceptAccountInvitation',
       requestType: AcceptAccountInvitationRequest,
       requestStream: false,
       responseType: AcceptAccountInvitationResponse,
@@ -89,7 +89,7 @@ export const IdentityServiceDefinition = {
       options: {},
     },
     archiveAccount: {
-      name: "ArchiveAccount",
+      name: 'ArchiveAccount',
       requestType: ArchiveAccountRequest,
       requestStream: false,
       responseType: ArchiveAccountResponse,
@@ -97,7 +97,7 @@ export const IdentityServiceDefinition = {
       options: {},
     },
     archiveUserMembership: {
-      name: "ArchiveUserMembership",
+      name: 'ArchiveUserMembership',
       requestType: ArchiveUserMembershipRequest,
       requestStream: false,
       responseType: ArchiveUserMembershipResponse,
@@ -105,7 +105,7 @@ export const IdentityServiceDefinition = {
       options: {},
     },
     archiveUser: {
-      name: "ArchiveUser",
+      name: 'ArchiveUser',
       requestType: ArchiveUserRequest,
       requestStream: false,
       responseType: ArchiveUserResponse,
@@ -113,7 +113,7 @@ export const IdentityServiceDefinition = {
       options: {},
     },
     cancelAccountInvitation: {
-      name: "CancelAccountInvitation",
+      name: 'CancelAccountInvitation',
       requestType: CancelAccountInvitationRequest,
       requestStream: false,
       responseType: CancelAccountInvitationResponse,
@@ -121,7 +121,7 @@ export const IdentityServiceDefinition = {
       options: {},
     },
     createAccount: {
-      name: "CreateAccount",
+      name: 'CreateAccount',
       requestType: CreateAccountRequest,
       requestStream: false,
       responseType: CreateAccountResponse,
@@ -129,7 +129,7 @@ export const IdentityServiceDefinition = {
       options: {},
     },
     createAccountInvitation: {
-      name: "CreateAccountInvitation",
+      name: 'CreateAccountInvitation',
       requestType: CreateAccountInvitationRequest,
       requestStream: false,
       responseType: CreateAccountInvitationResponse,
@@ -137,7 +137,7 @@ export const IdentityServiceDefinition = {
       options: {},
     },
     createUser: {
-      name: "CreateUser",
+      name: 'CreateUser',
       requestType: CreateUserRequest,
       requestStream: false,
       responseType: CreateUserResponse,
@@ -145,7 +145,7 @@ export const IdentityServiceDefinition = {
       options: {},
     },
     getAccount: {
-      name: "GetAccount",
+      name: 'GetAccount',
       requestType: GetAccountRequest,
       requestStream: false,
       responseType: GetAccountResponse,
@@ -153,7 +153,7 @@ export const IdentityServiceDefinition = {
       options: {},
     },
     getAccountInvitation: {
-      name: "GetAccountInvitation",
+      name: 'GetAccountInvitation',
       requestType: GetAccountInvitationRequest,
       requestStream: false,
       responseType: GetAccountInvitationResponse,
@@ -161,7 +161,7 @@ export const IdentityServiceDefinition = {
       options: {},
     },
     getAccounts: {
-      name: "GetAccounts",
+      name: 'GetAccounts',
       requestType: GetAccountsRequest,
       requestStream: false,
       responseType: GetAccountsResponse,
@@ -169,7 +169,7 @@ export const IdentityServiceDefinition = {
       options: {},
     },
     getAccountsForUser: {
-      name: "GetAccountsForUser",
+      name: 'GetAccountsForUser',
       requestType: GetAccountsForUserRequest,
       requestStream: false,
       responseType: GetAccountsForUserResponse,
@@ -177,7 +177,7 @@ export const IdentityServiceDefinition = {
       options: {},
     },
     getReceivedAccountInvitations: {
-      name: "GetReceivedAccountInvitations",
+      name: 'GetReceivedAccountInvitations',
       requestType: GetReceivedAccountInvitationsRequest,
       requestStream: false,
       responseType: GetReceivedAccountInvitationsResponse,
@@ -185,7 +185,7 @@ export const IdentityServiceDefinition = {
       options: {},
     },
     getSentAccountInvitations: {
-      name: "GetSentAccountInvitations",
+      name: 'GetSentAccountInvitations',
       requestType: GetSentAccountInvitationsRequest,
       requestStream: false,
       responseType: GetSentAccountInvitationsResponse,
@@ -193,7 +193,7 @@ export const IdentityServiceDefinition = {
       options: {},
     },
     getUser: {
-      name: "GetUser",
+      name: 'GetUser',
       requestType: GetUserRequest,
       requestStream: false,
       responseType: GetUserResponse,
@@ -201,7 +201,7 @@ export const IdentityServiceDefinition = {
       options: {},
     },
     rejectAccountInvitation: {
-      name: "RejectAccountInvitation",
+      name: 'RejectAccountInvitation',
       requestType: RejectAccountInvitationRequest,
       requestStream: false,
       responseType: RejectAccountInvitationResponse,
@@ -209,7 +209,7 @@ export const IdentityServiceDefinition = {
       options: {},
     },
     getUsers: {
-      name: "GetUsers",
+      name: 'GetUsers',
       requestType: GetUsersRequest,
       requestStream: false,
       responseType: GetUsersResponse,
@@ -217,7 +217,7 @@ export const IdentityServiceDefinition = {
       options: {},
     },
     getUsersForAccount: {
-      name: "GetUsersForAccount",
+      name: 'GetUsersForAccount',
       requestType: GetUsersForAccountRequest,
       requestStream: false,
       responseType: GetUsersForAccountResponse,
@@ -225,7 +225,7 @@ export const IdentityServiceDefinition = {
       options: {},
     },
     searchForUsers: {
-      name: "SearchForUsers",
+      name: 'SearchForUsers',
       requestType: SearchForUsersRequest,
       requestStream: false,
       responseType: SearchForUsersResponse,
@@ -233,7 +233,7 @@ export const IdentityServiceDefinition = {
       options: {},
     },
     setDefaultAccount: {
-      name: "SetDefaultAccount",
+      name: 'SetDefaultAccount',
       requestType: SetDefaultAccountRequest,
       requestStream: false,
       responseType: SetDefaultAccountResponse,
@@ -241,7 +241,7 @@ export const IdentityServiceDefinition = {
       options: {},
     },
     transferAccountOwnership: {
-      name: "TransferAccountOwnership",
+      name: 'TransferAccountOwnership',
       requestType: TransferAccountOwnershipRequest,
       requestStream: false,
       responseType: TransferAccountOwnershipResponse,
@@ -249,7 +249,7 @@ export const IdentityServiceDefinition = {
       options: {},
     },
     updateAccount: {
-      name: "UpdateAccount",
+      name: 'UpdateAccount',
       requestType: UpdateAccountRequest,
       requestStream: false,
       responseType: UpdateAccountResponse,
@@ -257,7 +257,7 @@ export const IdentityServiceDefinition = {
       options: {},
     },
     updateAccountMemberPermissions: {
-      name: "UpdateAccountMemberPermissions",
+      name: 'UpdateAccountMemberPermissions',
       requestType: UpdateAccountMemberPermissionsRequest,
       requestStream: false,
       responseType: UpdateAccountMemberPermissionsResponse,
@@ -265,7 +265,7 @@ export const IdentityServiceDefinition = {
       options: {},
     },
     updateUserDetails: {
-      name: "UpdateUserDetails",
+      name: 'UpdateUserDetails',
       requestType: UpdateUserDetailsRequest,
       requestStream: false,
       responseType: UpdateUserDetailsResponse,
@@ -273,7 +273,7 @@ export const IdentityServiceDefinition = {
       options: {},
     },
     updateUserEmailAddress: {
-      name: "UpdateUserEmailAddress",
+      name: 'UpdateUserEmailAddress',
       requestType: UpdateUserEmailAddressRequest,
       requestStream: false,
       responseType: UpdateUserEmailAddressResponse,
@@ -281,7 +281,7 @@ export const IdentityServiceDefinition = {
       options: {},
     },
     updateUserUsername: {
-      name: "UpdateUserUsername",
+      name: 'UpdateUserUsername',
       requestType: UpdateUserUsernameRequest,
       requestStream: false,
       responseType: UpdateUserUsernameResponse,
@@ -289,7 +289,7 @@ export const IdentityServiceDefinition = {
       options: {},
     },
     uploadUserAvatar: {
-      name: "UploadUserAvatar",
+      name: 'UploadUserAvatar',
       requestType: UploadUserAvatarRequest,
       requestStream: false,
       responseType: UploadUserAvatarResponse,
@@ -302,225 +302,241 @@ export const IdentityServiceDefinition = {
 export interface IdentityServiceImplementation<CallContextExt = {}> {
   adminUpdateUserStatus(
     request: AdminUpdateUserStatusRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<AdminUpdateUserStatusResponse>>;
   acceptAccountInvitation(
     request: AcceptAccountInvitationRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<AcceptAccountInvitationResponse>>;
   archiveAccount(
     request: ArchiveAccountRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<ArchiveAccountResponse>>;
   archiveUserMembership(
     request: ArchiveUserMembershipRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<ArchiveUserMembershipResponse>>;
   archiveUser(
     request: ArchiveUserRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<ArchiveUserResponse>>;
   cancelAccountInvitation(
     request: CancelAccountInvitationRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<CancelAccountInvitationResponse>>;
   createAccount(
     request: CreateAccountRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<CreateAccountResponse>>;
   createAccountInvitation(
     request: CreateAccountInvitationRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<CreateAccountInvitationResponse>>;
   createUser(
     request: CreateUserRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<CreateUserResponse>>;
   getAccount(
     request: GetAccountRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<GetAccountResponse>>;
   getAccountInvitation(
     request: GetAccountInvitationRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<GetAccountInvitationResponse>>;
   getAccounts(
     request: GetAccountsRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<GetAccountsResponse>>;
   getAccountsForUser(
     request: GetAccountsForUserRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<GetAccountsForUserResponse>>;
   getReceivedAccountInvitations(
     request: GetReceivedAccountInvitationsRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<GetReceivedAccountInvitationsResponse>>;
   getSentAccountInvitations(
     request: GetSentAccountInvitationsRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<GetSentAccountInvitationsResponse>>;
-  getUser(request: GetUserRequest, context: CallContext & CallContextExt): Promise<DeepPartial<GetUserResponse>>;
+  getUser(
+    request: GetUserRequest,
+    context: CallContext & CallContextExt
+  ): Promise<DeepPartial<GetUserResponse>>;
   rejectAccountInvitation(
     request: RejectAccountInvitationRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<RejectAccountInvitationResponse>>;
-  getUsers(request: GetUsersRequest, context: CallContext & CallContextExt): Promise<DeepPartial<GetUsersResponse>>;
+  getUsers(
+    request: GetUsersRequest,
+    context: CallContext & CallContextExt
+  ): Promise<DeepPartial<GetUsersResponse>>;
   getUsersForAccount(
     request: GetUsersForAccountRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<GetUsersForAccountResponse>>;
   searchForUsers(
     request: SearchForUsersRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<SearchForUsersResponse>>;
   setDefaultAccount(
     request: SetDefaultAccountRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<SetDefaultAccountResponse>>;
   transferAccountOwnership(
     request: TransferAccountOwnershipRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<TransferAccountOwnershipResponse>>;
   updateAccount(
     request: UpdateAccountRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<UpdateAccountResponse>>;
   updateAccountMemberPermissions(
     request: UpdateAccountMemberPermissionsRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<UpdateAccountMemberPermissionsResponse>>;
   updateUserDetails(
     request: UpdateUserDetailsRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<UpdateUserDetailsResponse>>;
   updateUserEmailAddress(
     request: UpdateUserEmailAddressRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<UpdateUserEmailAddressResponse>>;
   updateUserUsername(
     request: UpdateUserUsernameRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<UpdateUserUsernameResponse>>;
   uploadUserAvatar(
     request: UploadUserAvatarRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<UploadUserAvatarResponse>>;
 }
 
 export interface IdentityServiceClient<CallOptionsExt = {}> {
   adminUpdateUserStatus(
     request: DeepPartial<AdminUpdateUserStatusRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<AdminUpdateUserStatusResponse>;
   acceptAccountInvitation(
     request: DeepPartial<AcceptAccountInvitationRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<AcceptAccountInvitationResponse>;
   archiveAccount(
     request: DeepPartial<ArchiveAccountRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<ArchiveAccountResponse>;
   archiveUserMembership(
     request: DeepPartial<ArchiveUserMembershipRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<ArchiveUserMembershipResponse>;
   archiveUser(
     request: DeepPartial<ArchiveUserRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<ArchiveUserResponse>;
   cancelAccountInvitation(
     request: DeepPartial<CancelAccountInvitationRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<CancelAccountInvitationResponse>;
   createAccount(
     request: DeepPartial<CreateAccountRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<CreateAccountResponse>;
   createAccountInvitation(
     request: DeepPartial<CreateAccountInvitationRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<CreateAccountInvitationResponse>;
   createUser(
     request: DeepPartial<CreateUserRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<CreateUserResponse>;
   getAccount(
     request: DeepPartial<GetAccountRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<GetAccountResponse>;
   getAccountInvitation(
     request: DeepPartial<GetAccountInvitationRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<GetAccountInvitationResponse>;
   getAccounts(
     request: DeepPartial<GetAccountsRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<GetAccountsResponse>;
   getAccountsForUser(
     request: DeepPartial<GetAccountsForUserRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<GetAccountsForUserResponse>;
   getReceivedAccountInvitations(
     request: DeepPartial<GetReceivedAccountInvitationsRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<GetReceivedAccountInvitationsResponse>;
   getSentAccountInvitations(
     request: DeepPartial<GetSentAccountInvitationsRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<GetSentAccountInvitationsResponse>;
-  getUser(request: DeepPartial<GetUserRequest>, options?: CallOptions & CallOptionsExt): Promise<GetUserResponse>;
+  getUser(
+    request: DeepPartial<GetUserRequest>,
+    options?: CallOptions & CallOptionsExt
+  ): Promise<GetUserResponse>;
   rejectAccountInvitation(
     request: DeepPartial<RejectAccountInvitationRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<RejectAccountInvitationResponse>;
-  getUsers(request: DeepPartial<GetUsersRequest>, options?: CallOptions & CallOptionsExt): Promise<GetUsersResponse>;
+  getUsers(
+    request: DeepPartial<GetUsersRequest>,
+    options?: CallOptions & CallOptionsExt
+  ): Promise<GetUsersResponse>;
   getUsersForAccount(
     request: DeepPartial<GetUsersForAccountRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<GetUsersForAccountResponse>;
   searchForUsers(
     request: DeepPartial<SearchForUsersRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<SearchForUsersResponse>;
   setDefaultAccount(
     request: DeepPartial<SetDefaultAccountRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<SetDefaultAccountResponse>;
   transferAccountOwnership(
     request: DeepPartial<TransferAccountOwnershipRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<TransferAccountOwnershipResponse>;
   updateAccount(
     request: DeepPartial<UpdateAccountRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<UpdateAccountResponse>;
   updateAccountMemberPermissions(
     request: DeepPartial<UpdateAccountMemberPermissionsRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<UpdateAccountMemberPermissionsResponse>;
   updateUserDetails(
     request: DeepPartial<UpdateUserDetailsRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<UpdateUserDetailsResponse>;
   updateUserEmailAddress(
     request: DeepPartial<UpdateUserEmailAddressRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<UpdateUserEmailAddressResponse>;
   updateUserUsername(
     request: DeepPartial<UpdateUserUsernameRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<UpdateUserUsernameResponse>;
   uploadUserAvatar(
     request: DeepPartial<UploadUserAvatarRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<UploadUserAvatarResponse>;
 }
 
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 
-export type DeepPartial<T> = T extends Builtin ? T
-  : T extends globalThis.Array<infer U> ? globalThis.Array<DeepPartial<U>>
-  : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>>
-  : T extends {} ? { [K in keyof T]?: DeepPartial<T[K]> }
-  : Partial<T>;
+export type DeepPartial<T> = T extends Builtin
+  ? T
+  : T extends globalThis.Array<infer U>
+    ? globalThis.Array<DeepPartial<U>>
+    : T extends ReadonlyArray<infer U>
+      ? ReadonlyArray<DeepPartial<U>>
+      : T extends {}
+        ? { [K in keyof T]?: DeepPartial<T[K]> }
+        : Partial<T>;

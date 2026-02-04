@@ -5,11 +5,11 @@
 // source: oauth/oauth_messages.proto
 
 /* eslint-disable */
-import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
-import { Duration } from "../google/protobuf/duration";
-import { Timestamp } from "../google/protobuf/timestamp";
+import { BinaryReader, BinaryWriter } from '@bufbuild/protobuf/wire';
+import { Duration } from '../google/protobuf/duration';
+import { Timestamp } from '../google/protobuf/timestamp';
 
-export const protobufPackage = "oauth";
+export const protobufPackage = 'oauth';
 
 export interface OAuth2Client {
   createdAt: Date | undefined;
@@ -44,11 +44,11 @@ function createBaseOAuth2Client(): OAuth2Client {
   return {
     createdAt: undefined,
     archivedAt: undefined,
-    name: "",
-    description: "",
-    clientId: "",
-    id: "",
-    clientSecret: "",
+    name: '',
+    description: '',
+    clientId: '',
+    id: '',
+    clientSecret: '',
   };
 }
 
@@ -60,19 +60,19 @@ export const OAuth2Client: MessageFns<OAuth2Client> = {
     if (message.archivedAt !== undefined) {
       Timestamp.encode(toTimestamp(message.archivedAt), writer.uint32(18).fork()).join();
     }
-    if (message.name !== "") {
+    if (message.name !== '') {
       writer.uint32(26).string(message.name);
     }
-    if (message.description !== "") {
+    if (message.description !== '') {
       writer.uint32(34).string(message.description);
     }
-    if (message.clientId !== "") {
+    if (message.clientId !== '') {
       writer.uint32(42).string(message.clientId);
     }
-    if (message.id !== "") {
+    if (message.id !== '') {
       writer.uint32(50).string(message.id);
     }
-    if (message.clientSecret !== "") {
+    if (message.clientSecret !== '') {
       writer.uint32(58).string(message.clientSecret);
     }
     return writer;
@@ -155,26 +155,26 @@ export const OAuth2Client: MessageFns<OAuth2Client> = {
       createdAt: isSet(object.createdAt)
         ? fromJsonTimestamp(object.createdAt)
         : isSet(object.created_at)
-        ? fromJsonTimestamp(object.created_at)
-        : undefined,
+          ? fromJsonTimestamp(object.created_at)
+          : undefined,
       archivedAt: isSet(object.archivedAt)
         ? fromJsonTimestamp(object.archivedAt)
         : isSet(object.archived_at)
-        ? fromJsonTimestamp(object.archived_at)
-        : undefined,
-      name: isSet(object.name) ? globalThis.String(object.name) : "",
-      description: isSet(object.description) ? globalThis.String(object.description) : "",
+          ? fromJsonTimestamp(object.archived_at)
+          : undefined,
+      name: isSet(object.name) ? globalThis.String(object.name) : '',
+      description: isSet(object.description) ? globalThis.String(object.description) : '',
       clientId: isSet(object.clientId)
         ? globalThis.String(object.clientId)
         : isSet(object.client_id)
-        ? globalThis.String(object.client_id)
-        : "",
-      id: isSet(object.id) ? globalThis.String(object.id) : "",
+          ? globalThis.String(object.client_id)
+          : '',
+      id: isSet(object.id) ? globalThis.String(object.id) : '',
       clientSecret: isSet(object.clientSecret)
         ? globalThis.String(object.clientSecret)
         : isSet(object.client_secret)
-        ? globalThis.String(object.client_secret)
-        : "",
+          ? globalThis.String(object.client_secret)
+          : '',
     };
   },
 
@@ -186,19 +186,19 @@ export const OAuth2Client: MessageFns<OAuth2Client> = {
     if (message.archivedAt !== undefined) {
       obj.archivedAt = message.archivedAt.toISOString();
     }
-    if (message.name !== "") {
+    if (message.name !== '') {
       obj.name = message.name;
     }
-    if (message.description !== "") {
+    if (message.description !== '') {
       obj.description = message.description;
     }
-    if (message.clientId !== "") {
+    if (message.clientId !== '') {
       obj.clientId = message.clientId;
     }
-    if (message.id !== "") {
+    if (message.id !== '') {
       obj.id = message.id;
     }
-    if (message.clientSecret !== "") {
+    if (message.clientSecret !== '') {
       obj.clientSecret = message.clientSecret;
     }
     return obj;
@@ -211,11 +211,11 @@ export const OAuth2Client: MessageFns<OAuth2Client> = {
     const message = createBaseOAuth2Client();
     message.createdAt = object.createdAt ?? undefined;
     message.archivedAt = object.archivedAt ?? undefined;
-    message.name = object.name ?? "";
-    message.description = object.description ?? "";
-    message.clientId = object.clientId ?? "";
-    message.id = object.id ?? "";
-    message.clientSecret = object.clientSecret ?? "";
+    message.name = object.name ?? '';
+    message.description = object.description ?? '';
+    message.clientId = object.clientId ?? '';
+    message.id = object.id ?? '';
+    message.clientSecret = object.clientSecret ?? '';
     return message;
   },
 };
@@ -225,16 +225,16 @@ function createBaseOAuth2ClientToken(): OAuth2ClientToken {
     refreshCreatedAt: undefined,
     accessCreatedAt: undefined,
     codeCreatedAt: undefined,
-    redirectUri: "",
-    scope: "",
-    code: "",
-    codeChallenge: "",
-    codeChallengeMethod: "",
-    belongsToUser: "",
-    access: "",
-    clientId: "",
-    refresh: "",
-    id: "",
+    redirectUri: '',
+    scope: '',
+    code: '',
+    codeChallenge: '',
+    codeChallengeMethod: '',
+    belongsToUser: '',
+    access: '',
+    clientId: '',
+    refresh: '',
+    id: '',
     codeExpiresAt: undefined,
     accessExpiresAt: undefined,
     refreshExpiresAt: undefined,
@@ -252,34 +252,34 @@ export const OAuth2ClientToken: MessageFns<OAuth2ClientToken> = {
     if (message.codeCreatedAt !== undefined) {
       Timestamp.encode(toTimestamp(message.codeCreatedAt), writer.uint32(26).fork()).join();
     }
-    if (message.redirectUri !== "") {
+    if (message.redirectUri !== '') {
       writer.uint32(34).string(message.redirectUri);
     }
-    if (message.scope !== "") {
+    if (message.scope !== '') {
       writer.uint32(42).string(message.scope);
     }
-    if (message.code !== "") {
+    if (message.code !== '') {
       writer.uint32(50).string(message.code);
     }
-    if (message.codeChallenge !== "") {
+    if (message.codeChallenge !== '') {
       writer.uint32(58).string(message.codeChallenge);
     }
-    if (message.codeChallengeMethod !== "") {
+    if (message.codeChallengeMethod !== '') {
       writer.uint32(66).string(message.codeChallengeMethod);
     }
-    if (message.belongsToUser !== "") {
+    if (message.belongsToUser !== '') {
       writer.uint32(74).string(message.belongsToUser);
     }
-    if (message.access !== "") {
+    if (message.access !== '') {
       writer.uint32(82).string(message.access);
     }
-    if (message.clientId !== "") {
+    if (message.clientId !== '') {
       writer.uint32(90).string(message.clientId);
     }
-    if (message.refresh !== "") {
+    if (message.refresh !== '') {
       writer.uint32(98).string(message.refresh);
     }
-    if (message.id !== "") {
+    if (message.id !== '') {
       writer.uint32(106).string(message.id);
     }
     if (message.codeExpiresAt !== undefined) {
@@ -443,63 +443,63 @@ export const OAuth2ClientToken: MessageFns<OAuth2ClientToken> = {
       refreshCreatedAt: isSet(object.refreshCreatedAt)
         ? fromJsonTimestamp(object.refreshCreatedAt)
         : isSet(object.refresh_created_at)
-        ? fromJsonTimestamp(object.refresh_created_at)
-        : undefined,
+          ? fromJsonTimestamp(object.refresh_created_at)
+          : undefined,
       accessCreatedAt: isSet(object.accessCreatedAt)
         ? fromJsonTimestamp(object.accessCreatedAt)
         : isSet(object.access_created_at)
-        ? fromJsonTimestamp(object.access_created_at)
-        : undefined,
+          ? fromJsonTimestamp(object.access_created_at)
+          : undefined,
       codeCreatedAt: isSet(object.codeCreatedAt)
         ? fromJsonTimestamp(object.codeCreatedAt)
         : isSet(object.code_created_at)
-        ? fromJsonTimestamp(object.code_created_at)
-        : undefined,
+          ? fromJsonTimestamp(object.code_created_at)
+          : undefined,
       redirectUri: isSet(object.redirectUri)
         ? globalThis.String(object.redirectUri)
         : isSet(object.redirect_uri)
-        ? globalThis.String(object.redirect_uri)
-        : "",
-      scope: isSet(object.scope) ? globalThis.String(object.scope) : "",
-      code: isSet(object.code) ? globalThis.String(object.code) : "",
+          ? globalThis.String(object.redirect_uri)
+          : '',
+      scope: isSet(object.scope) ? globalThis.String(object.scope) : '',
+      code: isSet(object.code) ? globalThis.String(object.code) : '',
       codeChallenge: isSet(object.codeChallenge)
         ? globalThis.String(object.codeChallenge)
         : isSet(object.code_challenge)
-        ? globalThis.String(object.code_challenge)
-        : "",
+          ? globalThis.String(object.code_challenge)
+          : '',
       codeChallengeMethod: isSet(object.codeChallengeMethod)
         ? globalThis.String(object.codeChallengeMethod)
         : isSet(object.code_challenge_method)
-        ? globalThis.String(object.code_challenge_method)
-        : "",
+          ? globalThis.String(object.code_challenge_method)
+          : '',
       belongsToUser: isSet(object.belongsToUser)
         ? globalThis.String(object.belongsToUser)
         : isSet(object.belongs_to_user)
-        ? globalThis.String(object.belongs_to_user)
-        : "",
-      access: isSet(object.access) ? globalThis.String(object.access) : "",
+          ? globalThis.String(object.belongs_to_user)
+          : '',
+      access: isSet(object.access) ? globalThis.String(object.access) : '',
       clientId: isSet(object.clientId)
         ? globalThis.String(object.clientId)
         : isSet(object.client_id)
-        ? globalThis.String(object.client_id)
-        : "",
-      refresh: isSet(object.refresh) ? globalThis.String(object.refresh) : "",
-      id: isSet(object.id) ? globalThis.String(object.id) : "",
+          ? globalThis.String(object.client_id)
+          : '',
+      refresh: isSet(object.refresh) ? globalThis.String(object.refresh) : '',
+      id: isSet(object.id) ? globalThis.String(object.id) : '',
       codeExpiresAt: isSet(object.codeExpiresAt)
         ? Duration.fromJSON(object.codeExpiresAt)
         : isSet(object.code_expires_at)
-        ? Duration.fromJSON(object.code_expires_at)
-        : undefined,
+          ? Duration.fromJSON(object.code_expires_at)
+          : undefined,
       accessExpiresAt: isSet(object.accessExpiresAt)
         ? Duration.fromJSON(object.accessExpiresAt)
         : isSet(object.access_expires_at)
-        ? Duration.fromJSON(object.access_expires_at)
-        : undefined,
+          ? Duration.fromJSON(object.access_expires_at)
+          : undefined,
       refreshExpiresAt: isSet(object.refreshExpiresAt)
         ? Duration.fromJSON(object.refreshExpiresAt)
         : isSet(object.refresh_expires_at)
-        ? Duration.fromJSON(object.refresh_expires_at)
-        : undefined,
+          ? Duration.fromJSON(object.refresh_expires_at)
+          : undefined,
     };
   },
 
@@ -514,34 +514,34 @@ export const OAuth2ClientToken: MessageFns<OAuth2ClientToken> = {
     if (message.codeCreatedAt !== undefined) {
       obj.codeCreatedAt = message.codeCreatedAt.toISOString();
     }
-    if (message.redirectUri !== "") {
+    if (message.redirectUri !== '') {
       obj.redirectUri = message.redirectUri;
     }
-    if (message.scope !== "") {
+    if (message.scope !== '') {
       obj.scope = message.scope;
     }
-    if (message.code !== "") {
+    if (message.code !== '') {
       obj.code = message.code;
     }
-    if (message.codeChallenge !== "") {
+    if (message.codeChallenge !== '') {
       obj.codeChallenge = message.codeChallenge;
     }
-    if (message.codeChallengeMethod !== "") {
+    if (message.codeChallengeMethod !== '') {
       obj.codeChallengeMethod = message.codeChallengeMethod;
     }
-    if (message.belongsToUser !== "") {
+    if (message.belongsToUser !== '') {
       obj.belongsToUser = message.belongsToUser;
     }
-    if (message.access !== "") {
+    if (message.access !== '') {
       obj.access = message.access;
     }
-    if (message.clientId !== "") {
+    if (message.clientId !== '') {
       obj.clientId = message.clientId;
     }
-    if (message.refresh !== "") {
+    if (message.refresh !== '') {
       obj.refresh = message.refresh;
     }
-    if (message.id !== "") {
+    if (message.id !== '') {
       obj.id = message.id;
     }
     if (message.codeExpiresAt !== undefined) {
@@ -564,36 +564,43 @@ export const OAuth2ClientToken: MessageFns<OAuth2ClientToken> = {
     message.refreshCreatedAt = object.refreshCreatedAt ?? undefined;
     message.accessCreatedAt = object.accessCreatedAt ?? undefined;
     message.codeCreatedAt = object.codeCreatedAt ?? undefined;
-    message.redirectUri = object.redirectUri ?? "";
-    message.scope = object.scope ?? "";
-    message.code = object.code ?? "";
-    message.codeChallenge = object.codeChallenge ?? "";
-    message.codeChallengeMethod = object.codeChallengeMethod ?? "";
-    message.belongsToUser = object.belongsToUser ?? "";
-    message.access = object.access ?? "";
-    message.clientId = object.clientId ?? "";
-    message.refresh = object.refresh ?? "";
-    message.id = object.id ?? "";
-    message.codeExpiresAt = (object.codeExpiresAt !== undefined && object.codeExpiresAt !== null)
-      ? Duration.fromPartial(object.codeExpiresAt)
-      : undefined;
-    message.accessExpiresAt = (object.accessExpiresAt !== undefined && object.accessExpiresAt !== null)
-      ? Duration.fromPartial(object.accessExpiresAt)
-      : undefined;
-    message.refreshExpiresAt = (object.refreshExpiresAt !== undefined && object.refreshExpiresAt !== null)
-      ? Duration.fromPartial(object.refreshExpiresAt)
-      : undefined;
+    message.redirectUri = object.redirectUri ?? '';
+    message.scope = object.scope ?? '';
+    message.code = object.code ?? '';
+    message.codeChallenge = object.codeChallenge ?? '';
+    message.codeChallengeMethod = object.codeChallengeMethod ?? '';
+    message.belongsToUser = object.belongsToUser ?? '';
+    message.access = object.access ?? '';
+    message.clientId = object.clientId ?? '';
+    message.refresh = object.refresh ?? '';
+    message.id = object.id ?? '';
+    message.codeExpiresAt =
+      object.codeExpiresAt !== undefined && object.codeExpiresAt !== null
+        ? Duration.fromPartial(object.codeExpiresAt)
+        : undefined;
+    message.accessExpiresAt =
+      object.accessExpiresAt !== undefined && object.accessExpiresAt !== null
+        ? Duration.fromPartial(object.accessExpiresAt)
+        : undefined;
+    message.refreshExpiresAt =
+      object.refreshExpiresAt !== undefined && object.refreshExpiresAt !== null
+        ? Duration.fromPartial(object.refreshExpiresAt)
+        : undefined;
     return message;
   },
 };
 
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 
-export type DeepPartial<T> = T extends Builtin ? T
-  : T extends globalThis.Array<infer U> ? globalThis.Array<DeepPartial<U>>
-  : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>>
-  : T extends {} ? { [K in keyof T]?: DeepPartial<T[K]> }
-  : Partial<T>;
+export type DeepPartial<T> = T extends Builtin
+  ? T
+  : T extends globalThis.Array<infer U>
+    ? globalThis.Array<DeepPartial<U>>
+    : T extends ReadonlyArray<infer U>
+      ? ReadonlyArray<DeepPartial<U>>
+      : T extends {}
+        ? { [K in keyof T]?: DeepPartial<T[K]> }
+        : Partial<T>;
 
 function toTimestamp(date: Date): Timestamp {
   const seconds = Math.trunc(date.getTime() / 1_000);
@@ -610,7 +617,7 @@ function fromTimestamp(t: Timestamp): Date {
 function fromJsonTimestamp(o: any): Date {
   if (o instanceof globalThis.Date) {
     return o;
-  } else if (typeof o === "string") {
+  } else if (typeof o === 'string') {
     return new globalThis.Date(o);
   } else {
     return fromTimestamp(Timestamp.fromJSON(o));

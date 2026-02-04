@@ -5,10 +5,10 @@
 // source: webhooks/webhooks_messages.proto
 
 /* eslint-disable */
-import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
-import { Timestamp } from "../google/protobuf/timestamp";
+import { BinaryReader, BinaryWriter } from '@bufbuild/protobuf/wire';
+import { Timestamp } from '../google/protobuf/timestamp';
 
-export const protobufPackage = "webhooks";
+export const protobufPackage = 'webhooks';
 
 export enum WebhookContentType {
   WEBHOOK_CONTENT_TYPE_JSON = 0,
@@ -19,13 +19,13 @@ export enum WebhookContentType {
 export function webhookContentTypeFromJSON(object: any): WebhookContentType {
   switch (object) {
     case 0:
-    case "WEBHOOK_CONTENT_TYPE_JSON":
+    case 'WEBHOOK_CONTENT_TYPE_JSON':
       return WebhookContentType.WEBHOOK_CONTENT_TYPE_JSON;
     case 1:
-    case "WEBHOOK_CONTENT_TYPE_XML":
+    case 'WEBHOOK_CONTENT_TYPE_XML':
       return WebhookContentType.WEBHOOK_CONTENT_TYPE_XML;
     case -1:
-    case "UNRECOGNIZED":
+    case 'UNRECOGNIZED':
     default:
       return WebhookContentType.UNRECOGNIZED;
   }
@@ -34,12 +34,12 @@ export function webhookContentTypeFromJSON(object: any): WebhookContentType {
 export function webhookContentTypeToJSON(object: WebhookContentType): string {
   switch (object) {
     case WebhookContentType.WEBHOOK_CONTENT_TYPE_JSON:
-      return "WEBHOOK_CONTENT_TYPE_JSON";
+      return 'WEBHOOK_CONTENT_TYPE_JSON';
     case WebhookContentType.WEBHOOK_CONTENT_TYPE_XML:
-      return "WEBHOOK_CONTENT_TYPE_XML";
+      return 'WEBHOOK_CONTENT_TYPE_XML';
     case WebhookContentType.UNRECOGNIZED:
     default:
-      return "UNRECOGNIZED";
+      return 'UNRECOGNIZED';
   }
 }
 
@@ -55,22 +55,22 @@ export enum WebhookMethod {
 export function webhookMethodFromJSON(object: any): WebhookMethod {
   switch (object) {
     case 0:
-    case "WEBHOOK_METHOD_GET":
+    case 'WEBHOOK_METHOD_GET':
       return WebhookMethod.WEBHOOK_METHOD_GET;
     case 1:
-    case "WEBHOOK_METHOD_PUT":
+    case 'WEBHOOK_METHOD_PUT':
       return WebhookMethod.WEBHOOK_METHOD_PUT;
     case 2:
-    case "WEBHOOK_METHOD_PATCH":
+    case 'WEBHOOK_METHOD_PATCH':
       return WebhookMethod.WEBHOOK_METHOD_PATCH;
     case 3:
-    case "WEBHOOK_METHOD_POST":
+    case 'WEBHOOK_METHOD_POST':
       return WebhookMethod.WEBHOOK_METHOD_POST;
     case 4:
-    case "WEBHOOK_METHOD_DELETE":
+    case 'WEBHOOK_METHOD_DELETE':
       return WebhookMethod.WEBHOOK_METHOD_DELETE;
     case -1:
-    case "UNRECOGNIZED":
+    case 'UNRECOGNIZED':
     default:
       return WebhookMethod.UNRECOGNIZED;
   }
@@ -79,18 +79,18 @@ export function webhookMethodFromJSON(object: any): WebhookMethod {
 export function webhookMethodToJSON(object: WebhookMethod): string {
   switch (object) {
     case WebhookMethod.WEBHOOK_METHOD_GET:
-      return "WEBHOOK_METHOD_GET";
+      return 'WEBHOOK_METHOD_GET';
     case WebhookMethod.WEBHOOK_METHOD_PUT:
-      return "WEBHOOK_METHOD_PUT";
+      return 'WEBHOOK_METHOD_PUT';
     case WebhookMethod.WEBHOOK_METHOD_PATCH:
-      return "WEBHOOK_METHOD_PATCH";
+      return 'WEBHOOK_METHOD_PATCH';
     case WebhookMethod.WEBHOOK_METHOD_POST:
-      return "WEBHOOK_METHOD_POST";
+      return 'WEBHOOK_METHOD_POST';
     case WebhookMethod.WEBHOOK_METHOD_DELETE:
-      return "WEBHOOK_METHOD_DELETE";
+      return 'WEBHOOK_METHOD_DELETE';
     case WebhookMethod.UNRECOGNIZED:
     default:
-      return "UNRECOGNIZED";
+      return 'UNRECOGNIZED';
   }
 }
 
@@ -131,7 +131,10 @@ function createBaseDataCollection(): DataCollection {
 export const DataCollection: MessageFns<DataCollection> = {
   encode(message: DataCollection, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
     globalThis.Object.entries(message.webhooks).forEach(([key, value]: [string, Webhook]) => {
-      DataCollection_WebhooksEntry.encode({ key: key as any, value }, writer.uint32(10).fork()).join();
+      DataCollection_WebhooksEntry.encode(
+        { key: key as any, value },
+        writer.uint32(10).fork()
+      ).join();
     });
     return writer;
   },
@@ -167,12 +170,12 @@ export const DataCollection: MessageFns<DataCollection> = {
     return {
       webhooks: isObject(object.webhooks)
         ? (globalThis.Object.entries(object.webhooks) as [string, any][]).reduce(
-          (acc: { [key: string]: Webhook }, [key, value]: [string, any]) => {
-            acc[key] = Webhook.fromJSON(value);
-            return acc;
-          },
-          {},
-        )
+            (acc: { [key: string]: Webhook }, [key, value]: [string, any]) => {
+              acc[key] = Webhook.fromJSON(value);
+              return acc;
+            },
+            {}
+          )
         : {},
     };
   },
@@ -196,26 +199,28 @@ export const DataCollection: MessageFns<DataCollection> = {
   },
   fromPartial(object: DeepPartial<DataCollection>): DataCollection {
     const message = createBaseDataCollection();
-    message.webhooks = (globalThis.Object.entries(object.webhooks ?? {}) as [string, Webhook][]).reduce(
-      (acc: { [key: string]: Webhook }, [key, value]: [string, Webhook]) => {
-        if (value !== undefined) {
-          acc[key] = Webhook.fromPartial(value);
-        }
-        return acc;
-      },
-      {},
-    );
+    message.webhooks = (
+      globalThis.Object.entries(object.webhooks ?? {}) as [string, Webhook][]
+    ).reduce((acc: { [key: string]: Webhook }, [key, value]: [string, Webhook]) => {
+      if (value !== undefined) {
+        acc[key] = Webhook.fromPartial(value);
+      }
+      return acc;
+    }, {});
     return message;
   },
 };
 
 function createBaseDataCollection_WebhooksEntry(): DataCollection_WebhooksEntry {
-  return { key: "", value: undefined };
+  return { key: '', value: undefined };
 }
 
 export const DataCollection_WebhooksEntry: MessageFns<DataCollection_WebhooksEntry> = {
-  encode(message: DataCollection_WebhooksEntry, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.key !== "") {
+  encode(
+    message: DataCollection_WebhooksEntry,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.key !== '') {
       writer.uint32(10).string(message.key);
     }
     if (message.value !== undefined) {
@@ -258,14 +263,14 @@ export const DataCollection_WebhooksEntry: MessageFns<DataCollection_WebhooksEnt
 
   fromJSON(object: any): DataCollection_WebhooksEntry {
     return {
-      key: isSet(object.key) ? globalThis.String(object.key) : "",
+      key: isSet(object.key) ? globalThis.String(object.key) : '',
       value: isSet(object.value) ? Webhook.fromJSON(object.value) : undefined,
     };
   },
 
   toJSON(message: DataCollection_WebhooksEntry): unknown {
     const obj: any = {};
-    if (message.key !== "") {
+    if (message.key !== '') {
       obj.key = message.key;
     }
     if (message.value !== undefined) {
@@ -279,10 +284,11 @@ export const DataCollection_WebhooksEntry: MessageFns<DataCollection_WebhooksEnt
   },
   fromPartial(object: DeepPartial<DataCollection_WebhooksEntry>): DataCollection_WebhooksEntry {
     const message = createBaseDataCollection_WebhooksEntry();
-    message.key = object.key ?? "";
-    message.value = (object.value !== undefined && object.value !== null)
-      ? Webhook.fromPartial(object.value)
-      : undefined;
+    message.key = object.key ?? '';
+    message.value =
+      object.value !== undefined && object.value !== null
+        ? Webhook.fromPartial(object.value)
+        : undefined;
     return message;
   },
 };
@@ -292,11 +298,11 @@ function createBaseWebhook(): Webhook {
     createdAt: undefined,
     archivedAt: undefined,
     lastUpdatedAt: undefined,
-    name: "",
-    url: "",
+    name: '',
+    url: '',
     method: 0,
-    id: "",
-    belongsToAccount: "",
+    id: '',
+    belongsToAccount: '',
     contentType: 0,
     events: [],
   };
@@ -313,19 +319,19 @@ export const Webhook: MessageFns<Webhook> = {
     if (message.lastUpdatedAt !== undefined) {
       Timestamp.encode(toTimestamp(message.lastUpdatedAt), writer.uint32(26).fork()).join();
     }
-    if (message.name !== "") {
+    if (message.name !== '') {
       writer.uint32(34).string(message.name);
     }
-    if (message.url !== "") {
+    if (message.url !== '') {
       writer.uint32(42).string(message.url);
     }
     if (message.method !== 0) {
       writer.uint32(48).int32(message.method);
     }
-    if (message.id !== "") {
+    if (message.id !== '') {
       writer.uint32(58).string(message.id);
     }
-    if (message.belongsToAccount !== "") {
+    if (message.belongsToAccount !== '') {
       writer.uint32(66).string(message.belongsToAccount);
     }
     if (message.contentType !== 0) {
@@ -438,32 +444,32 @@ export const Webhook: MessageFns<Webhook> = {
       createdAt: isSet(object.createdAt)
         ? fromJsonTimestamp(object.createdAt)
         : isSet(object.created_at)
-        ? fromJsonTimestamp(object.created_at)
-        : undefined,
+          ? fromJsonTimestamp(object.created_at)
+          : undefined,
       archivedAt: isSet(object.archivedAt)
         ? fromJsonTimestamp(object.archivedAt)
         : isSet(object.archived_at)
-        ? fromJsonTimestamp(object.archived_at)
-        : undefined,
+          ? fromJsonTimestamp(object.archived_at)
+          : undefined,
       lastUpdatedAt: isSet(object.lastUpdatedAt)
         ? fromJsonTimestamp(object.lastUpdatedAt)
         : isSet(object.last_updated_at)
-        ? fromJsonTimestamp(object.last_updated_at)
-        : undefined,
-      name: isSet(object.name) ? globalThis.String(object.name) : "",
-      url: isSet(object.url) ? globalThis.String(object.url) : "",
+          ? fromJsonTimestamp(object.last_updated_at)
+          : undefined,
+      name: isSet(object.name) ? globalThis.String(object.name) : '',
+      url: isSet(object.url) ? globalThis.String(object.url) : '',
       method: isSet(object.method) ? webhookMethodFromJSON(object.method) : 0,
-      id: isSet(object.id) ? globalThis.String(object.id) : "",
+      id: isSet(object.id) ? globalThis.String(object.id) : '',
       belongsToAccount: isSet(object.belongsToAccount)
         ? globalThis.String(object.belongsToAccount)
         : isSet(object.belongs_to_account)
-        ? globalThis.String(object.belongs_to_account)
-        : "",
+          ? globalThis.String(object.belongs_to_account)
+          : '',
       contentType: isSet(object.contentType)
         ? webhookContentTypeFromJSON(object.contentType)
         : isSet(object.content_type)
-        ? webhookContentTypeFromJSON(object.content_type)
-        : 0,
+          ? webhookContentTypeFromJSON(object.content_type)
+          : 0,
       events: globalThis.Array.isArray(object?.events)
         ? object.events.map((e: any) => WebhookTriggerEvent.fromJSON(e))
         : [],
@@ -481,19 +487,19 @@ export const Webhook: MessageFns<Webhook> = {
     if (message.lastUpdatedAt !== undefined) {
       obj.lastUpdatedAt = message.lastUpdatedAt.toISOString();
     }
-    if (message.name !== "") {
+    if (message.name !== '') {
       obj.name = message.name;
     }
-    if (message.url !== "") {
+    if (message.url !== '') {
       obj.url = message.url;
     }
     if (message.method !== 0) {
       obj.method = webhookMethodToJSON(message.method);
     }
-    if (message.id !== "") {
+    if (message.id !== '') {
       obj.id = message.id;
     }
-    if (message.belongsToAccount !== "") {
+    if (message.belongsToAccount !== '') {
       obj.belongsToAccount = message.belongsToAccount;
     }
     if (message.contentType !== 0) {
@@ -513,11 +519,11 @@ export const Webhook: MessageFns<Webhook> = {
     message.createdAt = object.createdAt ?? undefined;
     message.archivedAt = object.archivedAt ?? undefined;
     message.lastUpdatedAt = object.lastUpdatedAt ?? undefined;
-    message.name = object.name ?? "";
-    message.url = object.url ?? "";
+    message.name = object.name ?? '';
+    message.url = object.url ?? '';
     message.method = object.method ?? 0;
-    message.id = object.id ?? "";
-    message.belongsToAccount = object.belongsToAccount ?? "";
+    message.id = object.id ?? '';
+    message.belongsToAccount = object.belongsToAccount ?? '';
     message.contentType = object.contentType ?? 0;
     message.events = object.events?.map((e) => WebhookTriggerEvent.fromPartial(e)) || [];
     return message;
@@ -525,7 +531,13 @@ export const Webhook: MessageFns<Webhook> = {
 };
 
 function createBaseWebhookTriggerEvent(): WebhookTriggerEvent {
-  return { createdAt: undefined, archivedAt: undefined, id: "", belongsToWebhook: "", triggerEvent: "" };
+  return {
+    createdAt: undefined,
+    archivedAt: undefined,
+    id: '',
+    belongsToWebhook: '',
+    triggerEvent: '',
+  };
 }
 
 export const WebhookTriggerEvent: MessageFns<WebhookTriggerEvent> = {
@@ -536,13 +548,13 @@ export const WebhookTriggerEvent: MessageFns<WebhookTriggerEvent> = {
     if (message.archivedAt !== undefined) {
       Timestamp.encode(toTimestamp(message.archivedAt), writer.uint32(18).fork()).join();
     }
-    if (message.id !== "") {
+    if (message.id !== '') {
       writer.uint32(26).string(message.id);
     }
-    if (message.belongsToWebhook !== "") {
+    if (message.belongsToWebhook !== '') {
       writer.uint32(34).string(message.belongsToWebhook);
     }
-    if (message.triggerEvent !== "") {
+    if (message.triggerEvent !== '') {
       writer.uint32(42).string(message.triggerEvent);
     }
     return writer;
@@ -609,24 +621,24 @@ export const WebhookTriggerEvent: MessageFns<WebhookTriggerEvent> = {
       createdAt: isSet(object.createdAt)
         ? fromJsonTimestamp(object.createdAt)
         : isSet(object.created_at)
-        ? fromJsonTimestamp(object.created_at)
-        : undefined,
+          ? fromJsonTimestamp(object.created_at)
+          : undefined,
       archivedAt: isSet(object.archivedAt)
         ? fromJsonTimestamp(object.archivedAt)
         : isSet(object.archived_at)
-        ? fromJsonTimestamp(object.archived_at)
-        : undefined,
-      id: isSet(object.id) ? globalThis.String(object.id) : "",
+          ? fromJsonTimestamp(object.archived_at)
+          : undefined,
+      id: isSet(object.id) ? globalThis.String(object.id) : '',
       belongsToWebhook: isSet(object.belongsToWebhook)
         ? globalThis.String(object.belongsToWebhook)
         : isSet(object.belongs_to_webhook)
-        ? globalThis.String(object.belongs_to_webhook)
-        : "",
+          ? globalThis.String(object.belongs_to_webhook)
+          : '',
       triggerEvent: isSet(object.triggerEvent)
         ? globalThis.String(object.triggerEvent)
         : isSet(object.trigger_event)
-        ? globalThis.String(object.trigger_event)
-        : "",
+          ? globalThis.String(object.trigger_event)
+          : '',
     };
   },
 
@@ -638,13 +650,13 @@ export const WebhookTriggerEvent: MessageFns<WebhookTriggerEvent> = {
     if (message.archivedAt !== undefined) {
       obj.archivedAt = message.archivedAt.toISOString();
     }
-    if (message.id !== "") {
+    if (message.id !== '') {
       obj.id = message.id;
     }
-    if (message.belongsToWebhook !== "") {
+    if (message.belongsToWebhook !== '') {
       obj.belongsToWebhook = message.belongsToWebhook;
     }
-    if (message.triggerEvent !== "") {
+    if (message.triggerEvent !== '') {
       obj.triggerEvent = message.triggerEvent;
     }
     return obj;
@@ -657,20 +669,24 @@ export const WebhookTriggerEvent: MessageFns<WebhookTriggerEvent> = {
     const message = createBaseWebhookTriggerEvent();
     message.createdAt = object.createdAt ?? undefined;
     message.archivedAt = object.archivedAt ?? undefined;
-    message.id = object.id ?? "";
-    message.belongsToWebhook = object.belongsToWebhook ?? "";
-    message.triggerEvent = object.triggerEvent ?? "";
+    message.id = object.id ?? '';
+    message.belongsToWebhook = object.belongsToWebhook ?? '';
+    message.triggerEvent = object.triggerEvent ?? '';
     return message;
   },
 };
 
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 
-export type DeepPartial<T> = T extends Builtin ? T
-  : T extends globalThis.Array<infer U> ? globalThis.Array<DeepPartial<U>>
-  : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>>
-  : T extends {} ? { [K in keyof T]?: DeepPartial<T[K]> }
-  : Partial<T>;
+export type DeepPartial<T> = T extends Builtin
+  ? T
+  : T extends globalThis.Array<infer U>
+    ? globalThis.Array<DeepPartial<U>>
+    : T extends ReadonlyArray<infer U>
+      ? ReadonlyArray<DeepPartial<U>>
+      : T extends {}
+        ? { [K in keyof T]?: DeepPartial<T[K]> }
+        : Partial<T>;
 
 function toTimestamp(date: Date): Timestamp {
   const seconds = Math.trunc(date.getTime() / 1_000);
@@ -687,7 +703,7 @@ function fromTimestamp(t: Timestamp): Date {
 function fromJsonTimestamp(o: any): Date {
   if (o instanceof globalThis.Date) {
     return o;
-  } else if (typeof o === "string") {
+  } else if (typeof o === 'string') {
     return new globalThis.Date(o);
   } else {
     return fromTimestamp(Timestamp.fromJSON(o));
@@ -695,7 +711,7 @@ function fromJsonTimestamp(o: any): Date {
 }
 
 function isObject(value: any): boolean {
-  return typeof value === "object" && value !== null;
+  return typeof value === 'object' && value !== null;
 }
 
 function isSet(value: any): boolean {

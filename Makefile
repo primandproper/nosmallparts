@@ -115,6 +115,7 @@ proto_typescript: ensure_protoc_installed
 		--ts_proto_opt=snakeToCamel=true \
 		--proto_path proto/ \
 		$(PROTO_FILES_PATH)
+	(cd frontend && $(MAKE) format)
 
 .PHONY: proto
 proto: format_proto proto_golang proto_typescript

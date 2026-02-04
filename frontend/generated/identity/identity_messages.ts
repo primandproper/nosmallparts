@@ -5,10 +5,10 @@
 // source: identity/identity_messages.proto
 
 /* eslint-disable */
-import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
-import { Timestamp } from "../google/protobuf/timestamp";
+import { BinaryReader, BinaryWriter } from '@bufbuild/protobuf/wire';
+import { Timestamp } from '../google/protobuf/timestamp';
 
-export const protobufPackage = "identity";
+export const protobufPackage = 'identity';
 
 export interface DataCollection {
   user: User | undefined;
@@ -209,14 +209,16 @@ export const DataCollection: MessageFns<DataCollection> = {
       receivedInvites: globalThis.Array.isArray(object?.receivedInvites)
         ? object.receivedInvites.map((e: any) => AccountInvitation.fromJSON(e))
         : globalThis.Array.isArray(object?.received_invites)
-        ? object.received_invites.map((e: any) => AccountInvitation.fromJSON(e))
-        : [],
+          ? object.received_invites.map((e: any) => AccountInvitation.fromJSON(e))
+          : [],
       sentInvites: globalThis.Array.isArray(object?.sentInvites)
         ? object.sentInvites.map((e: any) => AccountInvitation.fromJSON(e))
         : globalThis.Array.isArray(object?.sent_invites)
-        ? object.sent_invites.map((e: any) => AccountInvitation.fromJSON(e))
+          ? object.sent_invites.map((e: any) => AccountInvitation.fromJSON(e))
+          : [],
+      accounts: globalThis.Array.isArray(object?.accounts)
+        ? object.accounts.map((e: any) => Account.fromJSON(e))
         : [],
-      accounts: globalThis.Array.isArray(object?.accounts) ? object.accounts.map((e: any) => Account.fromJSON(e)) : [],
     };
   },
 
@@ -242,8 +244,10 @@ export const DataCollection: MessageFns<DataCollection> = {
   },
   fromPartial(object: DeepPartial<DataCollection>): DataCollection {
     const message = createBaseDataCollection();
-    message.user = (object.user !== undefined && object.user !== null) ? User.fromPartial(object.user) : undefined;
-    message.receivedInvites = object.receivedInvites?.map((e) => AccountInvitation.fromPartial(e)) || [];
+    message.user =
+      object.user !== undefined && object.user !== null ? User.fromPartial(object.user) : undefined;
+    message.receivedInvites =
+      object.receivedInvites?.map((e) => AccountInvitation.fromPartial(e)) || [];
     message.sentInvites = object.sentInvites?.map((e) => AccountInvitation.fromPartial(e)) || [];
     message.accounts = object.accounts?.map((e) => Account.fromPartial(e)) || [];
     return message;
@@ -251,15 +255,18 @@ export const DataCollection: MessageFns<DataCollection> = {
 };
 
 function createBaseModifyUserPermissionsInput(): ModifyUserPermissionsInput {
-  return { reason: "", newRole: "" };
+  return { reason: '', newRole: '' };
 }
 
 export const ModifyUserPermissionsInput: MessageFns<ModifyUserPermissionsInput> = {
-  encode(message: ModifyUserPermissionsInput, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.reason !== "") {
+  encode(
+    message: ModifyUserPermissionsInput,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.reason !== '') {
       writer.uint32(10).string(message.reason);
     }
-    if (message.newRole !== "") {
+    if (message.newRole !== '') {
       writer.uint32(18).string(message.newRole);
     }
     return writer;
@@ -299,21 +306,21 @@ export const ModifyUserPermissionsInput: MessageFns<ModifyUserPermissionsInput> 
 
   fromJSON(object: any): ModifyUserPermissionsInput {
     return {
-      reason: isSet(object.reason) ? globalThis.String(object.reason) : "",
+      reason: isSet(object.reason) ? globalThis.String(object.reason) : '',
       newRole: isSet(object.newRole)
         ? globalThis.String(object.newRole)
         : isSet(object.new_role)
-        ? globalThis.String(object.new_role)
-        : "",
+          ? globalThis.String(object.new_role)
+          : '',
     };
   },
 
   toJSON(message: ModifyUserPermissionsInput): unknown {
     const obj: any = {};
-    if (message.reason !== "") {
+    if (message.reason !== '') {
       obj.reason = message.reason;
     }
-    if (message.newRole !== "") {
+    if (message.newRole !== '') {
       obj.newRole = message.newRole;
     }
     return obj;
@@ -324,8 +331,8 @@ export const ModifyUserPermissionsInput: MessageFns<ModifyUserPermissionsInput> 
   },
   fromPartial(object: DeepPartial<ModifyUserPermissionsInput>): ModifyUserPermissionsInput {
     const message = createBaseModifyUserPermissionsInput();
-    message.reason = object.reason ?? "";
-    message.newRole = object.newRole ?? "";
+    message.reason = object.reason ?? '';
+    message.newRole = object.newRole ?? '';
     return message;
   },
 };
@@ -338,19 +345,19 @@ function createBaseAccount(): Account {
     archivedAt: undefined,
     longitude: undefined,
     latitude: undefined,
-    state: "",
-    contactPhone: "",
-    city: "",
-    addressLine1: "",
-    zipCode: "",
-    country: "",
-    billingStatus: "",
-    addressLine2: "",
-    paymentProcessorCustomerId: "",
-    belongsToUser: "",
-    id: "",
-    name: "",
-    webhookEncryptionKey: "",
+    state: '',
+    contactPhone: '',
+    city: '',
+    addressLine1: '',
+    zipCode: '',
+    country: '',
+    billingStatus: '',
+    addressLine2: '',
+    paymentProcessorCustomerId: '',
+    belongsToUser: '',
+    id: '',
+    name: '',
+    webhookEncryptionKey: '',
     members: [],
   };
 }
@@ -375,43 +382,43 @@ export const Account: MessageFns<Account> = {
     if (message.latitude !== undefined) {
       writer.uint32(53).float(message.latitude);
     }
-    if (message.state !== "") {
+    if (message.state !== '') {
       writer.uint32(58).string(message.state);
     }
-    if (message.contactPhone !== "") {
+    if (message.contactPhone !== '') {
       writer.uint32(66).string(message.contactPhone);
     }
-    if (message.city !== "") {
+    if (message.city !== '') {
       writer.uint32(74).string(message.city);
     }
-    if (message.addressLine1 !== "") {
+    if (message.addressLine1 !== '') {
       writer.uint32(82).string(message.addressLine1);
     }
-    if (message.zipCode !== "") {
+    if (message.zipCode !== '') {
       writer.uint32(90).string(message.zipCode);
     }
-    if (message.country !== "") {
+    if (message.country !== '') {
       writer.uint32(98).string(message.country);
     }
-    if (message.billingStatus !== "") {
+    if (message.billingStatus !== '') {
       writer.uint32(106).string(message.billingStatus);
     }
-    if (message.addressLine2 !== "") {
+    if (message.addressLine2 !== '') {
       writer.uint32(114).string(message.addressLine2);
     }
-    if (message.paymentProcessorCustomerId !== "") {
+    if (message.paymentProcessorCustomerId !== '') {
       writer.uint32(122).string(message.paymentProcessorCustomerId);
     }
-    if (message.belongsToUser !== "") {
+    if (message.belongsToUser !== '') {
       writer.uint32(130).string(message.belongsToUser);
     }
-    if (message.id !== "") {
+    if (message.id !== '') {
       writer.uint32(138).string(message.id);
     }
-    if (message.name !== "") {
+    if (message.name !== '') {
       writer.uint32(146).string(message.name);
     }
-    if (message.webhookEncryptionKey !== "") {
+    if (message.webhookEncryptionKey !== '') {
       writer.uint32(154).string(message.webhookEncryptionKey);
     }
     for (const v of message.members) {
@@ -601,70 +608,70 @@ export const Account: MessageFns<Account> = {
       createdAt: isSet(object.createdAt)
         ? fromJsonTimestamp(object.createdAt)
         : isSet(object.created_at)
-        ? fromJsonTimestamp(object.created_at)
-        : undefined,
+          ? fromJsonTimestamp(object.created_at)
+          : undefined,
       subscriptionPlanId: isSet(object.subscriptionPlanId)
         ? globalThis.String(object.subscriptionPlanId)
         : isSet(object.subscription_plan_id)
-        ? globalThis.String(object.subscription_plan_id)
-        : undefined,
+          ? globalThis.String(object.subscription_plan_id)
+          : undefined,
       lastUpdatedAt: isSet(object.lastUpdatedAt)
         ? fromJsonTimestamp(object.lastUpdatedAt)
         : isSet(object.last_updated_at)
-        ? fromJsonTimestamp(object.last_updated_at)
-        : undefined,
+          ? fromJsonTimestamp(object.last_updated_at)
+          : undefined,
       archivedAt: isSet(object.archivedAt)
         ? fromJsonTimestamp(object.archivedAt)
         : isSet(object.archived_at)
-        ? fromJsonTimestamp(object.archived_at)
-        : undefined,
+          ? fromJsonTimestamp(object.archived_at)
+          : undefined,
       longitude: isSet(object.longitude) ? globalThis.Number(object.longitude) : undefined,
       latitude: isSet(object.latitude) ? globalThis.Number(object.latitude) : undefined,
-      state: isSet(object.state) ? globalThis.String(object.state) : "",
+      state: isSet(object.state) ? globalThis.String(object.state) : '',
       contactPhone: isSet(object.contactPhone)
         ? globalThis.String(object.contactPhone)
         : isSet(object.contact_phone)
-        ? globalThis.String(object.contact_phone)
-        : "",
-      city: isSet(object.city) ? globalThis.String(object.city) : "",
+          ? globalThis.String(object.contact_phone)
+          : '',
+      city: isSet(object.city) ? globalThis.String(object.city) : '',
       addressLine1: isSet(object.addressLine1)
         ? globalThis.String(object.addressLine1)
         : isSet(object.address_line1)
-        ? globalThis.String(object.address_line1)
-        : "",
+          ? globalThis.String(object.address_line1)
+          : '',
       zipCode: isSet(object.zipCode)
         ? globalThis.String(object.zipCode)
         : isSet(object.zip_code)
-        ? globalThis.String(object.zip_code)
-        : "",
-      country: isSet(object.country) ? globalThis.String(object.country) : "",
+          ? globalThis.String(object.zip_code)
+          : '',
+      country: isSet(object.country) ? globalThis.String(object.country) : '',
       billingStatus: isSet(object.billingStatus)
         ? globalThis.String(object.billingStatus)
         : isSet(object.billing_status)
-        ? globalThis.String(object.billing_status)
-        : "",
+          ? globalThis.String(object.billing_status)
+          : '',
       addressLine2: isSet(object.addressLine2)
         ? globalThis.String(object.addressLine2)
         : isSet(object.address_line2)
-        ? globalThis.String(object.address_line2)
-        : "",
+          ? globalThis.String(object.address_line2)
+          : '',
       paymentProcessorCustomerId: isSet(object.paymentProcessorCustomerId)
         ? globalThis.String(object.paymentProcessorCustomerId)
         : isSet(object.payment_processor_customer_id)
-        ? globalThis.String(object.payment_processor_customer_id)
-        : "",
+          ? globalThis.String(object.payment_processor_customer_id)
+          : '',
       belongsToUser: isSet(object.belongsToUser)
         ? globalThis.String(object.belongsToUser)
         : isSet(object.belongs_to_user)
-        ? globalThis.String(object.belongs_to_user)
-        : "",
-      id: isSet(object.id) ? globalThis.String(object.id) : "",
-      name: isSet(object.name) ? globalThis.String(object.name) : "",
+          ? globalThis.String(object.belongs_to_user)
+          : '',
+      id: isSet(object.id) ? globalThis.String(object.id) : '',
+      name: isSet(object.name) ? globalThis.String(object.name) : '',
       webhookEncryptionKey: isSet(object.webhookEncryptionKey)
         ? globalThis.String(object.webhookEncryptionKey)
         : isSet(object.webhook_encryption_key)
-        ? globalThis.String(object.webhook_encryption_key)
-        : "",
+          ? globalThis.String(object.webhook_encryption_key)
+          : '',
       members: globalThis.Array.isArray(object?.members)
         ? object.members.map((e: any) => AccountUserMembershipWithUser.fromJSON(e))
         : [],
@@ -691,43 +698,43 @@ export const Account: MessageFns<Account> = {
     if (message.latitude !== undefined) {
       obj.latitude = message.latitude;
     }
-    if (message.state !== "") {
+    if (message.state !== '') {
       obj.state = message.state;
     }
-    if (message.contactPhone !== "") {
+    if (message.contactPhone !== '') {
       obj.contactPhone = message.contactPhone;
     }
-    if (message.city !== "") {
+    if (message.city !== '') {
       obj.city = message.city;
     }
-    if (message.addressLine1 !== "") {
+    if (message.addressLine1 !== '') {
       obj.addressLine1 = message.addressLine1;
     }
-    if (message.zipCode !== "") {
+    if (message.zipCode !== '') {
       obj.zipCode = message.zipCode;
     }
-    if (message.country !== "") {
+    if (message.country !== '') {
       obj.country = message.country;
     }
-    if (message.billingStatus !== "") {
+    if (message.billingStatus !== '') {
       obj.billingStatus = message.billingStatus;
     }
-    if (message.addressLine2 !== "") {
+    if (message.addressLine2 !== '') {
       obj.addressLine2 = message.addressLine2;
     }
-    if (message.paymentProcessorCustomerId !== "") {
+    if (message.paymentProcessorCustomerId !== '') {
       obj.paymentProcessorCustomerId = message.paymentProcessorCustomerId;
     }
-    if (message.belongsToUser !== "") {
+    if (message.belongsToUser !== '') {
       obj.belongsToUser = message.belongsToUser;
     }
-    if (message.id !== "") {
+    if (message.id !== '') {
       obj.id = message.id;
     }
-    if (message.name !== "") {
+    if (message.name !== '') {
       obj.name = message.name;
     }
-    if (message.webhookEncryptionKey !== "") {
+    if (message.webhookEncryptionKey !== '') {
       obj.webhookEncryptionKey = message.webhookEncryptionKey;
     }
     if (message.members?.length) {
@@ -747,20 +754,21 @@ export const Account: MessageFns<Account> = {
     message.archivedAt = object.archivedAt ?? undefined;
     message.longitude = object.longitude ?? undefined;
     message.latitude = object.latitude ?? undefined;
-    message.state = object.state ?? "";
-    message.contactPhone = object.contactPhone ?? "";
-    message.city = object.city ?? "";
-    message.addressLine1 = object.addressLine1 ?? "";
-    message.zipCode = object.zipCode ?? "";
-    message.country = object.country ?? "";
-    message.billingStatus = object.billingStatus ?? "";
-    message.addressLine2 = object.addressLine2 ?? "";
-    message.paymentProcessorCustomerId = object.paymentProcessorCustomerId ?? "";
-    message.belongsToUser = object.belongsToUser ?? "";
-    message.id = object.id ?? "";
-    message.name = object.name ?? "";
-    message.webhookEncryptionKey = object.webhookEncryptionKey ?? "";
-    message.members = object.members?.map((e) => AccountUserMembershipWithUser.fromPartial(e)) || [];
+    message.state = object.state ?? '';
+    message.contactPhone = object.contactPhone ?? '';
+    message.city = object.city ?? '';
+    message.addressLine1 = object.addressLine1 ?? '';
+    message.zipCode = object.zipCode ?? '';
+    message.country = object.country ?? '';
+    message.billingStatus = object.billingStatus ?? '';
+    message.addressLine2 = object.addressLine2 ?? '';
+    message.paymentProcessorCustomerId = object.paymentProcessorCustomerId ?? '';
+    message.belongsToUser = object.belongsToUser ?? '';
+    message.id = object.id ?? '';
+    message.name = object.name ?? '';
+    message.webhookEncryptionKey = object.webhookEncryptionKey ?? '';
+    message.members =
+      object.members?.map((e) => AccountUserMembershipWithUser.fromPartial(e)) || [];
     return message;
   },
 };
@@ -771,13 +779,13 @@ function createBaseAccountInvitation(): AccountInvitation {
     lastUpdatedAt: undefined,
     archivedAt: undefined,
     toUser: undefined,
-    status: "",
-    toEmail: "",
-    statusNote: "",
-    token: "",
-    id: "",
-    note: "",
-    toName: "",
+    status: '',
+    toEmail: '',
+    statusNote: '',
+    token: '',
+    id: '',
+    note: '',
+    toName: '',
     expiresAt: undefined,
     destinationAccount: undefined,
     fromUser: undefined,
@@ -798,25 +806,25 @@ export const AccountInvitation: MessageFns<AccountInvitation> = {
     if (message.toUser !== undefined) {
       writer.uint32(34).string(message.toUser);
     }
-    if (message.status !== "") {
+    if (message.status !== '') {
       writer.uint32(42).string(message.status);
     }
-    if (message.toEmail !== "") {
+    if (message.toEmail !== '') {
       writer.uint32(50).string(message.toEmail);
     }
-    if (message.statusNote !== "") {
+    if (message.statusNote !== '') {
       writer.uint32(58).string(message.statusNote);
     }
-    if (message.token !== "") {
+    if (message.token !== '') {
       writer.uint32(66).string(message.token);
     }
-    if (message.id !== "") {
+    if (message.id !== '') {
       writer.uint32(74).string(message.id);
     }
-    if (message.note !== "") {
+    if (message.note !== '') {
       writer.uint32(82).string(message.note);
     }
-    if (message.toName !== "") {
+    if (message.toName !== '') {
       writer.uint32(90).string(message.toName);
     }
     if (message.expiresAt !== undefined) {
@@ -964,57 +972,57 @@ export const AccountInvitation: MessageFns<AccountInvitation> = {
       createdAt: isSet(object.createdAt)
         ? fromJsonTimestamp(object.createdAt)
         : isSet(object.created_at)
-        ? fromJsonTimestamp(object.created_at)
-        : undefined,
+          ? fromJsonTimestamp(object.created_at)
+          : undefined,
       lastUpdatedAt: isSet(object.lastUpdatedAt)
         ? fromJsonTimestamp(object.lastUpdatedAt)
         : isSet(object.last_updated_at)
-        ? fromJsonTimestamp(object.last_updated_at)
-        : undefined,
+          ? fromJsonTimestamp(object.last_updated_at)
+          : undefined,
       archivedAt: isSet(object.archivedAt)
         ? fromJsonTimestamp(object.archivedAt)
         : isSet(object.archived_at)
-        ? fromJsonTimestamp(object.archived_at)
-        : undefined,
+          ? fromJsonTimestamp(object.archived_at)
+          : undefined,
       toUser: isSet(object.toUser)
         ? globalThis.String(object.toUser)
         : isSet(object.to_user)
-        ? globalThis.String(object.to_user)
-        : undefined,
-      status: isSet(object.status) ? globalThis.String(object.status) : "",
+          ? globalThis.String(object.to_user)
+          : undefined,
+      status: isSet(object.status) ? globalThis.String(object.status) : '',
       toEmail: isSet(object.toEmail)
         ? globalThis.String(object.toEmail)
         : isSet(object.to_email)
-        ? globalThis.String(object.to_email)
-        : "",
+          ? globalThis.String(object.to_email)
+          : '',
       statusNote: isSet(object.statusNote)
         ? globalThis.String(object.statusNote)
         : isSet(object.status_note)
-        ? globalThis.String(object.status_note)
-        : "",
-      token: isSet(object.token) ? globalThis.String(object.token) : "",
-      id: isSet(object.id) ? globalThis.String(object.id) : "",
-      note: isSet(object.note) ? globalThis.String(object.note) : "",
+          ? globalThis.String(object.status_note)
+          : '',
+      token: isSet(object.token) ? globalThis.String(object.token) : '',
+      id: isSet(object.id) ? globalThis.String(object.id) : '',
+      note: isSet(object.note) ? globalThis.String(object.note) : '',
       toName: isSet(object.toName)
         ? globalThis.String(object.toName)
         : isSet(object.to_name)
-        ? globalThis.String(object.to_name)
-        : "",
+          ? globalThis.String(object.to_name)
+          : '',
       expiresAt: isSet(object.expiresAt)
         ? fromJsonTimestamp(object.expiresAt)
         : isSet(object.expires_at)
-        ? fromJsonTimestamp(object.expires_at)
-        : undefined,
+          ? fromJsonTimestamp(object.expires_at)
+          : undefined,
       destinationAccount: isSet(object.destinationAccount)
         ? Account.fromJSON(object.destinationAccount)
         : isSet(object.destination_account)
-        ? Account.fromJSON(object.destination_account)
-        : undefined,
+          ? Account.fromJSON(object.destination_account)
+          : undefined,
       fromUser: isSet(object.fromUser)
         ? User.fromJSON(object.fromUser)
         : isSet(object.from_user)
-        ? User.fromJSON(object.from_user)
-        : undefined,
+          ? User.fromJSON(object.from_user)
+          : undefined,
     };
   },
 
@@ -1032,25 +1040,25 @@ export const AccountInvitation: MessageFns<AccountInvitation> = {
     if (message.toUser !== undefined) {
       obj.toUser = message.toUser;
     }
-    if (message.status !== "") {
+    if (message.status !== '') {
       obj.status = message.status;
     }
-    if (message.toEmail !== "") {
+    if (message.toEmail !== '') {
       obj.toEmail = message.toEmail;
     }
-    if (message.statusNote !== "") {
+    if (message.statusNote !== '') {
       obj.statusNote = message.statusNote;
     }
-    if (message.token !== "") {
+    if (message.token !== '') {
       obj.token = message.token;
     }
-    if (message.id !== "") {
+    if (message.id !== '') {
       obj.id = message.id;
     }
-    if (message.note !== "") {
+    if (message.note !== '') {
       obj.note = message.note;
     }
-    if (message.toName !== "") {
+    if (message.toName !== '') {
       obj.toName = message.toName;
     }
     if (message.expiresAt !== undefined) {
@@ -1074,37 +1082,42 @@ export const AccountInvitation: MessageFns<AccountInvitation> = {
     message.lastUpdatedAt = object.lastUpdatedAt ?? undefined;
     message.archivedAt = object.archivedAt ?? undefined;
     message.toUser = object.toUser ?? undefined;
-    message.status = object.status ?? "";
-    message.toEmail = object.toEmail ?? "";
-    message.statusNote = object.statusNote ?? "";
-    message.token = object.token ?? "";
-    message.id = object.id ?? "";
-    message.note = object.note ?? "";
-    message.toName = object.toName ?? "";
+    message.status = object.status ?? '';
+    message.toEmail = object.toEmail ?? '';
+    message.statusNote = object.statusNote ?? '';
+    message.token = object.token ?? '';
+    message.id = object.id ?? '';
+    message.note = object.note ?? '';
+    message.toName = object.toName ?? '';
     message.expiresAt = object.expiresAt ?? undefined;
-    message.destinationAccount = (object.destinationAccount !== undefined && object.destinationAccount !== null)
-      ? Account.fromPartial(object.destinationAccount)
-      : undefined;
-    message.fromUser = (object.fromUser !== undefined && object.fromUser !== null)
-      ? User.fromPartial(object.fromUser)
-      : undefined;
+    message.destinationAccount =
+      object.destinationAccount !== undefined && object.destinationAccount !== null
+        ? Account.fromPartial(object.destinationAccount)
+        : undefined;
+    message.fromUser =
+      object.fromUser !== undefined && object.fromUser !== null
+        ? User.fromPartial(object.fromUser)
+        : undefined;
     return message;
   },
 };
 
 function createBaseAccountOwnershipTransferInput(): AccountOwnershipTransferInput {
-  return { reason: "", currentOwner: "", newOwner: "" };
+  return { reason: '', currentOwner: '', newOwner: '' };
 }
 
 export const AccountOwnershipTransferInput: MessageFns<AccountOwnershipTransferInput> = {
-  encode(message: AccountOwnershipTransferInput, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.reason !== "") {
+  encode(
+    message: AccountOwnershipTransferInput,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.reason !== '') {
       writer.uint32(10).string(message.reason);
     }
-    if (message.currentOwner !== "") {
+    if (message.currentOwner !== '') {
       writer.uint32(18).string(message.currentOwner);
     }
-    if (message.newOwner !== "") {
+    if (message.newOwner !== '') {
       writer.uint32(26).string(message.newOwner);
     }
     return writer;
@@ -1152,29 +1165,29 @@ export const AccountOwnershipTransferInput: MessageFns<AccountOwnershipTransferI
 
   fromJSON(object: any): AccountOwnershipTransferInput {
     return {
-      reason: isSet(object.reason) ? globalThis.String(object.reason) : "",
+      reason: isSet(object.reason) ? globalThis.String(object.reason) : '',
       currentOwner: isSet(object.currentOwner)
         ? globalThis.String(object.currentOwner)
         : isSet(object.current_owner)
-        ? globalThis.String(object.current_owner)
-        : "",
+          ? globalThis.String(object.current_owner)
+          : '',
       newOwner: isSet(object.newOwner)
         ? globalThis.String(object.newOwner)
         : isSet(object.new_owner)
-        ? globalThis.String(object.new_owner)
-        : "",
+          ? globalThis.String(object.new_owner)
+          : '',
     };
   },
 
   toJSON(message: AccountOwnershipTransferInput): unknown {
     const obj: any = {};
-    if (message.reason !== "") {
+    if (message.reason !== '') {
       obj.reason = message.reason;
     }
-    if (message.currentOwner !== "") {
+    if (message.currentOwner !== '') {
       obj.currentOwner = message.currentOwner;
     }
-    if (message.newOwner !== "") {
+    if (message.newOwner !== '') {
       obj.newOwner = message.newOwner;
     }
     return obj;
@@ -1185,9 +1198,9 @@ export const AccountOwnershipTransferInput: MessageFns<AccountOwnershipTransferI
   },
   fromPartial(object: DeepPartial<AccountOwnershipTransferInput>): AccountOwnershipTransferInput {
     const message = createBaseAccountOwnershipTransferInput();
-    message.reason = object.reason ?? "";
-    message.currentOwner = object.currentOwner ?? "";
-    message.newOwner = object.newOwner ?? "";
+    message.reason = object.reason ?? '';
+    message.currentOwner = object.currentOwner ?? '';
+    message.newOwner = object.newOwner ?? '';
     return message;
   },
 };
@@ -1197,10 +1210,10 @@ function createBaseAccountUserMembership(): AccountUserMembership {
     createdAt: undefined,
     lastUpdatedAt: undefined,
     archivedAt: undefined,
-    id: "",
-    belongsToUser: "",
-    belongsToAccount: "",
-    accountRole: "",
+    id: '',
+    belongsToUser: '',
+    belongsToAccount: '',
+    accountRole: '',
     defaultAccount: false,
   };
 }
@@ -1216,16 +1229,16 @@ export const AccountUserMembership: MessageFns<AccountUserMembership> = {
     if (message.archivedAt !== undefined) {
       Timestamp.encode(toTimestamp(message.archivedAt), writer.uint32(26).fork()).join();
     }
-    if (message.id !== "") {
+    if (message.id !== '') {
       writer.uint32(34).string(message.id);
     }
-    if (message.belongsToUser !== "") {
+    if (message.belongsToUser !== '') {
       writer.uint32(42).string(message.belongsToUser);
     }
-    if (message.belongsToAccount !== "") {
+    if (message.belongsToAccount !== '') {
       writer.uint32(50).string(message.belongsToAccount);
     }
-    if (message.accountRole !== "") {
+    if (message.accountRole !== '') {
       writer.uint32(58).string(message.accountRole);
     }
     if (message.defaultAccount !== false) {
@@ -1319,39 +1332,39 @@ export const AccountUserMembership: MessageFns<AccountUserMembership> = {
       createdAt: isSet(object.createdAt)
         ? fromJsonTimestamp(object.createdAt)
         : isSet(object.created_at)
-        ? fromJsonTimestamp(object.created_at)
-        : undefined,
+          ? fromJsonTimestamp(object.created_at)
+          : undefined,
       lastUpdatedAt: isSet(object.lastUpdatedAt)
         ? fromJsonTimestamp(object.lastUpdatedAt)
         : isSet(object.last_updated_at)
-        ? fromJsonTimestamp(object.last_updated_at)
-        : undefined,
+          ? fromJsonTimestamp(object.last_updated_at)
+          : undefined,
       archivedAt: isSet(object.archivedAt)
         ? fromJsonTimestamp(object.archivedAt)
         : isSet(object.archived_at)
-        ? fromJsonTimestamp(object.archived_at)
-        : undefined,
-      id: isSet(object.id) ? globalThis.String(object.id) : "",
+          ? fromJsonTimestamp(object.archived_at)
+          : undefined,
+      id: isSet(object.id) ? globalThis.String(object.id) : '',
       belongsToUser: isSet(object.belongsToUser)
         ? globalThis.String(object.belongsToUser)
         : isSet(object.belongs_to_user)
-        ? globalThis.String(object.belongs_to_user)
-        : "",
+          ? globalThis.String(object.belongs_to_user)
+          : '',
       belongsToAccount: isSet(object.belongsToAccount)
         ? globalThis.String(object.belongsToAccount)
         : isSet(object.belongs_to_account)
-        ? globalThis.String(object.belongs_to_account)
-        : "",
+          ? globalThis.String(object.belongs_to_account)
+          : '',
       accountRole: isSet(object.accountRole)
         ? globalThis.String(object.accountRole)
         : isSet(object.account_role)
-        ? globalThis.String(object.account_role)
-        : "",
+          ? globalThis.String(object.account_role)
+          : '',
       defaultAccount: isSet(object.defaultAccount)
         ? globalThis.Boolean(object.defaultAccount)
         : isSet(object.default_account)
-        ? globalThis.Boolean(object.default_account)
-        : false,
+          ? globalThis.Boolean(object.default_account)
+          : false,
     };
   },
 
@@ -1366,16 +1379,16 @@ export const AccountUserMembership: MessageFns<AccountUserMembership> = {
     if (message.archivedAt !== undefined) {
       obj.archivedAt = message.archivedAt.toISOString();
     }
-    if (message.id !== "") {
+    if (message.id !== '') {
       obj.id = message.id;
     }
-    if (message.belongsToUser !== "") {
+    if (message.belongsToUser !== '') {
       obj.belongsToUser = message.belongsToUser;
     }
-    if (message.belongsToAccount !== "") {
+    if (message.belongsToAccount !== '') {
       obj.belongsToAccount = message.belongsToAccount;
     }
-    if (message.accountRole !== "") {
+    if (message.accountRole !== '') {
       obj.accountRole = message.accountRole;
     }
     if (message.defaultAccount !== false) {
@@ -1392,10 +1405,10 @@ export const AccountUserMembership: MessageFns<AccountUserMembership> = {
     message.createdAt = object.createdAt ?? undefined;
     message.lastUpdatedAt = object.lastUpdatedAt ?? undefined;
     message.archivedAt = object.archivedAt ?? undefined;
-    message.id = object.id ?? "";
-    message.belongsToUser = object.belongsToUser ?? "";
-    message.belongsToAccount = object.belongsToAccount ?? "";
-    message.accountRole = object.accountRole ?? "";
+    message.id = object.id ?? '';
+    message.belongsToUser = object.belongsToUser ?? '';
+    message.belongsToAccount = object.belongsToAccount ?? '';
+    message.accountRole = object.accountRole ?? '';
     message.defaultAccount = object.defaultAccount ?? false;
     return message;
   },
@@ -1407,15 +1420,18 @@ function createBaseAccountUserMembershipWithUser(): AccountUserMembershipWithUse
     lastUpdatedAt: undefined,
     belongsToUser: undefined,
     archivedAt: undefined,
-    id: "",
-    belongsToAccount: "",
-    accountRole: "",
+    id: '',
+    belongsToAccount: '',
+    accountRole: '',
     defaultAccount: false,
   };
 }
 
 export const AccountUserMembershipWithUser: MessageFns<AccountUserMembershipWithUser> = {
-  encode(message: AccountUserMembershipWithUser, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: AccountUserMembershipWithUser,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.createdAt !== undefined) {
       Timestamp.encode(toTimestamp(message.createdAt), writer.uint32(10).fork()).join();
     }
@@ -1428,13 +1444,13 @@ export const AccountUserMembershipWithUser: MessageFns<AccountUserMembershipWith
     if (message.archivedAt !== undefined) {
       Timestamp.encode(toTimestamp(message.archivedAt), writer.uint32(34).fork()).join();
     }
-    if (message.id !== "") {
+    if (message.id !== '') {
       writer.uint32(42).string(message.id);
     }
-    if (message.belongsToAccount !== "") {
+    if (message.belongsToAccount !== '') {
       writer.uint32(50).string(message.belongsToAccount);
     }
-    if (message.accountRole !== "") {
+    if (message.accountRole !== '') {
       writer.uint32(58).string(message.accountRole);
     }
     if (message.defaultAccount !== false) {
@@ -1528,39 +1544,39 @@ export const AccountUserMembershipWithUser: MessageFns<AccountUserMembershipWith
       createdAt: isSet(object.createdAt)
         ? fromJsonTimestamp(object.createdAt)
         : isSet(object.created_at)
-        ? fromJsonTimestamp(object.created_at)
-        : undefined,
+          ? fromJsonTimestamp(object.created_at)
+          : undefined,
       lastUpdatedAt: isSet(object.lastUpdatedAt)
         ? fromJsonTimestamp(object.lastUpdatedAt)
         : isSet(object.last_updated_at)
-        ? fromJsonTimestamp(object.last_updated_at)
-        : undefined,
+          ? fromJsonTimestamp(object.last_updated_at)
+          : undefined,
       belongsToUser: isSet(object.belongsToUser)
         ? User.fromJSON(object.belongsToUser)
         : isSet(object.belongs_to_user)
-        ? User.fromJSON(object.belongs_to_user)
-        : undefined,
+          ? User.fromJSON(object.belongs_to_user)
+          : undefined,
       archivedAt: isSet(object.archivedAt)
         ? fromJsonTimestamp(object.archivedAt)
         : isSet(object.archived_at)
-        ? fromJsonTimestamp(object.archived_at)
-        : undefined,
-      id: isSet(object.id) ? globalThis.String(object.id) : "",
+          ? fromJsonTimestamp(object.archived_at)
+          : undefined,
+      id: isSet(object.id) ? globalThis.String(object.id) : '',
       belongsToAccount: isSet(object.belongsToAccount)
         ? globalThis.String(object.belongsToAccount)
         : isSet(object.belongs_to_account)
-        ? globalThis.String(object.belongs_to_account)
-        : "",
+          ? globalThis.String(object.belongs_to_account)
+          : '',
       accountRole: isSet(object.accountRole)
         ? globalThis.String(object.accountRole)
         : isSet(object.account_role)
-        ? globalThis.String(object.account_role)
-        : "",
+          ? globalThis.String(object.account_role)
+          : '',
       defaultAccount: isSet(object.defaultAccount)
         ? globalThis.Boolean(object.defaultAccount)
         : isSet(object.default_account)
-        ? globalThis.Boolean(object.default_account)
-        : false,
+          ? globalThis.Boolean(object.default_account)
+          : false,
     };
   },
 
@@ -1578,13 +1594,13 @@ export const AccountUserMembershipWithUser: MessageFns<AccountUserMembershipWith
     if (message.archivedAt !== undefined) {
       obj.archivedAt = message.archivedAt.toISOString();
     }
-    if (message.id !== "") {
+    if (message.id !== '') {
       obj.id = message.id;
     }
-    if (message.belongsToAccount !== "") {
+    if (message.belongsToAccount !== '') {
       obj.belongsToAccount = message.belongsToAccount;
     }
-    if (message.accountRole !== "") {
+    if (message.accountRole !== '') {
       obj.accountRole = message.accountRole;
     }
     if (message.defaultAccount !== false) {
@@ -1600,13 +1616,14 @@ export const AccountUserMembershipWithUser: MessageFns<AccountUserMembershipWith
     const message = createBaseAccountUserMembershipWithUser();
     message.createdAt = object.createdAt ?? undefined;
     message.lastUpdatedAt = object.lastUpdatedAt ?? undefined;
-    message.belongsToUser = (object.belongsToUser !== undefined && object.belongsToUser !== null)
-      ? User.fromPartial(object.belongsToUser)
-      : undefined;
+    message.belongsToUser =
+      object.belongsToUser !== undefined && object.belongsToUser !== null
+        ? User.fromPartial(object.belongsToUser)
+        : undefined;
     message.archivedAt = object.archivedAt ?? undefined;
-    message.id = object.id ?? "";
-    message.belongsToAccount = object.belongsToAccount ?? "";
-    message.accountRole = object.accountRole ?? "";
+    message.id = object.id ?? '';
+    message.belongsToAccount = object.belongsToAccount ?? '';
+    message.accountRole = object.accountRole ?? '';
     message.defaultAccount = object.defaultAccount ?? false;
     return message;
   },
@@ -1623,17 +1640,17 @@ function createBaseUser(): User {
     avatarSrc: undefined,
     birthday: undefined,
     archivedAt: undefined,
-    accountStatusExplanation: "",
-    twoFactorSecret: "",
-    hashedPassword: "",
-    id: "",
-    accountStatus: "",
-    username: "",
-    firstName: "",
-    lastName: "",
-    emailAddress: "",
+    accountStatusExplanation: '',
+    twoFactorSecret: '',
+    hashedPassword: '',
+    id: '',
+    accountStatus: '',
+    username: '',
+    firstName: '',
+    lastName: '',
+    emailAddress: '',
     emailAddressVerifiedAt: undefined,
-    serviceRole: "",
+    serviceRole: '',
     requiresPasswordChange: false,
   };
 }
@@ -1650,13 +1667,22 @@ export const User: MessageFns<User> = {
       Timestamp.encode(toTimestamp(message.lastUpdatedAt), writer.uint32(26).fork()).join();
     }
     if (message.lastAcceptedTermsOfService !== undefined) {
-      Timestamp.encode(toTimestamp(message.lastAcceptedTermsOfService), writer.uint32(34).fork()).join();
+      Timestamp.encode(
+        toTimestamp(message.lastAcceptedTermsOfService),
+        writer.uint32(34).fork()
+      ).join();
     }
     if (message.lastAcceptedPrivacyPolicy !== undefined) {
-      Timestamp.encode(toTimestamp(message.lastAcceptedPrivacyPolicy), writer.uint32(42).fork()).join();
+      Timestamp.encode(
+        toTimestamp(message.lastAcceptedPrivacyPolicy),
+        writer.uint32(42).fork()
+      ).join();
     }
     if (message.twoFactorSecretVerifiedAt !== undefined) {
-      Timestamp.encode(toTimestamp(message.twoFactorSecretVerifiedAt), writer.uint32(50).fork()).join();
+      Timestamp.encode(
+        toTimestamp(message.twoFactorSecretVerifiedAt),
+        writer.uint32(50).fork()
+      ).join();
     }
     if (message.avatarSrc !== undefined) {
       writer.uint32(58).string(message.avatarSrc);
@@ -1667,37 +1693,40 @@ export const User: MessageFns<User> = {
     if (message.archivedAt !== undefined) {
       Timestamp.encode(toTimestamp(message.archivedAt), writer.uint32(74).fork()).join();
     }
-    if (message.accountStatusExplanation !== "") {
+    if (message.accountStatusExplanation !== '') {
       writer.uint32(82).string(message.accountStatusExplanation);
     }
-    if (message.twoFactorSecret !== "") {
+    if (message.twoFactorSecret !== '') {
       writer.uint32(90).string(message.twoFactorSecret);
     }
-    if (message.hashedPassword !== "") {
+    if (message.hashedPassword !== '') {
       writer.uint32(98).string(message.hashedPassword);
     }
-    if (message.id !== "") {
+    if (message.id !== '') {
       writer.uint32(106).string(message.id);
     }
-    if (message.accountStatus !== "") {
+    if (message.accountStatus !== '') {
       writer.uint32(114).string(message.accountStatus);
     }
-    if (message.username !== "") {
+    if (message.username !== '') {
       writer.uint32(122).string(message.username);
     }
-    if (message.firstName !== "") {
+    if (message.firstName !== '') {
       writer.uint32(130).string(message.firstName);
     }
-    if (message.lastName !== "") {
+    if (message.lastName !== '') {
       writer.uint32(138).string(message.lastName);
     }
-    if (message.emailAddress !== "") {
+    if (message.emailAddress !== '') {
       writer.uint32(146).string(message.emailAddress);
     }
     if (message.emailAddressVerifiedAt !== undefined) {
-      Timestamp.encode(toTimestamp(message.emailAddressVerifiedAt), writer.uint32(154).fork()).join();
+      Timestamp.encode(
+        toTimestamp(message.emailAddressVerifiedAt),
+        writer.uint32(154).fork()
+      ).join();
     }
-    if (message.serviceRole !== "") {
+    if (message.serviceRole !== '') {
       writer.uint32(162).string(message.serviceRole);
     }
     if (message.requiresPasswordChange !== false) {
@@ -1742,7 +1771,9 @@ export const User: MessageFns<User> = {
             break;
           }
 
-          message.lastAcceptedTermsOfService = fromTimestamp(Timestamp.decode(reader, reader.uint32()));
+          message.lastAcceptedTermsOfService = fromTimestamp(
+            Timestamp.decode(reader, reader.uint32())
+          );
           continue;
         }
         case 5: {
@@ -1750,7 +1781,9 @@ export const User: MessageFns<User> = {
             break;
           }
 
-          message.lastAcceptedPrivacyPolicy = fromTimestamp(Timestamp.decode(reader, reader.uint32()));
+          message.lastAcceptedPrivacyPolicy = fromTimestamp(
+            Timestamp.decode(reader, reader.uint32())
+          );
           continue;
         }
         case 6: {
@@ -1758,7 +1791,9 @@ export const User: MessageFns<User> = {
             break;
           }
 
-          message.twoFactorSecretVerifiedAt = fromTimestamp(Timestamp.decode(reader, reader.uint32()));
+          message.twoFactorSecretVerifiedAt = fromTimestamp(
+            Timestamp.decode(reader, reader.uint32())
+          );
           continue;
         }
         case 7: {
@@ -1895,96 +1930,96 @@ export const User: MessageFns<User> = {
       createdAt: isSet(object.createdAt)
         ? fromJsonTimestamp(object.createdAt)
         : isSet(object.created_at)
-        ? fromJsonTimestamp(object.created_at)
-        : undefined,
+          ? fromJsonTimestamp(object.created_at)
+          : undefined,
       passwordLastChangedAt: isSet(object.passwordLastChangedAt)
         ? fromJsonTimestamp(object.passwordLastChangedAt)
         : isSet(object.password_last_changed_at)
-        ? fromJsonTimestamp(object.password_last_changed_at)
-        : undefined,
+          ? fromJsonTimestamp(object.password_last_changed_at)
+          : undefined,
       lastUpdatedAt: isSet(object.lastUpdatedAt)
         ? fromJsonTimestamp(object.lastUpdatedAt)
         : isSet(object.last_updated_at)
-        ? fromJsonTimestamp(object.last_updated_at)
-        : undefined,
+          ? fromJsonTimestamp(object.last_updated_at)
+          : undefined,
       lastAcceptedTermsOfService: isSet(object.lastAcceptedTermsOfService)
         ? fromJsonTimestamp(object.lastAcceptedTermsOfService)
         : isSet(object.last_accepted_terms_of_service)
-        ? fromJsonTimestamp(object.last_accepted_terms_of_service)
-        : undefined,
+          ? fromJsonTimestamp(object.last_accepted_terms_of_service)
+          : undefined,
       lastAcceptedPrivacyPolicy: isSet(object.lastAcceptedPrivacyPolicy)
         ? fromJsonTimestamp(object.lastAcceptedPrivacyPolicy)
         : isSet(object.last_accepted_privacy_policy)
-        ? fromJsonTimestamp(object.last_accepted_privacy_policy)
-        : undefined,
+          ? fromJsonTimestamp(object.last_accepted_privacy_policy)
+          : undefined,
       twoFactorSecretVerifiedAt: isSet(object.twoFactorSecretVerifiedAt)
         ? fromJsonTimestamp(object.twoFactorSecretVerifiedAt)
         : isSet(object.two_factor_secret_verified_at)
-        ? fromJsonTimestamp(object.two_factor_secret_verified_at)
-        : undefined,
+          ? fromJsonTimestamp(object.two_factor_secret_verified_at)
+          : undefined,
       avatarSrc: isSet(object.avatarSrc)
         ? globalThis.String(object.avatarSrc)
         : isSet(object.avatar_src)
-        ? globalThis.String(object.avatar_src)
-        : undefined,
+          ? globalThis.String(object.avatar_src)
+          : undefined,
       birthday: isSet(object.birthday) ? fromJsonTimestamp(object.birthday) : undefined,
       archivedAt: isSet(object.archivedAt)
         ? fromJsonTimestamp(object.archivedAt)
         : isSet(object.archived_at)
-        ? fromJsonTimestamp(object.archived_at)
-        : undefined,
+          ? fromJsonTimestamp(object.archived_at)
+          : undefined,
       accountStatusExplanation: isSet(object.accountStatusExplanation)
         ? globalThis.String(object.accountStatusExplanation)
         : isSet(object.account_status_explanation)
-        ? globalThis.String(object.account_status_explanation)
-        : "",
+          ? globalThis.String(object.account_status_explanation)
+          : '',
       twoFactorSecret: isSet(object.twoFactorSecret)
         ? globalThis.String(object.twoFactorSecret)
         : isSet(object.two_factor_secret)
-        ? globalThis.String(object.two_factor_secret)
-        : "",
+          ? globalThis.String(object.two_factor_secret)
+          : '',
       hashedPassword: isSet(object.hashedPassword)
         ? globalThis.String(object.hashedPassword)
         : isSet(object.hashed_password)
-        ? globalThis.String(object.hashed_password)
-        : "",
-      id: isSet(object.id) ? globalThis.String(object.id) : "",
+          ? globalThis.String(object.hashed_password)
+          : '',
+      id: isSet(object.id) ? globalThis.String(object.id) : '',
       accountStatus: isSet(object.accountStatus)
         ? globalThis.String(object.accountStatus)
         : isSet(object.account_status)
-        ? globalThis.String(object.account_status)
-        : "",
-      username: isSet(object.username) ? globalThis.String(object.username) : "",
+          ? globalThis.String(object.account_status)
+          : '',
+      username: isSet(object.username) ? globalThis.String(object.username) : '',
       firstName: isSet(object.firstName)
         ? globalThis.String(object.firstName)
         : isSet(object.first_name)
-        ? globalThis.String(object.first_name)
-        : "",
+          ? globalThis.String(object.first_name)
+          : '',
       lastName: isSet(object.lastName)
         ? globalThis.String(object.lastName)
         : isSet(object.last_name)
-        ? globalThis.String(object.last_name)
-        : "",
+          ? globalThis.String(object.last_name)
+          : '',
       emailAddress: isSet(object.emailAddress)
         ? globalThis.String(object.emailAddress)
         : isSet(object.email_address)
-        ? globalThis.String(object.email_address)
-        : "",
+          ? globalThis.String(object.email_address)
+          : '',
       emailAddressVerifiedAt: isSet(object.emailAddressVerifiedAt)
         ? fromJsonTimestamp(object.emailAddressVerifiedAt)
         : isSet(object.email_address_verified_at)
-        ? fromJsonTimestamp(object.email_address_verified_at)
-        : undefined,
+          ? fromJsonTimestamp(object.email_address_verified_at)
+          : undefined,
       serviceRole: isSet(object.serviceRole)
         ? globalThis.String(object.serviceRole)
         : isSet(object.service_role)
-        ? globalThis.String(object.service_role)
-        : "",
+          ? globalThis.String(object.service_role)
+          : '',
       requiresPasswordChange: isSet(object.requiresPasswordChange)
         ? globalThis.Boolean(object.requiresPasswordChange)
         : isSet(object.requires_password_change)
-        ? globalThis.Boolean(object.requires_password_change)
-        : false,
+          ? globalThis.Boolean(object.requires_password_change)
+          : false,
     };
   },
 
@@ -2017,37 +2052,37 @@ export const User: MessageFns<User> = {
     if (message.archivedAt !== undefined) {
       obj.archivedAt = message.archivedAt.toISOString();
     }
-    if (message.accountStatusExplanation !== "") {
+    if (message.accountStatusExplanation !== '') {
       obj.accountStatusExplanation = message.accountStatusExplanation;
     }
-    if (message.twoFactorSecret !== "") {
+    if (message.twoFactorSecret !== '') {
       obj.twoFactorSecret = message.twoFactorSecret;
     }
-    if (message.hashedPassword !== "") {
+    if (message.hashedPassword !== '') {
       obj.hashedPassword = message.hashedPassword;
     }
-    if (message.id !== "") {
+    if (message.id !== '') {
       obj.id = message.id;
     }
-    if (message.accountStatus !== "") {
+    if (message.accountStatus !== '') {
       obj.accountStatus = message.accountStatus;
     }
-    if (message.username !== "") {
+    if (message.username !== '') {
       obj.username = message.username;
     }
-    if (message.firstName !== "") {
+    if (message.firstName !== '') {
       obj.firstName = message.firstName;
     }
-    if (message.lastName !== "") {
+    if (message.lastName !== '') {
       obj.lastName = message.lastName;
     }
-    if (message.emailAddress !== "") {
+    if (message.emailAddress !== '') {
       obj.emailAddress = message.emailAddress;
     }
     if (message.emailAddressVerifiedAt !== undefined) {
       obj.emailAddressVerifiedAt = message.emailAddressVerifiedAt.toISOString();
     }
-    if (message.serviceRole !== "") {
+    if (message.serviceRole !== '') {
       obj.serviceRole = message.serviceRole;
     }
     if (message.requiresPasswordChange !== false) {
@@ -2070,35 +2105,38 @@ export const User: MessageFns<User> = {
     message.avatarSrc = object.avatarSrc ?? undefined;
     message.birthday = object.birthday ?? undefined;
     message.archivedAt = object.archivedAt ?? undefined;
-    message.accountStatusExplanation = object.accountStatusExplanation ?? "";
-    message.twoFactorSecret = object.twoFactorSecret ?? "";
-    message.hashedPassword = object.hashedPassword ?? "";
-    message.id = object.id ?? "";
-    message.accountStatus = object.accountStatus ?? "";
-    message.username = object.username ?? "";
-    message.firstName = object.firstName ?? "";
-    message.lastName = object.lastName ?? "";
-    message.emailAddress = object.emailAddress ?? "";
+    message.accountStatusExplanation = object.accountStatusExplanation ?? '';
+    message.twoFactorSecret = object.twoFactorSecret ?? '';
+    message.hashedPassword = object.hashedPassword ?? '';
+    message.id = object.id ?? '';
+    message.accountStatus = object.accountStatus ?? '';
+    message.username = object.username ?? '';
+    message.firstName = object.firstName ?? '';
+    message.lastName = object.lastName ?? '';
+    message.emailAddress = object.emailAddress ?? '';
     message.emailAddressVerifiedAt = object.emailAddressVerifiedAt ?? undefined;
-    message.serviceRole = object.serviceRole ?? "";
+    message.serviceRole = object.serviceRole ?? '';
     message.requiresPasswordChange = object.requiresPasswordChange ?? false;
     return message;
   },
 };
 
 function createBaseUserAccountStatusUpdateInput(): UserAccountStatusUpdateInput {
-  return { newStatus: "", reason: "", targetUserId: "" };
+  return { newStatus: '', reason: '', targetUserId: '' };
 }
 
 export const UserAccountStatusUpdateInput: MessageFns<UserAccountStatusUpdateInput> = {
-  encode(message: UserAccountStatusUpdateInput, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.newStatus !== "") {
+  encode(
+    message: UserAccountStatusUpdateInput,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.newStatus !== '') {
       writer.uint32(10).string(message.newStatus);
     }
-    if (message.reason !== "") {
+    if (message.reason !== '') {
       writer.uint32(18).string(message.reason);
     }
-    if (message.targetUserId !== "") {
+    if (message.targetUserId !== '') {
       writer.uint32(26).string(message.targetUserId);
     }
     return writer;
@@ -2149,26 +2187,26 @@ export const UserAccountStatusUpdateInput: MessageFns<UserAccountStatusUpdateInp
       newStatus: isSet(object.newStatus)
         ? globalThis.String(object.newStatus)
         : isSet(object.new_status)
-        ? globalThis.String(object.new_status)
-        : "",
-      reason: isSet(object.reason) ? globalThis.String(object.reason) : "",
+          ? globalThis.String(object.new_status)
+          : '',
+      reason: isSet(object.reason) ? globalThis.String(object.reason) : '',
       targetUserId: isSet(object.targetUserId)
         ? globalThis.String(object.targetUserId)
         : isSet(object.target_user_id)
-        ? globalThis.String(object.target_user_id)
-        : "",
+          ? globalThis.String(object.target_user_id)
+          : '',
     };
   },
 
   toJSON(message: UserAccountStatusUpdateInput): unknown {
     const obj: any = {};
-    if (message.newStatus !== "") {
+    if (message.newStatus !== '') {
       obj.newStatus = message.newStatus;
     }
-    if (message.reason !== "") {
+    if (message.reason !== '') {
       obj.reason = message.reason;
     }
-    if (message.targetUserId !== "") {
+    if (message.targetUserId !== '') {
       obj.targetUserId = message.targetUserId;
     }
     return obj;
@@ -2179,9 +2217,9 @@ export const UserAccountStatusUpdateInput: MessageFns<UserAccountStatusUpdateInp
   },
   fromPartial(object: DeepPartial<UserAccountStatusUpdateInput>): UserAccountStatusUpdateInput {
     const message = createBaseUserAccountStatusUpdateInput();
-    message.newStatus = object.newStatus ?? "";
-    message.reason = object.reason ?? "";
-    message.targetUserId = object.targetUserId ?? "";
+    message.newStatus = object.newStatus ?? '';
+    message.reason = object.reason ?? '';
+    message.targetUserId = object.targetUserId ?? '';
     return message;
   },
 };
@@ -2189,14 +2227,14 @@ export const UserAccountStatusUpdateInput: MessageFns<UserAccountStatusUpdateInp
 function createBaseUserRegistrationInput(): UserRegistrationInput {
   return {
     birthday: undefined,
-    password: "",
-    emailAddress: "",
-    invitationToken: "",
-    invitationId: "",
-    username: "",
-    firstName: "",
-    lastName: "",
-    accountName: "",
+    password: '',
+    emailAddress: '',
+    invitationToken: '',
+    invitationId: '',
+    username: '',
+    firstName: '',
+    lastName: '',
+    accountName: '',
     acceptedTos: false,
     acceptedPrivacyPolicy: false,
   };
@@ -2207,28 +2245,28 @@ export const UserRegistrationInput: MessageFns<UserRegistrationInput> = {
     if (message.birthday !== undefined) {
       Timestamp.encode(toTimestamp(message.birthday), writer.uint32(10).fork()).join();
     }
-    if (message.password !== "") {
+    if (message.password !== '') {
       writer.uint32(18).string(message.password);
     }
-    if (message.emailAddress !== "") {
+    if (message.emailAddress !== '') {
       writer.uint32(26).string(message.emailAddress);
     }
-    if (message.invitationToken !== "") {
+    if (message.invitationToken !== '') {
       writer.uint32(34).string(message.invitationToken);
     }
-    if (message.invitationId !== "") {
+    if (message.invitationId !== '') {
       writer.uint32(42).string(message.invitationId);
     }
-    if (message.username !== "") {
+    if (message.username !== '') {
       writer.uint32(50).string(message.username);
     }
-    if (message.firstName !== "") {
+    if (message.firstName !== '') {
       writer.uint32(58).string(message.firstName);
     }
-    if (message.lastName !== "") {
+    if (message.lastName !== '') {
       writer.uint32(66).string(message.lastName);
     }
-    if (message.accountName !== "") {
+    if (message.accountName !== '') {
       writer.uint32(74).string(message.accountName);
     }
     if (message.acceptedTos !== false) {
@@ -2347,48 +2385,48 @@ export const UserRegistrationInput: MessageFns<UserRegistrationInput> = {
   fromJSON(object: any): UserRegistrationInput {
     return {
       birthday: isSet(object.birthday) ? fromJsonTimestamp(object.birthday) : undefined,
-      password: isSet(object.password) ? globalThis.String(object.password) : "",
+      password: isSet(object.password) ? globalThis.String(object.password) : '',
       emailAddress: isSet(object.emailAddress)
         ? globalThis.String(object.emailAddress)
         : isSet(object.email_address)
-        ? globalThis.String(object.email_address)
-        : "",
+          ? globalThis.String(object.email_address)
+          : '',
       invitationToken: isSet(object.invitationToken)
         ? globalThis.String(object.invitationToken)
         : isSet(object.invitation_token)
-        ? globalThis.String(object.invitation_token)
-        : "",
+          ? globalThis.String(object.invitation_token)
+          : '',
       invitationId: isSet(object.invitationId)
         ? globalThis.String(object.invitationId)
         : isSet(object.invitation_id)
-        ? globalThis.String(object.invitation_id)
-        : "",
-      username: isSet(object.username) ? globalThis.String(object.username) : "",
+          ? globalThis.String(object.invitation_id)
+          : '',
+      username: isSet(object.username) ? globalThis.String(object.username) : '',
       firstName: isSet(object.firstName)
         ? globalThis.String(object.firstName)
         : isSet(object.first_name)
-        ? globalThis.String(object.first_name)
-        : "",
+          ? globalThis.String(object.first_name)
+          : '',
       lastName: isSet(object.lastName)
         ? globalThis.String(object.lastName)
         : isSet(object.last_name)
-        ? globalThis.String(object.last_name)
-        : "",
+          ? globalThis.String(object.last_name)
+          : '',
       accountName: isSet(object.accountName)
         ? globalThis.String(object.accountName)
         : isSet(object.account_name)
-        ? globalThis.String(object.account_name)
-        : "",
+          ? globalThis.String(object.account_name)
+          : '',
       acceptedTos: isSet(object.acceptedTos)
         ? globalThis.Boolean(object.acceptedTos)
         : isSet(object.accepted_tos)
-        ? globalThis.Boolean(object.accepted_tos)
-        : false,
+          ? globalThis.Boolean(object.accepted_tos)
+          : false,
       acceptedPrivacyPolicy: isSet(object.acceptedPrivacyPolicy)
         ? globalThis.Boolean(object.acceptedPrivacyPolicy)
         : isSet(object.accepted_privacy_policy)
-        ? globalThis.Boolean(object.accepted_privacy_policy)
-        : false,
+          ? globalThis.Boolean(object.accepted_privacy_policy)
+          : false,
     };
   },
 
@@ -2397,28 +2435,28 @@ export const UserRegistrationInput: MessageFns<UserRegistrationInput> = {
     if (message.birthday !== undefined) {
       obj.birthday = message.birthday.toISOString();
     }
-    if (message.password !== "") {
+    if (message.password !== '') {
       obj.password = message.password;
     }
-    if (message.emailAddress !== "") {
+    if (message.emailAddress !== '') {
       obj.emailAddress = message.emailAddress;
     }
-    if (message.invitationToken !== "") {
+    if (message.invitationToken !== '') {
       obj.invitationToken = message.invitationToken;
     }
-    if (message.invitationId !== "") {
+    if (message.invitationId !== '') {
       obj.invitationId = message.invitationId;
     }
-    if (message.username !== "") {
+    if (message.username !== '') {
       obj.username = message.username;
     }
-    if (message.firstName !== "") {
+    if (message.firstName !== '') {
       obj.firstName = message.firstName;
     }
-    if (message.lastName !== "") {
+    if (message.lastName !== '') {
       obj.lastName = message.lastName;
     }
-    if (message.accountName !== "") {
+    if (message.accountName !== '') {
       obj.accountName = message.accountName;
     }
     if (message.acceptedTos !== false) {
@@ -2436,14 +2474,14 @@ export const UserRegistrationInput: MessageFns<UserRegistrationInput> = {
   fromPartial(object: DeepPartial<UserRegistrationInput>): UserRegistrationInput {
     const message = createBaseUserRegistrationInput();
     message.birthday = object.birthday ?? undefined;
-    message.password = object.password ?? "";
-    message.emailAddress = object.emailAddress ?? "";
-    message.invitationToken = object.invitationToken ?? "";
-    message.invitationId = object.invitationId ?? "";
-    message.username = object.username ?? "";
-    message.firstName = object.firstName ?? "";
-    message.lastName = object.lastName ?? "";
-    message.accountName = object.accountName ?? "";
+    message.password = object.password ?? '';
+    message.emailAddress = object.emailAddress ?? '';
+    message.invitationToken = object.invitationToken ?? '';
+    message.invitationId = object.invitationId ?? '';
+    message.username = object.username ?? '';
+    message.firstName = object.firstName ?? '';
+    message.lastName = object.lastName ?? '';
+    message.accountName = object.accountName ?? '';
     message.acceptedTos = object.acceptedTos ?? false;
     message.acceptedPrivacyPolicy = object.acceptedPrivacyPolicy ?? false;
     return message;
@@ -2452,11 +2490,15 @@ export const UserRegistrationInput: MessageFns<UserRegistrationInput> = {
 
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 
-export type DeepPartial<T> = T extends Builtin ? T
-  : T extends globalThis.Array<infer U> ? globalThis.Array<DeepPartial<U>>
-  : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>>
-  : T extends {} ? { [K in keyof T]?: DeepPartial<T[K]> }
-  : Partial<T>;
+export type DeepPartial<T> = T extends Builtin
+  ? T
+  : T extends globalThis.Array<infer U>
+    ? globalThis.Array<DeepPartial<U>>
+    : T extends ReadonlyArray<infer U>
+      ? ReadonlyArray<DeepPartial<U>>
+      : T extends {}
+        ? { [K in keyof T]?: DeepPartial<T[K]> }
+        : Partial<T>;
 
 function toTimestamp(date: Date): Timestamp {
   const seconds = Math.trunc(date.getTime() / 1_000);
@@ -2473,7 +2515,7 @@ function fromTimestamp(t: Timestamp): Date {
 function fromJsonTimestamp(o: any): Date {
   if (o instanceof globalThis.Date) {
     return o;
-  } else if (typeof o === "string") {
+  } else if (typeof o === 'string') {
     return new globalThis.Date(o);
   } else {
     return fromTimestamp(Timestamp.fromJSON(o));

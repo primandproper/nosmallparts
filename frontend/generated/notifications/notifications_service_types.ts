@@ -5,17 +5,17 @@
 // source: notifications/notifications_service_types.proto
 
 /* eslint-disable */
-import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
-import { ResponseDetails } from "../common";
-import { Pagination, QueryFilter } from "../filtering";
+import { BinaryReader, BinaryWriter } from '@bufbuild/protobuf/wire';
+import { ResponseDetails } from '../common';
+import { Pagination, QueryFilter } from '../filtering';
 import {
   UserNotification,
   UserNotificationStatus,
   userNotificationStatusFromJSON,
   userNotificationStatusToJSON,
-} from "./notifications_messages";
+} from './notifications_messages';
 
-export const protobufPackage = "notifications";
+export const protobufPackage = 'notifications';
 
 export interface GetUserNotificationRequest {
   userNotificationId: string;
@@ -57,12 +57,15 @@ export interface UserNotificationUpdateRequestInput {
 }
 
 function createBaseGetUserNotificationRequest(): GetUserNotificationRequest {
-  return { userNotificationId: "" };
+  return { userNotificationId: '' };
 }
 
 export const GetUserNotificationRequest: MessageFns<GetUserNotificationRequest> = {
-  encode(message: GetUserNotificationRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.userNotificationId !== "") {
+  encode(
+    message: GetUserNotificationRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.userNotificationId !== '') {
       writer.uint32(10).string(message.userNotificationId);
     }
     return writer;
@@ -97,14 +100,14 @@ export const GetUserNotificationRequest: MessageFns<GetUserNotificationRequest> 
       userNotificationId: isSet(object.userNotificationId)
         ? globalThis.String(object.userNotificationId)
         : isSet(object.user_notification_id)
-        ? globalThis.String(object.user_notification_id)
-        : "",
+          ? globalThis.String(object.user_notification_id)
+          : '',
     };
   },
 
   toJSON(message: GetUserNotificationRequest): unknown {
     const obj: any = {};
-    if (message.userNotificationId !== "") {
+    if (message.userNotificationId !== '') {
       obj.userNotificationId = message.userNotificationId;
     }
     return obj;
@@ -115,7 +118,7 @@ export const GetUserNotificationRequest: MessageFns<GetUserNotificationRequest> 
   },
   fromPartial(object: DeepPartial<GetUserNotificationRequest>): GetUserNotificationRequest {
     const message = createBaseGetUserNotificationRequest();
-    message.userNotificationId = object.userNotificationId ?? "";
+    message.userNotificationId = object.userNotificationId ?? '';
     return message;
   },
 };
@@ -125,7 +128,10 @@ function createBaseGetUserNotificationResponse(): GetUserNotificationResponse {
 }
 
 export const GetUserNotificationResponse: MessageFns<GetUserNotificationResponse> = {
-  encode(message: GetUserNotificationResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: GetUserNotificationResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -172,8 +178,8 @@ export const GetUserNotificationResponse: MessageFns<GetUserNotificationResponse
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       result: isSet(object.result) ? UserNotification.fromJSON(object.result) : undefined,
     };
   },
@@ -194,12 +200,14 @@ export const GetUserNotificationResponse: MessageFns<GetUserNotificationResponse
   },
   fromPartial(object: DeepPartial<GetUserNotificationResponse>): GetUserNotificationResponse {
     const message = createBaseGetUserNotificationResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.result = (object.result !== undefined && object.result !== null)
-      ? UserNotification.fromPartial(object.result)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
+    message.result =
+      object.result !== undefined && object.result !== null
+        ? UserNotification.fromPartial(object.result)
+        : undefined;
     return message;
   },
 };
@@ -209,7 +217,10 @@ function createBaseGetUserNotificationsRequest(): GetUserNotificationsRequest {
 }
 
 export const GetUserNotificationsRequest: MessageFns<GetUserNotificationsRequest> = {
-  encode(message: GetUserNotificationsRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: GetUserNotificationsRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.filter !== undefined) {
       QueryFilter.encode(message.filter, writer.uint32(10).fork()).join();
     }
@@ -257,9 +268,10 @@ export const GetUserNotificationsRequest: MessageFns<GetUserNotificationsRequest
   },
   fromPartial(object: DeepPartial<GetUserNotificationsRequest>): GetUserNotificationsRequest {
     const message = createBaseGetUserNotificationsRequest();
-    message.filter = (object.filter !== undefined && object.filter !== null)
-      ? QueryFilter.fromPartial(object.filter)
-      : undefined;
+    message.filter =
+      object.filter !== undefined && object.filter !== null
+        ? QueryFilter.fromPartial(object.filter)
+        : undefined;
     return message;
   },
 };
@@ -269,7 +281,10 @@ function createBaseGetUserNotificationsResponse(): GetUserNotificationsResponse 
 }
 
 export const GetUserNotificationsResponse: MessageFns<GetUserNotificationsResponse> = {
-  encode(message: GetUserNotificationsResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: GetUserNotificationsResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -327,8 +342,8 @@ export const GetUserNotificationsResponse: MessageFns<GetUserNotificationsRespon
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       pagination: isSet(object.pagination) ? Pagination.fromJSON(object.pagination) : undefined,
       results: globalThis.Array.isArray(object?.results)
         ? object.results.map((e: any) => UserNotification.fromJSON(e))
@@ -355,24 +370,29 @@ export const GetUserNotificationsResponse: MessageFns<GetUserNotificationsRespon
   },
   fromPartial(object: DeepPartial<GetUserNotificationsResponse>): GetUserNotificationsResponse {
     const message = createBaseGetUserNotificationsResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.pagination = (object.pagination !== undefined && object.pagination !== null)
-      ? Pagination.fromPartial(object.pagination)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
+    message.pagination =
+      object.pagination !== undefined && object.pagination !== null
+        ? Pagination.fromPartial(object.pagination)
+        : undefined;
     message.results = object.results?.map((e) => UserNotification.fromPartial(e)) || [];
     return message;
   },
 };
 
 function createBaseUpdateUserNotificationRequest(): UpdateUserNotificationRequest {
-  return { userNotificationId: "", input: undefined };
+  return { userNotificationId: '', input: undefined };
 }
 
 export const UpdateUserNotificationRequest: MessageFns<UpdateUserNotificationRequest> = {
-  encode(message: UpdateUserNotificationRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.userNotificationId !== "") {
+  encode(
+    message: UpdateUserNotificationRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.userNotificationId !== '') {
       writer.uint32(10).string(message.userNotificationId);
     }
     if (message.input !== undefined) {
@@ -418,15 +438,17 @@ export const UpdateUserNotificationRequest: MessageFns<UpdateUserNotificationReq
       userNotificationId: isSet(object.userNotificationId)
         ? globalThis.String(object.userNotificationId)
         : isSet(object.user_notification_id)
-        ? globalThis.String(object.user_notification_id)
-        : "",
-      input: isSet(object.input) ? UserNotificationUpdateRequestInput.fromJSON(object.input) : undefined,
+          ? globalThis.String(object.user_notification_id)
+          : '',
+      input: isSet(object.input)
+        ? UserNotificationUpdateRequestInput.fromJSON(object.input)
+        : undefined,
     };
   },
 
   toJSON(message: UpdateUserNotificationRequest): unknown {
     const obj: any = {};
-    if (message.userNotificationId !== "") {
+    if (message.userNotificationId !== '') {
       obj.userNotificationId = message.userNotificationId;
     }
     if (message.input !== undefined) {
@@ -440,10 +462,11 @@ export const UpdateUserNotificationRequest: MessageFns<UpdateUserNotificationReq
   },
   fromPartial(object: DeepPartial<UpdateUserNotificationRequest>): UpdateUserNotificationRequest {
     const message = createBaseUpdateUserNotificationRequest();
-    message.userNotificationId = object.userNotificationId ?? "";
-    message.input = (object.input !== undefined && object.input !== null)
-      ? UserNotificationUpdateRequestInput.fromPartial(object.input)
-      : undefined;
+    message.userNotificationId = object.userNotificationId ?? '';
+    message.input =
+      object.input !== undefined && object.input !== null
+        ? UserNotificationUpdateRequestInput.fromPartial(object.input)
+        : undefined;
     return message;
   },
 };
@@ -453,7 +476,10 @@ function createBaseUpdateUserNotificationResponse(): UpdateUserNotificationRespo
 }
 
 export const UpdateUserNotificationResponse: MessageFns<UpdateUserNotificationResponse> = {
-  encode(message: UpdateUserNotificationResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: UpdateUserNotificationResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -500,8 +526,8 @@ export const UpdateUserNotificationResponse: MessageFns<UpdateUserNotificationRe
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       updated: isSet(object.updated) ? UserNotification.fromJSON(object.updated) : undefined,
     };
   },
@@ -522,118 +548,134 @@ export const UpdateUserNotificationResponse: MessageFns<UpdateUserNotificationRe
   },
   fromPartial(object: DeepPartial<UpdateUserNotificationResponse>): UpdateUserNotificationResponse {
     const message = createBaseUpdateUserNotificationResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.updated = (object.updated !== undefined && object.updated !== null)
-      ? UserNotification.fromPartial(object.updated)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
+    message.updated =
+      object.updated !== undefined && object.updated !== null
+        ? UserNotification.fromPartial(object.updated)
+        : undefined;
     return message;
   },
 };
 
 function createBaseUserNotificationCreationRequestInput(): UserNotificationCreationRequestInput {
-  return { content: "", status: 0, belongsToUser: "" };
+  return { content: '', status: 0, belongsToUser: '' };
 }
 
-export const UserNotificationCreationRequestInput: MessageFns<UserNotificationCreationRequestInput> = {
-  encode(message: UserNotificationCreationRequestInput, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.content !== "") {
-      writer.uint32(10).string(message.content);
-    }
-    if (message.status !== 0) {
-      writer.uint32(16).int32(message.status);
-    }
-    if (message.belongsToUser !== "") {
-      writer.uint32(26).string(message.belongsToUser);
-    }
-    return writer;
-  },
-
-  decode(input: BinaryReader | Uint8Array, length?: number): UserNotificationCreationRequestInput {
-    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
-    const end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseUserNotificationCreationRequestInput();
-    while (reader.pos < end) {
-      const tag = reader.uint32();
-      switch (tag >>> 3) {
-        case 1: {
-          if (tag !== 10) {
-            break;
-          }
-
-          message.content = reader.string();
-          continue;
-        }
-        case 2: {
-          if (tag !== 16) {
-            break;
-          }
-
-          message.status = reader.int32() as any;
-          continue;
-        }
-        case 3: {
-          if (tag !== 26) {
-            break;
-          }
-
-          message.belongsToUser = reader.string();
-          continue;
-        }
+export const UserNotificationCreationRequestInput: MessageFns<UserNotificationCreationRequestInput> =
+  {
+    encode(
+      message: UserNotificationCreationRequestInput,
+      writer: BinaryWriter = new BinaryWriter()
+    ): BinaryWriter {
+      if (message.content !== '') {
+        writer.uint32(10).string(message.content);
       }
-      if ((tag & 7) === 4 || tag === 0) {
-        break;
+      if (message.status !== 0) {
+        writer.uint32(16).int32(message.status);
       }
-      reader.skip(tag & 7);
-    }
-    return message;
-  },
+      if (message.belongsToUser !== '') {
+        writer.uint32(26).string(message.belongsToUser);
+      }
+      return writer;
+    },
 
-  fromJSON(object: any): UserNotificationCreationRequestInput {
-    return {
-      content: isSet(object.content) ? globalThis.String(object.content) : "",
-      status: isSet(object.status) ? userNotificationStatusFromJSON(object.status) : 0,
-      belongsToUser: isSet(object.belongsToUser)
-        ? globalThis.String(object.belongsToUser)
-        : isSet(object.belongs_to_user)
-        ? globalThis.String(object.belongs_to_user)
-        : "",
-    };
-  },
+    decode(
+      input: BinaryReader | Uint8Array,
+      length?: number
+    ): UserNotificationCreationRequestInput {
+      const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+      const end = length === undefined ? reader.len : reader.pos + length;
+      const message = createBaseUserNotificationCreationRequestInput();
+      while (reader.pos < end) {
+        const tag = reader.uint32();
+        switch (tag >>> 3) {
+          case 1: {
+            if (tag !== 10) {
+              break;
+            }
 
-  toJSON(message: UserNotificationCreationRequestInput): unknown {
-    const obj: any = {};
-    if (message.content !== "") {
-      obj.content = message.content;
-    }
-    if (message.status !== 0) {
-      obj.status = userNotificationStatusToJSON(message.status);
-    }
-    if (message.belongsToUser !== "") {
-      obj.belongsToUser = message.belongsToUser;
-    }
-    return obj;
-  },
+            message.content = reader.string();
+            continue;
+          }
+          case 2: {
+            if (tag !== 16) {
+              break;
+            }
 
-  create(base?: DeepPartial<UserNotificationCreationRequestInput>): UserNotificationCreationRequestInput {
-    return UserNotificationCreationRequestInput.fromPartial(base ?? {});
-  },
-  fromPartial(object: DeepPartial<UserNotificationCreationRequestInput>): UserNotificationCreationRequestInput {
-    const message = createBaseUserNotificationCreationRequestInput();
-    message.content = object.content ?? "";
-    message.status = object.status ?? 0;
-    message.belongsToUser = object.belongsToUser ?? "";
-    return message;
-  },
-};
+            message.status = reader.int32() as any;
+            continue;
+          }
+          case 3: {
+            if (tag !== 26) {
+              break;
+            }
+
+            message.belongsToUser = reader.string();
+            continue;
+          }
+        }
+        if ((tag & 7) === 4 || tag === 0) {
+          break;
+        }
+        reader.skip(tag & 7);
+      }
+      return message;
+    },
+
+    fromJSON(object: any): UserNotificationCreationRequestInput {
+      return {
+        content: isSet(object.content) ? globalThis.String(object.content) : '',
+        status: isSet(object.status) ? userNotificationStatusFromJSON(object.status) : 0,
+        belongsToUser: isSet(object.belongsToUser)
+          ? globalThis.String(object.belongsToUser)
+          : isSet(object.belongs_to_user)
+            ? globalThis.String(object.belongs_to_user)
+            : '',
+      };
+    },
+
+    toJSON(message: UserNotificationCreationRequestInput): unknown {
+      const obj: any = {};
+      if (message.content !== '') {
+        obj.content = message.content;
+      }
+      if (message.status !== 0) {
+        obj.status = userNotificationStatusToJSON(message.status);
+      }
+      if (message.belongsToUser !== '') {
+        obj.belongsToUser = message.belongsToUser;
+      }
+      return obj;
+    },
+
+    create(
+      base?: DeepPartial<UserNotificationCreationRequestInput>
+    ): UserNotificationCreationRequestInput {
+      return UserNotificationCreationRequestInput.fromPartial(base ?? {});
+    },
+    fromPartial(
+      object: DeepPartial<UserNotificationCreationRequestInput>
+    ): UserNotificationCreationRequestInput {
+      const message = createBaseUserNotificationCreationRequestInput();
+      message.content = object.content ?? '';
+      message.status = object.status ?? 0;
+      message.belongsToUser = object.belongsToUser ?? '';
+      return message;
+    },
+  };
 
 function createBaseUserNotificationUpdateRequestInput(): UserNotificationUpdateRequestInput {
   return { status: undefined };
 }
 
 export const UserNotificationUpdateRequestInput: MessageFns<UserNotificationUpdateRequestInput> = {
-  encode(message: UserNotificationUpdateRequestInput, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: UserNotificationUpdateRequestInput,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.status !== undefined) {
       writer.uint32(8).int32(message.status);
     }
@@ -665,7 +707,9 @@ export const UserNotificationUpdateRequestInput: MessageFns<UserNotificationUpda
   },
 
   fromJSON(object: any): UserNotificationUpdateRequestInput {
-    return { status: isSet(object.status) ? userNotificationStatusFromJSON(object.status) : undefined };
+    return {
+      status: isSet(object.status) ? userNotificationStatusFromJSON(object.status) : undefined,
+    };
   },
 
   toJSON(message: UserNotificationUpdateRequestInput): unknown {
@@ -676,10 +720,14 @@ export const UserNotificationUpdateRequestInput: MessageFns<UserNotificationUpda
     return obj;
   },
 
-  create(base?: DeepPartial<UserNotificationUpdateRequestInput>): UserNotificationUpdateRequestInput {
+  create(
+    base?: DeepPartial<UserNotificationUpdateRequestInput>
+  ): UserNotificationUpdateRequestInput {
     return UserNotificationUpdateRequestInput.fromPartial(base ?? {});
   },
-  fromPartial(object: DeepPartial<UserNotificationUpdateRequestInput>): UserNotificationUpdateRequestInput {
+  fromPartial(
+    object: DeepPartial<UserNotificationUpdateRequestInput>
+  ): UserNotificationUpdateRequestInput {
     const message = createBaseUserNotificationUpdateRequestInput();
     message.status = object.status ?? undefined;
     return message;
@@ -688,11 +736,15 @@ export const UserNotificationUpdateRequestInput: MessageFns<UserNotificationUpda
 
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 
-export type DeepPartial<T> = T extends Builtin ? T
-  : T extends globalThis.Array<infer U> ? globalThis.Array<DeepPartial<U>>
-  : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>>
-  : T extends {} ? { [K in keyof T]?: DeepPartial<T[K]> }
-  : Partial<T>;
+export type DeepPartial<T> = T extends Builtin
+  ? T
+  : T extends globalThis.Array<infer U>
+    ? globalThis.Array<DeepPartial<U>>
+    : T extends ReadonlyArray<infer U>
+      ? ReadonlyArray<DeepPartial<U>>
+      : T extends {}
+        ? { [K in keyof T]?: DeepPartial<T[K]> }
+        : Partial<T>;
 
 function isSet(value: any): boolean {
   return value !== null && value !== undefined;

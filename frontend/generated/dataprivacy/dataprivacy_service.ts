@@ -5,7 +5,7 @@
 // source: dataprivacy/dataprivacy_service.proto
 
 /* eslint-disable */
-import type { CallContext, CallOptions } from "nice-grpc-common";
+import type { CallContext, CallOptions } from 'nice-grpc-common';
 import {
   AggregateUserDataReportRequest,
   AggregateUserDataReportResponse,
@@ -13,17 +13,17 @@ import {
   DestroyAllUserDataResponse,
   FetchUserDataReportRequest,
   FetchUserDataReportResponse,
-} from "./dataprivacy_service_types";
+} from './dataprivacy_service_types';
 
-export const protobufPackage = "dataprivacy";
+export const protobufPackage = 'dataprivacy';
 
 export type DataPrivacyServiceDefinition = typeof DataPrivacyServiceDefinition;
 export const DataPrivacyServiceDefinition = {
-  name: "DataPrivacyService",
-  fullName: "dataprivacy.DataPrivacyService",
+  name: 'DataPrivacyService',
+  fullName: 'dataprivacy.DataPrivacyService',
   methods: {
     aggregateUserDataReport: {
-      name: "AggregateUserDataReport",
+      name: 'AggregateUserDataReport',
       requestType: AggregateUserDataReportRequest,
       requestStream: false,
       responseType: AggregateUserDataReportResponse,
@@ -31,7 +31,7 @@ export const DataPrivacyServiceDefinition = {
       options: {},
     },
     destroyAllUserData: {
-      name: "DestroyAllUserData",
+      name: 'DestroyAllUserData',
       requestType: DestroyAllUserDataRequest,
       requestStream: false,
       responseType: DestroyAllUserDataResponse,
@@ -39,7 +39,7 @@ export const DataPrivacyServiceDefinition = {
       options: {},
     },
     fetchUserDataReport: {
-      name: "FetchUserDataReport",
+      name: 'FetchUserDataReport',
       requestType: FetchUserDataReportRequest,
       requestStream: false,
       responseType: FetchUserDataReportResponse,
@@ -52,37 +52,41 @@ export const DataPrivacyServiceDefinition = {
 export interface DataPrivacyServiceImplementation<CallContextExt = {}> {
   aggregateUserDataReport(
     request: AggregateUserDataReportRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<AggregateUserDataReportResponse>>;
   destroyAllUserData(
     request: DestroyAllUserDataRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<DestroyAllUserDataResponse>>;
   fetchUserDataReport(
     request: FetchUserDataReportRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<FetchUserDataReportResponse>>;
 }
 
 export interface DataPrivacyServiceClient<CallOptionsExt = {}> {
   aggregateUserDataReport(
     request: DeepPartial<AggregateUserDataReportRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<AggregateUserDataReportResponse>;
   destroyAllUserData(
     request: DeepPartial<DestroyAllUserDataRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<DestroyAllUserDataResponse>;
   fetchUserDataReport(
     request: DeepPartial<FetchUserDataReportRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<FetchUserDataReportResponse>;
 }
 
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 
-export type DeepPartial<T> = T extends Builtin ? T
-  : T extends globalThis.Array<infer U> ? globalThis.Array<DeepPartial<U>>
-  : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>>
-  : T extends {} ? { [K in keyof T]?: DeepPartial<T[K]> }
-  : Partial<T>;
+export type DeepPartial<T> = T extends Builtin
+  ? T
+  : T extends globalThis.Array<infer U>
+    ? globalThis.Array<DeepPartial<U>>
+    : T extends ReadonlyArray<infer U>
+      ? ReadonlyArray<DeepPartial<U>>
+      : T extends {}
+        ? { [K in keyof T]?: DeepPartial<T[K]> }
+        : Partial<T>;

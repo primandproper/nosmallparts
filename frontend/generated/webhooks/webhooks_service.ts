@@ -5,7 +5,7 @@
 // source: webhooks/webhooks_service.proto
 
 /* eslint-disable */
-import type { CallContext, CallOptions } from "nice-grpc-common";
+import type { CallContext, CallOptions } from 'nice-grpc-common';
 import {
   AddWebhookTriggerEventRequest,
   AddWebhookTriggerEventResponse,
@@ -19,17 +19,17 @@ import {
   GetWebhookResponse,
   GetWebhooksRequest,
   GetWebhooksResponse,
-} from "./webhooks_service_types";
+} from './webhooks_service_types';
 
-export const protobufPackage = "webhooks";
+export const protobufPackage = 'webhooks';
 
 export type WebhooksServiceDefinition = typeof WebhooksServiceDefinition;
 export const WebhooksServiceDefinition = {
-  name: "WebhooksService",
-  fullName: "webhooks.WebhooksService",
+  name: 'WebhooksService',
+  fullName: 'webhooks.WebhooksService',
   methods: {
     archiveWebhook: {
-      name: "ArchiveWebhook",
+      name: 'ArchiveWebhook',
       requestType: ArchiveWebhookRequest,
       requestStream: false,
       responseType: ArchiveWebhookResponse,
@@ -37,7 +37,7 @@ export const WebhooksServiceDefinition = {
       options: {},
     },
     archiveWebhookTriggerEvent: {
-      name: "ArchiveWebhookTriggerEvent",
+      name: 'ArchiveWebhookTriggerEvent',
       requestType: ArchiveWebhookTriggerEventRequest,
       requestStream: false,
       responseType: ArchiveWebhookTriggerEventResponse,
@@ -45,7 +45,7 @@ export const WebhooksServiceDefinition = {
       options: {},
     },
     createWebhook: {
-      name: "CreateWebhook",
+      name: 'CreateWebhook',
       requestType: CreateWebhookRequest,
       requestStream: false,
       responseType: CreateWebhookResponse,
@@ -53,7 +53,7 @@ export const WebhooksServiceDefinition = {
       options: {},
     },
     addWebhookTriggerEvent: {
-      name: "AddWebhookTriggerEvent",
+      name: 'AddWebhookTriggerEvent',
       requestType: AddWebhookTriggerEventRequest,
       requestStream: false,
       responseType: AddWebhookTriggerEventResponse,
@@ -61,7 +61,7 @@ export const WebhooksServiceDefinition = {
       options: {},
     },
     getWebhook: {
-      name: "GetWebhook",
+      name: 'GetWebhook',
       requestType: GetWebhookRequest,
       requestStream: false,
       responseType: GetWebhookResponse,
@@ -69,7 +69,7 @@ export const WebhooksServiceDefinition = {
       options: {},
     },
     getWebhooks: {
-      name: "GetWebhooks",
+      name: 'GetWebhooks',
       requestType: GetWebhooksRequest,
       requestStream: false,
       responseType: GetWebhooksResponse,
@@ -82,61 +82,65 @@ export const WebhooksServiceDefinition = {
 export interface WebhooksServiceImplementation<CallContextExt = {}> {
   archiveWebhook(
     request: ArchiveWebhookRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<ArchiveWebhookResponse>>;
   archiveWebhookTriggerEvent(
     request: ArchiveWebhookTriggerEventRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<ArchiveWebhookTriggerEventResponse>>;
   createWebhook(
     request: CreateWebhookRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<CreateWebhookResponse>>;
   addWebhookTriggerEvent(
     request: AddWebhookTriggerEventRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<AddWebhookTriggerEventResponse>>;
   getWebhook(
     request: GetWebhookRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<GetWebhookResponse>>;
   getWebhooks(
     request: GetWebhooksRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<GetWebhooksResponse>>;
 }
 
 export interface WebhooksServiceClient<CallOptionsExt = {}> {
   archiveWebhook(
     request: DeepPartial<ArchiveWebhookRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<ArchiveWebhookResponse>;
   archiveWebhookTriggerEvent(
     request: DeepPartial<ArchiveWebhookTriggerEventRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<ArchiveWebhookTriggerEventResponse>;
   createWebhook(
     request: DeepPartial<CreateWebhookRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<CreateWebhookResponse>;
   addWebhookTriggerEvent(
     request: DeepPartial<AddWebhookTriggerEventRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<AddWebhookTriggerEventResponse>;
   getWebhook(
     request: DeepPartial<GetWebhookRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<GetWebhookResponse>;
   getWebhooks(
     request: DeepPartial<GetWebhooksRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<GetWebhooksResponse>;
 }
 
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 
-export type DeepPartial<T> = T extends Builtin ? T
-  : T extends globalThis.Array<infer U> ? globalThis.Array<DeepPartial<U>>
-  : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>>
-  : T extends {} ? { [K in keyof T]?: DeepPartial<T[K]> }
-  : Partial<T>;
+export type DeepPartial<T> = T extends Builtin
+  ? T
+  : T extends globalThis.Array<infer U>
+    ? globalThis.Array<DeepPartial<U>>
+    : T extends ReadonlyArray<infer U>
+      ? ReadonlyArray<DeepPartial<U>>
+      : T extends {}
+        ? { [K in keyof T]?: DeepPartial<T[K]> }
+        : Partial<T>;

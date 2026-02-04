@@ -5,10 +5,10 @@
 // source: issue_reports/issue_reports_messages.proto
 
 /* eslint-disable */
-import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
-import { Timestamp } from "../google/protobuf/timestamp";
+import { BinaryReader, BinaryWriter } from '@bufbuild/protobuf/wire';
+import { Timestamp } from '../google/protobuf/timestamp';
 
-export const protobufPackage = "issue_reports";
+export const protobufPackage = 'issue_reports';
 
 export interface DataCollection {
   issueReports: { [key: string]: IssueReport };
@@ -38,9 +38,14 @@ function createBaseDataCollection(): DataCollection {
 
 export const DataCollection: MessageFns<DataCollection> = {
   encode(message: DataCollection, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    globalThis.Object.entries(message.issueReports).forEach(([key, value]: [string, IssueReport]) => {
-      DataCollection_IssueReportsEntry.encode({ key: key as any, value }, writer.uint32(10).fork()).join();
-    });
+    globalThis.Object.entries(message.issueReports).forEach(
+      ([key, value]: [string, IssueReport]) => {
+        DataCollection_IssueReportsEntry.encode(
+          { key: key as any, value },
+          writer.uint32(10).fork()
+        ).join();
+      }
+    );
     return writer;
   },
 
@@ -75,21 +80,21 @@ export const DataCollection: MessageFns<DataCollection> = {
     return {
       issueReports: isObject(object.issueReports)
         ? (globalThis.Object.entries(object.issueReports) as [string, any][]).reduce(
-          (acc: { [key: string]: IssueReport }, [key, value]: [string, any]) => {
-            acc[key] = IssueReport.fromJSON(value);
-            return acc;
-          },
-          {},
-        )
+            (acc: { [key: string]: IssueReport }, [key, value]: [string, any]) => {
+              acc[key] = IssueReport.fromJSON(value);
+              return acc;
+            },
+            {}
+          )
         : isObject(object.issue_reports)
-        ? (globalThis.Object.entries(object.issue_reports) as [string, any][]).reduce(
-          (acc: { [key: string]: IssueReport }, [key, value]: [string, any]) => {
-            acc[key] = IssueReport.fromJSON(value);
-            return acc;
-          },
-          {},
-        )
-        : {},
+          ? (globalThis.Object.entries(object.issue_reports) as [string, any][]).reduce(
+              (acc: { [key: string]: IssueReport }, [key, value]: [string, any]) => {
+                acc[key] = IssueReport.fromJSON(value);
+                return acc;
+              },
+              {}
+            )
+          : {},
     };
   },
 
@@ -112,26 +117,28 @@ export const DataCollection: MessageFns<DataCollection> = {
   },
   fromPartial(object: DeepPartial<DataCollection>): DataCollection {
     const message = createBaseDataCollection();
-    message.issueReports = (globalThis.Object.entries(object.issueReports ?? {}) as [string, IssueReport][]).reduce(
-      (acc: { [key: string]: IssueReport }, [key, value]: [string, IssueReport]) => {
-        if (value !== undefined) {
-          acc[key] = IssueReport.fromPartial(value);
-        }
-        return acc;
-      },
-      {},
-    );
+    message.issueReports = (
+      globalThis.Object.entries(object.issueReports ?? {}) as [string, IssueReport][]
+    ).reduce((acc: { [key: string]: IssueReport }, [key, value]: [string, IssueReport]) => {
+      if (value !== undefined) {
+        acc[key] = IssueReport.fromPartial(value);
+      }
+      return acc;
+    }, {});
     return message;
   },
 };
 
 function createBaseDataCollection_IssueReportsEntry(): DataCollection_IssueReportsEntry {
-  return { key: "", value: undefined };
+  return { key: '', value: undefined };
 }
 
 export const DataCollection_IssueReportsEntry: MessageFns<DataCollection_IssueReportsEntry> = {
-  encode(message: DataCollection_IssueReportsEntry, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.key !== "") {
+  encode(
+    message: DataCollection_IssueReportsEntry,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.key !== '') {
       writer.uint32(10).string(message.key);
     }
     if (message.value !== undefined) {
@@ -174,14 +181,14 @@ export const DataCollection_IssueReportsEntry: MessageFns<DataCollection_IssueRe
 
   fromJSON(object: any): DataCollection_IssueReportsEntry {
     return {
-      key: isSet(object.key) ? globalThis.String(object.key) : "",
+      key: isSet(object.key) ? globalThis.String(object.key) : '',
       value: isSet(object.value) ? IssueReport.fromJSON(object.value) : undefined,
     };
   },
 
   toJSON(message: DataCollection_IssueReportsEntry): unknown {
     const obj: any = {};
-    if (message.key !== "") {
+    if (message.key !== '') {
       obj.key = message.key;
     }
     if (message.value !== undefined) {
@@ -193,12 +200,15 @@ export const DataCollection_IssueReportsEntry: MessageFns<DataCollection_IssueRe
   create(base?: DeepPartial<DataCollection_IssueReportsEntry>): DataCollection_IssueReportsEntry {
     return DataCollection_IssueReportsEntry.fromPartial(base ?? {});
   },
-  fromPartial(object: DeepPartial<DataCollection_IssueReportsEntry>): DataCollection_IssueReportsEntry {
+  fromPartial(
+    object: DeepPartial<DataCollection_IssueReportsEntry>
+  ): DataCollection_IssueReportsEntry {
     const message = createBaseDataCollection_IssueReportsEntry();
-    message.key = object.key ?? "";
-    message.value = (object.value !== undefined && object.value !== null)
-      ? IssueReport.fromPartial(object.value)
-      : undefined;
+    message.key = object.key ?? '';
+    message.value =
+      object.value !== undefined && object.value !== null
+        ? IssueReport.fromPartial(object.value)
+        : undefined;
     return message;
   },
 };
@@ -208,13 +218,13 @@ function createBaseIssueReport(): IssueReport {
     createdAt: undefined,
     archivedAt: undefined,
     lastUpdatedAt: undefined,
-    id: "",
-    issueType: "",
-    details: "",
-    relevantTable: "",
-    relevantRecordId: "",
-    createdByUser: "",
-    belongsToAccount: "",
+    id: '',
+    issueType: '',
+    details: '',
+    relevantTable: '',
+    relevantRecordId: '',
+    createdByUser: '',
+    belongsToAccount: '',
   };
 }
 
@@ -229,25 +239,25 @@ export const IssueReport: MessageFns<IssueReport> = {
     if (message.lastUpdatedAt !== undefined) {
       Timestamp.encode(toTimestamp(message.lastUpdatedAt), writer.uint32(26).fork()).join();
     }
-    if (message.id !== "") {
+    if (message.id !== '') {
       writer.uint32(34).string(message.id);
     }
-    if (message.issueType !== "") {
+    if (message.issueType !== '') {
       writer.uint32(42).string(message.issueType);
     }
-    if (message.details !== "") {
+    if (message.details !== '') {
       writer.uint32(50).string(message.details);
     }
-    if (message.relevantTable !== "") {
+    if (message.relevantTable !== '') {
       writer.uint32(58).string(message.relevantTable);
     }
-    if (message.relevantRecordId !== "") {
+    if (message.relevantRecordId !== '') {
       writer.uint32(66).string(message.relevantRecordId);
     }
-    if (message.createdByUser !== "") {
+    if (message.createdByUser !== '') {
       writer.uint32(74).string(message.createdByUser);
     }
-    if (message.belongsToAccount !== "") {
+    if (message.belongsToAccount !== '') {
       writer.uint32(82).string(message.belongsToAccount);
     }
     return writer;
@@ -354,45 +364,45 @@ export const IssueReport: MessageFns<IssueReport> = {
       createdAt: isSet(object.createdAt)
         ? fromJsonTimestamp(object.createdAt)
         : isSet(object.created_at)
-        ? fromJsonTimestamp(object.created_at)
-        : undefined,
+          ? fromJsonTimestamp(object.created_at)
+          : undefined,
       archivedAt: isSet(object.archivedAt)
         ? fromJsonTimestamp(object.archivedAt)
         : isSet(object.archived_at)
-        ? fromJsonTimestamp(object.archived_at)
-        : undefined,
+          ? fromJsonTimestamp(object.archived_at)
+          : undefined,
       lastUpdatedAt: isSet(object.lastUpdatedAt)
         ? fromJsonTimestamp(object.lastUpdatedAt)
         : isSet(object.last_updated_at)
-        ? fromJsonTimestamp(object.last_updated_at)
-        : undefined,
-      id: isSet(object.id) ? globalThis.String(object.id) : "",
+          ? fromJsonTimestamp(object.last_updated_at)
+          : undefined,
+      id: isSet(object.id) ? globalThis.String(object.id) : '',
       issueType: isSet(object.issueType)
         ? globalThis.String(object.issueType)
         : isSet(object.issue_type)
-        ? globalThis.String(object.issue_type)
-        : "",
-      details: isSet(object.details) ? globalThis.String(object.details) : "",
+          ? globalThis.String(object.issue_type)
+          : '',
+      details: isSet(object.details) ? globalThis.String(object.details) : '',
       relevantTable: isSet(object.relevantTable)
         ? globalThis.String(object.relevantTable)
         : isSet(object.relevant_table)
-        ? globalThis.String(object.relevant_table)
-        : "",
+          ? globalThis.String(object.relevant_table)
+          : '',
       relevantRecordId: isSet(object.relevantRecordId)
         ? globalThis.String(object.relevantRecordId)
         : isSet(object.relevant_record_id)
-        ? globalThis.String(object.relevant_record_id)
-        : "",
+          ? globalThis.String(object.relevant_record_id)
+          : '',
       createdByUser: isSet(object.createdByUser)
         ? globalThis.String(object.createdByUser)
         : isSet(object.created_by_user)
-        ? globalThis.String(object.created_by_user)
-        : "",
+          ? globalThis.String(object.created_by_user)
+          : '',
       belongsToAccount: isSet(object.belongsToAccount)
         ? globalThis.String(object.belongsToAccount)
         : isSet(object.belongs_to_account)
-        ? globalThis.String(object.belongs_to_account)
-        : "",
+          ? globalThis.String(object.belongs_to_account)
+          : '',
     };
   },
 
@@ -407,25 +417,25 @@ export const IssueReport: MessageFns<IssueReport> = {
     if (message.lastUpdatedAt !== undefined) {
       obj.lastUpdatedAt = message.lastUpdatedAt.toISOString();
     }
-    if (message.id !== "") {
+    if (message.id !== '') {
       obj.id = message.id;
     }
-    if (message.issueType !== "") {
+    if (message.issueType !== '') {
       obj.issueType = message.issueType;
     }
-    if (message.details !== "") {
+    if (message.details !== '') {
       obj.details = message.details;
     }
-    if (message.relevantTable !== "") {
+    if (message.relevantTable !== '') {
       obj.relevantTable = message.relevantTable;
     }
-    if (message.relevantRecordId !== "") {
+    if (message.relevantRecordId !== '') {
       obj.relevantRecordId = message.relevantRecordId;
     }
-    if (message.createdByUser !== "") {
+    if (message.createdByUser !== '') {
       obj.createdByUser = message.createdByUser;
     }
-    if (message.belongsToAccount !== "") {
+    if (message.belongsToAccount !== '') {
       obj.belongsToAccount = message.belongsToAccount;
     }
     return obj;
@@ -439,24 +449,28 @@ export const IssueReport: MessageFns<IssueReport> = {
     message.createdAt = object.createdAt ?? undefined;
     message.archivedAt = object.archivedAt ?? undefined;
     message.lastUpdatedAt = object.lastUpdatedAt ?? undefined;
-    message.id = object.id ?? "";
-    message.issueType = object.issueType ?? "";
-    message.details = object.details ?? "";
-    message.relevantTable = object.relevantTable ?? "";
-    message.relevantRecordId = object.relevantRecordId ?? "";
-    message.createdByUser = object.createdByUser ?? "";
-    message.belongsToAccount = object.belongsToAccount ?? "";
+    message.id = object.id ?? '';
+    message.issueType = object.issueType ?? '';
+    message.details = object.details ?? '';
+    message.relevantTable = object.relevantTable ?? '';
+    message.relevantRecordId = object.relevantRecordId ?? '';
+    message.createdByUser = object.createdByUser ?? '';
+    message.belongsToAccount = object.belongsToAccount ?? '';
     return message;
   },
 };
 
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 
-export type DeepPartial<T> = T extends Builtin ? T
-  : T extends globalThis.Array<infer U> ? globalThis.Array<DeepPartial<U>>
-  : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>>
-  : T extends {} ? { [K in keyof T]?: DeepPartial<T[K]> }
-  : Partial<T>;
+export type DeepPartial<T> = T extends Builtin
+  ? T
+  : T extends globalThis.Array<infer U>
+    ? globalThis.Array<DeepPartial<U>>
+    : T extends ReadonlyArray<infer U>
+      ? ReadonlyArray<DeepPartial<U>>
+      : T extends {}
+        ? { [K in keyof T]?: DeepPartial<T[K]> }
+        : Partial<T>;
 
 function toTimestamp(date: Date): Timestamp {
   const seconds = Math.trunc(date.getTime() / 1_000);
@@ -473,7 +487,7 @@ function fromTimestamp(t: Timestamp): Date {
 function fromJsonTimestamp(o: any): Date {
   if (o instanceof globalThis.Date) {
     return o;
-  } else if (typeof o === "string") {
+  } else if (typeof o === 'string') {
     return new globalThis.Date(o);
   } else {
     return fromTimestamp(Timestamp.fromJSON(o));
@@ -481,7 +495,7 @@ function fromJsonTimestamp(o: any): Date {
 }
 
 function isObject(value: any): boolean {
-  return typeof value === "object" && value !== null;
+  return typeof value === 'object' && value !== null;
 }
 
 function isSet(value: any): boolean {

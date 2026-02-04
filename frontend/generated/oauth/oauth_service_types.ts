@@ -5,12 +5,12 @@
 // source: oauth/oauth_service_types.proto
 
 /* eslint-disable */
-import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
-import { ResponseDetails } from "../common";
-import { Pagination, QueryFilter } from "../filtering";
-import { OAuth2Client } from "./oauth_messages";
+import { BinaryReader, BinaryWriter } from '@bufbuild/protobuf/wire';
+import { ResponseDetails } from '../common';
+import { Pagination, QueryFilter } from '../filtering';
+import { OAuth2Client } from './oauth_messages';
 
-export const protobufPackage = "oauth";
+export const protobufPackage = 'oauth';
 
 export interface CreateOAuth2ClientRequest {
   input: OAuth2ClientCreationRequestInput | undefined;
@@ -66,7 +66,10 @@ function createBaseCreateOAuth2ClientRequest(): CreateOAuth2ClientRequest {
 }
 
 export const CreateOAuth2ClientRequest: MessageFns<CreateOAuth2ClientRequest> = {
-  encode(message: CreateOAuth2ClientRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: CreateOAuth2ClientRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.input !== undefined) {
       OAuth2ClientCreationRequestInput.encode(message.input, writer.uint32(10).fork()).join();
     }
@@ -98,7 +101,11 @@ export const CreateOAuth2ClientRequest: MessageFns<CreateOAuth2ClientRequest> = 
   },
 
   fromJSON(object: any): CreateOAuth2ClientRequest {
-    return { input: isSet(object.input) ? OAuth2ClientCreationRequestInput.fromJSON(object.input) : undefined };
+    return {
+      input: isSet(object.input)
+        ? OAuth2ClientCreationRequestInput.fromJSON(object.input)
+        : undefined,
+    };
   },
 
   toJSON(message: CreateOAuth2ClientRequest): unknown {
@@ -114,9 +121,10 @@ export const CreateOAuth2ClientRequest: MessageFns<CreateOAuth2ClientRequest> = 
   },
   fromPartial(object: DeepPartial<CreateOAuth2ClientRequest>): CreateOAuth2ClientRequest {
     const message = createBaseCreateOAuth2ClientRequest();
-    message.input = (object.input !== undefined && object.input !== null)
-      ? OAuth2ClientCreationRequestInput.fromPartial(object.input)
-      : undefined;
+    message.input =
+      object.input !== undefined && object.input !== null
+        ? OAuth2ClientCreationRequestInput.fromPartial(object.input)
+        : undefined;
     return message;
   },
 };
@@ -126,7 +134,10 @@ function createBaseCreateOAuth2ClientResponse(): CreateOAuth2ClientResponse {
 }
 
 export const CreateOAuth2ClientResponse: MessageFns<CreateOAuth2ClientResponse> = {
-  encode(message: CreateOAuth2ClientResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: CreateOAuth2ClientResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -173,8 +184,8 @@ export const CreateOAuth2ClientResponse: MessageFns<CreateOAuth2ClientResponse> 
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       created: isSet(object.created) ? OAuth2Client.fromJSON(object.created) : undefined,
     };
   },
@@ -195,23 +206,28 @@ export const CreateOAuth2ClientResponse: MessageFns<CreateOAuth2ClientResponse> 
   },
   fromPartial(object: DeepPartial<CreateOAuth2ClientResponse>): CreateOAuth2ClientResponse {
     const message = createBaseCreateOAuth2ClientResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.created = (object.created !== undefined && object.created !== null)
-      ? OAuth2Client.fromPartial(object.created)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
+    message.created =
+      object.created !== undefined && object.created !== null
+        ? OAuth2Client.fromPartial(object.created)
+        : undefined;
     return message;
   },
 };
 
 function createBaseArchiveOAuth2ClientRequest(): ArchiveOAuth2ClientRequest {
-  return { oauth2ClientId: "" };
+  return { oauth2ClientId: '' };
 }
 
 export const ArchiveOAuth2ClientRequest: MessageFns<ArchiveOAuth2ClientRequest> = {
-  encode(message: ArchiveOAuth2ClientRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.oauth2ClientId !== "") {
+  encode(
+    message: ArchiveOAuth2ClientRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.oauth2ClientId !== '') {
       writer.uint32(10).string(message.oauth2ClientId);
     }
     return writer;
@@ -246,14 +262,14 @@ export const ArchiveOAuth2ClientRequest: MessageFns<ArchiveOAuth2ClientRequest> 
       oauth2ClientId: isSet(object.oauth2ClientId)
         ? globalThis.String(object.oauth2ClientId)
         : isSet(object.oauth2_client_id)
-        ? globalThis.String(object.oauth2_client_id)
-        : "",
+          ? globalThis.String(object.oauth2_client_id)
+          : '',
     };
   },
 
   toJSON(message: ArchiveOAuth2ClientRequest): unknown {
     const obj: any = {};
-    if (message.oauth2ClientId !== "") {
+    if (message.oauth2ClientId !== '') {
       obj.oauth2ClientId = message.oauth2ClientId;
     }
     return obj;
@@ -264,7 +280,7 @@ export const ArchiveOAuth2ClientRequest: MessageFns<ArchiveOAuth2ClientRequest> 
   },
   fromPartial(object: DeepPartial<ArchiveOAuth2ClientRequest>): ArchiveOAuth2ClientRequest {
     const message = createBaseArchiveOAuth2ClientRequest();
-    message.oauth2ClientId = object.oauth2ClientId ?? "";
+    message.oauth2ClientId = object.oauth2ClientId ?? '';
     return message;
   },
 };
@@ -274,7 +290,10 @@ function createBaseArchiveOAuth2ClientResponse(): ArchiveOAuth2ClientResponse {
 }
 
 export const ArchiveOAuth2ClientResponse: MessageFns<ArchiveOAuth2ClientResponse> = {
-  encode(message: ArchiveOAuth2ClientResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: ArchiveOAuth2ClientResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -310,8 +329,8 @@ export const ArchiveOAuth2ClientResponse: MessageFns<ArchiveOAuth2ClientResponse
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
     };
   },
 
@@ -328,20 +347,21 @@ export const ArchiveOAuth2ClientResponse: MessageFns<ArchiveOAuth2ClientResponse
   },
   fromPartial(object: DeepPartial<ArchiveOAuth2ClientResponse>): ArchiveOAuth2ClientResponse {
     const message = createBaseArchiveOAuth2ClientResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
     return message;
   },
 };
 
 function createBaseGetOAuth2ClientRequest(): GetOAuth2ClientRequest {
-  return { oauth2ClientId: "" };
+  return { oauth2ClientId: '' };
 }
 
 export const GetOAuth2ClientRequest: MessageFns<GetOAuth2ClientRequest> = {
   encode(message: GetOAuth2ClientRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.oauth2ClientId !== "") {
+    if (message.oauth2ClientId !== '') {
       writer.uint32(10).string(message.oauth2ClientId);
     }
     return writer;
@@ -376,14 +396,14 @@ export const GetOAuth2ClientRequest: MessageFns<GetOAuth2ClientRequest> = {
       oauth2ClientId: isSet(object.oauth2ClientId)
         ? globalThis.String(object.oauth2ClientId)
         : isSet(object.oauth2_client_id)
-        ? globalThis.String(object.oauth2_client_id)
-        : "",
+          ? globalThis.String(object.oauth2_client_id)
+          : '',
     };
   },
 
   toJSON(message: GetOAuth2ClientRequest): unknown {
     const obj: any = {};
-    if (message.oauth2ClientId !== "") {
+    if (message.oauth2ClientId !== '') {
       obj.oauth2ClientId = message.oauth2ClientId;
     }
     return obj;
@@ -394,7 +414,7 @@ export const GetOAuth2ClientRequest: MessageFns<GetOAuth2ClientRequest> = {
   },
   fromPartial(object: DeepPartial<GetOAuth2ClientRequest>): GetOAuth2ClientRequest {
     const message = createBaseGetOAuth2ClientRequest();
-    message.oauth2ClientId = object.oauth2ClientId ?? "";
+    message.oauth2ClientId = object.oauth2ClientId ?? '';
     return message;
   },
 };
@@ -404,7 +424,10 @@ function createBaseGetOAuth2ClientResponse(): GetOAuth2ClientResponse {
 }
 
 export const GetOAuth2ClientResponse: MessageFns<GetOAuth2ClientResponse> = {
-  encode(message: GetOAuth2ClientResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: GetOAuth2ClientResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -451,8 +474,8 @@ export const GetOAuth2ClientResponse: MessageFns<GetOAuth2ClientResponse> = {
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       result: isSet(object.result) ? OAuth2Client.fromJSON(object.result) : undefined,
     };
   },
@@ -473,12 +496,14 @@ export const GetOAuth2ClientResponse: MessageFns<GetOAuth2ClientResponse> = {
   },
   fromPartial(object: DeepPartial<GetOAuth2ClientResponse>): GetOAuth2ClientResponse {
     const message = createBaseGetOAuth2ClientResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.result = (object.result !== undefined && object.result !== null)
-      ? OAuth2Client.fromPartial(object.result)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
+    message.result =
+      object.result !== undefined && object.result !== null
+        ? OAuth2Client.fromPartial(object.result)
+        : undefined;
     return message;
   },
 };
@@ -488,7 +513,10 @@ function createBaseGetOAuth2ClientsRequest(): GetOAuth2ClientsRequest {
 }
 
 export const GetOAuth2ClientsRequest: MessageFns<GetOAuth2ClientsRequest> = {
-  encode(message: GetOAuth2ClientsRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: GetOAuth2ClientsRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.filter !== undefined) {
       QueryFilter.encode(message.filter, writer.uint32(10).fork()).join();
     }
@@ -536,9 +564,10 @@ export const GetOAuth2ClientsRequest: MessageFns<GetOAuth2ClientsRequest> = {
   },
   fromPartial(object: DeepPartial<GetOAuth2ClientsRequest>): GetOAuth2ClientsRequest {
     const message = createBaseGetOAuth2ClientsRequest();
-    message.filter = (object.filter !== undefined && object.filter !== null)
-      ? QueryFilter.fromPartial(object.filter)
-      : undefined;
+    message.filter =
+      object.filter !== undefined && object.filter !== null
+        ? QueryFilter.fromPartial(object.filter)
+        : undefined;
     return message;
   },
 };
@@ -548,7 +577,10 @@ function createBaseGetOAuth2ClientsResponse(): GetOAuth2ClientsResponse {
 }
 
 export const GetOAuth2ClientsResponse: MessageFns<GetOAuth2ClientsResponse> = {
-  encode(message: GetOAuth2ClientsResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: GetOAuth2ClientsResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -606,8 +638,8 @@ export const GetOAuth2ClientsResponse: MessageFns<GetOAuth2ClientsResponse> = {
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       pagination: isSet(object.pagination) ? Pagination.fromJSON(object.pagination) : undefined,
       results: globalThis.Array.isArray(object?.results)
         ? object.results.map((e: any) => OAuth2Client.fromJSON(e))
@@ -634,27 +666,32 @@ export const GetOAuth2ClientsResponse: MessageFns<GetOAuth2ClientsResponse> = {
   },
   fromPartial(object: DeepPartial<GetOAuth2ClientsResponse>): GetOAuth2ClientsResponse {
     const message = createBaseGetOAuth2ClientsResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.pagination = (object.pagination !== undefined && object.pagination !== null)
-      ? Pagination.fromPartial(object.pagination)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
+    message.pagination =
+      object.pagination !== undefined && object.pagination !== null
+        ? Pagination.fromPartial(object.pagination)
+        : undefined;
     message.results = object.results?.map((e) => OAuth2Client.fromPartial(e)) || [];
     return message;
   },
 };
 
 function createBaseOAuth2ClientCreationRequestInput(): OAuth2ClientCreationRequestInput {
-  return { name: "", description: "" };
+  return { name: '', description: '' };
 }
 
 export const OAuth2ClientCreationRequestInput: MessageFns<OAuth2ClientCreationRequestInput> = {
-  encode(message: OAuth2ClientCreationRequestInput, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.name !== "") {
+  encode(
+    message: OAuth2ClientCreationRequestInput,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.name !== '') {
       writer.uint32(10).string(message.name);
     }
-    if (message.description !== "") {
+    if (message.description !== '') {
       writer.uint32(18).string(message.description);
     }
     return writer;
@@ -694,17 +731,17 @@ export const OAuth2ClientCreationRequestInput: MessageFns<OAuth2ClientCreationRe
 
   fromJSON(object: any): OAuth2ClientCreationRequestInput {
     return {
-      name: isSet(object.name) ? globalThis.String(object.name) : "",
-      description: isSet(object.description) ? globalThis.String(object.description) : "",
+      name: isSet(object.name) ? globalThis.String(object.name) : '',
+      description: isSet(object.description) ? globalThis.String(object.description) : '',
     };
   },
 
   toJSON(message: OAuth2ClientCreationRequestInput): unknown {
     const obj: any = {};
-    if (message.name !== "") {
+    if (message.name !== '') {
       obj.name = message.name;
     }
-    if (message.description !== "") {
+    if (message.description !== '') {
       obj.description = message.description;
     }
     return obj;
@@ -713,33 +750,38 @@ export const OAuth2ClientCreationRequestInput: MessageFns<OAuth2ClientCreationRe
   create(base?: DeepPartial<OAuth2ClientCreationRequestInput>): OAuth2ClientCreationRequestInput {
     return OAuth2ClientCreationRequestInput.fromPartial(base ?? {});
   },
-  fromPartial(object: DeepPartial<OAuth2ClientCreationRequestInput>): OAuth2ClientCreationRequestInput {
+  fromPartial(
+    object: DeepPartial<OAuth2ClientCreationRequestInput>
+  ): OAuth2ClientCreationRequestInput {
     const message = createBaseOAuth2ClientCreationRequestInput();
-    message.name = object.name ?? "";
-    message.description = object.description ?? "";
+    message.name = object.name ?? '';
+    message.description = object.description ?? '';
     return message;
   },
 };
 
 function createBaseOAuth2ClientCreationResponse(): OAuth2ClientCreationResponse {
-  return { clientId: "", clientSecret: "", name: "", description: "", id: "" };
+  return { clientId: '', clientSecret: '', name: '', description: '', id: '' };
 }
 
 export const OAuth2ClientCreationResponse: MessageFns<OAuth2ClientCreationResponse> = {
-  encode(message: OAuth2ClientCreationResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.clientId !== "") {
+  encode(
+    message: OAuth2ClientCreationResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.clientId !== '') {
       writer.uint32(10).string(message.clientId);
     }
-    if (message.clientSecret !== "") {
+    if (message.clientSecret !== '') {
       writer.uint32(18).string(message.clientSecret);
     }
-    if (message.name !== "") {
+    if (message.name !== '') {
       writer.uint32(26).string(message.name);
     }
-    if (message.description !== "") {
+    if (message.description !== '') {
       writer.uint32(34).string(message.description);
     }
-    if (message.id !== "") {
+    if (message.id !== '') {
       writer.uint32(42).string(message.id);
     }
     return writer;
@@ -806,34 +848,34 @@ export const OAuth2ClientCreationResponse: MessageFns<OAuth2ClientCreationRespon
       clientId: isSet(object.clientId)
         ? globalThis.String(object.clientId)
         : isSet(object.client_id)
-        ? globalThis.String(object.client_id)
-        : "",
+          ? globalThis.String(object.client_id)
+          : '',
       clientSecret: isSet(object.clientSecret)
         ? globalThis.String(object.clientSecret)
         : isSet(object.client_secret)
-        ? globalThis.String(object.client_secret)
-        : "",
-      name: isSet(object.name) ? globalThis.String(object.name) : "",
-      description: isSet(object.description) ? globalThis.String(object.description) : "",
-      id: isSet(object.id) ? globalThis.String(object.id) : "",
+          ? globalThis.String(object.client_secret)
+          : '',
+      name: isSet(object.name) ? globalThis.String(object.name) : '',
+      description: isSet(object.description) ? globalThis.String(object.description) : '',
+      id: isSet(object.id) ? globalThis.String(object.id) : '',
     };
   },
 
   toJSON(message: OAuth2ClientCreationResponse): unknown {
     const obj: any = {};
-    if (message.clientId !== "") {
+    if (message.clientId !== '') {
       obj.clientId = message.clientId;
     }
-    if (message.clientSecret !== "") {
+    if (message.clientSecret !== '') {
       obj.clientSecret = message.clientSecret;
     }
-    if (message.name !== "") {
+    if (message.name !== '') {
       obj.name = message.name;
     }
-    if (message.description !== "") {
+    if (message.description !== '') {
       obj.description = message.description;
     }
-    if (message.id !== "") {
+    if (message.id !== '') {
       obj.id = message.id;
     }
     return obj;
@@ -844,22 +886,26 @@ export const OAuth2ClientCreationResponse: MessageFns<OAuth2ClientCreationRespon
   },
   fromPartial(object: DeepPartial<OAuth2ClientCreationResponse>): OAuth2ClientCreationResponse {
     const message = createBaseOAuth2ClientCreationResponse();
-    message.clientId = object.clientId ?? "";
-    message.clientSecret = object.clientSecret ?? "";
-    message.name = object.name ?? "";
-    message.description = object.description ?? "";
-    message.id = object.id ?? "";
+    message.clientId = object.clientId ?? '';
+    message.clientSecret = object.clientSecret ?? '';
+    message.name = object.name ?? '';
+    message.description = object.description ?? '';
+    message.id = object.id ?? '';
     return message;
   },
 };
 
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 
-export type DeepPartial<T> = T extends Builtin ? T
-  : T extends globalThis.Array<infer U> ? globalThis.Array<DeepPartial<U>>
-  : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>>
-  : T extends {} ? { [K in keyof T]?: DeepPartial<T[K]> }
-  : Partial<T>;
+export type DeepPartial<T> = T extends Builtin
+  ? T
+  : T extends globalThis.Array<infer U>
+    ? globalThis.Array<DeepPartial<U>>
+    : T extends ReadonlyArray<infer U>
+      ? ReadonlyArray<DeepPartial<U>>
+      : T extends {}
+        ? { [K in keyof T]?: DeepPartial<T[K]> }
+        : Partial<T>;
 
 function isSet(value: any): boolean {
   return value !== null && value !== undefined;

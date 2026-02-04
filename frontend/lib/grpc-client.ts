@@ -15,7 +15,9 @@ function getGrpcBackendUrl(): string {
 // Create a singleton channel and client
 // Note: This is lazily initialized to avoid issues during build time
 let _channel: ReturnType<typeof createChannel> | null = null;
-let _playScriptsClient: ReturnType<typeof createClient<typeof PlayScriptsServiceDefinition>> | null = null;
+let _playScriptsClient: ReturnType<
+  typeof createClient<typeof PlayScriptsServiceDefinition>
+> | null = null;
 
 function getChannel() {
   if (!_channel) {

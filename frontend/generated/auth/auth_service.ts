@@ -5,7 +5,7 @@
 // source: auth/auth_service.proto
 
 /* eslint-disable */
-import type { CallContext, CallOptions } from "nice-grpc-common";
+import type { CallContext, CallOptions } from 'nice-grpc-common';
 import {
   AdminLoginForTokenRequest,
   ExchangeTokenRequest,
@@ -36,17 +36,17 @@ import {
   VerifyEmailAddressResponse,
   VerifyTOTPSecretRequest,
   VerifyTOTPSecretResponse,
-} from "./auth_service_types";
+} from './auth_service_types';
 
-export const protobufPackage = "auth";
+export const protobufPackage = 'auth';
 
 export type AuthServiceDefinition = typeof AuthServiceDefinition;
 export const AuthServiceDefinition = {
-  name: "AuthService",
-  fullName: "auth.AuthService",
+  name: 'AuthService',
+  fullName: 'auth.AuthService',
   methods: {
     getAuthStatus: {
-      name: "GetAuthStatus",
+      name: 'GetAuthStatus',
       requestType: GetAuthStatusRequest,
       requestStream: false,
       responseType: GetAuthStatusResponse,
@@ -54,7 +54,7 @@ export const AuthServiceDefinition = {
       options: {},
     },
     exchangeToken: {
-      name: "ExchangeToken",
+      name: 'ExchangeToken',
       requestType: ExchangeTokenRequest,
       requestStream: false,
       responseType: ExchangeTokenResponse,
@@ -62,7 +62,7 @@ export const AuthServiceDefinition = {
       options: {},
     },
     adminLoginForToken: {
-      name: "AdminLoginForToken",
+      name: 'AdminLoginForToken',
       requestType: AdminLoginForTokenRequest,
       requestStream: false,
       responseType: LoginForTokenResponse,
@@ -70,7 +70,7 @@ export const AuthServiceDefinition = {
       options: {},
     },
     checkPermissions: {
-      name: "CheckPermissions",
+      name: 'CheckPermissions',
       requestType: UserPermissionsRequestInput,
       requestStream: false,
       responseType: UserPermissionsResponse,
@@ -78,7 +78,7 @@ export const AuthServiceDefinition = {
       options: {},
     },
     getActiveAccount: {
-      name: "GetActiveAccount",
+      name: 'GetActiveAccount',
       requestType: GetActiveAccountRequest,
       requestStream: false,
       responseType: GetActiveAccountResponse,
@@ -86,7 +86,7 @@ export const AuthServiceDefinition = {
       options: {},
     },
     getSelf: {
-      name: "GetSelf",
+      name: 'GetSelf',
       requestType: GetSelfRequest,
       requestStream: false,
       responseType: GetSelfResponse,
@@ -94,7 +94,7 @@ export const AuthServiceDefinition = {
       options: {},
     },
     loginForToken: {
-      name: "LoginForToken",
+      name: 'LoginForToken',
       requestType: LoginForTokenRequest,
       requestStream: false,
       responseType: LoginForTokenResponse,
@@ -102,7 +102,7 @@ export const AuthServiceDefinition = {
       options: {},
     },
     redeemPasswordResetToken: {
-      name: "RedeemPasswordResetToken",
+      name: 'RedeemPasswordResetToken',
       requestType: RedeemPasswordResetTokenRequest,
       requestStream: false,
       responseType: RedeemPasswordResetTokenResponse,
@@ -110,7 +110,7 @@ export const AuthServiceDefinition = {
       options: {},
     },
     refreshTOTPSecret: {
-      name: "RefreshTOTPSecret",
+      name: 'RefreshTOTPSecret',
       requestType: RefreshTOTPSecretRequest,
       requestStream: false,
       responseType: RefreshTOTPSecretResponse,
@@ -118,7 +118,7 @@ export const AuthServiceDefinition = {
       options: {},
     },
     requestEmailVerificationEmail: {
-      name: "RequestEmailVerificationEmail",
+      name: 'RequestEmailVerificationEmail',
       requestType: RequestEmailVerificationEmailRequest,
       requestStream: false,
       responseType: RequestEmailVerificationEmailResponse,
@@ -126,7 +126,7 @@ export const AuthServiceDefinition = {
       options: {},
     },
     requestPasswordResetToken: {
-      name: "RequestPasswordResetToken",
+      name: 'RequestPasswordResetToken',
       requestType: RequestPasswordResetTokenRequest,
       requestStream: false,
       responseType: RequestPasswordResetTokenResponse,
@@ -134,7 +134,7 @@ export const AuthServiceDefinition = {
       options: {},
     },
     requestUsernameReminder: {
-      name: "RequestUsernameReminder",
+      name: 'RequestUsernameReminder',
       requestType: RequestUsernameReminderRequest,
       requestStream: false,
       responseType: RequestUsernameReminderResponse,
@@ -142,7 +142,7 @@ export const AuthServiceDefinition = {
       options: {},
     },
     verifyEmailAddress: {
-      name: "VerifyEmailAddress",
+      name: 'VerifyEmailAddress',
       requestType: VerifyEmailAddressRequest,
       requestStream: false,
       responseType: VerifyEmailAddressResponse,
@@ -150,7 +150,7 @@ export const AuthServiceDefinition = {
       options: {},
     },
     verifyTOTPSecret: {
-      name: "VerifyTOTPSecret",
+      name: 'VerifyTOTPSecret',
       requestType: VerifyTOTPSecretRequest,
       requestStream: false,
       responseType: VerifyTOTPSecretResponse,
@@ -158,7 +158,7 @@ export const AuthServiceDefinition = {
       options: {},
     },
     updatePassword: {
-      name: "UpdatePassword",
+      name: 'UpdatePassword',
       requestType: UpdatePasswordRequest,
       requestStream: false,
       responseType: UpdatePasswordResponse,
@@ -171,127 +171,137 @@ export const AuthServiceDefinition = {
 export interface AuthServiceImplementation<CallContextExt = {}> {
   getAuthStatus(
     request: GetAuthStatusRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<GetAuthStatusResponse>>;
   exchangeToken(
     request: ExchangeTokenRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<ExchangeTokenResponse>>;
   adminLoginForToken(
     request: AdminLoginForTokenRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<LoginForTokenResponse>>;
   checkPermissions(
     request: UserPermissionsRequestInput,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<UserPermissionsResponse>>;
   getActiveAccount(
     request: GetActiveAccountRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<GetActiveAccountResponse>>;
-  getSelf(request: GetSelfRequest, context: CallContext & CallContextExt): Promise<DeepPartial<GetSelfResponse>>;
+  getSelf(
+    request: GetSelfRequest,
+    context: CallContext & CallContextExt
+  ): Promise<DeepPartial<GetSelfResponse>>;
   loginForToken(
     request: LoginForTokenRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<LoginForTokenResponse>>;
   redeemPasswordResetToken(
     request: RedeemPasswordResetTokenRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<RedeemPasswordResetTokenResponse>>;
   refreshTOTPSecret(
     request: RefreshTOTPSecretRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<RefreshTOTPSecretResponse>>;
   requestEmailVerificationEmail(
     request: RequestEmailVerificationEmailRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<RequestEmailVerificationEmailResponse>>;
   requestPasswordResetToken(
     request: RequestPasswordResetTokenRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<RequestPasswordResetTokenResponse>>;
   requestUsernameReminder(
     request: RequestUsernameReminderRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<RequestUsernameReminderResponse>>;
   verifyEmailAddress(
     request: VerifyEmailAddressRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<VerifyEmailAddressResponse>>;
   verifyTOTPSecret(
     request: VerifyTOTPSecretRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<VerifyTOTPSecretResponse>>;
   updatePassword(
     request: UpdatePasswordRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<UpdatePasswordResponse>>;
 }
 
 export interface AuthServiceClient<CallOptionsExt = {}> {
   getAuthStatus(
     request: DeepPartial<GetAuthStatusRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<GetAuthStatusResponse>;
   exchangeToken(
     request: DeepPartial<ExchangeTokenRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<ExchangeTokenResponse>;
   adminLoginForToken(
     request: DeepPartial<AdminLoginForTokenRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<LoginForTokenResponse>;
   checkPermissions(
     request: DeepPartial<UserPermissionsRequestInput>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<UserPermissionsResponse>;
   getActiveAccount(
     request: DeepPartial<GetActiveAccountRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<GetActiveAccountResponse>;
-  getSelf(request: DeepPartial<GetSelfRequest>, options?: CallOptions & CallOptionsExt): Promise<GetSelfResponse>;
+  getSelf(
+    request: DeepPartial<GetSelfRequest>,
+    options?: CallOptions & CallOptionsExt
+  ): Promise<GetSelfResponse>;
   loginForToken(
     request: DeepPartial<LoginForTokenRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<LoginForTokenResponse>;
   redeemPasswordResetToken(
     request: DeepPartial<RedeemPasswordResetTokenRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<RedeemPasswordResetTokenResponse>;
   refreshTOTPSecret(
     request: DeepPartial<RefreshTOTPSecretRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<RefreshTOTPSecretResponse>;
   requestEmailVerificationEmail(
     request: DeepPartial<RequestEmailVerificationEmailRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<RequestEmailVerificationEmailResponse>;
   requestPasswordResetToken(
     request: DeepPartial<RequestPasswordResetTokenRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<RequestPasswordResetTokenResponse>;
   requestUsernameReminder(
     request: DeepPartial<RequestUsernameReminderRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<RequestUsernameReminderResponse>;
   verifyEmailAddress(
     request: DeepPartial<VerifyEmailAddressRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<VerifyEmailAddressResponse>;
   verifyTOTPSecret(
     request: DeepPartial<VerifyTOTPSecretRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<VerifyTOTPSecretResponse>;
   updatePassword(
     request: DeepPartial<UpdatePasswordRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<UpdatePasswordResponse>;
 }
 
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 
-export type DeepPartial<T> = T extends Builtin ? T
-  : T extends globalThis.Array<infer U> ? globalThis.Array<DeepPartial<U>>
-  : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>>
-  : T extends {} ? { [K in keyof T]?: DeepPartial<T[K]> }
-  : Partial<T>;
+export type DeepPartial<T> = T extends Builtin
+  ? T
+  : T extends globalThis.Array<infer U>
+    ? globalThis.Array<DeepPartial<U>>
+    : T extends ReadonlyArray<infer U>
+      ? ReadonlyArray<DeepPartial<U>>
+      : T extends {}
+        ? { [K in keyof T]?: DeepPartial<T[K]> }
+        : Partial<T>;

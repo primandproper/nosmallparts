@@ -5,10 +5,10 @@
 // source: identity/identity_service_types.proto
 
 /* eslint-disable */
-import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
-import { ResponseDetails } from "../common";
-import { Pagination, QueryFilter } from "../filtering";
-import { Timestamp } from "../google/protobuf/timestamp";
+import { BinaryReader, BinaryWriter } from '@bufbuild/protobuf/wire';
+import { ResponseDetails } from '../common';
+import { Pagination, QueryFilter } from '../filtering';
+import { Timestamp } from '../google/protobuf/timestamp';
 import {
   Account,
   AccountInvitation,
@@ -16,9 +16,9 @@ import {
   ModifyUserPermissionsInput,
   User,
   UserRegistrationInput,
-} from "./identity_messages";
+} from './identity_messages';
 
-export const protobufPackage = "identity";
+export const protobufPackage = 'identity';
 
 export interface ArchiveUserRequest {
   userId: string;
@@ -364,12 +364,12 @@ export interface AdminUpdateUserStatusResponse {
 }
 
 function createBaseArchiveUserRequest(): ArchiveUserRequest {
-  return { userId: "" };
+  return { userId: '' };
 }
 
 export const ArchiveUserRequest: MessageFns<ArchiveUserRequest> = {
   encode(message: ArchiveUserRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.userId !== "") {
+    if (message.userId !== '') {
       writer.uint32(10).string(message.userId);
     }
     return writer;
@@ -404,14 +404,14 @@ export const ArchiveUserRequest: MessageFns<ArchiveUserRequest> = {
       userId: isSet(object.userId)
         ? globalThis.String(object.userId)
         : isSet(object.user_id)
-        ? globalThis.String(object.user_id)
-        : "",
+          ? globalThis.String(object.user_id)
+          : '',
     };
   },
 
   toJSON(message: ArchiveUserRequest): unknown {
     const obj: any = {};
-    if (message.userId !== "") {
+    if (message.userId !== '') {
       obj.userId = message.userId;
     }
     return obj;
@@ -422,7 +422,7 @@ export const ArchiveUserRequest: MessageFns<ArchiveUserRequest> = {
   },
   fromPartial(object: DeepPartial<ArchiveUserRequest>): ArchiveUserRequest {
     const message = createBaseArchiveUserRequest();
-    message.userId = object.userId ?? "";
+    message.userId = object.userId ?? '';
     return message;
   },
 };
@@ -468,8 +468,8 @@ export const ArchiveUserResponse: MessageFns<ArchiveUserResponse> = {
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
     };
   },
 
@@ -486,23 +486,27 @@ export const ArchiveUserResponse: MessageFns<ArchiveUserResponse> = {
   },
   fromPartial(object: DeepPartial<ArchiveUserResponse>): ArchiveUserResponse {
     const message = createBaseArchiveUserResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
     return message;
   },
 };
 
 function createBaseArchiveUserMembershipRequest(): ArchiveUserMembershipRequest {
-  return { accountId: "", userId: "" };
+  return { accountId: '', userId: '' };
 }
 
 export const ArchiveUserMembershipRequest: MessageFns<ArchiveUserMembershipRequest> = {
-  encode(message: ArchiveUserMembershipRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.accountId !== "") {
+  encode(
+    message: ArchiveUserMembershipRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.accountId !== '') {
       writer.uint32(10).string(message.accountId);
     }
-    if (message.userId !== "") {
+    if (message.userId !== '') {
       writer.uint32(18).string(message.userId);
     }
     return writer;
@@ -545,22 +549,22 @@ export const ArchiveUserMembershipRequest: MessageFns<ArchiveUserMembershipReque
       accountId: isSet(object.accountId)
         ? globalThis.String(object.accountId)
         : isSet(object.account_id)
-        ? globalThis.String(object.account_id)
-        : "",
+          ? globalThis.String(object.account_id)
+          : '',
       userId: isSet(object.userId)
         ? globalThis.String(object.userId)
         : isSet(object.user_id)
-        ? globalThis.String(object.user_id)
-        : "",
+          ? globalThis.String(object.user_id)
+          : '',
     };
   },
 
   toJSON(message: ArchiveUserMembershipRequest): unknown {
     const obj: any = {};
-    if (message.accountId !== "") {
+    if (message.accountId !== '') {
       obj.accountId = message.accountId;
     }
-    if (message.userId !== "") {
+    if (message.userId !== '') {
       obj.userId = message.userId;
     }
     return obj;
@@ -571,8 +575,8 @@ export const ArchiveUserMembershipRequest: MessageFns<ArchiveUserMembershipReque
   },
   fromPartial(object: DeepPartial<ArchiveUserMembershipRequest>): ArchiveUserMembershipRequest {
     const message = createBaseArchiveUserMembershipRequest();
-    message.accountId = object.accountId ?? "";
-    message.userId = object.userId ?? "";
+    message.accountId = object.accountId ?? '';
+    message.userId = object.userId ?? '';
     return message;
   },
 };
@@ -582,7 +586,10 @@ function createBaseArchiveUserMembershipResponse(): ArchiveUserMembershipRespons
 }
 
 export const ArchiveUserMembershipResponse: MessageFns<ArchiveUserMembershipResponse> = {
-  encode(message: ArchiveUserMembershipResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: ArchiveUserMembershipResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -618,8 +625,8 @@ export const ArchiveUserMembershipResponse: MessageFns<ArchiveUserMembershipResp
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
     };
   },
 
@@ -636,9 +643,10 @@ export const ArchiveUserMembershipResponse: MessageFns<ArchiveUserMembershipResp
   },
   fromPartial(object: DeepPartial<ArchiveUserMembershipResponse>): ArchiveUserMembershipResponse {
     const message = createBaseArchiveUserMembershipResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
     return message;
   },
 };
@@ -680,7 +688,9 @@ export const CreateUserRequest: MessageFns<CreateUserRequest> = {
   },
 
   fromJSON(object: any): CreateUserRequest {
-    return { input: isSet(object.input) ? UserRegistrationInput.fromJSON(object.input) : undefined };
+    return {
+      input: isSet(object.input) ? UserRegistrationInput.fromJSON(object.input) : undefined,
+    };
   },
 
   toJSON(message: CreateUserRequest): unknown {
@@ -696,9 +706,10 @@ export const CreateUserRequest: MessageFns<CreateUserRequest> = {
   },
   fromPartial(object: DeepPartial<CreateUserRequest>): CreateUserRequest {
     const message = createBaseCreateUserRequest();
-    message.input = (object.input !== undefined && object.input !== null)
-      ? UserRegistrationInput.fromPartial(object.input)
-      : undefined;
+    message.input =
+      object.input !== undefined && object.input !== null
+        ? UserRegistrationInput.fromPartial(object.input)
+        : undefined;
     return message;
   },
 };
@@ -755,8 +766,8 @@ export const CreateUserResponse: MessageFns<CreateUserResponse> = {
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       created: isSet(object.created) ? UserCreationResponse.fromJSON(object.created) : undefined,
     };
   },
@@ -777,12 +788,14 @@ export const CreateUserResponse: MessageFns<CreateUserResponse> = {
   },
   fromPartial(object: DeepPartial<CreateUserResponse>): CreateUserResponse {
     const message = createBaseCreateUserResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.created = (object.created !== undefined && object.created !== null)
-      ? UserCreationResponse.fromPartial(object.created)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
+    message.created =
+      object.created !== undefined && object.created !== null
+        ? UserCreationResponse.fromPartial(object.created)
+        : undefined;
     return message;
   },
 };
@@ -824,7 +837,9 @@ export const CreateAccountRequest: MessageFns<CreateAccountRequest> = {
   },
 
   fromJSON(object: any): CreateAccountRequest {
-    return { input: isSet(object.input) ? AccountCreationRequestInput.fromJSON(object.input) : undefined };
+    return {
+      input: isSet(object.input) ? AccountCreationRequestInput.fromJSON(object.input) : undefined,
+    };
   },
 
   toJSON(message: CreateAccountRequest): unknown {
@@ -840,9 +855,10 @@ export const CreateAccountRequest: MessageFns<CreateAccountRequest> = {
   },
   fromPartial(object: DeepPartial<CreateAccountRequest>): CreateAccountRequest {
     const message = createBaseCreateAccountRequest();
-    message.input = (object.input !== undefined && object.input !== null)
-      ? AccountCreationRequestInput.fromPartial(object.input)
-      : undefined;
+    message.input =
+      object.input !== undefined && object.input !== null
+        ? AccountCreationRequestInput.fromPartial(object.input)
+        : undefined;
     return message;
   },
 };
@@ -899,8 +915,8 @@ export const CreateAccountResponse: MessageFns<CreateAccountResponse> = {
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       created: isSet(object.created) ? Account.fromJSON(object.created) : undefined,
     };
   },
@@ -921,12 +937,14 @@ export const CreateAccountResponse: MessageFns<CreateAccountResponse> = {
   },
   fromPartial(object: DeepPartial<CreateAccountResponse>): CreateAccountResponse {
     const message = createBaseCreateAccountResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.created = (object.created !== undefined && object.created !== null)
-      ? Account.fromPartial(object.created)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
+    message.created =
+      object.created !== undefined && object.created !== null
+        ? Account.fromPartial(object.created)
+        : undefined;
     return message;
   },
 };
@@ -936,7 +954,10 @@ function createBaseCreateAccountInvitationRequest(): CreateAccountInvitationRequ
 }
 
 export const CreateAccountInvitationRequest: MessageFns<CreateAccountInvitationRequest> = {
-  encode(message: CreateAccountInvitationRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: CreateAccountInvitationRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.input !== undefined) {
       AccountInvitationCreationRequestInput.encode(message.input, writer.uint32(10).fork()).join();
     }
@@ -968,7 +989,11 @@ export const CreateAccountInvitationRequest: MessageFns<CreateAccountInvitationR
   },
 
   fromJSON(object: any): CreateAccountInvitationRequest {
-    return { input: isSet(object.input) ? AccountInvitationCreationRequestInput.fromJSON(object.input) : undefined };
+    return {
+      input: isSet(object.input)
+        ? AccountInvitationCreationRequestInput.fromJSON(object.input)
+        : undefined,
+    };
   },
 
   toJSON(message: CreateAccountInvitationRequest): unknown {
@@ -984,9 +1009,10 @@ export const CreateAccountInvitationRequest: MessageFns<CreateAccountInvitationR
   },
   fromPartial(object: DeepPartial<CreateAccountInvitationRequest>): CreateAccountInvitationRequest {
     const message = createBaseCreateAccountInvitationRequest();
-    message.input = (object.input !== undefined && object.input !== null)
-      ? AccountInvitationCreationRequestInput.fromPartial(object.input)
-      : undefined;
+    message.input =
+      object.input !== undefined && object.input !== null
+        ? AccountInvitationCreationRequestInput.fromPartial(object.input)
+        : undefined;
     return message;
   },
 };
@@ -996,7 +1022,10 @@ function createBaseCreateAccountInvitationResponse(): CreateAccountInvitationRes
 }
 
 export const CreateAccountInvitationResponse: MessageFns<CreateAccountInvitationResponse> = {
-  encode(message: CreateAccountInvitationResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: CreateAccountInvitationResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -1043,8 +1072,8 @@ export const CreateAccountInvitationResponse: MessageFns<CreateAccountInvitation
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       created: isSet(object.created) ? AccountInvitation.fromJSON(object.created) : undefined,
     };
   },
@@ -1063,25 +1092,32 @@ export const CreateAccountInvitationResponse: MessageFns<CreateAccountInvitation
   create(base?: DeepPartial<CreateAccountInvitationResponse>): CreateAccountInvitationResponse {
     return CreateAccountInvitationResponse.fromPartial(base ?? {});
   },
-  fromPartial(object: DeepPartial<CreateAccountInvitationResponse>): CreateAccountInvitationResponse {
+  fromPartial(
+    object: DeepPartial<CreateAccountInvitationResponse>
+  ): CreateAccountInvitationResponse {
     const message = createBaseCreateAccountInvitationResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.created = (object.created !== undefined && object.created !== null)
-      ? AccountInvitation.fromPartial(object.created)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
+    message.created =
+      object.created !== undefined && object.created !== null
+        ? AccountInvitation.fromPartial(object.created)
+        : undefined;
     return message;
   },
 };
 
 function createBaseCancelAccountInvitationRequest(): CancelAccountInvitationRequest {
-  return { accountInvitationId: "", input: undefined };
+  return { accountInvitationId: '', input: undefined };
 }
 
 export const CancelAccountInvitationRequest: MessageFns<CancelAccountInvitationRequest> = {
-  encode(message: CancelAccountInvitationRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.accountInvitationId !== "") {
+  encode(
+    message: CancelAccountInvitationRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.accountInvitationId !== '') {
       writer.uint32(10).string(message.accountInvitationId);
     }
     if (message.input !== undefined) {
@@ -1127,15 +1163,17 @@ export const CancelAccountInvitationRequest: MessageFns<CancelAccountInvitationR
       accountInvitationId: isSet(object.accountInvitationId)
         ? globalThis.String(object.accountInvitationId)
         : isSet(object.account_invitation_id)
-        ? globalThis.String(object.account_invitation_id)
-        : "",
-      input: isSet(object.input) ? AccountInvitationUpdateRequestInput.fromJSON(object.input) : undefined,
+          ? globalThis.String(object.account_invitation_id)
+          : '',
+      input: isSet(object.input)
+        ? AccountInvitationUpdateRequestInput.fromJSON(object.input)
+        : undefined,
     };
   },
 
   toJSON(message: CancelAccountInvitationRequest): unknown {
     const obj: any = {};
-    if (message.accountInvitationId !== "") {
+    if (message.accountInvitationId !== '') {
       obj.accountInvitationId = message.accountInvitationId;
     }
     if (message.input !== undefined) {
@@ -1149,10 +1187,11 @@ export const CancelAccountInvitationRequest: MessageFns<CancelAccountInvitationR
   },
   fromPartial(object: DeepPartial<CancelAccountInvitationRequest>): CancelAccountInvitationRequest {
     const message = createBaseCancelAccountInvitationRequest();
-    message.accountInvitationId = object.accountInvitationId ?? "";
-    message.input = (object.input !== undefined && object.input !== null)
-      ? AccountInvitationUpdateRequestInput.fromPartial(object.input)
-      : undefined;
+    message.accountInvitationId = object.accountInvitationId ?? '';
+    message.input =
+      object.input !== undefined && object.input !== null
+        ? AccountInvitationUpdateRequestInput.fromPartial(object.input)
+        : undefined;
     return message;
   },
 };
@@ -1162,7 +1201,10 @@ function createBaseCancelAccountInvitationResponse(): CancelAccountInvitationRes
 }
 
 export const CancelAccountInvitationResponse: MessageFns<CancelAccountInvitationResponse> = {
-  encode(message: CancelAccountInvitationResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: CancelAccountInvitationResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -1198,8 +1240,8 @@ export const CancelAccountInvitationResponse: MessageFns<CancelAccountInvitation
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
     };
   },
 
@@ -1214,22 +1256,25 @@ export const CancelAccountInvitationResponse: MessageFns<CancelAccountInvitation
   create(base?: DeepPartial<CancelAccountInvitationResponse>): CancelAccountInvitationResponse {
     return CancelAccountInvitationResponse.fromPartial(base ?? {});
   },
-  fromPartial(object: DeepPartial<CancelAccountInvitationResponse>): CancelAccountInvitationResponse {
+  fromPartial(
+    object: DeepPartial<CancelAccountInvitationResponse>
+  ): CancelAccountInvitationResponse {
     const message = createBaseCancelAccountInvitationResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
     return message;
   },
 };
 
 function createBaseArchiveAccountRequest(): ArchiveAccountRequest {
-  return { accountId: "" };
+  return { accountId: '' };
 }
 
 export const ArchiveAccountRequest: MessageFns<ArchiveAccountRequest> = {
   encode(message: ArchiveAccountRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.accountId !== "") {
+    if (message.accountId !== '') {
       writer.uint32(10).string(message.accountId);
     }
     return writer;
@@ -1264,14 +1309,14 @@ export const ArchiveAccountRequest: MessageFns<ArchiveAccountRequest> = {
       accountId: isSet(object.accountId)
         ? globalThis.String(object.accountId)
         : isSet(object.account_id)
-        ? globalThis.String(object.account_id)
-        : "",
+          ? globalThis.String(object.account_id)
+          : '',
     };
   },
 
   toJSON(message: ArchiveAccountRequest): unknown {
     const obj: any = {};
-    if (message.accountId !== "") {
+    if (message.accountId !== '') {
       obj.accountId = message.accountId;
     }
     return obj;
@@ -1282,7 +1327,7 @@ export const ArchiveAccountRequest: MessageFns<ArchiveAccountRequest> = {
   },
   fromPartial(object: DeepPartial<ArchiveAccountRequest>): ArchiveAccountRequest {
     const message = createBaseArchiveAccountRequest();
-    message.accountId = object.accountId ?? "";
+    message.accountId = object.accountId ?? '';
     return message;
   },
 };
@@ -1328,8 +1373,8 @@ export const ArchiveAccountResponse: MessageFns<ArchiveAccountResponse> = {
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
     };
   },
 
@@ -1346,20 +1391,24 @@ export const ArchiveAccountResponse: MessageFns<ArchiveAccountResponse> = {
   },
   fromPartial(object: DeepPartial<ArchiveAccountResponse>): ArchiveAccountResponse {
     const message = createBaseArchiveAccountResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
     return message;
   },
 };
 
 function createBaseAcceptAccountInvitationRequest(): AcceptAccountInvitationRequest {
-  return { accountInvitationId: "", input: undefined };
+  return { accountInvitationId: '', input: undefined };
 }
 
 export const AcceptAccountInvitationRequest: MessageFns<AcceptAccountInvitationRequest> = {
-  encode(message: AcceptAccountInvitationRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.accountInvitationId !== "") {
+  encode(
+    message: AcceptAccountInvitationRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.accountInvitationId !== '') {
       writer.uint32(10).string(message.accountInvitationId);
     }
     if (message.input !== undefined) {
@@ -1405,15 +1454,17 @@ export const AcceptAccountInvitationRequest: MessageFns<AcceptAccountInvitationR
       accountInvitationId: isSet(object.accountInvitationId)
         ? globalThis.String(object.accountInvitationId)
         : isSet(object.account_invitation_id)
-        ? globalThis.String(object.account_invitation_id)
-        : "",
-      input: isSet(object.input) ? AccountInvitationUpdateRequestInput.fromJSON(object.input) : undefined,
+          ? globalThis.String(object.account_invitation_id)
+          : '',
+      input: isSet(object.input)
+        ? AccountInvitationUpdateRequestInput.fromJSON(object.input)
+        : undefined,
     };
   },
 
   toJSON(message: AcceptAccountInvitationRequest): unknown {
     const obj: any = {};
-    if (message.accountInvitationId !== "") {
+    if (message.accountInvitationId !== '') {
       obj.accountInvitationId = message.accountInvitationId;
     }
     if (message.input !== undefined) {
@@ -1427,10 +1478,11 @@ export const AcceptAccountInvitationRequest: MessageFns<AcceptAccountInvitationR
   },
   fromPartial(object: DeepPartial<AcceptAccountInvitationRequest>): AcceptAccountInvitationRequest {
     const message = createBaseAcceptAccountInvitationRequest();
-    message.accountInvitationId = object.accountInvitationId ?? "";
-    message.input = (object.input !== undefined && object.input !== null)
-      ? AccountInvitationUpdateRequestInput.fromPartial(object.input)
-      : undefined;
+    message.accountInvitationId = object.accountInvitationId ?? '';
+    message.input =
+      object.input !== undefined && object.input !== null
+        ? AccountInvitationUpdateRequestInput.fromPartial(object.input)
+        : undefined;
     return message;
   },
 };
@@ -1440,7 +1492,10 @@ function createBaseAcceptAccountInvitationResponse(): AcceptAccountInvitationRes
 }
 
 export const AcceptAccountInvitationResponse: MessageFns<AcceptAccountInvitationResponse> = {
-  encode(message: AcceptAccountInvitationResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: AcceptAccountInvitationResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -1476,8 +1531,8 @@ export const AcceptAccountInvitationResponse: MessageFns<AcceptAccountInvitation
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
     };
   },
 
@@ -1492,22 +1547,25 @@ export const AcceptAccountInvitationResponse: MessageFns<AcceptAccountInvitation
   create(base?: DeepPartial<AcceptAccountInvitationResponse>): AcceptAccountInvitationResponse {
     return AcceptAccountInvitationResponse.fromPartial(base ?? {});
   },
-  fromPartial(object: DeepPartial<AcceptAccountInvitationResponse>): AcceptAccountInvitationResponse {
+  fromPartial(
+    object: DeepPartial<AcceptAccountInvitationResponse>
+  ): AcceptAccountInvitationResponse {
     const message = createBaseAcceptAccountInvitationResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
     return message;
   },
 };
 
 function createBaseGetAccountRequest(): GetAccountRequest {
-  return { accountId: "" };
+  return { accountId: '' };
 }
 
 export const GetAccountRequest: MessageFns<GetAccountRequest> = {
   encode(message: GetAccountRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.accountId !== "") {
+    if (message.accountId !== '') {
       writer.uint32(10).string(message.accountId);
     }
     return writer;
@@ -1542,14 +1600,14 @@ export const GetAccountRequest: MessageFns<GetAccountRequest> = {
       accountId: isSet(object.accountId)
         ? globalThis.String(object.accountId)
         : isSet(object.account_id)
-        ? globalThis.String(object.account_id)
-        : "",
+          ? globalThis.String(object.account_id)
+          : '',
     };
   },
 
   toJSON(message: GetAccountRequest): unknown {
     const obj: any = {};
-    if (message.accountId !== "") {
+    if (message.accountId !== '') {
       obj.accountId = message.accountId;
     }
     return obj;
@@ -1560,7 +1618,7 @@ export const GetAccountRequest: MessageFns<GetAccountRequest> = {
   },
   fromPartial(object: DeepPartial<GetAccountRequest>): GetAccountRequest {
     const message = createBaseGetAccountRequest();
-    message.accountId = object.accountId ?? "";
+    message.accountId = object.accountId ?? '';
     return message;
   },
 };
@@ -1617,8 +1675,8 @@ export const GetAccountResponse: MessageFns<GetAccountResponse> = {
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       result: isSet(object.result) ? Account.fromJSON(object.result) : undefined,
     };
   },
@@ -1639,23 +1697,28 @@ export const GetAccountResponse: MessageFns<GetAccountResponse> = {
   },
   fromPartial(object: DeepPartial<GetAccountResponse>): GetAccountResponse {
     const message = createBaseGetAccountResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.result = (object.result !== undefined && object.result !== null)
-      ? Account.fromPartial(object.result)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
+    message.result =
+      object.result !== undefined && object.result !== null
+        ? Account.fromPartial(object.result)
+        : undefined;
     return message;
   },
 };
 
 function createBaseGetAccountInvitationRequest(): GetAccountInvitationRequest {
-  return { accountInvitationId: "" };
+  return { accountInvitationId: '' };
 }
 
 export const GetAccountInvitationRequest: MessageFns<GetAccountInvitationRequest> = {
-  encode(message: GetAccountInvitationRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.accountInvitationId !== "") {
+  encode(
+    message: GetAccountInvitationRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.accountInvitationId !== '') {
       writer.uint32(10).string(message.accountInvitationId);
     }
     return writer;
@@ -1690,14 +1753,14 @@ export const GetAccountInvitationRequest: MessageFns<GetAccountInvitationRequest
       accountInvitationId: isSet(object.accountInvitationId)
         ? globalThis.String(object.accountInvitationId)
         : isSet(object.account_invitation_id)
-        ? globalThis.String(object.account_invitation_id)
-        : "",
+          ? globalThis.String(object.account_invitation_id)
+          : '',
     };
   },
 
   toJSON(message: GetAccountInvitationRequest): unknown {
     const obj: any = {};
-    if (message.accountInvitationId !== "") {
+    if (message.accountInvitationId !== '') {
       obj.accountInvitationId = message.accountInvitationId;
     }
     return obj;
@@ -1708,7 +1771,7 @@ export const GetAccountInvitationRequest: MessageFns<GetAccountInvitationRequest
   },
   fromPartial(object: DeepPartial<GetAccountInvitationRequest>): GetAccountInvitationRequest {
     const message = createBaseGetAccountInvitationRequest();
-    message.accountInvitationId = object.accountInvitationId ?? "";
+    message.accountInvitationId = object.accountInvitationId ?? '';
     return message;
   },
 };
@@ -1718,7 +1781,10 @@ function createBaseGetAccountInvitationResponse(): GetAccountInvitationResponse 
 }
 
 export const GetAccountInvitationResponse: MessageFns<GetAccountInvitationResponse> = {
-  encode(message: GetAccountInvitationResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: GetAccountInvitationResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -1765,8 +1831,8 @@ export const GetAccountInvitationResponse: MessageFns<GetAccountInvitationRespon
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       result: isSet(object.result) ? AccountInvitation.fromJSON(object.result) : undefined,
     };
   },
@@ -1787,12 +1853,14 @@ export const GetAccountInvitationResponse: MessageFns<GetAccountInvitationRespon
   },
   fromPartial(object: DeepPartial<GetAccountInvitationResponse>): GetAccountInvitationResponse {
     const message = createBaseGetAccountInvitationResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.result = (object.result !== undefined && object.result !== null)
-      ? AccountInvitation.fromPartial(object.result)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
+    message.result =
+      object.result !== undefined && object.result !== null
+        ? AccountInvitation.fromPartial(object.result)
+        : undefined;
     return message;
   },
 };
@@ -1850,9 +1918,10 @@ export const GetAccountsRequest: MessageFns<GetAccountsRequest> = {
   },
   fromPartial(object: DeepPartial<GetAccountsRequest>): GetAccountsRequest {
     const message = createBaseGetAccountsRequest();
-    message.filter = (object.filter !== undefined && object.filter !== null)
-      ? QueryFilter.fromPartial(object.filter)
-      : undefined;
+    message.filter =
+      object.filter !== undefined && object.filter !== null
+        ? QueryFilter.fromPartial(object.filter)
+        : undefined;
     return message;
   },
 };
@@ -1920,10 +1989,12 @@ export const GetAccountsResponse: MessageFns<GetAccountsResponse> = {
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       pagination: isSet(object.pagination) ? Pagination.fromJSON(object.pagination) : undefined,
-      results: globalThis.Array.isArray(object?.results) ? object.results.map((e: any) => Account.fromJSON(e)) : [],
+      results: globalThis.Array.isArray(object?.results)
+        ? object.results.map((e: any) => Account.fromJSON(e))
+        : [],
     };
   },
 
@@ -1946,27 +2017,32 @@ export const GetAccountsResponse: MessageFns<GetAccountsResponse> = {
   },
   fromPartial(object: DeepPartial<GetAccountsResponse>): GetAccountsResponse {
     const message = createBaseGetAccountsResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.pagination = (object.pagination !== undefined && object.pagination !== null)
-      ? Pagination.fromPartial(object.pagination)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
+    message.pagination =
+      object.pagination !== undefined && object.pagination !== null
+        ? Pagination.fromPartial(object.pagination)
+        : undefined;
     message.results = object.results?.map((e) => Account.fromPartial(e)) || [];
     return message;
   },
 };
 
 function createBaseGetAccountsForUserRequest(): GetAccountsForUserRequest {
-  return { filter: undefined, userId: "" };
+  return { filter: undefined, userId: '' };
 }
 
 export const GetAccountsForUserRequest: MessageFns<GetAccountsForUserRequest> = {
-  encode(message: GetAccountsForUserRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: GetAccountsForUserRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.filter !== undefined) {
       QueryFilter.encode(message.filter, writer.uint32(10).fork()).join();
     }
-    if (message.userId !== "") {
+    if (message.userId !== '') {
       writer.uint32(18).string(message.userId);
     }
     return writer;
@@ -2010,8 +2086,8 @@ export const GetAccountsForUserRequest: MessageFns<GetAccountsForUserRequest> = 
       userId: isSet(object.userId)
         ? globalThis.String(object.userId)
         : isSet(object.user_id)
-        ? globalThis.String(object.user_id)
-        : "",
+          ? globalThis.String(object.user_id)
+          : '',
     };
   },
 
@@ -2020,7 +2096,7 @@ export const GetAccountsForUserRequest: MessageFns<GetAccountsForUserRequest> = 
     if (message.filter !== undefined) {
       obj.filter = QueryFilter.toJSON(message.filter);
     }
-    if (message.userId !== "") {
+    if (message.userId !== '') {
       obj.userId = message.userId;
     }
     return obj;
@@ -2031,10 +2107,11 @@ export const GetAccountsForUserRequest: MessageFns<GetAccountsForUserRequest> = 
   },
   fromPartial(object: DeepPartial<GetAccountsForUserRequest>): GetAccountsForUserRequest {
     const message = createBaseGetAccountsForUserRequest();
-    message.filter = (object.filter !== undefined && object.filter !== null)
-      ? QueryFilter.fromPartial(object.filter)
-      : undefined;
-    message.userId = object.userId ?? "";
+    message.filter =
+      object.filter !== undefined && object.filter !== null
+        ? QueryFilter.fromPartial(object.filter)
+        : undefined;
+    message.userId = object.userId ?? '';
     return message;
   },
 };
@@ -2044,7 +2121,10 @@ function createBaseGetAccountsForUserResponse(): GetAccountsForUserResponse {
 }
 
 export const GetAccountsForUserResponse: MessageFns<GetAccountsForUserResponse> = {
-  encode(message: GetAccountsForUserResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: GetAccountsForUserResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -2102,10 +2182,12 @@ export const GetAccountsForUserResponse: MessageFns<GetAccountsForUserResponse> 
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       pagination: isSet(object.pagination) ? Pagination.fromJSON(object.pagination) : undefined,
-      results: globalThis.Array.isArray(object?.results) ? object.results.map((e: any) => Account.fromJSON(e)) : [],
+      results: globalThis.Array.isArray(object?.results)
+        ? object.results.map((e: any) => Account.fromJSON(e))
+        : [],
     };
   },
 
@@ -2128,12 +2210,14 @@ export const GetAccountsForUserResponse: MessageFns<GetAccountsForUserResponse> 
   },
   fromPartial(object: DeepPartial<GetAccountsForUserResponse>): GetAccountsForUserResponse {
     const message = createBaseGetAccountsForUserResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.pagination = (object.pagination !== undefined && object.pagination !== null)
-      ? Pagination.fromPartial(object.pagination)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
+    message.pagination =
+      object.pagination !== undefined && object.pagination !== null
+        ? Pagination.fromPartial(object.pagination)
+        : undefined;
     message.results = object.results?.map((e) => Account.fromPartial(e)) || [];
     return message;
   },
@@ -2143,170 +2227,198 @@ function createBaseGetReceivedAccountInvitationsRequest(): GetReceivedAccountInv
   return { filter: undefined };
 }
 
-export const GetReceivedAccountInvitationsRequest: MessageFns<GetReceivedAccountInvitationsRequest> = {
-  encode(message: GetReceivedAccountInvitationsRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.filter !== undefined) {
-      QueryFilter.encode(message.filter, writer.uint32(10).fork()).join();
-    }
-    return writer;
-  },
+export const GetReceivedAccountInvitationsRequest: MessageFns<GetReceivedAccountInvitationsRequest> =
+  {
+    encode(
+      message: GetReceivedAccountInvitationsRequest,
+      writer: BinaryWriter = new BinaryWriter()
+    ): BinaryWriter {
+      if (message.filter !== undefined) {
+        QueryFilter.encode(message.filter, writer.uint32(10).fork()).join();
+      }
+      return writer;
+    },
 
-  decode(input: BinaryReader | Uint8Array, length?: number): GetReceivedAccountInvitationsRequest {
-    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
-    const end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseGetReceivedAccountInvitationsRequest();
-    while (reader.pos < end) {
-      const tag = reader.uint32();
-      switch (tag >>> 3) {
-        case 1: {
-          if (tag !== 10) {
-            break;
+    decode(
+      input: BinaryReader | Uint8Array,
+      length?: number
+    ): GetReceivedAccountInvitationsRequest {
+      const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+      const end = length === undefined ? reader.len : reader.pos + length;
+      const message = createBaseGetReceivedAccountInvitationsRequest();
+      while (reader.pos < end) {
+        const tag = reader.uint32();
+        switch (tag >>> 3) {
+          case 1: {
+            if (tag !== 10) {
+              break;
+            }
+
+            message.filter = QueryFilter.decode(reader, reader.uint32());
+            continue;
           }
-
-          message.filter = QueryFilter.decode(reader, reader.uint32());
-          continue;
         }
+        if ((tag & 7) === 4 || tag === 0) {
+          break;
+        }
+        reader.skip(tag & 7);
       }
-      if ((tag & 7) === 4 || tag === 0) {
-        break;
+      return message;
+    },
+
+    fromJSON(object: any): GetReceivedAccountInvitationsRequest {
+      return { filter: isSet(object.filter) ? QueryFilter.fromJSON(object.filter) : undefined };
+    },
+
+    toJSON(message: GetReceivedAccountInvitationsRequest): unknown {
+      const obj: any = {};
+      if (message.filter !== undefined) {
+        obj.filter = QueryFilter.toJSON(message.filter);
       }
-      reader.skip(tag & 7);
-    }
-    return message;
-  },
+      return obj;
+    },
 
-  fromJSON(object: any): GetReceivedAccountInvitationsRequest {
-    return { filter: isSet(object.filter) ? QueryFilter.fromJSON(object.filter) : undefined };
-  },
-
-  toJSON(message: GetReceivedAccountInvitationsRequest): unknown {
-    const obj: any = {};
-    if (message.filter !== undefined) {
-      obj.filter = QueryFilter.toJSON(message.filter);
-    }
-    return obj;
-  },
-
-  create(base?: DeepPartial<GetReceivedAccountInvitationsRequest>): GetReceivedAccountInvitationsRequest {
-    return GetReceivedAccountInvitationsRequest.fromPartial(base ?? {});
-  },
-  fromPartial(object: DeepPartial<GetReceivedAccountInvitationsRequest>): GetReceivedAccountInvitationsRequest {
-    const message = createBaseGetReceivedAccountInvitationsRequest();
-    message.filter = (object.filter !== undefined && object.filter !== null)
-      ? QueryFilter.fromPartial(object.filter)
-      : undefined;
-    return message;
-  },
-};
+    create(
+      base?: DeepPartial<GetReceivedAccountInvitationsRequest>
+    ): GetReceivedAccountInvitationsRequest {
+      return GetReceivedAccountInvitationsRequest.fromPartial(base ?? {});
+    },
+    fromPartial(
+      object: DeepPartial<GetReceivedAccountInvitationsRequest>
+    ): GetReceivedAccountInvitationsRequest {
+      const message = createBaseGetReceivedAccountInvitationsRequest();
+      message.filter =
+        object.filter !== undefined && object.filter !== null
+          ? QueryFilter.fromPartial(object.filter)
+          : undefined;
+      return message;
+    },
+  };
 
 function createBaseGetReceivedAccountInvitationsResponse(): GetReceivedAccountInvitationsResponse {
   return { responseDetails: undefined, pagination: undefined, results: [] };
 }
 
-export const GetReceivedAccountInvitationsResponse: MessageFns<GetReceivedAccountInvitationsResponse> = {
-  encode(message: GetReceivedAccountInvitationsResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.responseDetails !== undefined) {
-      ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
-    }
-    if (message.pagination !== undefined) {
-      Pagination.encode(message.pagination, writer.uint32(18).fork()).join();
-    }
-    for (const v of message.results) {
-      AccountInvitation.encode(v!, writer.uint32(26).fork()).join();
-    }
-    return writer;
-  },
-
-  decode(input: BinaryReader | Uint8Array, length?: number): GetReceivedAccountInvitationsResponse {
-    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
-    const end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseGetReceivedAccountInvitationsResponse();
-    while (reader.pos < end) {
-      const tag = reader.uint32();
-      switch (tag >>> 3) {
-        case 1: {
-          if (tag !== 10) {
-            break;
-          }
-
-          message.responseDetails = ResponseDetails.decode(reader, reader.uint32());
-          continue;
-        }
-        case 2: {
-          if (tag !== 18) {
-            break;
-          }
-
-          message.pagination = Pagination.decode(reader, reader.uint32());
-          continue;
-        }
-        case 3: {
-          if (tag !== 26) {
-            break;
-          }
-
-          message.results.push(AccountInvitation.decode(reader, reader.uint32()));
-          continue;
-        }
+export const GetReceivedAccountInvitationsResponse: MessageFns<GetReceivedAccountInvitationsResponse> =
+  {
+    encode(
+      message: GetReceivedAccountInvitationsResponse,
+      writer: BinaryWriter = new BinaryWriter()
+    ): BinaryWriter {
+      if (message.responseDetails !== undefined) {
+        ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
       }
-      if ((tag & 7) === 4 || tag === 0) {
-        break;
+      if (message.pagination !== undefined) {
+        Pagination.encode(message.pagination, writer.uint32(18).fork()).join();
       }
-      reader.skip(tag & 7);
-    }
-    return message;
-  },
+      for (const v of message.results) {
+        AccountInvitation.encode(v!, writer.uint32(26).fork()).join();
+      }
+      return writer;
+    },
 
-  fromJSON(object: any): GetReceivedAccountInvitationsResponse {
-    return {
-      responseDetails: isSet(object.responseDetails)
-        ? ResponseDetails.fromJSON(object.responseDetails)
-        : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
-      pagination: isSet(object.pagination) ? Pagination.fromJSON(object.pagination) : undefined,
-      results: globalThis.Array.isArray(object?.results)
-        ? object.results.map((e: any) => AccountInvitation.fromJSON(e))
-        : [],
-    };
-  },
+    decode(
+      input: BinaryReader | Uint8Array,
+      length?: number
+    ): GetReceivedAccountInvitationsResponse {
+      const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+      const end = length === undefined ? reader.len : reader.pos + length;
+      const message = createBaseGetReceivedAccountInvitationsResponse();
+      while (reader.pos < end) {
+        const tag = reader.uint32();
+        switch (tag >>> 3) {
+          case 1: {
+            if (tag !== 10) {
+              break;
+            }
 
-  toJSON(message: GetReceivedAccountInvitationsResponse): unknown {
-    const obj: any = {};
-    if (message.responseDetails !== undefined) {
-      obj.responseDetails = ResponseDetails.toJSON(message.responseDetails);
-    }
-    if (message.pagination !== undefined) {
-      obj.pagination = Pagination.toJSON(message.pagination);
-    }
-    if (message.results?.length) {
-      obj.results = message.results.map((e) => AccountInvitation.toJSON(e));
-    }
-    return obj;
-  },
+            message.responseDetails = ResponseDetails.decode(reader, reader.uint32());
+            continue;
+          }
+          case 2: {
+            if (tag !== 18) {
+              break;
+            }
 
-  create(base?: DeepPartial<GetReceivedAccountInvitationsResponse>): GetReceivedAccountInvitationsResponse {
-    return GetReceivedAccountInvitationsResponse.fromPartial(base ?? {});
-  },
-  fromPartial(object: DeepPartial<GetReceivedAccountInvitationsResponse>): GetReceivedAccountInvitationsResponse {
-    const message = createBaseGetReceivedAccountInvitationsResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.pagination = (object.pagination !== undefined && object.pagination !== null)
-      ? Pagination.fromPartial(object.pagination)
-      : undefined;
-    message.results = object.results?.map((e) => AccountInvitation.fromPartial(e)) || [];
-    return message;
-  },
-};
+            message.pagination = Pagination.decode(reader, reader.uint32());
+            continue;
+          }
+          case 3: {
+            if (tag !== 26) {
+              break;
+            }
+
+            message.results.push(AccountInvitation.decode(reader, reader.uint32()));
+            continue;
+          }
+        }
+        if ((tag & 7) === 4 || tag === 0) {
+          break;
+        }
+        reader.skip(tag & 7);
+      }
+      return message;
+    },
+
+    fromJSON(object: any): GetReceivedAccountInvitationsResponse {
+      return {
+        responseDetails: isSet(object.responseDetails)
+          ? ResponseDetails.fromJSON(object.responseDetails)
+          : isSet(object.response_details)
+            ? ResponseDetails.fromJSON(object.response_details)
+            : undefined,
+        pagination: isSet(object.pagination) ? Pagination.fromJSON(object.pagination) : undefined,
+        results: globalThis.Array.isArray(object?.results)
+          ? object.results.map((e: any) => AccountInvitation.fromJSON(e))
+          : [],
+      };
+    },
+
+    toJSON(message: GetReceivedAccountInvitationsResponse): unknown {
+      const obj: any = {};
+      if (message.responseDetails !== undefined) {
+        obj.responseDetails = ResponseDetails.toJSON(message.responseDetails);
+      }
+      if (message.pagination !== undefined) {
+        obj.pagination = Pagination.toJSON(message.pagination);
+      }
+      if (message.results?.length) {
+        obj.results = message.results.map((e) => AccountInvitation.toJSON(e));
+      }
+      return obj;
+    },
+
+    create(
+      base?: DeepPartial<GetReceivedAccountInvitationsResponse>
+    ): GetReceivedAccountInvitationsResponse {
+      return GetReceivedAccountInvitationsResponse.fromPartial(base ?? {});
+    },
+    fromPartial(
+      object: DeepPartial<GetReceivedAccountInvitationsResponse>
+    ): GetReceivedAccountInvitationsResponse {
+      const message = createBaseGetReceivedAccountInvitationsResponse();
+      message.responseDetails =
+        object.responseDetails !== undefined && object.responseDetails !== null
+          ? ResponseDetails.fromPartial(object.responseDetails)
+          : undefined;
+      message.pagination =
+        object.pagination !== undefined && object.pagination !== null
+          ? Pagination.fromPartial(object.pagination)
+          : undefined;
+      message.results = object.results?.map((e) => AccountInvitation.fromPartial(e)) || [];
+      return message;
+    },
+  };
 
 function createBaseGetSentAccountInvitationsRequest(): GetSentAccountInvitationsRequest {
   return { filter: undefined };
 }
 
 export const GetSentAccountInvitationsRequest: MessageFns<GetSentAccountInvitationsRequest> = {
-  encode(message: GetSentAccountInvitationsRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: GetSentAccountInvitationsRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.filter !== undefined) {
       QueryFilter.encode(message.filter, writer.uint32(10).fork()).join();
     }
@@ -2352,11 +2464,14 @@ export const GetSentAccountInvitationsRequest: MessageFns<GetSentAccountInvitati
   create(base?: DeepPartial<GetSentAccountInvitationsRequest>): GetSentAccountInvitationsRequest {
     return GetSentAccountInvitationsRequest.fromPartial(base ?? {});
   },
-  fromPartial(object: DeepPartial<GetSentAccountInvitationsRequest>): GetSentAccountInvitationsRequest {
+  fromPartial(
+    object: DeepPartial<GetSentAccountInvitationsRequest>
+  ): GetSentAccountInvitationsRequest {
     const message = createBaseGetSentAccountInvitationsRequest();
-    message.filter = (object.filter !== undefined && object.filter !== null)
-      ? QueryFilter.fromPartial(object.filter)
-      : undefined;
+    message.filter =
+      object.filter !== undefined && object.filter !== null
+        ? QueryFilter.fromPartial(object.filter)
+        : undefined;
     return message;
   },
 };
@@ -2366,7 +2481,10 @@ function createBaseGetSentAccountInvitationsResponse(): GetSentAccountInvitation
 }
 
 export const GetSentAccountInvitationsResponse: MessageFns<GetSentAccountInvitationsResponse> = {
-  encode(message: GetSentAccountInvitationsResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: GetSentAccountInvitationsResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -2424,8 +2542,8 @@ export const GetSentAccountInvitationsResponse: MessageFns<GetSentAccountInvitat
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       pagination: isSet(object.pagination) ? Pagination.fromJSON(object.pagination) : undefined,
       results: globalThis.Array.isArray(object?.results)
         ? object.results.map((e: any) => AccountInvitation.fromJSON(e))
@@ -2450,26 +2568,30 @@ export const GetSentAccountInvitationsResponse: MessageFns<GetSentAccountInvitat
   create(base?: DeepPartial<GetSentAccountInvitationsResponse>): GetSentAccountInvitationsResponse {
     return GetSentAccountInvitationsResponse.fromPartial(base ?? {});
   },
-  fromPartial(object: DeepPartial<GetSentAccountInvitationsResponse>): GetSentAccountInvitationsResponse {
+  fromPartial(
+    object: DeepPartial<GetSentAccountInvitationsResponse>
+  ): GetSentAccountInvitationsResponse {
     const message = createBaseGetSentAccountInvitationsResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.pagination = (object.pagination !== undefined && object.pagination !== null)
-      ? Pagination.fromPartial(object.pagination)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
+    message.pagination =
+      object.pagination !== undefined && object.pagination !== null
+        ? Pagination.fromPartial(object.pagination)
+        : undefined;
     message.results = object.results?.map((e) => AccountInvitation.fromPartial(e)) || [];
     return message;
   },
 };
 
 function createBaseGetUserRequest(): GetUserRequest {
-  return { userId: "" };
+  return { userId: '' };
 }
 
 export const GetUserRequest: MessageFns<GetUserRequest> = {
   encode(message: GetUserRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.userId !== "") {
+    if (message.userId !== '') {
       writer.uint32(10).string(message.userId);
     }
     return writer;
@@ -2504,14 +2626,14 @@ export const GetUserRequest: MessageFns<GetUserRequest> = {
       userId: isSet(object.userId)
         ? globalThis.String(object.userId)
         : isSet(object.user_id)
-        ? globalThis.String(object.user_id)
-        : "",
+          ? globalThis.String(object.user_id)
+          : '',
     };
   },
 
   toJSON(message: GetUserRequest): unknown {
     const obj: any = {};
-    if (message.userId !== "") {
+    if (message.userId !== '') {
       obj.userId = message.userId;
     }
     return obj;
@@ -2522,7 +2644,7 @@ export const GetUserRequest: MessageFns<GetUserRequest> = {
   },
   fromPartial(object: DeepPartial<GetUserRequest>): GetUserRequest {
     const message = createBaseGetUserRequest();
-    message.userId = object.userId ?? "";
+    message.userId = object.userId ?? '';
     return message;
   },
 };
@@ -2579,8 +2701,8 @@ export const GetUserResponse: MessageFns<GetUserResponse> = {
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       result: isSet(object.result) ? User.fromJSON(object.result) : undefined,
     };
   },
@@ -2601,12 +2723,14 @@ export const GetUserResponse: MessageFns<GetUserResponse> = {
   },
   fromPartial(object: DeepPartial<GetUserResponse>): GetUserResponse {
     const message = createBaseGetUserResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.result = (object.result !== undefined && object.result !== null)
-      ? User.fromPartial(object.result)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
+    message.result =
+      object.result !== undefined && object.result !== null
+        ? User.fromPartial(object.result)
+        : undefined;
     return message;
   },
 };
@@ -2664,9 +2788,10 @@ export const GetUsersRequest: MessageFns<GetUsersRequest> = {
   },
   fromPartial(object: DeepPartial<GetUsersRequest>): GetUsersRequest {
     const message = createBaseGetUsersRequest();
-    message.filter = (object.filter !== undefined && object.filter !== null)
-      ? QueryFilter.fromPartial(object.filter)
-      : undefined;
+    message.filter =
+      object.filter !== undefined && object.filter !== null
+        ? QueryFilter.fromPartial(object.filter)
+        : undefined;
     return message;
   },
 };
@@ -2734,10 +2859,12 @@ export const GetUsersResponse: MessageFns<GetUsersResponse> = {
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       pagination: isSet(object.pagination) ? Pagination.fromJSON(object.pagination) : undefined,
-      results: globalThis.Array.isArray(object?.results) ? object.results.map((e: any) => User.fromJSON(e)) : [],
+      results: globalThis.Array.isArray(object?.results)
+        ? object.results.map((e: any) => User.fromJSON(e))
+        : [],
     };
   },
 
@@ -2760,27 +2887,32 @@ export const GetUsersResponse: MessageFns<GetUsersResponse> = {
   },
   fromPartial(object: DeepPartial<GetUsersResponse>): GetUsersResponse {
     const message = createBaseGetUsersResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.pagination = (object.pagination !== undefined && object.pagination !== null)
-      ? Pagination.fromPartial(object.pagination)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
+    message.pagination =
+      object.pagination !== undefined && object.pagination !== null
+        ? Pagination.fromPartial(object.pagination)
+        : undefined;
     message.results = object.results?.map((e) => User.fromPartial(e)) || [];
     return message;
   },
 };
 
 function createBaseGetUsersForAccountRequest(): GetUsersForAccountRequest {
-  return { filter: undefined, accountId: "" };
+  return { filter: undefined, accountId: '' };
 }
 
 export const GetUsersForAccountRequest: MessageFns<GetUsersForAccountRequest> = {
-  encode(message: GetUsersForAccountRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: GetUsersForAccountRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.filter !== undefined) {
       QueryFilter.encode(message.filter, writer.uint32(10).fork()).join();
     }
-    if (message.accountId !== "") {
+    if (message.accountId !== '') {
       writer.uint32(18).string(message.accountId);
     }
     return writer;
@@ -2824,8 +2956,8 @@ export const GetUsersForAccountRequest: MessageFns<GetUsersForAccountRequest> = 
       accountId: isSet(object.accountId)
         ? globalThis.String(object.accountId)
         : isSet(object.account_id)
-        ? globalThis.String(object.account_id)
-        : "",
+          ? globalThis.String(object.account_id)
+          : '',
     };
   },
 
@@ -2834,7 +2966,7 @@ export const GetUsersForAccountRequest: MessageFns<GetUsersForAccountRequest> = 
     if (message.filter !== undefined) {
       obj.filter = QueryFilter.toJSON(message.filter);
     }
-    if (message.accountId !== "") {
+    if (message.accountId !== '') {
       obj.accountId = message.accountId;
     }
     return obj;
@@ -2845,10 +2977,11 @@ export const GetUsersForAccountRequest: MessageFns<GetUsersForAccountRequest> = 
   },
   fromPartial(object: DeepPartial<GetUsersForAccountRequest>): GetUsersForAccountRequest {
     const message = createBaseGetUsersForAccountRequest();
-    message.filter = (object.filter !== undefined && object.filter !== null)
-      ? QueryFilter.fromPartial(object.filter)
-      : undefined;
-    message.accountId = object.accountId ?? "";
+    message.filter =
+      object.filter !== undefined && object.filter !== null
+        ? QueryFilter.fromPartial(object.filter)
+        : undefined;
+    message.accountId = object.accountId ?? '';
     return message;
   },
 };
@@ -2858,7 +2991,10 @@ function createBaseGetUsersForAccountResponse(): GetUsersForAccountResponse {
 }
 
 export const GetUsersForAccountResponse: MessageFns<GetUsersForAccountResponse> = {
-  encode(message: GetUsersForAccountResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: GetUsersForAccountResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -2916,10 +3052,12 @@ export const GetUsersForAccountResponse: MessageFns<GetUsersForAccountResponse> 
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       pagination: isSet(object.pagination) ? Pagination.fromJSON(object.pagination) : undefined,
-      results: globalThis.Array.isArray(object?.results) ? object.results.map((e: any) => User.fromJSON(e)) : [],
+      results: globalThis.Array.isArray(object?.results)
+        ? object.results.map((e: any) => User.fromJSON(e))
+        : [],
     };
   },
 
@@ -2942,24 +3080,29 @@ export const GetUsersForAccountResponse: MessageFns<GetUsersForAccountResponse> 
   },
   fromPartial(object: DeepPartial<GetUsersForAccountResponse>): GetUsersForAccountResponse {
     const message = createBaseGetUsersForAccountResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.pagination = (object.pagination !== undefined && object.pagination !== null)
-      ? Pagination.fromPartial(object.pagination)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
+    message.pagination =
+      object.pagination !== undefined && object.pagination !== null
+        ? Pagination.fromPartial(object.pagination)
+        : undefined;
     message.results = object.results?.map((e) => User.fromPartial(e)) || [];
     return message;
   },
 };
 
 function createBaseRejectAccountInvitationRequest(): RejectAccountInvitationRequest {
-  return { accountInvitationId: "", input: undefined };
+  return { accountInvitationId: '', input: undefined };
 }
 
 export const RejectAccountInvitationRequest: MessageFns<RejectAccountInvitationRequest> = {
-  encode(message: RejectAccountInvitationRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.accountInvitationId !== "") {
+  encode(
+    message: RejectAccountInvitationRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.accountInvitationId !== '') {
       writer.uint32(10).string(message.accountInvitationId);
     }
     if (message.input !== undefined) {
@@ -3005,15 +3148,17 @@ export const RejectAccountInvitationRequest: MessageFns<RejectAccountInvitationR
       accountInvitationId: isSet(object.accountInvitationId)
         ? globalThis.String(object.accountInvitationId)
         : isSet(object.account_invitation_id)
-        ? globalThis.String(object.account_invitation_id)
-        : "",
-      input: isSet(object.input) ? AccountInvitationUpdateRequestInput.fromJSON(object.input) : undefined,
+          ? globalThis.String(object.account_invitation_id)
+          : '',
+      input: isSet(object.input)
+        ? AccountInvitationUpdateRequestInput.fromJSON(object.input)
+        : undefined,
     };
   },
 
   toJSON(message: RejectAccountInvitationRequest): unknown {
     const obj: any = {};
-    if (message.accountInvitationId !== "") {
+    if (message.accountInvitationId !== '') {
       obj.accountInvitationId = message.accountInvitationId;
     }
     if (message.input !== undefined) {
@@ -3027,10 +3172,11 @@ export const RejectAccountInvitationRequest: MessageFns<RejectAccountInvitationR
   },
   fromPartial(object: DeepPartial<RejectAccountInvitationRequest>): RejectAccountInvitationRequest {
     const message = createBaseRejectAccountInvitationRequest();
-    message.accountInvitationId = object.accountInvitationId ?? "";
-    message.input = (object.input !== undefined && object.input !== null)
-      ? AccountInvitationUpdateRequestInput.fromPartial(object.input)
-      : undefined;
+    message.accountInvitationId = object.accountInvitationId ?? '';
+    message.input =
+      object.input !== undefined && object.input !== null
+        ? AccountInvitationUpdateRequestInput.fromPartial(object.input)
+        : undefined;
     return message;
   },
 };
@@ -3040,7 +3186,10 @@ function createBaseRejectAccountInvitationResponse(): RejectAccountInvitationRes
 }
 
 export const RejectAccountInvitationResponse: MessageFns<RejectAccountInvitationResponse> = {
-  encode(message: RejectAccountInvitationResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: RejectAccountInvitationResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -3076,8 +3225,8 @@ export const RejectAccountInvitationResponse: MessageFns<RejectAccountInvitation
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
     };
   },
 
@@ -3092,17 +3241,20 @@ export const RejectAccountInvitationResponse: MessageFns<RejectAccountInvitation
   create(base?: DeepPartial<RejectAccountInvitationResponse>): RejectAccountInvitationResponse {
     return RejectAccountInvitationResponse.fromPartial(base ?? {});
   },
-  fromPartial(object: DeepPartial<RejectAccountInvitationResponse>): RejectAccountInvitationResponse {
+  fromPartial(
+    object: DeepPartial<RejectAccountInvitationResponse>
+  ): RejectAccountInvitationResponse {
     const message = createBaseRejectAccountInvitationResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
     return message;
   },
 };
 
 function createBaseSearchForUsersRequest(): SearchForUsersRequest {
-  return { filter: undefined, query: "", useSearchService: false };
+  return { filter: undefined, query: '', useSearchService: false };
 }
 
 export const SearchForUsersRequest: MessageFns<SearchForUsersRequest> = {
@@ -3110,7 +3262,7 @@ export const SearchForUsersRequest: MessageFns<SearchForUsersRequest> = {
     if (message.filter !== undefined) {
       QueryFilter.encode(message.filter, writer.uint32(10).fork()).join();
     }
-    if (message.query !== "") {
+    if (message.query !== '') {
       writer.uint32(18).string(message.query);
     }
     if (message.useSearchService !== false) {
@@ -3162,12 +3314,12 @@ export const SearchForUsersRequest: MessageFns<SearchForUsersRequest> = {
   fromJSON(object: any): SearchForUsersRequest {
     return {
       filter: isSet(object.filter) ? QueryFilter.fromJSON(object.filter) : undefined,
-      query: isSet(object.query) ? globalThis.String(object.query) : "",
+      query: isSet(object.query) ? globalThis.String(object.query) : '',
       useSearchService: isSet(object.useSearchService)
         ? globalThis.Boolean(object.useSearchService)
         : isSet(object.use_search_service)
-        ? globalThis.Boolean(object.use_search_service)
-        : false,
+          ? globalThis.Boolean(object.use_search_service)
+          : false,
     };
   },
 
@@ -3176,7 +3328,7 @@ export const SearchForUsersRequest: MessageFns<SearchForUsersRequest> = {
     if (message.filter !== undefined) {
       obj.filter = QueryFilter.toJSON(message.filter);
     }
-    if (message.query !== "") {
+    if (message.query !== '') {
       obj.query = message.query;
     }
     if (message.useSearchService !== false) {
@@ -3190,10 +3342,11 @@ export const SearchForUsersRequest: MessageFns<SearchForUsersRequest> = {
   },
   fromPartial(object: DeepPartial<SearchForUsersRequest>): SearchForUsersRequest {
     const message = createBaseSearchForUsersRequest();
-    message.filter = (object.filter !== undefined && object.filter !== null)
-      ? QueryFilter.fromPartial(object.filter)
-      : undefined;
-    message.query = object.query ?? "";
+    message.filter =
+      object.filter !== undefined && object.filter !== null
+        ? QueryFilter.fromPartial(object.filter)
+        : undefined;
+    message.query = object.query ?? '';
     message.useSearchService = object.useSearchService ?? false;
     return message;
   },
@@ -3262,10 +3415,12 @@ export const SearchForUsersResponse: MessageFns<SearchForUsersResponse> = {
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       pagination: isSet(object.pagination) ? Pagination.fromJSON(object.pagination) : undefined,
-      results: globalThis.Array.isArray(object?.results) ? object.results.map((e: any) => User.fromJSON(e)) : [],
+      results: globalThis.Array.isArray(object?.results)
+        ? object.results.map((e: any) => User.fromJSON(e))
+        : [],
     };
   },
 
@@ -3288,24 +3443,29 @@ export const SearchForUsersResponse: MessageFns<SearchForUsersResponse> = {
   },
   fromPartial(object: DeepPartial<SearchForUsersResponse>): SearchForUsersResponse {
     const message = createBaseSearchForUsersResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.pagination = (object.pagination !== undefined && object.pagination !== null)
-      ? Pagination.fromPartial(object.pagination)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
+    message.pagination =
+      object.pagination !== undefined && object.pagination !== null
+        ? Pagination.fromPartial(object.pagination)
+        : undefined;
     message.results = object.results?.map((e) => User.fromPartial(e)) || [];
     return message;
   },
 };
 
 function createBaseSetDefaultAccountRequest(): SetDefaultAccountRequest {
-  return { accountId: "" };
+  return { accountId: '' };
 }
 
 export const SetDefaultAccountRequest: MessageFns<SetDefaultAccountRequest> = {
-  encode(message: SetDefaultAccountRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.accountId !== "") {
+  encode(
+    message: SetDefaultAccountRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.accountId !== '') {
       writer.uint32(10).string(message.accountId);
     }
     return writer;
@@ -3340,14 +3500,14 @@ export const SetDefaultAccountRequest: MessageFns<SetDefaultAccountRequest> = {
       accountId: isSet(object.accountId)
         ? globalThis.String(object.accountId)
         : isSet(object.account_id)
-        ? globalThis.String(object.account_id)
-        : "",
+          ? globalThis.String(object.account_id)
+          : '',
     };
   },
 
   toJSON(message: SetDefaultAccountRequest): unknown {
     const obj: any = {};
-    if (message.accountId !== "") {
+    if (message.accountId !== '') {
       obj.accountId = message.accountId;
     }
     return obj;
@@ -3358,7 +3518,7 @@ export const SetDefaultAccountRequest: MessageFns<SetDefaultAccountRequest> = {
   },
   fromPartial(object: DeepPartial<SetDefaultAccountRequest>): SetDefaultAccountRequest {
     const message = createBaseSetDefaultAccountRequest();
-    message.accountId = object.accountId ?? "";
+    message.accountId = object.accountId ?? '';
     return message;
   },
 };
@@ -3368,7 +3528,10 @@ function createBaseSetDefaultAccountResponse(): SetDefaultAccountResponse {
 }
 
 export const SetDefaultAccountResponse: MessageFns<SetDefaultAccountResponse> = {
-  encode(message: SetDefaultAccountResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: SetDefaultAccountResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -3415,8 +3578,8 @@ export const SetDefaultAccountResponse: MessageFns<SetDefaultAccountResponse> = 
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       success: isSet(object.success) ? globalThis.Boolean(object.success) : false,
     };
   },
@@ -3437,21 +3600,25 @@ export const SetDefaultAccountResponse: MessageFns<SetDefaultAccountResponse> = 
   },
   fromPartial(object: DeepPartial<SetDefaultAccountResponse>): SetDefaultAccountResponse {
     const message = createBaseSetDefaultAccountResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
     message.success = object.success ?? false;
     return message;
   },
 };
 
 function createBaseTransferAccountOwnershipRequest(): TransferAccountOwnershipRequest {
-  return { accountId: "", input: undefined };
+  return { accountId: '', input: undefined };
 }
 
 export const TransferAccountOwnershipRequest: MessageFns<TransferAccountOwnershipRequest> = {
-  encode(message: TransferAccountOwnershipRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.accountId !== "") {
+  encode(
+    message: TransferAccountOwnershipRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.accountId !== '') {
       writer.uint32(10).string(message.accountId);
     }
     if (message.input !== undefined) {
@@ -3497,15 +3664,15 @@ export const TransferAccountOwnershipRequest: MessageFns<TransferAccountOwnershi
       accountId: isSet(object.accountId)
         ? globalThis.String(object.accountId)
         : isSet(object.account_id)
-        ? globalThis.String(object.account_id)
-        : "",
+          ? globalThis.String(object.account_id)
+          : '',
       input: isSet(object.input) ? AccountOwnershipTransferInput.fromJSON(object.input) : undefined,
     };
   },
 
   toJSON(message: TransferAccountOwnershipRequest): unknown {
     const obj: any = {};
-    if (message.accountId !== "") {
+    if (message.accountId !== '') {
       obj.accountId = message.accountId;
     }
     if (message.input !== undefined) {
@@ -3517,12 +3684,15 @@ export const TransferAccountOwnershipRequest: MessageFns<TransferAccountOwnershi
   create(base?: DeepPartial<TransferAccountOwnershipRequest>): TransferAccountOwnershipRequest {
     return TransferAccountOwnershipRequest.fromPartial(base ?? {});
   },
-  fromPartial(object: DeepPartial<TransferAccountOwnershipRequest>): TransferAccountOwnershipRequest {
+  fromPartial(
+    object: DeepPartial<TransferAccountOwnershipRequest>
+  ): TransferAccountOwnershipRequest {
     const message = createBaseTransferAccountOwnershipRequest();
-    message.accountId = object.accountId ?? "";
-    message.input = (object.input !== undefined && object.input !== null)
-      ? AccountOwnershipTransferInput.fromPartial(object.input)
-      : undefined;
+    message.accountId = object.accountId ?? '';
+    message.input =
+      object.input !== undefined && object.input !== null
+        ? AccountOwnershipTransferInput.fromPartial(object.input)
+        : undefined;
     return message;
   },
 };
@@ -3532,7 +3702,10 @@ function createBaseTransferAccountOwnershipResponse(): TransferAccountOwnershipR
 }
 
 export const TransferAccountOwnershipResponse: MessageFns<TransferAccountOwnershipResponse> = {
-  encode(message: TransferAccountOwnershipResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: TransferAccountOwnershipResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -3579,8 +3752,8 @@ export const TransferAccountOwnershipResponse: MessageFns<TransferAccountOwnersh
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       success: isSet(object.success) ? globalThis.Boolean(object.success) : false,
     };
   },
@@ -3599,23 +3772,26 @@ export const TransferAccountOwnershipResponse: MessageFns<TransferAccountOwnersh
   create(base?: DeepPartial<TransferAccountOwnershipResponse>): TransferAccountOwnershipResponse {
     return TransferAccountOwnershipResponse.fromPartial(base ?? {});
   },
-  fromPartial(object: DeepPartial<TransferAccountOwnershipResponse>): TransferAccountOwnershipResponse {
+  fromPartial(
+    object: DeepPartial<TransferAccountOwnershipResponse>
+  ): TransferAccountOwnershipResponse {
     const message = createBaseTransferAccountOwnershipResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
     message.success = object.success ?? false;
     return message;
   },
 };
 
 function createBaseUpdateAccountRequest(): UpdateAccountRequest {
-  return { accountId: "", input: undefined };
+  return { accountId: '', input: undefined };
 }
 
 export const UpdateAccountRequest: MessageFns<UpdateAccountRequest> = {
   encode(message: UpdateAccountRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.accountId !== "") {
+    if (message.accountId !== '') {
       writer.uint32(10).string(message.accountId);
     }
     if (message.input !== undefined) {
@@ -3661,15 +3837,15 @@ export const UpdateAccountRequest: MessageFns<UpdateAccountRequest> = {
       accountId: isSet(object.accountId)
         ? globalThis.String(object.accountId)
         : isSet(object.account_id)
-        ? globalThis.String(object.account_id)
-        : "",
+          ? globalThis.String(object.account_id)
+          : '',
       input: isSet(object.input) ? AccountUpdateRequestInput.fromJSON(object.input) : undefined,
     };
   },
 
   toJSON(message: UpdateAccountRequest): unknown {
     const obj: any = {};
-    if (message.accountId !== "") {
+    if (message.accountId !== '') {
       obj.accountId = message.accountId;
     }
     if (message.input !== undefined) {
@@ -3683,10 +3859,11 @@ export const UpdateAccountRequest: MessageFns<UpdateAccountRequest> = {
   },
   fromPartial(object: DeepPartial<UpdateAccountRequest>): UpdateAccountRequest {
     const message = createBaseUpdateAccountRequest();
-    message.accountId = object.accountId ?? "";
-    message.input = (object.input !== undefined && object.input !== null)
-      ? AccountUpdateRequestInput.fromPartial(object.input)
-      : undefined;
+    message.accountId = object.accountId ?? '';
+    message.input =
+      object.input !== undefined && object.input !== null
+        ? AccountUpdateRequestInput.fromPartial(object.input)
+        : undefined;
     return message;
   },
 };
@@ -3732,8 +3909,8 @@ export const UpdateAccountResponse: MessageFns<UpdateAccountResponse> = {
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
     };
   },
 
@@ -3750,180 +3927,208 @@ export const UpdateAccountResponse: MessageFns<UpdateAccountResponse> = {
   },
   fromPartial(object: DeepPartial<UpdateAccountResponse>): UpdateAccountResponse {
     const message = createBaseUpdateAccountResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
     return message;
   },
 };
 
 function createBaseUpdateAccountMemberPermissionsRequest(): UpdateAccountMemberPermissionsRequest {
-  return { userId: "", input: undefined };
+  return { userId: '', input: undefined };
 }
 
-export const UpdateAccountMemberPermissionsRequest: MessageFns<UpdateAccountMemberPermissionsRequest> = {
-  encode(message: UpdateAccountMemberPermissionsRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.userId !== "") {
-      writer.uint32(10).string(message.userId);
-    }
-    if (message.input !== undefined) {
-      ModifyUserPermissionsInput.encode(message.input, writer.uint32(18).fork()).join();
-    }
-    return writer;
-  },
-
-  decode(input: BinaryReader | Uint8Array, length?: number): UpdateAccountMemberPermissionsRequest {
-    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
-    const end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseUpdateAccountMemberPermissionsRequest();
-    while (reader.pos < end) {
-      const tag = reader.uint32();
-      switch (tag >>> 3) {
-        case 1: {
-          if (tag !== 10) {
-            break;
-          }
-
-          message.userId = reader.string();
-          continue;
-        }
-        case 2: {
-          if (tag !== 18) {
-            break;
-          }
-
-          message.input = ModifyUserPermissionsInput.decode(reader, reader.uint32());
-          continue;
-        }
+export const UpdateAccountMemberPermissionsRequest: MessageFns<UpdateAccountMemberPermissionsRequest> =
+  {
+    encode(
+      message: UpdateAccountMemberPermissionsRequest,
+      writer: BinaryWriter = new BinaryWriter()
+    ): BinaryWriter {
+      if (message.userId !== '') {
+        writer.uint32(10).string(message.userId);
       }
-      if ((tag & 7) === 4 || tag === 0) {
-        break;
+      if (message.input !== undefined) {
+        ModifyUserPermissionsInput.encode(message.input, writer.uint32(18).fork()).join();
       }
-      reader.skip(tag & 7);
-    }
-    return message;
-  },
+      return writer;
+    },
 
-  fromJSON(object: any): UpdateAccountMemberPermissionsRequest {
-    return {
-      userId: isSet(object.userId)
-        ? globalThis.String(object.userId)
-        : isSet(object.user_id)
-        ? globalThis.String(object.user_id)
-        : "",
-      input: isSet(object.input) ? ModifyUserPermissionsInput.fromJSON(object.input) : undefined,
-    };
-  },
+    decode(
+      input: BinaryReader | Uint8Array,
+      length?: number
+    ): UpdateAccountMemberPermissionsRequest {
+      const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+      const end = length === undefined ? reader.len : reader.pos + length;
+      const message = createBaseUpdateAccountMemberPermissionsRequest();
+      while (reader.pos < end) {
+        const tag = reader.uint32();
+        switch (tag >>> 3) {
+          case 1: {
+            if (tag !== 10) {
+              break;
+            }
 
-  toJSON(message: UpdateAccountMemberPermissionsRequest): unknown {
-    const obj: any = {};
-    if (message.userId !== "") {
-      obj.userId = message.userId;
-    }
-    if (message.input !== undefined) {
-      obj.input = ModifyUserPermissionsInput.toJSON(message.input);
-    }
-    return obj;
-  },
+            message.userId = reader.string();
+            continue;
+          }
+          case 2: {
+            if (tag !== 18) {
+              break;
+            }
 
-  create(base?: DeepPartial<UpdateAccountMemberPermissionsRequest>): UpdateAccountMemberPermissionsRequest {
-    return UpdateAccountMemberPermissionsRequest.fromPartial(base ?? {});
-  },
-  fromPartial(object: DeepPartial<UpdateAccountMemberPermissionsRequest>): UpdateAccountMemberPermissionsRequest {
-    const message = createBaseUpdateAccountMemberPermissionsRequest();
-    message.userId = object.userId ?? "";
-    message.input = (object.input !== undefined && object.input !== null)
-      ? ModifyUserPermissionsInput.fromPartial(object.input)
-      : undefined;
-    return message;
-  },
-};
+            message.input = ModifyUserPermissionsInput.decode(reader, reader.uint32());
+            continue;
+          }
+        }
+        if ((tag & 7) === 4 || tag === 0) {
+          break;
+        }
+        reader.skip(tag & 7);
+      }
+      return message;
+    },
+
+    fromJSON(object: any): UpdateAccountMemberPermissionsRequest {
+      return {
+        userId: isSet(object.userId)
+          ? globalThis.String(object.userId)
+          : isSet(object.user_id)
+            ? globalThis.String(object.user_id)
+            : '',
+        input: isSet(object.input) ? ModifyUserPermissionsInput.fromJSON(object.input) : undefined,
+      };
+    },
+
+    toJSON(message: UpdateAccountMemberPermissionsRequest): unknown {
+      const obj: any = {};
+      if (message.userId !== '') {
+        obj.userId = message.userId;
+      }
+      if (message.input !== undefined) {
+        obj.input = ModifyUserPermissionsInput.toJSON(message.input);
+      }
+      return obj;
+    },
+
+    create(
+      base?: DeepPartial<UpdateAccountMemberPermissionsRequest>
+    ): UpdateAccountMemberPermissionsRequest {
+      return UpdateAccountMemberPermissionsRequest.fromPartial(base ?? {});
+    },
+    fromPartial(
+      object: DeepPartial<UpdateAccountMemberPermissionsRequest>
+    ): UpdateAccountMemberPermissionsRequest {
+      const message = createBaseUpdateAccountMemberPermissionsRequest();
+      message.userId = object.userId ?? '';
+      message.input =
+        object.input !== undefined && object.input !== null
+          ? ModifyUserPermissionsInput.fromPartial(object.input)
+          : undefined;
+      return message;
+    },
+  };
 
 function createBaseUpdateAccountMemberPermissionsResponse(): UpdateAccountMemberPermissionsResponse {
   return { responseDetails: undefined };
 }
 
-export const UpdateAccountMemberPermissionsResponse: MessageFns<UpdateAccountMemberPermissionsResponse> = {
-  encode(message: UpdateAccountMemberPermissionsResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.responseDetails !== undefined) {
-      ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
-    }
-    return writer;
-  },
+export const UpdateAccountMemberPermissionsResponse: MessageFns<UpdateAccountMemberPermissionsResponse> =
+  {
+    encode(
+      message: UpdateAccountMemberPermissionsResponse,
+      writer: BinaryWriter = new BinaryWriter()
+    ): BinaryWriter {
+      if (message.responseDetails !== undefined) {
+        ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
+      }
+      return writer;
+    },
 
-  decode(input: BinaryReader | Uint8Array, length?: number): UpdateAccountMemberPermissionsResponse {
-    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
-    const end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseUpdateAccountMemberPermissionsResponse();
-    while (reader.pos < end) {
-      const tag = reader.uint32();
-      switch (tag >>> 3) {
-        case 1: {
-          if (tag !== 10) {
-            break;
+    decode(
+      input: BinaryReader | Uint8Array,
+      length?: number
+    ): UpdateAccountMemberPermissionsResponse {
+      const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+      const end = length === undefined ? reader.len : reader.pos + length;
+      const message = createBaseUpdateAccountMemberPermissionsResponse();
+      while (reader.pos < end) {
+        const tag = reader.uint32();
+        switch (tag >>> 3) {
+          case 1: {
+            if (tag !== 10) {
+              break;
+            }
+
+            message.responseDetails = ResponseDetails.decode(reader, reader.uint32());
+            continue;
           }
-
-          message.responseDetails = ResponseDetails.decode(reader, reader.uint32());
-          continue;
         }
+        if ((tag & 7) === 4 || tag === 0) {
+          break;
+        }
+        reader.skip(tag & 7);
       }
-      if ((tag & 7) === 4 || tag === 0) {
-        break;
+      return message;
+    },
+
+    fromJSON(object: any): UpdateAccountMemberPermissionsResponse {
+      return {
+        responseDetails: isSet(object.responseDetails)
+          ? ResponseDetails.fromJSON(object.responseDetails)
+          : isSet(object.response_details)
+            ? ResponseDetails.fromJSON(object.response_details)
+            : undefined,
+      };
+    },
+
+    toJSON(message: UpdateAccountMemberPermissionsResponse): unknown {
+      const obj: any = {};
+      if (message.responseDetails !== undefined) {
+        obj.responseDetails = ResponseDetails.toJSON(message.responseDetails);
       }
-      reader.skip(tag & 7);
-    }
-    return message;
-  },
+      return obj;
+    },
 
-  fromJSON(object: any): UpdateAccountMemberPermissionsResponse {
-    return {
-      responseDetails: isSet(object.responseDetails)
-        ? ResponseDetails.fromJSON(object.responseDetails)
-        : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
-    };
-  },
-
-  toJSON(message: UpdateAccountMemberPermissionsResponse): unknown {
-    const obj: any = {};
-    if (message.responseDetails !== undefined) {
-      obj.responseDetails = ResponseDetails.toJSON(message.responseDetails);
-    }
-    return obj;
-  },
-
-  create(base?: DeepPartial<UpdateAccountMemberPermissionsResponse>): UpdateAccountMemberPermissionsResponse {
-    return UpdateAccountMemberPermissionsResponse.fromPartial(base ?? {});
-  },
-  fromPartial(object: DeepPartial<UpdateAccountMemberPermissionsResponse>): UpdateAccountMemberPermissionsResponse {
-    const message = createBaseUpdateAccountMemberPermissionsResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    return message;
-  },
-};
+    create(
+      base?: DeepPartial<UpdateAccountMemberPermissionsResponse>
+    ): UpdateAccountMemberPermissionsResponse {
+      return UpdateAccountMemberPermissionsResponse.fromPartial(base ?? {});
+    },
+    fromPartial(
+      object: DeepPartial<UpdateAccountMemberPermissionsResponse>
+    ): UpdateAccountMemberPermissionsResponse {
+      const message = createBaseUpdateAccountMemberPermissionsResponse();
+      message.responseDetails =
+        object.responseDetails !== undefined && object.responseDetails !== null
+          ? ResponseDetails.fromPartial(object.responseDetails)
+          : undefined;
+      return message;
+    },
+  };
 
 function createBaseUserDetailsUpdateRequestInput(): UserDetailsUpdateRequestInput {
-  return { firstName: "", lastName: "", birthday: undefined, currentPassword: "", totpToken: "" };
+  return { firstName: '', lastName: '', birthday: undefined, currentPassword: '', totpToken: '' };
 }
 
 export const UserDetailsUpdateRequestInput: MessageFns<UserDetailsUpdateRequestInput> = {
-  encode(message: UserDetailsUpdateRequestInput, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.firstName !== "") {
+  encode(
+    message: UserDetailsUpdateRequestInput,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.firstName !== '') {
       writer.uint32(10).string(message.firstName);
     }
-    if (message.lastName !== "") {
+    if (message.lastName !== '') {
       writer.uint32(18).string(message.lastName);
     }
     if (message.birthday !== undefined) {
       Timestamp.encode(toTimestamp(message.birthday), writer.uint32(26).fork()).join();
     }
-    if (message.currentPassword !== "") {
+    if (message.currentPassword !== '') {
       writer.uint32(34).string(message.currentPassword);
     }
-    if (message.totpToken !== "") {
+    if (message.totpToken !== '') {
       writer.uint32(42).string(message.totpToken);
     }
     return writer;
@@ -3990,42 +4195,42 @@ export const UserDetailsUpdateRequestInput: MessageFns<UserDetailsUpdateRequestI
       firstName: isSet(object.firstName)
         ? globalThis.String(object.firstName)
         : isSet(object.first_name)
-        ? globalThis.String(object.first_name)
-        : "",
+          ? globalThis.String(object.first_name)
+          : '',
       lastName: isSet(object.lastName)
         ? globalThis.String(object.lastName)
         : isSet(object.last_name)
-        ? globalThis.String(object.last_name)
-        : "",
+          ? globalThis.String(object.last_name)
+          : '',
       birthday: isSet(object.birthday) ? fromJsonTimestamp(object.birthday) : undefined,
       currentPassword: isSet(object.currentPassword)
         ? globalThis.String(object.currentPassword)
         : isSet(object.current_password)
-        ? globalThis.String(object.current_password)
-        : "",
+          ? globalThis.String(object.current_password)
+          : '',
       totpToken: isSet(object.totpToken)
         ? globalThis.String(object.totpToken)
         : isSet(object.totp_token)
-        ? globalThis.String(object.totp_token)
-        : "",
+          ? globalThis.String(object.totp_token)
+          : '',
     };
   },
 
   toJSON(message: UserDetailsUpdateRequestInput): unknown {
     const obj: any = {};
-    if (message.firstName !== "") {
+    if (message.firstName !== '') {
       obj.firstName = message.firstName;
     }
-    if (message.lastName !== "") {
+    if (message.lastName !== '') {
       obj.lastName = message.lastName;
     }
     if (message.birthday !== undefined) {
       obj.birthday = message.birthday.toISOString();
     }
-    if (message.currentPassword !== "") {
+    if (message.currentPassword !== '') {
       obj.currentPassword = message.currentPassword;
     }
-    if (message.totpToken !== "") {
+    if (message.totpToken !== '') {
       obj.totpToken = message.totpToken;
     }
     return obj;
@@ -4036,11 +4241,11 @@ export const UserDetailsUpdateRequestInput: MessageFns<UserDetailsUpdateRequestI
   },
   fromPartial(object: DeepPartial<UserDetailsUpdateRequestInput>): UserDetailsUpdateRequestInput {
     const message = createBaseUserDetailsUpdateRequestInput();
-    message.firstName = object.firstName ?? "";
-    message.lastName = object.lastName ?? "";
+    message.firstName = object.firstName ?? '';
+    message.lastName = object.lastName ?? '';
     message.birthday = object.birthday ?? undefined;
-    message.currentPassword = object.currentPassword ?? "";
-    message.totpToken = object.totpToken ?? "";
+    message.currentPassword = object.currentPassword ?? '';
+    message.totpToken = object.totpToken ?? '';
     return message;
   },
 };
@@ -4050,7 +4255,10 @@ function createBaseUpdateUserDetailsRequest(): UpdateUserDetailsRequest {
 }
 
 export const UpdateUserDetailsRequest: MessageFns<UpdateUserDetailsRequest> = {
-  encode(message: UpdateUserDetailsRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: UpdateUserDetailsRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.input !== undefined) {
       UserDetailsUpdateRequestInput.encode(message.input, writer.uint32(10).fork()).join();
     }
@@ -4082,7 +4290,9 @@ export const UpdateUserDetailsRequest: MessageFns<UpdateUserDetailsRequest> = {
   },
 
   fromJSON(object: any): UpdateUserDetailsRequest {
-    return { input: isSet(object.input) ? UserDetailsUpdateRequestInput.fromJSON(object.input) : undefined };
+    return {
+      input: isSet(object.input) ? UserDetailsUpdateRequestInput.fromJSON(object.input) : undefined,
+    };
   },
 
   toJSON(message: UpdateUserDetailsRequest): unknown {
@@ -4098,9 +4308,10 @@ export const UpdateUserDetailsRequest: MessageFns<UpdateUserDetailsRequest> = {
   },
   fromPartial(object: DeepPartial<UpdateUserDetailsRequest>): UpdateUserDetailsRequest {
     const message = createBaseUpdateUserDetailsRequest();
-    message.input = (object.input !== undefined && object.input !== null)
-      ? UserDetailsUpdateRequestInput.fromPartial(object.input)
-      : undefined;
+    message.input =
+      object.input !== undefined && object.input !== null
+        ? UserDetailsUpdateRequestInput.fromPartial(object.input)
+        : undefined;
     return message;
   },
 };
@@ -4110,7 +4321,10 @@ function createBaseUpdateUserDetailsResponse(): UpdateUserDetailsResponse {
 }
 
 export const UpdateUserDetailsResponse: MessageFns<UpdateUserDetailsResponse> = {
-  encode(message: UpdateUserDetailsResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: UpdateUserDetailsResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -4146,8 +4360,8 @@ export const UpdateUserDetailsResponse: MessageFns<UpdateUserDetailsResponse> = 
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
     };
   },
 
@@ -4164,26 +4378,30 @@ export const UpdateUserDetailsResponse: MessageFns<UpdateUserDetailsResponse> = 
   },
   fromPartial(object: DeepPartial<UpdateUserDetailsResponse>): UpdateUserDetailsResponse {
     const message = createBaseUpdateUserDetailsResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
     return message;
   },
 };
 
 function createBaseUpdateUserEmailAddressRequest(): UpdateUserEmailAddressRequest {
-  return { newEmailAddress: "", currentPassword: "", totpToken: "" };
+  return { newEmailAddress: '', currentPassword: '', totpToken: '' };
 }
 
 export const UpdateUserEmailAddressRequest: MessageFns<UpdateUserEmailAddressRequest> = {
-  encode(message: UpdateUserEmailAddressRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.newEmailAddress !== "") {
+  encode(
+    message: UpdateUserEmailAddressRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.newEmailAddress !== '') {
       writer.uint32(10).string(message.newEmailAddress);
     }
-    if (message.currentPassword !== "") {
+    if (message.currentPassword !== '') {
       writer.uint32(18).string(message.currentPassword);
     }
-    if (message.totpToken !== "") {
+    if (message.totpToken !== '') {
       writer.uint32(26).string(message.totpToken);
     }
     return writer;
@@ -4234,30 +4452,30 @@ export const UpdateUserEmailAddressRequest: MessageFns<UpdateUserEmailAddressReq
       newEmailAddress: isSet(object.newEmailAddress)
         ? globalThis.String(object.newEmailAddress)
         : isSet(object.new_email_address)
-        ? globalThis.String(object.new_email_address)
-        : "",
+          ? globalThis.String(object.new_email_address)
+          : '',
       currentPassword: isSet(object.currentPassword)
         ? globalThis.String(object.currentPassword)
         : isSet(object.current_password)
-        ? globalThis.String(object.current_password)
-        : "",
+          ? globalThis.String(object.current_password)
+          : '',
       totpToken: isSet(object.totpToken)
         ? globalThis.String(object.totpToken)
         : isSet(object.totp_token)
-        ? globalThis.String(object.totp_token)
-        : "",
+          ? globalThis.String(object.totp_token)
+          : '',
     };
   },
 
   toJSON(message: UpdateUserEmailAddressRequest): unknown {
     const obj: any = {};
-    if (message.newEmailAddress !== "") {
+    if (message.newEmailAddress !== '') {
       obj.newEmailAddress = message.newEmailAddress;
     }
-    if (message.currentPassword !== "") {
+    if (message.currentPassword !== '') {
       obj.currentPassword = message.currentPassword;
     }
-    if (message.totpToken !== "") {
+    if (message.totpToken !== '') {
       obj.totpToken = message.totpToken;
     }
     return obj;
@@ -4268,9 +4486,9 @@ export const UpdateUserEmailAddressRequest: MessageFns<UpdateUserEmailAddressReq
   },
   fromPartial(object: DeepPartial<UpdateUserEmailAddressRequest>): UpdateUserEmailAddressRequest {
     const message = createBaseUpdateUserEmailAddressRequest();
-    message.newEmailAddress = object.newEmailAddress ?? "";
-    message.currentPassword = object.currentPassword ?? "";
-    message.totpToken = object.totpToken ?? "";
+    message.newEmailAddress = object.newEmailAddress ?? '';
+    message.currentPassword = object.currentPassword ?? '';
+    message.totpToken = object.totpToken ?? '';
     return message;
   },
 };
@@ -4280,7 +4498,10 @@ function createBaseUpdateUserEmailAddressResponse(): UpdateUserEmailAddressRespo
 }
 
 export const UpdateUserEmailAddressResponse: MessageFns<UpdateUserEmailAddressResponse> = {
-  encode(message: UpdateUserEmailAddressResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: UpdateUserEmailAddressResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -4316,8 +4537,8 @@ export const UpdateUserEmailAddressResponse: MessageFns<UpdateUserEmailAddressRe
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
     };
   },
 
@@ -4334,20 +4555,24 @@ export const UpdateUserEmailAddressResponse: MessageFns<UpdateUserEmailAddressRe
   },
   fromPartial(object: DeepPartial<UpdateUserEmailAddressResponse>): UpdateUserEmailAddressResponse {
     const message = createBaseUpdateUserEmailAddressResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
     return message;
   },
 };
 
 function createBaseUpdateUserUsernameRequest(): UpdateUserUsernameRequest {
-  return { newUsername: "" };
+  return { newUsername: '' };
 }
 
 export const UpdateUserUsernameRequest: MessageFns<UpdateUserUsernameRequest> = {
-  encode(message: UpdateUserUsernameRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.newUsername !== "") {
+  encode(
+    message: UpdateUserUsernameRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.newUsername !== '') {
       writer.uint32(10).string(message.newUsername);
     }
     return writer;
@@ -4382,14 +4607,14 @@ export const UpdateUserUsernameRequest: MessageFns<UpdateUserUsernameRequest> = 
       newUsername: isSet(object.newUsername)
         ? globalThis.String(object.newUsername)
         : isSet(object.new_username)
-        ? globalThis.String(object.new_username)
-        : "",
+          ? globalThis.String(object.new_username)
+          : '',
     };
   },
 
   toJSON(message: UpdateUserUsernameRequest): unknown {
     const obj: any = {};
-    if (message.newUsername !== "") {
+    if (message.newUsername !== '') {
       obj.newUsername = message.newUsername;
     }
     return obj;
@@ -4400,7 +4625,7 @@ export const UpdateUserUsernameRequest: MessageFns<UpdateUserUsernameRequest> = 
   },
   fromPartial(object: DeepPartial<UpdateUserUsernameRequest>): UpdateUserUsernameRequest {
     const message = createBaseUpdateUserUsernameRequest();
-    message.newUsername = object.newUsername ?? "";
+    message.newUsername = object.newUsername ?? '';
     return message;
   },
 };
@@ -4410,7 +4635,10 @@ function createBaseUpdateUserUsernameResponse(): UpdateUserUsernameResponse {
 }
 
 export const UpdateUserUsernameResponse: MessageFns<UpdateUserUsernameResponse> = {
-  encode(message: UpdateUserUsernameResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: UpdateUserUsernameResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -4446,8 +4674,8 @@ export const UpdateUserUsernameResponse: MessageFns<UpdateUserUsernameResponse> 
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
     };
   },
 
@@ -4464,20 +4692,24 @@ export const UpdateUserUsernameResponse: MessageFns<UpdateUserUsernameResponse> 
   },
   fromPartial(object: DeepPartial<UpdateUserUsernameResponse>): UpdateUserUsernameResponse {
     const message = createBaseUpdateUserUsernameResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
     return message;
   },
 };
 
 function createBaseUploadUserAvatarRequest(): UploadUserAvatarRequest {
-  return { base64EncodedData: "" };
+  return { base64EncodedData: '' };
 }
 
 export const UploadUserAvatarRequest: MessageFns<UploadUserAvatarRequest> = {
-  encode(message: UploadUserAvatarRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.base64EncodedData !== "") {
+  encode(
+    message: UploadUserAvatarRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.base64EncodedData !== '') {
       writer.uint32(10).string(message.base64EncodedData);
     }
     return writer;
@@ -4512,14 +4744,14 @@ export const UploadUserAvatarRequest: MessageFns<UploadUserAvatarRequest> = {
       base64EncodedData: isSet(object.base64EncodedData)
         ? globalThis.String(object.base64EncodedData)
         : isSet(object.base64_encoded_data)
-        ? globalThis.String(object.base64_encoded_data)
-        : "",
+          ? globalThis.String(object.base64_encoded_data)
+          : '',
     };
   },
 
   toJSON(message: UploadUserAvatarRequest): unknown {
     const obj: any = {};
-    if (message.base64EncodedData !== "") {
+    if (message.base64EncodedData !== '') {
       obj.base64EncodedData = message.base64EncodedData;
     }
     return obj;
@@ -4530,7 +4762,7 @@ export const UploadUserAvatarRequest: MessageFns<UploadUserAvatarRequest> = {
   },
   fromPartial(object: DeepPartial<UploadUserAvatarRequest>): UploadUserAvatarRequest {
     const message = createBaseUploadUserAvatarRequest();
-    message.base64EncodedData = object.base64EncodedData ?? "";
+    message.base64EncodedData = object.base64EncodedData ?? '';
     return message;
   },
 };
@@ -4540,7 +4772,10 @@ function createBaseUploadUserAvatarResponse(): UploadUserAvatarResponse {
 }
 
 export const UploadUserAvatarResponse: MessageFns<UploadUserAvatarResponse> = {
-  encode(message: UploadUserAvatarResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: UploadUserAvatarResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -4576,8 +4811,8 @@ export const UploadUserAvatarResponse: MessageFns<UploadUserAvatarResponse> = {
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
     };
   },
 
@@ -4594,9 +4829,10 @@ export const UploadUserAvatarResponse: MessageFns<UploadUserAvatarResponse> = {
   },
   fromPartial(object: DeepPartial<UploadUserAvatarResponse>): UploadUserAvatarResponse {
     const message = createBaseUploadUserAvatarResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
     return message;
   },
 };
@@ -4605,51 +4841,54 @@ function createBaseAccountCreationRequestInput(): AccountCreationRequestInput {
   return {
     latitude: undefined,
     longitude: undefined,
-    name: "",
-    contactPhone: "",
-    addressLine1: "",
-    addressLine2: "",
-    city: "",
-    state: "",
-    zipCode: "",
-    country: "",
-    belongsToUser: "",
+    name: '',
+    contactPhone: '',
+    addressLine1: '',
+    addressLine2: '',
+    city: '',
+    state: '',
+    zipCode: '',
+    country: '',
+    belongsToUser: '',
   };
 }
 
 export const AccountCreationRequestInput: MessageFns<AccountCreationRequestInput> = {
-  encode(message: AccountCreationRequestInput, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: AccountCreationRequestInput,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.latitude !== undefined) {
       writer.uint32(13).float(message.latitude);
     }
     if (message.longitude !== undefined) {
       writer.uint32(21).float(message.longitude);
     }
-    if (message.name !== "") {
+    if (message.name !== '') {
       writer.uint32(26).string(message.name);
     }
-    if (message.contactPhone !== "") {
+    if (message.contactPhone !== '') {
       writer.uint32(34).string(message.contactPhone);
     }
-    if (message.addressLine1 !== "") {
+    if (message.addressLine1 !== '') {
       writer.uint32(42).string(message.addressLine1);
     }
-    if (message.addressLine2 !== "") {
+    if (message.addressLine2 !== '') {
       writer.uint32(50).string(message.addressLine2);
     }
-    if (message.city !== "") {
+    if (message.city !== '') {
       writer.uint32(58).string(message.city);
     }
-    if (message.state !== "") {
+    if (message.state !== '') {
       writer.uint32(66).string(message.state);
     }
-    if (message.zipCode !== "") {
+    if (message.zipCode !== '') {
       writer.uint32(74).string(message.zipCode);
     }
-    if (message.country !== "") {
+    if (message.country !== '') {
       writer.uint32(82).string(message.country);
     }
-    if (message.belongsToUser !== "") {
+    if (message.belongsToUser !== '') {
       writer.uint32(90).string(message.belongsToUser);
     }
     return writer;
@@ -4763,35 +5002,35 @@ export const AccountCreationRequestInput: MessageFns<AccountCreationRequestInput
     return {
       latitude: isSet(object.latitude) ? globalThis.Number(object.latitude) : undefined,
       longitude: isSet(object.longitude) ? globalThis.Number(object.longitude) : undefined,
-      name: isSet(object.name) ? globalThis.String(object.name) : "",
+      name: isSet(object.name) ? globalThis.String(object.name) : '',
       contactPhone: isSet(object.contactPhone)
         ? globalThis.String(object.contactPhone)
         : isSet(object.contact_phone)
-        ? globalThis.String(object.contact_phone)
-        : "",
+          ? globalThis.String(object.contact_phone)
+          : '',
       addressLine1: isSet(object.addressLine1)
         ? globalThis.String(object.addressLine1)
         : isSet(object.address_line1)
-        ? globalThis.String(object.address_line1)
-        : "",
+          ? globalThis.String(object.address_line1)
+          : '',
       addressLine2: isSet(object.addressLine2)
         ? globalThis.String(object.addressLine2)
         : isSet(object.address_line2)
-        ? globalThis.String(object.address_line2)
-        : "",
-      city: isSet(object.city) ? globalThis.String(object.city) : "",
-      state: isSet(object.state) ? globalThis.String(object.state) : "",
+          ? globalThis.String(object.address_line2)
+          : '',
+      city: isSet(object.city) ? globalThis.String(object.city) : '',
+      state: isSet(object.state) ? globalThis.String(object.state) : '',
       zipCode: isSet(object.zipCode)
         ? globalThis.String(object.zipCode)
         : isSet(object.zip_code)
-        ? globalThis.String(object.zip_code)
-        : "",
-      country: isSet(object.country) ? globalThis.String(object.country) : "",
+          ? globalThis.String(object.zip_code)
+          : '',
+      country: isSet(object.country) ? globalThis.String(object.country) : '',
       belongsToUser: isSet(object.belongsToUser)
         ? globalThis.String(object.belongsToUser)
         : isSet(object.belongs_to_user)
-        ? globalThis.String(object.belongs_to_user)
-        : "",
+          ? globalThis.String(object.belongs_to_user)
+          : '',
     };
   },
 
@@ -4803,31 +5042,31 @@ export const AccountCreationRequestInput: MessageFns<AccountCreationRequestInput
     if (message.longitude !== undefined) {
       obj.longitude = message.longitude;
     }
-    if (message.name !== "") {
+    if (message.name !== '') {
       obj.name = message.name;
     }
-    if (message.contactPhone !== "") {
+    if (message.contactPhone !== '') {
       obj.contactPhone = message.contactPhone;
     }
-    if (message.addressLine1 !== "") {
+    if (message.addressLine1 !== '') {
       obj.addressLine1 = message.addressLine1;
     }
-    if (message.addressLine2 !== "") {
+    if (message.addressLine2 !== '') {
       obj.addressLine2 = message.addressLine2;
     }
-    if (message.city !== "") {
+    if (message.city !== '') {
       obj.city = message.city;
     }
-    if (message.state !== "") {
+    if (message.state !== '') {
       obj.state = message.state;
     }
-    if (message.zipCode !== "") {
+    if (message.zipCode !== '') {
       obj.zipCode = message.zipCode;
     }
-    if (message.country !== "") {
+    if (message.country !== '') {
       obj.country = message.country;
     }
-    if (message.belongsToUser !== "") {
+    if (message.belongsToUser !== '') {
       obj.belongsToUser = message.belongsToUser;
     }
     return obj;
@@ -4840,214 +5079,233 @@ export const AccountCreationRequestInput: MessageFns<AccountCreationRequestInput
     const message = createBaseAccountCreationRequestInput();
     message.latitude = object.latitude ?? undefined;
     message.longitude = object.longitude ?? undefined;
-    message.name = object.name ?? "";
-    message.contactPhone = object.contactPhone ?? "";
-    message.addressLine1 = object.addressLine1 ?? "";
-    message.addressLine2 = object.addressLine2 ?? "";
-    message.city = object.city ?? "";
-    message.state = object.state ?? "";
-    message.zipCode = object.zipCode ?? "";
-    message.country = object.country ?? "";
-    message.belongsToUser = object.belongsToUser ?? "";
+    message.name = object.name ?? '';
+    message.contactPhone = object.contactPhone ?? '';
+    message.addressLine1 = object.addressLine1 ?? '';
+    message.addressLine2 = object.addressLine2 ?? '';
+    message.city = object.city ?? '';
+    message.state = object.state ?? '';
+    message.zipCode = object.zipCode ?? '';
+    message.country = object.country ?? '';
+    message.belongsToUser = object.belongsToUser ?? '';
     return message;
   },
 };
 
 function createBaseAccountInvitationCreationRequestInput(): AccountInvitationCreationRequestInput {
-  return { expiresAt: undefined, note: "", toEmail: "", toName: "" };
+  return { expiresAt: undefined, note: '', toEmail: '', toName: '' };
 }
 
-export const AccountInvitationCreationRequestInput: MessageFns<AccountInvitationCreationRequestInput> = {
-  encode(message: AccountInvitationCreationRequestInput, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.expiresAt !== undefined) {
-      Timestamp.encode(toTimestamp(message.expiresAt), writer.uint32(10).fork()).join();
-    }
-    if (message.note !== "") {
-      writer.uint32(18).string(message.note);
-    }
-    if (message.toEmail !== "") {
-      writer.uint32(26).string(message.toEmail);
-    }
-    if (message.toName !== "") {
-      writer.uint32(34).string(message.toName);
-    }
-    return writer;
-  },
-
-  decode(input: BinaryReader | Uint8Array, length?: number): AccountInvitationCreationRequestInput {
-    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
-    const end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseAccountInvitationCreationRequestInput();
-    while (reader.pos < end) {
-      const tag = reader.uint32();
-      switch (tag >>> 3) {
-        case 1: {
-          if (tag !== 10) {
-            break;
-          }
-
-          message.expiresAt = fromTimestamp(Timestamp.decode(reader, reader.uint32()));
-          continue;
-        }
-        case 2: {
-          if (tag !== 18) {
-            break;
-          }
-
-          message.note = reader.string();
-          continue;
-        }
-        case 3: {
-          if (tag !== 26) {
-            break;
-          }
-
-          message.toEmail = reader.string();
-          continue;
-        }
-        case 4: {
-          if (tag !== 34) {
-            break;
-          }
-
-          message.toName = reader.string();
-          continue;
-        }
+export const AccountInvitationCreationRequestInput: MessageFns<AccountInvitationCreationRequestInput> =
+  {
+    encode(
+      message: AccountInvitationCreationRequestInput,
+      writer: BinaryWriter = new BinaryWriter()
+    ): BinaryWriter {
+      if (message.expiresAt !== undefined) {
+        Timestamp.encode(toTimestamp(message.expiresAt), writer.uint32(10).fork()).join();
       }
-      if ((tag & 7) === 4 || tag === 0) {
-        break;
+      if (message.note !== '') {
+        writer.uint32(18).string(message.note);
       }
-      reader.skip(tag & 7);
-    }
-    return message;
-  },
+      if (message.toEmail !== '') {
+        writer.uint32(26).string(message.toEmail);
+      }
+      if (message.toName !== '') {
+        writer.uint32(34).string(message.toName);
+      }
+      return writer;
+    },
 
-  fromJSON(object: any): AccountInvitationCreationRequestInput {
-    return {
-      expiresAt: isSet(object.expiresAt)
-        ? fromJsonTimestamp(object.expiresAt)
-        : isSet(object.expires_at)
-        ? fromJsonTimestamp(object.expires_at)
-        : undefined,
-      note: isSet(object.note) ? globalThis.String(object.note) : "",
-      toEmail: isSet(object.toEmail)
-        ? globalThis.String(object.toEmail)
-        : isSet(object.to_email)
-        ? globalThis.String(object.to_email)
-        : "",
-      toName: isSet(object.toName)
-        ? globalThis.String(object.toName)
-        : isSet(object.to_name)
-        ? globalThis.String(object.to_name)
-        : "",
-    };
-  },
+    decode(
+      input: BinaryReader | Uint8Array,
+      length?: number
+    ): AccountInvitationCreationRequestInput {
+      const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+      const end = length === undefined ? reader.len : reader.pos + length;
+      const message = createBaseAccountInvitationCreationRequestInput();
+      while (reader.pos < end) {
+        const tag = reader.uint32();
+        switch (tag >>> 3) {
+          case 1: {
+            if (tag !== 10) {
+              break;
+            }
 
-  toJSON(message: AccountInvitationCreationRequestInput): unknown {
-    const obj: any = {};
-    if (message.expiresAt !== undefined) {
-      obj.expiresAt = message.expiresAt.toISOString();
-    }
-    if (message.note !== "") {
-      obj.note = message.note;
-    }
-    if (message.toEmail !== "") {
-      obj.toEmail = message.toEmail;
-    }
-    if (message.toName !== "") {
-      obj.toName = message.toName;
-    }
-    return obj;
-  },
+            message.expiresAt = fromTimestamp(Timestamp.decode(reader, reader.uint32()));
+            continue;
+          }
+          case 2: {
+            if (tag !== 18) {
+              break;
+            }
 
-  create(base?: DeepPartial<AccountInvitationCreationRequestInput>): AccountInvitationCreationRequestInput {
-    return AccountInvitationCreationRequestInput.fromPartial(base ?? {});
-  },
-  fromPartial(object: DeepPartial<AccountInvitationCreationRequestInput>): AccountInvitationCreationRequestInput {
-    const message = createBaseAccountInvitationCreationRequestInput();
-    message.expiresAt = object.expiresAt ?? undefined;
-    message.note = object.note ?? "";
-    message.toEmail = object.toEmail ?? "";
-    message.toName = object.toName ?? "";
-    return message;
-  },
-};
+            message.note = reader.string();
+            continue;
+          }
+          case 3: {
+            if (tag !== 26) {
+              break;
+            }
+
+            message.toEmail = reader.string();
+            continue;
+          }
+          case 4: {
+            if (tag !== 34) {
+              break;
+            }
+
+            message.toName = reader.string();
+            continue;
+          }
+        }
+        if ((tag & 7) === 4 || tag === 0) {
+          break;
+        }
+        reader.skip(tag & 7);
+      }
+      return message;
+    },
+
+    fromJSON(object: any): AccountInvitationCreationRequestInput {
+      return {
+        expiresAt: isSet(object.expiresAt)
+          ? fromJsonTimestamp(object.expiresAt)
+          : isSet(object.expires_at)
+            ? fromJsonTimestamp(object.expires_at)
+            : undefined,
+        note: isSet(object.note) ? globalThis.String(object.note) : '',
+        toEmail: isSet(object.toEmail)
+          ? globalThis.String(object.toEmail)
+          : isSet(object.to_email)
+            ? globalThis.String(object.to_email)
+            : '',
+        toName: isSet(object.toName)
+          ? globalThis.String(object.toName)
+          : isSet(object.to_name)
+            ? globalThis.String(object.to_name)
+            : '',
+      };
+    },
+
+    toJSON(message: AccountInvitationCreationRequestInput): unknown {
+      const obj: any = {};
+      if (message.expiresAt !== undefined) {
+        obj.expiresAt = message.expiresAt.toISOString();
+      }
+      if (message.note !== '') {
+        obj.note = message.note;
+      }
+      if (message.toEmail !== '') {
+        obj.toEmail = message.toEmail;
+      }
+      if (message.toName !== '') {
+        obj.toName = message.toName;
+      }
+      return obj;
+    },
+
+    create(
+      base?: DeepPartial<AccountInvitationCreationRequestInput>
+    ): AccountInvitationCreationRequestInput {
+      return AccountInvitationCreationRequestInput.fromPartial(base ?? {});
+    },
+    fromPartial(
+      object: DeepPartial<AccountInvitationCreationRequestInput>
+    ): AccountInvitationCreationRequestInput {
+      const message = createBaseAccountInvitationCreationRequestInput();
+      message.expiresAt = object.expiresAt ?? undefined;
+      message.note = object.note ?? '';
+      message.toEmail = object.toEmail ?? '';
+      message.toName = object.toName ?? '';
+      return message;
+    },
+  };
 
 function createBaseAccountInvitationUpdateRequestInput(): AccountInvitationUpdateRequestInput {
-  return { token: "", note: "" };
+  return { token: '', note: '' };
 }
 
-export const AccountInvitationUpdateRequestInput: MessageFns<AccountInvitationUpdateRequestInput> = {
-  encode(message: AccountInvitationUpdateRequestInput, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.token !== "") {
-      writer.uint32(10).string(message.token);
-    }
-    if (message.note !== "") {
-      writer.uint32(18).string(message.note);
-    }
-    return writer;
-  },
-
-  decode(input: BinaryReader | Uint8Array, length?: number): AccountInvitationUpdateRequestInput {
-    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
-    const end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseAccountInvitationUpdateRequestInput();
-    while (reader.pos < end) {
-      const tag = reader.uint32();
-      switch (tag >>> 3) {
-        case 1: {
-          if (tag !== 10) {
-            break;
-          }
-
-          message.token = reader.string();
-          continue;
-        }
-        case 2: {
-          if (tag !== 18) {
-            break;
-          }
-
-          message.note = reader.string();
-          continue;
-        }
+export const AccountInvitationUpdateRequestInput: MessageFns<AccountInvitationUpdateRequestInput> =
+  {
+    encode(
+      message: AccountInvitationUpdateRequestInput,
+      writer: BinaryWriter = new BinaryWriter()
+    ): BinaryWriter {
+      if (message.token !== '') {
+        writer.uint32(10).string(message.token);
       }
-      if ((tag & 7) === 4 || tag === 0) {
-        break;
+      if (message.note !== '') {
+        writer.uint32(18).string(message.note);
       }
-      reader.skip(tag & 7);
-    }
-    return message;
-  },
+      return writer;
+    },
 
-  fromJSON(object: any): AccountInvitationUpdateRequestInput {
-    return {
-      token: isSet(object.token) ? globalThis.String(object.token) : "",
-      note: isSet(object.note) ? globalThis.String(object.note) : "",
-    };
-  },
+    decode(input: BinaryReader | Uint8Array, length?: number): AccountInvitationUpdateRequestInput {
+      const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+      const end = length === undefined ? reader.len : reader.pos + length;
+      const message = createBaseAccountInvitationUpdateRequestInput();
+      while (reader.pos < end) {
+        const tag = reader.uint32();
+        switch (tag >>> 3) {
+          case 1: {
+            if (tag !== 10) {
+              break;
+            }
 
-  toJSON(message: AccountInvitationUpdateRequestInput): unknown {
-    const obj: any = {};
-    if (message.token !== "") {
-      obj.token = message.token;
-    }
-    if (message.note !== "") {
-      obj.note = message.note;
-    }
-    return obj;
-  },
+            message.token = reader.string();
+            continue;
+          }
+          case 2: {
+            if (tag !== 18) {
+              break;
+            }
 
-  create(base?: DeepPartial<AccountInvitationUpdateRequestInput>): AccountInvitationUpdateRequestInput {
-    return AccountInvitationUpdateRequestInput.fromPartial(base ?? {});
-  },
-  fromPartial(object: DeepPartial<AccountInvitationUpdateRequestInput>): AccountInvitationUpdateRequestInput {
-    const message = createBaseAccountInvitationUpdateRequestInput();
-    message.token = object.token ?? "";
-    message.note = object.note ?? "";
-    return message;
-  },
-};
+            message.note = reader.string();
+            continue;
+          }
+        }
+        if ((tag & 7) === 4 || tag === 0) {
+          break;
+        }
+        reader.skip(tag & 7);
+      }
+      return message;
+    },
+
+    fromJSON(object: any): AccountInvitationUpdateRequestInput {
+      return {
+        token: isSet(object.token) ? globalThis.String(object.token) : '',
+        note: isSet(object.note) ? globalThis.String(object.note) : '',
+      };
+    },
+
+    toJSON(message: AccountInvitationUpdateRequestInput): unknown {
+      const obj: any = {};
+      if (message.token !== '') {
+        obj.token = message.token;
+      }
+      if (message.note !== '') {
+        obj.note = message.note;
+      }
+      return obj;
+    },
+
+    create(
+      base?: DeepPartial<AccountInvitationUpdateRequestInput>
+    ): AccountInvitationUpdateRequestInput {
+      return AccountInvitationUpdateRequestInput.fromPartial(base ?? {});
+    },
+    fromPartial(
+      object: DeepPartial<AccountInvitationUpdateRequestInput>
+    ): AccountInvitationUpdateRequestInput {
+      const message = createBaseAccountInvitationUpdateRequestInput();
+      message.token = object.token ?? '';
+      message.note = object.note ?? '';
+      return message;
+    },
+  };
 
 function createBaseAccountUpdateRequestInput(): AccountUpdateRequestInput {
   return {
@@ -5061,12 +5319,15 @@ function createBaseAccountUpdateRequestInput(): AccountUpdateRequestInput {
     country: undefined,
     latitude: undefined,
     longitude: undefined,
-    belongsToUser: "",
+    belongsToUser: '',
   };
 }
 
 export const AccountUpdateRequestInput: MessageFns<AccountUpdateRequestInput> = {
-  encode(message: AccountUpdateRequestInput, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: AccountUpdateRequestInput,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.name !== undefined) {
       writer.uint32(10).string(message.name);
     }
@@ -5097,7 +5358,7 @@ export const AccountUpdateRequestInput: MessageFns<AccountUpdateRequestInput> = 
     if (message.longitude !== undefined) {
       writer.uint32(85).float(message.longitude);
     }
-    if (message.belongsToUser !== "") {
+    if (message.belongsToUser !== '') {
       writer.uint32(90).string(message.belongsToUser);
     }
     return writer;
@@ -5213,33 +5474,33 @@ export const AccountUpdateRequestInput: MessageFns<AccountUpdateRequestInput> = 
       contactPhone: isSet(object.contactPhone)
         ? globalThis.String(object.contactPhone)
         : isSet(object.contact_phone)
-        ? globalThis.String(object.contact_phone)
-        : undefined,
+          ? globalThis.String(object.contact_phone)
+          : undefined,
       addressLine1: isSet(object.addressLine1)
         ? globalThis.String(object.addressLine1)
         : isSet(object.address_line1)
-        ? globalThis.String(object.address_line1)
-        : undefined,
+          ? globalThis.String(object.address_line1)
+          : undefined,
       addressLine2: isSet(object.addressLine2)
         ? globalThis.String(object.addressLine2)
         : isSet(object.address_line2)
-        ? globalThis.String(object.address_line2)
-        : undefined,
+          ? globalThis.String(object.address_line2)
+          : undefined,
       city: isSet(object.city) ? globalThis.String(object.city) : undefined,
       state: isSet(object.state) ? globalThis.String(object.state) : undefined,
       zipCode: isSet(object.zipCode)
         ? globalThis.String(object.zipCode)
         : isSet(object.zip_code)
-        ? globalThis.String(object.zip_code)
-        : undefined,
+          ? globalThis.String(object.zip_code)
+          : undefined,
       country: isSet(object.country) ? globalThis.String(object.country) : undefined,
       latitude: isSet(object.latitude) ? globalThis.Number(object.latitude) : undefined,
       longitude: isSet(object.longitude) ? globalThis.Number(object.longitude) : undefined,
       belongsToUser: isSet(object.belongsToUser)
         ? globalThis.String(object.belongsToUser)
         : isSet(object.belongs_to_user)
-        ? globalThis.String(object.belongs_to_user)
-        : "",
+          ? globalThis.String(object.belongs_to_user)
+          : '',
     };
   },
 
@@ -5275,7 +5536,7 @@ export const AccountUpdateRequestInput: MessageFns<AccountUpdateRequestInput> = 
     if (message.longitude !== undefined) {
       obj.longitude = message.longitude;
     }
-    if (message.belongsToUser !== "") {
+    if (message.belongsToUser !== '') {
       obj.belongsToUser = message.belongsToUser;
     }
     return obj;
@@ -5296,7 +5557,7 @@ export const AccountUpdateRequestInput: MessageFns<AccountUpdateRequestInput> = 
     message.country = object.country ?? undefined;
     message.latitude = object.latitude ?? undefined;
     message.longitude = object.longitude ?? undefined;
-    message.belongsToUser = object.belongsToUser ?? "";
+    message.belongsToUser = object.belongsToUser ?? '';
     return message;
   },
 };
@@ -5306,14 +5567,14 @@ function createBaseUserCreationResponse(): UserCreationResponse {
     responseDetails: undefined,
     createdAt: undefined,
     birthday: undefined,
-    username: "",
-    emailAddress: "",
-    twoFactorQrCode: "",
-    createdUserId: "",
-    accountStatus: "",
-    twoFactorSecret: "",
-    firstName: "",
-    lastName: "",
+    username: '',
+    emailAddress: '',
+    twoFactorQrCode: '',
+    createdUserId: '',
+    accountStatus: '',
+    twoFactorSecret: '',
+    firstName: '',
+    lastName: '',
   };
 }
 
@@ -5328,28 +5589,28 @@ export const UserCreationResponse: MessageFns<UserCreationResponse> = {
     if (message.birthday !== undefined) {
       Timestamp.encode(toTimestamp(message.birthday), writer.uint32(26).fork()).join();
     }
-    if (message.username !== "") {
+    if (message.username !== '') {
       writer.uint32(34).string(message.username);
     }
-    if (message.emailAddress !== "") {
+    if (message.emailAddress !== '') {
       writer.uint32(42).string(message.emailAddress);
     }
-    if (message.twoFactorQrCode !== "") {
+    if (message.twoFactorQrCode !== '') {
       writer.uint32(50).string(message.twoFactorQrCode);
     }
-    if (message.createdUserId !== "") {
+    if (message.createdUserId !== '') {
       writer.uint32(58).string(message.createdUserId);
     }
-    if (message.accountStatus !== "") {
+    if (message.accountStatus !== '') {
       writer.uint32(66).string(message.accountStatus);
     }
-    if (message.twoFactorSecret !== "") {
+    if (message.twoFactorSecret !== '') {
       writer.uint32(74).string(message.twoFactorSecret);
     }
-    if (message.firstName !== "") {
+    if (message.firstName !== '') {
       writer.uint32(82).string(message.firstName);
     }
-    if (message.lastName !== "") {
+    if (message.lastName !== '') {
       writer.uint32(90).string(message.lastName);
     }
     return writer;
@@ -5464,50 +5725,50 @@ export const UserCreationResponse: MessageFns<UserCreationResponse> = {
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       createdAt: isSet(object.createdAt)
         ? fromJsonTimestamp(object.createdAt)
         : isSet(object.created_at)
-        ? fromJsonTimestamp(object.created_at)
-        : undefined,
+          ? fromJsonTimestamp(object.created_at)
+          : undefined,
       birthday: isSet(object.birthday) ? fromJsonTimestamp(object.birthday) : undefined,
-      username: isSet(object.username) ? globalThis.String(object.username) : "",
+      username: isSet(object.username) ? globalThis.String(object.username) : '',
       emailAddress: isSet(object.emailAddress)
         ? globalThis.String(object.emailAddress)
         : isSet(object.email_address)
-        ? globalThis.String(object.email_address)
-        : "",
+          ? globalThis.String(object.email_address)
+          : '',
       twoFactorQrCode: isSet(object.twoFactorQrCode)
         ? globalThis.String(object.twoFactorQrCode)
         : isSet(object.two_factor_qr_code)
-        ? globalThis.String(object.two_factor_qr_code)
-        : "",
+          ? globalThis.String(object.two_factor_qr_code)
+          : '',
       createdUserId: isSet(object.createdUserId)
         ? globalThis.String(object.createdUserId)
         : isSet(object.created_user_id)
-        ? globalThis.String(object.created_user_id)
-        : "",
+          ? globalThis.String(object.created_user_id)
+          : '',
       accountStatus: isSet(object.accountStatus)
         ? globalThis.String(object.accountStatus)
         : isSet(object.account_status)
-        ? globalThis.String(object.account_status)
-        : "",
+          ? globalThis.String(object.account_status)
+          : '',
       twoFactorSecret: isSet(object.twoFactorSecret)
         ? globalThis.String(object.twoFactorSecret)
         : isSet(object.two_factor_secret)
-        ? globalThis.String(object.two_factor_secret)
-        : "",
+          ? globalThis.String(object.two_factor_secret)
+          : '',
       firstName: isSet(object.firstName)
         ? globalThis.String(object.firstName)
         : isSet(object.first_name)
-        ? globalThis.String(object.first_name)
-        : "",
+          ? globalThis.String(object.first_name)
+          : '',
       lastName: isSet(object.lastName)
         ? globalThis.String(object.lastName)
         : isSet(object.last_name)
-        ? globalThis.String(object.last_name)
-        : "",
+          ? globalThis.String(object.last_name)
+          : '',
     };
   },
 
@@ -5522,28 +5783,28 @@ export const UserCreationResponse: MessageFns<UserCreationResponse> = {
     if (message.birthday !== undefined) {
       obj.birthday = message.birthday.toISOString();
     }
-    if (message.username !== "") {
+    if (message.username !== '') {
       obj.username = message.username;
     }
-    if (message.emailAddress !== "") {
+    if (message.emailAddress !== '') {
       obj.emailAddress = message.emailAddress;
     }
-    if (message.twoFactorQrCode !== "") {
+    if (message.twoFactorQrCode !== '') {
       obj.twoFactorQrCode = message.twoFactorQrCode;
     }
-    if (message.createdUserId !== "") {
+    if (message.createdUserId !== '') {
       obj.createdUserId = message.createdUserId;
     }
-    if (message.accountStatus !== "") {
+    if (message.accountStatus !== '') {
       obj.accountStatus = message.accountStatus;
     }
-    if (message.twoFactorSecret !== "") {
+    if (message.twoFactorSecret !== '') {
       obj.twoFactorSecret = message.twoFactorSecret;
     }
-    if (message.firstName !== "") {
+    if (message.firstName !== '') {
       obj.firstName = message.firstName;
     }
-    if (message.lastName !== "") {
+    if (message.lastName !== '') {
       obj.lastName = message.lastName;
     }
     return obj;
@@ -5554,36 +5815,40 @@ export const UserCreationResponse: MessageFns<UserCreationResponse> = {
   },
   fromPartial(object: DeepPartial<UserCreationResponse>): UserCreationResponse {
     const message = createBaseUserCreationResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
     message.createdAt = object.createdAt ?? undefined;
     message.birthday = object.birthday ?? undefined;
-    message.username = object.username ?? "";
-    message.emailAddress = object.emailAddress ?? "";
-    message.twoFactorQrCode = object.twoFactorQrCode ?? "";
-    message.createdUserId = object.createdUserId ?? "";
-    message.accountStatus = object.accountStatus ?? "";
-    message.twoFactorSecret = object.twoFactorSecret ?? "";
-    message.firstName = object.firstName ?? "";
-    message.lastName = object.lastName ?? "";
+    message.username = object.username ?? '';
+    message.emailAddress = object.emailAddress ?? '';
+    message.twoFactorQrCode = object.twoFactorQrCode ?? '';
+    message.createdUserId = object.createdUserId ?? '';
+    message.accountStatus = object.accountStatus ?? '';
+    message.twoFactorSecret = object.twoFactorSecret ?? '';
+    message.firstName = object.firstName ?? '';
+    message.lastName = object.lastName ?? '';
     return message;
   },
 };
 
 function createBaseUserDataAggregationRequest(): UserDataAggregationRequest {
-  return { requestId: "", reportId: "", userId: "" };
+  return { requestId: '', reportId: '', userId: '' };
 }
 
 export const UserDataAggregationRequest: MessageFns<UserDataAggregationRequest> = {
-  encode(message: UserDataAggregationRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.requestId !== "") {
+  encode(
+    message: UserDataAggregationRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.requestId !== '') {
       writer.uint32(10).string(message.requestId);
     }
-    if (message.reportId !== "") {
+    if (message.reportId !== '') {
       writer.uint32(18).string(message.reportId);
     }
-    if (message.userId !== "") {
+    if (message.userId !== '') {
       writer.uint32(26).string(message.userId);
     }
     return writer;
@@ -5634,30 +5899,30 @@ export const UserDataAggregationRequest: MessageFns<UserDataAggregationRequest> 
       requestId: isSet(object.requestId)
         ? globalThis.String(object.requestId)
         : isSet(object.request_id)
-        ? globalThis.String(object.request_id)
-        : "",
+          ? globalThis.String(object.request_id)
+          : '',
       reportId: isSet(object.reportId)
         ? globalThis.String(object.reportId)
         : isSet(object.report_id)
-        ? globalThis.String(object.report_id)
-        : "",
+          ? globalThis.String(object.report_id)
+          : '',
       userId: isSet(object.userId)
         ? globalThis.String(object.userId)
         : isSet(object.user_id)
-        ? globalThis.String(object.user_id)
-        : "",
+          ? globalThis.String(object.user_id)
+          : '',
     };
   },
 
   toJSON(message: UserDataAggregationRequest): unknown {
     const obj: any = {};
-    if (message.requestId !== "") {
+    if (message.requestId !== '') {
       obj.requestId = message.requestId;
     }
-    if (message.reportId !== "") {
+    if (message.reportId !== '') {
       obj.reportId = message.reportId;
     }
-    if (message.userId !== "") {
+    if (message.userId !== '') {
       obj.userId = message.userId;
     }
     return obj;
@@ -5668,32 +5933,35 @@ export const UserDataAggregationRequest: MessageFns<UserDataAggregationRequest> 
   },
   fromPartial(object: DeepPartial<UserDataAggregationRequest>): UserDataAggregationRequest {
     const message = createBaseUserDataAggregationRequest();
-    message.requestId = object.requestId ?? "";
-    message.reportId = object.reportId ?? "";
-    message.userId = object.userId ?? "";
+    message.requestId = object.requestId ?? '';
+    message.reportId = object.reportId ?? '';
+    message.userId = object.userId ?? '';
     return message;
   },
 };
 
 function createBaseUserDetailsUpdateRequest(): UserDetailsUpdateRequest {
-  return { firstName: "", lastName: "", birthday: undefined, currentPassword: "", totpToken: "" };
+  return { firstName: '', lastName: '', birthday: undefined, currentPassword: '', totpToken: '' };
 }
 
 export const UserDetailsUpdateRequest: MessageFns<UserDetailsUpdateRequest> = {
-  encode(message: UserDetailsUpdateRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.firstName !== "") {
+  encode(
+    message: UserDetailsUpdateRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.firstName !== '') {
       writer.uint32(10).string(message.firstName);
     }
-    if (message.lastName !== "") {
+    if (message.lastName !== '') {
       writer.uint32(18).string(message.lastName);
     }
     if (message.birthday !== undefined) {
       Timestamp.encode(toTimestamp(message.birthday), writer.uint32(26).fork()).join();
     }
-    if (message.currentPassword !== "") {
+    if (message.currentPassword !== '') {
       writer.uint32(34).string(message.currentPassword);
     }
-    if (message.totpToken !== "") {
+    if (message.totpToken !== '') {
       writer.uint32(42).string(message.totpToken);
     }
     return writer;
@@ -5760,42 +6028,42 @@ export const UserDetailsUpdateRequest: MessageFns<UserDetailsUpdateRequest> = {
       firstName: isSet(object.firstName)
         ? globalThis.String(object.firstName)
         : isSet(object.first_name)
-        ? globalThis.String(object.first_name)
-        : "",
+          ? globalThis.String(object.first_name)
+          : '',
       lastName: isSet(object.lastName)
         ? globalThis.String(object.lastName)
         : isSet(object.last_name)
-        ? globalThis.String(object.last_name)
-        : "",
+          ? globalThis.String(object.last_name)
+          : '',
       birthday: isSet(object.birthday) ? fromJsonTimestamp(object.birthday) : undefined,
       currentPassword: isSet(object.currentPassword)
         ? globalThis.String(object.currentPassword)
         : isSet(object.current_password)
-        ? globalThis.String(object.current_password)
-        : "",
+          ? globalThis.String(object.current_password)
+          : '',
       totpToken: isSet(object.totpToken)
         ? globalThis.String(object.totpToken)
         : isSet(object.totp_token)
-        ? globalThis.String(object.totp_token)
-        : "",
+          ? globalThis.String(object.totp_token)
+          : '',
     };
   },
 
   toJSON(message: UserDetailsUpdateRequest): unknown {
     const obj: any = {};
-    if (message.firstName !== "") {
+    if (message.firstName !== '') {
       obj.firstName = message.firstName;
     }
-    if (message.lastName !== "") {
+    if (message.lastName !== '') {
       obj.lastName = message.lastName;
     }
     if (message.birthday !== undefined) {
       obj.birthday = message.birthday.toISOString();
     }
-    if (message.currentPassword !== "") {
+    if (message.currentPassword !== '') {
       obj.currentPassword = message.currentPassword;
     }
-    if (message.totpToken !== "") {
+    if (message.totpToken !== '') {
       obj.totpToken = message.totpToken;
     }
     return obj;
@@ -5806,28 +6074,28 @@ export const UserDetailsUpdateRequest: MessageFns<UserDetailsUpdateRequest> = {
   },
   fromPartial(object: DeepPartial<UserDetailsUpdateRequest>): UserDetailsUpdateRequest {
     const message = createBaseUserDetailsUpdateRequest();
-    message.firstName = object.firstName ?? "";
-    message.lastName = object.lastName ?? "";
+    message.firstName = object.firstName ?? '';
+    message.lastName = object.lastName ?? '';
     message.birthday = object.birthday ?? undefined;
-    message.currentPassword = object.currentPassword ?? "";
-    message.totpToken = object.totpToken ?? "";
+    message.currentPassword = object.currentPassword ?? '';
+    message.totpToken = object.totpToken ?? '';
     return message;
   },
 };
 
 function createBaseUsernameUpdateRequest(): UsernameUpdateRequest {
-  return { newUsername: "", currentPassword: "", totpToken: "" };
+  return { newUsername: '', currentPassword: '', totpToken: '' };
 }
 
 export const UsernameUpdateRequest: MessageFns<UsernameUpdateRequest> = {
   encode(message: UsernameUpdateRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.newUsername !== "") {
+    if (message.newUsername !== '') {
       writer.uint32(10).string(message.newUsername);
     }
-    if (message.currentPassword !== "") {
+    if (message.currentPassword !== '') {
       writer.uint32(18).string(message.currentPassword);
     }
-    if (message.totpToken !== "") {
+    if (message.totpToken !== '') {
       writer.uint32(26).string(message.totpToken);
     }
     return writer;
@@ -5878,30 +6146,30 @@ export const UsernameUpdateRequest: MessageFns<UsernameUpdateRequest> = {
       newUsername: isSet(object.newUsername)
         ? globalThis.String(object.newUsername)
         : isSet(object.new_username)
-        ? globalThis.String(object.new_username)
-        : "",
+          ? globalThis.String(object.new_username)
+          : '',
       currentPassword: isSet(object.currentPassword)
         ? globalThis.String(object.currentPassword)
         : isSet(object.current_password)
-        ? globalThis.String(object.current_password)
-        : "",
+          ? globalThis.String(object.current_password)
+          : '',
       totpToken: isSet(object.totpToken)
         ? globalThis.String(object.totpToken)
         : isSet(object.totp_token)
-        ? globalThis.String(object.totp_token)
-        : "",
+          ? globalThis.String(object.totp_token)
+          : '',
     };
   },
 
   toJSON(message: UsernameUpdateRequest): unknown {
     const obj: any = {};
-    if (message.newUsername !== "") {
+    if (message.newUsername !== '') {
       obj.newUsername = message.newUsername;
     }
-    if (message.currentPassword !== "") {
+    if (message.currentPassword !== '') {
       obj.currentPassword = message.currentPassword;
     }
-    if (message.totpToken !== "") {
+    if (message.totpToken !== '') {
       obj.totpToken = message.totpToken;
     }
     return obj;
@@ -5912,26 +6180,29 @@ export const UsernameUpdateRequest: MessageFns<UsernameUpdateRequest> = {
   },
   fromPartial(object: DeepPartial<UsernameUpdateRequest>): UsernameUpdateRequest {
     const message = createBaseUsernameUpdateRequest();
-    message.newUsername = object.newUsername ?? "";
-    message.currentPassword = object.currentPassword ?? "";
-    message.totpToken = object.totpToken ?? "";
+    message.newUsername = object.newUsername ?? '';
+    message.currentPassword = object.currentPassword ?? '';
+    message.totpToken = object.totpToken ?? '';
     return message;
   },
 };
 
 function createBaseAdminUpdateUserStatusRequest(): AdminUpdateUserStatusRequest {
-  return { targetUserId: "", newStatus: "", reason: "" };
+  return { targetUserId: '', newStatus: '', reason: '' };
 }
 
 export const AdminUpdateUserStatusRequest: MessageFns<AdminUpdateUserStatusRequest> = {
-  encode(message: AdminUpdateUserStatusRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.targetUserId !== "") {
+  encode(
+    message: AdminUpdateUserStatusRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.targetUserId !== '') {
       writer.uint32(10).string(message.targetUserId);
     }
-    if (message.newStatus !== "") {
+    if (message.newStatus !== '') {
       writer.uint32(18).string(message.newStatus);
     }
-    if (message.reason !== "") {
+    if (message.reason !== '') {
       writer.uint32(26).string(message.reason);
     }
     return writer;
@@ -5982,26 +6253,26 @@ export const AdminUpdateUserStatusRequest: MessageFns<AdminUpdateUserStatusReque
       targetUserId: isSet(object.targetUserId)
         ? globalThis.String(object.targetUserId)
         : isSet(object.target_user_id)
-        ? globalThis.String(object.target_user_id)
-        : "",
+          ? globalThis.String(object.target_user_id)
+          : '',
       newStatus: isSet(object.newStatus)
         ? globalThis.String(object.newStatus)
         : isSet(object.new_status)
-        ? globalThis.String(object.new_status)
-        : "",
-      reason: isSet(object.reason) ? globalThis.String(object.reason) : "",
+          ? globalThis.String(object.new_status)
+          : '',
+      reason: isSet(object.reason) ? globalThis.String(object.reason) : '',
     };
   },
 
   toJSON(message: AdminUpdateUserStatusRequest): unknown {
     const obj: any = {};
-    if (message.targetUserId !== "") {
+    if (message.targetUserId !== '') {
       obj.targetUserId = message.targetUserId;
     }
-    if (message.newStatus !== "") {
+    if (message.newStatus !== '') {
       obj.newStatus = message.newStatus;
     }
-    if (message.reason !== "") {
+    if (message.reason !== '') {
       obj.reason = message.reason;
     }
     return obj;
@@ -6012,9 +6283,9 @@ export const AdminUpdateUserStatusRequest: MessageFns<AdminUpdateUserStatusReque
   },
   fromPartial(object: DeepPartial<AdminUpdateUserStatusRequest>): AdminUpdateUserStatusRequest {
     const message = createBaseAdminUpdateUserStatusRequest();
-    message.targetUserId = object.targetUserId ?? "";
-    message.newStatus = object.newStatus ?? "";
-    message.reason = object.reason ?? "";
+    message.targetUserId = object.targetUserId ?? '';
+    message.newStatus = object.newStatus ?? '';
+    message.reason = object.reason ?? '';
     return message;
   },
 };
@@ -6024,7 +6295,10 @@ function createBaseAdminUpdateUserStatusResponse(): AdminUpdateUserStatusRespons
 }
 
 export const AdminUpdateUserStatusResponse: MessageFns<AdminUpdateUserStatusResponse> = {
-  encode(message: AdminUpdateUserStatusResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: AdminUpdateUserStatusResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -6060,8 +6334,8 @@ export const AdminUpdateUserStatusResponse: MessageFns<AdminUpdateUserStatusResp
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
     };
   },
 
@@ -6078,20 +6352,25 @@ export const AdminUpdateUserStatusResponse: MessageFns<AdminUpdateUserStatusResp
   },
   fromPartial(object: DeepPartial<AdminUpdateUserStatusResponse>): AdminUpdateUserStatusResponse {
     const message = createBaseAdminUpdateUserStatusResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
     return message;
   },
 };
 
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 
-export type DeepPartial<T> = T extends Builtin ? T
-  : T extends globalThis.Array<infer U> ? globalThis.Array<DeepPartial<U>>
-  : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>>
-  : T extends {} ? { [K in keyof T]?: DeepPartial<T[K]> }
-  : Partial<T>;
+export type DeepPartial<T> = T extends Builtin
+  ? T
+  : T extends globalThis.Array<infer U>
+    ? globalThis.Array<DeepPartial<U>>
+    : T extends ReadonlyArray<infer U>
+      ? ReadonlyArray<DeepPartial<U>>
+      : T extends {}
+        ? { [K in keyof T]?: DeepPartial<T[K]> }
+        : Partial<T>;
 
 function toTimestamp(date: Date): Timestamp {
   const seconds = Math.trunc(date.getTime() / 1_000);
@@ -6108,7 +6387,7 @@ function fromTimestamp(t: Timestamp): Date {
 function fromJsonTimestamp(o: any): Date {
   if (o instanceof globalThis.Date) {
     return o;
-  } else if (typeof o === "string") {
+  } else if (typeof o === 'string') {
     return new globalThis.Date(o);
   } else {
     return fromTimestamp(Timestamp.fromJSON(o));

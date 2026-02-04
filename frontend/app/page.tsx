@@ -5,6 +5,7 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { getConfig } from '@/lib/types';
 import { AdBannerPlaceholder } from '@/components/AdBanner';
+import { useAuth } from '@/hooks/useAuth';
 
 function Star({ style }: { style: React.CSSProperties }) {
   return <div className="star" style={style} />;
@@ -38,6 +39,7 @@ function Stars() {
 function HomeContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const { isAuthenticated, isLoading: authLoading, logout } = useAuth();
   const [playerName, setPlayerName] = useState('');
   const [stageCode, setStageCode] = useState('');
   const [isCreating, setIsCreating] = useState(false);
@@ -123,12 +125,45 @@ function HomeContent() {
       ? 'Enter Stage'
       : 'Create New Stage';
 
+  const handleLogout = async () => {
+    await logout();
+    router.refresh();
+  };
+
   return (
     <main className="min-h-screen stage-bg relative overflow-hidden">
       {/* Decorative elements */}
       <div className="curtain-left" />
       <div className="curtain-right" />
       <Stars />
+
+      {/* Auth Navigation */}
+      <div className="absolute top-6 right-6 z-30 animate-fade-up">
+        {!authLoading && (
+          <div className="flex items-center gap-4">
+            {isAuthenticated ? (
+              <button
+                onClick={handleLogout}
+                className="text-[var(--cream)] opacity-60 hover:opacity-100 hover:text-[var(--gold)] transition-all text-sm"
+              >
+                Sign Out
+              </button>
+            ) : (
+              <>
+                <Link
+                  href="/auth/login"
+                  className="text-[var(--cream)] opacity-60 hover:opacity-100 hover:text-[var(--gold)] transition-all text-sm"
+                >
+                  Sign In
+                </Link>
+                <Link href="/auth/register" className="btn-secondary px-4 py-2 rounded-lg text-sm">
+                  Create Account
+                </Link>
+              </>
+            )}
+          </div>
+        )}
+      </div>
 
       {/* Main content */}
       <div className="relative z-20 min-h-screen flex flex-col items-center justify-center px-6 py-12">

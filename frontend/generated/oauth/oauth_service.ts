@@ -5,7 +5,7 @@
 // source: oauth/oauth_service.proto
 
 /* eslint-disable */
-import type { CallContext, CallOptions } from "nice-grpc-common";
+import type { CallContext, CallOptions } from 'nice-grpc-common';
 import {
   ArchiveOAuth2ClientRequest,
   ArchiveOAuth2ClientResponse,
@@ -15,17 +15,17 @@ import {
   GetOAuth2ClientResponse,
   GetOAuth2ClientsRequest,
   GetOAuth2ClientsResponse,
-} from "./oauth_service_types";
+} from './oauth_service_types';
 
-export const protobufPackage = "oauth";
+export const protobufPackage = 'oauth';
 
 export type OAuthServiceDefinition = typeof OAuthServiceDefinition;
 export const OAuthServiceDefinition = {
-  name: "OAuthService",
-  fullName: "oauth.OAuthService",
+  name: 'OAuthService',
+  fullName: 'oauth.OAuthService',
   methods: {
     archiveOAuth2Client: {
-      name: "ArchiveOAuth2Client",
+      name: 'ArchiveOAuth2Client',
       requestType: ArchiveOAuth2ClientRequest,
       requestStream: false,
       responseType: ArchiveOAuth2ClientResponse,
@@ -33,7 +33,7 @@ export const OAuthServiceDefinition = {
       options: {},
     },
     createOAuth2Client: {
-      name: "CreateOAuth2Client",
+      name: 'CreateOAuth2Client',
       requestType: CreateOAuth2ClientRequest,
       requestStream: false,
       responseType: CreateOAuth2ClientResponse,
@@ -41,7 +41,7 @@ export const OAuthServiceDefinition = {
       options: {},
     },
     getOAuth2Client: {
-      name: "GetOAuth2Client",
+      name: 'GetOAuth2Client',
       requestType: GetOAuth2ClientRequest,
       requestStream: false,
       responseType: GetOAuth2ClientResponse,
@@ -49,7 +49,7 @@ export const OAuthServiceDefinition = {
       options: {},
     },
     getOAuth2Clients: {
-      name: "GetOAuth2Clients",
+      name: 'GetOAuth2Clients',
       requestType: GetOAuth2ClientsRequest,
       requestStream: false,
       responseType: GetOAuth2ClientsResponse,
@@ -62,45 +62,49 @@ export const OAuthServiceDefinition = {
 export interface OAuthServiceImplementation<CallContextExt = {}> {
   archiveOAuth2Client(
     request: ArchiveOAuth2ClientRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<ArchiveOAuth2ClientResponse>>;
   createOAuth2Client(
     request: CreateOAuth2ClientRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<CreateOAuth2ClientResponse>>;
   getOAuth2Client(
     request: GetOAuth2ClientRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<GetOAuth2ClientResponse>>;
   getOAuth2Clients(
     request: GetOAuth2ClientsRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<GetOAuth2ClientsResponse>>;
 }
 
 export interface OAuthServiceClient<CallOptionsExt = {}> {
   archiveOAuth2Client(
     request: DeepPartial<ArchiveOAuth2ClientRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<ArchiveOAuth2ClientResponse>;
   createOAuth2Client(
     request: DeepPartial<CreateOAuth2ClientRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<CreateOAuth2ClientResponse>;
   getOAuth2Client(
     request: DeepPartial<GetOAuth2ClientRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<GetOAuth2ClientResponse>;
   getOAuth2Clients(
     request: DeepPartial<GetOAuth2ClientsRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<GetOAuth2ClientsResponse>;
 }
 
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 
-export type DeepPartial<T> = T extends Builtin ? T
-  : T extends globalThis.Array<infer U> ? globalThis.Array<DeepPartial<U>>
-  : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>>
-  : T extends {} ? { [K in keyof T]?: DeepPartial<T[K]> }
-  : Partial<T>;
+export type DeepPartial<T> = T extends Builtin
+  ? T
+  : T extends globalThis.Array<infer U>
+    ? globalThis.Array<DeepPartial<U>>
+    : T extends ReadonlyArray<infer U>
+      ? ReadonlyArray<DeepPartial<U>>
+      : T extends {}
+        ? { [K in keyof T]?: DeepPartial<T[K]> }
+        : Partial<T>;

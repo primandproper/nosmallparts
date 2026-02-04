@@ -5,10 +5,10 @@
 // source: settings/settings_messages.proto
 
 /* eslint-disable */
-import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
-import { Timestamp } from "../google/protobuf/timestamp";
+import { BinaryReader, BinaryWriter } from '@bufbuild/protobuf/wire';
+import { Timestamp } from '../google/protobuf/timestamp';
 
-export const protobufPackage = "settings";
+export const protobufPackage = 'settings';
 
 export interface DataCollection {
   serviceSettingConfigurations: { [key: string]: ServiceSettingConfiguration };
@@ -53,9 +53,11 @@ export const DataCollection: MessageFns<DataCollection> = {
   encode(message: DataCollection, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
     globalThis.Object.entries(message.serviceSettingConfigurations).forEach(
       ([key, value]: [string, ServiceSettingConfiguration]) => {
-        DataCollection_ServiceSettingConfigurationsEntry.encode({ key: key as any, value }, writer.uint32(10).fork())
-          .join();
-      },
+        DataCollection_ServiceSettingConfigurationsEntry.encode(
+          { key: key as any, value },
+          writer.uint32(10).fork()
+        ).join();
+      }
     );
     for (const v of message.userServiceSettingConfigurations) {
       ServiceSettingConfiguration.encode(v!, writer.uint32(18).fork()).join();
@@ -75,7 +77,10 @@ export const DataCollection: MessageFns<DataCollection> = {
             break;
           }
 
-          const entry1 = DataCollection_ServiceSettingConfigurationsEntry.decode(reader, reader.uint32());
+          const entry1 = DataCollection_ServiceSettingConfigurationsEntry.decode(
+            reader,
+            reader.uint32()
+          );
           if (entry1.value !== undefined) {
             message.serviceSettingConfigurations[entry1.key] = entry1.value;
           }
@@ -86,7 +91,9 @@ export const DataCollection: MessageFns<DataCollection> = {
             break;
           }
 
-          message.userServiceSettingConfigurations.push(ServiceSettingConfiguration.decode(reader, reader.uint32()));
+          message.userServiceSettingConfigurations.push(
+            ServiceSettingConfiguration.decode(reader, reader.uint32())
+          );
           continue;
         }
       }
@@ -101,27 +108,40 @@ export const DataCollection: MessageFns<DataCollection> = {
   fromJSON(object: any): DataCollection {
     return {
       serviceSettingConfigurations: isObject(object.serviceSettingConfigurations)
-        ? (globalThis.Object.entries(object.serviceSettingConfigurations) as [string, any][]).reduce(
-          (acc: { [key: string]: ServiceSettingConfiguration }, [key, value]: [string, any]) => {
-            acc[key] = ServiceSettingConfiguration.fromJSON(value);
-            return acc;
-          },
-          {},
-        )
+        ? (
+            globalThis.Object.entries(object.serviceSettingConfigurations) as [string, any][]
+          ).reduce(
+            (acc: { [key: string]: ServiceSettingConfiguration }, [key, value]: [string, any]) => {
+              acc[key] = ServiceSettingConfiguration.fromJSON(value);
+              return acc;
+            },
+            {}
+          )
         : isObject(object.service_setting_configurations)
-        ? (globalThis.Object.entries(object.service_setting_configurations) as [string, any][]).reduce(
-          (acc: { [key: string]: ServiceSettingConfiguration }, [key, value]: [string, any]) => {
-            acc[key] = ServiceSettingConfiguration.fromJSON(value);
-            return acc;
-          },
-          {},
-        )
-        : {},
-      userServiceSettingConfigurations: globalThis.Array.isArray(object?.userServiceSettingConfigurations)
-        ? object.userServiceSettingConfigurations.map((e: any) => ServiceSettingConfiguration.fromJSON(e))
+          ? (
+              globalThis.Object.entries(object.service_setting_configurations) as [string, any][]
+            ).reduce(
+              (
+                acc: { [key: string]: ServiceSettingConfiguration },
+                [key, value]: [string, any]
+              ) => {
+                acc[key] = ServiceSettingConfiguration.fromJSON(value);
+                return acc;
+              },
+              {}
+            )
+          : {},
+      userServiceSettingConfigurations: globalThis.Array.isArray(
+        object?.userServiceSettingConfigurations
+      )
+        ? object.userServiceSettingConfigurations.map((e: any) =>
+            ServiceSettingConfiguration.fromJSON(e)
+          )
         : globalThis.Array.isArray(object?.user_service_setting_configurations)
-        ? object.user_service_setting_configurations.map((e: any) => ServiceSettingConfiguration.fromJSON(e))
-        : [],
+          ? object.user_service_setting_configurations.map((e: any) =>
+              ServiceSettingConfiguration.fromJSON(e)
+            )
+          : [],
     };
   },
 
@@ -152,112 +172,120 @@ export const DataCollection: MessageFns<DataCollection> = {
   },
   fromPartial(object: DeepPartial<DataCollection>): DataCollection {
     const message = createBaseDataCollection();
-    message.serviceSettingConfigurations =
-      (globalThis.Object.entries(object.serviceSettingConfigurations ?? {}) as [string, ServiceSettingConfiguration][])
-        .reduce(
-          (
-            acc: { [key: string]: ServiceSettingConfiguration },
-            [key, value]: [string, ServiceSettingConfiguration],
-          ) => {
-            if (value !== undefined) {
-              acc[key] = ServiceSettingConfiguration.fromPartial(value);
-            }
-            return acc;
-          },
-          {},
-        );
+    message.serviceSettingConfigurations = (
+      globalThis.Object.entries(object.serviceSettingConfigurations ?? {}) as [
+        string,
+        ServiceSettingConfiguration,
+      ][]
+    ).reduce(
+      (
+        acc: { [key: string]: ServiceSettingConfiguration },
+        [key, value]: [string, ServiceSettingConfiguration]
+      ) => {
+        if (value !== undefined) {
+          acc[key] = ServiceSettingConfiguration.fromPartial(value);
+        }
+        return acc;
+      },
+      {}
+    );
     message.userServiceSettingConfigurations =
-      object.userServiceSettingConfigurations?.map((e) => ServiceSettingConfiguration.fromPartial(e)) || [];
+      object.userServiceSettingConfigurations?.map((e) =>
+        ServiceSettingConfiguration.fromPartial(e)
+      ) || [];
     return message;
   },
 };
 
 function createBaseDataCollection_ServiceSettingConfigurationsEntry(): DataCollection_ServiceSettingConfigurationsEntry {
-  return { key: "", value: undefined };
+  return { key: '', value: undefined };
 }
 
-export const DataCollection_ServiceSettingConfigurationsEntry: MessageFns<
-  DataCollection_ServiceSettingConfigurationsEntry
-> = {
-  encode(
-    message: DataCollection_ServiceSettingConfigurationsEntry,
-    writer: BinaryWriter = new BinaryWriter(),
-  ): BinaryWriter {
-    if (message.key !== "") {
-      writer.uint32(10).string(message.key);
-    }
-    if (message.value !== undefined) {
-      ServiceSettingConfiguration.encode(message.value, writer.uint32(18).fork()).join();
-    }
-    return writer;
-  },
-
-  decode(input: BinaryReader | Uint8Array, length?: number): DataCollection_ServiceSettingConfigurationsEntry {
-    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
-    const end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseDataCollection_ServiceSettingConfigurationsEntry();
-    while (reader.pos < end) {
-      const tag = reader.uint32();
-      switch (tag >>> 3) {
-        case 1: {
-          if (tag !== 10) {
-            break;
-          }
-
-          message.key = reader.string();
-          continue;
-        }
-        case 2: {
-          if (tag !== 18) {
-            break;
-          }
-
-          message.value = ServiceSettingConfiguration.decode(reader, reader.uint32());
-          continue;
-        }
+export const DataCollection_ServiceSettingConfigurationsEntry: MessageFns<DataCollection_ServiceSettingConfigurationsEntry> =
+  {
+    encode(
+      message: DataCollection_ServiceSettingConfigurationsEntry,
+      writer: BinaryWriter = new BinaryWriter()
+    ): BinaryWriter {
+      if (message.key !== '') {
+        writer.uint32(10).string(message.key);
       }
-      if ((tag & 7) === 4 || tag === 0) {
-        break;
+      if (message.value !== undefined) {
+        ServiceSettingConfiguration.encode(message.value, writer.uint32(18).fork()).join();
       }
-      reader.skip(tag & 7);
-    }
-    return message;
-  },
+      return writer;
+    },
 
-  fromJSON(object: any): DataCollection_ServiceSettingConfigurationsEntry {
-    return {
-      key: isSet(object.key) ? globalThis.String(object.key) : "",
-      value: isSet(object.value) ? ServiceSettingConfiguration.fromJSON(object.value) : undefined,
-    };
-  },
+    decode(
+      input: BinaryReader | Uint8Array,
+      length?: number
+    ): DataCollection_ServiceSettingConfigurationsEntry {
+      const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+      const end = length === undefined ? reader.len : reader.pos + length;
+      const message = createBaseDataCollection_ServiceSettingConfigurationsEntry();
+      while (reader.pos < end) {
+        const tag = reader.uint32();
+        switch (tag >>> 3) {
+          case 1: {
+            if (tag !== 10) {
+              break;
+            }
 
-  toJSON(message: DataCollection_ServiceSettingConfigurationsEntry): unknown {
-    const obj: any = {};
-    if (message.key !== "") {
-      obj.key = message.key;
-    }
-    if (message.value !== undefined) {
-      obj.value = ServiceSettingConfiguration.toJSON(message.value);
-    }
-    return obj;
-  },
+            message.key = reader.string();
+            continue;
+          }
+          case 2: {
+            if (tag !== 18) {
+              break;
+            }
 
-  create(
-    base?: DeepPartial<DataCollection_ServiceSettingConfigurationsEntry>,
-  ): DataCollection_ServiceSettingConfigurationsEntry {
-    return DataCollection_ServiceSettingConfigurationsEntry.fromPartial(base ?? {});
-  },
-  fromPartial(
-    object: DeepPartial<DataCollection_ServiceSettingConfigurationsEntry>,
-  ): DataCollection_ServiceSettingConfigurationsEntry {
-    const message = createBaseDataCollection_ServiceSettingConfigurationsEntry();
-    message.key = object.key ?? "";
-    message.value = (object.value !== undefined && object.value !== null)
-      ? ServiceSettingConfiguration.fromPartial(object.value)
-      : undefined;
-    return message;
-  },
-};
+            message.value = ServiceSettingConfiguration.decode(reader, reader.uint32());
+            continue;
+          }
+        }
+        if ((tag & 7) === 4 || tag === 0) {
+          break;
+        }
+        reader.skip(tag & 7);
+      }
+      return message;
+    },
+
+    fromJSON(object: any): DataCollection_ServiceSettingConfigurationsEntry {
+      return {
+        key: isSet(object.key) ? globalThis.String(object.key) : '',
+        value: isSet(object.value) ? ServiceSettingConfiguration.fromJSON(object.value) : undefined,
+      };
+    },
+
+    toJSON(message: DataCollection_ServiceSettingConfigurationsEntry): unknown {
+      const obj: any = {};
+      if (message.key !== '') {
+        obj.key = message.key;
+      }
+      if (message.value !== undefined) {
+        obj.value = ServiceSettingConfiguration.toJSON(message.value);
+      }
+      return obj;
+    },
+
+    create(
+      base?: DeepPartial<DataCollection_ServiceSettingConfigurationsEntry>
+    ): DataCollection_ServiceSettingConfigurationsEntry {
+      return DataCollection_ServiceSettingConfigurationsEntry.fromPartial(base ?? {});
+    },
+    fromPartial(
+      object: DeepPartial<DataCollection_ServiceSettingConfigurationsEntry>
+    ): DataCollection_ServiceSettingConfigurationsEntry {
+      const message = createBaseDataCollection_ServiceSettingConfigurationsEntry();
+      message.key = object.key ?? '';
+      message.value =
+        object.value !== undefined && object.value !== null
+          ? ServiceSettingConfiguration.fromPartial(object.value)
+          : undefined;
+      return message;
+    },
+  };
 
 function createBaseServiceSetting(): ServiceSetting {
   return {
@@ -265,10 +293,10 @@ function createBaseServiceSetting(): ServiceSetting {
     defaultValue: undefined,
     lastUpdatedAt: undefined,
     archivedAt: undefined,
-    id: "",
-    name: "",
-    type: "",
-    description: "",
+    id: '',
+    name: '',
+    type: '',
+    description: '',
     enumeration: [],
     adminsOnly: false,
   };
@@ -288,16 +316,16 @@ export const ServiceSetting: MessageFns<ServiceSetting> = {
     if (message.archivedAt !== undefined) {
       Timestamp.encode(toTimestamp(message.archivedAt), writer.uint32(34).fork()).join();
     }
-    if (message.id !== "") {
+    if (message.id !== '') {
       writer.uint32(42).string(message.id);
     }
-    if (message.name !== "") {
+    if (message.name !== '') {
       writer.uint32(50).string(message.name);
     }
-    if (message.type !== "") {
+    if (message.type !== '') {
       writer.uint32(58).string(message.type);
     }
-    if (message.description !== "") {
+    if (message.description !== '') {
       writer.uint32(66).string(message.description);
     }
     for (const v of message.enumeration) {
@@ -410,35 +438,35 @@ export const ServiceSetting: MessageFns<ServiceSetting> = {
       createdAt: isSet(object.createdAt)
         ? fromJsonTimestamp(object.createdAt)
         : isSet(object.created_at)
-        ? fromJsonTimestamp(object.created_at)
-        : undefined,
+          ? fromJsonTimestamp(object.created_at)
+          : undefined,
       defaultValue: isSet(object.defaultValue)
         ? globalThis.String(object.defaultValue)
         : isSet(object.default_value)
-        ? globalThis.String(object.default_value)
-        : undefined,
+          ? globalThis.String(object.default_value)
+          : undefined,
       lastUpdatedAt: isSet(object.lastUpdatedAt)
         ? fromJsonTimestamp(object.lastUpdatedAt)
         : isSet(object.last_updated_at)
-        ? fromJsonTimestamp(object.last_updated_at)
-        : undefined,
+          ? fromJsonTimestamp(object.last_updated_at)
+          : undefined,
       archivedAt: isSet(object.archivedAt)
         ? fromJsonTimestamp(object.archivedAt)
         : isSet(object.archived_at)
-        ? fromJsonTimestamp(object.archived_at)
-        : undefined,
-      id: isSet(object.id) ? globalThis.String(object.id) : "",
-      name: isSet(object.name) ? globalThis.String(object.name) : "",
-      type: isSet(object.type) ? globalThis.String(object.type) : "",
-      description: isSet(object.description) ? globalThis.String(object.description) : "",
+          ? fromJsonTimestamp(object.archived_at)
+          : undefined,
+      id: isSet(object.id) ? globalThis.String(object.id) : '',
+      name: isSet(object.name) ? globalThis.String(object.name) : '',
+      type: isSet(object.type) ? globalThis.String(object.type) : '',
+      description: isSet(object.description) ? globalThis.String(object.description) : '',
       enumeration: globalThis.Array.isArray(object?.enumeration)
         ? object.enumeration.map((e: any) => globalThis.String(e))
         : [],
       adminsOnly: isSet(object.adminsOnly)
         ? globalThis.Boolean(object.adminsOnly)
         : isSet(object.admins_only)
-        ? globalThis.Boolean(object.admins_only)
-        : false,
+          ? globalThis.Boolean(object.admins_only)
+          : false,
     };
   },
 
@@ -456,16 +484,16 @@ export const ServiceSetting: MessageFns<ServiceSetting> = {
     if (message.archivedAt !== undefined) {
       obj.archivedAt = message.archivedAt.toISOString();
     }
-    if (message.id !== "") {
+    if (message.id !== '') {
       obj.id = message.id;
     }
-    if (message.name !== "") {
+    if (message.name !== '') {
       obj.name = message.name;
     }
-    if (message.type !== "") {
+    if (message.type !== '') {
       obj.type = message.type;
     }
-    if (message.description !== "") {
+    if (message.description !== '') {
       obj.description = message.description;
     }
     if (message.enumeration?.length) {
@@ -486,10 +514,10 @@ export const ServiceSetting: MessageFns<ServiceSetting> = {
     message.defaultValue = object.defaultValue ?? undefined;
     message.lastUpdatedAt = object.lastUpdatedAt ?? undefined;
     message.archivedAt = object.archivedAt ?? undefined;
-    message.id = object.id ?? "";
-    message.name = object.name ?? "";
-    message.type = object.type ?? "";
-    message.description = object.description ?? "";
+    message.id = object.id ?? '';
+    message.name = object.name ?? '';
+    message.type = object.type ?? '';
+    message.description = object.description ?? '';
     message.enumeration = object.enumeration?.map((e) => e) || [];
     message.adminsOnly = object.adminsOnly ?? false;
     return message;
@@ -501,17 +529,20 @@ function createBaseServiceSettingConfiguration(): ServiceSettingConfiguration {
     createdAt: undefined,
     lastUpdatedAt: undefined,
     archivedAt: undefined,
-    id: "",
-    value: "",
-    notes: "",
-    belongsToUser: "",
-    belongsToAccount: "",
+    id: '',
+    value: '',
+    notes: '',
+    belongsToUser: '',
+    belongsToAccount: '',
     serviceSetting: undefined,
   };
 }
 
 export const ServiceSettingConfiguration: MessageFns<ServiceSettingConfiguration> = {
-  encode(message: ServiceSettingConfiguration, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: ServiceSettingConfiguration,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.createdAt !== undefined) {
       Timestamp.encode(toTimestamp(message.createdAt), writer.uint32(10).fork()).join();
     }
@@ -521,19 +552,19 @@ export const ServiceSettingConfiguration: MessageFns<ServiceSettingConfiguration
     if (message.archivedAt !== undefined) {
       Timestamp.encode(toTimestamp(message.archivedAt), writer.uint32(26).fork()).join();
     }
-    if (message.id !== "") {
+    if (message.id !== '') {
       writer.uint32(34).string(message.id);
     }
-    if (message.value !== "") {
+    if (message.value !== '') {
       writer.uint32(42).string(message.value);
     }
-    if (message.notes !== "") {
+    if (message.notes !== '') {
       writer.uint32(50).string(message.notes);
     }
-    if (message.belongsToUser !== "") {
+    if (message.belongsToUser !== '') {
       writer.uint32(58).string(message.belongsToUser);
     }
-    if (message.belongsToAccount !== "") {
+    if (message.belongsToAccount !== '') {
       writer.uint32(66).string(message.belongsToAccount);
     }
     if (message.serviceSetting !== undefined) {
@@ -635,36 +666,36 @@ export const ServiceSettingConfiguration: MessageFns<ServiceSettingConfiguration
       createdAt: isSet(object.createdAt)
         ? fromJsonTimestamp(object.createdAt)
         : isSet(object.created_at)
-        ? fromJsonTimestamp(object.created_at)
-        : undefined,
+          ? fromJsonTimestamp(object.created_at)
+          : undefined,
       lastUpdatedAt: isSet(object.lastUpdatedAt)
         ? fromJsonTimestamp(object.lastUpdatedAt)
         : isSet(object.last_updated_at)
-        ? fromJsonTimestamp(object.last_updated_at)
-        : undefined,
+          ? fromJsonTimestamp(object.last_updated_at)
+          : undefined,
       archivedAt: isSet(object.archivedAt)
         ? fromJsonTimestamp(object.archivedAt)
         : isSet(object.archived_at)
-        ? fromJsonTimestamp(object.archived_at)
-        : undefined,
-      id: isSet(object.id) ? globalThis.String(object.id) : "",
-      value: isSet(object.value) ? globalThis.String(object.value) : "",
-      notes: isSet(object.notes) ? globalThis.String(object.notes) : "",
+          ? fromJsonTimestamp(object.archived_at)
+          : undefined,
+      id: isSet(object.id) ? globalThis.String(object.id) : '',
+      value: isSet(object.value) ? globalThis.String(object.value) : '',
+      notes: isSet(object.notes) ? globalThis.String(object.notes) : '',
       belongsToUser: isSet(object.belongsToUser)
         ? globalThis.String(object.belongsToUser)
         : isSet(object.belongs_to_user)
-        ? globalThis.String(object.belongs_to_user)
-        : "",
+          ? globalThis.String(object.belongs_to_user)
+          : '',
       belongsToAccount: isSet(object.belongsToAccount)
         ? globalThis.String(object.belongsToAccount)
         : isSet(object.belongs_to_account)
-        ? globalThis.String(object.belongs_to_account)
-        : "",
+          ? globalThis.String(object.belongs_to_account)
+          : '',
       serviceSetting: isSet(object.serviceSetting)
         ? ServiceSetting.fromJSON(object.serviceSetting)
         : isSet(object.service_setting)
-        ? ServiceSetting.fromJSON(object.service_setting)
-        : undefined,
+          ? ServiceSetting.fromJSON(object.service_setting)
+          : undefined,
     };
   },
 
@@ -679,19 +710,19 @@ export const ServiceSettingConfiguration: MessageFns<ServiceSettingConfiguration
     if (message.archivedAt !== undefined) {
       obj.archivedAt = message.archivedAt.toISOString();
     }
-    if (message.id !== "") {
+    if (message.id !== '') {
       obj.id = message.id;
     }
-    if (message.value !== "") {
+    if (message.value !== '') {
       obj.value = message.value;
     }
-    if (message.notes !== "") {
+    if (message.notes !== '') {
       obj.notes = message.notes;
     }
-    if (message.belongsToUser !== "") {
+    if (message.belongsToUser !== '') {
       obj.belongsToUser = message.belongsToUser;
     }
-    if (message.belongsToAccount !== "") {
+    if (message.belongsToAccount !== '') {
       obj.belongsToAccount = message.belongsToAccount;
     }
     if (message.serviceSetting !== undefined) {
@@ -708,25 +739,30 @@ export const ServiceSettingConfiguration: MessageFns<ServiceSettingConfiguration
     message.createdAt = object.createdAt ?? undefined;
     message.lastUpdatedAt = object.lastUpdatedAt ?? undefined;
     message.archivedAt = object.archivedAt ?? undefined;
-    message.id = object.id ?? "";
-    message.value = object.value ?? "";
-    message.notes = object.notes ?? "";
-    message.belongsToUser = object.belongsToUser ?? "";
-    message.belongsToAccount = object.belongsToAccount ?? "";
-    message.serviceSetting = (object.serviceSetting !== undefined && object.serviceSetting !== null)
-      ? ServiceSetting.fromPartial(object.serviceSetting)
-      : undefined;
+    message.id = object.id ?? '';
+    message.value = object.value ?? '';
+    message.notes = object.notes ?? '';
+    message.belongsToUser = object.belongsToUser ?? '';
+    message.belongsToAccount = object.belongsToAccount ?? '';
+    message.serviceSetting =
+      object.serviceSetting !== undefined && object.serviceSetting !== null
+        ? ServiceSetting.fromPartial(object.serviceSetting)
+        : undefined;
     return message;
   },
 };
 
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 
-export type DeepPartial<T> = T extends Builtin ? T
-  : T extends globalThis.Array<infer U> ? globalThis.Array<DeepPartial<U>>
-  : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>>
-  : T extends {} ? { [K in keyof T]?: DeepPartial<T[K]> }
-  : Partial<T>;
+export type DeepPartial<T> = T extends Builtin
+  ? T
+  : T extends globalThis.Array<infer U>
+    ? globalThis.Array<DeepPartial<U>>
+    : T extends ReadonlyArray<infer U>
+      ? ReadonlyArray<DeepPartial<U>>
+      : T extends {}
+        ? { [K in keyof T]?: DeepPartial<T[K]> }
+        : Partial<T>;
 
 function toTimestamp(date: Date): Timestamp {
   const seconds = Math.trunc(date.getTime() / 1_000);
@@ -743,7 +779,7 @@ function fromTimestamp(t: Timestamp): Date {
 function fromJsonTimestamp(o: any): Date {
   if (o instanceof globalThis.Date) {
     return o;
-  } else if (typeof o === "string") {
+  } else if (typeof o === 'string') {
     return new globalThis.Date(o);
   } else {
     return fromTimestamp(Timestamp.fromJSON(o));
@@ -751,7 +787,7 @@ function fromJsonTimestamp(o: any): Date {
 }
 
 function isObject(value: any): boolean {
-  return typeof value === "object" && value !== null;
+  return typeof value === 'object' && value !== null;
 }
 
 function isSet(value: any): boolean {

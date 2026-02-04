@@ -140,7 +140,7 @@
 			"username": "dbuser",
 			"password": "hunter2",
 			"database": "no-small-parts",
-			"hostname": "pgdatabase",
+			"hostname": "postgres",
 			"port": 5432,
 			"disableSSL": true
 		},
@@ -148,7 +148,7 @@
 			"username": "dbuser",
 			"password": "hunter2",
 			"database": "no-small-parts",
-			"hostname": "pgdatabase",
+			"hostname": "postgres",
 			"port": 5432,
 			"disableSSL": true
 		},

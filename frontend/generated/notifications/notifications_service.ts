@@ -5,7 +5,7 @@
 // source: notifications/notifications_service.proto
 
 /* eslint-disable */
-import type { CallContext, CallOptions } from "nice-grpc-common";
+import type { CallContext, CallOptions } from 'nice-grpc-common';
 import {
   GetUserNotificationRequest,
   GetUserNotificationResponse,
@@ -13,17 +13,17 @@ import {
   GetUserNotificationsResponse,
   UpdateUserNotificationRequest,
   UpdateUserNotificationResponse,
-} from "./notifications_service_types";
+} from './notifications_service_types';
 
-export const protobufPackage = "notifications";
+export const protobufPackage = 'notifications';
 
 export type UserNotificationsServiceDefinition = typeof UserNotificationsServiceDefinition;
 export const UserNotificationsServiceDefinition = {
-  name: "UserNotificationsService",
-  fullName: "notifications.UserNotificationsService",
+  name: 'UserNotificationsService',
+  fullName: 'notifications.UserNotificationsService',
   methods: {
     getUserNotification: {
-      name: "GetUserNotification",
+      name: 'GetUserNotification',
       requestType: GetUserNotificationRequest,
       requestStream: false,
       responseType: GetUserNotificationResponse,
@@ -31,7 +31,7 @@ export const UserNotificationsServiceDefinition = {
       options: {},
     },
     getUserNotifications: {
-      name: "GetUserNotifications",
+      name: 'GetUserNotifications',
       requestType: GetUserNotificationsRequest,
       requestStream: false,
       responseType: GetUserNotificationsResponse,
@@ -39,7 +39,7 @@ export const UserNotificationsServiceDefinition = {
       options: {},
     },
     updateUserNotification: {
-      name: "UpdateUserNotification",
+      name: 'UpdateUserNotification',
       requestType: UpdateUserNotificationRequest,
       requestStream: false,
       responseType: UpdateUserNotificationResponse,
@@ -52,37 +52,41 @@ export const UserNotificationsServiceDefinition = {
 export interface UserNotificationsServiceImplementation<CallContextExt = {}> {
   getUserNotification(
     request: GetUserNotificationRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<GetUserNotificationResponse>>;
   getUserNotifications(
     request: GetUserNotificationsRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<GetUserNotificationsResponse>>;
   updateUserNotification(
     request: UpdateUserNotificationRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<UpdateUserNotificationResponse>>;
 }
 
 export interface UserNotificationsServiceClient<CallOptionsExt = {}> {
   getUserNotification(
     request: DeepPartial<GetUserNotificationRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<GetUserNotificationResponse>;
   getUserNotifications(
     request: DeepPartial<GetUserNotificationsRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<GetUserNotificationsResponse>;
   updateUserNotification(
     request: DeepPartial<UpdateUserNotificationRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<UpdateUserNotificationResponse>;
 }
 
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 
-export type DeepPartial<T> = T extends Builtin ? T
-  : T extends globalThis.Array<infer U> ? globalThis.Array<DeepPartial<U>>
-  : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>>
-  : T extends {} ? { [K in keyof T]?: DeepPartial<T[K]> }
-  : Partial<T>;
+export type DeepPartial<T> = T extends Builtin
+  ? T
+  : T extends globalThis.Array<infer U>
+    ? globalThis.Array<DeepPartial<U>>
+    : T extends ReadonlyArray<infer U>
+      ? ReadonlyArray<DeepPartial<U>>
+      : T extends {}
+        ? { [K in keyof T]?: DeepPartial<T[K]> }
+        : Partial<T>;

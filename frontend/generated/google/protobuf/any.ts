@@ -5,9 +5,9 @@
 // source: google/protobuf/any.proto
 
 /* eslint-disable */
-import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
+import { BinaryReader, BinaryWriter } from '@bufbuild/protobuf/wire';
 
-export const protobufPackage = "google.protobuf";
+export const protobufPackage = 'google.protobuf';
 
 /**
  * `Any` contains an arbitrary serialized protocol buffer message along with a
@@ -133,12 +133,12 @@ export interface Any {
 }
 
 function createBaseAny(): Any {
-  return { typeUrl: "", value: new Uint8Array(0) };
+  return { typeUrl: '', value: new Uint8Array(0) };
 }
 
 export const Any: MessageFns<Any> = {
   encode(message: Any, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.typeUrl !== "") {
+    if (message.typeUrl !== '') {
       writer.uint32(10).string(message.typeUrl);
     }
     if (message.value.length !== 0) {
@@ -184,15 +184,15 @@ export const Any: MessageFns<Any> = {
       typeUrl: isSet(object.typeUrl)
         ? globalThis.String(object.typeUrl)
         : isSet(object.type_url)
-        ? globalThis.String(object.type_url)
-        : "",
+          ? globalThis.String(object.type_url)
+          : '',
       value: isSet(object.value) ? bytesFromBase64(object.value) : new Uint8Array(0),
     };
   },
 
   toJSON(message: Any): unknown {
     const obj: any = {};
-    if (message.typeUrl !== "") {
+    if (message.typeUrl !== '') {
       obj.typeUrl = message.typeUrl;
     }
     if (message.value.length !== 0) {
@@ -206,7 +206,7 @@ export const Any: MessageFns<Any> = {
   },
   fromPartial(object: DeepPartial<Any>): Any {
     const message = createBaseAny();
-    message.typeUrl = object.typeUrl ?? "";
+    message.typeUrl = object.typeUrl ?? '';
     message.value = object.value ?? new Uint8Array(0);
     return message;
   },
@@ -214,7 +214,7 @@ export const Any: MessageFns<Any> = {
 
 function bytesFromBase64(b64: string): Uint8Array {
   if ((globalThis as any).Buffer) {
-    return Uint8Array.from(globalThis.Buffer.from(b64, "base64"));
+    return Uint8Array.from(globalThis.Buffer.from(b64, 'base64'));
   } else {
     const bin = globalThis.atob(b64);
     const arr = new Uint8Array(bin.length);
@@ -227,23 +227,27 @@ function bytesFromBase64(b64: string): Uint8Array {
 
 function base64FromBytes(arr: Uint8Array): string {
   if ((globalThis as any).Buffer) {
-    return globalThis.Buffer.from(arr).toString("base64");
+    return globalThis.Buffer.from(arr).toString('base64');
   } else {
     const bin: string[] = [];
     arr.forEach((byte) => {
       bin.push(globalThis.String.fromCharCode(byte));
     });
-    return globalThis.btoa(bin.join(""));
+    return globalThis.btoa(bin.join(''));
   }
 }
 
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 
-export type DeepPartial<T> = T extends Builtin ? T
-  : T extends globalThis.Array<infer U> ? globalThis.Array<DeepPartial<U>>
-  : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>>
-  : T extends {} ? { [K in keyof T]?: DeepPartial<T[K]> }
-  : Partial<T>;
+export type DeepPartial<T> = T extends Builtin
+  ? T
+  : T extends globalThis.Array<infer U>
+    ? globalThis.Array<DeepPartial<U>>
+    : T extends ReadonlyArray<infer U>
+      ? ReadonlyArray<DeepPartial<U>>
+      : T extends {}
+        ? { [K in keyof T]?: DeepPartial<T[K]> }
+        : Partial<T>;
 
 function isSet(value: any): boolean {
   return value !== null && value !== undefined;

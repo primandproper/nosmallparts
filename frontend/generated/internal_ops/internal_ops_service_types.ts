@@ -5,10 +5,10 @@
 // source: internal_ops/internal_ops_service_types.proto
 
 /* eslint-disable */
-import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
-import { ResponseDetails } from "../common";
+import { BinaryReader, BinaryWriter } from '@bufbuild/protobuf/wire';
+import { ResponseDetails } from '../common';
 
-export const protobufPackage = "internalops";
+export const protobufPackage = 'internalops';
 
 export interface PublishArbitraryQueueMessageRequest {
   queueName: string;
@@ -21,174 +21,198 @@ export interface PublishArbitraryQueueMessageResponse {
 }
 
 function createBasePublishArbitraryQueueMessageRequest(): PublishArbitraryQueueMessageRequest {
-  return { queueName: "", body: "" };
+  return { queueName: '', body: '' };
 }
 
-export const PublishArbitraryQueueMessageRequest: MessageFns<PublishArbitraryQueueMessageRequest> = {
-  encode(message: PublishArbitraryQueueMessageRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.queueName !== "") {
-      writer.uint32(10).string(message.queueName);
-    }
-    if (message.body !== "") {
-      writer.uint32(18).string(message.body);
-    }
-    return writer;
-  },
-
-  decode(input: BinaryReader | Uint8Array, length?: number): PublishArbitraryQueueMessageRequest {
-    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
-    const end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBasePublishArbitraryQueueMessageRequest();
-    while (reader.pos < end) {
-      const tag = reader.uint32();
-      switch (tag >>> 3) {
-        case 1: {
-          if (tag !== 10) {
-            break;
-          }
-
-          message.queueName = reader.string();
-          continue;
-        }
-        case 2: {
-          if (tag !== 18) {
-            break;
-          }
-
-          message.body = reader.string();
-          continue;
-        }
+export const PublishArbitraryQueueMessageRequest: MessageFns<PublishArbitraryQueueMessageRequest> =
+  {
+    encode(
+      message: PublishArbitraryQueueMessageRequest,
+      writer: BinaryWriter = new BinaryWriter()
+    ): BinaryWriter {
+      if (message.queueName !== '') {
+        writer.uint32(10).string(message.queueName);
       }
-      if ((tag & 7) === 4 || tag === 0) {
-        break;
+      if (message.body !== '') {
+        writer.uint32(18).string(message.body);
       }
-      reader.skip(tag & 7);
-    }
-    return message;
-  },
+      return writer;
+    },
 
-  fromJSON(object: any): PublishArbitraryQueueMessageRequest {
-    return {
-      queueName: isSet(object.queueName)
-        ? globalThis.String(object.queueName)
-        : isSet(object.queue_name)
-        ? globalThis.String(object.queue_name)
-        : "",
-      body: isSet(object.body) ? globalThis.String(object.body) : "",
-    };
-  },
+    decode(input: BinaryReader | Uint8Array, length?: number): PublishArbitraryQueueMessageRequest {
+      const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+      const end = length === undefined ? reader.len : reader.pos + length;
+      const message = createBasePublishArbitraryQueueMessageRequest();
+      while (reader.pos < end) {
+        const tag = reader.uint32();
+        switch (tag >>> 3) {
+          case 1: {
+            if (tag !== 10) {
+              break;
+            }
 
-  toJSON(message: PublishArbitraryQueueMessageRequest): unknown {
-    const obj: any = {};
-    if (message.queueName !== "") {
-      obj.queueName = message.queueName;
-    }
-    if (message.body !== "") {
-      obj.body = message.body;
-    }
-    return obj;
-  },
+            message.queueName = reader.string();
+            continue;
+          }
+          case 2: {
+            if (tag !== 18) {
+              break;
+            }
 
-  create(base?: DeepPartial<PublishArbitraryQueueMessageRequest>): PublishArbitraryQueueMessageRequest {
-    return PublishArbitraryQueueMessageRequest.fromPartial(base ?? {});
-  },
-  fromPartial(object: DeepPartial<PublishArbitraryQueueMessageRequest>): PublishArbitraryQueueMessageRequest {
-    const message = createBasePublishArbitraryQueueMessageRequest();
-    message.queueName = object.queueName ?? "";
-    message.body = object.body ?? "";
-    return message;
-  },
-};
+            message.body = reader.string();
+            continue;
+          }
+        }
+        if ((tag & 7) === 4 || tag === 0) {
+          break;
+        }
+        reader.skip(tag & 7);
+      }
+      return message;
+    },
+
+    fromJSON(object: any): PublishArbitraryQueueMessageRequest {
+      return {
+        queueName: isSet(object.queueName)
+          ? globalThis.String(object.queueName)
+          : isSet(object.queue_name)
+            ? globalThis.String(object.queue_name)
+            : '',
+        body: isSet(object.body) ? globalThis.String(object.body) : '',
+      };
+    },
+
+    toJSON(message: PublishArbitraryQueueMessageRequest): unknown {
+      const obj: any = {};
+      if (message.queueName !== '') {
+        obj.queueName = message.queueName;
+      }
+      if (message.body !== '') {
+        obj.body = message.body;
+      }
+      return obj;
+    },
+
+    create(
+      base?: DeepPartial<PublishArbitraryQueueMessageRequest>
+    ): PublishArbitraryQueueMessageRequest {
+      return PublishArbitraryQueueMessageRequest.fromPartial(base ?? {});
+    },
+    fromPartial(
+      object: DeepPartial<PublishArbitraryQueueMessageRequest>
+    ): PublishArbitraryQueueMessageRequest {
+      const message = createBasePublishArbitraryQueueMessageRequest();
+      message.queueName = object.queueName ?? '';
+      message.body = object.body ?? '';
+      return message;
+    },
+  };
 
 function createBasePublishArbitraryQueueMessageResponse(): PublishArbitraryQueueMessageResponse {
   return { responseDetails: undefined, success: false };
 }
 
-export const PublishArbitraryQueueMessageResponse: MessageFns<PublishArbitraryQueueMessageResponse> = {
-  encode(message: PublishArbitraryQueueMessageResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.responseDetails !== undefined) {
-      ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
-    }
-    if (message.success !== false) {
-      writer.uint32(16).bool(message.success);
-    }
-    return writer;
-  },
-
-  decode(input: BinaryReader | Uint8Array, length?: number): PublishArbitraryQueueMessageResponse {
-    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
-    const end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBasePublishArbitraryQueueMessageResponse();
-    while (reader.pos < end) {
-      const tag = reader.uint32();
-      switch (tag >>> 3) {
-        case 1: {
-          if (tag !== 10) {
-            break;
-          }
-
-          message.responseDetails = ResponseDetails.decode(reader, reader.uint32());
-          continue;
-        }
-        case 2: {
-          if (tag !== 16) {
-            break;
-          }
-
-          message.success = reader.bool();
-          continue;
-        }
+export const PublishArbitraryQueueMessageResponse: MessageFns<PublishArbitraryQueueMessageResponse> =
+  {
+    encode(
+      message: PublishArbitraryQueueMessageResponse,
+      writer: BinaryWriter = new BinaryWriter()
+    ): BinaryWriter {
+      if (message.responseDetails !== undefined) {
+        ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
       }
-      if ((tag & 7) === 4 || tag === 0) {
-        break;
+      if (message.success !== false) {
+        writer.uint32(16).bool(message.success);
       }
-      reader.skip(tag & 7);
-    }
-    return message;
-  },
+      return writer;
+    },
 
-  fromJSON(object: any): PublishArbitraryQueueMessageResponse {
-    return {
-      responseDetails: isSet(object.responseDetails)
-        ? ResponseDetails.fromJSON(object.responseDetails)
-        : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
-      success: isSet(object.success) ? globalThis.Boolean(object.success) : false,
-    };
-  },
+    decode(
+      input: BinaryReader | Uint8Array,
+      length?: number
+    ): PublishArbitraryQueueMessageResponse {
+      const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+      const end = length === undefined ? reader.len : reader.pos + length;
+      const message = createBasePublishArbitraryQueueMessageResponse();
+      while (reader.pos < end) {
+        const tag = reader.uint32();
+        switch (tag >>> 3) {
+          case 1: {
+            if (tag !== 10) {
+              break;
+            }
 
-  toJSON(message: PublishArbitraryQueueMessageResponse): unknown {
-    const obj: any = {};
-    if (message.responseDetails !== undefined) {
-      obj.responseDetails = ResponseDetails.toJSON(message.responseDetails);
-    }
-    if (message.success !== false) {
-      obj.success = message.success;
-    }
-    return obj;
-  },
+            message.responseDetails = ResponseDetails.decode(reader, reader.uint32());
+            continue;
+          }
+          case 2: {
+            if (tag !== 16) {
+              break;
+            }
 
-  create(base?: DeepPartial<PublishArbitraryQueueMessageResponse>): PublishArbitraryQueueMessageResponse {
-    return PublishArbitraryQueueMessageResponse.fromPartial(base ?? {});
-  },
-  fromPartial(object: DeepPartial<PublishArbitraryQueueMessageResponse>): PublishArbitraryQueueMessageResponse {
-    const message = createBasePublishArbitraryQueueMessageResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.success = object.success ?? false;
-    return message;
-  },
-};
+            message.success = reader.bool();
+            continue;
+          }
+        }
+        if ((tag & 7) === 4 || tag === 0) {
+          break;
+        }
+        reader.skip(tag & 7);
+      }
+      return message;
+    },
+
+    fromJSON(object: any): PublishArbitraryQueueMessageResponse {
+      return {
+        responseDetails: isSet(object.responseDetails)
+          ? ResponseDetails.fromJSON(object.responseDetails)
+          : isSet(object.response_details)
+            ? ResponseDetails.fromJSON(object.response_details)
+            : undefined,
+        success: isSet(object.success) ? globalThis.Boolean(object.success) : false,
+      };
+    },
+
+    toJSON(message: PublishArbitraryQueueMessageResponse): unknown {
+      const obj: any = {};
+      if (message.responseDetails !== undefined) {
+        obj.responseDetails = ResponseDetails.toJSON(message.responseDetails);
+      }
+      if (message.success !== false) {
+        obj.success = message.success;
+      }
+      return obj;
+    },
+
+    create(
+      base?: DeepPartial<PublishArbitraryQueueMessageResponse>
+    ): PublishArbitraryQueueMessageResponse {
+      return PublishArbitraryQueueMessageResponse.fromPartial(base ?? {});
+    },
+    fromPartial(
+      object: DeepPartial<PublishArbitraryQueueMessageResponse>
+    ): PublishArbitraryQueueMessageResponse {
+      const message = createBasePublishArbitraryQueueMessageResponse();
+      message.responseDetails =
+        object.responseDetails !== undefined && object.responseDetails !== null
+          ? ResponseDetails.fromPartial(object.responseDetails)
+          : undefined;
+      message.success = object.success ?? false;
+      return message;
+    },
+  };
 
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 
-export type DeepPartial<T> = T extends Builtin ? T
-  : T extends globalThis.Array<infer U> ? globalThis.Array<DeepPartial<U>>
-  : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>>
-  : T extends {} ? { [K in keyof T]?: DeepPartial<T[K]> }
-  : Partial<T>;
+export type DeepPartial<T> = T extends Builtin
+  ? T
+  : T extends globalThis.Array<infer U>
+    ? globalThis.Array<DeepPartial<U>>
+    : T extends ReadonlyArray<infer U>
+      ? ReadonlyArray<DeepPartial<U>>
+      : T extends {}
+        ? { [K in keyof T]?: DeepPartial<T[K]> }
+        : Partial<T>;
 
 function isSet(value: any): boolean {
   return value !== null && value !== undefined;

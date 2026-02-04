@@ -5,13 +5,13 @@
 // source: auth/auth_service_types.proto
 
 /* eslint-disable */
-import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
-import { ResponseDetails } from "../common";
-import { Timestamp } from "../google/protobuf/timestamp";
-import { Account, User } from "../identity/identity_messages";
-import { UserLoginInput } from "./auth_messages";
+import { BinaryReader, BinaryWriter } from '@bufbuild/protobuf/wire';
+import { ResponseDetails } from '../common';
+import { Timestamp } from '../google/protobuf/timestamp';
+import { Account, User } from '../identity/identity_messages';
+import { UserLoginInput } from './auth_messages';
 
-export const protobufPackage = "auth";
+export const protobufPackage = 'auth';
 
 export interface LoginForTokenRequest {
   input: UserLoginInput | undefined;
@@ -44,16 +44,14 @@ export interface ExchangeTokenResponse {
   expiresUtc: Date | undefined;
 }
 
-export interface GetActiveAccountRequest {
-}
+export interface GetActiveAccountRequest {}
 
 export interface GetActiveAccountResponse {
   responseDetails: ResponseDetails | undefined;
   result: Account | undefined;
 }
 
-export interface GetAuthStatusRequest {
-}
+export interface GetAuthStatusRequest {}
 
 export interface GetAuthStatusResponse {
   responseDetails: ResponseDetails | undefined;
@@ -196,8 +194,7 @@ export interface UsernameReminderRequestInput {
   emailAddress: string;
 }
 
-export interface GetSelfRequest {
-}
+export interface GetSelfRequest {}
 
 export interface GetSelfResponse {
   responseDetails: ResponseDetails | undefined;
@@ -257,9 +254,10 @@ export const LoginForTokenRequest: MessageFns<LoginForTokenRequest> = {
   },
   fromPartial(object: DeepPartial<LoginForTokenRequest>): LoginForTokenRequest {
     const message = createBaseLoginForTokenRequest();
-    message.input = (object.input !== undefined && object.input !== null)
-      ? UserLoginInput.fromPartial(object.input)
-      : undefined;
+    message.input =
+      object.input !== undefined && object.input !== null
+        ? UserLoginInput.fromPartial(object.input)
+        : undefined;
     return message;
   },
 };
@@ -316,8 +314,8 @@ export const LoginForTokenResponse: MessageFns<LoginForTokenResponse> = {
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       result: isSet(object.result) ? TokenResponse.fromJSON(object.result) : undefined,
     };
   },
@@ -338,12 +336,14 @@ export const LoginForTokenResponse: MessageFns<LoginForTokenResponse> = {
   },
   fromPartial(object: DeepPartial<LoginForTokenResponse>): LoginForTokenResponse {
     const message = createBaseLoginForTokenResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.result = (object.result !== undefined && object.result !== null)
-      ? TokenResponse.fromPartial(object.result)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
+    message.result =
+      object.result !== undefined && object.result !== null
+        ? TokenResponse.fromPartial(object.result)
+        : undefined;
     return message;
   },
 };
@@ -353,7 +353,10 @@ function createBaseAdminLoginForTokenRequest(): AdminLoginForTokenRequest {
 }
 
 export const AdminLoginForTokenRequest: MessageFns<AdminLoginForTokenRequest> = {
-  encode(message: AdminLoginForTokenRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: AdminLoginForTokenRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.input !== undefined) {
       UserLoginInput.encode(message.input, writer.uint32(10).fork()).join();
     }
@@ -401,9 +404,10 @@ export const AdminLoginForTokenRequest: MessageFns<AdminLoginForTokenRequest> = 
   },
   fromPartial(object: DeepPartial<AdminLoginForTokenRequest>): AdminLoginForTokenRequest {
     const message = createBaseAdminLoginForTokenRequest();
-    message.input = (object.input !== undefined && object.input !== null)
-      ? UserLoginInput.fromPartial(object.input)
-      : undefined;
+    message.input =
+      object.input !== undefined && object.input !== null
+        ? UserLoginInput.fromPartial(object.input)
+        : undefined;
     return message;
   },
 };
@@ -413,7 +417,10 @@ function createBaseAdminLoginForTokenResponse(): AdminLoginForTokenResponse {
 }
 
 export const AdminLoginForTokenResponse: MessageFns<AdminLoginForTokenResponse> = {
-  encode(message: AdminLoginForTokenResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: AdminLoginForTokenResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -460,8 +467,8 @@ export const AdminLoginForTokenResponse: MessageFns<AdminLoginForTokenResponse> 
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       result: isSet(object.result) ? TokenResponse.fromJSON(object.result) : undefined,
     };
   },
@@ -482,23 +489,25 @@ export const AdminLoginForTokenResponse: MessageFns<AdminLoginForTokenResponse> 
   },
   fromPartial(object: DeepPartial<AdminLoginForTokenResponse>): AdminLoginForTokenResponse {
     const message = createBaseAdminLoginForTokenResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.result = (object.result !== undefined && object.result !== null)
-      ? TokenResponse.fromPartial(object.result)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
+    message.result =
+      object.result !== undefined && object.result !== null
+        ? TokenResponse.fromPartial(object.result)
+        : undefined;
     return message;
   },
 };
 
 function createBaseExchangeTokenRequest(): ExchangeTokenRequest {
-  return { refreshToken: "" };
+  return { refreshToken: '' };
 }
 
 export const ExchangeTokenRequest: MessageFns<ExchangeTokenRequest> = {
   encode(message: ExchangeTokenRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.refreshToken !== "") {
+    if (message.refreshToken !== '') {
       writer.uint32(10).string(message.refreshToken);
     }
     return writer;
@@ -533,14 +542,14 @@ export const ExchangeTokenRequest: MessageFns<ExchangeTokenRequest> = {
       refreshToken: isSet(object.refreshToken)
         ? globalThis.String(object.refreshToken)
         : isSet(object.refresh_token)
-        ? globalThis.String(object.refresh_token)
-        : "",
+          ? globalThis.String(object.refresh_token)
+          : '',
     };
   },
 
   toJSON(message: ExchangeTokenRequest): unknown {
     const obj: any = {};
-    if (message.refreshToken !== "") {
+    if (message.refreshToken !== '') {
       obj.refreshToken = message.refreshToken;
     }
     return obj;
@@ -551,7 +560,7 @@ export const ExchangeTokenRequest: MessageFns<ExchangeTokenRequest> = {
   },
   fromPartial(object: DeepPartial<ExchangeTokenRequest>): ExchangeTokenRequest {
     const message = createBaseExchangeTokenRequest();
-    message.refreshToken = object.refreshToken ?? "";
+    message.refreshToken = object.refreshToken ?? '';
     return message;
   },
 };
@@ -559,10 +568,10 @@ export const ExchangeTokenRequest: MessageFns<ExchangeTokenRequest> = {
 function createBaseExchangeTokenResponse(): ExchangeTokenResponse {
   return {
     responseDetails: undefined,
-    userId: "",
-    accountId: "",
-    accessToken: "",
-    refreshToken: "",
+    userId: '',
+    accountId: '',
+    accessToken: '',
+    refreshToken: '',
     expiresUtc: undefined,
   };
 }
@@ -572,16 +581,16 @@ export const ExchangeTokenResponse: MessageFns<ExchangeTokenResponse> = {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
-    if (message.userId !== "") {
+    if (message.userId !== '') {
       writer.uint32(18).string(message.userId);
     }
-    if (message.accountId !== "") {
+    if (message.accountId !== '') {
       writer.uint32(26).string(message.accountId);
     }
-    if (message.accessToken !== "") {
+    if (message.accessToken !== '') {
       writer.uint32(34).string(message.accessToken);
     }
-    if (message.refreshToken !== "") {
+    if (message.refreshToken !== '') {
       writer.uint32(42).string(message.refreshToken);
     }
     if (message.expiresUtc !== undefined) {
@@ -659,33 +668,33 @@ export const ExchangeTokenResponse: MessageFns<ExchangeTokenResponse> = {
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       userId: isSet(object.userId)
         ? globalThis.String(object.userId)
         : isSet(object.user_id)
-        ? globalThis.String(object.user_id)
-        : "",
+          ? globalThis.String(object.user_id)
+          : '',
       accountId: isSet(object.accountId)
         ? globalThis.String(object.accountId)
         : isSet(object.account_id)
-        ? globalThis.String(object.account_id)
-        : "",
+          ? globalThis.String(object.account_id)
+          : '',
       accessToken: isSet(object.accessToken)
         ? globalThis.String(object.accessToken)
         : isSet(object.access_token)
-        ? globalThis.String(object.access_token)
-        : "",
+          ? globalThis.String(object.access_token)
+          : '',
       refreshToken: isSet(object.refreshToken)
         ? globalThis.String(object.refreshToken)
         : isSet(object.refresh_token)
-        ? globalThis.String(object.refresh_token)
-        : "",
+          ? globalThis.String(object.refresh_token)
+          : '',
       expiresUtc: isSet(object.expiresUtc)
         ? fromJsonTimestamp(object.expiresUtc)
         : isSet(object.expires_utc)
-        ? fromJsonTimestamp(object.expires_utc)
-        : undefined,
+          ? fromJsonTimestamp(object.expires_utc)
+          : undefined,
     };
   },
 
@@ -694,16 +703,16 @@ export const ExchangeTokenResponse: MessageFns<ExchangeTokenResponse> = {
     if (message.responseDetails !== undefined) {
       obj.responseDetails = ResponseDetails.toJSON(message.responseDetails);
     }
-    if (message.userId !== "") {
+    if (message.userId !== '') {
       obj.userId = message.userId;
     }
-    if (message.accountId !== "") {
+    if (message.accountId !== '') {
       obj.accountId = message.accountId;
     }
-    if (message.accessToken !== "") {
+    if (message.accessToken !== '') {
       obj.accessToken = message.accessToken;
     }
-    if (message.refreshToken !== "") {
+    if (message.refreshToken !== '') {
       obj.refreshToken = message.refreshToken;
     }
     if (message.expiresUtc !== undefined) {
@@ -717,13 +726,14 @@ export const ExchangeTokenResponse: MessageFns<ExchangeTokenResponse> = {
   },
   fromPartial(object: DeepPartial<ExchangeTokenResponse>): ExchangeTokenResponse {
     const message = createBaseExchangeTokenResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.userId = object.userId ?? "";
-    message.accountId = object.accountId ?? "";
-    message.accessToken = object.accessToken ?? "";
-    message.refreshToken = object.refreshToken ?? "";
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
+    message.userId = object.userId ?? '';
+    message.accountId = object.accountId ?? '';
+    message.accessToken = object.accessToken ?? '';
+    message.refreshToken = object.refreshToken ?? '';
     message.expiresUtc = object.expiresUtc ?? undefined;
     return message;
   },
@@ -777,7 +787,10 @@ function createBaseGetActiveAccountResponse(): GetActiveAccountResponse {
 }
 
 export const GetActiveAccountResponse: MessageFns<GetActiveAccountResponse> = {
-  encode(message: GetActiveAccountResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: GetActiveAccountResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -824,8 +837,8 @@ export const GetActiveAccountResponse: MessageFns<GetActiveAccountResponse> = {
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       result: isSet(object.result) ? Account.fromJSON(object.result) : undefined,
     };
   },
@@ -846,12 +859,14 @@ export const GetActiveAccountResponse: MessageFns<GetActiveAccountResponse> = {
   },
   fromPartial(object: DeepPartial<GetActiveAccountResponse>): GetActiveAccountResponse {
     const message = createBaseGetActiveAccountResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.result = (object.result !== undefined && object.result !== null)
-      ? Account.fromPartial(object.result)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
+    message.result =
+      object.result !== undefined && object.result !== null
+        ? Account.fromPartial(object.result)
+        : undefined;
     return message;
   },
 };
@@ -900,7 +915,13 @@ export const GetAuthStatusRequest: MessageFns<GetAuthStatusRequest> = {
 };
 
 function createBaseGetAuthStatusResponse(): GetAuthStatusResponse {
-  return { responseDetails: undefined, userId: "", accountStatus: "", accountStatusExplanation: "", activeAccount: "" };
+  return {
+    responseDetails: undefined,
+    userId: '',
+    accountStatus: '',
+    accountStatusExplanation: '',
+    activeAccount: '',
+  };
 }
 
 export const GetAuthStatusResponse: MessageFns<GetAuthStatusResponse> = {
@@ -908,16 +929,16 @@ export const GetAuthStatusResponse: MessageFns<GetAuthStatusResponse> = {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
-    if (message.userId !== "") {
+    if (message.userId !== '') {
       writer.uint32(18).string(message.userId);
     }
-    if (message.accountStatus !== "") {
+    if (message.accountStatus !== '') {
       writer.uint32(26).string(message.accountStatus);
     }
-    if (message.accountStatusExplanation !== "") {
+    if (message.accountStatusExplanation !== '') {
       writer.uint32(34).string(message.accountStatusExplanation);
     }
-    if (message.activeAccount !== "") {
+    if (message.activeAccount !== '') {
       writer.uint32(42).string(message.activeAccount);
     }
     return writer;
@@ -984,28 +1005,28 @@ export const GetAuthStatusResponse: MessageFns<GetAuthStatusResponse> = {
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       userId: isSet(object.userId)
         ? globalThis.String(object.userId)
         : isSet(object.user_id)
-        ? globalThis.String(object.user_id)
-        : "",
+          ? globalThis.String(object.user_id)
+          : '',
       accountStatus: isSet(object.accountStatus)
         ? globalThis.String(object.accountStatus)
         : isSet(object.account_status)
-        ? globalThis.String(object.account_status)
-        : "",
+          ? globalThis.String(object.account_status)
+          : '',
       accountStatusExplanation: isSet(object.accountStatusExplanation)
         ? globalThis.String(object.accountStatusExplanation)
         : isSet(object.account_status_explanation)
-        ? globalThis.String(object.account_status_explanation)
-        : "",
+          ? globalThis.String(object.account_status_explanation)
+          : '',
       activeAccount: isSet(object.activeAccount)
         ? globalThis.String(object.activeAccount)
         : isSet(object.active_account)
-        ? globalThis.String(object.active_account)
-        : "",
+          ? globalThis.String(object.active_account)
+          : '',
     };
   },
 
@@ -1014,16 +1035,16 @@ export const GetAuthStatusResponse: MessageFns<GetAuthStatusResponse> = {
     if (message.responseDetails !== undefined) {
       obj.responseDetails = ResponseDetails.toJSON(message.responseDetails);
     }
-    if (message.userId !== "") {
+    if (message.userId !== '') {
       obj.userId = message.userId;
     }
-    if (message.accountStatus !== "") {
+    if (message.accountStatus !== '') {
       obj.accountStatus = message.accountStatus;
     }
-    if (message.accountStatusExplanation !== "") {
+    if (message.accountStatusExplanation !== '') {
       obj.accountStatusExplanation = message.accountStatusExplanation;
     }
-    if (message.activeAccount !== "") {
+    if (message.activeAccount !== '') {
       obj.activeAccount = message.activeAccount;
     }
     return obj;
@@ -1034,27 +1055,31 @@ export const GetAuthStatusResponse: MessageFns<GetAuthStatusResponse> = {
   },
   fromPartial(object: DeepPartial<GetAuthStatusResponse>): GetAuthStatusResponse {
     const message = createBaseGetAuthStatusResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.userId = object.userId ?? "";
-    message.accountStatus = object.accountStatus ?? "";
-    message.accountStatusExplanation = object.accountStatusExplanation ?? "";
-    message.activeAccount = object.activeAccount ?? "";
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
+    message.userId = object.userId ?? '';
+    message.accountStatus = object.accountStatus ?? '';
+    message.accountStatusExplanation = object.accountStatusExplanation ?? '';
+    message.activeAccount = object.activeAccount ?? '';
     return message;
   },
 };
 
 function createBaseRedeemPasswordResetTokenRequest(): RedeemPasswordResetTokenRequest {
-  return { token: "", newPassword: "" };
+  return { token: '', newPassword: '' };
 }
 
 export const RedeemPasswordResetTokenRequest: MessageFns<RedeemPasswordResetTokenRequest> = {
-  encode(message: RedeemPasswordResetTokenRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.token !== "") {
+  encode(
+    message: RedeemPasswordResetTokenRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.token !== '') {
       writer.uint32(10).string(message.token);
     }
-    if (message.newPassword !== "") {
+    if (message.newPassword !== '') {
       writer.uint32(18).string(message.newPassword);
     }
     return writer;
@@ -1094,21 +1119,21 @@ export const RedeemPasswordResetTokenRequest: MessageFns<RedeemPasswordResetToke
 
   fromJSON(object: any): RedeemPasswordResetTokenRequest {
     return {
-      token: isSet(object.token) ? globalThis.String(object.token) : "",
+      token: isSet(object.token) ? globalThis.String(object.token) : '',
       newPassword: isSet(object.newPassword)
         ? globalThis.String(object.newPassword)
         : isSet(object.new_password)
-        ? globalThis.String(object.new_password)
-        : "",
+          ? globalThis.String(object.new_password)
+          : '',
     };
   },
 
   toJSON(message: RedeemPasswordResetTokenRequest): unknown {
     const obj: any = {};
-    if (message.token !== "") {
+    if (message.token !== '') {
       obj.token = message.token;
     }
-    if (message.newPassword !== "") {
+    if (message.newPassword !== '') {
       obj.newPassword = message.newPassword;
     }
     return obj;
@@ -1117,10 +1142,12 @@ export const RedeemPasswordResetTokenRequest: MessageFns<RedeemPasswordResetToke
   create(base?: DeepPartial<RedeemPasswordResetTokenRequest>): RedeemPasswordResetTokenRequest {
     return RedeemPasswordResetTokenRequest.fromPartial(base ?? {});
   },
-  fromPartial(object: DeepPartial<RedeemPasswordResetTokenRequest>): RedeemPasswordResetTokenRequest {
+  fromPartial(
+    object: DeepPartial<RedeemPasswordResetTokenRequest>
+  ): RedeemPasswordResetTokenRequest {
     const message = createBaseRedeemPasswordResetTokenRequest();
-    message.token = object.token ?? "";
-    message.newPassword = object.newPassword ?? "";
+    message.token = object.token ?? '';
+    message.newPassword = object.newPassword ?? '';
     return message;
   },
 };
@@ -1130,7 +1157,10 @@ function createBaseRedeemPasswordResetTokenResponse(): RedeemPasswordResetTokenR
 }
 
 export const RedeemPasswordResetTokenResponse: MessageFns<RedeemPasswordResetTokenResponse> = {
-  encode(message: RedeemPasswordResetTokenResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: RedeemPasswordResetTokenResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -1166,8 +1196,8 @@ export const RedeemPasswordResetTokenResponse: MessageFns<RedeemPasswordResetTok
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
     };
   },
 
@@ -1182,25 +1212,31 @@ export const RedeemPasswordResetTokenResponse: MessageFns<RedeemPasswordResetTok
   create(base?: DeepPartial<RedeemPasswordResetTokenResponse>): RedeemPasswordResetTokenResponse {
     return RedeemPasswordResetTokenResponse.fromPartial(base ?? {});
   },
-  fromPartial(object: DeepPartial<RedeemPasswordResetTokenResponse>): RedeemPasswordResetTokenResponse {
+  fromPartial(
+    object: DeepPartial<RedeemPasswordResetTokenResponse>
+  ): RedeemPasswordResetTokenResponse {
     const message = createBaseRedeemPasswordResetTokenResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
     return message;
   },
 };
 
 function createBaseRefreshTOTPSecretRequest(): RefreshTOTPSecretRequest {
-  return { currentPassword: "", totpToken: "" };
+  return { currentPassword: '', totpToken: '' };
 }
 
 export const RefreshTOTPSecretRequest: MessageFns<RefreshTOTPSecretRequest> = {
-  encode(message: RefreshTOTPSecretRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.currentPassword !== "") {
+  encode(
+    message: RefreshTOTPSecretRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.currentPassword !== '') {
       writer.uint32(10).string(message.currentPassword);
     }
-    if (message.totpToken !== "") {
+    if (message.totpToken !== '') {
       writer.uint32(18).string(message.totpToken);
     }
     return writer;
@@ -1243,22 +1279,22 @@ export const RefreshTOTPSecretRequest: MessageFns<RefreshTOTPSecretRequest> = {
       currentPassword: isSet(object.currentPassword)
         ? globalThis.String(object.currentPassword)
         : isSet(object.current_password)
-        ? globalThis.String(object.current_password)
-        : "",
+          ? globalThis.String(object.current_password)
+          : '',
       totpToken: isSet(object.totpToken)
         ? globalThis.String(object.totpToken)
         : isSet(object.totp_token)
-        ? globalThis.String(object.totp_token)
-        : "",
+          ? globalThis.String(object.totp_token)
+          : '',
     };
   },
 
   toJSON(message: RefreshTOTPSecretRequest): unknown {
     const obj: any = {};
-    if (message.currentPassword !== "") {
+    if (message.currentPassword !== '') {
       obj.currentPassword = message.currentPassword;
     }
-    if (message.totpToken !== "") {
+    if (message.totpToken !== '') {
       obj.totpToken = message.totpToken;
     }
     return obj;
@@ -1269,8 +1305,8 @@ export const RefreshTOTPSecretRequest: MessageFns<RefreshTOTPSecretRequest> = {
   },
   fromPartial(object: DeepPartial<RefreshTOTPSecretRequest>): RefreshTOTPSecretRequest {
     const message = createBaseRefreshTOTPSecretRequest();
-    message.currentPassword = object.currentPassword ?? "";
-    message.totpToken = object.totpToken ?? "";
+    message.currentPassword = object.currentPassword ?? '';
+    message.totpToken = object.totpToken ?? '';
     return message;
   },
 };
@@ -1280,7 +1316,10 @@ function createBaseRefreshTOTPSecretResponse(): RefreshTOTPSecretResponse {
 }
 
 export const RefreshTOTPSecretResponse: MessageFns<RefreshTOTPSecretResponse> = {
-  encode(message: RefreshTOTPSecretResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: RefreshTOTPSecretResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -1327,8 +1366,8 @@ export const RefreshTOTPSecretResponse: MessageFns<RefreshTOTPSecretResponse> = 
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       result: isSet(object.result) ? TOTPSecretRefreshResponse.fromJSON(object.result) : undefined,
     };
   },
@@ -1349,169 +1388,197 @@ export const RefreshTOTPSecretResponse: MessageFns<RefreshTOTPSecretResponse> = 
   },
   fromPartial(object: DeepPartial<RefreshTOTPSecretResponse>): RefreshTOTPSecretResponse {
     const message = createBaseRefreshTOTPSecretResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.result = (object.result !== undefined && object.result !== null)
-      ? TOTPSecretRefreshResponse.fromPartial(object.result)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
+    message.result =
+      object.result !== undefined && object.result !== null
+        ? TOTPSecretRefreshResponse.fromPartial(object.result)
+        : undefined;
     return message;
   },
 };
 
 function createBaseRequestEmailVerificationEmailRequest(): RequestEmailVerificationEmailRequest {
-  return { emailAddress: "" };
+  return { emailAddress: '' };
 }
 
-export const RequestEmailVerificationEmailRequest: MessageFns<RequestEmailVerificationEmailRequest> = {
-  encode(message: RequestEmailVerificationEmailRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.emailAddress !== "") {
-      writer.uint32(10).string(message.emailAddress);
-    }
-    return writer;
-  },
+export const RequestEmailVerificationEmailRequest: MessageFns<RequestEmailVerificationEmailRequest> =
+  {
+    encode(
+      message: RequestEmailVerificationEmailRequest,
+      writer: BinaryWriter = new BinaryWriter()
+    ): BinaryWriter {
+      if (message.emailAddress !== '') {
+        writer.uint32(10).string(message.emailAddress);
+      }
+      return writer;
+    },
 
-  decode(input: BinaryReader | Uint8Array, length?: number): RequestEmailVerificationEmailRequest {
-    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
-    const end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseRequestEmailVerificationEmailRequest();
-    while (reader.pos < end) {
-      const tag = reader.uint32();
-      switch (tag >>> 3) {
-        case 1: {
-          if (tag !== 10) {
-            break;
+    decode(
+      input: BinaryReader | Uint8Array,
+      length?: number
+    ): RequestEmailVerificationEmailRequest {
+      const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+      const end = length === undefined ? reader.len : reader.pos + length;
+      const message = createBaseRequestEmailVerificationEmailRequest();
+      while (reader.pos < end) {
+        const tag = reader.uint32();
+        switch (tag >>> 3) {
+          case 1: {
+            if (tag !== 10) {
+              break;
+            }
+
+            message.emailAddress = reader.string();
+            continue;
           }
-
-          message.emailAddress = reader.string();
-          continue;
         }
+        if ((tag & 7) === 4 || tag === 0) {
+          break;
+        }
+        reader.skip(tag & 7);
       }
-      if ((tag & 7) === 4 || tag === 0) {
-        break;
+      return message;
+    },
+
+    fromJSON(object: any): RequestEmailVerificationEmailRequest {
+      return {
+        emailAddress: isSet(object.emailAddress)
+          ? globalThis.String(object.emailAddress)
+          : isSet(object.email_address)
+            ? globalThis.String(object.email_address)
+            : '',
+      };
+    },
+
+    toJSON(message: RequestEmailVerificationEmailRequest): unknown {
+      const obj: any = {};
+      if (message.emailAddress !== '') {
+        obj.emailAddress = message.emailAddress;
       }
-      reader.skip(tag & 7);
-    }
-    return message;
-  },
+      return obj;
+    },
 
-  fromJSON(object: any): RequestEmailVerificationEmailRequest {
-    return {
-      emailAddress: isSet(object.emailAddress)
-        ? globalThis.String(object.emailAddress)
-        : isSet(object.email_address)
-        ? globalThis.String(object.email_address)
-        : "",
-    };
-  },
-
-  toJSON(message: RequestEmailVerificationEmailRequest): unknown {
-    const obj: any = {};
-    if (message.emailAddress !== "") {
-      obj.emailAddress = message.emailAddress;
-    }
-    return obj;
-  },
-
-  create(base?: DeepPartial<RequestEmailVerificationEmailRequest>): RequestEmailVerificationEmailRequest {
-    return RequestEmailVerificationEmailRequest.fromPartial(base ?? {});
-  },
-  fromPartial(object: DeepPartial<RequestEmailVerificationEmailRequest>): RequestEmailVerificationEmailRequest {
-    const message = createBaseRequestEmailVerificationEmailRequest();
-    message.emailAddress = object.emailAddress ?? "";
-    return message;
-  },
-};
+    create(
+      base?: DeepPartial<RequestEmailVerificationEmailRequest>
+    ): RequestEmailVerificationEmailRequest {
+      return RequestEmailVerificationEmailRequest.fromPartial(base ?? {});
+    },
+    fromPartial(
+      object: DeepPartial<RequestEmailVerificationEmailRequest>
+    ): RequestEmailVerificationEmailRequest {
+      const message = createBaseRequestEmailVerificationEmailRequest();
+      message.emailAddress = object.emailAddress ?? '';
+      return message;
+    },
+  };
 
 function createBaseRequestEmailVerificationEmailResponse(): RequestEmailVerificationEmailResponse {
   return { responseDetails: undefined, submitted: false };
 }
 
-export const RequestEmailVerificationEmailResponse: MessageFns<RequestEmailVerificationEmailResponse> = {
-  encode(message: RequestEmailVerificationEmailResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.responseDetails !== undefined) {
-      ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
-    }
-    if (message.submitted !== false) {
-      writer.uint32(16).bool(message.submitted);
-    }
-    return writer;
-  },
-
-  decode(input: BinaryReader | Uint8Array, length?: number): RequestEmailVerificationEmailResponse {
-    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
-    const end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseRequestEmailVerificationEmailResponse();
-    while (reader.pos < end) {
-      const tag = reader.uint32();
-      switch (tag >>> 3) {
-        case 1: {
-          if (tag !== 10) {
-            break;
-          }
-
-          message.responseDetails = ResponseDetails.decode(reader, reader.uint32());
-          continue;
-        }
-        case 2: {
-          if (tag !== 16) {
-            break;
-          }
-
-          message.submitted = reader.bool();
-          continue;
-        }
+export const RequestEmailVerificationEmailResponse: MessageFns<RequestEmailVerificationEmailResponse> =
+  {
+    encode(
+      message: RequestEmailVerificationEmailResponse,
+      writer: BinaryWriter = new BinaryWriter()
+    ): BinaryWriter {
+      if (message.responseDetails !== undefined) {
+        ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
       }
-      if ((tag & 7) === 4 || tag === 0) {
-        break;
+      if (message.submitted !== false) {
+        writer.uint32(16).bool(message.submitted);
       }
-      reader.skip(tag & 7);
-    }
-    return message;
-  },
+      return writer;
+    },
 
-  fromJSON(object: any): RequestEmailVerificationEmailResponse {
-    return {
-      responseDetails: isSet(object.responseDetails)
-        ? ResponseDetails.fromJSON(object.responseDetails)
-        : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
-      submitted: isSet(object.submitted) ? globalThis.Boolean(object.submitted) : false,
-    };
-  },
+    decode(
+      input: BinaryReader | Uint8Array,
+      length?: number
+    ): RequestEmailVerificationEmailResponse {
+      const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+      const end = length === undefined ? reader.len : reader.pos + length;
+      const message = createBaseRequestEmailVerificationEmailResponse();
+      while (reader.pos < end) {
+        const tag = reader.uint32();
+        switch (tag >>> 3) {
+          case 1: {
+            if (tag !== 10) {
+              break;
+            }
 
-  toJSON(message: RequestEmailVerificationEmailResponse): unknown {
-    const obj: any = {};
-    if (message.responseDetails !== undefined) {
-      obj.responseDetails = ResponseDetails.toJSON(message.responseDetails);
-    }
-    if (message.submitted !== false) {
-      obj.submitted = message.submitted;
-    }
-    return obj;
-  },
+            message.responseDetails = ResponseDetails.decode(reader, reader.uint32());
+            continue;
+          }
+          case 2: {
+            if (tag !== 16) {
+              break;
+            }
 
-  create(base?: DeepPartial<RequestEmailVerificationEmailResponse>): RequestEmailVerificationEmailResponse {
-    return RequestEmailVerificationEmailResponse.fromPartial(base ?? {});
-  },
-  fromPartial(object: DeepPartial<RequestEmailVerificationEmailResponse>): RequestEmailVerificationEmailResponse {
-    const message = createBaseRequestEmailVerificationEmailResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.submitted = object.submitted ?? false;
-    return message;
-  },
-};
+            message.submitted = reader.bool();
+            continue;
+          }
+        }
+        if ((tag & 7) === 4 || tag === 0) {
+          break;
+        }
+        reader.skip(tag & 7);
+      }
+      return message;
+    },
+
+    fromJSON(object: any): RequestEmailVerificationEmailResponse {
+      return {
+        responseDetails: isSet(object.responseDetails)
+          ? ResponseDetails.fromJSON(object.responseDetails)
+          : isSet(object.response_details)
+            ? ResponseDetails.fromJSON(object.response_details)
+            : undefined,
+        submitted: isSet(object.submitted) ? globalThis.Boolean(object.submitted) : false,
+      };
+    },
+
+    toJSON(message: RequestEmailVerificationEmailResponse): unknown {
+      const obj: any = {};
+      if (message.responseDetails !== undefined) {
+        obj.responseDetails = ResponseDetails.toJSON(message.responseDetails);
+      }
+      if (message.submitted !== false) {
+        obj.submitted = message.submitted;
+      }
+      return obj;
+    },
+
+    create(
+      base?: DeepPartial<RequestEmailVerificationEmailResponse>
+    ): RequestEmailVerificationEmailResponse {
+      return RequestEmailVerificationEmailResponse.fromPartial(base ?? {});
+    },
+    fromPartial(
+      object: DeepPartial<RequestEmailVerificationEmailResponse>
+    ): RequestEmailVerificationEmailResponse {
+      const message = createBaseRequestEmailVerificationEmailResponse();
+      message.responseDetails =
+        object.responseDetails !== undefined && object.responseDetails !== null
+          ? ResponseDetails.fromPartial(object.responseDetails)
+          : undefined;
+      message.submitted = object.submitted ?? false;
+      return message;
+    },
+  };
 
 function createBaseRequestPasswordResetTokenRequest(): RequestPasswordResetTokenRequest {
-  return { emailAddress: "" };
+  return { emailAddress: '' };
 }
 
 export const RequestPasswordResetTokenRequest: MessageFns<RequestPasswordResetTokenRequest> = {
-  encode(message: RequestPasswordResetTokenRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.emailAddress !== "") {
+  encode(
+    message: RequestPasswordResetTokenRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.emailAddress !== '') {
       writer.uint32(10).string(message.emailAddress);
     }
     return writer;
@@ -1546,14 +1613,14 @@ export const RequestPasswordResetTokenRequest: MessageFns<RequestPasswordResetTo
       emailAddress: isSet(object.emailAddress)
         ? globalThis.String(object.emailAddress)
         : isSet(object.email_address)
-        ? globalThis.String(object.email_address)
-        : "",
+          ? globalThis.String(object.email_address)
+          : '',
     };
   },
 
   toJSON(message: RequestPasswordResetTokenRequest): unknown {
     const obj: any = {};
-    if (message.emailAddress !== "") {
+    if (message.emailAddress !== '') {
       obj.emailAddress = message.emailAddress;
     }
     return obj;
@@ -1562,9 +1629,11 @@ export const RequestPasswordResetTokenRequest: MessageFns<RequestPasswordResetTo
   create(base?: DeepPartial<RequestPasswordResetTokenRequest>): RequestPasswordResetTokenRequest {
     return RequestPasswordResetTokenRequest.fromPartial(base ?? {});
   },
-  fromPartial(object: DeepPartial<RequestPasswordResetTokenRequest>): RequestPasswordResetTokenRequest {
+  fromPartial(
+    object: DeepPartial<RequestPasswordResetTokenRequest>
+  ): RequestPasswordResetTokenRequest {
     const message = createBaseRequestPasswordResetTokenRequest();
-    message.emailAddress = object.emailAddress ?? "";
+    message.emailAddress = object.emailAddress ?? '';
     return message;
   },
 };
@@ -1574,7 +1643,10 @@ function createBaseRequestPasswordResetTokenResponse(): RequestPasswordResetToke
 }
 
 export const RequestPasswordResetTokenResponse: MessageFns<RequestPasswordResetTokenResponse> = {
-  encode(message: RequestPasswordResetTokenResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: RequestPasswordResetTokenResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -1621,8 +1693,8 @@ export const RequestPasswordResetTokenResponse: MessageFns<RequestPasswordResetT
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       accepted: isSet(object.accepted) ? globalThis.Boolean(object.accepted) : false,
     };
   },
@@ -1641,23 +1713,29 @@ export const RequestPasswordResetTokenResponse: MessageFns<RequestPasswordResetT
   create(base?: DeepPartial<RequestPasswordResetTokenResponse>): RequestPasswordResetTokenResponse {
     return RequestPasswordResetTokenResponse.fromPartial(base ?? {});
   },
-  fromPartial(object: DeepPartial<RequestPasswordResetTokenResponse>): RequestPasswordResetTokenResponse {
+  fromPartial(
+    object: DeepPartial<RequestPasswordResetTokenResponse>
+  ): RequestPasswordResetTokenResponse {
     const message = createBaseRequestPasswordResetTokenResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
     message.accepted = object.accepted ?? false;
     return message;
   },
 };
 
 function createBaseRequestUsernameReminderRequest(): RequestUsernameReminderRequest {
-  return { emailAddress: "" };
+  return { emailAddress: '' };
 }
 
 export const RequestUsernameReminderRequest: MessageFns<RequestUsernameReminderRequest> = {
-  encode(message: RequestUsernameReminderRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.emailAddress !== "") {
+  encode(
+    message: RequestUsernameReminderRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.emailAddress !== '') {
       writer.uint32(10).string(message.emailAddress);
     }
     return writer;
@@ -1692,14 +1770,14 @@ export const RequestUsernameReminderRequest: MessageFns<RequestUsernameReminderR
       emailAddress: isSet(object.emailAddress)
         ? globalThis.String(object.emailAddress)
         : isSet(object.email_address)
-        ? globalThis.String(object.email_address)
-        : "",
+          ? globalThis.String(object.email_address)
+          : '',
     };
   },
 
   toJSON(message: RequestUsernameReminderRequest): unknown {
     const obj: any = {};
-    if (message.emailAddress !== "") {
+    if (message.emailAddress !== '') {
       obj.emailAddress = message.emailAddress;
     }
     return obj;
@@ -1710,7 +1788,7 @@ export const RequestUsernameReminderRequest: MessageFns<RequestUsernameReminderR
   },
   fromPartial(object: DeepPartial<RequestUsernameReminderRequest>): RequestUsernameReminderRequest {
     const message = createBaseRequestUsernameReminderRequest();
-    message.emailAddress = object.emailAddress ?? "";
+    message.emailAddress = object.emailAddress ?? '';
     return message;
   },
 };
@@ -1720,7 +1798,10 @@ function createBaseRequestUsernameReminderResponse(): RequestUsernameReminderRes
 }
 
 export const RequestUsernameReminderResponse: MessageFns<RequestUsernameReminderResponse> = {
-  encode(message: RequestUsernameReminderResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: RequestUsernameReminderResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -1767,8 +1848,8 @@ export const RequestUsernameReminderResponse: MessageFns<RequestUsernameReminder
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       submitted: isSet(object.submitted) ? globalThis.Boolean(object.submitted) : false,
     };
   },
@@ -1787,29 +1868,32 @@ export const RequestUsernameReminderResponse: MessageFns<RequestUsernameReminder
   create(base?: DeepPartial<RequestUsernameReminderResponse>): RequestUsernameReminderResponse {
     return RequestUsernameReminderResponse.fromPartial(base ?? {});
   },
-  fromPartial(object: DeepPartial<RequestUsernameReminderResponse>): RequestUsernameReminderResponse {
+  fromPartial(
+    object: DeepPartial<RequestUsernameReminderResponse>
+  ): RequestUsernameReminderResponse {
     const message = createBaseRequestUsernameReminderResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
     message.submitted = object.submitted ?? false;
     return message;
   },
 };
 
 function createBaseUpdatePasswordRequest(): UpdatePasswordRequest {
-  return { newPassword: "", currentPassword: "", totpToken: "" };
+  return { newPassword: '', currentPassword: '', totpToken: '' };
 }
 
 export const UpdatePasswordRequest: MessageFns<UpdatePasswordRequest> = {
   encode(message: UpdatePasswordRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.newPassword !== "") {
+    if (message.newPassword !== '') {
       writer.uint32(10).string(message.newPassword);
     }
-    if (message.currentPassword !== "") {
+    if (message.currentPassword !== '') {
       writer.uint32(18).string(message.currentPassword);
     }
-    if (message.totpToken !== "") {
+    if (message.totpToken !== '') {
       writer.uint32(26).string(message.totpToken);
     }
     return writer;
@@ -1860,30 +1944,30 @@ export const UpdatePasswordRequest: MessageFns<UpdatePasswordRequest> = {
       newPassword: isSet(object.newPassword)
         ? globalThis.String(object.newPassword)
         : isSet(object.new_password)
-        ? globalThis.String(object.new_password)
-        : "",
+          ? globalThis.String(object.new_password)
+          : '',
       currentPassword: isSet(object.currentPassword)
         ? globalThis.String(object.currentPassword)
         : isSet(object.current_password)
-        ? globalThis.String(object.current_password)
-        : "",
+          ? globalThis.String(object.current_password)
+          : '',
       totpToken: isSet(object.totpToken)
         ? globalThis.String(object.totpToken)
         : isSet(object.totp_token)
-        ? globalThis.String(object.totp_token)
-        : "",
+          ? globalThis.String(object.totp_token)
+          : '',
     };
   },
 
   toJSON(message: UpdatePasswordRequest): unknown {
     const obj: any = {};
-    if (message.newPassword !== "") {
+    if (message.newPassword !== '') {
       obj.newPassword = message.newPassword;
     }
-    if (message.currentPassword !== "") {
+    if (message.currentPassword !== '') {
       obj.currentPassword = message.currentPassword;
     }
-    if (message.totpToken !== "") {
+    if (message.totpToken !== '') {
       obj.totpToken = message.totpToken;
     }
     return obj;
@@ -1894,9 +1978,9 @@ export const UpdatePasswordRequest: MessageFns<UpdatePasswordRequest> = {
   },
   fromPartial(object: DeepPartial<UpdatePasswordRequest>): UpdatePasswordRequest {
     const message = createBaseUpdatePasswordRequest();
-    message.newPassword = object.newPassword ?? "";
-    message.currentPassword = object.currentPassword ?? "";
-    message.totpToken = object.totpToken ?? "";
+    message.newPassword = object.newPassword ?? '';
+    message.currentPassword = object.currentPassword ?? '';
+    message.totpToken = object.totpToken ?? '';
     return message;
   },
 };
@@ -1942,8 +2026,8 @@ export const UpdatePasswordResponse: MessageFns<UpdatePasswordResponse> = {
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
     };
   },
 
@@ -1960,20 +2044,24 @@ export const UpdatePasswordResponse: MessageFns<UpdatePasswordResponse> = {
   },
   fromPartial(object: DeepPartial<UpdatePasswordResponse>): UpdatePasswordResponse {
     const message = createBaseUpdatePasswordResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
     return message;
   },
 };
 
 function createBaseVerifyEmailAddressRequest(): VerifyEmailAddressRequest {
-  return { token: "" };
+  return { token: '' };
 }
 
 export const VerifyEmailAddressRequest: MessageFns<VerifyEmailAddressRequest> = {
-  encode(message: VerifyEmailAddressRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.token !== "") {
+  encode(
+    message: VerifyEmailAddressRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.token !== '') {
       writer.uint32(10).string(message.token);
     }
     return writer;
@@ -2004,12 +2092,12 @@ export const VerifyEmailAddressRequest: MessageFns<VerifyEmailAddressRequest> = 
   },
 
   fromJSON(object: any): VerifyEmailAddressRequest {
-    return { token: isSet(object.token) ? globalThis.String(object.token) : "" };
+    return { token: isSet(object.token) ? globalThis.String(object.token) : '' };
   },
 
   toJSON(message: VerifyEmailAddressRequest): unknown {
     const obj: any = {};
-    if (message.token !== "") {
+    if (message.token !== '') {
       obj.token = message.token;
     }
     return obj;
@@ -2020,7 +2108,7 @@ export const VerifyEmailAddressRequest: MessageFns<VerifyEmailAddressRequest> = 
   },
   fromPartial(object: DeepPartial<VerifyEmailAddressRequest>): VerifyEmailAddressRequest {
     const message = createBaseVerifyEmailAddressRequest();
-    message.token = object.token ?? "";
+    message.token = object.token ?? '';
     return message;
   },
 };
@@ -2030,7 +2118,10 @@ function createBaseVerifyEmailAddressResponse(): VerifyEmailAddressResponse {
 }
 
 export const VerifyEmailAddressResponse: MessageFns<VerifyEmailAddressResponse> = {
-  encode(message: VerifyEmailAddressResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: VerifyEmailAddressResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -2077,8 +2168,8 @@ export const VerifyEmailAddressResponse: MessageFns<VerifyEmailAddressResponse> 
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       verified: isSet(object.verified) ? globalThis.Boolean(object.verified) : false,
     };
   },
@@ -2099,24 +2190,28 @@ export const VerifyEmailAddressResponse: MessageFns<VerifyEmailAddressResponse> 
   },
   fromPartial(object: DeepPartial<VerifyEmailAddressResponse>): VerifyEmailAddressResponse {
     const message = createBaseVerifyEmailAddressResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
     message.verified = object.verified ?? false;
     return message;
   },
 };
 
 function createBaseVerifyTOTPSecretRequest(): VerifyTOTPSecretRequest {
-  return { totpToken: "", userId: "" };
+  return { totpToken: '', userId: '' };
 }
 
 export const VerifyTOTPSecretRequest: MessageFns<VerifyTOTPSecretRequest> = {
-  encode(message: VerifyTOTPSecretRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.totpToken !== "") {
+  encode(
+    message: VerifyTOTPSecretRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.totpToken !== '') {
       writer.uint32(10).string(message.totpToken);
     }
-    if (message.userId !== "") {
+    if (message.userId !== '') {
       writer.uint32(18).string(message.userId);
     }
     return writer;
@@ -2159,22 +2254,22 @@ export const VerifyTOTPSecretRequest: MessageFns<VerifyTOTPSecretRequest> = {
       totpToken: isSet(object.totpToken)
         ? globalThis.String(object.totpToken)
         : isSet(object.totp_token)
-        ? globalThis.String(object.totp_token)
-        : "",
+          ? globalThis.String(object.totp_token)
+          : '',
       userId: isSet(object.userId)
         ? globalThis.String(object.userId)
         : isSet(object.user_id)
-        ? globalThis.String(object.user_id)
-        : "",
+          ? globalThis.String(object.user_id)
+          : '',
     };
   },
 
   toJSON(message: VerifyTOTPSecretRequest): unknown {
     const obj: any = {};
-    if (message.totpToken !== "") {
+    if (message.totpToken !== '') {
       obj.totpToken = message.totpToken;
     }
-    if (message.userId !== "") {
+    if (message.userId !== '') {
       obj.userId = message.userId;
     }
     return obj;
@@ -2185,8 +2280,8 @@ export const VerifyTOTPSecretRequest: MessageFns<VerifyTOTPSecretRequest> = {
   },
   fromPartial(object: DeepPartial<VerifyTOTPSecretRequest>): VerifyTOTPSecretRequest {
     const message = createBaseVerifyTOTPSecretRequest();
-    message.totpToken = object.totpToken ?? "";
-    message.userId = object.userId ?? "";
+    message.totpToken = object.totpToken ?? '';
+    message.userId = object.userId ?? '';
     return message;
   },
 };
@@ -2196,7 +2291,10 @@ function createBaseVerifyTOTPSecretResponse(): VerifyTOTPSecretResponse {
 }
 
 export const VerifyTOTPSecretResponse: MessageFns<VerifyTOTPSecretResponse> = {
-  encode(message: VerifyTOTPSecretResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: VerifyTOTPSecretResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -2243,8 +2341,8 @@ export const VerifyTOTPSecretResponse: MessageFns<VerifyTOTPSecretResponse> = {
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       accepted: isSet(object.accepted) ? globalThis.Boolean(object.accepted) : false,
     };
   },
@@ -2265,21 +2363,25 @@ export const VerifyTOTPSecretResponse: MessageFns<VerifyTOTPSecretResponse> = {
   },
   fromPartial(object: DeepPartial<VerifyTOTPSecretResponse>): VerifyTOTPSecretResponse {
     const message = createBaseVerifyTOTPSecretResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
     message.accepted = object.accepted ?? false;
     return message;
   },
 };
 
 function createBaseEmailAddressVerificationRequest(): EmailAddressVerificationRequest {
-  return { token: "" };
+  return { token: '' };
 }
 
 export const EmailAddressVerificationRequest: MessageFns<EmailAddressVerificationRequest> = {
-  encode(message: EmailAddressVerificationRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.token !== "") {
+  encode(
+    message: EmailAddressVerificationRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.token !== '') {
       writer.uint32(10).string(message.token);
     }
     return writer;
@@ -2310,12 +2412,12 @@ export const EmailAddressVerificationRequest: MessageFns<EmailAddressVerificatio
   },
 
   fromJSON(object: any): EmailAddressVerificationRequest {
-    return { token: isSet(object.token) ? globalThis.String(object.token) : "" };
+    return { token: isSet(object.token) ? globalThis.String(object.token) : '' };
   },
 
   toJSON(message: EmailAddressVerificationRequest): unknown {
     const obj: any = {};
-    if (message.token !== "") {
+    if (message.token !== '') {
       obj.token = message.token;
     }
     return obj;
@@ -2324,9 +2426,11 @@ export const EmailAddressVerificationRequest: MessageFns<EmailAddressVerificatio
   create(base?: DeepPartial<EmailAddressVerificationRequest>): EmailAddressVerificationRequest {
     return EmailAddressVerificationRequest.fromPartial(base ?? {});
   },
-  fromPartial(object: DeepPartial<EmailAddressVerificationRequest>): EmailAddressVerificationRequest {
+  fromPartial(
+    object: DeepPartial<EmailAddressVerificationRequest>
+  ): EmailAddressVerificationRequest {
     const message = createBaseEmailAddressVerificationRequest();
-    message.token = object.token ?? "";
+    message.token = object.token ?? '';
     return message;
   },
 };
@@ -2336,7 +2440,10 @@ function createBaseEmailAddressVerificationResponse(): EmailAddressVerificationR
 }
 
 export const EmailAddressVerificationResponse: MessageFns<EmailAddressVerificationResponse> = {
-  encode(message: EmailAddressVerificationResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: EmailAddressVerificationResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -2372,8 +2479,8 @@ export const EmailAddressVerificationResponse: MessageFns<EmailAddressVerificati
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
     };
   },
 
@@ -2388,11 +2495,14 @@ export const EmailAddressVerificationResponse: MessageFns<EmailAddressVerificati
   create(base?: DeepPartial<EmailAddressVerificationResponse>): EmailAddressVerificationResponse {
     return EmailAddressVerificationResponse.fromPartial(base ?? {});
   },
-  fromPartial(object: DeepPartial<EmailAddressVerificationResponse>): EmailAddressVerificationResponse {
+  fromPartial(
+    object: DeepPartial<EmailAddressVerificationResponse>
+  ): EmailAddressVerificationResponse {
     const message = createBaseEmailAddressVerificationResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
     return message;
   },
 };
@@ -2449,8 +2559,8 @@ export const PasswordResetResponse: MessageFns<PasswordResetResponse> = {
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       successful: isSet(object.successful) ? globalThis.Boolean(object.successful) : false,
     };
   },
@@ -2471,168 +2581,194 @@ export const PasswordResetResponse: MessageFns<PasswordResetResponse> = {
   },
   fromPartial(object: DeepPartial<PasswordResetResponse>): PasswordResetResponse {
     const message = createBasePasswordResetResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
     message.successful = object.successful ?? false;
     return message;
   },
 };
 
 function createBasePasswordResetTokenCreationRequestInput(): PasswordResetTokenCreationRequestInput {
-  return { emailAddress: "" };
+  return { emailAddress: '' };
 }
 
-export const PasswordResetTokenCreationRequestInput: MessageFns<PasswordResetTokenCreationRequestInput> = {
-  encode(message: PasswordResetTokenCreationRequestInput, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.emailAddress !== "") {
-      writer.uint32(10).string(message.emailAddress);
-    }
-    return writer;
-  },
+export const PasswordResetTokenCreationRequestInput: MessageFns<PasswordResetTokenCreationRequestInput> =
+  {
+    encode(
+      message: PasswordResetTokenCreationRequestInput,
+      writer: BinaryWriter = new BinaryWriter()
+    ): BinaryWriter {
+      if (message.emailAddress !== '') {
+        writer.uint32(10).string(message.emailAddress);
+      }
+      return writer;
+    },
 
-  decode(input: BinaryReader | Uint8Array, length?: number): PasswordResetTokenCreationRequestInput {
-    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
-    const end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBasePasswordResetTokenCreationRequestInput();
-    while (reader.pos < end) {
-      const tag = reader.uint32();
-      switch (tag >>> 3) {
-        case 1: {
-          if (tag !== 10) {
-            break;
+    decode(
+      input: BinaryReader | Uint8Array,
+      length?: number
+    ): PasswordResetTokenCreationRequestInput {
+      const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+      const end = length === undefined ? reader.len : reader.pos + length;
+      const message = createBasePasswordResetTokenCreationRequestInput();
+      while (reader.pos < end) {
+        const tag = reader.uint32();
+        switch (tag >>> 3) {
+          case 1: {
+            if (tag !== 10) {
+              break;
+            }
+
+            message.emailAddress = reader.string();
+            continue;
           }
-
-          message.emailAddress = reader.string();
-          continue;
         }
+        if ((tag & 7) === 4 || tag === 0) {
+          break;
+        }
+        reader.skip(tag & 7);
       }
-      if ((tag & 7) === 4 || tag === 0) {
-        break;
+      return message;
+    },
+
+    fromJSON(object: any): PasswordResetTokenCreationRequestInput {
+      return {
+        emailAddress: isSet(object.emailAddress)
+          ? globalThis.String(object.emailAddress)
+          : isSet(object.email_address)
+            ? globalThis.String(object.email_address)
+            : '',
+      };
+    },
+
+    toJSON(message: PasswordResetTokenCreationRequestInput): unknown {
+      const obj: any = {};
+      if (message.emailAddress !== '') {
+        obj.emailAddress = message.emailAddress;
       }
-      reader.skip(tag & 7);
-    }
-    return message;
-  },
+      return obj;
+    },
 
-  fromJSON(object: any): PasswordResetTokenCreationRequestInput {
-    return {
-      emailAddress: isSet(object.emailAddress)
-        ? globalThis.String(object.emailAddress)
-        : isSet(object.email_address)
-        ? globalThis.String(object.email_address)
-        : "",
-    };
-  },
-
-  toJSON(message: PasswordResetTokenCreationRequestInput): unknown {
-    const obj: any = {};
-    if (message.emailAddress !== "") {
-      obj.emailAddress = message.emailAddress;
-    }
-    return obj;
-  },
-
-  create(base?: DeepPartial<PasswordResetTokenCreationRequestInput>): PasswordResetTokenCreationRequestInput {
-    return PasswordResetTokenCreationRequestInput.fromPartial(base ?? {});
-  },
-  fromPartial(object: DeepPartial<PasswordResetTokenCreationRequestInput>): PasswordResetTokenCreationRequestInput {
-    const message = createBasePasswordResetTokenCreationRequestInput();
-    message.emailAddress = object.emailAddress ?? "";
-    return message;
-  },
-};
+    create(
+      base?: DeepPartial<PasswordResetTokenCreationRequestInput>
+    ): PasswordResetTokenCreationRequestInput {
+      return PasswordResetTokenCreationRequestInput.fromPartial(base ?? {});
+    },
+    fromPartial(
+      object: DeepPartial<PasswordResetTokenCreationRequestInput>
+    ): PasswordResetTokenCreationRequestInput {
+      const message = createBasePasswordResetTokenCreationRequestInput();
+      message.emailAddress = object.emailAddress ?? '';
+      return message;
+    },
+  };
 
 function createBasePasswordResetTokenRedemptionRequestInput(): PasswordResetTokenRedemptionRequestInput {
-  return { token: "", newPassword: "" };
+  return { token: '', newPassword: '' };
 }
 
-export const PasswordResetTokenRedemptionRequestInput: MessageFns<PasswordResetTokenRedemptionRequestInput> = {
-  encode(message: PasswordResetTokenRedemptionRequestInput, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.token !== "") {
-      writer.uint32(10).string(message.token);
-    }
-    if (message.newPassword !== "") {
-      writer.uint32(18).string(message.newPassword);
-    }
-    return writer;
-  },
-
-  decode(input: BinaryReader | Uint8Array, length?: number): PasswordResetTokenRedemptionRequestInput {
-    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
-    const end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBasePasswordResetTokenRedemptionRequestInput();
-    while (reader.pos < end) {
-      const tag = reader.uint32();
-      switch (tag >>> 3) {
-        case 1: {
-          if (tag !== 10) {
-            break;
-          }
-
-          message.token = reader.string();
-          continue;
-        }
-        case 2: {
-          if (tag !== 18) {
-            break;
-          }
-
-          message.newPassword = reader.string();
-          continue;
-        }
+export const PasswordResetTokenRedemptionRequestInput: MessageFns<PasswordResetTokenRedemptionRequestInput> =
+  {
+    encode(
+      message: PasswordResetTokenRedemptionRequestInput,
+      writer: BinaryWriter = new BinaryWriter()
+    ): BinaryWriter {
+      if (message.token !== '') {
+        writer.uint32(10).string(message.token);
       }
-      if ((tag & 7) === 4 || tag === 0) {
-        break;
+      if (message.newPassword !== '') {
+        writer.uint32(18).string(message.newPassword);
       }
-      reader.skip(tag & 7);
-    }
-    return message;
-  },
+      return writer;
+    },
 
-  fromJSON(object: any): PasswordResetTokenRedemptionRequestInput {
-    return {
-      token: isSet(object.token) ? globalThis.String(object.token) : "",
-      newPassword: isSet(object.newPassword)
-        ? globalThis.String(object.newPassword)
-        : isSet(object.new_password)
-        ? globalThis.String(object.new_password)
-        : "",
-    };
-  },
+    decode(
+      input: BinaryReader | Uint8Array,
+      length?: number
+    ): PasswordResetTokenRedemptionRequestInput {
+      const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+      const end = length === undefined ? reader.len : reader.pos + length;
+      const message = createBasePasswordResetTokenRedemptionRequestInput();
+      while (reader.pos < end) {
+        const tag = reader.uint32();
+        switch (tag >>> 3) {
+          case 1: {
+            if (tag !== 10) {
+              break;
+            }
 
-  toJSON(message: PasswordResetTokenRedemptionRequestInput): unknown {
-    const obj: any = {};
-    if (message.token !== "") {
-      obj.token = message.token;
-    }
-    if (message.newPassword !== "") {
-      obj.newPassword = message.newPassword;
-    }
-    return obj;
-  },
+            message.token = reader.string();
+            continue;
+          }
+          case 2: {
+            if (tag !== 18) {
+              break;
+            }
 
-  create(base?: DeepPartial<PasswordResetTokenRedemptionRequestInput>): PasswordResetTokenRedemptionRequestInput {
-    return PasswordResetTokenRedemptionRequestInput.fromPartial(base ?? {});
-  },
-  fromPartial(object: DeepPartial<PasswordResetTokenRedemptionRequestInput>): PasswordResetTokenRedemptionRequestInput {
-    const message = createBasePasswordResetTokenRedemptionRequestInput();
-    message.token = object.token ?? "";
-    message.newPassword = object.newPassword ?? "";
-    return message;
-  },
-};
+            message.newPassword = reader.string();
+            continue;
+          }
+        }
+        if ((tag & 7) === 4 || tag === 0) {
+          break;
+        }
+        reader.skip(tag & 7);
+      }
+      return message;
+    },
+
+    fromJSON(object: any): PasswordResetTokenRedemptionRequestInput {
+      return {
+        token: isSet(object.token) ? globalThis.String(object.token) : '',
+        newPassword: isSet(object.newPassword)
+          ? globalThis.String(object.newPassword)
+          : isSet(object.new_password)
+            ? globalThis.String(object.new_password)
+            : '',
+      };
+    },
+
+    toJSON(message: PasswordResetTokenRedemptionRequestInput): unknown {
+      const obj: any = {};
+      if (message.token !== '') {
+        obj.token = message.token;
+      }
+      if (message.newPassword !== '') {
+        obj.newPassword = message.newPassword;
+      }
+      return obj;
+    },
+
+    create(
+      base?: DeepPartial<PasswordResetTokenRedemptionRequestInput>
+    ): PasswordResetTokenRedemptionRequestInput {
+      return PasswordResetTokenRedemptionRequestInput.fromPartial(base ?? {});
+    },
+    fromPartial(
+      object: DeepPartial<PasswordResetTokenRedemptionRequestInput>
+    ): PasswordResetTokenRedemptionRequestInput {
+      const message = createBasePasswordResetTokenRedemptionRequestInput();
+      message.token = object.token ?? '';
+      message.newPassword = object.newPassword ?? '';
+      return message;
+    },
+  };
 
 function createBaseTOTPSecretRefreshResponse(): TOTPSecretRefreshResponse {
-  return { twoFactorQrCode: "", twoFactorSecret: "" };
+  return { twoFactorQrCode: '', twoFactorSecret: '' };
 }
 
 export const TOTPSecretRefreshResponse: MessageFns<TOTPSecretRefreshResponse> = {
-  encode(message: TOTPSecretRefreshResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.twoFactorQrCode !== "") {
+  encode(
+    message: TOTPSecretRefreshResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.twoFactorQrCode !== '') {
       writer.uint32(18).string(message.twoFactorQrCode);
     }
-    if (message.twoFactorSecret !== "") {
+    if (message.twoFactorSecret !== '') {
       writer.uint32(26).string(message.twoFactorSecret);
     }
     return writer;
@@ -2675,22 +2811,22 @@ export const TOTPSecretRefreshResponse: MessageFns<TOTPSecretRefreshResponse> = 
       twoFactorQrCode: isSet(object.twoFactorQrCode)
         ? globalThis.String(object.twoFactorQrCode)
         : isSet(object.two_factor_qr_code)
-        ? globalThis.String(object.two_factor_qr_code)
-        : "",
+          ? globalThis.String(object.two_factor_qr_code)
+          : '',
       twoFactorSecret: isSet(object.twoFactorSecret)
         ? globalThis.String(object.twoFactorSecret)
         : isSet(object.two_factor_secret)
-        ? globalThis.String(object.two_factor_secret)
-        : "",
+          ? globalThis.String(object.two_factor_secret)
+          : '',
     };
   },
 
   toJSON(message: TOTPSecretRefreshResponse): unknown {
     const obj: any = {};
-    if (message.twoFactorQrCode !== "") {
+    if (message.twoFactorQrCode !== '') {
       obj.twoFactorQrCode = message.twoFactorQrCode;
     }
-    if (message.twoFactorSecret !== "") {
+    if (message.twoFactorSecret !== '') {
       obj.twoFactorSecret = message.twoFactorSecret;
     }
     return obj;
@@ -2701,8 +2837,8 @@ export const TOTPSecretRefreshResponse: MessageFns<TOTPSecretRefreshResponse> = 
   },
   fromPartial(object: DeepPartial<TOTPSecretRefreshResponse>): TOTPSecretRefreshResponse {
     const message = createBaseTOTPSecretRefreshResponse();
-    message.twoFactorQrCode = object.twoFactorQrCode ?? "";
-    message.twoFactorSecret = object.twoFactorSecret ?? "";
+    message.twoFactorQrCode = object.twoFactorQrCode ?? '';
+    message.twoFactorSecret = object.twoFactorSecret ?? '';
     return message;
   },
 };
@@ -2712,7 +2848,10 @@ function createBaseTOTPSecretVerificationResponse(): TOTPSecretVerificationRespo
 }
 
 export const TOTPSecretVerificationResponse: MessageFns<TOTPSecretVerificationResponse> = {
-  encode(message: TOTPSecretVerificationResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: TOTPSecretVerificationResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -2759,8 +2898,8 @@ export const TOTPSecretVerificationResponse: MessageFns<TOTPSecretVerificationRe
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       accepted: isSet(object.accepted) ? globalThis.Boolean(object.accepted) : false,
     };
   },
@@ -2781,30 +2920,31 @@ export const TOTPSecretVerificationResponse: MessageFns<TOTPSecretVerificationRe
   },
   fromPartial(object: DeepPartial<TOTPSecretVerificationResponse>): TOTPSecretVerificationResponse {
     const message = createBaseTOTPSecretVerificationResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
     message.accepted = object.accepted ?? false;
     return message;
   },
 };
 
 function createBaseTokenResponse(): TokenResponse {
-  return { userId: "", accountId: "", accessToken: "", refreshToken: "", expiresUtc: undefined };
+  return { userId: '', accountId: '', accessToken: '', refreshToken: '', expiresUtc: undefined };
 }
 
 export const TokenResponse: MessageFns<TokenResponse> = {
   encode(message: TokenResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.userId !== "") {
+    if (message.userId !== '') {
       writer.uint32(18).string(message.userId);
     }
-    if (message.accountId !== "") {
+    if (message.accountId !== '') {
       writer.uint32(26).string(message.accountId);
     }
-    if (message.accessToken !== "") {
+    if (message.accessToken !== '') {
       writer.uint32(34).string(message.accessToken);
     }
-    if (message.refreshToken !== "") {
+    if (message.refreshToken !== '') {
       writer.uint32(42).string(message.refreshToken);
     }
     if (message.expiresUtc !== undefined) {
@@ -2874,43 +3014,43 @@ export const TokenResponse: MessageFns<TokenResponse> = {
       userId: isSet(object.userId)
         ? globalThis.String(object.userId)
         : isSet(object.user_id)
-        ? globalThis.String(object.user_id)
-        : "",
+          ? globalThis.String(object.user_id)
+          : '',
       accountId: isSet(object.accountId)
         ? globalThis.String(object.accountId)
         : isSet(object.account_id)
-        ? globalThis.String(object.account_id)
-        : "",
+          ? globalThis.String(object.account_id)
+          : '',
       accessToken: isSet(object.accessToken)
         ? globalThis.String(object.accessToken)
         : isSet(object.access_token)
-        ? globalThis.String(object.access_token)
-        : "",
+          ? globalThis.String(object.access_token)
+          : '',
       refreshToken: isSet(object.refreshToken)
         ? globalThis.String(object.refreshToken)
         : isSet(object.refresh_token)
-        ? globalThis.String(object.refresh_token)
-        : "",
+          ? globalThis.String(object.refresh_token)
+          : '',
       expiresUtc: isSet(object.expiresUtc)
         ? fromJsonTimestamp(object.expiresUtc)
         : isSet(object.expires_utc)
-        ? fromJsonTimestamp(object.expires_utc)
-        : undefined,
+          ? fromJsonTimestamp(object.expires_utc)
+          : undefined,
     };
   },
 
   toJSON(message: TokenResponse): unknown {
     const obj: any = {};
-    if (message.userId !== "") {
+    if (message.userId !== '') {
       obj.userId = message.userId;
     }
-    if (message.accountId !== "") {
+    if (message.accountId !== '') {
       obj.accountId = message.accountId;
     }
-    if (message.accessToken !== "") {
+    if (message.accessToken !== '') {
       obj.accessToken = message.accessToken;
     }
-    if (message.refreshToken !== "") {
+    if (message.refreshToken !== '') {
       obj.refreshToken = message.refreshToken;
     }
     if (message.expiresUtc !== undefined) {
@@ -2924,10 +3064,10 @@ export const TokenResponse: MessageFns<TokenResponse> = {
   },
   fromPartial(object: DeepPartial<TokenResponse>): TokenResponse {
     const message = createBaseTokenResponse();
-    message.userId = object.userId ?? "";
-    message.accountId = object.accountId ?? "";
-    message.accessToken = object.accessToken ?? "";
-    message.refreshToken = object.refreshToken ?? "";
+    message.userId = object.userId ?? '';
+    message.accountId = object.accountId ?? '';
+    message.accessToken = object.accessToken ?? '';
+    message.refreshToken = object.refreshToken ?? '';
     message.expiresUtc = object.expiresUtc ?? undefined;
     return message;
   },
@@ -2938,7 +3078,10 @@ function createBaseUserPermissionsRequestInput(): UserPermissionsRequestInput {
 }
 
 export const UserPermissionsRequestInput: MessageFns<UserPermissionsRequestInput> = {
-  encode(message: UserPermissionsRequestInput, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: UserPermissionsRequestInput,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     for (const v of message.permissions) {
       writer.uint32(10).string(v!);
     }
@@ -3000,12 +3143,18 @@ function createBaseUserPermissionsResponse(): UserPermissionsResponse {
 }
 
 export const UserPermissionsResponse: MessageFns<UserPermissionsResponse> = {
-  encode(message: UserPermissionsResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: UserPermissionsResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
     globalThis.Object.entries(message.permissions).forEach(([key, value]: [string, boolean]) => {
-      UserPermissionsResponse_PermissionsEntry.encode({ key: key as any, value }, writer.uint32(18).fork()).join();
+      UserPermissionsResponse_PermissionsEntry.encode(
+        { key: key as any, value },
+        writer.uint32(18).fork()
+      ).join();
     });
     return writer;
   },
@@ -3050,16 +3199,16 @@ export const UserPermissionsResponse: MessageFns<UserPermissionsResponse> = {
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       permissions: isObject(object.permissions)
         ? (globalThis.Object.entries(object.permissions) as [string, any][]).reduce(
-          (acc: { [key: string]: boolean }, [key, value]: [string, any]) => {
-            acc[key] = globalThis.Boolean(value);
-            return acc;
-          },
-          {},
-        )
+            (acc: { [key: string]: boolean }, [key, value]: [string, any]) => {
+              acc[key] = globalThis.Boolean(value);
+              return acc;
+            },
+            {}
+          )
         : {},
     };
   },
@@ -3086,105 +3235,119 @@ export const UserPermissionsResponse: MessageFns<UserPermissionsResponse> = {
   },
   fromPartial(object: DeepPartial<UserPermissionsResponse>): UserPermissionsResponse {
     const message = createBaseUserPermissionsResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.permissions = (globalThis.Object.entries(object.permissions ?? {}) as [string, boolean][]).reduce(
-      (acc: { [key: string]: boolean }, [key, value]: [string, boolean]) => {
-        if (value !== undefined) {
-          acc[key] = globalThis.Boolean(value);
-        }
-        return acc;
-      },
-      {},
-    );
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
+    message.permissions = (
+      globalThis.Object.entries(object.permissions ?? {}) as [string, boolean][]
+    ).reduce((acc: { [key: string]: boolean }, [key, value]: [string, boolean]) => {
+      if (value !== undefined) {
+        acc[key] = globalThis.Boolean(value);
+      }
+      return acc;
+    }, {});
     return message;
   },
 };
 
 function createBaseUserPermissionsResponse_PermissionsEntry(): UserPermissionsResponse_PermissionsEntry {
-  return { key: "", value: false };
+  return { key: '', value: false };
 }
 
-export const UserPermissionsResponse_PermissionsEntry: MessageFns<UserPermissionsResponse_PermissionsEntry> = {
-  encode(message: UserPermissionsResponse_PermissionsEntry, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.key !== "") {
-      writer.uint32(10).string(message.key);
-    }
-    if (message.value !== false) {
-      writer.uint32(16).bool(message.value);
-    }
-    return writer;
-  },
-
-  decode(input: BinaryReader | Uint8Array, length?: number): UserPermissionsResponse_PermissionsEntry {
-    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
-    const end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseUserPermissionsResponse_PermissionsEntry();
-    while (reader.pos < end) {
-      const tag = reader.uint32();
-      switch (tag >>> 3) {
-        case 1: {
-          if (tag !== 10) {
-            break;
-          }
-
-          message.key = reader.string();
-          continue;
-        }
-        case 2: {
-          if (tag !== 16) {
-            break;
-          }
-
-          message.value = reader.bool();
-          continue;
-        }
+export const UserPermissionsResponse_PermissionsEntry: MessageFns<UserPermissionsResponse_PermissionsEntry> =
+  {
+    encode(
+      message: UserPermissionsResponse_PermissionsEntry,
+      writer: BinaryWriter = new BinaryWriter()
+    ): BinaryWriter {
+      if (message.key !== '') {
+        writer.uint32(10).string(message.key);
       }
-      if ((tag & 7) === 4 || tag === 0) {
-        break;
+      if (message.value !== false) {
+        writer.uint32(16).bool(message.value);
       }
-      reader.skip(tag & 7);
-    }
-    return message;
-  },
+      return writer;
+    },
 
-  fromJSON(object: any): UserPermissionsResponse_PermissionsEntry {
-    return {
-      key: isSet(object.key) ? globalThis.String(object.key) : "",
-      value: isSet(object.value) ? globalThis.Boolean(object.value) : false,
-    };
-  },
+    decode(
+      input: BinaryReader | Uint8Array,
+      length?: number
+    ): UserPermissionsResponse_PermissionsEntry {
+      const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+      const end = length === undefined ? reader.len : reader.pos + length;
+      const message = createBaseUserPermissionsResponse_PermissionsEntry();
+      while (reader.pos < end) {
+        const tag = reader.uint32();
+        switch (tag >>> 3) {
+          case 1: {
+            if (tag !== 10) {
+              break;
+            }
 
-  toJSON(message: UserPermissionsResponse_PermissionsEntry): unknown {
-    const obj: any = {};
-    if (message.key !== "") {
-      obj.key = message.key;
-    }
-    if (message.value !== false) {
-      obj.value = message.value;
-    }
-    return obj;
-  },
+            message.key = reader.string();
+            continue;
+          }
+          case 2: {
+            if (tag !== 16) {
+              break;
+            }
 
-  create(base?: DeepPartial<UserPermissionsResponse_PermissionsEntry>): UserPermissionsResponse_PermissionsEntry {
-    return UserPermissionsResponse_PermissionsEntry.fromPartial(base ?? {});
-  },
-  fromPartial(object: DeepPartial<UserPermissionsResponse_PermissionsEntry>): UserPermissionsResponse_PermissionsEntry {
-    const message = createBaseUserPermissionsResponse_PermissionsEntry();
-    message.key = object.key ?? "";
-    message.value = object.value ?? false;
-    return message;
-  },
-};
+            message.value = reader.bool();
+            continue;
+          }
+        }
+        if ((tag & 7) === 4 || tag === 0) {
+          break;
+        }
+        reader.skip(tag & 7);
+      }
+      return message;
+    },
+
+    fromJSON(object: any): UserPermissionsResponse_PermissionsEntry {
+      return {
+        key: isSet(object.key) ? globalThis.String(object.key) : '',
+        value: isSet(object.value) ? globalThis.Boolean(object.value) : false,
+      };
+    },
+
+    toJSON(message: UserPermissionsResponse_PermissionsEntry): unknown {
+      const obj: any = {};
+      if (message.key !== '') {
+        obj.key = message.key;
+      }
+      if (message.value !== false) {
+        obj.value = message.value;
+      }
+      return obj;
+    },
+
+    create(
+      base?: DeepPartial<UserPermissionsResponse_PermissionsEntry>
+    ): UserPermissionsResponse_PermissionsEntry {
+      return UserPermissionsResponse_PermissionsEntry.fromPartial(base ?? {});
+    },
+    fromPartial(
+      object: DeepPartial<UserPermissionsResponse_PermissionsEntry>
+    ): UserPermissionsResponse_PermissionsEntry {
+      const message = createBaseUserPermissionsResponse_PermissionsEntry();
+      message.key = object.key ?? '';
+      message.value = object.value ?? false;
+      return message;
+    },
+  };
 
 function createBaseUsernameReminderRequestInput(): UsernameReminderRequestInput {
-  return { emailAddress: "" };
+  return { emailAddress: '' };
 }
 
 export const UsernameReminderRequestInput: MessageFns<UsernameReminderRequestInput> = {
-  encode(message: UsernameReminderRequestInput, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.emailAddress !== "") {
+  encode(
+    message: UsernameReminderRequestInput,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.emailAddress !== '') {
       writer.uint32(10).string(message.emailAddress);
     }
     return writer;
@@ -3219,14 +3382,14 @@ export const UsernameReminderRequestInput: MessageFns<UsernameReminderRequestInp
       emailAddress: isSet(object.emailAddress)
         ? globalThis.String(object.emailAddress)
         : isSet(object.email_address)
-        ? globalThis.String(object.email_address)
-        : "",
+          ? globalThis.String(object.email_address)
+          : '',
     };
   },
 
   toJSON(message: UsernameReminderRequestInput): unknown {
     const obj: any = {};
-    if (message.emailAddress !== "") {
+    if (message.emailAddress !== '') {
       obj.emailAddress = message.emailAddress;
     }
     return obj;
@@ -3237,7 +3400,7 @@ export const UsernameReminderRequestInput: MessageFns<UsernameReminderRequestInp
   },
   fromPartial(object: DeepPartial<UsernameReminderRequestInput>): UsernameReminderRequestInput {
     const message = createBaseUsernameReminderRequestInput();
-    message.emailAddress = object.emailAddress ?? "";
+    message.emailAddress = object.emailAddress ?? '';
     return message;
   },
 };
@@ -3337,8 +3500,8 @@ export const GetSelfResponse: MessageFns<GetSelfResponse> = {
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       result: isSet(object.result) ? User.fromJSON(object.result) : undefined,
     };
   },
@@ -3359,23 +3522,29 @@ export const GetSelfResponse: MessageFns<GetSelfResponse> = {
   },
   fromPartial(object: DeepPartial<GetSelfResponse>): GetSelfResponse {
     const message = createBaseGetSelfResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.result = (object.result !== undefined && object.result !== null)
-      ? User.fromPartial(object.result)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
+    message.result =
+      object.result !== undefined && object.result !== null
+        ? User.fromPartial(object.result)
+        : undefined;
     return message;
   },
 };
 
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 
-export type DeepPartial<T> = T extends Builtin ? T
-  : T extends globalThis.Array<infer U> ? globalThis.Array<DeepPartial<U>>
-  : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>>
-  : T extends {} ? { [K in keyof T]?: DeepPartial<T[K]> }
-  : Partial<T>;
+export type DeepPartial<T> = T extends Builtin
+  ? T
+  : T extends globalThis.Array<infer U>
+    ? globalThis.Array<DeepPartial<U>>
+    : T extends ReadonlyArray<infer U>
+      ? ReadonlyArray<DeepPartial<U>>
+      : T extends {}
+        ? { [K in keyof T]?: DeepPartial<T[K]> }
+        : Partial<T>;
 
 function toTimestamp(date: Date): Timestamp {
   const seconds = Math.trunc(date.getTime() / 1_000);
@@ -3392,7 +3561,7 @@ function fromTimestamp(t: Timestamp): Date {
 function fromJsonTimestamp(o: any): Date {
   if (o instanceof globalThis.Date) {
     return o;
-  } else if (typeof o === "string") {
+  } else if (typeof o === 'string') {
     return new globalThis.Date(o);
   } else {
     return fromTimestamp(Timestamp.fromJSON(o));
@@ -3400,7 +3569,7 @@ function fromJsonTimestamp(o: any): Date {
 }
 
 function isObject(value: any): boolean {
-  return typeof value === "object" && value !== null;
+  return typeof value === 'object' && value !== null;
 }
 
 function isSet(value: any): boolean {

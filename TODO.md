@@ -1,0 +1,5 @@
+- [x] setup registration and login pages for frontend app
+- [x] require login to create a script (allow creation of scripts while unauthed, but prompt for signin when attepmting to publish)
+- [ ] figure out why the database isn't being migrated?
+- [ ] don't require login for play search
+- [ ] fully deprecate legacy server

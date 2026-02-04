@@ -5,12 +5,12 @@
 // source: audit/audit_service_types.proto
 
 /* eslint-disable */
-import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
-import { ResponseDetails } from "../common";
-import { Pagination, QueryFilter } from "../filtering";
-import { AuditLogEntry } from "./audit_messages";
+import { BinaryReader, BinaryWriter } from '@bufbuild/protobuf/wire';
+import { ResponseDetails } from '../common';
+import { Pagination, QueryFilter } from '../filtering';
+import { AuditLogEntry } from './audit_messages';
 
-export const protobufPackage = "audit";
+export const protobufPackage = 'audit';
 
 export interface GetAuditLogEntriesForAccountRequest {
   filter: QueryFilter | undefined;
@@ -45,170 +45,195 @@ function createBaseGetAuditLogEntriesForAccountRequest(): GetAuditLogEntriesForA
   return { filter: undefined };
 }
 
-export const GetAuditLogEntriesForAccountRequest: MessageFns<GetAuditLogEntriesForAccountRequest> = {
-  encode(message: GetAuditLogEntriesForAccountRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.filter !== undefined) {
-      QueryFilter.encode(message.filter, writer.uint32(10).fork()).join();
-    }
-    return writer;
-  },
+export const GetAuditLogEntriesForAccountRequest: MessageFns<GetAuditLogEntriesForAccountRequest> =
+  {
+    encode(
+      message: GetAuditLogEntriesForAccountRequest,
+      writer: BinaryWriter = new BinaryWriter()
+    ): BinaryWriter {
+      if (message.filter !== undefined) {
+        QueryFilter.encode(message.filter, writer.uint32(10).fork()).join();
+      }
+      return writer;
+    },
 
-  decode(input: BinaryReader | Uint8Array, length?: number): GetAuditLogEntriesForAccountRequest {
-    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
-    const end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseGetAuditLogEntriesForAccountRequest();
-    while (reader.pos < end) {
-      const tag = reader.uint32();
-      switch (tag >>> 3) {
-        case 1: {
-          if (tag !== 10) {
-            break;
+    decode(input: BinaryReader | Uint8Array, length?: number): GetAuditLogEntriesForAccountRequest {
+      const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+      const end = length === undefined ? reader.len : reader.pos + length;
+      const message = createBaseGetAuditLogEntriesForAccountRequest();
+      while (reader.pos < end) {
+        const tag = reader.uint32();
+        switch (tag >>> 3) {
+          case 1: {
+            if (tag !== 10) {
+              break;
+            }
+
+            message.filter = QueryFilter.decode(reader, reader.uint32());
+            continue;
           }
-
-          message.filter = QueryFilter.decode(reader, reader.uint32());
-          continue;
         }
+        if ((tag & 7) === 4 || tag === 0) {
+          break;
+        }
+        reader.skip(tag & 7);
       }
-      if ((tag & 7) === 4 || tag === 0) {
-        break;
+      return message;
+    },
+
+    fromJSON(object: any): GetAuditLogEntriesForAccountRequest {
+      return { filter: isSet(object.filter) ? QueryFilter.fromJSON(object.filter) : undefined };
+    },
+
+    toJSON(message: GetAuditLogEntriesForAccountRequest): unknown {
+      const obj: any = {};
+      if (message.filter !== undefined) {
+        obj.filter = QueryFilter.toJSON(message.filter);
       }
-      reader.skip(tag & 7);
-    }
-    return message;
-  },
+      return obj;
+    },
 
-  fromJSON(object: any): GetAuditLogEntriesForAccountRequest {
-    return { filter: isSet(object.filter) ? QueryFilter.fromJSON(object.filter) : undefined };
-  },
-
-  toJSON(message: GetAuditLogEntriesForAccountRequest): unknown {
-    const obj: any = {};
-    if (message.filter !== undefined) {
-      obj.filter = QueryFilter.toJSON(message.filter);
-    }
-    return obj;
-  },
-
-  create(base?: DeepPartial<GetAuditLogEntriesForAccountRequest>): GetAuditLogEntriesForAccountRequest {
-    return GetAuditLogEntriesForAccountRequest.fromPartial(base ?? {});
-  },
-  fromPartial(object: DeepPartial<GetAuditLogEntriesForAccountRequest>): GetAuditLogEntriesForAccountRequest {
-    const message = createBaseGetAuditLogEntriesForAccountRequest();
-    message.filter = (object.filter !== undefined && object.filter !== null)
-      ? QueryFilter.fromPartial(object.filter)
-      : undefined;
-    return message;
-  },
-};
+    create(
+      base?: DeepPartial<GetAuditLogEntriesForAccountRequest>
+    ): GetAuditLogEntriesForAccountRequest {
+      return GetAuditLogEntriesForAccountRequest.fromPartial(base ?? {});
+    },
+    fromPartial(
+      object: DeepPartial<GetAuditLogEntriesForAccountRequest>
+    ): GetAuditLogEntriesForAccountRequest {
+      const message = createBaseGetAuditLogEntriesForAccountRequest();
+      message.filter =
+        object.filter !== undefined && object.filter !== null
+          ? QueryFilter.fromPartial(object.filter)
+          : undefined;
+      return message;
+    },
+  };
 
 function createBaseGetAuditLogEntriesForAccountResponse(): GetAuditLogEntriesForAccountResponse {
   return { responseDetails: undefined, pagination: undefined, results: [] };
 }
 
-export const GetAuditLogEntriesForAccountResponse: MessageFns<GetAuditLogEntriesForAccountResponse> = {
-  encode(message: GetAuditLogEntriesForAccountResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.responseDetails !== undefined) {
-      ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
-    }
-    if (message.pagination !== undefined) {
-      Pagination.encode(message.pagination, writer.uint32(18).fork()).join();
-    }
-    for (const v of message.results) {
-      AuditLogEntry.encode(v!, writer.uint32(26).fork()).join();
-    }
-    return writer;
-  },
-
-  decode(input: BinaryReader | Uint8Array, length?: number): GetAuditLogEntriesForAccountResponse {
-    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
-    const end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseGetAuditLogEntriesForAccountResponse();
-    while (reader.pos < end) {
-      const tag = reader.uint32();
-      switch (tag >>> 3) {
-        case 1: {
-          if (tag !== 10) {
-            break;
-          }
-
-          message.responseDetails = ResponseDetails.decode(reader, reader.uint32());
-          continue;
-        }
-        case 2: {
-          if (tag !== 18) {
-            break;
-          }
-
-          message.pagination = Pagination.decode(reader, reader.uint32());
-          continue;
-        }
-        case 3: {
-          if (tag !== 26) {
-            break;
-          }
-
-          message.results.push(AuditLogEntry.decode(reader, reader.uint32()));
-          continue;
-        }
+export const GetAuditLogEntriesForAccountResponse: MessageFns<GetAuditLogEntriesForAccountResponse> =
+  {
+    encode(
+      message: GetAuditLogEntriesForAccountResponse,
+      writer: BinaryWriter = new BinaryWriter()
+    ): BinaryWriter {
+      if (message.responseDetails !== undefined) {
+        ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
       }
-      if ((tag & 7) === 4 || tag === 0) {
-        break;
+      if (message.pagination !== undefined) {
+        Pagination.encode(message.pagination, writer.uint32(18).fork()).join();
       }
-      reader.skip(tag & 7);
-    }
-    return message;
-  },
+      for (const v of message.results) {
+        AuditLogEntry.encode(v!, writer.uint32(26).fork()).join();
+      }
+      return writer;
+    },
 
-  fromJSON(object: any): GetAuditLogEntriesForAccountResponse {
-    return {
-      responseDetails: isSet(object.responseDetails)
-        ? ResponseDetails.fromJSON(object.responseDetails)
-        : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
-      pagination: isSet(object.pagination) ? Pagination.fromJSON(object.pagination) : undefined,
-      results: globalThis.Array.isArray(object?.results)
-        ? object.results.map((e: any) => AuditLogEntry.fromJSON(e))
-        : [],
-    };
-  },
+    decode(
+      input: BinaryReader | Uint8Array,
+      length?: number
+    ): GetAuditLogEntriesForAccountResponse {
+      const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+      const end = length === undefined ? reader.len : reader.pos + length;
+      const message = createBaseGetAuditLogEntriesForAccountResponse();
+      while (reader.pos < end) {
+        const tag = reader.uint32();
+        switch (tag >>> 3) {
+          case 1: {
+            if (tag !== 10) {
+              break;
+            }
 
-  toJSON(message: GetAuditLogEntriesForAccountResponse): unknown {
-    const obj: any = {};
-    if (message.responseDetails !== undefined) {
-      obj.responseDetails = ResponseDetails.toJSON(message.responseDetails);
-    }
-    if (message.pagination !== undefined) {
-      obj.pagination = Pagination.toJSON(message.pagination);
-    }
-    if (message.results?.length) {
-      obj.results = message.results.map((e) => AuditLogEntry.toJSON(e));
-    }
-    return obj;
-  },
+            message.responseDetails = ResponseDetails.decode(reader, reader.uint32());
+            continue;
+          }
+          case 2: {
+            if (tag !== 18) {
+              break;
+            }
 
-  create(base?: DeepPartial<GetAuditLogEntriesForAccountResponse>): GetAuditLogEntriesForAccountResponse {
-    return GetAuditLogEntriesForAccountResponse.fromPartial(base ?? {});
-  },
-  fromPartial(object: DeepPartial<GetAuditLogEntriesForAccountResponse>): GetAuditLogEntriesForAccountResponse {
-    const message = createBaseGetAuditLogEntriesForAccountResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.pagination = (object.pagination !== undefined && object.pagination !== null)
-      ? Pagination.fromPartial(object.pagination)
-      : undefined;
-    message.results = object.results?.map((e) => AuditLogEntry.fromPartial(e)) || [];
-    return message;
-  },
-};
+            message.pagination = Pagination.decode(reader, reader.uint32());
+            continue;
+          }
+          case 3: {
+            if (tag !== 26) {
+              break;
+            }
+
+            message.results.push(AuditLogEntry.decode(reader, reader.uint32()));
+            continue;
+          }
+        }
+        if ((tag & 7) === 4 || tag === 0) {
+          break;
+        }
+        reader.skip(tag & 7);
+      }
+      return message;
+    },
+
+    fromJSON(object: any): GetAuditLogEntriesForAccountResponse {
+      return {
+        responseDetails: isSet(object.responseDetails)
+          ? ResponseDetails.fromJSON(object.responseDetails)
+          : isSet(object.response_details)
+            ? ResponseDetails.fromJSON(object.response_details)
+            : undefined,
+        pagination: isSet(object.pagination) ? Pagination.fromJSON(object.pagination) : undefined,
+        results: globalThis.Array.isArray(object?.results)
+          ? object.results.map((e: any) => AuditLogEntry.fromJSON(e))
+          : [],
+      };
+    },
+
+    toJSON(message: GetAuditLogEntriesForAccountResponse): unknown {
+      const obj: any = {};
+      if (message.responseDetails !== undefined) {
+        obj.responseDetails = ResponseDetails.toJSON(message.responseDetails);
+      }
+      if (message.pagination !== undefined) {
+        obj.pagination = Pagination.toJSON(message.pagination);
+      }
+      if (message.results?.length) {
+        obj.results = message.results.map((e) => AuditLogEntry.toJSON(e));
+      }
+      return obj;
+    },
+
+    create(
+      base?: DeepPartial<GetAuditLogEntriesForAccountResponse>
+    ): GetAuditLogEntriesForAccountResponse {
+      return GetAuditLogEntriesForAccountResponse.fromPartial(base ?? {});
+    },
+    fromPartial(
+      object: DeepPartial<GetAuditLogEntriesForAccountResponse>
+    ): GetAuditLogEntriesForAccountResponse {
+      const message = createBaseGetAuditLogEntriesForAccountResponse();
+      message.responseDetails =
+        object.responseDetails !== undefined && object.responseDetails !== null
+          ? ResponseDetails.fromPartial(object.responseDetails)
+          : undefined;
+      message.pagination =
+        object.pagination !== undefined && object.pagination !== null
+          ? Pagination.fromPartial(object.pagination)
+          : undefined;
+      message.results = object.results?.map((e) => AuditLogEntry.fromPartial(e)) || [];
+      return message;
+    },
+  };
 
 function createBaseGetAuditLogEntriesForUserRequest(): GetAuditLogEntriesForUserRequest {
   return { filter: undefined };
 }
 
 export const GetAuditLogEntriesForUserRequest: MessageFns<GetAuditLogEntriesForUserRequest> = {
-  encode(message: GetAuditLogEntriesForUserRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: GetAuditLogEntriesForUserRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.filter !== undefined) {
       QueryFilter.encode(message.filter, writer.uint32(10).fork()).join();
     }
@@ -254,11 +279,14 @@ export const GetAuditLogEntriesForUserRequest: MessageFns<GetAuditLogEntriesForU
   create(base?: DeepPartial<GetAuditLogEntriesForUserRequest>): GetAuditLogEntriesForUserRequest {
     return GetAuditLogEntriesForUserRequest.fromPartial(base ?? {});
   },
-  fromPartial(object: DeepPartial<GetAuditLogEntriesForUserRequest>): GetAuditLogEntriesForUserRequest {
+  fromPartial(
+    object: DeepPartial<GetAuditLogEntriesForUserRequest>
+  ): GetAuditLogEntriesForUserRequest {
     const message = createBaseGetAuditLogEntriesForUserRequest();
-    message.filter = (object.filter !== undefined && object.filter !== null)
-      ? QueryFilter.fromPartial(object.filter)
-      : undefined;
+    message.filter =
+      object.filter !== undefined && object.filter !== null
+        ? QueryFilter.fromPartial(object.filter)
+        : undefined;
     return message;
   },
 };
@@ -268,7 +296,10 @@ function createBaseGetAuditLogEntriesForUserResponse(): GetAuditLogEntriesForUse
 }
 
 export const GetAuditLogEntriesForUserResponse: MessageFns<GetAuditLogEntriesForUserResponse> = {
-  encode(message: GetAuditLogEntriesForUserResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: GetAuditLogEntriesForUserResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -326,8 +357,8 @@ export const GetAuditLogEntriesForUserResponse: MessageFns<GetAuditLogEntriesFor
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       pagination: isSet(object.pagination) ? Pagination.fromJSON(object.pagination) : undefined,
       results: globalThis.Array.isArray(object?.results)
         ? object.results.map((e: any) => AuditLogEntry.fromJSON(e))
@@ -352,26 +383,33 @@ export const GetAuditLogEntriesForUserResponse: MessageFns<GetAuditLogEntriesFor
   create(base?: DeepPartial<GetAuditLogEntriesForUserResponse>): GetAuditLogEntriesForUserResponse {
     return GetAuditLogEntriesForUserResponse.fromPartial(base ?? {});
   },
-  fromPartial(object: DeepPartial<GetAuditLogEntriesForUserResponse>): GetAuditLogEntriesForUserResponse {
+  fromPartial(
+    object: DeepPartial<GetAuditLogEntriesForUserResponse>
+  ): GetAuditLogEntriesForUserResponse {
     const message = createBaseGetAuditLogEntriesForUserResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.pagination = (object.pagination !== undefined && object.pagination !== null)
-      ? Pagination.fromPartial(object.pagination)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
+    message.pagination =
+      object.pagination !== undefined && object.pagination !== null
+        ? Pagination.fromPartial(object.pagination)
+        : undefined;
     message.results = object.results?.map((e) => AuditLogEntry.fromPartial(e)) || [];
     return message;
   },
 };
 
 function createBaseGetAuditLogEntryByIDRequest(): GetAuditLogEntryByIDRequest {
-  return { auditLogEntryId: "" };
+  return { auditLogEntryId: '' };
 }
 
 export const GetAuditLogEntryByIDRequest: MessageFns<GetAuditLogEntryByIDRequest> = {
-  encode(message: GetAuditLogEntryByIDRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.auditLogEntryId !== "") {
+  encode(
+    message: GetAuditLogEntryByIDRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.auditLogEntryId !== '') {
       writer.uint32(10).string(message.auditLogEntryId);
     }
     return writer;
@@ -406,14 +444,14 @@ export const GetAuditLogEntryByIDRequest: MessageFns<GetAuditLogEntryByIDRequest
       auditLogEntryId: isSet(object.auditLogEntryId)
         ? globalThis.String(object.auditLogEntryId)
         : isSet(object.audit_log_entry_id)
-        ? globalThis.String(object.audit_log_entry_id)
-        : "",
+          ? globalThis.String(object.audit_log_entry_id)
+          : '',
     };
   },
 
   toJSON(message: GetAuditLogEntryByIDRequest): unknown {
     const obj: any = {};
-    if (message.auditLogEntryId !== "") {
+    if (message.auditLogEntryId !== '') {
       obj.auditLogEntryId = message.auditLogEntryId;
     }
     return obj;
@@ -424,7 +462,7 @@ export const GetAuditLogEntryByIDRequest: MessageFns<GetAuditLogEntryByIDRequest
   },
   fromPartial(object: DeepPartial<GetAuditLogEntryByIDRequest>): GetAuditLogEntryByIDRequest {
     const message = createBaseGetAuditLogEntryByIDRequest();
-    message.auditLogEntryId = object.auditLogEntryId ?? "";
+    message.auditLogEntryId = object.auditLogEntryId ?? '';
     return message;
   },
 };
@@ -434,7 +472,10 @@ function createBaseGetAuditLogEntryByIDResponse(): GetAuditLogEntryByIDResponse 
 }
 
 export const GetAuditLogEntryByIDResponse: MessageFns<GetAuditLogEntryByIDResponse> = {
-  encode(message: GetAuditLogEntryByIDResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: GetAuditLogEntryByIDResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -481,8 +522,8 @@ export const GetAuditLogEntryByIDResponse: MessageFns<GetAuditLogEntryByIDRespon
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       result: isSet(object.result) ? AuditLogEntry.fromJSON(object.result) : undefined,
     };
   },
@@ -503,23 +544,29 @@ export const GetAuditLogEntryByIDResponse: MessageFns<GetAuditLogEntryByIDRespon
   },
   fromPartial(object: DeepPartial<GetAuditLogEntryByIDResponse>): GetAuditLogEntryByIDResponse {
     const message = createBaseGetAuditLogEntryByIDResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.result = (object.result !== undefined && object.result !== null)
-      ? AuditLogEntry.fromPartial(object.result)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
+    message.result =
+      object.result !== undefined && object.result !== null
+        ? AuditLogEntry.fromPartial(object.result)
+        : undefined;
     return message;
   },
 };
 
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 
-export type DeepPartial<T> = T extends Builtin ? T
-  : T extends globalThis.Array<infer U> ? globalThis.Array<DeepPartial<U>>
-  : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>>
-  : T extends {} ? { [K in keyof T]?: DeepPartial<T[K]> }
-  : Partial<T>;
+export type DeepPartial<T> = T extends Builtin
+  ? T
+  : T extends globalThis.Array<infer U>
+    ? globalThis.Array<DeepPartial<U>>
+    : T extends ReadonlyArray<infer U>
+      ? ReadonlyArray<DeepPartial<U>>
+      : T extends {}
+        ? { [K in keyof T]?: DeepPartial<T[K]> }
+        : Partial<T>;
 
 function isSet(value: any): boolean {
   return value !== null && value !== undefined;

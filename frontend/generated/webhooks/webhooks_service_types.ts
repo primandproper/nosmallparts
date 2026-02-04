@@ -5,10 +5,10 @@
 // source: webhooks/webhooks_service_types.proto
 
 /* eslint-disable */
-import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
-import { ResponseDetails } from "../common";
-import { Pagination, QueryFilter } from "../filtering";
-import { Any } from "../google/protobuf/any";
+import { BinaryReader, BinaryWriter } from '@bufbuild/protobuf/wire';
+import { ResponseDetails } from '../common';
+import { Pagination, QueryFilter } from '../filtering';
+import { Any } from '../google/protobuf/any';
 import {
   Webhook,
   WebhookContentType,
@@ -18,9 +18,9 @@ import {
   webhookMethodFromJSON,
   webhookMethodToJSON,
   WebhookTriggerEvent,
-} from "./webhooks_messages";
+} from './webhooks_messages';
 
-export const protobufPackage = "webhooks";
+export const protobufPackage = 'webhooks';
 
 export interface WebhookCreationRequestInput {
   name: string;
@@ -99,18 +99,21 @@ export interface GetWebhooksResponse {
 }
 
 function createBaseWebhookCreationRequestInput(): WebhookCreationRequestInput {
-  return { name: "", contentType: 0, url: "", method: 0, events: [] };
+  return { name: '', contentType: 0, url: '', method: 0, events: [] };
 }
 
 export const WebhookCreationRequestInput: MessageFns<WebhookCreationRequestInput> = {
-  encode(message: WebhookCreationRequestInput, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.name !== "") {
+  encode(
+    message: WebhookCreationRequestInput,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.name !== '') {
       writer.uint32(10).string(message.name);
     }
     if (message.contentType !== 0) {
       writer.uint32(16).int32(message.contentType);
     }
-    if (message.url !== "") {
+    if (message.url !== '') {
       writer.uint32(26).string(message.url);
     }
     if (message.method !== 0) {
@@ -180,27 +183,29 @@ export const WebhookCreationRequestInput: MessageFns<WebhookCreationRequestInput
 
   fromJSON(object: any): WebhookCreationRequestInput {
     return {
-      name: isSet(object.name) ? globalThis.String(object.name) : "",
+      name: isSet(object.name) ? globalThis.String(object.name) : '',
       contentType: isSet(object.contentType)
         ? webhookContentTypeFromJSON(object.contentType)
         : isSet(object.content_type)
-        ? webhookContentTypeFromJSON(object.content_type)
-        : 0,
-      url: isSet(object.url) ? globalThis.String(object.url) : "",
+          ? webhookContentTypeFromJSON(object.content_type)
+          : 0,
+      url: isSet(object.url) ? globalThis.String(object.url) : '',
       method: isSet(object.method) ? webhookMethodFromJSON(object.method) : 0,
-      events: globalThis.Array.isArray(object?.events) ? object.events.map((e: any) => globalThis.String(e)) : [],
+      events: globalThis.Array.isArray(object?.events)
+        ? object.events.map((e: any) => globalThis.String(e))
+        : [],
     };
   },
 
   toJSON(message: WebhookCreationRequestInput): unknown {
     const obj: any = {};
-    if (message.name !== "") {
+    if (message.name !== '') {
       obj.name = message.name;
     }
     if (message.contentType !== 0) {
       obj.contentType = webhookContentTypeToJSON(message.contentType);
     }
-    if (message.url !== "") {
+    if (message.url !== '') {
       obj.url = message.url;
     }
     if (message.method !== 0) {
@@ -217,9 +222,9 @@ export const WebhookCreationRequestInput: MessageFns<WebhookCreationRequestInput
   },
   fromPartial(object: DeepPartial<WebhookCreationRequestInput>): WebhookCreationRequestInput {
     const message = createBaseWebhookCreationRequestInput();
-    message.name = object.name ?? "";
+    message.name = object.name ?? '';
     message.contentType = object.contentType ?? 0;
-    message.url = object.url ?? "";
+    message.url = object.url ?? '';
     message.method = object.method ?? 0;
     message.events = object.events?.map((e) => e) || [];
     return message;
@@ -227,24 +232,27 @@ export const WebhookCreationRequestInput: MessageFns<WebhookCreationRequestInput
 };
 
 function createBaseWebhookExecutionRequest(): WebhookExecutionRequest {
-  return { requestId: "", payload: undefined, webhookId: "", accountId: "", triggerEvent: "" };
+  return { requestId: '', payload: undefined, webhookId: '', accountId: '', triggerEvent: '' };
 }
 
 export const WebhookExecutionRequest: MessageFns<WebhookExecutionRequest> = {
-  encode(message: WebhookExecutionRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.requestId !== "") {
+  encode(
+    message: WebhookExecutionRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.requestId !== '') {
       writer.uint32(10).string(message.requestId);
     }
     if (message.payload !== undefined) {
       Any.encode(message.payload, writer.uint32(18).fork()).join();
     }
-    if (message.webhookId !== "") {
+    if (message.webhookId !== '') {
       writer.uint32(26).string(message.webhookId);
     }
-    if (message.accountId !== "") {
+    if (message.accountId !== '') {
       writer.uint32(34).string(message.accountId);
     }
-    if (message.triggerEvent !== "") {
+    if (message.triggerEvent !== '') {
       writer.uint32(42).string(message.triggerEvent);
     }
     return writer;
@@ -311,42 +319,42 @@ export const WebhookExecutionRequest: MessageFns<WebhookExecutionRequest> = {
       requestId: isSet(object.requestId)
         ? globalThis.String(object.requestId)
         : isSet(object.request_id)
-        ? globalThis.String(object.request_id)
-        : "",
+          ? globalThis.String(object.request_id)
+          : '',
       payload: isSet(object.payload) ? Any.fromJSON(object.payload) : undefined,
       webhookId: isSet(object.webhookId)
         ? globalThis.String(object.webhookId)
         : isSet(object.webhook_id)
-        ? globalThis.String(object.webhook_id)
-        : "",
+          ? globalThis.String(object.webhook_id)
+          : '',
       accountId: isSet(object.accountId)
         ? globalThis.String(object.accountId)
         : isSet(object.account_id)
-        ? globalThis.String(object.account_id)
-        : "",
+          ? globalThis.String(object.account_id)
+          : '',
       triggerEvent: isSet(object.triggerEvent)
         ? globalThis.String(object.triggerEvent)
         : isSet(object.trigger_event)
-        ? globalThis.String(object.trigger_event)
-        : "",
+          ? globalThis.String(object.trigger_event)
+          : '',
     };
   },
 
   toJSON(message: WebhookExecutionRequest): unknown {
     const obj: any = {};
-    if (message.requestId !== "") {
+    if (message.requestId !== '') {
       obj.requestId = message.requestId;
     }
     if (message.payload !== undefined) {
       obj.payload = Any.toJSON(message.payload);
     }
-    if (message.webhookId !== "") {
+    if (message.webhookId !== '') {
       obj.webhookId = message.webhookId;
     }
-    if (message.accountId !== "") {
+    if (message.accountId !== '') {
       obj.accountId = message.accountId;
     }
-    if (message.triggerEvent !== "") {
+    if (message.triggerEvent !== '') {
       obj.triggerEvent = message.triggerEvent;
     }
     return obj;
@@ -357,100 +365,112 @@ export const WebhookExecutionRequest: MessageFns<WebhookExecutionRequest> = {
   },
   fromPartial(object: DeepPartial<WebhookExecutionRequest>): WebhookExecutionRequest {
     const message = createBaseWebhookExecutionRequest();
-    message.requestId = object.requestId ?? "";
-    message.payload = (object.payload !== undefined && object.payload !== null)
-      ? Any.fromPartial(object.payload)
-      : undefined;
-    message.webhookId = object.webhookId ?? "";
-    message.accountId = object.accountId ?? "";
-    message.triggerEvent = object.triggerEvent ?? "";
+    message.requestId = object.requestId ?? '';
+    message.payload =
+      object.payload !== undefined && object.payload !== null
+        ? Any.fromPartial(object.payload)
+        : undefined;
+    message.webhookId = object.webhookId ?? '';
+    message.accountId = object.accountId ?? '';
+    message.triggerEvent = object.triggerEvent ?? '';
     return message;
   },
 };
 
 function createBaseWebhookTriggerEventCreationRequestInput(): WebhookTriggerEventCreationRequestInput {
-  return { belongsToWebhook: "", triggerEvent: "" };
+  return { belongsToWebhook: '', triggerEvent: '' };
 }
 
-export const WebhookTriggerEventCreationRequestInput: MessageFns<WebhookTriggerEventCreationRequestInput> = {
-  encode(message: WebhookTriggerEventCreationRequestInput, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.belongsToWebhook !== "") {
-      writer.uint32(10).string(message.belongsToWebhook);
-    }
-    if (message.triggerEvent !== "") {
-      writer.uint32(18).string(message.triggerEvent);
-    }
-    return writer;
-  },
-
-  decode(input: BinaryReader | Uint8Array, length?: number): WebhookTriggerEventCreationRequestInput {
-    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
-    const end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseWebhookTriggerEventCreationRequestInput();
-    while (reader.pos < end) {
-      const tag = reader.uint32();
-      switch (tag >>> 3) {
-        case 1: {
-          if (tag !== 10) {
-            break;
-          }
-
-          message.belongsToWebhook = reader.string();
-          continue;
-        }
-        case 2: {
-          if (tag !== 18) {
-            break;
-          }
-
-          message.triggerEvent = reader.string();
-          continue;
-        }
+export const WebhookTriggerEventCreationRequestInput: MessageFns<WebhookTriggerEventCreationRequestInput> =
+  {
+    encode(
+      message: WebhookTriggerEventCreationRequestInput,
+      writer: BinaryWriter = new BinaryWriter()
+    ): BinaryWriter {
+      if (message.belongsToWebhook !== '') {
+        writer.uint32(10).string(message.belongsToWebhook);
       }
-      if ((tag & 7) === 4 || tag === 0) {
-        break;
+      if (message.triggerEvent !== '') {
+        writer.uint32(18).string(message.triggerEvent);
       }
-      reader.skip(tag & 7);
-    }
-    return message;
-  },
+      return writer;
+    },
 
-  fromJSON(object: any): WebhookTriggerEventCreationRequestInput {
-    return {
-      belongsToWebhook: isSet(object.belongsToWebhook)
-        ? globalThis.String(object.belongsToWebhook)
-        : isSet(object.belongs_to_webhook)
-        ? globalThis.String(object.belongs_to_webhook)
-        : "",
-      triggerEvent: isSet(object.triggerEvent)
-        ? globalThis.String(object.triggerEvent)
-        : isSet(object.trigger_event)
-        ? globalThis.String(object.trigger_event)
-        : "",
-    };
-  },
+    decode(
+      input: BinaryReader | Uint8Array,
+      length?: number
+    ): WebhookTriggerEventCreationRequestInput {
+      const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+      const end = length === undefined ? reader.len : reader.pos + length;
+      const message = createBaseWebhookTriggerEventCreationRequestInput();
+      while (reader.pos < end) {
+        const tag = reader.uint32();
+        switch (tag >>> 3) {
+          case 1: {
+            if (tag !== 10) {
+              break;
+            }
 
-  toJSON(message: WebhookTriggerEventCreationRequestInput): unknown {
-    const obj: any = {};
-    if (message.belongsToWebhook !== "") {
-      obj.belongsToWebhook = message.belongsToWebhook;
-    }
-    if (message.triggerEvent !== "") {
-      obj.triggerEvent = message.triggerEvent;
-    }
-    return obj;
-  },
+            message.belongsToWebhook = reader.string();
+            continue;
+          }
+          case 2: {
+            if (tag !== 18) {
+              break;
+            }
 
-  create(base?: DeepPartial<WebhookTriggerEventCreationRequestInput>): WebhookTriggerEventCreationRequestInput {
-    return WebhookTriggerEventCreationRequestInput.fromPartial(base ?? {});
-  },
-  fromPartial(object: DeepPartial<WebhookTriggerEventCreationRequestInput>): WebhookTriggerEventCreationRequestInput {
-    const message = createBaseWebhookTriggerEventCreationRequestInput();
-    message.belongsToWebhook = object.belongsToWebhook ?? "";
-    message.triggerEvent = object.triggerEvent ?? "";
-    return message;
-  },
-};
+            message.triggerEvent = reader.string();
+            continue;
+          }
+        }
+        if ((tag & 7) === 4 || tag === 0) {
+          break;
+        }
+        reader.skip(tag & 7);
+      }
+      return message;
+    },
+
+    fromJSON(object: any): WebhookTriggerEventCreationRequestInput {
+      return {
+        belongsToWebhook: isSet(object.belongsToWebhook)
+          ? globalThis.String(object.belongsToWebhook)
+          : isSet(object.belongs_to_webhook)
+            ? globalThis.String(object.belongs_to_webhook)
+            : '',
+        triggerEvent: isSet(object.triggerEvent)
+          ? globalThis.String(object.triggerEvent)
+          : isSet(object.trigger_event)
+            ? globalThis.String(object.trigger_event)
+            : '',
+      };
+    },
+
+    toJSON(message: WebhookTriggerEventCreationRequestInput): unknown {
+      const obj: any = {};
+      if (message.belongsToWebhook !== '') {
+        obj.belongsToWebhook = message.belongsToWebhook;
+      }
+      if (message.triggerEvent !== '') {
+        obj.triggerEvent = message.triggerEvent;
+      }
+      return obj;
+    },
+
+    create(
+      base?: DeepPartial<WebhookTriggerEventCreationRequestInput>
+    ): WebhookTriggerEventCreationRequestInput {
+      return WebhookTriggerEventCreationRequestInput.fromPartial(base ?? {});
+    },
+    fromPartial(
+      object: DeepPartial<WebhookTriggerEventCreationRequestInput>
+    ): WebhookTriggerEventCreationRequestInput {
+      const message = createBaseWebhookTriggerEventCreationRequestInput();
+      message.belongsToWebhook = object.belongsToWebhook ?? '';
+      message.triggerEvent = object.triggerEvent ?? '';
+      return message;
+    },
+  };
 
 function createBaseCreateWebhookRequest(): CreateWebhookRequest {
   return { input: undefined };
@@ -489,7 +509,9 @@ export const CreateWebhookRequest: MessageFns<CreateWebhookRequest> = {
   },
 
   fromJSON(object: any): CreateWebhookRequest {
-    return { input: isSet(object.input) ? WebhookCreationRequestInput.fromJSON(object.input) : undefined };
+    return {
+      input: isSet(object.input) ? WebhookCreationRequestInput.fromJSON(object.input) : undefined,
+    };
   },
 
   toJSON(message: CreateWebhookRequest): unknown {
@@ -505,9 +527,10 @@ export const CreateWebhookRequest: MessageFns<CreateWebhookRequest> = {
   },
   fromPartial(object: DeepPartial<CreateWebhookRequest>): CreateWebhookRequest {
     const message = createBaseCreateWebhookRequest();
-    message.input = (object.input !== undefined && object.input !== null)
-      ? WebhookCreationRequestInput.fromPartial(object.input)
-      : undefined;
+    message.input =
+      object.input !== undefined && object.input !== null
+        ? WebhookCreationRequestInput.fromPartial(object.input)
+        : undefined;
     return message;
   },
 };
@@ -564,8 +587,8 @@ export const CreateWebhookResponse: MessageFns<CreateWebhookResponse> = {
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       created: isSet(object.created) ? Webhook.fromJSON(object.created) : undefined,
     };
   },
@@ -586,27 +609,35 @@ export const CreateWebhookResponse: MessageFns<CreateWebhookResponse> = {
   },
   fromPartial(object: DeepPartial<CreateWebhookResponse>): CreateWebhookResponse {
     const message = createBaseCreateWebhookResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.created = (object.created !== undefined && object.created !== null)
-      ? Webhook.fromPartial(object.created)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
+    message.created =
+      object.created !== undefined && object.created !== null
+        ? Webhook.fromPartial(object.created)
+        : undefined;
     return message;
   },
 };
 
 function createBaseAddWebhookTriggerEventRequest(): AddWebhookTriggerEventRequest {
-  return { webhookId: "", input: undefined };
+  return { webhookId: '', input: undefined };
 }
 
 export const AddWebhookTriggerEventRequest: MessageFns<AddWebhookTriggerEventRequest> = {
-  encode(message: AddWebhookTriggerEventRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.webhookId !== "") {
+  encode(
+    message: AddWebhookTriggerEventRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.webhookId !== '') {
       writer.uint32(10).string(message.webhookId);
     }
     if (message.input !== undefined) {
-      WebhookTriggerEventCreationRequestInput.encode(message.input, writer.uint32(18).fork()).join();
+      WebhookTriggerEventCreationRequestInput.encode(
+        message.input,
+        writer.uint32(18).fork()
+      ).join();
     }
     return writer;
   },
@@ -648,15 +679,17 @@ export const AddWebhookTriggerEventRequest: MessageFns<AddWebhookTriggerEventReq
       webhookId: isSet(object.webhookId)
         ? globalThis.String(object.webhookId)
         : isSet(object.webhook_id)
-        ? globalThis.String(object.webhook_id)
-        : "",
-      input: isSet(object.input) ? WebhookTriggerEventCreationRequestInput.fromJSON(object.input) : undefined,
+          ? globalThis.String(object.webhook_id)
+          : '',
+      input: isSet(object.input)
+        ? WebhookTriggerEventCreationRequestInput.fromJSON(object.input)
+        : undefined,
     };
   },
 
   toJSON(message: AddWebhookTriggerEventRequest): unknown {
     const obj: any = {};
-    if (message.webhookId !== "") {
+    if (message.webhookId !== '') {
       obj.webhookId = message.webhookId;
     }
     if (message.input !== undefined) {
@@ -670,10 +703,11 @@ export const AddWebhookTriggerEventRequest: MessageFns<AddWebhookTriggerEventReq
   },
   fromPartial(object: DeepPartial<AddWebhookTriggerEventRequest>): AddWebhookTriggerEventRequest {
     const message = createBaseAddWebhookTriggerEventRequest();
-    message.webhookId = object.webhookId ?? "";
-    message.input = (object.input !== undefined && object.input !== null)
-      ? WebhookTriggerEventCreationRequestInput.fromPartial(object.input)
-      : undefined;
+    message.webhookId = object.webhookId ?? '';
+    message.input =
+      object.input !== undefined && object.input !== null
+        ? WebhookTriggerEventCreationRequestInput.fromPartial(object.input)
+        : undefined;
     return message;
   },
 };
@@ -683,7 +717,10 @@ function createBaseAddWebhookTriggerEventResponse(): AddWebhookTriggerEventRespo
 }
 
 export const AddWebhookTriggerEventResponse: MessageFns<AddWebhookTriggerEventResponse> = {
-  encode(message: AddWebhookTriggerEventResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: AddWebhookTriggerEventResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -730,8 +767,8 @@ export const AddWebhookTriggerEventResponse: MessageFns<AddWebhookTriggerEventRe
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       created: isSet(object.created) ? WebhookTriggerEvent.fromJSON(object.created) : undefined,
     };
   },
@@ -752,23 +789,25 @@ export const AddWebhookTriggerEventResponse: MessageFns<AddWebhookTriggerEventRe
   },
   fromPartial(object: DeepPartial<AddWebhookTriggerEventResponse>): AddWebhookTriggerEventResponse {
     const message = createBaseAddWebhookTriggerEventResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.created = (object.created !== undefined && object.created !== null)
-      ? WebhookTriggerEvent.fromPartial(object.created)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
+    message.created =
+      object.created !== undefined && object.created !== null
+        ? WebhookTriggerEvent.fromPartial(object.created)
+        : undefined;
     return message;
   },
 };
 
 function createBaseArchiveWebhookRequest(): ArchiveWebhookRequest {
-  return { webhookId: "" };
+  return { webhookId: '' };
 }
 
 export const ArchiveWebhookRequest: MessageFns<ArchiveWebhookRequest> = {
   encode(message: ArchiveWebhookRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.webhookId !== "") {
+    if (message.webhookId !== '') {
       writer.uint32(10).string(message.webhookId);
     }
     return writer;
@@ -803,14 +842,14 @@ export const ArchiveWebhookRequest: MessageFns<ArchiveWebhookRequest> = {
       webhookId: isSet(object.webhookId)
         ? globalThis.String(object.webhookId)
         : isSet(object.webhook_id)
-        ? globalThis.String(object.webhook_id)
-        : "",
+          ? globalThis.String(object.webhook_id)
+          : '',
     };
   },
 
   toJSON(message: ArchiveWebhookRequest): unknown {
     const obj: any = {};
-    if (message.webhookId !== "") {
+    if (message.webhookId !== '') {
       obj.webhookId = message.webhookId;
     }
     return obj;
@@ -821,7 +860,7 @@ export const ArchiveWebhookRequest: MessageFns<ArchiveWebhookRequest> = {
   },
   fromPartial(object: DeepPartial<ArchiveWebhookRequest>): ArchiveWebhookRequest {
     const message = createBaseArchiveWebhookRequest();
-    message.webhookId = object.webhookId ?? "";
+    message.webhookId = object.webhookId ?? '';
     return message;
   },
 };
@@ -867,8 +906,8 @@ export const ArchiveWebhookResponse: MessageFns<ArchiveWebhookResponse> = {
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
     };
   },
 
@@ -885,23 +924,27 @@ export const ArchiveWebhookResponse: MessageFns<ArchiveWebhookResponse> = {
   },
   fromPartial(object: DeepPartial<ArchiveWebhookResponse>): ArchiveWebhookResponse {
     const message = createBaseArchiveWebhookResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
     return message;
   },
 };
 
 function createBaseArchiveWebhookTriggerEventRequest(): ArchiveWebhookTriggerEventRequest {
-  return { webhookId: "", webhookTriggerEventId: "" };
+  return { webhookId: '', webhookTriggerEventId: '' };
 }
 
 export const ArchiveWebhookTriggerEventRequest: MessageFns<ArchiveWebhookTriggerEventRequest> = {
-  encode(message: ArchiveWebhookTriggerEventRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.webhookId !== "") {
+  encode(
+    message: ArchiveWebhookTriggerEventRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.webhookId !== '') {
       writer.uint32(10).string(message.webhookId);
     }
-    if (message.webhookTriggerEventId !== "") {
+    if (message.webhookTriggerEventId !== '') {
       writer.uint32(18).string(message.webhookTriggerEventId);
     }
     return writer;
@@ -944,22 +987,22 @@ export const ArchiveWebhookTriggerEventRequest: MessageFns<ArchiveWebhookTrigger
       webhookId: isSet(object.webhookId)
         ? globalThis.String(object.webhookId)
         : isSet(object.webhook_id)
-        ? globalThis.String(object.webhook_id)
-        : "",
+          ? globalThis.String(object.webhook_id)
+          : '',
       webhookTriggerEventId: isSet(object.webhookTriggerEventId)
         ? globalThis.String(object.webhookTriggerEventId)
         : isSet(object.webhook_trigger_event_id)
-        ? globalThis.String(object.webhook_trigger_event_id)
-        : "",
+          ? globalThis.String(object.webhook_trigger_event_id)
+          : '',
     };
   },
 
   toJSON(message: ArchiveWebhookTriggerEventRequest): unknown {
     const obj: any = {};
-    if (message.webhookId !== "") {
+    if (message.webhookId !== '') {
       obj.webhookId = message.webhookId;
     }
-    if (message.webhookTriggerEventId !== "") {
+    if (message.webhookTriggerEventId !== '') {
       obj.webhookTriggerEventId = message.webhookTriggerEventId;
     }
     return obj;
@@ -968,10 +1011,12 @@ export const ArchiveWebhookTriggerEventRequest: MessageFns<ArchiveWebhookTrigger
   create(base?: DeepPartial<ArchiveWebhookTriggerEventRequest>): ArchiveWebhookTriggerEventRequest {
     return ArchiveWebhookTriggerEventRequest.fromPartial(base ?? {});
   },
-  fromPartial(object: DeepPartial<ArchiveWebhookTriggerEventRequest>): ArchiveWebhookTriggerEventRequest {
+  fromPartial(
+    object: DeepPartial<ArchiveWebhookTriggerEventRequest>
+  ): ArchiveWebhookTriggerEventRequest {
     const message = createBaseArchiveWebhookTriggerEventRequest();
-    message.webhookId = object.webhookId ?? "";
-    message.webhookTriggerEventId = object.webhookTriggerEventId ?? "";
+    message.webhookId = object.webhookId ?? '';
+    message.webhookTriggerEventId = object.webhookTriggerEventId ?? '';
     return message;
   },
 };
@@ -981,7 +1026,10 @@ function createBaseArchiveWebhookTriggerEventResponse(): ArchiveWebhookTriggerEv
 }
 
 export const ArchiveWebhookTriggerEventResponse: MessageFns<ArchiveWebhookTriggerEventResponse> = {
-  encode(message: ArchiveWebhookTriggerEventResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: ArchiveWebhookTriggerEventResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -1017,8 +1065,8 @@ export const ArchiveWebhookTriggerEventResponse: MessageFns<ArchiveWebhookTrigge
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
     };
   },
 
@@ -1030,25 +1078,30 @@ export const ArchiveWebhookTriggerEventResponse: MessageFns<ArchiveWebhookTrigge
     return obj;
   },
 
-  create(base?: DeepPartial<ArchiveWebhookTriggerEventResponse>): ArchiveWebhookTriggerEventResponse {
+  create(
+    base?: DeepPartial<ArchiveWebhookTriggerEventResponse>
+  ): ArchiveWebhookTriggerEventResponse {
     return ArchiveWebhookTriggerEventResponse.fromPartial(base ?? {});
   },
-  fromPartial(object: DeepPartial<ArchiveWebhookTriggerEventResponse>): ArchiveWebhookTriggerEventResponse {
+  fromPartial(
+    object: DeepPartial<ArchiveWebhookTriggerEventResponse>
+  ): ArchiveWebhookTriggerEventResponse {
     const message = createBaseArchiveWebhookTriggerEventResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
     return message;
   },
 };
 
 function createBaseGetWebhookRequest(): GetWebhookRequest {
-  return { webhookId: "" };
+  return { webhookId: '' };
 }
 
 export const GetWebhookRequest: MessageFns<GetWebhookRequest> = {
   encode(message: GetWebhookRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.webhookId !== "") {
+    if (message.webhookId !== '') {
       writer.uint32(10).string(message.webhookId);
     }
     return writer;
@@ -1083,14 +1136,14 @@ export const GetWebhookRequest: MessageFns<GetWebhookRequest> = {
       webhookId: isSet(object.webhookId)
         ? globalThis.String(object.webhookId)
         : isSet(object.webhook_id)
-        ? globalThis.String(object.webhook_id)
-        : "",
+          ? globalThis.String(object.webhook_id)
+          : '',
     };
   },
 
   toJSON(message: GetWebhookRequest): unknown {
     const obj: any = {};
-    if (message.webhookId !== "") {
+    if (message.webhookId !== '') {
       obj.webhookId = message.webhookId;
     }
     return obj;
@@ -1101,7 +1154,7 @@ export const GetWebhookRequest: MessageFns<GetWebhookRequest> = {
   },
   fromPartial(object: DeepPartial<GetWebhookRequest>): GetWebhookRequest {
     const message = createBaseGetWebhookRequest();
-    message.webhookId = object.webhookId ?? "";
+    message.webhookId = object.webhookId ?? '';
     return message;
   },
 };
@@ -1158,8 +1211,8 @@ export const GetWebhookResponse: MessageFns<GetWebhookResponse> = {
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       result: isSet(object.result) ? Webhook.fromJSON(object.result) : undefined,
     };
   },
@@ -1180,12 +1233,14 @@ export const GetWebhookResponse: MessageFns<GetWebhookResponse> = {
   },
   fromPartial(object: DeepPartial<GetWebhookResponse>): GetWebhookResponse {
     const message = createBaseGetWebhookResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.result = (object.result !== undefined && object.result !== null)
-      ? Webhook.fromPartial(object.result)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
+    message.result =
+      object.result !== undefined && object.result !== null
+        ? Webhook.fromPartial(object.result)
+        : undefined;
     return message;
   },
 };
@@ -1243,9 +1298,10 @@ export const GetWebhooksRequest: MessageFns<GetWebhooksRequest> = {
   },
   fromPartial(object: DeepPartial<GetWebhooksRequest>): GetWebhooksRequest {
     const message = createBaseGetWebhooksRequest();
-    message.filter = (object.filter !== undefined && object.filter !== null)
-      ? QueryFilter.fromPartial(object.filter)
-      : undefined;
+    message.filter =
+      object.filter !== undefined && object.filter !== null
+        ? QueryFilter.fromPartial(object.filter)
+        : undefined;
     return message;
   },
 };
@@ -1313,10 +1369,12 @@ export const GetWebhooksResponse: MessageFns<GetWebhooksResponse> = {
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       pagination: isSet(object.pagination) ? Pagination.fromJSON(object.pagination) : undefined,
-      results: globalThis.Array.isArray(object?.results) ? object.results.map((e: any) => Webhook.fromJSON(e)) : [],
+      results: globalThis.Array.isArray(object?.results)
+        ? object.results.map((e: any) => Webhook.fromJSON(e))
+        : [],
     };
   },
 
@@ -1339,12 +1397,14 @@ export const GetWebhooksResponse: MessageFns<GetWebhooksResponse> = {
   },
   fromPartial(object: DeepPartial<GetWebhooksResponse>): GetWebhooksResponse {
     const message = createBaseGetWebhooksResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.pagination = (object.pagination !== undefined && object.pagination !== null)
-      ? Pagination.fromPartial(object.pagination)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
+    message.pagination =
+      object.pagination !== undefined && object.pagination !== null
+        ? Pagination.fromPartial(object.pagination)
+        : undefined;
     message.results = object.results?.map((e) => Webhook.fromPartial(e)) || [];
     return message;
   },
@@ -1352,11 +1412,15 @@ export const GetWebhooksResponse: MessageFns<GetWebhooksResponse> = {
 
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 
-export type DeepPartial<T> = T extends Builtin ? T
-  : T extends globalThis.Array<infer U> ? globalThis.Array<DeepPartial<U>>
-  : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>>
-  : T extends {} ? { [K in keyof T]?: DeepPartial<T[K]> }
-  : Partial<T>;
+export type DeepPartial<T> = T extends Builtin
+  ? T
+  : T extends globalThis.Array<infer U>
+    ? globalThis.Array<DeepPartial<U>>
+    : T extends ReadonlyArray<infer U>
+      ? ReadonlyArray<DeepPartial<U>>
+      : T extends {}
+        ? { [K in keyof T]?: DeepPartial<T[K]> }
+        : Partial<T>;
 
 function isSet(value: any): boolean {
   return value !== null && value !== undefined;

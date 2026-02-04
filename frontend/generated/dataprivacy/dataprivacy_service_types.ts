@@ -5,22 +5,20 @@
 // source: dataprivacy/dataprivacy_service_types.proto
 
 /* eslint-disable */
-import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
-import { ResponseDetails } from "../common";
-import { UserDataCollection } from "./dataprivacy_messages";
+import { BinaryReader, BinaryWriter } from '@bufbuild/protobuf/wire';
+import { ResponseDetails } from '../common';
+import { UserDataCollection } from './dataprivacy_messages';
 
-export const protobufPackage = "dataprivacy";
+export const protobufPackage = 'dataprivacy';
 
-export interface AggregateUserDataReportRequest {
-}
+export interface AggregateUserDataReportRequest {}
 
 export interface AggregateUserDataReportResponse {
   responseDetails: ResponseDetails | undefined;
   reportId: string;
 }
 
-export interface DestroyAllUserDataRequest {
-}
+export interface DestroyAllUserDataRequest {}
 
 export interface DestroyAllUserDataResponse {
   responseDetails: ResponseDetails | undefined;
@@ -41,7 +39,10 @@ function createBaseAggregateUserDataReportRequest(): AggregateUserDataReportRequ
 }
 
 export const AggregateUserDataReportRequest: MessageFns<AggregateUserDataReportRequest> = {
-  encode(_: AggregateUserDataReportRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    _: AggregateUserDataReportRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     return writer;
   },
 
@@ -80,15 +81,18 @@ export const AggregateUserDataReportRequest: MessageFns<AggregateUserDataReportR
 };
 
 function createBaseAggregateUserDataReportResponse(): AggregateUserDataReportResponse {
-  return { responseDetails: undefined, reportId: "" };
+  return { responseDetails: undefined, reportId: '' };
 }
 
 export const AggregateUserDataReportResponse: MessageFns<AggregateUserDataReportResponse> = {
-  encode(message: AggregateUserDataReportResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: AggregateUserDataReportResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
-    if (message.reportId !== "") {
+    if (message.reportId !== '') {
       writer.uint32(18).string(message.reportId);
     }
     return writer;
@@ -131,13 +135,13 @@ export const AggregateUserDataReportResponse: MessageFns<AggregateUserDataReport
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       reportId: isSet(object.reportId)
         ? globalThis.String(object.reportId)
         : isSet(object.report_id)
-        ? globalThis.String(object.report_id)
-        : "",
+          ? globalThis.String(object.report_id)
+          : '',
     };
   },
 
@@ -146,7 +150,7 @@ export const AggregateUserDataReportResponse: MessageFns<AggregateUserDataReport
     if (message.responseDetails !== undefined) {
       obj.responseDetails = ResponseDetails.toJSON(message.responseDetails);
     }
-    if (message.reportId !== "") {
+    if (message.reportId !== '') {
       obj.reportId = message.reportId;
     }
     return obj;
@@ -155,12 +159,15 @@ export const AggregateUserDataReportResponse: MessageFns<AggregateUserDataReport
   create(base?: DeepPartial<AggregateUserDataReportResponse>): AggregateUserDataReportResponse {
     return AggregateUserDataReportResponse.fromPartial(base ?? {});
   },
-  fromPartial(object: DeepPartial<AggregateUserDataReportResponse>): AggregateUserDataReportResponse {
+  fromPartial(
+    object: DeepPartial<AggregateUserDataReportResponse>
+  ): AggregateUserDataReportResponse {
     const message = createBaseAggregateUserDataReportResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.reportId = object.reportId ?? "";
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
+    message.reportId = object.reportId ?? '';
     return message;
   },
 };
@@ -213,7 +220,10 @@ function createBaseDestroyAllUserDataResponse(): DestroyAllUserDataResponse {
 }
 
 export const DestroyAllUserDataResponse: MessageFns<DestroyAllUserDataResponse> = {
-  encode(message: DestroyAllUserDataResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: DestroyAllUserDataResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -260,8 +270,8 @@ export const DestroyAllUserDataResponse: MessageFns<DestroyAllUserDataResponse> 
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       successful: isSet(object.successful) ? globalThis.Boolean(object.successful) : false,
     };
   },
@@ -282,21 +292,25 @@ export const DestroyAllUserDataResponse: MessageFns<DestroyAllUserDataResponse> 
   },
   fromPartial(object: DeepPartial<DestroyAllUserDataResponse>): DestroyAllUserDataResponse {
     const message = createBaseDestroyAllUserDataResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
     message.successful = object.successful ?? false;
     return message;
   },
 };
 
 function createBaseFetchUserDataReportRequest(): FetchUserDataReportRequest {
-  return { userDataAggregationReportId: "" };
+  return { userDataAggregationReportId: '' };
 }
 
 export const FetchUserDataReportRequest: MessageFns<FetchUserDataReportRequest> = {
-  encode(message: FetchUserDataReportRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.userDataAggregationReportId !== "") {
+  encode(
+    message: FetchUserDataReportRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.userDataAggregationReportId !== '') {
       writer.uint32(10).string(message.userDataAggregationReportId);
     }
     return writer;
@@ -331,14 +345,14 @@ export const FetchUserDataReportRequest: MessageFns<FetchUserDataReportRequest> 
       userDataAggregationReportId: isSet(object.userDataAggregationReportId)
         ? globalThis.String(object.userDataAggregationReportId)
         : isSet(object.user_data_aggregation_report_id)
-        ? globalThis.String(object.user_data_aggregation_report_id)
-        : "",
+          ? globalThis.String(object.user_data_aggregation_report_id)
+          : '',
     };
   },
 
   toJSON(message: FetchUserDataReportRequest): unknown {
     const obj: any = {};
-    if (message.userDataAggregationReportId !== "") {
+    if (message.userDataAggregationReportId !== '') {
       obj.userDataAggregationReportId = message.userDataAggregationReportId;
     }
     return obj;
@@ -349,7 +363,7 @@ export const FetchUserDataReportRequest: MessageFns<FetchUserDataReportRequest> 
   },
   fromPartial(object: DeepPartial<FetchUserDataReportRequest>): FetchUserDataReportRequest {
     const message = createBaseFetchUserDataReportRequest();
-    message.userDataAggregationReportId = object.userDataAggregationReportId ?? "";
+    message.userDataAggregationReportId = object.userDataAggregationReportId ?? '';
     return message;
   },
 };
@@ -359,7 +373,10 @@ function createBaseFetchUserDataReportResponse(): FetchUserDataReportResponse {
 }
 
 export const FetchUserDataReportResponse: MessageFns<FetchUserDataReportResponse> = {
-  encode(message: FetchUserDataReportResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: FetchUserDataReportResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -406,13 +423,13 @@ export const FetchUserDataReportResponse: MessageFns<FetchUserDataReportResponse
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       userDataCollection: isSet(object.userDataCollection)
         ? UserDataCollection.fromJSON(object.userDataCollection)
         : isSet(object.user_data_collection)
-        ? UserDataCollection.fromJSON(object.user_data_collection)
-        : undefined,
+          ? UserDataCollection.fromJSON(object.user_data_collection)
+          : undefined,
     };
   },
 
@@ -432,23 +449,29 @@ export const FetchUserDataReportResponse: MessageFns<FetchUserDataReportResponse
   },
   fromPartial(object: DeepPartial<FetchUserDataReportResponse>): FetchUserDataReportResponse {
     const message = createBaseFetchUserDataReportResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.userDataCollection = (object.userDataCollection !== undefined && object.userDataCollection !== null)
-      ? UserDataCollection.fromPartial(object.userDataCollection)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
+    message.userDataCollection =
+      object.userDataCollection !== undefined && object.userDataCollection !== null
+        ? UserDataCollection.fromPartial(object.userDataCollection)
+        : undefined;
     return message;
   },
 };
 
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 
-export type DeepPartial<T> = T extends Builtin ? T
-  : T extends globalThis.Array<infer U> ? globalThis.Array<DeepPartial<U>>
-  : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>>
-  : T extends {} ? { [K in keyof T]?: DeepPartial<T[K]> }
-  : Partial<T>;
+export type DeepPartial<T> = T extends Builtin
+  ? T
+  : T extends globalThis.Array<infer U>
+    ? globalThis.Array<DeepPartial<U>>
+    : T extends ReadonlyArray<infer U>
+      ? ReadonlyArray<DeepPartial<U>>
+      : T extends {}
+        ? { [K in keyof T]?: DeepPartial<T[K]> }
+        : Partial<T>;
 
 function isSet(value: any): boolean {
   return value !== null && value !== undefined;

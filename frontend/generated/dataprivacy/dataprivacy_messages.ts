@@ -5,12 +5,12 @@
 // source: dataprivacy/dataprivacy_messages.proto
 
 /* eslint-disable */
-import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
-import { DataCollection } from "../identity/identity_messages";
-import { DataCollection as DataCollection1 } from "../settings/settings_messages";
-import { DataCollection as DataCollection2 } from "../webhooks/webhooks_messages";
+import { BinaryReader, BinaryWriter } from '@bufbuild/protobuf/wire';
+import { DataCollection } from '../identity/identity_messages';
+import { DataCollection as DataCollection1 } from '../settings/settings_messages';
+import { DataCollection as DataCollection2 } from '../webhooks/webhooks_messages';
 
-export const protobufPackage = "dataprivacy";
+export const protobufPackage = 'dataprivacy';
 
 export interface UserDataCollection {
   reportId: string;
@@ -21,7 +21,7 @@ export interface UserDataCollection {
 
 function createBaseUserDataCollection(): UserDataCollection {
   return {
-    reportId: "",
+    reportId: '',
     identityDataCollection: undefined,
     settingsDataCollection: undefined,
     webhooksDataCollection: undefined,
@@ -30,7 +30,7 @@ function createBaseUserDataCollection(): UserDataCollection {
 
 export const UserDataCollection: MessageFns<UserDataCollection> = {
   encode(message: UserDataCollection, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.reportId !== "") {
+    if (message.reportId !== '') {
       writer.uint32(10).string(message.reportId);
     }
     if (message.identityDataCollection !== undefined) {
@@ -98,29 +98,29 @@ export const UserDataCollection: MessageFns<UserDataCollection> = {
       reportId: isSet(object.reportId)
         ? globalThis.String(object.reportId)
         : isSet(object.report_id)
-        ? globalThis.String(object.report_id)
-        : "",
+          ? globalThis.String(object.report_id)
+          : '',
       identityDataCollection: isSet(object.identityDataCollection)
         ? DataCollection.fromJSON(object.identityDataCollection)
         : isSet(object.identity_data_collection)
-        ? DataCollection.fromJSON(object.identity_data_collection)
-        : undefined,
+          ? DataCollection.fromJSON(object.identity_data_collection)
+          : undefined,
       settingsDataCollection: isSet(object.settingsDataCollection)
         ? DataCollection1.fromJSON(object.settingsDataCollection)
         : isSet(object.settings_data_collection)
-        ? DataCollection1.fromJSON(object.settings_data_collection)
-        : undefined,
+          ? DataCollection1.fromJSON(object.settings_data_collection)
+          : undefined,
       webhooksDataCollection: isSet(object.webhooksDataCollection)
         ? DataCollection2.fromJSON(object.webhooksDataCollection)
         : isSet(object.webhooks_data_collection)
-        ? DataCollection2.fromJSON(object.webhooks_data_collection)
-        : undefined,
+          ? DataCollection2.fromJSON(object.webhooks_data_collection)
+          : undefined,
     };
   },
 
   toJSON(message: UserDataCollection): unknown {
     const obj: any = {};
-    if (message.reportId !== "") {
+    if (message.reportId !== '') {
       obj.reportId = message.reportId;
     }
     if (message.identityDataCollection !== undefined) {
@@ -140,17 +140,17 @@ export const UserDataCollection: MessageFns<UserDataCollection> = {
   },
   fromPartial(object: DeepPartial<UserDataCollection>): UserDataCollection {
     const message = createBaseUserDataCollection();
-    message.reportId = object.reportId ?? "";
+    message.reportId = object.reportId ?? '';
     message.identityDataCollection =
-      (object.identityDataCollection !== undefined && object.identityDataCollection !== null)
+      object.identityDataCollection !== undefined && object.identityDataCollection !== null
         ? DataCollection.fromPartial(object.identityDataCollection)
         : undefined;
     message.settingsDataCollection =
-      (object.settingsDataCollection !== undefined && object.settingsDataCollection !== null)
+      object.settingsDataCollection !== undefined && object.settingsDataCollection !== null
         ? DataCollection1.fromPartial(object.settingsDataCollection)
         : undefined;
     message.webhooksDataCollection =
-      (object.webhooksDataCollection !== undefined && object.webhooksDataCollection !== null)
+      object.webhooksDataCollection !== undefined && object.webhooksDataCollection !== null
         ? DataCollection2.fromPartial(object.webhooksDataCollection)
         : undefined;
     return message;
@@ -159,11 +159,15 @@ export const UserDataCollection: MessageFns<UserDataCollection> = {
 
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 
-export type DeepPartial<T> = T extends Builtin ? T
-  : T extends globalThis.Array<infer U> ? globalThis.Array<DeepPartial<U>>
-  : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>>
-  : T extends {} ? { [K in keyof T]?: DeepPartial<T[K]> }
-  : Partial<T>;
+export type DeepPartial<T> = T extends Builtin
+  ? T
+  : T extends globalThis.Array<infer U>
+    ? globalThis.Array<DeepPartial<U>>
+    : T extends ReadonlyArray<infer U>
+      ? ReadonlyArray<DeepPartial<U>>
+      : T extends {}
+        ? { [K in keyof T]?: DeepPartial<T[K]> }
+        : Partial<T>;
 
 function isSet(value: any): boolean {
   return value !== null && value !== undefined;

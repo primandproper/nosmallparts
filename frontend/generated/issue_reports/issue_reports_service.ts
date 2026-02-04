@@ -5,7 +5,7 @@
 // source: issue_reports/issue_reports_service.proto
 
 /* eslint-disable */
-import type { CallContext, CallOptions } from "nice-grpc-common";
+import type { CallContext, CallOptions } from 'nice-grpc-common';
 import {
   ArchiveIssueReportRequest,
   ArchiveIssueReportResponse,
@@ -23,17 +23,17 @@ import {
   GetIssueReportsResponse,
   UpdateIssueReportRequest,
   UpdateIssueReportResponse,
-} from "./issue_reports_service_types";
+} from './issue_reports_service_types';
 
-export const protobufPackage = "issue_reports";
+export const protobufPackage = 'issue_reports';
 
 export type IssueReportsServiceDefinition = typeof IssueReportsServiceDefinition;
 export const IssueReportsServiceDefinition = {
-  name: "IssueReportsService",
-  fullName: "issue_reports.IssueReportsService",
+  name: 'IssueReportsService',
+  fullName: 'issue_reports.IssueReportsService',
   methods: {
     createIssueReport: {
-      name: "CreateIssueReport",
+      name: 'CreateIssueReport',
       requestType: CreateIssueReportRequest,
       requestStream: false,
       responseType: CreateIssueReportResponse,
@@ -41,7 +41,7 @@ export const IssueReportsServiceDefinition = {
       options: {},
     },
     getIssueReport: {
-      name: "GetIssueReport",
+      name: 'GetIssueReport',
       requestType: GetIssueReportRequest,
       requestStream: false,
       responseType: GetIssueReportResponse,
@@ -49,7 +49,7 @@ export const IssueReportsServiceDefinition = {
       options: {},
     },
     getIssueReports: {
-      name: "GetIssueReports",
+      name: 'GetIssueReports',
       requestType: GetIssueReportsRequest,
       requestStream: false,
       responseType: GetIssueReportsResponse,
@@ -57,7 +57,7 @@ export const IssueReportsServiceDefinition = {
       options: {},
     },
     getIssueReportsForAccount: {
-      name: "GetIssueReportsForAccount",
+      name: 'GetIssueReportsForAccount',
       requestType: GetIssueReportsForAccountRequest,
       requestStream: false,
       responseType: GetIssueReportsForAccountResponse,
@@ -65,7 +65,7 @@ export const IssueReportsServiceDefinition = {
       options: {},
     },
     getIssueReportsForTable: {
-      name: "GetIssueReportsForTable",
+      name: 'GetIssueReportsForTable',
       requestType: GetIssueReportsForTableRequest,
       requestStream: false,
       responseType: GetIssueReportsForTableResponse,
@@ -73,7 +73,7 @@ export const IssueReportsServiceDefinition = {
       options: {},
     },
     getIssueReportsForRecord: {
-      name: "GetIssueReportsForRecord",
+      name: 'GetIssueReportsForRecord',
       requestType: GetIssueReportsForRecordRequest,
       requestStream: false,
       responseType: GetIssueReportsForRecordResponse,
@@ -81,7 +81,7 @@ export const IssueReportsServiceDefinition = {
       options: {},
     },
     updateIssueReport: {
-      name: "UpdateIssueReport",
+      name: 'UpdateIssueReport',
       requestType: UpdateIssueReportRequest,
       requestStream: false,
       responseType: UpdateIssueReportResponse,
@@ -89,7 +89,7 @@ export const IssueReportsServiceDefinition = {
       options: {},
     },
     archiveIssueReport: {
-      name: "ArchiveIssueReport",
+      name: 'ArchiveIssueReport',
       requestType: ArchiveIssueReportRequest,
       requestStream: false,
       responseType: ArchiveIssueReportResponse,
@@ -102,77 +102,81 @@ export const IssueReportsServiceDefinition = {
 export interface IssueReportsServiceImplementation<CallContextExt = {}> {
   createIssueReport(
     request: CreateIssueReportRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<CreateIssueReportResponse>>;
   getIssueReport(
     request: GetIssueReportRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<GetIssueReportResponse>>;
   getIssueReports(
     request: GetIssueReportsRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<GetIssueReportsResponse>>;
   getIssueReportsForAccount(
     request: GetIssueReportsForAccountRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<GetIssueReportsForAccountResponse>>;
   getIssueReportsForTable(
     request: GetIssueReportsForTableRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<GetIssueReportsForTableResponse>>;
   getIssueReportsForRecord(
     request: GetIssueReportsForRecordRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<GetIssueReportsForRecordResponse>>;
   updateIssueReport(
     request: UpdateIssueReportRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<UpdateIssueReportResponse>>;
   archiveIssueReport(
     request: ArchiveIssueReportRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<ArchiveIssueReportResponse>>;
 }
 
 export interface IssueReportsServiceClient<CallOptionsExt = {}> {
   createIssueReport(
     request: DeepPartial<CreateIssueReportRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<CreateIssueReportResponse>;
   getIssueReport(
     request: DeepPartial<GetIssueReportRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<GetIssueReportResponse>;
   getIssueReports(
     request: DeepPartial<GetIssueReportsRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<GetIssueReportsResponse>;
   getIssueReportsForAccount(
     request: DeepPartial<GetIssueReportsForAccountRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<GetIssueReportsForAccountResponse>;
   getIssueReportsForTable(
     request: DeepPartial<GetIssueReportsForTableRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<GetIssueReportsForTableResponse>;
   getIssueReportsForRecord(
     request: DeepPartial<GetIssueReportsForRecordRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<GetIssueReportsForRecordResponse>;
   updateIssueReport(
     request: DeepPartial<UpdateIssueReportRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<UpdateIssueReportResponse>;
   archiveIssueReport(
     request: DeepPartial<ArchiveIssueReportRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<ArchiveIssueReportResponse>;
 }
 
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 
-export type DeepPartial<T> = T extends Builtin ? T
-  : T extends globalThis.Array<infer U> ? globalThis.Array<DeepPartial<U>>
-  : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>>
-  : T extends {} ? { [K in keyof T]?: DeepPartial<T[K]> }
-  : Partial<T>;
+export type DeepPartial<T> = T extends Builtin
+  ? T
+  : T extends globalThis.Array<infer U>
+    ? globalThis.Array<DeepPartial<U>>
+    : T extends ReadonlyArray<infer U>
+      ? ReadonlyArray<DeepPartial<U>>
+      : T extends {}
+        ? { [K in keyof T]?: DeepPartial<T[K]> }
+        : Partial<T>;

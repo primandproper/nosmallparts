@@ -5,7 +5,7 @@
 // source: settings/settings_service.proto
 
 /* eslint-disable */
-import type { CallContext, CallOptions } from "nice-grpc-common";
+import type { CallContext, CallOptions } from 'nice-grpc-common';
 import {
   ArchiveServiceSettingConfigurationRequest,
   ArchiveServiceSettingConfigurationResponse,
@@ -29,17 +29,17 @@ import {
   SearchForServiceSettingsResponse,
   UpdateServiceSettingConfigurationRequest,
   UpdateServiceSettingConfigurationResponse,
-} from "./settings_service_types";
+} from './settings_service_types';
 
-export const protobufPackage = "settings";
+export const protobufPackage = 'settings';
 
 export type SettingsServiceDefinition = typeof SettingsServiceDefinition;
 export const SettingsServiceDefinition = {
-  name: "SettingsService",
-  fullName: "settings.SettingsService",
+  name: 'SettingsService',
+  fullName: 'settings.SettingsService',
   methods: {
     getServiceSettingConfigurationsForAccount: {
-      name: "GetServiceSettingConfigurationsForAccount",
+      name: 'GetServiceSettingConfigurationsForAccount',
       requestType: GetServiceSettingConfigurationsForAccountRequest,
       requestStream: false,
       responseType: GetServiceSettingConfigurationsForAccountResponse,
@@ -47,7 +47,7 @@ export const SettingsServiceDefinition = {
       options: {},
     },
     getServiceSettingConfigurationsForUser: {
-      name: "GetServiceSettingConfigurationsForUser",
+      name: 'GetServiceSettingConfigurationsForUser',
       requestType: GetServiceSettingConfigurationsForUserRequest,
       requestStream: false,
       responseType: GetServiceSettingConfigurationsForUserResponse,
@@ -55,7 +55,7 @@ export const SettingsServiceDefinition = {
       options: {},
     },
     searchForServiceSettings: {
-      name: "SearchForServiceSettings",
+      name: 'SearchForServiceSettings',
       requestType: SearchForServiceSettingsRequest,
       requestStream: false,
       responseType: SearchForServiceSettingsResponse,
@@ -63,7 +63,7 @@ export const SettingsServiceDefinition = {
       options: {},
     },
     archiveServiceSetting: {
-      name: "ArchiveServiceSetting",
+      name: 'ArchiveServiceSetting',
       requestType: ArchiveServiceSettingRequest,
       requestStream: false,
       responseType: ArchiveServiceSettingResponse,
@@ -71,7 +71,7 @@ export const SettingsServiceDefinition = {
       options: {},
     },
     archiveServiceSettingConfiguration: {
-      name: "ArchiveServiceSettingConfiguration",
+      name: 'ArchiveServiceSettingConfiguration',
       requestType: ArchiveServiceSettingConfigurationRequest,
       requestStream: false,
       responseType: ArchiveServiceSettingConfigurationResponse,
@@ -79,7 +79,7 @@ export const SettingsServiceDefinition = {
       options: {},
     },
     createServiceSetting: {
-      name: "CreateServiceSetting",
+      name: 'CreateServiceSetting',
       requestType: CreateServiceSettingRequest,
       requestStream: false,
       responseType: CreateServiceSettingResponse,
@@ -87,7 +87,7 @@ export const SettingsServiceDefinition = {
       options: {},
     },
     createServiceSettingConfiguration: {
-      name: "CreateServiceSettingConfiguration",
+      name: 'CreateServiceSettingConfiguration',
       requestType: CreateServiceSettingConfigurationRequest,
       requestStream: false,
       responseType: CreateServiceSettingConfigurationResponse,
@@ -95,7 +95,7 @@ export const SettingsServiceDefinition = {
       options: {},
     },
     getServiceSetting: {
-      name: "GetServiceSetting",
+      name: 'GetServiceSetting',
       requestType: GetServiceSettingRequest,
       requestStream: false,
       responseType: GetServiceSettingResponse,
@@ -103,7 +103,7 @@ export const SettingsServiceDefinition = {
       options: {},
     },
     getServiceSettingConfigurationByName: {
-      name: "GetServiceSettingConfigurationByName",
+      name: 'GetServiceSettingConfigurationByName',
       requestType: GetServiceSettingConfigurationByNameRequest,
       requestStream: false,
       responseType: GetServiceSettingConfigurationByNameResponse,
@@ -111,7 +111,7 @@ export const SettingsServiceDefinition = {
       options: {},
     },
     getServiceSettings: {
-      name: "GetServiceSettings",
+      name: 'GetServiceSettings',
       requestType: GetServiceSettingsRequest,
       requestStream: false,
       responseType: GetServiceSettingsResponse,
@@ -119,7 +119,7 @@ export const SettingsServiceDefinition = {
       options: {},
     },
     updateServiceSettingConfiguration: {
-      name: "UpdateServiceSettingConfiguration",
+      name: 'UpdateServiceSettingConfiguration',
       requestType: UpdateServiceSettingConfigurationRequest,
       requestStream: false,
       responseType: UpdateServiceSettingConfigurationResponse,
@@ -132,101 +132,105 @@ export const SettingsServiceDefinition = {
 export interface SettingsServiceImplementation<CallContextExt = {}> {
   getServiceSettingConfigurationsForAccount(
     request: GetServiceSettingConfigurationsForAccountRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<GetServiceSettingConfigurationsForAccountResponse>>;
   getServiceSettingConfigurationsForUser(
     request: GetServiceSettingConfigurationsForUserRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<GetServiceSettingConfigurationsForUserResponse>>;
   searchForServiceSettings(
     request: SearchForServiceSettingsRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<SearchForServiceSettingsResponse>>;
   archiveServiceSetting(
     request: ArchiveServiceSettingRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<ArchiveServiceSettingResponse>>;
   archiveServiceSettingConfiguration(
     request: ArchiveServiceSettingConfigurationRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<ArchiveServiceSettingConfigurationResponse>>;
   createServiceSetting(
     request: CreateServiceSettingRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<CreateServiceSettingResponse>>;
   createServiceSettingConfiguration(
     request: CreateServiceSettingConfigurationRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<CreateServiceSettingConfigurationResponse>>;
   getServiceSetting(
     request: GetServiceSettingRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<GetServiceSettingResponse>>;
   getServiceSettingConfigurationByName(
     request: GetServiceSettingConfigurationByNameRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<GetServiceSettingConfigurationByNameResponse>>;
   getServiceSettings(
     request: GetServiceSettingsRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<GetServiceSettingsResponse>>;
   updateServiceSettingConfiguration(
     request: UpdateServiceSettingConfigurationRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<UpdateServiceSettingConfigurationResponse>>;
 }
 
 export interface SettingsServiceClient<CallOptionsExt = {}> {
   getServiceSettingConfigurationsForAccount(
     request: DeepPartial<GetServiceSettingConfigurationsForAccountRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<GetServiceSettingConfigurationsForAccountResponse>;
   getServiceSettingConfigurationsForUser(
     request: DeepPartial<GetServiceSettingConfigurationsForUserRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<GetServiceSettingConfigurationsForUserResponse>;
   searchForServiceSettings(
     request: DeepPartial<SearchForServiceSettingsRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<SearchForServiceSettingsResponse>;
   archiveServiceSetting(
     request: DeepPartial<ArchiveServiceSettingRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<ArchiveServiceSettingResponse>;
   archiveServiceSettingConfiguration(
     request: DeepPartial<ArchiveServiceSettingConfigurationRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<ArchiveServiceSettingConfigurationResponse>;
   createServiceSetting(
     request: DeepPartial<CreateServiceSettingRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<CreateServiceSettingResponse>;
   createServiceSettingConfiguration(
     request: DeepPartial<CreateServiceSettingConfigurationRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<CreateServiceSettingConfigurationResponse>;
   getServiceSetting(
     request: DeepPartial<GetServiceSettingRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<GetServiceSettingResponse>;
   getServiceSettingConfigurationByName(
     request: DeepPartial<GetServiceSettingConfigurationByNameRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<GetServiceSettingConfigurationByNameResponse>;
   getServiceSettings(
     request: DeepPartial<GetServiceSettingsRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<GetServiceSettingsResponse>;
   updateServiceSettingConfiguration(
     request: DeepPartial<UpdateServiceSettingConfigurationRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<UpdateServiceSettingConfigurationResponse>;
 }
 
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 
-export type DeepPartial<T> = T extends Builtin ? T
-  : T extends globalThis.Array<infer U> ? globalThis.Array<DeepPartial<U>>
-  : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>>
-  : T extends {} ? { [K in keyof T]?: DeepPartial<T[K]> }
-  : Partial<T>;
+export type DeepPartial<T> = T extends Builtin
+  ? T
+  : T extends globalThis.Array<infer U>
+    ? globalThis.Array<DeepPartial<U>>
+    : T extends ReadonlyArray<infer U>
+      ? ReadonlyArray<DeepPartial<U>>
+      : T extends {}
+        ? { [K in keyof T]?: DeepPartial<T[K]> }
+        : Partial<T>;

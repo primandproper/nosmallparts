@@ -5,10 +5,10 @@
 // source: play_scripts/play_scripts_messages.proto
 
 /* eslint-disable */
-import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
-import { Timestamp } from "../google/protobuf/timestamp";
+import { BinaryReader, BinaryWriter } from '@bufbuild/protobuf/wire';
+import { Timestamp } from '../google/protobuf/timestamp';
 
-export const protobufPackage = "play_scripts";
+export const protobufPackage = 'play_scripts';
 
 /**
  * ScrollMode controls how long lines are displayed to performers
@@ -27,16 +27,16 @@ export enum ScrollMode {
 export function scrollModeFromJSON(object: any): ScrollMode {
   switch (object) {
     case 0:
-    case "SCROLL_MODE_UNSPECIFIED":
+    case 'SCROLL_MODE_UNSPECIFIED':
       return ScrollMode.SCROLL_MODE_UNSPECIFIED;
     case 1:
-    case "SCROLL_MODE_AUTO":
+    case 'SCROLL_MODE_AUTO':
       return ScrollMode.SCROLL_MODE_AUTO;
     case 2:
-    case "SCROLL_MODE_MANUAL":
+    case 'SCROLL_MODE_MANUAL':
       return ScrollMode.SCROLL_MODE_MANUAL;
     case -1:
-    case "UNRECOGNIZED":
+    case 'UNRECOGNIZED':
     default:
       return ScrollMode.UNRECOGNIZED;
   }
@@ -45,14 +45,14 @@ export function scrollModeFromJSON(object: any): ScrollMode {
 export function scrollModeToJSON(object: ScrollMode): string {
   switch (object) {
     case ScrollMode.SCROLL_MODE_UNSPECIFIED:
-      return "SCROLL_MODE_UNSPECIFIED";
+      return 'SCROLL_MODE_UNSPECIFIED';
     case ScrollMode.SCROLL_MODE_AUTO:
-      return "SCROLL_MODE_AUTO";
+      return 'SCROLL_MODE_AUTO';
     case ScrollMode.SCROLL_MODE_MANUAL:
-      return "SCROLL_MODE_MANUAL";
+      return 'SCROLL_MODE_MANUAL';
     case ScrollMode.UNRECOGNIZED:
     default:
-      return "UNRECOGNIZED";
+      return 'UNRECOGNIZED';
   }
 }
 
@@ -107,7 +107,10 @@ function createBaseDataCollection(): DataCollection {
 export const DataCollection: MessageFns<DataCollection> = {
   encode(message: DataCollection, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
     globalThis.Object.entries(message.playScripts).forEach(([key, value]: [string, PlayScript]) => {
-      DataCollection_PlayScriptsEntry.encode({ key: key as any, value }, writer.uint32(10).fork()).join();
+      DataCollection_PlayScriptsEntry.encode(
+        { key: key as any, value },
+        writer.uint32(10).fork()
+      ).join();
     });
     return writer;
   },
@@ -143,21 +146,21 @@ export const DataCollection: MessageFns<DataCollection> = {
     return {
       playScripts: isObject(object.playScripts)
         ? (globalThis.Object.entries(object.playScripts) as [string, any][]).reduce(
-          (acc: { [key: string]: PlayScript }, [key, value]: [string, any]) => {
-            acc[key] = PlayScript.fromJSON(value);
-            return acc;
-          },
-          {},
-        )
+            (acc: { [key: string]: PlayScript }, [key, value]: [string, any]) => {
+              acc[key] = PlayScript.fromJSON(value);
+              return acc;
+            },
+            {}
+          )
         : isObject(object.play_scripts)
-        ? (globalThis.Object.entries(object.play_scripts) as [string, any][]).reduce(
-          (acc: { [key: string]: PlayScript }, [key, value]: [string, any]) => {
-            acc[key] = PlayScript.fromJSON(value);
-            return acc;
-          },
-          {},
-        )
-        : {},
+          ? (globalThis.Object.entries(object.play_scripts) as [string, any][]).reduce(
+              (acc: { [key: string]: PlayScript }, [key, value]: [string, any]) => {
+                acc[key] = PlayScript.fromJSON(value);
+                return acc;
+              },
+              {}
+            )
+          : {},
     };
   },
 
@@ -180,26 +183,28 @@ export const DataCollection: MessageFns<DataCollection> = {
   },
   fromPartial(object: DeepPartial<DataCollection>): DataCollection {
     const message = createBaseDataCollection();
-    message.playScripts = (globalThis.Object.entries(object.playScripts ?? {}) as [string, PlayScript][]).reduce(
-      (acc: { [key: string]: PlayScript }, [key, value]: [string, PlayScript]) => {
-        if (value !== undefined) {
-          acc[key] = PlayScript.fromPartial(value);
-        }
-        return acc;
-      },
-      {},
-    );
+    message.playScripts = (
+      globalThis.Object.entries(object.playScripts ?? {}) as [string, PlayScript][]
+    ).reduce((acc: { [key: string]: PlayScript }, [key, value]: [string, PlayScript]) => {
+      if (value !== undefined) {
+        acc[key] = PlayScript.fromPartial(value);
+      }
+      return acc;
+    }, {});
     return message;
   },
 };
 
 function createBaseDataCollection_PlayScriptsEntry(): DataCollection_PlayScriptsEntry {
-  return { key: "", value: undefined };
+  return { key: '', value: undefined };
 }
 
 export const DataCollection_PlayScriptsEntry: MessageFns<DataCollection_PlayScriptsEntry> = {
-  encode(message: DataCollection_PlayScriptsEntry, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.key !== "") {
+  encode(
+    message: DataCollection_PlayScriptsEntry,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.key !== '') {
       writer.uint32(10).string(message.key);
     }
     if (message.value !== undefined) {
@@ -242,14 +247,14 @@ export const DataCollection_PlayScriptsEntry: MessageFns<DataCollection_PlayScri
 
   fromJSON(object: any): DataCollection_PlayScriptsEntry {
     return {
-      key: isSet(object.key) ? globalThis.String(object.key) : "",
+      key: isSet(object.key) ? globalThis.String(object.key) : '',
       value: isSet(object.value) ? PlayScript.fromJSON(object.value) : undefined,
     };
   },
 
   toJSON(message: DataCollection_PlayScriptsEntry): unknown {
     const obj: any = {};
-    if (message.key !== "") {
+    if (message.key !== '') {
       obj.key = message.key;
     }
     if (message.value !== undefined) {
@@ -261,12 +266,15 @@ export const DataCollection_PlayScriptsEntry: MessageFns<DataCollection_PlayScri
   create(base?: DeepPartial<DataCollection_PlayScriptsEntry>): DataCollection_PlayScriptsEntry {
     return DataCollection_PlayScriptsEntry.fromPartial(base ?? {});
   },
-  fromPartial(object: DeepPartial<DataCollection_PlayScriptsEntry>): DataCollection_PlayScriptsEntry {
+  fromPartial(
+    object: DeepPartial<DataCollection_PlayScriptsEntry>
+  ): DataCollection_PlayScriptsEntry {
     const message = createBaseDataCollection_PlayScriptsEntry();
-    message.key = object.key ?? "";
-    message.value = (object.value !== undefined && object.value !== null)
-      ? PlayScript.fromPartial(object.value)
-      : undefined;
+    message.key = object.key ?? '';
+    message.value =
+      object.value !== undefined && object.value !== null
+        ? PlayScript.fromPartial(object.value)
+        : undefined;
     return message;
   },
 };
@@ -276,15 +284,15 @@ function createBasePlayScript(): PlayScript {
     createdAt: undefined,
     archivedAt: undefined,
     lastUpdatedAt: undefined,
-    id: "",
-    title: "",
-    description: "",
-    author: "",
+    id: '',
+    title: '',
+    description: '',
+    author: '',
     isPublic: false,
     castMembers: [],
     lines: [],
-    createdByUser: "",
-    belongsToAccount: "",
+    createdByUser: '',
+    belongsToAccount: '',
   };
 }
 
@@ -299,16 +307,16 @@ export const PlayScript: MessageFns<PlayScript> = {
     if (message.lastUpdatedAt !== undefined) {
       Timestamp.encode(toTimestamp(message.lastUpdatedAt), writer.uint32(26).fork()).join();
     }
-    if (message.id !== "") {
+    if (message.id !== '') {
       writer.uint32(34).string(message.id);
     }
-    if (message.title !== "") {
+    if (message.title !== '') {
       writer.uint32(42).string(message.title);
     }
-    if (message.description !== "") {
+    if (message.description !== '') {
       writer.uint32(50).string(message.description);
     }
-    if (message.author !== "") {
+    if (message.author !== '') {
       writer.uint32(58).string(message.author);
     }
     if (message.isPublic !== false) {
@@ -320,10 +328,10 @@ export const PlayScript: MessageFns<PlayScript> = {
     for (const v of message.lines) {
       PlayScriptLine.encode(v!, writer.uint32(82).fork()).join();
     }
-    if (message.createdByUser !== "") {
+    if (message.createdByUser !== '') {
       writer.uint32(90).string(message.createdByUser);
     }
-    if (message.belongsToAccount !== "") {
+    if (message.belongsToAccount !== '') {
       writer.uint32(98).string(message.belongsToAccount);
     }
     return writer;
@@ -446,45 +454,45 @@ export const PlayScript: MessageFns<PlayScript> = {
       createdAt: isSet(object.createdAt)
         ? fromJsonTimestamp(object.createdAt)
         : isSet(object.created_at)
-        ? fromJsonTimestamp(object.created_at)
-        : undefined,
+          ? fromJsonTimestamp(object.created_at)
+          : undefined,
       archivedAt: isSet(object.archivedAt)
         ? fromJsonTimestamp(object.archivedAt)
         : isSet(object.archived_at)
-        ? fromJsonTimestamp(object.archived_at)
-        : undefined,
+          ? fromJsonTimestamp(object.archived_at)
+          : undefined,
       lastUpdatedAt: isSet(object.lastUpdatedAt)
         ? fromJsonTimestamp(object.lastUpdatedAt)
         : isSet(object.last_updated_at)
-        ? fromJsonTimestamp(object.last_updated_at)
-        : undefined,
-      id: isSet(object.id) ? globalThis.String(object.id) : "",
-      title: isSet(object.title) ? globalThis.String(object.title) : "",
-      description: isSet(object.description) ? globalThis.String(object.description) : "",
-      author: isSet(object.author) ? globalThis.String(object.author) : "",
+          ? fromJsonTimestamp(object.last_updated_at)
+          : undefined,
+      id: isSet(object.id) ? globalThis.String(object.id) : '',
+      title: isSet(object.title) ? globalThis.String(object.title) : '',
+      description: isSet(object.description) ? globalThis.String(object.description) : '',
+      author: isSet(object.author) ? globalThis.String(object.author) : '',
       isPublic: isSet(object.isPublic)
         ? globalThis.Boolean(object.isPublic)
         : isSet(object.is_public)
-        ? globalThis.Boolean(object.is_public)
-        : false,
+          ? globalThis.Boolean(object.is_public)
+          : false,
       castMembers: globalThis.Array.isArray(object?.castMembers)
         ? object.castMembers.map((e: any) => PlayScriptCastMember.fromJSON(e))
         : globalThis.Array.isArray(object?.cast_members)
-        ? object.cast_members.map((e: any) => PlayScriptCastMember.fromJSON(e))
-        : [],
+          ? object.cast_members.map((e: any) => PlayScriptCastMember.fromJSON(e))
+          : [],
       lines: globalThis.Array.isArray(object?.lines)
         ? object.lines.map((e: any) => PlayScriptLine.fromJSON(e))
         : [],
       createdByUser: isSet(object.createdByUser)
         ? globalThis.String(object.createdByUser)
         : isSet(object.created_by_user)
-        ? globalThis.String(object.created_by_user)
-        : "",
+          ? globalThis.String(object.created_by_user)
+          : '',
       belongsToAccount: isSet(object.belongsToAccount)
         ? globalThis.String(object.belongsToAccount)
         : isSet(object.belongs_to_account)
-        ? globalThis.String(object.belongs_to_account)
-        : "",
+          ? globalThis.String(object.belongs_to_account)
+          : '',
     };
   },
 
@@ -499,16 +507,16 @@ export const PlayScript: MessageFns<PlayScript> = {
     if (message.lastUpdatedAt !== undefined) {
       obj.lastUpdatedAt = message.lastUpdatedAt.toISOString();
     }
-    if (message.id !== "") {
+    if (message.id !== '') {
       obj.id = message.id;
     }
-    if (message.title !== "") {
+    if (message.title !== '') {
       obj.title = message.title;
     }
-    if (message.description !== "") {
+    if (message.description !== '') {
       obj.description = message.description;
     }
-    if (message.author !== "") {
+    if (message.author !== '') {
       obj.author = message.author;
     }
     if (message.isPublic !== false) {
@@ -520,10 +528,10 @@ export const PlayScript: MessageFns<PlayScript> = {
     if (message.lines?.length) {
       obj.lines = message.lines.map((e) => PlayScriptLine.toJSON(e));
     }
-    if (message.createdByUser !== "") {
+    if (message.createdByUser !== '') {
       obj.createdByUser = message.createdByUser;
     }
-    if (message.belongsToAccount !== "") {
+    if (message.belongsToAccount !== '') {
       obj.belongsToAccount = message.belongsToAccount;
     }
     return obj;
@@ -537,21 +545,21 @@ export const PlayScript: MessageFns<PlayScript> = {
     message.createdAt = object.createdAt ?? undefined;
     message.archivedAt = object.archivedAt ?? undefined;
     message.lastUpdatedAt = object.lastUpdatedAt ?? undefined;
-    message.id = object.id ?? "";
-    message.title = object.title ?? "";
-    message.description = object.description ?? "";
-    message.author = object.author ?? "";
+    message.id = object.id ?? '';
+    message.title = object.title ?? '';
+    message.description = object.description ?? '';
+    message.author = object.author ?? '';
     message.isPublic = object.isPublic ?? false;
     message.castMembers = object.castMembers?.map((e) => PlayScriptCastMember.fromPartial(e)) || [];
     message.lines = object.lines?.map((e) => PlayScriptLine.fromPartial(e)) || [];
-    message.createdByUser = object.createdByUser ?? "";
-    message.belongsToAccount = object.belongsToAccount ?? "";
+    message.createdByUser = object.createdByUser ?? '';
+    message.belongsToAccount = object.belongsToAccount ?? '';
     return message;
   },
 };
 
 function createBasePlayScriptCastMember(): PlayScriptCastMember {
-  return { createdAt: undefined, id: "", playScriptId: "", name: "", sortOrder: 0 };
+  return { createdAt: undefined, id: '', playScriptId: '', name: '', sortOrder: 0 };
 }
 
 export const PlayScriptCastMember: MessageFns<PlayScriptCastMember> = {
@@ -559,13 +567,13 @@ export const PlayScriptCastMember: MessageFns<PlayScriptCastMember> = {
     if (message.createdAt !== undefined) {
       Timestamp.encode(toTimestamp(message.createdAt), writer.uint32(10).fork()).join();
     }
-    if (message.id !== "") {
+    if (message.id !== '') {
       writer.uint32(18).string(message.id);
     }
-    if (message.playScriptId !== "") {
+    if (message.playScriptId !== '') {
       writer.uint32(26).string(message.playScriptId);
     }
-    if (message.name !== "") {
+    if (message.name !== '') {
       writer.uint32(34).string(message.name);
     }
     if (message.sortOrder !== 0) {
@@ -635,20 +643,20 @@ export const PlayScriptCastMember: MessageFns<PlayScriptCastMember> = {
       createdAt: isSet(object.createdAt)
         ? fromJsonTimestamp(object.createdAt)
         : isSet(object.created_at)
-        ? fromJsonTimestamp(object.created_at)
-        : undefined,
-      id: isSet(object.id) ? globalThis.String(object.id) : "",
+          ? fromJsonTimestamp(object.created_at)
+          : undefined,
+      id: isSet(object.id) ? globalThis.String(object.id) : '',
       playScriptId: isSet(object.playScriptId)
         ? globalThis.String(object.playScriptId)
         : isSet(object.play_script_id)
-        ? globalThis.String(object.play_script_id)
-        : "",
-      name: isSet(object.name) ? globalThis.String(object.name) : "",
+          ? globalThis.String(object.play_script_id)
+          : '',
+      name: isSet(object.name) ? globalThis.String(object.name) : '',
       sortOrder: isSet(object.sortOrder)
         ? globalThis.Number(object.sortOrder)
         : isSet(object.sort_order)
-        ? globalThis.Number(object.sort_order)
-        : 0,
+          ? globalThis.Number(object.sort_order)
+          : 0,
     };
   },
 
@@ -657,13 +665,13 @@ export const PlayScriptCastMember: MessageFns<PlayScriptCastMember> = {
     if (message.createdAt !== undefined) {
       obj.createdAt = message.createdAt.toISOString();
     }
-    if (message.id !== "") {
+    if (message.id !== '') {
       obj.id = message.id;
     }
-    if (message.playScriptId !== "") {
+    if (message.playScriptId !== '') {
       obj.playScriptId = message.playScriptId;
     }
-    if (message.name !== "") {
+    if (message.name !== '') {
       obj.name = message.name;
     }
     if (message.sortOrder !== 0) {
@@ -678,9 +686,9 @@ export const PlayScriptCastMember: MessageFns<PlayScriptCastMember> = {
   fromPartial(object: DeepPartial<PlayScriptCastMember>): PlayScriptCastMember {
     const message = createBasePlayScriptCastMember();
     message.createdAt = object.createdAt ?? undefined;
-    message.id = object.id ?? "";
-    message.playScriptId = object.playScriptId ?? "";
-    message.name = object.name ?? "";
+    message.id = object.id ?? '';
+    message.playScriptId = object.playScriptId ?? '';
+    message.name = object.name ?? '';
     message.sortOrder = object.sortOrder ?? 0;
     return message;
   },
@@ -689,12 +697,12 @@ export const PlayScriptCastMember: MessageFns<PlayScriptCastMember> = {
 function createBasePlayScriptLine(): PlayScriptLine {
   return {
     createdAt: undefined,
-    id: "",
-    playScriptId: "",
-    castMemberId: "",
-    lineText: "",
+    id: '',
+    playScriptId: '',
+    castMemberId: '',
+    lineText: '',
     lineIndex: 0,
-    direction: "",
+    direction: '',
     scrollMode: 0,
     autoScrollWpm: 0,
   };
@@ -705,22 +713,22 @@ export const PlayScriptLine: MessageFns<PlayScriptLine> = {
     if (message.createdAt !== undefined) {
       Timestamp.encode(toTimestamp(message.createdAt), writer.uint32(10).fork()).join();
     }
-    if (message.id !== "") {
+    if (message.id !== '') {
       writer.uint32(18).string(message.id);
     }
-    if (message.playScriptId !== "") {
+    if (message.playScriptId !== '') {
       writer.uint32(26).string(message.playScriptId);
     }
-    if (message.castMemberId !== "") {
+    if (message.castMemberId !== '') {
       writer.uint32(34).string(message.castMemberId);
     }
-    if (message.lineText !== "") {
+    if (message.lineText !== '') {
       writer.uint32(42).string(message.lineText);
     }
     if (message.lineIndex !== 0) {
       writer.uint32(48).int32(message.lineIndex);
     }
-    if (message.direction !== "") {
+    if (message.direction !== '') {
       writer.uint32(58).string(message.direction);
     }
     if (message.scrollMode !== 0) {
@@ -825,40 +833,40 @@ export const PlayScriptLine: MessageFns<PlayScriptLine> = {
       createdAt: isSet(object.createdAt)
         ? fromJsonTimestamp(object.createdAt)
         : isSet(object.created_at)
-        ? fromJsonTimestamp(object.created_at)
-        : undefined,
-      id: isSet(object.id) ? globalThis.String(object.id) : "",
+          ? fromJsonTimestamp(object.created_at)
+          : undefined,
+      id: isSet(object.id) ? globalThis.String(object.id) : '',
       playScriptId: isSet(object.playScriptId)
         ? globalThis.String(object.playScriptId)
         : isSet(object.play_script_id)
-        ? globalThis.String(object.play_script_id)
-        : "",
+          ? globalThis.String(object.play_script_id)
+          : '',
       castMemberId: isSet(object.castMemberId)
         ? globalThis.String(object.castMemberId)
         : isSet(object.cast_member_id)
-        ? globalThis.String(object.cast_member_id)
-        : "",
+          ? globalThis.String(object.cast_member_id)
+          : '',
       lineText: isSet(object.lineText)
         ? globalThis.String(object.lineText)
         : isSet(object.line_text)
-        ? globalThis.String(object.line_text)
-        : "",
+          ? globalThis.String(object.line_text)
+          : '',
       lineIndex: isSet(object.lineIndex)
         ? globalThis.Number(object.lineIndex)
         : isSet(object.line_index)
-        ? globalThis.Number(object.line_index)
-        : 0,
-      direction: isSet(object.direction) ? globalThis.String(object.direction) : "",
+          ? globalThis.Number(object.line_index)
+          : 0,
+      direction: isSet(object.direction) ? globalThis.String(object.direction) : '',
       scrollMode: isSet(object.scrollMode)
         ? scrollModeFromJSON(object.scrollMode)
         : isSet(object.scroll_mode)
-        ? scrollModeFromJSON(object.scroll_mode)
-        : 0,
+          ? scrollModeFromJSON(object.scroll_mode)
+          : 0,
       autoScrollWpm: isSet(object.autoScrollWpm)
         ? globalThis.Number(object.autoScrollWpm)
         : isSet(object.auto_scroll_wpm)
-        ? globalThis.Number(object.auto_scroll_wpm)
-        : 0,
+          ? globalThis.Number(object.auto_scroll_wpm)
+          : 0,
     };
   },
 
@@ -867,22 +875,22 @@ export const PlayScriptLine: MessageFns<PlayScriptLine> = {
     if (message.createdAt !== undefined) {
       obj.createdAt = message.createdAt.toISOString();
     }
-    if (message.id !== "") {
+    if (message.id !== '') {
       obj.id = message.id;
     }
-    if (message.playScriptId !== "") {
+    if (message.playScriptId !== '') {
       obj.playScriptId = message.playScriptId;
     }
-    if (message.castMemberId !== "") {
+    if (message.castMemberId !== '') {
       obj.castMemberId = message.castMemberId;
     }
-    if (message.lineText !== "") {
+    if (message.lineText !== '') {
       obj.lineText = message.lineText;
     }
     if (message.lineIndex !== 0) {
       obj.lineIndex = Math.round(message.lineIndex);
     }
-    if (message.direction !== "") {
+    if (message.direction !== '') {
       obj.direction = message.direction;
     }
     if (message.scrollMode !== 0) {
@@ -900,12 +908,12 @@ export const PlayScriptLine: MessageFns<PlayScriptLine> = {
   fromPartial(object: DeepPartial<PlayScriptLine>): PlayScriptLine {
     const message = createBasePlayScriptLine();
     message.createdAt = object.createdAt ?? undefined;
-    message.id = object.id ?? "";
-    message.playScriptId = object.playScriptId ?? "";
-    message.castMemberId = object.castMemberId ?? "";
-    message.lineText = object.lineText ?? "";
+    message.id = object.id ?? '';
+    message.playScriptId = object.playScriptId ?? '';
+    message.castMemberId = object.castMemberId ?? '';
+    message.lineText = object.lineText ?? '';
     message.lineIndex = object.lineIndex ?? 0;
-    message.direction = object.direction ?? "";
+    message.direction = object.direction ?? '';
     message.scrollMode = object.scrollMode ?? 0;
     message.autoScrollWpm = object.autoScrollWpm ?? 0;
     return message;
@@ -914,11 +922,15 @@ export const PlayScriptLine: MessageFns<PlayScriptLine> = {
 
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 
-export type DeepPartial<T> = T extends Builtin ? T
-  : T extends globalThis.Array<infer U> ? globalThis.Array<DeepPartial<U>>
-  : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>>
-  : T extends {} ? { [K in keyof T]?: DeepPartial<T[K]> }
-  : Partial<T>;
+export type DeepPartial<T> = T extends Builtin
+  ? T
+  : T extends globalThis.Array<infer U>
+    ? globalThis.Array<DeepPartial<U>>
+    : T extends ReadonlyArray<infer U>
+      ? ReadonlyArray<DeepPartial<U>>
+      : T extends {}
+        ? { [K in keyof T]?: DeepPartial<T[K]> }
+        : Partial<T>;
 
 function toTimestamp(date: Date): Timestamp {
   const seconds = Math.trunc(date.getTime() / 1_000);
@@ -935,7 +947,7 @@ function fromTimestamp(t: Timestamp): Date {
 function fromJsonTimestamp(o: any): Date {
   if (o instanceof globalThis.Date) {
     return o;
-  } else if (typeof o === "string") {
+  } else if (typeof o === 'string') {
     return new globalThis.Date(o);
   } else {
     return fromTimestamp(Timestamp.fromJSON(o));
@@ -943,7 +955,7 @@ function fromJsonTimestamp(o: any): Date {
 }
 
 function isObject(value: any): boolean {
-  return typeof value === "object" && value !== null;
+  return typeof value === 'object' && value !== null;
 }
 
 function isSet(value: any): boolean {

@@ -5,9 +5,9 @@
 // source: common.proto
 
 /* eslint-disable */
-import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
+import { BinaryReader, BinaryWriter } from '@bufbuild/protobuf/wire';
 
-export const protobufPackage = "common";
+export const protobufPackage = 'common';
 
 export interface NamedID {
   id: string;
@@ -60,15 +60,15 @@ export interface Uint32RangeWithOptionalMaxUpdateRequestInput {
 }
 
 function createBaseNamedID(): NamedID {
-  return { id: "", name: "" };
+  return { id: '', name: '' };
 }
 
 export const NamedID: MessageFns<NamedID> = {
   encode(message: NamedID, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.id !== "") {
+    if (message.id !== '') {
       writer.uint32(10).string(message.id);
     }
-    if (message.name !== "") {
+    if (message.name !== '') {
       writer.uint32(18).string(message.name);
     }
     return writer;
@@ -108,17 +108,17 @@ export const NamedID: MessageFns<NamedID> = {
 
   fromJSON(object: any): NamedID {
     return {
-      id: isSet(object.id) ? globalThis.String(object.id) : "",
-      name: isSet(object.name) ? globalThis.String(object.name) : "",
+      id: isSet(object.id) ? globalThis.String(object.id) : '',
+      name: isSet(object.name) ? globalThis.String(object.name) : '',
     };
   },
 
   toJSON(message: NamedID): unknown {
     const obj: any = {};
-    if (message.id !== "") {
+    if (message.id !== '') {
       obj.id = message.id;
     }
-    if (message.name !== "") {
+    if (message.name !== '') {
       obj.name = message.name;
     }
     return obj;
@@ -129,22 +129,22 @@ export const NamedID: MessageFns<NamedID> = {
   },
   fromPartial(object: DeepPartial<NamedID>): NamedID {
     const message = createBaseNamedID();
-    message.id = object.id ?? "";
-    message.name = object.name ?? "";
+    message.id = object.id ?? '';
+    message.name = object.name ?? '';
     return message;
   },
 };
 
 function createBaseResponseDetails(): ResponseDetails {
-  return { currentAccountId: "", traceId: "" };
+  return { currentAccountId: '', traceId: '' };
 }
 
 export const ResponseDetails: MessageFns<ResponseDetails> = {
   encode(message: ResponseDetails, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.currentAccountId !== "") {
+    if (message.currentAccountId !== '') {
       writer.uint32(10).string(message.currentAccountId);
     }
-    if (message.traceId !== "") {
+    if (message.traceId !== '') {
       writer.uint32(18).string(message.traceId);
     }
     return writer;
@@ -187,22 +187,22 @@ export const ResponseDetails: MessageFns<ResponseDetails> = {
       currentAccountId: isSet(object.currentAccountId)
         ? globalThis.String(object.currentAccountId)
         : isSet(object.current_account_id)
-        ? globalThis.String(object.current_account_id)
-        : "",
+          ? globalThis.String(object.current_account_id)
+          : '',
       traceId: isSet(object.traceId)
         ? globalThis.String(object.traceId)
         : isSet(object.trace_id)
-        ? globalThis.String(object.trace_id)
-        : "",
+          ? globalThis.String(object.trace_id)
+          : '',
     };
   },
 
   toJSON(message: ResponseDetails): unknown {
     const obj: any = {};
-    if (message.currentAccountId !== "") {
+    if (message.currentAccountId !== '') {
       obj.currentAccountId = message.currentAccountId;
     }
-    if (message.traceId !== "") {
+    if (message.traceId !== '') {
       obj.traceId = message.traceId;
     }
     return obj;
@@ -213,8 +213,8 @@ export const ResponseDetails: MessageFns<ResponseDetails> = {
   },
   fromPartial(object: DeepPartial<ResponseDetails>): ResponseDetails {
     const message = createBaseResponseDetails();
-    message.currentAccountId = object.currentAccountId ?? "";
-    message.traceId = object.traceId ?? "";
+    message.currentAccountId = object.currentAccountId ?? '';
+    message.traceId = object.traceId ?? '';
     return message;
   },
 };
@@ -376,7 +376,10 @@ function createBaseFloat32RangeWithOptionalMax(): Float32RangeWithOptionalMax {
 }
 
 export const Float32RangeWithOptionalMax: MessageFns<Float32RangeWithOptionalMax> = {
-  encode(message: Float32RangeWithOptionalMax, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: Float32RangeWithOptionalMax,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.max !== undefined) {
       writer.uint32(13).float(message.max);
     }
@@ -455,7 +458,7 @@ export const Float32RangeWithOptionalMaxUpdateRequestInput: MessageFns<Float32Ra
   {
     encode(
       message: Float32RangeWithOptionalMaxUpdateRequestInput,
-      writer: BinaryWriter = new BinaryWriter(),
+      writer: BinaryWriter = new BinaryWriter()
     ): BinaryWriter {
       if (message.min !== undefined) {
         writer.uint32(13).float(message.min);
@@ -466,7 +469,10 @@ export const Float32RangeWithOptionalMaxUpdateRequestInput: MessageFns<Float32Ra
       return writer;
     },
 
-    decode(input: BinaryReader | Uint8Array, length?: number): Float32RangeWithOptionalMaxUpdateRequestInput {
+    decode(
+      input: BinaryReader | Uint8Array,
+      length?: number
+    ): Float32RangeWithOptionalMaxUpdateRequestInput {
       const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
       const end = length === undefined ? reader.len : reader.pos + length;
       const message = createBaseFloat32RangeWithOptionalMaxUpdateRequestInput();
@@ -517,12 +523,12 @@ export const Float32RangeWithOptionalMaxUpdateRequestInput: MessageFns<Float32Ra
     },
 
     create(
-      base?: DeepPartial<Float32RangeWithOptionalMaxUpdateRequestInput>,
+      base?: DeepPartial<Float32RangeWithOptionalMaxUpdateRequestInput>
     ): Float32RangeWithOptionalMaxUpdateRequestInput {
       return Float32RangeWithOptionalMaxUpdateRequestInput.fromPartial(base ?? {});
     },
     fromPartial(
-      object: DeepPartial<Float32RangeWithOptionalMaxUpdateRequestInput>,
+      object: DeepPartial<Float32RangeWithOptionalMaxUpdateRequestInput>
     ): Float32RangeWithOptionalMaxUpdateRequestInput {
       const message = createBaseFloat32RangeWithOptionalMaxUpdateRequestInput();
       message.min = object.min ?? undefined;
@@ -536,7 +542,10 @@ function createBaseUint16RangeWithOptionalMax(): Uint16RangeWithOptionalMax {
 }
 
 export const Uint16RangeWithOptionalMax: MessageFns<Uint16RangeWithOptionalMax> = {
-  encode(message: Uint16RangeWithOptionalMax, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: Uint16RangeWithOptionalMax,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.max !== undefined) {
       writer.uint32(8).uint32(message.max);
     }
@@ -611,91 +620,98 @@ function createBaseUint16RangeWithOptionalMaxUpdateRequestInput(): Uint16RangeWi
   return { min: undefined, max: undefined };
 }
 
-export const Uint16RangeWithOptionalMaxUpdateRequestInput: MessageFns<Uint16RangeWithOptionalMaxUpdateRequestInput> = {
-  encode(
-    message: Uint16RangeWithOptionalMaxUpdateRequestInput,
-    writer: BinaryWriter = new BinaryWriter(),
-  ): BinaryWriter {
-    if (message.min !== undefined) {
-      writer.uint32(8).uint32(message.min);
-    }
-    if (message.max !== undefined) {
-      writer.uint32(16).uint32(message.max);
-    }
-    return writer;
-  },
-
-  decode(input: BinaryReader | Uint8Array, length?: number): Uint16RangeWithOptionalMaxUpdateRequestInput {
-    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
-    const end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseUint16RangeWithOptionalMaxUpdateRequestInput();
-    while (reader.pos < end) {
-      const tag = reader.uint32();
-      switch (tag >>> 3) {
-        case 1: {
-          if (tag !== 8) {
-            break;
-          }
-
-          message.min = reader.uint32();
-          continue;
-        }
-        case 2: {
-          if (tag !== 16) {
-            break;
-          }
-
-          message.max = reader.uint32();
-          continue;
-        }
+export const Uint16RangeWithOptionalMaxUpdateRequestInput: MessageFns<Uint16RangeWithOptionalMaxUpdateRequestInput> =
+  {
+    encode(
+      message: Uint16RangeWithOptionalMaxUpdateRequestInput,
+      writer: BinaryWriter = new BinaryWriter()
+    ): BinaryWriter {
+      if (message.min !== undefined) {
+        writer.uint32(8).uint32(message.min);
       }
-      if ((tag & 7) === 4 || tag === 0) {
-        break;
+      if (message.max !== undefined) {
+        writer.uint32(16).uint32(message.max);
       }
-      reader.skip(tag & 7);
-    }
-    return message;
-  },
+      return writer;
+    },
 
-  fromJSON(object: any): Uint16RangeWithOptionalMaxUpdateRequestInput {
-    return {
-      min: isSet(object.min) ? globalThis.Number(object.min) : undefined,
-      max: isSet(object.max) ? globalThis.Number(object.max) : undefined,
-    };
-  },
+    decode(
+      input: BinaryReader | Uint8Array,
+      length?: number
+    ): Uint16RangeWithOptionalMaxUpdateRequestInput {
+      const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+      const end = length === undefined ? reader.len : reader.pos + length;
+      const message = createBaseUint16RangeWithOptionalMaxUpdateRequestInput();
+      while (reader.pos < end) {
+        const tag = reader.uint32();
+        switch (tag >>> 3) {
+          case 1: {
+            if (tag !== 8) {
+              break;
+            }
 
-  toJSON(message: Uint16RangeWithOptionalMaxUpdateRequestInput): unknown {
-    const obj: any = {};
-    if (message.min !== undefined) {
-      obj.min = Math.round(message.min);
-    }
-    if (message.max !== undefined) {
-      obj.max = Math.round(message.max);
-    }
-    return obj;
-  },
+            message.min = reader.uint32();
+            continue;
+          }
+          case 2: {
+            if (tag !== 16) {
+              break;
+            }
 
-  create(
-    base?: DeepPartial<Uint16RangeWithOptionalMaxUpdateRequestInput>,
-  ): Uint16RangeWithOptionalMaxUpdateRequestInput {
-    return Uint16RangeWithOptionalMaxUpdateRequestInput.fromPartial(base ?? {});
-  },
-  fromPartial(
-    object: DeepPartial<Uint16RangeWithOptionalMaxUpdateRequestInput>,
-  ): Uint16RangeWithOptionalMaxUpdateRequestInput {
-    const message = createBaseUint16RangeWithOptionalMaxUpdateRequestInput();
-    message.min = object.min ?? undefined;
-    message.max = object.max ?? undefined;
-    return message;
-  },
-};
+            message.max = reader.uint32();
+            continue;
+          }
+        }
+        if ((tag & 7) === 4 || tag === 0) {
+          break;
+        }
+        reader.skip(tag & 7);
+      }
+      return message;
+    },
+
+    fromJSON(object: any): Uint16RangeWithOptionalMaxUpdateRequestInput {
+      return {
+        min: isSet(object.min) ? globalThis.Number(object.min) : undefined,
+        max: isSet(object.max) ? globalThis.Number(object.max) : undefined,
+      };
+    },
+
+    toJSON(message: Uint16RangeWithOptionalMaxUpdateRequestInput): unknown {
+      const obj: any = {};
+      if (message.min !== undefined) {
+        obj.min = Math.round(message.min);
+      }
+      if (message.max !== undefined) {
+        obj.max = Math.round(message.max);
+      }
+      return obj;
+    },
+
+    create(
+      base?: DeepPartial<Uint16RangeWithOptionalMaxUpdateRequestInput>
+    ): Uint16RangeWithOptionalMaxUpdateRequestInput {
+      return Uint16RangeWithOptionalMaxUpdateRequestInput.fromPartial(base ?? {});
+    },
+    fromPartial(
+      object: DeepPartial<Uint16RangeWithOptionalMaxUpdateRequestInput>
+    ): Uint16RangeWithOptionalMaxUpdateRequestInput {
+      const message = createBaseUint16RangeWithOptionalMaxUpdateRequestInput();
+      message.min = object.min ?? undefined;
+      message.max = object.max ?? undefined;
+      return message;
+    },
+  };
 
 function createBaseUint32RangeWithOptionalMax(): Uint32RangeWithOptionalMax {
   return { max: undefined, min: 0 };
 }
 
 export const Uint32RangeWithOptionalMax: MessageFns<Uint32RangeWithOptionalMax> = {
-  encode(message: Uint32RangeWithOptionalMax, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: Uint32RangeWithOptionalMax,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.max !== undefined) {
       writer.uint32(8).uint32(message.max);
     }
@@ -770,92 +786,100 @@ function createBaseUint32RangeWithOptionalMaxUpdateRequestInput(): Uint32RangeWi
   return { min: undefined, max: undefined };
 }
 
-export const Uint32RangeWithOptionalMaxUpdateRequestInput: MessageFns<Uint32RangeWithOptionalMaxUpdateRequestInput> = {
-  encode(
-    message: Uint32RangeWithOptionalMaxUpdateRequestInput,
-    writer: BinaryWriter = new BinaryWriter(),
-  ): BinaryWriter {
-    if (message.min !== undefined) {
-      writer.uint32(8).uint32(message.min);
-    }
-    if (message.max !== undefined) {
-      writer.uint32(16).uint32(message.max);
-    }
-    return writer;
-  },
-
-  decode(input: BinaryReader | Uint8Array, length?: number): Uint32RangeWithOptionalMaxUpdateRequestInput {
-    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
-    const end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseUint32RangeWithOptionalMaxUpdateRequestInput();
-    while (reader.pos < end) {
-      const tag = reader.uint32();
-      switch (tag >>> 3) {
-        case 1: {
-          if (tag !== 8) {
-            break;
-          }
-
-          message.min = reader.uint32();
-          continue;
-        }
-        case 2: {
-          if (tag !== 16) {
-            break;
-          }
-
-          message.max = reader.uint32();
-          continue;
-        }
+export const Uint32RangeWithOptionalMaxUpdateRequestInput: MessageFns<Uint32RangeWithOptionalMaxUpdateRequestInput> =
+  {
+    encode(
+      message: Uint32RangeWithOptionalMaxUpdateRequestInput,
+      writer: BinaryWriter = new BinaryWriter()
+    ): BinaryWriter {
+      if (message.min !== undefined) {
+        writer.uint32(8).uint32(message.min);
       }
-      if ((tag & 7) === 4 || tag === 0) {
-        break;
+      if (message.max !== undefined) {
+        writer.uint32(16).uint32(message.max);
       }
-      reader.skip(tag & 7);
-    }
-    return message;
-  },
+      return writer;
+    },
 
-  fromJSON(object: any): Uint32RangeWithOptionalMaxUpdateRequestInput {
-    return {
-      min: isSet(object.min) ? globalThis.Number(object.min) : undefined,
-      max: isSet(object.max) ? globalThis.Number(object.max) : undefined,
-    };
-  },
+    decode(
+      input: BinaryReader | Uint8Array,
+      length?: number
+    ): Uint32RangeWithOptionalMaxUpdateRequestInput {
+      const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+      const end = length === undefined ? reader.len : reader.pos + length;
+      const message = createBaseUint32RangeWithOptionalMaxUpdateRequestInput();
+      while (reader.pos < end) {
+        const tag = reader.uint32();
+        switch (tag >>> 3) {
+          case 1: {
+            if (tag !== 8) {
+              break;
+            }
 
-  toJSON(message: Uint32RangeWithOptionalMaxUpdateRequestInput): unknown {
-    const obj: any = {};
-    if (message.min !== undefined) {
-      obj.min = Math.round(message.min);
-    }
-    if (message.max !== undefined) {
-      obj.max = Math.round(message.max);
-    }
-    return obj;
-  },
+            message.min = reader.uint32();
+            continue;
+          }
+          case 2: {
+            if (tag !== 16) {
+              break;
+            }
 
-  create(
-    base?: DeepPartial<Uint32RangeWithOptionalMaxUpdateRequestInput>,
-  ): Uint32RangeWithOptionalMaxUpdateRequestInput {
-    return Uint32RangeWithOptionalMaxUpdateRequestInput.fromPartial(base ?? {});
-  },
-  fromPartial(
-    object: DeepPartial<Uint32RangeWithOptionalMaxUpdateRequestInput>,
-  ): Uint32RangeWithOptionalMaxUpdateRequestInput {
-    const message = createBaseUint32RangeWithOptionalMaxUpdateRequestInput();
-    message.min = object.min ?? undefined;
-    message.max = object.max ?? undefined;
-    return message;
-  },
-};
+            message.max = reader.uint32();
+            continue;
+          }
+        }
+        if ((tag & 7) === 4 || tag === 0) {
+          break;
+        }
+        reader.skip(tag & 7);
+      }
+      return message;
+    },
+
+    fromJSON(object: any): Uint32RangeWithOptionalMaxUpdateRequestInput {
+      return {
+        min: isSet(object.min) ? globalThis.Number(object.min) : undefined,
+        max: isSet(object.max) ? globalThis.Number(object.max) : undefined,
+      };
+    },
+
+    toJSON(message: Uint32RangeWithOptionalMaxUpdateRequestInput): unknown {
+      const obj: any = {};
+      if (message.min !== undefined) {
+        obj.min = Math.round(message.min);
+      }
+      if (message.max !== undefined) {
+        obj.max = Math.round(message.max);
+      }
+      return obj;
+    },
+
+    create(
+      base?: DeepPartial<Uint32RangeWithOptionalMaxUpdateRequestInput>
+    ): Uint32RangeWithOptionalMaxUpdateRequestInput {
+      return Uint32RangeWithOptionalMaxUpdateRequestInput.fromPartial(base ?? {});
+    },
+    fromPartial(
+      object: DeepPartial<Uint32RangeWithOptionalMaxUpdateRequestInput>
+    ): Uint32RangeWithOptionalMaxUpdateRequestInput {
+      const message = createBaseUint32RangeWithOptionalMaxUpdateRequestInput();
+      message.min = object.min ?? undefined;
+      message.max = object.max ?? undefined;
+      return message;
+    },
+  };
 
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 
-export type DeepPartial<T> = T extends Builtin ? T
-  : T extends globalThis.Array<infer U> ? globalThis.Array<DeepPartial<U>>
-  : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>>
-  : T extends {} ? { [K in keyof T]?: DeepPartial<T[K]> }
-  : Partial<T>;
+export type DeepPartial<T> = T extends Builtin
+  ? T
+  : T extends globalThis.Array<infer U>
+    ? globalThis.Array<DeepPartial<U>>
+    : T extends ReadonlyArray<infer U>
+      ? ReadonlyArray<DeepPartial<U>>
+      : T extends {}
+        ? { [K in keyof T]?: DeepPartial<T[K]> }
+        : Partial<T>;
 
 function isSet(value: any): boolean {
   return value !== null && value !== undefined;

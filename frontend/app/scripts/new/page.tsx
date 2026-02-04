@@ -11,12 +11,14 @@ import {
   getNextLineIndex,
 } from '@/lib/scriptUtils';
 import { TurnEditor } from '@/components/LineEditor';
+import { useAuth } from '@/hooks/useAuth';
 import { v4 as uuidv4 } from 'uuid';
 
 function ScriptEditorContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const draftId = searchParams.get('draft');
+  const { isAuthenticated, isLoading: authLoading } = useAuth();
 
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
@@ -250,13 +252,26 @@ function ScriptEditorContent() {
               >
                 {isSaving ? 'Saving...' : 'Save Draft'}
               </button>
-              <button
-                onClick={handlePublish}
-                disabled={isPublishing}
-                className="btn-elegant px-5 py-2 rounded-lg font-medium disabled:opacity-50"
-              >
-                {isPublishing ? 'Publishing...' : '🎭 Publish'}
-              </button>
+              {authLoading ? (
+                <div className="px-5 py-2 rounded-lg bg-[var(--charcoal)]/30 text-[var(--cream)] opacity-50">
+                  Loading...
+                </div>
+              ) : isAuthenticated ? (
+                <button
+                  onClick={handlePublish}
+                  disabled={isPublishing}
+                  className="btn-elegant px-5 py-2 rounded-lg font-medium disabled:opacity-50"
+                >
+                  {isPublishing ? 'Publishing...' : '🎭 Publish'}
+                </button>
+              ) : (
+                <Link
+                  href="/auth/login"
+                  className="btn-elegant px-5 py-2 rounded-lg font-medium inline-flex items-center gap-2"
+                >
+                  <span>Sign in to Publish</span>
+                </Link>
+              )}
             </div>
           </div>
         </div>
@@ -449,6 +464,24 @@ function ScriptEditorContent() {
                   );
                 })()}
               </div>
+
+              {/* Authentication Notice */}
+              {!authLoading && !isAuthenticated && (
+                <div className="mt-4 p-3 rounded-lg bg-[var(--gold)]/10 border border-[var(--gold)]/20">
+                  <p className="text-[var(--cream)] text-sm opacity-80">
+                    <span className="text-[var(--gold)]">Note:</span> You can save drafts locally,
+                    but you&apos;ll need to{' '}
+                    <Link href="/auth/login" className="text-[var(--gold)] hover:underline">
+                      sign in
+                    </Link>{' '}
+                    or{' '}
+                    <Link href="/auth/register" className="text-[var(--gold)] hover:underline">
+                      create an account
+                    </Link>{' '}
+                    to publish your script.
+                  </p>
+                </div>
+              )}
             </section>
           </div>
         </div>

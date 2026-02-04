@@ -5,21 +5,21 @@
 // source: internal_ops/internal_ops_service.proto
 
 /* eslint-disable */
-import type { CallContext, CallOptions } from "nice-grpc-common";
+import type { CallContext, CallOptions } from 'nice-grpc-common';
 import {
   PublishArbitraryQueueMessageRequest,
   PublishArbitraryQueueMessageResponse,
-} from "./internal_ops_service_types";
+} from './internal_ops_service_types';
 
-export const protobufPackage = "internalops";
+export const protobufPackage = 'internalops';
 
 export type InternalOperationsDefinition = typeof InternalOperationsDefinition;
 export const InternalOperationsDefinition = {
-  name: "InternalOperations",
-  fullName: "internalops.InternalOperations",
+  name: 'InternalOperations',
+  fullName: 'internalops.InternalOperations',
   methods: {
     publishArbitraryQueueMessage: {
-      name: "PublishArbitraryQueueMessage",
+      name: 'PublishArbitraryQueueMessage',
       requestType: PublishArbitraryQueueMessageRequest,
       requestStream: false,
       responseType: PublishArbitraryQueueMessageResponse,
@@ -32,21 +32,25 @@ export const InternalOperationsDefinition = {
 export interface InternalOperationsServiceImplementation<CallContextExt = {}> {
   publishArbitraryQueueMessage(
     request: PublishArbitraryQueueMessageRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<PublishArbitraryQueueMessageResponse>>;
 }
 
 export interface InternalOperationsClient<CallOptionsExt = {}> {
   publishArbitraryQueueMessage(
     request: DeepPartial<PublishArbitraryQueueMessageRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<PublishArbitraryQueueMessageResponse>;
 }
 
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 
-export type DeepPartial<T> = T extends Builtin ? T
-  : T extends globalThis.Array<infer U> ? globalThis.Array<DeepPartial<U>>
-  : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>>
-  : T extends {} ? { [K in keyof T]?: DeepPartial<T[K]> }
-  : Partial<T>;
+export type DeepPartial<T> = T extends Builtin
+  ? T
+  : T extends globalThis.Array<infer U>
+    ? globalThis.Array<DeepPartial<U>>
+    : T extends ReadonlyArray<infer U>
+      ? ReadonlyArray<DeepPartial<U>>
+      : T extends {}
+        ? { [K in keyof T]?: DeepPartial<T[K]> }
+        : Partial<T>;

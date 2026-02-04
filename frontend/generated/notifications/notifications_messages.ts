@@ -5,10 +5,10 @@
 // source: notifications/notifications_messages.proto
 
 /* eslint-disable */
-import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
-import { Timestamp } from "../google/protobuf/timestamp";
+import { BinaryReader, BinaryWriter } from '@bufbuild/protobuf/wire';
+import { Timestamp } from '../google/protobuf/timestamp';
 
-export const protobufPackage = "notifications";
+export const protobufPackage = 'notifications';
 
 export enum UserNotificationStatus {
   USER_NOTIFICATION_STATUS_UNREAD = 0,
@@ -20,16 +20,16 @@ export enum UserNotificationStatus {
 export function userNotificationStatusFromJSON(object: any): UserNotificationStatus {
   switch (object) {
     case 0:
-    case "USER_NOTIFICATION_STATUS_UNREAD":
+    case 'USER_NOTIFICATION_STATUS_UNREAD':
       return UserNotificationStatus.USER_NOTIFICATION_STATUS_UNREAD;
     case 1:
-    case "USER_NOTIFICATION_STATUS_READ":
+    case 'USER_NOTIFICATION_STATUS_READ':
       return UserNotificationStatus.USER_NOTIFICATION_STATUS_READ;
     case 2:
-    case "USER_NOTIFICATION_STATUS_DISMISSED":
+    case 'USER_NOTIFICATION_STATUS_DISMISSED':
       return UserNotificationStatus.USER_NOTIFICATION_STATUS_DISMISSED;
     case -1:
-    case "UNRECOGNIZED":
+    case 'UNRECOGNIZED':
     default:
       return UserNotificationStatus.UNRECOGNIZED;
   }
@@ -38,14 +38,14 @@ export function userNotificationStatusFromJSON(object: any): UserNotificationSta
 export function userNotificationStatusToJSON(object: UserNotificationStatus): string {
   switch (object) {
     case UserNotificationStatus.USER_NOTIFICATION_STATUS_UNREAD:
-      return "USER_NOTIFICATION_STATUS_UNREAD";
+      return 'USER_NOTIFICATION_STATUS_UNREAD';
     case UserNotificationStatus.USER_NOTIFICATION_STATUS_READ:
-      return "USER_NOTIFICATION_STATUS_READ";
+      return 'USER_NOTIFICATION_STATUS_READ';
     case UserNotificationStatus.USER_NOTIFICATION_STATUS_DISMISSED:
-      return "USER_NOTIFICATION_STATUS_DISMISSED";
+      return 'USER_NOTIFICATION_STATUS_DISMISSED';
     case UserNotificationStatus.UNRECOGNIZED:
     default:
-      return "UNRECOGNIZED";
+      return 'UNRECOGNIZED';
   }
 }
 
@@ -59,7 +59,14 @@ export interface UserNotification {
 }
 
 function createBaseUserNotification(): UserNotification {
-  return { createdAt: undefined, lastUpdatedAt: undefined, id: "", content: "", status: 0, belongsToUser: "" };
+  return {
+    createdAt: undefined,
+    lastUpdatedAt: undefined,
+    id: '',
+    content: '',
+    status: 0,
+    belongsToUser: '',
+  };
 }
 
 export const UserNotification: MessageFns<UserNotification> = {
@@ -70,16 +77,16 @@ export const UserNotification: MessageFns<UserNotification> = {
     if (message.lastUpdatedAt !== undefined) {
       Timestamp.encode(toTimestamp(message.lastUpdatedAt), writer.uint32(18).fork()).join();
     }
-    if (message.id !== "") {
+    if (message.id !== '') {
       writer.uint32(26).string(message.id);
     }
-    if (message.content !== "") {
+    if (message.content !== '') {
       writer.uint32(34).string(message.content);
     }
     if (message.status !== 0) {
       writer.uint32(40).int32(message.status);
     }
-    if (message.belongsToUser !== "") {
+    if (message.belongsToUser !== '') {
       writer.uint32(50).string(message.belongsToUser);
     }
     return writer;
@@ -154,21 +161,21 @@ export const UserNotification: MessageFns<UserNotification> = {
       createdAt: isSet(object.createdAt)
         ? fromJsonTimestamp(object.createdAt)
         : isSet(object.created_at)
-        ? fromJsonTimestamp(object.created_at)
-        : undefined,
+          ? fromJsonTimestamp(object.created_at)
+          : undefined,
       lastUpdatedAt: isSet(object.lastUpdatedAt)
         ? fromJsonTimestamp(object.lastUpdatedAt)
         : isSet(object.last_updated_at)
-        ? fromJsonTimestamp(object.last_updated_at)
-        : undefined,
-      id: isSet(object.id) ? globalThis.String(object.id) : "",
-      content: isSet(object.content) ? globalThis.String(object.content) : "",
+          ? fromJsonTimestamp(object.last_updated_at)
+          : undefined,
+      id: isSet(object.id) ? globalThis.String(object.id) : '',
+      content: isSet(object.content) ? globalThis.String(object.content) : '',
       status: isSet(object.status) ? userNotificationStatusFromJSON(object.status) : 0,
       belongsToUser: isSet(object.belongsToUser)
         ? globalThis.String(object.belongsToUser)
         : isSet(object.belongs_to_user)
-        ? globalThis.String(object.belongs_to_user)
-        : "",
+          ? globalThis.String(object.belongs_to_user)
+          : '',
     };
   },
 
@@ -180,16 +187,16 @@ export const UserNotification: MessageFns<UserNotification> = {
     if (message.lastUpdatedAt !== undefined) {
       obj.lastUpdatedAt = message.lastUpdatedAt.toISOString();
     }
-    if (message.id !== "") {
+    if (message.id !== '') {
       obj.id = message.id;
     }
-    if (message.content !== "") {
+    if (message.content !== '') {
       obj.content = message.content;
     }
     if (message.status !== 0) {
       obj.status = userNotificationStatusToJSON(message.status);
     }
-    if (message.belongsToUser !== "") {
+    if (message.belongsToUser !== '') {
       obj.belongsToUser = message.belongsToUser;
     }
     return obj;
@@ -202,21 +209,25 @@ export const UserNotification: MessageFns<UserNotification> = {
     const message = createBaseUserNotification();
     message.createdAt = object.createdAt ?? undefined;
     message.lastUpdatedAt = object.lastUpdatedAt ?? undefined;
-    message.id = object.id ?? "";
-    message.content = object.content ?? "";
+    message.id = object.id ?? '';
+    message.content = object.content ?? '';
     message.status = object.status ?? 0;
-    message.belongsToUser = object.belongsToUser ?? "";
+    message.belongsToUser = object.belongsToUser ?? '';
     return message;
   },
 };
 
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 
-export type DeepPartial<T> = T extends Builtin ? T
-  : T extends globalThis.Array<infer U> ? globalThis.Array<DeepPartial<U>>
-  : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>>
-  : T extends {} ? { [K in keyof T]?: DeepPartial<T[K]> }
-  : Partial<T>;
+export type DeepPartial<T> = T extends Builtin
+  ? T
+  : T extends globalThis.Array<infer U>
+    ? globalThis.Array<DeepPartial<U>>
+    : T extends ReadonlyArray<infer U>
+      ? ReadonlyArray<DeepPartial<U>>
+      : T extends {}
+        ? { [K in keyof T]?: DeepPartial<T[K]> }
+        : Partial<T>;
 
 function toTimestamp(date: Date): Timestamp {
   const seconds = Math.trunc(date.getTime() / 1_000);
@@ -233,7 +244,7 @@ function fromTimestamp(t: Timestamp): Date {
 function fromJsonTimestamp(o: any): Date {
   if (o instanceof globalThis.Date) {
     return o;
-  } else if (typeof o === "string") {
+  } else if (typeof o === 'string') {
     return new globalThis.Date(o);
   } else {
     return fromTimestamp(Timestamp.fromJSON(o));

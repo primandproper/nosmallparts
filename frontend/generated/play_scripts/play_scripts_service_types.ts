@@ -5,12 +5,17 @@
 // source: play_scripts/play_scripts_service_types.proto
 
 /* eslint-disable */
-import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
-import { ResponseDetails } from "../common";
-import { Pagination, QueryFilter } from "../filtering";
-import { PlayScript, ScrollMode, scrollModeFromJSON, scrollModeToJSON } from "./play_scripts_messages";
+import { BinaryReader, BinaryWriter } from '@bufbuild/protobuf/wire';
+import { ResponseDetails } from '../common';
+import { Pagination, QueryFilter } from '../filtering';
+import {
+  PlayScript,
+  ScrollMode,
+  scrollModeFromJSON,
+  scrollModeToJSON,
+} from './play_scripts_messages';
 
-export const protobufPackage = "play_scripts";
+export const protobufPackage = 'play_scripts';
 
 export interface PlayScriptCastMemberCreationInput {
   /** Client-provided ID for referencing in lines */
@@ -113,15 +118,18 @@ export interface ArchivePlayScriptResponse {
 }
 
 function createBasePlayScriptCastMemberCreationInput(): PlayScriptCastMemberCreationInput {
-  return { id: "", name: "", sortOrder: 0 };
+  return { id: '', name: '', sortOrder: 0 };
 }
 
 export const PlayScriptCastMemberCreationInput: MessageFns<PlayScriptCastMemberCreationInput> = {
-  encode(message: PlayScriptCastMemberCreationInput, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.id !== "") {
+  encode(
+    message: PlayScriptCastMemberCreationInput,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.id !== '') {
       writer.uint32(10).string(message.id);
     }
-    if (message.name !== "") {
+    if (message.name !== '') {
       writer.uint32(18).string(message.name);
     }
     if (message.sortOrder !== 0) {
@@ -172,22 +180,22 @@ export const PlayScriptCastMemberCreationInput: MessageFns<PlayScriptCastMemberC
 
   fromJSON(object: any): PlayScriptCastMemberCreationInput {
     return {
-      id: isSet(object.id) ? globalThis.String(object.id) : "",
-      name: isSet(object.name) ? globalThis.String(object.name) : "",
+      id: isSet(object.id) ? globalThis.String(object.id) : '',
+      name: isSet(object.name) ? globalThis.String(object.name) : '',
       sortOrder: isSet(object.sortOrder)
         ? globalThis.Number(object.sortOrder)
         : isSet(object.sort_order)
-        ? globalThis.Number(object.sort_order)
-        : 0,
+          ? globalThis.Number(object.sort_order)
+          : 0,
     };
   },
 
   toJSON(message: PlayScriptCastMemberCreationInput): unknown {
     const obj: any = {};
-    if (message.id !== "") {
+    if (message.id !== '') {
       obj.id = message.id;
     }
-    if (message.name !== "") {
+    if (message.name !== '') {
       obj.name = message.name;
     }
     if (message.sortOrder !== 0) {
@@ -199,31 +207,43 @@ export const PlayScriptCastMemberCreationInput: MessageFns<PlayScriptCastMemberC
   create(base?: DeepPartial<PlayScriptCastMemberCreationInput>): PlayScriptCastMemberCreationInput {
     return PlayScriptCastMemberCreationInput.fromPartial(base ?? {});
   },
-  fromPartial(object: DeepPartial<PlayScriptCastMemberCreationInput>): PlayScriptCastMemberCreationInput {
+  fromPartial(
+    object: DeepPartial<PlayScriptCastMemberCreationInput>
+  ): PlayScriptCastMemberCreationInput {
     const message = createBasePlayScriptCastMemberCreationInput();
-    message.id = object.id ?? "";
-    message.name = object.name ?? "";
+    message.id = object.id ?? '';
+    message.name = object.name ?? '';
     message.sortOrder = object.sortOrder ?? 0;
     return message;
   },
 };
 
 function createBasePlayScriptLineCreationInput(): PlayScriptLineCreationInput {
-  return { castMemberId: "", lineText: "", lineIndex: 0, direction: "", scrollMode: 0, autoScrollWpm: 0 };
+  return {
+    castMemberId: '',
+    lineText: '',
+    lineIndex: 0,
+    direction: '',
+    scrollMode: 0,
+    autoScrollWpm: 0,
+  };
 }
 
 export const PlayScriptLineCreationInput: MessageFns<PlayScriptLineCreationInput> = {
-  encode(message: PlayScriptLineCreationInput, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.castMemberId !== "") {
+  encode(
+    message: PlayScriptLineCreationInput,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.castMemberId !== '') {
       writer.uint32(10).string(message.castMemberId);
     }
-    if (message.lineText !== "") {
+    if (message.lineText !== '') {
       writer.uint32(18).string(message.lineText);
     }
     if (message.lineIndex !== 0) {
       writer.uint32(24).int32(message.lineIndex);
     }
-    if (message.direction !== "") {
+    if (message.direction !== '') {
       writer.uint32(34).string(message.direction);
     }
     if (message.scrollMode !== 0) {
@@ -304,44 +324,44 @@ export const PlayScriptLineCreationInput: MessageFns<PlayScriptLineCreationInput
       castMemberId: isSet(object.castMemberId)
         ? globalThis.String(object.castMemberId)
         : isSet(object.cast_member_id)
-        ? globalThis.String(object.cast_member_id)
-        : "",
+          ? globalThis.String(object.cast_member_id)
+          : '',
       lineText: isSet(object.lineText)
         ? globalThis.String(object.lineText)
         : isSet(object.line_text)
-        ? globalThis.String(object.line_text)
-        : "",
+          ? globalThis.String(object.line_text)
+          : '',
       lineIndex: isSet(object.lineIndex)
         ? globalThis.Number(object.lineIndex)
         : isSet(object.line_index)
-        ? globalThis.Number(object.line_index)
-        : 0,
-      direction: isSet(object.direction) ? globalThis.String(object.direction) : "",
+          ? globalThis.Number(object.line_index)
+          : 0,
+      direction: isSet(object.direction) ? globalThis.String(object.direction) : '',
       scrollMode: isSet(object.scrollMode)
         ? scrollModeFromJSON(object.scrollMode)
         : isSet(object.scroll_mode)
-        ? scrollModeFromJSON(object.scroll_mode)
-        : 0,
+          ? scrollModeFromJSON(object.scroll_mode)
+          : 0,
       autoScrollWpm: isSet(object.autoScrollWpm)
         ? globalThis.Number(object.autoScrollWpm)
         : isSet(object.auto_scroll_wpm)
-        ? globalThis.Number(object.auto_scroll_wpm)
-        : 0,
+          ? globalThis.Number(object.auto_scroll_wpm)
+          : 0,
     };
   },
 
   toJSON(message: PlayScriptLineCreationInput): unknown {
     const obj: any = {};
-    if (message.castMemberId !== "") {
+    if (message.castMemberId !== '') {
       obj.castMemberId = message.castMemberId;
     }
-    if (message.lineText !== "") {
+    if (message.lineText !== '') {
       obj.lineText = message.lineText;
     }
     if (message.lineIndex !== 0) {
       obj.lineIndex = Math.round(message.lineIndex);
     }
-    if (message.direction !== "") {
+    if (message.direction !== '') {
       obj.direction = message.direction;
     }
     if (message.scrollMode !== 0) {
@@ -358,10 +378,10 @@ export const PlayScriptLineCreationInput: MessageFns<PlayScriptLineCreationInput
   },
   fromPartial(object: DeepPartial<PlayScriptLineCreationInput>): PlayScriptLineCreationInput {
     const message = createBasePlayScriptLineCreationInput();
-    message.castMemberId = object.castMemberId ?? "";
-    message.lineText = object.lineText ?? "";
+    message.castMemberId = object.castMemberId ?? '';
+    message.lineText = object.lineText ?? '';
     message.lineIndex = object.lineIndex ?? 0;
-    message.direction = object.direction ?? "";
+    message.direction = object.direction ?? '';
     message.scrollMode = object.scrollMode ?? 0;
     message.autoScrollWpm = object.autoScrollWpm ?? 0;
     return message;
@@ -369,18 +389,21 @@ export const PlayScriptLineCreationInput: MessageFns<PlayScriptLineCreationInput
 };
 
 function createBasePlayScriptCreationRequestInput(): PlayScriptCreationRequestInput {
-  return { title: "", description: "", author: "", isPublic: false, castMembers: [], lines: [] };
+  return { title: '', description: '', author: '', isPublic: false, castMembers: [], lines: [] };
 }
 
 export const PlayScriptCreationRequestInput: MessageFns<PlayScriptCreationRequestInput> = {
-  encode(message: PlayScriptCreationRequestInput, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.title !== "") {
+  encode(
+    message: PlayScriptCreationRequestInput,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.title !== '') {
       writer.uint32(10).string(message.title);
     }
-    if (message.description !== "") {
+    if (message.description !== '') {
       writer.uint32(18).string(message.description);
     }
-    if (message.author !== "") {
+    if (message.author !== '') {
       writer.uint32(26).string(message.author);
     }
     if (message.isPublic !== false) {
@@ -439,7 +462,9 @@ export const PlayScriptCreationRequestInput: MessageFns<PlayScriptCreationReques
             break;
           }
 
-          message.castMembers.push(PlayScriptCastMemberCreationInput.decode(reader, reader.uint32()));
+          message.castMembers.push(
+            PlayScriptCastMemberCreationInput.decode(reader, reader.uint32())
+          );
           continue;
         }
         case 6: {
@@ -461,19 +486,19 @@ export const PlayScriptCreationRequestInput: MessageFns<PlayScriptCreationReques
 
   fromJSON(object: any): PlayScriptCreationRequestInput {
     return {
-      title: isSet(object.title) ? globalThis.String(object.title) : "",
-      description: isSet(object.description) ? globalThis.String(object.description) : "",
-      author: isSet(object.author) ? globalThis.String(object.author) : "",
+      title: isSet(object.title) ? globalThis.String(object.title) : '',
+      description: isSet(object.description) ? globalThis.String(object.description) : '',
+      author: isSet(object.author) ? globalThis.String(object.author) : '',
       isPublic: isSet(object.isPublic)
         ? globalThis.Boolean(object.isPublic)
         : isSet(object.is_public)
-        ? globalThis.Boolean(object.is_public)
-        : false,
+          ? globalThis.Boolean(object.is_public)
+          : false,
       castMembers: globalThis.Array.isArray(object?.castMembers)
         ? object.castMembers.map((e: any) => PlayScriptCastMemberCreationInput.fromJSON(e))
         : globalThis.Array.isArray(object?.cast_members)
-        ? object.cast_members.map((e: any) => PlayScriptCastMemberCreationInput.fromJSON(e))
-        : [],
+          ? object.cast_members.map((e: any) => PlayScriptCastMemberCreationInput.fromJSON(e))
+          : [],
       lines: globalThis.Array.isArray(object?.lines)
         ? object.lines.map((e: any) => PlayScriptLineCreationInput.fromJSON(e))
         : [],
@@ -482,13 +507,13 @@ export const PlayScriptCreationRequestInput: MessageFns<PlayScriptCreationReques
 
   toJSON(message: PlayScriptCreationRequestInput): unknown {
     const obj: any = {};
-    if (message.title !== "") {
+    if (message.title !== '') {
       obj.title = message.title;
     }
-    if (message.description !== "") {
+    if (message.description !== '') {
       obj.description = message.description;
     }
-    if (message.author !== "") {
+    if (message.author !== '') {
       obj.author = message.author;
     }
     if (message.isPublic !== false) {
@@ -508,11 +533,12 @@ export const PlayScriptCreationRequestInput: MessageFns<PlayScriptCreationReques
   },
   fromPartial(object: DeepPartial<PlayScriptCreationRequestInput>): PlayScriptCreationRequestInput {
     const message = createBasePlayScriptCreationRequestInput();
-    message.title = object.title ?? "";
-    message.description = object.description ?? "";
-    message.author = object.author ?? "";
+    message.title = object.title ?? '';
+    message.description = object.description ?? '';
+    message.author = object.author ?? '';
     message.isPublic = object.isPublic ?? false;
-    message.castMembers = object.castMembers?.map((e) => PlayScriptCastMemberCreationInput.fromPartial(e)) || [];
+    message.castMembers =
+      object.castMembers?.map((e) => PlayScriptCastMemberCreationInput.fromPartial(e)) || [];
     message.lines = object.lines?.map((e) => PlayScriptLineCreationInput.fromPartial(e)) || [];
     return message;
   },
@@ -523,7 +549,10 @@ function createBasePlayScriptUpdateRequestInput(): PlayScriptUpdateRequestInput 
 }
 
 export const PlayScriptUpdateRequestInput: MessageFns<PlayScriptUpdateRequestInput> = {
-  encode(message: PlayScriptUpdateRequestInput, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: PlayScriptUpdateRequestInput,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.title !== undefined) {
       writer.uint32(10).string(message.title);
     }
@@ -595,8 +624,8 @@ export const PlayScriptUpdateRequestInput: MessageFns<PlayScriptUpdateRequestInp
       isPublic: isSet(object.isPublic)
         ? globalThis.Boolean(object.isPublic)
         : isSet(object.is_public)
-        ? globalThis.Boolean(object.is_public)
-        : undefined,
+          ? globalThis.Boolean(object.is_public)
+          : undefined,
     };
   },
 
@@ -635,7 +664,10 @@ function createBaseCreatePlayScriptRequest(): CreatePlayScriptRequest {
 }
 
 export const CreatePlayScriptRequest: MessageFns<CreatePlayScriptRequest> = {
-  encode(message: CreatePlayScriptRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: CreatePlayScriptRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.input !== undefined) {
       PlayScriptCreationRequestInput.encode(message.input, writer.uint32(10).fork()).join();
     }
@@ -667,7 +699,11 @@ export const CreatePlayScriptRequest: MessageFns<CreatePlayScriptRequest> = {
   },
 
   fromJSON(object: any): CreatePlayScriptRequest {
-    return { input: isSet(object.input) ? PlayScriptCreationRequestInput.fromJSON(object.input) : undefined };
+    return {
+      input: isSet(object.input)
+        ? PlayScriptCreationRequestInput.fromJSON(object.input)
+        : undefined,
+    };
   },
 
   toJSON(message: CreatePlayScriptRequest): unknown {
@@ -683,9 +719,10 @@ export const CreatePlayScriptRequest: MessageFns<CreatePlayScriptRequest> = {
   },
   fromPartial(object: DeepPartial<CreatePlayScriptRequest>): CreatePlayScriptRequest {
     const message = createBaseCreatePlayScriptRequest();
-    message.input = (object.input !== undefined && object.input !== null)
-      ? PlayScriptCreationRequestInput.fromPartial(object.input)
-      : undefined;
+    message.input =
+      object.input !== undefined && object.input !== null
+        ? PlayScriptCreationRequestInput.fromPartial(object.input)
+        : undefined;
     return message;
   },
 };
@@ -695,7 +732,10 @@ function createBaseCreatePlayScriptResponse(): CreatePlayScriptResponse {
 }
 
 export const CreatePlayScriptResponse: MessageFns<CreatePlayScriptResponse> = {
-  encode(message: CreatePlayScriptResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: CreatePlayScriptResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -742,8 +782,8 @@ export const CreatePlayScriptResponse: MessageFns<CreatePlayScriptResponse> = {
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       created: isSet(object.created) ? PlayScript.fromJSON(object.created) : undefined,
     };
   },
@@ -764,23 +804,25 @@ export const CreatePlayScriptResponse: MessageFns<CreatePlayScriptResponse> = {
   },
   fromPartial(object: DeepPartial<CreatePlayScriptResponse>): CreatePlayScriptResponse {
     const message = createBaseCreatePlayScriptResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.created = (object.created !== undefined && object.created !== null)
-      ? PlayScript.fromPartial(object.created)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
+    message.created =
+      object.created !== undefined && object.created !== null
+        ? PlayScript.fromPartial(object.created)
+        : undefined;
     return message;
   },
 };
 
 function createBaseGetPlayScriptRequest(): GetPlayScriptRequest {
-  return { playScriptId: "" };
+  return { playScriptId: '' };
 }
 
 export const GetPlayScriptRequest: MessageFns<GetPlayScriptRequest> = {
   encode(message: GetPlayScriptRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.playScriptId !== "") {
+    if (message.playScriptId !== '') {
       writer.uint32(10).string(message.playScriptId);
     }
     return writer;
@@ -815,14 +857,14 @@ export const GetPlayScriptRequest: MessageFns<GetPlayScriptRequest> = {
       playScriptId: isSet(object.playScriptId)
         ? globalThis.String(object.playScriptId)
         : isSet(object.play_script_id)
-        ? globalThis.String(object.play_script_id)
-        : "",
+          ? globalThis.String(object.play_script_id)
+          : '',
     };
   },
 
   toJSON(message: GetPlayScriptRequest): unknown {
     const obj: any = {};
-    if (message.playScriptId !== "") {
+    if (message.playScriptId !== '') {
       obj.playScriptId = message.playScriptId;
     }
     return obj;
@@ -833,7 +875,7 @@ export const GetPlayScriptRequest: MessageFns<GetPlayScriptRequest> = {
   },
   fromPartial(object: DeepPartial<GetPlayScriptRequest>): GetPlayScriptRequest {
     const message = createBaseGetPlayScriptRequest();
-    message.playScriptId = object.playScriptId ?? "";
+    message.playScriptId = object.playScriptId ?? '';
     return message;
   },
 };
@@ -890,8 +932,8 @@ export const GetPlayScriptResponse: MessageFns<GetPlayScriptResponse> = {
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       result: isSet(object.result) ? PlayScript.fromJSON(object.result) : undefined,
     };
   },
@@ -912,12 +954,14 @@ export const GetPlayScriptResponse: MessageFns<GetPlayScriptResponse> = {
   },
   fromPartial(object: DeepPartial<GetPlayScriptResponse>): GetPlayScriptResponse {
     const message = createBaseGetPlayScriptResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.result = (object.result !== undefined && object.result !== null)
-      ? PlayScript.fromPartial(object.result)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
+    message.result =
+      object.result !== undefined && object.result !== null
+        ? PlayScript.fromPartial(object.result)
+        : undefined;
     return message;
   },
 };
@@ -975,9 +1019,10 @@ export const GetPlayScriptsRequest: MessageFns<GetPlayScriptsRequest> = {
   },
   fromPartial(object: DeepPartial<GetPlayScriptsRequest>): GetPlayScriptsRequest {
     const message = createBaseGetPlayScriptsRequest();
-    message.filter = (object.filter !== undefined && object.filter !== null)
-      ? QueryFilter.fromPartial(object.filter)
-      : undefined;
+    message.filter =
+      object.filter !== undefined && object.filter !== null
+        ? QueryFilter.fromPartial(object.filter)
+        : undefined;
     return message;
   },
 };
@@ -1045,10 +1090,12 @@ export const GetPlayScriptsResponse: MessageFns<GetPlayScriptsResponse> = {
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       pagination: isSet(object.pagination) ? Pagination.fromJSON(object.pagination) : undefined,
-      results: globalThis.Array.isArray(object?.results) ? object.results.map((e: any) => PlayScript.fromJSON(e)) : [],
+      results: globalThis.Array.isArray(object?.results)
+        ? object.results.map((e: any) => PlayScript.fromJSON(e))
+        : [],
     };
   },
 
@@ -1071,24 +1118,29 @@ export const GetPlayScriptsResponse: MessageFns<GetPlayScriptsResponse> = {
   },
   fromPartial(object: DeepPartial<GetPlayScriptsResponse>): GetPlayScriptsResponse {
     const message = createBaseGetPlayScriptsResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.pagination = (object.pagination !== undefined && object.pagination !== null)
-      ? Pagination.fromPartial(object.pagination)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
+    message.pagination =
+      object.pagination !== undefined && object.pagination !== null
+        ? Pagination.fromPartial(object.pagination)
+        : undefined;
     message.results = object.results?.map((e) => PlayScript.fromPartial(e)) || [];
     return message;
   },
 };
 
 function createBaseGetPlayScriptsForAccountRequest(): GetPlayScriptsForAccountRequest {
-  return { accountId: "", filter: undefined };
+  return { accountId: '', filter: undefined };
 }
 
 export const GetPlayScriptsForAccountRequest: MessageFns<GetPlayScriptsForAccountRequest> = {
-  encode(message: GetPlayScriptsForAccountRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.accountId !== "") {
+  encode(
+    message: GetPlayScriptsForAccountRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.accountId !== '') {
       writer.uint32(10).string(message.accountId);
     }
     if (message.filter !== undefined) {
@@ -1134,15 +1186,15 @@ export const GetPlayScriptsForAccountRequest: MessageFns<GetPlayScriptsForAccoun
       accountId: isSet(object.accountId)
         ? globalThis.String(object.accountId)
         : isSet(object.account_id)
-        ? globalThis.String(object.account_id)
-        : "",
+          ? globalThis.String(object.account_id)
+          : '',
       filter: isSet(object.filter) ? QueryFilter.fromJSON(object.filter) : undefined,
     };
   },
 
   toJSON(message: GetPlayScriptsForAccountRequest): unknown {
     const obj: any = {};
-    if (message.accountId !== "") {
+    if (message.accountId !== '') {
       obj.accountId = message.accountId;
     }
     if (message.filter !== undefined) {
@@ -1154,12 +1206,15 @@ export const GetPlayScriptsForAccountRequest: MessageFns<GetPlayScriptsForAccoun
   create(base?: DeepPartial<GetPlayScriptsForAccountRequest>): GetPlayScriptsForAccountRequest {
     return GetPlayScriptsForAccountRequest.fromPartial(base ?? {});
   },
-  fromPartial(object: DeepPartial<GetPlayScriptsForAccountRequest>): GetPlayScriptsForAccountRequest {
+  fromPartial(
+    object: DeepPartial<GetPlayScriptsForAccountRequest>
+  ): GetPlayScriptsForAccountRequest {
     const message = createBaseGetPlayScriptsForAccountRequest();
-    message.accountId = object.accountId ?? "";
-    message.filter = (object.filter !== undefined && object.filter !== null)
-      ? QueryFilter.fromPartial(object.filter)
-      : undefined;
+    message.accountId = object.accountId ?? '';
+    message.filter =
+      object.filter !== undefined && object.filter !== null
+        ? QueryFilter.fromPartial(object.filter)
+        : undefined;
     return message;
   },
 };
@@ -1169,7 +1224,10 @@ function createBaseGetPlayScriptsForAccountResponse(): GetPlayScriptsForAccountR
 }
 
 export const GetPlayScriptsForAccountResponse: MessageFns<GetPlayScriptsForAccountResponse> = {
-  encode(message: GetPlayScriptsForAccountResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: GetPlayScriptsForAccountResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -1227,10 +1285,12 @@ export const GetPlayScriptsForAccountResponse: MessageFns<GetPlayScriptsForAccou
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       pagination: isSet(object.pagination) ? Pagination.fromJSON(object.pagination) : undefined,
-      results: globalThis.Array.isArray(object?.results) ? object.results.map((e: any) => PlayScript.fromJSON(e)) : [],
+      results: globalThis.Array.isArray(object?.results)
+        ? object.results.map((e: any) => PlayScript.fromJSON(e))
+        : [],
     };
   },
 
@@ -1251,14 +1311,18 @@ export const GetPlayScriptsForAccountResponse: MessageFns<GetPlayScriptsForAccou
   create(base?: DeepPartial<GetPlayScriptsForAccountResponse>): GetPlayScriptsForAccountResponse {
     return GetPlayScriptsForAccountResponse.fromPartial(base ?? {});
   },
-  fromPartial(object: DeepPartial<GetPlayScriptsForAccountResponse>): GetPlayScriptsForAccountResponse {
+  fromPartial(
+    object: DeepPartial<GetPlayScriptsForAccountResponse>
+  ): GetPlayScriptsForAccountResponse {
     const message = createBaseGetPlayScriptsForAccountResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.pagination = (object.pagination !== undefined && object.pagination !== null)
-      ? Pagination.fromPartial(object.pagination)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
+    message.pagination =
+      object.pagination !== undefined && object.pagination !== null
+        ? Pagination.fromPartial(object.pagination)
+        : undefined;
     message.results = object.results?.map((e) => PlayScript.fromPartial(e)) || [];
     return message;
   },
@@ -1269,7 +1333,10 @@ function createBaseGetPublicPlayScriptsRequest(): GetPublicPlayScriptsRequest {
 }
 
 export const GetPublicPlayScriptsRequest: MessageFns<GetPublicPlayScriptsRequest> = {
-  encode(message: GetPublicPlayScriptsRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: GetPublicPlayScriptsRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.filter !== undefined) {
       QueryFilter.encode(message.filter, writer.uint32(10).fork()).join();
     }
@@ -1317,9 +1384,10 @@ export const GetPublicPlayScriptsRequest: MessageFns<GetPublicPlayScriptsRequest
   },
   fromPartial(object: DeepPartial<GetPublicPlayScriptsRequest>): GetPublicPlayScriptsRequest {
     const message = createBaseGetPublicPlayScriptsRequest();
-    message.filter = (object.filter !== undefined && object.filter !== null)
-      ? QueryFilter.fromPartial(object.filter)
-      : undefined;
+    message.filter =
+      object.filter !== undefined && object.filter !== null
+        ? QueryFilter.fromPartial(object.filter)
+        : undefined;
     return message;
   },
 };
@@ -1329,7 +1397,10 @@ function createBaseGetPublicPlayScriptsResponse(): GetPublicPlayScriptsResponse 
 }
 
 export const GetPublicPlayScriptsResponse: MessageFns<GetPublicPlayScriptsResponse> = {
-  encode(message: GetPublicPlayScriptsResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: GetPublicPlayScriptsResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -1387,10 +1458,12 @@ export const GetPublicPlayScriptsResponse: MessageFns<GetPublicPlayScriptsRespon
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       pagination: isSet(object.pagination) ? Pagination.fromJSON(object.pagination) : undefined,
-      results: globalThis.Array.isArray(object?.results) ? object.results.map((e: any) => PlayScript.fromJSON(e)) : [],
+      results: globalThis.Array.isArray(object?.results)
+        ? object.results.map((e: any) => PlayScript.fromJSON(e))
+        : [],
     };
   },
 
@@ -1413,24 +1486,29 @@ export const GetPublicPlayScriptsResponse: MessageFns<GetPublicPlayScriptsRespon
   },
   fromPartial(object: DeepPartial<GetPublicPlayScriptsResponse>): GetPublicPlayScriptsResponse {
     const message = createBaseGetPublicPlayScriptsResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.pagination = (object.pagination !== undefined && object.pagination !== null)
-      ? Pagination.fromPartial(object.pagination)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
+    message.pagination =
+      object.pagination !== undefined && object.pagination !== null
+        ? Pagination.fromPartial(object.pagination)
+        : undefined;
     message.results = object.results?.map((e) => PlayScript.fromPartial(e)) || [];
     return message;
   },
 };
 
 function createBaseUpdatePlayScriptRequest(): UpdatePlayScriptRequest {
-  return { playScriptId: "", input: undefined };
+  return { playScriptId: '', input: undefined };
 }
 
 export const UpdatePlayScriptRequest: MessageFns<UpdatePlayScriptRequest> = {
-  encode(message: UpdatePlayScriptRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.playScriptId !== "") {
+  encode(
+    message: UpdatePlayScriptRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.playScriptId !== '') {
       writer.uint32(10).string(message.playScriptId);
     }
     if (message.input !== undefined) {
@@ -1476,15 +1554,15 @@ export const UpdatePlayScriptRequest: MessageFns<UpdatePlayScriptRequest> = {
       playScriptId: isSet(object.playScriptId)
         ? globalThis.String(object.playScriptId)
         : isSet(object.play_script_id)
-        ? globalThis.String(object.play_script_id)
-        : "",
+          ? globalThis.String(object.play_script_id)
+          : '',
       input: isSet(object.input) ? PlayScriptUpdateRequestInput.fromJSON(object.input) : undefined,
     };
   },
 
   toJSON(message: UpdatePlayScriptRequest): unknown {
     const obj: any = {};
-    if (message.playScriptId !== "") {
+    if (message.playScriptId !== '') {
       obj.playScriptId = message.playScriptId;
     }
     if (message.input !== undefined) {
@@ -1498,10 +1576,11 @@ export const UpdatePlayScriptRequest: MessageFns<UpdatePlayScriptRequest> = {
   },
   fromPartial(object: DeepPartial<UpdatePlayScriptRequest>): UpdatePlayScriptRequest {
     const message = createBaseUpdatePlayScriptRequest();
-    message.playScriptId = object.playScriptId ?? "";
-    message.input = (object.input !== undefined && object.input !== null)
-      ? PlayScriptUpdateRequestInput.fromPartial(object.input)
-      : undefined;
+    message.playScriptId = object.playScriptId ?? '';
+    message.input =
+      object.input !== undefined && object.input !== null
+        ? PlayScriptUpdateRequestInput.fromPartial(object.input)
+        : undefined;
     return message;
   },
 };
@@ -1511,7 +1590,10 @@ function createBaseUpdatePlayScriptResponse(): UpdatePlayScriptResponse {
 }
 
 export const UpdatePlayScriptResponse: MessageFns<UpdatePlayScriptResponse> = {
-  encode(message: UpdatePlayScriptResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: UpdatePlayScriptResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -1558,8 +1640,8 @@ export const UpdatePlayScriptResponse: MessageFns<UpdatePlayScriptResponse> = {
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       updated: isSet(object.updated) ? PlayScript.fromJSON(object.updated) : undefined,
     };
   },
@@ -1580,23 +1662,28 @@ export const UpdatePlayScriptResponse: MessageFns<UpdatePlayScriptResponse> = {
   },
   fromPartial(object: DeepPartial<UpdatePlayScriptResponse>): UpdatePlayScriptResponse {
     const message = createBaseUpdatePlayScriptResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.updated = (object.updated !== undefined && object.updated !== null)
-      ? PlayScript.fromPartial(object.updated)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
+    message.updated =
+      object.updated !== undefined && object.updated !== null
+        ? PlayScript.fromPartial(object.updated)
+        : undefined;
     return message;
   },
 };
 
 function createBaseArchivePlayScriptRequest(): ArchivePlayScriptRequest {
-  return { playScriptId: "" };
+  return { playScriptId: '' };
 }
 
 export const ArchivePlayScriptRequest: MessageFns<ArchivePlayScriptRequest> = {
-  encode(message: ArchivePlayScriptRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.playScriptId !== "") {
+  encode(
+    message: ArchivePlayScriptRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.playScriptId !== '') {
       writer.uint32(10).string(message.playScriptId);
     }
     return writer;
@@ -1631,14 +1718,14 @@ export const ArchivePlayScriptRequest: MessageFns<ArchivePlayScriptRequest> = {
       playScriptId: isSet(object.playScriptId)
         ? globalThis.String(object.playScriptId)
         : isSet(object.play_script_id)
-        ? globalThis.String(object.play_script_id)
-        : "",
+          ? globalThis.String(object.play_script_id)
+          : '',
     };
   },
 
   toJSON(message: ArchivePlayScriptRequest): unknown {
     const obj: any = {};
-    if (message.playScriptId !== "") {
+    if (message.playScriptId !== '') {
       obj.playScriptId = message.playScriptId;
     }
     return obj;
@@ -1649,7 +1736,7 @@ export const ArchivePlayScriptRequest: MessageFns<ArchivePlayScriptRequest> = {
   },
   fromPartial(object: DeepPartial<ArchivePlayScriptRequest>): ArchivePlayScriptRequest {
     const message = createBaseArchivePlayScriptRequest();
-    message.playScriptId = object.playScriptId ?? "";
+    message.playScriptId = object.playScriptId ?? '';
     return message;
   },
 };
@@ -1659,7 +1746,10 @@ function createBaseArchivePlayScriptResponse(): ArchivePlayScriptResponse {
 }
 
 export const ArchivePlayScriptResponse: MessageFns<ArchivePlayScriptResponse> = {
-  encode(message: ArchivePlayScriptResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: ArchivePlayScriptResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -1695,8 +1785,8 @@ export const ArchivePlayScriptResponse: MessageFns<ArchivePlayScriptResponse> = 
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
     };
   },
 
@@ -1713,20 +1803,25 @@ export const ArchivePlayScriptResponse: MessageFns<ArchivePlayScriptResponse> = 
   },
   fromPartial(object: DeepPartial<ArchivePlayScriptResponse>): ArchivePlayScriptResponse {
     const message = createBaseArchivePlayScriptResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
     return message;
   },
 };
 
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 
-export type DeepPartial<T> = T extends Builtin ? T
-  : T extends globalThis.Array<infer U> ? globalThis.Array<DeepPartial<U>>
-  : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>>
-  : T extends {} ? { [K in keyof T]?: DeepPartial<T[K]> }
-  : Partial<T>;
+export type DeepPartial<T> = T extends Builtin
+  ? T
+  : T extends globalThis.Array<infer U>
+    ? globalThis.Array<DeepPartial<U>>
+    : T extends ReadonlyArray<infer U>
+      ? ReadonlyArray<DeepPartial<U>>
+      : T extends {}
+        ? { [K in keyof T]?: DeepPartial<T[K]> }
+        : Partial<T>;
 
 function isSet(value: any): boolean {
   return value !== null && value !== undefined;

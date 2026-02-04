@@ -5,10 +5,10 @@
 // source: waitlists/waitlists_messages.proto
 
 /* eslint-disable */
-import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
-import { Timestamp } from "../google/protobuf/timestamp";
+import { BinaryReader, BinaryWriter } from '@bufbuild/protobuf/wire';
+import { Timestamp } from '../google/protobuf/timestamp';
 
-export const protobufPackage = "waitlists";
+export const protobufPackage = 'waitlists';
 
 export interface Waitlist {
   createdAt: Date | undefined;
@@ -36,9 +36,9 @@ function createBaseWaitlist(): Waitlist {
     createdAt: undefined,
     lastUpdatedAt: undefined,
     archivedAt: undefined,
-    id: "",
-    name: "",
-    description: "",
+    id: '',
+    name: '',
+    description: '',
     validUntil: undefined,
   };
 }
@@ -54,13 +54,13 @@ export const Waitlist: MessageFns<Waitlist> = {
     if (message.archivedAt !== undefined) {
       Timestamp.encode(toTimestamp(message.archivedAt), writer.uint32(26).fork()).join();
     }
-    if (message.id !== "") {
+    if (message.id !== '') {
       writer.uint32(34).string(message.id);
     }
-    if (message.name !== "") {
+    if (message.name !== '') {
       writer.uint32(42).string(message.name);
     }
-    if (message.description !== "") {
+    if (message.description !== '') {
       writer.uint32(50).string(message.description);
     }
     if (message.validUntil !== undefined) {
@@ -146,26 +146,26 @@ export const Waitlist: MessageFns<Waitlist> = {
       createdAt: isSet(object.createdAt)
         ? fromJsonTimestamp(object.createdAt)
         : isSet(object.created_at)
-        ? fromJsonTimestamp(object.created_at)
-        : undefined,
+          ? fromJsonTimestamp(object.created_at)
+          : undefined,
       lastUpdatedAt: isSet(object.lastUpdatedAt)
         ? fromJsonTimestamp(object.lastUpdatedAt)
         : isSet(object.last_updated_at)
-        ? fromJsonTimestamp(object.last_updated_at)
-        : undefined,
+          ? fromJsonTimestamp(object.last_updated_at)
+          : undefined,
       archivedAt: isSet(object.archivedAt)
         ? fromJsonTimestamp(object.archivedAt)
         : isSet(object.archived_at)
-        ? fromJsonTimestamp(object.archived_at)
-        : undefined,
-      id: isSet(object.id) ? globalThis.String(object.id) : "",
-      name: isSet(object.name) ? globalThis.String(object.name) : "",
-      description: isSet(object.description) ? globalThis.String(object.description) : "",
+          ? fromJsonTimestamp(object.archived_at)
+          : undefined,
+      id: isSet(object.id) ? globalThis.String(object.id) : '',
+      name: isSet(object.name) ? globalThis.String(object.name) : '',
+      description: isSet(object.description) ? globalThis.String(object.description) : '',
       validUntil: isSet(object.validUntil)
         ? fromJsonTimestamp(object.validUntil)
         : isSet(object.valid_until)
-        ? fromJsonTimestamp(object.valid_until)
-        : undefined,
+          ? fromJsonTimestamp(object.valid_until)
+          : undefined,
     };
   },
 
@@ -180,13 +180,13 @@ export const Waitlist: MessageFns<Waitlist> = {
     if (message.archivedAt !== undefined) {
       obj.archivedAt = message.archivedAt.toISOString();
     }
-    if (message.id !== "") {
+    if (message.id !== '') {
       obj.id = message.id;
     }
-    if (message.name !== "") {
+    if (message.name !== '') {
       obj.name = message.name;
     }
-    if (message.description !== "") {
+    if (message.description !== '') {
       obj.description = message.description;
     }
     if (message.validUntil !== undefined) {
@@ -203,9 +203,9 @@ export const Waitlist: MessageFns<Waitlist> = {
     message.createdAt = object.createdAt ?? undefined;
     message.lastUpdatedAt = object.lastUpdatedAt ?? undefined;
     message.archivedAt = object.archivedAt ?? undefined;
-    message.id = object.id ?? "";
-    message.name = object.name ?? "";
-    message.description = object.description ?? "";
+    message.id = object.id ?? '';
+    message.name = object.name ?? '';
+    message.description = object.description ?? '';
     message.validUntil = object.validUntil ?? undefined;
     return message;
   },
@@ -216,11 +216,11 @@ function createBaseWaitlistSignup(): WaitlistSignup {
     createdAt: undefined,
     lastUpdatedAt: undefined,
     archivedAt: undefined,
-    id: "",
-    notes: "",
-    belongsToWaitlist: "",
-    belongsToUser: "",
-    belongsToAccount: "",
+    id: '',
+    notes: '',
+    belongsToWaitlist: '',
+    belongsToUser: '',
+    belongsToAccount: '',
   };
 }
 
@@ -235,19 +235,19 @@ export const WaitlistSignup: MessageFns<WaitlistSignup> = {
     if (message.archivedAt !== undefined) {
       Timestamp.encode(toTimestamp(message.archivedAt), writer.uint32(26).fork()).join();
     }
-    if (message.id !== "") {
+    if (message.id !== '') {
       writer.uint32(34).string(message.id);
     }
-    if (message.notes !== "") {
+    if (message.notes !== '') {
       writer.uint32(42).string(message.notes);
     }
-    if (message.belongsToWaitlist !== "") {
+    if (message.belongsToWaitlist !== '') {
       writer.uint32(50).string(message.belongsToWaitlist);
     }
-    if (message.belongsToUser !== "") {
+    if (message.belongsToUser !== '') {
       writer.uint32(58).string(message.belongsToUser);
     }
-    if (message.belongsToAccount !== "") {
+    if (message.belongsToAccount !== '') {
       writer.uint32(66).string(message.belongsToAccount);
     }
     return writer;
@@ -338,35 +338,35 @@ export const WaitlistSignup: MessageFns<WaitlistSignup> = {
       createdAt: isSet(object.createdAt)
         ? fromJsonTimestamp(object.createdAt)
         : isSet(object.created_at)
-        ? fromJsonTimestamp(object.created_at)
-        : undefined,
+          ? fromJsonTimestamp(object.created_at)
+          : undefined,
       lastUpdatedAt: isSet(object.lastUpdatedAt)
         ? fromJsonTimestamp(object.lastUpdatedAt)
         : isSet(object.last_updated_at)
-        ? fromJsonTimestamp(object.last_updated_at)
-        : undefined,
+          ? fromJsonTimestamp(object.last_updated_at)
+          : undefined,
       archivedAt: isSet(object.archivedAt)
         ? fromJsonTimestamp(object.archivedAt)
         : isSet(object.archived_at)
-        ? fromJsonTimestamp(object.archived_at)
-        : undefined,
-      id: isSet(object.id) ? globalThis.String(object.id) : "",
-      notes: isSet(object.notes) ? globalThis.String(object.notes) : "",
+          ? fromJsonTimestamp(object.archived_at)
+          : undefined,
+      id: isSet(object.id) ? globalThis.String(object.id) : '',
+      notes: isSet(object.notes) ? globalThis.String(object.notes) : '',
       belongsToWaitlist: isSet(object.belongsToWaitlist)
         ? globalThis.String(object.belongsToWaitlist)
         : isSet(object.belongs_to_waitlist)
-        ? globalThis.String(object.belongs_to_waitlist)
-        : "",
+          ? globalThis.String(object.belongs_to_waitlist)
+          : '',
       belongsToUser: isSet(object.belongsToUser)
         ? globalThis.String(object.belongsToUser)
         : isSet(object.belongs_to_user)
-        ? globalThis.String(object.belongs_to_user)
-        : "",
+          ? globalThis.String(object.belongs_to_user)
+          : '',
       belongsToAccount: isSet(object.belongsToAccount)
         ? globalThis.String(object.belongsToAccount)
         : isSet(object.belongs_to_account)
-        ? globalThis.String(object.belongs_to_account)
-        : "",
+          ? globalThis.String(object.belongs_to_account)
+          : '',
     };
   },
 
@@ -381,19 +381,19 @@ export const WaitlistSignup: MessageFns<WaitlistSignup> = {
     if (message.archivedAt !== undefined) {
       obj.archivedAt = message.archivedAt.toISOString();
     }
-    if (message.id !== "") {
+    if (message.id !== '') {
       obj.id = message.id;
     }
-    if (message.notes !== "") {
+    if (message.notes !== '') {
       obj.notes = message.notes;
     }
-    if (message.belongsToWaitlist !== "") {
+    if (message.belongsToWaitlist !== '') {
       obj.belongsToWaitlist = message.belongsToWaitlist;
     }
-    if (message.belongsToUser !== "") {
+    if (message.belongsToUser !== '') {
       obj.belongsToUser = message.belongsToUser;
     }
-    if (message.belongsToAccount !== "") {
+    if (message.belongsToAccount !== '') {
       obj.belongsToAccount = message.belongsToAccount;
     }
     return obj;
@@ -407,22 +407,26 @@ export const WaitlistSignup: MessageFns<WaitlistSignup> = {
     message.createdAt = object.createdAt ?? undefined;
     message.lastUpdatedAt = object.lastUpdatedAt ?? undefined;
     message.archivedAt = object.archivedAt ?? undefined;
-    message.id = object.id ?? "";
-    message.notes = object.notes ?? "";
-    message.belongsToWaitlist = object.belongsToWaitlist ?? "";
-    message.belongsToUser = object.belongsToUser ?? "";
-    message.belongsToAccount = object.belongsToAccount ?? "";
+    message.id = object.id ?? '';
+    message.notes = object.notes ?? '';
+    message.belongsToWaitlist = object.belongsToWaitlist ?? '';
+    message.belongsToUser = object.belongsToUser ?? '';
+    message.belongsToAccount = object.belongsToAccount ?? '';
     return message;
   },
 };
 
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 
-export type DeepPartial<T> = T extends Builtin ? T
-  : T extends globalThis.Array<infer U> ? globalThis.Array<DeepPartial<U>>
-  : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>>
-  : T extends {} ? { [K in keyof T]?: DeepPartial<T[K]> }
-  : Partial<T>;
+export type DeepPartial<T> = T extends Builtin
+  ? T
+  : T extends globalThis.Array<infer U>
+    ? globalThis.Array<DeepPartial<U>>
+    : T extends ReadonlyArray<infer U>
+      ? ReadonlyArray<DeepPartial<U>>
+      : T extends {}
+        ? { [K in keyof T]?: DeepPartial<T[K]> }
+        : Partial<T>;
 
 function toTimestamp(date: Date): Timestamp {
   const seconds = Math.trunc(date.getTime() / 1_000);
@@ -439,7 +443,7 @@ function fromTimestamp(t: Timestamp): Date {
 function fromJsonTimestamp(o: any): Date {
   if (o instanceof globalThis.Date) {
     return o;
-  } else if (typeof o === "string") {
+  } else if (typeof o === 'string') {
     return new globalThis.Date(o);
   } else {
     return fromTimestamp(Timestamp.fromJSON(o));

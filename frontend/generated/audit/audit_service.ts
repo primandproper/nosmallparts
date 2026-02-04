@@ -5,7 +5,7 @@
 // source: audit/audit_service.proto
 
 /* eslint-disable */
-import type { CallContext, CallOptions } from "nice-grpc-common";
+import type { CallContext, CallOptions } from 'nice-grpc-common';
 import {
   GetAuditLogEntriesForAccountRequest,
   GetAuditLogEntriesForAccountResponse,
@@ -13,17 +13,17 @@ import {
   GetAuditLogEntriesForUserResponse,
   GetAuditLogEntryByIDRequest,
   GetAuditLogEntryByIDResponse,
-} from "./audit_service_types";
+} from './audit_service_types';
 
-export const protobufPackage = "audit";
+export const protobufPackage = 'audit';
 
 export type AuditServiceDefinition = typeof AuditServiceDefinition;
 export const AuditServiceDefinition = {
-  name: "AuditService",
-  fullName: "audit.AuditService",
+  name: 'AuditService',
+  fullName: 'audit.AuditService',
   methods: {
     getAuditLogEntriesForAccount: {
-      name: "GetAuditLogEntriesForAccount",
+      name: 'GetAuditLogEntriesForAccount',
       requestType: GetAuditLogEntriesForAccountRequest,
       requestStream: false,
       responseType: GetAuditLogEntriesForAccountResponse,
@@ -31,7 +31,7 @@ export const AuditServiceDefinition = {
       options: {},
     },
     getAuditLogEntriesForUser: {
-      name: "GetAuditLogEntriesForUser",
+      name: 'GetAuditLogEntriesForUser',
       requestType: GetAuditLogEntriesForUserRequest,
       requestStream: false,
       responseType: GetAuditLogEntriesForUserResponse,
@@ -39,7 +39,7 @@ export const AuditServiceDefinition = {
       options: {},
     },
     getAuditLogEntryByID: {
-      name: "GetAuditLogEntryByID",
+      name: 'GetAuditLogEntryByID',
       requestType: GetAuditLogEntryByIDRequest,
       requestStream: false,
       responseType: GetAuditLogEntryByIDResponse,
@@ -52,37 +52,41 @@ export const AuditServiceDefinition = {
 export interface AuditServiceImplementation<CallContextExt = {}> {
   getAuditLogEntriesForAccount(
     request: GetAuditLogEntriesForAccountRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<GetAuditLogEntriesForAccountResponse>>;
   getAuditLogEntriesForUser(
     request: GetAuditLogEntriesForUserRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<GetAuditLogEntriesForUserResponse>>;
   getAuditLogEntryByID(
     request: GetAuditLogEntryByIDRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<GetAuditLogEntryByIDResponse>>;
 }
 
 export interface AuditServiceClient<CallOptionsExt = {}> {
   getAuditLogEntriesForAccount(
     request: DeepPartial<GetAuditLogEntriesForAccountRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<GetAuditLogEntriesForAccountResponse>;
   getAuditLogEntriesForUser(
     request: DeepPartial<GetAuditLogEntriesForUserRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<GetAuditLogEntriesForUserResponse>;
   getAuditLogEntryByID(
     request: DeepPartial<GetAuditLogEntryByIDRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<GetAuditLogEntryByIDResponse>;
 }
 
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 
-export type DeepPartial<T> = T extends Builtin ? T
-  : T extends globalThis.Array<infer U> ? globalThis.Array<DeepPartial<U>>
-  : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>>
-  : T extends {} ? { [K in keyof T]?: DeepPartial<T[K]> }
-  : Partial<T>;
+export type DeepPartial<T> = T extends Builtin
+  ? T
+  : T extends globalThis.Array<infer U>
+    ? globalThis.Array<DeepPartial<U>>
+    : T extends ReadonlyArray<infer U>
+      ? ReadonlyArray<DeepPartial<U>>
+      : T extends {}
+        ? { [K in keyof T]?: DeepPartial<T[K]> }
+        : Partial<T>;

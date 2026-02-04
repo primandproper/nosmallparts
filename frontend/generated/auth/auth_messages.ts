@@ -5,10 +5,10 @@
 // source: auth/auth_messages.proto
 
 /* eslint-disable */
-import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
-import { Timestamp } from "../google/protobuf/timestamp";
+import { BinaryReader, BinaryWriter } from '@bufbuild/protobuf/wire';
+import { Timestamp } from '../google/protobuf/timestamp';
 
-export const protobufPackage = "auth";
+export const protobufPackage = 'auth';
 
 export interface ChangeActiveAccountInput {
   accountId: string;
@@ -47,12 +47,15 @@ export interface UserLoginInput {
 }
 
 function createBaseChangeActiveAccountInput(): ChangeActiveAccountInput {
-  return { accountId: "" };
+  return { accountId: '' };
 }
 
 export const ChangeActiveAccountInput: MessageFns<ChangeActiveAccountInput> = {
-  encode(message: ChangeActiveAccountInput, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.accountId !== "") {
+  encode(
+    message: ChangeActiveAccountInput,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.accountId !== '') {
       writer.uint32(10).string(message.accountId);
     }
     return writer;
@@ -87,14 +90,14 @@ export const ChangeActiveAccountInput: MessageFns<ChangeActiveAccountInput> = {
       accountId: isSet(object.accountId)
         ? globalThis.String(object.accountId)
         : isSet(object.account_id)
-        ? globalThis.String(object.account_id)
-        : "",
+          ? globalThis.String(object.account_id)
+          : '',
     };
   },
 
   toJSON(message: ChangeActiveAccountInput): unknown {
     const obj: any = {};
-    if (message.accountId !== "") {
+    if (message.accountId !== '') {
       obj.accountId = message.accountId;
     }
     return obj;
@@ -105,7 +108,7 @@ export const ChangeActiveAccountInput: MessageFns<ChangeActiveAccountInput> = {
   },
   fromPartial(object: DeepPartial<ChangeActiveAccountInput>): ChangeActiveAccountInput {
     const message = createBaseChangeActiveAccountInput();
-    message.accountId = object.accountId ?? "";
+    message.accountId = object.accountId ?? '';
     return message;
   },
 };
@@ -116,9 +119,9 @@ function createBasePasswordResetToken(): PasswordResetToken {
     expiresAt: undefined,
     redeemedAt: undefined,
     lastUpdatedAt: undefined,
-    id: "",
-    token: "",
-    belongsToUser: "",
+    id: '',
+    token: '',
+    belongsToUser: '',
   };
 }
 
@@ -136,13 +139,13 @@ export const PasswordResetToken: MessageFns<PasswordResetToken> = {
     if (message.lastUpdatedAt !== undefined) {
       Timestamp.encode(toTimestamp(message.lastUpdatedAt), writer.uint32(34).fork()).join();
     }
-    if (message.id !== "") {
+    if (message.id !== '') {
       writer.uint32(42).string(message.id);
     }
-    if (message.token !== "") {
+    if (message.token !== '') {
       writer.uint32(50).string(message.token);
     }
-    if (message.belongsToUser !== "") {
+    if (message.belongsToUser !== '') {
       writer.uint32(58).string(message.belongsToUser);
     }
     return writer;
@@ -225,30 +228,30 @@ export const PasswordResetToken: MessageFns<PasswordResetToken> = {
       createdAt: isSet(object.createdAt)
         ? fromJsonTimestamp(object.createdAt)
         : isSet(object.created_at)
-        ? fromJsonTimestamp(object.created_at)
-        : undefined,
+          ? fromJsonTimestamp(object.created_at)
+          : undefined,
       expiresAt: isSet(object.expiresAt)
         ? fromJsonTimestamp(object.expiresAt)
         : isSet(object.expires_at)
-        ? fromJsonTimestamp(object.expires_at)
-        : undefined,
+          ? fromJsonTimestamp(object.expires_at)
+          : undefined,
       redeemedAt: isSet(object.redeemedAt)
         ? fromJsonTimestamp(object.redeemedAt)
         : isSet(object.redeemed_at)
-        ? fromJsonTimestamp(object.redeemed_at)
-        : undefined,
+          ? fromJsonTimestamp(object.redeemed_at)
+          : undefined,
       lastUpdatedAt: isSet(object.lastUpdatedAt)
         ? fromJsonTimestamp(object.lastUpdatedAt)
         : isSet(object.last_updated_at)
-        ? fromJsonTimestamp(object.last_updated_at)
-        : undefined,
-      id: isSet(object.id) ? globalThis.String(object.id) : "",
-      token: isSet(object.token) ? globalThis.String(object.token) : "",
+          ? fromJsonTimestamp(object.last_updated_at)
+          : undefined,
+      id: isSet(object.id) ? globalThis.String(object.id) : '',
+      token: isSet(object.token) ? globalThis.String(object.token) : '',
       belongsToUser: isSet(object.belongsToUser)
         ? globalThis.String(object.belongsToUser)
         : isSet(object.belongs_to_user)
-        ? globalThis.String(object.belongs_to_user)
-        : "",
+          ? globalThis.String(object.belongs_to_user)
+          : '',
     };
   },
 
@@ -266,13 +269,13 @@ export const PasswordResetToken: MessageFns<PasswordResetToken> = {
     if (message.lastUpdatedAt !== undefined) {
       obj.lastUpdatedAt = message.lastUpdatedAt.toISOString();
     }
-    if (message.id !== "") {
+    if (message.id !== '') {
       obj.id = message.id;
     }
-    if (message.token !== "") {
+    if (message.token !== '') {
       obj.token = message.token;
     }
-    if (message.belongsToUser !== "") {
+    if (message.belongsToUser !== '') {
       obj.belongsToUser = message.belongsToUser;
     }
     return obj;
@@ -287,26 +290,26 @@ export const PasswordResetToken: MessageFns<PasswordResetToken> = {
     message.expiresAt = object.expiresAt ?? undefined;
     message.redeemedAt = object.redeemedAt ?? undefined;
     message.lastUpdatedAt = object.lastUpdatedAt ?? undefined;
-    message.id = object.id ?? "";
-    message.token = object.token ?? "";
-    message.belongsToUser = object.belongsToUser ?? "";
+    message.id = object.id ?? '';
+    message.token = object.token ?? '';
+    message.belongsToUser = object.belongsToUser ?? '';
     return message;
   },
 };
 
 function createBasePasswordUpdateInput(): PasswordUpdateInput {
-  return { newPassword: "", currentPassword: "", totpToken: "" };
+  return { newPassword: '', currentPassword: '', totpToken: '' };
 }
 
 export const PasswordUpdateInput: MessageFns<PasswordUpdateInput> = {
   encode(message: PasswordUpdateInput, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.newPassword !== "") {
+    if (message.newPassword !== '') {
       writer.uint32(10).string(message.newPassword);
     }
-    if (message.currentPassword !== "") {
+    if (message.currentPassword !== '') {
       writer.uint32(18).string(message.currentPassword);
     }
-    if (message.totpToken !== "") {
+    if (message.totpToken !== '') {
       writer.uint32(26).string(message.totpToken);
     }
     return writer;
@@ -357,30 +360,30 @@ export const PasswordUpdateInput: MessageFns<PasswordUpdateInput> = {
       newPassword: isSet(object.newPassword)
         ? globalThis.String(object.newPassword)
         : isSet(object.new_password)
-        ? globalThis.String(object.new_password)
-        : "",
+          ? globalThis.String(object.new_password)
+          : '',
       currentPassword: isSet(object.currentPassword)
         ? globalThis.String(object.currentPassword)
         : isSet(object.current_password)
-        ? globalThis.String(object.current_password)
-        : "",
+          ? globalThis.String(object.current_password)
+          : '',
       totpToken: isSet(object.totpToken)
         ? globalThis.String(object.totpToken)
         : isSet(object.totp_token)
-        ? globalThis.String(object.totp_token)
-        : "",
+          ? globalThis.String(object.totp_token)
+          : '',
     };
   },
 
   toJSON(message: PasswordUpdateInput): unknown {
     const obj: any = {};
-    if (message.newPassword !== "") {
+    if (message.newPassword !== '') {
       obj.newPassword = message.newPassword;
     }
-    if (message.currentPassword !== "") {
+    if (message.currentPassword !== '') {
       obj.currentPassword = message.currentPassword;
     }
-    if (message.totpToken !== "") {
+    if (message.totpToken !== '') {
       obj.totpToken = message.totpToken;
     }
     return obj;
@@ -391,23 +394,23 @@ export const PasswordUpdateInput: MessageFns<PasswordUpdateInput> = {
   },
   fromPartial(object: DeepPartial<PasswordUpdateInput>): PasswordUpdateInput {
     const message = createBasePasswordUpdateInput();
-    message.newPassword = object.newPassword ?? "";
-    message.currentPassword = object.currentPassword ?? "";
-    message.totpToken = object.totpToken ?? "";
+    message.newPassword = object.newPassword ?? '';
+    message.currentPassword = object.currentPassword ?? '';
+    message.totpToken = object.totpToken ?? '';
     return message;
   },
 };
 
 function createBaseTOTPSecretRefreshInput(): TOTPSecretRefreshInput {
-  return { currentPassword: "", totpToken: "" };
+  return { currentPassword: '', totpToken: '' };
 }
 
 export const TOTPSecretRefreshInput: MessageFns<TOTPSecretRefreshInput> = {
   encode(message: TOTPSecretRefreshInput, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.currentPassword !== "") {
+    if (message.currentPassword !== '') {
       writer.uint32(10).string(message.currentPassword);
     }
-    if (message.totpToken !== "") {
+    if (message.totpToken !== '') {
       writer.uint32(18).string(message.totpToken);
     }
     return writer;
@@ -450,22 +453,22 @@ export const TOTPSecretRefreshInput: MessageFns<TOTPSecretRefreshInput> = {
       currentPassword: isSet(object.currentPassword)
         ? globalThis.String(object.currentPassword)
         : isSet(object.current_password)
-        ? globalThis.String(object.current_password)
-        : "",
+          ? globalThis.String(object.current_password)
+          : '',
       totpToken: isSet(object.totpToken)
         ? globalThis.String(object.totpToken)
         : isSet(object.totp_token)
-        ? globalThis.String(object.totp_token)
-        : "",
+          ? globalThis.String(object.totp_token)
+          : '',
     };
   },
 
   toJSON(message: TOTPSecretRefreshInput): unknown {
     const obj: any = {};
-    if (message.currentPassword !== "") {
+    if (message.currentPassword !== '') {
       obj.currentPassword = message.currentPassword;
     }
-    if (message.totpToken !== "") {
+    if (message.totpToken !== '') {
       obj.totpToken = message.totpToken;
     }
     return obj;
@@ -476,22 +479,25 @@ export const TOTPSecretRefreshInput: MessageFns<TOTPSecretRefreshInput> = {
   },
   fromPartial(object: DeepPartial<TOTPSecretRefreshInput>): TOTPSecretRefreshInput {
     const message = createBaseTOTPSecretRefreshInput();
-    message.currentPassword = object.currentPassword ?? "";
-    message.totpToken = object.totpToken ?? "";
+    message.currentPassword = object.currentPassword ?? '';
+    message.totpToken = object.totpToken ?? '';
     return message;
   },
 };
 
 function createBaseTOTPSecretVerificationInput(): TOTPSecretVerificationInput {
-  return { totpToken: "", userId: "" };
+  return { totpToken: '', userId: '' };
 }
 
 export const TOTPSecretVerificationInput: MessageFns<TOTPSecretVerificationInput> = {
-  encode(message: TOTPSecretVerificationInput, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.totpToken !== "") {
+  encode(
+    message: TOTPSecretVerificationInput,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.totpToken !== '') {
       writer.uint32(10).string(message.totpToken);
     }
-    if (message.userId !== "") {
+    if (message.userId !== '') {
       writer.uint32(18).string(message.userId);
     }
     return writer;
@@ -534,22 +540,22 @@ export const TOTPSecretVerificationInput: MessageFns<TOTPSecretVerificationInput
       totpToken: isSet(object.totpToken)
         ? globalThis.String(object.totpToken)
         : isSet(object.totp_token)
-        ? globalThis.String(object.totp_token)
-        : "",
+          ? globalThis.String(object.totp_token)
+          : '',
       userId: isSet(object.userId)
         ? globalThis.String(object.userId)
         : isSet(object.user_id)
-        ? globalThis.String(object.user_id)
-        : "",
+          ? globalThis.String(object.user_id)
+          : '',
     };
   },
 
   toJSON(message: TOTPSecretVerificationInput): unknown {
     const obj: any = {};
-    if (message.totpToken !== "") {
+    if (message.totpToken !== '') {
       obj.totpToken = message.totpToken;
     }
-    if (message.userId !== "") {
+    if (message.userId !== '') {
       obj.userId = message.userId;
     }
     return obj;
@@ -560,25 +566,25 @@ export const TOTPSecretVerificationInput: MessageFns<TOTPSecretVerificationInput
   },
   fromPartial(object: DeepPartial<TOTPSecretVerificationInput>): TOTPSecretVerificationInput {
     const message = createBaseTOTPSecretVerificationInput();
-    message.totpToken = object.totpToken ?? "";
-    message.userId = object.userId ?? "";
+    message.totpToken = object.totpToken ?? '';
+    message.userId = object.userId ?? '';
     return message;
   },
 };
 
 function createBaseUserLoginInput(): UserLoginInput {
-  return { username: "", password: "", totpToken: "" };
+  return { username: '', password: '', totpToken: '' };
 }
 
 export const UserLoginInput: MessageFns<UserLoginInput> = {
   encode(message: UserLoginInput, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.username !== "") {
+    if (message.username !== '') {
       writer.uint32(10).string(message.username);
     }
-    if (message.password !== "") {
+    if (message.password !== '') {
       writer.uint32(18).string(message.password);
     }
-    if (message.totpToken !== "") {
+    if (message.totpToken !== '') {
       writer.uint32(26).string(message.totpToken);
     }
     return writer;
@@ -626,25 +632,25 @@ export const UserLoginInput: MessageFns<UserLoginInput> = {
 
   fromJSON(object: any): UserLoginInput {
     return {
-      username: isSet(object.username) ? globalThis.String(object.username) : "",
-      password: isSet(object.password) ? globalThis.String(object.password) : "",
+      username: isSet(object.username) ? globalThis.String(object.username) : '',
+      password: isSet(object.password) ? globalThis.String(object.password) : '',
       totpToken: isSet(object.totpToken)
         ? globalThis.String(object.totpToken)
         : isSet(object.totp_token)
-        ? globalThis.String(object.totp_token)
-        : "",
+          ? globalThis.String(object.totp_token)
+          : '',
     };
   },
 
   toJSON(message: UserLoginInput): unknown {
     const obj: any = {};
-    if (message.username !== "") {
+    if (message.username !== '') {
       obj.username = message.username;
     }
-    if (message.password !== "") {
+    if (message.password !== '') {
       obj.password = message.password;
     }
-    if (message.totpToken !== "") {
+    if (message.totpToken !== '') {
       obj.totpToken = message.totpToken;
     }
     return obj;
@@ -655,20 +661,24 @@ export const UserLoginInput: MessageFns<UserLoginInput> = {
   },
   fromPartial(object: DeepPartial<UserLoginInput>): UserLoginInput {
     const message = createBaseUserLoginInput();
-    message.username = object.username ?? "";
-    message.password = object.password ?? "";
-    message.totpToken = object.totpToken ?? "";
+    message.username = object.username ?? '';
+    message.password = object.password ?? '';
+    message.totpToken = object.totpToken ?? '';
     return message;
   },
 };
 
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 
-export type DeepPartial<T> = T extends Builtin ? T
-  : T extends globalThis.Array<infer U> ? globalThis.Array<DeepPartial<U>>
-  : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>>
-  : T extends {} ? { [K in keyof T]?: DeepPartial<T[K]> }
-  : Partial<T>;
+export type DeepPartial<T> = T extends Builtin
+  ? T
+  : T extends globalThis.Array<infer U>
+    ? globalThis.Array<DeepPartial<U>>
+    : T extends ReadonlyArray<infer U>
+      ? ReadonlyArray<DeepPartial<U>>
+      : T extends {}
+        ? { [K in keyof T]?: DeepPartial<T[K]> }
+        : Partial<T>;
 
 function toTimestamp(date: Date): Timestamp {
   const seconds = Math.trunc(date.getTime() / 1_000);
@@ -685,7 +695,7 @@ function fromTimestamp(t: Timestamp): Date {
 function fromJsonTimestamp(o: any): Date {
   if (o instanceof globalThis.Date) {
     return o;
-  } else if (typeof o === "string") {
+  } else if (typeof o === 'string') {
     return new globalThis.Date(o);
   } else {
     return fromTimestamp(Timestamp.fromJSON(o));

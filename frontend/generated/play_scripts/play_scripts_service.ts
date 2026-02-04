@@ -5,7 +5,7 @@
 // source: play_scripts/play_scripts_service.proto
 
 /* eslint-disable */
-import type { CallContext, CallOptions } from "nice-grpc-common";
+import type { CallContext, CallOptions } from 'nice-grpc-common';
 import {
   ArchivePlayScriptRequest,
   ArchivePlayScriptResponse,
@@ -21,17 +21,17 @@ import {
   GetPublicPlayScriptsResponse,
   UpdatePlayScriptRequest,
   UpdatePlayScriptResponse,
-} from "./play_scripts_service_types";
+} from './play_scripts_service_types';
 
-export const protobufPackage = "play_scripts";
+export const protobufPackage = 'play_scripts';
 
 export type PlayScriptsServiceDefinition = typeof PlayScriptsServiceDefinition;
 export const PlayScriptsServiceDefinition = {
-  name: "PlayScriptsService",
-  fullName: "play_scripts.PlayScriptsService",
+  name: 'PlayScriptsService',
+  fullName: 'play_scripts.PlayScriptsService',
   methods: {
     createPlayScript: {
-      name: "CreatePlayScript",
+      name: 'CreatePlayScript',
       requestType: CreatePlayScriptRequest,
       requestStream: false,
       responseType: CreatePlayScriptResponse,
@@ -39,7 +39,7 @@ export const PlayScriptsServiceDefinition = {
       options: {},
     },
     getPlayScript: {
-      name: "GetPlayScript",
+      name: 'GetPlayScript',
       requestType: GetPlayScriptRequest,
       requestStream: false,
       responseType: GetPlayScriptResponse,
@@ -47,7 +47,7 @@ export const PlayScriptsServiceDefinition = {
       options: {},
     },
     getPlayScripts: {
-      name: "GetPlayScripts",
+      name: 'GetPlayScripts',
       requestType: GetPlayScriptsRequest,
       requestStream: false,
       responseType: GetPlayScriptsResponse,
@@ -55,7 +55,7 @@ export const PlayScriptsServiceDefinition = {
       options: {},
     },
     getPlayScriptsForAccount: {
-      name: "GetPlayScriptsForAccount",
+      name: 'GetPlayScriptsForAccount',
       requestType: GetPlayScriptsForAccountRequest,
       requestStream: false,
       responseType: GetPlayScriptsForAccountResponse,
@@ -63,7 +63,7 @@ export const PlayScriptsServiceDefinition = {
       options: {},
     },
     getPublicPlayScripts: {
-      name: "GetPublicPlayScripts",
+      name: 'GetPublicPlayScripts',
       requestType: GetPublicPlayScriptsRequest,
       requestStream: false,
       responseType: GetPublicPlayScriptsResponse,
@@ -71,7 +71,7 @@ export const PlayScriptsServiceDefinition = {
       options: {},
     },
     updatePlayScript: {
-      name: "UpdatePlayScript",
+      name: 'UpdatePlayScript',
       requestType: UpdatePlayScriptRequest,
       requestStream: false,
       responseType: UpdatePlayScriptResponse,
@@ -79,7 +79,7 @@ export const PlayScriptsServiceDefinition = {
       options: {},
     },
     archivePlayScript: {
-      name: "ArchivePlayScript",
+      name: 'ArchivePlayScript',
       requestType: ArchivePlayScriptRequest,
       requestStream: false,
       responseType: ArchivePlayScriptResponse,
@@ -92,69 +92,73 @@ export const PlayScriptsServiceDefinition = {
 export interface PlayScriptsServiceImplementation<CallContextExt = {}> {
   createPlayScript(
     request: CreatePlayScriptRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<CreatePlayScriptResponse>>;
   getPlayScript(
     request: GetPlayScriptRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<GetPlayScriptResponse>>;
   getPlayScripts(
     request: GetPlayScriptsRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<GetPlayScriptsResponse>>;
   getPlayScriptsForAccount(
     request: GetPlayScriptsForAccountRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<GetPlayScriptsForAccountResponse>>;
   getPublicPlayScripts(
     request: GetPublicPlayScriptsRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<GetPublicPlayScriptsResponse>>;
   updatePlayScript(
     request: UpdatePlayScriptRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<UpdatePlayScriptResponse>>;
   archivePlayScript(
     request: ArchivePlayScriptRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<ArchivePlayScriptResponse>>;
 }
 
 export interface PlayScriptsServiceClient<CallOptionsExt = {}> {
   createPlayScript(
     request: DeepPartial<CreatePlayScriptRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<CreatePlayScriptResponse>;
   getPlayScript(
     request: DeepPartial<GetPlayScriptRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<GetPlayScriptResponse>;
   getPlayScripts(
     request: DeepPartial<GetPlayScriptsRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<GetPlayScriptsResponse>;
   getPlayScriptsForAccount(
     request: DeepPartial<GetPlayScriptsForAccountRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<GetPlayScriptsForAccountResponse>;
   getPublicPlayScripts(
     request: DeepPartial<GetPublicPlayScriptsRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<GetPublicPlayScriptsResponse>;
   updatePlayScript(
     request: DeepPartial<UpdatePlayScriptRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<UpdatePlayScriptResponse>;
   archivePlayScript(
     request: DeepPartial<ArchivePlayScriptRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<ArchivePlayScriptResponse>;
 }
 
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 
-export type DeepPartial<T> = T extends Builtin ? T
-  : T extends globalThis.Array<infer U> ? globalThis.Array<DeepPartial<U>>
-  : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>>
-  : T extends {} ? { [K in keyof T]?: DeepPartial<T[K]> }
-  : Partial<T>;
+export type DeepPartial<T> = T extends Builtin
+  ? T
+  : T extends globalThis.Array<infer U>
+    ? globalThis.Array<DeepPartial<U>>
+    : T extends ReadonlyArray<infer U>
+      ? ReadonlyArray<DeepPartial<U>>
+      : T extends {}
+        ? { [K in keyof T]?: DeepPartial<T[K]> }
+        : Partial<T>;

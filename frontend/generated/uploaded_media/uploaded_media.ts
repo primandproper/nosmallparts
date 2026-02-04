@@ -5,13 +5,13 @@
 // source: uploaded_media/uploaded_media.proto
 
 /* eslint-disable */
-import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
-import type { CallContext, CallOptions } from "nice-grpc-common";
-import { ResponseDetails } from "../common";
-import { Pagination, QueryFilter } from "../filtering";
-import { Timestamp } from "../google/protobuf/timestamp";
+import { BinaryReader, BinaryWriter } from '@bufbuild/protobuf/wire';
+import type { CallContext, CallOptions } from 'nice-grpc-common';
+import { ResponseDetails } from '../common';
+import { Pagination, QueryFilter } from '../filtering';
+import { Timestamp } from '../google/protobuf/timestamp';
 
-export const protobufPackage = "uploaded_media";
+export const protobufPackage = 'uploaded_media';
 
 export enum UploadedMediaMimeType {
   UPLOADED_MEDIA_MIME_TYPE_UNSPECIFIED = 0,
@@ -25,22 +25,22 @@ export enum UploadedMediaMimeType {
 export function uploadedMediaMimeTypeFromJSON(object: any): UploadedMediaMimeType {
   switch (object) {
     case 0:
-    case "UPLOADED_MEDIA_MIME_TYPE_UNSPECIFIED":
+    case 'UPLOADED_MEDIA_MIME_TYPE_UNSPECIFIED':
       return UploadedMediaMimeType.UPLOADED_MEDIA_MIME_TYPE_UNSPECIFIED;
     case 1:
-    case "UPLOADED_MEDIA_MIME_TYPE_IMAGE_PNG":
+    case 'UPLOADED_MEDIA_MIME_TYPE_IMAGE_PNG':
       return UploadedMediaMimeType.UPLOADED_MEDIA_MIME_TYPE_IMAGE_PNG;
     case 2:
-    case "UPLOADED_MEDIA_MIME_TYPE_IMAGE_JPEG":
+    case 'UPLOADED_MEDIA_MIME_TYPE_IMAGE_JPEG':
       return UploadedMediaMimeType.UPLOADED_MEDIA_MIME_TYPE_IMAGE_JPEG;
     case 3:
-    case "UPLOADED_MEDIA_MIME_TYPE_IMAGE_GIF":
+    case 'UPLOADED_MEDIA_MIME_TYPE_IMAGE_GIF':
       return UploadedMediaMimeType.UPLOADED_MEDIA_MIME_TYPE_IMAGE_GIF;
     case 4:
-    case "UPLOADED_MEDIA_MIME_TYPE_VIDEO_MP4":
+    case 'UPLOADED_MEDIA_MIME_TYPE_VIDEO_MP4':
       return UploadedMediaMimeType.UPLOADED_MEDIA_MIME_TYPE_VIDEO_MP4;
     case -1:
-    case "UNRECOGNIZED":
+    case 'UNRECOGNIZED':
     default:
       return UploadedMediaMimeType.UNRECOGNIZED;
   }
@@ -49,18 +49,18 @@ export function uploadedMediaMimeTypeFromJSON(object: any): UploadedMediaMimeTyp
 export function uploadedMediaMimeTypeToJSON(object: UploadedMediaMimeType): string {
   switch (object) {
     case UploadedMediaMimeType.UPLOADED_MEDIA_MIME_TYPE_UNSPECIFIED:
-      return "UPLOADED_MEDIA_MIME_TYPE_UNSPECIFIED";
+      return 'UPLOADED_MEDIA_MIME_TYPE_UNSPECIFIED';
     case UploadedMediaMimeType.UPLOADED_MEDIA_MIME_TYPE_IMAGE_PNG:
-      return "UPLOADED_MEDIA_MIME_TYPE_IMAGE_PNG";
+      return 'UPLOADED_MEDIA_MIME_TYPE_IMAGE_PNG';
     case UploadedMediaMimeType.UPLOADED_MEDIA_MIME_TYPE_IMAGE_JPEG:
-      return "UPLOADED_MEDIA_MIME_TYPE_IMAGE_JPEG";
+      return 'UPLOADED_MEDIA_MIME_TYPE_IMAGE_JPEG';
     case UploadedMediaMimeType.UPLOADED_MEDIA_MIME_TYPE_IMAGE_GIF:
-      return "UPLOADED_MEDIA_MIME_TYPE_IMAGE_GIF";
+      return 'UPLOADED_MEDIA_MIME_TYPE_IMAGE_GIF';
     case UploadedMediaMimeType.UPLOADED_MEDIA_MIME_TYPE_VIDEO_MP4:
-      return "UPLOADED_MEDIA_MIME_TYPE_VIDEO_MP4";
+      return 'UPLOADED_MEDIA_MIME_TYPE_VIDEO_MP4';
     case UploadedMediaMimeType.UNRECOGNIZED:
     default:
-      return "UNRECOGNIZED";
+      return 'UNRECOGNIZED';
   }
 }
 
@@ -177,9 +177,14 @@ function createBaseDataCollection(): DataCollection {
 
 export const DataCollection: MessageFns<DataCollection> = {
   encode(message: DataCollection, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    globalThis.Object.entries(message.uploadedMedia).forEach(([key, value]: [string, UploadedMedia]) => {
-      DataCollection_UploadedMediaEntry.encode({ key: key as any, value }, writer.uint32(10).fork()).join();
-    });
+    globalThis.Object.entries(message.uploadedMedia).forEach(
+      ([key, value]: [string, UploadedMedia]) => {
+        DataCollection_UploadedMediaEntry.encode(
+          { key: key as any, value },
+          writer.uint32(10).fork()
+        ).join();
+      }
+    );
     return writer;
   },
 
@@ -214,21 +219,21 @@ export const DataCollection: MessageFns<DataCollection> = {
     return {
       uploadedMedia: isObject(object.uploadedMedia)
         ? (globalThis.Object.entries(object.uploadedMedia) as [string, any][]).reduce(
-          (acc: { [key: string]: UploadedMedia }, [key, value]: [string, any]) => {
-            acc[key] = UploadedMedia.fromJSON(value);
-            return acc;
-          },
-          {},
-        )
+            (acc: { [key: string]: UploadedMedia }, [key, value]: [string, any]) => {
+              acc[key] = UploadedMedia.fromJSON(value);
+              return acc;
+            },
+            {}
+          )
         : isObject(object.uploaded_media)
-        ? (globalThis.Object.entries(object.uploaded_media) as [string, any][]).reduce(
-          (acc: { [key: string]: UploadedMedia }, [key, value]: [string, any]) => {
-            acc[key] = UploadedMedia.fromJSON(value);
-            return acc;
-          },
-          {},
-        )
-        : {},
+          ? (globalThis.Object.entries(object.uploaded_media) as [string, any][]).reduce(
+              (acc: { [key: string]: UploadedMedia }, [key, value]: [string, any]) => {
+                acc[key] = UploadedMedia.fromJSON(value);
+                return acc;
+              },
+              {}
+            )
+          : {},
     };
   },
 
@@ -251,26 +256,28 @@ export const DataCollection: MessageFns<DataCollection> = {
   },
   fromPartial(object: DeepPartial<DataCollection>): DataCollection {
     const message = createBaseDataCollection();
-    message.uploadedMedia = (globalThis.Object.entries(object.uploadedMedia ?? {}) as [string, UploadedMedia][]).reduce(
-      (acc: { [key: string]: UploadedMedia }, [key, value]: [string, UploadedMedia]) => {
-        if (value !== undefined) {
-          acc[key] = UploadedMedia.fromPartial(value);
-        }
-        return acc;
-      },
-      {},
-    );
+    message.uploadedMedia = (
+      globalThis.Object.entries(object.uploadedMedia ?? {}) as [string, UploadedMedia][]
+    ).reduce((acc: { [key: string]: UploadedMedia }, [key, value]: [string, UploadedMedia]) => {
+      if (value !== undefined) {
+        acc[key] = UploadedMedia.fromPartial(value);
+      }
+      return acc;
+    }, {});
     return message;
   },
 };
 
 function createBaseDataCollection_UploadedMediaEntry(): DataCollection_UploadedMediaEntry {
-  return { key: "", value: undefined };
+  return { key: '', value: undefined };
 }
 
 export const DataCollection_UploadedMediaEntry: MessageFns<DataCollection_UploadedMediaEntry> = {
-  encode(message: DataCollection_UploadedMediaEntry, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.key !== "") {
+  encode(
+    message: DataCollection_UploadedMediaEntry,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.key !== '') {
       writer.uint32(10).string(message.key);
     }
     if (message.value !== undefined) {
@@ -313,14 +320,14 @@ export const DataCollection_UploadedMediaEntry: MessageFns<DataCollection_Upload
 
   fromJSON(object: any): DataCollection_UploadedMediaEntry {
     return {
-      key: isSet(object.key) ? globalThis.String(object.key) : "",
+      key: isSet(object.key) ? globalThis.String(object.key) : '',
       value: isSet(object.value) ? UploadedMedia.fromJSON(object.value) : undefined,
     };
   },
 
   toJSON(message: DataCollection_UploadedMediaEntry): unknown {
     const obj: any = {};
-    if (message.key !== "") {
+    if (message.key !== '') {
       obj.key = message.key;
     }
     if (message.value !== undefined) {
@@ -332,12 +339,15 @@ export const DataCollection_UploadedMediaEntry: MessageFns<DataCollection_Upload
   create(base?: DeepPartial<DataCollection_UploadedMediaEntry>): DataCollection_UploadedMediaEntry {
     return DataCollection_UploadedMediaEntry.fromPartial(base ?? {});
   },
-  fromPartial(object: DeepPartial<DataCollection_UploadedMediaEntry>): DataCollection_UploadedMediaEntry {
+  fromPartial(
+    object: DeepPartial<DataCollection_UploadedMediaEntry>
+  ): DataCollection_UploadedMediaEntry {
     const message = createBaseDataCollection_UploadedMediaEntry();
-    message.key = object.key ?? "";
-    message.value = (object.value !== undefined && object.value !== null)
-      ? UploadedMedia.fromPartial(object.value)
-      : undefined;
+    message.key = object.key ?? '';
+    message.value =
+      object.value !== undefined && object.value !== null
+        ? UploadedMedia.fromPartial(object.value)
+        : undefined;
     return message;
   },
 };
@@ -412,27 +422,28 @@ export const UploadRequest: MessageFns<UploadRequest> = {
   },
   fromPartial(object: DeepPartial<UploadRequest>): UploadRequest {
     const message = createBaseUploadRequest();
-    message.metadata = (object.metadata !== undefined && object.metadata !== null)
-      ? UploadMetadata.fromPartial(object.metadata)
-      : undefined;
+    message.metadata =
+      object.metadata !== undefined && object.metadata !== null
+        ? UploadMetadata.fromPartial(object.metadata)
+        : undefined;
     message.chunk = object.chunk ?? undefined;
     return message;
   },
 };
 
 function createBaseUploadMetadata(): UploadMetadata {
-  return { bucket: "", objectName: "", contentType: "" };
+  return { bucket: '', objectName: '', contentType: '' };
 }
 
 export const UploadMetadata: MessageFns<UploadMetadata> = {
   encode(message: UploadMetadata, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.bucket !== "") {
+    if (message.bucket !== '') {
       writer.uint32(10).string(message.bucket);
     }
-    if (message.objectName !== "") {
+    if (message.objectName !== '') {
       writer.uint32(18).string(message.objectName);
     }
-    if (message.contentType !== "") {
+    if (message.contentType !== '') {
       writer.uint32(26).string(message.contentType);
     }
     return writer;
@@ -480,29 +491,29 @@ export const UploadMetadata: MessageFns<UploadMetadata> = {
 
   fromJSON(object: any): UploadMetadata {
     return {
-      bucket: isSet(object.bucket) ? globalThis.String(object.bucket) : "",
+      bucket: isSet(object.bucket) ? globalThis.String(object.bucket) : '',
       objectName: isSet(object.objectName)
         ? globalThis.String(object.objectName)
         : isSet(object.object_name)
-        ? globalThis.String(object.object_name)
-        : "",
+          ? globalThis.String(object.object_name)
+          : '',
       contentType: isSet(object.contentType)
         ? globalThis.String(object.contentType)
         : isSet(object.content_type)
-        ? globalThis.String(object.content_type)
-        : "",
+          ? globalThis.String(object.content_type)
+          : '',
     };
   },
 
   toJSON(message: UploadMetadata): unknown {
     const obj: any = {};
-    if (message.bucket !== "") {
+    if (message.bucket !== '') {
       obj.bucket = message.bucket;
     }
-    if (message.objectName !== "") {
+    if (message.objectName !== '') {
       obj.objectName = message.objectName;
     }
-    if (message.contentType !== "") {
+    if (message.contentType !== '') {
       obj.contentType = message.contentType;
     }
     return obj;
@@ -513,20 +524,20 @@ export const UploadMetadata: MessageFns<UploadMetadata> = {
   },
   fromPartial(object: DeepPartial<UploadMetadata>): UploadMetadata {
     const message = createBaseUploadMetadata();
-    message.bucket = object.bucket ?? "";
-    message.objectName = object.objectName ?? "";
-    message.contentType = object.contentType ?? "";
+    message.bucket = object.bucket ?? '';
+    message.objectName = object.objectName ?? '';
+    message.contentType = object.contentType ?? '';
     return message;
   },
 };
 
 function createBaseUploadResponse(): UploadResponse {
-  return { objectUrl: "", sizeBytes: 0 };
+  return { objectUrl: '', sizeBytes: 0 };
 }
 
 export const UploadResponse: MessageFns<UploadResponse> = {
   encode(message: UploadResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.objectUrl !== "") {
+    if (message.objectUrl !== '') {
       writer.uint32(10).string(message.objectUrl);
     }
     if (message.sizeBytes !== 0) {
@@ -572,19 +583,19 @@ export const UploadResponse: MessageFns<UploadResponse> = {
       objectUrl: isSet(object.objectUrl)
         ? globalThis.String(object.objectUrl)
         : isSet(object.object_url)
-        ? globalThis.String(object.object_url)
-        : "",
+          ? globalThis.String(object.object_url)
+          : '',
       sizeBytes: isSet(object.sizeBytes)
         ? globalThis.Number(object.sizeBytes)
         : isSet(object.size_bytes)
-        ? globalThis.Number(object.size_bytes)
-        : 0,
+          ? globalThis.Number(object.size_bytes)
+          : 0,
     };
   },
 
   toJSON(message: UploadResponse): unknown {
     const obj: any = {};
-    if (message.objectUrl !== "") {
+    if (message.objectUrl !== '') {
       obj.objectUrl = message.objectUrl;
     }
     if (message.sizeBytes !== 0) {
@@ -598,7 +609,7 @@ export const UploadResponse: MessageFns<UploadResponse> = {
   },
   fromPartial(object: DeepPartial<UploadResponse>): UploadResponse {
     const message = createBaseUploadResponse();
-    message.objectUrl = object.objectUrl ?? "";
+    message.objectUrl = object.objectUrl ?? '';
     message.sizeBytes = object.sizeBytes ?? 0;
     return message;
   },
@@ -609,10 +620,10 @@ function createBaseUploadedMedia(): UploadedMedia {
     createdAt: undefined,
     archivedAt: undefined,
     lastUpdatedAt: undefined,
-    id: "",
-    storagePath: "",
+    id: '',
+    storagePath: '',
     mimeType: 0,
-    createdByUser: "",
+    createdByUser: '',
   };
 }
 
@@ -627,16 +638,16 @@ export const UploadedMedia: MessageFns<UploadedMedia> = {
     if (message.lastUpdatedAt !== undefined) {
       Timestamp.encode(toTimestamp(message.lastUpdatedAt), writer.uint32(26).fork()).join();
     }
-    if (message.id !== "") {
+    if (message.id !== '') {
       writer.uint32(34).string(message.id);
     }
-    if (message.storagePath !== "") {
+    if (message.storagePath !== '') {
       writer.uint32(42).string(message.storagePath);
     }
     if (message.mimeType !== 0) {
       writer.uint32(48).int32(message.mimeType);
     }
-    if (message.createdByUser !== "") {
+    if (message.createdByUser !== '') {
       writer.uint32(58).string(message.createdByUser);
     }
     return writer;
@@ -719,34 +730,34 @@ export const UploadedMedia: MessageFns<UploadedMedia> = {
       createdAt: isSet(object.createdAt)
         ? fromJsonTimestamp(object.createdAt)
         : isSet(object.created_at)
-        ? fromJsonTimestamp(object.created_at)
-        : undefined,
+          ? fromJsonTimestamp(object.created_at)
+          : undefined,
       archivedAt: isSet(object.archivedAt)
         ? fromJsonTimestamp(object.archivedAt)
         : isSet(object.archived_at)
-        ? fromJsonTimestamp(object.archived_at)
-        : undefined,
+          ? fromJsonTimestamp(object.archived_at)
+          : undefined,
       lastUpdatedAt: isSet(object.lastUpdatedAt)
         ? fromJsonTimestamp(object.lastUpdatedAt)
         : isSet(object.last_updated_at)
-        ? fromJsonTimestamp(object.last_updated_at)
-        : undefined,
-      id: isSet(object.id) ? globalThis.String(object.id) : "",
+          ? fromJsonTimestamp(object.last_updated_at)
+          : undefined,
+      id: isSet(object.id) ? globalThis.String(object.id) : '',
       storagePath: isSet(object.storagePath)
         ? globalThis.String(object.storagePath)
         : isSet(object.storage_path)
-        ? globalThis.String(object.storage_path)
-        : "",
+          ? globalThis.String(object.storage_path)
+          : '',
       mimeType: isSet(object.mimeType)
         ? uploadedMediaMimeTypeFromJSON(object.mimeType)
         : isSet(object.mime_type)
-        ? uploadedMediaMimeTypeFromJSON(object.mime_type)
-        : 0,
+          ? uploadedMediaMimeTypeFromJSON(object.mime_type)
+          : 0,
       createdByUser: isSet(object.createdByUser)
         ? globalThis.String(object.createdByUser)
         : isSet(object.created_by_user)
-        ? globalThis.String(object.created_by_user)
-        : "",
+          ? globalThis.String(object.created_by_user)
+          : '',
     };
   },
 
@@ -761,16 +772,16 @@ export const UploadedMedia: MessageFns<UploadedMedia> = {
     if (message.lastUpdatedAt !== undefined) {
       obj.lastUpdatedAt = message.lastUpdatedAt.toISOString();
     }
-    if (message.id !== "") {
+    if (message.id !== '') {
       obj.id = message.id;
     }
-    if (message.storagePath !== "") {
+    if (message.storagePath !== '') {
       obj.storagePath = message.storagePath;
     }
     if (message.mimeType !== 0) {
       obj.mimeType = uploadedMediaMimeTypeToJSON(message.mimeType);
     }
-    if (message.createdByUser !== "") {
+    if (message.createdByUser !== '') {
       obj.createdByUser = message.createdByUser;
     }
     return obj;
@@ -784,21 +795,24 @@ export const UploadedMedia: MessageFns<UploadedMedia> = {
     message.createdAt = object.createdAt ?? undefined;
     message.archivedAt = object.archivedAt ?? undefined;
     message.lastUpdatedAt = object.lastUpdatedAt ?? undefined;
-    message.id = object.id ?? "";
-    message.storagePath = object.storagePath ?? "";
+    message.id = object.id ?? '';
+    message.storagePath = object.storagePath ?? '';
     message.mimeType = object.mimeType ?? 0;
-    message.createdByUser = object.createdByUser ?? "";
+    message.createdByUser = object.createdByUser ?? '';
     return message;
   },
 };
 
 function createBaseUploadedMediaCreationRequestInput(): UploadedMediaCreationRequestInput {
-  return { storagePath: "", mimeType: 0 };
+  return { storagePath: '', mimeType: 0 };
 }
 
 export const UploadedMediaCreationRequestInput: MessageFns<UploadedMediaCreationRequestInput> = {
-  encode(message: UploadedMediaCreationRequestInput, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.storagePath !== "") {
+  encode(
+    message: UploadedMediaCreationRequestInput,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.storagePath !== '') {
       writer.uint32(10).string(message.storagePath);
     }
     if (message.mimeType !== 0) {
@@ -844,19 +858,19 @@ export const UploadedMediaCreationRequestInput: MessageFns<UploadedMediaCreation
       storagePath: isSet(object.storagePath)
         ? globalThis.String(object.storagePath)
         : isSet(object.storage_path)
-        ? globalThis.String(object.storage_path)
-        : "",
+          ? globalThis.String(object.storage_path)
+          : '',
       mimeType: isSet(object.mimeType)
         ? uploadedMediaMimeTypeFromJSON(object.mimeType)
         : isSet(object.mime_type)
-        ? uploadedMediaMimeTypeFromJSON(object.mime_type)
-        : 0,
+          ? uploadedMediaMimeTypeFromJSON(object.mime_type)
+          : 0,
     };
   },
 
   toJSON(message: UploadedMediaCreationRequestInput): unknown {
     const obj: any = {};
-    if (message.storagePath !== "") {
+    if (message.storagePath !== '') {
       obj.storagePath = message.storagePath;
     }
     if (message.mimeType !== 0) {
@@ -868,9 +882,11 @@ export const UploadedMediaCreationRequestInput: MessageFns<UploadedMediaCreation
   create(base?: DeepPartial<UploadedMediaCreationRequestInput>): UploadedMediaCreationRequestInput {
     return UploadedMediaCreationRequestInput.fromPartial(base ?? {});
   },
-  fromPartial(object: DeepPartial<UploadedMediaCreationRequestInput>): UploadedMediaCreationRequestInput {
+  fromPartial(
+    object: DeepPartial<UploadedMediaCreationRequestInput>
+  ): UploadedMediaCreationRequestInput {
     const message = createBaseUploadedMediaCreationRequestInput();
-    message.storagePath = object.storagePath ?? "";
+    message.storagePath = object.storagePath ?? '';
     message.mimeType = object.mimeType ?? 0;
     return message;
   },
@@ -881,7 +897,10 @@ function createBaseUploadedMediaUpdateRequestInput(): UploadedMediaUpdateRequest
 }
 
 export const UploadedMediaUpdateRequestInput: MessageFns<UploadedMediaUpdateRequestInput> = {
-  encode(message: UploadedMediaUpdateRequestInput, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: UploadedMediaUpdateRequestInput,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.storagePath !== undefined) {
       writer.uint32(10).string(message.storagePath);
     }
@@ -928,13 +947,13 @@ export const UploadedMediaUpdateRequestInput: MessageFns<UploadedMediaUpdateRequ
       storagePath: isSet(object.storagePath)
         ? globalThis.String(object.storagePath)
         : isSet(object.storage_path)
-        ? globalThis.String(object.storage_path)
-        : undefined,
+          ? globalThis.String(object.storage_path)
+          : undefined,
       mimeType: isSet(object.mimeType)
         ? uploadedMediaMimeTypeFromJSON(object.mimeType)
         : isSet(object.mime_type)
-        ? uploadedMediaMimeTypeFromJSON(object.mime_type)
-        : undefined,
+          ? uploadedMediaMimeTypeFromJSON(object.mime_type)
+          : undefined,
     };
   },
 
@@ -952,7 +971,9 @@ export const UploadedMediaUpdateRequestInput: MessageFns<UploadedMediaUpdateRequ
   create(base?: DeepPartial<UploadedMediaUpdateRequestInput>): UploadedMediaUpdateRequestInput {
     return UploadedMediaUpdateRequestInput.fromPartial(base ?? {});
   },
-  fromPartial(object: DeepPartial<UploadedMediaUpdateRequestInput>): UploadedMediaUpdateRequestInput {
+  fromPartial(
+    object: DeepPartial<UploadedMediaUpdateRequestInput>
+  ): UploadedMediaUpdateRequestInput {
     const message = createBaseUploadedMediaUpdateRequestInput();
     message.storagePath = object.storagePath ?? undefined;
     message.mimeType = object.mimeType ?? undefined;
@@ -965,7 +986,10 @@ function createBaseCreateUploadedMediaRequest(): CreateUploadedMediaRequest {
 }
 
 export const CreateUploadedMediaRequest: MessageFns<CreateUploadedMediaRequest> = {
-  encode(message: CreateUploadedMediaRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: CreateUploadedMediaRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.input !== undefined) {
       UploadedMediaCreationRequestInput.encode(message.input, writer.uint32(10).fork()).join();
     }
@@ -997,7 +1021,11 @@ export const CreateUploadedMediaRequest: MessageFns<CreateUploadedMediaRequest> 
   },
 
   fromJSON(object: any): CreateUploadedMediaRequest {
-    return { input: isSet(object.input) ? UploadedMediaCreationRequestInput.fromJSON(object.input) : undefined };
+    return {
+      input: isSet(object.input)
+        ? UploadedMediaCreationRequestInput.fromJSON(object.input)
+        : undefined,
+    };
   },
 
   toJSON(message: CreateUploadedMediaRequest): unknown {
@@ -1013,9 +1041,10 @@ export const CreateUploadedMediaRequest: MessageFns<CreateUploadedMediaRequest> 
   },
   fromPartial(object: DeepPartial<CreateUploadedMediaRequest>): CreateUploadedMediaRequest {
     const message = createBaseCreateUploadedMediaRequest();
-    message.input = (object.input !== undefined && object.input !== null)
-      ? UploadedMediaCreationRequestInput.fromPartial(object.input)
-      : undefined;
+    message.input =
+      object.input !== undefined && object.input !== null
+        ? UploadedMediaCreationRequestInput.fromPartial(object.input)
+        : undefined;
     return message;
   },
 };
@@ -1025,7 +1054,10 @@ function createBaseCreateUploadedMediaResponse(): CreateUploadedMediaResponse {
 }
 
 export const CreateUploadedMediaResponse: MessageFns<CreateUploadedMediaResponse> = {
-  encode(message: CreateUploadedMediaResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: CreateUploadedMediaResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -1072,8 +1104,8 @@ export const CreateUploadedMediaResponse: MessageFns<CreateUploadedMediaResponse
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       created: isSet(object.created) ? UploadedMedia.fromJSON(object.created) : undefined,
     };
   },
@@ -1094,23 +1126,28 @@ export const CreateUploadedMediaResponse: MessageFns<CreateUploadedMediaResponse
   },
   fromPartial(object: DeepPartial<CreateUploadedMediaResponse>): CreateUploadedMediaResponse {
     const message = createBaseCreateUploadedMediaResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.created = (object.created !== undefined && object.created !== null)
-      ? UploadedMedia.fromPartial(object.created)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
+    message.created =
+      object.created !== undefined && object.created !== null
+        ? UploadedMedia.fromPartial(object.created)
+        : undefined;
     return message;
   },
 };
 
 function createBaseGetUploadedMediaRequest(): GetUploadedMediaRequest {
-  return { uploadedMediaId: "" };
+  return { uploadedMediaId: '' };
 }
 
 export const GetUploadedMediaRequest: MessageFns<GetUploadedMediaRequest> = {
-  encode(message: GetUploadedMediaRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.uploadedMediaId !== "") {
+  encode(
+    message: GetUploadedMediaRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.uploadedMediaId !== '') {
       writer.uint32(10).string(message.uploadedMediaId);
     }
     return writer;
@@ -1145,14 +1182,14 @@ export const GetUploadedMediaRequest: MessageFns<GetUploadedMediaRequest> = {
       uploadedMediaId: isSet(object.uploadedMediaId)
         ? globalThis.String(object.uploadedMediaId)
         : isSet(object.uploaded_media_id)
-        ? globalThis.String(object.uploaded_media_id)
-        : "",
+          ? globalThis.String(object.uploaded_media_id)
+          : '',
     };
   },
 
   toJSON(message: GetUploadedMediaRequest): unknown {
     const obj: any = {};
-    if (message.uploadedMediaId !== "") {
+    if (message.uploadedMediaId !== '') {
       obj.uploadedMediaId = message.uploadedMediaId;
     }
     return obj;
@@ -1163,7 +1200,7 @@ export const GetUploadedMediaRequest: MessageFns<GetUploadedMediaRequest> = {
   },
   fromPartial(object: DeepPartial<GetUploadedMediaRequest>): GetUploadedMediaRequest {
     const message = createBaseGetUploadedMediaRequest();
-    message.uploadedMediaId = object.uploadedMediaId ?? "";
+    message.uploadedMediaId = object.uploadedMediaId ?? '';
     return message;
   },
 };
@@ -1173,7 +1210,10 @@ function createBaseGetUploadedMediaResponse(): GetUploadedMediaResponse {
 }
 
 export const GetUploadedMediaResponse: MessageFns<GetUploadedMediaResponse> = {
-  encode(message: GetUploadedMediaResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: GetUploadedMediaResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -1220,8 +1260,8 @@ export const GetUploadedMediaResponse: MessageFns<GetUploadedMediaResponse> = {
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       result: isSet(object.result) ? UploadedMedia.fromJSON(object.result) : undefined,
     };
   },
@@ -1242,12 +1282,14 @@ export const GetUploadedMediaResponse: MessageFns<GetUploadedMediaResponse> = {
   },
   fromPartial(object: DeepPartial<GetUploadedMediaResponse>): GetUploadedMediaResponse {
     const message = createBaseGetUploadedMediaResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.result = (object.result !== undefined && object.result !== null)
-      ? UploadedMedia.fromPartial(object.result)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
+    message.result =
+      object.result !== undefined && object.result !== null
+        ? UploadedMedia.fromPartial(object.result)
+        : undefined;
     return message;
   },
 };
@@ -1257,7 +1299,10 @@ function createBaseGetUploadedMediaWithIDsRequest(): GetUploadedMediaWithIDsRequ
 }
 
 export const GetUploadedMediaWithIDsRequest: MessageFns<GetUploadedMediaWithIDsRequest> = {
-  encode(message: GetUploadedMediaWithIDsRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: GetUploadedMediaWithIDsRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     for (const v of message.ids) {
       writer.uint32(10).string(v!);
     }
@@ -1289,7 +1334,11 @@ export const GetUploadedMediaWithIDsRequest: MessageFns<GetUploadedMediaWithIDsR
   },
 
   fromJSON(object: any): GetUploadedMediaWithIDsRequest {
-    return { ids: globalThis.Array.isArray(object?.ids) ? object.ids.map((e: any) => globalThis.String(e)) : [] };
+    return {
+      ids: globalThis.Array.isArray(object?.ids)
+        ? object.ids.map((e: any) => globalThis.String(e))
+        : [],
+    };
   },
 
   toJSON(message: GetUploadedMediaWithIDsRequest): unknown {
@@ -1315,7 +1364,10 @@ function createBaseGetUploadedMediaWithIDsResponse(): GetUploadedMediaWithIDsRes
 }
 
 export const GetUploadedMediaWithIDsResponse: MessageFns<GetUploadedMediaWithIDsResponse> = {
-  encode(message: GetUploadedMediaWithIDsResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: GetUploadedMediaWithIDsResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -1362,8 +1414,8 @@ export const GetUploadedMediaWithIDsResponse: MessageFns<GetUploadedMediaWithIDs
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       results: globalThis.Array.isArray(object?.results)
         ? object.results.map((e: any) => UploadedMedia.fromJSON(e))
         : [],
@@ -1384,23 +1436,29 @@ export const GetUploadedMediaWithIDsResponse: MessageFns<GetUploadedMediaWithIDs
   create(base?: DeepPartial<GetUploadedMediaWithIDsResponse>): GetUploadedMediaWithIDsResponse {
     return GetUploadedMediaWithIDsResponse.fromPartial(base ?? {});
   },
-  fromPartial(object: DeepPartial<GetUploadedMediaWithIDsResponse>): GetUploadedMediaWithIDsResponse {
+  fromPartial(
+    object: DeepPartial<GetUploadedMediaWithIDsResponse>
+  ): GetUploadedMediaWithIDsResponse {
     const message = createBaseGetUploadedMediaWithIDsResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
     message.results = object.results?.map((e) => UploadedMedia.fromPartial(e)) || [];
     return message;
   },
 };
 
 function createBaseGetUploadedMediaForUserRequest(): GetUploadedMediaForUserRequest {
-  return { userId: "", filter: undefined };
+  return { userId: '', filter: undefined };
 }
 
 export const GetUploadedMediaForUserRequest: MessageFns<GetUploadedMediaForUserRequest> = {
-  encode(message: GetUploadedMediaForUserRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.userId !== "") {
+  encode(
+    message: GetUploadedMediaForUserRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.userId !== '') {
       writer.uint32(10).string(message.userId);
     }
     if (message.filter !== undefined) {
@@ -1446,15 +1504,15 @@ export const GetUploadedMediaForUserRequest: MessageFns<GetUploadedMediaForUserR
       userId: isSet(object.userId)
         ? globalThis.String(object.userId)
         : isSet(object.user_id)
-        ? globalThis.String(object.user_id)
-        : "",
+          ? globalThis.String(object.user_id)
+          : '',
       filter: isSet(object.filter) ? QueryFilter.fromJSON(object.filter) : undefined,
     };
   },
 
   toJSON(message: GetUploadedMediaForUserRequest): unknown {
     const obj: any = {};
-    if (message.userId !== "") {
+    if (message.userId !== '') {
       obj.userId = message.userId;
     }
     if (message.filter !== undefined) {
@@ -1468,10 +1526,11 @@ export const GetUploadedMediaForUserRequest: MessageFns<GetUploadedMediaForUserR
   },
   fromPartial(object: DeepPartial<GetUploadedMediaForUserRequest>): GetUploadedMediaForUserRequest {
     const message = createBaseGetUploadedMediaForUserRequest();
-    message.userId = object.userId ?? "";
-    message.filter = (object.filter !== undefined && object.filter !== null)
-      ? QueryFilter.fromPartial(object.filter)
-      : undefined;
+    message.userId = object.userId ?? '';
+    message.filter =
+      object.filter !== undefined && object.filter !== null
+        ? QueryFilter.fromPartial(object.filter)
+        : undefined;
     return message;
   },
 };
@@ -1481,7 +1540,10 @@ function createBaseGetUploadedMediaForUserResponse(): GetUploadedMediaForUserRes
 }
 
 export const GetUploadedMediaForUserResponse: MessageFns<GetUploadedMediaForUserResponse> = {
-  encode(message: GetUploadedMediaForUserResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: GetUploadedMediaForUserResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -1539,8 +1601,8 @@ export const GetUploadedMediaForUserResponse: MessageFns<GetUploadedMediaForUser
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       pagination: isSet(object.pagination) ? Pagination.fromJSON(object.pagination) : undefined,
       results: globalThis.Array.isArray(object?.results)
         ? object.results.map((e: any) => UploadedMedia.fromJSON(e))
@@ -1565,26 +1627,33 @@ export const GetUploadedMediaForUserResponse: MessageFns<GetUploadedMediaForUser
   create(base?: DeepPartial<GetUploadedMediaForUserResponse>): GetUploadedMediaForUserResponse {
     return GetUploadedMediaForUserResponse.fromPartial(base ?? {});
   },
-  fromPartial(object: DeepPartial<GetUploadedMediaForUserResponse>): GetUploadedMediaForUserResponse {
+  fromPartial(
+    object: DeepPartial<GetUploadedMediaForUserResponse>
+  ): GetUploadedMediaForUserResponse {
     const message = createBaseGetUploadedMediaForUserResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.pagination = (object.pagination !== undefined && object.pagination !== null)
-      ? Pagination.fromPartial(object.pagination)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
+    message.pagination =
+      object.pagination !== undefined && object.pagination !== null
+        ? Pagination.fromPartial(object.pagination)
+        : undefined;
     message.results = object.results?.map((e) => UploadedMedia.fromPartial(e)) || [];
     return message;
   },
 };
 
 function createBaseUpdateUploadedMediaRequest(): UpdateUploadedMediaRequest {
-  return { uploadedMediaId: "", input: undefined };
+  return { uploadedMediaId: '', input: undefined };
 }
 
 export const UpdateUploadedMediaRequest: MessageFns<UpdateUploadedMediaRequest> = {
-  encode(message: UpdateUploadedMediaRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.uploadedMediaId !== "") {
+  encode(
+    message: UpdateUploadedMediaRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.uploadedMediaId !== '') {
       writer.uint32(10).string(message.uploadedMediaId);
     }
     if (message.input !== undefined) {
@@ -1630,15 +1699,17 @@ export const UpdateUploadedMediaRequest: MessageFns<UpdateUploadedMediaRequest> 
       uploadedMediaId: isSet(object.uploadedMediaId)
         ? globalThis.String(object.uploadedMediaId)
         : isSet(object.uploaded_media_id)
-        ? globalThis.String(object.uploaded_media_id)
-        : "",
-      input: isSet(object.input) ? UploadedMediaUpdateRequestInput.fromJSON(object.input) : undefined,
+          ? globalThis.String(object.uploaded_media_id)
+          : '',
+      input: isSet(object.input)
+        ? UploadedMediaUpdateRequestInput.fromJSON(object.input)
+        : undefined,
     };
   },
 
   toJSON(message: UpdateUploadedMediaRequest): unknown {
     const obj: any = {};
-    if (message.uploadedMediaId !== "") {
+    if (message.uploadedMediaId !== '') {
       obj.uploadedMediaId = message.uploadedMediaId;
     }
     if (message.input !== undefined) {
@@ -1652,10 +1723,11 @@ export const UpdateUploadedMediaRequest: MessageFns<UpdateUploadedMediaRequest> 
   },
   fromPartial(object: DeepPartial<UpdateUploadedMediaRequest>): UpdateUploadedMediaRequest {
     const message = createBaseUpdateUploadedMediaRequest();
-    message.uploadedMediaId = object.uploadedMediaId ?? "";
-    message.input = (object.input !== undefined && object.input !== null)
-      ? UploadedMediaUpdateRequestInput.fromPartial(object.input)
-      : undefined;
+    message.uploadedMediaId = object.uploadedMediaId ?? '';
+    message.input =
+      object.input !== undefined && object.input !== null
+        ? UploadedMediaUpdateRequestInput.fromPartial(object.input)
+        : undefined;
     return message;
   },
 };
@@ -1665,7 +1737,10 @@ function createBaseUpdateUploadedMediaResponse(): UpdateUploadedMediaResponse {
 }
 
 export const UpdateUploadedMediaResponse: MessageFns<UpdateUploadedMediaResponse> = {
-  encode(message: UpdateUploadedMediaResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: UpdateUploadedMediaResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -1712,8 +1787,8 @@ export const UpdateUploadedMediaResponse: MessageFns<UpdateUploadedMediaResponse
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       updated: isSet(object.updated) ? UploadedMedia.fromJSON(object.updated) : undefined,
     };
   },
@@ -1734,23 +1809,28 @@ export const UpdateUploadedMediaResponse: MessageFns<UpdateUploadedMediaResponse
   },
   fromPartial(object: DeepPartial<UpdateUploadedMediaResponse>): UpdateUploadedMediaResponse {
     const message = createBaseUpdateUploadedMediaResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.updated = (object.updated !== undefined && object.updated !== null)
-      ? UploadedMedia.fromPartial(object.updated)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
+    message.updated =
+      object.updated !== undefined && object.updated !== null
+        ? UploadedMedia.fromPartial(object.updated)
+        : undefined;
     return message;
   },
 };
 
 function createBaseArchiveUploadedMediaRequest(): ArchiveUploadedMediaRequest {
-  return { uploadedMediaId: "" };
+  return { uploadedMediaId: '' };
 }
 
 export const ArchiveUploadedMediaRequest: MessageFns<ArchiveUploadedMediaRequest> = {
-  encode(message: ArchiveUploadedMediaRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.uploadedMediaId !== "") {
+  encode(
+    message: ArchiveUploadedMediaRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.uploadedMediaId !== '') {
       writer.uint32(10).string(message.uploadedMediaId);
     }
     return writer;
@@ -1785,14 +1865,14 @@ export const ArchiveUploadedMediaRequest: MessageFns<ArchiveUploadedMediaRequest
       uploadedMediaId: isSet(object.uploadedMediaId)
         ? globalThis.String(object.uploadedMediaId)
         : isSet(object.uploaded_media_id)
-        ? globalThis.String(object.uploaded_media_id)
-        : "",
+          ? globalThis.String(object.uploaded_media_id)
+          : '',
     };
   },
 
   toJSON(message: ArchiveUploadedMediaRequest): unknown {
     const obj: any = {};
-    if (message.uploadedMediaId !== "") {
+    if (message.uploadedMediaId !== '') {
       obj.uploadedMediaId = message.uploadedMediaId;
     }
     return obj;
@@ -1803,7 +1883,7 @@ export const ArchiveUploadedMediaRequest: MessageFns<ArchiveUploadedMediaRequest
   },
   fromPartial(object: DeepPartial<ArchiveUploadedMediaRequest>): ArchiveUploadedMediaRequest {
     const message = createBaseArchiveUploadedMediaRequest();
-    message.uploadedMediaId = object.uploadedMediaId ?? "";
+    message.uploadedMediaId = object.uploadedMediaId ?? '';
     return message;
   },
 };
@@ -1813,7 +1893,10 @@ function createBaseArchiveUploadedMediaResponse(): ArchiveUploadedMediaResponse 
 }
 
 export const ArchiveUploadedMediaResponse: MessageFns<ArchiveUploadedMediaResponse> = {
-  encode(message: ArchiveUploadedMediaResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: ArchiveUploadedMediaResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -1849,8 +1932,8 @@ export const ArchiveUploadedMediaResponse: MessageFns<ArchiveUploadedMediaRespon
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
     };
   },
 
@@ -1867,20 +1950,21 @@ export const ArchiveUploadedMediaResponse: MessageFns<ArchiveUploadedMediaRespon
   },
   fromPartial(object: DeepPartial<ArchiveUploadedMediaResponse>): ArchiveUploadedMediaResponse {
     const message = createBaseArchiveUploadedMediaResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
     return message;
   },
 };
 
 export type UploadedMediaServiceDefinition = typeof UploadedMediaServiceDefinition;
 export const UploadedMediaServiceDefinition = {
-  name: "UploadedMediaService",
-  fullName: "uploaded_media.UploadedMediaService",
+  name: 'UploadedMediaService',
+  fullName: 'uploaded_media.UploadedMediaService',
   methods: {
     upload: {
-      name: "Upload",
+      name: 'Upload',
       requestType: UploadRequest,
       requestStream: true,
       responseType: UploadResponse,
@@ -1888,7 +1972,7 @@ export const UploadedMediaServiceDefinition = {
       options: {},
     },
     createUploadedMedia: {
-      name: "CreateUploadedMedia",
+      name: 'CreateUploadedMedia',
       requestType: CreateUploadedMediaRequest,
       requestStream: false,
       responseType: CreateUploadedMediaResponse,
@@ -1896,7 +1980,7 @@ export const UploadedMediaServiceDefinition = {
       options: {},
     },
     getUploadedMedia: {
-      name: "GetUploadedMedia",
+      name: 'GetUploadedMedia',
       requestType: GetUploadedMediaRequest,
       requestStream: false,
       responseType: GetUploadedMediaResponse,
@@ -1904,7 +1988,7 @@ export const UploadedMediaServiceDefinition = {
       options: {},
     },
     getUploadedMediaWithIDs: {
-      name: "GetUploadedMediaWithIDs",
+      name: 'GetUploadedMediaWithIDs',
       requestType: GetUploadedMediaWithIDsRequest,
       requestStream: false,
       responseType: GetUploadedMediaWithIDsResponse,
@@ -1912,7 +1996,7 @@ export const UploadedMediaServiceDefinition = {
       options: {},
     },
     getUploadedMediaForUser: {
-      name: "GetUploadedMediaForUser",
+      name: 'GetUploadedMediaForUser',
       requestType: GetUploadedMediaForUserRequest,
       requestStream: false,
       responseType: GetUploadedMediaForUserResponse,
@@ -1920,7 +2004,7 @@ export const UploadedMediaServiceDefinition = {
       options: {},
     },
     updateUploadedMedia: {
-      name: "UpdateUploadedMedia",
+      name: 'UpdateUploadedMedia',
       requestType: UpdateUploadedMediaRequest,
       requestStream: false,
       responseType: UpdateUploadedMediaResponse,
@@ -1928,7 +2012,7 @@ export const UploadedMediaServiceDefinition = {
       options: {},
     },
     archiveUploadedMedia: {
-      name: "ArchiveUploadedMedia",
+      name: 'ArchiveUploadedMedia',
       requestType: ArchiveUploadedMediaRequest,
       requestStream: false,
       responseType: ArchiveUploadedMediaResponse,
@@ -1941,68 +2025,68 @@ export const UploadedMediaServiceDefinition = {
 export interface UploadedMediaServiceImplementation<CallContextExt = {}> {
   upload(
     request: AsyncIterable<UploadRequest>,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<UploadResponse>>;
   createUploadedMedia(
     request: CreateUploadedMediaRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<CreateUploadedMediaResponse>>;
   getUploadedMedia(
     request: GetUploadedMediaRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<GetUploadedMediaResponse>>;
   getUploadedMediaWithIDs(
     request: GetUploadedMediaWithIDsRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<GetUploadedMediaWithIDsResponse>>;
   getUploadedMediaForUser(
     request: GetUploadedMediaForUserRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<GetUploadedMediaForUserResponse>>;
   updateUploadedMedia(
     request: UpdateUploadedMediaRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<UpdateUploadedMediaResponse>>;
   archiveUploadedMedia(
     request: ArchiveUploadedMediaRequest,
-    context: CallContext & CallContextExt,
+    context: CallContext & CallContextExt
   ): Promise<DeepPartial<ArchiveUploadedMediaResponse>>;
 }
 
 export interface UploadedMediaServiceClient<CallOptionsExt = {}> {
   upload(
     request: AsyncIterable<DeepPartial<UploadRequest>>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<UploadResponse>;
   createUploadedMedia(
     request: DeepPartial<CreateUploadedMediaRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<CreateUploadedMediaResponse>;
   getUploadedMedia(
     request: DeepPartial<GetUploadedMediaRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<GetUploadedMediaResponse>;
   getUploadedMediaWithIDs(
     request: DeepPartial<GetUploadedMediaWithIDsRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<GetUploadedMediaWithIDsResponse>;
   getUploadedMediaForUser(
     request: DeepPartial<GetUploadedMediaForUserRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<GetUploadedMediaForUserResponse>;
   updateUploadedMedia(
     request: DeepPartial<UpdateUploadedMediaRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<UpdateUploadedMediaResponse>;
   archiveUploadedMedia(
     request: DeepPartial<ArchiveUploadedMediaRequest>,
-    options?: CallOptions & CallOptionsExt,
+    options?: CallOptions & CallOptionsExt
   ): Promise<ArchiveUploadedMediaResponse>;
 }
 
 function bytesFromBase64(b64: string): Uint8Array {
   if ((globalThis as any).Buffer) {
-    return Uint8Array.from(globalThis.Buffer.from(b64, "base64"));
+    return Uint8Array.from(globalThis.Buffer.from(b64, 'base64'));
   } else {
     const bin = globalThis.atob(b64);
     const arr = new Uint8Array(bin.length);
@@ -2015,23 +2099,27 @@ function bytesFromBase64(b64: string): Uint8Array {
 
 function base64FromBytes(arr: Uint8Array): string {
   if ((globalThis as any).Buffer) {
-    return globalThis.Buffer.from(arr).toString("base64");
+    return globalThis.Buffer.from(arr).toString('base64');
   } else {
     const bin: string[] = [];
     arr.forEach((byte) => {
       bin.push(globalThis.String.fromCharCode(byte));
     });
-    return globalThis.btoa(bin.join(""));
+    return globalThis.btoa(bin.join(''));
   }
 }
 
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 
-export type DeepPartial<T> = T extends Builtin ? T
-  : T extends globalThis.Array<infer U> ? globalThis.Array<DeepPartial<U>>
-  : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>>
-  : T extends {} ? { [K in keyof T]?: DeepPartial<T[K]> }
-  : Partial<T>;
+export type DeepPartial<T> = T extends Builtin
+  ? T
+  : T extends globalThis.Array<infer U>
+    ? globalThis.Array<DeepPartial<U>>
+    : T extends ReadonlyArray<infer U>
+      ? ReadonlyArray<DeepPartial<U>>
+      : T extends {}
+        ? { [K in keyof T]?: DeepPartial<T[K]> }
+        : Partial<T>;
 
 function toTimestamp(date: Date): Timestamp {
   const seconds = Math.trunc(date.getTime() / 1_000);
@@ -2048,7 +2136,7 @@ function fromTimestamp(t: Timestamp): Date {
 function fromJsonTimestamp(o: any): Date {
   if (o instanceof globalThis.Date) {
     return o;
-  } else if (typeof o === "string") {
+  } else if (typeof o === 'string') {
     return new globalThis.Date(o);
   } else {
     return fromTimestamp(Timestamp.fromJSON(o));
@@ -2058,16 +2146,16 @@ function fromJsonTimestamp(o: any): Date {
 function longToNumber(int64: { toString(): string }): number {
   const num = globalThis.Number(int64.toString());
   if (num > globalThis.Number.MAX_SAFE_INTEGER) {
-    throw new globalThis.Error("Value is larger than Number.MAX_SAFE_INTEGER");
+    throw new globalThis.Error('Value is larger than Number.MAX_SAFE_INTEGER');
   }
   if (num < globalThis.Number.MIN_SAFE_INTEGER) {
-    throw new globalThis.Error("Value is smaller than Number.MIN_SAFE_INTEGER");
+    throw new globalThis.Error('Value is smaller than Number.MIN_SAFE_INTEGER');
   }
   return num;
 }
 
 function isObject(value: any): boolean {
-  return typeof value === "object" && value !== null;
+  return typeof value === 'object' && value !== null;
 }
 
 function isSet(value: any): boolean {

@@ -5,10 +5,10 @@
 // source: filtering.proto
 
 /* eslint-disable */
-import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
-import { Timestamp } from "./google/protobuf/timestamp";
+import { BinaryReader, BinaryWriter } from '@bufbuild/protobuf/wire';
+import { Timestamp } from './google/protobuf/timestamp';
 
-export const protobufPackage = "filtering";
+export const protobufPackage = 'filtering';
 
 export interface QueryFilter {
   sortBy?: string | undefined;
@@ -157,38 +157,38 @@ export const QueryFilter: MessageFns<QueryFilter> = {
       sortBy: isSet(object.sortBy)
         ? globalThis.String(object.sortBy)
         : isSet(object.sort_by)
-        ? globalThis.String(object.sort_by)
-        : undefined,
+          ? globalThis.String(object.sort_by)
+          : undefined,
       createdAfter: isSet(object.createdAfter)
         ? fromJsonTimestamp(object.createdAfter)
         : isSet(object.created_after)
-        ? fromJsonTimestamp(object.created_after)
-        : undefined,
+          ? fromJsonTimestamp(object.created_after)
+          : undefined,
       createdBefore: isSet(object.createdBefore)
         ? fromJsonTimestamp(object.createdBefore)
         : isSet(object.created_before)
-        ? fromJsonTimestamp(object.created_before)
-        : undefined,
+          ? fromJsonTimestamp(object.created_before)
+          : undefined,
       updatedAfter: isSet(object.updatedAfter)
         ? fromJsonTimestamp(object.updatedAfter)
         : isSet(object.updated_after)
-        ? fromJsonTimestamp(object.updated_after)
-        : undefined,
+          ? fromJsonTimestamp(object.updated_after)
+          : undefined,
       updatedBefore: isSet(object.updatedBefore)
         ? fromJsonTimestamp(object.updatedBefore)
         : isSet(object.updated_before)
-        ? fromJsonTimestamp(object.updated_before)
-        : undefined,
+          ? fromJsonTimestamp(object.updated_before)
+          : undefined,
       maxResponseSize: isSet(object.maxResponseSize)
         ? globalThis.Number(object.maxResponseSize)
         : isSet(object.max_response_size)
-        ? globalThis.Number(object.max_response_size)
-        : undefined,
+          ? globalThis.Number(object.max_response_size)
+          : undefined,
       includeArchived: isSet(object.includeArchived)
         ? globalThis.Boolean(object.includeArchived)
         : isSet(object.include_archived)
-        ? globalThis.Boolean(object.include_archived)
-        : undefined,
+          ? globalThis.Boolean(object.include_archived)
+          : undefined,
       cursor: isSet(object.cursor) ? globalThis.String(object.cursor) : undefined,
     };
   },
@@ -244,8 +244,8 @@ function createBasePagination(): Pagination {
     maxResponseSize: 0,
     filteredCount: 0,
     totalCount: 0,
-    cursor: "",
-    previousCursor: "",
+    cursor: '',
+    previousCursor: '',
     appliedQueryFilter: undefined,
   };
 }
@@ -261,10 +261,10 @@ export const Pagination: MessageFns<Pagination> = {
     if (message.totalCount !== 0) {
       writer.uint32(24).uint64(message.totalCount);
     }
-    if (message.cursor !== "") {
+    if (message.cursor !== '') {
       writer.uint32(34).string(message.cursor);
     }
-    if (message.previousCursor !== "") {
+    if (message.previousCursor !== '') {
       writer.uint32(42).string(message.previousCursor);
     }
     if (message.appliedQueryFilter !== undefined) {
@@ -342,29 +342,29 @@ export const Pagination: MessageFns<Pagination> = {
       maxResponseSize: isSet(object.maxResponseSize)
         ? globalThis.Number(object.maxResponseSize)
         : isSet(object.max_response_size)
-        ? globalThis.Number(object.max_response_size)
-        : 0,
+          ? globalThis.Number(object.max_response_size)
+          : 0,
       filteredCount: isSet(object.filteredCount)
         ? globalThis.Number(object.filteredCount)
         : isSet(object.filtered_count)
-        ? globalThis.Number(object.filtered_count)
-        : 0,
+          ? globalThis.Number(object.filtered_count)
+          : 0,
       totalCount: isSet(object.totalCount)
         ? globalThis.Number(object.totalCount)
         : isSet(object.total_count)
-        ? globalThis.Number(object.total_count)
-        : 0,
-      cursor: isSet(object.cursor) ? globalThis.String(object.cursor) : "",
+          ? globalThis.Number(object.total_count)
+          : 0,
+      cursor: isSet(object.cursor) ? globalThis.String(object.cursor) : '',
       previousCursor: isSet(object.previousCursor)
         ? globalThis.String(object.previousCursor)
         : isSet(object.previous_cursor)
-        ? globalThis.String(object.previous_cursor)
-        : "",
+          ? globalThis.String(object.previous_cursor)
+          : '',
       appliedQueryFilter: isSet(object.appliedQueryFilter)
         ? QueryFilter.fromJSON(object.appliedQueryFilter)
         : isSet(object.applied_query_filter)
-        ? QueryFilter.fromJSON(object.applied_query_filter)
-        : undefined,
+          ? QueryFilter.fromJSON(object.applied_query_filter)
+          : undefined,
     };
   },
 
@@ -379,10 +379,10 @@ export const Pagination: MessageFns<Pagination> = {
     if (message.totalCount !== 0) {
       obj.totalCount = Math.round(message.totalCount);
     }
-    if (message.cursor !== "") {
+    if (message.cursor !== '') {
       obj.cursor = message.cursor;
     }
-    if (message.previousCursor !== "") {
+    if (message.previousCursor !== '') {
       obj.previousCursor = message.previousCursor;
     }
     if (message.appliedQueryFilter !== undefined) {
@@ -399,22 +399,27 @@ export const Pagination: MessageFns<Pagination> = {
     message.maxResponseSize = object.maxResponseSize ?? 0;
     message.filteredCount = object.filteredCount ?? 0;
     message.totalCount = object.totalCount ?? 0;
-    message.cursor = object.cursor ?? "";
-    message.previousCursor = object.previousCursor ?? "";
-    message.appliedQueryFilter = (object.appliedQueryFilter !== undefined && object.appliedQueryFilter !== null)
-      ? QueryFilter.fromPartial(object.appliedQueryFilter)
-      : undefined;
+    message.cursor = object.cursor ?? '';
+    message.previousCursor = object.previousCursor ?? '';
+    message.appliedQueryFilter =
+      object.appliedQueryFilter !== undefined && object.appliedQueryFilter !== null
+        ? QueryFilter.fromPartial(object.appliedQueryFilter)
+        : undefined;
     return message;
   },
 };
 
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 
-export type DeepPartial<T> = T extends Builtin ? T
-  : T extends globalThis.Array<infer U> ? globalThis.Array<DeepPartial<U>>
-  : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>>
-  : T extends {} ? { [K in keyof T]?: DeepPartial<T[K]> }
-  : Partial<T>;
+export type DeepPartial<T> = T extends Builtin
+  ? T
+  : T extends globalThis.Array<infer U>
+    ? globalThis.Array<DeepPartial<U>>
+    : T extends ReadonlyArray<infer U>
+      ? ReadonlyArray<DeepPartial<U>>
+      : T extends {}
+        ? { [K in keyof T]?: DeepPartial<T[K]> }
+        : Partial<T>;
 
 function toTimestamp(date: Date): Timestamp {
   const seconds = Math.trunc(date.getTime() / 1_000);
@@ -431,7 +436,7 @@ function fromTimestamp(t: Timestamp): Date {
 function fromJsonTimestamp(o: any): Date {
   if (o instanceof globalThis.Date) {
     return o;
-  } else if (typeof o === "string") {
+  } else if (typeof o === 'string') {
     return new globalThis.Date(o);
   } else {
     return fromTimestamp(Timestamp.fromJSON(o));
@@ -441,10 +446,10 @@ function fromJsonTimestamp(o: any): Date {
 function longToNumber(int64: { toString(): string }): number {
   const num = globalThis.Number(int64.toString());
   if (num > globalThis.Number.MAX_SAFE_INTEGER) {
-    throw new globalThis.Error("Value is larger than Number.MAX_SAFE_INTEGER");
+    throw new globalThis.Error('Value is larger than Number.MAX_SAFE_INTEGER');
   }
   if (num < globalThis.Number.MIN_SAFE_INTEGER) {
-    throw new globalThis.Error("Value is smaller than Number.MIN_SAFE_INTEGER");
+    throw new globalThis.Error('Value is smaller than Number.MIN_SAFE_INTEGER');
   }
   return num;
 }

@@ -5,12 +5,12 @@
 // source: settings/settings_service_types.proto
 
 /* eslint-disable */
-import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
-import { ResponseDetails } from "../common";
-import { Pagination, QueryFilter } from "../filtering";
-import { ServiceSetting, ServiceSettingConfiguration } from "./settings_messages";
+import { BinaryReader, BinaryWriter } from '@bufbuild/protobuf/wire';
+import { ResponseDetails } from '../common';
+import { Pagination, QueryFilter } from '../filtering';
+import { ServiceSetting, ServiceSettingConfiguration } from './settings_messages';
 
-export const protobufPackage = "settings";
+export const protobufPackage = 'settings';
 
 export interface CreateServiceSettingRequest {
   input: ServiceSettingCreationRequestInput | undefined;
@@ -143,7 +143,10 @@ function createBaseCreateServiceSettingRequest(): CreateServiceSettingRequest {
 }
 
 export const CreateServiceSettingRequest: MessageFns<CreateServiceSettingRequest> = {
-  encode(message: CreateServiceSettingRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: CreateServiceSettingRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.input !== undefined) {
       ServiceSettingCreationRequestInput.encode(message.input, writer.uint32(10).fork()).join();
     }
@@ -175,7 +178,11 @@ export const CreateServiceSettingRequest: MessageFns<CreateServiceSettingRequest
   },
 
   fromJSON(object: any): CreateServiceSettingRequest {
-    return { input: isSet(object.input) ? ServiceSettingCreationRequestInput.fromJSON(object.input) : undefined };
+    return {
+      input: isSet(object.input)
+        ? ServiceSettingCreationRequestInput.fromJSON(object.input)
+        : undefined,
+    };
   },
 
   toJSON(message: CreateServiceSettingRequest): unknown {
@@ -191,9 +198,10 @@ export const CreateServiceSettingRequest: MessageFns<CreateServiceSettingRequest
   },
   fromPartial(object: DeepPartial<CreateServiceSettingRequest>): CreateServiceSettingRequest {
     const message = createBaseCreateServiceSettingRequest();
-    message.input = (object.input !== undefined && object.input !== null)
-      ? ServiceSettingCreationRequestInput.fromPartial(object.input)
-      : undefined;
+    message.input =
+      object.input !== undefined && object.input !== null
+        ? ServiceSettingCreationRequestInput.fromPartial(object.input)
+        : undefined;
     return message;
   },
 };
@@ -203,7 +211,10 @@ function createBaseCreateServiceSettingResponse(): CreateServiceSettingResponse 
 }
 
 export const CreateServiceSettingResponse: MessageFns<CreateServiceSettingResponse> = {
-  encode(message: CreateServiceSettingResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: CreateServiceSettingResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -250,8 +261,8 @@ export const CreateServiceSettingResponse: MessageFns<CreateServiceSettingRespon
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       created: isSet(object.created) ? ServiceSetting.fromJSON(object.created) : undefined,
     };
   },
@@ -272,12 +283,14 @@ export const CreateServiceSettingResponse: MessageFns<CreateServiceSettingRespon
   },
   fromPartial(object: DeepPartial<CreateServiceSettingResponse>): CreateServiceSettingResponse {
     const message = createBaseCreateServiceSettingResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.created = (object.created !== undefined && object.created !== null)
-      ? ServiceSetting.fromPartial(object.created)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
+    message.created =
+      object.created !== undefined && object.created !== null
+        ? ServiceSetting.fromPartial(object.created)
+        : undefined;
     return message;
   },
 };
@@ -286,157 +299,193 @@ function createBaseCreateServiceSettingConfigurationRequest(): CreateServiceSett
   return { input: undefined };
 }
 
-export const CreateServiceSettingConfigurationRequest: MessageFns<CreateServiceSettingConfigurationRequest> = {
-  encode(message: CreateServiceSettingConfigurationRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.input !== undefined) {
-      ServiceSettingConfigurationCreationRequestInput.encode(message.input, writer.uint32(10).fork()).join();
-    }
-    return writer;
-  },
+export const CreateServiceSettingConfigurationRequest: MessageFns<CreateServiceSettingConfigurationRequest> =
+  {
+    encode(
+      message: CreateServiceSettingConfigurationRequest,
+      writer: BinaryWriter = new BinaryWriter()
+    ): BinaryWriter {
+      if (message.input !== undefined) {
+        ServiceSettingConfigurationCreationRequestInput.encode(
+          message.input,
+          writer.uint32(10).fork()
+        ).join();
+      }
+      return writer;
+    },
 
-  decode(input: BinaryReader | Uint8Array, length?: number): CreateServiceSettingConfigurationRequest {
-    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
-    const end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseCreateServiceSettingConfigurationRequest();
-    while (reader.pos < end) {
-      const tag = reader.uint32();
-      switch (tag >>> 3) {
-        case 1: {
-          if (tag !== 10) {
-            break;
+    decode(
+      input: BinaryReader | Uint8Array,
+      length?: number
+    ): CreateServiceSettingConfigurationRequest {
+      const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+      const end = length === undefined ? reader.len : reader.pos + length;
+      const message = createBaseCreateServiceSettingConfigurationRequest();
+      while (reader.pos < end) {
+        const tag = reader.uint32();
+        switch (tag >>> 3) {
+          case 1: {
+            if (tag !== 10) {
+              break;
+            }
+
+            message.input = ServiceSettingConfigurationCreationRequestInput.decode(
+              reader,
+              reader.uint32()
+            );
+            continue;
           }
-
-          message.input = ServiceSettingConfigurationCreationRequestInput.decode(reader, reader.uint32());
-          continue;
         }
+        if ((tag & 7) === 4 || tag === 0) {
+          break;
+        }
+        reader.skip(tag & 7);
       }
-      if ((tag & 7) === 4 || tag === 0) {
-        break;
+      return message;
+    },
+
+    fromJSON(object: any): CreateServiceSettingConfigurationRequest {
+      return {
+        input: isSet(object.input)
+          ? ServiceSettingConfigurationCreationRequestInput.fromJSON(object.input)
+          : undefined,
+      };
+    },
+
+    toJSON(message: CreateServiceSettingConfigurationRequest): unknown {
+      const obj: any = {};
+      if (message.input !== undefined) {
+        obj.input = ServiceSettingConfigurationCreationRequestInput.toJSON(message.input);
       }
-      reader.skip(tag & 7);
-    }
-    return message;
-  },
+      return obj;
+    },
 
-  fromJSON(object: any): CreateServiceSettingConfigurationRequest {
-    return {
-      input: isSet(object.input) ? ServiceSettingConfigurationCreationRequestInput.fromJSON(object.input) : undefined,
-    };
-  },
-
-  toJSON(message: CreateServiceSettingConfigurationRequest): unknown {
-    const obj: any = {};
-    if (message.input !== undefined) {
-      obj.input = ServiceSettingConfigurationCreationRequestInput.toJSON(message.input);
-    }
-    return obj;
-  },
-
-  create(base?: DeepPartial<CreateServiceSettingConfigurationRequest>): CreateServiceSettingConfigurationRequest {
-    return CreateServiceSettingConfigurationRequest.fromPartial(base ?? {});
-  },
-  fromPartial(object: DeepPartial<CreateServiceSettingConfigurationRequest>): CreateServiceSettingConfigurationRequest {
-    const message = createBaseCreateServiceSettingConfigurationRequest();
-    message.input = (object.input !== undefined && object.input !== null)
-      ? ServiceSettingConfigurationCreationRequestInput.fromPartial(object.input)
-      : undefined;
-    return message;
-  },
-};
+    create(
+      base?: DeepPartial<CreateServiceSettingConfigurationRequest>
+    ): CreateServiceSettingConfigurationRequest {
+      return CreateServiceSettingConfigurationRequest.fromPartial(base ?? {});
+    },
+    fromPartial(
+      object: DeepPartial<CreateServiceSettingConfigurationRequest>
+    ): CreateServiceSettingConfigurationRequest {
+      const message = createBaseCreateServiceSettingConfigurationRequest();
+      message.input =
+        object.input !== undefined && object.input !== null
+          ? ServiceSettingConfigurationCreationRequestInput.fromPartial(object.input)
+          : undefined;
+      return message;
+    },
+  };
 
 function createBaseCreateServiceSettingConfigurationResponse(): CreateServiceSettingConfigurationResponse {
   return { responseDetails: undefined, created: undefined };
 }
 
-export const CreateServiceSettingConfigurationResponse: MessageFns<CreateServiceSettingConfigurationResponse> = {
-  encode(message: CreateServiceSettingConfigurationResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.responseDetails !== undefined) {
-      ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
-    }
-    if (message.created !== undefined) {
-      ServiceSettingConfiguration.encode(message.created, writer.uint32(18).fork()).join();
-    }
-    return writer;
-  },
-
-  decode(input: BinaryReader | Uint8Array, length?: number): CreateServiceSettingConfigurationResponse {
-    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
-    const end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseCreateServiceSettingConfigurationResponse();
-    while (reader.pos < end) {
-      const tag = reader.uint32();
-      switch (tag >>> 3) {
-        case 1: {
-          if (tag !== 10) {
-            break;
-          }
-
-          message.responseDetails = ResponseDetails.decode(reader, reader.uint32());
-          continue;
-        }
-        case 2: {
-          if (tag !== 18) {
-            break;
-          }
-
-          message.created = ServiceSettingConfiguration.decode(reader, reader.uint32());
-          continue;
-        }
+export const CreateServiceSettingConfigurationResponse: MessageFns<CreateServiceSettingConfigurationResponse> =
+  {
+    encode(
+      message: CreateServiceSettingConfigurationResponse,
+      writer: BinaryWriter = new BinaryWriter()
+    ): BinaryWriter {
+      if (message.responseDetails !== undefined) {
+        ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
       }
-      if ((tag & 7) === 4 || tag === 0) {
-        break;
+      if (message.created !== undefined) {
+        ServiceSettingConfiguration.encode(message.created, writer.uint32(18).fork()).join();
       }
-      reader.skip(tag & 7);
-    }
-    return message;
-  },
+      return writer;
+    },
 
-  fromJSON(object: any): CreateServiceSettingConfigurationResponse {
-    return {
-      responseDetails: isSet(object.responseDetails)
-        ? ResponseDetails.fromJSON(object.responseDetails)
-        : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
-      created: isSet(object.created) ? ServiceSettingConfiguration.fromJSON(object.created) : undefined,
-    };
-  },
+    decode(
+      input: BinaryReader | Uint8Array,
+      length?: number
+    ): CreateServiceSettingConfigurationResponse {
+      const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+      const end = length === undefined ? reader.len : reader.pos + length;
+      const message = createBaseCreateServiceSettingConfigurationResponse();
+      while (reader.pos < end) {
+        const tag = reader.uint32();
+        switch (tag >>> 3) {
+          case 1: {
+            if (tag !== 10) {
+              break;
+            }
 
-  toJSON(message: CreateServiceSettingConfigurationResponse): unknown {
-    const obj: any = {};
-    if (message.responseDetails !== undefined) {
-      obj.responseDetails = ResponseDetails.toJSON(message.responseDetails);
-    }
-    if (message.created !== undefined) {
-      obj.created = ServiceSettingConfiguration.toJSON(message.created);
-    }
-    return obj;
-  },
+            message.responseDetails = ResponseDetails.decode(reader, reader.uint32());
+            continue;
+          }
+          case 2: {
+            if (tag !== 18) {
+              break;
+            }
 
-  create(base?: DeepPartial<CreateServiceSettingConfigurationResponse>): CreateServiceSettingConfigurationResponse {
-    return CreateServiceSettingConfigurationResponse.fromPartial(base ?? {});
-  },
-  fromPartial(
-    object: DeepPartial<CreateServiceSettingConfigurationResponse>,
-  ): CreateServiceSettingConfigurationResponse {
-    const message = createBaseCreateServiceSettingConfigurationResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.created = (object.created !== undefined && object.created !== null)
-      ? ServiceSettingConfiguration.fromPartial(object.created)
-      : undefined;
-    return message;
-  },
-};
+            message.created = ServiceSettingConfiguration.decode(reader, reader.uint32());
+            continue;
+          }
+        }
+        if ((tag & 7) === 4 || tag === 0) {
+          break;
+        }
+        reader.skip(tag & 7);
+      }
+      return message;
+    },
+
+    fromJSON(object: any): CreateServiceSettingConfigurationResponse {
+      return {
+        responseDetails: isSet(object.responseDetails)
+          ? ResponseDetails.fromJSON(object.responseDetails)
+          : isSet(object.response_details)
+            ? ResponseDetails.fromJSON(object.response_details)
+            : undefined,
+        created: isSet(object.created)
+          ? ServiceSettingConfiguration.fromJSON(object.created)
+          : undefined,
+      };
+    },
+
+    toJSON(message: CreateServiceSettingConfigurationResponse): unknown {
+      const obj: any = {};
+      if (message.responseDetails !== undefined) {
+        obj.responseDetails = ResponseDetails.toJSON(message.responseDetails);
+      }
+      if (message.created !== undefined) {
+        obj.created = ServiceSettingConfiguration.toJSON(message.created);
+      }
+      return obj;
+    },
+
+    create(
+      base?: DeepPartial<CreateServiceSettingConfigurationResponse>
+    ): CreateServiceSettingConfigurationResponse {
+      return CreateServiceSettingConfigurationResponse.fromPartial(base ?? {});
+    },
+    fromPartial(
+      object: DeepPartial<CreateServiceSettingConfigurationResponse>
+    ): CreateServiceSettingConfigurationResponse {
+      const message = createBaseCreateServiceSettingConfigurationResponse();
+      message.responseDetails =
+        object.responseDetails !== undefined && object.responseDetails !== null
+          ? ResponseDetails.fromPartial(object.responseDetails)
+          : undefined;
+      message.created =
+        object.created !== undefined && object.created !== null
+          ? ServiceSettingConfiguration.fromPartial(object.created)
+          : undefined;
+      return message;
+    },
+  };
 
 function createBaseArchiveServiceSettingRequest(): ArchiveServiceSettingRequest {
-  return { serviceSettingId: "" };
+  return { serviceSettingId: '' };
 }
 
 export const ArchiveServiceSettingRequest: MessageFns<ArchiveServiceSettingRequest> = {
-  encode(message: ArchiveServiceSettingRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.serviceSettingId !== "") {
+  encode(
+    message: ArchiveServiceSettingRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.serviceSettingId !== '') {
       writer.uint32(10).string(message.serviceSettingId);
     }
     return writer;
@@ -471,14 +520,14 @@ export const ArchiveServiceSettingRequest: MessageFns<ArchiveServiceSettingReque
       serviceSettingId: isSet(object.serviceSettingId)
         ? globalThis.String(object.serviceSettingId)
         : isSet(object.service_setting_id)
-        ? globalThis.String(object.service_setting_id)
-        : "",
+          ? globalThis.String(object.service_setting_id)
+          : '',
     };
   },
 
   toJSON(message: ArchiveServiceSettingRequest): unknown {
     const obj: any = {};
-    if (message.serviceSettingId !== "") {
+    if (message.serviceSettingId !== '') {
       obj.serviceSettingId = message.serviceSettingId;
     }
     return obj;
@@ -489,7 +538,7 @@ export const ArchiveServiceSettingRequest: MessageFns<ArchiveServiceSettingReque
   },
   fromPartial(object: DeepPartial<ArchiveServiceSettingRequest>): ArchiveServiceSettingRequest {
     const message = createBaseArchiveServiceSettingRequest();
-    message.serviceSettingId = object.serviceSettingId ?? "";
+    message.serviceSettingId = object.serviceSettingId ?? '';
     return message;
   },
 };
@@ -499,7 +548,10 @@ function createBaseArchiveServiceSettingResponse(): ArchiveServiceSettingRespons
 }
 
 export const ArchiveServiceSettingResponse: MessageFns<ArchiveServiceSettingResponse> = {
-  encode(message: ArchiveServiceSettingResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: ArchiveServiceSettingResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -535,8 +587,8 @@ export const ArchiveServiceSettingResponse: MessageFns<ArchiveServiceSettingResp
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
     };
   },
 
@@ -553,154 +605,177 @@ export const ArchiveServiceSettingResponse: MessageFns<ArchiveServiceSettingResp
   },
   fromPartial(object: DeepPartial<ArchiveServiceSettingResponse>): ArchiveServiceSettingResponse {
     const message = createBaseArchiveServiceSettingResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
     return message;
   },
 };
 
 function createBaseArchiveServiceSettingConfigurationRequest(): ArchiveServiceSettingConfigurationRequest {
-  return { serviceSettingConfigurationId: "" };
+  return { serviceSettingConfigurationId: '' };
 }
 
-export const ArchiveServiceSettingConfigurationRequest: MessageFns<ArchiveServiceSettingConfigurationRequest> = {
-  encode(message: ArchiveServiceSettingConfigurationRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.serviceSettingConfigurationId !== "") {
-      writer.uint32(10).string(message.serviceSettingConfigurationId);
-    }
-    return writer;
-  },
+export const ArchiveServiceSettingConfigurationRequest: MessageFns<ArchiveServiceSettingConfigurationRequest> =
+  {
+    encode(
+      message: ArchiveServiceSettingConfigurationRequest,
+      writer: BinaryWriter = new BinaryWriter()
+    ): BinaryWriter {
+      if (message.serviceSettingConfigurationId !== '') {
+        writer.uint32(10).string(message.serviceSettingConfigurationId);
+      }
+      return writer;
+    },
 
-  decode(input: BinaryReader | Uint8Array, length?: number): ArchiveServiceSettingConfigurationRequest {
-    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
-    const end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseArchiveServiceSettingConfigurationRequest();
-    while (reader.pos < end) {
-      const tag = reader.uint32();
-      switch (tag >>> 3) {
-        case 1: {
-          if (tag !== 10) {
-            break;
+    decode(
+      input: BinaryReader | Uint8Array,
+      length?: number
+    ): ArchiveServiceSettingConfigurationRequest {
+      const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+      const end = length === undefined ? reader.len : reader.pos + length;
+      const message = createBaseArchiveServiceSettingConfigurationRequest();
+      while (reader.pos < end) {
+        const tag = reader.uint32();
+        switch (tag >>> 3) {
+          case 1: {
+            if (tag !== 10) {
+              break;
+            }
+
+            message.serviceSettingConfigurationId = reader.string();
+            continue;
           }
-
-          message.serviceSettingConfigurationId = reader.string();
-          continue;
         }
+        if ((tag & 7) === 4 || tag === 0) {
+          break;
+        }
+        reader.skip(tag & 7);
       }
-      if ((tag & 7) === 4 || tag === 0) {
-        break;
+      return message;
+    },
+
+    fromJSON(object: any): ArchiveServiceSettingConfigurationRequest {
+      return {
+        serviceSettingConfigurationId: isSet(object.serviceSettingConfigurationId)
+          ? globalThis.String(object.serviceSettingConfigurationId)
+          : isSet(object.service_setting_configuration_id)
+            ? globalThis.String(object.service_setting_configuration_id)
+            : '',
+      };
+    },
+
+    toJSON(message: ArchiveServiceSettingConfigurationRequest): unknown {
+      const obj: any = {};
+      if (message.serviceSettingConfigurationId !== '') {
+        obj.serviceSettingConfigurationId = message.serviceSettingConfigurationId;
       }
-      reader.skip(tag & 7);
-    }
-    return message;
-  },
+      return obj;
+    },
 
-  fromJSON(object: any): ArchiveServiceSettingConfigurationRequest {
-    return {
-      serviceSettingConfigurationId: isSet(object.serviceSettingConfigurationId)
-        ? globalThis.String(object.serviceSettingConfigurationId)
-        : isSet(object.service_setting_configuration_id)
-        ? globalThis.String(object.service_setting_configuration_id)
-        : "",
-    };
-  },
-
-  toJSON(message: ArchiveServiceSettingConfigurationRequest): unknown {
-    const obj: any = {};
-    if (message.serviceSettingConfigurationId !== "") {
-      obj.serviceSettingConfigurationId = message.serviceSettingConfigurationId;
-    }
-    return obj;
-  },
-
-  create(base?: DeepPartial<ArchiveServiceSettingConfigurationRequest>): ArchiveServiceSettingConfigurationRequest {
-    return ArchiveServiceSettingConfigurationRequest.fromPartial(base ?? {});
-  },
-  fromPartial(
-    object: DeepPartial<ArchiveServiceSettingConfigurationRequest>,
-  ): ArchiveServiceSettingConfigurationRequest {
-    const message = createBaseArchiveServiceSettingConfigurationRequest();
-    message.serviceSettingConfigurationId = object.serviceSettingConfigurationId ?? "";
-    return message;
-  },
-};
+    create(
+      base?: DeepPartial<ArchiveServiceSettingConfigurationRequest>
+    ): ArchiveServiceSettingConfigurationRequest {
+      return ArchiveServiceSettingConfigurationRequest.fromPartial(base ?? {});
+    },
+    fromPartial(
+      object: DeepPartial<ArchiveServiceSettingConfigurationRequest>
+    ): ArchiveServiceSettingConfigurationRequest {
+      const message = createBaseArchiveServiceSettingConfigurationRequest();
+      message.serviceSettingConfigurationId = object.serviceSettingConfigurationId ?? '';
+      return message;
+    },
+  };
 
 function createBaseArchiveServiceSettingConfigurationResponse(): ArchiveServiceSettingConfigurationResponse {
   return { responseDetails: undefined };
 }
 
-export const ArchiveServiceSettingConfigurationResponse: MessageFns<ArchiveServiceSettingConfigurationResponse> = {
-  encode(message: ArchiveServiceSettingConfigurationResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.responseDetails !== undefined) {
-      ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
-    }
-    return writer;
-  },
+export const ArchiveServiceSettingConfigurationResponse: MessageFns<ArchiveServiceSettingConfigurationResponse> =
+  {
+    encode(
+      message: ArchiveServiceSettingConfigurationResponse,
+      writer: BinaryWriter = new BinaryWriter()
+    ): BinaryWriter {
+      if (message.responseDetails !== undefined) {
+        ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
+      }
+      return writer;
+    },
 
-  decode(input: BinaryReader | Uint8Array, length?: number): ArchiveServiceSettingConfigurationResponse {
-    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
-    const end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseArchiveServiceSettingConfigurationResponse();
-    while (reader.pos < end) {
-      const tag = reader.uint32();
-      switch (tag >>> 3) {
-        case 1: {
-          if (tag !== 10) {
-            break;
+    decode(
+      input: BinaryReader | Uint8Array,
+      length?: number
+    ): ArchiveServiceSettingConfigurationResponse {
+      const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+      const end = length === undefined ? reader.len : reader.pos + length;
+      const message = createBaseArchiveServiceSettingConfigurationResponse();
+      while (reader.pos < end) {
+        const tag = reader.uint32();
+        switch (tag >>> 3) {
+          case 1: {
+            if (tag !== 10) {
+              break;
+            }
+
+            message.responseDetails = ResponseDetails.decode(reader, reader.uint32());
+            continue;
           }
-
-          message.responseDetails = ResponseDetails.decode(reader, reader.uint32());
-          continue;
         }
+        if ((tag & 7) === 4 || tag === 0) {
+          break;
+        }
+        reader.skip(tag & 7);
       }
-      if ((tag & 7) === 4 || tag === 0) {
-        break;
+      return message;
+    },
+
+    fromJSON(object: any): ArchiveServiceSettingConfigurationResponse {
+      return {
+        responseDetails: isSet(object.responseDetails)
+          ? ResponseDetails.fromJSON(object.responseDetails)
+          : isSet(object.response_details)
+            ? ResponseDetails.fromJSON(object.response_details)
+            : undefined,
+      };
+    },
+
+    toJSON(message: ArchiveServiceSettingConfigurationResponse): unknown {
+      const obj: any = {};
+      if (message.responseDetails !== undefined) {
+        obj.responseDetails = ResponseDetails.toJSON(message.responseDetails);
       }
-      reader.skip(tag & 7);
-    }
-    return message;
-  },
+      return obj;
+    },
 
-  fromJSON(object: any): ArchiveServiceSettingConfigurationResponse {
-    return {
-      responseDetails: isSet(object.responseDetails)
-        ? ResponseDetails.fromJSON(object.responseDetails)
-        : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
-    };
-  },
-
-  toJSON(message: ArchiveServiceSettingConfigurationResponse): unknown {
-    const obj: any = {};
-    if (message.responseDetails !== undefined) {
-      obj.responseDetails = ResponseDetails.toJSON(message.responseDetails);
-    }
-    return obj;
-  },
-
-  create(base?: DeepPartial<ArchiveServiceSettingConfigurationResponse>): ArchiveServiceSettingConfigurationResponse {
-    return ArchiveServiceSettingConfigurationResponse.fromPartial(base ?? {});
-  },
-  fromPartial(
-    object: DeepPartial<ArchiveServiceSettingConfigurationResponse>,
-  ): ArchiveServiceSettingConfigurationResponse {
-    const message = createBaseArchiveServiceSettingConfigurationResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    return message;
-  },
-};
+    create(
+      base?: DeepPartial<ArchiveServiceSettingConfigurationResponse>
+    ): ArchiveServiceSettingConfigurationResponse {
+      return ArchiveServiceSettingConfigurationResponse.fromPartial(base ?? {});
+    },
+    fromPartial(
+      object: DeepPartial<ArchiveServiceSettingConfigurationResponse>
+    ): ArchiveServiceSettingConfigurationResponse {
+      const message = createBaseArchiveServiceSettingConfigurationResponse();
+      message.responseDetails =
+        object.responseDetails !== undefined && object.responseDetails !== null
+          ? ResponseDetails.fromPartial(object.responseDetails)
+          : undefined;
+      return message;
+    },
+  };
 
 function createBaseGetServiceSettingRequest(): GetServiceSettingRequest {
-  return { serviceSettingId: "" };
+  return { serviceSettingId: '' };
 }
 
 export const GetServiceSettingRequest: MessageFns<GetServiceSettingRequest> = {
-  encode(message: GetServiceSettingRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.serviceSettingId !== "") {
+  encode(
+    message: GetServiceSettingRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.serviceSettingId !== '') {
       writer.uint32(10).string(message.serviceSettingId);
     }
     return writer;
@@ -735,14 +810,14 @@ export const GetServiceSettingRequest: MessageFns<GetServiceSettingRequest> = {
       serviceSettingId: isSet(object.serviceSettingId)
         ? globalThis.String(object.serviceSettingId)
         : isSet(object.service_setting_id)
-        ? globalThis.String(object.service_setting_id)
-        : "",
+          ? globalThis.String(object.service_setting_id)
+          : '',
     };
   },
 
   toJSON(message: GetServiceSettingRequest): unknown {
     const obj: any = {};
-    if (message.serviceSettingId !== "") {
+    if (message.serviceSettingId !== '') {
       obj.serviceSettingId = message.serviceSettingId;
     }
     return obj;
@@ -753,7 +828,7 @@ export const GetServiceSettingRequest: MessageFns<GetServiceSettingRequest> = {
   },
   fromPartial(object: DeepPartial<GetServiceSettingRequest>): GetServiceSettingRequest {
     const message = createBaseGetServiceSettingRequest();
-    message.serviceSettingId = object.serviceSettingId ?? "";
+    message.serviceSettingId = object.serviceSettingId ?? '';
     return message;
   },
 };
@@ -763,7 +838,10 @@ function createBaseGetServiceSettingResponse(): GetServiceSettingResponse {
 }
 
 export const GetServiceSettingResponse: MessageFns<GetServiceSettingResponse> = {
-  encode(message: GetServiceSettingResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: GetServiceSettingResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -810,8 +888,8 @@ export const GetServiceSettingResponse: MessageFns<GetServiceSettingResponse> = 
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       result: isSet(object.result) ? ServiceSetting.fromJSON(object.result) : undefined,
     };
   },
@@ -832,391 +910,417 @@ export const GetServiceSettingResponse: MessageFns<GetServiceSettingResponse> = 
   },
   fromPartial(object: DeepPartial<GetServiceSettingResponse>): GetServiceSettingResponse {
     const message = createBaseGetServiceSettingResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.result = (object.result !== undefined && object.result !== null)
-      ? ServiceSetting.fromPartial(object.result)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
+    message.result =
+      object.result !== undefined && object.result !== null
+        ? ServiceSetting.fromPartial(object.result)
+        : undefined;
     return message;
   },
 };
 
 function createBaseGetServiceSettingConfigurationByNameRequest(): GetServiceSettingConfigurationByNameRequest {
-  return { filter: undefined, serviceSettingConfigurationName: "" };
+  return { filter: undefined, serviceSettingConfigurationName: '' };
 }
 
-export const GetServiceSettingConfigurationByNameRequest: MessageFns<GetServiceSettingConfigurationByNameRequest> = {
-  encode(
-    message: GetServiceSettingConfigurationByNameRequest,
-    writer: BinaryWriter = new BinaryWriter(),
-  ): BinaryWriter {
-    if (message.filter !== undefined) {
-      QueryFilter.encode(message.filter, writer.uint32(10).fork()).join();
-    }
-    if (message.serviceSettingConfigurationName !== "") {
-      writer.uint32(18).string(message.serviceSettingConfigurationName);
-    }
-    return writer;
-  },
-
-  decode(input: BinaryReader | Uint8Array, length?: number): GetServiceSettingConfigurationByNameRequest {
-    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
-    const end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseGetServiceSettingConfigurationByNameRequest();
-    while (reader.pos < end) {
-      const tag = reader.uint32();
-      switch (tag >>> 3) {
-        case 1: {
-          if (tag !== 10) {
-            break;
-          }
-
-          message.filter = QueryFilter.decode(reader, reader.uint32());
-          continue;
-        }
-        case 2: {
-          if (tag !== 18) {
-            break;
-          }
-
-          message.serviceSettingConfigurationName = reader.string();
-          continue;
-        }
+export const GetServiceSettingConfigurationByNameRequest: MessageFns<GetServiceSettingConfigurationByNameRequest> =
+  {
+    encode(
+      message: GetServiceSettingConfigurationByNameRequest,
+      writer: BinaryWriter = new BinaryWriter()
+    ): BinaryWriter {
+      if (message.filter !== undefined) {
+        QueryFilter.encode(message.filter, writer.uint32(10).fork()).join();
       }
-      if ((tag & 7) === 4 || tag === 0) {
-        break;
+      if (message.serviceSettingConfigurationName !== '') {
+        writer.uint32(18).string(message.serviceSettingConfigurationName);
       }
-      reader.skip(tag & 7);
-    }
-    return message;
-  },
+      return writer;
+    },
 
-  fromJSON(object: any): GetServiceSettingConfigurationByNameRequest {
-    return {
-      filter: isSet(object.filter) ? QueryFilter.fromJSON(object.filter) : undefined,
-      serviceSettingConfigurationName: isSet(object.serviceSettingConfigurationName)
-        ? globalThis.String(object.serviceSettingConfigurationName)
-        : isSet(object.service_setting_configuration_name)
-        ? globalThis.String(object.service_setting_configuration_name)
-        : "",
-    };
-  },
+    decode(
+      input: BinaryReader | Uint8Array,
+      length?: number
+    ): GetServiceSettingConfigurationByNameRequest {
+      const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+      const end = length === undefined ? reader.len : reader.pos + length;
+      const message = createBaseGetServiceSettingConfigurationByNameRequest();
+      while (reader.pos < end) {
+        const tag = reader.uint32();
+        switch (tag >>> 3) {
+          case 1: {
+            if (tag !== 10) {
+              break;
+            }
 
-  toJSON(message: GetServiceSettingConfigurationByNameRequest): unknown {
-    const obj: any = {};
-    if (message.filter !== undefined) {
-      obj.filter = QueryFilter.toJSON(message.filter);
-    }
-    if (message.serviceSettingConfigurationName !== "") {
-      obj.serviceSettingConfigurationName = message.serviceSettingConfigurationName;
-    }
-    return obj;
-  },
+            message.filter = QueryFilter.decode(reader, reader.uint32());
+            continue;
+          }
+          case 2: {
+            if (tag !== 18) {
+              break;
+            }
 
-  create(base?: DeepPartial<GetServiceSettingConfigurationByNameRequest>): GetServiceSettingConfigurationByNameRequest {
-    return GetServiceSettingConfigurationByNameRequest.fromPartial(base ?? {});
-  },
-  fromPartial(
-    object: DeepPartial<GetServiceSettingConfigurationByNameRequest>,
-  ): GetServiceSettingConfigurationByNameRequest {
-    const message = createBaseGetServiceSettingConfigurationByNameRequest();
-    message.filter = (object.filter !== undefined && object.filter !== null)
-      ? QueryFilter.fromPartial(object.filter)
-      : undefined;
-    message.serviceSettingConfigurationName = object.serviceSettingConfigurationName ?? "";
-    return message;
-  },
-};
+            message.serviceSettingConfigurationName = reader.string();
+            continue;
+          }
+        }
+        if ((tag & 7) === 4 || tag === 0) {
+          break;
+        }
+        reader.skip(tag & 7);
+      }
+      return message;
+    },
+
+    fromJSON(object: any): GetServiceSettingConfigurationByNameRequest {
+      return {
+        filter: isSet(object.filter) ? QueryFilter.fromJSON(object.filter) : undefined,
+        serviceSettingConfigurationName: isSet(object.serviceSettingConfigurationName)
+          ? globalThis.String(object.serviceSettingConfigurationName)
+          : isSet(object.service_setting_configuration_name)
+            ? globalThis.String(object.service_setting_configuration_name)
+            : '',
+      };
+    },
+
+    toJSON(message: GetServiceSettingConfigurationByNameRequest): unknown {
+      const obj: any = {};
+      if (message.filter !== undefined) {
+        obj.filter = QueryFilter.toJSON(message.filter);
+      }
+      if (message.serviceSettingConfigurationName !== '') {
+        obj.serviceSettingConfigurationName = message.serviceSettingConfigurationName;
+      }
+      return obj;
+    },
+
+    create(
+      base?: DeepPartial<GetServiceSettingConfigurationByNameRequest>
+    ): GetServiceSettingConfigurationByNameRequest {
+      return GetServiceSettingConfigurationByNameRequest.fromPartial(base ?? {});
+    },
+    fromPartial(
+      object: DeepPartial<GetServiceSettingConfigurationByNameRequest>
+    ): GetServiceSettingConfigurationByNameRequest {
+      const message = createBaseGetServiceSettingConfigurationByNameRequest();
+      message.filter =
+        object.filter !== undefined && object.filter !== null
+          ? QueryFilter.fromPartial(object.filter)
+          : undefined;
+      message.serviceSettingConfigurationName = object.serviceSettingConfigurationName ?? '';
+      return message;
+    },
+  };
 
 function createBaseGetServiceSettingConfigurationByNameResponse(): GetServiceSettingConfigurationByNameResponse {
   return { responseDetails: undefined, pagination: undefined, result: undefined };
 }
 
-export const GetServiceSettingConfigurationByNameResponse: MessageFns<GetServiceSettingConfigurationByNameResponse> = {
-  encode(
-    message: GetServiceSettingConfigurationByNameResponse,
-    writer: BinaryWriter = new BinaryWriter(),
-  ): BinaryWriter {
-    if (message.responseDetails !== undefined) {
-      ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
-    }
-    if (message.pagination !== undefined) {
-      Pagination.encode(message.pagination, writer.uint32(18).fork()).join();
-    }
-    if (message.result !== undefined) {
-      ServiceSettingConfiguration.encode(message.result, writer.uint32(26).fork()).join();
-    }
-    return writer;
-  },
-
-  decode(input: BinaryReader | Uint8Array, length?: number): GetServiceSettingConfigurationByNameResponse {
-    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
-    const end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseGetServiceSettingConfigurationByNameResponse();
-    while (reader.pos < end) {
-      const tag = reader.uint32();
-      switch (tag >>> 3) {
-        case 1: {
-          if (tag !== 10) {
-            break;
-          }
-
-          message.responseDetails = ResponseDetails.decode(reader, reader.uint32());
-          continue;
-        }
-        case 2: {
-          if (tag !== 18) {
-            break;
-          }
-
-          message.pagination = Pagination.decode(reader, reader.uint32());
-          continue;
-        }
-        case 3: {
-          if (tag !== 26) {
-            break;
-          }
-
-          message.result = ServiceSettingConfiguration.decode(reader, reader.uint32());
-          continue;
-        }
+export const GetServiceSettingConfigurationByNameResponse: MessageFns<GetServiceSettingConfigurationByNameResponse> =
+  {
+    encode(
+      message: GetServiceSettingConfigurationByNameResponse,
+      writer: BinaryWriter = new BinaryWriter()
+    ): BinaryWriter {
+      if (message.responseDetails !== undefined) {
+        ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
       }
-      if ((tag & 7) === 4 || tag === 0) {
-        break;
+      if (message.pagination !== undefined) {
+        Pagination.encode(message.pagination, writer.uint32(18).fork()).join();
       }
-      reader.skip(tag & 7);
-    }
-    return message;
-  },
+      if (message.result !== undefined) {
+        ServiceSettingConfiguration.encode(message.result, writer.uint32(26).fork()).join();
+      }
+      return writer;
+    },
 
-  fromJSON(object: any): GetServiceSettingConfigurationByNameResponse {
-    return {
-      responseDetails: isSet(object.responseDetails)
-        ? ResponseDetails.fromJSON(object.responseDetails)
-        : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
-      pagination: isSet(object.pagination) ? Pagination.fromJSON(object.pagination) : undefined,
-      result: isSet(object.result) ? ServiceSettingConfiguration.fromJSON(object.result) : undefined,
-    };
-  },
+    decode(
+      input: BinaryReader | Uint8Array,
+      length?: number
+    ): GetServiceSettingConfigurationByNameResponse {
+      const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+      const end = length === undefined ? reader.len : reader.pos + length;
+      const message = createBaseGetServiceSettingConfigurationByNameResponse();
+      while (reader.pos < end) {
+        const tag = reader.uint32();
+        switch (tag >>> 3) {
+          case 1: {
+            if (tag !== 10) {
+              break;
+            }
 
-  toJSON(message: GetServiceSettingConfigurationByNameResponse): unknown {
-    const obj: any = {};
-    if (message.responseDetails !== undefined) {
-      obj.responseDetails = ResponseDetails.toJSON(message.responseDetails);
-    }
-    if (message.pagination !== undefined) {
-      obj.pagination = Pagination.toJSON(message.pagination);
-    }
-    if (message.result !== undefined) {
-      obj.result = ServiceSettingConfiguration.toJSON(message.result);
-    }
-    return obj;
-  },
+            message.responseDetails = ResponseDetails.decode(reader, reader.uint32());
+            continue;
+          }
+          case 2: {
+            if (tag !== 18) {
+              break;
+            }
 
-  create(
-    base?: DeepPartial<GetServiceSettingConfigurationByNameResponse>,
-  ): GetServiceSettingConfigurationByNameResponse {
-    return GetServiceSettingConfigurationByNameResponse.fromPartial(base ?? {});
-  },
-  fromPartial(
-    object: DeepPartial<GetServiceSettingConfigurationByNameResponse>,
-  ): GetServiceSettingConfigurationByNameResponse {
-    const message = createBaseGetServiceSettingConfigurationByNameResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.pagination = (object.pagination !== undefined && object.pagination !== null)
-      ? Pagination.fromPartial(object.pagination)
-      : undefined;
-    message.result = (object.result !== undefined && object.result !== null)
-      ? ServiceSettingConfiguration.fromPartial(object.result)
-      : undefined;
-    return message;
-  },
-};
+            message.pagination = Pagination.decode(reader, reader.uint32());
+            continue;
+          }
+          case 3: {
+            if (tag !== 26) {
+              break;
+            }
+
+            message.result = ServiceSettingConfiguration.decode(reader, reader.uint32());
+            continue;
+          }
+        }
+        if ((tag & 7) === 4 || tag === 0) {
+          break;
+        }
+        reader.skip(tag & 7);
+      }
+      return message;
+    },
+
+    fromJSON(object: any): GetServiceSettingConfigurationByNameResponse {
+      return {
+        responseDetails: isSet(object.responseDetails)
+          ? ResponseDetails.fromJSON(object.responseDetails)
+          : isSet(object.response_details)
+            ? ResponseDetails.fromJSON(object.response_details)
+            : undefined,
+        pagination: isSet(object.pagination) ? Pagination.fromJSON(object.pagination) : undefined,
+        result: isSet(object.result)
+          ? ServiceSettingConfiguration.fromJSON(object.result)
+          : undefined,
+      };
+    },
+
+    toJSON(message: GetServiceSettingConfigurationByNameResponse): unknown {
+      const obj: any = {};
+      if (message.responseDetails !== undefined) {
+        obj.responseDetails = ResponseDetails.toJSON(message.responseDetails);
+      }
+      if (message.pagination !== undefined) {
+        obj.pagination = Pagination.toJSON(message.pagination);
+      }
+      if (message.result !== undefined) {
+        obj.result = ServiceSettingConfiguration.toJSON(message.result);
+      }
+      return obj;
+    },
+
+    create(
+      base?: DeepPartial<GetServiceSettingConfigurationByNameResponse>
+    ): GetServiceSettingConfigurationByNameResponse {
+      return GetServiceSettingConfigurationByNameResponse.fromPartial(base ?? {});
+    },
+    fromPartial(
+      object: DeepPartial<GetServiceSettingConfigurationByNameResponse>
+    ): GetServiceSettingConfigurationByNameResponse {
+      const message = createBaseGetServiceSettingConfigurationByNameResponse();
+      message.responseDetails =
+        object.responseDetails !== undefined && object.responseDetails !== null
+          ? ResponseDetails.fromPartial(object.responseDetails)
+          : undefined;
+      message.pagination =
+        object.pagination !== undefined && object.pagination !== null
+          ? Pagination.fromPartial(object.pagination)
+          : undefined;
+      message.result =
+        object.result !== undefined && object.result !== null
+          ? ServiceSettingConfiguration.fromPartial(object.result)
+          : undefined;
+      return message;
+    },
+  };
 
 function createBaseGetServiceSettingConfigurationsForAccountRequest(): GetServiceSettingConfigurationsForAccountRequest {
   return { filter: undefined };
 }
 
-export const GetServiceSettingConfigurationsForAccountRequest: MessageFns<
-  GetServiceSettingConfigurationsForAccountRequest
-> = {
-  encode(
-    message: GetServiceSettingConfigurationsForAccountRequest,
-    writer: BinaryWriter = new BinaryWriter(),
-  ): BinaryWriter {
-    if (message.filter !== undefined) {
-      QueryFilter.encode(message.filter, writer.uint32(10).fork()).join();
-    }
-    return writer;
-  },
+export const GetServiceSettingConfigurationsForAccountRequest: MessageFns<GetServiceSettingConfigurationsForAccountRequest> =
+  {
+    encode(
+      message: GetServiceSettingConfigurationsForAccountRequest,
+      writer: BinaryWriter = new BinaryWriter()
+    ): BinaryWriter {
+      if (message.filter !== undefined) {
+        QueryFilter.encode(message.filter, writer.uint32(10).fork()).join();
+      }
+      return writer;
+    },
 
-  decode(input: BinaryReader | Uint8Array, length?: number): GetServiceSettingConfigurationsForAccountRequest {
-    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
-    const end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseGetServiceSettingConfigurationsForAccountRequest();
-    while (reader.pos < end) {
-      const tag = reader.uint32();
-      switch (tag >>> 3) {
-        case 1: {
-          if (tag !== 10) {
-            break;
+    decode(
+      input: BinaryReader | Uint8Array,
+      length?: number
+    ): GetServiceSettingConfigurationsForAccountRequest {
+      const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+      const end = length === undefined ? reader.len : reader.pos + length;
+      const message = createBaseGetServiceSettingConfigurationsForAccountRequest();
+      while (reader.pos < end) {
+        const tag = reader.uint32();
+        switch (tag >>> 3) {
+          case 1: {
+            if (tag !== 10) {
+              break;
+            }
+
+            message.filter = QueryFilter.decode(reader, reader.uint32());
+            continue;
           }
-
-          message.filter = QueryFilter.decode(reader, reader.uint32());
-          continue;
         }
+        if ((tag & 7) === 4 || tag === 0) {
+          break;
+        }
+        reader.skip(tag & 7);
       }
-      if ((tag & 7) === 4 || tag === 0) {
-        break;
+      return message;
+    },
+
+    fromJSON(object: any): GetServiceSettingConfigurationsForAccountRequest {
+      return { filter: isSet(object.filter) ? QueryFilter.fromJSON(object.filter) : undefined };
+    },
+
+    toJSON(message: GetServiceSettingConfigurationsForAccountRequest): unknown {
+      const obj: any = {};
+      if (message.filter !== undefined) {
+        obj.filter = QueryFilter.toJSON(message.filter);
       }
-      reader.skip(tag & 7);
-    }
-    return message;
-  },
+      return obj;
+    },
 
-  fromJSON(object: any): GetServiceSettingConfigurationsForAccountRequest {
-    return { filter: isSet(object.filter) ? QueryFilter.fromJSON(object.filter) : undefined };
-  },
-
-  toJSON(message: GetServiceSettingConfigurationsForAccountRequest): unknown {
-    const obj: any = {};
-    if (message.filter !== undefined) {
-      obj.filter = QueryFilter.toJSON(message.filter);
-    }
-    return obj;
-  },
-
-  create(
-    base?: DeepPartial<GetServiceSettingConfigurationsForAccountRequest>,
-  ): GetServiceSettingConfigurationsForAccountRequest {
-    return GetServiceSettingConfigurationsForAccountRequest.fromPartial(base ?? {});
-  },
-  fromPartial(
-    object: DeepPartial<GetServiceSettingConfigurationsForAccountRequest>,
-  ): GetServiceSettingConfigurationsForAccountRequest {
-    const message = createBaseGetServiceSettingConfigurationsForAccountRequest();
-    message.filter = (object.filter !== undefined && object.filter !== null)
-      ? QueryFilter.fromPartial(object.filter)
-      : undefined;
-    return message;
-  },
-};
+    create(
+      base?: DeepPartial<GetServiceSettingConfigurationsForAccountRequest>
+    ): GetServiceSettingConfigurationsForAccountRequest {
+      return GetServiceSettingConfigurationsForAccountRequest.fromPartial(base ?? {});
+    },
+    fromPartial(
+      object: DeepPartial<GetServiceSettingConfigurationsForAccountRequest>
+    ): GetServiceSettingConfigurationsForAccountRequest {
+      const message = createBaseGetServiceSettingConfigurationsForAccountRequest();
+      message.filter =
+        object.filter !== undefined && object.filter !== null
+          ? QueryFilter.fromPartial(object.filter)
+          : undefined;
+      return message;
+    },
+  };
 
 function createBaseGetServiceSettingConfigurationsForAccountResponse(): GetServiceSettingConfigurationsForAccountResponse {
   return { responseDetails: undefined, pagination: undefined, results: [] };
 }
 
-export const GetServiceSettingConfigurationsForAccountResponse: MessageFns<
-  GetServiceSettingConfigurationsForAccountResponse
-> = {
-  encode(
-    message: GetServiceSettingConfigurationsForAccountResponse,
-    writer: BinaryWriter = new BinaryWriter(),
-  ): BinaryWriter {
-    if (message.responseDetails !== undefined) {
-      ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
-    }
-    if (message.pagination !== undefined) {
-      Pagination.encode(message.pagination, writer.uint32(18).fork()).join();
-    }
-    for (const v of message.results) {
-      ServiceSettingConfiguration.encode(v!, writer.uint32(26).fork()).join();
-    }
-    return writer;
-  },
-
-  decode(input: BinaryReader | Uint8Array, length?: number): GetServiceSettingConfigurationsForAccountResponse {
-    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
-    const end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseGetServiceSettingConfigurationsForAccountResponse();
-    while (reader.pos < end) {
-      const tag = reader.uint32();
-      switch (tag >>> 3) {
-        case 1: {
-          if (tag !== 10) {
-            break;
-          }
-
-          message.responseDetails = ResponseDetails.decode(reader, reader.uint32());
-          continue;
-        }
-        case 2: {
-          if (tag !== 18) {
-            break;
-          }
-
-          message.pagination = Pagination.decode(reader, reader.uint32());
-          continue;
-        }
-        case 3: {
-          if (tag !== 26) {
-            break;
-          }
-
-          message.results.push(ServiceSettingConfiguration.decode(reader, reader.uint32()));
-          continue;
-        }
+export const GetServiceSettingConfigurationsForAccountResponse: MessageFns<GetServiceSettingConfigurationsForAccountResponse> =
+  {
+    encode(
+      message: GetServiceSettingConfigurationsForAccountResponse,
+      writer: BinaryWriter = new BinaryWriter()
+    ): BinaryWriter {
+      if (message.responseDetails !== undefined) {
+        ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
       }
-      if ((tag & 7) === 4 || tag === 0) {
-        break;
+      if (message.pagination !== undefined) {
+        Pagination.encode(message.pagination, writer.uint32(18).fork()).join();
       }
-      reader.skip(tag & 7);
-    }
-    return message;
-  },
+      for (const v of message.results) {
+        ServiceSettingConfiguration.encode(v!, writer.uint32(26).fork()).join();
+      }
+      return writer;
+    },
 
-  fromJSON(object: any): GetServiceSettingConfigurationsForAccountResponse {
-    return {
-      responseDetails: isSet(object.responseDetails)
-        ? ResponseDetails.fromJSON(object.responseDetails)
-        : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
-      pagination: isSet(object.pagination) ? Pagination.fromJSON(object.pagination) : undefined,
-      results: globalThis.Array.isArray(object?.results)
-        ? object.results.map((e: any) => ServiceSettingConfiguration.fromJSON(e))
-        : [],
-    };
-  },
+    decode(
+      input: BinaryReader | Uint8Array,
+      length?: number
+    ): GetServiceSettingConfigurationsForAccountResponse {
+      const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+      const end = length === undefined ? reader.len : reader.pos + length;
+      const message = createBaseGetServiceSettingConfigurationsForAccountResponse();
+      while (reader.pos < end) {
+        const tag = reader.uint32();
+        switch (tag >>> 3) {
+          case 1: {
+            if (tag !== 10) {
+              break;
+            }
 
-  toJSON(message: GetServiceSettingConfigurationsForAccountResponse): unknown {
-    const obj: any = {};
-    if (message.responseDetails !== undefined) {
-      obj.responseDetails = ResponseDetails.toJSON(message.responseDetails);
-    }
-    if (message.pagination !== undefined) {
-      obj.pagination = Pagination.toJSON(message.pagination);
-    }
-    if (message.results?.length) {
-      obj.results = message.results.map((e) => ServiceSettingConfiguration.toJSON(e));
-    }
-    return obj;
-  },
+            message.responseDetails = ResponseDetails.decode(reader, reader.uint32());
+            continue;
+          }
+          case 2: {
+            if (tag !== 18) {
+              break;
+            }
 
-  create(
-    base?: DeepPartial<GetServiceSettingConfigurationsForAccountResponse>,
-  ): GetServiceSettingConfigurationsForAccountResponse {
-    return GetServiceSettingConfigurationsForAccountResponse.fromPartial(base ?? {});
-  },
-  fromPartial(
-    object: DeepPartial<GetServiceSettingConfigurationsForAccountResponse>,
-  ): GetServiceSettingConfigurationsForAccountResponse {
-    const message = createBaseGetServiceSettingConfigurationsForAccountResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.pagination = (object.pagination !== undefined && object.pagination !== null)
-      ? Pagination.fromPartial(object.pagination)
-      : undefined;
-    message.results = object.results?.map((e) => ServiceSettingConfiguration.fromPartial(e)) || [];
-    return message;
-  },
-};
+            message.pagination = Pagination.decode(reader, reader.uint32());
+            continue;
+          }
+          case 3: {
+            if (tag !== 26) {
+              break;
+            }
+
+            message.results.push(ServiceSettingConfiguration.decode(reader, reader.uint32()));
+            continue;
+          }
+        }
+        if ((tag & 7) === 4 || tag === 0) {
+          break;
+        }
+        reader.skip(tag & 7);
+      }
+      return message;
+    },
+
+    fromJSON(object: any): GetServiceSettingConfigurationsForAccountResponse {
+      return {
+        responseDetails: isSet(object.responseDetails)
+          ? ResponseDetails.fromJSON(object.responseDetails)
+          : isSet(object.response_details)
+            ? ResponseDetails.fromJSON(object.response_details)
+            : undefined,
+        pagination: isSet(object.pagination) ? Pagination.fromJSON(object.pagination) : undefined,
+        results: globalThis.Array.isArray(object?.results)
+          ? object.results.map((e: any) => ServiceSettingConfiguration.fromJSON(e))
+          : [],
+      };
+    },
+
+    toJSON(message: GetServiceSettingConfigurationsForAccountResponse): unknown {
+      const obj: any = {};
+      if (message.responseDetails !== undefined) {
+        obj.responseDetails = ResponseDetails.toJSON(message.responseDetails);
+      }
+      if (message.pagination !== undefined) {
+        obj.pagination = Pagination.toJSON(message.pagination);
+      }
+      if (message.results?.length) {
+        obj.results = message.results.map((e) => ServiceSettingConfiguration.toJSON(e));
+      }
+      return obj;
+    },
+
+    create(
+      base?: DeepPartial<GetServiceSettingConfigurationsForAccountResponse>
+    ): GetServiceSettingConfigurationsForAccountResponse {
+      return GetServiceSettingConfigurationsForAccountResponse.fromPartial(base ?? {});
+    },
+    fromPartial(
+      object: DeepPartial<GetServiceSettingConfigurationsForAccountResponse>
+    ): GetServiceSettingConfigurationsForAccountResponse {
+      const message = createBaseGetServiceSettingConfigurationsForAccountResponse();
+      message.responseDetails =
+        object.responseDetails !== undefined && object.responseDetails !== null
+          ? ResponseDetails.fromPartial(object.responseDetails)
+          : undefined;
+      message.pagination =
+        object.pagination !== undefined && object.pagination !== null
+          ? Pagination.fromPartial(object.pagination)
+          : undefined;
+      message.results =
+        object.results?.map((e) => ServiceSettingConfiguration.fromPartial(e)) || [];
+      return message;
+    },
+  };
 
 function createBaseGetServiceSettingConfigurationsForUserRequest(): GetServiceSettingConfigurationsForUserRequest {
   return { filter: undefined };
@@ -1226,7 +1330,7 @@ export const GetServiceSettingConfigurationsForUserRequest: MessageFns<GetServic
   {
     encode(
       message: GetServiceSettingConfigurationsForUserRequest,
-      writer: BinaryWriter = new BinaryWriter(),
+      writer: BinaryWriter = new BinaryWriter()
     ): BinaryWriter {
       if (message.filter !== undefined) {
         QueryFilter.encode(message.filter, writer.uint32(10).fork()).join();
@@ -1234,7 +1338,10 @@ export const GetServiceSettingConfigurationsForUserRequest: MessageFns<GetServic
       return writer;
     },
 
-    decode(input: BinaryReader | Uint8Array, length?: number): GetServiceSettingConfigurationsForUserRequest {
+    decode(
+      input: BinaryReader | Uint8Array,
+      length?: number
+    ): GetServiceSettingConfigurationsForUserRequest {
       const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
       const end = length === undefined ? reader.len : reader.pos + length;
       const message = createBaseGetServiceSettingConfigurationsForUserRequest();
@@ -1271,17 +1378,18 @@ export const GetServiceSettingConfigurationsForUserRequest: MessageFns<GetServic
     },
 
     create(
-      base?: DeepPartial<GetServiceSettingConfigurationsForUserRequest>,
+      base?: DeepPartial<GetServiceSettingConfigurationsForUserRequest>
     ): GetServiceSettingConfigurationsForUserRequest {
       return GetServiceSettingConfigurationsForUserRequest.fromPartial(base ?? {});
     },
     fromPartial(
-      object: DeepPartial<GetServiceSettingConfigurationsForUserRequest>,
+      object: DeepPartial<GetServiceSettingConfigurationsForUserRequest>
     ): GetServiceSettingConfigurationsForUserRequest {
       const message = createBaseGetServiceSettingConfigurationsForUserRequest();
-      message.filter = (object.filter !== undefined && object.filter !== null)
-        ? QueryFilter.fromPartial(object.filter)
-        : undefined;
+      message.filter =
+        object.filter !== undefined && object.filter !== null
+          ? QueryFilter.fromPartial(object.filter)
+          : undefined;
       return message;
     },
   };
@@ -1290,119 +1398,127 @@ function createBaseGetServiceSettingConfigurationsForUserResponse(): GetServiceS
   return { responseDetails: undefined, pagination: undefined, results: [] };
 }
 
-export const GetServiceSettingConfigurationsForUserResponse: MessageFns<
-  GetServiceSettingConfigurationsForUserResponse
-> = {
-  encode(
-    message: GetServiceSettingConfigurationsForUserResponse,
-    writer: BinaryWriter = new BinaryWriter(),
-  ): BinaryWriter {
-    if (message.responseDetails !== undefined) {
-      ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
-    }
-    if (message.pagination !== undefined) {
-      Pagination.encode(message.pagination, writer.uint32(18).fork()).join();
-    }
-    for (const v of message.results) {
-      ServiceSettingConfiguration.encode(v!, writer.uint32(26).fork()).join();
-    }
-    return writer;
-  },
-
-  decode(input: BinaryReader | Uint8Array, length?: number): GetServiceSettingConfigurationsForUserResponse {
-    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
-    const end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseGetServiceSettingConfigurationsForUserResponse();
-    while (reader.pos < end) {
-      const tag = reader.uint32();
-      switch (tag >>> 3) {
-        case 1: {
-          if (tag !== 10) {
-            break;
-          }
-
-          message.responseDetails = ResponseDetails.decode(reader, reader.uint32());
-          continue;
-        }
-        case 2: {
-          if (tag !== 18) {
-            break;
-          }
-
-          message.pagination = Pagination.decode(reader, reader.uint32());
-          continue;
-        }
-        case 3: {
-          if (tag !== 26) {
-            break;
-          }
-
-          message.results.push(ServiceSettingConfiguration.decode(reader, reader.uint32()));
-          continue;
-        }
+export const GetServiceSettingConfigurationsForUserResponse: MessageFns<GetServiceSettingConfigurationsForUserResponse> =
+  {
+    encode(
+      message: GetServiceSettingConfigurationsForUserResponse,
+      writer: BinaryWriter = new BinaryWriter()
+    ): BinaryWriter {
+      if (message.responseDetails !== undefined) {
+        ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
       }
-      if ((tag & 7) === 4 || tag === 0) {
-        break;
+      if (message.pagination !== undefined) {
+        Pagination.encode(message.pagination, writer.uint32(18).fork()).join();
       }
-      reader.skip(tag & 7);
-    }
-    return message;
-  },
+      for (const v of message.results) {
+        ServiceSettingConfiguration.encode(v!, writer.uint32(26).fork()).join();
+      }
+      return writer;
+    },
 
-  fromJSON(object: any): GetServiceSettingConfigurationsForUserResponse {
-    return {
-      responseDetails: isSet(object.responseDetails)
-        ? ResponseDetails.fromJSON(object.responseDetails)
-        : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
-      pagination: isSet(object.pagination) ? Pagination.fromJSON(object.pagination) : undefined,
-      results: globalThis.Array.isArray(object?.results)
-        ? object.results.map((e: any) => ServiceSettingConfiguration.fromJSON(e))
-        : [],
-    };
-  },
+    decode(
+      input: BinaryReader | Uint8Array,
+      length?: number
+    ): GetServiceSettingConfigurationsForUserResponse {
+      const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+      const end = length === undefined ? reader.len : reader.pos + length;
+      const message = createBaseGetServiceSettingConfigurationsForUserResponse();
+      while (reader.pos < end) {
+        const tag = reader.uint32();
+        switch (tag >>> 3) {
+          case 1: {
+            if (tag !== 10) {
+              break;
+            }
 
-  toJSON(message: GetServiceSettingConfigurationsForUserResponse): unknown {
-    const obj: any = {};
-    if (message.responseDetails !== undefined) {
-      obj.responseDetails = ResponseDetails.toJSON(message.responseDetails);
-    }
-    if (message.pagination !== undefined) {
-      obj.pagination = Pagination.toJSON(message.pagination);
-    }
-    if (message.results?.length) {
-      obj.results = message.results.map((e) => ServiceSettingConfiguration.toJSON(e));
-    }
-    return obj;
-  },
+            message.responseDetails = ResponseDetails.decode(reader, reader.uint32());
+            continue;
+          }
+          case 2: {
+            if (tag !== 18) {
+              break;
+            }
 
-  create(
-    base?: DeepPartial<GetServiceSettingConfigurationsForUserResponse>,
-  ): GetServiceSettingConfigurationsForUserResponse {
-    return GetServiceSettingConfigurationsForUserResponse.fromPartial(base ?? {});
-  },
-  fromPartial(
-    object: DeepPartial<GetServiceSettingConfigurationsForUserResponse>,
-  ): GetServiceSettingConfigurationsForUserResponse {
-    const message = createBaseGetServiceSettingConfigurationsForUserResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.pagination = (object.pagination !== undefined && object.pagination !== null)
-      ? Pagination.fromPartial(object.pagination)
-      : undefined;
-    message.results = object.results?.map((e) => ServiceSettingConfiguration.fromPartial(e)) || [];
-    return message;
-  },
-};
+            message.pagination = Pagination.decode(reader, reader.uint32());
+            continue;
+          }
+          case 3: {
+            if (tag !== 26) {
+              break;
+            }
+
+            message.results.push(ServiceSettingConfiguration.decode(reader, reader.uint32()));
+            continue;
+          }
+        }
+        if ((tag & 7) === 4 || tag === 0) {
+          break;
+        }
+        reader.skip(tag & 7);
+      }
+      return message;
+    },
+
+    fromJSON(object: any): GetServiceSettingConfigurationsForUserResponse {
+      return {
+        responseDetails: isSet(object.responseDetails)
+          ? ResponseDetails.fromJSON(object.responseDetails)
+          : isSet(object.response_details)
+            ? ResponseDetails.fromJSON(object.response_details)
+            : undefined,
+        pagination: isSet(object.pagination) ? Pagination.fromJSON(object.pagination) : undefined,
+        results: globalThis.Array.isArray(object?.results)
+          ? object.results.map((e: any) => ServiceSettingConfiguration.fromJSON(e))
+          : [],
+      };
+    },
+
+    toJSON(message: GetServiceSettingConfigurationsForUserResponse): unknown {
+      const obj: any = {};
+      if (message.responseDetails !== undefined) {
+        obj.responseDetails = ResponseDetails.toJSON(message.responseDetails);
+      }
+      if (message.pagination !== undefined) {
+        obj.pagination = Pagination.toJSON(message.pagination);
+      }
+      if (message.results?.length) {
+        obj.results = message.results.map((e) => ServiceSettingConfiguration.toJSON(e));
+      }
+      return obj;
+    },
+
+    create(
+      base?: DeepPartial<GetServiceSettingConfigurationsForUserResponse>
+    ): GetServiceSettingConfigurationsForUserResponse {
+      return GetServiceSettingConfigurationsForUserResponse.fromPartial(base ?? {});
+    },
+    fromPartial(
+      object: DeepPartial<GetServiceSettingConfigurationsForUserResponse>
+    ): GetServiceSettingConfigurationsForUserResponse {
+      const message = createBaseGetServiceSettingConfigurationsForUserResponse();
+      message.responseDetails =
+        object.responseDetails !== undefined && object.responseDetails !== null
+          ? ResponseDetails.fromPartial(object.responseDetails)
+          : undefined;
+      message.pagination =
+        object.pagination !== undefined && object.pagination !== null
+          ? Pagination.fromPartial(object.pagination)
+          : undefined;
+      message.results =
+        object.results?.map((e) => ServiceSettingConfiguration.fromPartial(e)) || [];
+      return message;
+    },
+  };
 
 function createBaseGetServiceSettingsRequest(): GetServiceSettingsRequest {
   return { filter: undefined };
 }
 
 export const GetServiceSettingsRequest: MessageFns<GetServiceSettingsRequest> = {
-  encode(message: GetServiceSettingsRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: GetServiceSettingsRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.filter !== undefined) {
       QueryFilter.encode(message.filter, writer.uint32(10).fork()).join();
     }
@@ -1450,9 +1566,10 @@ export const GetServiceSettingsRequest: MessageFns<GetServiceSettingsRequest> = 
   },
   fromPartial(object: DeepPartial<GetServiceSettingsRequest>): GetServiceSettingsRequest {
     const message = createBaseGetServiceSettingsRequest();
-    message.filter = (object.filter !== undefined && object.filter !== null)
-      ? QueryFilter.fromPartial(object.filter)
-      : undefined;
+    message.filter =
+      object.filter !== undefined && object.filter !== null
+        ? QueryFilter.fromPartial(object.filter)
+        : undefined;
     return message;
   },
 };
@@ -1462,7 +1579,10 @@ function createBaseGetServiceSettingsResponse(): GetServiceSettingsResponse {
 }
 
 export const GetServiceSettingsResponse: MessageFns<GetServiceSettingsResponse> = {
-  encode(message: GetServiceSettingsResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: GetServiceSettingsResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -1520,8 +1640,8 @@ export const GetServiceSettingsResponse: MessageFns<GetServiceSettingsResponse> 
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       pagination: isSet(object.pagination) ? Pagination.fromJSON(object.pagination) : undefined,
       results: globalThis.Array.isArray(object?.results)
         ? object.results.map((e: any) => ServiceSetting.fromJSON(e))
@@ -1548,27 +1668,32 @@ export const GetServiceSettingsResponse: MessageFns<GetServiceSettingsResponse> 
   },
   fromPartial(object: DeepPartial<GetServiceSettingsResponse>): GetServiceSettingsResponse {
     const message = createBaseGetServiceSettingsResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.pagination = (object.pagination !== undefined && object.pagination !== null)
-      ? Pagination.fromPartial(object.pagination)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
+    message.pagination =
+      object.pagination !== undefined && object.pagination !== null
+        ? Pagination.fromPartial(object.pagination)
+        : undefined;
     message.results = object.results?.map((e) => ServiceSetting.fromPartial(e)) || [];
     return message;
   },
 };
 
 function createBaseSearchForServiceSettingsRequest(): SearchForServiceSettingsRequest {
-  return { filter: undefined, query: "" };
+  return { filter: undefined, query: '' };
 }
 
 export const SearchForServiceSettingsRequest: MessageFns<SearchForServiceSettingsRequest> = {
-  encode(message: SearchForServiceSettingsRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: SearchForServiceSettingsRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.filter !== undefined) {
       QueryFilter.encode(message.filter, writer.uint32(10).fork()).join();
     }
-    if (message.query !== "") {
+    if (message.query !== '') {
       writer.uint32(18).string(message.query);
     }
     return writer;
@@ -1609,7 +1734,7 @@ export const SearchForServiceSettingsRequest: MessageFns<SearchForServiceSetting
   fromJSON(object: any): SearchForServiceSettingsRequest {
     return {
       filter: isSet(object.filter) ? QueryFilter.fromJSON(object.filter) : undefined,
-      query: isSet(object.query) ? globalThis.String(object.query) : "",
+      query: isSet(object.query) ? globalThis.String(object.query) : '',
     };
   },
 
@@ -1618,7 +1743,7 @@ export const SearchForServiceSettingsRequest: MessageFns<SearchForServiceSetting
     if (message.filter !== undefined) {
       obj.filter = QueryFilter.toJSON(message.filter);
     }
-    if (message.query !== "") {
+    if (message.query !== '') {
       obj.query = message.query;
     }
     return obj;
@@ -1627,12 +1752,15 @@ export const SearchForServiceSettingsRequest: MessageFns<SearchForServiceSetting
   create(base?: DeepPartial<SearchForServiceSettingsRequest>): SearchForServiceSettingsRequest {
     return SearchForServiceSettingsRequest.fromPartial(base ?? {});
   },
-  fromPartial(object: DeepPartial<SearchForServiceSettingsRequest>): SearchForServiceSettingsRequest {
+  fromPartial(
+    object: DeepPartial<SearchForServiceSettingsRequest>
+  ): SearchForServiceSettingsRequest {
     const message = createBaseSearchForServiceSettingsRequest();
-    message.filter = (object.filter !== undefined && object.filter !== null)
-      ? QueryFilter.fromPartial(object.filter)
-      : undefined;
-    message.query = object.query ?? "";
+    message.filter =
+      object.filter !== undefined && object.filter !== null
+        ? QueryFilter.fromPartial(object.filter)
+        : undefined;
+    message.query = object.query ?? '';
     return message;
   },
 };
@@ -1642,7 +1770,10 @@ function createBaseSearchForServiceSettingsResponse(): SearchForServiceSettingsR
 }
 
 export const SearchForServiceSettingsResponse: MessageFns<SearchForServiceSettingsResponse> = {
-  encode(message: SearchForServiceSettingsResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: SearchForServiceSettingsResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -1700,8 +1831,8 @@ export const SearchForServiceSettingsResponse: MessageFns<SearchForServiceSettin
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       pagination: isSet(object.pagination) ? Pagination.fromJSON(object.pagination) : undefined,
       results: globalThis.Array.isArray(object?.results)
         ? object.results.map((e: any) => ServiceSetting.fromJSON(e))
@@ -1726,291 +1857,330 @@ export const SearchForServiceSettingsResponse: MessageFns<SearchForServiceSettin
   create(base?: DeepPartial<SearchForServiceSettingsResponse>): SearchForServiceSettingsResponse {
     return SearchForServiceSettingsResponse.fromPartial(base ?? {});
   },
-  fromPartial(object: DeepPartial<SearchForServiceSettingsResponse>): SearchForServiceSettingsResponse {
+  fromPartial(
+    object: DeepPartial<SearchForServiceSettingsResponse>
+  ): SearchForServiceSettingsResponse {
     const message = createBaseSearchForServiceSettingsResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.pagination = (object.pagination !== undefined && object.pagination !== null)
-      ? Pagination.fromPartial(object.pagination)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
+    message.pagination =
+      object.pagination !== undefined && object.pagination !== null
+        ? Pagination.fromPartial(object.pagination)
+        : undefined;
     message.results = object.results?.map((e) => ServiceSetting.fromPartial(e)) || [];
     return message;
   },
 };
 
 function createBaseUpdateServiceSettingConfigurationRequest(): UpdateServiceSettingConfigurationRequest {
-  return { serviceSettingConfigurationId: "", input: undefined };
+  return { serviceSettingConfigurationId: '', input: undefined };
 }
 
-export const UpdateServiceSettingConfigurationRequest: MessageFns<UpdateServiceSettingConfigurationRequest> = {
-  encode(message: UpdateServiceSettingConfigurationRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.serviceSettingConfigurationId !== "") {
-      writer.uint32(10).string(message.serviceSettingConfigurationId);
-    }
-    if (message.input !== undefined) {
-      ServiceSettingConfigurationUpdateRequestInput.encode(message.input, writer.uint32(18).fork()).join();
-    }
-    return writer;
-  },
-
-  decode(input: BinaryReader | Uint8Array, length?: number): UpdateServiceSettingConfigurationRequest {
-    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
-    const end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseUpdateServiceSettingConfigurationRequest();
-    while (reader.pos < end) {
-      const tag = reader.uint32();
-      switch (tag >>> 3) {
-        case 1: {
-          if (tag !== 10) {
-            break;
-          }
-
-          message.serviceSettingConfigurationId = reader.string();
-          continue;
-        }
-        case 2: {
-          if (tag !== 18) {
-            break;
-          }
-
-          message.input = ServiceSettingConfigurationUpdateRequestInput.decode(reader, reader.uint32());
-          continue;
-        }
+export const UpdateServiceSettingConfigurationRequest: MessageFns<UpdateServiceSettingConfigurationRequest> =
+  {
+    encode(
+      message: UpdateServiceSettingConfigurationRequest,
+      writer: BinaryWriter = new BinaryWriter()
+    ): BinaryWriter {
+      if (message.serviceSettingConfigurationId !== '') {
+        writer.uint32(10).string(message.serviceSettingConfigurationId);
       }
-      if ((tag & 7) === 4 || tag === 0) {
-        break;
+      if (message.input !== undefined) {
+        ServiceSettingConfigurationUpdateRequestInput.encode(
+          message.input,
+          writer.uint32(18).fork()
+        ).join();
       }
-      reader.skip(tag & 7);
-    }
-    return message;
-  },
+      return writer;
+    },
 
-  fromJSON(object: any): UpdateServiceSettingConfigurationRequest {
-    return {
-      serviceSettingConfigurationId: isSet(object.serviceSettingConfigurationId)
-        ? globalThis.String(object.serviceSettingConfigurationId)
-        : isSet(object.service_setting_configuration_id)
-        ? globalThis.String(object.service_setting_configuration_id)
-        : "",
-      input: isSet(object.input) ? ServiceSettingConfigurationUpdateRequestInput.fromJSON(object.input) : undefined,
-    };
-  },
+    decode(
+      input: BinaryReader | Uint8Array,
+      length?: number
+    ): UpdateServiceSettingConfigurationRequest {
+      const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+      const end = length === undefined ? reader.len : reader.pos + length;
+      const message = createBaseUpdateServiceSettingConfigurationRequest();
+      while (reader.pos < end) {
+        const tag = reader.uint32();
+        switch (tag >>> 3) {
+          case 1: {
+            if (tag !== 10) {
+              break;
+            }
 
-  toJSON(message: UpdateServiceSettingConfigurationRequest): unknown {
-    const obj: any = {};
-    if (message.serviceSettingConfigurationId !== "") {
-      obj.serviceSettingConfigurationId = message.serviceSettingConfigurationId;
-    }
-    if (message.input !== undefined) {
-      obj.input = ServiceSettingConfigurationUpdateRequestInput.toJSON(message.input);
-    }
-    return obj;
-  },
+            message.serviceSettingConfigurationId = reader.string();
+            continue;
+          }
+          case 2: {
+            if (tag !== 18) {
+              break;
+            }
 
-  create(base?: DeepPartial<UpdateServiceSettingConfigurationRequest>): UpdateServiceSettingConfigurationRequest {
-    return UpdateServiceSettingConfigurationRequest.fromPartial(base ?? {});
-  },
-  fromPartial(object: DeepPartial<UpdateServiceSettingConfigurationRequest>): UpdateServiceSettingConfigurationRequest {
-    const message = createBaseUpdateServiceSettingConfigurationRequest();
-    message.serviceSettingConfigurationId = object.serviceSettingConfigurationId ?? "";
-    message.input = (object.input !== undefined && object.input !== null)
-      ? ServiceSettingConfigurationUpdateRequestInput.fromPartial(object.input)
-      : undefined;
-    return message;
-  },
-};
+            message.input = ServiceSettingConfigurationUpdateRequestInput.decode(
+              reader,
+              reader.uint32()
+            );
+            continue;
+          }
+        }
+        if ((tag & 7) === 4 || tag === 0) {
+          break;
+        }
+        reader.skip(tag & 7);
+      }
+      return message;
+    },
+
+    fromJSON(object: any): UpdateServiceSettingConfigurationRequest {
+      return {
+        serviceSettingConfigurationId: isSet(object.serviceSettingConfigurationId)
+          ? globalThis.String(object.serviceSettingConfigurationId)
+          : isSet(object.service_setting_configuration_id)
+            ? globalThis.String(object.service_setting_configuration_id)
+            : '',
+        input: isSet(object.input)
+          ? ServiceSettingConfigurationUpdateRequestInput.fromJSON(object.input)
+          : undefined,
+      };
+    },
+
+    toJSON(message: UpdateServiceSettingConfigurationRequest): unknown {
+      const obj: any = {};
+      if (message.serviceSettingConfigurationId !== '') {
+        obj.serviceSettingConfigurationId = message.serviceSettingConfigurationId;
+      }
+      if (message.input !== undefined) {
+        obj.input = ServiceSettingConfigurationUpdateRequestInput.toJSON(message.input);
+      }
+      return obj;
+    },
+
+    create(
+      base?: DeepPartial<UpdateServiceSettingConfigurationRequest>
+    ): UpdateServiceSettingConfigurationRequest {
+      return UpdateServiceSettingConfigurationRequest.fromPartial(base ?? {});
+    },
+    fromPartial(
+      object: DeepPartial<UpdateServiceSettingConfigurationRequest>
+    ): UpdateServiceSettingConfigurationRequest {
+      const message = createBaseUpdateServiceSettingConfigurationRequest();
+      message.serviceSettingConfigurationId = object.serviceSettingConfigurationId ?? '';
+      message.input =
+        object.input !== undefined && object.input !== null
+          ? ServiceSettingConfigurationUpdateRequestInput.fromPartial(object.input)
+          : undefined;
+      return message;
+    },
+  };
 
 function createBaseUpdateServiceSettingConfigurationResponse(): UpdateServiceSettingConfigurationResponse {
   return { responseDetails: undefined, updated: undefined };
 }
 
-export const UpdateServiceSettingConfigurationResponse: MessageFns<UpdateServiceSettingConfigurationResponse> = {
-  encode(message: UpdateServiceSettingConfigurationResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.responseDetails !== undefined) {
-      ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
-    }
-    if (message.updated !== undefined) {
-      ServiceSettingConfiguration.encode(message.updated, writer.uint32(18).fork()).join();
-    }
-    return writer;
-  },
-
-  decode(input: BinaryReader | Uint8Array, length?: number): UpdateServiceSettingConfigurationResponse {
-    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
-    const end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseUpdateServiceSettingConfigurationResponse();
-    while (reader.pos < end) {
-      const tag = reader.uint32();
-      switch (tag >>> 3) {
-        case 1: {
-          if (tag !== 10) {
-            break;
-          }
-
-          message.responseDetails = ResponseDetails.decode(reader, reader.uint32());
-          continue;
-        }
-        case 2: {
-          if (tag !== 18) {
-            break;
-          }
-
-          message.updated = ServiceSettingConfiguration.decode(reader, reader.uint32());
-          continue;
-        }
+export const UpdateServiceSettingConfigurationResponse: MessageFns<UpdateServiceSettingConfigurationResponse> =
+  {
+    encode(
+      message: UpdateServiceSettingConfigurationResponse,
+      writer: BinaryWriter = new BinaryWriter()
+    ): BinaryWriter {
+      if (message.responseDetails !== undefined) {
+        ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
       }
-      if ((tag & 7) === 4 || tag === 0) {
-        break;
+      if (message.updated !== undefined) {
+        ServiceSettingConfiguration.encode(message.updated, writer.uint32(18).fork()).join();
       }
-      reader.skip(tag & 7);
-    }
-    return message;
-  },
+      return writer;
+    },
 
-  fromJSON(object: any): UpdateServiceSettingConfigurationResponse {
-    return {
-      responseDetails: isSet(object.responseDetails)
-        ? ResponseDetails.fromJSON(object.responseDetails)
-        : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
-      updated: isSet(object.updated) ? ServiceSettingConfiguration.fromJSON(object.updated) : undefined,
-    };
-  },
+    decode(
+      input: BinaryReader | Uint8Array,
+      length?: number
+    ): UpdateServiceSettingConfigurationResponse {
+      const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+      const end = length === undefined ? reader.len : reader.pos + length;
+      const message = createBaseUpdateServiceSettingConfigurationResponse();
+      while (reader.pos < end) {
+        const tag = reader.uint32();
+        switch (tag >>> 3) {
+          case 1: {
+            if (tag !== 10) {
+              break;
+            }
 
-  toJSON(message: UpdateServiceSettingConfigurationResponse): unknown {
-    const obj: any = {};
-    if (message.responseDetails !== undefined) {
-      obj.responseDetails = ResponseDetails.toJSON(message.responseDetails);
-    }
-    if (message.updated !== undefined) {
-      obj.updated = ServiceSettingConfiguration.toJSON(message.updated);
-    }
-    return obj;
-  },
+            message.responseDetails = ResponseDetails.decode(reader, reader.uint32());
+            continue;
+          }
+          case 2: {
+            if (tag !== 18) {
+              break;
+            }
 
-  create(base?: DeepPartial<UpdateServiceSettingConfigurationResponse>): UpdateServiceSettingConfigurationResponse {
-    return UpdateServiceSettingConfigurationResponse.fromPartial(base ?? {});
-  },
-  fromPartial(
-    object: DeepPartial<UpdateServiceSettingConfigurationResponse>,
-  ): UpdateServiceSettingConfigurationResponse {
-    const message = createBaseUpdateServiceSettingConfigurationResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.updated = (object.updated !== undefined && object.updated !== null)
-      ? ServiceSettingConfiguration.fromPartial(object.updated)
-      : undefined;
-    return message;
-  },
-};
+            message.updated = ServiceSettingConfiguration.decode(reader, reader.uint32());
+            continue;
+          }
+        }
+        if ((tag & 7) === 4 || tag === 0) {
+          break;
+        }
+        reader.skip(tag & 7);
+      }
+      return message;
+    },
+
+    fromJSON(object: any): UpdateServiceSettingConfigurationResponse {
+      return {
+        responseDetails: isSet(object.responseDetails)
+          ? ResponseDetails.fromJSON(object.responseDetails)
+          : isSet(object.response_details)
+            ? ResponseDetails.fromJSON(object.response_details)
+            : undefined,
+        updated: isSet(object.updated)
+          ? ServiceSettingConfiguration.fromJSON(object.updated)
+          : undefined,
+      };
+    },
+
+    toJSON(message: UpdateServiceSettingConfigurationResponse): unknown {
+      const obj: any = {};
+      if (message.responseDetails !== undefined) {
+        obj.responseDetails = ResponseDetails.toJSON(message.responseDetails);
+      }
+      if (message.updated !== undefined) {
+        obj.updated = ServiceSettingConfiguration.toJSON(message.updated);
+      }
+      return obj;
+    },
+
+    create(
+      base?: DeepPartial<UpdateServiceSettingConfigurationResponse>
+    ): UpdateServiceSettingConfigurationResponse {
+      return UpdateServiceSettingConfigurationResponse.fromPartial(base ?? {});
+    },
+    fromPartial(
+      object: DeepPartial<UpdateServiceSettingConfigurationResponse>
+    ): UpdateServiceSettingConfigurationResponse {
+      const message = createBaseUpdateServiceSettingConfigurationResponse();
+      message.responseDetails =
+        object.responseDetails !== undefined && object.responseDetails !== null
+          ? ResponseDetails.fromPartial(object.responseDetails)
+          : undefined;
+      message.updated =
+        object.updated !== undefined && object.updated !== null
+          ? ServiceSettingConfiguration.fromPartial(object.updated)
+          : undefined;
+      return message;
+    },
+  };
 
 function createBaseServiceSettingConfigurationCreationRequestInput(): ServiceSettingConfigurationCreationRequestInput {
-  return { value: "", notes: "", serviceSettingId: "" };
+  return { value: '', notes: '', serviceSettingId: '' };
 }
 
-export const ServiceSettingConfigurationCreationRequestInput: MessageFns<
-  ServiceSettingConfigurationCreationRequestInput
-> = {
-  encode(
-    message: ServiceSettingConfigurationCreationRequestInput,
-    writer: BinaryWriter = new BinaryWriter(),
-  ): BinaryWriter {
-    if (message.value !== "") {
-      writer.uint32(10).string(message.value);
-    }
-    if (message.notes !== "") {
-      writer.uint32(18).string(message.notes);
-    }
-    if (message.serviceSettingId !== "") {
-      writer.uint32(26).string(message.serviceSettingId);
-    }
-    return writer;
-  },
-
-  decode(input: BinaryReader | Uint8Array, length?: number): ServiceSettingConfigurationCreationRequestInput {
-    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
-    const end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseServiceSettingConfigurationCreationRequestInput();
-    while (reader.pos < end) {
-      const tag = reader.uint32();
-      switch (tag >>> 3) {
-        case 1: {
-          if (tag !== 10) {
-            break;
-          }
-
-          message.value = reader.string();
-          continue;
-        }
-        case 2: {
-          if (tag !== 18) {
-            break;
-          }
-
-          message.notes = reader.string();
-          continue;
-        }
-        case 3: {
-          if (tag !== 26) {
-            break;
-          }
-
-          message.serviceSettingId = reader.string();
-          continue;
-        }
+export const ServiceSettingConfigurationCreationRequestInput: MessageFns<ServiceSettingConfigurationCreationRequestInput> =
+  {
+    encode(
+      message: ServiceSettingConfigurationCreationRequestInput,
+      writer: BinaryWriter = new BinaryWriter()
+    ): BinaryWriter {
+      if (message.value !== '') {
+        writer.uint32(10).string(message.value);
       }
-      if ((tag & 7) === 4 || tag === 0) {
-        break;
+      if (message.notes !== '') {
+        writer.uint32(18).string(message.notes);
       }
-      reader.skip(tag & 7);
-    }
-    return message;
-  },
+      if (message.serviceSettingId !== '') {
+        writer.uint32(26).string(message.serviceSettingId);
+      }
+      return writer;
+    },
 
-  fromJSON(object: any): ServiceSettingConfigurationCreationRequestInput {
-    return {
-      value: isSet(object.value) ? globalThis.String(object.value) : "",
-      notes: isSet(object.notes) ? globalThis.String(object.notes) : "",
-      serviceSettingId: isSet(object.serviceSettingId)
-        ? globalThis.String(object.serviceSettingId)
-        : isSet(object.service_setting_id)
-        ? globalThis.String(object.service_setting_id)
-        : "",
-    };
-  },
+    decode(
+      input: BinaryReader | Uint8Array,
+      length?: number
+    ): ServiceSettingConfigurationCreationRequestInput {
+      const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+      const end = length === undefined ? reader.len : reader.pos + length;
+      const message = createBaseServiceSettingConfigurationCreationRequestInput();
+      while (reader.pos < end) {
+        const tag = reader.uint32();
+        switch (tag >>> 3) {
+          case 1: {
+            if (tag !== 10) {
+              break;
+            }
 
-  toJSON(message: ServiceSettingConfigurationCreationRequestInput): unknown {
-    const obj: any = {};
-    if (message.value !== "") {
-      obj.value = message.value;
-    }
-    if (message.notes !== "") {
-      obj.notes = message.notes;
-    }
-    if (message.serviceSettingId !== "") {
-      obj.serviceSettingId = message.serviceSettingId;
-    }
-    return obj;
-  },
+            message.value = reader.string();
+            continue;
+          }
+          case 2: {
+            if (tag !== 18) {
+              break;
+            }
 
-  create(
-    base?: DeepPartial<ServiceSettingConfigurationCreationRequestInput>,
-  ): ServiceSettingConfigurationCreationRequestInput {
-    return ServiceSettingConfigurationCreationRequestInput.fromPartial(base ?? {});
-  },
-  fromPartial(
-    object: DeepPartial<ServiceSettingConfigurationCreationRequestInput>,
-  ): ServiceSettingConfigurationCreationRequestInput {
-    const message = createBaseServiceSettingConfigurationCreationRequestInput();
-    message.value = object.value ?? "";
-    message.notes = object.notes ?? "";
-    message.serviceSettingId = object.serviceSettingId ?? "";
-    return message;
-  },
-};
+            message.notes = reader.string();
+            continue;
+          }
+          case 3: {
+            if (tag !== 26) {
+              break;
+            }
+
+            message.serviceSettingId = reader.string();
+            continue;
+          }
+        }
+        if ((tag & 7) === 4 || tag === 0) {
+          break;
+        }
+        reader.skip(tag & 7);
+      }
+      return message;
+    },
+
+    fromJSON(object: any): ServiceSettingConfigurationCreationRequestInput {
+      return {
+        value: isSet(object.value) ? globalThis.String(object.value) : '',
+        notes: isSet(object.notes) ? globalThis.String(object.notes) : '',
+        serviceSettingId: isSet(object.serviceSettingId)
+          ? globalThis.String(object.serviceSettingId)
+          : isSet(object.service_setting_id)
+            ? globalThis.String(object.service_setting_id)
+            : '',
+      };
+    },
+
+    toJSON(message: ServiceSettingConfigurationCreationRequestInput): unknown {
+      const obj: any = {};
+      if (message.value !== '') {
+        obj.value = message.value;
+      }
+      if (message.notes !== '') {
+        obj.notes = message.notes;
+      }
+      if (message.serviceSettingId !== '') {
+        obj.serviceSettingId = message.serviceSettingId;
+      }
+      return obj;
+    },
+
+    create(
+      base?: DeepPartial<ServiceSettingConfigurationCreationRequestInput>
+    ): ServiceSettingConfigurationCreationRequestInput {
+      return ServiceSettingConfigurationCreationRequestInput.fromPartial(base ?? {});
+    },
+    fromPartial(
+      object: DeepPartial<ServiceSettingConfigurationCreationRequestInput>
+    ): ServiceSettingConfigurationCreationRequestInput {
+      const message = createBaseServiceSettingConfigurationCreationRequestInput();
+      message.value = object.value ?? '';
+      message.notes = object.notes ?? '';
+      message.serviceSettingId = object.serviceSettingId ?? '';
+      return message;
+    },
+  };
 
 function createBaseServiceSettingConfigurationUpdateRequestInput(): ServiceSettingConfigurationUpdateRequestInput {
   return { value: undefined, notes: undefined, serviceSettingId: undefined };
@@ -2020,7 +2190,7 @@ export const ServiceSettingConfigurationUpdateRequestInput: MessageFns<ServiceSe
   {
     encode(
       message: ServiceSettingConfigurationUpdateRequestInput,
-      writer: BinaryWriter = new BinaryWriter(),
+      writer: BinaryWriter = new BinaryWriter()
     ): BinaryWriter {
       if (message.value !== undefined) {
         writer.uint32(10).string(message.value);
@@ -2034,7 +2204,10 @@ export const ServiceSettingConfigurationUpdateRequestInput: MessageFns<ServiceSe
       return writer;
     },
 
-    decode(input: BinaryReader | Uint8Array, length?: number): ServiceSettingConfigurationUpdateRequestInput {
+    decode(
+      input: BinaryReader | Uint8Array,
+      length?: number
+    ): ServiceSettingConfigurationUpdateRequestInput {
       const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
       const end = length === undefined ? reader.len : reader.pos + length;
       const message = createBaseServiceSettingConfigurationUpdateRequestInput();
@@ -2081,8 +2254,8 @@ export const ServiceSettingConfigurationUpdateRequestInput: MessageFns<ServiceSe
         serviceSettingId: isSet(object.serviceSettingId)
           ? globalThis.String(object.serviceSettingId)
           : isSet(object.service_setting_id)
-          ? globalThis.String(object.service_setting_id)
-          : undefined,
+            ? globalThis.String(object.service_setting_id)
+            : undefined,
       };
     },
 
@@ -2101,12 +2274,12 @@ export const ServiceSettingConfigurationUpdateRequestInput: MessageFns<ServiceSe
     },
 
     create(
-      base?: DeepPartial<ServiceSettingConfigurationUpdateRequestInput>,
+      base?: DeepPartial<ServiceSettingConfigurationUpdateRequestInput>
     ): ServiceSettingConfigurationUpdateRequestInput {
       return ServiceSettingConfigurationUpdateRequestInput.fromPartial(base ?? {});
     },
     fromPartial(
-      object: DeepPartial<ServiceSettingConfigurationUpdateRequestInput>,
+      object: DeepPartial<ServiceSettingConfigurationUpdateRequestInput>
     ): ServiceSettingConfigurationUpdateRequestInput {
       const message = createBaseServiceSettingConfigurationUpdateRequestInput();
       message.value = object.value ?? undefined;
@@ -2117,21 +2290,31 @@ export const ServiceSettingConfigurationUpdateRequestInput: MessageFns<ServiceSe
   };
 
 function createBaseServiceSettingCreationRequestInput(): ServiceSettingCreationRequestInput {
-  return { defaultValue: undefined, name: "", type: "", description: "", enumeration: [], adminsOnly: false };
+  return {
+    defaultValue: undefined,
+    name: '',
+    type: '',
+    description: '',
+    enumeration: [],
+    adminsOnly: false,
+  };
 }
 
 export const ServiceSettingCreationRequestInput: MessageFns<ServiceSettingCreationRequestInput> = {
-  encode(message: ServiceSettingCreationRequestInput, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: ServiceSettingCreationRequestInput,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.defaultValue !== undefined) {
       writer.uint32(10).string(message.defaultValue);
     }
-    if (message.name !== "") {
+    if (message.name !== '') {
       writer.uint32(18).string(message.name);
     }
-    if (message.type !== "") {
+    if (message.type !== '') {
       writer.uint32(26).string(message.type);
     }
-    if (message.description !== "") {
+    if (message.description !== '') {
       writer.uint32(34).string(message.description);
     }
     for (const v of message.enumeration) {
@@ -2212,19 +2395,19 @@ export const ServiceSettingCreationRequestInput: MessageFns<ServiceSettingCreati
       defaultValue: isSet(object.defaultValue)
         ? globalThis.String(object.defaultValue)
         : isSet(object.default_value)
-        ? globalThis.String(object.default_value)
-        : undefined,
-      name: isSet(object.name) ? globalThis.String(object.name) : "",
-      type: isSet(object.type) ? globalThis.String(object.type) : "",
-      description: isSet(object.description) ? globalThis.String(object.description) : "",
+          ? globalThis.String(object.default_value)
+          : undefined,
+      name: isSet(object.name) ? globalThis.String(object.name) : '',
+      type: isSet(object.type) ? globalThis.String(object.type) : '',
+      description: isSet(object.description) ? globalThis.String(object.description) : '',
       enumeration: globalThis.Array.isArray(object?.enumeration)
         ? object.enumeration.map((e: any) => globalThis.String(e))
         : [],
       adminsOnly: isSet(object.adminsOnly)
         ? globalThis.Boolean(object.adminsOnly)
         : isSet(object.admins_only)
-        ? globalThis.Boolean(object.admins_only)
-        : false,
+          ? globalThis.Boolean(object.admins_only)
+          : false,
     };
   },
 
@@ -2233,13 +2416,13 @@ export const ServiceSettingCreationRequestInput: MessageFns<ServiceSettingCreati
     if (message.defaultValue !== undefined) {
       obj.defaultValue = message.defaultValue;
     }
-    if (message.name !== "") {
+    if (message.name !== '') {
       obj.name = message.name;
     }
-    if (message.type !== "") {
+    if (message.type !== '') {
       obj.type = message.type;
     }
-    if (message.description !== "") {
+    if (message.description !== '') {
       obj.description = message.description;
     }
     if (message.enumeration?.length) {
@@ -2251,15 +2434,19 @@ export const ServiceSettingCreationRequestInput: MessageFns<ServiceSettingCreati
     return obj;
   },
 
-  create(base?: DeepPartial<ServiceSettingCreationRequestInput>): ServiceSettingCreationRequestInput {
+  create(
+    base?: DeepPartial<ServiceSettingCreationRequestInput>
+  ): ServiceSettingCreationRequestInput {
     return ServiceSettingCreationRequestInput.fromPartial(base ?? {});
   },
-  fromPartial(object: DeepPartial<ServiceSettingCreationRequestInput>): ServiceSettingCreationRequestInput {
+  fromPartial(
+    object: DeepPartial<ServiceSettingCreationRequestInput>
+  ): ServiceSettingCreationRequestInput {
     const message = createBaseServiceSettingCreationRequestInput();
     message.defaultValue = object.defaultValue ?? undefined;
-    message.name = object.name ?? "";
-    message.type = object.type ?? "";
-    message.description = object.description ?? "";
+    message.name = object.name ?? '';
+    message.type = object.type ?? '';
+    message.description = object.description ?? '';
     message.enumeration = object.enumeration?.map((e) => e) || [];
     message.adminsOnly = object.adminsOnly ?? false;
     return message;
@@ -2268,11 +2455,15 @@ export const ServiceSettingCreationRequestInput: MessageFns<ServiceSettingCreati
 
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 
-export type DeepPartial<T> = T extends Builtin ? T
-  : T extends globalThis.Array<infer U> ? globalThis.Array<DeepPartial<U>>
-  : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>>
-  : T extends {} ? { [K in keyof T]?: DeepPartial<T[K]> }
-  : Partial<T>;
+export type DeepPartial<T> = T extends Builtin
+  ? T
+  : T extends globalThis.Array<infer U>
+    ? globalThis.Array<DeepPartial<U>>
+    : T extends ReadonlyArray<infer U>
+      ? ReadonlyArray<DeepPartial<U>>
+      : T extends {}
+        ? { [K in keyof T]?: DeepPartial<T[K]> }
+        : Partial<T>;
 
 function isSet(value: any): boolean {
   return value !== null && value !== undefined;

@@ -5,12 +5,12 @@
 // source: issue_reports/issue_reports_service_types.proto
 
 /* eslint-disable */
-import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
-import { ResponseDetails } from "../common";
-import { Pagination, QueryFilter } from "../filtering";
-import { IssueReport } from "./issue_reports_messages";
+import { BinaryReader, BinaryWriter } from '@bufbuild/protobuf/wire';
+import { ResponseDetails } from '../common';
+import { Pagination, QueryFilter } from '../filtering';
+import { IssueReport } from './issue_reports_messages';
 
-export const protobufPackage = "issue_reports";
+export const protobufPackage = 'issue_reports';
 
 export interface IssueReportCreationRequestInput {
   issueType: string;
@@ -107,21 +107,24 @@ export interface ArchiveIssueReportResponse {
 }
 
 function createBaseIssueReportCreationRequestInput(): IssueReportCreationRequestInput {
-  return { issueType: "", details: "", relevantTable: "", relevantRecordId: "" };
+  return { issueType: '', details: '', relevantTable: '', relevantRecordId: '' };
 }
 
 export const IssueReportCreationRequestInput: MessageFns<IssueReportCreationRequestInput> = {
-  encode(message: IssueReportCreationRequestInput, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.issueType !== "") {
+  encode(
+    message: IssueReportCreationRequestInput,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.issueType !== '') {
       writer.uint32(10).string(message.issueType);
     }
-    if (message.details !== "") {
+    if (message.details !== '') {
       writer.uint32(18).string(message.details);
     }
-    if (message.relevantTable !== "") {
+    if (message.relevantTable !== '') {
       writer.uint32(26).string(message.relevantTable);
     }
-    if (message.relevantRecordId !== "") {
+    if (message.relevantRecordId !== '') {
       writer.uint32(34).string(message.relevantRecordId);
     }
     return writer;
@@ -180,34 +183,34 @@ export const IssueReportCreationRequestInput: MessageFns<IssueReportCreationRequ
       issueType: isSet(object.issueType)
         ? globalThis.String(object.issueType)
         : isSet(object.issue_type)
-        ? globalThis.String(object.issue_type)
-        : "",
-      details: isSet(object.details) ? globalThis.String(object.details) : "",
+          ? globalThis.String(object.issue_type)
+          : '',
+      details: isSet(object.details) ? globalThis.String(object.details) : '',
       relevantTable: isSet(object.relevantTable)
         ? globalThis.String(object.relevantTable)
         : isSet(object.relevant_table)
-        ? globalThis.String(object.relevant_table)
-        : "",
+          ? globalThis.String(object.relevant_table)
+          : '',
       relevantRecordId: isSet(object.relevantRecordId)
         ? globalThis.String(object.relevantRecordId)
         : isSet(object.relevant_record_id)
-        ? globalThis.String(object.relevant_record_id)
-        : "",
+          ? globalThis.String(object.relevant_record_id)
+          : '',
     };
   },
 
   toJSON(message: IssueReportCreationRequestInput): unknown {
     const obj: any = {};
-    if (message.issueType !== "") {
+    if (message.issueType !== '') {
       obj.issueType = message.issueType;
     }
-    if (message.details !== "") {
+    if (message.details !== '') {
       obj.details = message.details;
     }
-    if (message.relevantTable !== "") {
+    if (message.relevantTable !== '') {
       obj.relevantTable = message.relevantTable;
     }
-    if (message.relevantRecordId !== "") {
+    if (message.relevantRecordId !== '') {
       obj.relevantRecordId = message.relevantRecordId;
     }
     return obj;
@@ -216,22 +219,32 @@ export const IssueReportCreationRequestInput: MessageFns<IssueReportCreationRequ
   create(base?: DeepPartial<IssueReportCreationRequestInput>): IssueReportCreationRequestInput {
     return IssueReportCreationRequestInput.fromPartial(base ?? {});
   },
-  fromPartial(object: DeepPartial<IssueReportCreationRequestInput>): IssueReportCreationRequestInput {
+  fromPartial(
+    object: DeepPartial<IssueReportCreationRequestInput>
+  ): IssueReportCreationRequestInput {
     const message = createBaseIssueReportCreationRequestInput();
-    message.issueType = object.issueType ?? "";
-    message.details = object.details ?? "";
-    message.relevantTable = object.relevantTable ?? "";
-    message.relevantRecordId = object.relevantRecordId ?? "";
+    message.issueType = object.issueType ?? '';
+    message.details = object.details ?? '';
+    message.relevantTable = object.relevantTable ?? '';
+    message.relevantRecordId = object.relevantRecordId ?? '';
     return message;
   },
 };
 
 function createBaseIssueReportUpdateRequestInput(): IssueReportUpdateRequestInput {
-  return { issueType: undefined, details: undefined, relevantTable: undefined, relevantRecordId: undefined };
+  return {
+    issueType: undefined,
+    details: undefined,
+    relevantTable: undefined,
+    relevantRecordId: undefined,
+  };
 }
 
 export const IssueReportUpdateRequestInput: MessageFns<IssueReportUpdateRequestInput> = {
-  encode(message: IssueReportUpdateRequestInput, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: IssueReportUpdateRequestInput,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.issueType !== undefined) {
       writer.uint32(10).string(message.issueType);
     }
@@ -300,19 +313,19 @@ export const IssueReportUpdateRequestInput: MessageFns<IssueReportUpdateRequestI
       issueType: isSet(object.issueType)
         ? globalThis.String(object.issueType)
         : isSet(object.issue_type)
-        ? globalThis.String(object.issue_type)
-        : undefined,
+          ? globalThis.String(object.issue_type)
+          : undefined,
       details: isSet(object.details) ? globalThis.String(object.details) : undefined,
       relevantTable: isSet(object.relevantTable)
         ? globalThis.String(object.relevantTable)
         : isSet(object.relevant_table)
-        ? globalThis.String(object.relevant_table)
-        : undefined,
+          ? globalThis.String(object.relevant_table)
+          : undefined,
       relevantRecordId: isSet(object.relevantRecordId)
         ? globalThis.String(object.relevantRecordId)
         : isSet(object.relevant_record_id)
-        ? globalThis.String(object.relevant_record_id)
-        : undefined,
+          ? globalThis.String(object.relevant_record_id)
+          : undefined,
     };
   },
 
@@ -351,7 +364,10 @@ function createBaseCreateIssueReportRequest(): CreateIssueReportRequest {
 }
 
 export const CreateIssueReportRequest: MessageFns<CreateIssueReportRequest> = {
-  encode(message: CreateIssueReportRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: CreateIssueReportRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.input !== undefined) {
       IssueReportCreationRequestInput.encode(message.input, writer.uint32(10).fork()).join();
     }
@@ -383,7 +399,11 @@ export const CreateIssueReportRequest: MessageFns<CreateIssueReportRequest> = {
   },
 
   fromJSON(object: any): CreateIssueReportRequest {
-    return { input: isSet(object.input) ? IssueReportCreationRequestInput.fromJSON(object.input) : undefined };
+    return {
+      input: isSet(object.input)
+        ? IssueReportCreationRequestInput.fromJSON(object.input)
+        : undefined,
+    };
   },
 
   toJSON(message: CreateIssueReportRequest): unknown {
@@ -399,9 +419,10 @@ export const CreateIssueReportRequest: MessageFns<CreateIssueReportRequest> = {
   },
   fromPartial(object: DeepPartial<CreateIssueReportRequest>): CreateIssueReportRequest {
     const message = createBaseCreateIssueReportRequest();
-    message.input = (object.input !== undefined && object.input !== null)
-      ? IssueReportCreationRequestInput.fromPartial(object.input)
-      : undefined;
+    message.input =
+      object.input !== undefined && object.input !== null
+        ? IssueReportCreationRequestInput.fromPartial(object.input)
+        : undefined;
     return message;
   },
 };
@@ -411,7 +432,10 @@ function createBaseCreateIssueReportResponse(): CreateIssueReportResponse {
 }
 
 export const CreateIssueReportResponse: MessageFns<CreateIssueReportResponse> = {
-  encode(message: CreateIssueReportResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: CreateIssueReportResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -458,8 +482,8 @@ export const CreateIssueReportResponse: MessageFns<CreateIssueReportResponse> = 
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       created: isSet(object.created) ? IssueReport.fromJSON(object.created) : undefined,
     };
   },
@@ -480,23 +504,25 @@ export const CreateIssueReportResponse: MessageFns<CreateIssueReportResponse> = 
   },
   fromPartial(object: DeepPartial<CreateIssueReportResponse>): CreateIssueReportResponse {
     const message = createBaseCreateIssueReportResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.created = (object.created !== undefined && object.created !== null)
-      ? IssueReport.fromPartial(object.created)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
+    message.created =
+      object.created !== undefined && object.created !== null
+        ? IssueReport.fromPartial(object.created)
+        : undefined;
     return message;
   },
 };
 
 function createBaseGetIssueReportRequest(): GetIssueReportRequest {
-  return { issueReportId: "" };
+  return { issueReportId: '' };
 }
 
 export const GetIssueReportRequest: MessageFns<GetIssueReportRequest> = {
   encode(message: GetIssueReportRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.issueReportId !== "") {
+    if (message.issueReportId !== '') {
       writer.uint32(10).string(message.issueReportId);
     }
     return writer;
@@ -531,14 +557,14 @@ export const GetIssueReportRequest: MessageFns<GetIssueReportRequest> = {
       issueReportId: isSet(object.issueReportId)
         ? globalThis.String(object.issueReportId)
         : isSet(object.issue_report_id)
-        ? globalThis.String(object.issue_report_id)
-        : "",
+          ? globalThis.String(object.issue_report_id)
+          : '',
     };
   },
 
   toJSON(message: GetIssueReportRequest): unknown {
     const obj: any = {};
-    if (message.issueReportId !== "") {
+    if (message.issueReportId !== '') {
       obj.issueReportId = message.issueReportId;
     }
     return obj;
@@ -549,7 +575,7 @@ export const GetIssueReportRequest: MessageFns<GetIssueReportRequest> = {
   },
   fromPartial(object: DeepPartial<GetIssueReportRequest>): GetIssueReportRequest {
     const message = createBaseGetIssueReportRequest();
-    message.issueReportId = object.issueReportId ?? "";
+    message.issueReportId = object.issueReportId ?? '';
     return message;
   },
 };
@@ -606,8 +632,8 @@ export const GetIssueReportResponse: MessageFns<GetIssueReportResponse> = {
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       result: isSet(object.result) ? IssueReport.fromJSON(object.result) : undefined,
     };
   },
@@ -628,12 +654,14 @@ export const GetIssueReportResponse: MessageFns<GetIssueReportResponse> = {
   },
   fromPartial(object: DeepPartial<GetIssueReportResponse>): GetIssueReportResponse {
     const message = createBaseGetIssueReportResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.result = (object.result !== undefined && object.result !== null)
-      ? IssueReport.fromPartial(object.result)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
+    message.result =
+      object.result !== undefined && object.result !== null
+        ? IssueReport.fromPartial(object.result)
+        : undefined;
     return message;
   },
 };
@@ -691,9 +719,10 @@ export const GetIssueReportsRequest: MessageFns<GetIssueReportsRequest> = {
   },
   fromPartial(object: DeepPartial<GetIssueReportsRequest>): GetIssueReportsRequest {
     const message = createBaseGetIssueReportsRequest();
-    message.filter = (object.filter !== undefined && object.filter !== null)
-      ? QueryFilter.fromPartial(object.filter)
-      : undefined;
+    message.filter =
+      object.filter !== undefined && object.filter !== null
+        ? QueryFilter.fromPartial(object.filter)
+        : undefined;
     return message;
   },
 };
@@ -703,7 +732,10 @@ function createBaseGetIssueReportsResponse(): GetIssueReportsResponse {
 }
 
 export const GetIssueReportsResponse: MessageFns<GetIssueReportsResponse> = {
-  encode(message: GetIssueReportsResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: GetIssueReportsResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -761,10 +793,12 @@ export const GetIssueReportsResponse: MessageFns<GetIssueReportsResponse> = {
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       pagination: isSet(object.pagination) ? Pagination.fromJSON(object.pagination) : undefined,
-      results: globalThis.Array.isArray(object?.results) ? object.results.map((e: any) => IssueReport.fromJSON(e)) : [],
+      results: globalThis.Array.isArray(object?.results)
+        ? object.results.map((e: any) => IssueReport.fromJSON(e))
+        : [],
     };
   },
 
@@ -787,24 +821,29 @@ export const GetIssueReportsResponse: MessageFns<GetIssueReportsResponse> = {
   },
   fromPartial(object: DeepPartial<GetIssueReportsResponse>): GetIssueReportsResponse {
     const message = createBaseGetIssueReportsResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.pagination = (object.pagination !== undefined && object.pagination !== null)
-      ? Pagination.fromPartial(object.pagination)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
+    message.pagination =
+      object.pagination !== undefined && object.pagination !== null
+        ? Pagination.fromPartial(object.pagination)
+        : undefined;
     message.results = object.results?.map((e) => IssueReport.fromPartial(e)) || [];
     return message;
   },
 };
 
 function createBaseGetIssueReportsForAccountRequest(): GetIssueReportsForAccountRequest {
-  return { accountId: "", filter: undefined };
+  return { accountId: '', filter: undefined };
 }
 
 export const GetIssueReportsForAccountRequest: MessageFns<GetIssueReportsForAccountRequest> = {
-  encode(message: GetIssueReportsForAccountRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.accountId !== "") {
+  encode(
+    message: GetIssueReportsForAccountRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.accountId !== '') {
       writer.uint32(10).string(message.accountId);
     }
     if (message.filter !== undefined) {
@@ -850,15 +889,15 @@ export const GetIssueReportsForAccountRequest: MessageFns<GetIssueReportsForAcco
       accountId: isSet(object.accountId)
         ? globalThis.String(object.accountId)
         : isSet(object.account_id)
-        ? globalThis.String(object.account_id)
-        : "",
+          ? globalThis.String(object.account_id)
+          : '',
       filter: isSet(object.filter) ? QueryFilter.fromJSON(object.filter) : undefined,
     };
   },
 
   toJSON(message: GetIssueReportsForAccountRequest): unknown {
     const obj: any = {};
-    if (message.accountId !== "") {
+    if (message.accountId !== '') {
       obj.accountId = message.accountId;
     }
     if (message.filter !== undefined) {
@@ -870,12 +909,15 @@ export const GetIssueReportsForAccountRequest: MessageFns<GetIssueReportsForAcco
   create(base?: DeepPartial<GetIssueReportsForAccountRequest>): GetIssueReportsForAccountRequest {
     return GetIssueReportsForAccountRequest.fromPartial(base ?? {});
   },
-  fromPartial(object: DeepPartial<GetIssueReportsForAccountRequest>): GetIssueReportsForAccountRequest {
+  fromPartial(
+    object: DeepPartial<GetIssueReportsForAccountRequest>
+  ): GetIssueReportsForAccountRequest {
     const message = createBaseGetIssueReportsForAccountRequest();
-    message.accountId = object.accountId ?? "";
-    message.filter = (object.filter !== undefined && object.filter !== null)
-      ? QueryFilter.fromPartial(object.filter)
-      : undefined;
+    message.accountId = object.accountId ?? '';
+    message.filter =
+      object.filter !== undefined && object.filter !== null
+        ? QueryFilter.fromPartial(object.filter)
+        : undefined;
     return message;
   },
 };
@@ -885,7 +927,10 @@ function createBaseGetIssueReportsForAccountResponse(): GetIssueReportsForAccoun
 }
 
 export const GetIssueReportsForAccountResponse: MessageFns<GetIssueReportsForAccountResponse> = {
-  encode(message: GetIssueReportsForAccountResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: GetIssueReportsForAccountResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -943,10 +988,12 @@ export const GetIssueReportsForAccountResponse: MessageFns<GetIssueReportsForAcc
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       pagination: isSet(object.pagination) ? Pagination.fromJSON(object.pagination) : undefined,
-      results: globalThis.Array.isArray(object?.results) ? object.results.map((e: any) => IssueReport.fromJSON(e)) : [],
+      results: globalThis.Array.isArray(object?.results)
+        ? object.results.map((e: any) => IssueReport.fromJSON(e))
+        : [],
     };
   },
 
@@ -967,26 +1014,33 @@ export const GetIssueReportsForAccountResponse: MessageFns<GetIssueReportsForAcc
   create(base?: DeepPartial<GetIssueReportsForAccountResponse>): GetIssueReportsForAccountResponse {
     return GetIssueReportsForAccountResponse.fromPartial(base ?? {});
   },
-  fromPartial(object: DeepPartial<GetIssueReportsForAccountResponse>): GetIssueReportsForAccountResponse {
+  fromPartial(
+    object: DeepPartial<GetIssueReportsForAccountResponse>
+  ): GetIssueReportsForAccountResponse {
     const message = createBaseGetIssueReportsForAccountResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.pagination = (object.pagination !== undefined && object.pagination !== null)
-      ? Pagination.fromPartial(object.pagination)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
+    message.pagination =
+      object.pagination !== undefined && object.pagination !== null
+        ? Pagination.fromPartial(object.pagination)
+        : undefined;
     message.results = object.results?.map((e) => IssueReport.fromPartial(e)) || [];
     return message;
   },
 };
 
 function createBaseGetIssueReportsForTableRequest(): GetIssueReportsForTableRequest {
-  return { tableName: "", filter: undefined };
+  return { tableName: '', filter: undefined };
 }
 
 export const GetIssueReportsForTableRequest: MessageFns<GetIssueReportsForTableRequest> = {
-  encode(message: GetIssueReportsForTableRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.tableName !== "") {
+  encode(
+    message: GetIssueReportsForTableRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.tableName !== '') {
       writer.uint32(10).string(message.tableName);
     }
     if (message.filter !== undefined) {
@@ -1032,15 +1086,15 @@ export const GetIssueReportsForTableRequest: MessageFns<GetIssueReportsForTableR
       tableName: isSet(object.tableName)
         ? globalThis.String(object.tableName)
         : isSet(object.table_name)
-        ? globalThis.String(object.table_name)
-        : "",
+          ? globalThis.String(object.table_name)
+          : '',
       filter: isSet(object.filter) ? QueryFilter.fromJSON(object.filter) : undefined,
     };
   },
 
   toJSON(message: GetIssueReportsForTableRequest): unknown {
     const obj: any = {};
-    if (message.tableName !== "") {
+    if (message.tableName !== '') {
       obj.tableName = message.tableName;
     }
     if (message.filter !== undefined) {
@@ -1054,10 +1108,11 @@ export const GetIssueReportsForTableRequest: MessageFns<GetIssueReportsForTableR
   },
   fromPartial(object: DeepPartial<GetIssueReportsForTableRequest>): GetIssueReportsForTableRequest {
     const message = createBaseGetIssueReportsForTableRequest();
-    message.tableName = object.tableName ?? "";
-    message.filter = (object.filter !== undefined && object.filter !== null)
-      ? QueryFilter.fromPartial(object.filter)
-      : undefined;
+    message.tableName = object.tableName ?? '';
+    message.filter =
+      object.filter !== undefined && object.filter !== null
+        ? QueryFilter.fromPartial(object.filter)
+        : undefined;
     return message;
   },
 };
@@ -1067,7 +1122,10 @@ function createBaseGetIssueReportsForTableResponse(): GetIssueReportsForTableRes
 }
 
 export const GetIssueReportsForTableResponse: MessageFns<GetIssueReportsForTableResponse> = {
-  encode(message: GetIssueReportsForTableResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: GetIssueReportsForTableResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -1125,10 +1183,12 @@ export const GetIssueReportsForTableResponse: MessageFns<GetIssueReportsForTable
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       pagination: isSet(object.pagination) ? Pagination.fromJSON(object.pagination) : undefined,
-      results: globalThis.Array.isArray(object?.results) ? object.results.map((e: any) => IssueReport.fromJSON(e)) : [],
+      results: globalThis.Array.isArray(object?.results)
+        ? object.results.map((e: any) => IssueReport.fromJSON(e))
+        : [],
     };
   },
 
@@ -1149,29 +1209,36 @@ export const GetIssueReportsForTableResponse: MessageFns<GetIssueReportsForTable
   create(base?: DeepPartial<GetIssueReportsForTableResponse>): GetIssueReportsForTableResponse {
     return GetIssueReportsForTableResponse.fromPartial(base ?? {});
   },
-  fromPartial(object: DeepPartial<GetIssueReportsForTableResponse>): GetIssueReportsForTableResponse {
+  fromPartial(
+    object: DeepPartial<GetIssueReportsForTableResponse>
+  ): GetIssueReportsForTableResponse {
     const message = createBaseGetIssueReportsForTableResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.pagination = (object.pagination !== undefined && object.pagination !== null)
-      ? Pagination.fromPartial(object.pagination)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
+    message.pagination =
+      object.pagination !== undefined && object.pagination !== null
+        ? Pagination.fromPartial(object.pagination)
+        : undefined;
     message.results = object.results?.map((e) => IssueReport.fromPartial(e)) || [];
     return message;
   },
 };
 
 function createBaseGetIssueReportsForRecordRequest(): GetIssueReportsForRecordRequest {
-  return { tableName: "", recordId: "", filter: undefined };
+  return { tableName: '', recordId: '', filter: undefined };
 }
 
 export const GetIssueReportsForRecordRequest: MessageFns<GetIssueReportsForRecordRequest> = {
-  encode(message: GetIssueReportsForRecordRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.tableName !== "") {
+  encode(
+    message: GetIssueReportsForRecordRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.tableName !== '') {
       writer.uint32(10).string(message.tableName);
     }
-    if (message.recordId !== "") {
+    if (message.recordId !== '') {
       writer.uint32(18).string(message.recordId);
     }
     if (message.filter !== undefined) {
@@ -1225,23 +1292,23 @@ export const GetIssueReportsForRecordRequest: MessageFns<GetIssueReportsForRecor
       tableName: isSet(object.tableName)
         ? globalThis.String(object.tableName)
         : isSet(object.table_name)
-        ? globalThis.String(object.table_name)
-        : "",
+          ? globalThis.String(object.table_name)
+          : '',
       recordId: isSet(object.recordId)
         ? globalThis.String(object.recordId)
         : isSet(object.record_id)
-        ? globalThis.String(object.record_id)
-        : "",
+          ? globalThis.String(object.record_id)
+          : '',
       filter: isSet(object.filter) ? QueryFilter.fromJSON(object.filter) : undefined,
     };
   },
 
   toJSON(message: GetIssueReportsForRecordRequest): unknown {
     const obj: any = {};
-    if (message.tableName !== "") {
+    if (message.tableName !== '') {
       obj.tableName = message.tableName;
     }
-    if (message.recordId !== "") {
+    if (message.recordId !== '') {
       obj.recordId = message.recordId;
     }
     if (message.filter !== undefined) {
@@ -1253,13 +1320,16 @@ export const GetIssueReportsForRecordRequest: MessageFns<GetIssueReportsForRecor
   create(base?: DeepPartial<GetIssueReportsForRecordRequest>): GetIssueReportsForRecordRequest {
     return GetIssueReportsForRecordRequest.fromPartial(base ?? {});
   },
-  fromPartial(object: DeepPartial<GetIssueReportsForRecordRequest>): GetIssueReportsForRecordRequest {
+  fromPartial(
+    object: DeepPartial<GetIssueReportsForRecordRequest>
+  ): GetIssueReportsForRecordRequest {
     const message = createBaseGetIssueReportsForRecordRequest();
-    message.tableName = object.tableName ?? "";
-    message.recordId = object.recordId ?? "";
-    message.filter = (object.filter !== undefined && object.filter !== null)
-      ? QueryFilter.fromPartial(object.filter)
-      : undefined;
+    message.tableName = object.tableName ?? '';
+    message.recordId = object.recordId ?? '';
+    message.filter =
+      object.filter !== undefined && object.filter !== null
+        ? QueryFilter.fromPartial(object.filter)
+        : undefined;
     return message;
   },
 };
@@ -1269,7 +1339,10 @@ function createBaseGetIssueReportsForRecordResponse(): GetIssueReportsForRecordR
 }
 
 export const GetIssueReportsForRecordResponse: MessageFns<GetIssueReportsForRecordResponse> = {
-  encode(message: GetIssueReportsForRecordResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: GetIssueReportsForRecordResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -1327,10 +1400,12 @@ export const GetIssueReportsForRecordResponse: MessageFns<GetIssueReportsForReco
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       pagination: isSet(object.pagination) ? Pagination.fromJSON(object.pagination) : undefined,
-      results: globalThis.Array.isArray(object?.results) ? object.results.map((e: any) => IssueReport.fromJSON(e)) : [],
+      results: globalThis.Array.isArray(object?.results)
+        ? object.results.map((e: any) => IssueReport.fromJSON(e))
+        : [],
     };
   },
 
@@ -1351,26 +1426,33 @@ export const GetIssueReportsForRecordResponse: MessageFns<GetIssueReportsForReco
   create(base?: DeepPartial<GetIssueReportsForRecordResponse>): GetIssueReportsForRecordResponse {
     return GetIssueReportsForRecordResponse.fromPartial(base ?? {});
   },
-  fromPartial(object: DeepPartial<GetIssueReportsForRecordResponse>): GetIssueReportsForRecordResponse {
+  fromPartial(
+    object: DeepPartial<GetIssueReportsForRecordResponse>
+  ): GetIssueReportsForRecordResponse {
     const message = createBaseGetIssueReportsForRecordResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.pagination = (object.pagination !== undefined && object.pagination !== null)
-      ? Pagination.fromPartial(object.pagination)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
+    message.pagination =
+      object.pagination !== undefined && object.pagination !== null
+        ? Pagination.fromPartial(object.pagination)
+        : undefined;
     message.results = object.results?.map((e) => IssueReport.fromPartial(e)) || [];
     return message;
   },
 };
 
 function createBaseUpdateIssueReportRequest(): UpdateIssueReportRequest {
-  return { issueReportId: "", input: undefined };
+  return { issueReportId: '', input: undefined };
 }
 
 export const UpdateIssueReportRequest: MessageFns<UpdateIssueReportRequest> = {
-  encode(message: UpdateIssueReportRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.issueReportId !== "") {
+  encode(
+    message: UpdateIssueReportRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.issueReportId !== '') {
       writer.uint32(10).string(message.issueReportId);
     }
     if (message.input !== undefined) {
@@ -1416,15 +1498,15 @@ export const UpdateIssueReportRequest: MessageFns<UpdateIssueReportRequest> = {
       issueReportId: isSet(object.issueReportId)
         ? globalThis.String(object.issueReportId)
         : isSet(object.issue_report_id)
-        ? globalThis.String(object.issue_report_id)
-        : "",
+          ? globalThis.String(object.issue_report_id)
+          : '',
       input: isSet(object.input) ? IssueReportUpdateRequestInput.fromJSON(object.input) : undefined,
     };
   },
 
   toJSON(message: UpdateIssueReportRequest): unknown {
     const obj: any = {};
-    if (message.issueReportId !== "") {
+    if (message.issueReportId !== '') {
       obj.issueReportId = message.issueReportId;
     }
     if (message.input !== undefined) {
@@ -1438,10 +1520,11 @@ export const UpdateIssueReportRequest: MessageFns<UpdateIssueReportRequest> = {
   },
   fromPartial(object: DeepPartial<UpdateIssueReportRequest>): UpdateIssueReportRequest {
     const message = createBaseUpdateIssueReportRequest();
-    message.issueReportId = object.issueReportId ?? "";
-    message.input = (object.input !== undefined && object.input !== null)
-      ? IssueReportUpdateRequestInput.fromPartial(object.input)
-      : undefined;
+    message.issueReportId = object.issueReportId ?? '';
+    message.input =
+      object.input !== undefined && object.input !== null
+        ? IssueReportUpdateRequestInput.fromPartial(object.input)
+        : undefined;
     return message;
   },
 };
@@ -1451,7 +1534,10 @@ function createBaseUpdateIssueReportResponse(): UpdateIssueReportResponse {
 }
 
 export const UpdateIssueReportResponse: MessageFns<UpdateIssueReportResponse> = {
-  encode(message: UpdateIssueReportResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: UpdateIssueReportResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -1498,8 +1584,8 @@ export const UpdateIssueReportResponse: MessageFns<UpdateIssueReportResponse> = 
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
       updated: isSet(object.updated) ? IssueReport.fromJSON(object.updated) : undefined,
     };
   },
@@ -1520,23 +1606,28 @@ export const UpdateIssueReportResponse: MessageFns<UpdateIssueReportResponse> = 
   },
   fromPartial(object: DeepPartial<UpdateIssueReportResponse>): UpdateIssueReportResponse {
     const message = createBaseUpdateIssueReportResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
-    message.updated = (object.updated !== undefined && object.updated !== null)
-      ? IssueReport.fromPartial(object.updated)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
+    message.updated =
+      object.updated !== undefined && object.updated !== null
+        ? IssueReport.fromPartial(object.updated)
+        : undefined;
     return message;
   },
 };
 
 function createBaseArchiveIssueReportRequest(): ArchiveIssueReportRequest {
-  return { issueReportId: "" };
+  return { issueReportId: '' };
 }
 
 export const ArchiveIssueReportRequest: MessageFns<ArchiveIssueReportRequest> = {
-  encode(message: ArchiveIssueReportRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.issueReportId !== "") {
+  encode(
+    message: ArchiveIssueReportRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.issueReportId !== '') {
       writer.uint32(10).string(message.issueReportId);
     }
     return writer;
@@ -1571,14 +1662,14 @@ export const ArchiveIssueReportRequest: MessageFns<ArchiveIssueReportRequest> = 
       issueReportId: isSet(object.issueReportId)
         ? globalThis.String(object.issueReportId)
         : isSet(object.issue_report_id)
-        ? globalThis.String(object.issue_report_id)
-        : "",
+          ? globalThis.String(object.issue_report_id)
+          : '',
     };
   },
 
   toJSON(message: ArchiveIssueReportRequest): unknown {
     const obj: any = {};
-    if (message.issueReportId !== "") {
+    if (message.issueReportId !== '') {
       obj.issueReportId = message.issueReportId;
     }
     return obj;
@@ -1589,7 +1680,7 @@ export const ArchiveIssueReportRequest: MessageFns<ArchiveIssueReportRequest> = 
   },
   fromPartial(object: DeepPartial<ArchiveIssueReportRequest>): ArchiveIssueReportRequest {
     const message = createBaseArchiveIssueReportRequest();
-    message.issueReportId = object.issueReportId ?? "";
+    message.issueReportId = object.issueReportId ?? '';
     return message;
   },
 };
@@ -1599,7 +1690,10 @@ function createBaseArchiveIssueReportResponse(): ArchiveIssueReportResponse {
 }
 
 export const ArchiveIssueReportResponse: MessageFns<ArchiveIssueReportResponse> = {
-  encode(message: ArchiveIssueReportResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+  encode(
+    message: ArchiveIssueReportResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.responseDetails !== undefined) {
       ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
     }
@@ -1635,8 +1729,8 @@ export const ArchiveIssueReportResponse: MessageFns<ArchiveIssueReportResponse> 
       responseDetails: isSet(object.responseDetails)
         ? ResponseDetails.fromJSON(object.responseDetails)
         : isSet(object.response_details)
-        ? ResponseDetails.fromJSON(object.response_details)
-        : undefined,
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
     };
   },
 
@@ -1653,20 +1747,25 @@ export const ArchiveIssueReportResponse: MessageFns<ArchiveIssueReportResponse> 
   },
   fromPartial(object: DeepPartial<ArchiveIssueReportResponse>): ArchiveIssueReportResponse {
     const message = createBaseArchiveIssueReportResponse();
-    message.responseDetails = (object.responseDetails !== undefined && object.responseDetails !== null)
-      ? ResponseDetails.fromPartial(object.responseDetails)
-      : undefined;
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
     return message;
   },
 };
 
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 
-export type DeepPartial<T> = T extends Builtin ? T
-  : T extends globalThis.Array<infer U> ? globalThis.Array<DeepPartial<U>>
-  : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>>
-  : T extends {} ? { [K in keyof T]?: DeepPartial<T[K]> }
-  : Partial<T>;
+export type DeepPartial<T> = T extends Builtin
+  ? T
+  : T extends globalThis.Array<infer U>
+    ? globalThis.Array<DeepPartial<U>>
+    : T extends ReadonlyArray<infer U>
+      ? ReadonlyArray<DeepPartial<U>>
+      : T extends {}
+        ? { [K in keyof T]?: DeepPartial<T[K]> }
+        : Partial<T>;
 
 function isSet(value: any): boolean {
   return value !== null && value !== undefined;

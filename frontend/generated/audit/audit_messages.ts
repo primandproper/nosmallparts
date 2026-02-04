@@ -5,10 +5,10 @@
 // source: audit/audit_messages.proto
 
 /* eslint-disable */
-import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
-import { Timestamp } from "../google/protobuf/timestamp";
+import { BinaryReader, BinaryWriter } from '@bufbuild/protobuf/wire';
+import { Timestamp } from '../google/protobuf/timestamp';
 
-export const protobufPackage = "audit";
+export const protobufPackage = 'audit';
 
 export interface DataCollection {
   accountAuditLogEntries: { [key: string]: AuditLogEntry };
@@ -47,9 +47,14 @@ function createBaseDataCollection(): DataCollection {
 
 export const DataCollection: MessageFns<DataCollection> = {
   encode(message: DataCollection, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    globalThis.Object.entries(message.accountAuditLogEntries).forEach(([key, value]: [string, AuditLogEntry]) => {
-      DataCollection_AccountAuditLogEntriesEntry.encode({ key: key as any, value }, writer.uint32(42).fork()).join();
-    });
+    globalThis.Object.entries(message.accountAuditLogEntries).forEach(
+      ([key, value]: [string, AuditLogEntry]) => {
+        DataCollection_AccountAuditLogEntriesEntry.encode(
+          { key: key as any, value },
+          writer.uint32(42).fork()
+        ).join();
+      }
+    );
     for (const v of message.userAuditLogEntries) {
       AuditLogEntry.encode(v!, writer.uint32(74).fork()).join();
     }
@@ -95,33 +100,36 @@ export const DataCollection: MessageFns<DataCollection> = {
     return {
       accountAuditLogEntries: isObject(object.accountAuditLogEntries)
         ? (globalThis.Object.entries(object.accountAuditLogEntries) as [string, any][]).reduce(
-          (acc: { [key: string]: AuditLogEntry }, [key, value]: [string, any]) => {
-            acc[key] = AuditLogEntry.fromJSON(value);
-            return acc;
-          },
-          {},
-        )
+            (acc: { [key: string]: AuditLogEntry }, [key, value]: [string, any]) => {
+              acc[key] = AuditLogEntry.fromJSON(value);
+              return acc;
+            },
+            {}
+          )
         : isObject(object.account_audit_log_entries)
-        ? (globalThis.Object.entries(object.account_audit_log_entries) as [string, any][]).reduce(
-          (acc: { [key: string]: AuditLogEntry }, [key, value]: [string, any]) => {
-            acc[key] = AuditLogEntry.fromJSON(value);
-            return acc;
-          },
-          {},
-        )
-        : {},
+          ? (globalThis.Object.entries(object.account_audit_log_entries) as [string, any][]).reduce(
+              (acc: { [key: string]: AuditLogEntry }, [key, value]: [string, any]) => {
+                acc[key] = AuditLogEntry.fromJSON(value);
+                return acc;
+              },
+              {}
+            )
+          : {},
       userAuditLogEntries: globalThis.Array.isArray(object?.userAuditLogEntries)
         ? object.userAuditLogEntries.map((e: any) => AuditLogEntry.fromJSON(e))
         : globalThis.Array.isArray(object?.user_audit_log_entries)
-        ? object.user_audit_log_entries.map((e: any) => AuditLogEntry.fromJSON(e))
-        : [],
+          ? object.user_audit_log_entries.map((e: any) => AuditLogEntry.fromJSON(e))
+          : [],
     };
   },
 
   toJSON(message: DataCollection): unknown {
     const obj: any = {};
     if (message.accountAuditLogEntries) {
-      const entries = globalThis.Object.entries(message.accountAuditLogEntries) as [string, AuditLogEntry][];
+      const entries = globalThis.Object.entries(message.accountAuditLogEntries) as [
+        string,
+        AuditLogEntry,
+      ][];
       if (entries.length > 0) {
         obj.accountAuditLogEntries = {};
         entries.forEach(([k, v]) => {
@@ -140,111 +148,120 @@ export const DataCollection: MessageFns<DataCollection> = {
   },
   fromPartial(object: DeepPartial<DataCollection>): DataCollection {
     const message = createBaseDataCollection();
-    message.accountAuditLogEntries =
-      (globalThis.Object.entries(object.accountAuditLogEntries ?? {}) as [string, AuditLogEntry][]).reduce(
-        (acc: { [key: string]: AuditLogEntry }, [key, value]: [string, AuditLogEntry]) => {
-          if (value !== undefined) {
-            acc[key] = AuditLogEntry.fromPartial(value);
-          }
-          return acc;
-        },
-        {},
-      );
-    message.userAuditLogEntries = object.userAuditLogEntries?.map((e) => AuditLogEntry.fromPartial(e)) || [];
+    message.accountAuditLogEntries = (
+      globalThis.Object.entries(object.accountAuditLogEntries ?? {}) as [string, AuditLogEntry][]
+    ).reduce((acc: { [key: string]: AuditLogEntry }, [key, value]: [string, AuditLogEntry]) => {
+      if (value !== undefined) {
+        acc[key] = AuditLogEntry.fromPartial(value);
+      }
+      return acc;
+    }, {});
+    message.userAuditLogEntries =
+      object.userAuditLogEntries?.map((e) => AuditLogEntry.fromPartial(e)) || [];
     return message;
   },
 };
 
 function createBaseDataCollection_AccountAuditLogEntriesEntry(): DataCollection_AccountAuditLogEntriesEntry {
-  return { key: "", value: undefined };
+  return { key: '', value: undefined };
 }
 
-export const DataCollection_AccountAuditLogEntriesEntry: MessageFns<DataCollection_AccountAuditLogEntriesEntry> = {
-  encode(message: DataCollection_AccountAuditLogEntriesEntry, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.key !== "") {
-      writer.uint32(10).string(message.key);
-    }
-    if (message.value !== undefined) {
-      AuditLogEntry.encode(message.value, writer.uint32(18).fork()).join();
-    }
-    return writer;
-  },
-
-  decode(input: BinaryReader | Uint8Array, length?: number): DataCollection_AccountAuditLogEntriesEntry {
-    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
-    const end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseDataCollection_AccountAuditLogEntriesEntry();
-    while (reader.pos < end) {
-      const tag = reader.uint32();
-      switch (tag >>> 3) {
-        case 1: {
-          if (tag !== 10) {
-            break;
-          }
-
-          message.key = reader.string();
-          continue;
-        }
-        case 2: {
-          if (tag !== 18) {
-            break;
-          }
-
-          message.value = AuditLogEntry.decode(reader, reader.uint32());
-          continue;
-        }
+export const DataCollection_AccountAuditLogEntriesEntry: MessageFns<DataCollection_AccountAuditLogEntriesEntry> =
+  {
+    encode(
+      message: DataCollection_AccountAuditLogEntriesEntry,
+      writer: BinaryWriter = new BinaryWriter()
+    ): BinaryWriter {
+      if (message.key !== '') {
+        writer.uint32(10).string(message.key);
       }
-      if ((tag & 7) === 4 || tag === 0) {
-        break;
+      if (message.value !== undefined) {
+        AuditLogEntry.encode(message.value, writer.uint32(18).fork()).join();
       }
-      reader.skip(tag & 7);
-    }
-    return message;
-  },
+      return writer;
+    },
 
-  fromJSON(object: any): DataCollection_AccountAuditLogEntriesEntry {
-    return {
-      key: isSet(object.key) ? globalThis.String(object.key) : "",
-      value: isSet(object.value) ? AuditLogEntry.fromJSON(object.value) : undefined,
-    };
-  },
+    decode(
+      input: BinaryReader | Uint8Array,
+      length?: number
+    ): DataCollection_AccountAuditLogEntriesEntry {
+      const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+      const end = length === undefined ? reader.len : reader.pos + length;
+      const message = createBaseDataCollection_AccountAuditLogEntriesEntry();
+      while (reader.pos < end) {
+        const tag = reader.uint32();
+        switch (tag >>> 3) {
+          case 1: {
+            if (tag !== 10) {
+              break;
+            }
 
-  toJSON(message: DataCollection_AccountAuditLogEntriesEntry): unknown {
-    const obj: any = {};
-    if (message.key !== "") {
-      obj.key = message.key;
-    }
-    if (message.value !== undefined) {
-      obj.value = AuditLogEntry.toJSON(message.value);
-    }
-    return obj;
-  },
+            message.key = reader.string();
+            continue;
+          }
+          case 2: {
+            if (tag !== 18) {
+              break;
+            }
 
-  create(base?: DeepPartial<DataCollection_AccountAuditLogEntriesEntry>): DataCollection_AccountAuditLogEntriesEntry {
-    return DataCollection_AccountAuditLogEntriesEntry.fromPartial(base ?? {});
-  },
-  fromPartial(
-    object: DeepPartial<DataCollection_AccountAuditLogEntriesEntry>,
-  ): DataCollection_AccountAuditLogEntriesEntry {
-    const message = createBaseDataCollection_AccountAuditLogEntriesEntry();
-    message.key = object.key ?? "";
-    message.value = (object.value !== undefined && object.value !== null)
-      ? AuditLogEntry.fromPartial(object.value)
-      : undefined;
-    return message;
-  },
-};
+            message.value = AuditLogEntry.decode(reader, reader.uint32());
+            continue;
+          }
+        }
+        if ((tag & 7) === 4 || tag === 0) {
+          break;
+        }
+        reader.skip(tag & 7);
+      }
+      return message;
+    },
+
+    fromJSON(object: any): DataCollection_AccountAuditLogEntriesEntry {
+      return {
+        key: isSet(object.key) ? globalThis.String(object.key) : '',
+        value: isSet(object.value) ? AuditLogEntry.fromJSON(object.value) : undefined,
+      };
+    },
+
+    toJSON(message: DataCollection_AccountAuditLogEntriesEntry): unknown {
+      const obj: any = {};
+      if (message.key !== '') {
+        obj.key = message.key;
+      }
+      if (message.value !== undefined) {
+        obj.value = AuditLogEntry.toJSON(message.value);
+      }
+      return obj;
+    },
+
+    create(
+      base?: DeepPartial<DataCollection_AccountAuditLogEntriesEntry>
+    ): DataCollection_AccountAuditLogEntriesEntry {
+      return DataCollection_AccountAuditLogEntriesEntry.fromPartial(base ?? {});
+    },
+    fromPartial(
+      object: DeepPartial<DataCollection_AccountAuditLogEntriesEntry>
+    ): DataCollection_AccountAuditLogEntriesEntry {
+      const message = createBaseDataCollection_AccountAuditLogEntriesEntry();
+      message.key = object.key ?? '';
+      message.value =
+        object.value !== undefined && object.value !== null
+          ? AuditLogEntry.fromPartial(object.value)
+          : undefined;
+      return message;
+    },
+  };
 
 function createBaseChangeLog(): ChangeLog {
-  return { oldValue: "", newValue: "" };
+  return { oldValue: '', newValue: '' };
 }
 
 export const ChangeLog: MessageFns<ChangeLog> = {
   encode(message: ChangeLog, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.oldValue !== "") {
+    if (message.oldValue !== '') {
       writer.uint32(10).string(message.oldValue);
     }
-    if (message.newValue !== "") {
+    if (message.newValue !== '') {
       writer.uint32(18).string(message.newValue);
     }
     return writer;
@@ -287,22 +304,22 @@ export const ChangeLog: MessageFns<ChangeLog> = {
       oldValue: isSet(object.oldValue)
         ? globalThis.String(object.oldValue)
         : isSet(object.old_value)
-        ? globalThis.String(object.old_value)
-        : "",
+          ? globalThis.String(object.old_value)
+          : '',
       newValue: isSet(object.newValue)
         ? globalThis.String(object.newValue)
         : isSet(object.new_value)
-        ? globalThis.String(object.new_value)
-        : "",
+          ? globalThis.String(object.new_value)
+          : '',
     };
   },
 
   toJSON(message: ChangeLog): unknown {
     const obj: any = {};
-    if (message.oldValue !== "") {
+    if (message.oldValue !== '') {
       obj.oldValue = message.oldValue;
     }
-    if (message.newValue !== "") {
+    if (message.newValue !== '') {
       obj.newValue = message.newValue;
     }
     return obj;
@@ -313,8 +330,8 @@ export const ChangeLog: MessageFns<ChangeLog> = {
   },
   fromPartial(object: DeepPartial<ChangeLog>): ChangeLog {
     const message = createBaseChangeLog();
-    message.oldValue = object.oldValue ?? "";
-    message.newValue = object.newValue ?? "";
+    message.oldValue = object.oldValue ?? '';
+    message.newValue = object.newValue ?? '';
     return message;
   },
 };
@@ -323,12 +340,12 @@ function createBaseAuditLogEntry(): AuditLogEntry {
   return {
     createdAt: undefined,
     changes: {},
-    belongsToAccount: "",
-    id: "",
-    resourceType: "",
-    relevantId: "",
-    eventType: "",
-    belongsToUser: "",
+    belongsToAccount: '',
+    id: '',
+    resourceType: '',
+    relevantId: '',
+    eventType: '',
+    belongsToUser: '',
   };
 }
 
@@ -338,24 +355,27 @@ export const AuditLogEntry: MessageFns<AuditLogEntry> = {
       Timestamp.encode(toTimestamp(message.createdAt), writer.uint32(10).fork()).join();
     }
     globalThis.Object.entries(message.changes).forEach(([key, value]: [string, ChangeLog]) => {
-      AuditLogEntry_ChangesEntry.encode({ key: key as any, value }, writer.uint32(18).fork()).join();
+      AuditLogEntry_ChangesEntry.encode(
+        { key: key as any, value },
+        writer.uint32(18).fork()
+      ).join();
     });
-    if (message.belongsToAccount !== "") {
+    if (message.belongsToAccount !== '') {
       writer.uint32(26).string(message.belongsToAccount);
     }
-    if (message.id !== "") {
+    if (message.id !== '') {
       writer.uint32(34).string(message.id);
     }
-    if (message.resourceType !== "") {
+    if (message.resourceType !== '') {
       writer.uint32(42).string(message.resourceType);
     }
-    if (message.relevantId !== "") {
+    if (message.relevantId !== '') {
       writer.uint32(50).string(message.relevantId);
     }
-    if (message.eventType !== "") {
+    if (message.eventType !== '') {
       writer.uint32(58).string(message.eventType);
     }
-    if (message.belongsToUser !== "") {
+    if (message.belongsToUser !== '') {
       writer.uint32(66).string(message.belongsToUser);
     }
     return writer;
@@ -449,43 +469,43 @@ export const AuditLogEntry: MessageFns<AuditLogEntry> = {
       createdAt: isSet(object.createdAt)
         ? fromJsonTimestamp(object.createdAt)
         : isSet(object.created_at)
-        ? fromJsonTimestamp(object.created_at)
-        : undefined,
+          ? fromJsonTimestamp(object.created_at)
+          : undefined,
       changes: isObject(object.changes)
         ? (globalThis.Object.entries(object.changes) as [string, any][]).reduce(
-          (acc: { [key: string]: ChangeLog }, [key, value]: [string, any]) => {
-            acc[key] = ChangeLog.fromJSON(value);
-            return acc;
-          },
-          {},
-        )
+            (acc: { [key: string]: ChangeLog }, [key, value]: [string, any]) => {
+              acc[key] = ChangeLog.fromJSON(value);
+              return acc;
+            },
+            {}
+          )
         : {},
       belongsToAccount: isSet(object.belongsToAccount)
         ? globalThis.String(object.belongsToAccount)
         : isSet(object.belongs_to_account)
-        ? globalThis.String(object.belongs_to_account)
-        : "",
-      id: isSet(object.id) ? globalThis.String(object.id) : "",
+          ? globalThis.String(object.belongs_to_account)
+          : '',
+      id: isSet(object.id) ? globalThis.String(object.id) : '',
       resourceType: isSet(object.resourceType)
         ? globalThis.String(object.resourceType)
         : isSet(object.resource_type)
-        ? globalThis.String(object.resource_type)
-        : "",
+          ? globalThis.String(object.resource_type)
+          : '',
       relevantId: isSet(object.relevantId)
         ? globalThis.String(object.relevantId)
         : isSet(object.relevant_id)
-        ? globalThis.String(object.relevant_id)
-        : "",
+          ? globalThis.String(object.relevant_id)
+          : '',
       eventType: isSet(object.eventType)
         ? globalThis.String(object.eventType)
         : isSet(object.event_type)
-        ? globalThis.String(object.event_type)
-        : "",
+          ? globalThis.String(object.event_type)
+          : '',
       belongsToUser: isSet(object.belongsToUser)
         ? globalThis.String(object.belongsToUser)
         : isSet(object.belongs_to_user)
-        ? globalThis.String(object.belongs_to_user)
-        : "",
+          ? globalThis.String(object.belongs_to_user)
+          : '',
     };
   },
 
@@ -503,22 +523,22 @@ export const AuditLogEntry: MessageFns<AuditLogEntry> = {
         });
       }
     }
-    if (message.belongsToAccount !== "") {
+    if (message.belongsToAccount !== '') {
       obj.belongsToAccount = message.belongsToAccount;
     }
-    if (message.id !== "") {
+    if (message.id !== '') {
       obj.id = message.id;
     }
-    if (message.resourceType !== "") {
+    if (message.resourceType !== '') {
       obj.resourceType = message.resourceType;
     }
-    if (message.relevantId !== "") {
+    if (message.relevantId !== '') {
       obj.relevantId = message.relevantId;
     }
-    if (message.eventType !== "") {
+    if (message.eventType !== '') {
       obj.eventType = message.eventType;
     }
-    if (message.belongsToUser !== "") {
+    if (message.belongsToUser !== '') {
       obj.belongsToUser = message.belongsToUser;
     }
     return obj;
@@ -530,32 +550,34 @@ export const AuditLogEntry: MessageFns<AuditLogEntry> = {
   fromPartial(object: DeepPartial<AuditLogEntry>): AuditLogEntry {
     const message = createBaseAuditLogEntry();
     message.createdAt = object.createdAt ?? undefined;
-    message.changes = (globalThis.Object.entries(object.changes ?? {}) as [string, ChangeLog][]).reduce(
-      (acc: { [key: string]: ChangeLog }, [key, value]: [string, ChangeLog]) => {
-        if (value !== undefined) {
-          acc[key] = ChangeLog.fromPartial(value);
-        }
-        return acc;
-      },
-      {},
-    );
-    message.belongsToAccount = object.belongsToAccount ?? "";
-    message.id = object.id ?? "";
-    message.resourceType = object.resourceType ?? "";
-    message.relevantId = object.relevantId ?? "";
-    message.eventType = object.eventType ?? "";
-    message.belongsToUser = object.belongsToUser ?? "";
+    message.changes = (
+      globalThis.Object.entries(object.changes ?? {}) as [string, ChangeLog][]
+    ).reduce((acc: { [key: string]: ChangeLog }, [key, value]: [string, ChangeLog]) => {
+      if (value !== undefined) {
+        acc[key] = ChangeLog.fromPartial(value);
+      }
+      return acc;
+    }, {});
+    message.belongsToAccount = object.belongsToAccount ?? '';
+    message.id = object.id ?? '';
+    message.resourceType = object.resourceType ?? '';
+    message.relevantId = object.relevantId ?? '';
+    message.eventType = object.eventType ?? '';
+    message.belongsToUser = object.belongsToUser ?? '';
     return message;
   },
 };
 
 function createBaseAuditLogEntry_ChangesEntry(): AuditLogEntry_ChangesEntry {
-  return { key: "", value: undefined };
+  return { key: '', value: undefined };
 }
 
 export const AuditLogEntry_ChangesEntry: MessageFns<AuditLogEntry_ChangesEntry> = {
-  encode(message: AuditLogEntry_ChangesEntry, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.key !== "") {
+  encode(
+    message: AuditLogEntry_ChangesEntry,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.key !== '') {
       writer.uint32(10).string(message.key);
     }
     if (message.value !== undefined) {
@@ -598,14 +620,14 @@ export const AuditLogEntry_ChangesEntry: MessageFns<AuditLogEntry_ChangesEntry> 
 
   fromJSON(object: any): AuditLogEntry_ChangesEntry {
     return {
-      key: isSet(object.key) ? globalThis.String(object.key) : "",
+      key: isSet(object.key) ? globalThis.String(object.key) : '',
       value: isSet(object.value) ? ChangeLog.fromJSON(object.value) : undefined,
     };
   },
 
   toJSON(message: AuditLogEntry_ChangesEntry): unknown {
     const obj: any = {};
-    if (message.key !== "") {
+    if (message.key !== '') {
       obj.key = message.key;
     }
     if (message.value !== undefined) {
@@ -619,21 +641,26 @@ export const AuditLogEntry_ChangesEntry: MessageFns<AuditLogEntry_ChangesEntry> 
   },
   fromPartial(object: DeepPartial<AuditLogEntry_ChangesEntry>): AuditLogEntry_ChangesEntry {
     const message = createBaseAuditLogEntry_ChangesEntry();
-    message.key = object.key ?? "";
-    message.value = (object.value !== undefined && object.value !== null)
-      ? ChangeLog.fromPartial(object.value)
-      : undefined;
+    message.key = object.key ?? '';
+    message.value =
+      object.value !== undefined && object.value !== null
+        ? ChangeLog.fromPartial(object.value)
+        : undefined;
     return message;
   },
 };
 
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 
-export type DeepPartial<T> = T extends Builtin ? T
-  : T extends globalThis.Array<infer U> ? globalThis.Array<DeepPartial<U>>
-  : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>>
-  : T extends {} ? { [K in keyof T]?: DeepPartial<T[K]> }
-  : Partial<T>;
+export type DeepPartial<T> = T extends Builtin
+  ? T
+  : T extends globalThis.Array<infer U>
+    ? globalThis.Array<DeepPartial<U>>
+    : T extends ReadonlyArray<infer U>
+      ? ReadonlyArray<DeepPartial<U>>
+      : T extends {}
+        ? { [K in keyof T]?: DeepPartial<T[K]> }
+        : Partial<T>;
 
 function toTimestamp(date: Date): Timestamp {
   const seconds = Math.trunc(date.getTime() / 1_000);
@@ -650,7 +677,7 @@ function fromTimestamp(t: Timestamp): Date {
 function fromJsonTimestamp(o: any): Date {
   if (o instanceof globalThis.Date) {
     return o;
-  } else if (typeof o === "string") {
+  } else if (typeof o === 'string') {
     return new globalThis.Date(o);
   } else {
     return fromTimestamp(Timestamp.fromJSON(o));
@@ -658,7 +685,7 @@ function fromJsonTimestamp(o: any): Date {
 }
 
 function isObject(value: any): boolean {
-  return typeof value === "object" && value !== null;
+  return typeof value === 'object' && value !== null;
 }
 
 function isSet(value: any): boolean {
