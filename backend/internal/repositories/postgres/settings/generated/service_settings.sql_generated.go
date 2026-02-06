@@ -64,8 +64,8 @@ type CreateServiceSettingParams struct {
 	Name         string
 	Type         SettingType
 	Description  string
-	Enumeration  string
 	DefaultValue sql.NullString
+	Enumeration  string
 	AdminsOnly   bool
 }
 
@@ -170,28 +170,28 @@ LIMIT COALESCE($7, 50)
 `
 
 type GetServiceSettingsParams struct {
-	ResultLimit     interface{}
 	CreatedAfter    sql.NullTime
 	CreatedBefore   sql.NullTime
 	UpdatedBefore   sql.NullTime
 	UpdatedAfter    sql.NullTime
-	Cursor          sql.NullString
 	IncludeArchived sql.NullBool
+	Cursor          sql.NullString
+	ResultLimit     interface{}
 }
 
 type GetServiceSettingsRow struct {
-	CreatedAt     time.Time
-	LastUpdatedAt sql.NullTime
-	ArchivedAt    sql.NullTime
 	ID            string
 	Name          string
 	Type          SettingType
 	Description   string
-	Enumeration   string
 	DefaultValue  sql.NullString
+	Enumeration   string
+	AdminsOnly    bool
+	CreatedAt     time.Time
+	LastUpdatedAt sql.NullTime
+	ArchivedAt    sql.NullTime
 	FilteredCount int64
 	TotalCount    int64
-	AdminsOnly    bool
 }
 
 func (q *Queries) GetServiceSettings(ctx context.Context, db DBTX, arg *GetServiceSettingsParams) ([]*GetServiceSettingsRow, error) {
@@ -292,29 +292,29 @@ LIMIT COALESCE($8, 50)
 `
 
 type SearchForServiceSettingsParams struct {
-	ResultLimit     interface{}
 	CreatedAfter    sql.NullTime
 	CreatedBefore   sql.NullTime
 	UpdatedBefore   sql.NullTime
 	UpdatedAfter    sql.NullTime
+	IncludeArchived sql.NullBool
 	NameQuery       string
 	Cursor          sql.NullString
-	IncludeArchived sql.NullBool
+	ResultLimit     interface{}
 }
 
 type SearchForServiceSettingsRow struct {
-	CreatedAt     time.Time
-	LastUpdatedAt sql.NullTime
-	ArchivedAt    sql.NullTime
 	ID            string
 	Name          string
 	Type          SettingType
 	Description   string
-	Enumeration   string
 	DefaultValue  sql.NullString
+	Enumeration   string
+	AdminsOnly    bool
+	CreatedAt     time.Time
+	LastUpdatedAt sql.NullTime
+	ArchivedAt    sql.NullTime
 	FilteredCount int64
 	TotalCount    int64
-	AdminsOnly    bool
 }
 
 func (q *Queries) SearchForServiceSettings(ctx context.Context, db DBTX, arg *SearchForServiceSettingsParams) ([]*SearchForServiceSettingsRow, error) {

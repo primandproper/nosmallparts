@@ -1,6 +1,7 @@
 package websocket
 
 import (
+	"log"
 	"sync"
 	"time"
 
@@ -78,7 +79,10 @@ func (c *ConnectionContext) Close() {
 	if ticker != nil {
 		ticker.Stop()
 	}
-	c.Conn.Close()
+
+	if err := c.Conn.Close(); err != nil {
+		log.Printf("\n\nError closing websocket connection: %v\n\n", err)
+	}
 }
 
 // WriteJSON writes a JSON message to the connection.

@@ -11,11 +11,8 @@ import (
 const (
 	idColumn               = "id"
 	nameColumn             = "name"
-	pluralNameColumn       = "plural_name"
 	notesColumn            = "notes"
 	descriptionColumn      = "description"
-	iconPathColumn         = "icon_path"
-	slugColumn             = "slug"
 	createdAtColumn        = "created_at"
 	lastUpdatedAtColumn    = "last_updated_at"
 	archivedAtColumn       = "archived_at"

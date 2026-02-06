@@ -28,8 +28,6 @@ import (
 )
 
 const (
-	httpTestServerAddress = "http://localhost:8000"
-
 	adminUserPassword = "integration-tests-are-cool"
 
 	nonexistentID = "00000000000000000000"

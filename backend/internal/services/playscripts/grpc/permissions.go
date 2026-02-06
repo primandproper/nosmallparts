@@ -2,7 +2,7 @@ package grpc
 
 import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/authorization"
-	playscriptssvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/playscripts"
+	playscriptssvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/play_scripts"
 )
 
 // PlayScriptsMethodPermissions is a named type for Wire dependency injection.

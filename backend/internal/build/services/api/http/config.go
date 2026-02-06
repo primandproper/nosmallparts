@@ -26,6 +26,7 @@ var (
 			"Database",
 			"Services",
 			"AppleAppSiteAssociation",
+			"LiveKit",
 		),
 		wire.FieldsOf(
 			new(*config.ServicesConfig),

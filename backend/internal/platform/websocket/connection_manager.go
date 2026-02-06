@@ -1,35 +1,57 @@
 package websocket
 
 import (
+	"context"
 	"sync"
+
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
+)
+
+const (
+	observabilityName = "websocket_connection_manager"
 )
 
 // ConnectionManager manages active WebSocket connections grouped by group ID and member ID.
 type ConnectionManager struct {
+	logger      logging.Logger
+	tracer      tracing.Tracer
 	connections map[string]map[string]*ConnectionContext
 	mu          sync.RWMutex
 }
 
 // NewConnectionManager creates a new ConnectionManager.
-func NewConnectionManager() *ConnectionManager {
+func NewConnectionManager(
+	tracerProvider tracing.TracerProvider,
+	logger logging.Logger,
+) *ConnectionManager {
 	return &ConnectionManager{
+		logger:      logging.EnsureLogger(logger).WithName(observabilityName),
+		tracer:      tracing.NewTracer(tracing.EnsureTracerProvider(tracerProvider).Tracer(observabilityName)),
 		connections: make(map[string]map[string]*ConnectionContext),
 	}
 }
 
 // Add adds a connection for a group and member.
-func (m *ConnectionManager) Add(groupID, memberID string, ctx *ConnectionContext) {
+func (m *ConnectionManager) Add(ctx context.Context, groupID, memberID string, connCtx *ConnectionContext) {
+	_, span := m.tracer.StartSpan(ctx)
+	defer span.End()
+
 	m.mu.Lock()
 	defer m.mu.Unlock()
 
 	if m.connections[groupID] == nil {
 		m.connections[groupID] = make(map[string]*ConnectionContext)
 	}
-	m.connections[groupID][memberID] = ctx
+	m.connections[groupID][memberID] = connCtx
 }
 
 // Remove removes a connection.
-func (m *ConnectionManager) Remove(groupID, memberID string) {
+func (m *ConnectionManager) Remove(ctx context.Context, groupID, memberID string) {
+	_, span := m.tracer.StartSpan(ctx)
+	defer span.End()
+
 	m.mu.Lock()
 	defer m.mu.Unlock()
 
@@ -42,7 +64,10 @@ func (m *ConnectionManager) Remove(groupID, memberID string) {
 }
 
 // Get gets a specific connection.
-func (m *ConnectionManager) Get(groupID, memberID string) *ConnectionContext {
+func (m *ConnectionManager) Get(ctx context.Context, groupID, memberID string) *ConnectionContext {
+	_, span := m.tracer.StartSpan(ctx)
+	defer span.End()
+
 	m.mu.RLock()
 	defer m.mu.RUnlock()
 
@@ -53,7 +78,10 @@ func (m *ConnectionManager) Get(groupID, memberID string) *ConnectionContext {
 }
 
 // GetGroupConnections gets all connections for a group.
-func (m *ConnectionManager) GetGroupConnections(groupID string) []*ConnectionContext {
+func (m *ConnectionManager) GetGroupConnections(ctx context.Context, groupID string) []*ConnectionContext {
+	_, span := m.tracer.StartSpan(ctx)
+	defer span.End()
+
 	m.mu.RLock()
 	defer m.mu.RUnlock()
 
@@ -67,38 +95,51 @@ func (m *ConnectionManager) GetGroupConnections(groupID string) []*ConnectionCon
 }
 
 // BroadcastToGroup sends a message to all connections in a group.
-func (m *ConnectionManager) BroadcastToGroup(groupID string, msg interface{}) {
+func (m *ConnectionManager) BroadcastToGroup(ctx context.Context, groupID string, msg interface{}) {
+	_, span := m.tracer.StartSpan(ctx)
+	defer span.End()
+
 	m.mu.RLock()
 	defer m.mu.RUnlock()
 
 	if groupConnections, ok := m.connections[groupID]; ok {
-		for _, ctx := range groupConnections {
-			_ = ctx.WriteJSON(msg)
+		for _, connCtx := range groupConnections {
+			if err := connCtx.WriteJSON(msg); err != nil {
+				observability.AcknowledgeError(err, m.logger, span, "writing JSON to connection context")
+			}
 		}
 	}
 }
 
 // BroadcastToGroupFiltered sends a message to connections in a group for which includeFunc returns true.
-func (m *ConnectionManager) BroadcastToGroupFiltered(groupID string, msg interface{}, includeFunc func(memberID string) bool) {
+func (m *ConnectionManager) BroadcastToGroupFiltered(ctx context.Context, groupID string, msg interface{}, includeFunc func(memberID string) bool) {
+	_, span := m.tracer.StartSpan(ctx)
+	defer span.End()
+
 	m.mu.RLock()
 	defer m.mu.RUnlock()
 
 	if groupConnections, ok := m.connections[groupID]; ok {
 		for memberID, ctx := range groupConnections {
 			if includeFunc(memberID) {
-				_ = ctx.WriteJSON(msg)
+				if err := ctx.WriteJSON(msg); err != nil {
+					observability.AcknowledgeError(err, m.logger, span, "writing JSON to connection context")
+				}
 			}
 		}
 	}
 }
 
 // SendToMember sends a message to a specific member in a group.
-func (m *ConnectionManager) SendToMember(groupID, memberID string, msg interface{}) error {
+func (m *ConnectionManager) SendToMember(ctx context.Context, groupID, memberID string, msg interface{}) error {
+	_, span := m.tracer.StartSpan(ctx)
+	defer span.End()
+
 	m.mu.RLock()
 	defer m.mu.RUnlock()
 
 	if groupConnections, ok := m.connections[groupID]; ok {
-		if ctx, ok := groupConnections[memberID]; ok {
+		if ctx, ok1 := groupConnections[memberID]; ok1 {
 			return ctx.WriteJSON(msg)
 		}
 	}
@@ -106,7 +147,10 @@ func (m *ConnectionManager) SendToMember(groupID, memberID string, msg interface
 }
 
 // GroupHasConnections returns whether a group has any active connections.
-func (m *ConnectionManager) GroupHasConnections(groupID string) bool {
+func (m *ConnectionManager) GroupHasConnections(ctx context.Context, groupID string) bool {
+	_, span := m.tracer.StartSpan(ctx)
+	defer span.End()
+
 	m.mu.RLock()
 	defer m.mu.RUnlock()
 
@@ -117,7 +161,10 @@ func (m *ConnectionManager) GroupHasConnections(groupID string) bool {
 }
 
 // GetConnectionCount returns the number of connections for a group.
-func (m *ConnectionManager) GetConnectionCount(groupID string) int {
+func (m *ConnectionManager) GetConnectionCount(ctx context.Context, groupID string) int {
+	_, span := m.tracer.StartSpan(ctx)
+	defer span.End()
+
 	m.mu.RLock()
 	defer m.mu.RUnlock()
 

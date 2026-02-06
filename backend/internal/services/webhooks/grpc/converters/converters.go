@@ -173,3 +173,20 @@ func ConvertGRPCWebhookTriggerEventDatabaseCreationInputToWebhookTriggerEventDat
 		TriggerEvent:     input.TriggerEvent,
 	}
 }
+
+// ConvertUserDataCollectionToGRPCDataCollection converts a domain webhooks UserDataCollection to a proto DataCollection.
+func ConvertUserDataCollectionToGRPCDataCollection(input *webhooks.UserDataCollection) *webhookssvc.DataCollection {
+	result := &webhookssvc.DataCollection{
+		Webhooks: make(map[string]*webhookssvc.WebhookList),
+	}
+
+	for accountID, webhookList := range input.Data {
+		var grpcWebhooks []*webhookssvc.Webhook
+		for i := range webhookList {
+			grpcWebhooks = append(grpcWebhooks, ConvertWebhookToGRPCWebhook(&webhookList[i]))
+		}
+		result.Webhooks[accountID] = &webhookssvc.WebhookList{Webhooks: grpcWebhooks}
+	}
+
+	return result
+}

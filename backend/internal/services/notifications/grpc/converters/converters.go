@@ -69,3 +69,14 @@ func ConvertUserNotificationUpdateRequestInputToGRPCUserNotificationUpdateReques
 		Status: newStatus,
 	}
 }
+
+// ConvertUserDataCollectionToGRPCDataCollection converts a domain notifications UserDataCollection to a proto DataCollection.
+func ConvertUserDataCollectionToGRPCDataCollection(input *notifications.UserDataCollection) *notificationssvc.DataCollection {
+	result := &notificationssvc.DataCollection{}
+
+	for i := range input.Data {
+		result.Notifications = append(result.Notifications, ConvertUserNotificationToGRPCUserNotification(&input.Data[i]))
+	}
+
+	return result
+}

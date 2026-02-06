@@ -261,7 +261,8 @@ func (r *repository) GetActiveParticipantsForStage(ctx context.Context, stageID 
 		participant := r.convertParticipant(result)
 
 		// Fetch roles for each participant
-		roles, err := r.GetParticipantRoles(ctx, participant.ID)
+		var roles []string
+		roles, err = r.GetParticipantRoles(ctx, participant.ID)
 		if err != nil {
 			return nil, observability.PrepareAndLogError(err, logger, span, "fetching participant roles")
 		}

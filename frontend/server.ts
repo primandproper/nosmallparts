@@ -23,6 +23,8 @@ app.prepare().then(async () => {
 
   server.listen(port, hostname, () => {
     console.log(`> Ready on http://${hostname}:${port}`);
-    console.log(`> Stages WebSocket handled by Go backend (NEXT_PUBLIC_BACKEND_WS_HOST: ${process.env.NEXT_PUBLIC_BACKEND_WS_HOST || 'localhost:8000'})`);
+    console.log(
+      `> Stages WebSocket handled by Go backend (NEXT_PUBLIC_BACKEND_WS_HOST: ${process.env.NEXT_PUBLIC_BACKEND_WS_HOST || 'localhost:8000'})`
+    );
   });
 });

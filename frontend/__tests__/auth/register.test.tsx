@@ -166,9 +166,13 @@ describe('Registration Page', () => {
 
       expect(screen.queryByText('Password is required')).not.toBeInTheDocument();
       expect(screen.queryByText('Must be at least 8 characters')).not.toBeInTheDocument();
-      expect(screen.queryByText('Must contain at least one uppercase letter')).not.toBeInTheDocument();
+      expect(
+        screen.queryByText('Must contain at least one uppercase letter')
+      ).not.toBeInTheDocument();
       expect(screen.queryByText('Must contain at least one number')).not.toBeInTheDocument();
-      expect(screen.queryByText('Must contain at least one special character')).not.toBeInTheDocument();
+      expect(
+        screen.queryByText('Must contain at least one special character')
+      ).not.toBeInTheDocument();
     });
   });
 
@@ -339,10 +343,13 @@ describe('Registration Page', () => {
       await user.click(submitButton);
 
       await waitFor(() => {
-        expect(global.fetch).toHaveBeenCalledWith('/api/auth/register', expect.objectContaining({
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-        }));
+        expect(global.fetch).toHaveBeenCalledWith(
+          '/api/auth/register',
+          expect.objectContaining({
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+          })
+        );
       });
     });
 

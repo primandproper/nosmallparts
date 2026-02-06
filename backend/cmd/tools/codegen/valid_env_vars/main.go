@@ -16,7 +16,7 @@ import (
 	"github.com/codemodus/kace"
 )
 
-// importAliasMap maps import aliases to real package names (e.g., "livekitcfg" -> "livekit")
+// importAliasMap maps import aliases to real package names (e.g., "livekitcfg" -> "livekit").
 var importAliasMap = make(map[string]string)
 
 func main() {

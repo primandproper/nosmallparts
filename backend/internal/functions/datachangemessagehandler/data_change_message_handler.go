@@ -7,6 +7,7 @@ import (
 	"sync"
 
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/config"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/dataprivacy"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/identity"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/webhooks"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/analytics"
@@ -33,6 +34,7 @@ var (
 type AsyncDataChangeMessageHandler struct {
 	searchDataIndexPublisher                  messagequeue.Publisher
 	identityRepo                              identity.Repository
+	dataPrivacyRepo                           dataprivacy.Repository
 	logger                                    logging.Logger
 	decoder                                   encoding.ServerEncoderDecoder
 	webhookExecutionTimestampHistogram        metrics.Float64Histogram
@@ -66,6 +68,7 @@ func NewAsyncDataChangeMessageHandler(
 	tracerProvider tracing.TracerProvider,
 	cfg *config.AsyncMessageHandlerConfig,
 	identityRepo identity.Repository,
+	dataPrivacyRepo dataprivacy.Repository,
 	webhookRepo webhooks.Repository,
 	consumerProvider messagequeue.ConsumerProvider,
 	publisherProvider messagequeue.PublisherProvider,
@@ -121,6 +124,7 @@ func NewAsyncDataChangeMessageHandler(
 		logger:                               logging.EnsureLogger(logger).WithName(o11yName),
 		nonWebhookEventTypes:                 []string{},
 		identityRepo:                         identityRepo,
+		dataPrivacyRepo:                      dataPrivacyRepo,
 		webhookRepo:                          webhookRepo,
 		consumerProvider:                     consumerProvider,
 		analyticsEventReporter:               analyticsEventReporter,

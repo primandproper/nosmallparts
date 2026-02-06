@@ -23,7 +23,7 @@ func (h *Handler) handleJoin(ctx context.Context, connCtx *platformws.Connection
 	participantName := msg.ParticipantName
 
 	if participantName == "" {
-		h.sendError(connCtx, "participant name is required")
+		h.sendError(ctx, connCtx, "participant name is required")
 		return
 	}
 
@@ -47,13 +47,13 @@ func (h *Handler) handleJoin(ctx context.Context, connCtx *platformws.Connection
 		})
 		if err != nil {
 			h.logger.Error("failed to create stage", err)
-			h.sendError(connCtx, "failed to create stage")
+			h.sendError(ctx, connCtx, "failed to create stage")
 			return
 		}
 		h.logger.WithValue("stageID", stage.ID).WithValue("code", stage.Code).Debug("created new stage")
 	} else if err != nil {
 		h.logger.Error("failed to get stage", err)
-		h.sendError(connCtx, "failed to get stage")
+		h.sendError(ctx, connCtx, "failed to get stage")
 		return
 	}
 
@@ -65,7 +65,7 @@ func (h *Handler) handleJoin(ctx context.Context, connCtx *platformws.Connection
 	})
 	if err != nil {
 		h.logger.Error("failed to add participant", err)
-		h.sendError(connCtx, "failed to join stage")
+		h.sendError(ctx, connCtx, "failed to join stage")
 		return
 	}
 
@@ -73,24 +73,34 @@ func (h *Handler) handleJoin(ctx context.Context, connCtx *platformws.Connection
 	connCtx.SetGroupAndMember(stage.ID, participant.ID)
 
 	// Add to connection manager
-	h.connections.Add(stage.ID, participant.ID, connCtx)
+	h.connections.Add(ctx, stage.ID, participant.ID, connCtx)
 
 	// Refresh stage with participants
-	stage, _ = h.stagesRepo.GetStageByID(ctx, stage.ID)
+	stage, err = h.stagesRepo.GetStageByID(ctx, stage.ID)
+	if errors.Is(err, sql.ErrNoRows) {
+		stage, err = h.stagesRepo.CreateStage(ctx, &stagesdomain.StageCreationInput{})
+	}
+	if err != nil {
+		h.logger.Error("failed to get stage", err)
+		h.sendError(ctx, connCtx, "failed to get stage")
+		return
+	}
 	stageState := h.buildStageState(ctx, stage)
 
 	// Send join confirmation to the new participant
-	_ = connCtx.WriteJSON(&stagesdomain.ServerMessage{
+	if err = connCtx.WriteJSON(&stagesdomain.ServerMessage{
 		Type:          stagesdomain.ServerMessageTypeJoined,
 		ParticipantID: participant.ID,
 		StageState:    stageState,
-	})
+	}); err != nil {
+		observability.AcknowledgeError(err, h.logger, span, "joining stage")
+	}
 
 	// Send available plays
 	h.sendAvailablePlays(ctx, connCtx)
 
 	// Broadcast updated state to all participants
-	h.connections.BroadcastToGroup(stage.ID, &stagesdomain.ServerMessage{
+	h.connections.BroadcastToGroup(ctx, stage.ID, &stagesdomain.ServerMessage{
 		Type:  stagesdomain.ServerMessageTypeStageState,
 		State: stageState,
 	})
@@ -102,7 +112,7 @@ func (h *Handler) handleToggleCastMember(ctx context.Context, connCtx *platformw
 	defer span.End()
 
 	if connCtx.GroupID == "" {
-		observability.PrepareAndLogError(errors.New("stage ID is required"), h.logger, span, "stage ID is required")
+		observability.AcknowledgeError(errors.New("stage ID is required"), h.logger, span, "stage ID is required")
 		return
 	}
 
@@ -110,14 +120,14 @@ func (h *Handler) handleToggleCastMember(ctx context.Context, connCtx *platformw
 	castMemberID := msg.CastMemberID
 
 	if participantID == "" || castMemberID == "" {
-		observability.PrepareAndLogError(errors.New("participant ID or cast member ID is required"), h.logger, span, "participant ID or cast member ID is required")
+		observability.AcknowledgeError(errors.New("participant ID or cast member ID is required"), h.logger, span, "participant ID or cast member ID is required")
 		return
 	}
 
 	// Get current roles
 	roles, err := h.stagesRepo.GetParticipantRoles(ctx, participantID)
 	if err != nil {
-		observability.PrepareAndLogError(err, h.logger, span, "failed to get participant roles")
+		observability.AcknowledgeError(err, h.logger, span, "failed to get participant roles")
 		return
 	}
 
@@ -132,13 +142,13 @@ func (h *Handler) handleToggleCastMember(ctx context.Context, connCtx *platformw
 
 	if hasRole {
 		// Remove role
-		if err := h.stagesRepo.RemoveParticipantRole(ctx, participantID, castMemberID); err != nil {
+		if err = h.stagesRepo.RemoveParticipantRole(ctx, participantID, castMemberID); err != nil {
 			h.logger.Error("failed to remove participant role", err)
 			return
 		}
 	} else {
 		// Add role
-		if err := h.stagesRepo.AddParticipantRole(ctx, participantID, castMemberID); err != nil {
+		if err = h.stagesRepo.AddParticipantRole(ctx, participantID, castMemberID); err != nil {
 			h.logger.Error("failed to add participant role", err)
 			return
 		}
@@ -146,7 +156,7 @@ func (h *Handler) handleToggleCastMember(ctx context.Context, connCtx *platformw
 
 	// Broadcast updated state
 	h.broadcastCastMembersUpdated(ctx, connCtx.GroupID)
-	h.broadcastStageState(connCtx.GroupID)
+	h.broadcastStageState(ctx, connCtx.GroupID)
 }
 
 // handleSetDirector handles setting a participant as director.
@@ -169,7 +179,7 @@ func (h *Handler) handleSetDirector(ctx context.Context, connCtx *platformws.Con
 		return
 	}
 
-	h.broadcastStageState(connCtx.GroupID)
+	h.broadcastStageState(ctx, connCtx.GroupID)
 }
 
 // handleSetAudience handles setting a participant as audience.
@@ -192,7 +202,7 @@ func (h *Handler) handleSetAudience(ctx context.Context, connCtx *platformws.Con
 		return
 	}
 
-	h.broadcastStageState(connCtx.GroupID)
+	h.broadcastStageState(ctx, connCtx.GroupID)
 }
 
 // handleSelectPlay handles selecting a play for the stage.
@@ -216,7 +226,7 @@ func (h *Handler) handleSelectPlay(ctx context.Context, connCtx *platformws.Conn
 		return
 	}
 
-	h.broadcastStageState(connCtx.GroupID)
+	h.broadcastStageState(ctx, connCtx.GroupID)
 }
 
 // handleSetReady handles setting a participant's ready status.
@@ -239,7 +249,7 @@ func (h *Handler) handleSetReady(ctx context.Context, connCtx *platformws.Connec
 		return
 	}
 
-	h.broadcastStageState(connCtx.GroupID)
+	h.broadcastStageState(ctx, connCtx.GroupID)
 }
 
 // handleSendChat handles sending a chat message.
@@ -274,20 +284,21 @@ func (h *Handler) handleSendChat(ctx context.Context, connCtx *platformws.Connec
 
 	if msg.CastOnly {
 		// Only send to non-audience members
-		h.connections.BroadcastToGroupFiltered(connCtx.GroupID, serverMsg, func(participantID string) bool {
-			p, err := h.stagesRepo.GetParticipant(ctx, participantID)
+		h.connections.BroadcastToGroupFiltered(ctx, connCtx.GroupID, serverMsg, func(participantID string) bool {
+			var p *stagesdomain.StageParticipant
+			p, err = h.stagesRepo.GetParticipant(ctx, participantID)
 			if err != nil {
 				return false // Exclude if we can't fetch
 			}
 			return !p.IsAudience
 		})
 	} else {
-		h.connections.BroadcastToGroup(connCtx.GroupID, serverMsg)
+		h.connections.BroadcastToGroup(ctx, connCtx.GroupID, serverMsg)
 	}
 }
 
 // handleStartPlay handles starting the play.
-func (h *Handler) handleStartPlay(ctx context.Context, connCtx *platformws.ConnectionContext, msg *stagesdomain.ClientMessage) {
+func (h *Handler) handleStartPlay(ctx context.Context, connCtx *platformws.ConnectionContext) {
 	ctx, span := h.tracer.StartSpan(ctx)
 	defer span.End()
 
@@ -304,7 +315,7 @@ func (h *Handler) handleStartPlay(ctx context.Context, connCtx *platformws.Conne
 	}
 
 	// Broadcast countdown start
-	h.connections.BroadcastToGroup(connCtx.GroupID, &stagesdomain.ServerMessage{
+	h.connections.BroadcastToGroup(ctx, connCtx.GroupID, &stagesdomain.ServerMessage{
 		Type:     stagesdomain.ServerMessageTypeCountdownStart,
 		Duration: 3, // 3 second countdown
 	})
@@ -315,7 +326,7 @@ func (h *Handler) handleStartPlay(ctx context.Context, connCtx *platformws.Conne
 
 		performingPhase := stagesdomain.StagePhasePerforming
 		lineIndex := 0
-		if err := h.stagesRepo.UpdateStage(context.Background(), connCtx.GroupID, &stagesdomain.StageUpdateInput{
+		if err := h.stagesRepo.UpdateStage(ctx, connCtx.GroupID, &stagesdomain.StageUpdateInput{
 			Phase:            &performingPhase,
 			CurrentLineIndex: &lineIndex,
 		}); err != nil {
@@ -323,18 +334,18 @@ func (h *Handler) handleStartPlay(ctx context.Context, connCtx *platformws.Conne
 			return
 		}
 
-		h.connections.BroadcastToGroup(connCtx.GroupID, &stagesdomain.ServerMessage{
+		h.connections.BroadcastToGroup(ctx, connCtx.GroupID, &stagesdomain.ServerMessage{
 			Type: stagesdomain.ServerMessageTypePlayStarted,
 		})
 
-		h.broadcastStageState(connCtx.GroupID)
+		h.broadcastStageState(ctx, connCtx.GroupID)
 	}()
 
-	h.broadcastStageState(connCtx.GroupID)
+	h.broadcastStageState(ctx, connCtx.GroupID)
 }
 
 // handleNextLine handles advancing to the next line.
-func (h *Handler) handleNextLine(ctx context.Context, connCtx *platformws.ConnectionContext, msg *stagesdomain.ClientMessage) {
+func (h *Handler) handleNextLine(ctx context.Context, connCtx *platformws.ConnectionContext) {
 	ctx, span := h.tracer.StartSpan(ctx)
 	defer span.End()
 
@@ -366,36 +377,36 @@ func (h *Handler) handleNextLine(ctx context.Context, connCtx *platformws.Connec
 	if newLineIndex >= len(play.Lines) {
 		// End the play
 		discussionPhase := stagesdomain.StagePhaseDiscussion
-		if err := h.stagesRepo.UpdateStage(ctx, connCtx.GroupID, &stagesdomain.StageUpdateInput{
+		if err = h.stagesRepo.UpdateStage(ctx, connCtx.GroupID, &stagesdomain.StageUpdateInput{
 			Phase: &discussionPhase,
 		}); err != nil {
 			h.logger.Error("failed to update stage to discussion", err)
 			return
 		}
 
-		h.connections.BroadcastToGroup(connCtx.GroupID, &stagesdomain.ServerMessage{
+		h.connections.BroadcastToGroup(ctx, connCtx.GroupID, &stagesdomain.ServerMessage{
 			Type: stagesdomain.ServerMessageTypePlayEnded,
 		})
 	} else {
 		// Advance to next line
-		if err := h.stagesRepo.UpdateStage(ctx, connCtx.GroupID, &stagesdomain.StageUpdateInput{
+		if err = h.stagesRepo.UpdateStage(ctx, connCtx.GroupID, &stagesdomain.StageUpdateInput{
 			CurrentLineIndex: &newLineIndex,
 		}); err != nil {
 			h.logger.Error("failed to advance line", err)
 			return
 		}
 
-		h.connections.BroadcastToGroup(connCtx.GroupID, &stagesdomain.ServerMessage{
+		h.connections.BroadcastToGroup(ctx, connCtx.GroupID, &stagesdomain.ServerMessage{
 			Type:             stagesdomain.ServerMessageTypeLineAdvanced,
 			CurrentLineIndex: newLineIndex,
 		})
 	}
 
-	h.broadcastStageState(connCtx.GroupID)
+	h.broadcastStageState(ctx, connCtx.GroupID)
 }
 
 // handleResetPlay handles resetting the play.
-func (h *Handler) handleResetPlay(ctx context.Context, connCtx *platformws.ConnectionContext, msg *stagesdomain.ClientMessage) {
+func (h *Handler) handleResetPlay(ctx context.Context, connCtx *platformws.ConnectionContext) {
 	ctx, span := h.tracer.StartSpan(ctx)
 	defer span.End()
 
@@ -414,15 +425,21 @@ func (h *Handler) handleResetPlay(ctx context.Context, connCtx *platformws.Conne
 	}
 
 	// Also reset all participants' ready status
-	participants, _ := h.stagesRepo.GetActiveParticipantsForStage(ctx, connCtx.GroupID)
-	for _, p := range participants {
-		isReady := false
-		_ = h.stagesRepo.UpdateParticipant(ctx, p.ID, &stagesdomain.ParticipantUpdateInput{
-			IsReady: &isReady,
-		})
+	participants, err := h.stagesRepo.GetActiveParticipantsForStage(ctx, connCtx.GroupID)
+	if err != nil {
+		observability.AcknowledgeError(err, h.logger, span, "failed to get active participants")
 	}
 
-	h.broadcastStageState(connCtx.GroupID)
+	for _, p := range participants {
+		isReady := false
+		if err = h.stagesRepo.UpdateParticipant(ctx, p.ID, &stagesdomain.ParticipantUpdateInput{
+			IsReady: &isReady,
+		}); err != nil {
+			observability.AcknowledgeError(err, h.logger, span, "failed to update participant")
+		}
+	}
+
+	h.broadcastStageState(ctx, connCtx.GroupID)
 }
 
 // sendAvailablePlays sends the list of available plays to a participant.
@@ -441,10 +458,12 @@ func (h *Handler) sendAvailablePlays(ctx context.Context, connCtx *platformws.Co
 	plays := make([]*playscripts.PlayScript, len(result.Data))
 	copy(plays, result.Data)
 
-	_ = connCtx.WriteJSON(&stagesdomain.ServerMessage{
+	if err = connCtx.WriteJSON(&stagesdomain.ServerMessage{
 		Type:  stagesdomain.ServerMessageTypeAvailablePlays,
 		Plays: plays,
-	})
+	}); err != nil {
+		observability.AcknowledgeError(err, h.logger, span, "failed to send available plays")
+	}
 }
 
 // broadcastCastMembersUpdated broadcasts updated cast member assignments.
@@ -458,7 +477,7 @@ func (h *Handler) broadcastCastMembersUpdated(ctx context.Context, stageID strin
 		return
 	}
 
-	h.connections.BroadcastToGroup(stageID, &stagesdomain.ServerMessage{
+	h.connections.BroadcastToGroup(ctx, stageID, &stagesdomain.ServerMessage{
 		Type:         stagesdomain.ServerMessageTypeCastMembersUpdated,
 		Participants: participants,
 	})

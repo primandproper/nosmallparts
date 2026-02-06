@@ -26,7 +26,8 @@ type repository struct {
 	generatedQuerier  generated.Querier
 	auditLogEntryRepo audit.Repository
 	secretGenerator   random.Generator
-	db                *sql.DB
+	readDB            *sql.DB
+	writeDB           *sql.DB
 }
 
 // ProvideIdentityRepository provides a new repository.
@@ -38,7 +39,8 @@ func ProvideIdentityRepository(
 ) identity.Repository {
 	c := &repository{
 		Client:            client,
-		db:                client.DB(),
+		readDB:            client.ReadDB(),
+		writeDB:           client.WriteDB(),
 		tracer:            tracing.NewTracer(tracing.EnsureTracerProvider(tracerProvider).Tracer(o11yName)),
 		generatedQuerier:  generated.New(),
 		auditLogEntryRepo: auditLogEntryRepo,

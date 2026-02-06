@@ -87,21 +87,21 @@ INSERT INTO users
 `
 
 type CreateUserParams struct {
-	TwoFactorSecretVerifiedAt     sql.NullTime
-	Birthday                      sql.NullTime
-	TwoFactorSecret               string
+	ID                            string
+	Username                      string
+	AvatarSrc                     sql.NullString
 	EmailAddress                  string
 	HashedPassword                string
-	ID                            string
+	RequiresPasswordChange        bool
+	TwoFactorSecret               string
+	TwoFactorSecretVerifiedAt     sql.NullTime
 	ServiceRole                   string
 	UserAccountStatus             string
 	UserAccountStatusExplanation  string
-	Username                      string
+	Birthday                      sql.NullTime
+	EmailAddressVerificationToken sql.NullString
 	FirstName                     string
 	LastName                      string
-	AvatarSrc                     sql.NullString
-	EmailAddressVerificationToken sql.NullString
-	RequiresPasswordChange        bool
 }
 
 func (q *Queries) CreateUser(ctx context.Context, db DBTX, arg *CreateUserParams) error {
@@ -170,29 +170,29 @@ WHERE users.archived_at IS NULL
 `
 
 type GetAdminUserByUsernameRow struct {
-	CreatedAt                     time.Time
-	Birthday                      sql.NullTime
-	ArchivedAt                    sql.NullTime
-	LastUpdatedAt                 sql.NullTime
-	LastIndexedAt                 sql.NullTime
+	ID                            string
+	Username                      string
+	AvatarSrc                     sql.NullString
+	EmailAddress                  string
+	HashedPassword                string
 	PasswordLastChangedAt         sql.NullTime
-	LastAcceptedPrivacyPolicy     sql.NullTime
-	LastAcceptedTermsOfService    sql.NullTime
+	RequiresPasswordChange        bool
+	TwoFactorSecret               string
 	TwoFactorSecretVerifiedAt     sql.NullTime
-	EmailAddressVerifiedAt        sql.NullTime
+	ServiceRole                   string
 	UserAccountStatus             string
 	UserAccountStatusExplanation  string
-	ID                            string
-	ServiceRole                   string
+	Birthday                      sql.NullTime
+	EmailAddressVerificationToken sql.NullString
+	EmailAddressVerifiedAt        sql.NullTime
 	FirstName                     string
 	LastName                      string
-	TwoFactorSecret               string
-	HashedPassword                string
-	EmailAddress                  string
-	Username                      string
-	EmailAddressVerificationToken sql.NullString
-	AvatarSrc                     sql.NullString
-	RequiresPasswordChange        bool
+	LastAcceptedTermsOfService    sql.NullTime
+	LastAcceptedPrivacyPolicy     sql.NullTime
+	LastIndexedAt                 sql.NullTime
+	CreatedAt                     time.Time
+	LastUpdatedAt                 sql.NullTime
+	ArchivedAt                    sql.NullTime
 }
 
 func (q *Queries) GetAdminUserByUsername(ctx context.Context, db DBTX, username string) (*GetAdminUserByUsernameRow, error) {
@@ -273,29 +273,29 @@ WHERE users.archived_at IS NULL
 `
 
 type GetUserByEmailRow struct {
-	CreatedAt                     time.Time
-	Birthday                      sql.NullTime
-	ArchivedAt                    sql.NullTime
-	LastUpdatedAt                 sql.NullTime
-	LastIndexedAt                 sql.NullTime
+	ID                            string
+	Username                      string
+	AvatarSrc                     sql.NullString
+	EmailAddress                  string
+	HashedPassword                string
 	PasswordLastChangedAt         sql.NullTime
-	LastAcceptedPrivacyPolicy     sql.NullTime
-	LastAcceptedTermsOfService    sql.NullTime
+	RequiresPasswordChange        bool
+	TwoFactorSecret               string
 	TwoFactorSecretVerifiedAt     sql.NullTime
-	EmailAddressVerifiedAt        sql.NullTime
+	ServiceRole                   string
 	UserAccountStatus             string
 	UserAccountStatusExplanation  string
-	ID                            string
-	ServiceRole                   string
+	Birthday                      sql.NullTime
+	EmailAddressVerificationToken sql.NullString
+	EmailAddressVerifiedAt        sql.NullTime
 	FirstName                     string
 	LastName                      string
-	TwoFactorSecret               string
-	HashedPassword                string
-	EmailAddress                  string
-	Username                      string
-	EmailAddressVerificationToken sql.NullString
-	AvatarSrc                     sql.NullString
-	RequiresPasswordChange        bool
+	LastAcceptedTermsOfService    sql.NullTime
+	LastAcceptedPrivacyPolicy     sql.NullTime
+	LastIndexedAt                 sql.NullTime
+	CreatedAt                     time.Time
+	LastUpdatedAt                 sql.NullTime
+	ArchivedAt                    sql.NullTime
 }
 
 func (q *Queries) GetUserByEmail(ctx context.Context, db DBTX, emailAddress string) (*GetUserByEmailRow, error) {
@@ -360,29 +360,29 @@ WHERE users.archived_at IS NULL
 `
 
 type GetUserByEmailAddressVerificationTokenRow struct {
-	CreatedAt                     time.Time
-	Birthday                      sql.NullTime
-	ArchivedAt                    sql.NullTime
-	LastUpdatedAt                 sql.NullTime
-	LastIndexedAt                 sql.NullTime
+	ID                            string
+	Username                      string
+	AvatarSrc                     sql.NullString
+	EmailAddress                  string
+	HashedPassword                string
 	PasswordLastChangedAt         sql.NullTime
-	LastAcceptedPrivacyPolicy     sql.NullTime
-	LastAcceptedTermsOfService    sql.NullTime
+	RequiresPasswordChange        bool
+	TwoFactorSecret               string
 	TwoFactorSecretVerifiedAt     sql.NullTime
-	EmailAddressVerifiedAt        sql.NullTime
+	ServiceRole                   string
 	UserAccountStatus             string
 	UserAccountStatusExplanation  string
-	ID                            string
-	ServiceRole                   string
+	Birthday                      sql.NullTime
+	EmailAddressVerificationToken sql.NullString
+	EmailAddressVerifiedAt        sql.NullTime
 	FirstName                     string
 	LastName                      string
-	TwoFactorSecret               string
-	HashedPassword                string
-	EmailAddress                  string
-	Username                      string
-	EmailAddressVerificationToken sql.NullString
-	AvatarSrc                     sql.NullString
-	RequiresPasswordChange        bool
+	LastAcceptedTermsOfService    sql.NullTime
+	LastAcceptedPrivacyPolicy     sql.NullTime
+	LastIndexedAt                 sql.NullTime
+	CreatedAt                     time.Time
+	LastUpdatedAt                 sql.NullTime
+	ArchivedAt                    sql.NullTime
 }
 
 func (q *Queries) GetUserByEmailAddressVerificationToken(ctx context.Context, db DBTX, emailAddressVerificationToken sql.NullString) (*GetUserByEmailAddressVerificationTokenRow, error) {
@@ -447,29 +447,29 @@ WHERE users.archived_at IS NULL
 `
 
 type GetUserByIDRow struct {
-	CreatedAt                     time.Time
-	Birthday                      sql.NullTime
-	ArchivedAt                    sql.NullTime
-	LastUpdatedAt                 sql.NullTime
-	LastIndexedAt                 sql.NullTime
+	ID                            string
+	Username                      string
+	AvatarSrc                     sql.NullString
+	EmailAddress                  string
+	HashedPassword                string
 	PasswordLastChangedAt         sql.NullTime
-	LastAcceptedPrivacyPolicy     sql.NullTime
-	LastAcceptedTermsOfService    sql.NullTime
+	RequiresPasswordChange        bool
+	TwoFactorSecret               string
 	TwoFactorSecretVerifiedAt     sql.NullTime
-	EmailAddressVerifiedAt        sql.NullTime
+	ServiceRole                   string
 	UserAccountStatus             string
 	UserAccountStatusExplanation  string
-	ID                            string
-	ServiceRole                   string
+	Birthday                      sql.NullTime
+	EmailAddressVerificationToken sql.NullString
+	EmailAddressVerifiedAt        sql.NullTime
 	FirstName                     string
 	LastName                      string
-	TwoFactorSecret               string
-	HashedPassword                string
-	EmailAddress                  string
-	Username                      string
-	EmailAddressVerificationToken sql.NullString
-	AvatarSrc                     sql.NullString
-	RequiresPasswordChange        bool
+	LastAcceptedTermsOfService    sql.NullTime
+	LastAcceptedPrivacyPolicy     sql.NullTime
+	LastIndexedAt                 sql.NullTime
+	CreatedAt                     time.Time
+	LastUpdatedAt                 sql.NullTime
+	ArchivedAt                    sql.NullTime
 }
 
 func (q *Queries) GetUserByID(ctx context.Context, db DBTX, id string) (*GetUserByIDRow, error) {
@@ -534,29 +534,29 @@ WHERE users.archived_at IS NULL
 `
 
 type GetUserByUsernameRow struct {
-	CreatedAt                     time.Time
-	Birthday                      sql.NullTime
-	ArchivedAt                    sql.NullTime
-	LastUpdatedAt                 sql.NullTime
-	LastIndexedAt                 sql.NullTime
+	ID                            string
+	Username                      string
+	AvatarSrc                     sql.NullString
+	EmailAddress                  string
+	HashedPassword                string
 	PasswordLastChangedAt         sql.NullTime
-	LastAcceptedPrivacyPolicy     sql.NullTime
-	LastAcceptedTermsOfService    sql.NullTime
+	RequiresPasswordChange        bool
+	TwoFactorSecret               string
 	TwoFactorSecretVerifiedAt     sql.NullTime
-	EmailAddressVerifiedAt        sql.NullTime
+	ServiceRole                   string
 	UserAccountStatus             string
 	UserAccountStatusExplanation  string
-	ID                            string
-	ServiceRole                   string
+	Birthday                      sql.NullTime
+	EmailAddressVerificationToken sql.NullString
+	EmailAddressVerifiedAt        sql.NullTime
 	FirstName                     string
 	LastName                      string
-	TwoFactorSecret               string
-	HashedPassword                string
-	EmailAddress                  string
-	Username                      string
-	EmailAddressVerificationToken sql.NullString
-	AvatarSrc                     sql.NullString
-	RequiresPasswordChange        bool
+	LastAcceptedTermsOfService    sql.NullTime
+	LastAcceptedPrivacyPolicy     sql.NullTime
+	LastIndexedAt                 sql.NullTime
+	CreatedAt                     time.Time
+	LastUpdatedAt                 sql.NullTime
+	ArchivedAt                    sql.NullTime
 }
 
 func (q *Queries) GetUserByUsername(ctx context.Context, db DBTX, username string) (*GetUserByUsernameRow, error) {
@@ -653,29 +653,29 @@ WHERE users.archived_at IS NULL
 `
 
 type GetUserWithUnverifiedTwoFactorRow struct {
-	CreatedAt                     time.Time
-	Birthday                      sql.NullTime
-	ArchivedAt                    sql.NullTime
-	LastUpdatedAt                 sql.NullTime
-	LastIndexedAt                 sql.NullTime
+	ID                            string
+	Username                      string
+	AvatarSrc                     sql.NullString
+	EmailAddress                  string
+	HashedPassword                string
 	PasswordLastChangedAt         sql.NullTime
-	LastAcceptedPrivacyPolicy     sql.NullTime
-	LastAcceptedTermsOfService    sql.NullTime
+	RequiresPasswordChange        bool
+	TwoFactorSecret               string
 	TwoFactorSecretVerifiedAt     sql.NullTime
-	EmailAddressVerifiedAt        sql.NullTime
+	ServiceRole                   string
 	UserAccountStatus             string
 	UserAccountStatusExplanation  string
-	ID                            string
-	ServiceRole                   string
+	Birthday                      sql.NullTime
+	EmailAddressVerificationToken sql.NullString
+	EmailAddressVerifiedAt        sql.NullTime
 	FirstName                     string
 	LastName                      string
-	TwoFactorSecret               string
-	HashedPassword                string
-	EmailAddress                  string
-	Username                      string
-	EmailAddressVerificationToken sql.NullString
-	AvatarSrc                     sql.NullString
-	RequiresPasswordChange        bool
+	LastAcceptedTermsOfService    sql.NullTime
+	LastAcceptedPrivacyPolicy     sql.NullTime
+	LastIndexedAt                 sql.NullTime
+	CreatedAt                     time.Time
+	LastUpdatedAt                 sql.NullTime
+	ArchivedAt                    sql.NullTime
 }
 
 func (q *Queries) GetUserWithUnverifiedTwoFactor(ctx context.Context, db DBTX, id string) (*GetUserWithUnverifiedTwoFactorRow, error) {
@@ -741,29 +741,29 @@ WHERE users.archived_at IS NULL
 `
 
 type GetUserWithVerifiedTwoFactorRow struct {
-	CreatedAt                     time.Time
-	Birthday                      sql.NullTime
-	ArchivedAt                    sql.NullTime
-	LastUpdatedAt                 sql.NullTime
-	LastIndexedAt                 sql.NullTime
+	ID                            string
+	Username                      string
+	AvatarSrc                     sql.NullString
+	EmailAddress                  string
+	HashedPassword                string
 	PasswordLastChangedAt         sql.NullTime
-	LastAcceptedPrivacyPolicy     sql.NullTime
-	LastAcceptedTermsOfService    sql.NullTime
+	RequiresPasswordChange        bool
+	TwoFactorSecret               string
 	TwoFactorSecretVerifiedAt     sql.NullTime
-	EmailAddressVerifiedAt        sql.NullTime
+	ServiceRole                   string
 	UserAccountStatus             string
 	UserAccountStatusExplanation  string
-	ID                            string
-	ServiceRole                   string
+	Birthday                      sql.NullTime
+	EmailAddressVerificationToken sql.NullString
+	EmailAddressVerifiedAt        sql.NullTime
 	FirstName                     string
 	LastName                      string
-	TwoFactorSecret               string
-	HashedPassword                string
-	EmailAddress                  string
-	Username                      string
-	EmailAddressVerificationToken sql.NullString
-	AvatarSrc                     sql.NullString
-	RequiresPasswordChange        bool
+	LastAcceptedTermsOfService    sql.NullTime
+	LastAcceptedPrivacyPolicy     sql.NullTime
+	LastIndexedAt                 sql.NullTime
+	CreatedAt                     time.Time
+	LastUpdatedAt                 sql.NullTime
+	ArchivedAt                    sql.NullTime
 }
 
 func (q *Queries) GetUserWithVerifiedTwoFactor(ctx context.Context, db DBTX, id string) (*GetUserWithVerifiedTwoFactorRow, error) {
@@ -863,41 +863,41 @@ LIMIT COALESCE($7, 50)
 `
 
 type GetUsersParams struct {
-	ResultLimit     interface{}
 	CreatedAfter    sql.NullTime
 	CreatedBefore   sql.NullTime
 	UpdatedBefore   sql.NullTime
 	UpdatedAfter    sql.NullTime
-	Cursor          sql.NullString
 	IncludeArchived sql.NullBool
+	Cursor          sql.NullString
+	ResultLimit     interface{}
 }
 
 type GetUsersRow struct {
-	CreatedAt                     time.Time
-	LastAcceptedPrivacyPolicy     sql.NullTime
-	LastAcceptedTermsOfService    sql.NullTime
-	ArchivedAt                    sql.NullTime
-	LastUpdatedAt                 sql.NullTime
-	PasswordLastChangedAt         sql.NullTime
-	LastIndexedAt                 sql.NullTime
-	Birthday                      sql.NullTime
-	TwoFactorSecretVerifiedAt     sql.NullTime
-	EmailAddressVerifiedAt        sql.NullTime
-	TwoFactorSecret               string
+	ID                            string
 	Username                      string
-	UserAccountStatusExplanation  string
-	UserAccountStatus             string
+	AvatarSrc                     sql.NullString
+	EmailAddress                  string
+	HashedPassword                string
+	PasswordLastChangedAt         sql.NullTime
+	RequiresPasswordChange        bool
+	TwoFactorSecret               string
+	TwoFactorSecretVerifiedAt     sql.NullTime
 	ServiceRole                   string
+	UserAccountStatus             string
+	UserAccountStatusExplanation  string
+	Birthday                      sql.NullTime
+	EmailAddressVerificationToken sql.NullString
+	EmailAddressVerifiedAt        sql.NullTime
 	FirstName                     string
 	LastName                      string
-	EmailAddress                  string
-	ID                            string
-	HashedPassword                string
-	AvatarSrc                     sql.NullString
-	EmailAddressVerificationToken sql.NullString
+	LastAcceptedTermsOfService    sql.NullTime
+	LastAcceptedPrivacyPolicy     sql.NullTime
+	LastIndexedAt                 sql.NullTime
+	CreatedAt                     time.Time
+	LastUpdatedAt                 sql.NullTime
+	ArchivedAt                    sql.NullTime
 	FilteredCount                 int64
 	TotalCount                    int64
-	RequiresPasswordChange        bool
 }
 
 func (q *Queries) GetUsers(ctx context.Context, db DBTX, arg *GetUsersParams) ([]*GetUsersRow, error) {
@@ -1027,42 +1027,42 @@ LIMIT COALESCE($8, 50)
 `
 
 type GetUsersForAccountParams struct {
-	ResultLimit      interface{}
 	CreatedAfter     sql.NullTime
 	CreatedBefore    sql.NullTime
 	UpdatedBefore    sql.NullTime
 	UpdatedAfter     sql.NullTime
+	IncludeArchived  sql.NullBool
 	BelongsToAccount string
 	Cursor           sql.NullString
-	IncludeArchived  sql.NullBool
+	ResultLimit      interface{}
 }
 
 type GetUsersForAccountRow struct {
-	CreatedAt                     time.Time
-	LastAcceptedPrivacyPolicy     sql.NullTime
-	LastAcceptedTermsOfService    sql.NullTime
-	ArchivedAt                    sql.NullTime
-	LastUpdatedAt                 sql.NullTime
-	PasswordLastChangedAt         sql.NullTime
-	LastIndexedAt                 sql.NullTime
-	Birthday                      sql.NullTime
-	TwoFactorSecretVerifiedAt     sql.NullTime
-	EmailAddressVerifiedAt        sql.NullTime
-	TwoFactorSecret               string
+	ID                            string
 	Username                      string
-	UserAccountStatusExplanation  string
-	UserAccountStatus             string
+	AvatarSrc                     sql.NullString
+	EmailAddress                  string
+	HashedPassword                string
+	PasswordLastChangedAt         sql.NullTime
+	RequiresPasswordChange        bool
+	TwoFactorSecret               string
+	TwoFactorSecretVerifiedAt     sql.NullTime
 	ServiceRole                   string
+	UserAccountStatus             string
+	UserAccountStatusExplanation  string
+	Birthday                      sql.NullTime
+	EmailAddressVerificationToken sql.NullString
+	EmailAddressVerifiedAt        sql.NullTime
 	FirstName                     string
 	LastName                      string
-	EmailAddress                  string
-	ID                            string
-	HashedPassword                string
-	AvatarSrc                     sql.NullString
-	EmailAddressVerificationToken sql.NullString
+	LastAcceptedTermsOfService    sql.NullTime
+	LastAcceptedPrivacyPolicy     sql.NullTime
+	LastIndexedAt                 sql.NullTime
+	CreatedAt                     time.Time
+	LastUpdatedAt                 sql.NullTime
+	ArchivedAt                    sql.NullTime
 	FilteredCount                 int64
 	TotalCount                    int64
-	RequiresPasswordChange        bool
 }
 
 func (q *Queries) GetUsersForAccount(ctx context.Context, db DBTX, arg *GetUsersForAccountParams) ([]*GetUsersForAccountRow, error) {
@@ -1154,29 +1154,29 @@ WHERE users.archived_at IS NULL
 `
 
 type GetUsersWithIDsRow struct {
-	CreatedAt                     time.Time
-	Birthday                      sql.NullTime
-	ArchivedAt                    sql.NullTime
-	LastUpdatedAt                 sql.NullTime
-	LastIndexedAt                 sql.NullTime
+	ID                            string
+	Username                      string
+	AvatarSrc                     sql.NullString
+	EmailAddress                  string
+	HashedPassword                string
 	PasswordLastChangedAt         sql.NullTime
-	LastAcceptedPrivacyPolicy     sql.NullTime
-	LastAcceptedTermsOfService    sql.NullTime
+	RequiresPasswordChange        bool
+	TwoFactorSecret               string
 	TwoFactorSecretVerifiedAt     sql.NullTime
-	EmailAddressVerifiedAt        sql.NullTime
+	ServiceRole                   string
 	UserAccountStatus             string
 	UserAccountStatusExplanation  string
-	ID                            string
-	ServiceRole                   string
+	Birthday                      sql.NullTime
+	EmailAddressVerificationToken sql.NullString
+	EmailAddressVerifiedAt        sql.NullTime
 	FirstName                     string
 	LastName                      string
-	TwoFactorSecret               string
-	HashedPassword                string
-	EmailAddress                  string
-	Username                      string
-	EmailAddressVerificationToken sql.NullString
-	AvatarSrc                     sql.NullString
-	RequiresPasswordChange        bool
+	LastAcceptedTermsOfService    sql.NullTime
+	LastAcceptedPrivacyPolicy     sql.NullTime
+	LastIndexedAt                 sql.NullTime
+	CreatedAt                     time.Time
+	LastUpdatedAt                 sql.NullTime
+	ArchivedAt                    sql.NullTime
 }
 
 func (q *Queries) GetUsersWithIDs(ctx context.Context, db DBTX, ids []string) ([]*GetUsersWithIDsRow, error) {
@@ -1359,42 +1359,42 @@ LIMIT COALESCE($8, 50)
 `
 
 type SearchUsersByUsernameParams struct {
-	ResultLimit     interface{}
 	CreatedAfter    sql.NullTime
 	CreatedBefore   sql.NullTime
 	UpdatedBefore   sql.NullTime
 	UpdatedAfter    sql.NullTime
+	IncludeArchived sql.NullBool
 	Username        string
 	Cursor          sql.NullString
-	IncludeArchived sql.NullBool
+	ResultLimit     interface{}
 }
 
 type SearchUsersByUsernameRow struct {
-	CreatedAt                     time.Time
-	LastAcceptedPrivacyPolicy     sql.NullTime
-	LastAcceptedTermsOfService    sql.NullTime
-	ArchivedAt                    sql.NullTime
-	LastUpdatedAt                 sql.NullTime
-	PasswordLastChangedAt         sql.NullTime
-	LastIndexedAt                 sql.NullTime
-	Birthday                      sql.NullTime
-	TwoFactorSecretVerifiedAt     sql.NullTime
-	EmailAddressVerifiedAt        sql.NullTime
-	TwoFactorSecret               string
+	ID                            string
 	Username                      string
-	UserAccountStatusExplanation  string
-	UserAccountStatus             string
+	AvatarSrc                     sql.NullString
+	EmailAddress                  string
+	HashedPassword                string
+	PasswordLastChangedAt         sql.NullTime
+	RequiresPasswordChange        bool
+	TwoFactorSecret               string
+	TwoFactorSecretVerifiedAt     sql.NullTime
 	ServiceRole                   string
+	UserAccountStatus             string
+	UserAccountStatusExplanation  string
+	Birthday                      sql.NullTime
+	EmailAddressVerificationToken sql.NullString
+	EmailAddressVerifiedAt        sql.NullTime
 	FirstName                     string
 	LastName                      string
-	EmailAddress                  string
-	ID                            string
-	HashedPassword                string
-	AvatarSrc                     sql.NullString
-	EmailAddressVerificationToken sql.NullString
+	LastAcceptedTermsOfService    sql.NullTime
+	LastAcceptedPrivacyPolicy     sql.NullTime
+	LastIndexedAt                 sql.NullTime
+	CreatedAt                     time.Time
+	LastUpdatedAt                 sql.NullTime
+	ArchivedAt                    sql.NullTime
 	FilteredCount                 int64
 	TotalCount                    int64
-	RequiresPasswordChange        bool
 }
 
 func (q *Queries) SearchUsersByUsername(ctx context.Context, db DBTX, arg *SearchUsersByUsernameParams) ([]*SearchUsersByUsernameRow, error) {
@@ -1464,8 +1464,8 @@ WHERE archived_at IS NULL
 `
 
 type UpdateUserAvatarSrcParams struct {
-	ID        string
 	AvatarSrc sql.NullString
+	ID        string
 }
 
 func (q *Queries) UpdateUserAvatarSrc(ctx context.Context, db DBTX, arg *UpdateUserAvatarSrcParams) (int64, error) {

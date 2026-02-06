@@ -35,7 +35,7 @@ func (r *repository) GetAccount(ctx context.Context, accountID string) (*identit
 	}
 	tracing.AttachToSpan(span, keys.AccountIDKey, accountID)
 
-	results, err := r.generatedQuerier.GetAccountByIDWithMemberships(ctx, r.db, accountID)
+	results, err := r.generatedQuerier.GetAccountByIDWithMemberships(ctx, r.readDB, accountID)
 	if err != nil {
 		return nil, observability.PrepareError(err, span, "executing accounts list retrieval query")
 	}
@@ -189,7 +189,7 @@ func (r *repository) getAccountsForUser(ctx context.Context, querier database.SQ
 
 // GetAccounts fetches a list of accounts from the database that meet a particular filter.
 func (r *repository) GetAccounts(ctx context.Context, userID string, filter *filtering.QueryFilter) (x *filtering.QueryFilteredResult[identity.Account], err error) {
-	return r.getAccountsForUser(ctx, r.db, userID, filter)
+	return r.getAccountsForUser(ctx, r.readDB, userID, filter)
 }
 
 // CreateAccount creates an account in the database.
@@ -204,7 +204,7 @@ func (r *repository) CreateAccount(ctx context.Context, input *identity.AccountD
 	logger := r.logger.WithValue(keys.UserIDKey, input.BelongsToUser)
 
 	// begin account creation transaction
-	tx, err := r.db.BeginTx(ctx, nil)
+	tx, err := r.writeDB.BeginTx(ctx, nil)
 	if err != nil {
 		return nil, observability.PrepareAndLogError(err, logger, span, "beginning transaction")
 	}
@@ -303,7 +303,7 @@ func (r *repository) UpdateAccount(ctx context.Context, updated *identity.Accoun
 	logger := r.logger.WithValue(keys.AccountIDKey, updated.ID)
 	tracing.AttachToSpan(span, keys.AccountIDKey, updated.ID)
 
-	tx, err := r.db.BeginTx(ctx, nil)
+	tx, err := r.writeDB.BeginTx(ctx, nil)
 	if err != nil {
 		return observability.PrepareAndLogError(err, logger, span, "beginning transaction")
 	}
@@ -444,12 +444,12 @@ func (r *repository) ArchiveAccount(ctx context.Context, accountID, ownerID stri
 	tracing.AttachToSpan(span, keys.AccountIDKey, accountID)
 	logger = logger.WithValue(keys.AccountIDKey, accountID)
 
-	tx, err := r.db.BeginTx(ctx, nil)
+	tx, err := r.writeDB.BeginTx(ctx, nil)
 	if err != nil {
 		return observability.PrepareAndLogError(err, logger, span, "beginning transaction")
 	}
 
-	if _, err = r.generatedQuerier.ArchiveAccount(ctx, r.db, &generated.ArchiveAccountParams{
+	if _, err = r.generatedQuerier.ArchiveAccount(ctx, tx, &generated.ArchiveAccountParams{
 		BelongsToUser: ownerID,
 		ID:            accountID,
 	}); err != nil {

@@ -41,7 +41,7 @@ func (q *repository) UserNotificationExists(ctx context.Context, userID, userNot
 	logger = logger.WithValue(keys.UserNotificationIDKey, userNotificationID)
 	tracing.AttachToSpan(span, keys.UserNotificationIDKey, userNotificationID)
 
-	result, err := q.generatedQuerier.CheckUserNotificationExistence(ctx, q.db, &generated.CheckUserNotificationExistenceParams{
+	result, err := q.generatedQuerier.CheckUserNotificationExistence(ctx, q.readDB, &generated.CheckUserNotificationExistenceParams{
 		ID:            userNotificationID,
 		BelongsToUser: userID,
 	})
@@ -71,7 +71,7 @@ func (q *repository) GetUserNotification(ctx context.Context, userID, userNotifi
 	logger = logger.WithValue(keys.UserNotificationIDKey, userNotificationID)
 	tracing.AttachToSpan(span, keys.UserNotificationIDKey, userNotificationID)
 
-	result, err := q.generatedQuerier.GetUserNotification(ctx, q.db, &generated.GetUserNotificationParams{
+	result, err := q.generatedQuerier.GetUserNotification(ctx, q.readDB, &generated.GetUserNotificationParams{
 		BelongsToUser: userID,
 		ID:            userNotificationID,
 	})
@@ -110,7 +110,7 @@ func (q *repository) GetUserNotifications(ctx context.Context, userID string, fi
 	logger = filter.AttachToLogger(logger)
 	tracing.AttachQueryFilterToSpan(span, filter)
 
-	results, err := q.generatedQuerier.GetUserNotificationsForUser(ctx, q.db, &generated.GetUserNotificationsForUserParams{
+	results, err := q.generatedQuerier.GetUserNotificationsForUser(ctx, q.readDB, &generated.GetUserNotificationsForUserParams{
 		UserID:        userID,
 		CreatedBefore: database.NullTimeFromTimePointer(filter.CreatedBefore),
 		CreatedAfter:  database.NullTimeFromTimePointer(filter.CreatedAfter),
@@ -163,7 +163,7 @@ func (q *repository) CreateUserNotification(ctx context.Context, input *types.Us
 	tracing.AttachToSpan(span, keys.UserNotificationIDKey, input.ID)
 	logger := q.logger.WithValue(keys.UserNotificationIDKey, input.ID)
 
-	tx, err := q.db.BeginTx(ctx, nil)
+	tx, err := q.writeDB.BeginTx(ctx, nil)
 	if err != nil {
 		return nil, observability.PrepareAndLogError(err, logger, span, "beginning transaction")
 	}
@@ -217,7 +217,7 @@ func (q *repository) UpdateUserNotification(ctx context.Context, updated *types.
 	logger := q.logger.WithValue(keys.UserNotificationIDKey, updated.ID)
 	tracing.AttachToSpan(span, keys.UserNotificationIDKey, updated.ID)
 
-	tx, err := q.db.BeginTx(ctx, nil)
+	tx, err := q.writeDB.BeginTx(ctx, nil)
 	if err != nil {
 		return observability.PrepareAndLogError(err, logger, span, "beginning transaction")
 	}

@@ -31,7 +31,7 @@ func (q *repository) GetOAuth2ClientTokenByCode(ctx context.Context, code string
 		return nil, observability.PrepareError(err, span, "encrypting oauth2 token code")
 	}
 
-	result, err := q.generatedQuerier.GetOAuth2ClientTokenByCode(ctx, q.db, encryptedCode)
+	result, err := q.generatedQuerier.GetOAuth2ClientTokenByCode(ctx, q.readDB, encryptedCode)
 	if err != nil {
 		return nil, observability.PrepareAndLogError(err, logger, span, "getting oauth2 client token by code")
 	}
@@ -97,7 +97,7 @@ func (q *repository) GetOAuth2ClientTokenByAccess(ctx context.Context, access st
 		return nil, observability.PrepareError(err, span, "encrypting oauth2 token access")
 	}
 
-	result, err := q.generatedQuerier.GetOAuth2ClientTokenByAccess(ctx, q.db, encryptedAccess)
+	result, err := q.generatedQuerier.GetOAuth2ClientTokenByAccess(ctx, q.readDB, encryptedAccess)
 	if err != nil {
 		return nil, observability.PrepareAndLogError(err, logger, span, "getting oauth2 client token by access")
 	}
@@ -163,7 +163,7 @@ func (q *repository) GetOAuth2ClientTokenByRefresh(ctx context.Context, refresh 
 		return nil, observability.PrepareError(err, span, "encrypting oauth2 token refresh")
 	}
 
-	result, err := q.generatedQuerier.GetOAuth2ClientTokenByRefresh(ctx, q.db, encryptedRefresh)
+	result, err := q.generatedQuerier.GetOAuth2ClientTokenByRefresh(ctx, q.readDB, encryptedRefresh)
 	if err != nil {
 		return nil, observability.PrepareAndLogError(err, logger, span, "getting oauth2 client token by refresh")
 	}
@@ -239,7 +239,7 @@ func (q *repository) CreateOAuth2ClientToken(ctx context.Context, input *types.O
 	}
 
 	// create the oauth2 client token.
-	if err = q.generatedQuerier.CreateOAuth2ClientToken(ctx, q.db, &generated.CreateOAuth2ClientTokenParams{
+	if err = q.generatedQuerier.CreateOAuth2ClientToken(ctx, q.writeDB, &generated.CreateOAuth2ClientTokenParams{
 		AccessExpiresAt:     now.Add(input.AccessExpiresIn),
 		CodeExpiresAt:       now.Add(input.CodeExpiresIn),
 		RefreshExpiresAt:    now.Add(input.RefreshExpiresIn),
@@ -300,7 +300,7 @@ func (q *repository) DeleteOAuth2ClientTokenByAccess(ctx context.Context, access
 		return observability.PrepareError(err, span, "encrypting oauth2 token access")
 	}
 
-	if _, err = q.generatedQuerier.DeleteOAuth2ClientTokenByAccess(ctx, q.db, encryptedAccess); err != nil {
+	if _, err = q.generatedQuerier.DeleteOAuth2ClientTokenByAccess(ctx, q.writeDB, encryptedAccess); err != nil {
 		return observability.PrepareAndLogError(err, logger, span, "archiving oauth2 client token by access")
 	}
 
@@ -327,7 +327,7 @@ func (q *repository) DeleteOAuth2ClientTokenByCode(ctx context.Context, code str
 		return observability.PrepareError(err, span, "encrypting oauth2 token code")
 	}
 
-	if _, err = q.generatedQuerier.DeleteOAuth2ClientTokenByCode(ctx, q.db, encryptedCode); err != nil {
+	if _, err = q.generatedQuerier.DeleteOAuth2ClientTokenByCode(ctx, q.writeDB, encryptedCode); err != nil {
 		return observability.PrepareAndLogError(err, logger, span, "archiving oauth2 client token by code")
 	}
 
@@ -354,7 +354,7 @@ func (q *repository) DeleteOAuth2ClientTokenByRefresh(ctx context.Context, refre
 		return observability.PrepareError(err, span, "encrypting oauth2 token refresh")
 	}
 
-	if _, err = q.generatedQuerier.DeleteOAuth2ClientTokenByRefresh(ctx, q.db, encryptedRefresh); err != nil {
+	if _, err = q.generatedQuerier.DeleteOAuth2ClientTokenByRefresh(ctx, q.writeDB, encryptedRefresh); err != nil {
 		return observability.PrepareAndLogError(err, logger, span, "archiving oauth2 client token by refresh")
 	}
 

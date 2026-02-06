@@ -73,14 +73,14 @@ func AllSettingTypeValues() []SettingType {
 }
 
 type ServiceSettings struct {
-	CreatedAt     time.Time
-	LastUpdatedAt sql.NullTime
-	ArchivedAt    sql.NullTime
 	ID            string
 	Name          string
 	Type          SettingType
 	Description   string
-	Enumeration   string
 	DefaultValue  sql.NullString
+	Enumeration   string
 	AdminsOnly    bool
+	CreatedAt     time.Time
+	LastUpdatedAt sql.NullTime
+	ArchivedAt    sql.NullTime
 }

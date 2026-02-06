@@ -21,6 +21,18 @@ images:
     newName: us-central1-docker.pkg.dev/no-small-parts-dev/containers/no-small-parts-job-db-cleaner
     newTag: latest
 
+  - name: no-small-parts-job-meal-plan-finalizer
+    newName: us-central1-docker.pkg.dev/no-small-parts-dev/containers/no-small-parts-job-meal-plan-finalizer
+    newTag: latest
+
+  - name: no-small-parts-job-meal-plan-grocery-list-init
+    newName: us-central1-docker.pkg.dev/no-small-parts-dev/containers/no-small-parts-job-meal-plan-grocery-list-init
+    newTag: latest
+
+  - name: no-small-parts-job-meal-plan-task-creator
+    newName: us-central1-docker.pkg.dev/no-small-parts-dev/containers/no-small-parts-job-meal-plan-task-creator
+    newTag: latest
+
   - name: no-small-parts-job-search-data-index-scheduler
     newName: us-central1-docker.pkg.dev/no-small-parts-dev/containers/no-small-parts-job-search-data-index-scheduler
     newTag: latest
@@ -34,8 +46,8 @@ images:
     newTag: latest
 
   # Uncomment to enable MCP server deployment
-  # - name: dinner-done-better-mcp-server
-  #   newName: us-central1-docker.pkg.dev/dinner-done-better-dev/containers/dinner-done-better-mcp-server
+  # - name: no-small-parts-mcp-server
+  #   newName: us-central1-docker.pkg.dev/no-small-parts-dev/containers/no-small-parts-mcp-server
   #   newTag: latest
 
 # See: https://kubectl.docs.kubernetes.io/references/kustomize/kustomization/patches/
@@ -87,7 +99,7 @@ patches:
       - op: add
         path: "/spec/template/spec/containers/0/env/-"
         value:
-          name: DINNER_DONE_BETTER_SERVICE_ENVIRONMENT
+          name: NO_SMALL_PARTS_SERVICE_ENVIRONMENT
           value: dev
     target:
       version: v1
@@ -103,6 +115,56 @@ patches:
     target:
       kind: CronJob
       name: no-small-parts-job-db-cleaner
+
+  ### Meal Plan Finalizer CronJob - needs database, pubsub, and CSI volume
+  - path: patches/cronjob-secrets-csi-volume.yaml
+    target:
+      kind: CronJob
+      name: no-small-parts-job-meal-plan-finalizer
+  - path: patches/cronjob-database-env.yaml
+    target:
+      kind: CronJob
+      name: no-small-parts-job-meal-plan-finalizer
+  - path: patches/cronjob-pubsub-env.yaml
+    target:
+      kind: CronJob
+      name: no-small-parts-job-meal-plan-finalizer
+
+  ### Meal Plan Grocery List Init CronJob - needs database, pubsub, segment, and CSI volume
+  - path: patches/cronjob-secrets-csi-volume.yaml
+    target:
+      kind: CronJob
+      name: no-small-parts-job-meal-plan-grocery-list-init
+  - path: patches/cronjob-database-env.yaml
+    target:
+      kind: CronJob
+      name: no-small-parts-job-meal-plan-grocery-list-init
+  - path: patches/cronjob-pubsub-env.yaml
+    target:
+      kind: CronJob
+      name: no-small-parts-job-meal-plan-grocery-list-init
+  - path: patches/cronjob-segment-env.yaml
+    target:
+      kind: CronJob
+      name: no-small-parts-job-meal-plan-grocery-list-init
+
+  ### Meal Plan Task Creator CronJob - needs database, pubsub, segment, and CSI volume
+  - path: patches/cronjob-secrets-csi-volume.yaml
+    target:
+      kind: CronJob
+      name: no-small-parts-job-meal-plan-task-creator
+  - path: patches/cronjob-database-env.yaml
+    target:
+      kind: CronJob
+      name: no-small-parts-job-meal-plan-task-creator
+  - path: patches/cronjob-pubsub-env.yaml
+    target:
+      kind: CronJob
+      name: no-small-parts-job-meal-plan-task-creator
+  - path: patches/cronjob-segment-env.yaml
+    target:
+      kind: CronJob
+      name: no-small-parts-job-meal-plan-task-creator
 
   ### Search Data Index Scheduler CronJob - needs database, pubsub, and CSI volume
   - path: patches/cronjob-secrets-csi-volume.yaml
@@ -123,7 +185,7 @@ patches:
       - op: add
         path: "/spec/template/spec/containers/0/env/-"
         value:
-          name: DINNER_DONE_BETTER_COOKIES_COOKIE_NAME
+          name: NO_SMALL_PARTS_COOKIES_COOKIE_NAME
           valueFrom:
             secretKeyRef:
               name: admin-webapp-config
@@ -131,7 +193,7 @@ patches:
       - op: add
         path: "/spec/template/spec/containers/0/env/-"
         value:
-          name: DINNER_DONE_BETTER_COOKIES_HASH_KEY
+          name: NO_SMALL_PARTS_COOKIES_HASH_KEY
           valueFrom:
             secretKeyRef:
               name: admin-webapp-config
@@ -139,7 +201,7 @@ patches:
       - op: add
         path: "/spec/template/spec/containers/0/env/-"
         value:
-          name: DINNER_DONE_BETTER_COOKIES_BLOCK_KEY
+          name: NO_SMALL_PARTS_COOKIES_BLOCK_KEY
           valueFrom:
             secretKeyRef:
               name: admin-webapp-config
@@ -147,7 +209,7 @@ patches:
       - op: add
         path: "/spec/template/spec/containers/0/env/-"
         value:
-          name: DINNER_DONE_BETTER_COOKIES_DOMAIN
+          name: NO_SMALL_PARTS_COOKIES_DOMAIN
           valueFrom:
             secretKeyRef:
               name: admin-webapp-config
@@ -155,7 +217,7 @@ patches:
       - op: add
         path: "/spec/template/spec/containers/0/env/-"
         value:
-          name: DINNER_DONE_BETTER_API_SERVICE_HTTP_API_SERVER_URL
+          name: NO_SMALL_PARTS_API_SERVICE_HTTP_API_SERVER_URL
           valueFrom:
             configMapKeyRef:
               name: admin-webapp-config
@@ -163,7 +225,7 @@ patches:
       - op: add
         path: "/spec/template/spec/containers/0/env/-"
         value:
-          name: DINNER_DONE_BETTER_API_SERVICE_GRPC_API_SERVER_URL
+          name: NO_SMALL_PARTS_API_SERVICE_GRPC_API_SERVER_URL
           valueFrom:
             configMapKeyRef:
               name: admin-webapp-config
@@ -171,7 +233,7 @@ patches:
       - op: add
         path: "/spec/template/spec/containers/0/env/-"
         value:
-          name: DINNER_DONE_BETTER_API_SERVICE_OAUTH2_API_CLIENT_ID
+          name: NO_SMALL_PARTS_API_SERVICE_OAUTH2_API_CLIENT_ID
           valueFrom:
             secretKeyRef:
               name: admin-webapp-config
@@ -179,7 +241,7 @@ patches:
       - op: add
         path: "/spec/template/spec/containers/0/env/-"
         value:
-          name: DINNER_DONE_BETTER_API_SERVICE_OAUTH2_API_CLIENT_SECRET
+          name: NO_SMALL_PARTS_API_SERVICE_OAUTH2_API_CLIENT_SECRET
           valueFrom:
             secretKeyRef:
               name: admin-webapp-config
@@ -210,6 +272,21 @@ configMapGenerator:
     files:
       - config.json=./configs/job_db_cleaner_config.json
 
+  - name: no-small-parts-job-meal-plan-finalizer-config
+    namespace: dev
+    files:
+      - config.json=./configs/job_meal_plan_finalizer_config.json
+
+  - name: no-small-parts-job-meal-plan-grocery-list-init-config
+    namespace: dev
+    files:
+      - config.json=./configs/job_meal_plan_grocery_list_initializer_config.json
+
+  - name: no-small-parts-job-meal-plan-task-creator-config
+    namespace: dev
+    files:
+      - config.json=./configs/job_meal_plan_task_creator_config.json
+
   - name: no-small-parts-job-search-data-index-scheduler-config
     namespace: dev
     files:
@@ -221,7 +298,7 @@ configMapGenerator:
       - config.json=./configs/admin_webapp_config.json
 
   # Uncomment to enable MCP server deployment
-  # - name: dinner-done-better-mcp-server-config
+  # - name: no-small-parts-mcp-server-config
   #   namespace: dev
   #   files:
   #     - config.json=./configs/mcp_server_config.json

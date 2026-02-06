@@ -38,7 +38,8 @@ func buildMockSQLTestClient(t *testing.T) (*repository, *sqlmockExpecterWrapper)
 	require.NoError(t, err)
 
 	c := &repository{
-		db:               fakeDB,
+		readDB:           fakeDB,
+		writeDB:          fakeDB,
 		logger:           logging.NewNoopLogger(),
 		generatedQuerier: generated.New(),
 		tracer:           tracing.NewTracerForTest("test"),
@@ -52,7 +53,7 @@ func buildDatabaseClientForTest(t *testing.T) (*repository, *pgcontainers.Postgr
 
 	ctx := t.Context()
 	container, db, config := pgtesting.BuildDatabaseContainerForTest(t)
-	require.NoError(t, migrations.NewMigrator(logging.NewNoopLogger(), tracing.NewNoopTracerProvider(), db, config).Migrate(ctx))
+	require.NoError(t, migrations.NewMigrator(logging.NewNoopLogger()).Migrate(ctx, db))
 
 	pgc, err := postgres.ProvideDatabaseClient(ctx, logging.NewNoopLogger(), tracing.NewNoopTracerProvider(), config)
 	require.NotNil(t, pgc)

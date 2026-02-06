@@ -26,7 +26,7 @@ func buildDatabaseClientForTest(t *testing.T) (*repository, *pgcontainers.Postgr
 
 	ctx := t.Context()
 	container, db, config := pgtesting.BuildDatabaseContainerForTest(t)
-	require.NoError(t, migrations.NewMigrator(logging.NewNoopLogger(), tracing.NewNoopTracerProvider(), db, config).Migrate(ctx))
+	require.NoError(t, migrations.NewMigrator(logging.NewNoopLogger()).Migrate(ctx, db))
 
 	pgc, err := postgres.ProvideDatabaseClient(ctx, logging.NewNoopLogger(), tracing.NewNoopTracerProvider(), config)
 	require.NotNil(t, pgc)
@@ -45,7 +45,7 @@ func buildInertClientForTest(t *testing.T) *repository {
 
 	config := &databasecfg.Config{
 		Provider:                 databasecfg.ProviderPostgres,
-		ConnectionDetails:        databasecfg.ConnectionDetails{},
+		ReadConnection:           databasecfg.ConnectionDetails{},
 		Debug:                    false,
 		LogQueries:               false,
 		RunMigrations:            true,

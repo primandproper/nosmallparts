@@ -8,6 +8,7 @@ import (
 
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/playscripts"
 	stagesdomain "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/stages"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
 	platformws "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/websocket"
@@ -66,93 +67,108 @@ func NewHandler(
 
 // ServeHTTP handles WebSocket upgrade and message processing.
 func (h *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	ctx, span := h.tracer.StartSpan(r.Context())
+	defer span.End()
+
 	conn, err := upgrader.Upgrade(w, r, nil)
 	if err != nil {
 		h.logger.Error("failed to upgrade connection", err)
 		return
 	}
 
-	ctx := platformws.NewConnectionContext(conn)
-	defer h.cleanup(ctx)
+	connCtx := platformws.NewConnectionContext(conn)
+	defer h.cleanup(ctx, connCtx)
 
 	// Configure connection
 	conn.SetReadLimit(maxMessageSize)
-	conn.SetReadDeadline(time.Now().Add(pongWait))
+	if err = conn.SetReadDeadline(time.Now().Add(pongWait)); err != nil {
+		observability.AcknowledgeError(err, h.logger, span, "failed to set read deadline")
+	}
 	conn.SetPongHandler(func(string) error {
-		ctx.MarkAlive()
-		conn.SetReadDeadline(time.Now().Add(pongWait))
+		connCtx.MarkAlive()
+		if err = conn.SetReadDeadline(time.Now().Add(pongWait)); err != nil {
+			observability.AcknowledgeError(err, h.logger, span, "failed to set read deadline")
+		}
 		return nil
 	})
 
 	// Start heartbeat
-	go h.heartbeat(ctx)
+	go h.heartbeat(connCtx)
 
 	// Handle incoming messages
-	h.readPump(ctx)
+	h.readPump(ctx, connCtx)
 }
 
 // heartbeat sends periodic ping messages to keep the connection alive.
-func (h *Handler) heartbeat(ctx *platformws.ConnectionContext) {
+func (h *Handler) heartbeat(connCtx *platformws.ConnectionContext) {
 	ticker := time.NewTicker(pingPeriod)
-	ctx.SetHeartbeatTicker(ticker)
+	connCtx.SetHeartbeatTicker(ticker)
 	defer ticker.Stop()
 
 	for {
 		select {
 		case <-ticker.C:
-			if !ctx.CheckAlive() {
+			if !connCtx.CheckAlive() {
 				h.logger.Debug("connection dead, closing")
-				ctx.Conn.Close()
+				if err := connCtx.Conn.Close(); err != nil {
+					observability.AcknowledgeError(err, h.logger, nil, "failed to close connection")
+				}
 				return
 			}
-			ctx.MarkDead()
-			ctx.Conn.SetWriteDeadline(time.Now().Add(writeWait))
-			if err := ctx.Conn.WriteMessage(websocket.PingMessage, nil); err != nil {
+			connCtx.MarkDead()
+			if err := connCtx.Conn.SetWriteDeadline(time.Now().Add(writeWait)); err != nil {
+				observability.AcknowledgeError(err, h.logger, nil, "setting write deadline")
+			}
+
+			if err := connCtx.Conn.WriteMessage(websocket.PingMessage, nil); err != nil {
 				return
 			}
-		case <-ctx.Done():
+		case <-connCtx.Done():
 			return
 		}
 	}
 }
 
 // readPump reads messages from the WebSocket connection.
-func (h *Handler) readPump(ctx *platformws.ConnectionContext) {
+func (h *Handler) readPump(ctx context.Context, connCtx *platformws.ConnectionContext) {
 	for {
 		var msg stagesdomain.ClientMessage
-		if err := ctx.Conn.ReadJSON(&msg); err != nil {
+		if err := connCtx.Conn.ReadJSON(&msg); err != nil {
 			if websocket.IsUnexpectedCloseError(err, websocket.CloseGoingAway, websocket.CloseAbnormalClosure) {
 				h.logger.Error("unexpected close error", err)
 			}
 			return
 		}
 
-		h.handleMessage(context.Background(), ctx, &msg)
+		h.handleMessage(ctx, connCtx, &msg)
 	}
 }
 
 // cleanup handles connection cleanup when a client disconnects.
-func (h *Handler) cleanup(ctx *platformws.ConnectionContext) {
-	ctx.Close()
+func (h *Handler) cleanup(ctx context.Context, connCtx *platformws.ConnectionContext) {
+	ctx, span := h.tracer.StartSpan(ctx)
+	defer span.End()
 
-	if ctx.GroupID != "" && ctx.MemberID != "" {
-		h.logger.WithValue("stageID", ctx.GroupID).WithValue("participantID", ctx.MemberID).Debug("participant disconnected")
+	connCtx.Close()
+
+	if connCtx.GroupID != "" && connCtx.MemberID != "" {
+		h.logger.WithValue("stageID", connCtx.GroupID).WithValue("participantID", connCtx.MemberID).Debug("participant disconnected")
 
 		// Mark participant as left in database
-		if err := h.stagesRepo.SetParticipantLeft(context.Background(), ctx.MemberID); err != nil {
+		if err := h.stagesRepo.SetParticipantLeft(ctx, connCtx.MemberID); err != nil {
 			h.logger.Error("failed to mark participant as left", err)
 		}
 
 		// Remove from connection manager
-		h.connections.Remove(ctx.GroupID, ctx.MemberID)
+		h.connections.Remove(ctx, connCtx.GroupID, connCtx.MemberID)
 
 		// Broadcast updated state to remaining participants
-		h.broadcastStageState(ctx.GroupID)
+		h.broadcastStageState(ctx, connCtx.GroupID)
 
 		// Archive stage if no more connections
-		if !h.connections.GroupHasConnections(ctx.GroupID) {
-			h.logger.WithValue("stageID", ctx.GroupID).Debug("no more connections, archiving stage")
-			if err := h.stagesRepo.ArchiveStage(context.Background(), ctx.GroupID); err != nil {
+		if !h.connections.GroupHasConnections(ctx, connCtx.GroupID) {
+			h.logger.WithValue("stageID", connCtx.GroupID).Debug("no more connections, archiving stage")
+			if err := h.stagesRepo.ArchiveStage(ctx, connCtx.GroupID); err != nil {
 				h.logger.Error("failed to archive stage", err)
 			}
 		}
@@ -161,6 +177,9 @@ func (h *Handler) cleanup(ctx *platformws.ConnectionContext) {
 
 // handleMessage routes incoming messages to the appropriate handler.
 func (h *Handler) handleMessage(ctx context.Context, connCtx *platformws.ConnectionContext, msg *stagesdomain.ClientMessage) {
+	ctx, span := h.tracer.StartSpan(ctx)
+	defer span.End()
+
 	switch msg.Type {
 	case stagesdomain.ClientMessageTypeJoin:
 		h.handleJoin(ctx, connCtx, msg)
@@ -177,35 +196,43 @@ func (h *Handler) handleMessage(ctx context.Context, connCtx *platformws.Connect
 	case stagesdomain.ClientMessageTypeSendChat:
 		h.handleSendChat(ctx, connCtx, msg)
 	case stagesdomain.ClientMessageTypeStartPlay:
-		h.handleStartPlay(ctx, connCtx, msg)
+		h.handleStartPlay(ctx, connCtx)
 	case stagesdomain.ClientMessageTypeNextLine:
-		h.handleNextLine(ctx, connCtx, msg)
+		h.handleNextLine(ctx, connCtx)
 	case stagesdomain.ClientMessageTypeResetPlay:
-		h.handleResetPlay(ctx, connCtx, msg)
+		h.handleResetPlay(ctx, connCtx)
 	default:
-		h.sendError(connCtx, "unknown message type")
+		h.sendError(ctx, connCtx, "unknown message type")
 	}
 }
 
 // sendError sends an error message to the client.
-func (h *Handler) sendError(ctx *platformws.ConnectionContext, message string) {
-	_ = ctx.WriteJSON(&stagesdomain.ServerMessage{
+func (h *Handler) sendError(ctx context.Context, connCtx *platformws.ConnectionContext, message string) {
+	_, span := h.tracer.StartSpan(ctx)
+	defer span.End()
+
+	if err := connCtx.WriteJSON(&stagesdomain.ServerMessage{
 		Type:  stagesdomain.ServerMessageTypeError,
 		Error: message,
-	})
+	}); err != nil {
+		observability.AcknowledgeError(err, h.logger, span, "failed to send error message")
+	}
 }
 
 // broadcastStageState broadcasts the current stage state to all connected clients.
-func (h *Handler) broadcastStageState(stageID string) {
-	stage, err := h.stagesRepo.GetStageByID(context.Background(), stageID)
+func (h *Handler) broadcastStageState(ctx context.Context, stageID string) {
+	ctx, span := h.tracer.StartSpan(ctx)
+	defer span.End()
+
+	stage, err := h.stagesRepo.GetStageByID(ctx, stageID)
 	if err != nil {
 		h.logger.Error("failed to get stage for broadcast", err)
 		return
 	}
 
-	stageState := h.buildStageState(context.Background(), stage)
+	stageState := h.buildStageState(ctx, stage)
 
-	h.connections.BroadcastToGroup(stageID, &stagesdomain.ServerMessage{
+	h.connections.BroadcastToGroup(ctx, stageID, &stagesdomain.ServerMessage{
 		Type:  stagesdomain.ServerMessageTypeStageState,
 		State: stageState,
 	})
@@ -213,6 +240,9 @@ func (h *Handler) broadcastStageState(stageID string) {
 
 // buildStageState constructs a StageState from a Stage.
 func (h *Handler) buildStageState(ctx context.Context, stage *stagesdomain.Stage) *stagesdomain.StageState {
+	ctx, span := h.tracer.StartSpan(ctx)
+	defer span.End()
+
 	state := &stagesdomain.StageState{
 		ID:               stage.ID,
 		Code:             stage.Code,

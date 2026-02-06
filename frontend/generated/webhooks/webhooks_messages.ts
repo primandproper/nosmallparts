@@ -94,13 +94,17 @@ export function webhookMethodToJSON(object: WebhookMethod): string {
   }
 }
 
+export interface WebhookList {
+  webhooks: Webhook[];
+}
+
 export interface DataCollection {
-  webhooks: { [key: string]: Webhook };
+  webhooks: { [key: string]: WebhookList };
 }
 
 export interface DataCollection_WebhooksEntry {
   key: string;
-  value: Webhook | undefined;
+  value: WebhookList | undefined;
 }
 
 export interface Webhook {
@@ -124,13 +128,75 @@ export interface WebhookTriggerEvent {
   triggerEvent: string;
 }
 
+function createBaseWebhookList(): WebhookList {
+  return { webhooks: [] };
+}
+
+export const WebhookList: MessageFns<WebhookList> = {
+  encode(message: WebhookList, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    for (const v of message.webhooks) {
+      Webhook.encode(v!, writer.uint32(10).fork()).join();
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): WebhookList {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseWebhookList();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.webhooks.push(Webhook.decode(reader, reader.uint32()));
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): WebhookList {
+    return {
+      webhooks: globalThis.Array.isArray(object?.webhooks)
+        ? object.webhooks.map((e: any) => Webhook.fromJSON(e))
+        : [],
+    };
+  },
+
+  toJSON(message: WebhookList): unknown {
+    const obj: any = {};
+    if (message.webhooks?.length) {
+      obj.webhooks = message.webhooks.map((e) => Webhook.toJSON(e));
+    }
+    return obj;
+  },
+
+  create(base?: DeepPartial<WebhookList>): WebhookList {
+    return WebhookList.fromPartial(base ?? {});
+  },
+  fromPartial(object: DeepPartial<WebhookList>): WebhookList {
+    const message = createBaseWebhookList();
+    message.webhooks = object.webhooks?.map((e) => Webhook.fromPartial(e)) || [];
+    return message;
+  },
+};
+
 function createBaseDataCollection(): DataCollection {
   return { webhooks: {} };
 }
 
 export const DataCollection: MessageFns<DataCollection> = {
   encode(message: DataCollection, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    globalThis.Object.entries(message.webhooks).forEach(([key, value]: [string, Webhook]) => {
+    globalThis.Object.entries(message.webhooks).forEach(([key, value]: [string, WebhookList]) => {
       DataCollection_WebhooksEntry.encode(
         { key: key as any, value },
         writer.uint32(10).fork()
@@ -170,8 +236,8 @@ export const DataCollection: MessageFns<DataCollection> = {
     return {
       webhooks: isObject(object.webhooks)
         ? (globalThis.Object.entries(object.webhooks) as [string, any][]).reduce(
-            (acc: { [key: string]: Webhook }, [key, value]: [string, any]) => {
-              acc[key] = Webhook.fromJSON(value);
+            (acc: { [key: string]: WebhookList }, [key, value]: [string, any]) => {
+              acc[key] = WebhookList.fromJSON(value);
               return acc;
             },
             {}
@@ -183,11 +249,11 @@ export const DataCollection: MessageFns<DataCollection> = {
   toJSON(message: DataCollection): unknown {
     const obj: any = {};
     if (message.webhooks) {
-      const entries = globalThis.Object.entries(message.webhooks) as [string, Webhook][];
+      const entries = globalThis.Object.entries(message.webhooks) as [string, WebhookList][];
       if (entries.length > 0) {
         obj.webhooks = {};
         entries.forEach(([k, v]) => {
-          obj.webhooks[k] = Webhook.toJSON(v);
+          obj.webhooks[k] = WebhookList.toJSON(v);
         });
       }
     }
@@ -200,10 +266,10 @@ export const DataCollection: MessageFns<DataCollection> = {
   fromPartial(object: DeepPartial<DataCollection>): DataCollection {
     const message = createBaseDataCollection();
     message.webhooks = (
-      globalThis.Object.entries(object.webhooks ?? {}) as [string, Webhook][]
-    ).reduce((acc: { [key: string]: Webhook }, [key, value]: [string, Webhook]) => {
+      globalThis.Object.entries(object.webhooks ?? {}) as [string, WebhookList][]
+    ).reduce((acc: { [key: string]: WebhookList }, [key, value]: [string, WebhookList]) => {
       if (value !== undefined) {
-        acc[key] = Webhook.fromPartial(value);
+        acc[key] = WebhookList.fromPartial(value);
       }
       return acc;
     }, {});
@@ -224,7 +290,7 @@ export const DataCollection_WebhooksEntry: MessageFns<DataCollection_WebhooksEnt
       writer.uint32(10).string(message.key);
     }
     if (message.value !== undefined) {
-      Webhook.encode(message.value, writer.uint32(18).fork()).join();
+      WebhookList.encode(message.value, writer.uint32(18).fork()).join();
     }
     return writer;
   },
@@ -249,7 +315,7 @@ export const DataCollection_WebhooksEntry: MessageFns<DataCollection_WebhooksEnt
             break;
           }
 
-          message.value = Webhook.decode(reader, reader.uint32());
+          message.value = WebhookList.decode(reader, reader.uint32());
           continue;
         }
       }
@@ -264,7 +330,7 @@ export const DataCollection_WebhooksEntry: MessageFns<DataCollection_WebhooksEnt
   fromJSON(object: any): DataCollection_WebhooksEntry {
     return {
       key: isSet(object.key) ? globalThis.String(object.key) : '',
-      value: isSet(object.value) ? Webhook.fromJSON(object.value) : undefined,
+      value: isSet(object.value) ? WebhookList.fromJSON(object.value) : undefined,
     };
   },
 
@@ -274,7 +340,7 @@ export const DataCollection_WebhooksEntry: MessageFns<DataCollection_WebhooksEnt
       obj.key = message.key;
     }
     if (message.value !== undefined) {
-      obj.value = Webhook.toJSON(message.value);
+      obj.value = WebhookList.toJSON(message.value);
     }
     return obj;
   },
@@ -287,7 +353,7 @@ export const DataCollection_WebhooksEntry: MessageFns<DataCollection_WebhooksEnt
     message.key = object.key ?? '';
     message.value =
       object.value !== undefined && object.value !== null
-        ? Webhook.fromPartial(object.value)
+        ? WebhookList.fromPartial(object.value)
         : undefined;
     return message;
   },

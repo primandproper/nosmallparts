@@ -37,7 +37,7 @@ func (r *repository) BuildSessionContextDataForUser(ctx context.Context, userID 
 	logger := r.logger.WithValue(keys.UserIDKey, userID)
 	tracing.AttachToSpan(span, keys.UserIDKey, userID)
 
-	results, err := r.generatedQuerier.GetAccountUserMembershipsForUser(ctx, r.db, userID)
+	results, err := r.generatedQuerier.GetAccountUserMembershipsForUser(ctx, r.readDB, userID)
 	if err != nil {
 		return nil, observability.PrepareAndLogError(err, logger, span, "fetching user's memberships from database")
 	}
@@ -87,7 +87,7 @@ func (r *repository) GetDefaultAccountIDForUser(ctx context.Context, userID stri
 	tracing.AttachToSpan(span, keys.UserIDKey, userID)
 	logger = logger.WithValue(keys.UserIDKey, userID)
 
-	id, err := r.generatedQuerier.GetDefaultAccountIDForUser(ctx, r.db, userID)
+	id, err := r.generatedQuerier.GetDefaultAccountIDForUser(ctx, r.readDB, userID)
 	if err != nil {
 		return "", observability.PrepareAndLogError(err, logger, span, "fetching default account ID for user")
 	}
@@ -112,7 +112,7 @@ func (r *repository) markAccountAsUserDefault(ctx context.Context, querier datab
 	tracing.AttachToSpan(span, keys.UserIDKey, userID)
 	tracing.AttachToSpan(span, keys.AccountIDKey, accountID)
 
-	tx, err := r.db.BeginTx(ctx, nil)
+	tx, err := r.writeDB.BeginTx(ctx, nil)
 	if err != nil {
 		return observability.PrepareAndLogError(err, logger, span, "beginning transaction")
 	}
@@ -152,7 +152,7 @@ func (r *repository) markAccountAsUserDefault(ctx context.Context, querier datab
 
 // MarkAccountAsUserDefault does a thing.
 func (r *repository) MarkAccountAsUserDefault(ctx context.Context, userID, accountID string) error {
-	return r.markAccountAsUserDefault(ctx, r.db, userID, accountID)
+	return r.markAccountAsUserDefault(ctx, r.writeDB, userID, accountID)
 }
 
 // UserIsMemberOfAccount does a thing.
@@ -166,7 +166,7 @@ func (r *repository) UserIsMemberOfAccount(ctx context.Context, userID, accountI
 	tracing.AttachToSpan(span, keys.UserIDKey, userID)
 	tracing.AttachToSpan(span, keys.AccountIDKey, accountID)
 
-	result, err := r.generatedQuerier.UserIsAccountMember(ctx, r.db, &generated.UserIsAccountMemberParams{
+	result, err := r.generatedQuerier.UserIsAccountMember(ctx, r.readDB, &generated.UserIsAccountMemberParams{
 		BelongsToAccount: accountID,
 		BelongsToUser:    userID,
 	})
@@ -199,7 +199,7 @@ func (r *repository) ModifyUserPermissions(ctx context.Context, accountID, userI
 	tracing.AttachToSpan(span, keys.UserIDKey, userID)
 	tracing.AttachToSpan(span, keys.AccountIDKey, accountID)
 
-	tx, err := r.db.BeginTx(ctx, nil)
+	tx, err := r.writeDB.BeginTx(ctx, nil)
 	if err != nil {
 		return observability.PrepareAndLogError(err, logger, span, "beginning transaction")
 	}
@@ -276,7 +276,7 @@ func (r *repository) TransferAccountOwnership(ctx context.Context, accountID str
 	tracing.AttachToSpan(span, keys.UserIDKey, input.NewOwner)
 	tracing.AttachToSpan(span, keys.AccountIDKey, accountID)
 
-	tx, err := r.db.BeginTx(ctx, nil)
+	tx, err := r.writeDB.BeginTx(ctx, nil)
 	if err != nil {
 		return observability.PrepareAndLogError(err, logger, span, "beginning transaction")
 	}
@@ -468,7 +468,7 @@ func (r *repository) RemoveUserFromAccount(ctx context.Context, userID, accountI
 		keys.AccountIDKey: accountID,
 	})
 
-	tx, err := r.db.BeginTx(ctx, nil)
+	tx, err := r.writeDB.BeginTx(ctx, nil)
 	if err != nil {
 		return observability.PrepareError(err, span, "beginning transaction")
 	}

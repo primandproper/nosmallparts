@@ -31,7 +31,7 @@ func (r *repository) GetPasswordResetTokenByToken(ctx context.Context, token str
 	}
 	tracing.AttachToSpan(span, keys.PasswordResetTokenIDKey, token)
 
-	result, err := r.generatedQuerier.GetPasswordResetToken(ctx, r.db, token)
+	result, err := r.generatedQuerier.GetPasswordResetToken(ctx, r.readDB, token)
 	if err != nil {
 		return nil, observability.PrepareAndLogError(err, r.logger, span, "getting password reset token")
 	}
@@ -60,7 +60,7 @@ func (r *repository) CreatePasswordResetToken(ctx context.Context, input *auth.P
 	logger := r.logger.WithValue(keys.PasswordResetTokenIDKey, input.ID)
 	tracing.AttachToSpan(span, keys.PasswordResetTokenIDKey, input.ID)
 
-	tx, err := r.db.BeginTx(ctx, nil)
+	tx, err := r.writeDB.BeginTx(ctx, nil)
 	if err != nil {
 		return nil, observability.PrepareAndLogError(err, logger, span, "beginning transaction")
 	}
@@ -114,7 +114,7 @@ func (r *repository) RedeemPasswordResetToken(ctx context.Context, passwordReset
 	logger = logger.WithValue(keys.PasswordResetTokenIDKey, passwordResetTokenID)
 	tracing.AttachToSpan(span, keys.PasswordResetTokenIDKey, passwordResetTokenID)
 
-	if err := r.generatedQuerier.RedeemPasswordResetToken(ctx, r.db, passwordResetTokenID); err != nil {
+	if err := r.generatedQuerier.RedeemPasswordResetToken(ctx, r.writeDB, passwordResetTokenID); err != nil {
 		return observability.PrepareAndLogError(err, logger, span, "archiving password reset token")
 	}
 

@@ -21,7 +21,7 @@ func TestAsyncDataChangeMessageHandler_handleWebhookExecutionRequest(t *testing.
 	t.Run("with nil request", func(t *testing.T) {
 		t.Parallel()
 
-		handler, _, _, _, _, _, _, _, _, _ := buildTestAsyncDataChangeMessageHandler(t)
+		handler, _, _, _, _, _, _, _, _, _, _ := buildTestAsyncDataChangeMessageHandler(t)
 
 		ctx := t.Context()
 
@@ -33,7 +33,7 @@ func TestAsyncDataChangeMessageHandler_handleWebhookExecutionRequest(t *testing.
 	t.Run("with account fetch error", func(t *testing.T) {
 		t.Parallel()
 
-		handler, identityRepo, _, _, _, _, _, _, _, _ := buildTestAsyncDataChangeMessageHandler(t)
+		handler, identityRepo, _, _, _, _, _, _, _, _, _ := buildTestAsyncDataChangeMessageHandler(t)
 
 		ctx := t.Context()
 
@@ -57,7 +57,7 @@ func TestAsyncDataChangeMessageHandler_handleWebhookExecutionRequest(t *testing.
 	t.Run("with webhook fetch error", func(t *testing.T) {
 		t.Parallel()
 
-		handler, identityRepo, webhookRepo, _, _, _, _, _, _, _ := buildTestAsyncDataChangeMessageHandler(t)
+		handler, identityRepo, webhookRepo, _, _, _, _, _, _, _, _ := buildTestAsyncDataChangeMessageHandler(t)
 
 		ctx := t.Context()
 
@@ -83,7 +83,7 @@ func TestAsyncDataChangeMessageHandler_handleWebhookExecutionRequest(t *testing.
 	t.Run("with invalid webhook encryption key", func(t *testing.T) {
 		t.Parallel()
 
-		handler, identityRepo, webhookRepo, _, _, _, _, _, _, _ := buildTestAsyncDataChangeMessageHandler(t)
+		handler, identityRepo, webhookRepo, _, _, _, _, _, _, _, _ := buildTestAsyncDataChangeMessageHandler(t)
 
 		ctx := t.Context()
 
@@ -113,7 +113,7 @@ func TestAsyncDataChangeMessageHandler_handleWebhookExecutionRequest(t *testing.
 	t.Run("with successful JSON webhook execution", func(t *testing.T) {
 		t.Parallel()
 
-		handler, identityRepo, webhookRepo, _, _, _, _, _, _, _ := buildTestAsyncDataChangeMessageHandler(t)
+		handler, identityRepo, webhookRepo, _, _, _, _, _, _, _, _ := buildTestAsyncDataChangeMessageHandler(t)
 
 		ctx := t.Context()
 
@@ -149,7 +149,7 @@ func TestAsyncDataChangeMessageHandler_handleWebhookExecutionRequest(t *testing.
 	t.Run("with successful XML webhook execution", func(t *testing.T) {
 		t.Parallel()
 
-		handler, identityRepo, webhookRepo, _, _, _, _, _, _, _ := buildTestAsyncDataChangeMessageHandler(t)
+		handler, identityRepo, webhookRepo, _, _, _, _, _, _, _, _ := buildTestAsyncDataChangeMessageHandler(t)
 
 		ctx := t.Context()
 

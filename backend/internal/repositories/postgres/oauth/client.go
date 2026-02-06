@@ -26,7 +26,8 @@ type repository struct {
 	generatedQuerier        generated.Querier
 	auditLogEntryRepo       audit.Repository
 	oauth2ClientTokenEncDec encryption.EncryptorDecryptor
-	db                      *sql.DB
+	readDB                  *sql.DB
+	writeDB                 *sql.DB
 }
 
 // ProvideOAuthRepository provides a new repository.
@@ -44,7 +45,8 @@ func ProvideOAuthRepository(
 
 	c := &repository{
 		Client:                  client,
-		db:                      client.DB(),
+		readDB:                  client.ReadDB(),
+		writeDB:                 client.WriteDB(),
 		tracer:                  tracing.NewTracer(tracing.EnsureTracerProvider(tracerProvider).Tracer(o11yName)),
 		generatedQuerier:        generated.New(),
 		auditLogEntryRepo:       auditLogEntryRepo,

@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	databasecfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/config"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
 
@@ -15,6 +15,27 @@ import (
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 )
+
+// testClientConfig is a test implementation of database.ClientConfig.
+type testClientConfig struct {
+	connectionString string
+	maxPingAttempts  uint64
+	pingWaitPeriod   time.Duration
+}
+
+var _ database.ClientConfig = (*testClientConfig)(nil)
+
+func (c *testClientConfig) GetConnectionString() string {
+	return c.connectionString
+}
+
+func (c *testClientConfig) GetMaxPingAttempts() uint64 {
+	return c.maxPingAttempts
+}
+
+func (c *testClientConfig) GetPingWaitPeriod() time.Duration {
+	return c.pingWaitPeriod
+}
 
 type sqlmockExpecterWrapper struct {
 	sqlmock.Sqlmock
@@ -32,8 +53,9 @@ func buildTestClient(t *testing.T) (*Client, *sqlmockExpecterWrapper) {
 
 	c := &Client{
 		db: fakeDB,
-		config: &databasecfg.Config{
-			LogQueries: false,
+		config: &testClientConfig{
+			maxPingAttempts: 1,
+			pingWaitPeriod:  time.Second,
 		},
 		logger:   logging.NewNoopLogger(),
 		timeFunc: defaultTimeFunc,
@@ -53,7 +75,7 @@ func TestQuerier_IsReady(T *testing.T) {
 
 		ctx := t.Context()
 		c, db := buildTestClient(t)
-		c.config = &databasecfg.Config{PingWaitPeriod: time.Second, MaxPingAttempts: 1}
+		c.config = &testClientConfig{pingWaitPeriod: time.Second, maxPingAttempts: 1}
 
 		db.ExpectPing().WillDelayFor(0)
 
@@ -65,7 +87,7 @@ func TestQuerier_IsReady(T *testing.T) {
 
 		ctx := t.Context()
 		c, db := buildTestClient(t)
-		c.config = &databasecfg.Config{PingWaitPeriod: time.Second, MaxPingAttempts: 1}
+		c.config = &testClientConfig{pingWaitPeriod: time.Second, maxPingAttempts: 1}
 
 		db.ExpectPing().WillReturnError(errors.New("blah"))
 
@@ -79,7 +101,7 @@ func TestQuerier_IsReady(T *testing.T) {
 		defer cancel()
 
 		c, db := buildTestClient(t)
-		c.config = &databasecfg.Config{PingWaitPeriod: time.Second, MaxPingAttempts: 1}
+		c.config = &testClientConfig{pingWaitPeriod: time.Second, maxPingAttempts: 1}
 
 		db.ExpectPing().WillReturnError(errors.New("blah"))
 
@@ -95,13 +117,12 @@ func TestProvideDatabaseClient(T *testing.T) {
 
 		ctx := t.Context()
 
-		exampleConfig := &databasecfg.Config{
-			Debug:           true,
-			RunMigrations:   false,
-			MaxPingAttempts: 1,
+		exampleConfig := &testClientConfig{
+			connectionString: "user=test password=test database=test host=localhost port=5432",
+			maxPingAttempts:  1,
 		}
 
-		actual, err := ProvideDatabaseClient(ctx, logging.NewNoopLogger(), tracing.NewNoopTracerProvider(), exampleConfig, nil)
+		actual, err := ProvideDatabaseClient(ctx, logging.NewNoopLogger(), tracing.NewNoopTracerProvider(), exampleConfig)
 		assert.NotNil(t, actual)
 		assert.NoError(t, err)
 	})

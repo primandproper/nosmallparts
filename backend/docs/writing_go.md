@@ -125,15 +125,15 @@ The project uses `golangci-lint` with custom configuration:
 
 - Use descriptive suffixes that indicate purpose:
   - `Logger` - for logging abstractions
-  - `Manager` or `<Domain>Manager` - for business logic coordinators (e.g., `IdentityManager`)
+  - `Manager` or `<Domain>Manager` - for business logic coordinators (e.g., `MealPlanningManager`, `RecipeManager`)
   - `Repository` - for data access abstractions (consistently just `Repository` within each domain)
-  - `DataManager` - for data layer abstractions (e.g., `IdentityDataManager`)
+  - `DataManager` - for data layer abstractions (e.g., `MealPlanDataManager`)
   - `Handler` - for request handlers
 
 ### Structs
 
 - **Configuration structs**: End with `Config` (e.g., `APIServiceConfig`, `DatabaseConfig`)
-- **Domain entities**: Use clear business terms
+- **Domain entities**: Use clear business terms (e.g., `MealPlan`, `Recipe`, `ValidIngredient`)
 
 ### Constants and Variables
 
@@ -361,7 +361,7 @@ The codebase follows a clean architecture approach with a framework-like platfor
 
 ### Platform as Framework Philosophy
 
-**`internal/platform`** is designed as a complete, reusable toolkit that could theoretically support any application. Think of it as an internal framework providing:
+**`internal/platform`** is designed as a complete, reusable toolkit that could theoretically support any application - not just meal planning. Think of it as an internal framework providing:
 
 - **Infrastructure abstractions**: Database clients, message queues, caching
 - **Utilities**: ID generation, encoding, compression, cryptography  
@@ -369,7 +369,7 @@ The codebase follows a clean architecture approach with a framework-like platfor
 - **Search capabilities**: Text indexing, vector search (future-ready)
 - **File handling**: Upload management and processing
 
-The goal is that everything needed to build the business logic exists in platform.
+The goal is that everything needed to build the business logic exists in platform, but nothing meal-planning-specific lives there.
 
 ### Package Import Rules
 

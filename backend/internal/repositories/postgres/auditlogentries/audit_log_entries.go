@@ -32,7 +32,7 @@ func (q *repository) GetAuditLogEntry(ctx context.Context, auditLogEntryID strin
 	logger = logger.WithValue(keys.AuditLogEntryIDKey, auditLogEntryID)
 	tracing.AttachToSpan(span, keys.AuditLogEntryIDKey, auditLogEntryID)
 
-	result, err := q.generatedQuerier.GetAuditLogEntry(ctx, q.db, auditLogEntryID)
+	result, err := q.generatedQuerier.GetAuditLogEntry(ctx, q.readDB, auditLogEntryID)
 	if err != nil {
 		return nil, observability.PrepareAndLogError(err, logger, span, "fetching audit log entry")
 	}
@@ -73,7 +73,7 @@ func (q *repository) GetAuditLogEntriesForUser(ctx context.Context, userID strin
 	logger = filter.AttachToLogger(logger)
 	tracing.AttachQueryFilterToSpan(span, filter)
 
-	results, err := q.generatedQuerier.GetAuditLogEntriesForUser(ctx, q.db, &generated.GetAuditLogEntriesForUserParams{
+	results, err := q.generatedQuerier.GetAuditLogEntriesForUser(ctx, q.readDB, &generated.GetAuditLogEntriesForUserParams{
 		BelongsToUser: database.NullStringFromString(userID),
 		CreatedBefore: database.NullTimeFromTimePointer(filter.CreatedBefore),
 		CreatedAfter:  database.NullTimeFromTimePointer(filter.CreatedAfter),
@@ -146,7 +146,7 @@ func (q *repository) GetAuditLogEntriesForUserAndResourceTypes(ctx context.Conte
 	logger = filter.AttachToLogger(logger)
 	tracing.AttachQueryFilterToSpan(span, filter)
 
-	results, err := q.generatedQuerier.GetAuditLogEntriesForUserAndResourceType(ctx, q.db, &generated.GetAuditLogEntriesForUserAndResourceTypeParams{
+	results, err := q.generatedQuerier.GetAuditLogEntriesForUserAndResourceType(ctx, q.readDB, &generated.GetAuditLogEntriesForUserAndResourceTypeParams{
 		BelongsToUser: database.NullStringFromString(userID),
 		Resources:     resourceTypes,
 		CreatedBefore: database.NullTimeFromTimePointer(filter.CreatedBefore),
@@ -214,7 +214,7 @@ func (q *repository) GetAuditLogEntriesForAccount(ctx context.Context, accountID
 	logger = filter.AttachToLogger(logger)
 	tracing.AttachQueryFilterToSpan(span, filter)
 
-	results, err := q.generatedQuerier.GetAuditLogEntriesForAccount(ctx, q.db, &generated.GetAuditLogEntriesForAccountParams{
+	results, err := q.generatedQuerier.GetAuditLogEntriesForAccount(ctx, q.readDB, &generated.GetAuditLogEntriesForAccountParams{
 		BelongsToAccount: database.NullStringFromString(accountID),
 		CreatedBefore:    database.NullTimeFromTimePointer(filter.CreatedBefore),
 		CreatedAfter:     database.NullTimeFromTimePointer(filter.CreatedAfter),
@@ -287,7 +287,7 @@ func (q *repository) GetAuditLogEntriesForAccountAndResourceTypes(ctx context.Co
 	logger = filter.AttachToLogger(logger)
 	tracing.AttachQueryFilterToSpan(span, filter)
 
-	results, err := q.generatedQuerier.GetAuditLogEntriesForAccountAndResourceType(ctx, q.db, &generated.GetAuditLogEntriesForAccountAndResourceTypeParams{
+	results, err := q.generatedQuerier.GetAuditLogEntriesForAccountAndResourceType(ctx, q.readDB, &generated.GetAuditLogEntriesForAccountAndResourceTypeParams{
 		BelongsToAccount: database.NullStringFromString(accountID),
 		Resources:        resourceTypes,
 		CreatedBefore:    database.NullTimeFromTimePointer(filter.CreatedBefore),

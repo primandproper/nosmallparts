@@ -10,6 +10,11 @@ import (
 	"strings"
 	"time"
 
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/postgres"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
+
 	"github.com/XSAM/otelsql"
 	validation "github.com/go-ozzo/ozzo-validation/v4"
 	"go.opentelemetry.io/otel/attribute"
@@ -18,33 +23,22 @@ import (
 
 const (
 	ProviderPostgres = "postgres"
-
-	SourceFiles = "files"
-	SourceRaw   = "raw"
 )
 
 type (
-
 	// Config represents our database configuration.
 	Config struct {
 		_ struct{} `json:"-"`
 
-		OAuth2TokenEncryptionKey string            `env:"OAUTH2_TOKEN_ENCRYPTION_KEY"     json:"oauth2TokenEncryptionKey"`
-		Provider                 string            `env:"PROVIDER"                        json:"provider"`
-		ConnectionDetails        ConnectionDetails `envPrefix:"CONNECTION_DETAILS_"       json:"connectionDetails"`
-		WriteConnectionDetails   ConnectionDetails `envPrefix:"WRITE_CONNECTION_DETAILS_" json:"writeConnectionDetails"`
-		Migrations               []*MigrationSpec  `env:"MIGRATIONS"                      json:"migrations"`
-		MaxPingAttempts          uint64            `env:"MAX_PING_ATTEMPTS"               json:"maxPingAttempts"`
-		PingWaitPeriod           time.Duration     `env:"PING_WAIT_PERIOD"                json:"pingWaitPeriod"`
-		Debug                    bool              `env:"DEBUG"                           json:"debug"`
-		LogQueries               bool              `env:"LOG_QUERIES"                     json:"logQueries"`
-		RunMigrations            bool              `env:"RUN_MIGRATIONS"                  json:"runMigrations"`
-	}
-
-	MigrationSpec struct {
-		Description string `json:"description"`
-		RawQuery    string `json:"rawQuery"`
-		Filepath    string `json:"filepath"`
+		OAuth2TokenEncryptionKey string            `env:"OAUTH2_TOKEN_ENCRYPTION_KEY" json:"oauth2TokenEncryptionKey"`
+		Provider                 string            `env:"PROVIDER"                    json:"provider"`
+		ReadConnection           ConnectionDetails `envPrefix:"READ_CONNECTION_"      json:"readConnection"`
+		WriteConnection          ConnectionDetails `envPrefix:"WRITE_CONNECTION_"     json:"writeConnection"`
+		MaxPingAttempts          uint64            `env:"MAX_PING_ATTEMPTS"           json:"maxPingAttempts"`
+		PingWaitPeriod           time.Duration     `env:"PING_WAIT_PERIOD"            json:"pingWaitPeriod"`
+		Debug                    bool              `env:"DEBUG"                       json:"debug"`
+		LogQueries               bool              `env:"LOG_QUERIES"                 json:"logQueries"`
+		RunMigrations            bool              `env:"RUN_MIGRATIONS"              json:"runMigrations"`
 	}
 
 	ConnectionDetails struct {
@@ -59,24 +53,42 @@ type (
 	}
 )
 
-var _ validation.ValidatableWithContext = (*Config)(nil)
+var (
+	_ validation.ValidatableWithContext = (*Config)(nil)
+	_ database.ClientConfig             = (*Config)(nil)
+)
+
+// GetConnectionString implements database.ClientConfig.
+func (cfg *Config) GetConnectionString() string {
+	return cfg.ReadConnection.String()
+}
+
+// GetMaxPingAttempts implements database.ClientConfig.
+func (cfg *Config) GetMaxPingAttempts() uint64 {
+	return cfg.MaxPingAttempts
+}
+
+// GetPingWaitPeriod implements database.ClientConfig.
+func (cfg *Config) GetPingWaitPeriod() time.Duration {
+	return cfg.PingWaitPeriod
+}
 
 // ValidateWithContext validates an DatabaseSettings struct.
 func (cfg *Config) ValidateWithContext(ctx context.Context) error {
 	return validation.ValidateStructWithContext(
 		ctx,
 		cfg,
-		validation.Field(&cfg.ConnectionDetails, validation.Required),
+		validation.Field(&cfg.ReadConnection, validation.Required),
 	)
 }
 
 // LoadConnectionDetailsFromURL wraps an inner function.
 func (cfg *Config) LoadConnectionDetailsFromURL(u string) error {
-	return cfg.ConnectionDetails.LoadFromURL(u)
+	return cfg.ReadConnection.LoadFromURL(u)
 }
 
 func (cfg *Config) ConnectToDatabase() (*sql.DB, error) {
-	db, err := otelsql.Open("pgx", cfg.ConnectionDetails.String(), otelsql.WithAttributes(
+	db, err := otelsql.Open("pgx", cfg.ReadConnection.String(), otelsql.WithAttributes(
 		attribute.KeyValue{
 			Key:   semconv.ServiceNameKey,
 			Value: attribute.StringValue("database"),
@@ -149,4 +161,34 @@ func (x *ConnectionDetails) LoadFromURL(u string) error {
 	x.DisableSSL = z.Query().Get("sslmode") == "disable"
 
 	return nil
+}
+
+// ProvideDatabase creates a database client based on the configured provider
+// and optionally runs migrations if RunMigrations is true and a migrator is provided.
+func ProvideDatabase(
+	ctx context.Context,
+	logger logging.Logger,
+	tracerProvider tracing.TracerProvider,
+	cfg *Config,
+	migrator database.Migrator,
+) (client database.Client, err error) {
+	switch strings.TrimSpace(strings.ToLower(cfg.Provider)) {
+	case ProviderPostgres:
+		client, err = postgres.ProvideDatabaseClient(ctx, logger, tracerProvider, cfg)
+	default:
+		return nil, fmt.Errorf("invalid database provider: %q", cfg.Provider)
+	}
+
+	if err != nil {
+		return nil, err
+	}
+
+	// Run migrations if enabled and migrator is provided
+	if cfg.RunMigrations && migrator != nil {
+		if err = migrator.Migrate(ctx, client.DB()); err != nil {
+			return nil, fmt.Errorf("running migrations: %w", err)
+		}
+	}
+
+	return client, nil
 }

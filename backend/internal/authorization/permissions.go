@@ -42,9 +42,6 @@ var (
 		ArchiveWaitlistsPermission,
 	}
 
-	// ServiceDataAdminPermissions is every service admin permission.
-	ServiceDataAdminPermissions = []gorbac.Permission{}
-
 	// AccountAdminPermissions is every account admin permission.
 	AccountAdminPermissions = []gorbac.Permission{
 		UpdateAccountPermission,
@@ -61,9 +58,6 @@ var (
 		ArchiveIssueReportsPermission,
 		CreateWebhookTriggerEventsPermission,
 		ArchiveWebhookTriggerEventsPermission,
-		CreatePlayScriptsPermission,
-		UpdatePlayScriptsPermission,
-		ArchivePlayScriptsPermission,
 	}
 
 	// AccountMemberPermissions is every account member permission.
@@ -92,7 +86,6 @@ var (
 		CreateWaitlistSignupsPermission,
 		UpdateWaitlistSignupsPermission,
 		ArchiveWaitlistSignupsPermission,
-		ReadPlayScriptsPermission,
 	}
 )
 
@@ -100,12 +93,6 @@ func init() {
 	// assign service admin permissions.
 	for _, perm := range ServiceAdminPermissions {
 		must(serviceAdmin.Assign(perm))
-	}
-
-	// assign service data admin permissions.
-	for _, perm := range ServiceDataAdminPermissions {
-		must(serviceDataAdmin.Assign(perm))
-		must(serviceAdmin.Assign(perm)) // these aren't separate things yet
 	}
 
 	// assign account admin permissions.

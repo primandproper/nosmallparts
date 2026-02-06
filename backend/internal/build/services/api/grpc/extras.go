@@ -11,7 +11,7 @@ import (
 	issuereportssvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/issue_reports"
 	notificationssvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/notifications"
 	oauthsvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/oauth"
-	playscriptssvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/playscripts"
+	playscriptssvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/play_scripts"
 	settingssvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/settings"
 	uploadedmediasvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/uploaded_media"
 	waitlistssvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/waitlists"
@@ -46,11 +46,11 @@ func BuildRegistrationFuncs(
 	issueReportsService issuereportssvc.IssueReportsServiceServer,
 	notificationsService notificationssvc.UserNotificationsServiceServer,
 	oauthService oauthsvc.OAuthServiceServer,
-	playScriptsService playscriptssvc.PlayScriptsServiceServer,
 	settingsService settingssvc.SettingsServiceServer,
 	uploadedMediaService uploadedmediasvc.UploadedMediaServiceServer,
 	waitlistsService waitlistssvc.WaitlistsServiceServer,
 	webhooksService webhookssvc.WebhooksServiceServer,
+	playScriptsService playscriptssvc.PlayScriptsServiceServer,
 ) []platformgrpc.RegistrationFunc {
 	return []platformgrpc.RegistrationFunc{
 		func(server *grpc.Server) {
@@ -62,11 +62,11 @@ func BuildRegistrationFuncs(
 			issuereportssvc.RegisterIssueReportsServiceServer(server, issueReportsService)
 			notificationssvc.RegisterUserNotificationsServiceServer(server, notificationsService)
 			oauthsvc.RegisterOAuthServiceServer(server, oauthService)
-			playscriptssvc.RegisterPlayScriptsServiceServer(server, playScriptsService)
 			settingssvc.RegisterSettingsServiceServer(server, settingsService)
 			uploadedmediasvc.RegisterUploadedMediaServiceServer(server, uploadedMediaService)
 			waitlistssvc.RegisterWaitlistsServiceServer(server, waitlistsService)
 			webhookssvc.RegisterWebhooksServiceServer(server, webhooksService)
+			playscriptssvc.RegisterPlayScriptsServiceServer(server, playScriptsService)
 		},
 	}
 }
@@ -108,11 +108,11 @@ func AggregateMethodPermissions(
 	issuereportsPermissions issuereportsgrpc.IssueReportsMethodPermissions,
 	notificationsPermissions notificationsgrpc.NotificationsMethodPermissions,
 	oauthPermissions oauthgrpc.OAuthMethodPermissions,
-	playscriptsPermissions playscriptsgrpc.PlayScriptsMethodPermissions,
 	settingsPermissions settingsgrpc.SettingsMethodPermissions,
 	uploadedmediaPermissions uploadedmediagrpc.UploadedMediaMethodPermissions,
 	waitlistsPermissions waitlistsgrpc.WaitlistsMethodPermissions,
 	webhooksPermissions webhooksgrpc.WebhooksMethodPermissions,
+	playScriptsPermissions playscriptsgrpc.PlayScriptsMethodPermissions,
 ) interceptors.MethodPermissionsMap {
 	result := make(interceptors.MethodPermissionsMap)
 
@@ -132,9 +132,6 @@ func AggregateMethodPermissions(
 	for method, perms := range oauthPermissions {
 		result[method] = perms
 	}
-	for method, perms := range playscriptsPermissions {
-		result[method] = perms
-	}
 	for method, perms := range settingsPermissions {
 		result[method] = perms
 	}
@@ -145,6 +142,9 @@ func AggregateMethodPermissions(
 		result[method] = perms
 	}
 	for method, perms := range webhooksPermissions {
+		result[method] = perms
+	}
+	for method, perms := range playScriptsPermissions {
 		result[method] = perms
 	}
 

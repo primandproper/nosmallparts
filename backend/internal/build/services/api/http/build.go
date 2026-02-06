@@ -9,6 +9,7 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/authentication"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/config"
 	analyticscfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/analytics/config"
+	databasecfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/config"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/postgres"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/encoding"
 	featureflagscfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/featureflags/config"
@@ -22,9 +23,12 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/server/http"
 	auditrepo "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/auditlogentries"
 	identityrepo "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/identity"
-	repomigrations "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/migrations"
 	oauthrepo "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/oauth"
+	playscriptsrepo "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/playscripts"
+	stagesrepo "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/stages"
 	authservice "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/auth/handlers/authentication"
+	livekitsvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/livekit"
+	stagessvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/stages"
 
 	"github.com/google/wire"
 )
@@ -43,8 +47,8 @@ func Build(
 		tracing.ProvidersTracing,
 		tracingcfg.TracingConfigProviders,
 		observability.O11yProviders,
+		databasecfg.ClientConfigProviders,
 		postgres.PGProviders,
-		repomigrations.MigrationProviders,
 		loggingcfg.LogConfigProviders,
 		authservice.AuthHTTPServiceProviders,
 		metricscfg.MetricsConfigProviders,
@@ -54,6 +58,11 @@ func Build(
 		auditrepo.AuditRepoProviders,
 		identityrepo.IDRepoProviders,
 		oauthrepo.OAuthRepoProviders,
+		playscriptsrepo.PlayScriptsRepoProviders,
+		stagesrepo.StagesRepoProviders,
+		// services
+		stagessvc.StagesWebSocketProviders,
+		livekitsvc.Providers,
 		ConfigProviders,
 		ProvideAPIRouter,
 	)

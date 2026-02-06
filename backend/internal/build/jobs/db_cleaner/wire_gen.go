@@ -9,12 +9,12 @@ package dbcleaner
 import (
 	"context"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/config"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/config"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/postgres"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging/config"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/metrics/config"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing/config"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/maintenance"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/migrations"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/oauth/workers/db_cleaner"
 )
 
@@ -38,9 +38,9 @@ func Build(ctx context.Context, cfg *config.DBCleanerConfig) (*dbcleaner.Job, er
 	if err != nil {
 		return nil, err
 	}
-	databasecfgConfig := &cfg.Database
-	migratorFactory := migrations.ProvideMigratorFactory(logger, tracerProvider, databasecfgConfig)
-	client, err := postgres.ProvideDatabaseClient(ctx, logger, tracerProvider, databasecfgConfig, migratorFactory)
+	databasecfgConfig := cfg.Database
+	clientConfig := databasecfg.ProvideClientConfig(databasecfgConfig)
+	client, err := postgres.ProvideDatabaseClient(ctx, logger, tracerProvider, clientConfig)
 	if err != nil {
 		return nil, err
 	}

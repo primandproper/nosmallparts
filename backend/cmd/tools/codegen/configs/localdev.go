@@ -25,7 +25,6 @@ import (
 	routingcfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/routing/config"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/search/text/algolia"
 	textsearchcfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/search/text/config"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/server/grpc"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/server/http"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/testutils"
 	uploadscfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/uploads/config"
@@ -46,7 +45,7 @@ var (
 		Username:   "dbuser",
 		Password:   "hunter2",
 		Database:   "no-small-parts",
-		Host:       "postgres",
+		Host:       "pgdatabase",
 		Port:       5432,
 		DisableSSL: true,
 	}
@@ -165,18 +164,16 @@ func buildLocalDevConfig() *config.APIServiceConfig {
 			Port:            defaultHTTPPort,
 			StartupDeadline: time.Minute,
 		},
-		GRPCServer: grpc.Config{
-			Port: defaultGRPCPort,
-		},
 		Database: databasecfg.Config{
+			Provider:                 databasecfg.ProviderPostgres,
 			OAuth2TokenEncryptionKey: localOAuth2TokenEncryptionKey,
 			Debug:                    true,
 			RunMigrations:            true,
 			LogQueries:               true,
 			MaxPingAttempts:          maxAttempts,
 			PingWaitPeriod:           time.Second,
-			ConnectionDetails:        localdevPostgresDBConnectionDetails,
-			WriteConnectionDetails:   localdevPostgresDBConnectionDetails,
+			ReadConnection:           localdevPostgresDBConnectionDetails,
+			WriteConnection:          localdevPostgresDBConnectionDetails,
 		},
 		Observability: localObservabilityConfig,
 		Services: config.ServicesConfig{

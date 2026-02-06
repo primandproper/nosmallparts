@@ -38,7 +38,7 @@ func TestQuerier_Integration_AccountUserMemberships(t *testing.T) {
 
 	for i := 0; i < exampleQuantity; i++ {
 		newMember := createUserForTest(t, ctx, nil, dbc)
-		assert.NoError(t, dbc.addUserToAccount(ctx, dbc.db, &identity.AccountUserMembershipDatabaseCreationInput{
+		assert.NoError(t, dbc.addUserToAccount(ctx, dbc.writeDB, &identity.AccountUserMembershipDatabaseCreationInput{
 			ID:          identifiers.New(),
 			Reason:      "testing",
 			UserID:      newMember.ID,
@@ -210,7 +210,7 @@ func TestSQLQuerier_addUserToAccount(T *testing.T) {
 
 		c := buildInertClientForTest(t)
 
-		err := c.addUserToAccount(ctx, c.db, nil)
+		err := c.addUserToAccount(ctx, c.writeDB, nil)
 		assert.Error(t, err)
 	})
 }

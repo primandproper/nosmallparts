@@ -272,7 +272,7 @@ func TestSQLQuerier_setInvitationStatus(T *testing.T) {
 
 		c := buildInertClientForTest(t)
 
-		err := c.setInvitationStatus(ctx, c.db, "", exampleAccountInvitation.Note, exampleAccountInvitation.Status)
+		err := c.setInvitationStatus(ctx, c.writeDB, "", exampleAccountInvitation.Note, exampleAccountInvitation.Status)
 		assert.Error(t, err)
 	})
 }
@@ -316,7 +316,7 @@ func TestSQLQuerier_attachInvitationsToUser(T *testing.T) {
 
 		c := buildInertClientForTest(t)
 
-		err := c.attachInvitationsToUser(ctx, c.db, "", exampleUser.ID)
+		err := c.attachInvitationsToUser(ctx, c.writeDB, "", exampleUser.ID)
 		assert.Error(t, err)
 	})
 
@@ -328,7 +328,7 @@ func TestSQLQuerier_attachInvitationsToUser(T *testing.T) {
 
 		c := buildInertClientForTest(t)
 
-		err := c.attachInvitationsToUser(ctx, c.db, exampleUser.EmailAddress, "")
+		err := c.attachInvitationsToUser(ctx, c.writeDB, exampleUser.EmailAddress, "")
 		assert.Error(t, err)
 	})
 }

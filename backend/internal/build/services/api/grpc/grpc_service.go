@@ -9,7 +9,7 @@ import (
 	issuereportssvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/issue_reports"
 	notificationssvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/notifications"
 	oauthsvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/oauth"
-	playscriptssvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/playscripts"
+	playscriptssvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/play_scripts"
 	settingssvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/settings"
 	uploadedmediasvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/uploaded_media"
 	waitlistssvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/waitlists"
@@ -26,11 +26,11 @@ type GRPCService struct {
 	issuereportssvc.IssueReportsServiceServer
 	notificationssvc.UserNotificationsServiceServer
 	oauthsvc.OAuthServiceServer
-	playscriptssvc.PlayScriptsServiceServer
 	settingssvc.SettingsServiceServer
 	uploadedmediasvc.UploadedMediaServiceServer
 	waitlistssvc.WaitlistsServiceServer
 	webhookssvc.WebhooksServiceServer
+	playscriptssvc.PlayScriptsServiceServer
 	*grpc.Server
 }
 
@@ -43,11 +43,11 @@ func NewGRPCService(
 	issueReportsServiceServer issuereportssvc.IssueReportsServiceServer,
 	userNotificationsServiceServer notificationssvc.UserNotificationsServiceServer,
 	oauthServiceServer oauthsvc.OAuthServiceServer,
-	playScriptsServiceServer playscriptssvc.PlayScriptsServiceServer,
 	settingsServiceServer settingssvc.SettingsServiceServer,
 	uploadedMediaServiceServer uploadedmediasvc.UploadedMediaServiceServer,
 	webhooksServiceServer webhookssvc.WebhooksServiceServer,
 	waitlistsServiceServer waitlistssvc.WaitlistsServiceServer,
+	playScriptsServiceServer playscriptssvc.PlayScriptsServiceServer,
 	server *grpc.Server,
 ) *GRPCService {
 	return &GRPCService{
@@ -60,10 +60,10 @@ func NewGRPCService(
 		IssueReportsServiceServer:      issueReportsServiceServer,
 		UserNotificationsServiceServer: userNotificationsServiceServer,
 		OAuthServiceServer:             oauthServiceServer,
-		PlayScriptsServiceServer:       playScriptsServiceServer,
 		SettingsServiceServer:          settingsServiceServer,
 		UploadedMediaServiceServer:     uploadedMediaServiceServer,
 		WebhooksServiceServer:          webhooksServiceServer,
 		WaitlistsServiceServer:         waitlistsServiceServer,
+		PlayScriptsServiceServer:       playScriptsServiceServer,
 	}
 }

@@ -235,6 +235,9 @@ linters:
         path: internal/platform/uploads/images/mock.go
       - linters:
           - forcetypeassert
+        path: internal/businesslogic/grocerylistpreparation/mocks.go
+      - linters:
+          - forcetypeassert
         path: internal/database/database_mock.go
       - linters:
           - gosec
@@ -277,6 +280,7 @@ formatters:
     gci:
       sections:
         - standard
+        - prefix(github.com/verygoodsoftwarenotvirus/nosmallparts/backend)
         - prefix(github.com/verygoodsoftwarenotvirus/nosmallparts)
         - prefix(github.com/verygoodsoftwarenotvirus)
         - default
@@ -285,7 +289,7 @@ formatters:
       simplify: true
     goimports:
       local-prefixes:
-        - github.com/verygoodsoftwarenotvirus/nosmallparts
+        - github.com/verygoodsoftwarenotvirus/nosmallparts/backend
   exclusions:
     generated: lax
     paths:

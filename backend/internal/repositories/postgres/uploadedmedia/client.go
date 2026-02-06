@@ -22,7 +22,8 @@ type repository struct {
 	logger            logging.Logger
 	generatedQuerier  generated.Querier
 	auditLogEntryRepo audit.Repository
-	db                *sql.DB
+	readDB            *sql.DB
+	writeDB           *sql.DB
 }
 
 // ProvideUploadedMediaRepository provides a new repository.
@@ -34,7 +35,8 @@ func ProvideUploadedMediaRepository(
 ) types.Repository {
 	c := &repository{
 		Client:            client,
-		db:                client.DB(),
+		readDB:            client.ReadDB(),
+		writeDB:           client.WriteDB(),
 		tracer:            tracing.NewTracer(tracing.EnsureTracerProvider(tracerProvider).Tracer(o11yName)),
 		generatedQuerier:  generated.New(),
 		auditLogEntryRepo: auditLogEntryRepo,

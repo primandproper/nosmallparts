@@ -11,6 +11,7 @@ Instead of hardcoding specific entities to create, `AllInOne` accepts a list of 
 - `WithIdentityRepository` - User, account, and membership operations
 - `WithOAuth2Repository` - OAuth2 client operations
 - `WithAuthRepository` - Authentication and password reset operations
+- `WithMealPlanningRepository` - All meal planning entities (recipes, ingredients, preparations, vessels, instruments, etc.)
 - `WithSettingsRepository` - Settings operations
 - `WithWebhooksRepository` - Webhook operations
 - `WithNotificationsRepository` - Notification operations

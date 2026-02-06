@@ -6,8 +6,13 @@
 
 /* eslint-disable */
 import { BinaryReader, BinaryWriter } from '@bufbuild/protobuf/wire';
+import { AuditLogEntry } from '../audit/audit_messages';
 import { DataCollection } from '../identity/identity_messages';
+import { IssueReport } from '../issue_reports/issue_reports_messages';
+import { DataCollection as DataCollection3 } from '../notifications/notifications_messages';
 import { DataCollection as DataCollection1 } from '../settings/settings_messages';
+import { UploadedMedia } from '../uploaded_media/uploaded_media';
+import { WaitlistSignup } from '../waitlists/waitlists_messages';
 import { DataCollection as DataCollection2 } from '../webhooks/webhooks_messages';
 
 export const protobufPackage = 'dataprivacy';
@@ -17,6 +22,11 @@ export interface UserDataCollection {
   identityDataCollection: DataCollection | undefined;
   settingsDataCollection: DataCollection1 | undefined;
   webhooksDataCollection: DataCollection2 | undefined;
+  notificationsDataCollection: DataCollection3 | undefined;
+  auditLogEntries: AuditLogEntry[];
+  issueReports: IssueReport[];
+  uploadedMedia: UploadedMedia[];
+  waitlistSignups: WaitlistSignup[];
 }
 
 function createBaseUserDataCollection(): UserDataCollection {
@@ -25,6 +35,11 @@ function createBaseUserDataCollection(): UserDataCollection {
     identityDataCollection: undefined,
     settingsDataCollection: undefined,
     webhooksDataCollection: undefined,
+    notificationsDataCollection: undefined,
+    auditLogEntries: [],
+    issueReports: [],
+    uploadedMedia: [],
+    waitlistSignups: [],
   };
 }
 
@@ -41,6 +56,21 @@ export const UserDataCollection: MessageFns<UserDataCollection> = {
     }
     if (message.webhooksDataCollection !== undefined) {
       DataCollection2.encode(message.webhooksDataCollection, writer.uint32(34).fork()).join();
+    }
+    if (message.notificationsDataCollection !== undefined) {
+      DataCollection3.encode(message.notificationsDataCollection, writer.uint32(42).fork()).join();
+    }
+    for (const v of message.auditLogEntries) {
+      AuditLogEntry.encode(v!, writer.uint32(50).fork()).join();
+    }
+    for (const v of message.issueReports) {
+      IssueReport.encode(v!, writer.uint32(58).fork()).join();
+    }
+    for (const v of message.uploadedMedia) {
+      UploadedMedia.encode(v!, writer.uint32(66).fork()).join();
+    }
+    for (const v of message.waitlistSignups) {
+      WaitlistSignup.encode(v!, writer.uint32(74).fork()).join();
     }
     return writer;
   },
@@ -84,6 +114,46 @@ export const UserDataCollection: MessageFns<UserDataCollection> = {
           message.webhooksDataCollection = DataCollection2.decode(reader, reader.uint32());
           continue;
         }
+        case 5: {
+          if (tag !== 42) {
+            break;
+          }
+
+          message.notificationsDataCollection = DataCollection3.decode(reader, reader.uint32());
+          continue;
+        }
+        case 6: {
+          if (tag !== 50) {
+            break;
+          }
+
+          message.auditLogEntries.push(AuditLogEntry.decode(reader, reader.uint32()));
+          continue;
+        }
+        case 7: {
+          if (tag !== 58) {
+            break;
+          }
+
+          message.issueReports.push(IssueReport.decode(reader, reader.uint32()));
+          continue;
+        }
+        case 8: {
+          if (tag !== 66) {
+            break;
+          }
+
+          message.uploadedMedia.push(UploadedMedia.decode(reader, reader.uint32()));
+          continue;
+        }
+        case 9: {
+          if (tag !== 74) {
+            break;
+          }
+
+          message.waitlistSignups.push(WaitlistSignup.decode(reader, reader.uint32()));
+          continue;
+        }
       }
       if ((tag & 7) === 4 || tag === 0) {
         break;
@@ -115,6 +185,31 @@ export const UserDataCollection: MessageFns<UserDataCollection> = {
         : isSet(object.webhooks_data_collection)
           ? DataCollection2.fromJSON(object.webhooks_data_collection)
           : undefined,
+      notificationsDataCollection: isSet(object.notificationsDataCollection)
+        ? DataCollection3.fromJSON(object.notificationsDataCollection)
+        : isSet(object.notifications_data_collection)
+          ? DataCollection3.fromJSON(object.notifications_data_collection)
+          : undefined,
+      auditLogEntries: globalThis.Array.isArray(object?.auditLogEntries)
+        ? object.auditLogEntries.map((e: any) => AuditLogEntry.fromJSON(e))
+        : globalThis.Array.isArray(object?.audit_log_entries)
+          ? object.audit_log_entries.map((e: any) => AuditLogEntry.fromJSON(e))
+          : [],
+      issueReports: globalThis.Array.isArray(object?.issueReports)
+        ? object.issueReports.map((e: any) => IssueReport.fromJSON(e))
+        : globalThis.Array.isArray(object?.issue_reports)
+          ? object.issue_reports.map((e: any) => IssueReport.fromJSON(e))
+          : [],
+      uploadedMedia: globalThis.Array.isArray(object?.uploadedMedia)
+        ? object.uploadedMedia.map((e: any) => UploadedMedia.fromJSON(e))
+        : globalThis.Array.isArray(object?.uploaded_media)
+          ? object.uploaded_media.map((e: any) => UploadedMedia.fromJSON(e))
+          : [],
+      waitlistSignups: globalThis.Array.isArray(object?.waitlistSignups)
+        ? object.waitlistSignups.map((e: any) => WaitlistSignup.fromJSON(e))
+        : globalThis.Array.isArray(object?.waitlist_signups)
+          ? object.waitlist_signups.map((e: any) => WaitlistSignup.fromJSON(e))
+          : [],
     };
   },
 
@@ -131,6 +226,21 @@ export const UserDataCollection: MessageFns<UserDataCollection> = {
     }
     if (message.webhooksDataCollection !== undefined) {
       obj.webhooksDataCollection = DataCollection2.toJSON(message.webhooksDataCollection);
+    }
+    if (message.notificationsDataCollection !== undefined) {
+      obj.notificationsDataCollection = DataCollection3.toJSON(message.notificationsDataCollection);
+    }
+    if (message.auditLogEntries?.length) {
+      obj.auditLogEntries = message.auditLogEntries.map((e) => AuditLogEntry.toJSON(e));
+    }
+    if (message.issueReports?.length) {
+      obj.issueReports = message.issueReports.map((e) => IssueReport.toJSON(e));
+    }
+    if (message.uploadedMedia?.length) {
+      obj.uploadedMedia = message.uploadedMedia.map((e) => UploadedMedia.toJSON(e));
+    }
+    if (message.waitlistSignups?.length) {
+      obj.waitlistSignups = message.waitlistSignups.map((e) => WaitlistSignup.toJSON(e));
     }
     return obj;
   },
@@ -153,6 +263,17 @@ export const UserDataCollection: MessageFns<UserDataCollection> = {
       object.webhooksDataCollection !== undefined && object.webhooksDataCollection !== null
         ? DataCollection2.fromPartial(object.webhooksDataCollection)
         : undefined;
+    message.notificationsDataCollection =
+      object.notificationsDataCollection !== undefined &&
+      object.notificationsDataCollection !== null
+        ? DataCollection3.fromPartial(object.notificationsDataCollection)
+        : undefined;
+    message.auditLogEntries =
+      object.auditLogEntries?.map((e) => AuditLogEntry.fromPartial(e)) || [];
+    message.issueReports = object.issueReports?.map((e) => IssueReport.fromPartial(e)) || [];
+    message.uploadedMedia = object.uploadedMedia?.map((e) => UploadedMedia.fromPartial(e)) || [];
+    message.waitlistSignups =
+      object.waitlistSignups?.map((e) => WaitlistSignup.fromPartial(e)) || [];
     return message;
   },
 };

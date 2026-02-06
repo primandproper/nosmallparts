@@ -91,7 +91,7 @@ func (a *AsyncDataChangeMessageHandler) handleWebhookExecutionRequest(
 
 	digest := hmac.New(sha256.New, decryptedKey)
 	digest.Write(payloadBody)
-	req.Header.Set("X-No-Small-Parts-Signature", hex.EncodeToString(digest.Sum(nil)))
+	req.Header.Set("X-Dinner-Done-Better-Signature", hex.EncodeToString(digest.Sum(nil)))
 
 	res, err := tracing.BuildTracedHTTPClient().Do(req)
 	if err != nil {

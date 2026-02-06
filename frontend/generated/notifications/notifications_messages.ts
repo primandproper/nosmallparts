@@ -49,6 +49,10 @@ export function userNotificationStatusToJSON(object: UserNotificationStatus): st
   }
 }
 
+export interface DataCollection {
+  notifications: UserNotification[];
+}
+
 export interface UserNotification {
   createdAt: Date | undefined;
   lastUpdatedAt: Date | undefined;
@@ -57,6 +61,68 @@ export interface UserNotification {
   status: UserNotificationStatus;
   belongsToUser: string;
 }
+
+function createBaseDataCollection(): DataCollection {
+  return { notifications: [] };
+}
+
+export const DataCollection: MessageFns<DataCollection> = {
+  encode(message: DataCollection, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    for (const v of message.notifications) {
+      UserNotification.encode(v!, writer.uint32(10).fork()).join();
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): DataCollection {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseDataCollection();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.notifications.push(UserNotification.decode(reader, reader.uint32()));
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): DataCollection {
+    return {
+      notifications: globalThis.Array.isArray(object?.notifications)
+        ? object.notifications.map((e: any) => UserNotification.fromJSON(e))
+        : [],
+    };
+  },
+
+  toJSON(message: DataCollection): unknown {
+    const obj: any = {};
+    if (message.notifications?.length) {
+      obj.notifications = message.notifications.map((e) => UserNotification.toJSON(e));
+    }
+    return obj;
+  },
+
+  create(base?: DeepPartial<DataCollection>): DataCollection {
+    return DataCollection.fromPartial(base ?? {});
+  },
+  fromPartial(object: DeepPartial<DataCollection>): DataCollection {
+    const message = createBaseDataCollection();
+    message.notifications = object.notifications?.map((e) => UserNotification.fromPartial(e)) || [];
+    return message;
+  },
+};
 
 function createBaseUserNotification(): UserNotification {
   return {

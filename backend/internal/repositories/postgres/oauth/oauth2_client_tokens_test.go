@@ -18,7 +18,7 @@ func createOAuth2ClientTokenForTest(t *testing.T, ctx context.Context, exampleOA
 
 	// create
 	if exampleOAuth2ClientToken == nil {
-		user := pgtesting.CreateUserForTest(t, nil, dbc.db)
+		user := pgtesting.CreateUserForTest(t, nil, dbc.writeDB)
 		oauth2Client := createOAuth2ClientForTest(t, ctx, nil, dbc)
 		exampleOAuth2ClientToken = fakes.BuildFakeOAuth2ClientToken()
 		exampleOAuth2ClientToken.BelongsToUser = user.ID
@@ -62,7 +62,7 @@ func TestQuerier_Integration_OAuth2ClientTokens(t *testing.T) {
 		assert.NoError(t, container.Terminate(ctx))
 	}(t)
 
-	user := pgtesting.CreateUserForTest(t, nil, dbc.db)
+	user := pgtesting.CreateUserForTest(t, nil, dbc.writeDB)
 	oauth2Client := createOAuth2ClientForTest(t, ctx, nil, dbc)
 	exampleOAuth2ClientToken := fakes.BuildFakeOAuth2ClientToken()
 	exampleOAuth2ClientToken.BelongsToUser = user.ID

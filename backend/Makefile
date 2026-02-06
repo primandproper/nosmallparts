@@ -231,7 +231,7 @@ agent:
 
 # OPERATIONS
 
-GCP_DEV_PROJECT_NAME := dinner-done-better-dev
+GCP_DEV_PROJECT_NAME := no-small-parts-dev
 
 # https://cloud.google.com/sql/docs/postgres/connect-admin-proxy#connect-tcp
 .PHONY: proxy_dev_db

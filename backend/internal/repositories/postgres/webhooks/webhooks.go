@@ -43,7 +43,7 @@ func (r *repository) WebhookExists(ctx context.Context, webhookID, accountID str
 	logger = logger.WithValue(keys.AccountIDKey, accountID)
 	tracing.AttachToSpan(span, keys.AccountIDKey, accountID)
 
-	result, err := r.generatedQuerier.CheckWebhookExistence(ctx, r.db, &generated.CheckWebhookExistenceParams{
+	result, err := r.generatedQuerier.CheckWebhookExistence(ctx, r.readDB, &generated.CheckWebhookExistenceParams{
 		BelongsToAccount: accountID,
 		ID:               webhookID,
 	})
@@ -73,7 +73,7 @@ func (r *repository) GetWebhook(ctx context.Context, webhookID, accountID string
 	logger = logger.WithValue(keys.AccountIDKey, accountID)
 	tracing.AttachToSpan(span, keys.AccountIDKey, accountID)
 
-	results, err := r.generatedQuerier.GetWebhook(ctx, r.db, &generated.GetWebhookParams{
+	results, err := r.generatedQuerier.GetWebhook(ctx, r.readDB, &generated.GetWebhookParams{
 		BelongsToAccount: accountID,
 		ID:               webhookID,
 	})
@@ -136,7 +136,7 @@ func (r *repository) GetWebhooks(ctx context.Context, accountID string, filter *
 	logger = filter.AttachToLogger(logger)
 	tracing.AttachQueryFilterToSpan(span, filter)
 
-	results, err := r.generatedQuerier.GetWebhooksForAccount(ctx, r.db, &generated.GetWebhooksForAccountParams{
+	results, err := r.generatedQuerier.GetWebhooksForAccount(ctx, r.readDB, &generated.GetWebhooksForAccountParams{
 		BelongsToAccount: accountID,
 		CreatedBefore:    database.NullTimeFromTimePointer(filter.CreatedBefore),
 		CreatedAfter:     database.NullTimeFromTimePointer(filter.CreatedAfter),
@@ -197,7 +197,7 @@ func (r *repository) GetWebhooksForAccountAndEvent(ctx context.Context, accountI
 	logger = logger.WithValue(keys.AccountIDKey, accountID)
 	tracing.AttachToSpan(span, keys.AccountIDKey, accountID)
 
-	databaseResults, err := r.generatedQuerier.GetWebhooksForAccountAndEvent(ctx, r.db, &generated.GetWebhooksForAccountAndEventParams{
+	databaseResults, err := r.generatedQuerier.GetWebhooksForAccountAndEvent(ctx, r.readDB, &generated.GetWebhooksForAccountAndEventParams{
 		BelongsToAccount: accountID,
 		TriggerEvent:     generated.WebhookEvent(eventType),
 	})
@@ -238,7 +238,7 @@ func (r *repository) CreateWebhook(ctx context.Context, input *types.WebhookData
 
 	logger.Debug("CreateWebhook invoked")
 
-	tx, err := r.db.BeginTx(ctx, nil)
+	tx, err := r.writeDB.BeginTx(ctx, nil)
 	if err != nil {
 		return nil, observability.PrepareAndLogError(err, logger, span, "beginning transaction")
 	}
@@ -365,7 +365,7 @@ func (r *repository) ArchiveWebhook(ctx context.Context, webhookID, accountID st
 		keys.AccountIDKey: accountID,
 	})
 
-	tx, err := r.db.BeginTx(ctx, nil)
+	tx, err := r.writeDB.BeginTx(ctx, nil)
 	if err != nil {
 		return observability.PrepareAndLogError(err, logger, span, "beginning transaction")
 	}
@@ -422,7 +422,7 @@ func (r *repository) AddWebhookTriggerEvent(ctx context.Context, accountID strin
 		keys.AccountIDKey:             accountID,
 	})
 
-	tx, err := r.db.BeginTx(ctx, nil)
+	tx, err := r.writeDB.BeginTx(ctx, nil)
 	if err != nil {
 		return nil, observability.PrepareAndLogError(err, logger, span, "beginning transaction")
 	}
@@ -460,7 +460,7 @@ func (r *repository) ArchiveWebhookTriggerEvent(ctx context.Context, webhookID, 
 		keys.WebhookTriggerEventIDKey: webhookTriggerEventID,
 	})
 
-	tx, err := r.db.BeginTx(ctx, nil)
+	tx, err := r.writeDB.BeginTx(ctx, nil)
 	if err != nil {
 		return observability.PrepareAndLogError(err, logger, span, "beginning transaction")
 	}

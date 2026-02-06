@@ -9,6 +9,7 @@ package searchdataindexscheduler
 import (
 	"context"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/config"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/config"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/postgres"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/messagequeue/config"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging/config"
@@ -17,7 +18,6 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/search/text/indexing"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/auditlogentries"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/identity"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/migrations"
 )
 
 // Injectors from build.go:
@@ -45,9 +45,9 @@ func Build(ctx context.Context, cfg *config.SearchDataIndexSchedulerConfig) (*in
 	if err != nil {
 		return nil, err
 	}
-	databasecfgConfig := &cfg.Database
-	migratorFactory := migrations.ProvideMigratorFactory(logger, tracerProvider, databasecfgConfig)
-	client, err := postgres.ProvideDatabaseClient(ctx, logger, tracerProvider, databasecfgConfig, migratorFactory)
+	databasecfgConfig := cfg.Database
+	clientConfig := databasecfg.ProvideClientConfig(databasecfgConfig)
+	client, err := postgres.ProvideDatabaseClient(ctx, logger, tracerProvider, clientConfig)
 	if err != nil {
 		return nil, err
 	}

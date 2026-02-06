@@ -6,6 +6,7 @@
 		"userDataAggregationTopicName": "",
 		"webhookExecutionRequestsTopicName": ""
 	},
+	"liveKit": {},
 	"appleAppSiteAssociation": {
 		"bundleID": "com.nosmallparts.ios"
 	},
@@ -86,19 +87,6 @@
 		"runMode": "development",
 		"debug": true
 	},
-	"email": {
-		"sendgrid": {
-			"apiToken": ""
-		},
-		"mailgun": null,
-		"mailjet": null,
-		"provider": "sendgrid",
-		"circuitBreakerConfig": {
-			"name": "dev_emailer",
-			"circuitBreakerErrorPercentage": 0.5,
-			"circuitBreakerMinimumOccurrenceThreshold": 100
-		}
-	},
 	"analytics": {
 		"segment": {
 			"apiToken": ""
@@ -108,6 +96,19 @@
 		"provider": "segment",
 		"circuitBreaker": {
 			"name": "dev_analytics",
+			"circuitBreakerErrorPercentage": 0.5,
+			"circuitBreakerMinimumOccurrenceThreshold": 100
+		}
+	},
+	"email": {
+		"sendgrid": {
+			"apiToken": ""
+		},
+		"mailgun": null,
+		"mailjet": null,
+		"provider": "sendgrid",
+		"circuitBreakerConfig": {
+			"name": "dev_emailer",
 			"circuitBreakerErrorPercentage": 0.5,
 			"circuitBreakerMinimumOccurrenceThreshold": 100
 		}
@@ -155,8 +156,8 @@
 	},
 	"database": {
 		"oauth2TokenEncryptionKey": "",
-		"provider": "",
-		"connectionDetails": {
+		"provider": "postgres",
+		"readConnection": {
 			"username": "api_db_user",
 			"password": "",
 			"database": "no-small-parts",
@@ -164,7 +165,7 @@
 			"port": 5432,
 			"disableSSL": false
 		},
-		"writeConnectionDetails": {
+		"writeConnection": {
 			"username": "api_db_user",
 			"password": "",
 			"database": "no-small-parts",
@@ -172,7 +173,6 @@
 			"port": 5432,
 			"disableSSL": false
 		},
-		"migrations": null,
 		"maxPingAttempts": 50,
 		"pingWaitPeriod": 1000000000,
 		"debug": true,

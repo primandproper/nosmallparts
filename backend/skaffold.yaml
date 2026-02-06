@@ -153,18 +153,6 @@ profiles:
             main: ./cmd/services/admin
             fromImage: golang:1.25-trixie
 
-        # Uncomment to enable MCP server deployment
-        # - image: us-central1-docker.pkg.dev/dinner-done-better-dev/containers/dinner-done-better-mcp-server
-        #   ko:
-        #     dir: .
-        #     flags:
-        #       - -trimpath
-        #     ldflags:
-        #       - -s -w
-        #       - -extldflags "-static"
-        #     main: ./cmd/services/mcp
-        #     fromImage: golang:1.25-trixie
-
     manifests:
       kustomize:
         paths:

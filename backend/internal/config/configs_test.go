@@ -42,7 +42,7 @@ func TestAPIServiceConfig_EncodeToFile(T *testing.T) {
 			Database: databasecfg.Config{
 				Debug:         true,
 				RunMigrations: true,
-				ConnectionDetails: databasecfg.ConnectionDetails{
+				ReadConnection: databasecfg.ConnectionDetails{
 					Username:   "username",
 					Password:   "password",
 					Database:   "table",
@@ -209,7 +209,7 @@ func TestAPIServiceConfig_ValidateWithContext(T *testing.T) {
 			},
 			Database: databasecfg.Config{
 				Debug: true,
-				ConnectionDetails: databasecfg.ConnectionDetails{
+				ReadConnection: databasecfg.ConnectionDetails{
 					Username: "user",
 					Password: "pass",
 					Database: "db",
@@ -248,7 +248,7 @@ func TestAPIServiceConfig_ValidateWithContext(T *testing.T) {
 			},
 			Database: databasecfg.Config{
 				Debug: true,
-				ConnectionDetails: databasecfg.ConnectionDetails{
+				ReadConnection: databasecfg.ConnectionDetails{
 					Username: "user",
 					Password: "pass",
 					Database: "db",
@@ -275,7 +275,7 @@ func TestDBCleanerConfig_ValidateWithContext(T *testing.T) {
 			Observability: observability.Config{},
 			Database: databasecfg.Config{
 				Debug: true,
-				ConnectionDetails: databasecfg.ConnectionDetails{
+				ReadConnection: databasecfg.ConnectionDetails{
 					Username: "user",
 					Password: "pass",
 					Database: "db",
@@ -300,7 +300,7 @@ func TestMealPlanFinalizerConfig_ValidateWithContext(T *testing.T) {
 			Observability: observability.Config{},
 			Database: databasecfg.Config{
 				Debug: true,
-				ConnectionDetails: databasecfg.ConnectionDetails{
+				ReadConnection: databasecfg.ConnectionDetails{
 					Username: "user",
 					Password: "pass",
 					Database: "db",
@@ -326,7 +326,7 @@ func TestMealPlanGroceryListInitializerConfig_ValidateWithContext(T *testing.T) 
 			Observability: observability.Config{},
 			Database: databasecfg.Config{
 				Debug: true,
-				ConnectionDetails: databasecfg.ConnectionDetails{
+				ReadConnection: databasecfg.ConnectionDetails{
 					Username: "user",
 					Password: "pass",
 					Database: "db",
@@ -352,7 +352,7 @@ func TestMealPlanTaskCreatorConfig_ValidateWithContext(T *testing.T) {
 			Observability: observability.Config{},
 			Database: databasecfg.Config{
 				Debug: true,
-				ConnectionDetails: databasecfg.ConnectionDetails{
+				ReadConnection: databasecfg.ConnectionDetails{
 					Username: "user",
 					Password: "pass",
 					Database: "db",
@@ -378,7 +378,7 @@ func TestSearchDataIndexSchedulerConfig_ValidateWithContext(T *testing.T) {
 			Observability: observability.Config{},
 			Database: databasecfg.Config{
 				Debug: true,
-				ConnectionDetails: databasecfg.ConnectionDetails{
+				ReadConnection: databasecfg.ConnectionDetails{
 					Username: "user",
 					Password: "pass",
 					Database: "db",
@@ -404,7 +404,7 @@ func TestAsyncMessageHandlerConfig_ValidateWithContext(T *testing.T) {
 			Observability: observability.Config{},
 			Database: databasecfg.Config{
 				Debug: true,
-				ConnectionDetails: databasecfg.ConnectionDetails{
+				ReadConnection: databasecfg.ConnectionDetails{
 					Username: "user",
 					Password: "pass",
 					Database: "db",

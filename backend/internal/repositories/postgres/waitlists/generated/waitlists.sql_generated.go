@@ -58,10 +58,10 @@ INSERT INTO waitlists (
 `
 
 type CreateWaitlistParams struct {
-	ValidUntil  time.Time
 	ID          string
 	Name        string
 	Description string
+	ValidUntil  time.Time
 }
 
 func (q *Queries) CreateWaitlist(ctx context.Context, db DBTX, arg *CreateWaitlistParams) error {
@@ -127,13 +127,13 @@ LIMIT COALESCE($7, 50)
 `
 
 type GetActiveWaitlistsParams struct {
-	ResultLimit     interface{}
 	CreatedAfter    sql.NullTime
 	CreatedBefore   sql.NullTime
 	UpdatedBefore   sql.NullTime
 	UpdatedAfter    sql.NullTime
-	Cursor          sql.NullString
 	IncludeArchived sql.NullBool
+	Cursor          sql.NullString
+	ResultLimit     interface{}
 }
 
 type GetActiveWaitlistsRow struct {
@@ -267,13 +267,13 @@ LIMIT COALESCE($7, 50)
 `
 
 type GetWaitlistsParams struct {
-	ResultLimit     interface{}
 	CreatedAfter    sql.NullTime
 	CreatedBefore   sql.NullTime
 	UpdatedBefore   sql.NullTime
 	UpdatedAfter    sql.NullTime
-	Cursor          sql.NullString
 	IncludeArchived sql.NullBool
+	Cursor          sql.NullString
+	ResultLimit     interface{}
 }
 
 type GetWaitlistsRow struct {

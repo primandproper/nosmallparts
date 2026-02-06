@@ -6,8 +6,12 @@ import "google/protobuf/timestamp.proto";
 
 option go_package = "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/webhooks";
 
+message WebhookList {
+  repeated Webhook webhooks = 1;
+}
+
 message DataCollection {
-  map<string, Webhook> webhooks = 1;
+  map<string, WebhookList> webhooks = 1;
 }
 
 message Webhook {

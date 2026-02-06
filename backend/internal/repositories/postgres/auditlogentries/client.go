@@ -20,7 +20,8 @@ type repository struct {
 	tracer           tracing.Tracer
 	logger           logging.Logger
 	generatedQuerier generated.Querier
-	db               *sql.DB
+	readDB           *sql.DB
+	writeDB          *sql.DB
 }
 
 // ProvideAuditLogRepository provides a new repository.
@@ -31,7 +32,8 @@ func ProvideAuditLogRepository(
 ) audit.Repository {
 	c := &repository{
 		Client:           client,
-		db:               client.DB(),
+		readDB:           client.ReadDB(),
+		writeDB:          client.WriteDB(),
 		tracer:           tracing.NewTracer(tracing.EnsureTracerProvider(tracerProvider).Tracer(o11yName)),
 		generatedQuerier: generated.New(),
 		logger:           logging.EnsureLogger(logger).WithName(o11yName),

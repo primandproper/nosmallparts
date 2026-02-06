@@ -14,69 +14,80 @@ import (
 func TestNewConnectionManager(t *testing.T) {
 	t.Parallel()
 
-	m := NewConnectionManager()
+	ctx := t.Context()
+
+	m := NewConnectionManager(nil, nil)
 	require.NotNil(t, m)
-	assert.False(t, m.GroupHasConnections("any"))
-	assert.Equal(t, 0, m.GetConnectionCount("any"))
-	assert.Nil(t, m.Get("any", "any"))
-	assert.Empty(t, m.GetGroupConnections("any"))
+
+	assert.False(t, m.GroupHasConnections(ctx, "any"))
+	assert.Equal(t, 0, m.GetConnectionCount(ctx, "any"))
+	assert.Nil(t, m.Get(ctx, "any", "any"))
+	assert.Empty(t, m.GetGroupConnections(ctx, "any"))
 }
 
 func TestConnectionManager_Add_Get_Remove(t *testing.T) {
 	t.Parallel()
 
+	ctx := t.Context()
+
 	conn, cleanup := testConnHelper(t)
 	defer cleanup()
 
-	ctx := NewConnectionContext(conn)
-	m := NewConnectionManager()
+	connCtx := NewConnectionContext(conn)
+	m := NewConnectionManager(nil, nil)
 
-	m.Add("g1", "m1", ctx)
-	assert.True(t, m.GroupHasConnections("g1"))
-	assert.Equal(t, 1, m.GetConnectionCount("g1"))
-	assert.Equal(t, ctx, m.Get("g1", "m1"))
-	assert.Len(t, m.GetGroupConnections("g1"), 1)
-	assert.Equal(t, ctx, m.GetGroupConnections("g1")[0])
+	m.Add(ctx, "g1", "m1", connCtx)
+	assert.True(t, m.GroupHasConnections(ctx, "g1"))
+	assert.Equal(t, 1, m.GetConnectionCount(ctx, "g1"))
+	assert.Equal(t, connCtx, m.Get(ctx, "g1", "m1"))
+	assert.Len(t, m.GetGroupConnections(ctx, "g1"), 1)
+	assert.Equal(t, connCtx, m.GetGroupConnections(ctx, "g1")[0])
 
-	m.Remove("g1", "m1")
-	assert.False(t, m.GroupHasConnections("g1"))
-	assert.Equal(t, 0, m.GetConnectionCount("g1"))
-	assert.Nil(t, m.Get("g1", "m1"))
-	assert.Empty(t, m.GetGroupConnections("g1"))
+	m.Remove(ctx, "g1", "m1")
+	assert.False(t, m.GroupHasConnections(ctx, "g1"))
+	assert.Equal(t, 0, m.GetConnectionCount(ctx, "g1"))
+	assert.Nil(t, m.Get(ctx, "g1", "m1"))
+	assert.Empty(t, m.GetGroupConnections(ctx, "g1"))
 }
 
 func TestConnectionManager_Remove_empties_group(t *testing.T) {
 	t.Parallel()
+
+	ctx := t.Context()
 
 	conn1, cleanup1 := testConnHelper(t)
 	defer cleanup1()
 	conn2, cleanup2 := testConnHelper(t)
 	defer cleanup2()
 
-	m := NewConnectionManager()
-	m.Add("g1", "m1", NewConnectionContext(conn1))
-	m.Add("g1", "m2", NewConnectionContext(conn2))
-	assert.Equal(t, 2, m.GetConnectionCount("g1"))
+	m := NewConnectionManager(nil, nil)
+	m.Add(ctx, "g1", "m1", NewConnectionContext(conn1))
+	m.Add(ctx, "g1", "m2", NewConnectionContext(conn2))
+	assert.Equal(t, 2, m.GetConnectionCount(ctx, "g1"))
 
-	m.Remove("g1", "m1")
-	assert.Equal(t, 1, m.GetConnectionCount("g1"))
-	assert.NotNil(t, m.Get("g1", "m2"))
+	m.Remove(ctx, "g1", "m1")
+	assert.Equal(t, 1, m.GetConnectionCount(ctx, "g1"))
+	assert.NotNil(t, m.Get(ctx, "g1", "m2"))
 
-	m.Remove("g1", "m2")
-	assert.False(t, m.GroupHasConnections("g1"))
-	assert.Equal(t, 0, m.GetConnectionCount("g1"))
+	m.Remove(ctx, "g1", "m2")
+	assert.False(t, m.GroupHasConnections(ctx, "g1"))
+	assert.Equal(t, 0, m.GetConnectionCount(ctx, "g1"))
 }
 
 func TestConnectionManager_Get_nonexistent(t *testing.T) {
 	t.Parallel()
 
-	m := NewConnectionManager()
-	assert.Nil(t, m.Get("g1", "m1"))
-	assert.Nil(t, m.Get("", ""))
+	ctx := t.Context()
+
+	m := NewConnectionManager(nil, nil)
+	assert.Nil(t, m.Get(ctx, "g1", "m1"))
+	assert.Nil(t, m.Get(ctx, "", ""))
 }
 
 func TestConnectionManager_BroadcastToGroup(t *testing.T) {
 	t.Parallel()
+
+	ctx := t.Context()
 
 	upgrader := websocket.Upgrader{CheckOrigin: func(*http.Request) bool { return true }}
 	ch := make(chan string, 2)
@@ -99,11 +110,11 @@ func TestConnectionManager_BroadcastToGroup(t *testing.T) {
 	conn2 := dialConn()
 	defer conn2.Close()
 
-	m := NewConnectionManager()
-	m.Add("g1", "m1", NewConnectionContext(conn1))
-	m.Add("g1", "m2", NewConnectionContext(conn2))
+	m := NewConnectionManager(nil, nil)
+	m.Add(ctx, "g1", "m1", NewConnectionContext(conn1))
+	m.Add(ctx, "g1", "m2", NewConnectionContext(conn2))
 
-	m.BroadcastToGroup("g1", "hello")
+	m.BroadcastToGroup(ctx, "g1", "hello")
 
 	got1 := <-ch
 	got2 := <-ch
@@ -114,6 +125,8 @@ func TestConnectionManager_BroadcastToGroup(t *testing.T) {
 func TestConnectionManager_BroadcastToGroupFiltered(t *testing.T) {
 	t.Parallel()
 
+	ctx := t.Context()
+
 	upgrader := websocket.Upgrader{CheckOrigin: func(*http.Request) bool { return true }}
 	ch := make(chan string, 2)
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
@@ -135,12 +148,12 @@ func TestConnectionManager_BroadcastToGroupFiltered(t *testing.T) {
 	conn2 := dialConn()
 	defer conn2.Close()
 
-	m := NewConnectionManager()
-	m.Add("g1", "m1", NewConnectionContext(conn1))
-	m.Add("g1", "m2", NewConnectionContext(conn2))
+	m := NewConnectionManager(nil, nil)
+	m.Add(ctx, "g1", "m1", NewConnectionContext(conn1))
+	m.Add(ctx, "g1", "m2", NewConnectionContext(conn2))
 
 	// only include m2
-	m.BroadcastToGroupFiltered("g1", "only-m2", func(memberID string) bool {
+	m.BroadcastToGroupFiltered(ctx, "g1", "only-m2", func(memberID string) bool {
 		return memberID == "m2"
 	})
 
@@ -157,12 +170,13 @@ func TestConnectionManager_BroadcastToGroupFiltered(t *testing.T) {
 func TestConnectionManager_BroadcastToGroupFiltered_none_match(t *testing.T) {
 	t.Parallel()
 
+	ctx := t.Context()
 	conn, cleanup := testConnHelper(t)
 	defer cleanup()
 
-	m := NewConnectionManager()
-	m.Add("g1", "m1", NewConnectionContext(conn))
-	m.BroadcastToGroupFiltered("g1", "nobody", func(memberID string) bool { return false })
+	m := NewConnectionManager(nil, nil)
+	m.Add(ctx, "g1", "m1", NewConnectionContext(conn))
+	m.BroadcastToGroupFiltered(ctx, "g1", "nobody", func(memberID string) bool { return false })
 	// no panic, no message sent (conn would block if we read; we don't read so we're good)
 	cleanup()
 }
@@ -185,23 +199,26 @@ func TestConnectionManager_SendToMember(t *testing.T) {
 	require.NoError(t, err)
 	defer conn.Close()
 
-	m := NewConnectionManager()
-	m.Add("g1", "m1", NewConnectionContext(conn))
+	ctx := t.Context()
 
-	err = m.SendToMember("g1", "m1", "direct")
+	m := NewConnectionManager(nil, nil)
+	m.Add(ctx, "g1", "m1", NewConnectionContext(conn))
+
+	err = m.SendToMember(ctx, "g1", "m1", "direct")
 	require.NoError(t, err)
 	assert.Equal(t, "direct", <-ch)
 
 	// nonexistent member returns nil error (no send)
-	err = m.SendToMember("g1", "m2", "x")
+	err = m.SendToMember(ctx, "g1", "m2", "x")
 	assert.NoError(t, err)
-	err = m.SendToMember("g2", "m1", "x")
+	err = m.SendToMember(ctx, "g2", "m1", "x")
 	assert.NoError(t, err)
 }
 
 func TestConnectionManager_BroadcastToGroup_empty_group(t *testing.T) {
 	t.Parallel()
 
-	m := NewConnectionManager()
-	m.BroadcastToGroup("nonexistent", "msg") // no panic
+	ctx := t.Context()
+	m := NewConnectionManager(nil, nil)
+	m.BroadcastToGroup(ctx, "nonexistent", "msg") // no panic
 }

@@ -275,7 +275,7 @@ function RegisterForm() {
             disabled={isLoading}
           />
         </div>
-        
+
         {/* Name Fields */}
         <div className="grid grid-cols-2 gap-4">
           <div>

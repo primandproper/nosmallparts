@@ -177,7 +177,7 @@ func TestQuerier_Integration_Users(t *testing.T) {
 
 	assert.NoError(t, dbc.MarkUserEmailAddressAsVerified(ctx, firstUser.ID, token))
 
-	res, err := dbc.db.ExecContext(ctx, "UPDATE users SET service_role = $1, two_factor_secret_verified_at = NOW() WHERE id = $2", "service_admin", firstUser.ID)
+	res, err := dbc.writeDB.ExecContext(ctx, "UPDATE users SET service_role = $1, two_factor_secret_verified_at = NOW() WHERE id = $2", "service_admin", firstUser.ID)
 	assert.NoError(t, err)
 	rowsAffected, err := res.RowsAffected()
 	assert.NoError(t, err)

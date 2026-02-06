@@ -14,7 +14,7 @@ func TestConfig_ValidateWithContext(T *testing.T) {
 
 		ctx := t.Context()
 		cfg := &Config{
-			ConnectionDetails: ConnectionDetails{
+			ReadConnection: ConnectionDetails{
 				Host:     "localhost",
 				Username: "root",
 				Password: "password",

@@ -99,20 +99,20 @@ INSERT INTO accounts (
 `
 
 type CreateAccountParams struct {
-	AddressLine2      string
-	Country           string
+	ID                string
+	Name              string
 	BillingStatus     string
 	ContactPhone      string
 	BelongsToUser     string
 	AddressLine1      string
-	State             string
-	WebhookHmacSecret string
-	Name              string
-	ZipCode           string
-	ID                string
+	AddressLine2      string
 	City              string
+	State             string
+	ZipCode           string
+	Country           string
 	Latitude          sql.NullString
 	Longitude         sql.NullString
+	WebhookHmacSecret string
 }
 
 func (q *Queries) CreateAccount(ctx context.Context, db DBTX, arg *CreateAccountParams) error {
@@ -198,58 +198,58 @@ WHERE accounts.archived_at IS NULL
 `
 
 type GetAccountByIDWithMembershipsRow struct {
-	MembershipCreatedAt               time.Time
-	CreatedAt                         time.Time
-	UserCreatedAt                     time.Time
-	UserLastAcceptedPrivacyPolicy     sql.NullTime
-	UserEmailAddressVerifiedAt        sql.NullTime
-	UserLastUpdatedAt                 sql.NullTime
-	MembershipLastUpdatedAt           sql.NullTime
-	UserLastIndexedAt                 sql.NullTime
-	MembershipArchivedAt              sql.NullTime
-	UserLastAcceptedTermsOfService    sql.NullTime
-	UserArchivedAt                    sql.NullTime
-	UserBirthday                      sql.NullTime
-	UserTwoFactorSecretVerifiedAt     sql.NullTime
-	UserPasswordLastChangedAt         sql.NullTime
-	ArchivedAt                        sql.NullTime
-	LastUpdatedAt                     sql.NullTime
-	LastPaymentProviderSyncOccurredAt sql.NullTime
-	Country                           string
-	UserServiceRole                   string
+	ID                                string
 	Name                              string
 	BillingStatus                     string
-	UserID                            string
-	UserUsername                      string
 	ContactPhone                      string
-	UserEmailAddress                  string
-	UserHashedPassword                string
-	ID                                string
-	MembershipAccountRole             string
-	UserTwoFactorSecret               string
-	ZipCode                           string
-	MembershipBelongsToAccount        string
-	UserUserAccountStatus             string
-	UserUserAccountStatusExplanation  string
-	State                             string
-	WebhookHmacSecret                 string
-	City                              string
-	UserFirstName                     string
-	UserLastName                      string
-	AddressLine2                      string
-	AddressLine1                      string
-	TimeZone                          TimeZone
-	BelongsToUser                     string
-	MembershipBelongsToUser           string
 	PaymentProcessorCustomerID        string
-	MembershipID                      string
-	UserEmailAddressVerificationToken sql.NullString
 	SubscriptionPlanID                sql.NullString
-	UserAvatarSrc                     sql.NullString
+	BelongsToUser                     string
+	TimeZone                          TimeZone
+	AddressLine1                      string
+	AddressLine2                      string
+	City                              string
+	State                             string
+	ZipCode                           string
+	Country                           string
 	Latitude                          sql.NullString
 	Longitude                         sql.NullString
-	MembershipDefaultAccount          bool
+	LastPaymentProviderSyncOccurredAt sql.NullTime
+	WebhookHmacSecret                 string
+	CreatedAt                         time.Time
+	LastUpdatedAt                     sql.NullTime
+	ArchivedAt                        sql.NullTime
+	UserID                            string
+	UserUsername                      string
+	UserAvatarSrc                     sql.NullString
+	UserEmailAddress                  string
+	UserHashedPassword                string
+	UserPasswordLastChangedAt         sql.NullTime
 	UserRequiresPasswordChange        bool
+	UserTwoFactorSecret               string
+	UserTwoFactorSecretVerifiedAt     sql.NullTime
+	UserServiceRole                   string
+	UserUserAccountStatus             string
+	UserUserAccountStatusExplanation  string
+	UserBirthday                      sql.NullTime
+	UserEmailAddressVerificationToken sql.NullString
+	UserEmailAddressVerifiedAt        sql.NullTime
+	UserFirstName                     string
+	UserLastName                      string
+	UserLastAcceptedTermsOfService    sql.NullTime
+	UserLastAcceptedPrivacyPolicy     sql.NullTime
+	UserLastIndexedAt                 sql.NullTime
+	UserCreatedAt                     time.Time
+	UserLastUpdatedAt                 sql.NullTime
+	UserArchivedAt                    sql.NullTime
+	MembershipID                      string
+	MembershipBelongsToAccount        string
+	MembershipBelongsToUser           string
+	MembershipDefaultAccount          bool
+	MembershipAccountRole             string
+	MembershipCreatedAt               time.Time
+	MembershipLastUpdatedAt           sql.NullTime
+	MembershipArchivedAt              sql.NullTime
 }
 
 func (q *Queries) GetAccountByIDWithMemberships(ctx context.Context, db DBTX, id string) ([]*GetAccountByIDWithMembershipsRow, error) {
@@ -395,38 +395,38 @@ LIMIT COALESCE($8, 50)
 `
 
 type GetAccountsForUserParams struct {
-	ResultLimit     interface{}
 	CreatedAfter    sql.NullTime
 	CreatedBefore   sql.NullTime
 	UpdatedBefore   sql.NullTime
 	UpdatedAfter    sql.NullTime
+	IncludeArchived sql.NullBool
 	BelongsToUser   string
 	Cursor          sql.NullString
-	IncludeArchived sql.NullBool
+	ResultLimit     interface{}
 }
 
 type GetAccountsForUserRow struct {
-	CreatedAt                         time.Time
-	LastPaymentProviderSyncOccurredAt sql.NullTime
-	LastUpdatedAt                     sql.NullTime
-	ArchivedAt                        sql.NullTime
-	AddressLine1                      string
-	State                             string
+	ID                                string
+	Name                              string
+	BillingStatus                     string
+	ContactPhone                      string
+	PaymentProcessorCustomerID        string
+	SubscriptionPlanID                sql.NullString
 	BelongsToUser                     string
 	TimeZone                          TimeZone
-	PaymentProcessorCustomerID        string
+	AddressLine1                      string
 	AddressLine2                      string
 	City                              string
-	ID                                string
+	State                             string
 	ZipCode                           string
 	Country                           string
-	ContactPhone                      string
-	BillingStatus                     string
-	Name                              string
-	WebhookHmacSecret                 string
-	SubscriptionPlanID                sql.NullString
-	Longitude                         sql.NullString
 	Latitude                          sql.NullString
+	Longitude                         sql.NullString
+	LastPaymentProviderSyncOccurredAt sql.NullTime
+	WebhookHmacSecret                 string
+	CreatedAt                         time.Time
+	LastUpdatedAt                     sql.NullTime
+	ArchivedAt                        sql.NullTime
 	FilteredCount                     int64
 	TotalCount                        int64
 }
@@ -514,10 +514,10 @@ type UpdateAccountParams struct {
 	State         string
 	ZipCode       string
 	Country       string
-	BelongsToUser string
-	ID            string
 	Latitude      sql.NullString
 	Longitude     sql.NullString
+	BelongsToUser string
+	ID            string
 }
 
 func (q *Queries) UpdateAccount(ctx context.Context, db DBTX, arg *UpdateAccountParams) (int64, error) {

@@ -46,7 +46,7 @@ func (r *repository) GetUser(ctx context.Context, userID string) (*identity.User
 	logger = logger.WithValue(keys.UserIDKey, userID)
 	tracing.AttachToSpan(span, keys.UserIDKey, userID)
 
-	result, err := r.generatedQuerier.GetUserByID(ctx, r.db, userID)
+	result, err := r.generatedQuerier.GetUserByID(ctx, r.readDB, userID)
 	if err != nil {
 		return nil, observability.PrepareAndLogError(err, logger, span, "getting user")
 	}
@@ -88,7 +88,7 @@ func (r *repository) GetUserWithUnverifiedTwoFactorSecret(ctx context.Context, u
 	}
 	tracing.AttachToSpan(span, keys.UserIDKey, userID)
 
-	result, err := r.generatedQuerier.GetUserWithUnverifiedTwoFactor(ctx, r.db, userID)
+	result, err := r.generatedQuerier.GetUserWithUnverifiedTwoFactor(ctx, r.readDB, userID)
 	if err != nil {
 		return nil, observability.PrepareError(err, span, "getting user with unverified two factor")
 	}
@@ -130,7 +130,7 @@ func (r *repository) GetUserByUsername(ctx context.Context, username string) (*i
 	}
 	tracing.AttachToSpan(span, keys.UsernameKey, username)
 
-	result, err := r.generatedQuerier.GetUserByUsername(ctx, r.db, username)
+	result, err := r.generatedQuerier.GetUserByUsername(ctx, r.readDB, username)
 	if err != nil {
 		return nil, observability.PrepareError(err, span, "getting user by username")
 	}
@@ -172,7 +172,7 @@ func (r *repository) GetAdminUserByUsername(ctx context.Context, username string
 	}
 	tracing.AttachToSpan(span, keys.UsernameKey, username)
 
-	result, err := r.generatedQuerier.GetAdminUserByUsername(ctx, r.db, username)
+	result, err := r.generatedQuerier.GetAdminUserByUsername(ctx, r.readDB, username)
 	if err != nil {
 		if errors.Is(err, sql.ErrNoRows) {
 			return nil, err
@@ -217,7 +217,7 @@ func (r *repository) GetUserByEmail(ctx context.Context, email string) (*identit
 	}
 	tracing.AttachToSpan(span, keys.UserEmailAddressKey, email)
 
-	result, err := r.generatedQuerier.GetUserByEmail(ctx, r.db, email)
+	result, err := r.generatedQuerier.GetUserByEmail(ctx, r.readDB, email)
 	if err != nil {
 		return nil, observability.PrepareError(err, span, "getting user by email")
 	}
@@ -268,7 +268,7 @@ func (r *repository) SearchForUsersByUsername(ctx context.Context, usernameQuery
 	tracing.AttachQueryFilterToSpan(span, filter)
 	filter.AttachToLogger(logger)
 
-	results, err := r.generatedQuerier.SearchUsersByUsername(ctx, r.db, &generated.SearchUsersByUsernameParams{
+	results, err := r.generatedQuerier.SearchUsersByUsername(ctx, r.readDB, &generated.SearchUsersByUsernameParams{
 		CreatedBefore:   database.NullTimeFromTimePointer(filter.CreatedBefore),
 		CreatedAfter:    database.NullTimeFromTimePointer(filter.CreatedAfter),
 		UpdatedBefore:   database.NullTimeFromTimePointer(filter.UpdatedBefore),
@@ -339,7 +339,7 @@ func (r *repository) GetUsers(ctx context.Context, filter *filtering.QueryFilter
 	tracing.AttachQueryFilterToSpan(span, filter)
 	filter.AttachToLogger(logger) // TODO: is assignment necessary here? if not, make consistent
 
-	results, err := r.generatedQuerier.GetUsers(ctx, r.db, &generated.GetUsersParams{
+	results, err := r.generatedQuerier.GetUsers(ctx, r.readDB, &generated.GetUsersParams{
 		CreatedBefore:   database.NullTimeFromTimePointer(filter.CreatedBefore),
 		CreatedAfter:    database.NullTimeFromTimePointer(filter.CreatedAfter),
 		UpdatedBefore:   database.NullTimeFromTimePointer(filter.UpdatedBefore),
@@ -422,7 +422,7 @@ func (r *repository) GetUsersForAccount(ctx context.Context, accountID string, f
 		Pagination: filter.ToPagination(),
 	}
 
-	results, err := r.generatedQuerier.GetUsersForAccount(ctx, r.db, &generated.GetUsersForAccountParams{
+	results, err := r.generatedQuerier.GetUsersForAccount(ctx, r.readDB, &generated.GetUsersForAccountParams{
 		BelongsToAccount: accountID,
 		CreatedBefore:    database.NullTimeFromTimePointer(filter.CreatedBefore),
 		CreatedAfter:     database.NullTimeFromTimePointer(filter.CreatedAfter),
@@ -476,7 +476,7 @@ func (r *repository) GetUsersWithIDs(ctx context.Context, ids []string) (x []*id
 
 	logger := r.logger.WithValue("user_id_count", len(ids))
 
-	results, err := r.generatedQuerier.GetUsersWithIDs(ctx, r.db, ids)
+	results, err := r.generatedQuerier.GetUsersWithIDs(ctx, r.readDB, ids)
 	if err != nil {
 		return nil, observability.PrepareAndLogError(err, logger, span, "scanning user")
 	}
@@ -517,7 +517,7 @@ func (r *repository) GetUserIDsThatNeedSearchIndexing(ctx context.Context) ([]st
 	ctx, span := r.tracer.StartSpan(ctx)
 	defer span.End()
 
-	results, err := r.generatedQuerier.GetUserIDsNeedingIndexing(ctx, r.db)
+	results, err := r.generatedQuerier.GetUserIDsNeedingIndexing(ctx, r.readDB)
 	if err != nil {
 		return nil, observability.PrepareError(err, span, "executing users list retrieval query")
 	}
@@ -538,7 +538,7 @@ func (r *repository) MarkUserAsIndexed(ctx context.Context, userID string) error
 	logger = logger.WithValue(keys.UserIDKey, userID)
 	tracing.AttachToSpan(span, keys.UserIDKey, userID)
 
-	if _, err := r.generatedQuerier.UpdateUserLastIndexedAt(ctx, r.db, userID); err != nil {
+	if _, err := r.generatedQuerier.UpdateUserLastIndexedAt(ctx, r.writeDB, userID); err != nil {
 		return observability.PrepareAndLogError(err, logger, span, "marking user as indexed")
 	}
 
@@ -565,7 +565,7 @@ func (r *repository) CreateUser(ctx context.Context, input *identity.UserDatabas
 	})
 
 	// begin user creation transaction
-	tx, err := r.db.BeginTx(ctx, nil)
+	tx, err := r.writeDB.BeginTx(ctx, nil)
 	if err != nil {
 		return nil, observability.PrepareError(err, span, "beginning transaction")
 	}
@@ -786,7 +786,7 @@ func (r *repository) UpdateUserUsername(ctx context.Context, userID, newUsername
 	logger = logger.WithValue(keys.UsernameKey, newUsername)
 	tracing.AttachToSpan(span, keys.UsernameKey, newUsername)
 
-	tx, err := r.db.BeginTx(ctx, nil)
+	tx, err := r.writeDB.BeginTx(ctx, nil)
 	if err != nil {
 		return observability.PrepareAndLogError(err, logger, span, "beginning transaction")
 	}
@@ -846,7 +846,7 @@ func (r *repository) UpdateUserEmailAddress(ctx context.Context, userID, newEmai
 	}
 	tracing.AttachToSpan(span, keys.UserEmailAddressKey, newEmailAddress)
 
-	tx, err := r.db.BeginTx(ctx, nil)
+	tx, err := r.writeDB.BeginTx(ctx, nil)
 	if err != nil {
 		return observability.PrepareAndLogError(err, logger, span, "beginning transaction")
 	}
@@ -905,7 +905,7 @@ func (r *repository) UpdateUserDetails(ctx context.Context, userID string, input
 	tracing.AttachToSpan(span, keys.UserIDKey, userID)
 	logger := r.logger.WithValue(keys.UserIDKey, userID)
 
-	tx, err := r.db.BeginTx(ctx, nil)
+	tx, err := r.writeDB.BeginTx(ctx, nil)
 	if err != nil {
 		return observability.PrepareAndLogError(err, logger, span, "beginning transaction")
 	}
@@ -974,7 +974,7 @@ func (r *repository) UpdateUserAvatar(ctx context.Context, userID, newAvatarSrc 
 	tracing.AttachToSpan(span, keys.UserIDKey, userID)
 	logger := r.logger.WithValue(keys.UserIDKey, userID)
 
-	tx, err := r.db.BeginTx(ctx, nil)
+	tx, err := r.writeDB.BeginTx(ctx, nil)
 	if err != nil {
 		return observability.PrepareAndLogError(err, logger, span, "beginning transaction")
 	}
@@ -1025,7 +1025,7 @@ func (r *repository) UpdateUserPassword(ctx context.Context, userID, newHash str
 	tracing.AttachToSpan(span, keys.UserIDKey, userID)
 	logger := r.logger.WithValue(keys.UserIDKey, userID)
 
-	tx, err := r.db.BeginTx(ctx, nil)
+	tx, err := r.writeDB.BeginTx(ctx, nil)
 	if err != nil {
 		return observability.PrepareAndLogError(err, logger, span, "beginning transaction")
 	}
@@ -1076,7 +1076,7 @@ func (r *repository) UpdateUserTwoFactorSecret(ctx context.Context, userID, newS
 	tracing.AttachToSpan(span, keys.UserIDKey, userID)
 	logger := r.logger.WithValue(keys.UserIDKey, userID)
 
-	tx, err := r.db.BeginTx(ctx, nil)
+	tx, err := r.writeDB.BeginTx(ctx, nil)
 	if err != nil {
 		return observability.PrepareAndLogError(err, logger, span, "beginning transaction")
 	}
@@ -1123,7 +1123,7 @@ func (r *repository) MarkUserTwoFactorSecretAsVerified(ctx context.Context, user
 	tracing.AttachToSpan(span, keys.UserIDKey, userID)
 	logger := r.logger.WithValue(keys.UserIDKey, userID)
 
-	tx, err := r.db.BeginTx(ctx, nil)
+	tx, err := r.writeDB.BeginTx(ctx, nil)
 	if err != nil {
 		return observability.PrepareAndLogError(err, logger, span, "beginning transaction")
 	}
@@ -1173,12 +1173,12 @@ func (r *repository) MarkUserTwoFactorSecretAsUnverified(ctx context.Context, us
 	tracing.AttachToSpan(span, keys.UserIDKey, userID)
 	logger := r.logger.WithValue(keys.UserIDKey, userID)
 
-	tx, err := r.db.BeginTx(ctx, nil)
+	tx, err := r.writeDB.BeginTx(ctx, nil)
 	if err != nil {
 		return observability.PrepareAndLogError(err, logger, span, "beginning transaction")
 	}
 
-	if err = r.generatedQuerier.MarkTwoFactorSecretAsUnverified(ctx, r.db, &generated.MarkTwoFactorSecretAsUnverifiedParams{
+	if err = r.generatedQuerier.MarkTwoFactorSecretAsUnverified(ctx, tx, &generated.MarkTwoFactorSecretAsUnverifiedParams{
 		TwoFactorSecret: newSecret,
 		ID:              userID,
 	}); err != nil {
@@ -1234,7 +1234,7 @@ func (r *repository) ArchiveUser(ctx context.Context, userID string) error {
 	logger := r.logger.WithValue(keys.UserIDKey, userID)
 
 	// begin archive user transaction
-	tx, err := r.db.BeginTx(ctx, nil)
+	tx, err := r.writeDB.BeginTx(ctx, nil)
 	if err != nil {
 		return observability.PrepareAndLogError(err, logger, span, "beginning transaction")
 	}
@@ -1281,7 +1281,7 @@ func (r *repository) GetEmailAddressVerificationTokenForUser(ctx context.Context
 	}
 	tracing.AttachToSpan(span, keys.UserIDKey, userID)
 
-	result, err := r.generatedQuerier.GetEmailVerificationTokenByUserID(ctx, r.db, userID)
+	result, err := r.generatedQuerier.GetEmailVerificationTokenByUserID(ctx, r.readDB, userID)
 	if err != nil {
 		return "", observability.PrepareError(err, span, "getting user by email address verification token")
 	}
@@ -1297,7 +1297,7 @@ func (r *repository) GetUserByEmailAddressVerificationToken(ctx context.Context,
 		return nil, database.ErrEmptyInputProvided
 	}
 
-	result, err := r.generatedQuerier.GetUserByEmailAddressVerificationToken(ctx, r.db, database.NullStringFromString(token))
+	result, err := r.generatedQuerier.GetUserByEmailAddressVerificationToken(ctx, r.readDB, database.NullStringFromString(token))
 	if err != nil {
 		return nil, observability.PrepareError(err, span, "getting user by email address verification token")
 	}
@@ -1344,7 +1344,7 @@ func (r *repository) MarkUserEmailAddressAsVerified(ctx context.Context, userID,
 		return database.ErrEmptyInputProvided
 	}
 
-	tx, err := r.db.BeginTx(ctx, nil)
+	tx, err := r.writeDB.BeginTx(ctx, nil)
 	if err != nil {
 		return observability.PrepareAndLogError(err, logger, span, "beginning transaction")
 	}
@@ -1405,7 +1405,7 @@ func (r *repository) MarkUserEmailAddressAsUnverified(ctx context.Context, userI
 	}
 	logger = logger.WithValue(keys.UserIDKey, userID)
 
-	tx, err := r.db.BeginTx(ctx, nil)
+	tx, err := r.writeDB.BeginTx(ctx, nil)
 	if err != nil {
 		return err
 	}
@@ -1464,7 +1464,7 @@ func (r *repository) UpdateUserAccountStatus(ctx context.Context, userID string,
 	logger := r.logger.WithValue(keys.UserIDKey, userID)
 	tracing.AttachToSpan(span, keys.UserIDKey, userID)
 
-	rowsChanged, err := r.generatedQuerier.SetUserAccountStatus(ctx, r.db, &generated.SetUserAccountStatusParams{
+	rowsChanged, err := r.generatedQuerier.SetUserAccountStatus(ctx, r.writeDB, &generated.SetUserAccountStatusParams{
 		UserAccountStatus:            input.NewStatus,
 		UserAccountStatusExplanation: input.Reason,
 		ID:                           input.TargetUserID,

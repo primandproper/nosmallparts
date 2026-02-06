@@ -4,6 +4,7 @@ import (
 	"testing"
 
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/config"
+	dataprivacymock "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/dataprivacy/mock"
 	identitymock "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/identity/mock"
 	webhooksmock "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/webhooks/mock"
 	analyticsmock "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/analytics/mock"
@@ -24,7 +25,7 @@ import (
 )
 
 //nolint:gocritic // I know this returns too many things
-func buildTestAsyncDataChangeMessageHandler(t *testing.T) (*AsyncDataChangeMessageHandler, *identitymock.RepositoryMock, *webhooksmock.Repository, *msgqueuemock.ConsumerProvider, *msgqueuemock.PublisherProvider, *analyticsmock.EventReporter, *emailmock.Emailer, *uploadsmock.MockUploadManager, *mockmetrics.MetricsProvider, *encodingmock.EncoderDecoder) {
+func buildTestAsyncDataChangeMessageHandler(t *testing.T) (*AsyncDataChangeMessageHandler, *identitymock.RepositoryMock, *webhooksmock.Repository, *msgqueuemock.ConsumerProvider, *msgqueuemock.PublisherProvider, *analyticsmock.EventReporter, *emailmock.Emailer, *uploadsmock.MockUploadManager, *mockmetrics.MetricsProvider, *encodingmock.EncoderDecoder, *dataprivacymock.Repository) {
 	t.Helper()
 
 	logger := logging.NewNoopLogger()
@@ -39,6 +40,7 @@ func buildTestAsyncDataChangeMessageHandler(t *testing.T) (*AsyncDataChangeMessa
 	uploadManager := &uploadsmock.MockUploadManager{}
 	metricsProvider := &mockmetrics.MetricsProvider{}
 	decoder := &encodingmock.EncoderDecoder{}
+	dataPrivacyRepo := &dataprivacymock.Repository{}
 
 	// Create mock indexers with noop implementations for testing
 	userDataIndexer := &identityindexing.UserDataIndexer{}
@@ -74,9 +76,10 @@ func buildTestAsyncDataChangeMessageHandler(t *testing.T) (*AsyncDataChangeMessa
 		searchDataIndexPublisher:         mockPublisher,
 		outboundEmailsPublisher:          mockPublisher,
 		webhookExecutionRequestPublisher: mockPublisher,
+		dataPrivacyRepo:                  dataPrivacyRepo,
 	}
 
-	return handler, identityRepo, webhookRepo, consumerProvider, publisherProvider, analyticsEventReporter, emailer, uploadManager, metricsProvider, decoder
+	return handler, identityRepo, webhookRepo, consumerProvider, publisherProvider, analyticsEventReporter, emailer, uploadManager, metricsProvider, decoder, dataPrivacyRepo
 }
 
 func TestNewAsyncDataChangeMessageHandler(t *testing.T) {
@@ -96,6 +99,7 @@ func TestNewAsyncDataChangeMessageHandler(t *testing.T) {
 			},
 		}
 		identityRepo := &identitymock.RepositoryMock{}
+		dataPrivacyRepo := &dataprivacymock.Repository{}
 		webhookRepo := &webhooksmock.Repository{}
 		consumerProvider := &msgqueuemock.ConsumerProvider{}
 		publisherProvider := &msgqueuemock.PublisherProvider{}
@@ -127,6 +131,7 @@ func TestNewAsyncDataChangeMessageHandler(t *testing.T) {
 			tracerProvider,
 			cfg,
 			identityRepo,
+			dataPrivacyRepo,
 			webhookRepo,
 			consumerProvider,
 			publisherProvider,
@@ -159,7 +164,7 @@ func TestAsyncDataChangeMessageHandler_SetNonWebhookEventTypes(t *testing.T) {
 	t.Run("standard", func(t *testing.T) {
 		t.Parallel()
 
-		handler, _, _, _, _, _, _, _, _, _ := buildTestAsyncDataChangeMessageHandler(t)
+		handler, _, _, _, _, _, _, _, _, _, _ := buildTestAsyncDataChangeMessageHandler(t)
 
 		eventTypes := []string{"event1", "event2", "event3"}
 		handler.SetNonWebhookEventTypes(eventTypes)

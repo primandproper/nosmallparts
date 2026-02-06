@@ -9,6 +9,7 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/config"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/functions/datachangemessagehandler"
 	analyticscfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/analytics/config"
+	databasecfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/config"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/postgres"
 	emailcfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/email/config"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/encoding"
@@ -20,8 +21,13 @@ import (
 	tracingcfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing/config"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/uploads/objectstorage"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/auditlogentries"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/dataprivacy"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/identity"
-	repomigrations "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/migrations"
+	issue_reports "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/issuereports"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/notifications"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/settings"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/uploadedmedia"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/waitlists"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/webhooks"
 	identityindexing "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/identity/indexing"
 
@@ -36,10 +42,16 @@ func Build(
 	wire.Build(
 		datachangemessagehandler.Providers,
 		msgconfig.MessageQueueProviders,
+		databasecfg.ClientConfigProviders,
 		postgres.PGProviders,
-		repomigrations.MigrationProviders,
 		auditlogentries.AuditRepoProviders,
+		dataprivacy.DataPrivProviders,
 		identity.IDRepoProviders,
+		issue_reports.IssueReportsRepoProviders,
+		notifications.NotifRepoProviders,
+		settings.SettingsRepoProviders,
+		uploadedmedia.UploadedMediaRepoProviders,
+		waitlists.WaitlistsRepoProviders,
 		webhooks.WebhookProviders,
 		analyticscfg.Providers,
 		emailcfg.Providers,

@@ -25,19 +25,19 @@ import (
 
 // fakeStagesRepo is a stages repository for testing that delegates to optional funcs.
 type fakeStagesRepo struct {
-	CreateStageFunc                func(ctx context.Context, input *stagesdomain.StageCreationInput) (*stagesdomain.Stage, error)
-	GetStageByIDFunc                func(ctx context.Context, stageID string) (*stagesdomain.Stage, error)
-	GetStageByCodeFunc              func(ctx context.Context, code string) (*stagesdomain.Stage, error)
-	UpdateStageFunc                func(ctx context.Context, stageID string, input *stagesdomain.StageUpdateInput) error
-	ArchiveStageFunc               func(ctx context.Context, stageID string) error
-	AddParticipantFunc             func(ctx context.Context, input *stagesdomain.ParticipantCreationInput) (*stagesdomain.StageParticipant, error)
-	GetParticipantFunc             func(ctx context.Context, participantID string) (*stagesdomain.StageParticipant, error)
+	CreateStageFunc                   func(ctx context.Context, input *stagesdomain.StageCreationInput) (*stagesdomain.Stage, error)
+	GetStageByIDFunc                  func(ctx context.Context, stageID string) (*stagesdomain.Stage, error)
+	GetStageByCodeFunc                func(ctx context.Context, code string) (*stagesdomain.Stage, error)
+	UpdateStageFunc                   func(ctx context.Context, stageID string, input *stagesdomain.StageUpdateInput) error
+	ArchiveStageFunc                  func(ctx context.Context, stageID string) error
+	AddParticipantFunc                func(ctx context.Context, input *stagesdomain.ParticipantCreationInput) (*stagesdomain.StageParticipant, error)
+	GetParticipantFunc                func(ctx context.Context, participantID string) (*stagesdomain.StageParticipant, error)
 	GetActiveParticipantsForStageFunc func(ctx context.Context, stageID string) ([]*stagesdomain.StageParticipant, error)
-	UpdateParticipantFunc          func(ctx context.Context, participantID string, input *stagesdomain.ParticipantUpdateInput) error
-	SetParticipantLeftFunc         func(ctx context.Context, participantID string) error
-	AddParticipantRoleFunc         func(ctx context.Context, participantID, castMemberID string) error
-	RemoveParticipantRoleFunc      func(ctx context.Context, participantID, castMemberID string) error
-	GetParticipantRolesFunc        func(ctx context.Context, participantID string) ([]string, error)
+	UpdateParticipantFunc             func(ctx context.Context, participantID string, input *stagesdomain.ParticipantUpdateInput) error
+	SetParticipantLeftFunc            func(ctx context.Context, participantID string) error
+	AddParticipantRoleFunc            func(ctx context.Context, participantID, castMemberID string) error
+	RemoveParticipantRoleFunc         func(ctx context.Context, participantID, castMemberID string) error
+	GetParticipantRolesFunc           func(ctx context.Context, participantID string) ([]string, error)
 }
 
 func (f *fakeStagesRepo) CreateStage(ctx context.Context, input *stagesdomain.StageCreationInput) (*stagesdomain.Stage, error) {
@@ -136,8 +136,9 @@ var _ stagesdomain.Repository = (*fakeStagesRepo)(nil)
 func buildTestHandler(t *testing.T, stagesRepo stagesdomain.Repository, playScriptsRepo playscripts.Repository) *Handler {
 	t.Helper()
 	logger := logging.NewNoopLogger()
-	connections := platformws.NewConnectionManager()
-	return NewHandler(logger, tracing.NewNoopTracerProvider(), stagesRepo, playScriptsRepo, connections)
+	tracerProvider := tracing.NewNoopTracerProvider()
+	connections := platformws.NewConnectionManager(tracerProvider, logger)
+	return NewHandler(logger, tracerProvider, stagesRepo, playScriptsRepo, connections)
 }
 
 func TestNewHandler(t *testing.T) {
@@ -390,4 +391,3 @@ func TestGenerateStageCode(t *testing.T) {
 		}
 	}
 }
-

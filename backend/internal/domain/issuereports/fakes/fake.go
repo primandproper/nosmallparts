@@ -68,7 +68,7 @@ func BuildFakeIssueReportDatabaseCreationInput() *types.IssueReportDatabaseCreat
 func BuildFakeIssueReportUpdateRequestInput() *types.IssueReportUpdateRequestInput {
 	issueType := fake.RandomString([]string{"bug", "feature_request", "data_quality", "performance", "other"})
 	details := fake.Sentence(20)
-	relevantTable := fake.RandomString([]string{"users", "accounts"})
+	relevantTable := fake.RandomString([]string{"users", "account"})
 	relevantRecordID := BuildFakeID()
 
 	return &types.IssueReportUpdateRequestInput{

@@ -25,6 +25,81 @@ const (
 	// AasaTeamIDEnvVarKey is the environment variable name to set to override `config.AppleAppSiteAssociation.TeamID`.
 	AasaTeamIDEnvVarKey = "NO_SMALL_PARTS_AASA_TEAM_ID"
 
+	// AnalyticsCircuitBreakerErrorRateEnvVarKey is the environment variable name to set to override `config.Analytics.CircuitBreaker.ErrorRate`.
+	AnalyticsCircuitBreakerErrorRateEnvVarKey = "NO_SMALL_PARTS_ANALYTICS_CIRCUIT_BREAKER_ERROR_RATE"
+
+	// AnalyticsCircuitBreakerMinimumSampleThresholdEnvVarKey is the environment variable name to set to override `config.Analytics.CircuitBreaker.MinimumSampleThreshold`.
+	AnalyticsCircuitBreakerMinimumSampleThresholdEnvVarKey = "NO_SMALL_PARTS_ANALYTICS_CIRCUIT_BREAKER_MINIMUM_SAMPLE_THRESHOLD"
+
+	// AnalyticsCircuitBreakerNameEnvVarKey is the environment variable name to set to override `config.Analytics.CircuitBreaker.Name`.
+	AnalyticsCircuitBreakerNameEnvVarKey = "NO_SMALL_PARTS_ANALYTICS_CIRCUIT_BREAKER_NAME"
+
+	// AnalyticsInitEnvVarKey is the environment variable name to set to override `config.Analytics.CircuitBreaker`.
+	AnalyticsInitEnvVarKey = "NO_SMALL_PARTS_ANALYTICS_init"
+
+	// AnalyticsPosthogCircuitBreakingErrorRateEnvVarKey is the environment variable name to set to override `config.Analytics.Posthog.CircuitBreakerConfig.ErrorRate`.
+	AnalyticsPosthogCircuitBreakingErrorRateEnvVarKey = "NO_SMALL_PARTS_ANALYTICS_POSTHOG_CIRCUIT_BREAKING_ERROR_RATE"
+
+	// AnalyticsPosthogCircuitBreakingMinimumSampleThresholdEnvVarKey is the environment variable name to set to override `config.Analytics.Posthog.CircuitBreakerConfig.MinimumSampleThreshold`.
+	AnalyticsPosthogCircuitBreakingMinimumSampleThresholdEnvVarKey = "NO_SMALL_PARTS_ANALYTICS_POSTHOG_CIRCUIT_BREAKING_MINIMUM_SAMPLE_THRESHOLD"
+
+	// AnalyticsPosthogCircuitBreakingNameEnvVarKey is the environment variable name to set to override `config.Analytics.Posthog.CircuitBreakerConfig.Name`.
+	AnalyticsPosthogCircuitBreakingNameEnvVarKey = "NO_SMALL_PARTS_ANALYTICS_POSTHOG_CIRCUIT_BREAKING_NAME"
+
+	// AnalyticsPosthogPersonalAPIKeyEnvVarKey is the environment variable name to set to override `config.Analytics.Posthog.PersonalAPIKey`.
+	AnalyticsPosthogPersonalAPIKeyEnvVarKey = "NO_SMALL_PARTS_ANALYTICS_POSTHOG_PERSONAL_API_KEY"
+
+	// AnalyticsPosthogProjectAPIKeyEnvVarKey is the environment variable name to set to override `config.Analytics.Posthog.ProjectAPIKey`.
+	AnalyticsPosthogProjectAPIKeyEnvVarKey = "NO_SMALL_PARTS_ANALYTICS_POSTHOG_PROJECT_API_KEY"
+
+	// AnalyticsProviderEnvVarKey is the environment variable name to set to override `config.Analytics.Provider`.
+	AnalyticsProviderEnvVarKey = "NO_SMALL_PARTS_ANALYTICS_PROVIDER"
+
+	// AnalyticsRudderstackAPIKeyEnvVarKey is the environment variable name to set to override `config.Analytics.Rudderstack.APIKey`.
+	AnalyticsRudderstackAPIKeyEnvVarKey = "NO_SMALL_PARTS_ANALYTICS_RUDDERSTACK_API_KEY"
+
+	// AnalyticsRudderstackDataPlaneURLEnvVarKey is the environment variable name to set to override `config.Analytics.Rudderstack.DataPlaneURL`.
+	AnalyticsRudderstackDataPlaneURLEnvVarKey = "NO_SMALL_PARTS_ANALYTICS_RUDDERSTACK_DATA_PLANE_URL"
+
+	// AnalyticsSegmentAPITokenEnvVarKey is the environment variable name to set to override `config.Analytics.Segment.APIToken`.
+	AnalyticsSegmentAPITokenEnvVarKey = "NO_SMALL_PARTS_ANALYTICS_SEGMENT_API_TOKEN"
+
+	// AuthDebugEnvVarKey is the environment variable name to set to override `config.Auth.Debug`.
+	AuthDebugEnvVarKey = "NO_SMALL_PARTS_AUTH_DEBUG"
+
+	// AuthEnableUserSignupEnvVarKey is the environment variable name to set to override `config.Auth.EnableUserSignup`.
+	AuthEnableUserSignupEnvVarKey = "NO_SMALL_PARTS_AUTH_ENABLE_USER_SIGNUP"
+
+	// AuthMinimumPasswordLengthEnvVarKey is the environment variable name to set to override `config.Auth.MinimumPasswordLength`.
+	AuthMinimumPasswordLengthEnvVarKey = "NO_SMALL_PARTS_AUTH_MINIMUM_PASSWORD_LENGTH"
+
+	// AuthMinimumUsernameLengthEnvVarKey is the environment variable name to set to override `config.Auth.MinimumUsernameLength`.
+	AuthMinimumUsernameLengthEnvVarKey = "NO_SMALL_PARTS_AUTH_MINIMUM_USERNAME_LENGTH"
+
+	// AuthSsoConfigGoogleSsoCallbackURLEnvVarKey is the environment variable name to set to override `config.Auth.SSO.Google.CallbackURL`.
+	AuthSsoConfigGoogleSsoCallbackURLEnvVarKey = "NO_SMALL_PARTS_AUTH_SSO_CONFIG_GOOGLE_SSO_CALLBACK_URL"
+
+	// AuthSsoConfigGoogleSsoClientIDEnvVarKey is the environment variable name to set to override `config.Auth.SSO.Google.ClientID`.
+	AuthSsoConfigGoogleSsoClientIDEnvVarKey = "NO_SMALL_PARTS_AUTH_SSO_CONFIG_GOOGLE_SSO_CLIENT_ID"
+
+	// AuthSsoConfigGoogleSsoClientSecretEnvVarKey is the environment variable name to set to override `config.Auth.SSO.Google.ClientSecret`.
+	AuthSsoConfigGoogleSsoClientSecretEnvVarKey = "NO_SMALL_PARTS_AUTH_SSO_CONFIG_GOOGLE_SSO_CLIENT_SECRET"
+
+	// AuthTokensAudienceEnvVarKey is the environment variable name to set to override `config.Auth.Tokens.Audience`.
+	AuthTokensAudienceEnvVarKey = "NO_SMALL_PARTS_AUTH_TOKENS_AUDIENCE"
+
+	// AuthTokensMaxAccessTokenLifetimeEnvVarKey is the environment variable name to set to override `config.Auth.Tokens.MaxAccessTokenLifetime`.
+	AuthTokensMaxAccessTokenLifetimeEnvVarKey = "NO_SMALL_PARTS_AUTH_TOKENS_MAX_ACCESS_TOKEN_LIFETIME"
+
+	// AuthTokensMaxRefreshTokenLifetimeEnvVarKey is the environment variable name to set to override `config.Auth.Tokens.MaxRefreshTokenLifetime`.
+	AuthTokensMaxRefreshTokenLifetimeEnvVarKey = "NO_SMALL_PARTS_AUTH_TOKENS_MAX_REFRESH_TOKEN_LIFETIME"
+
+	// AuthTokensProviderEnvVarKey is the environment variable name to set to override `config.Auth.Tokens.Provider`.
+	AuthTokensProviderEnvVarKey = "NO_SMALL_PARTS_AUTH_TOKENS_PROVIDER"
+
+	// AuthTokensSigningKeyEnvVarKey is the environment variable name to set to override `config.Auth.Tokens.Base64EncodedSigningKey`.
+	AuthTokensSigningKeyEnvVarKey = "NO_SMALL_PARTS_AUTH_TOKENS_SIGNING_KEY"
+
 	// CookiesBlockKeyEnvVarKey is the environment variable name to set to override `config.Cookies.Base64EncodedBlockKey`.
 	CookiesBlockKeyEnvVarKey = "NO_SMALL_PARTS_COOKIES_BLOCK_KEY"
 
@@ -43,8 +118,176 @@ const (
 	// CookiesSecureOnlyEnvVarKey is the environment variable name to set to override `config.Cookies.SecureOnly`.
 	CookiesSecureOnlyEnvVarKey = "NO_SMALL_PARTS_COOKIES_SECURE_ONLY"
 
+	// DatabaseDebugEnvVarKey is the environment variable name to set to override `config.Database.Debug`.
+	DatabaseDebugEnvVarKey = "NO_SMALL_PARTS_DATABASE_DEBUG"
+
+	// DatabaseLogQueriesEnvVarKey is the environment variable name to set to override `config.Database.LogQueries`.
+	DatabaseLogQueriesEnvVarKey = "NO_SMALL_PARTS_DATABASE_LOG_QUERIES"
+
+	// DatabaseMaxPingAttemptsEnvVarKey is the environment variable name to set to override `config.Database.MaxPingAttempts`.
+	DatabaseMaxPingAttemptsEnvVarKey = "NO_SMALL_PARTS_DATABASE_MAX_PING_ATTEMPTS"
+
+	// DatabaseOauth2TokenEncryptionKeyEnvVarKey is the environment variable name to set to override `config.Database.OAuth2TokenEncryptionKey`.
+	DatabaseOauth2TokenEncryptionKeyEnvVarKey = "NO_SMALL_PARTS_DATABASE_OAUTH2_TOKEN_ENCRYPTION_KEY"
+
+	// DatabasePingWaitPeriodEnvVarKey is the environment variable name to set to override `config.Database.PingWaitPeriod`.
+	DatabasePingWaitPeriodEnvVarKey = "NO_SMALL_PARTS_DATABASE_PING_WAIT_PERIOD"
+
+	// DatabaseProviderEnvVarKey is the environment variable name to set to override `config.Database.Provider`.
+	DatabaseProviderEnvVarKey = "NO_SMALL_PARTS_DATABASE_PROVIDER"
+
+	// DatabaseReadConnectionDatabaseEnvVarKey is the environment variable name to set to override `config.Database.ReadConnection.Database`.
+	DatabaseReadConnectionDatabaseEnvVarKey = "NO_SMALL_PARTS_DATABASE_READ_CONNECTION_DATABASE"
+
+	// DatabaseReadConnectionDisableSslEnvVarKey is the environment variable name to set to override `config.Database.ReadConnection.DisableSSL`.
+	DatabaseReadConnectionDisableSslEnvVarKey = "NO_SMALL_PARTS_DATABASE_READ_CONNECTION_DISABLE_SSL"
+
+	// DatabaseReadConnectionHostEnvVarKey is the environment variable name to set to override `config.Database.ReadConnection.Host`.
+	DatabaseReadConnectionHostEnvVarKey = "NO_SMALL_PARTS_DATABASE_READ_CONNECTION_HOST"
+
+	// DatabaseReadConnectionPasswordEnvVarKey is the environment variable name to set to override `config.Database.ReadConnection.Password`.
+	DatabaseReadConnectionPasswordEnvVarKey = "NO_SMALL_PARTS_DATABASE_READ_CONNECTION_PASSWORD"
+
+	// DatabaseReadConnectionPortEnvVarKey is the environment variable name to set to override `config.Database.ReadConnection.Port`.
+	DatabaseReadConnectionPortEnvVarKey = "NO_SMALL_PARTS_DATABASE_READ_CONNECTION_PORT"
+
+	// DatabaseReadConnectionUsernameEnvVarKey is the environment variable name to set to override `config.Database.ReadConnection.Username`.
+	DatabaseReadConnectionUsernameEnvVarKey = "NO_SMALL_PARTS_DATABASE_READ_CONNECTION_USERNAME"
+
+	// DatabaseRunMigrationsEnvVarKey is the environment variable name to set to override `config.Database.RunMigrations`.
+	DatabaseRunMigrationsEnvVarKey = "NO_SMALL_PARTS_DATABASE_RUN_MIGRATIONS"
+
+	// DatabaseWriteConnectionDatabaseEnvVarKey is the environment variable name to set to override `config.Database.WriteConnection.Database`.
+	DatabaseWriteConnectionDatabaseEnvVarKey = "NO_SMALL_PARTS_DATABASE_WRITE_CONNECTION_DATABASE"
+
+	// DatabaseWriteConnectionDisableSslEnvVarKey is the environment variable name to set to override `config.Database.WriteConnection.DisableSSL`.
+	DatabaseWriteConnectionDisableSslEnvVarKey = "NO_SMALL_PARTS_DATABASE_WRITE_CONNECTION_DISABLE_SSL"
+
+	// DatabaseWriteConnectionHostEnvVarKey is the environment variable name to set to override `config.Database.WriteConnection.Host`.
+	DatabaseWriteConnectionHostEnvVarKey = "NO_SMALL_PARTS_DATABASE_WRITE_CONNECTION_HOST"
+
+	// DatabaseWriteConnectionPasswordEnvVarKey is the environment variable name to set to override `config.Database.WriteConnection.Password`.
+	DatabaseWriteConnectionPasswordEnvVarKey = "NO_SMALL_PARTS_DATABASE_WRITE_CONNECTION_PASSWORD"
+
+	// DatabaseWriteConnectionPortEnvVarKey is the environment variable name to set to override `config.Database.WriteConnection.Port`.
+	DatabaseWriteConnectionPortEnvVarKey = "NO_SMALL_PARTS_DATABASE_WRITE_CONNECTION_PORT"
+
+	// DatabaseWriteConnectionUsernameEnvVarKey is the environment variable name to set to override `config.Database.WriteConnection.Username`.
+	DatabaseWriteConnectionUsernameEnvVarKey = "NO_SMALL_PARTS_DATABASE_WRITE_CONNECTION_USERNAME"
+
+	// EmailCircuitBreakingErrorRateEnvVarKey is the environment variable name to set to override `config.Email.CircuitBreaker.ErrorRate`.
+	EmailCircuitBreakingErrorRateEnvVarKey = "NO_SMALL_PARTS_EMAIL_CIRCUIT_BREAKING_ERROR_RATE"
+
+	// EmailCircuitBreakingMinimumSampleThresholdEnvVarKey is the environment variable name to set to override `config.Email.CircuitBreaker.MinimumSampleThreshold`.
+	EmailCircuitBreakingMinimumSampleThresholdEnvVarKey = "NO_SMALL_PARTS_EMAIL_CIRCUIT_BREAKING_MINIMUM_SAMPLE_THRESHOLD"
+
+	// EmailCircuitBreakingNameEnvVarKey is the environment variable name to set to override `config.Email.CircuitBreaker.Name`.
+	EmailCircuitBreakingNameEnvVarKey = "NO_SMALL_PARTS_EMAIL_CIRCUIT_BREAKING_NAME"
+
+	// EmailInitEnvVarKey is the environment variable name to set to override `config.Email.CircuitBreaker`.
+	EmailInitEnvVarKey = "NO_SMALL_PARTS_EMAIL_init"
+
+	// EmailMailgunDomainEnvVarKey is the environment variable name to set to override `config.Email.Mailgun.Domain`.
+	EmailMailgunDomainEnvVarKey = "NO_SMALL_PARTS_EMAIL_MAILGUN_DOMAIN"
+
+	// EmailMailgunPrivateAPIKeyEnvVarKey is the environment variable name to set to override `config.Email.Mailgun.PrivateAPIKey`.
+	EmailMailgunPrivateAPIKeyEnvVarKey = "NO_SMALL_PARTS_EMAIL_MAILGUN_PRIVATE_API_KEY"
+
+	// EmailMailjetAPIKeyEnvVarKey is the environment variable name to set to override `config.Email.Mailjet.APIKey`.
+	EmailMailjetAPIKeyEnvVarKey = "NO_SMALL_PARTS_EMAIL_MAILJET_API_KEY"
+
+	// EmailMailjetSecretKeyEnvVarKey is the environment variable name to set to override `config.Email.Mailjet.SecretKey`.
+	EmailMailjetSecretKeyEnvVarKey = "NO_SMALL_PARTS_EMAIL_MAILJET_SECRET_KEY"
+
+	// EmailProviderEnvVarKey is the environment variable name to set to override `config.Email.Provider`.
+	EmailProviderEnvVarKey = "NO_SMALL_PARTS_EMAIL_PROVIDER"
+
+	// EmailSendgridAPITokenEnvVarKey is the environment variable name to set to override `config.Email.Sendgrid.APIToken`.
+	EmailSendgridAPITokenEnvVarKey = "NO_SMALL_PARTS_EMAIL_SENDGRID_API_TOKEN"
+
 	// EncodingContentTypeEnvVarKey is the environment variable name to set to override `config.Encoding.ContentType`.
 	EncodingContentTypeEnvVarKey = "NO_SMALL_PARTS_ENCODING_CONTENT_TYPE"
+
+	// EventsConsumerProviderEnvVarKey is the environment variable name to set to override `config.Events.Consumer.Provider`.
+	EventsConsumerProviderEnvVarKey = "NO_SMALL_PARTS_EVENTS_CONSUMER_PROVIDER"
+
+	// EventsConsumerPubsubProjectIDEnvVarKey is the environment variable name to set to override `config.Events.Consumer.PubSub.ProjectID`.
+	EventsConsumerPubsubProjectIDEnvVarKey = "NO_SMALL_PARTS_EVENTS_CONSUMER_PUBSUB_PROJECT_ID"
+
+	// EventsConsumerRedisPasswordEnvVarKey is the environment variable name to set to override `config.Events.Consumer.Redis.Password`.
+	EventsConsumerRedisPasswordEnvVarKey = "NO_SMALL_PARTS_EVENTS_CONSUMER_REDIS_PASSWORD"
+
+	// EventsConsumerRedisQueueAddressesEnvVarKey is the environment variable name to set to override `config.Events.Consumer.Redis.QueueAddresses`.
+	EventsConsumerRedisQueueAddressesEnvVarKey = "NO_SMALL_PARTS_EVENTS_CONSUMER_REDIS_QUEUE_ADDRESSES"
+
+	// EventsConsumerRedisUsernameEnvVarKey is the environment variable name to set to override `config.Events.Consumer.Redis.Username`.
+	EventsConsumerRedisUsernameEnvVarKey = "NO_SMALL_PARTS_EVENTS_CONSUMER_REDIS_USERNAME"
+
+	// EventsConsumerSqsQueueAddressEnvVarKey is the environment variable name to set to override `config.Events.Consumer.SQS.QueueAddress`.
+	EventsConsumerSqsQueueAddressEnvVarKey = "NO_SMALL_PARTS_EVENTS_CONSUMER_SQS_QUEUE_ADDRESS"
+
+	// EventsPublisherProviderEnvVarKey is the environment variable name to set to override `config.Events.Publisher.Provider`.
+	EventsPublisherProviderEnvVarKey = "NO_SMALL_PARTS_EVENTS_PUBLISHER_PROVIDER"
+
+	// EventsPublisherPubsubProjectIDEnvVarKey is the environment variable name to set to override `config.Events.Publisher.PubSub.ProjectID`.
+	EventsPublisherPubsubProjectIDEnvVarKey = "NO_SMALL_PARTS_EVENTS_PUBLISHER_PUBSUB_PROJECT_ID"
+
+	// EventsPublisherRedisPasswordEnvVarKey is the environment variable name to set to override `config.Events.Publisher.Redis.Password`.
+	EventsPublisherRedisPasswordEnvVarKey = "NO_SMALL_PARTS_EVENTS_PUBLISHER_REDIS_PASSWORD"
+
+	// EventsPublisherRedisQueueAddressesEnvVarKey is the environment variable name to set to override `config.Events.Publisher.Redis.QueueAddresses`.
+	EventsPublisherRedisQueueAddressesEnvVarKey = "NO_SMALL_PARTS_EVENTS_PUBLISHER_REDIS_QUEUE_ADDRESSES"
+
+	// EventsPublisherRedisUsernameEnvVarKey is the environment variable name to set to override `config.Events.Publisher.Redis.Username`.
+	EventsPublisherRedisUsernameEnvVarKey = "NO_SMALL_PARTS_EVENTS_PUBLISHER_REDIS_USERNAME"
+
+	// EventsPublisherSqsQueueAddressEnvVarKey is the environment variable name to set to override `config.Events.Publisher.SQS.QueueAddress`.
+	EventsPublisherSqsQueueAddressEnvVarKey = "NO_SMALL_PARTS_EVENTS_PUBLISHER_SQS_QUEUE_ADDRESS"
+
+	// FeatureFlagsCircuitBreakingErrorRateEnvVarKey is the environment variable name to set to override `config.FeatureFlags.CircuitBreaker.ErrorRate`.
+	FeatureFlagsCircuitBreakingErrorRateEnvVarKey = "NO_SMALL_PARTS_FEATURE_FLAGS_CIRCUIT_BREAKING_ERROR_RATE"
+
+	// FeatureFlagsCircuitBreakingMinimumSampleThresholdEnvVarKey is the environment variable name to set to override `config.FeatureFlags.CircuitBreaker.MinimumSampleThreshold`.
+	FeatureFlagsCircuitBreakingMinimumSampleThresholdEnvVarKey = "NO_SMALL_PARTS_FEATURE_FLAGS_CIRCUIT_BREAKING_MINIMUM_SAMPLE_THRESHOLD"
+
+	// FeatureFlagsCircuitBreakingNameEnvVarKey is the environment variable name to set to override `config.FeatureFlags.CircuitBreaker.Name`.
+	FeatureFlagsCircuitBreakingNameEnvVarKey = "NO_SMALL_PARTS_FEATURE_FLAGS_CIRCUIT_BREAKING_NAME"
+
+	// FeatureFlagsInitEnvVarKey is the environment variable name to set to override `config.FeatureFlags.CircuitBreaker`.
+	FeatureFlagsInitEnvVarKey = "NO_SMALL_PARTS_FEATURE_FLAGS_init"
+
+	// FeatureFlagsLaunchDarklycircuitBreakingErrorRateEnvVarKey is the environment variable name to set to override `config.FeatureFlags.LaunchDarkly.CircuitBreakerConfig.ErrorRate`.
+	FeatureFlagsLaunchDarklycircuitBreakingErrorRateEnvVarKey = "NO_SMALL_PARTS_FEATURE_FLAGS_LAUNCH_DARKLYCIRCUIT_BREAKING_ERROR_RATE"
+
+	// FeatureFlagsLaunchDarklycircuitBreakingMinimumSampleThresholdEnvVarKey is the environment variable name to set to override `config.FeatureFlags.LaunchDarkly.CircuitBreakerConfig.MinimumSampleThreshold`.
+	FeatureFlagsLaunchDarklycircuitBreakingMinimumSampleThresholdEnvVarKey = "NO_SMALL_PARTS_FEATURE_FLAGS_LAUNCH_DARKLYCIRCUIT_BREAKING_MINIMUM_SAMPLE_THRESHOLD"
+
+	// FeatureFlagsLaunchDarklycircuitBreakingNameEnvVarKey is the environment variable name to set to override `config.FeatureFlags.LaunchDarkly.CircuitBreakerConfig.Name`.
+	FeatureFlagsLaunchDarklycircuitBreakingNameEnvVarKey = "NO_SMALL_PARTS_FEATURE_FLAGS_LAUNCH_DARKLYCIRCUIT_BREAKING_NAME"
+
+	// FeatureFlagsLaunchDarklyinitTimeoutEnvVarKey is the environment variable name to set to override `config.FeatureFlags.LaunchDarkly.InitTimeout`.
+	FeatureFlagsLaunchDarklyinitTimeoutEnvVarKey = "NO_SMALL_PARTS_FEATURE_FLAGS_LAUNCH_DARKLYINIT_TIMEOUT"
+
+	// FeatureFlagsLaunchDarklysdkKeyEnvVarKey is the environment variable name to set to override `config.FeatureFlags.LaunchDarkly.SDKKey`.
+	FeatureFlagsLaunchDarklysdkKeyEnvVarKey = "NO_SMALL_PARTS_FEATURE_FLAGS_LAUNCH_DARKLYSDK_KEY"
+
+	// FeatureFlagsPosthogCircuitBreakingErrorRateEnvVarKey is the environment variable name to set to override `config.FeatureFlags.PostHog.CircuitBreakerConfig.ErrorRate`.
+	FeatureFlagsPosthogCircuitBreakingErrorRateEnvVarKey = "NO_SMALL_PARTS_FEATURE_FLAGS_POSTHOG_CIRCUIT_BREAKING_ERROR_RATE"
+
+	// FeatureFlagsPosthogCircuitBreakingMinimumSampleThresholdEnvVarKey is the environment variable name to set to override `config.FeatureFlags.PostHog.CircuitBreakerConfig.MinimumSampleThreshold`.
+	FeatureFlagsPosthogCircuitBreakingMinimumSampleThresholdEnvVarKey = "NO_SMALL_PARTS_FEATURE_FLAGS_POSTHOG_CIRCUIT_BREAKING_MINIMUM_SAMPLE_THRESHOLD"
+
+	// FeatureFlagsPosthogCircuitBreakingNameEnvVarKey is the environment variable name to set to override `config.FeatureFlags.PostHog.CircuitBreakerConfig.Name`.
+	FeatureFlagsPosthogCircuitBreakingNameEnvVarKey = "NO_SMALL_PARTS_FEATURE_FLAGS_POSTHOG_CIRCUIT_BREAKING_NAME"
+
+	// FeatureFlagsPosthogPersonalAPIKeyEnvVarKey is the environment variable name to set to override `config.FeatureFlags.PostHog.PersonalAPIKey`.
+	FeatureFlagsPosthogPersonalAPIKeyEnvVarKey = "NO_SMALL_PARTS_FEATURE_FLAGS_POSTHOG_PERSONAL_API_KEY"
+
+	// FeatureFlagsPosthogProjectAPIKeyEnvVarKey is the environment variable name to set to override `config.FeatureFlags.PostHog.ProjectAPIKey`.
+	FeatureFlagsPosthogProjectAPIKeyEnvVarKey = "NO_SMALL_PARTS_FEATURE_FLAGS_POSTHOG_PROJECT_API_KEY"
+
+	// FeatureFlagsProviderEnvVarKey is the environment variable name to set to override `config.FeatureFlags.Provider`.
+	FeatureFlagsProviderEnvVarKey = "NO_SMALL_PARTS_FEATURE_FLAGS_PROVIDER"
 
 	// GrpcPortEnvVarKey is the environment variable name to set to override `config.GRPCServer.Port`.
 	GrpcPortEnvVarKey = "NO_SMALL_PARTS_GRPC_PORT"
@@ -78,6 +321,150 @@ const (
 
 	// MetaRunModeEnvVarKey is the environment variable name to set to override `config.Meta.RunMode`.
 	MetaRunModeEnvVarKey = "NO_SMALL_PARTS_META_RUN_MODE"
+
+	// ObservabilityLoggingInitEnvVarKey is the environment variable name to set to override `config.Observability.Logging.OtelSlog`.
+	ObservabilityLoggingInitEnvVarKey = "NO_SMALL_PARTS_OBSERVABILITY_LOGGING_init"
+
+	// ObservabilityLoggingLevelEnvVarKey is the environment variable name to set to override `config.Observability.Logging.Level`.
+	ObservabilityLoggingLevelEnvVarKey = "NO_SMALL_PARTS_OBSERVABILITY_LOGGING_LEVEL"
+
+	// ObservabilityLoggingOtelSlogCollectionIntervalEnvVarKey is the environment variable name to set to override `config.Observability.Logging.OtelSlog.CollectionInterval`.
+	ObservabilityLoggingOtelSlogCollectionIntervalEnvVarKey = "NO_SMALL_PARTS_OBSERVABILITY_LOGGING_OTEL_SLOG_COLLECTION_INTERVAL"
+
+	// ObservabilityLoggingOtelSlogCollectorEndpointEnvVarKey is the environment variable name to set to override `config.Observability.Logging.OtelSlog.CollectorEndpoint`.
+	ObservabilityLoggingOtelSlogCollectorEndpointEnvVarKey = "NO_SMALL_PARTS_OBSERVABILITY_LOGGING_OTEL_SLOG_COLLECTOR_ENDPOINT"
+
+	// ObservabilityLoggingOtelSlogEnableHostMetricsEnvVarKey is the environment variable name to set to override `config.Observability.Logging.OtelSlog.EnableHostMetrics`.
+	ObservabilityLoggingOtelSlogEnableHostMetricsEnvVarKey = "NO_SMALL_PARTS_OBSERVABILITY_LOGGING_OTEL_SLOG_ENABLE_HOST_METRICS"
+
+	// ObservabilityLoggingOtelSlogEnableRuntimeMetricsEnvVarKey is the environment variable name to set to override `config.Observability.Logging.OtelSlog.EnableRuntimeMetrics`.
+	ObservabilityLoggingOtelSlogEnableRuntimeMetricsEnvVarKey = "NO_SMALL_PARTS_OBSERVABILITY_LOGGING_OTEL_SLOG_ENABLE_RUNTIME_METRICS"
+
+	// ObservabilityLoggingOtelSlogInsecureEnvVarKey is the environment variable name to set to override `config.Observability.Logging.OtelSlog.Insecure`.
+	ObservabilityLoggingOtelSlogInsecureEnvVarKey = "NO_SMALL_PARTS_OBSERVABILITY_LOGGING_OTEL_SLOG_INSECURE"
+
+	// ObservabilityLoggingProviderEnvVarKey is the environment variable name to set to override `config.Observability.Logging.Provider`.
+	ObservabilityLoggingProviderEnvVarKey = "NO_SMALL_PARTS_OBSERVABILITY_LOGGING_PROVIDER"
+
+	// ObservabilityLoggingServiceNameEnvVarKey is the environment variable name to set to override `config.Observability.Logging.ServiceName`.
+	ObservabilityLoggingServiceNameEnvVarKey = "NO_SMALL_PARTS_OBSERVABILITY_LOGGING_SERVICE_NAME"
+
+	// ObservabilityMetricsInitEnvVarKey is the environment variable name to set to override `config.Observability.Metrics.Otel`.
+	ObservabilityMetricsInitEnvVarKey = "NO_SMALL_PARTS_OBSERVABILITY_METRICS_init"
+
+	// ObservabilityMetricsOtelCollectionIntervalEnvVarKey is the environment variable name to set to override `config.Observability.Metrics.Otel.CollectionInterval`.
+	ObservabilityMetricsOtelCollectionIntervalEnvVarKey = "NO_SMALL_PARTS_OBSERVABILITY_METRICS_OTEL_COLLECTION_INTERVAL"
+
+	// ObservabilityMetricsOtelCollectorEndpointEnvVarKey is the environment variable name to set to override `config.Observability.Metrics.Otel.CollectorEndpoint`.
+	ObservabilityMetricsOtelCollectorEndpointEnvVarKey = "NO_SMALL_PARTS_OBSERVABILITY_METRICS_OTEL_COLLECTOR_ENDPOINT"
+
+	// ObservabilityMetricsOtelEnableHostMetricsEnvVarKey is the environment variable name to set to override `config.Observability.Metrics.Otel.EnableHostMetrics`.
+	ObservabilityMetricsOtelEnableHostMetricsEnvVarKey = "NO_SMALL_PARTS_OBSERVABILITY_METRICS_OTEL_ENABLE_HOST_METRICS"
+
+	// ObservabilityMetricsOtelEnableRuntimeMetricsEnvVarKey is the environment variable name to set to override `config.Observability.Metrics.Otel.EnableRuntimeMetrics`.
+	ObservabilityMetricsOtelEnableRuntimeMetricsEnvVarKey = "NO_SMALL_PARTS_OBSERVABILITY_METRICS_OTEL_ENABLE_RUNTIME_METRICS"
+
+	// ObservabilityMetricsOtelInsecureEnvVarKey is the environment variable name to set to override `config.Observability.Metrics.Otel.Insecure`.
+	ObservabilityMetricsOtelInsecureEnvVarKey = "NO_SMALL_PARTS_OBSERVABILITY_METRICS_OTEL_INSECURE"
+
+	// ObservabilityMetricsProviderEnvVarKey is the environment variable name to set to override `config.Observability.Metrics.Provider`.
+	ObservabilityMetricsProviderEnvVarKey = "NO_SMALL_PARTS_OBSERVABILITY_METRICS_PROVIDER"
+
+	// ObservabilityMetricsServiceNameEnvVarKey is the environment variable name to set to override `config.Observability.Metrics.ServiceName`.
+	ObservabilityMetricsServiceNameEnvVarKey = "NO_SMALL_PARTS_OBSERVABILITY_METRICS_SERVICE_NAME"
+
+	// ObservabilityTracingCloudtraceGoogleCloudTraceProjectIDEnvVarKey is the environment variable name to set to override `config.Observability.Tracing.CloudTrace.ProjectID`.
+	ObservabilityTracingCloudtraceGoogleCloudTraceProjectIDEnvVarKey = "NO_SMALL_PARTS_OBSERVABILITY_TRACING_CLOUDTRACE_GOOGLE_CLOUD_TRACE_PROJECT_ID"
+
+	// ObservabilityTracingInitEnvVarKey is the environment variable name to set to override `config.Observability.Tracing.Otel`.
+	ObservabilityTracingInitEnvVarKey = "NO_SMALL_PARTS_OBSERVABILITY_TRACING_init"
+
+	// ObservabilityTracingOtelgrpcCollectorEndpointEnvVarKey is the environment variable name to set to override `config.Observability.Tracing.Otel.CollectorEndpoint`.
+	ObservabilityTracingOtelgrpcCollectorEndpointEnvVarKey = "NO_SMALL_PARTS_OBSERVABILITY_TRACING_OTELGRPC_COLLECTOR_ENDPOINT"
+
+	// ObservabilityTracingOtelgrpcInsecureEnvVarKey is the environment variable name to set to override `config.Observability.Tracing.Otel.Insecure`.
+	ObservabilityTracingOtelgrpcInsecureEnvVarKey = "NO_SMALL_PARTS_OBSERVABILITY_TRACING_OTELGRPC_INSECURE"
+
+	// ObservabilityTracingTracingProviderEnvVarKey is the environment variable name to set to override `config.Observability.Tracing.Provider`.
+	ObservabilityTracingTracingProviderEnvVarKey = "NO_SMALL_PARTS_OBSERVABILITY_TRACING_TRACING_PROVIDER"
+
+	// ObservabilityTracingTracingServiceNameEnvVarKey is the environment variable name to set to override `config.Observability.Tracing.ServiceName`.
+	ObservabilityTracingTracingServiceNameEnvVarKey = "NO_SMALL_PARTS_OBSERVABILITY_TRACING_TRACING_SERVICE_NAME"
+
+	// ObservabilityTracingTracingSpanCollectionProbabilityEnvVarKey is the environment variable name to set to override `config.Observability.Tracing.SpanCollectionProbability`.
+	ObservabilityTracingTracingSpanCollectionProbabilityEnvVarKey = "NO_SMALL_PARTS_OBSERVABILITY_TRACING_TRACING_SPAN_COLLECTION_PROBABILITY"
+
+	// QueuesDataChangesTopicNameEnvVarKey is the environment variable name to set to override `config.Queues.DataChangesTopicName`.
+	QueuesDataChangesTopicNameEnvVarKey = "NO_SMALL_PARTS_QUEUES_DATA_CHANGES_TOPIC_NAME"
+
+	// QueuesOutboundEmailsTopicNameEnvVarKey is the environment variable name to set to override `config.Queues.OutboundEmailsTopicName`.
+	QueuesOutboundEmailsTopicNameEnvVarKey = "NO_SMALL_PARTS_QUEUES_OUTBOUND_EMAILS_TOPIC_NAME"
+
+	// QueuesSearchIndexRequestsTopicNameEnvVarKey is the environment variable name to set to override `config.Queues.SearchIndexRequestsTopicName`.
+	QueuesSearchIndexRequestsTopicNameEnvVarKey = "NO_SMALL_PARTS_QUEUES_SEARCH_INDEX_REQUESTS_TOPIC_NAME"
+
+	// QueuesUserDataAggregationTopicNameEnvVarKey is the environment variable name to set to override `config.Queues.UserDataAggregationTopicName`.
+	QueuesUserDataAggregationTopicNameEnvVarKey = "NO_SMALL_PARTS_QUEUES_USER_DATA_AGGREGATION_TOPIC_NAME"
+
+	// QueuesWebhookExecutionRequestsTopicNameEnvVarKey is the environment variable name to set to override `config.Queues.WebhookExecutionRequestsTopicName`.
+	QueuesWebhookExecutionRequestsTopicNameEnvVarKey = "NO_SMALL_PARTS_QUEUES_WEBHOOK_EXECUTION_REQUESTS_TOPIC_NAME"
+
+	// RoutingChiEnableCorsForLocalhostEnvVarKey is the environment variable name to set to override `config.Routing.Chi.EnableCORSForLocalhost`.
+	RoutingChiEnableCorsForLocalhostEnvVarKey = "NO_SMALL_PARTS_ROUTING_CHI_ENABLE_CORS_FOR_LOCALHOST"
+
+	// RoutingChiServiceNameEnvVarKey is the environment variable name to set to override `config.Routing.Chi.ServiceName`.
+	RoutingChiServiceNameEnvVarKey = "NO_SMALL_PARTS_ROUTING_CHI_SERVICE_NAME"
+
+	// RoutingChiSilenceRouteLoggingEnvVarKey is the environment variable name to set to override `config.Routing.Chi.SilenceRouteLogging`.
+	RoutingChiSilenceRouteLoggingEnvVarKey = "NO_SMALL_PARTS_ROUTING_CHI_SILENCE_ROUTE_LOGGING"
+
+	// RoutingChiValidDomainsEnvVarKey is the environment variable name to set to override `config.Routing.Chi.ValidDomains`.
+	RoutingChiValidDomainsEnvVarKey = "NO_SMALL_PARTS_ROUTING_CHI_VALID_DOMAINS"
+
+	// RoutingInitEnvVarKey is the environment variable name to set to override `config.Routing.Chi`.
+	RoutingInitEnvVarKey = "NO_SMALL_PARTS_ROUTING_init"
+
+	// RoutingProviderEnvVarKey is the environment variable name to set to override `config.Routing.Provider`.
+	RoutingProviderEnvVarKey = "NO_SMALL_PARTS_ROUTING_PROVIDER"
+
+	// SearchAlgoliaAPIKeyEnvVarKey is the environment variable name to set to override `config.TextSearch.Algolia.APIKey`.
+	SearchAlgoliaAPIKeyEnvVarKey = "NO_SMALL_PARTS_SEARCH_ALGOLIA_API_KEY"
+
+	// SearchAlgoliaAppIDEnvVarKey is the environment variable name to set to override `config.TextSearch.Algolia.AppID`.
+	SearchAlgoliaAppIDEnvVarKey = "NO_SMALL_PARTS_SEARCH_ALGOLIA_APP_ID"
+
+	// SearchAlgoliaTimeoutEnvVarKey is the environment variable name to set to override `config.TextSearch.Algolia.Timeout`.
+	SearchAlgoliaTimeoutEnvVarKey = "NO_SMALL_PARTS_SEARCH_ALGOLIA_TIMEOUT"
+
+	// SearchCircuitBreakerErrorRateEnvVarKey is the environment variable name to set to override `config.TextSearch.CircuitBreaker.ErrorRate`.
+	SearchCircuitBreakerErrorRateEnvVarKey = "NO_SMALL_PARTS_SEARCH_CIRCUIT_BREAKER_ERROR_RATE"
+
+	// SearchCircuitBreakerMinimumSampleThresholdEnvVarKey is the environment variable name to set to override `config.TextSearch.CircuitBreaker.MinimumSampleThreshold`.
+	SearchCircuitBreakerMinimumSampleThresholdEnvVarKey = "NO_SMALL_PARTS_SEARCH_CIRCUIT_BREAKER_MINIMUM_SAMPLE_THRESHOLD"
+
+	// SearchCircuitBreakerNameEnvVarKey is the environment variable name to set to override `config.TextSearch.CircuitBreaker.Name`.
+	SearchCircuitBreakerNameEnvVarKey = "NO_SMALL_PARTS_SEARCH_CIRCUIT_BREAKER_NAME"
+
+	// SearchElasticsearchAddressEnvVarKey is the environment variable name to set to override `config.TextSearch.Elasticsearch.Address`.
+	SearchElasticsearchAddressEnvVarKey = "NO_SMALL_PARTS_SEARCH_ELASTICSEARCH_ADDRESS"
+
+	// SearchElasticsearchCaCertEnvVarKey is the environment variable name to set to override `config.TextSearch.Elasticsearch.CACert`.
+	SearchElasticsearchCaCertEnvVarKey = "NO_SMALL_PARTS_SEARCH_ELASTICSEARCH_CA_CERT"
+
+	// SearchElasticsearchIndexOperationTimeoutEnvVarKey is the environment variable name to set to override `config.TextSearch.Elasticsearch.IndexOperationTimeout`.
+	SearchElasticsearchIndexOperationTimeoutEnvVarKey = "NO_SMALL_PARTS_SEARCH_ELASTICSEARCH_INDEX_OPERATION_TIMEOUT"
+
+	// SearchElasticsearchPasswordEnvVarKey is the environment variable name to set to override `config.TextSearch.Elasticsearch.Password`.
+	SearchElasticsearchPasswordEnvVarKey = "NO_SMALL_PARTS_SEARCH_ELASTICSEARCH_PASSWORD"
+
+	// SearchElasticsearchUsernameEnvVarKey is the environment variable name to set to override `config.TextSearch.Elasticsearch.Username`.
+	SearchElasticsearchUsernameEnvVarKey = "NO_SMALL_PARTS_SEARCH_ELASTICSEARCH_USERNAME"
+
+	// SearchInitEnvVarKey is the environment variable name to set to override `config.TextSearch.CircuitBreaker`.
+	SearchInitEnvVarKey = "NO_SMALL_PARTS_SEARCH_init"
+
+	// SearchProviderEnvVarKey is the environment variable name to set to override `config.TextSearch.Provider`.
+	SearchProviderEnvVarKey = "NO_SMALL_PARTS_SEARCH_PROVIDER"
 
 	// ServerDebugEnvVarKey is the environment variable name to set to override `config.HTTPServer.Debug`.
 	ServerDebugEnvVarKey = "NO_SMALL_PARTS_SERVER_DEBUG"
@@ -130,12 +517,18 @@ const (
 	// ServiceAuthSsoConfigGoogleClientSecretEnvVarKey is the environment variable name to set to override `config.Services.Auth.SSO.Google.ClientSecret`.
 	ServiceAuthSsoConfigGoogleClientSecretEnvVarKey = "NO_SMALL_PARTS_SERVICE_AUTH_SSO_CONFIG_GOOGLE_CLIENT_SECRET"
 
-	// ServiceLivekitAPIKeyEnvVarKey is the environment variable name to set to override `config.Services.LiveKit.APIKey`.
-	ServiceLivekitAPIKeyEnvVarKey = "NO_SMALL_PARTS_SERVICE_LIVEKIT_API_KEY"
+	// ServiceAuthTokensAudienceEnvVarKey is the environment variable name to set to override `config.Services.Auth.Tokens.Audience`.
+	ServiceAuthTokensAudienceEnvVarKey = "NO_SMALL_PARTS_SERVICE_AUTH_TOKENS_AUDIENCE"
 
-	// ServiceLivekitAPISecretEnvVarKey is the environment variable name to set to override `config.Services.LiveKit.APISecret`.
-	ServiceLivekitAPISecretEnvVarKey = "NO_SMALL_PARTS_SERVICE_LIVEKIT_API_SECRET"
+	// ServiceAuthTokensMaxAccessTokenLifetimeEnvVarKey is the environment variable name to set to override `config.Services.Auth.Tokens.MaxAccessTokenLifetime`.
+	ServiceAuthTokensMaxAccessTokenLifetimeEnvVarKey = "NO_SMALL_PARTS_SERVICE_AUTH_TOKENS_MAX_ACCESS_TOKEN_LIFETIME"
 
-	// ServiceLivekitURLEnvVarKey is the environment variable name to set to override `config.Services.LiveKit.URL`.
-	ServiceLivekitURLEnvVarKey = "NO_SMALL_PARTS_SERVICE_LIVEKIT_URL"
+	// ServiceAuthTokensMaxRefreshTokenLifetimeEnvVarKey is the environment variable name to set to override `config.Services.Auth.Tokens.MaxRefreshTokenLifetime`.
+	ServiceAuthTokensMaxRefreshTokenLifetimeEnvVarKey = "NO_SMALL_PARTS_SERVICE_AUTH_TOKENS_MAX_REFRESH_TOKEN_LIFETIME"
+
+	// ServiceAuthTokensProviderEnvVarKey is the environment variable name to set to override `config.Services.Auth.Tokens.Provider`.
+	ServiceAuthTokensProviderEnvVarKey = "NO_SMALL_PARTS_SERVICE_AUTH_TOKENS_PROVIDER"
+
+	// ServiceAuthTokensSigningKeyEnvVarKey is the environment variable name to set to override `config.Services.Auth.Tokens.Base64EncodedSigningKey`.
+	ServiceAuthTokensSigningKeyEnvVarKey = "NO_SMALL_PARTS_SERVICE_AUTH_TOKENS_SIGNING_KEY"
 )

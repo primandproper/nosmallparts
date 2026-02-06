@@ -34,6 +34,7 @@ var (
 			"Users",
 			"DataPrivacy",
 			"OAuth2Clients",
+			"OAuth2Clients",
 			"UploadedMedia",
 		),
 		ProvideHTTPServerConfigFromAPIServiceConfig,

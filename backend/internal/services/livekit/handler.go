@@ -2,10 +2,10 @@ package livekit
 
 import (
 	"context"
-	"encoding/json"
 	"net/http"
 	"time"
 
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/encoding"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/internalerrors"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
@@ -33,9 +33,10 @@ type ErrorResponse struct {
 
 // Handler handles LiveKit token generation requests.
 type Handler struct {
-	config *Config
-	logger logging.Logger
-	tracer tracing.Tracer
+	config         *Config
+	logger         logging.Logger
+	tracer         tracing.Tracer
+	encoderDecoder encoding.ServerEncoderDecoder
 }
 
 // NewHandler creates a new LiveKit handler.
@@ -44,6 +45,7 @@ func NewHandler(
 	config *Config,
 	logger logging.Logger,
 	tracerProvider tracing.TracerProvider,
+	encoderDecoder encoding.ServerEncoderDecoder,
 ) (*Handler, error) {
 	if config == nil {
 		return nil, internalerrors.NilConfigError("livekit")
@@ -54,9 +56,10 @@ func NewHandler(
 	}
 
 	return &Handler{
-		config: config,
-		logger: logging.EnsureLogger(logger).WithName("livekit"),
-		tracer: tracing.NewTracer(tracing.EnsureTracerProvider(tracerProvider).Tracer("livekit")),
+		config:         config,
+		logger:         logging.EnsureLogger(logger).WithName("livekit"),
+		tracer:         tracing.NewTracer(tracing.EnsureTracerProvider(tracerProvider).Tracer("livekit")),
+		encoderDecoder: encoderDecoder,
 	}, nil
 }
 
@@ -67,7 +70,7 @@ func (h *Handler) Enabled() bool {
 
 // GenerateToken handles POST requests to generate a LiveKit access token.
 func (h *Handler) GenerateToken(w http.ResponseWriter, r *http.Request) {
-	_, span := h.tracer.StartSpan(r.Context())
+	ctx, span := h.tracer.StartSpan(r.Context())
 	defer span.End()
 
 	logger := h.logger.Clone()
@@ -75,28 +78,22 @@ func (h *Handler) GenerateToken(w http.ResponseWriter, r *http.Request) {
 	// Check if LiveKit is configured
 	if !h.config.Enabled() {
 		logger.Debug("LiveKit not configured, returning 503")
-		w.Header().Set("Content-Type", "application/json")
-		w.WriteHeader(http.StatusServiceUnavailable)
-		_ = json.NewEncoder(w).Encode(ErrorResponse{Error: "LiveKit not configured"})
+		h.encoderDecoder.EncodeResponseWithStatus(ctx, w, &ErrorResponse{Error: "LiveKit not configured"}, http.StatusServiceUnavailable)
 		return
 	}
 
 	// Parse request body
 	var req TokenRequest
-	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
+	if err := h.encoderDecoder.DecodeRequest(ctx, r, &req); err != nil {
 		logger.Error("failed to decode request body", err)
-		w.Header().Set("Content-Type", "application/json")
-		w.WriteHeader(http.StatusBadRequest)
-		_ = json.NewEncoder(w).Encode(ErrorResponse{Error: "Invalid request body"})
+		h.encoderDecoder.EncodeResponseWithStatus(ctx, w, &ErrorResponse{Error: "Invalid request body"}, http.StatusBadRequest)
 		return
 	}
 
 	// Validate required fields
 	if req.StageID == "" || req.ParticipantID == "" || req.ParticipantName == "" {
 		logger.Debug("missing required fields in token request")
-		w.Header().Set("Content-Type", "application/json")
-		w.WriteHeader(http.StatusBadRequest)
-		_ = json.NewEncoder(w).Encode(ErrorResponse{Error: "stageId, participantId, and participantName are required"})
+		h.encoderDecoder.EncodeResponseWithStatus(ctx, w, &ErrorResponse{Error: "stageId, participantId, and participantName are required"}, http.StatusBadRequest)
 		return
 	}
 
@@ -113,7 +110,7 @@ func (h *Handler) GenerateToken(w http.ResponseWriter, r *http.Request) {
 		RoomJoin: true,
 		Room:     roomName,
 	}
-	at.AddGrant(grant).
+	at.SetVideoGrant(grant).
 		SetIdentity(req.ParticipantID).
 		SetName(req.ParticipantName).
 		SetValidFor(24 * time.Hour) // Token valid for 24 hours
@@ -121,19 +118,15 @@ func (h *Handler) GenerateToken(w http.ResponseWriter, r *http.Request) {
 	token, err := at.ToJWT()
 	if err != nil {
 		logger.Error("failed to generate JWT token", err)
-		w.Header().Set("Content-Type", "application/json")
-		w.WriteHeader(http.StatusInternalServerError)
-		_ = json.NewEncoder(w).Encode(ErrorResponse{Error: "Failed to generate token"})
+		h.encoderDecoder.EncodeResponseWithStatus(ctx, w, &ErrorResponse{Error: "Failed to generate token"}, http.StatusInternalServerError)
 		return
 	}
 
 	logger.Debug("generated LiveKit token")
 
 	// Return token and LiveKit server URL
-	w.Header().Set("Content-Type", "application/json")
-	w.WriteHeader(http.StatusOK)
-	_ = json.NewEncoder(w).Encode(TokenResponse{
+	h.encoderDecoder.EncodeResponseWithStatus(ctx, w, &TokenResponse{
 		Token: token,
 		URL:   h.config.URL,
-	})
+	}, http.StatusOK)
 }

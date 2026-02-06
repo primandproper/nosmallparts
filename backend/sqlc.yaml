@@ -489,14 +489,14 @@ sql:
   - engine: "postgresql"
     schema: "internal/repositories/postgres/migrations/migration_files"
     queries:
-      - "internal/repositories/postgres/playscripts/sqlc_queries"
+      - "internal/repositories/postgres/dataprivacy/sqlc_queries"
     strict_function_checks: true
     rules:
       - no-delete
     gen:
       go:
         package: "generated"
-        out: "internal/repositories/postgres/playscripts/generated"
+        out: "internal/repositories/postgres/dataprivacy/generated"
         emit_db_tags: false
         emit_prepared_queries: false
         emit_interface: true
@@ -529,12 +529,9 @@ sql:
               type: "Time"
               pointer: true
             nullable: true
-          - db_type: "scroll_mode_enum"
-            go_type:
-              type: "string"
 
 rules:
   - name: no-delete
     message: "don't use delete statements"
     rule: |-
-      query.sql.contains("DELETE") && !query.name.contains("OAuth2ClientToken") && query.name != "DeleteUser" && !query.name.contains("PlayScriptCastMember") && !query.name.contains("PlayScriptLine")
+      query.sql.contains("DELETE") && !query.name.contains("OAuth2ClientToken") && query.name != "DeleteUser"

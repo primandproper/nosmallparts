@@ -48,6 +48,36 @@ patches:
       kind: CronJob
       name: no-small-parts-job-db-cleaner
 
+  # Meal Plan Finalizer CronJob
+  - path: patches/cronjob-k8s-hostnames.yaml
+    target:
+      kind: CronJob
+      name: no-small-parts-job-meal-plan-finalizer
+  - path: patches/cronjob-local-image-pull.yaml
+    target:
+      kind: CronJob
+      name: no-small-parts-job-meal-plan-finalizer
+
+  # Meal Plan Grocery List Init CronJob
+  - path: patches/cronjob-k8s-hostnames.yaml
+    target:
+      kind: CronJob
+      name: no-small-parts-job-meal-plan-grocery-list-init
+  - path: patches/cronjob-local-image-pull.yaml
+    target:
+      kind: CronJob
+      name: no-small-parts-job-meal-plan-grocery-list-init
+
+  # Meal Plan Task Creator CronJob
+  - path: patches/cronjob-k8s-hostnames.yaml
+    target:
+      kind: CronJob
+      name: no-small-parts-job-meal-plan-task-creator
+  - path: patches/cronjob-local-image-pull.yaml
+    target:
+      kind: CronJob
+      name: no-small-parts-job-meal-plan-task-creator
+
   # Search Data Index Scheduler CronJob
   - path: patches/cronjob-k8s-hostnames.yaml
     target:
@@ -76,6 +106,21 @@ configMapGenerator:
     files:
       - config.json=configs/job_db_cleaner_config.json
 
+  - name: no-small-parts-job-meal-plan-finalizer-config
+    namespace: localdev
+    files:
+      - config.json=configs/job_meal_plan_finalizer_config.json
+
+  - name: no-small-parts-job-meal-plan-grocery-list-init-config
+    namespace: localdev
+    files:
+      - config.json=configs/job_meal_plan_grocery_list_initializer_config.json
+
+  - name: no-small-parts-job-meal-plan-task-creator-config
+    namespace: localdev
+    files:
+      - config.json=configs/job_meal_plan_task_creator_config.json
+
   - name: no-small-parts-job-search-data-index-scheduler-config
     namespace: localdev
     files:
@@ -87,7 +132,7 @@ configMapGenerator:
       - config.json=configs/admin_webapp_config.json
 
   # Uncomment to enable MCP server deployment
-  # - name: dinner-done-better-mcp-server-config
+  # - name: no-small-parts-mcp-server-config
   #   namespace: localdev
   #   files:
   #     - config.json=configs/mcp_server_config.json

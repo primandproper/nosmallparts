@@ -34,7 +34,7 @@ func (r *repository) AccountInvitationExists(ctx context.Context, accountInvitat
 	logger = logger.WithValue(keys.AccountInvitationIDKey, accountInvitationID)
 	tracing.AttachToSpan(span, keys.AccountInvitationIDKey, accountInvitationID)
 
-	result, err := r.generatedQuerier.CheckAccountInvitationExistence(ctx, r.db, accountInvitationID)
+	result, err := r.generatedQuerier.CheckAccountInvitationExistence(ctx, r.readDB, accountInvitationID)
 	if err != nil {
 		return false, observability.PrepareAndLogError(err, logger, span, "performing account invitation existence check")
 	}
@@ -61,7 +61,7 @@ func (r *repository) GetAccountInvitationByAccountAndID(ctx context.Context, acc
 	logger = logger.WithValue(keys.AccountInvitationIDKey, accountInvitationID)
 	tracing.AttachToSpan(span, keys.AccountInvitationIDKey, accountInvitationID)
 
-	result, err := r.generatedQuerier.GetAccountInvitationByAccountAndID(ctx, r.db, &generated.GetAccountInvitationByAccountAndIDParams{
+	result, err := r.generatedQuerier.GetAccountInvitationByAccountAndID(ctx, r.readDB, &generated.GetAccountInvitationByAccountAndIDParams{
 		DestinationAccount: accountID,
 		ID:                 accountInvitationID,
 	})
@@ -150,7 +150,7 @@ func (r *repository) GetAccountInvitationByTokenAndID(ctx context.Context, token
 
 	logger.Debug("fetching account invitation")
 
-	result, err := r.generatedQuerier.GetAccountInvitationByTokenAndID(ctx, r.db, &generated.GetAccountInvitationByTokenAndIDParams{
+	result, err := r.generatedQuerier.GetAccountInvitationByTokenAndID(ctx, r.readDB, &generated.GetAccountInvitationByTokenAndIDParams{
 		Token: token,
 		ID:    invitationID,
 	})
@@ -233,7 +233,7 @@ func (r *repository) GetAccountInvitationByToken(ctx context.Context, token stri
 
 	logger.Debug("fetching account invitation")
 
-	result, err := r.generatedQuerier.GetAccountInvitationByToken(ctx, r.db, token)
+	result, err := r.generatedQuerier.GetAccountInvitationByToken(ctx, r.readDB, token)
 	if err != nil {
 		return nil, observability.PrepareAndLogError(err, logger, span, "fetching account invitation")
 	}
@@ -319,7 +319,7 @@ func (r *repository) GetAccountInvitationByEmailAndToken(ctx context.Context, em
 	logger = logger.WithValue(keys.AccountInvitationTokenKey, token)
 	tracing.AttachToSpan(span, keys.AccountInvitationTokenKey, token)
 
-	result, err := r.generatedQuerier.GetAccountInvitationByEmailAndToken(ctx, r.db, &generated.GetAccountInvitationByEmailAndTokenParams{
+	result, err := r.generatedQuerier.GetAccountInvitationByEmailAndToken(ctx, r.readDB, &generated.GetAccountInvitationByEmailAndTokenParams{
 		ToEmail: emailAddress,
 		Token:   token,
 	})
@@ -407,7 +407,7 @@ func (r *repository) CreateAccountInvitation(ctx context.Context, input *identit
 		}
 	}
 
-	if err := r.generatedQuerier.CreateAccountInvitation(ctx, r.db, &generated.CreateAccountInvitationParams{
+	if err := r.generatedQuerier.CreateAccountInvitation(ctx, r.writeDB, &generated.CreateAccountInvitationParams{
 		ExpiresAt:          input.ExpiresAt,
 		ID:                 input.ID,
 		FromUser:           input.FromUser,
@@ -455,7 +455,7 @@ func (r *repository) GetPendingAccountInvitationsFromUser(ctx context.Context, u
 	logger := r.logger.WithValue(keys.UserIDKey, userID)
 	filter.AttachToLogger(logger)
 
-	results, err := r.generatedQuerier.GetPendingInvitesFromUser(ctx, r.db, &generated.GetPendingInvitesFromUserParams{
+	results, err := r.generatedQuerier.GetPendingInvitesFromUser(ctx, r.readDB, &generated.GetPendingInvitesFromUserParams{
 		CreatedBefore:   database.NullTimeFromTimePointer(filter.CreatedBefore),
 		CreatedAfter:    database.NullTimeFromTimePointer(filter.CreatedAfter),
 		UpdatedBefore:   database.NullTimeFromTimePointer(filter.UpdatedBefore),
@@ -562,7 +562,7 @@ func (r *repository) GetPendingAccountInvitationsForUser(ctx context.Context, us
 	logger := r.logger.WithValue(keys.UserIDKey, userID)
 	filter.AttachToLogger(logger)
 
-	results, err := r.generatedQuerier.GetPendingInvitesForUser(ctx, r.db, &generated.GetPendingInvitesForUserParams{
+	results, err := r.generatedQuerier.GetPendingInvitesForUser(ctx, r.readDB, &generated.GetPendingInvitesForUserParams{
 		CreatedBefore:   database.NullTimeFromTimePointer(filter.CreatedBefore),
 		CreatedAfter:    database.NullTimeFromTimePointer(filter.CreatedAfter),
 		UpdatedBefore:   database.NullTimeFromTimePointer(filter.UpdatedBefore),
@@ -685,7 +685,7 @@ func (r *repository) setInvitationStatus(ctx context.Context, querier database.S
 
 // CancelAccountInvitation cancels an account invitation by its ID with a note.
 func (r *repository) CancelAccountInvitation(ctx context.Context, accountID, accountInvitationID, note string) error {
-	return r.setInvitationStatus(ctx, r.db, accountInvitationID, note, string(identity.CancelledAccountInvitationStatus))
+	return r.setInvitationStatus(ctx, r.writeDB, accountInvitationID, note, string(identity.CancelledAccountInvitationStatus))
 }
 
 // AcceptAccountInvitation accepts an account invitation by its ID with a note.
@@ -705,7 +705,7 @@ func (r *repository) AcceptAccountInvitation(ctx context.Context, accountID, acc
 		return database.ErrNilInputProvided
 	}
 
-	tx, err := r.db.BeginTx(ctx, nil)
+	tx, err := r.writeDB.BeginTx(ctx, nil)
 	if err != nil {
 		return observability.PrepareAndLogError(err, logger, span, "beginning transaction")
 	}
@@ -744,7 +744,7 @@ func (r *repository) AcceptAccountInvitation(ctx context.Context, accountID, acc
 
 // RejectAccountInvitation rejects an account invitation by its ID with a note.
 func (r *repository) RejectAccountInvitation(ctx context.Context, accountID, accountInvitationID, note string) error {
-	return r.setInvitationStatus(ctx, r.db, accountInvitationID, note, string(identity.RejectedAccountInvitationStatus))
+	return r.setInvitationStatus(ctx, r.writeDB, accountInvitationID, note, string(identity.RejectedAccountInvitationStatus))
 }
 
 func (r *repository) attachInvitationsToUser(ctx context.Context, querier database.SQLQueryExecutor, userEmail, userID string) error {

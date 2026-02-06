@@ -176,6 +176,7 @@ type (
 		UpdateUserDetails(ctx context.Context, userID string, input *UserDetailsDatabaseUpdateInput) error
 		UpdateUserPassword(ctx context.Context, userID, newHash string) error
 		ArchiveUser(ctx context.Context, userID string) error
+		DeleteUser(ctx context.Context, userID string) error
 		GetUserWithUnverifiedTwoFactorSecret(ctx context.Context, userID string) (*User, error)
 		MarkUserTwoFactorSecretAsVerified(ctx context.Context, userID string) error
 		MarkUserTwoFactorSecretAsUnverified(ctx context.Context, userID, newSecret string) error

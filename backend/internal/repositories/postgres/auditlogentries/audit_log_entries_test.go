@@ -20,11 +20,11 @@ func createAuditLogEntryForTest(t *testing.T, ctx context.Context, querier datab
 	t.Helper()
 
 	if user == nil {
-		user = pgtesting.CreateUserForTest(t, nil, dbc.db)
+		user = pgtesting.CreateUserForTest(t, nil, dbc.writeDB)
 	}
 
 	if account == nil {
-		account = pgtesting.CreateAccountForTest(t, nil, user.ID, dbc.db)
+		account = pgtesting.CreateAccountForTest(t, nil, user.ID, dbc.writeDB)
 	}
 
 	// create
@@ -67,10 +67,10 @@ func TestQuerier_Integration_AuditLogEntries(t *testing.T) {
 		assert.NoError(t, container.Terminate(ctx))
 	}(t)
 
-	user := pgtesting.CreateUserForTest(t, nil, dbc.db)
+	user := pgtesting.CreateUserForTest(t, nil, dbc.writeDB)
 	exampleAccount := identityfakes.BuildFakeAccount()
 	exampleAccount.BelongsToUser = user.ID
-	account := pgtesting.CreateAccountForTest(t, exampleAccount, user.ID, dbc.db)
+	account := pgtesting.CreateAccountForTest(t, exampleAccount, user.ID, dbc.writeDB)
 
 	exampleAuditLogEntry := fakes.BuildFakeAuditLogEntry()
 	exampleAuditLogEntry.BelongsToAccount = &account.ID
@@ -78,12 +78,12 @@ func TestQuerier_Integration_AuditLogEntries(t *testing.T) {
 	createdAuditLogEntries := []*types.AuditLogEntry{}
 
 	// create
-	createdAuditLogEntries = append(createdAuditLogEntries, createAuditLogEntryForTest(t, ctx, dbc.db, exampleAuditLogEntry, user, account, dbc))
+	createdAuditLogEntries = append(createdAuditLogEntries, createAuditLogEntryForTest(t, ctx, dbc.writeDB, exampleAuditLogEntry, user, account, dbc))
 
 	// create more
 	for i := 0; i < exampleQuantity; i++ {
 		input := fakes.BuildFakeAuditLogEntry()
-		createdAuditLogEntries = append(createdAuditLogEntries, createAuditLogEntryForTest(t, ctx, dbc.db, input, user, account, dbc))
+		createdAuditLogEntries = append(createdAuditLogEntries, createAuditLogEntryForTest(t, ctx, dbc.writeDB, input, user, account, dbc))
 	}
 
 	// fetch as list
@@ -101,7 +101,7 @@ func TestQuerier_Integration_AuditLogEntries(t *testing.T) {
 func TestQuerier_GetAuditLogEntry(T *testing.T) {
 	T.Parallel()
 
-	T.Run("with invalid audit log entry ID", func(t *testing.T) {
+	T.Run("with invalid audit log entry MealPlanTaskID", func(t *testing.T) {
 		t.Parallel()
 
 		ctx := t.Context()
@@ -122,7 +122,7 @@ func TestQuerier_CreateAuditLogEntry(T *testing.T) {
 		ctx := t.Context()
 		c := buildInertClientForTest(t)
 
-		actual, err := c.CreateAuditLogEntry(ctx, c.db, nil)
+		actual, err := c.CreateAuditLogEntry(ctx, c.writeDB, nil)
 		assert.Error(t, err)
 		assert.Nil(t, actual)
 	})

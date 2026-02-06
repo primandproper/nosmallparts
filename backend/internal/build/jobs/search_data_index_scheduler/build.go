@@ -7,6 +7,7 @@ import (
 	"context"
 
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/config"
+	databasecfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/config"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/postgres"
 	msgconfig "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/messagequeue/config"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability"
@@ -16,7 +17,6 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/search/text/indexing"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/auditlogentries"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/identity"
-	repomigrations "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/migrations"
 
 	"github.com/google/wire"
 )
@@ -31,8 +31,8 @@ func Build(
 		tracingcfg.TracingConfigProviders,
 		observability.O11yProviders,
 		msgconfig.MessageQueueProviders,
+		databasecfg.ClientConfigProviders,
 		postgres.PGProviders,
-		repomigrations.MigrationProviders,
 		loggingcfg.LogConfigProviders,
 		metricscfg.MetricsConfigProviders,
 		auditlogentries.AuditRepoProviders,

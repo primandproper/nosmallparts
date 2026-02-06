@@ -26,6 +26,7 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/server/grpc"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/server/http"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/uploads/objectstorage"
+	livekitsvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/livekit"
 
 	validation "github.com/go-ozzo/ozzo-validation/v4"
 	"github.com/hashicorp/go-multierror"
@@ -67,6 +68,7 @@ type (
 	APIServiceConfig struct {
 		_                       struct{}                      `json:"-"`
 		Queues                  msgconfig.QueuesConfig        `envPrefix:"QUEUES_"        json:"queues"`
+		LiveKit                 livekitsvc.Config             `envPrefix:"LIVEKIT_"       json:"liveKit,omitempty"`
 		AppleAppSiteAssociation AppleAppSiteAssociationConfig `envPrefix:"AASA_"          json:"appleAppSiteAssociation,omitempty"`
 		Routing                 routingcfg.Config             `envPrefix:"ROUTING_"       json:"routing"`
 		Encoding                encoding.Config               `envPrefix:"ENCODING_"      json:"encoding"`
@@ -74,8 +76,8 @@ type (
 		Observability           observability.Config          `envPrefix:"OBSERVABILITY_" json:"observability"`
 		GRPCServer              grpc.Config                   `envPrefix:"GRPC_"          json:"grpc"`
 		Meta                    MetaSettings                  `envPrefix:"META_"          json:"meta"`
-		Email                   emailcfg.Config               `envPrefix:"EMAIL_"         json:"email"`
 		Analytics               analyticscfg.Config           `envPrefix:"ANALYTICS_"     json:"analytics"`
+		Email                   emailcfg.Config               `envPrefix:"EMAIL_"         json:"email"`
 		TextSearch              textsearchcfg.Config          `envPrefix:"SEARCH_"        json:"search"`
 		FeatureFlags            featureflagscfg.Config        `envPrefix:"FEATURE_FLAGS_" json:"featureFlags"`
 		HTTPServer              http.Config                   `envPrefix:"HTTP_"          json:"http"`
@@ -173,7 +175,7 @@ type (
 		// TeamID is the Apple Developer Team ID (e.g., "ABCD1234XY").
 		// This can be found in the Apple Developer Portal under Membership.
 		TeamID string `env:"TEAM_ID" json:"teamID,omitempty"`
-		// BundleID is the iOS app bundle identifier (e.g., "com.dinnerdonebetter.ios").
+		// BundleID is the iOS app bundle identifier (e.g., "com.nosmallparts.ios").
 		BundleID string `env:"BUNDLE_ID" json:"bundleID,omitempty"`
 	}
 

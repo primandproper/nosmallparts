@@ -36,7 +36,7 @@ func (r *repository) GetUploadedMedia(ctx context.Context, uploadedMediaID strin
 	logger = logger.WithValue(keys.UploadedMediaIDKey, uploadedMediaID)
 	tracing.AttachToSpan(span, keys.UploadedMediaIDKey, uploadedMediaID)
 
-	result, err := r.generatedQuerier.GetUploadedMedia(ctx, r.db, uploadedMediaID)
+	result, err := r.generatedQuerier.GetUploadedMedia(ctx, r.readDB, uploadedMediaID)
 	if err != nil {
 		return nil, observability.PrepareAndLogError(err, logger, span, "fetching uploaded media")
 	}
@@ -67,7 +67,7 @@ func (r *repository) GetUploadedMediaWithIDs(ctx context.Context, ids []string) 
 	logger = logger.WithValue("ids", ids)
 	tracing.AttachToSpan(span, "id_count", len(ids))
 
-	results, err := r.generatedQuerier.GetUploadedMediaWithIDs(ctx, r.db, ids)
+	results, err := r.generatedQuerier.GetUploadedMediaWithIDs(ctx, r.readDB, ids)
 	if err != nil {
 		return nil, observability.PrepareAndLogError(err, logger, span, "fetching uploaded media with IDs")
 	}
@@ -107,7 +107,7 @@ func (r *repository) GetUploadedMediaForUser(ctx context.Context, userID string,
 	logger = filter.AttachToLogger(logger)
 	tracing.AttachQueryFilterToSpan(span, filter)
 
-	results, err := r.generatedQuerier.GetUploadedMediaForUser(ctx, r.db, &generated.GetUploadedMediaForUserParams{
+	results, err := r.generatedQuerier.GetUploadedMediaForUser(ctx, r.readDB, &generated.GetUploadedMediaForUserParams{
 		CreatedAfter:    database.NullTimeFromTimePointer(filter.CreatedAfter),
 		CreatedBefore:   database.NullTimeFromTimePointer(filter.CreatedBefore),
 		UpdatedBefore:   database.NullTimeFromTimePointer(filter.UpdatedBefore),
@@ -168,7 +168,7 @@ func (r *repository) CreateUploadedMedia(ctx context.Context, input *types.Uploa
 
 	logger.Debug("CreateUploadedMedia invoked")
 
-	tx, err := r.db.BeginTx(ctx, nil)
+	tx, err := r.writeDB.BeginTx(ctx, nil)
 	if err != nil {
 		return nil, observability.PrepareAndLogError(err, logger, span, "beginning transaction")
 	}
@@ -225,7 +225,7 @@ func (r *repository) UpdateUploadedMedia(ctx context.Context, uploadedMedia *typ
 	logger = logger.WithValue(keys.UploadedMediaIDKey, uploadedMedia.ID)
 	tracing.AttachToSpan(span, keys.UploadedMediaIDKey, uploadedMedia.ID)
 
-	tx, err := r.db.BeginTx(ctx, nil)
+	tx, err := r.writeDB.BeginTx(ctx, nil)
 	if err != nil {
 		return observability.PrepareAndLogError(err, logger, span, "beginning transaction")
 	}
@@ -278,7 +278,7 @@ func (r *repository) ArchiveUploadedMedia(ctx context.Context, uploadedMediaID s
 	logger = logger.WithValue(keys.UploadedMediaIDKey, uploadedMediaID)
 	tracing.AttachToSpan(span, keys.UploadedMediaIDKey, uploadedMediaID)
 
-	tx, err := r.db.BeginTx(ctx, nil)
+	tx, err := r.writeDB.BeginTx(ctx, nil)
 	if err != nil {
 		return observability.PrepareAndLogError(err, logger, span, "beginning transaction")
 	}

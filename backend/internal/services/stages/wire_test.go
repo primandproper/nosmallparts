@@ -1,6 +1,7 @@
 package stages
 
 import (
+	"context"
 	"testing"
 
 	playscriptsmock "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/playscripts/mock"
@@ -15,10 +16,12 @@ import (
 func TestProvideConnectionManager(t *testing.T) {
 	t.Parallel()
 
-	mgr := ProvideConnectionManager()
+	tracerProvider := tracing.NewNoopTracerProvider()
+	logger := logging.NewNoopLogger()
+	mgr := ProvideConnectionManager(tracerProvider, logger)
 	require.NotNil(t, mgr)
-	assert.False(t, mgr.GroupHasConnections("any"))
-	assert.Equal(t, 0, mgr.GetConnectionCount("any"))
+	assert.False(t, mgr.GroupHasConnections(context.Background(), "any"))
+	assert.Equal(t, 0, mgr.GetConnectionCount(context.Background(), "any"))
 }
 
 func TestProvideHandler(t *testing.T) {
@@ -28,7 +31,7 @@ func TestProvideHandler(t *testing.T) {
 	tracerProvider := tracing.NewNoopTracerProvider()
 	stagesRepo := &fakeStagesRepo{}
 	playScriptsRepo := &playscriptsmock.Repository{}
-	connectionManager := platformws.NewConnectionManager()
+	connectionManager := platformws.NewConnectionManager(tracerProvider, logger)
 
 	h := ProvideHandler(logger, tracerProvider, stagesRepo, playScriptsRepo, connectionManager)
 	require.NotNil(t, h)

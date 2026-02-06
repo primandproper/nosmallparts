@@ -38,7 +38,7 @@ func (q *repository) ServiceSettingExists(ctx context.Context, serviceSettingID 
 	logger = logger.WithValue(keys.ServiceSettingIDKey, serviceSettingID)
 	tracing.AttachToSpan(span, keys.ServiceSettingIDKey, serviceSettingID)
 
-	result, err := q.generatedQuerier.CheckServiceSettingExistence(ctx, q.db, serviceSettingID)
+	result, err := q.generatedQuerier.CheckServiceSettingExistence(ctx, q.readDB, serviceSettingID)
 	if err != nil {
 		return false, observability.PrepareAndLogError(err, logger, span, "performing service setting existence check")
 	}
@@ -48,7 +48,7 @@ func (q *repository) ServiceSettingExists(ctx context.Context, serviceSettingID 
 
 // GetServiceSetting fetches a service setting from the database.
 func (q *repository) GetServiceSetting(ctx context.Context, serviceSettingID string) (*types.ServiceSetting, error) {
-	return q.getServiceSetting(ctx, q.db, serviceSettingID)
+	return q.getServiceSetting(ctx, q.readDB, serviceSettingID)
 }
 
 // getServiceSetting fetches a service setting from the database.
@@ -111,7 +111,7 @@ func (q *repository) SearchForServiceSettings(ctx context.Context, query string,
 	logger = filter.AttachToLogger(logger)
 	tracing.AttachQueryFilterToSpan(span, filter)
 
-	results, err := q.generatedQuerier.SearchForServiceSettings(ctx, q.db, &generated.SearchForServiceSettingsParams{
+	results, err := q.generatedQuerier.SearchForServiceSettings(ctx, q.readDB, &generated.SearchForServiceSettingsParams{
 		NameQuery:       query,
 		CreatedBefore:   database.NullTimeFromTimePointer(filter.CreatedBefore),
 		CreatedAfter:    database.NullTimeFromTimePointer(filter.CreatedAfter),
@@ -183,7 +183,7 @@ func (q *repository) GetServiceSettings(ctx context.Context, filter *filtering.Q
 	logger = filter.AttachToLogger(logger)
 	tracing.AttachQueryFilterToSpan(span, filter)
 
-	results, err := q.generatedQuerier.GetServiceSettings(ctx, q.db, &generated.GetServiceSettingsParams{
+	results, err := q.generatedQuerier.GetServiceSettings(ctx, q.readDB, &generated.GetServiceSettingsParams{
 		CreatedBefore:   database.NullTimeFromTimePointer(filter.CreatedBefore),
 		CreatedAfter:    database.NullTimeFromTimePointer(filter.CreatedAfter),
 		UpdatedBefore:   database.NullTimeFromTimePointer(filter.UpdatedBefore),
@@ -249,7 +249,7 @@ func (q *repository) CreateServiceSetting(ctx context.Context, input *types.Serv
 	tracing.AttachToSpan(span, keys.ServiceSettingIDKey, input.ID)
 	logger := q.logger.WithValue(keys.ServiceSettingIDKey, input.ID)
 
-	tx, err := q.db.BeginTx(ctx, nil)
+	tx, err := q.writeDB.BeginTx(ctx, nil)
 	if err != nil {
 		return nil, observability.PrepareAndLogError(err, logger, span, "beginning transaction")
 	}
@@ -311,12 +311,12 @@ func (q *repository) ArchiveServiceSetting(ctx context.Context, serviceSettingID
 	logger = logger.WithValue(keys.ServiceSettingIDKey, serviceSettingID)
 	tracing.AttachToSpan(span, keys.ServiceSettingIDKey, serviceSettingID)
 
-	tx, err := q.db.BeginTx(ctx, nil)
+	tx, err := q.writeDB.BeginTx(ctx, nil)
 	if err != nil {
 		return observability.PrepareAndLogError(err, logger, span, "beginning transaction")
 	}
 
-	rowsAffected, err := q.generatedQuerier.ArchiveServiceSetting(ctx, q.db, serviceSettingID)
+	rowsAffected, err := q.generatedQuerier.ArchiveServiceSetting(ctx, tx, serviceSettingID)
 	if err != nil {
 		q.RollbackTransaction(ctx, tx)
 		return observability.PrepareAndLogError(err, logger, span, "updating service setting")

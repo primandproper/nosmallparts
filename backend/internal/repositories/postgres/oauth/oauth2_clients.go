@@ -37,7 +37,7 @@ func (q *repository) GetOAuth2ClientByClientID(ctx context.Context, clientID str
 	logger = logger.WithValue(keys.OAuth2ClientClientIDKey, clientID)
 	tracing.AttachToSpan(span, keys.OAuth2ClientClientIDKey, clientID)
 
-	result, err := q.generatedQuerier.GetOAuth2ClientByClientID(ctx, q.db, clientID)
+	result, err := q.generatedQuerier.GetOAuth2ClientByClientID(ctx, q.readDB, clientID)
 	if err != nil {
 		return nil, observability.PrepareAndLogError(err, logger, span, "fetching oauth2 client")
 	}
@@ -68,7 +68,7 @@ func (q *repository) GetOAuth2ClientByDatabaseID(ctx context.Context, clientID s
 	logger = logger.WithValue(keys.OAuth2ClientClientIDKey, clientID)
 	tracing.AttachToSpan(span, keys.OAuth2ClientClientIDKey, clientID)
 
-	result, err := q.generatedQuerier.GetOAuth2ClientByDatabaseID(ctx, q.db, clientID)
+	result, err := q.generatedQuerier.GetOAuth2ClientByDatabaseID(ctx, q.readDB, clientID)
 	if err != nil {
 		return nil, observability.PrepareAndLogError(err, logger, span, "fetching oauth2 client")
 	}
@@ -99,7 +99,7 @@ func (q *repository) GetOAuth2Clients(ctx context.Context, filter *filtering.Que
 	logger = filter.AttachToLogger(logger)
 	tracing.AttachQueryFilterToSpan(span, filter)
 
-	results, err := q.generatedQuerier.GetOAuth2Clients(ctx, q.db, &generated.GetOAuth2ClientsParams{
+	results, err := q.generatedQuerier.GetOAuth2Clients(ctx, q.readDB, &generated.GetOAuth2ClientsParams{
 		CreatedBefore:   database.NullTimeFromTimePointer(filter.CreatedBefore),
 		CreatedAfter:    database.NullTimeFromTimePointer(filter.CreatedAfter),
 		Cursor:          database.NullStringFromStringPointer(filter.Cursor),
@@ -154,12 +154,12 @@ func (q *repository) CreateOAuth2Client(ctx context.Context, input *types.OAuth2
 		keys.OAuth2ClientClientIDKey: input.ClientID,
 	})
 
-	tx, err := q.db.BeginTx(ctx, nil)
+	tx, err := q.writeDB.BeginTx(ctx, nil)
 	if err != nil {
 		return nil, observability.PrepareAndLogError(err, logger, span, "beginning transaction")
 	}
 
-	if writeErr := q.generatedQuerier.CreateOAuth2Client(ctx, q.db, &generated.CreateOAuth2ClientParams{
+	if writeErr := q.generatedQuerier.CreateOAuth2Client(ctx, tx, &generated.CreateOAuth2ClientParams{
 		ID:           input.ID,
 		Description:  input.Description,
 		Name:         input.Name,
@@ -210,7 +210,7 @@ func (q *repository) ArchiveOAuth2Client(ctx context.Context, clientID string) e
 	tracing.AttachToSpan(span, keys.OAuth2ClientClientIDKey, clientID)
 	logger := q.logger.WithValue(keys.OAuth2ClientIDKey, clientID)
 
-	rowsAffected, err := q.generatedQuerier.ArchiveOAuth2Client(ctx, q.db, clientID)
+	rowsAffected, err := q.generatedQuerier.ArchiveOAuth2Client(ctx, q.writeDB, clientID)
 	if err != nil {
 		if errors.Is(err, sql.ErrNoRows) {
 			return err

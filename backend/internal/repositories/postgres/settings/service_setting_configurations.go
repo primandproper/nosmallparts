@@ -37,7 +37,7 @@ func (q *repository) ServiceSettingConfigurationExists(ctx context.Context, serv
 	logger = logger.WithValue(keys.ServiceSettingConfigurationIDKey, serviceSettingConfigurationID)
 	tracing.AttachToSpan(span, keys.ServiceSettingConfigurationIDKey, serviceSettingConfigurationID)
 
-	result, err := q.generatedQuerier.CheckServiceSettingConfigurationExistence(ctx, q.db, serviceSettingConfigurationID)
+	result, err := q.generatedQuerier.CheckServiceSettingConfigurationExistence(ctx, q.readDB, serviceSettingConfigurationID)
 	if err != nil {
 		return false, observability.PrepareAndLogError(err, logger, span, "performing service setting configuration existence check")
 	}
@@ -58,7 +58,7 @@ func (q *repository) GetServiceSettingConfiguration(ctx context.Context, service
 	tracing.AttachToSpan(span, keys.ServiceSettingConfigurationIDKey, serviceSettingConfigurationID)
 	logger = logger.WithValue(keys.ServiceSettingConfigurationIDKey, serviceSettingConfigurationID)
 
-	result, err := q.generatedQuerier.GetServiceSettingConfigurationByID(ctx, q.db, serviceSettingConfigurationID)
+	result, err := q.generatedQuerier.GetServiceSettingConfigurationByID(ctx, q.readDB, serviceSettingConfigurationID)
 	if err != nil {
 		return nil, observability.PrepareAndLogError(err, logger, span, "fetching service setting configuration")
 	}
@@ -115,7 +115,7 @@ func (q *repository) GetServiceSettingConfigurationForUserByName(ctx context.Con
 	logger = logger.WithValue(keys.ServiceSettingNameKey, settingName)
 	tracing.AttachToSpan(span, keys.ServiceSettingNameKey, settingName)
 
-	result, err := q.generatedQuerier.GetServiceSettingConfigurationForUserBySettingName(ctx, q.db, &generated.GetServiceSettingConfigurationForUserBySettingNameParams{
+	result, err := q.generatedQuerier.GetServiceSettingConfigurationForUserBySettingName(ctx, q.readDB, &generated.GetServiceSettingConfigurationForUserBySettingNameParams{
 		Name:          settingName,
 		BelongsToUser: userID,
 	})
@@ -175,7 +175,7 @@ func (q *repository) GetServiceSettingConfigurationForAccountByName(ctx context.
 	logger = logger.WithValue(keys.ServiceSettingNameKey, settingName)
 	tracing.AttachToSpan(span, keys.ServiceSettingNameKey, settingName)
 
-	result, err := q.generatedQuerier.GetServiceSettingConfigurationForAccountBySettingName(ctx, q.db, &generated.GetServiceSettingConfigurationForAccountBySettingNameParams{
+	result, err := q.generatedQuerier.GetServiceSettingConfigurationForAccountBySettingName(ctx, q.readDB, &generated.GetServiceSettingConfigurationForAccountBySettingNameParams{
 		Name:             settingName,
 		BelongsToAccount: accountID,
 	})
@@ -235,7 +235,7 @@ func (q *repository) GetServiceSettingConfigurationsForUser(ctx context.Context,
 	tracing.AttachQueryFilterToSpan(span, filter)
 	filter.AttachToLogger(logger)
 
-	results, err := q.generatedQuerier.GetServiceSettingConfigurationsForUser(ctx, q.db, &generated.GetServiceSettingConfigurationsForUserParams{
+	results, err := q.generatedQuerier.GetServiceSettingConfigurationsForUser(ctx, q.readDB, &generated.GetServiceSettingConfigurationsForUserParams{
 		BelongsToUser:   userID,
 		CreatedAfter:    database.NullTimeFromTimePointer(filter.CreatedAfter),
 		CreatedBefore:   database.NullTimeFromTimePointer(filter.CreatedBefore),
@@ -321,7 +321,7 @@ func (q *repository) GetServiceSettingConfigurationsForAccount(ctx context.Conte
 	tracing.AttachQueryFilterToSpan(span, filter)
 	filter.AttachToLogger(logger)
 
-	results, err := q.generatedQuerier.GetServiceSettingConfigurationsForAccount(ctx, q.db, &generated.GetServiceSettingConfigurationsForAccountParams{
+	results, err := q.generatedQuerier.GetServiceSettingConfigurationsForAccount(ctx, q.readDB, &generated.GetServiceSettingConfigurationsForAccountParams{
 		BelongsToAccount: accountID,
 		CreatedAfter:     database.NullTimeFromTimePointer(filter.CreatedAfter),
 		CreatedBefore:    database.NullTimeFromTimePointer(filter.CreatedBefore),
@@ -400,13 +400,13 @@ func (q *repository) CreateServiceSettingConfiguration(ctx context.Context, inpu
 	logger := q.logger.WithValue(keys.ServiceSettingConfigurationIDKey, input.ID)
 
 	// begin account creation transaction
-	tx, err := q.db.BeginTx(ctx, nil)
+	tx, err := q.writeDB.BeginTx(ctx, nil)
 	if err != nil {
 		return nil, observability.PrepareAndLogError(err, logger, span, "beginning transaction")
 	}
 
 	// create the service setting configuration.
-	if err = q.generatedQuerier.CreateServiceSettingConfiguration(ctx, q.db, &generated.CreateServiceSettingConfigurationParams{
+	if err = q.generatedQuerier.CreateServiceSettingConfiguration(ctx, tx, &generated.CreateServiceSettingConfigurationParams{
 		ID:               input.ID,
 		Value:            input.Value,
 		Notes:            input.Notes,
@@ -467,12 +467,12 @@ func (q *repository) UpdateServiceSettingConfiguration(ctx context.Context, upda
 	tracing.AttachToSpan(span, keys.ServiceSettingConfigurationIDKey, updated.ID)
 
 	// begin account creation transaction
-	tx, err := q.db.BeginTx(ctx, nil)
+	tx, err := q.writeDB.BeginTx(ctx, nil)
 	if err != nil {
 		return observability.PrepareAndLogError(err, logger, span, "beginning transaction")
 	}
 
-	if _, err = q.generatedQuerier.UpdateServiceSettingConfiguration(ctx, q.db, &generated.UpdateServiceSettingConfigurationParams{
+	if _, err = q.generatedQuerier.UpdateServiceSettingConfiguration(ctx, tx, &generated.UpdateServiceSettingConfigurationParams{
 		Value:            updated.Value,
 		Notes:            updated.Notes,
 		ServiceSettingID: updated.ServiceSetting.ID,
@@ -519,12 +519,12 @@ func (q *repository) ArchiveServiceSettingConfiguration(ctx context.Context, ser
 	tracing.AttachToSpan(span, keys.ServiceSettingConfigurationIDKey, serviceSettingConfigurationID)
 
 	// begin account creation transaction
-	tx, err := q.db.BeginTx(ctx, nil)
+	tx, err := q.writeDB.BeginTx(ctx, nil)
 	if err != nil {
 		return observability.PrepareAndLogError(err, logger, span, "beginning transaction")
 	}
 
-	rowsAffected, err := q.generatedQuerier.ArchiveServiceSettingConfiguration(ctx, q.db, serviceSettingConfigurationID)
+	rowsAffected, err := q.generatedQuerier.ArchiveServiceSettingConfiguration(ctx, tx, serviceSettingConfigurationID)
 	if err != nil {
 		q.RollbackTransaction(ctx, tx)
 		return observability.PrepareAndLogError(err, logger, span, "archiving service setting configuration")

@@ -22,9 +22,9 @@ func createServiceSettingConfigurationForTest(t *testing.T, ctx context.Context,
 
 	// create
 	if exampleServiceSettingConfiguration == nil {
-		user := pgtesting.CreateUserForTest(t, nil, dbc.db)
+		user := pgtesting.CreateUserForTest(t, nil, dbc.writeDB)
 		generatedIdentity := generated.New()
-		accountID, err := generatedIdentity.GetDefaultAccountIDForUser(ctx, dbc.db, user.ID)
+		accountID, err := generatedIdentity.GetDefaultAccountIDForUser(ctx, dbc.writeDB, user.ID)
 		require.NoError(t, err)
 
 		serviceSetting := createServiceSettingForTest(t, ctx, nil, dbc)
@@ -71,8 +71,8 @@ func TestQuerier_Integration_ServiceSettingConfigurations(t *testing.T) {
 		assert.NoError(t, container.Terminate(ctx))
 	}(t)
 
-	user := pgtesting.CreateUserForTest(t, nil, dbc.db)
-	account := pgtesting.CreateAccountForTest(t, nil, user.ID, dbc.db)
+	user := pgtesting.CreateUserForTest(t, nil, dbc.writeDB)
+	account := pgtesting.CreateAccountForTest(t, nil, user.ID, dbc.writeDB)
 
 	serviceSetting := createServiceSettingForTest(t, ctx, nil, dbc)
 	exampleServiceSettingConfiguration := fakes.BuildFakeServiceSettingConfiguration()
@@ -242,8 +242,8 @@ func TestQuerier_Integration_ServiceSettingConfigurationsForUser_CursorBasedPagi
 	}(t)
 
 	// Create a user and account for testing
-	user := pgtesting.CreateUserForTest(t, nil, dbc.db)
-	account := pgtesting.CreateAccountForTest(t, nil, user.ID, dbc.db)
+	user := pgtesting.CreateUserForTest(t, nil, dbc.writeDB)
+	account := pgtesting.CreateAccountForTest(t, nil, user.ID, dbc.writeDB)
 
 	// Use the generic pagination test helper
 	pgtesting.TestCursorBasedPagination(t, ctx, pgtesting.PaginationTestConfig[types.ServiceSettingConfiguration]{
@@ -293,8 +293,8 @@ func TestQuerier_Integration_ServiceSettingConfigurationsForAccount_CursorBasedP
 	}(t)
 
 	// Create a user and account for testing
-	user := pgtesting.CreateUserForTest(t, nil, dbc.db)
-	account := pgtesting.CreateAccountForTest(t, nil, user.ID, dbc.db)
+	user := pgtesting.CreateUserForTest(t, nil, dbc.writeDB)
+	account := pgtesting.CreateAccountForTest(t, nil, user.ID, dbc.writeDB)
 
 	// Use the generic pagination test helper
 	pgtesting.TestCursorBasedPagination(t, ctx, pgtesting.PaginationTestConfig[types.ServiceSettingConfiguration]{

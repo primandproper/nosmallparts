@@ -134,6 +134,7 @@ type (
 	WaitlistSignupDataManager interface {
 		GetWaitlistSignup(ctx context.Context, waitlistSignupID, waitlistID string) (*WaitlistSignup, error)
 		GetWaitlistSignupsForWaitlist(ctx context.Context, waitlistID string, filter *filtering.QueryFilter) (*filtering.QueryFilteredResult[WaitlistSignup], error)
+		GetWaitlistSignupsForUser(ctx context.Context, userID string, filter *filtering.QueryFilter) (*filtering.QueryFilteredResult[WaitlistSignup], error)
 		CreateWaitlistSignup(ctx context.Context, input *WaitlistSignupDatabaseCreationInput) (*WaitlistSignup, error)
 		UpdateWaitlistSignup(ctx context.Context, waitlistSignup *WaitlistSignup) error
 		ArchiveWaitlistSignup(ctx context.Context, waitlistSignupID string) error

@@ -3,7 +3,12 @@ import { NextRequest, NextResponse } from 'next/server';
 // Get the Go backend URL from environment variable
 function getBackendUrl(): string {
   const url = process.env.BACKEND_HTTP_URL || 'http://localhost:8000';
-  console.log('[LiveKit API] BACKEND_HTTP_URL env:', process.env.BACKEND_HTTP_URL, '-> using:', url);
+  console.log(
+    '[LiveKit API] BACKEND_HTTP_URL env:',
+    process.env.BACKEND_HTTP_URL,
+    '-> using:',
+    url
+  );
   return url;
 }
 

@@ -26,9 +26,8 @@ const (
 )
 
 var (
-	serviceUser      = gorbac.NewStdRole(serviceUserRoleName)
-	serviceAdmin     = gorbac.NewStdRole(serviceAdminRoleName)
-	serviceDataAdmin = gorbac.NewStdRole(serviceDataAdminRoleName)
+	serviceUser  = gorbac.NewStdRole(serviceUserRoleName)
+	serviceAdmin = gorbac.NewStdRole(serviceAdminRoleName)
 )
 
 type (

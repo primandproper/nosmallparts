@@ -20,17 +20,16 @@ import (
 	authsvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/auth"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database"
 	databasecfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/config"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/postgres"
 	pgtesting "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/postgres/testing"
 	msgconfig "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/messagequeue/config"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/messagequeue/redis"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/random"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/auditlogentries"
 	authrepo "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/auth"
 	identityrepo "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/identity"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/migrations"
 	notificationsrepo "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/notifications"
 	oauthrepo "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/oauth"
 	settingsrepo "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/settings"
@@ -112,19 +111,16 @@ func BuildInProcessServer(ctx context.Context, cfg *config.APIServiceConfig) (se
 	cfg.Events.Consumer.Redis = *redisConfig
 
 	// set up a database container, migrate it, and build a connection client
-	_, db, dbCfg, err := pgtesting.BuildDatabaseContainer(ctx, "integration_testing")
+	_, _, dbCfg, err = pgtesting.BuildDatabaseContainer(ctx, "integration_testing")
 	if err != nil {
 		return nil, nil, nil, fmt.Errorf("connecting to postgres: %w", err)
 	}
-	cfg.Database = *dbCfg
+	cfg.Database.WriteConnection = dbCfg.WriteConnection
+	cfg.Database.ReadConnection = dbCfg.ReadConnection
 
-	if err = migrations.NewMigrator(logger, tracing.NewNoopTracerProvider(), db, dbCfg).Migrate(ctx); err != nil {
-		return nil, nil, nil, fmt.Errorf(": %w", err)
-	}
-
-	// Migrations already run above, so don't run again
-	dbCfg.RunMigrations = false
-	databaseClient, err = postgres.ProvideDatabaseClient(ctx, logger, tracing.NewNoopTracerProvider(), dbCfg, nil)
+	tracerProvider := tracing.NewNoopTracerProvider()
+	migrator := repositories.ProvideMigrator(&cfg.Database, logger)
+	databaseClient, err = databasecfg.ProvideDatabase(ctx, logger, tracerProvider, &cfg.Database, migrator)
 	if err != nil {
 		return nil, nil, nil, fmt.Errorf("initializing database client: %w", err)
 	}
@@ -135,7 +131,7 @@ func BuildInProcessServer(ctx context.Context, cfg *config.APIServiceConfig) (se
 		return nil, nil, nil, fmt.Errorf("building API server: %w", err)
 	}
 
-	return server, databaseClient, dbCfg, nil
+	return server, databaseClient, &cfg.Database, nil
 }
 
 // DatabaseInitFunc is a function that performs database initialization operations.
@@ -210,7 +206,7 @@ func AllInOne(ctx context.Context, cfg *config.APIServiceConfig, initFuncs ...Da
 		return nil, fmt.Errorf("building in-process server: %w", err)
 	}
 
-	log.Printf("%sDATABASE CONNECTION URL: %s%s", strings.Repeat("\n", 10), dbCfg.ConnectionDetails.URI(), strings.Repeat("\n", 10))
+	log.Printf("%sDATABASE CONNECTION URL: %s%s", strings.Repeat("\n", 10), dbCfg.ReadConnection.URI(), strings.Repeat("\n", 10))
 
 	logger, tracerProvider, _, err := cfg.Observability.ProvideThreePillars(ctx)
 	if err != nil {

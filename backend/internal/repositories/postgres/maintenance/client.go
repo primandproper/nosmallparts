@@ -20,18 +20,23 @@ type repository struct {
 	tracer           tracing.Tracer
 	logger           logging.Logger
 	generatedQuerier generated.Querier
-	db               *sql.DB
+	readDB           *sql.DB
+	writeDB          *sql.DB
 }
 
 // ProvideMaintenanceRepository provides a new repository.
 func ProvideMaintenanceRepository(logger logging.Logger, tracerProvider tracing.TracerProvider, client database.Client) maintenance.MaintenanceDataManager {
 	c := &repository{
 		Client:           client,
-		db:               client.DB(),
+		readDB:           client.ReadDB(),
+		writeDB:          client.WriteDB(),
 		tracer:           tracing.NewTracer(tracing.EnsureTracerProvider(tracerProvider).Tracer(o11yName)),
 		generatedQuerier: generated.New(),
 		logger:           logging.EnsureLogger(logger).WithName(o11yName),
 	}
+
+	// these are here for future use
+	_, _ = c.readDB, c.writeDB
 
 	return c
 }

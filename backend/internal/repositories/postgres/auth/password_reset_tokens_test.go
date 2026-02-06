@@ -56,7 +56,7 @@ func TestQuerier_Integration_PasswordResetTokens(t *testing.T) {
 		assert.NoError(t, container.Terminate(ctx))
 	}(t)
 
-	user := pgtesting.CreateUserForTest(t, nil, dbc.db)
+	user := pgtesting.CreateUserForTest(t, nil, dbc.writeDB)
 
 	examplePasswordResetToken := authfakes.BuildFakePasswordResetToken()
 	examplePasswordResetToken.BelongsToUser = user.ID

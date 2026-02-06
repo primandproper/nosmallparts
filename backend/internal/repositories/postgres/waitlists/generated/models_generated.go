@@ -10,16 +10,16 @@ import (
 )
 
 type IssueReports struct {
-	CreatedAt        time.Time
-	LastUpdatedAt    sql.NullTime
-	ArchivedAt       sql.NullTime
 	ID               string
 	IssueType        string
 	Details          string
-	CreatedByUser    string
-	BelongsToAccount string
 	RelevantTable    sql.NullString
 	RelevantRecordID sql.NullString
+	CreatedAt        time.Time
+	LastUpdatedAt    sql.NullTime
+	ArchivedAt       sql.NullTime
+	CreatedByUser    string
+	BelongsToAccount string
 }
 
 type WaitlistSignups struct {

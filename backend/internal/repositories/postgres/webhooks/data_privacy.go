@@ -20,7 +20,7 @@ func (r *repository) CollectUserData(ctx context.Context, accountIDs []string) (
 	x := &webhooks.UserDataCollection{}
 
 	for _, accountID := range accountIDs {
-		accountWebhooks, err := r.generatedQuerier.GetWebhooksForAccount(ctx, r.db, &generated.GetWebhooksForAccountParams{
+		accountWebhooks, err := r.generatedQuerier.GetWebhooksForAccount(ctx, r.readDB, &generated.GetWebhooksForAccountParams{
 			CreatedBefore:    database.NullTimeFromTimePointer(filter.CreatedBefore),
 			CreatedAfter:     database.NullTimeFromTimePointer(filter.CreatedAfter),
 			UpdatedBefore:    database.NullTimeFromTimePointer(filter.UpdatedBefore),

@@ -12,6 +12,8 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/routing"
 	routingcfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/routing/config"
+	livekitsvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/livekit"
+	stagessvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/stages"
 )
 
 // appleAppSiteAssociation represents the structure of the apple-app-site-association file
@@ -37,6 +39,8 @@ func ProvideAPIRouter(
 	metricsProvider metrics.Provider,
 	authService auth.AuthDataService,
 	aasaConfig config.AppleAppSiteAssociationConfig,
+	stagesHandler *stagessvc.Handler,
+	livekitHandler *livekitsvc.Handler,
 ) (routing.Router, error) {
 	router, err := routingConfig.ProvideRouter(logger, tracerProvider, metricsProvider)
 	if err != nil {
@@ -90,6 +94,18 @@ func ProvideAPIRouter(
 					res.WriteHeader(http.StatusInternalServerError)
 				}
 			})
+		})
+	}
+
+	// WebSocket endpoint for stages
+	router.Route("/ws", func(wsRouter routing.Router) {
+		wsRouter.Get("/stages", stagesHandler.ServeHTTP)
+	})
+
+	// LiveKit token generation endpoint
+	if livekitHandler.Enabled() {
+		router.Route("/api/livekit", func(livekitRouter routing.Router) {
+			livekitRouter.Post("/token", livekitHandler.GenerateToken)
 		})
 	}
 

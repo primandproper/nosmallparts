@@ -125,12 +125,13 @@ func buildDevEnvironmentServerConfig() *config.APIServiceConfig {
 			Provider: textsearchcfg.AlgoliaProvider,
 		},
 		Database: databasecfg.Config{
+			Provider:        databasecfg.ProviderPostgres,
 			Debug:           true,
 			LogQueries:      true,
 			RunMigrations:   true,
 			MaxPingAttempts: maxAttempts,
 			PingWaitPeriod:  time.Second,
-			ConnectionDetails: databasecfg.ConnectionDetails{
+			ReadConnection: databasecfg.ConnectionDetails{
 				Username:   "api_db_user",
 				Password:   "",
 				Database:   "no-small-parts",
@@ -138,7 +139,7 @@ func buildDevEnvironmentServerConfig() *config.APIServiceConfig {
 				Port:       5432,
 				DisableSSL: false,
 			},
-			WriteConnectionDetails: databasecfg.ConnectionDetails{
+			WriteConnection: databasecfg.ConnectionDetails{
 				Username:   "api_db_user",
 				Password:   "",
 				Database:   "no-small-parts",
@@ -217,7 +218,7 @@ func buildDevEnvironmentServerConfig() *config.APIServiceConfig {
 		// AppleAppSiteAssociation configures the apple-app-site-association endpoint for iOS Universal Links.
 		// Set these values once you have an Apple Developer account.
 		// TeamID: Your 10-character Apple Developer Team ID from https://developer.apple.com/account
-		// BundleID: Your iOS app bundle identifier (e.g., "com.dinnerdonebetter.ios")
+		// BundleID: Your iOS app bundle identifier (e.g., "com.nosmallparts.ios")
 		AppleAppSiteAssociation: config.AppleAppSiteAssociationConfig{
 			TeamID:   "", // TODO: Set your Apple Developer Team ID
 			BundleID: "com.nosmallparts.ios",

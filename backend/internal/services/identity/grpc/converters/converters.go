@@ -351,3 +351,20 @@ func ConvertGRPCModifyUserPermissionsInputToModifyUserPermissionsInput(input *id
 		NewRole: input.NewRole,
 	}
 }
+
+// ConvertUserDataCollectionToGRPCDataCollection converts a domain identity UserDataCollection to a proto DataCollection.
+func ConvertUserDataCollectionToGRPCDataCollection(input *identity.UserDataCollection) *identitysvc.DataCollection {
+	result := &identitysvc.DataCollection{
+		User: ConvertUserToGRPCUser(&input.User),
+	}
+
+	for i := range input.Accounts {
+		result.Accounts = append(result.Accounts, ConvertAccountToGRPCAccount(&input.Accounts[i]))
+	}
+
+	for i := range input.AccountInvitations {
+		result.ReceivedInvites = append(result.ReceivedInvites, ConvertAccountInvitationToGRPCAccountInvitation(&input.AccountInvitations[i]))
+	}
+
+	return result
+}

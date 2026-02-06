@@ -12,14 +12,18 @@ import (
 )
 
 // testConnHelper starts a minimal WebSocket server and returns a client connection.
-func testConnHelper(t *testing.T) (*websocket.Conn, func()) {
+func testConnHelper(t *testing.T) (conn *websocket.Conn, shutdown func()) {
 	t.Helper()
+
 	upgrader := websocket.Upgrader{CheckOrigin: func(*http.Request) bool { return true }}
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		_, _ = upgrader.Upgrade(w, r, nil)
 	}))
-	conn, _, err := websocket.DefaultDialer.Dial("ws"+server.URL[4:], http.Header{"Origin": {server.URL}})
+
+	var err error
+	conn, _, err = websocket.DefaultDialer.Dial("ws"+server.URL[4:], http.Header{"Origin": {server.URL}})
 	require.NoError(t, err)
+
 	return conn, func() {
 		conn.Close()
 		server.Close()

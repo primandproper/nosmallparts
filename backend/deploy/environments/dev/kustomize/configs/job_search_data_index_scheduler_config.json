@@ -68,8 +68,8 @@
 	},
 	"database": {
 		"oauth2TokenEncryptionKey": "",
-		"provider": "",
-		"connectionDetails": {
+		"provider": "postgres",
+		"readConnection": {
 			"username": "api_db_user",
 			"password": "",
 			"database": "no-small-parts",
@@ -77,7 +77,7 @@
 			"port": 5432,
 			"disableSSL": false
 		},
-		"writeConnectionDetails": {
+		"writeConnection": {
 			"username": "api_db_user",
 			"password": "",
 			"database": "no-small-parts",
@@ -85,7 +85,6 @@
 			"port": 5432,
 			"disableSSL": false
 		},
-		"migrations": null,
 		"maxPingAttempts": 50,
 		"pingWaitPeriod": 1000000000,
 		"debug": true,

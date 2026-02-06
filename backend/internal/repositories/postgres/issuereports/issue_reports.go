@@ -36,7 +36,7 @@ func (r *repository) GetIssueReport(ctx context.Context, issueReportID string) (
 	logger = logger.WithValue(keys.IssueReportIDKey, issueReportID)
 	tracing.AttachToSpan(span, keys.IssueReportIDKey, issueReportID)
 
-	result, err := r.generatedQuerier.GetIssueReport(ctx, r.db, issueReportID)
+	result, err := r.generatedQuerier.GetIssueReport(ctx, r.readDB, issueReportID)
 	if err != nil {
 		return nil, observability.PrepareAndLogError(err, logger, span, "fetching issue report")
 	}
@@ -70,7 +70,7 @@ func (r *repository) GetIssueReports(ctx context.Context, filter *filtering.Quer
 	logger = filter.AttachToLogger(logger)
 	tracing.AttachQueryFilterToSpan(span, filter)
 
-	results, err := r.generatedQuerier.GetIssueReports(ctx, r.db, &generated.GetIssueReportsParams{
+	results, err := r.generatedQuerier.GetIssueReports(ctx, r.readDB, &generated.GetIssueReportsParams{
 		CreatedAfter:    database.NullTimeFromTimePointer(filter.CreatedAfter),
 		CreatedBefore:   database.NullTimeFromTimePointer(filter.CreatedBefore),
 		UpdatedBefore:   database.NullTimeFromTimePointer(filter.UpdatedBefore),
@@ -137,7 +137,7 @@ func (r *repository) GetIssueReportsForAccount(ctx context.Context, accountID st
 	logger = filter.AttachToLogger(logger)
 	tracing.AttachQueryFilterToSpan(span, filter)
 
-	results, err := r.generatedQuerier.GetIssueReportsForAccount(ctx, r.db, &generated.GetIssueReportsForAccountParams{
+	results, err := r.generatedQuerier.GetIssueReportsForAccount(ctx, r.readDB, &generated.GetIssueReportsForAccountParams{
 		CreatedAfter:     database.NullTimeFromTimePointer(filter.CreatedAfter),
 		CreatedBefore:    database.NullTimeFromTimePointer(filter.CreatedBefore),
 		UpdatedBefore:    database.NullTimeFromTimePointer(filter.UpdatedBefore),
@@ -201,7 +201,7 @@ func (r *repository) CreateIssueReport(ctx context.Context, input *types.IssueRe
 
 	logger.Debug("CreateIssueReport invoked")
 
-	tx, err := r.db.BeginTx(ctx, nil)
+	tx, err := r.writeDB.BeginTx(ctx, nil)
 	if err != nil {
 		return nil, observability.PrepareAndLogError(err, logger, span, "beginning transaction")
 	}
@@ -263,7 +263,7 @@ func (r *repository) UpdateIssueReport(ctx context.Context, issueReport *types.I
 	logger = logger.WithValue(keys.IssueReportIDKey, issueReport.ID)
 	tracing.AttachToSpan(span, keys.IssueReportIDKey, issueReport.ID)
 
-	tx, err := r.db.BeginTx(ctx, nil)
+	tx, err := r.writeDB.BeginTx(ctx, nil)
 	if err != nil {
 		return observability.PrepareAndLogError(err, logger, span, "beginning transaction")
 	}
@@ -321,7 +321,7 @@ func (r *repository) GetIssueReportsForTable(ctx context.Context, tableName stri
 	logger = filter.AttachToLogger(logger)
 	tracing.AttachQueryFilterToSpan(span, filter)
 
-	results, err := r.generatedQuerier.GetIssueReportsForTable(ctx, r.db, &generated.GetIssueReportsForTableParams{
+	results, err := r.generatedQuerier.GetIssueReportsForTable(ctx, r.readDB, &generated.GetIssueReportsForTableParams{
 		RelevantTable:   database.NullStringFromString(tableName),
 		CreatedAfter:    database.NullTimeFromTimePointer(filter.CreatedAfter),
 		CreatedBefore:   database.NullTimeFromTimePointer(filter.CreatedBefore),
@@ -395,7 +395,7 @@ func (r *repository) GetIssueReportsForRecord(ctx context.Context, tableName, re
 	logger = filter.AttachToLogger(logger)
 	tracing.AttachQueryFilterToSpan(span, filter)
 
-	results, err := r.generatedQuerier.GetIssueReportsForRecord(ctx, r.db, &generated.GetIssueReportsForRecordParams{
+	results, err := r.generatedQuerier.GetIssueReportsForRecord(ctx, r.readDB, &generated.GetIssueReportsForRecordParams{
 		RelevantTable:    database.NullStringFromString(tableName),
 		RelevantRecordID: database.NullStringFromString(recordID),
 		CreatedAfter:     database.NullTimeFromTimePointer(filter.CreatedAfter),
@@ -457,7 +457,7 @@ func (r *repository) ArchiveIssueReport(ctx context.Context, issueReportID strin
 
 	logger := r.logger.WithValue(keys.IssueReportIDKey, issueReportID)
 
-	tx, err := r.db.BeginTx(ctx, nil)
+	tx, err := r.writeDB.BeginTx(ctx, nil)
 	if err != nil {
 		return observability.PrepareAndLogError(err, logger, span, "beginning transaction")
 	}

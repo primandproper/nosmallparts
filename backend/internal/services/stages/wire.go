@@ -18,8 +18,11 @@ var (
 )
 
 // ProvideConnectionManager provides a ConnectionManager.
-func ProvideConnectionManager() *platformws.ConnectionManager {
-	return platformws.NewConnectionManager()
+func ProvideConnectionManager(
+	tracerProvider tracing.TracerProvider,
+	logger logging.Logger,
+) *platformws.ConnectionManager {
+	return platformws.NewConnectionManager(tracerProvider, logger)
 }
 
 // ProvideHandler provides a WebSocket Handler.

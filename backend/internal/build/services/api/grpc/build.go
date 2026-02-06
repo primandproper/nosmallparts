@@ -13,6 +13,7 @@ import (
 	authmgr "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/auth/managers"
 	identitymgr "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/identity/manager"
 	oauthmgr "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/oauth/manager"
+	databasecfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/config"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/postgres"
 	msgconfig "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/messagequeue/config"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability"
@@ -26,13 +27,13 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/uploads/objectstorage"
 	auditrepo "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/auditlogentries"
 	authrepo "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/auth"
+	dataprivacyrepo "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/dataprivacy"
 	identityrepo "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/identity"
 	issuereportsrepo "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/issuereports"
 	notificationsrepo "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/notifications"
 	oauthrepo "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/oauth"
 	playscriptsrepo "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/playscripts"
 	settingsrepo "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/settings"
-	repomigrations "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/migrations"
 	uploadedmediarepo "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/uploadedmedia"
 	waitlistsrepo "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/waitlists"
 	webhooksrepo "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/webhooks"
@@ -71,8 +72,8 @@ func Build(
 		sessions.SessionProviders,
 		observability.O11yProviders,
 		random.RandProviders,
+		databasecfg.ClientConfigProviders,
 		postgres.PGProviders,
-		repomigrations.MigrationProviders,
 		grpc.ProvidersGRPC,
 		qrcodes.QRCodeProviders,
 		tokenscfg.TokenIssuerProviders,
@@ -85,12 +86,13 @@ func Build(
 		identityrepo.IDRepoProviders,
 		issuereportsrepo.IssueReportsRepoProviders,
 		notificationsrepo.NotifRepoProviders,
-		playscriptsrepo.PlayScriptsRepoProviders,
 		settingsrepo.SettingsRepoProviders,
 		uploadedmediarepo.UploadedMediaRepoProviders,
 		webhooksrepo.WebhookProviders,
 		oauthrepo.OAuthRepoProviders,
 		waitlistsrepo.WaitlistsRepoProviders,
+		dataprivacyrepo.DataPrivProviders,
+		playscriptsrepo.PlayScriptsRepoProviders,
 		// services
 		authhttpsvc.AuthHTTPServiceProviders,
 		auditsvc.AuditSvcProviders,
@@ -100,12 +102,12 @@ func Build(
 		internalopssvc.InternalOpsSvcProviders,
 		issuereportssvc.IssueReportSvcProviders,
 		notificationssvc.NotifsSvcProviders,
-		playscriptssvc.PlayScriptsSvcProviders,
 		settingssvc.SettingSvcProviders,
 		uploadedmediasvc.UploadedMediaSvcProviders,
 		webhookssvc.WebhookSvcProviders,
 		oauthsvc.OAuthSvcProviders,
 		waitlistssvc.WaitlistsSvcProviders,
+		playscriptssvc.PlayScriptsSvcProviders,
 		uploadedmediacfg.UploadedMediaConfigProviders,
 		// manager
 		identitymgr.IDManagerProviders,

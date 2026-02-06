@@ -6,6 +6,7 @@
 		"userDataAggregationTopicName": "user_data_aggregation_requests",
 		"webhookExecutionRequestsTopicName": "webhook_execution_requests"
 	},
+	"liveKit": {},
 	"appleAppSiteAssociation": {},
 	"routing": {
 		"chiConfig": {
@@ -82,22 +83,11 @@
 		}
 	},
 	"grpc": {
-		"port": 8001
+		"port": 0
 	},
 	"meta": {
 		"runMode": "development",
 		"debug": true
-	},
-	"email": {
-		"sendgrid": null,
-		"mailgun": null,
-		"mailjet": null,
-		"provider": "",
-		"circuitBreakerConfig": {
-			"name": "",
-			"circuitBreakerErrorPercentage": 0,
-			"circuitBreakerMinimumOccurrenceThreshold": 0
-		}
 	},
 	"analytics": {
 		"segment": null,
@@ -108,6 +98,17 @@
 			"name": "feature_flagger",
 			"circuitBreakerErrorPercentage": 0.5,
 			"circuitBreakerMinimumOccurrenceThreshold": 100
+		}
+	},
+	"email": {
+		"sendgrid": null,
+		"mailgun": null,
+		"mailjet": null,
+		"provider": "",
+		"circuitBreakerConfig": {
+			"name": "",
+			"circuitBreakerErrorPercentage": 0,
+			"circuitBreakerMinimumOccurrenceThreshold": 0
 		}
 	},
 	"search": {
@@ -153,24 +154,23 @@
 	},
 	"database": {
 		"oauth2TokenEncryptionKey": "HEREISA32CHARSECRETWHICHISMADEUP",
-		"provider": "",
-		"connectionDetails": {
+		"provider": "postgres",
+		"readConnection": {
 			"username": "dbuser",
 			"password": "hunter2",
 			"database": "no-small-parts",
-			"hostname": "postgres",
+			"hostname": "pgdatabase",
 			"port": 5432,
 			"disableSSL": true
 		},
-		"writeConnectionDetails": {
+		"writeConnection": {
 			"username": "dbuser",
 			"password": "hunter2",
 			"database": "no-small-parts",
-			"hostname": "postgres",
+			"hostname": "pgdatabase",
 			"port": 5432,
 			"disableSSL": true
 		},
-		"migrations": null,
 		"maxPingAttempts": 50,
 		"pingWaitPeriod": 1000000000,
 		"debug": true,

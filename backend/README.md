@@ -1,6 +1,6 @@
 # Dinner Done Better API
 
-[![backend - deploy](https://github.com/dinnerdonebetter/dinnerdonebetter/actions/workflows/backend_deploy_dev.yaml/badge.svg)](https://github.com/dinnerdonebetter/dinnerdonebetter/actions/workflows/backend_deploy_dev.yaml) [![backend - integration tests](https://github.com/dinnerdonebetter/dinnerdonebetter/actions/workflows/backend_integration_tests.yaml/badge.svg)](https://github.com/dinnerdonebetter/dinnerdonebetter/actions/workflows/backend_integration_tests.yaml) [![backend - lint](https://github.com/dinnerdonebetter/dinnerdonebetter/actions/workflows/backend_lint.yaml/badge.svg)](https://github.com/dinnerdonebetter/dinnerdonebetter/actions/workflows/backend_lint.yaml) [![backend - unit tests](https://github.com/dinnerdonebetter/dinnerdonebetter/actions/workflows/backend_unit_tests.yaml/badge.svg)](https://github.com/dinnerdonebetter/dinnerdonebetter/actions/workflows/backend_unit_tests.yaml)
+[![backend - deploy](https://github.com/verygoodsoftwarenotvirus/nosmallparts/actions/workflows/backend_deploy_dev.yaml/badge.svg)](https://github.com/verygoodsoftwarenotvirus/nosmallparts/actions/workflows/backend_deploy_dev.yaml) [![backend - integration tests](https://github.com/verygoodsoftwarenotvirus/nosmallparts/actions/workflows/backend_integration_tests.yaml/badge.svg)](https://github.com/verygoodsoftwarenotvirus/nosmallparts/actions/workflows/backend_integration_tests.yaml) [![backend - lint](https://github.com/verygoodsoftwarenotvirus/nosmallparts/actions/workflows/backend_lint.yaml/badge.svg)](https://github.com/verygoodsoftwarenotvirus/nosmallparts/actions/workflows/backend_lint.yaml) [![backend - unit tests](https://github.com/verygoodsoftwarenotvirus/nosmallparts/actions/workflows/backend_unit_tests.yaml/badge.svg)](https://github.com/verygoodsoftwarenotvirus/nosmallparts/actions/workflows/backend_unit_tests.yaml)
 
 ## dev dependencies
 
@@ -39,13 +39,22 @@ flowchart LR
     Database("Database")
     DataChangesQueue("Data Changes Queue")
     DataChangesWorker("Data Changes Worker")
+    MealPlanFinalizerWorker("Meal Plan Finalizer")
+    MealPlanGroceryListInitializerWorker("Grocery List Initializer")
+    MealPlanTaskCreatorWorker("Meal Plan Task Creator")
     OutboundEmailerWorker("Outbound Emailer")
     SearchDataIndexSchedulerWorker("Data Index Scheduler")
     SearchDataIndexerWorker("Search Data Indexer")
     PublicInternet-->APIServer
+    Cron-->MealPlanGroceryListInitializerWorker
     Cron-->SearchDataIndexSchedulerWorker
+    Cron-->MealPlanTaskCreatorWorker
+    Cron-->MealPlanFinalizerWorker
     DataChangesWorker-->OutboundEmailerWorker
     DataChangesWorker-->SearchDataIndexerWorker
+    MealPlanGroceryListInitializerWorker-.->DataChangesQueue
+    MealPlanTaskCreatorWorker-.->DataChangesQueue
+    MealPlanFinalizerWorker-.->DataChangesQueue
     SearchDataIndexSchedulerWorker-->SearchDataIndexerWorker
     SearchDataIndexerWorker-->Algolia
     DataChangesQueue-->DataChangesWorker

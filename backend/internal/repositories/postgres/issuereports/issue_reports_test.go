@@ -65,8 +65,8 @@ func TestQuerier_Integration_IssueReports(t *testing.T) {
 		assert.NoError(t, container.Terminate(ctx))
 	}(t)
 
-	user := pgtesting.CreateUserForTest(t, nil, dbc.db)
-	account := pgtesting.CreateAccountForTest(t, nil, user.ID, dbc.db)
+	user := pgtesting.CreateUserForTest(t, nil, dbc.writeDB)
+	account := pgtesting.CreateAccountForTest(t, nil, user.ID, dbc.writeDB)
 
 	exampleIssueReport := fakes.BuildFakeIssueReport()
 	exampleIssueReport.BelongsToAccount = account.ID
@@ -132,7 +132,7 @@ func TestQuerier_Integration_IssueReports(t *testing.T) {
 func TestQuerier_GetIssueReport(T *testing.T) {
 	T.Parallel()
 
-	T.Run("with invalid issue report ID", func(t *testing.T) {
+	T.Run("with invalid issue report MealPlanTaskID", func(t *testing.T) {
 		t.Parallel()
 
 		ctx := t.Context()
@@ -166,8 +166,8 @@ func TestQuerier_GetIssueReports(T *testing.T) {
 			assert.NoError(t, container.Terminate(ctx))
 		}(t)
 
-		user := pgtesting.CreateUserForTest(t, nil, dbc.db)
-		account := pgtesting.CreateAccountForTest(t, nil, user.ID, dbc.db)
+		user := pgtesting.CreateUserForTest(t, nil, dbc.writeDB)
+		account := pgtesting.CreateAccountForTest(t, nil, user.ID, dbc.writeDB)
 
 		exampleIssueReport := fakes.BuildFakeIssueReport()
 		exampleIssueReport.BelongsToAccount = account.ID
@@ -189,7 +189,7 @@ func TestQuerier_GetIssueReports(T *testing.T) {
 func TestQuerier_GetIssueReportsForAccount(T *testing.T) {
 	T.Parallel()
 
-	T.Run("with invalid account ID", func(t *testing.T) {
+	T.Run("with invalid account MealPlanTaskID", func(t *testing.T) {
 		t.Parallel()
 
 		ctx := t.Context()
@@ -233,14 +233,14 @@ func TestQuerier_GetIssueReportsForRecord(T *testing.T) {
 		assert.Nil(t, actual)
 	})
 
-	T.Run("with invalid record ID", func(t *testing.T) {
+	T.Run("with invalid record MealPlanTaskID", func(t *testing.T) {
 		t.Parallel()
 
 		ctx := t.Context()
 		filter := filtering.DefaultQueryFilter()
 		c := buildInertClientForTest(t)
 
-		actual, err := c.GetIssueReportsForRecord(ctx, "users", "", filter)
+		actual, err := c.GetIssueReportsForRecord(ctx, "recipes", "", filter)
 		assert.Error(t, err)
 		assert.Nil(t, actual)
 	})
@@ -278,7 +278,7 @@ func TestQuerier_UpdateIssueReport(T *testing.T) {
 func TestQuerier_ArchiveIssueReport(T *testing.T) {
 	T.Parallel()
 
-	T.Run("with invalid issue report ID", func(t *testing.T) {
+	T.Run("with invalid issue report MealPlanTaskID", func(t *testing.T) {
 		t.Parallel()
 
 		ctx := t.Context()
@@ -305,8 +305,8 @@ func TestQuerier_Integration_CursorBasedPagination(t *testing.T) {
 		assert.NoError(t, container.Terminate(ctx))
 	}(t)
 
-	user := pgtesting.CreateUserForTest(t, nil, dbc.db)
-	account := pgtesting.CreateAccountForTest(t, nil, user.ID, dbc.db)
+	user := pgtesting.CreateUserForTest(t, nil, dbc.writeDB)
+	account := pgtesting.CreateAccountForTest(t, nil, user.ID, dbc.writeDB)
 
 	// Use the generic pagination test helper
 	pgtesting.TestCursorBasedPagination(t, ctx, pgtesting.PaginationTestConfig[types.IssueReport]{

@@ -257,6 +257,11 @@ func (m *RepositoryMock) ArchiveUser(ctx context.Context, userID string) error {
 	return m.Called(ctx, userID).Error(0)
 }
 
+// DeleteUser is a mock function.
+func (m *RepositoryMock) DeleteUser(ctx context.Context, userID string) error {
+	return m.Called(ctx, userID).Error(0)
+}
+
 // GetEmailAddressVerificationTokenForUser is a mock function.
 func (m *RepositoryMock) GetEmailAddressVerificationTokenForUser(ctx context.Context, userID string) (string, error) {
 	returnValues := m.Called(ctx, userID)

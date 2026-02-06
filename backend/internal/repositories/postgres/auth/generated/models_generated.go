@@ -3,3 +3,5 @@
 //   sqlc v1.25.0
 
 package generated
+
+import ()

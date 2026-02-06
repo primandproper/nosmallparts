@@ -10,21 +10,21 @@ import (
 )
 
 type Oauth2ClientTokens struct {
-	CodeCreatedAt       time.Time
-	RefreshExpiresAt    time.Time
-	RefreshCreatedAt    time.Time
-	AccessExpiresAt     time.Time
-	AccessCreatedAt     time.Time
-	CodeExpiresAt       time.Time
-	CodeChallengeMethod string
 	ID                  string
-	CodeChallenge       string
-	Access              string
-	Code                string
-	RedirectUri         string
-	Refresh             string
-	BelongsToUser       string
 	ClientID            string
+	BelongsToUser       string
+	RedirectUri         string
+	Code                string
+	CodeChallenge       string
+	CodeChallengeMethod string
+	CodeCreatedAt       time.Time
+	CodeExpiresAt       time.Time
+	Access              string
+	AccessCreatedAt     time.Time
+	AccessExpiresAt     time.Time
+	Refresh             string
+	RefreshCreatedAt    time.Time
+	RefreshExpiresAt    time.Time
 }
 
 type Oauth2Clients struct {

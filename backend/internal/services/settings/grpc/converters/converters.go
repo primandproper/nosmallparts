@@ -114,3 +114,20 @@ func ConvertGRPCServiceSettingConfigurationUpdateRequestInputToServiceSettingCon
 		ServiceSettingID: input.ServiceSettingId,
 	}
 }
+
+// ConvertUserDataCollectionToGRPCDataCollection converts a domain settings UserDataCollection to a proto DataCollection.
+func ConvertUserDataCollectionToGRPCDataCollection(input *settings.UserDataCollection) *settingssvc.DataCollection {
+	result := &settingssvc.DataCollection{
+		ServiceSettingConfigurations: make(map[string]*settingssvc.ServiceSettingConfiguration),
+	}
+
+	for i := range input.AccountSettings {
+		result.ServiceSettingConfigurations[input.AccountSettings[i].ID] = ConvertServiceSettingConfigurationToGRPCServiceSettingConfiguration(&input.AccountSettings[i])
+	}
+
+	for i := range input.UserSettings {
+		result.UserServiceSettingConfigurations = append(result.UserServiceSettingConfigurations, ConvertServiceSettingConfigurationToGRPCServiceSettingConfiguration(&input.UserSettings[i]))
+	}
+
+	return result
+}

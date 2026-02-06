@@ -11,6 +11,7 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/authentication"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/config"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/analytics/config"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/config"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/postgres"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/encoding"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/featureflags/config"
@@ -23,9 +24,12 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/server/http"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/auditlogentries"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/identity"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/migrations"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/oauth"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/playscripts"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/stages"
 	authentication2 "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/auth/handlers/authentication"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/livekit"
+	stages2 "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/stages"
 )
 
 // Injectors from build.go:
@@ -53,14 +57,15 @@ func Build(ctx context.Context, cfg *config.APIServiceConfig) (http.Server, erro
 	servicesConfig := &cfg.Services
 	authenticationConfig := &servicesConfig.Auth
 	authenticator := authentication.ProvideArgon2Authenticator(logger, tracerProvider)
-	databasecfgConfig := &cfg.Database
-	migratorFactory := migrations.ProvideMigratorFactory(logger, tracerProvider, databasecfgConfig)
-	client, err := postgres.ProvideDatabaseClient(ctx, logger, tracerProvider, databasecfgConfig, migratorFactory)
+	databasecfgConfig := cfg.Database
+	clientConfig := databasecfg.ProvideClientConfig(databasecfgConfig)
+	client, err := postgres.ProvideDatabaseClient(ctx, logger, tracerProvider, clientConfig)
 	if err != nil {
 		return nil, err
 	}
 	repository := auditlogentries.ProvideAuditLogRepository(logger, tracerProvider, client)
-	oauthRepository := oauth.ProvideOAuthRepository(logger, tracerProvider, repository, databasecfgConfig, client)
+	config2 := &cfg.Database
+	oauthRepository := oauth.ProvideOAuthRepository(logger, tracerProvider, repository, config2, client)
 	identityRepository := identity.ProvideIdentityRepository(logger, tracerProvider, repository, client)
 	encodingConfig := cfg.Encoding
 	contentType := encoding.ProvideContentType(encodingConfig)
@@ -81,8 +86,8 @@ func Build(ctx context.Context, cfg *config.APIServiceConfig) (http.Server, erro
 	if err != nil {
 		return nil, err
 	}
-	config2 := &cfg.Routing
-	routeParamManager, err := routingcfg.ProvideRouteParamManager(config2)
+	config3 := &cfg.Routing
+	routeParamManager, err := routingcfg.ProvideRouteParamManager(config3)
 	if err != nil {
 		return nil, err
 	}
@@ -92,7 +97,16 @@ func Build(ctx context.Context, cfg *config.APIServiceConfig) (http.Server, erro
 		return nil, err
 	}
 	appleAppSiteAssociationConfig := cfg.AppleAppSiteAssociation
-	router, err := ProvideAPIRouter(routingcfgConfig, logger, tracerProvider, provider, authDataService, appleAppSiteAssociationConfig)
+	stagesRepository := stages.ProvideStagesRepository(logger, tracerProvider, client)
+	playscriptsRepository := playscripts.ProvidePlayScriptsRepository(logger, tracerProvider, repository, client)
+	connectionManager := stages2.ProvideConnectionManager(tracerProvider, logger)
+	handler := stages2.ProvideHandler(logger, tracerProvider, stagesRepository, playscriptsRepository, connectionManager)
+	livekitConfig := &cfg.LiveKit
+	livekitHandler, err := livekit.NewHandler(ctx, livekitConfig, logger, tracerProvider, serverEncoderDecoder)
+	if err != nil {
+		return nil, err
+	}
+	router, err := ProvideAPIRouter(routingcfgConfig, logger, tracerProvider, provider, authDataService, appleAppSiteAssociationConfig, handler, livekitHandler)
 	if err != nil {
 		return nil, err
 	}

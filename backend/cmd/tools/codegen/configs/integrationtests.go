@@ -88,14 +88,15 @@ func buildIntegrationTestsConfig() *config.APIServiceConfig {
 			Port: defaultGRPCPort,
 		},
 		Database: databasecfg.Config{
+			Provider:                 databasecfg.ProviderPostgres,
 			OAuth2TokenEncryptionKey: localOAuth2TokenEncryptionKey,
 			Debug:                    true,
 			RunMigrations:            true,
 			LogQueries:               true,
 			MaxPingAttempts:          maxAttempts,
 			PingWaitPeriod:           1500 * time.Millisecond,
-			ConnectionDetails:        localdevPostgresDBConnectionDetails,
-			WriteConnectionDetails:   localdevPostgresDBConnectionDetails,
+			ReadConnection:           localdevPostgresDBConnectionDetails,
+			WriteConnection:          localdevPostgresDBConnectionDetails,
 		},
 		Observability: observability.Config{
 			Logging: loggingcfg.Config{

@@ -26,7 +26,7 @@ func Test_buildDataChangeMessageFromContext(T *testing.T) {
 		ctx = context.WithValue(ctx, sessions.SessionContextDataKey, sessionContextData)
 
 		expected := &DataChangeMessage{
-			EventType: AuditLogEventTypeCreated,
+			EventType: AuditLogEventTypeArchived,
 			Context: map[string]any{
 				"things": "stuff",
 			},

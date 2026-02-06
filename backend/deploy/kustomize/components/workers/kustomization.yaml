@@ -4,4 +4,7 @@ kind: Kustomization
 
 resources:
   - db_cleaner_cronjob.yaml
+  - meal_plan_finalizer_cronjob.yaml
+  - meal_plan_grocery_list_initializer_cronjob.yaml
+  - meal_plan_task_creator_cronjob.yaml
   - search_data_index_scheduler_cronjob.yaml
