@@ -1,7 +1,16 @@
 'use client';
 
 import { useState, useEffect, useRef, useCallback } from 'react';
-import { StageState, Play, PlayLine, CastMember, Participant, ServerMessage, ChatMessage, getConfig } from '@/lib/types';
+import {
+  StageState,
+  Play,
+  PlayLine,
+  CastMember,
+  Participant,
+  ServerMessage,
+  ChatMessage,
+  getConfig,
+} from '@/lib/types';
 
 // The Go backend sends PlayScript objects over WebSocket with a different shape
 // than the frontend Play type. These functions convert between the two formats.
@@ -173,9 +182,7 @@ export function usePlayState({
             }
             break;
           case 'availablePlays':
-            setAvailablePlays(
-              (message.plays || []).map((play: any) => convertBackendPlay(play))
-            );
+            setAvailablePlays((message.plays || []).map((play: any) => convertBackendPlay(play)));
             break;
           case 'castMembersUpdated':
             setStageState((prev) =>

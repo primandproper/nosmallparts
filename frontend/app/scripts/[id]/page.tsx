@@ -181,7 +181,9 @@ export default function ScriptDetailPage() {
               <h2 className="font-[Cormorant_Garamond] text-2xl text-[var(--gold)] mb-4">Cast</h2>
               <ul className="space-y-3">
                 {(script.cast || []).map((member) => {
-                  const lineCount = (script.lines || []).filter((l) => l.castMemberId === member.id).length;
+                  const lineCount = (script.lines || []).filter(
+                    (l) => l.castMemberId === member.id
+                  ).length;
                   return (
                     <li
                       key={member.id}

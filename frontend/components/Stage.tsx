@@ -128,14 +128,16 @@ export function Stage({ stageState, participantId, onNextLine }: StageProps) {
       )}
 
       {/* Director view */}
-      {currentParticipant && (currentParticipant.castMemberIds || []).length === 0 && isDirector && (
-        <div className="p-4 rounded-xl bg-[var(--gold)]/10 border border-[var(--gold)]/20 text-center">
-          <span className="text-2xl">🎬</span>
-          <p className="text-[var(--gold)] text-sm mt-2">
-            Directing • Advance when the speaker is ready
-          </p>
-        </div>
-      )}
+      {currentParticipant &&
+        (currentParticipant.castMemberIds || []).length === 0 &&
+        isDirector && (
+          <div className="p-4 rounded-xl bg-[var(--gold)]/10 border border-[var(--gold)]/20 text-center">
+            <span className="text-2xl">🎬</span>
+            <p className="text-[var(--gold)] text-sm mt-2">
+              Directing • Advance when the speaker is ready
+            </p>
+          </div>
+        )}
 
       {/* Next button */}
       {canAdvance && (

@@ -83,10 +83,7 @@ function grpcStatusToHttp(code: number): number {
 }
 
 // GET /api/play-scripts/[id] - Get a single play script
-export async function GET(
-  _request: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
-) {
+export async function GET(_request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   try {
     const { id } = await params;
 

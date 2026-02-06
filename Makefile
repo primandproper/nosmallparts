@@ -57,7 +57,7 @@ setup: ensure_yamlfmt_installed
 	(cd frontend && $(MAKE) setup)
 
 .PHONY: format
-format: format_yaml
+format:
 	(cd backend && $(MAKE) format)
 	(cd frontend && $(MAKE) format)
 

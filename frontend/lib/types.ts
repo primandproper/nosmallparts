@@ -107,7 +107,9 @@ export function areAllCastMembersAssigned(state: StageState): boolean {
   const performers = getPerformers(state);
   const assignedCastMemberIds = new Set(performers.flatMap((p) => p.castMemberIds));
 
-  return (state.selectedPlay.cast || []).every((castMember) => assignedCastMemberIds.has(castMember.id));
+  return (state.selectedPlay.cast || []).every((castMember) =>
+    assignedCastMemberIds.has(castMember.id)
+  );
 }
 
 export function areAllParticipantsReady(state: StageState): boolean {
@@ -225,7 +227,8 @@ export type RoomConfig = StageConfig;
 
 function getWsUrl(): string {
   // Allow override via environment variable
-  const envUrl = typeof process !== 'undefined' ? process.env.NEXT_PUBLIC_BACKEND_WS_URL : undefined;
+  const envUrl =
+    typeof process !== 'undefined' ? process.env.NEXT_PUBLIC_BACKEND_WS_URL : undefined;
   if (envUrl) {
     return envUrl;
   }

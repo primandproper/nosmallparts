@@ -133,7 +133,9 @@ function PlaySelector({
                       </div>
                     </div>
                     <div className="text-right shrink-0">
-                      <div className="text-xs text-[var(--gold)]">{(play.cast || []).length} roles</div>
+                      <div className="text-xs text-[var(--gold)]">
+                        {(play.cast || []).length} roles
+                      </div>
                       <div className="text-xs text-[var(--cream)] opacity-40">
                         {getTotalLineIndices(play)} turns
                       </div>
@@ -199,7 +201,9 @@ export function Lobby({
   }, [hasDirector, canStart, onStartPlay]);
 
   const getCastMemberAssignment = (castMemberId: string) => {
-    return (stageState.participants || []).find((p) => (p.castMemberIds || []).includes(castMemberId));
+    return (stageState.participants || []).find((p) =>
+      (p.castMemberIds || []).includes(castMemberId)
+    );
   };
 
   return (
@@ -247,7 +251,9 @@ export function Lobby({
           <div className="space-y-2">
             {(stageState.selectedPlay.cast || []).map((castMember) => {
               const assignedTo = getCastMemberAssignment(castMember.id);
-              const isAssignedToMe = (currentParticipant?.castMemberIds || []).includes(castMember.id);
+              const isAssignedToMe = (currentParticipant?.castMemberIds || []).includes(
+                castMember.id
+              );
               const lineCount = (stageState.selectedPlay!.lines || []).filter(
                 (l) => l.castMemberId === castMember.id
               ).length;

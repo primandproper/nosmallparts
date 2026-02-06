@@ -30,11 +30,11 @@ export async function POST() {
   } catch (error: unknown) {
     console.error('[Stages API] Error creating stage:', error);
 
-    if (error instanceof Error && (error.message.includes('fetch') || error.message.includes('ECONNREFUSED'))) {
-      return NextResponse.json(
-        { error: 'Failed to connect to backend service' },
-        { status: 503 }
-      );
+    if (
+      error instanceof Error &&
+      (error.message.includes('fetch') || error.message.includes('ECONNREFUSED'))
+    ) {
+      return NextResponse.json({ error: 'Failed to connect to backend service' }, { status: 503 });
     }
 
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
