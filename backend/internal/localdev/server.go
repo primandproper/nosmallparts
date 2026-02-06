@@ -122,7 +122,9 @@ func BuildInProcessServer(ctx context.Context, cfg *config.APIServiceConfig) (se
 		return nil, nil, nil, fmt.Errorf(": %w", err)
 	}
 
-	databaseClient, err = postgres.ProvideDatabaseClient(ctx, logger, tracing.NewNoopTracerProvider(), dbCfg)
+	// Migrations already run above, so don't run again
+	dbCfg.RunMigrations = false
+	databaseClient, err = postgres.ProvideDatabaseClient(ctx, logger, tracing.NewNoopTracerProvider(), dbCfg, nil)
 	if err != nil {
 		return nil, nil, nil, fmt.Errorf("initializing database client: %w", err)
 	}

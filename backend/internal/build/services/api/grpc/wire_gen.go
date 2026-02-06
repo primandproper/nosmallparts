@@ -8,19 +8,18 @@ package grpcapi
 
 import (
 	"context"
-
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/authentication"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/authentication/sessions"
-	tokenscfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/authentication/tokens/config"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/authentication/tokens/config"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/config"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/auth/managers"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/identity/manager"
 	manager2 "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/oauth/manager"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/postgres"
-	msgconfig "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/messagequeue/config"
-	loggingcfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging/config"
-	metricscfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/metrics/config"
-	tracingcfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing/config"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/messagequeue/config"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging/config"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/metrics/config"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing/config"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/qrcodes"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/random"
 	grpc14 "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/server/grpc"
@@ -28,7 +27,8 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/auditlogentries"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/auth"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/identity"
-	issue_reports "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/issuereports"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/issuereports"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/migrations"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/notifications"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/oauth"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/playscripts"
@@ -69,7 +69,8 @@ func Build(ctx context.Context, cfg *config.APIServiceConfig) (*GRPCService, err
 		return nil, err
 	}
 	databasecfgConfig := &cfg.Database
-	client, err := postgres.ProvideDatabaseClient(ctx, logger, tracerProvider, databasecfgConfig)
+	migratorFactory := migrations.ProvideMigratorFactory(logger, tracerProvider, databasecfgConfig)
+	client, err := postgres.ProvideDatabaseClient(ctx, logger, tracerProvider, databasecfgConfig, migratorFactory)
 	if err != nil {
 		return nil, err
 	}

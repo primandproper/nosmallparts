@@ -33,8 +33,16 @@ type Client struct {
 	migrateOnce sync.Once
 }
 
+// MigratorFactory is a function that creates a migrator given a database connection.
+type MigratorFactory func(db *sql.DB) Migrator
+
+// Migrator is an interface for running database migrations.
+type Migrator interface {
+	Migrate(ctx context.Context) error
+}
+
 // ProvideDatabaseClient provides a new DataManager client.
-func ProvideDatabaseClient(ctx context.Context, logger logging.Logger, tracerProvider tracing.TracerProvider, cfg *databasecfg.Config) (database.Client, error) {
+func ProvideDatabaseClient(ctx context.Context, logger logging.Logger, tracerProvider tracing.TracerProvider, cfg *databasecfg.Config, migratorFactory MigratorFactory) (database.Client, error) {
 	tracer := tracing.NewTracer(tracing.EnsureTracerProvider(tracerProvider).Tracer(tracingName))
 
 	ctx, span := tracer.StartSpan(ctx)
@@ -62,11 +70,12 @@ func ProvideDatabaseClient(ctx context.Context, logger logging.Logger, tracerPro
 		logger:   logging.EnsureLogger(logger).WithName("querier"),
 	}
 
-	if cfg.RunMigrations {
+	if cfg.RunMigrations && migratorFactory != nil {
 		c.logger.Info("migrating querier")
 
+		migrator := migratorFactory(db)
 		start := time.Now()
-		if err = c.Migrate(ctx); err != nil {
+		if err = migrator.Migrate(ctx); err != nil {
 			return nil, observability.PrepareAndLogError(err, logger, span, "migrating database")
 		}
 

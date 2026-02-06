@@ -7,6 +7,7 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/auth/handlers/authentication"
 	dataprivacycfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/dataprivacy/config"
 	identitycfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/identity/config"
+	livekitcfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/livekit"
 	oauthcfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/oauth/config"
 	uploadedmediacfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/uploadedmedia/config"
 
@@ -16,12 +17,14 @@ import (
 type (
 	// ServicesConfig collects the various service configurations.
 	ServicesConfig struct {
-		_             struct{}                `json:"-"`
-		Users         identitycfg.Config      `envPrefix:"USERS_"          json:"users,omitempty"`
-		DataPrivacy   dataprivacycfg.Config   `envPrefix:"DATA_PRIVACY_"   json:"dataPrivacy,omitempty"`
-		UploadedMedia uploadedmediacfg.Config `envPrefix:"UPLOADED_MEDIA_" json:"uploadedMedia,omitempty"`
-		Auth          authentication.Config   `envPrefix:"AUTH_"           json:"auth,omitempty"`
-		OAuth2Clients oauthcfg.Config         `envPrefix:"OAUTH2_CLIENTS_" json:"oauth2Clients,omitempty"`
+		_ struct{} `json:"-"`
+
+		LiveKit       livekitcfg.Config       `envPrefix:"LIVEKIT_"        json:"livekit"`
+		Users         identitycfg.Config      `envPrefix:"USERS_"          json:"users"`
+		DataPrivacy   dataprivacycfg.Config   `envPrefix:"DATA_PRIVACY_"   json:"dataPrivacy"`
+		UploadedMedia uploadedmediacfg.Config `envPrefix:"UPLOADED_MEDIA_" json:"uploadedMedia"`
+		Auth          authentication.Config   `envPrefix:"AUTH_"           json:"auth"`
+		OAuth2Clients oauthcfg.Config         `envPrefix:"OAUTH2_CLIENTS_" json:"oauth2Clients"`
 	}
 )
 

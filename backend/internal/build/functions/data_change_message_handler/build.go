@@ -21,6 +21,7 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/uploads/objectstorage"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/auditlogentries"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/identity"
+	repomigrations "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/migrations"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/webhooks"
 	identityindexing "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/identity/indexing"
 
@@ -36,6 +37,7 @@ func Build(
 		datachangemessagehandler.Providers,
 		msgconfig.MessageQueueProviders,
 		postgres.PGProviders,
+		repomigrations.MigrationProviders,
 		auditlogentries.AuditRepoProviders,
 		identity.IDRepoProviders,
 		webhooks.WebhookProviders,

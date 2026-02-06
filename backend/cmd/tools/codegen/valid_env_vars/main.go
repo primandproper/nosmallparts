@@ -16,6 +16,9 @@ import (
 	"github.com/codemodus/kace"
 )
 
+// importAliasMap maps import aliases to real package names (e.g., "livekitcfg" -> "livekit")
+var importAliasMap = make(map[string]string)
+
 func main() {
 	dir, err := os.Getwd()
 	if err != nil {
@@ -24,6 +27,7 @@ func main() {
 
 	outputLines := []string{}
 	structs := parseGoFiles(dir)
+
 	structsToEvaluate := []string{
 		"config.APIServiceConfig",
 		"config.AdminWebappConfig",
@@ -32,7 +36,8 @@ func main() {
 
 	for _, structName := range structsToEvaluate {
 		if mainAST, found := structs[structName]; found {
-			extractedEnvVars := extractEnvVars(mainAST, structs, "main", "", "")
+			visited := make(map[*ast.TypeSpec]bool)
+			extractedEnvVars := extractEnvVars(mainAST, structs, "main", "", "", visited)
 			for envVar, fieldPath := range extractedEnvVars {
 				if slices.Contains(generatedEnvVars, kace.Pascal(envVar)) {
 					continue
@@ -88,6 +93,21 @@ func parseGoFiles(dir string) map[string]*ast.TypeSpec {
 			return nil
 		}
 
+		// Collect import aliases from this file
+		for _, imp := range node.Imports {
+			if imp.Path == nil || imp.Name == nil {
+				continue
+			}
+			importPath := strings.Trim(imp.Path.Value, `"`)
+			parts := strings.Split(importPath, "/")
+			pkgName := parts[len(parts)-1]
+
+			// Only record if it's actually an alias (different from the real package name)
+			if imp.Name.Name != pkgName && imp.Name.Name != "_" && imp.Name.Name != "." {
+				importAliasMap[imp.Name.Name] = pkgName
+			}
+		}
+
 		for _, decl := range node.Decls {
 			genDecl, ok := decl.(*ast.GenDecl)
 			if !ok {
@@ -126,13 +146,21 @@ func getTagValue(tag, key string) string {
 	return ""
 }
 
+// resolvePackageName resolves an import alias to the real package name.
+func resolvePackageName(alias string) string {
+	if realName, ok := importAliasMap[alias]; ok {
+		return realName
+	}
+	return alias
+}
+
 // handleIdent handles extracting info from an *ast.Ident node.
-func handleIdent(structs map[string]*ast.TypeSpec, fieldType *ast.Ident, envVars map[string]string, currentPackage, prefixValue, fieldNamePrefix, fieldName string) {
+func handleIdent(structs map[string]*ast.TypeSpec, fieldType *ast.Ident, envVars map[string]string, currentPackage, prefixValue, fieldNamePrefix, fieldName string, visited map[*ast.TypeSpec]bool) {
 	for key, nestedStruct := range structs {
 		keyParts := strings.Split(key, ".")
 		if len(keyParts) == 2 && keyParts[1] == fieldType.Name {
 			if keyParts[0] == currentPackage || currentPackage == "main" {
-				for k, v := range extractEnvVars(nestedStruct, structs, keyParts[0], prefixValue, fmt.Sprintf("%s.%s", fieldNamePrefix, fieldName)) {
+				for k, v := range extractEnvVars(nestedStruct, structs, keyParts[0], prefixValue, fmt.Sprintf("%s.%s", fieldNamePrefix, fieldName), visited) {
 					envVars[k] = v
 				}
 			}
@@ -141,11 +169,14 @@ func handleIdent(structs map[string]*ast.TypeSpec, fieldType *ast.Ident, envVars
 }
 
 // handleSelectorExpr handles extracting info from an *ast.SelectorExpr node.
-func handleSelectorExpr(structs map[string]*ast.TypeSpec, fieldType *ast.SelectorExpr, envVars map[string]string, prefixValue, fieldNamePrefix, fieldName string) {
+func handleSelectorExpr(structs map[string]*ast.TypeSpec, fieldType *ast.SelectorExpr, envVars map[string]string, prefixValue, fieldNamePrefix, fieldName string, visited map[*ast.TypeSpec]bool) {
 	if pkgIdent, isIdentifier := fieldType.X.(*ast.Ident); isIdentifier {
-		fullName := fmt.Sprintf("%s.%s", pkgIdent.Name, fieldType.Sel.Name)
+		// Resolve import alias to real package name
+		realPkgName := resolvePackageName(pkgIdent.Name)
+
+		fullName := fmt.Sprintf("%s.%s", realPkgName, fieldType.Sel.Name)
 		if nestedStruct, found := structs[fullName]; found {
-			for k, v := range extractEnvVars(nestedStruct, structs, pkgIdent.Name, prefixValue, fmt.Sprintf("%s.%s", fieldNamePrefix, fieldName)) {
+			for k, v := range extractEnvVars(nestedStruct, structs, realPkgName, prefixValue, fmt.Sprintf("%s.%s", fieldNamePrefix, fieldName), visited) {
 				envVars[k] = v
 			}
 		}
@@ -153,8 +184,14 @@ func handleSelectorExpr(structs map[string]*ast.TypeSpec, fieldType *ast.Selecto
 }
 
 // extractEnvVars traverses a struct definition and collects environment variables, resolving nested structs.
-func extractEnvVars(typeSpec *ast.TypeSpec, structs map[string]*ast.TypeSpec, currentPackage, envVarPrefix, fieldNamePrefix string) map[string]string {
+func extractEnvVars(typeSpec *ast.TypeSpec, structs map[string]*ast.TypeSpec, currentPackage, envVarPrefix, fieldNamePrefix string, visited map[*ast.TypeSpec]bool) map[string]string {
 	envVars := map[string]string{}
+
+	// Cycle detection: skip if we've already visited this AST node
+	if visited[typeSpec] {
+		return envVars
+	}
+	visited[typeSpec] = true
 
 	structType, ok := typeSpec.Type.(*ast.StructType)
 	if !ok {
@@ -191,15 +228,15 @@ func extractEnvVars(typeSpec *ast.TypeSpec, structs map[string]*ast.TypeSpec, cu
 
 			switch fieldType := field.Type.(type) {
 			case *ast.Ident:
-				handleIdent(structs, fieldType, envVars, currentPackage, prefixValue, fieldNamePrefix, fn)
+				handleIdent(structs, fieldType, envVars, currentPackage, prefixValue, fieldNamePrefix, fn, visited)
 			case *ast.SelectorExpr:
-				handleSelectorExpr(structs, fieldType, envVars, prefixValue, fieldNamePrefix, fn)
+				handleSelectorExpr(structs, fieldType, envVars, prefixValue, fieldNamePrefix, fn, visited)
 			case *ast.StarExpr:
 				switch ft := fieldType.X.(type) {
 				case *ast.Ident:
-					handleIdent(structs, ft, envVars, currentPackage, prefixValue, fieldNamePrefix, fn)
+					handleIdent(structs, ft, envVars, currentPackage, prefixValue, fieldNamePrefix, fn, visited)
 				case *ast.SelectorExpr:
-					handleSelectorExpr(structs, ft, envVars, prefixValue, fieldNamePrefix, fn)
+					handleSelectorExpr(structs, ft, envVars, prefixValue, fieldNamePrefix, fn, visited)
 				}
 			}
 		}

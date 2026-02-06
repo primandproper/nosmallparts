@@ -63,6 +63,8 @@ const (
 	UploadedMediaIDKey = "uploaded_media" + idSuffix
 	// PlayScriptIDKey is the standard key for referring to a play script ID.
 	PlayScriptIDKey = "play_script" + idSuffix
+	// StageIDKey is the standard key for referring to a stage ID.
+	StageIDKey = "stage" + idSuffix
 	// AuditLogEntryIDKey is the standard key for referring to an audit log entry's ID.
 	AuditLogEntryIDKey = "audit_log_entry" + idSuffix
 	// AuditLogEntryResourceTypesKey is the standard key for referring to an audit log entry's resource type.

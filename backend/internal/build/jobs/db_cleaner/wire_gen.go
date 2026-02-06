@@ -8,14 +8,14 @@ package dbcleaner
 
 import (
 	"context"
-
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/config"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/postgres"
-	loggingcfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging/config"
-	metricscfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/metrics/config"
-	tracingcfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing/config"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging/config"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/metrics/config"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing/config"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/maintenance"
-	dbcleaner "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/oauth/workers/db_cleaner"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/migrations"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/oauth/workers/db_cleaner"
 )
 
 // Injectors from build.go:
@@ -39,7 +39,8 @@ func Build(ctx context.Context, cfg *config.DBCleanerConfig) (*dbcleaner.Job, er
 		return nil, err
 	}
 	databasecfgConfig := &cfg.Database
-	client, err := postgres.ProvideDatabaseClient(ctx, logger, tracerProvider, databasecfgConfig)
+	migratorFactory := migrations.ProvideMigratorFactory(logger, tracerProvider, databasecfgConfig)
+	client, err := postgres.ProvideDatabaseClient(ctx, logger, tracerProvider, databasecfgConfig, migratorFactory)
 	if err != nil {
 		return nil, err
 	}

@@ -13,6 +13,7 @@ import (
 	metricscfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/metrics/config"
 	tracingcfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing/config"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/maintenance"
+	repomigrations "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/migrations"
 	dbcleaner "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/oauth/workers/db_cleaner"
 
 	"github.com/google/wire"
@@ -28,6 +29,7 @@ func Build(
 		tracingcfg.TracingConfigProviders,
 		observability.O11yProviders,
 		postgres.PGProviders,
+		repomigrations.MigrationProviders,
 		loggingcfg.LogConfigProviders,
 		metricscfg.MetricsConfigProviders,
 		maintenance.Providers,

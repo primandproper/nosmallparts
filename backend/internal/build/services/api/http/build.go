@@ -22,6 +22,7 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/server/http"
 	auditrepo "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/auditlogentries"
 	identityrepo "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/identity"
+	repomigrations "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/migrations"
 	oauthrepo "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/oauth"
 	authservice "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/auth/handlers/authentication"
 
@@ -43,6 +44,7 @@ func Build(
 		tracingcfg.TracingConfigProviders,
 		observability.O11yProviders,
 		postgres.PGProviders,
+		repomigrations.MigrationProviders,
 		loggingcfg.LogConfigProviders,
 		authservice.AuthHTTPServiceProviders,
 		metricscfg.MetricsConfigProviders,

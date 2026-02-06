@@ -6,6 +6,7 @@ import (
 	"fmt"
 
 	databasecfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/config"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/postgres"
 	pgmigrations "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/postgres/migrations"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
@@ -23,6 +24,13 @@ func fetchMigration(name string) string {
 	}
 
 	return string(file)
+}
+
+// ProvideMigratorFactory provides a MigratorFactory for use with the database client.
+func ProvideMigratorFactory(logger logging.Logger, tracerProvider tracing.TracerProvider, config *databasecfg.Config) postgres.MigratorFactory {
+	return func(db *sql.DB) postgres.Migrator {
+		return NewMigrator(logger, tracerProvider, db, config)
+	}
 }
 
 func NewMigrator(logger logging.Logger, tracerProvider tracing.TracerProvider, db *sql.DB, config *databasecfg.Config) *pgmigrations.Migrator {
@@ -70,6 +78,10 @@ func NewMigrator(logger logging.Logger, tracerProvider tracing.TracerProvider, d
 		{
 			Description: "play scripts tables",
 			RawQuery:    fetchMigration("00011_play_scripts"),
+		},
+		{
+			Description: "stages tables",
+			RawQuery:    fetchMigration("00012_stages"),
 		},
 	}
 

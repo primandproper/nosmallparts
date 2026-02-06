@@ -16,6 +16,7 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/search/text/indexing"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/auditlogentries"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/identity"
+	repomigrations "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/migrations"
 
 	"github.com/google/wire"
 )
@@ -31,6 +32,7 @@ func Build(
 		observability.O11yProviders,
 		msgconfig.MessageQueueProviders,
 		postgres.PGProviders,
+		repomigrations.MigrationProviders,
 		loggingcfg.LogConfigProviders,
 		metricscfg.MetricsConfigProviders,
 		auditlogentries.AuditRepoProviders,

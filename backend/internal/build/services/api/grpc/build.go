@@ -32,6 +32,7 @@ import (
 	oauthrepo "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/oauth"
 	playscriptsrepo "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/playscripts"
 	settingsrepo "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/settings"
+	repomigrations "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/migrations"
 	uploadedmediarepo "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/uploadedmedia"
 	waitlistsrepo "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/waitlists"
 	webhooksrepo "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/webhooks"
@@ -71,6 +72,7 @@ func Build(
 		observability.O11yProviders,
 		random.RandProviders,
 		postgres.PGProviders,
+		repomigrations.MigrationProviders,
 		grpc.ProvidersGRPC,
 		qrcodes.QRCodeProviders,
 		tokenscfg.TokenIssuerProviders,
