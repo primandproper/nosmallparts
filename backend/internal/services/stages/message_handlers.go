@@ -4,6 +4,7 @@ import (
 	"context"
 	"database/sql"
 	"errors"
+	"strings"
 	"time"
 
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/playscripts"
@@ -19,7 +20,7 @@ func (h *Handler) handleJoin(ctx context.Context, connCtx *platformws.Connection
 	ctx, span := h.tracer.StartSpan(ctx)
 	defer span.End()
 
-	stageID := msg.StageID
+	stageID := strings.TrimSpace(msg.StageID)
 	participantName := msg.ParticipantName
 
 	if participantName == "" {
@@ -30,12 +31,12 @@ func (h *Handler) handleJoin(ctx context.Context, connCtx *platformws.Connection
 	var stage *stagesdomain.Stage
 	var err error
 
-	// Try to find existing stage by ID or code
+	// Try to find existing stage by ID or code (codes are uppercase)
 	if stageID != "" {
 		stage, err = h.stagesRepo.GetStageByID(ctx, stageID)
 		if errors.Is(err, sql.ErrNoRows) {
-			// Try by code
-			stage, err = h.stagesRepo.GetStageByCode(ctx, stageID)
+			// Try by code (uppercase for case-insensitive lookup)
+			stage, err = h.stagesRepo.GetStageByCode(ctx, strings.ToUpper(stageID))
 		}
 	}
 

@@ -102,6 +102,12 @@ func ProvideAPIRouter(
 		wsRouter.Get("/stages", stagesHandler.ServeHTTP)
 	})
 
+	// REST endpoints for stages
+	router.Route("/api/stages", func(stagesRouter routing.Router) {
+		stagesRouter.Post("/", stagesHandler.CreateStageHTTP)
+		stagesRouter.Get("/{code}/exists", stagesHandler.CheckStageExists)
+	})
+
 	// LiveKit token generation endpoint
 	if livekitHandler.Enabled() {
 		router.Route("/api/livekit", func(livekitRouter routing.Router) {

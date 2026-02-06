@@ -38,6 +38,7 @@ export type RoomPhase = StagePhase;
 
 export interface StageState {
   id: string;
+  code: string;
   participants: Participant[];
   selectedPlay: Play | null;
   currentLineIndex: number;
@@ -83,7 +84,7 @@ export type ServerMessage =
 
 // Utility functions
 export function getCastMemberById(play: Play, castMemberId: string): CastMember | undefined {
-  return play.cast.find((c) => c.id === castMemberId);
+  return (play.cast || []).find((c) => c.id === castMemberId);
 }
 
 export function getCastMemberNameForLine(play: Play, line: PlayLine): string {
@@ -92,11 +93,11 @@ export function getCastMemberNameForLine(play: Play, line: PlayLine): string {
 }
 
 export function getPerformers(state: StageState): Participant[] {
-  return state.participants.filter((p) => !p.isAudience);
+  return (state.participants || []).filter((p) => !p.isAudience);
 }
 
 export function getAudience(state: StageState): Participant[] {
-  return state.participants.filter((p) => p.isAudience);
+  return (state.participants || []).filter((p) => p.isAudience);
 }
 
 export function areAllCastMembersAssigned(state: StageState): boolean {
@@ -106,7 +107,7 @@ export function areAllCastMembersAssigned(state: StageState): boolean {
   const performers = getPerformers(state);
   const assignedCastMemberIds = new Set(performers.flatMap((p) => p.castMemberIds));
 
-  return state.selectedPlay.cast.every((castMember) => assignedCastMemberIds.has(castMember.id));
+  return (state.selectedPlay.cast || []).every((castMember) => assignedCastMemberIds.has(castMember.id));
 }
 
 export function areAllParticipantsReady(state: StageState): boolean {
@@ -120,12 +121,12 @@ export function canStartPlay(state: StageState): boolean {
 }
 
 export function getLineIndices(play: Play): number[] {
-  const indices = new Set(play.lines.map((l) => l.index));
+  const indices = new Set((play.lines || []).map((l) => l.index));
   return Array.from(indices).sort((a, b) => a - b);
 }
 
 export function getLinesAtIndex(play: Play, index: number): PlayLine[] {
-  return play.lines.filter((l) => l.index === index);
+  return (play.lines || []).filter((l) => l.index === index);
 }
 
 export function getCurrentLines(state: StageState): PlayLine[] {
@@ -145,8 +146,8 @@ export function getCurrentSpeakerCastMemberIds(state: StageState): string[] {
 
 export function getCurrentSpeakers(state: StageState): Participant[] {
   const speakerCastMemberIds = getCurrentSpeakerCastMemberIds(state);
-  return state.participants.filter((p) =>
-    p.castMemberIds.some((id) => speakerCastMemberIds.includes(id))
+  return (state.participants || []).filter((p) =>
+    (p.castMemberIds || []).some((id) => speakerCastMemberIds.includes(id))
   );
 }
 
@@ -160,10 +161,10 @@ export function getCurrentLinesForParticipant(
   participantId: string
 ): PlayLine[] {
   const currentLines = getCurrentLines(state);
-  const participant = state.participants.find((p) => p.id === participantId);
+  const participant = (state.participants || []).find((p) => p.id === participantId);
   if (!participant) return [];
 
-  return currentLines.filter((l) => participant.castMemberIds.includes(l.castMemberId));
+  return currentLines.filter((l) => (participant.castMemberIds || []).includes(l.castMemberId));
 }
 
 export function getNextLinesForParticipant(
@@ -172,8 +173,8 @@ export function getNextLinesForParticipant(
 ): { lines: PlayLine[]; turnsAway: number } | null {
   if (!state.selectedPlay || state.phase !== 'performing') return null;
 
-  const participant = state.participants.find((p) => p.id === participantId);
-  if (!participant || participant.castMemberIds.length === 0) return null;
+  const participant = (state.participants || []).find((p) => p.id === participantId);
+  if (!participant || (participant.castMemberIds || []).length === 0) return null;
 
   const indices = getLineIndices(state.selectedPlay);
 
@@ -181,7 +182,7 @@ export function getNextLinesForParticipant(
   for (let i = state.currentLineIndex + 1; i < indices.length; i++) {
     const linesAtIndex = getLinesAtIndex(state.selectedPlay, indices[i]);
     const participantLines = linesAtIndex.filter((l) =>
-      participant.castMemberIds.includes(l.castMemberId)
+      (participant.castMemberIds || []).includes(l.castMemberId)
     );
 
     if (participantLines.length > 0) {
@@ -216,37 +217,31 @@ export function getNextLineForParticipant(
 
 // Frontend-specific configuration
 export interface StageConfig {
-  serverUrl: string;
   wsUrl: string;
 }
 
 // Keep RoomConfig as alias for backward compatibility
 export type RoomConfig = StageConfig;
 
-function getServerUrl(): string {
-  if (typeof window === 'undefined') {
-    return 'http://localhost:3001';
+function getWsUrl(): string {
+  // Allow override via environment variable
+  const envUrl = typeof process !== 'undefined' ? process.env.NEXT_PUBLIC_BACKEND_WS_URL : undefined;
+  if (envUrl) {
+    return envUrl;
   }
 
-  // Use the same host as the frontend, but port 3001 for the server
-  const { protocol, hostname } = window.location;
-  return `${protocol}//${hostname}:3001`;
-}
-
-function getWsUrl(): string {
   if (typeof window === 'undefined') {
-    return 'ws://localhost:3001';
+    return 'ws://localhost:8000/ws/stages';
   }
 
   // Use ws:// for http:// and wss:// for https://
   const { protocol, hostname } = window.location;
   const wsProtocol = protocol === 'https:' ? 'wss:' : 'ws:';
-  return `${wsProtocol}//${hostname}:3001`;
+  return `${wsProtocol}//${hostname}:8000/ws/stages`;
 }
 
 export function getConfig(): StageConfig {
   return {
-    serverUrl: getServerUrl(),
     wsUrl: getWsUrl(),
   };
 }

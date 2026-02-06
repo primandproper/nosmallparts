@@ -57,8 +57,11 @@ export default function StagePage() {
     participantName: playerName || '',
   });
 
+  // Use the short code from stageState when available, fall back to URL param
+  const displayCode = stageState?.code || stageId;
+
   const handleCopyStageCode = async () => {
-    const shareableUrl = `${window.location.origin}/?stage=${stageId}`;
+    const shareableUrl = `${window.location.origin}/?stage=${displayCode}`;
     try {
       await navigator.clipboard.writeText(shareableUrl);
       setCopied(true);
@@ -103,7 +106,7 @@ export default function StagePage() {
         <div className="text-center">
           <div className="text-4xl mb-4 animate-pulse">🎭</div>
           <p className="text-[var(--gold)] text-xl">Connecting to stage...</p>
-          <p className="text-[var(--cream)] opacity-40 text-sm mt-2">Stage: {stageId}</p>
+          <p className="text-[var(--cream)] opacity-40 text-sm mt-2">Stage: {displayCode}</p>
         </div>
       </main>
     );
@@ -130,7 +133,7 @@ export default function StagePage() {
                   Stage:
                 </span>
                 <code className="bg-[var(--charcoal)] px-3 py-1.5 rounded-lg text-[var(--gold)] font-mono tracking-wider text-sm">
-                  {stageId}
+                  {displayCode}
                 </code>
                 <button
                   onClick={handleCopyStageCode}
@@ -213,7 +216,7 @@ export default function StagePage() {
             <Chat
               messages={chatMessages}
               currentParticipant={
-                stageState.participants.find((p) => p.id === participantId) || null
+                (stageState.participants || []).find((p) => p.id === participantId) || null
               }
               onSendMessage={sendChat}
             />

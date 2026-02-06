@@ -1,12 +1,16 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getPlayScriptsClient } from '@/lib/grpc-client';
-import { PlayScript } from '@/generated/play_scripts/play_scripts_messages';
+import {
+  PlayScript,
+  PlayScriptCastMember,
+  PlayScriptLine,
+  ScrollMode,
+} from '@/generated/play_scripts/play_scripts_messages';
 import {
   PlayScriptCreationRequestInput,
   PlayScriptCastMemberCreationInput,
   PlayScriptLineCreationInput,
 } from '@/generated/play_scripts/play_scripts_service_types';
-import { ScrollMode } from '@/generated/play_scripts/play_scripts_messages';
 import { CastMember, PlayLine } from '@/lib/types';
 import { Status } from '@grpc/grpc-js/build/src/constants';
 
@@ -18,6 +22,53 @@ interface CreatePlayScriptBody {
   isPublic?: boolean;
   cast: CastMember[];
   lines: PlayLine[];
+}
+
+// Frontend Play shape (what the scripts pages expect)
+interface FrontendPlay {
+  id: string;
+  title: string;
+  description: string;
+  author?: string;
+  isUserScript?: boolean;
+  cast: CastMember[];
+  lines: PlayLine[];
+}
+
+// Convert a gRPC PlayScript to the frontend Play format
+function toFrontendPlay(ps: PlayScript): FrontendPlay {
+  return {
+    id: ps.id,
+    title: ps.title,
+    description: ps.description,
+    author: ps.author || undefined,
+    isUserScript: true, // All scripts from the backend are user-created
+    cast: (ps.castMembers || [])
+      .sort((a: PlayScriptCastMember, b: PlayScriptCastMember) => a.sortOrder - b.sortOrder)
+      .map((cm: PlayScriptCastMember) => ({
+        id: cm.id,
+        name: cm.name,
+      })),
+    lines: (ps.lines || []).map((line: PlayScriptLine) => {
+      const result: PlayLine = {
+        castMemberId: line.castMemberId,
+        text: line.lineText,
+        index: line.lineIndex,
+      };
+      if (line.direction) {
+        result.direction = line.direction;
+      }
+      if (line.scrollMode === ScrollMode.SCROLL_MODE_MANUAL) {
+        result.scrollMode = 'manual';
+      } else if (line.scrollMode === ScrollMode.SCROLL_MODE_AUTO) {
+        result.scrollMode = 'auto';
+      }
+      if (line.autoScrollWpm) {
+        result.autoScrollWpm = line.autoScrollWpm;
+      }
+      return result;
+    }),
+  };
 }
 
 // Convert frontend scroll mode string to protobuf enum
@@ -79,6 +130,31 @@ function grpcStatusToHttp(code: number): number {
   }
 }
 
+// GET /api/play-scripts - List public play scripts
+export async function GET() {
+  try {
+    const client = getPlayScriptsClient();
+    const response = await client.getPublicPlayScripts({ filter: undefined });
+
+    const scripts = (response.results || []).map(toFrontendPlay);
+    return NextResponse.json(scripts);
+  } catch (error: unknown) {
+    console.error('Error listing play scripts:', error);
+
+    if (error && typeof error === 'object' && 'code' in error) {
+      const grpcError = error as { code: number; message?: string };
+      const httpStatus = grpcStatusToHttp(grpcError.code);
+      return NextResponse.json(
+        { error: grpcError.message || 'gRPC error occurred' },
+        { status: httpStatus }
+      );
+    }
+
+    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
+  }
+}
+
+// POST /api/play-scripts - Create a play script
 export async function POST(request: NextRequest) {
   try {
     const body: CreatePlayScriptBody = await request.json();

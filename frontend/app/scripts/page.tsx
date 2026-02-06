@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { Play, getConfig, getDrafts, deleteDraft, isDraft } from '@/lib/types';
+import { Play, getDrafts, deleteDraft } from '@/lib/types';
 import { ScriptCard } from '@/components/ScriptCard';
 import { AdBannerPlaceholder } from '@/components/AdBanner';
 
@@ -23,7 +23,7 @@ export default function ScriptsPage() {
   useEffect(() => {
     async function fetchScripts() {
       try {
-        const res = await fetch(`${getConfig().serverUrl}/api/scripts`);
+        const res = await fetch('/api/play-scripts');
         if (res.ok) {
           const data = await res.json();
           setScripts(data);
@@ -66,7 +66,7 @@ export default function ScriptsPage() {
           item.script.title.toLowerCase().includes(query) ||
           item.script.description.toLowerCase().includes(query) ||
           (item.script.author && item.script.author.toLowerCase().includes(query)) ||
-          item.script.cast.some((c) => c.name.toLowerCase().includes(query))
+          (item.script.cast || []).some((c) => c.name.toLowerCase().includes(query))
         );
       });
     }
@@ -85,7 +85,7 @@ export default function ScriptsPage() {
     if (!confirm('Delete this script? This cannot be undone.')) return;
 
     try {
-      const res = await fetch(`${getConfig().serverUrl}/api/scripts/${id}`, {
+      const res = await fetch(`/api/play-scripts/${id}`, {
         method: 'DELETE',
       });
       if (res.ok) {

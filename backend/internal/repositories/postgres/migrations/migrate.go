@@ -54,6 +54,8 @@ func (m *Migrator) Migrate(ctx context.Context, db *sql.DB) error {
 		{Version: 9, Description: "issue reports table", Script: fetchMigration("00009_issue_reports")},
 		{Version: 10, Description: "uploaded media table", Script: fetchMigration("00010_uploaded_media")},
 		{Version: 11, Description: "data privacy tables", Script: fetchMigration("00011_dataprivacy")},
+		{Version: 12, Description: "play scripts tables", Script: fetchMigration("00012_play_scripts")},
+		{Version: 13, Description: "stages tables", Script: fetchMigration("00013_stages")},
 	}
 
 	if err := darwin.New(darwin.NewGenericDriver(db, darwin.PostgresDialect{}), migrations, nil).Migrate(); err != nil {

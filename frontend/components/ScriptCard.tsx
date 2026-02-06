@@ -10,8 +10,8 @@ interface ScriptCardProps {
 }
 
 export function ScriptCard({ script, isDraft = false, onClick, onDelete }: ScriptCardProps) {
-  const lineCount = script.lines.length;
-  const castCount = script.cast.length;
+  const lineCount = (script.lines || []).length;
+  const castCount = (script.cast || []).length;
 
   // Determine badge type
   const getBadge = () => {
@@ -79,7 +79,7 @@ export function ScriptCard({ script, isDraft = false, onClick, onDelete }: Scrip
       {castCount > 0 && (
         <div className="mt-3 pt-3 border-t border-[var(--cream)]/10">
           <p className="text-[var(--cream)] opacity-40 text-xs">
-            {script.cast.map((c) => c.name).join(', ')}
+            {(script.cast || []).map((c) => c.name).join(', ')}
           </p>
         </div>
       )}

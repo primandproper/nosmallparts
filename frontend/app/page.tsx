@@ -3,7 +3,6 @@
 import { useState, useEffect, useRef, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
-import { getConfig } from '@/lib/types';
 import { AdBannerPlaceholder } from '@/components/AdBanner';
 import { useAuth } from '@/hooks/useAuth';
 
@@ -95,7 +94,7 @@ function HomeContent() {
       sessionStorage.setItem('playerName', playerName);
 
       if (stageCode) {
-        const response = await fetch(`${getConfig().serverUrl}/api/stages/${stageCode}/exists`);
+        const response = await fetch(`/api/stages/${stageCode}/exists`);
         const data = await response.json();
 
         if (data.exists) {
@@ -105,11 +104,18 @@ function HomeContent() {
           setIsCreating(false);
         }
       } else {
-        const response = await fetch(`${getConfig().serverUrl}/api/stages`, {
+        const response = await fetch('/api/stages', {
           method: 'POST',
         });
         const data = await response.json();
-        router.push(`/stage/${data.stageId}`);
+
+        if (!response.ok || !data.code) {
+          setError(data.error || 'Failed to create stage. Please try again.');
+          setIsCreating(false);
+          return;
+        }
+
+        router.push(`/stage/${data.code}`);
       }
     } catch (err) {
       setError('Failed to connect to server. Please try again.');

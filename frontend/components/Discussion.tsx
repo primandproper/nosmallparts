@@ -29,8 +29,8 @@ export function Discussion({ stageState, onResetPlay }: DiscussionProps) {
             Tonight&apos;s Cast
           </h3>
           <div className="space-y-2">
-            {stageState.participants
-              .filter((p) => p.castMemberIds.length > 0)
+            {(stageState.participants || [])
+              .filter((p) => (p.castMemberIds || []).length > 0)
               .map((participant) => (
                 <div
                   key={participant.id}
@@ -38,7 +38,7 @@ export function Discussion({ stageState, onResetPlay }: DiscussionProps) {
                 >
                   <span className="text-[var(--cream)]">{participant.name}</span>
                   <span className="text-[var(--gold)] text-sm">
-                    {participant.castMemberIds
+                    {(participant.castMemberIds || [])
                       .map((id) => getCastMemberById(stageState.selectedPlay!, id)?.name)
                       .filter(Boolean)
                       .join(', ')}

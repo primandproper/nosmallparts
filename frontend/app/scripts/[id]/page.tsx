@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { Play, getConfig, getCastMemberById } from '@/lib/types';
+import { Play, getCastMemberById } from '@/lib/types';
 
 type ScriptWithMeta = Play & { isUserScript?: boolean };
 
@@ -19,7 +19,7 @@ export default function ScriptDetailPage() {
   useEffect(() => {
     async function fetchScript() {
       try {
-        const res = await fetch(`${getConfig().serverUrl}/api/scripts/${scriptId}`);
+        const res = await fetch(`/api/play-scripts/${scriptId}`);
         if (!res.ok) {
           if (res.status === 404) {
             setError('Script not found');
@@ -48,7 +48,7 @@ export default function ScriptDetailPage() {
     if (!confirm('Delete this script? This cannot be undone.')) return;
 
     try {
-      const res = await fetch(`${getConfig().serverUrl}/api/scripts/${scriptId}`, {
+      const res = await fetch(`/api/play-scripts/${scriptId}`, {
         method: 'DELETE',
       });
       if (res.ok) {
@@ -180,8 +180,8 @@ export default function ScriptDetailPage() {
             <div className="card-elegant rounded-xl p-6 sticky top-24">
               <h2 className="font-[Cormorant_Garamond] text-2xl text-[var(--gold)] mb-4">Cast</h2>
               <ul className="space-y-3">
-                {script.cast.map((member) => {
-                  const lineCount = script.lines.filter((l) => l.castMemberId === member.id).length;
+                {(script.cast || []).map((member) => {
+                  const lineCount = (script.lines || []).filter((l) => l.castMemberId === member.id).length;
                   return (
                     <li
                       key={member.id}

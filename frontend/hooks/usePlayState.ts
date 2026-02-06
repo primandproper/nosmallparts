@@ -1,7 +1,93 @@
 'use client';
 
 import { useState, useEffect, useRef, useCallback } from 'react';
-import { StageState, Play, Participant, ServerMessage, ChatMessage, getConfig } from '@/lib/types';
+import { StageState, Play, PlayLine, CastMember, Participant, ServerMessage, ChatMessage, getConfig } from '@/lib/types';
+
+// The Go backend sends PlayScript objects over WebSocket with a different shape
+// than the frontend Play type. These functions convert between the two formats.
+
+interface BackendCastMember {
+  id: string;
+  name: string;
+  sortOrder: number;
+}
+
+interface BackendLine {
+  castMemberId: string;
+  lineText: string;
+  lineIndex: number;
+  direction?: string;
+  scrollMode?: string;
+  autoScrollWpm?: number;
+}
+
+interface BackendPlayScript {
+  id: string;
+  title: string;
+  description: string;
+  author?: string;
+  castMembers?: BackendCastMember[];
+  lines?: BackendLine[];
+  // Frontend Play fields (in case data is already in frontend format)
+  cast?: CastMember[];
+}
+
+function convertBackendPlay(raw: BackendPlayScript): Play {
+  // If the data already has 'cast', it's likely already in frontend format
+  const cast: CastMember[] = raw.cast
+    ? raw.cast
+    : (raw.castMembers || [])
+        .sort((a, b) => a.sortOrder - b.sortOrder)
+        .map((cm) => ({ id: cm.id, name: cm.name }));
+
+  const lines: PlayLine[] = (raw.lines || []).map((line) => {
+    // Handle both backend format (lineText/lineIndex) and frontend format (text/index)
+    const result: PlayLine = {
+      castMemberId: line.castMemberId,
+      text: (line as any).text || line.lineText || '',
+      index: (line as any).index ?? line.lineIndex ?? 0,
+    };
+    if (line.direction) {
+      result.direction = line.direction;
+    }
+    if (line.scrollMode === 'manual') {
+      result.scrollMode = 'manual';
+    } else if (line.scrollMode === 'auto') {
+      result.scrollMode = 'auto';
+    }
+    if (line.autoScrollWpm) {
+      result.autoScrollWpm = line.autoScrollWpm;
+    }
+    return result;
+  });
+
+  return {
+    id: raw.id,
+    title: raw.title,
+    description: raw.description,
+    author: raw.author,
+    cast,
+    lines,
+  };
+}
+
+function convertStageState(raw: any): StageState {
+  return {
+    id: raw.id,
+    code: raw.code || '',
+    phase: raw.phase,
+    currentLineIndex: raw.currentLineIndex ?? 0,
+    participants: (raw.participants || []).map((p: any) => ({
+      id: p.id,
+      name: p.name,
+      castMemberIds: p.castMemberIds || [],
+      isDirector: p.isDirector ?? false,
+      isReady: p.isReady ?? false,
+      isAudience: p.isAudience ?? false,
+    })),
+    selectedPlay: raw.selectedPlay ? convertBackendPlay(raw.selectedPlay) : null,
+  };
+}
 
 interface UsePlayStateOptions {
   stageId: string;
@@ -61,31 +147,51 @@ export function usePlayState({
 
         switch (message.type) {
           case 'joined':
-            console.log(
-              '[WS] Joined stage! participantId:',
-              message.participantId,
-              'participants:',
-              message.stageState.participants.length
-            );
-            setParticipantId(message.participantId);
-            setStageState(message.stageState);
+            {
+              const state = convertStageState(message.stageState);
+              console.log(
+                '[WS] Joined stage! participantId:',
+                message.participantId,
+                'participants:',
+                state.participants.length
+              );
+              setParticipantId(message.participantId);
+              setStageState(state);
+            }
             break;
           case 'stageState':
-            console.log(
-              '[WS] State update, participants:',
-              message.state.participants.map((p: any) => ({
-                name: p.name,
-                castMemberIds: p.castMemberIds,
-              }))
-            );
-            setStageState(message.state);
+            {
+              const state = convertStageState(message.state);
+              console.log(
+                '[WS] State update, participants:',
+                state.participants.map((p: any) => ({
+                  name: p.name,
+                  castMemberIds: p.castMemberIds,
+                }))
+              );
+              setStageState(state);
+            }
             break;
           case 'availablePlays':
-            setAvailablePlays(message.plays);
+            setAvailablePlays(
+              (message.plays || []).map((play: any) => convertBackendPlay(play))
+            );
             break;
           case 'castMembersUpdated':
             setStageState((prev) =>
-              prev ? { ...prev, participants: message.participants } : null
+              prev
+                ? {
+                    ...prev,
+                    participants: (message.participants || []).map((p: any) => ({
+                      id: p.id,
+                      name: p.name,
+                      castMemberIds: p.castMemberIds || [],
+                      isDirector: p.isDirector ?? false,
+                      isReady: p.isReady ?? false,
+                      isAudience: p.isAudience ?? false,
+                    })),
+                  }
+                : null
             );
             break;
           case 'playStarted':

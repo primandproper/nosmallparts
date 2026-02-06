@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { getConfig } from '@/lib/types';
 
 interface UseLiveKitOptions {
   stageId: string;
@@ -29,7 +28,7 @@ export function useLiveKit({
 
     const fetchToken = async () => {
       try {
-        const response = await fetch(`${getConfig().serverUrl}/api/livekit/token`, {
+        const response = await fetch('/api/livekit/token', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

@@ -29,8 +29,8 @@ interface VideoRoomProps {
 
 // Audience placeholder - shown to audience members instead of video
 function AudienceView({ stageState }: { stageState: StageState }) {
-  const performers = stageState.participants.filter((p) => !p.isAudience);
-  const audienceCount = stageState.participants.filter((p) => p.isAudience).length;
+  const performers = (stageState.participants || []).filter((p) => !p.isAudience);
+  const audienceCount = (stageState.participants || []).filter((p) => p.isAudience).length;
 
   return (
     <div className="card-elegant rounded-2xl overflow-hidden min-h-[400px] h-[500px] relative">
@@ -145,7 +145,7 @@ function LiveKitGrid({ stageState }: { stageState: StageState }) {
   );
 
   // Filter out audience members from tracks
-  const audienceIds = stageState.participants.filter((p) => p.isAudience).map((p) => p.id);
+  const audienceIds = (stageState.participants || []).filter((p) => p.isAudience).map((p) => p.id);
   const tracks = allTracks.filter((track) => !audienceIds.includes(track.participant.identity));
 
   const isPerforming = stageState.phase === 'performing';
@@ -183,7 +183,7 @@ function LiveKitGrid({ stageState }: { stageState: StageState }) {
           // Find the speaker info
           const speaker = currentSpeakers.find((s) => s.id === track.participant.identity);
           const speakerLines = speaker
-            ? currentLines.filter((l) => speaker.castMemberIds.includes(l.castMemberId))
+            ? currentLines.filter((l) => (speaker.castMemberIds || []).includes(l.castMemberId))
             : [];
           const castNames = speakerLines
             .map((l) =>
@@ -226,7 +226,7 @@ function LiveKitGrid({ stageState }: { stageState: StageState }) {
         );
         const castMemberNames =
           participant && stageState.selectedPlay
-            ? participant.castMemberIds
+            ? (participant.castMemberIds || [])
                 .map((id) => getCastMemberById(stageState.selectedPlay!, id)?.name)
                 .filter(Boolean)
             : [];
@@ -314,7 +314,7 @@ function MockVideoRoom({
   participantId: string | null;
 }) {
   // Filter out audience members - they don't show on camera
-  const performers = stageState.participants.filter((p) => !p.isAudience);
+  const performers = (stageState.participants || []).filter((p) => !p.isAudience);
   const isPerforming = stageState.phase === 'performing';
   const currentSpeakers = getCurrentSpeakers(stageState);
   const currentLines = getCurrentLines(stageState);
@@ -351,7 +351,7 @@ function MockVideoRoom({
           let displayInfo: string[] = [];
           if (isPerforming) {
             const speakerLines = currentLines.filter((l) =>
-              participant.castMemberIds.includes(l.castMemberId)
+              (participant.castMemberIds || []).includes(l.castMemberId)
             );
             displayInfo = speakerLines
               .map((l) =>
@@ -359,7 +359,7 @@ function MockVideoRoom({
               )
               .filter(Boolean);
           } else if (stageState.selectedPlay) {
-            displayInfo = participant.castMemberIds
+            displayInfo = (participant.castMemberIds || [])
               .map((id) => getCastMemberById(stageState.selectedPlay!, id)?.name)
               .filter(Boolean) as string[];
           }
@@ -409,7 +409,7 @@ function MockVideoRoom({
 
 export function VideoRoom({ stageState, participantId, livekitToken, livekitUrl }: VideoRoomProps) {
   // Check if current participant is audience
-  const currentParticipant = stageState.participants.find((p) => p.id === participantId);
+  const currentParticipant = (stageState.participants || []).find((p) => p.id === participantId);
   const isAudience = currentParticipant?.isAudience || false;
 
   // Audience members see a special view without camera

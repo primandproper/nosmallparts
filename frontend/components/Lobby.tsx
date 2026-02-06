@@ -37,14 +37,14 @@ function PlaySelector({
   const containerRef = useRef<HTMLDivElement>(null);
 
   // Filter plays based on search
-  const filteredPlays = plays.filter((play) => {
+  const filteredPlays = (plays || []).filter((play) => {
     const query = searchQuery.toLowerCase().trim();
     if (!query) return true;
     return (
       play.title.toLowerCase().includes(query) ||
       play.description.toLowerCase().includes(query) ||
       (play.author && play.author.toLowerCase().includes(query)) ||
-      play.cast.some((member) => member.name.toLowerCase().includes(query))
+      (play.cast || []).some((member) => member.name.toLowerCase().includes(query))
     );
   });
 
@@ -70,7 +70,7 @@ function PlaySelector({
           <div className="flex-1 min-w-0">
             <div className="font-medium truncate">{selectedPlay.title}</div>
             <div className="text-xs text-[var(--cream)] opacity-40 truncate">
-              {selectedPlay.cast.length} roles • {getTotalLineIndices(selectedPlay)} turns
+              {(selectedPlay.cast || []).length} roles • {getTotalLineIndices(selectedPlay)} turns
             </div>
           </div>
         ) : (
@@ -133,7 +133,7 @@ function PlaySelector({
                       </div>
                     </div>
                     <div className="text-right shrink-0">
-                      <div className="text-xs text-[var(--gold)]">{play.cast.length} roles</div>
+                      <div className="text-xs text-[var(--gold)]">{(play.cast || []).length} roles</div>
                       <div className="text-xs text-[var(--cream)] opacity-40">
                         {getTotalLineIndices(play)} turns
                       </div>
@@ -147,7 +147,7 @@ function PlaySelector({
           {/* Footer */}
           <div className="p-2 border-t border-[var(--cream)]/10 text-center">
             <span className="text-xs text-[var(--cream)] opacity-30">
-              {plays.length} plays available
+              {(plays || []).length} plays available
             </span>
           </div>
         </div>
@@ -167,7 +167,7 @@ export function Lobby({
   onSelectPlay,
   onStartPlay,
 }: LobbyProps) {
-  const currentParticipant = stageState.participants.find((p) => p.id === participantId);
+  const currentParticipant = (stageState.participants || []).find((p) => p.id === participantId);
   const allCastMembersAssigned = stageState.selectedPlay
     ? areAllCastMembersAssigned(stageState)
     : false;
@@ -175,7 +175,7 @@ export function Lobby({
   const canStart = canStartPlay(stageState);
 
   // Check if there's a director
-  const hasDirector = stageState.participants.some((p) => p.isDirector);
+  const hasDirector = (stageState.participants || []).some((p) => p.isDirector);
   const isDirector = currentParticipant?.isDirector || false;
   const isAudience = currentParticipant?.isAudience || false;
 
@@ -199,7 +199,7 @@ export function Lobby({
   }, [hasDirector, canStart, onStartPlay]);
 
   const getCastMemberAssignment = (castMemberId: string) => {
-    return stageState.participants.find((p) => p.castMemberIds.includes(castMemberId));
+    return (stageState.participants || []).find((p) => (p.castMemberIds || []).includes(castMemberId));
   };
 
   return (
@@ -245,10 +245,10 @@ export function Lobby({
             Cast Roles
           </label>
           <div className="space-y-2">
-            {stageState.selectedPlay.cast.map((castMember) => {
+            {(stageState.selectedPlay.cast || []).map((castMember) => {
               const assignedTo = getCastMemberAssignment(castMember.id);
-              const isAssignedToMe = currentParticipant?.castMemberIds.includes(castMember.id);
-              const lineCount = stageState.selectedPlay!.lines.filter(
+              const isAssignedToMe = (currentParticipant?.castMemberIds || []).includes(castMember.id);
+              const lineCount = (stageState.selectedPlay!.lines || []).filter(
                 (l) => l.castMemberId === castMember.id
               ).length;
 
@@ -389,10 +389,10 @@ export function Lobby({
       {/* Participants */}
       <div>
         <label className="block text-[var(--gold)] text-xs font-medium mb-3 tracking-wide uppercase">
-          Present ({stageState.participants.length})
+          Present ({(stageState.participants || []).length})
         </label>
         <div className="space-y-2">
-          {stageState.participants.map((participant) => (
+          {(stageState.participants || []).map((participant) => (
             <div
               key={participant.id}
               className={`flex items-center justify-between text-sm p-3 rounded-xl ${
@@ -426,10 +426,10 @@ export function Lobby({
               </div>
               <div className="flex items-center gap-2">
                 {!participant.isAudience &&
-                  participant.castMemberIds.length > 0 &&
+                  (participant.castMemberIds || []).length > 0 &&
                   stageState.selectedPlay && (
                     <span className="text-[var(--cream)] opacity-60 text-xs">
-                      {participant.castMemberIds
+                      {(participant.castMemberIds || [])
                         .map((id) => getCastMemberById(stageState.selectedPlay!, id)?.name)
                         .filter(Boolean)
                         .join(', ')}

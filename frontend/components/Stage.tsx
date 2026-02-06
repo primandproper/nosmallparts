@@ -22,13 +22,13 @@ export function Stage({ stageState, participantId, onNextLine }: StageProps) {
     return null;
   }
 
-  const currentParticipant = stageState.participants.find((p) => p.id === participantId);
+  const currentParticipant = (stageState.participants || []).find((p) => p.id === participantId);
   const isMyTurn = isParticipantSpeaking(stageState, participantId);
   const myCurrentLines = getCurrentLinesForParticipant(stageState, participantId);
   const myNextLines = getNextLinesForParticipant(stageState, participantId);
 
   const isDirector = currentParticipant?.isDirector || false;
-  const hasDirector = stageState.participants.some((p) => p.isDirector);
+  const hasDirector = (stageState.participants || []).some((p) => p.isDirector);
 
   // If there's a director, only they can advance. Otherwise, current speaker advances.
   const canAdvance = hasDirector ? isDirector : isMyTurn;
@@ -80,7 +80,7 @@ export function Stage({ stageState, participantId, onNextLine }: StageProps) {
       )}
 
       {/* Waiting for turn */}
-      {!isMyTurn && currentParticipant && currentParticipant.castMemberIds.length > 0 && (
+      {!isMyTurn && currentParticipant && (currentParticipant.castMemberIds || []).length > 0 && (
         <div className="p-4 rounded-xl bg-[var(--charcoal)]/50 border border-[var(--cream)]/10">
           {myNextLines ? (
             <>
@@ -106,20 +106,20 @@ export function Stage({ stageState, participantId, onNextLine }: StageProps) {
           ) : (
             <p className="text-[var(--cream)] opacity-40 text-sm text-center py-2">
               No more lines for your character
-              {currentParticipant.castMemberIds.length > 1 ? 's' : ''}
+              {(currentParticipant.castMemberIds || []).length > 1 ? 's' : ''}
             </p>
           )}
         </div>
       )}
 
       {/* Character display */}
-      {currentParticipant && currentParticipant.castMemberIds.length > 0 && (
+      {currentParticipant && (currentParticipant.castMemberIds || []).length > 0 && (
         <div className="text-center">
           <span className="text-[var(--cream)] opacity-30 text-xs uppercase tracking-wider">
             Playing as
           </span>
           <p className="text-[var(--gold)] font-medium">
-            {currentParticipant.castMemberIds
+            {(currentParticipant.castMemberIds || [])
               .map((id) => getCastMemberById(stageState.selectedPlay!, id)?.name)
               .filter(Boolean)
               .join(' & ')}
@@ -128,7 +128,7 @@ export function Stage({ stageState, participantId, onNextLine }: StageProps) {
       )}
 
       {/* Director view */}
-      {currentParticipant && currentParticipant.castMemberIds.length === 0 && isDirector && (
+      {currentParticipant && (currentParticipant.castMemberIds || []).length === 0 && isDirector && (
         <div className="p-4 rounded-xl bg-[var(--gold)]/10 border border-[var(--gold)]/20 text-center">
           <span className="text-2xl">🎬</span>
           <p className="text-[var(--gold)] text-sm mt-2">

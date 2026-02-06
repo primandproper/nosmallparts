@@ -48,6 +48,9 @@ services:
         condition: service_healthy
     environment:
       CONFIGURATION_FILEPATH: '/etc/config'
+      NO_SMALL_PARTS_LIVEKIT_API_KEY: '${LIVEKIT_API_KEY}'
+      NO_SMALL_PARTS_LIVEKIT_API_SECRET: '${LIVEKIT_API_SECRET}'
+      NO_SMALL_PARTS_LIVEKIT_URL: '${LIVEKIT_URL}'
     ports:
       - '8000:8000'
       - '8001:8001'
@@ -75,6 +78,8 @@ services:
         condition: service_healthy
     environment:
       GRPC_BACKEND_URL: 'backend:8001'
+      BACKEND_HTTP_URL: 'http://backend:8000'
+      NEXT_PUBLIC_BACKEND_WS_URL: 'ws://localhost:8000/ws/stages'
     ports:
       - '3000:3000'
     networks:
