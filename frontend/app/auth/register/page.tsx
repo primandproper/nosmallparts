@@ -7,9 +7,6 @@ import Link from 'next/link';
 interface RegisterResponse {
   success: boolean;
   error?: string;
-  userId?: string;
-  twoFactorQrCode?: string;
-  twoFactorSecret?: string;
 }
 
 function RegisterForm() {
@@ -29,31 +26,91 @@ function RegisterForm() {
     acceptedPrivacyPolicy: false,
   });
   const [error, setError] = useState('');
+  const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
+  const [touched, setTouched] = useState<Record<string, boolean>>({});
   const [isLoading, setIsLoading] = useState(false);
-  const [registrationComplete, setRegistrationComplete] = useState(false);
-  const [twoFactorData, setTwoFactorData] = useState<{
-    qrCode: string;
-    secret: string;
-  } | null>(null);
+
+  const validateField = (name: string, value: string, allData?: typeof formData): string => {
+    const data = allData || formData;
+    switch (name) {
+      case 'username':
+        if (!value.trim()) return 'Username is required';
+        if (value.length < 3) return 'Must be at least 3 characters';
+        return '';
+      case 'emailAddress':
+        if (!value.trim()) return 'Email is required';
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) return 'Invalid email format';
+        return '';
+      case 'password':
+        if (!value) return 'Password is required';
+        if (value.length < 8) return 'Must be at least 8 characters';
+        if (!/[A-Z]/.test(value)) return 'Must contain at least one uppercase letter';
+        if (!/[0-9]/.test(value)) return 'Must contain at least one number';
+        if (!/[^A-Za-z0-9]/.test(value)) return 'Must contain at least one special character';
+        return '';
+      case 'confirmPassword':
+        if (!value) return 'Please confirm your password';
+        if (value !== data.password) return 'Passwords do not match';
+        return '';
+      case 'firstName':
+        if (!value.trim()) return 'First name is required';
+        return '';
+      case 'lastName':
+        if (!value.trim()) return 'Last name is required';
+        return '';
+      default:
+        return '';
+    }
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: type === 'checkbox' ? checked : value,
-    }));
+    const newValue = type === 'checkbox' ? checked : value;
+
+    const updated = { ...formData, [name]: newValue };
+    setFormData(updated);
     setError('');
+
+    // Re-validate touched fields (outside of setFormData to avoid nested state updates)
+    const errorUpdates: Record<string, string> = {};
+
+    if (name === 'password' && touched['confirmPassword'] && updated.confirmPassword) {
+      errorUpdates['confirmPassword'] = validateField(
+        'confirmPassword',
+        updated.confirmPassword,
+        updated
+      );
+    }
+
+    if (touched[name] && type !== 'checkbox') {
+      errorUpdates[name] = validateField(name, value);
+    }
+
+    if (Object.keys(errorUpdates).length > 0) {
+      setFieldErrors((prev) => ({ ...prev, ...errorUpdates }));
+    }
+  };
+
+  const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setTouched((prev) => ({ ...prev, [name]: true }));
+    const fieldError = validateField(name, value);
+    setFieldErrors((prev) => ({ ...prev, [name]: fieldError }));
   };
 
   const validateForm = (): string | null => {
     if (!formData.username.trim()) return 'Username is required';
-    if (formData.username.length < 3) return 'Username must be at least 3 characters';
+    if (formData.username.length < 3) return 'Must be at least 3 characters';
     if (!formData.emailAddress.trim()) return 'Email is required';
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.emailAddress)) return 'Invalid email format';
     if (!formData.firstName.trim()) return 'First name is required';
     if (!formData.lastName.trim()) return 'Last name is required';
     if (!formData.password) return 'Password is required';
-    if (formData.password.length < 8) return 'Password must be at least 8 characters';
+    if (formData.password.length < 8) return 'Must be at least 8 characters';
+    if (!/[A-Z]/.test(formData.password)) return 'Must contain at least one uppercase letter';
+    if (!/[0-9]/.test(formData.password)) return 'Must contain at least one number';
+    if (!/[^A-Za-z0-9]/.test(formData.password))
+      return 'Must contain at least one special character';
     if (formData.password !== formData.confirmPassword) return 'Passwords do not match';
     if (!formData.acceptedTos) return 'You must accept the Terms of Service';
     if (!formData.acceptedPrivacyPolicy) return 'You must accept the Privacy Policy';
@@ -94,14 +151,7 @@ function RegisterForm() {
       const data: RegisterResponse = await response.json();
 
       if (data.success) {
-        // Show 2FA setup if provided
-        if (data.twoFactorQrCode && data.twoFactorSecret) {
-          setTwoFactorData({
-            qrCode: data.twoFactorQrCode,
-            secret: data.twoFactorSecret,
-          });
-        }
-        setRegistrationComplete(true);
+        router.push('/auth/login');
       } else {
         setError(data.error || 'Registration failed');
       }
@@ -111,79 +161,6 @@ function RegisterForm() {
       setIsLoading(false);
     }
   };
-
-  const handleContinueToLogin = () => {
-    router.push('/auth/login');
-  };
-
-  // Show 2FA setup after successful registration
-  if (registrationComplete) {
-    return (
-      <div className="card-elegant rounded-2xl p-8 animate-fade-up">
-        <div className="text-center mb-6">
-          <div className="text-4xl mb-4">✅</div>
-          <h2 className="text-2xl font-semibold text-[var(--cream)] mb-2">
-            Registration Complete!
-          </h2>
-          <p className="text-[var(--cream)] opacity-60">
-            Your account has been created successfully.
-          </p>
-        </div>
-
-        {twoFactorData && (
-          <div className="mb-6 p-4 bg-[var(--black)] rounded-xl border border-[var(--gold)]/20">
-            <h3 className="text-[var(--gold)] font-medium mb-3 text-center">
-              Set Up Two-Factor Authentication
-            </h3>
-            <p className="text-[var(--cream)] opacity-60 text-sm mb-4 text-center">
-              Scan this QR code with your authenticator app to enable 2FA for your account.
-            </p>
-
-            {/* QR Code Display */}
-            <div className="flex justify-center mb-4">
-              {twoFactorData.qrCode.startsWith('data:image') ? (
-                // If it's a data URL, display as image
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  src={twoFactorData.qrCode}
-                  alt="2FA QR Code"
-                  className="w-48 h-48 bg-white p-2 rounded-lg"
-                />
-              ) : (
-                // Otherwise show as base64 image
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  src={`data:image/png;base64,${twoFactorData.qrCode}`}
-                  alt="2FA QR Code"
-                  className="w-48 h-48 bg-white p-2 rounded-lg"
-                />
-              )}
-            </div>
-
-            {/* Manual Secret */}
-            <div className="text-center">
-              <p className="text-[var(--cream)] opacity-50 text-xs mb-2">
-                Or enter this code manually:
-              </p>
-              <code className="block bg-[var(--black-lighter)] px-4 py-2 rounded-lg font-mono text-sm text-[var(--gold)] select-all">
-                {twoFactorData.secret}
-              </code>
-            </div>
-          </div>
-        )}
-
-        <button onClick={handleContinueToLogin} className="btn-primary w-full py-3 rounded-xl">
-          <span>Continue to Login</span>
-        </button>
-
-        <p className="text-center text-[var(--cream)] opacity-40 text-xs mt-4">
-          {twoFactorData
-            ? "You'll need to verify your 2FA after logging in."
-            : 'Please check your email to verify your account.'}
-        </p>
-      </div>
-    );
-  }
 
   return (
     <div className="card-elegant rounded-2xl p-8 animate-fade-up animate-delay-1">
@@ -206,53 +183,15 @@ function RegisterForm() {
             name="username"
             value={formData.username}
             onChange={handleChange}
+            onBlur={handleBlur}
             className="input-elegant w-full px-3 py-2.5 rounded-lg text-[var(--cream)] text-sm"
             placeholder="Choose a unique username"
             autoComplete="username"
             disabled={isLoading}
           />
-        </div>
-
-        {/* Password */}
-        <div>
-          <label
-            htmlFor="password"
-            className="block text-[var(--gold)] text-xs font-medium mb-1.5 tracking-wide uppercase"
-          >
-            Password
-          </label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            className="input-elegant w-full px-3 py-2.5 rounded-lg text-[var(--cream)] text-sm"
-            placeholder="At least 8 characters"
-            autoComplete="new-password"
-            disabled={isLoading}
-          />
-        </div>
-
-        {/* Confirm Password */}
-        <div>
-          <label
-            htmlFor="confirmPassword"
-            className="block text-[var(--gold)] text-xs font-medium mb-1.5 tracking-wide uppercase"
-          >
-            Confirm Password
-          </label>
-          <input
-            type="password"
-            id="confirmPassword"
-            name="confirmPassword"
-            value={formData.confirmPassword}
-            onChange={handleChange}
-            className="input-elegant w-full px-3 py-2.5 rounded-lg text-[var(--cream)] text-sm"
-            placeholder="Re-enter your password"
-            autoComplete="new-password"
-            disabled={isLoading}
-          />
+          {touched.username && fieldErrors.username && (
+            <p className="text-red-400 text-xs mt-1">{fieldErrors.username}</p>
+          )}
         </div>
 
         {/* Email */}
@@ -269,11 +208,15 @@ function RegisterForm() {
             name="emailAddress"
             value={formData.emailAddress}
             onChange={handleChange}
+            onBlur={handleBlur}
             className="input-elegant w-full px-3 py-2.5 rounded-lg text-[var(--cream)] text-sm"
             placeholder="you@example.com"
             autoComplete="email"
             disabled={isLoading}
           />
+          {touched.emailAddress && fieldErrors.emailAddress && (
+            <p className="text-red-400 text-xs mt-1">{fieldErrors.emailAddress}</p>
+          )}
         </div>
 
         {/* Name Fields */}
@@ -291,10 +234,14 @@ function RegisterForm() {
               name="firstName"
               value={formData.firstName}
               onChange={handleChange}
+              onBlur={handleBlur}
               className="input-elegant w-full px-3 py-2.5 rounded-lg text-[var(--cream)] text-sm"
               placeholder="Jane"
               disabled={isLoading}
             />
+            {touched.firstName && fieldErrors.firstName && (
+              <p className="text-red-400 text-xs mt-1">{fieldErrors.firstName}</p>
+            )}
           </div>
           <div>
             <label
@@ -309,11 +256,68 @@ function RegisterForm() {
               name="lastName"
               value={formData.lastName}
               onChange={handleChange}
+              onBlur={handleBlur}
               className="input-elegant w-full px-3 py-2.5 rounded-lg text-[var(--cream)] text-sm"
               placeholder="Doe"
               disabled={isLoading}
             />
+            {touched.lastName && fieldErrors.lastName && (
+              <p className="text-red-400 text-xs mt-1">{fieldErrors.lastName}</p>
+            )}
           </div>
+        </div>
+
+        {/* Password */}
+        <div>
+          <label
+            htmlFor="password"
+            className="block text-[var(--gold)] text-xs font-medium mb-1.5 tracking-wide uppercase"
+          >
+            Password
+          </label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            className="input-elegant w-full px-3 py-2.5 rounded-lg text-[var(--cream)] text-sm"
+            placeholder="Strong password required"
+            autoComplete="new-password"
+            disabled={isLoading}
+          />
+          {touched.password && fieldErrors.password && (
+            <p className="text-red-400 text-xs mt-1">{fieldErrors.password}</p>
+          )}
+        </div>
+
+        {/* Confirm Password */}
+        <div>
+          <label
+            htmlFor="confirmPassword"
+            className="block text-[var(--gold)] text-xs font-medium mb-1.5 tracking-wide uppercase"
+          >
+            Confirm Password
+          </label>
+          <input
+            type="password"
+            id="confirmPassword"
+            name="confirmPassword"
+            value={formData.confirmPassword}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            className="input-elegant w-full px-3 py-2.5 rounded-lg text-[var(--cream)] text-sm"
+            placeholder="Re-enter your password"
+            autoComplete="new-password"
+            disabled={isLoading}
+          />
+          {touched.confirmPassword && fieldErrors.confirmPassword && (
+            <p className="text-red-400 text-xs mt-1">{fieldErrors.confirmPassword}</p>
+          )}
+          {touched.confirmPassword && !fieldErrors.confirmPassword && formData.confirmPassword && (
+            <p className="text-green-400 text-xs mt-1">Passwords match</p>
+          )}
         </div>
 
         {/* Birthday (optional) */}

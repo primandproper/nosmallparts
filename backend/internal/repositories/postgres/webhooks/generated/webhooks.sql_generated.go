@@ -123,20 +123,20 @@ type GetWebhookParams struct {
 }
 
 type GetWebhookRow struct {
-	WebhookID                           string
-	WebhookName                         string
-	WebhookContentType                  string
+	WebhookCreatedAt                    time.Time
+	WebhookTriggerEventCreatedAt        sql.NullTime
+	WebhookArchivedAt                   sql.NullTime
+	WebhookLastUpdatedAt                sql.NullTime
+	WebhookTriggerEventArchivedAt       sql.NullTime
 	WebhookUrl                          string
 	WebhookMethod                       string
-	WebhookTriggerEventID               sql.NullString
+	WebhookID                           string
+	WebhookContentType                  string
+	WebhookName                         string
+	WebhookBelongsToAccount             string
 	WebhookTriggerEventTriggerEvent     NullWebhookEvent
 	WebhookTriggerEventBelongsToWebhook sql.NullString
-	WebhookTriggerEventCreatedAt        sql.NullTime
-	WebhookTriggerEventArchivedAt       sql.NullTime
-	WebhookCreatedAt                    time.Time
-	WebhookLastUpdatedAt                sql.NullTime
-	WebhookArchivedAt                   sql.NullTime
-	WebhookBelongsToAccount             string
+	WebhookTriggerEventID               sql.NullString
 }
 
 func (q *Queries) GetWebhook(ctx context.Context, db DBTX, arg *GetWebhookParams) ([]*GetWebhookRow, error) {
@@ -240,31 +240,31 @@ LIMIT COALESCE($8, 50)
 `
 
 type GetWebhooksForAccountParams struct {
+	ResultLimit      interface{}
 	CreatedAfter     sql.NullTime
 	CreatedBefore    sql.NullTime
 	UpdatedBefore    sql.NullTime
 	UpdatedAfter     sql.NullTime
-	IncludeArchived  sql.NullBool
 	BelongsToAccount string
 	Cursor           sql.NullString
-	ResultLimit      interface{}
+	IncludeArchived  sql.NullBool
 }
 
 type GetWebhooksForAccountRow struct {
-	ID               string
-	Name             string
+	CreatedAt_2      time.Time
+	ArchivedAt_2     sql.NullTime
+	CreatedAt        sql.NullTime
+	ArchivedAt       sql.NullTime
+	LastUpdatedAt    sql.NullTime
 	ContentType      string
-	URL              string
 	Method           string
+	Name             string
+	URL              string
+	ID               string
+	BelongsToAccount string
 	ID_2             sql.NullString
 	TriggerEvent     NullWebhookEvent
 	BelongsToWebhook sql.NullString
-	CreatedAt        sql.NullTime
-	ArchivedAt       sql.NullTime
-	CreatedAt_2      time.Time
-	LastUpdatedAt    sql.NullTime
-	ArchivedAt_2     sql.NullTime
-	BelongsToAccount string
 	FilteredCount    int64
 	TotalCount       int64
 }

@@ -67,10 +67,10 @@ type CreateIssueReportParams struct {
 	ID               string
 	IssueType        string
 	Details          string
-	RelevantTable    sql.NullString
-	RelevantRecordID sql.NullString
 	CreatedByUser    string
 	BelongsToAccount string
+	RelevantTable    sql.NullString
+	RelevantRecordID sql.NullString
 }
 
 func (q *Queries) CreateIssueReport(ctx context.Context, db DBTX, arg *CreateIssueReportParams) error {
@@ -173,26 +173,26 @@ LIMIT COALESCE($7, 50)
 `
 
 type GetIssueReportsParams struct {
+	ResultLimit     interface{}
 	CreatedAfter    sql.NullTime
 	CreatedBefore   sql.NullTime
 	UpdatedBefore   sql.NullTime
 	UpdatedAfter    sql.NullTime
-	IncludeArchived sql.NullBool
 	Cursor          sql.NullString
-	ResultLimit     interface{}
+	IncludeArchived sql.NullBool
 }
 
 type GetIssueReportsRow struct {
-	ID               string
-	IssueType        string
-	Details          string
-	RelevantTable    sql.NullString
-	RelevantRecordID sql.NullString
 	CreatedAt        time.Time
 	LastUpdatedAt    sql.NullTime
 	ArchivedAt       sql.NullTime
+	ID               string
+	IssueType        string
+	Details          string
 	CreatedByUser    string
 	BelongsToAccount string
+	RelevantTable    sql.NullString
+	RelevantRecordID sql.NullString
 	FilteredCount    int64
 	TotalCount       int64
 }
@@ -297,27 +297,27 @@ LIMIT COALESCE($8, 50)
 `
 
 type GetIssueReportsForAccountParams struct {
+	ResultLimit      interface{}
 	CreatedAfter     sql.NullTime
 	CreatedBefore    sql.NullTime
 	UpdatedBefore    sql.NullTime
 	UpdatedAfter     sql.NullTime
-	IncludeArchived  sql.NullBool
 	BelongsToAccount string
 	Cursor           sql.NullString
-	ResultLimit      interface{}
+	IncludeArchived  sql.NullBool
 }
 
 type GetIssueReportsForAccountRow struct {
-	ID               string
-	IssueType        string
-	Details          string
-	RelevantTable    sql.NullString
-	RelevantRecordID sql.NullString
 	CreatedAt        time.Time
 	LastUpdatedAt    sql.NullTime
 	ArchivedAt       sql.NullTime
+	ID               string
+	IssueType        string
+	Details          string
 	CreatedByUser    string
 	BelongsToAccount string
+	RelevantTable    sql.NullString
+	RelevantRecordID sql.NullString
 	FilteredCount    int64
 	TotalCount       int64
 }
@@ -427,28 +427,28 @@ LIMIT COALESCE($9, 50)
 `
 
 type GetIssueReportsForRecordParams struct {
+	ResultLimit      interface{}
 	CreatedAfter     sql.NullTime
 	CreatedBefore    sql.NullTime
 	UpdatedBefore    sql.NullTime
 	UpdatedAfter     sql.NullTime
-	IncludeArchived  sql.NullBool
 	RelevantTable    sql.NullString
 	RelevantRecordID sql.NullString
 	Cursor           sql.NullString
-	ResultLimit      interface{}
+	IncludeArchived  sql.NullBool
 }
 
 type GetIssueReportsForRecordRow struct {
-	ID               string
-	IssueType        string
-	Details          string
-	RelevantTable    sql.NullString
-	RelevantRecordID sql.NullString
 	CreatedAt        time.Time
 	LastUpdatedAt    sql.NullTime
 	ArchivedAt       sql.NullTime
+	ID               string
+	IssueType        string
+	Details          string
 	CreatedByUser    string
 	BelongsToAccount string
+	RelevantTable    sql.NullString
+	RelevantRecordID sql.NullString
 	FilteredCount    int64
 	TotalCount       int64
 }
@@ -555,27 +555,27 @@ LIMIT COALESCE($8, 50)
 `
 
 type GetIssueReportsForTableParams struct {
+	ResultLimit     interface{}
 	CreatedAfter    sql.NullTime
 	CreatedBefore   sql.NullTime
 	UpdatedBefore   sql.NullTime
 	UpdatedAfter    sql.NullTime
-	IncludeArchived sql.NullBool
 	RelevantTable   sql.NullString
 	Cursor          sql.NullString
-	ResultLimit     interface{}
+	IncludeArchived sql.NullBool
 }
 
 type GetIssueReportsForTableRow struct {
-	ID               string
-	IssueType        string
-	Details          string
-	RelevantTable    sql.NullString
-	RelevantRecordID sql.NullString
 	CreatedAt        time.Time
 	LastUpdatedAt    sql.NullTime
 	ArchivedAt       sql.NullTime
+	ID               string
+	IssueType        string
+	Details          string
 	CreatedByUser    string
 	BelongsToAccount string
+	RelevantTable    sql.NullString
+	RelevantRecordID sql.NullString
 	FilteredCount    int64
 	TotalCount       int64
 }
@@ -639,9 +639,9 @@ WHERE archived_at IS NULL
 type UpdateIssueReportParams struct {
 	IssueType        string
 	Details          string
+	ID               string
 	RelevantTable    sql.NullString
 	RelevantRecordID sql.NullString
-	ID               string
 }
 
 func (q *Queries) UpdateIssueReport(ctx context.Context, db DBTX, arg *UpdateIssueReportParams) (int64, error) {

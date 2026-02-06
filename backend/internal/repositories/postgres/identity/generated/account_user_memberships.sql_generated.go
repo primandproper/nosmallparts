@@ -75,8 +75,8 @@ type CreateAccountUserMembershipForNewUserParams struct {
 	ID               string
 	BelongsToAccount string
 	BelongsToUser    string
-	DefaultAccount   bool
 	AccountRole      string
+	DefaultAccount   bool
 }
 
 func (q *Queries) CreateAccountUserMembershipForNewUser(ctx context.Context, db DBTX, arg *CreateAccountUserMembershipForNewUserParams) error {

@@ -138,13 +138,13 @@ LIMIT COALESCE($7, 50)
 `
 
 type GetUserNotificationsForUserParams struct {
+	ResultLimit   interface{}
 	CreatedAfter  sql.NullTime
 	CreatedBefore sql.NullTime
 	UpdatedBefore sql.NullTime
 	UpdatedAfter  sql.NullTime
 	UserID        string
 	Cursor        sql.NullString
-	ResultLimit   interface{}
 }
 
 type GetUserNotificationsForUserRow struct {

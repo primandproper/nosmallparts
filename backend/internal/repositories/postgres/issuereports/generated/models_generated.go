@@ -10,14 +10,14 @@ import (
 )
 
 type IssueReports struct {
-	ID               string
-	IssueType        string
-	Details          string
-	RelevantTable    sql.NullString
-	RelevantRecordID sql.NullString
 	CreatedAt        time.Time
 	LastUpdatedAt    sql.NullTime
 	ArchivedAt       sql.NullTime
+	ID               string
+	IssueType        string
+	Details          string
 	CreatedByUser    string
 	BelongsToAccount string
+	RelevantTable    sql.NullString
+	RelevantRecordID sql.NullString
 }

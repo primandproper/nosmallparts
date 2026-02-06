@@ -158,14 +158,14 @@ LIMIT COALESCE($8, 50)
 `
 
 type GetUploadedMediaForUserParams struct {
+	ResultLimit     interface{}
 	CreatedAfter    sql.NullTime
 	CreatedBefore   sql.NullTime
 	UpdatedBefore   sql.NullTime
 	UpdatedAfter    sql.NullTime
-	IncludeArchived sql.NullBool
 	CreatedByUser   string
 	Cursor          sql.NullString
-	ResultLimit     interface{}
+	IncludeArchived sql.NullBool
 }
 
 type GetUploadedMediaForUserRow struct {

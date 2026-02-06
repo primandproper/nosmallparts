@@ -35,9 +35,9 @@ INSERT INTO user_data_disclosures (
 `
 
 type CreateUserDataDisclosureParams struct {
+	ExpiresAt     time.Time
 	ID            string
 	BelongsToUser string
-	ExpiresAt     time.Time
 }
 
 func (q *Queries) CreateUserDataDisclosure(ctx context.Context, db DBTX, arg *CreateUserDataDisclosureParams) error {
@@ -115,24 +115,24 @@ LIMIT COALESCE($6, 50)
 `
 
 type GetUserDataDisclosuresForUserParams struct {
+	ResultLimit     interface{}
 	CreatedAfter    sql.NullTime
 	CreatedBefore   sql.NullTime
-	IncludeArchived sql.NullBool
 	UserID          string
 	Cursor          sql.NullString
-	ResultLimit     interface{}
+	IncludeArchived sql.NullBool
 }
 
 type GetUserDataDisclosuresForUserRow struct {
-	ID            string
-	BelongsToUser string
-	Status        UserDataDisclosureStatus
-	ReportID      sql.NullString
 	ExpiresAt     time.Time
 	CreatedAt     time.Time
 	LastUpdatedAt sql.NullTime
 	CompletedAt   sql.NullTime
 	ArchivedAt    sql.NullTime
+	ID            string
+	BelongsToUser string
+	Status        UserDataDisclosureStatus
+	ReportID      sql.NullString
 	FilteredCount int64
 	TotalCount    int64
 }
@@ -190,8 +190,8 @@ WHERE user_data_disclosures.id = $2
 `
 
 type MarkUserDataDisclosureCompletedParams struct {
-	ReportID sql.NullString
 	ID       string
+	ReportID sql.NullString
 }
 
 func (q *Queries) MarkUserDataDisclosureCompleted(ctx context.Context, db DBTX, arg *MarkUserDataDisclosureCompletedParams) error {

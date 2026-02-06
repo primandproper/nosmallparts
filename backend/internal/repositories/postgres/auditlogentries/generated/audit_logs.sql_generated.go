@@ -91,14 +91,15 @@ LIMIT COALESCE($5, 50)
 `
 
 type GetAuditLogEntriesForAccountParams struct {
+	ResultLimit      interface{}
 	CreatedAfter     sql.NullTime
 	CreatedBefore    sql.NullTime
 	BelongsToAccount sql.NullString
 	Cursor           sql.NullString
-	ResultLimit      interface{}
 }
 
 type GetAuditLogEntriesForAccountRow struct {
+	CreatedAt        time.Time
 	ID               string
 	ResourceType     string
 	RelevantID       string
@@ -106,7 +107,6 @@ type GetAuditLogEntriesForAccountRow struct {
 	Changes          json.RawMessage
 	BelongsToUser    sql.NullString
 	BelongsToAccount sql.NullString
-	CreatedAt        time.Time
 	FilteredCount    int64
 	TotalCount       int64
 }
@@ -188,15 +188,16 @@ LIMIT COALESCE($6, 50)
 `
 
 type GetAuditLogEntriesForAccountAndResourceTypeParams struct {
+	ResultLimit      interface{}
 	CreatedAfter     sql.NullTime
 	CreatedBefore    sql.NullTime
 	BelongsToAccount sql.NullString
 	Resources        []string
 	Cursor           sql.NullString
-	ResultLimit      interface{}
 }
 
 type GetAuditLogEntriesForAccountAndResourceTypeRow struct {
+	CreatedAt        time.Time
 	ID               string
 	ResourceType     string
 	RelevantID       string
@@ -204,7 +205,6 @@ type GetAuditLogEntriesForAccountAndResourceTypeRow struct {
 	Changes          json.RawMessage
 	BelongsToUser    sql.NullString
 	BelongsToAccount sql.NullString
-	CreatedAt        time.Time
 	FilteredCount    int64
 	TotalCount       int64
 }
@@ -284,14 +284,15 @@ LIMIT COALESCE($5, 50)
 `
 
 type GetAuditLogEntriesForUserParams struct {
+	ResultLimit   interface{}
 	CreatedAfter  sql.NullTime
 	CreatedBefore sql.NullTime
 	BelongsToUser sql.NullString
 	Cursor        sql.NullString
-	ResultLimit   interface{}
 }
 
 type GetAuditLogEntriesForUserRow struct {
+	CreatedAt        time.Time
 	ID               string
 	ResourceType     string
 	RelevantID       string
@@ -299,7 +300,6 @@ type GetAuditLogEntriesForUserRow struct {
 	Changes          json.RawMessage
 	BelongsToUser    sql.NullString
 	BelongsToAccount sql.NullString
-	CreatedAt        time.Time
 	FilteredCount    int64
 	TotalCount       int64
 }
@@ -381,15 +381,16 @@ LIMIT COALESCE($6, 50)
 `
 
 type GetAuditLogEntriesForUserAndResourceTypeParams struct {
+	ResultLimit   interface{}
 	CreatedAfter  sql.NullTime
 	CreatedBefore sql.NullTime
 	BelongsToUser sql.NullString
 	Resources     []string
 	Cursor        sql.NullString
-	ResultLimit   interface{}
 }
 
 type GetAuditLogEntriesForUserAndResourceTypeRow struct {
+	CreatedAt        time.Time
 	ID               string
 	ResourceType     string
 	RelevantID       string
@@ -397,7 +398,6 @@ type GetAuditLogEntriesForUserAndResourceTypeRow struct {
 	Changes          json.RawMessage
 	BelongsToUser    sql.NullString
 	BelongsToAccount sql.NullString
-	CreatedAt        time.Time
 	FilteredCount    int64
 	TotalCount       int64
 }
@@ -458,6 +458,7 @@ WHERE audit_log_entries.id = $1
 `
 
 type GetAuditLogEntryRow struct {
+	CreatedAt        time.Time
 	ID               string
 	ResourceType     string
 	RelevantID       string
@@ -465,7 +466,6 @@ type GetAuditLogEntryRow struct {
 	Changes          json.RawMessage
 	BelongsToUser    sql.NullString
 	BelongsToAccount sql.NullString
-	CreatedAt        time.Time
 }
 
 func (q *Queries) GetAuditLogEntry(ctx context.Context, db DBTX, id string) (*GetAuditLogEntryRow, error) {

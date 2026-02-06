@@ -79,13 +79,13 @@ func AllUserDataDisclosureStatusValues() []UserDataDisclosureStatus {
 }
 
 type UserDataDisclosures struct {
-	ID            string
-	BelongsToUser string
-	Status        UserDataDisclosureStatus
-	ReportID      sql.NullString
 	ExpiresAt     time.Time
 	CreatedAt     time.Time
 	LastUpdatedAt sql.NullTime
 	CompletedAt   sql.NullTime
 	ArchivedAt    sql.NullTime
+	ID            string
+	BelongsToUser string
+	Status        UserDataDisclosureStatus
+	ReportID      sql.NullString
 }

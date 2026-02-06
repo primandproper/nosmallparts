@@ -20,8 +20,8 @@ WHERE archived_at IS NULL
 `
 
 type AssignInvitationsToUserByEmailParams struct {
-	ToUser       sql.NullString
 	EmailAddress string
+	ToUser       sql.NullString
 }
 
 func (q *Queries) AssignInvitationsToUserByEmail(ctx context.Context, db DBTX, arg *AssignInvitationsToUserByEmailParams) (int64, error) {
@@ -41,8 +41,8 @@ WHERE archived_at IS NULL
 `
 
 type AttachAccountInvitationsToUserIDParams struct {
-	ToUser  sql.NullString
 	ToEmail string
+	ToUser  sql.NullString
 }
 
 func (q *Queries) AttachAccountInvitationsToUserID(ctx context.Context, db DBTX, arg *AttachAccountInvitationsToUserIDParams) (int64, error) {
@@ -94,15 +94,15 @@ INSERT INTO account_invitations (
 `
 
 type CreateAccountInvitationParams struct {
+	ExpiresAt          time.Time
 	ID                 string
 	FromUser           string
-	ToUser             sql.NullString
 	ToName             string
 	Note               string
 	ToEmail            string
 	Token              string
 	DestinationAccount string
-	ExpiresAt          time.Time
+	ToUser             sql.NullString
 }
 
 func (q *Queries) CreateAccountInvitation(ctx context.Context, db DBTX, arg *CreateAccountInvitationParams) error {
@@ -195,64 +195,64 @@ type GetAccountInvitationByAccountAndIDParams struct {
 }
 
 type GetAccountInvitationByAccountAndIDRow struct {
-	ID                                       string
+	ExpiresAt                                time.Time
+	AccountCreatedAt                         time.Time
+	UserCreatedAt                            time.Time
+	CreatedAt                                time.Time
+	UserLastIndexedAt                        sql.NullTime
+	UserEmailAddressVerifiedAt               sql.NullTime
+	UserLastUpdatedAt                        sql.NullTime
+	LastUpdatedAt                            sql.NullTime
+	ArchivedAt                               sql.NullTime
+	UserLastAcceptedPrivacyPolicy            sql.NullTime
+	UserLastAcceptedTermsOfService           sql.NullTime
+	UserArchivedAt                           sql.NullTime
+	UserBirthday                             sql.NullTime
+	UserTwoFactorSecretVerifiedAt            sql.NullTime
+	UserPasswordLastChangedAt                sql.NullTime
+	AccountArchivedAt                        sql.NullTime
+	AccountLastUpdatedAt                     sql.NullTime
+	AccountLastPaymentProviderSyncOccurredAt sql.NullTime
+	AccountCountry                           string
+	AccountPaymentProcessorCustomerID        string
 	AccountID                                string
 	AccountName                              string
-	AccountBillingStatus                     string
-	AccountContactPhone                      string
-	AccountPaymentProcessorCustomerID        string
-	AccountSubscriptionPlanID                sql.NullString
-	AccountBelongsToUser                     string
-	AccountTimeZone                          TimeZone
-	AccountAddressLine1                      string
-	AccountAddressLine2                      string
-	AccountCity                              string
-	AccountState                             string
-	AccountZipCode                           string
-	AccountCountry                           string
-	AccountLatitude                          sql.NullString
-	AccountLongitude                         sql.NullString
-	AccountLastPaymentProviderSyncOccurredAt sql.NullTime
-	AccountWebhookHmacSecret                 string
-	AccountCreatedAt                         time.Time
-	AccountLastUpdatedAt                     sql.NullTime
-	AccountArchivedAt                        sql.NullTime
 	FromUser                                 string
-	ToUser                                   sql.NullString
+	AccountBillingStatus                     string
 	UserID                                   string
 	UserUsername                             string
-	UserAvatarSrc                            sql.NullString
+	StatusNote                               string
 	UserEmailAddress                         string
 	UserHashedPassword                       string
-	UserPasswordLastChangedAt                sql.NullTime
-	UserRequiresPasswordChange               bool
+	ID                                       string
+	Status                                   InvitationState
 	UserTwoFactorSecret                      string
-	UserTwoFactorSecretVerifiedAt            sql.NullTime
+	AccountZipCode                           string
 	UserServiceRole                          string
 	UserUserAccountStatus                    string
 	UserUserAccountStatusExplanation         string
-	UserBirthday                             sql.NullTime
-	UserEmailAddressVerificationToken        sql.NullString
-	UserEmailAddressVerifiedAt               sql.NullTime
+	AccountState                             string
+	AccountContactPhone                      string
+	AccountCity                              string
 	UserFirstName                            string
 	UserLastName                             string
-	UserLastAcceptedTermsOfService           sql.NullTime
-	UserLastAcceptedPrivacyPolicy            sql.NullTime
-	UserLastIndexedAt                        sql.NullTime
-	UserCreatedAt                            time.Time
-	UserLastUpdatedAt                        sql.NullTime
-	UserArchivedAt                           sql.NullTime
+	AccountAddressLine2                      string
+	AccountAddressLine1                      string
+	AccountTimeZone                          TimeZone
+	AccountBelongsToUser                     string
+	DestinationAccount                       string
+	AccountWebhookHmacSecret                 string
 	ToName                                   string
 	Note                                     string
 	ToEmail                                  string
 	Token                                    string
-	DestinationAccount                       string
-	ExpiresAt                                time.Time
-	Status                                   InvitationState
-	StatusNote                               string
-	CreatedAt                                time.Time
-	LastUpdatedAt                            sql.NullTime
-	ArchivedAt                               sql.NullTime
+	AccountSubscriptionPlanID                sql.NullString
+	UserEmailAddressVerificationToken        sql.NullString
+	UserAvatarSrc                            sql.NullString
+	ToUser                                   sql.NullString
+	AccountLatitude                          sql.NullString
+	AccountLongitude                         sql.NullString
+	UserRequiresPasswordChange               bool
 }
 
 func (q *Queries) GetAccountInvitationByAccountAndID(ctx context.Context, db DBTX, arg *GetAccountInvitationByAccountAndIDParams) (*GetAccountInvitationByAccountAndIDRow, error) {
@@ -396,64 +396,64 @@ type GetAccountInvitationByEmailAndTokenParams struct {
 }
 
 type GetAccountInvitationByEmailAndTokenRow struct {
-	ID                                       string
+	ExpiresAt                                time.Time
+	AccountCreatedAt                         time.Time
+	UserCreatedAt                            time.Time
+	CreatedAt                                time.Time
+	UserLastIndexedAt                        sql.NullTime
+	UserEmailAddressVerifiedAt               sql.NullTime
+	UserLastUpdatedAt                        sql.NullTime
+	LastUpdatedAt                            sql.NullTime
+	ArchivedAt                               sql.NullTime
+	UserLastAcceptedPrivacyPolicy            sql.NullTime
+	UserLastAcceptedTermsOfService           sql.NullTime
+	UserArchivedAt                           sql.NullTime
+	UserBirthday                             sql.NullTime
+	UserTwoFactorSecretVerifiedAt            sql.NullTime
+	UserPasswordLastChangedAt                sql.NullTime
+	AccountArchivedAt                        sql.NullTime
+	AccountLastUpdatedAt                     sql.NullTime
+	AccountLastPaymentProviderSyncOccurredAt sql.NullTime
+	AccountCountry                           string
+	AccountPaymentProcessorCustomerID        string
 	AccountID                                string
 	AccountName                              string
-	AccountBillingStatus                     string
-	AccountContactPhone                      string
-	AccountPaymentProcessorCustomerID        string
-	AccountSubscriptionPlanID                sql.NullString
-	AccountBelongsToUser                     string
-	AccountTimeZone                          TimeZone
-	AccountAddressLine1                      string
-	AccountAddressLine2                      string
-	AccountCity                              string
-	AccountState                             string
-	AccountZipCode                           string
-	AccountCountry                           string
-	AccountLatitude                          sql.NullString
-	AccountLongitude                         sql.NullString
-	AccountLastPaymentProviderSyncOccurredAt sql.NullTime
-	AccountWebhookHmacSecret                 string
-	AccountCreatedAt                         time.Time
-	AccountLastUpdatedAt                     sql.NullTime
-	AccountArchivedAt                        sql.NullTime
 	FromUser                                 string
-	ToUser                                   sql.NullString
+	AccountBillingStatus                     string
 	UserID                                   string
 	UserUsername                             string
-	UserAvatarSrc                            sql.NullString
+	StatusNote                               string
 	UserEmailAddress                         string
 	UserHashedPassword                       string
-	UserPasswordLastChangedAt                sql.NullTime
-	UserRequiresPasswordChange               bool
+	ID                                       string
+	Status                                   InvitationState
 	UserTwoFactorSecret                      string
-	UserTwoFactorSecretVerifiedAt            sql.NullTime
+	AccountZipCode                           string
 	UserServiceRole                          string
 	UserUserAccountStatus                    string
 	UserUserAccountStatusExplanation         string
-	UserBirthday                             sql.NullTime
-	UserEmailAddressVerificationToken        sql.NullString
-	UserEmailAddressVerifiedAt               sql.NullTime
+	AccountState                             string
+	AccountContactPhone                      string
+	AccountCity                              string
 	UserFirstName                            string
 	UserLastName                             string
-	UserLastAcceptedTermsOfService           sql.NullTime
-	UserLastAcceptedPrivacyPolicy            sql.NullTime
-	UserLastIndexedAt                        sql.NullTime
-	UserCreatedAt                            time.Time
-	UserLastUpdatedAt                        sql.NullTime
-	UserArchivedAt                           sql.NullTime
+	AccountAddressLine2                      string
+	AccountAddressLine1                      string
+	AccountTimeZone                          TimeZone
+	AccountBelongsToUser                     string
+	DestinationAccount                       string
+	AccountWebhookHmacSecret                 string
 	ToName                                   string
 	Note                                     string
 	ToEmail                                  string
 	Token                                    string
-	DestinationAccount                       string
-	ExpiresAt                                time.Time
-	Status                                   InvitationState
-	StatusNote                               string
-	CreatedAt                                time.Time
-	LastUpdatedAt                            sql.NullTime
-	ArchivedAt                               sql.NullTime
+	AccountSubscriptionPlanID                sql.NullString
+	UserEmailAddressVerificationToken        sql.NullString
+	UserAvatarSrc                            sql.NullString
+	ToUser                                   sql.NullString
+	AccountLatitude                          sql.NullString
+	AccountLongitude                         sql.NullString
+	UserRequiresPasswordChange               bool
 }
 
 func (q *Queries) GetAccountInvitationByEmailAndToken(ctx context.Context, db DBTX, arg *GetAccountInvitationByEmailAndTokenParams) (*GetAccountInvitationByEmailAndTokenRow, error) {
@@ -591,64 +591,64 @@ WHERE account_invitations.archived_at IS NULL
 `
 
 type GetAccountInvitationByTokenRow struct {
-	ID                                       string
+	ExpiresAt                                time.Time
+	AccountCreatedAt                         time.Time
+	UserCreatedAt                            time.Time
+	CreatedAt                                time.Time
+	UserLastIndexedAt                        sql.NullTime
+	UserEmailAddressVerifiedAt               sql.NullTime
+	UserLastUpdatedAt                        sql.NullTime
+	LastUpdatedAt                            sql.NullTime
+	ArchivedAt                               sql.NullTime
+	UserLastAcceptedPrivacyPolicy            sql.NullTime
+	UserLastAcceptedTermsOfService           sql.NullTime
+	UserArchivedAt                           sql.NullTime
+	UserBirthday                             sql.NullTime
+	UserTwoFactorSecretVerifiedAt            sql.NullTime
+	UserPasswordLastChangedAt                sql.NullTime
+	AccountArchivedAt                        sql.NullTime
+	AccountLastUpdatedAt                     sql.NullTime
+	AccountLastPaymentProviderSyncOccurredAt sql.NullTime
+	AccountCountry                           string
+	AccountPaymentProcessorCustomerID        string
 	AccountID                                string
 	AccountName                              string
-	AccountBillingStatus                     string
-	AccountContactPhone                      string
-	AccountPaymentProcessorCustomerID        string
-	AccountSubscriptionPlanID                sql.NullString
-	AccountBelongsToUser                     string
-	AccountTimeZone                          TimeZone
-	AccountAddressLine1                      string
-	AccountAddressLine2                      string
-	AccountCity                              string
-	AccountState                             string
-	AccountZipCode                           string
-	AccountCountry                           string
-	AccountLatitude                          sql.NullString
-	AccountLongitude                         sql.NullString
-	AccountLastPaymentProviderSyncOccurredAt sql.NullTime
-	AccountWebhookHmacSecret                 string
-	AccountCreatedAt                         time.Time
-	AccountLastUpdatedAt                     sql.NullTime
-	AccountArchivedAt                        sql.NullTime
 	FromUser                                 string
-	ToUser                                   sql.NullString
+	AccountBillingStatus                     string
 	UserID                                   string
 	UserUsername                             string
-	UserAvatarSrc                            sql.NullString
+	StatusNote                               string
 	UserEmailAddress                         string
 	UserHashedPassword                       string
-	UserPasswordLastChangedAt                sql.NullTime
-	UserRequiresPasswordChange               bool
+	ID                                       string
+	Status                                   InvitationState
 	UserTwoFactorSecret                      string
-	UserTwoFactorSecretVerifiedAt            sql.NullTime
+	AccountZipCode                           string
 	UserServiceRole                          string
 	UserUserAccountStatus                    string
 	UserUserAccountStatusExplanation         string
-	UserBirthday                             sql.NullTime
-	UserEmailAddressVerificationToken        sql.NullString
-	UserEmailAddressVerifiedAt               sql.NullTime
+	AccountState                             string
+	AccountContactPhone                      string
+	AccountCity                              string
 	UserFirstName                            string
 	UserLastName                             string
-	UserLastAcceptedTermsOfService           sql.NullTime
-	UserLastAcceptedPrivacyPolicy            sql.NullTime
-	UserLastIndexedAt                        sql.NullTime
-	UserCreatedAt                            time.Time
-	UserLastUpdatedAt                        sql.NullTime
-	UserArchivedAt                           sql.NullTime
+	AccountAddressLine2                      string
+	AccountAddressLine1                      string
+	AccountTimeZone                          TimeZone
+	AccountBelongsToUser                     string
+	DestinationAccount                       string
+	AccountWebhookHmacSecret                 string
 	ToName                                   string
 	Note                                     string
 	ToEmail                                  string
 	Token                                    string
-	DestinationAccount                       string
-	ExpiresAt                                time.Time
-	Status                                   InvitationState
-	StatusNote                               string
-	CreatedAt                                time.Time
-	LastUpdatedAt                            sql.NullTime
-	ArchivedAt                               sql.NullTime
+	AccountSubscriptionPlanID                sql.NullString
+	UserEmailAddressVerificationToken        sql.NullString
+	UserAvatarSrc                            sql.NullString
+	ToUser                                   sql.NullString
+	AccountLatitude                          sql.NullString
+	AccountLongitude                         sql.NullString
+	UserRequiresPasswordChange               bool
 }
 
 func (q *Queries) GetAccountInvitationByToken(ctx context.Context, db DBTX, token string) (*GetAccountInvitationByTokenRow, error) {
@@ -792,64 +792,64 @@ type GetAccountInvitationByTokenAndIDParams struct {
 }
 
 type GetAccountInvitationByTokenAndIDRow struct {
-	ID                                       string
+	ExpiresAt                                time.Time
+	AccountCreatedAt                         time.Time
+	UserCreatedAt                            time.Time
+	CreatedAt                                time.Time
+	UserLastIndexedAt                        sql.NullTime
+	UserEmailAddressVerifiedAt               sql.NullTime
+	UserLastUpdatedAt                        sql.NullTime
+	LastUpdatedAt                            sql.NullTime
+	ArchivedAt                               sql.NullTime
+	UserLastAcceptedPrivacyPolicy            sql.NullTime
+	UserLastAcceptedTermsOfService           sql.NullTime
+	UserArchivedAt                           sql.NullTime
+	UserBirthday                             sql.NullTime
+	UserTwoFactorSecretVerifiedAt            sql.NullTime
+	UserPasswordLastChangedAt                sql.NullTime
+	AccountArchivedAt                        sql.NullTime
+	AccountLastUpdatedAt                     sql.NullTime
+	AccountLastPaymentProviderSyncOccurredAt sql.NullTime
+	AccountCountry                           string
+	AccountPaymentProcessorCustomerID        string
 	AccountID                                string
 	AccountName                              string
-	AccountBillingStatus                     string
-	AccountContactPhone                      string
-	AccountPaymentProcessorCustomerID        string
-	AccountSubscriptionPlanID                sql.NullString
-	AccountBelongsToUser                     string
-	AccountTimeZone                          TimeZone
-	AccountAddressLine1                      string
-	AccountAddressLine2                      string
-	AccountCity                              string
-	AccountState                             string
-	AccountZipCode                           string
-	AccountCountry                           string
-	AccountLatitude                          sql.NullString
-	AccountLongitude                         sql.NullString
-	AccountLastPaymentProviderSyncOccurredAt sql.NullTime
-	AccountWebhookHmacSecret                 string
-	AccountCreatedAt                         time.Time
-	AccountLastUpdatedAt                     sql.NullTime
-	AccountArchivedAt                        sql.NullTime
 	FromUser                                 string
-	ToUser                                   sql.NullString
+	AccountBillingStatus                     string
 	UserID                                   string
 	UserUsername                             string
-	UserAvatarSrc                            sql.NullString
+	StatusNote                               string
 	UserEmailAddress                         string
 	UserHashedPassword                       string
-	UserPasswordLastChangedAt                sql.NullTime
-	UserRequiresPasswordChange               bool
+	ID                                       string
+	Status                                   InvitationState
 	UserTwoFactorSecret                      string
-	UserTwoFactorSecretVerifiedAt            sql.NullTime
+	AccountZipCode                           string
 	UserServiceRole                          string
 	UserUserAccountStatus                    string
 	UserUserAccountStatusExplanation         string
-	UserBirthday                             sql.NullTime
-	UserEmailAddressVerificationToken        sql.NullString
-	UserEmailAddressVerifiedAt               sql.NullTime
+	AccountState                             string
+	AccountContactPhone                      string
+	AccountCity                              string
 	UserFirstName                            string
 	UserLastName                             string
-	UserLastAcceptedTermsOfService           sql.NullTime
-	UserLastAcceptedPrivacyPolicy            sql.NullTime
-	UserLastIndexedAt                        sql.NullTime
-	UserCreatedAt                            time.Time
-	UserLastUpdatedAt                        sql.NullTime
-	UserArchivedAt                           sql.NullTime
+	AccountAddressLine2                      string
+	AccountAddressLine1                      string
+	AccountTimeZone                          TimeZone
+	AccountBelongsToUser                     string
+	DestinationAccount                       string
+	AccountWebhookHmacSecret                 string
 	ToName                                   string
 	Note                                     string
 	ToEmail                                  string
 	Token                                    string
-	DestinationAccount                       string
-	ExpiresAt                                time.Time
-	Status                                   InvitationState
-	StatusNote                               string
-	CreatedAt                                time.Time
-	LastUpdatedAt                            sql.NullTime
-	ArchivedAt                               sql.NullTime
+	AccountSubscriptionPlanID                sql.NullString
+	UserEmailAddressVerificationToken        sql.NullString
+	UserAvatarSrc                            sql.NullString
+	ToUser                                   sql.NullString
+	AccountLatitude                          sql.NullString
+	AccountLongitude                         sql.NullString
+	UserRequiresPasswordChange               bool
 }
 
 func (q *Queries) GetAccountInvitationByTokenAndID(ctx context.Context, db DBTX, arg *GetAccountInvitationByTokenAndIDParams) (*GetAccountInvitationByTokenAndIDRow, error) {
@@ -1023,78 +1023,78 @@ LIMIT COALESCE($9, 50)
 `
 
 type GetPendingInvitesForUserParams struct {
+	ResultLimit     interface{}
 	CreatedAfter    sql.NullTime
 	CreatedBefore   sql.NullTime
 	UpdatedBefore   sql.NullTime
 	UpdatedAfter    sql.NullTime
-	IncludeArchived sql.NullBool
-	ToUser          sql.NullString
 	Status          InvitationState
+	ToUser          sql.NullString
 	Cursor          sql.NullString
-	ResultLimit     interface{}
+	IncludeArchived sql.NullBool
 }
 
 type GetPendingInvitesForUserRow struct {
-	ID                                       string
+	ExpiresAt                                time.Time
+	AccountCreatedAt                         time.Time
+	UserCreatedAt                            time.Time
+	CreatedAt                                time.Time
+	UserLastIndexedAt                        sql.NullTime
+	UserEmailAddressVerifiedAt               sql.NullTime
+	UserLastUpdatedAt                        sql.NullTime
+	LastUpdatedAt                            sql.NullTime
+	ArchivedAt                               sql.NullTime
+	UserLastAcceptedPrivacyPolicy            sql.NullTime
+	UserLastAcceptedTermsOfService           sql.NullTime
+	UserArchivedAt                           sql.NullTime
+	UserBirthday                             sql.NullTime
+	UserTwoFactorSecretVerifiedAt            sql.NullTime
+	UserPasswordLastChangedAt                sql.NullTime
+	AccountArchivedAt                        sql.NullTime
+	AccountLastUpdatedAt                     sql.NullTime
+	AccountLastPaymentProviderSyncOccurredAt sql.NullTime
+	UserTwoFactorSecret                      string
+	UserFirstName                            string
 	AccountID                                string
 	AccountName                              string
-	AccountBillingStatus                     string
-	AccountContactPhone                      string
-	AccountPaymentProcessorCustomerID        string
-	AccountSubscriptionPlanID                sql.NullString
-	AccountBelongsToUser                     string
-	AccountTimeZone                          TimeZone
-	AccountAddressLine1                      string
-	AccountAddressLine2                      string
-	AccountCity                              string
-	AccountState                             string
-	AccountZipCode                           string
-	AccountCountry                           string
-	AccountLatitude                          sql.NullString
-	AccountLongitude                         sql.NullString
-	AccountLastPaymentProviderSyncOccurredAt sql.NullTime
-	AccountWebhookHmacSecret                 string
-	AccountCreatedAt                         time.Time
-	AccountLastUpdatedAt                     sql.NullTime
-	AccountArchivedAt                        sql.NullTime
 	FromUser                                 string
-	ToUser                                   sql.NullString
+	AccountBillingStatus                     string
 	UserID                                   string
 	UserUsername                             string
-	UserAvatarSrc                            sql.NullString
+	StatusNote                               string
 	UserEmailAddress                         string
 	UserHashedPassword                       string
-	UserPasswordLastChangedAt                sql.NullTime
-	UserRequiresPasswordChange               bool
-	UserTwoFactorSecret                      string
-	UserTwoFactorSecretVerifiedAt            sql.NullTime
+	AccountCountry                           string
+	Status                                   InvitationState
+	ID                                       string
+	AccountZipCode                           string
 	UserServiceRole                          string
 	UserUserAccountStatus                    string
 	UserUserAccountStatusExplanation         string
-	UserBirthday                             sql.NullTime
-	UserEmailAddressVerificationToken        sql.NullString
-	UserEmailAddressVerifiedAt               sql.NullTime
-	UserFirstName                            string
+	AccountState                             string
+	AccountContactPhone                      string
+	AccountCity                              string
+	AccountWebhookHmacSecret                 string
 	UserLastName                             string
-	UserLastAcceptedTermsOfService           sql.NullTime
-	UserLastAcceptedPrivacyPolicy            sql.NullTime
-	UserLastIndexedAt                        sql.NullTime
-	UserCreatedAt                            time.Time
-	UserLastUpdatedAt                        sql.NullTime
-	UserArchivedAt                           sql.NullTime
+	AccountAddressLine2                      string
+	AccountAddressLine1                      string
+	AccountTimeZone                          TimeZone
+	AccountBelongsToUser                     string
+	DestinationAccount                       string
+	AccountPaymentProcessorCustomerID        string
 	ToName                                   string
 	Note                                     string
 	ToEmail                                  string
 	Token                                    string
-	DestinationAccount                       string
-	ExpiresAt                                time.Time
-	Status                                   InvitationState
-	StatusNote                               string
-	CreatedAt                                time.Time
-	LastUpdatedAt                            sql.NullTime
-	ArchivedAt                               sql.NullTime
+	AccountSubscriptionPlanID                sql.NullString
+	UserEmailAddressVerificationToken        sql.NullString
+	UserAvatarSrc                            sql.NullString
+	ToUser                                   sql.NullString
+	AccountLatitude                          sql.NullString
+	AccountLongitude                         sql.NullString
 	FilteredCount                            int64
 	TotalCount                               int64
+	UserRequiresPasswordChange               bool
 }
 
 func (q *Queries) GetPendingInvitesForUser(ctx context.Context, db DBTX, arg *GetPendingInvitesForUserParams) ([]*GetPendingInvitesForUserRow, error) {
@@ -1295,78 +1295,78 @@ LIMIT COALESCE($9, 50)
 `
 
 type GetPendingInvitesFromUserParams struct {
+	ResultLimit     interface{}
 	CreatedAfter    sql.NullTime
 	CreatedBefore   sql.NullTime
 	UpdatedBefore   sql.NullTime
 	UpdatedAfter    sql.NullTime
-	IncludeArchived sql.NullBool
 	FromUser        string
 	Status          InvitationState
 	Cursor          sql.NullString
-	ResultLimit     interface{}
+	IncludeArchived sql.NullBool
 }
 
 type GetPendingInvitesFromUserRow struct {
-	ID                                       string
+	ExpiresAt                                time.Time
+	AccountCreatedAt                         time.Time
+	UserCreatedAt                            time.Time
+	CreatedAt                                time.Time
+	UserLastIndexedAt                        sql.NullTime
+	UserEmailAddressVerifiedAt               sql.NullTime
+	UserLastUpdatedAt                        sql.NullTime
+	LastUpdatedAt                            sql.NullTime
+	ArchivedAt                               sql.NullTime
+	UserLastAcceptedPrivacyPolicy            sql.NullTime
+	UserLastAcceptedTermsOfService           sql.NullTime
+	UserArchivedAt                           sql.NullTime
+	UserBirthday                             sql.NullTime
+	UserTwoFactorSecretVerifiedAt            sql.NullTime
+	UserPasswordLastChangedAt                sql.NullTime
+	AccountArchivedAt                        sql.NullTime
+	AccountLastUpdatedAt                     sql.NullTime
+	AccountLastPaymentProviderSyncOccurredAt sql.NullTime
+	UserTwoFactorSecret                      string
+	UserFirstName                            string
 	AccountID                                string
 	AccountName                              string
-	AccountBillingStatus                     string
-	AccountContactPhone                      string
-	AccountPaymentProcessorCustomerID        string
-	AccountSubscriptionPlanID                sql.NullString
-	AccountBelongsToUser                     string
-	AccountTimeZone                          TimeZone
-	AccountAddressLine1                      string
-	AccountAddressLine2                      string
-	AccountCity                              string
-	AccountState                             string
-	AccountZipCode                           string
-	AccountCountry                           string
-	AccountLatitude                          sql.NullString
-	AccountLongitude                         sql.NullString
-	AccountLastPaymentProviderSyncOccurredAt sql.NullTime
-	AccountWebhookHmacSecret                 string
-	AccountCreatedAt                         time.Time
-	AccountLastUpdatedAt                     sql.NullTime
-	AccountArchivedAt                        sql.NullTime
 	FromUser                                 string
-	ToUser                                   sql.NullString
+	AccountBillingStatus                     string
 	UserID                                   string
 	UserUsername                             string
-	UserAvatarSrc                            sql.NullString
+	StatusNote                               string
 	UserEmailAddress                         string
 	UserHashedPassword                       string
-	UserPasswordLastChangedAt                sql.NullTime
-	UserRequiresPasswordChange               bool
-	UserTwoFactorSecret                      string
-	UserTwoFactorSecretVerifiedAt            sql.NullTime
+	AccountCountry                           string
+	Status                                   InvitationState
+	ID                                       string
+	AccountZipCode                           string
 	UserServiceRole                          string
 	UserUserAccountStatus                    string
 	UserUserAccountStatusExplanation         string
-	UserBirthday                             sql.NullTime
-	UserEmailAddressVerificationToken        sql.NullString
-	UserEmailAddressVerifiedAt               sql.NullTime
-	UserFirstName                            string
+	AccountState                             string
+	AccountContactPhone                      string
+	AccountCity                              string
+	AccountWebhookHmacSecret                 string
 	UserLastName                             string
-	UserLastAcceptedTermsOfService           sql.NullTime
-	UserLastAcceptedPrivacyPolicy            sql.NullTime
-	UserLastIndexedAt                        sql.NullTime
-	UserCreatedAt                            time.Time
-	UserLastUpdatedAt                        sql.NullTime
-	UserArchivedAt                           sql.NullTime
+	AccountAddressLine2                      string
+	AccountAddressLine1                      string
+	AccountTimeZone                          TimeZone
+	AccountBelongsToUser                     string
+	DestinationAccount                       string
+	AccountPaymentProcessorCustomerID        string
 	ToName                                   string
 	Note                                     string
 	ToEmail                                  string
 	Token                                    string
-	DestinationAccount                       string
-	ExpiresAt                                time.Time
-	Status                                   InvitationState
-	StatusNote                               string
-	CreatedAt                                time.Time
-	LastUpdatedAt                            sql.NullTime
-	ArchivedAt                               sql.NullTime
+	AccountSubscriptionPlanID                sql.NullString
+	UserEmailAddressVerificationToken        sql.NullString
+	UserAvatarSrc                            sql.NullString
+	ToUser                                   sql.NullString
+	AccountLatitude                          sql.NullString
+	AccountLongitude                         sql.NullString
 	FilteredCount                            int64
 	TotalCount                               int64
+	UserRequiresPasswordChange               bool
 }
 
 func (q *Queries) GetPendingInvitesFromUser(ctx context.Context, db DBTX, arg *GetPendingInvitesFromUserParams) ([]*GetPendingInvitesFromUserRow, error) {

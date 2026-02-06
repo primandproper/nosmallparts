@@ -175,14 +175,14 @@ LIMIT COALESCE($8, 50)
 `
 
 type GetWaitlistSignupsForUserParams struct {
+	ResultLimit     interface{}
 	CreatedAfter    sql.NullTime
 	CreatedBefore   sql.NullTime
 	UpdatedBefore   sql.NullTime
 	UpdatedAfter    sql.NullTime
-	IncludeArchived sql.NullBool
 	BelongsToUser   sql.NullString
 	Cursor          sql.NullString
-	ResultLimit     interface{}
+	IncludeArchived sql.NullBool
 }
 
 type GetWaitlistSignupsForUserRow struct {
@@ -295,14 +295,14 @@ LIMIT COALESCE($8, 50)
 `
 
 type GetWaitlistSignupsForWaitlistParams struct {
+	ResultLimit       interface{}
 	CreatedAfter      sql.NullTime
 	CreatedBefore     sql.NullTime
 	UpdatedBefore     sql.NullTime
 	UpdatedAfter      sql.NullTime
-	IncludeArchived   sql.NullBool
 	BelongsToWaitlist sql.NullString
 	Cursor            sql.NullString
-	ResultLimit       interface{}
+	IncludeArchived   sql.NullBool
 }
 
 type GetWaitlistSignupsForWaitlistRow struct {

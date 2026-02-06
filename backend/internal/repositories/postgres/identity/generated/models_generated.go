@@ -143,12 +143,12 @@ func AllTimeZoneValues() []TimeZone {
 }
 
 type AccountUserMemberships struct {
-	ID               string
-	BelongsToAccount string
-	BelongsToUser    string
-	DefaultAccount   bool
-	AccountRole      string
 	CreatedAt        time.Time
 	LastUpdatedAt    sql.NullTime
 	ArchivedAt       sql.NullTime
+	ID               string
+	BelongsToAccount string
+	BelongsToUser    string
+	AccountRole      string
+	DefaultAccount   bool
 }

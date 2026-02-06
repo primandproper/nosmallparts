@@ -8,14 +8,15 @@ package dbcleaner
 
 import (
 	"context"
+
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/config"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/config"
+	databasecfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/config"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/postgres"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging/config"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/metrics/config"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing/config"
+	loggingcfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging/config"
+	metricscfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/metrics/config"
+	tracingcfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing/config"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/maintenance"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/oauth/workers/db_cleaner"
+	dbcleaner "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/oauth/workers/db_cleaner"
 )
 
 // Injectors from build.go:

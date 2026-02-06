@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom';
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen, waitFor, cleanup } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import RegisterPage from '../../app/auth/register/page';
 
@@ -21,6 +21,10 @@ describe('Registration Page', () => {
     jest.clearAllMocks();
     mockSearchParams.delete('invitation');
     (global.fetch as jest.Mock).mockReset();
+  });
+
+  afterEach(() => {
+    cleanup();
   });
 
   it('renders the registration form', () => {

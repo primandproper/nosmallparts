@@ -153,11 +153,11 @@ LIMIT COALESCE($5, 50)
 `
 
 type GetOAuth2ClientsParams struct {
+	ResultLimit     interface{}
 	CreatedAfter    sql.NullTime
 	CreatedBefore   sql.NullTime
-	IncludeArchived sql.NullBool
 	Cursor          sql.NullString
-	ResultLimit     interface{}
+	IncludeArchived sql.NullBool
 }
 
 type GetOAuth2ClientsRow struct {

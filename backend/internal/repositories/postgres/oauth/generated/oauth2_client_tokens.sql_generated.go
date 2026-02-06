@@ -63,21 +63,21 @@ INSERT INTO oauth2_client_tokens (
 `
 
 type CreateOAuth2ClientTokenParams struct {
-	ID                  string
-	ClientID            string
-	BelongsToUser       string
-	RedirectUri         string
-	Code                string
-	CodeChallenge       string
-	CodeChallengeMethod string
 	CodeCreatedAt       time.Time
-	CodeExpiresAt       time.Time
-	Access              string
-	AccessCreatedAt     time.Time
-	AccessExpiresAt     time.Time
-	Refresh             string
-	RefreshCreatedAt    time.Time
 	RefreshExpiresAt    time.Time
+	RefreshCreatedAt    time.Time
+	AccessExpiresAt     time.Time
+	AccessCreatedAt     time.Time
+	CodeExpiresAt       time.Time
+	CodeChallengeMethod string
+	ID                  string
+	CodeChallenge       string
+	Access              string
+	Code                string
+	RedirectUri         string
+	Refresh             string
+	BelongsToUser       string
+	ClientID            string
 }
 
 func (q *Queries) CreateOAuth2ClientToken(ctx context.Context, db DBTX, arg *CreateOAuth2ClientTokenParams) error {
