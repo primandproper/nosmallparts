@@ -106,21 +106,6 @@ configMapGenerator:
     files:
       - config.json=configs/job_db_cleaner_config.json
 
-  - name: no-small-parts-job-meal-plan-finalizer-config
-    namespace: localdev
-    files:
-      - config.json=configs/job_meal_plan_finalizer_config.json
-
-  - name: no-small-parts-job-meal-plan-grocery-list-init-config
-    namespace: localdev
-    files:
-      - config.json=configs/job_meal_plan_grocery_list_initializer_config.json
-
-  - name: no-small-parts-job-meal-plan-task-creator-config
-    namespace: localdev
-    files:
-      - config.json=configs/job_meal_plan_task_creator_config.json
-
   - name: no-small-parts-job-search-data-index-scheduler-config
     namespace: localdev
     files:
