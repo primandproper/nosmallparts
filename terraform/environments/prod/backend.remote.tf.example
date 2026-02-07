@@ -1,0 +1,11 @@
+# Optional: use Terraform Cloud for state. Rename to backend.tf (and remove or rename backend.tf)
+# then run: terraform init -migrate-state
+#
+# terraform {
+#   backend "remote" {
+#     organization = "nosmallparts"
+#     workspaces {
+#       name = "backend"
+#     }
+#   }
+# }

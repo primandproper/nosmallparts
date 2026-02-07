@@ -61,9 +61,17 @@ format:
 	(cd backend && $(MAKE) format)
 	(cd frontend && $(MAKE) format)
 
+# Terraform: format from root; init/validate from prod environment
+TERRAFORM_DIR := terraform
+TERRAFORM_ENV := $(TERRAFORM_DIR)/environments/prod
+
 .PHONY: terraformat
 terraformat:
-	(cd backend && $(MAKE) terraformat)
+	cd $(TERRAFORM_DIR) && terraform fmt -recursive
+
+.PHONY: lint_terraform
+lint_terraform: terraformat
+	cd $(TERRAFORM_ENV) && terraform init -upgrade && terraform validate && terraform fmt -check -recursive
 
 .PHONY: format_yaml
 format_yaml: ensure_yamlfmt_installed
@@ -124,3 +132,46 @@ proto: format_proto proto_golang proto_typescript
 .PHONY: run
 run:
 	$(CONTAINER_RUNNER) compose up --build
+
+# -----------------------------------------------------------------------------
+# Google Cloud Run deployment
+# -----------------------------------------------------------------------------
+# Set GCP_PROJECT (defaults to gcloud config project), GCP_REGION, ARTIFACT_REPO as needed.
+# Prereqs: gcloud CLI, Docker; run: gcloud auth configure-docker $(GCP_REGION)-docker.pkg.dev
+GCP_PROJECT    ?= no-small-parts
+GCP_REGION     ?= us-central1
+ARTIFACT_REPO  ?= cloud-run-images
+
+API_IMAGE      := $(GCP_REGION)-docker.pkg.dev/$(GCP_PROJECT)/$(ARTIFACT_REPO)/nosmallparts-api
+FRONTEND_IMAGE := $(GCP_REGION)-docker.pkg.dev/$(GCP_PROJECT)/$(ARTIFACT_REPO)/nosmallparts-frontend
+
+.PHONY: gcr-ensure-repo
+gcr-ensure-repo:
+	gcloud artifacts repositories create $(ARTIFACT_REPO) \
+		--repository-format=docker \
+		--location=$(GCP_REGION) \
+		--description="Images for No Small Parts Cloud Run" \
+		|| true
+
+.PHONY: gcr-deploy-api
+gcr-deploy-api: gcr-ensure-repo
+	$(CONTAINER_RUNNER) build -f backend/deploy/dockerfiles/api_server.Dockerfile -t $(API_IMAGE):latest ./backend
+	$(CONTAINER_RUNNER) push $(API_IMAGE):latest
+	gcloud run deploy nosmallparts-api \
+		--image $(API_IMAGE):latest \
+		--region $(GCP_REGION) \
+		--platform managed \
+		--allow-unauthenticated
+
+.PHONY: gcr-deploy-frontend
+gcr-deploy-frontend: gcr-ensure-repo
+	$(CONTAINER_RUNNER) build -t $(FRONTEND_IMAGE):latest ./frontend
+	$(CONTAINER_RUNNER) push $(FRONTEND_IMAGE):latest
+	gcloud run deploy nosmallparts-frontend \
+		--image $(FRONTEND_IMAGE):latest \
+		--region $(GCP_REGION) \
+		--platform managed \
+		--allow-unauthenticated
+
+.PHONY: gcr-deploy
+gcr-deploy: gcr-deploy-api gcr-deploy-frontend

@@ -1,9 +1,0 @@
-*.json
-*.yaml
-*.config
-.terraform/
-.terraform.lock.hcl
-
-data_changes_cloud_function/
-meal_plan_finalizer_cloud_function/
-meal_planning_prober_cloud_function/

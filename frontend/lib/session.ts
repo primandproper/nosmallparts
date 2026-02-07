@@ -12,14 +12,17 @@ export interface SessionData {
 
 /**
  * Get OAuth2 client credentials from environment variables.
- * The Next.js server assumes it has access to these.
+ * Required for making authenticated gRPC/API requests to the backend (e.g. OAuth2 code exchange).
+ * Set OAUTH2_CLIENT_ID and OAUTH2_CLIENT_SECRET (see frontend/env.example).
  */
 export function getOAuth2ClientCredentials() {
   const clientId = process.env.OAUTH2_CLIENT_ID;
   const clientSecret = process.env.OAUTH2_CLIENT_SECRET;
 
   if (!clientId || !clientSecret) {
-    throw new Error('OAuth2 client credentials not configured');
+    throw new Error(
+      'OAuth2 client credentials not configured. Set OAUTH2_CLIENT_ID and OAUTH2_CLIENT_SECRET (see env.example).'
+    );
   }
 
   return { clientId, clientSecret };

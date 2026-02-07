@@ -124,7 +124,7 @@ format_golang: goimports format_imports format_go_fieldalignment # format_go_tag
 
 .PHONY: terraformat
 terraformat:
-	@$(SCRIPTS_DIR)/terraformat.sh
+	@$(MAKE) -C .. terraformat
 
 .PHONY: format
 format: format_golang terraformat
@@ -151,8 +151,8 @@ golang_lint: struct_usage_check
 	@$(SCRIPTS_DIR)/golang_lint.sh $(CONTAINER_RUNNER) $(LINTER_IMAGE) "$(LINTER)"
 
 .PHONY: lint_terraform
-lint_terraform: terraformat
-	@$(SCRIPTS_DIR)/lint_terraform.sh deploy/environments/dev/terraform
+lint_terraform:
+	@$(MAKE) -C .. lint_terraform
 
 .PHONY: shellcheck
 shellcheck:
