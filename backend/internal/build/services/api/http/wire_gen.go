@@ -86,8 +86,8 @@ func Build(ctx context.Context, cfg *config.APIServiceConfig) (http.Server, erro
 	if err != nil {
 		return nil, err
 	}
-	config3 := &cfg.Routing
-	routeParamManager, err := routingcfg.ProvideRouteParamManager(config3)
+	config2 := &cfg.Routing
+	routeParamManager, err := routingcfg.ProvideRouteParamManager(config2)
 	if err != nil {
 		return nil, err
 	}
