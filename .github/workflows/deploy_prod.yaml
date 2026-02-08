@@ -24,9 +24,7 @@ jobs:
       frontend: ${{ steps.filter.outputs.frontend }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+      - uses: actions/checkout@v5
 
       - uses: dorny/paths-filter@v3
         id: filter
@@ -49,7 +47,7 @@ jobs:
       ARTIFACT_REPO: containers
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Authenticate to GCP
         uses: google-github-actions/auth@v2
@@ -98,7 +96,7 @@ jobs:
       ARTIFACT_REPO: containers
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Authenticate to GCP
         uses: google-github-actions/auth@v2
