@@ -1,0 +1,29 @@
+# Copy to terraform.tfvars and fill in. Do not commit terraform.tfvars.
+# Backend (API) prod only. Outputs cloud_run_api_url and artifact_registry_repository_id
+# are used by frontend Terraform (frontend/terraform/environments/prod).
+
+environment   = "prod"
+project_id    = "no-small-parts"
+gcp_region    = "us-central1"
+gcp_main_zone = "us-central1-a"
+
+# google_cloud_credentials = "path/to/sa.json"  # or set TF_VAR_google_cloud_credentials
+
+api_service_config_file = "service-config.json"
+# Or set api_service_config_json in TFC (sensitive) instead.
+
+db_instance_name = "prod"
+
+cloudflare_zone_id = "your-zone-id"
+# cloudflare_api_token = "..."  # set via env or TFC
+
+media_bucket_name   = "media.nosmall.parts"
+userdata_bucket_name = "userdata.nosmall.parts"
+
+# API secrets: set in TFC (sensitive) or here
+# sendgrid_api_token = "..."
+# segment_api_token = "..."
+# posthog_api_key = "..."
+# posthog_personal_api_key = "..."
+# google_sso_oauth2_client_id = "..."
+# google_sso_oauth2_client_secret = "..."

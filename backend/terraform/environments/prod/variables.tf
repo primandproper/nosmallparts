@@ -1,11 +1,6 @@
 # -----------------------------------------------------------------------------
-# Terraform Cloud
-# In TFC workspace → Variables, use these *exact* keys (Terraform uses snake_case):
-#   cloudflare_api_token, cloudflare_zone_id, google_cloud_credentials
-#   (+ project_id, media_bucket_name, userdata_bucket_name, frontend_*, sendgrid_*, etc.)
-# Mark secrets as "Sensitive". Do not use UPPERCASE keys (e.g. CLOUDFLARE_API_TOKEN).
-# TFC variables are only injected when the run executes in TFC (remote run). For
-# local `terraform plan`, use terraform.tfvars or TF_VAR_cloudflare_api_token etc.
+# Terraform Cloud: use exact snake_case keys (e.g. cloudflare_api_token).
+# Mark secrets as Sensitive. For local runs use terraform.tfvars or TF_VAR_*.
 # -----------------------------------------------------------------------------
 
 # -----------------------------------------------------------------------------
@@ -40,7 +35,6 @@ variable "gcp_main_zone" {
 variable "google_cloud_credentials" {
   type      = string
   sensitive = true
-  # Set in TFC (sensitive)
 }
 
 # -----------------------------------------------------------------------------
@@ -107,7 +101,6 @@ variable "artifact_repository_id" {
 variable "cloudflare_api_token" {
   type      = string
   sensitive = true
-  # Set in TFC (sensitive)
 }
 
 variable "cloudflare_zone_id" {
@@ -152,19 +145,18 @@ variable "cors_origins" {
 
 # -----------------------------------------------------------------------------
 # API config (mounted as secret at /etc/config/service-config.json)
-# Prefer api_service_config_file (read from disk); otherwise use api_service_config_json.
 # -----------------------------------------------------------------------------
 variable "api_service_config_file" {
   type        = string
   default     = ""
-  description = "Path to service-config.json relative to this directory (e.g. service-config.json). If set, file content is used; add file to .gitignore if it contains secrets."
+  description = "Path to service-config.json relative to this directory; add file to .gitignore if it contains secrets"
 }
 
 variable "api_service_config_json" {
   type        = string
   default     = "{}"
   sensitive   = true
-  description = "API service config JSON; used only when api_service_config_file is not set (e.g. set in TFC as sensitive)"
+  description = "API service config JSON; used when api_service_config_file is not set"
 }
 
 # -----------------------------------------------------------------------------
@@ -198,35 +190,4 @@ variable "google_sso_oauth2_client_id" {
 variable "google_sso_oauth2_client_secret" {
   type      = string
   sensitive = true
-}
-
-# -----------------------------------------------------------------------------
-# Frontend
-# -----------------------------------------------------------------------------
-variable "frontend_backend_http_url" {
-  type        = string
-  description = "Backend API URL for the Next.js app (e.g. Cloud Run API URL)"
-}
-
-variable "frontend_grpc_backend_url" {
-  type        = string
-  description = "Backend gRPC address for the Next.js app"
-}
-
-variable "frontend_oauth2_client_id" {
-  type      = string
-  sensitive = true
-  # Set in TFC (sensitive)
-}
-
-variable "frontend_oauth2_client_secret" {
-  type      = string
-  sensitive = true
-  # Set in TFC (sensitive)
-}
-
-variable "frontend_next_public_backend_ws_url" {
-  type        = string
-  default     = ""
-  description = "WebSocket URL for stages (browser)"
 }

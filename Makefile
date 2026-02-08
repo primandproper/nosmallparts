@@ -61,17 +61,16 @@ format:
 	(cd backend && $(MAKE) format)
 	(cd frontend && $(MAKE) format)
 
-# Terraform: format from root; init/validate from prod environment
-TERRAFORM_DIR := terraform
-TERRAFORM_ENV := $(TERRAFORM_DIR)/environments/prod
-
+# Terraform: format and lint both backend and frontend roots
 .PHONY: terraformat
 terraformat:
-	cd $(TERRAFORM_DIR) && terraform fmt -recursive
+	cd backend/terraform && terraform fmt -recursive
+	cd frontend/terraform && terraform fmt -recursive
 
 .PHONY: lint_terraform
 lint_terraform: terraformat
-	cd $(TERRAFORM_ENV) && terraform init -upgrade && terraform validate && terraform fmt -check -recursive
+	cd backend/terraform/environments/prod && terraform init -upgrade && terraform validate && terraform fmt -check -recursive
+	cd frontend/terraform/environments/prod && terraform init -upgrade && terraform validate && terraform fmt -check -recursive
 
 .PHONY: format_yaml
 format_yaml: ensure_yamlfmt_installed

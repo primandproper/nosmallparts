@@ -1,7 +1,7 @@
 # -----------------------------------------------------------------------------
-# Prod environment – providers and module call
+# Prod environment – backend (API) only. Run from this directory.
 # -----------------------------------------------------------------------------
-# Run from this directory: terraform init && terraform plan && terraform apply
+# terraform init && terraform plan && terraform apply
 
 terraform {
   required_version = ">= 1.10"
@@ -33,8 +33,8 @@ provider "cloudflare" {
   api_token = var.cloudflare_api_token
 }
 
-module "nosmallparts" {
-  source = "../../modules/nosmallparts"
+module "api" {
+  source = "../../modules/api"
 
   environment   = var.environment
   project_id    = var.project_id
@@ -49,8 +49,8 @@ module "nosmallparts" {
   db_instance_name   = var.db_instance_name
   db_ssl_common_name = var.db_ssl_common_name
 
-  pubsub_topic_prefix     = var.pubsub_topic_prefix
-  artifact_repository_id  = var.artifact_repository_id
+  pubsub_topic_prefix    = var.pubsub_topic_prefix
+  artifact_repository_id = var.artifact_repository_id
 
   cloudflare_zone_id              = var.cloudflare_zone_id
   cloudflare_db_record_name       = var.cloudflare_db_record_name
@@ -69,30 +69,24 @@ module "nosmallparts" {
   posthog_personal_api_key    = var.posthog_personal_api_key
   google_sso_oauth2_client_id = var.google_sso_oauth2_client_id
   google_sso_oauth2_client_secret = var.google_sso_oauth2_client_secret
-
-  frontend_backend_http_url        = var.frontend_backend_http_url
-  frontend_grpc_backend_url        = var.frontend_grpc_backend_url
-  frontend_oauth2_client_id       = var.frontend_oauth2_client_id
-  frontend_oauth2_client_secret   = var.frontend_oauth2_client_secret
-  frontend_next_public_backend_ws_url = var.frontend_next_public_backend_ws_url
 }
 
 output "cloud_run_api_url" {
-  value       = module.nosmallparts.cloud_run_api_url
-  description = "Cloud Run API service URL"
-}
-
-output "cloud_run_frontend_url" {
-  value       = module.nosmallparts.cloud_run_frontend_url
-  description = "Cloud Run Frontend service URL"
+  value       = module.api.cloud_run_api_url
+  description = "Cloud Run API URL; use as frontend_backend_http_url in frontend Terraform"
 }
 
 output "database_private_ip" {
-  value       = module.nosmallparts.database_private_ip
+  value       = module.api.database_private_ip
   description = "Cloud SQL private IP"
 }
 
+output "artifact_registry_repository_id" {
+  value       = module.api.artifact_registry_repository_id
+  description = "Artifact Registry repo ID; pass to frontend Terraform for image path"
+}
+
 output "environment" {
-  value       = module.nosmallparts.environment
+  value       = module.api.environment
   description = "Environment name"
 }

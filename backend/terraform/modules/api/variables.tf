@@ -76,7 +76,7 @@ variable "pubsub_topic_prefix" {
 # Artifact Registry
 # -----------------------------------------------------------------------------
 variable "artifact_repository_id" {
-  description = "Artifact Registry repository ID for container images"
+  description = "Artifact Registry repository ID for container images (API and frontend use same repo)"
   type        = string
   default     = "containers"
 }
@@ -174,33 +174,4 @@ variable "google_sso_oauth2_client_secret" {
   type      = string
   default   = ""
   sensitive = true
-}
-
-# -----------------------------------------------------------------------------
-# Frontend (Cloud Run env vars)
-# -----------------------------------------------------------------------------
-variable "frontend_backend_http_url" {
-  description = "Backend API URL for the Next.js app"
-  type        = string
-}
-
-variable "frontend_grpc_backend_url" {
-  description = "Backend gRPC address for the Next.js app"
-  type        = string
-}
-
-variable "frontend_oauth2_client_id" {
-  type      = string
-  sensitive = true
-}
-
-variable "frontend_oauth2_client_secret" {
-  type      = string
-  sensitive = true
-}
-
-variable "frontend_next_public_backend_ws_url" {
-  type        = string
-  default     = ""
-  description = "WebSocket URL for stages (browser)"
 }

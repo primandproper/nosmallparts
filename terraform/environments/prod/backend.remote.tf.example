@@ -1,9 +1,0 @@
-# backend.tf is configured for Terraform Cloud (remote state).
-# To use a local backend instead, replace backend.tf with:
-#
-# terraform {
-#   backend "local" {
-#     path = "prod.tfstate"
-#   }
-# }
-# Then: terraform init -reconfigure
