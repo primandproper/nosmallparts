@@ -14,6 +14,10 @@ gcp_main_zone = "us-central1-a"
 
 # google_cloud_credentials = "path/to/sa.json"  # or set TF_VAR_google_cloud_credentials
 
+# API config: read from disk (path relative to terraform/environments/prod). *.json is in .gitignore.
+api_service_config_file = "service-config.json"
+# Or omit the above and set api_service_config_json in TFC (sensitive) instead.
+
 db_instance_name = "prod"
 
 cloudflare_zone_id = "your-zone-id"

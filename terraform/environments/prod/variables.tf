@@ -151,6 +151,23 @@ variable "cors_origins" {
 }
 
 # -----------------------------------------------------------------------------
+# API config (mounted as secret at /etc/config/service-config.json)
+# Prefer api_service_config_file (read from disk); otherwise use api_service_config_json.
+# -----------------------------------------------------------------------------
+variable "api_service_config_file" {
+  type        = string
+  default     = ""
+  description = "Path to service-config.json relative to this directory (e.g. service-config.json). If set, file content is used; add file to .gitignore if it contains secrets."
+}
+
+variable "api_service_config_json" {
+  type        = string
+  default     = "{}"
+  sensitive   = true
+  description = "API service config JSON; used only when api_service_config_file is not set (e.g. set in TFC as sensitive)"
+}
+
+# -----------------------------------------------------------------------------
 # API secrets (set in TFC as sensitive)
 # -----------------------------------------------------------------------------
 variable "sendgrid_api_token" {

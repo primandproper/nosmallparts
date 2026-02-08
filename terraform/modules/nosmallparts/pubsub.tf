@@ -3,6 +3,11 @@ locals {
   pubsub_prefix = var.pubsub_topic_prefix
 }
 
+# API publishes change events here; consumers (e.g. Cloud Functions) can subscribe (not created by this module).
+resource "google_pubsub_topic" "data_changes_topic" {
+  name = "${local.pubsub_prefix}data_changes"
+}
+
 resource "google_pubsub_topic" "outbound_emails_topic" {
   name = "${local.pubsub_prefix}outbound_emails"
 }

@@ -23,16 +23,16 @@ variable "gcp_main_zone" {
 }
 
 # -----------------------------------------------------------------------------
-# Networking (existing VPC – data sources)
+# Networking (VPC and reserved range are created by the module)
 # -----------------------------------------------------------------------------
 variable "private_network_name" {
-  description = "Name of the existing VPC network for private service connection"
+  description = "Name of the VPC network for private service connection (created by module)"
   type        = string
   default     = "private-network"
 }
 
 variable "private_ip_address_name" {
-  description = "Name of the existing global address range for service networking"
+  description = "Name of the global address range for service networking (created by module)"
   type        = string
   default     = "private-ip-address"
 }
@@ -125,6 +125,16 @@ variable "cors_origins" {
   description = "CORS origins for storage buckets (e.g. [\"https://nosmall.parts\"])"
   type        = list(string)
   default     = ["https://nosmall.parts"]
+}
+
+# -----------------------------------------------------------------------------
+# API config (JSON string; mounted as secret at /etc/config/service-config.json)
+# -----------------------------------------------------------------------------
+variable "api_service_config_json" {
+  description = "API service config as JSON (mounted in Cloud Run; set in TFC or tfvars)"
+  type        = string
+  default     = "{}"
+  sensitive   = true
 }
 
 # -----------------------------------------------------------------------------
