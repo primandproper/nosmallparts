@@ -1,11 +1,9 @@
-# Optional: use Terraform Cloud for state. Rename to backend.tf (and remove or rename backend.tf)
-# then run: terraform init -migrate-state
+# backend.tf is configured for Terraform Cloud (remote state).
+# To use a local backend instead, replace backend.tf with:
 #
 # terraform {
-#   backend "remote" {
-#     organization = "nosmallparts"
-#     workspaces {
-#       name = "backend"
-#     }
+#   backend "local" {
+#     path = "prod.tfstate"
 #   }
 # }
+# Then: terraform init -reconfigure

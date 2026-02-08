@@ -1,7 +1,11 @@
-# Local backend – init works without Terraform Cloud.
-# To use Terraform Cloud instead: replace this with backend "remote" and run terraform init -migrate-state.
+# Terraform Cloud remote backend – state stored in TFC.
+# For CI: set secret TERRAFORM_CLOUD_API_TOKEN. For local: terraform login or TF_TOKEN_app_terraform_io.
 terraform {
-  backend "local" {
-    path = "prod.tfstate"
+  backend "remote" {
+    organization = "nosmallparts"
+
+    workspaces {
+      name = "backend"
+    }
   }
 }

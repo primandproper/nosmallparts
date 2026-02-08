@@ -23,6 +23,7 @@ jobs:
     outputs:
       backend: ${{ steps.filter.outputs.backend }}
       frontend: ${{ steps.filter.outputs.frontend }}
+      terraform: ${{ steps.filter.outputs.terraform }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
@@ -37,6 +38,48 @@ jobs:
             frontend:
               - frontend/**
               - terraform/**
+            terraform:
+              - terraform/**
+
+  terraform:
+    needs: [changes]
+    if: ${{ needs.changes.outputs.terraform == 'true' }}
+    runs-on: ubuntu-latest
+    env:
+      GCP_PROJECT: ${{ secrets.GCP_PROJECT }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      - name: Authenticate to GCP
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GOOGLE_CLOUD_CREDENTIALS }}
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.9.5
+          cli_config_credentials_token: ${{ secrets.TERRAFORM_CLOUD_API_TOKEN }}
+
+      - name: Copy API config for Terraform (optional)
+        run: |
+          if [ -f backend/deploy/environments/dev/kustomize/configs/api_service_config.json ]; then
+            cp backend/deploy/environments/dev/kustomize/configs/api_service_config.json terraform/environments/prod/service-config.json
+          fi
+        continue-on-error: true
+
+      - name: Terraform Init
+        working-directory: terraform/environments/prod
+        run: terraform init
+
+      - name: Terraform Apply
+        working-directory: terraform/environments/prod
+        env:
+          # Required for provider and module; other vars should be in TFC or add more TF_VAR_* here
+          TF_VAR_project_id: ${{ secrets.GCP_PROJECT }}
+          TF_VAR_google_cloud_credentials: ${{ secrets.GOOGLE_CLOUD_CREDENTIALS }}
+        run: terraform apply -auto-approve -input=false
 
   deploy-api:
     needs: [changes]
