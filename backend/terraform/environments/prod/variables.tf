@@ -125,14 +125,14 @@ variable "cloudflare_userdata_record_name" {
 # -----------------------------------------------------------------------------
 variable "media_bucket_name" {
   type        = string
-  default     = "media"
-  description = "GCS bucket name for media (globally unique). Set in workspace variable set."
+  default     = null
+  description = "GCS bucket name for media (globally unique). Defaults to ${project_id}-${environment}-media if unset."
 }
 
 variable "userdata_bucket_name" {
   type        = string
-  default     = "userdata"
-  description = "GCS bucket name for user data (globally unique). Set in workspace variable set."
+  default     = null
+  description = "GCS bucket name for user data (globally unique). Defaults to ${project_id}-${environment}-userdata if unset."
 }
 
 variable "cors_origins" {

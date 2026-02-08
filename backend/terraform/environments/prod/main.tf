@@ -56,8 +56,9 @@ module "api" {
   cloudflare_media_record_name    = var.cloudflare_media_record_name
   cloudflare_userdata_record_name = var.cloudflare_userdata_record_name
 
-  media_bucket_name    = var.media_bucket_name
-  userdata_bucket_name = var.userdata_bucket_name
+  # Default to project+env so bucket names are globally unique when not set in TFC
+  media_bucket_name    = coalesce(var.media_bucket_name, "${var.project_id}-${var.environment}-media")
+  userdata_bucket_name = coalesce(var.userdata_bucket_name, "${var.project_id}-${var.environment}-userdata")
   cors_origins         = var.cors_origins
 
   api_service_config_json = var.api_service_config_file != "" ? file("${path.module}/${var.api_service_config_file}") : var.api_service_config_json
