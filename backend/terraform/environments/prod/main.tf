@@ -61,13 +61,6 @@ module "api" {
   cors_origins         = var.cors_origins
 
   api_service_config_json = var.api_service_config_file != "" ? file("${path.module}/${var.api_service_config_file}") : var.api_service_config_json
-
-  sendgrid_api_token              = var.sendgrid_api_token
-  segment_api_token               = var.segment_api_token
-  posthog_api_key                 = var.posthog_api_key
-  posthog_personal_api_key        = var.posthog_personal_api_key
-  google_sso_oauth2_client_id     = var.google_sso_oauth2_client_id
-  google_sso_oauth2_client_secret = var.google_sso_oauth2_client_secret
 }
 
 output "cloud_run_api_url" {

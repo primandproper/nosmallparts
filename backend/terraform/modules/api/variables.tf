@@ -113,11 +113,13 @@ variable "cloudflare_userdata_record_name" {
 # -----------------------------------------------------------------------------
 variable "media_bucket_name" {
   description = "GCS bucket name for API media (must be globally unique)"
+  default     = "media"
   type        = string
 }
 
 variable "userdata_bucket_name" {
   description = "GCS bucket name for user data (must be globally unique)"
+  default     = "userdata"
   type        = string
 }
 
