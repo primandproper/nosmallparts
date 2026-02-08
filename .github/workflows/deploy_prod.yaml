@@ -16,34 +16,34 @@ concurrency:
 
 name: deploy prod
 jobs:
-  changes:
-    permissions:
-      pull-requests: read
-      contents: read
-    outputs:
-      backend: ${{ steps.filter.outputs.backend }}
-      frontend: ${{ steps.filter.outputs.frontend }}
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v5
-
-      - uses: dorny/paths-filter@v3
-        id: filter
-        with:
-          filters: |
-            backend:
-              - backend/**
-              - backend/terraform/**
-            frontend:
-              - frontend/**
-              - frontend/terraform/**
-            terraform_backend:
-              - backend/terraform/**
-            terraform_frontend:
-              - frontend/terraform/**
+#  changes:
+#    permissions:
+#      pull-requests: read
+#      contents: read
+#    outputs:
+#      backend: ${{ steps.filter.outputs.backend }}
+#      frontend: ${{ steps.filter.outputs.frontend }}
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/checkout@v5
+#
+#      - uses: dorny/paths-filter@v3
+#        id: filter
+#        with:
+#          filters: |
+#            backend:
+#              - backend/**
+#              - backend/terraform/**
+#            frontend:
+#              - frontend/**
+#              - frontend/terraform/**
+#            terraform_backend:
+#              - backend/terraform/**
+#            terraform_frontend:
+#              - frontend/terraform/**
 
   terraform-backend:
-    needs: [changes]
+#    needs: [changes]
     if: ${{ needs.changes.outputs.terraform_backend == 'true' || needs.changes.outputs.terraform_frontend == 'true' }}
     runs-on: ubuntu-latest
     env:
@@ -95,7 +95,7 @@ jobs:
           echo "EOF" >> $GITHUB_OUTPUT
 
   deploy-api:
-    needs: [changes, terraform-backend]
+    needs: [terraform-backend]
     if: ${{ needs.changes.outputs.backend == 'true' }}
     runs-on: ubuntu-latest
     env:
