@@ -29,9 +29,8 @@ provider "google" {
   credentials = var.google_cloud_credentials
 }
 
-provider "cloudflare" {
-  api_token = var.CLOUDFLARE_API_TOKEN
-}
+# Token is read from CLOUDFLARE_API_TOKEN env var (set in TFC workspace env vars).
+provider "cloudflare" {}
 
 module "api" {
   source = "../../modules/api"

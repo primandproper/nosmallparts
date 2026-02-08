@@ -98,13 +98,7 @@ variable "artifact_repository_id" {
 # -----------------------------------------------------------------------------
 # Cloudflare
 # -----------------------------------------------------------------------------
-# Match TFC variable set name (CLOUDFLARE_API_TOKEN) so workspace vars apply without TF_VAR_ prefix.
-variable "CLOUDFLARE_API_TOKEN" {
-  type        = string
-  sensitive   = true
-  description = "Cloudflare API token (set in workspace variable set as CLOUDFLARE_API_TOKEN)"
-}
-
+# API token: set CLOUDFLARE_API_TOKEN in TFC workspace env vars; provider reads it directly.
 variable "cloudflare_zone_id" {
   type        = string
   default     = ""
