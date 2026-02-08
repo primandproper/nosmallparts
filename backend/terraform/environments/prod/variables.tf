@@ -100,9 +100,8 @@ variable "artifact_repository_id" {
 # -----------------------------------------------------------------------------
 variable "cloudflare_api_token" {
   type        = string
-  default     = ""
   sensitive   = true
-  description = "Cloudflare API token; set via TF_VAR_cloudflare_api_token or TFC. Required only if cloudflare_zone_id is set."
+  description = "Cloudflare API token (set in workspace variable set or TF_VAR_cloudflare_api_token)"
 }
 
 variable "cloudflare_zone_id" {
@@ -131,14 +130,12 @@ variable "cloudflare_userdata_record_name" {
 # -----------------------------------------------------------------------------
 variable "media_bucket_name" {
   type        = string
-  default     = "nosmallparts-prod-media"
-  description = "GCS bucket name for media (globally unique)"
+  description = "GCS bucket name for media (globally unique). Set in workspace variable set."
 }
 
 variable "userdata_bucket_name" {
   type        = string
-  default     = "nosmallparts-prod-userdata"
-  description = "GCS bucket name for user data (globally unique)"
+  description = "GCS bucket name for user data (globally unique). Set in workspace variable set."
 }
 
 variable "cors_origins" {
@@ -164,46 +161,40 @@ variable "api_service_config_json" {
 }
 
 # -----------------------------------------------------------------------------
-# API secrets (optional – set in TFC or TF_VAR_* when using those services)
+# API secrets (set in workspace variable set or TF_VAR_*)
 # -----------------------------------------------------------------------------
 variable "sendgrid_api_token" {
   type        = string
-  default     = ""
   sensitive   = true
-  description = "SendGrid API token; leave empty if not using SendGrid"
+  description = "SendGrid API token (set in workspace variable set)"
 }
 
 variable "segment_api_token" {
   type        = string
-  default     = ""
   sensitive   = true
-  description = "Segment API token; leave empty if not using Segment"
+  description = "Segment API token (set in workspace variable set)"
 }
 
 variable "posthog_api_key" {
   type        = string
-  default     = ""
   sensitive   = true
-  description = "PostHog API key; leave empty if not using PostHog"
+  description = "PostHog API key (set in workspace variable set)"
 }
 
 variable "posthog_personal_api_key" {
   type        = string
-  default     = ""
   sensitive   = true
-  description = "PostHog personal API key; leave empty if not using PostHog"
+  description = "PostHog personal API key (set in workspace variable set)"
 }
 
 variable "google_sso_oauth2_client_id" {
   type        = string
-  default     = ""
   sensitive   = true
-  description = "Google SSO OAuth2 client ID; leave empty if not using Google SSO"
+  description = "Google SSO OAuth2 client ID (set in workspace variable set)"
 }
 
 variable "google_sso_oauth2_client_secret" {
   type        = string
-  default     = ""
   sensitive   = true
-  description = "Google SSO OAuth2 client secret; leave empty if not using Google SSO"
+  description = "Google SSO OAuth2 client secret (set in workspace variable set)"
 }

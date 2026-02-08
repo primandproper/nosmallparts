@@ -29,11 +29,8 @@ provider "google" {
   credentials = var.google_cloud_credentials
 }
 
-# Use a placeholder when token is empty so the provider process doesn't exit during
-# plan/apply. When cloudflare_zone_id is empty there are no Cloudflare resources, so
-# the provider is never used for API calls.
 provider "cloudflare" {
-  api_token = var.cloudflare_api_token != "" ? var.cloudflare_api_token : "placeholder-unused-no-cloudflare-dns"
+  api_token = var.cloudflare_api_token
 }
 
 module "api" {
