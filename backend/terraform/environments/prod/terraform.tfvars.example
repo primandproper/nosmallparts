@@ -19,11 +19,3 @@ cloudflare_zone_id = "your-zone-id"
 
 media_bucket_name   = "media.nosmall.parts"
 userdata_bucket_name = "userdata.nosmall.parts"
-
-# API secrets: set in TFC (sensitive) or here
-# sendgrid_api_token = "..."
-# segment_api_token = "..."
-# posthog_api_key = "..."
-# posthog_personal_api_key = "..."
-# google_sso_oauth2_client_id = "..."
-# google_sso_oauth2_client_secret = "..."

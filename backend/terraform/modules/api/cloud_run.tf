@@ -65,30 +65,6 @@ resource "google_cloud_run_v2_service" "api" {
         value = base64encode(random_string.jwt_signing_key.result)
       }
       env {
-        name  = "SENDGRID_API_TOKEN"
-        value = var.sendgrid_api_token
-      }
-      env {
-        name  = "SEGMENT_API_TOKEN"
-        value = var.segment_api_token
-      }
-      env {
-        name  = "POSTHOG_API_KEY"
-        value = var.posthog_api_key
-      }
-      env {
-        name  = "POSTHOG_PERSONAL_API_KEY"
-        value = var.posthog_personal_api_key
-      }
-      env {
-        name  = "GOOGLE_SSO_OAUTH2_CLIENT_ID"
-        value = var.google_sso_oauth2_client_id
-      }
-      env {
-        name  = "GOOGLE_SSO_OAUTH2_CLIENT_SECRET"
-        value = var.google_sso_oauth2_client_secret
-      }
-      env {
         name  = "NO_SMALL_PARTS_QUEUES_DATA_CHANGES_TOPIC_NAME"
         value = google_pubsub_topic.data_changes_topic.name
       }
