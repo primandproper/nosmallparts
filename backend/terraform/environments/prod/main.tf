@@ -41,8 +41,8 @@ module "api" {
   gcp_region    = var.gcp_region
   gcp_main_zone = var.gcp_main_zone
 
-  private_network_name       = var.private_network_name
-  private_ip_address_name    = var.private_ip_address_name
+  private_network_name        = var.private_network_name
+  private_ip_address_name     = var.private_ip_address_name
   vpc_connector_ip_cidr_range = var.vpc_connector_ip_cidr_range
 
   database_name      = var.database_name
@@ -57,17 +57,17 @@ module "api" {
   cloudflare_media_record_name    = var.cloudflare_media_record_name
   cloudflare_userdata_record_name = var.cloudflare_userdata_record_name
 
-  media_bucket_name   = var.media_bucket_name
+  media_bucket_name    = var.media_bucket_name
   userdata_bucket_name = var.userdata_bucket_name
-  cors_origins        = var.cors_origins
+  cors_origins         = var.cors_origins
 
   api_service_config_json = var.api_service_config_file != "" ? file("${path.module}/${var.api_service_config_file}") : var.api_service_config_json
 
-  sendgrid_api_token          = var.sendgrid_api_token
-  segment_api_token           = var.segment_api_token
-  posthog_api_key             = var.posthog_api_key
-  posthog_personal_api_key    = var.posthog_personal_api_key
-  google_sso_oauth2_client_id = var.google_sso_oauth2_client_id
+  sendgrid_api_token              = var.sendgrid_api_token
+  segment_api_token               = var.segment_api_token
+  posthog_api_key                 = var.posthog_api_key
+  posthog_personal_api_key        = var.posthog_personal_api_key
+  google_sso_oauth2_client_id     = var.google_sso_oauth2_client_id
   google_sso_oauth2_client_secret = var.google_sso_oauth2_client_secret
 }
 

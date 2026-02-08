@@ -71,7 +71,7 @@ resource "google_storage_bucket" "user_data_storage" {
 
   lifecycle_rule {
     condition { age = 30 }
-    action   { type = "Delete" }
+    action { type = "Delete" }
   }
 }
 

@@ -37,9 +37,9 @@ resource "google_sql_database_instance" "main" {
       min_length                  = 30
       reuse_interval              = 1
       complexity                  = "COMPLEXITY_DEFAULT"
-      disallow_username_substring  = true
+      disallow_username_substring = true
       password_change_interval    = "1s"
-      enable_password_policy     = true
+      enable_password_policy      = true
     }
   }
 }
