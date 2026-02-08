@@ -81,6 +81,10 @@ jobs:
         env:
           TF_VAR_project_id: ${{ secrets.GCP_PROJECT }}
           TF_VAR_google_cloud_credentials: ${{ secrets.GOOGLE_CLOUD_CREDENTIALS }}
+          # TFC workspace env vars are not available when running from GHA; pass secrets as TF_VAR_*
+          TF_VAR_cloudflare_api_token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          TF_VAR_media_bucket_name: ${{ secrets.GCP_PROJECT }}-media
+          TF_VAR_userdata_bucket_name: ${{ secrets.GCP_PROJECT }}-userdata
         run: terraform apply -auto-approve -input=false
 
       - name: Terraform outputs

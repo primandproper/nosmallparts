@@ -99,8 +99,10 @@ variable "artifact_repository_id" {
 # Cloudflare
 # -----------------------------------------------------------------------------
 variable "cloudflare_api_token" {
-  type      = string
-  sensitive = true
+  type        = string
+  default     = ""
+  sensitive   = true
+  description = "Cloudflare API token; set via TF_VAR_cloudflare_api_token or TFC. Required only if cloudflare_zone_id is set."
 }
 
 variable "cloudflare_zone_id" {
@@ -129,11 +131,13 @@ variable "cloudflare_userdata_record_name" {
 # -----------------------------------------------------------------------------
 variable "media_bucket_name" {
   type        = string
+  default     = "nosmallparts-prod-media"
   description = "GCS bucket name for media (globally unique)"
 }
 
 variable "userdata_bucket_name" {
   type        = string
+  default     = "nosmallparts-prod-userdata"
   description = "GCS bucket name for user data (globally unique)"
 }
 
@@ -160,34 +164,46 @@ variable "api_service_config_json" {
 }
 
 # -----------------------------------------------------------------------------
-# API secrets (set in TFC as sensitive)
+# API secrets (optional – set in TFC or TF_VAR_* when using those services)
 # -----------------------------------------------------------------------------
 variable "sendgrid_api_token" {
-  type      = string
-  sensitive = true
+  type        = string
+  default     = ""
+  sensitive   = true
+  description = "SendGrid API token; leave empty if not using SendGrid"
 }
 
 variable "segment_api_token" {
-  type      = string
-  sensitive = true
+  type        = string
+  default     = ""
+  sensitive   = true
+  description = "Segment API token; leave empty if not using Segment"
 }
 
 variable "posthog_api_key" {
-  type      = string
-  sensitive = true
+  type        = string
+  default     = ""
+  sensitive   = true
+  description = "PostHog API key; leave empty if not using PostHog"
 }
 
 variable "posthog_personal_api_key" {
-  type      = string
-  sensitive = true
+  type        = string
+  default     = ""
+  sensitive   = true
+  description = "PostHog personal API key; leave empty if not using PostHog"
 }
 
 variable "google_sso_oauth2_client_id" {
-  type      = string
-  sensitive = true
+  type        = string
+  default     = ""
+  sensitive   = true
+  description = "Google SSO OAuth2 client ID; leave empty if not using Google SSO"
 }
 
 variable "google_sso_oauth2_client_secret" {
-  type      = string
-  sensitive = true
+  type        = string
+  default     = ""
+  sensitive   = true
+  description = "Google SSO OAuth2 client secret; leave empty if not using Google SSO"
 }
