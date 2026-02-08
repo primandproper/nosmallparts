@@ -79,6 +79,7 @@ jobs:
       - name: Terraform Apply
         working-directory: backend/terraform/environments/prod
         env:
+          TF_LOG: INFO
           TF_VAR_project_id: ${{ secrets.GCP_PROJECT }}
           TF_VAR_google_cloud_credentials: ${{ secrets.GOOGLE_CLOUD_CREDENTIALS }}
           # TFC workspace env vars are not available when running from GHA; pass secrets as TF_VAR_*
