@@ -82,7 +82,7 @@ jobs:
         run: terraform apply -auto-approve -input=false
 
   deploy-api:
-    needs: [changes]
+    needs: [changes, terraform]
     if: ${{ needs.changes.outputs.backend == 'true' }}
     runs-on: ubuntu-latest
     env:
@@ -131,7 +131,7 @@ jobs:
           image: ${{ env.GCP_REGION }}-docker.pkg.dev/${{ env.GCP_PROJECT }}/${{ env.ARTIFACT_REPO }}/nosmallparts-api:latest
 
 #  deploy-frontend:
-#    needs: [changes]
+#    needs: [changes, terraform]
 #    if: ${{ needs.changes.outputs.frontend == 'true' }}
 #    runs-on: ubuntu-latest
 #    env:
