@@ -72,6 +72,28 @@ jobs:
             cp backend/deploy/environments/dev/kustomize/configs/api_service_config.json backend/terraform/environments/prod/service-config.json
           fi
 
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v2
+
+      - name: Authorize Docker push to Artifact Registry
+        run: gcloud auth configure-docker us-central1-docker.pkg.dev
+
+      - name: Ensure Artifact Registry repository exists
+        run: |
+          gcloud artifacts repositories create containers \
+            --repository-format=docker \
+            --location=us-central1 \
+            --description="Images for No Small Parts Cloud Run" \
+            || true
+
+      - name: Build and push API image (for Terraform Cloud Run)
+        run: |
+          docker build \
+            -f backend/deploy/dockerfiles/api_server.Dockerfile \
+            -t us-central1-docker.pkg.dev/${{ env.GCP_PROJECT }}/containers/nosmallparts-api:latest \
+            ./backend
+          docker push us-central1-docker.pkg.dev/${{ env.GCP_PROJECT }}/containers/nosmallparts-api:latest
+
       - name: Terraform Init
         working-directory: backend/terraform/environments/prod
         run: terraform init
