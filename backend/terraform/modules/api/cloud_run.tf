@@ -6,9 +6,10 @@ resource "google_vpc_access_connector" "cloud_run" {
 }
 
 resource "google_cloud_run_v2_service" "api" {
-  name     = "nosmallparts-api-${var.environment}"
-  location = var.gcp_region
-  ingress  = "INGRESS_TRAFFIC_ALL"
+  name                = "nosmallparts-api-${var.environment}"
+  location            = var.gcp_region
+  ingress             = "INGRESS_TRAFFIC_ALL"
+  deletion_protection = false
 
   template {
     scaling {
