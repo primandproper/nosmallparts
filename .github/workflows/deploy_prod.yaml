@@ -98,6 +98,14 @@ jobs:
         working-directory: backend/terraform/environments/prod
         run: terraform init
 
+      - name: Terraform Apply (set deletion_protection=false on Cloud Run)
+        working-directory: backend/terraform/environments/prod
+        env:
+          TF_VAR_project_id: ${{ secrets.GCP_PROJECT }}
+          TF_VAR_google_cloud_credentials: ${{ secrets.GOOGLE_CLOUD_CREDENTIALS }}
+        run: terraform apply -auto-approve -input=false -target=module.api.google_cloud_run_v2_service.api
+        continue-on-error: true
+
       - name: Terraform Apply
         working-directory: backend/terraform/environments/prod
         env:
