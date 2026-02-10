@@ -76,65 +76,46 @@ jobs:
         working-directory: backend/terraform/environments/prod
         run: terraform init
 
-      - name: Terraform Apply (set deletion_protection=false on Cloud Run)
-        working-directory: backend/terraform/environments/prod
-        env:
-          TF_VAR_project_id: ${{ secrets.GCP_PROJECT }}
-          TF_VAR_google_cloud_credentials: ${{ secrets.GOOGLE_CLOUD_CREDENTIALS }}
-        run: terraform apply -auto-approve -input=false -target=module.api.google_cloud_run_v2_service.api
-        continue-on-error: true
+     - name: Set up Cloud SDK
+       uses: google-github-actions/setup-gcloud@v2
 
-      - name: Terraform Destroy
-        working-directory: backend/terraform/environments/prod
-        env:
-          TF_VAR_project_id: ${{ secrets.GCP_PROJECT }}
-          TF_VAR_google_cloud_credentials: ${{ secrets.GOOGLE_CLOUD_CREDENTIALS }}
-        run: terraform destroy -auto-approve -input=false
+     - name: Authorize Docker push to Artifact Registry
+       run: gcloud auth configure-docker us-central1-docker.pkg.dev
 
-# -----------------------------------------------------------------------------
-# Backend terraform apply + deploy-api commented out for one-off destroy.
-# Uncomment the block below and remove the destroy step above to restore deploy.
-# -----------------------------------------------------------------------------
-#      - name: Set up Cloud SDK
-#        uses: google-github-actions/setup-gcloud@v2
-#
-#      - name: Authorize Docker push to Artifact Registry
-#        run: gcloud auth configure-docker us-central1-docker.pkg.dev
-#
-#      - name: Ensure Artifact Registry repository exists
-#        run: |
-#          gcloud artifacts repositories create containers \
-#            --repository-format=docker \
-#            --location=us-central1 \
-#            --description="Images for No Small Parts Cloud Run" \
-#            || true
-#
-#      - name: Build and push API image (for Terraform Cloud Run)
-#        run: |
-#          docker build \
-#            -f backend/deploy/dockerfiles/api_server.Dockerfile \
-#            -t us-central1-docker.pkg.dev/${{ env.GCP_PROJECT }}/containers/nosmallparts-api:latest \
-#            ./backend
-#          docker push us-central1-docker.pkg.dev/${{ env.GCP_PROJECT }}/containers/nosmallparts-api:latest
-#
-#      - name: Terraform Apply
-#        working-directory: backend/terraform/environments/prod
-#        env:
-#          TF_VAR_project_id: ${{ secrets.GCP_PROJECT }}
-#          TF_VAR_google_cloud_credentials: ${{ secrets.GOOGLE_CLOUD_CREDENTIALS }}
-#        run: terraform apply -auto-approve -input=false
-#
-#      - name: Terraform outputs
-#        id: outputs
-#        working-directory: backend/terraform/environments/prod
-#        run: |
-#          echo "cloud_run_api_url<<EOF" >> $GITHUB_OUTPUT
-#          terraform output -raw cloud_run_api_url >> $GITHUB_OUTPUT
-#          echo "EOF" >> $GITHUB_OUTPUT
-#          echo "artifact_registry_repository_id<<EOF" >> $GITHUB_OUTPUT
-#          terraform output -raw artifact_registry_repository_id >> $GITHUB_OUTPUT
-#          echo "EOF" >> $GITHUB_OUTPUT
-#
+     - name: Ensure Artifact Registry repository exists
+       run: |
+         gcloud artifacts repositories create containers \
+           --repository-format=docker \
+           --location=us-central1 \
+           --description="Images for No Small Parts Cloud Run" \
+           || true
+
+     - name: Build and push API image (for Terraform Cloud Run)
+       run: |
+         docker build \
+           -f backend/deploy/dockerfiles/api_server.Dockerfile \
+           -t us-central1-docker.pkg.dev/${{ env.GCP_PROJECT }}/containers/nosmallparts-api:latest \
+           ./backend
+         docker push us-central1-docker.pkg.dev/${{ env.GCP_PROJECT }}/containers/nosmallparts-api:latest
+
+     - name: Terraform Apply
+       working-directory: backend/terraform/environments/prod
+       env:
+         TF_VAR_project_id: ${{ secrets.GCP_PROJECT }}
+         TF_VAR_google_cloud_credentials: ${{ secrets.GOOGLE_CLOUD_CREDENTIALS }}
+       run: terraform apply -auto-approve -input=false
+
+     - name: Terraform outputs
+       id: outputs
+       working-directory: backend/terraform/environments/prod
+       run: |
+         echo "cloud_run_api_url<<EOF" >> $GITHUB_OUTPUT
+         terraform output -raw cloud_run_api_url >> $GITHUB_OUTPUT
+         echo "EOF" >> $GITHUB_OUTPUT
+         echo "artifact_registry_repository_id<<EOF" >> $GITHUB_OUTPUT
+         terraform output -raw artifact_registry_repository_id >> $GITHUB_OUTPUT
+         echo "EOF" >> $GITHUB_OUTPUT
+
 #  deploy-api:
 #    needs: [terraform-backend]
 ##    if: ${{ needs.changes.outputs.backend == 'true' }}
