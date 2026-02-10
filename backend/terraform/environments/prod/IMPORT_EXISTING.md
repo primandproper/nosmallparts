@@ -13,3 +13,16 @@ terraform import 'module.api.google_artifact_registry_repository.main' \
 ```
 
 Then run `terraform plan` again; it should show no create for these resources (only any desired changes).
+
+---
+
+# Remove from state when a resource was manually deleted in GCP
+
+If you deleted a resource in the GCP console, Terraform still has it in state and will try to use it. Remove it from state so the next apply recreates it:
+
+```bash
+# Example: VPC connector was manually deleted
+terraform state rm 'module.api.google_vpc_access_connector.cloud_run'
+```
+
+Then run `terraform apply`; Terraform will create the connector and the Cloud Run service can use it.
