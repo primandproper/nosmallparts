@@ -50,7 +50,6 @@ jobs:
       GCP_PROJECT: ${{ secrets.GCP_PROJECT }}
     outputs:
       cloud_run_api_url: ${{ steps.outputs.outputs.cloud_run_api_url }}
-      artifact_registry_repository_id: ${{ steps.outputs.outputs.artifact_registry_repository_id }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v5
@@ -113,9 +112,6 @@ jobs:
         run: |
           echo "cloud_run_api_url<<EOF" >> $GITHUB_OUTPUT
           terraform output -raw cloud_run_api_url >> $GITHUB_OUTPUT
-          echo "EOF" >> $GITHUB_OUTPUT
-          echo "artifact_registry_repository_id<<EOF" >> $GITHUB_OUTPUT
-          terraform output -raw artifact_registry_repository_id >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
 
   deploy-api:
@@ -197,7 +193,6 @@ jobs:
 #       env:
 #         TF_VAR_project_id: ${{ secrets.GCP_PROJECT }}
 #         TF_VAR_google_cloud_credentials: ${{ secrets.GOOGLE_CLOUD_CREDENTIALS }}
-#         TF_VAR_artifact_repository_id: ${{ needs.terraform-backend.outputs.artifact_registry_repository_id }}
 #         TF_VAR_frontend_backend_http_url: ${{ needs.terraform-backend.outputs.cloud_run_api_url }}
 #         TF_VAR_frontend_grpc_backend_url: ${{ needs.terraform-backend.outputs.cloud_run_api_url }}
 #       run: terraform apply -auto-approve -input=false
