@@ -3,6 +3,8 @@ resource "google_vpc_access_connector" "cloud_run" {
   region        = var.gcp_region
   network       = google_compute_network.private_network.name
   ip_cidr_range = var.vpc_connector_ip_cidr_range
+  min_instances = 2
+  max_instances = 3
 }
 
 resource "google_cloud_run_v2_service" "api" {
@@ -31,7 +33,7 @@ resource "google_cloud_run_v2_service" "api" {
       }
     }
     containers {
-      image = "${var.gcp_region}-docker.pkg.dev/${var.project_id}/${google_artifact_registry_repository.main.repository_id}/nosmallparts-api:latest"
+      image = "${var.gcp_region}-docker.pkg.dev/${var.project_id}/containers/nosmallparts-api:latest"
 
       env {
         name  = "CONFIGURATION_FILEPATH"

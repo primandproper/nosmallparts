@@ -88,7 +88,7 @@ jobs:
 
       - name: Build and push API image (for Terraform Cloud Run)
         run: |
-          docker build \
+          docker build --platform linux/amd64 \
             -f backend/deploy/dockerfiles/api_server.Dockerfile \
             -t us-central1-docker.pkg.dev/${{ env.GCP_PROJECT }}/containers/nosmallparts-api:latest \
             ./backend
@@ -97,26 +97,6 @@ jobs:
       - name: Terraform Init
         working-directory: backend/terraform/environments/prod
         run: terraform init
-
-      - name: Terraform Apply (set deletion_protection=false on Cloud Run)
-        working-directory: backend/terraform/environments/prod
-        env:
-          TF_VAR_project_id: ${{ secrets.GCP_PROJECT }}
-          TF_VAR_google_cloud_credentials: ${{ secrets.GOOGLE_CLOUD_CREDENTIALS }}
-        run: terraform apply -auto-approve -input=false -target=module.api.google_cloud_run_v2_service.api
-        continue-on-error: true
-
-      - name: Terraform state rm (VPC connector if manually deleted in GCP)
-        working-directory: backend/terraform/environments/prod
-        env:
-          TF_VAR_project_id: ${{ secrets.GCP_PROJECT }}
-          TF_VAR_google_cloud_credentials: ${{ secrets.GOOGLE_CLOUD_CREDENTIALS }}
-        run: |
-          if ! gcloud compute networks vpc-access connectors describe prod-cloud-run-connector \
-            --region=us-central1 --project=${{ env.GCP_PROJECT }} 2>/dev/null; then
-            echo "VPC connector missing in GCP; removing from state so Terraform will recreate it"
-            terraform state rm 'module.api.google_vpc_access_connector.cloud_run'
-          fi
 
       - name: Terraform Apply
         working-directory: backend/terraform/environments/prod
@@ -169,7 +149,7 @@ jobs:
 
       - name: Build and push API image
         run: |
-          docker build \
+          docker build --platform linux/amd64 \
             -f backend/deploy/dockerfiles/api_server.Dockerfile \
             -t ${{ env.GCP_REGION }}-docker.pkg.dev/${{ env.GCP_PROJECT }}/${{ env.ARTIFACT_REPO }}/nosmallparts-api:${{ github.sha }} \
             -t ${{ env.GCP_REGION }}-docker.pkg.dev/${{ env.GCP_PROJECT }}/${{ env.ARTIFACT_REPO }}/nosmallparts-api:latest \

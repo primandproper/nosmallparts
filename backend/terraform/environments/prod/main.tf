@@ -74,11 +74,6 @@ output "database_private_ip" {
   description = "Cloud SQL private IP"
 }
 
-output "artifact_registry_repository_id" {
-  value       = module.api.artifact_registry_repository_id
-  description = "Artifact Registry repo ID; pass to frontend Terraform for image path"
-}
-
 output "environment" {
   value       = module.api.environment
   description = "Environment name"

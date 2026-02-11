@@ -8,11 +8,6 @@ output "database_private_ip" {
   description = "Cloud SQL private IP"
 }
 
-output "artifact_registry_repository_id" {
-  value       = google_artifact_registry_repository.main.repository_id
-  description = "Artifact Registry repository ID (API and frontend images; pass to frontend Terraform)"
-}
-
 output "environment" {
   value       = var.environment
   description = "Environment name"
