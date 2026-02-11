@@ -90,7 +90,7 @@ func buildDevEnvironmentServerConfig() *config.APIServiceConfig {
 			},
 		},
 		Email: emailcfg.Config{
-			Provider: emailcfg.ProviderSendgrid,
+			Provider: "",
 			CircuitBreaker: circuitbreaking.Config{
 				Name:                   "dev_emailer",
 				ErrorRate:              .5,
@@ -99,7 +99,7 @@ func buildDevEnvironmentServerConfig() *config.APIServiceConfig {
 			Sendgrid: &sendgrid.Config{},
 		},
 		Analytics: analyticscfg.Config{
-			Provider: analyticscfg.ProviderSegment,
+			Provider: "",
 			CircuitBreaker: circuitbreaking.Config{
 				Name:                   "dev_analytics",
 				ErrorRate:              .5,
@@ -122,7 +122,7 @@ func buildDevEnvironmentServerConfig() *config.APIServiceConfig {
 				ErrorRate:              .5,
 				MinimumSampleThreshold: 100,
 			},
-			Provider: textsearchcfg.AlgoliaProvider,
+			Provider: "",
 		},
 		Database: databasecfg.Config{
 			Provider:        databasecfg.ProviderPostgres,

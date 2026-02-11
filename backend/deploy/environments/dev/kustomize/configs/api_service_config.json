@@ -93,7 +93,7 @@
 		},
 		"posthog": null,
 		"rudderstack": null,
-		"provider": "segment",
+		"provider": "",
 		"circuitBreaker": {
 			"name": "dev_analytics",
 			"circuitBreakerErrorPercentage": 0.5,
@@ -106,7 +106,7 @@
 		},
 		"mailgun": null,
 		"mailjet": null,
-		"provider": "sendgrid",
+		"provider": "",
 		"circuitBreakerConfig": {
 			"name": "dev_emailer",
 			"circuitBreakerErrorPercentage": 0.5,
@@ -120,7 +120,7 @@
 			"timeout": 0
 		},
 		"elasticsearch": null,
-		"provider": "algolia",
+		"provider": "",
 		"circuitBreakerConfig": {
 			"name": "dev_text_searcher",
 			"circuitBreakerErrorPercentage": 0.5,
