@@ -40,27 +40,55 @@ resource "google_cloud_run_v2_service" "api" {
         value = "/etc/config/service-config.json"
       }
       env {
-        name  = "DATABASE_HOST"
+        name  = "NO_SMALL_PARTS_DATABASE_READ_CONNECTION_HOST"
         value = google_sql_database_instance.main.private_ip_address
       }
       env {
-        name  = "DATABASE_USERNAME"
+        name  = "NO_SMALL_PARTS_DATABASE_READ_CONNECTION_USERNAME"
         value = local.api_database_username
       }
       env {
-        name  = "DATABASE_PASSWORD"
+        name  = "NO_SMALL_PARTS_DATABASE_READ_CONNECTION_PASSWORD"
         value = random_password.api_user_database_password.result
       }
       env {
-        name  = "DATABASE_NAME"
+        name  = "NO_SMALL_PARTS_DATABASE_READ_CONNECTION_DATABASE"
         value = var.database_name
       }
       env {
-        name  = "OAUTH2_TOKEN_ENCRYPTION_KEY"
+        name  = "NO_SMALL_PARTS_DATABASE_READ_CONNECTION_PORT"
+        value = "5432"
+      }
+      env {
+        name  = "NO_SMALL_PARTS_DATABASE_WRITE_CONNECTION_HOST"
+        value = google_sql_database_instance.main.private_ip_address
+      }
+      env {
+        name  = "NO_SMALL_PARTS_DATABASE_WRITE_CONNECTION_USERNAME"
+        value = local.api_database_username
+      }
+      env {
+        name  = "NO_SMALL_PARTS_DATABASE_WRITE_CONNECTION_PASSWORD"
+        value = random_password.api_user_database_password.result
+      }
+      env {
+        name  = "NO_SMALL_PARTS_DATABASE_WRITE_CONNECTION_DATABASE"
+        value = var.database_name
+      }
+      env {
+        name  = "NO_SMALL_PARTS_DATABASE_WRITE_CONNECTION_PORT"
+        value = "5432"
+      }
+      env {
+        name  = "NO_SMALL_PARTS_DATABASE_RUN_MIGRATIONS"
+        value = "true"
+      }
+      env {
+        name  = "NO_SMALL_PARTS_DATABASE_OAUTH2_TOKEN_ENCRYPTION_KEY"
         value = random_string.oauth2_token_encryption_key.result
       }
       env {
-        name  = "JWT_SIGNING_KEY"
+        name  = "NO_SMALL_PARTS_SERVICE_AUTH_TOKENS_SIGNING_KEY"
         value = base64encode(random_string.jwt_signing_key.result)
       }
       env {

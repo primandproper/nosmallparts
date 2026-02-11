@@ -103,6 +103,8 @@ jobs:
         env:
           TF_VAR_project_id: ${{ secrets.GCP_PROJECT }}
           TF_VAR_google_cloud_credentials: ${{ secrets.GOOGLE_CLOUD_CREDENTIALS }}
+          # Use copied service-config.json so Secret Manager gets real config (not default "{}")
+          TF_VAR_api_service_config_file: service-config.json
         run: terraform apply -auto-approve -input=false
 
       - name: Terraform outputs
