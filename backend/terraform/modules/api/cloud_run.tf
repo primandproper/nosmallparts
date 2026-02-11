@@ -41,7 +41,7 @@ resource "google_cloud_run_v2_service" "api" {
         period_seconds       = 5
         failure_threshold    = 6
         http_get {
-          path = "/ready"
+          path = "/_ops_/ready"
         }
       }
 
