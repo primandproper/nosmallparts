@@ -8,7 +8,6 @@
 	},
 	"events": {
 		"consumers": {
-			"provider": "pubsub",
 			"sqs": {
 				"queueAddress": ""
 			},
@@ -21,7 +20,6 @@
 			}
 		},
 		"publishers": {
-			"provider": "pubsub",
 			"sqs": {
 				"queueAddress": ""
 			},

@@ -73,11 +73,11 @@ func buildDevEnvironmentServerConfig() *config.APIServiceConfig {
 		},
 		Events: msgconfig.Config{
 			Consumer: msgconfig.MessageQueueConfig{
-				Provider: msgconfig.ProviderPubSub,
+				Provider: "", // msgconfig.ProviderPubSub,
 				PubSub:   pubsub.Config{ProjectID: gcpProjectID},
 			},
 			Publisher: msgconfig.MessageQueueConfig{
-				Provider: msgconfig.ProviderPubSub,
+				Provider: "", // msgconfig.ProviderPubSub,
 				PubSub:   pubsub.Config{ProjectID: gcpProjectID},
 			},
 		},
