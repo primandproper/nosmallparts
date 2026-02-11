@@ -35,9 +35,23 @@ resource "google_cloud_run_v2_service" "api" {
     containers {
       image = "${var.gcp_region}-docker.pkg.dev/${var.project_id}/containers/nosmallparts-api:latest"
 
+      startup_probe {
+        initial_delay_seconds = 5
+        timeout_seconds       = 3
+        period_seconds       = 5
+        failure_threshold    = 6
+        http_get {
+          path = "/ready"
+        }
+      }
+
       env {
         name  = "CONFIGURATION_FILEPATH"
         value = "/etc/config/service-config.json"
+      }
+      env {
+        name  = "RUNNING_IN_GCP_CLOUD_RUN"
+        value = "true"
       }
       env {
         name  = "NO_SMALL_PARTS_DATABASE_READ_CONNECTION_HOST"
