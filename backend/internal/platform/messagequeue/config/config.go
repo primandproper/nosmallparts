@@ -98,7 +98,7 @@ func ProvideConsumerProvider(ctx context.Context, logger logging.Logger, c *Conf
 
 		return pubsub.ProvidePubSubConsumerProvider(logger, client), nil
 	default:
-		return nil, fmt.Errorf("invalid provider: %q", c.Consumer.Provider)
+		return messagequeue.NewNoopConsumerProvider(), nil
 	}
 }
 
@@ -121,6 +121,6 @@ func ProvidePublisherProvider(ctx context.Context, logger logging.Logger, tracer
 
 		return pubsub.ProvidePubSubPublisherProvider(logger, tracerProvider, client), nil
 	default:
-		return nil, fmt.Errorf("invalid publisher provider: %q", c.Publisher.Provider)
+		return messagequeue.NewNoopPublisherProvider(), nil
 	}
 }
