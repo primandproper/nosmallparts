@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
+import { getBackendCookieForRequest, clearEncryptedBackendCookie } from '@/lib/backend-session-cookie';
 
-// Get the Go backend URL from environment variable
 function getBackendUrl(): string {
   return process.env.BACKEND_HTTP_URL || 'http://localhost:8000';
 }
@@ -12,13 +12,24 @@ interface CreateStageResponse {
 
 export async function POST() {
   try {
+    const sessionCookie = await getBackendCookieForRequest();
+    if (!sessionCookie) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+
     const backendUrl = getBackendUrl();
     const response = await fetch(`${backendUrl}/api/stages`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'X-Session-Cookie': sessionCookie,
       },
     });
+
+    if (response.status === 401) {
+      await clearEncryptedBackendCookie();
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
 
     if (!response.ok) {
       const data = await response.json();

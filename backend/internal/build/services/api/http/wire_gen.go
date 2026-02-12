@@ -8,19 +8,21 @@ package api
 
 import (
 	"context"
-
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/authentication"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/authentication/cookies"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/config"
-	analyticscfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/analytics/config"
-	databasecfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/config"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/identity/manager"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/analytics/config"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/config"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/encoding"
-	featureflagscfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/featureflags/config"
-	msgconfig "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/messagequeue/config"
-	loggingcfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging/config"
-	metricscfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/metrics/config"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/featureflags/config"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/messagequeue/config"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging/config"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/metrics/config"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
-	tracingcfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing/config"
-	routingcfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/routing/config"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing/config"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/random"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/routing/config"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/server/http"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/auditlogentries"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/identity"
@@ -30,6 +32,7 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/stages"
 	authentication2 "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/auth/handlers/authentication"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/livekit"
+	playscripts2 "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/playscripts"
 	stages2 "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/stages"
 )
 
@@ -91,22 +94,45 @@ func Build(ctx context.Context, cfg *config.APIServiceConfig) (http.Server, erro
 	if err != nil {
 		return nil, err
 	}
-	queuesConfig := &cfg.Queues
-	authDataService, err := authentication2.ProvideService(ctx, logger, authenticationConfig, authenticator, oauthRepository, identityRepository, serverEncoderDecoder, tracerProvider, publisherProvider, featureFlagManager, eventReporter, routeParamManager, queuesConfig)
+	queuesConfig := ProvideQueuesConfig(cfg)
+	cookiesConfig := ProvideCookiesConfig(cfg)
+	cookiesManager, err := cookies.NewCookieManager(cookiesConfig, tracerProvider)
+	if err != nil {
+		return nil, err
+	}
+	authDataService, err := authentication2.ProvideService(ctx, logger, authenticationConfig, authenticator, oauthRepository, identityRepository, serverEncoderDecoder, tracerProvider, publisherProvider, featureFlagManager, eventReporter, routeParamManager, queuesConfig, cookiesManager, cookiesConfig)
 	if err != nil {
 		return nil, err
 	}
 	appleAppSiteAssociationConfig := cfg.AppleAppSiteAssociation
 	stagesRepository := stages.ProvideStagesRepository(logger, tracerProvider, client)
+	stagesManager := stages2.ProvideStagesManager(stagesRepository)
 	playscriptsRepository := playscripts.ProvidePlayScriptsRepository(logger, tracerProvider, repository, client)
 	connectionManager := stages2.ProvideConnectionManager(tracerProvider, logger)
-	handler := stages2.ProvideHandler(logger, tracerProvider, stagesRepository, playscriptsRepository, connectionManager)
+	handler := stages2.ProvideHandler(logger, tracerProvider, stagesManager, playscriptsRepository, connectionManager)
+	playScriptsManager := playscripts2.ProvidePlayScriptsManager(playscriptsRepository)
+	httpHandler := playscripts2.ProvideHTTPHandler(playScriptsManager, serverEncoderDecoder, logger, tracerProvider)
 	livekitConfig := &cfg.LiveKit
 	livekitHandler, err := livekit.NewHandler(ctx, livekitConfig, logger, tracerProvider, serverEncoderDecoder)
 	if err != nil {
 		return nil, err
 	}
-	router, err := ProvideAPIRouter(routingcfgConfig, logger, tracerProvider, provider, authDataService, appleAppSiteAssociationConfig, handler, livekitHandler)
+	middleware := ProvideSessionFromCookieMiddleware(cookiesManager, cookiesConfig, logger, tracerProvider)
+	apiOauth2ManagerForSession := ProvideOAuth2ManagerForSession(logger, tracerProvider, cfg, oauthRepository)
+	sessionCookieHandler := ProvideSessionCookieHandler(apiOauth2ManagerForSession, identityRepository, cookiesManager, cookiesConfig, logger, tracerProvider)
+	generator := random.NewGenerator(logger, tracerProvider)
+	hasher := authentication.ProvideHasher(authenticator)
+	textsearchcfgConfig := ProvideTextSearchConfig(cfg)
+	userTextSearcher, err := ProvideUserTextSearcher(ctx, logger, tracerProvider, provider, textsearchcfgConfig)
+	if err != nil {
+		return nil, err
+	}
+	identityDataManager, err := manager.NewIdentityDataManager(ctx, tracerProvider, logger, publisherProvider, identityRepository, generator, hasher, userTextSearcher, queuesConfig)
+	if err != nil {
+		return nil, err
+	}
+	registerHandler := ProvideRegisterHandler(identityDataManager, logger, tracerProvider)
+	router, err := ProvideAPIRouter(routingcfgConfig, logger, tracerProvider, provider, authDataService, appleAppSiteAssociationConfig, handler, httpHandler, livekitHandler, middleware, sessionCookieHandler, registerHandler)
 	if err != nil {
 		return nil, err
 	}

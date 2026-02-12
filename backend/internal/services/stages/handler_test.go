@@ -133,20 +133,20 @@ func (f *fakeStagesRepo) GetParticipantRoles(ctx context.Context, participantID 
 
 var _ stagesdomain.Repository = (*fakeStagesRepo)(nil)
 
-func buildTestHandler(t *testing.T, stagesRepo stagesdomain.Repository, playScriptsRepo playscripts.Repository) *Handler {
+func buildTestHandler(t *testing.T, stagesManager stagesdomain.StagesManager, playScriptsRepo playscripts.Repository) *Handler {
 	t.Helper()
 	logger := logging.NewNoopLogger()
 	tracerProvider := tracing.NewNoopTracerProvider()
 	connections := platformws.NewConnectionManager(tracerProvider, logger)
-	return NewHandler(logger, tracerProvider, stagesRepo, playScriptsRepo, connections)
+	return NewHandler(logger, tracerProvider, stagesManager, playScriptsRepo, connections)
 }
 
 func TestNewHandler(t *testing.T) {
 	t.Parallel()
 
-	h := buildTestHandler(t, &fakeStagesRepo{}, &playscriptsmock.Repository{})
+	h := buildTestHandler(t, NewManager(&fakeStagesRepo{}), &playscriptsmock.Repository{})
 	require.NotNil(t, h)
-	assert.NotNil(t, h.stagesRepo)
+	assert.NotNil(t, h.stagesManager)
 	assert.NotNil(t, h.playScriptsRepo)
 	assert.NotNil(t, h.connections)
 	assert.NotNil(t, h.logger)
@@ -159,9 +159,9 @@ func TestHandler_buildStageState(t *testing.T) {
 	t.Run("stage_without_play_script", func(t *testing.T) {
 		t.Parallel()
 
-		stagesRepo := &fakeStagesRepo{}
+		stagesManager := NewManager(&fakeStagesRepo{})
 		playScriptsRepo := &playscriptsmock.Repository{}
-		h := buildTestHandler(t, stagesRepo, playScriptsRepo)
+		h := buildTestHandler(t, stagesManager, playScriptsRepo)
 
 		stage := &stagesdomain.Stage{
 			ID:               "stage-1",
@@ -184,12 +184,12 @@ func TestHandler_buildStageState(t *testing.T) {
 		t.Parallel()
 
 		playID := "play-1"
-		stagesRepo := &fakeStagesRepo{}
+		stagesManager := NewManager(&fakeStagesRepo{})
 		playScriptsRepo := &playscriptsmock.Repository{}
 		expectedPlay := &playscripts.PlayScript{ID: playID, Title: "Test Play"}
 		playScriptsRepo.On("GetPlayScript", mock.Anything, playID).Return(expectedPlay, nil)
 
-		h := buildTestHandler(t, stagesRepo, playScriptsRepo)
+		h := buildTestHandler(t, stagesManager, playScriptsRepo)
 
 		stage := &stagesdomain.Stage{
 			ID:               "stage-1",
@@ -213,11 +213,11 @@ func TestHandler_buildStageState(t *testing.T) {
 		t.Parallel()
 
 		playID := "play-1"
-		stagesRepo := &fakeStagesRepo{}
+		stagesManager := NewManager(&fakeStagesRepo{})
 		playScriptsRepo := &playscriptsmock.Repository{}
 		playScriptsRepo.On("GetPlayScript", mock.Anything, playID).Return(nil, errors.New("db error"))
 
-		h := buildTestHandler(t, stagesRepo, playScriptsRepo)
+		h := buildTestHandler(t, stagesManager, playScriptsRepo)
 
 		stage := &stagesdomain.Stage{
 			ID:               "stage-1",
@@ -242,9 +242,9 @@ func TestHandler_WebSocket_handleJoin(t *testing.T) {
 	t.Run("empty_participant_name_returns_error", func(t *testing.T) {
 		t.Parallel()
 
-		stagesRepo := &fakeStagesRepo{}
+		stagesManager := NewManager(&fakeStagesRepo{})
 		playScriptsRepo := &playscriptsmock.Repository{}
-		h := buildTestHandler(t, stagesRepo, playScriptsRepo)
+		h := buildTestHandler(t, stagesManager, playScriptsRepo)
 
 		server := httptest.NewServer(h)
 		defer server.Close()
@@ -308,6 +308,7 @@ func TestHandler_WebSocket_handleJoin(t *testing.T) {
 			},
 		}
 
+		stagesManager := NewManager(stagesRepo)
 		filterResult := filtering.NewQueryFilteredResult(
 			[]*playscripts.PlayScript{},
 			0, 0,
@@ -317,7 +318,7 @@ func TestHandler_WebSocket_handleJoin(t *testing.T) {
 		playScriptsRepo := &playscriptsmock.Repository{}
 		playScriptsRepo.On("GetPublicPlayScripts", mock.Anything, mock.Anything).Return(filterResult, nil)
 
-		h := buildTestHandler(t, stagesRepo, playScriptsRepo)
+		h := buildTestHandler(t, stagesManager, playScriptsRepo)
 
 		server := httptest.NewServer(h)
 		defer server.Close()
@@ -347,9 +348,9 @@ func TestHandler_WebSocket_handleJoin(t *testing.T) {
 	t.Run("unknown_message_type_returns_error", func(t *testing.T) {
 		t.Parallel()
 
-		stagesRepo := &fakeStagesRepo{}
+		stagesManager := NewManager(&fakeStagesRepo{})
 		playScriptsRepo := &playscriptsmock.Repository{}
-		h := buildTestHandler(t, stagesRepo, playScriptsRepo)
+		h := buildTestHandler(t, stagesManager, playScriptsRepo)
 
 		server := httptest.NewServer(h)
 		defer server.Close()

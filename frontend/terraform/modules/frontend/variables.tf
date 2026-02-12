@@ -32,11 +32,6 @@ variable "frontend_backend_http_url" {
   type        = string
 }
 
-variable "frontend_grpc_backend_url" {
-  description = "Backend gRPC address (host:port)"
-  type        = string
-}
-
 variable "frontend_oauth2_client_id" {
   type      = string
   sensitive = true

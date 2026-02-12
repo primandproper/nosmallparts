@@ -4,7 +4,6 @@ import (
 	"context"
 
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
 	o11yutils "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/utils"
 
 	"go.opentelemetry.io/otel"
@@ -12,7 +11,15 @@ import (
 	"go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc"
 	"go.opentelemetry.io/otel/propagation"
 	sdktrace "go.opentelemetry.io/otel/sdk/trace"
+	"go.opentelemetry.io/otel/trace"
 )
+
+// TracerProvider is a trace provider that supports ForceFlush. Returned by SetupOtelGRPC
+// and satisfied by *sdktrace.TracerProvider. Callers may use it as tracing.TracerProvider.
+type TracerProvider interface {
+	trace.TracerProvider
+	ForceFlush(context.Context) error
+}
 
 type errorHandler struct {
 	logger logging.Logger
@@ -27,7 +34,7 @@ func init() {
 }
 
 // SetupOtelGRPC creates a new trace provider instance and registers it as global trace provider.
-func SetupOtelGRPC(ctx context.Context, serviceName string, collectionProbability float64, c *Config) (tracing.TracerProvider, error) {
+func SetupOtelGRPC(ctx context.Context, serviceName string, collectionProbability float64, c *Config) (TracerProvider, error) {
 	res := o11yutils.MustOtelResource(ctx, serviceName)
 
 	options := []otlptracegrpc.Option{

@@ -27,7 +27,6 @@ import (
 	routingcfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/routing/config"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/search/text/algolia"
 	textsearchcfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/search/text/config"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/server/grpc"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/server/http"
 	uploadscfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/uploads/config"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/uploads/objectstorage"
@@ -111,9 +110,6 @@ func buildDevEnvironmentServerConfig() *config.APIServiceConfig {
 			Debug:           true,
 			Port:            defaultHTTPPort,
 			StartupDeadline: time.Minute,
-		},
-		GRPCServer: grpc.Config{
-			Port: defaultGRPCPort,
 		},
 		TextSearch: textsearchcfg.Config{
 			Algolia: &algolia.Config{},

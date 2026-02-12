@@ -29,13 +29,13 @@ func TestProvideHandler(t *testing.T) {
 
 	logger := logging.NewNoopLogger()
 	tracerProvider := tracing.NewNoopTracerProvider()
-	stagesRepo := &fakeStagesRepo{}
+	stagesManager := NewManager(&fakeStagesRepo{})
 	playScriptsRepo := &playscriptsmock.Repository{}
 	connectionManager := platformws.NewConnectionManager(tracerProvider, logger)
 
-	h := ProvideHandler(logger, tracerProvider, stagesRepo, playScriptsRepo, connectionManager)
+	h := ProvideHandler(logger, tracerProvider, stagesManager, playScriptsRepo, connectionManager)
 	require.NotNil(t, h)
-	assert.NotNil(t, h.stagesRepo)
+	assert.NotNil(t, h.stagesManager)
 	assert.NotNil(t, h.playScriptsRepo)
 	assert.Equal(t, connectionManager, h.connections)
 }

@@ -1,14 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { getBackendCookieForRequest, clearEncryptedBackendCookie } from '@/lib/backend-session-cookie';
 
-// Get the Go backend URL from environment variable
 function getBackendUrl(): string {
   const url = process.env.BACKEND_HTTP_URL || 'http://localhost:8000';
-  console.log(
-    '[LiveKit API] BACKEND_HTTP_URL env:',
-    process.env.BACKEND_HTTP_URL,
-    '-> using:',
-    url
-  );
   return url;
 }
 
@@ -42,13 +36,17 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'participantName is required' }, { status: 400 });
     }
 
-    // Forward request to Go backend
+    const sessionCookie = await getBackendCookieForRequest();
+    if (!sessionCookie) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+
     const backendUrl = getBackendUrl();
-    console.log('[LiveKit API] Forwarding to backend:', backendUrl);
     const response = await fetch(`${backendUrl}/api/livekit/token`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'X-Session-Cookie': sessionCookie,
       },
       body: JSON.stringify({
         stageId: body.stageId,
@@ -56,6 +54,11 @@ export async function POST(request: NextRequest) {
         participantName: body.participantName,
       }),
     });
+
+    if (response.status === 401) {
+      await clearEncryptedBackendCookie();
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
 
     // Handle 503 (LiveKit not configured) specially
     if (response.status === 503) {

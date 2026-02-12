@@ -16,20 +16,16 @@
     "format:check": "prettier --check ."
   },
   "dependencies": {
-    "@bufbuild/protobuf": "^2.0.0",
-    "@grpc/grpc-js": "^1.10.0",
     "@livekit/components-react": "^2.0.0",
     "@livekit/components-styles": "^1.2.0",
     "livekit-client": "^2.0.0",
     "next": "14.1.0",
-    "nice-grpc": "^2.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@playwright/test": "^1.41.0",
-    "ts-proto": "^2.6.1",
     "@testing-library/jest-dom": "^6.4.0",
     "@testing-library/react": "^14.2.0",
     "@testing-library/user-event": "^14.5.0",

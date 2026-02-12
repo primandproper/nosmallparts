@@ -48,7 +48,7 @@ func (s *AdminFrontendServer) LoginSubmission(res http.ResponseWriter, req *http
 		}), nil
 	}
 
-	unauthedClient, err := client.BuildUnauthenticatedGRPCClient(s.config.APIServiceConnection.GRPCAPIServerURL)
+	unauthedClient, err := client.BuildUnauthenticatedHTTPClient(s.config.APIServiceConnection.HTTPAPIServerURL)
 	if err != nil {
 		return s.componentRenderer.LoginForm(&components.LoginFormProps{
 			GeneralError: err.Error(),

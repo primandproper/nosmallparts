@@ -38,8 +38,8 @@ resource "google_cloud_run_v2_service" "api" {
       startup_probe {
         initial_delay_seconds = 5
         timeout_seconds       = 3
-        period_seconds       = 5
-        failure_threshold    = 6
+        period_seconds        = 5
+        failure_threshold     = 6
         http_get {
           path = "/_ops_/ready"
         }

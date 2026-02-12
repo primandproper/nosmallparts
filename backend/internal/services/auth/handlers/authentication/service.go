@@ -7,6 +7,7 @@ import (
 	"sync"
 
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/authentication"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/authentication/cookies"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/authentication/tokens"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/auth"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/identity"
@@ -51,6 +52,10 @@ type (
 		dataChangesPublisher     messagequeue.Publisher
 		oauth2Server             *server.Server
 		tokenIssuer              tokens.Issuer
+		authManager              authentication.Manager
+		cookieManager            cookies.Manager
+		sessionCookieName        string
+		cookieConfig             *cookies.Config
 	}
 )
 
@@ -69,6 +74,8 @@ func ProvideService(
 	analyticsReporter analytics.EventReporter,
 	routeParamManager routing.RouteParamManager,
 	queuesConfig *msgconfig.QueuesConfig,
+	cookieManager cookies.Manager,
+	cookieConfig *cookies.Config,
 ) (auth.AuthDataService, error) {
 	if queuesConfig == nil {
 		return nil, internalerrors.NilConfigError("queuesConfig for AuthDataService")
@@ -82,6 +89,11 @@ func ProvideService(
 	signer, err := cfg.Tokens.ProvideTokenIssuer(logger, tracerProvider)
 	if err != nil {
 		return nil, fmt.Errorf("creating json web token signer: %w", err)
+	}
+
+	authManager, err := authentication.NewManager(ctx, queuesConfig, signer, authenticator, tracerProvider, logger, publisherProvider, identityRepo, &cfg.Tokens)
+	if err != nil {
+		return nil, fmt.Errorf("creating authentication manager: %w", err)
 	}
 
 	manager := ProvideOAuth2ClientManager(logger, tracerProvider, &cfg.OAuth2, oauthRepo)
@@ -100,6 +112,10 @@ func ProvideService(
 		tokenIssuer:              signer,
 		authProviderFetcher:      routeParamManager.BuildRouteParamStringIDFetcher(AuthProviderParamKey),
 		oauth2Server:             ProvideOAuth2ServerImplementation(logger, tracerProvider, identityRepo, authenticator, signer, manager),
+		authManager:       authManager,
+		cookieManager:     cookieManager,
+		sessionCookieName: cookieConfig.CookieName,
+		cookieConfig:      cookieConfig,
 	}
 
 	useProvidersMutex.Lock()

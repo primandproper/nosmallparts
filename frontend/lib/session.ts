@@ -12,7 +12,7 @@ export interface SessionData {
 
 /**
  * Get OAuth2 client credentials from environment variables.
- * Required for making authenticated gRPC/API requests to the backend (e.g. OAuth2 code exchange).
+ * Required for making authenticated API requests to the backend (e.g. OAuth2 code exchange).
  * Set OAUTH2_CLIENT_ID and OAUTH2_CLIENT_SECRET (see frontend/env.example).
  */
 export function getOAuth2ClientCredentials() {

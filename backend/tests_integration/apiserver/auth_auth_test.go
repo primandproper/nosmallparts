@@ -37,7 +37,7 @@ func TestAuth_LoginForToken(T *testing.T) {
 			Password: user.HashedPassword,
 		}
 
-		unauthedClient := buildUnauthenticatedGRPCClientForTest(t)
+		unauthedClient := buildUnauthenticatedHTTPClientForTest(t)
 
 		tokenRes, err := unauthedClient.LoginForToken(ctx, &authsvc.LoginForTokenRequest{
 			Input: loginInput,
@@ -57,7 +57,7 @@ func TestAuth_LoginForToken(T *testing.T) {
 			TotpToken: "otp scode",
 		}
 
-		unauthedClient := buildUnauthenticatedGRPCClientForTest(t)
+		unauthedClient := buildUnauthenticatedHTTPClientForTest(t)
 
 		tokenRes, err := unauthedClient.LoginForToken(ctx, &authsvc.LoginForTokenRequest{
 			Input: loginInput,
@@ -80,7 +80,7 @@ func TestAuth_AdminLoginForToken(T *testing.T) {
 			TotpToken: generateTOTPCodeForUserForTest(t, premadeAdminUser),
 		}
 
-		unauthedClient := buildUnauthenticatedGRPCClientForTest(t)
+		unauthedClient := buildUnauthenticatedHTTPClientForTest(t)
 
 		tokenRes, err := unauthedClient.AdminLoginForToken(ctx, &authsvc.AdminLoginForTokenRequest{
 			Input: loginInput,
@@ -102,7 +102,7 @@ func TestAuth_AdminLoginForToken(T *testing.T) {
 			TotpToken: generateTOTPCodeForUserForTest(t, user),
 		}
 
-		unauthedClient := buildUnauthenticatedGRPCClientForTest(t)
+		unauthedClient := buildUnauthenticatedHTTPClientForTest(t)
 
 		tokenRes, err := unauthedClient.AdminLoginForToken(ctx, &authsvc.AdminLoginForTokenRequest{
 			Input: loginInput,
@@ -121,7 +121,7 @@ func TestAuth_AdminLoginForToken(T *testing.T) {
 			TotpToken: generateTOTPCodeForUserForTest(t, premadeAdminUser),
 		}
 
-		unauthedClient := buildUnauthenticatedGRPCClientForTest(t)
+		unauthedClient := buildUnauthenticatedHTTPClientForTest(t)
 
 		tokenRes, err := unauthedClient.AdminLoginForToken(ctx, &authsvc.AdminLoginForTokenRequest{
 			Input: loginInput,
@@ -140,7 +140,7 @@ func TestAuth_AdminLoginForToken(T *testing.T) {
 			TotpToken: "000000",
 		}
 
-		unauthedClient := buildUnauthenticatedGRPCClientForTest(t)
+		unauthedClient := buildUnauthenticatedHTTPClientForTest(t)
 
 		tokenRes, err := unauthedClient.AdminLoginForToken(ctx, &authsvc.AdminLoginForTokenRequest{
 			Input: loginInput,
@@ -159,7 +159,7 @@ func TestAuth_AdminLoginForToken(T *testing.T) {
 			TotpToken: "otp scode",
 		}
 
-		unauthedClient := buildUnauthenticatedGRPCClientForTest(t)
+		unauthedClient := buildUnauthenticatedHTTPClientForTest(t)
 
 		tokenRes, err := unauthedClient.AdminLoginForToken(ctx, &authsvc.AdminLoginForTokenRequest{
 			Input: loginInput,
@@ -176,7 +176,7 @@ func TestAuth_GetAuthStatus(T *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
-		unauthedClient := buildUnauthenticatedGRPCClientForTest(t)
+		unauthedClient := buildUnauthenticatedHTTPClientForTest(t)
 
 		res, err := unauthedClient.GetAuthStatus(ctx, &authsvc.GetAuthStatusRequest{})
 		assert.Error(t, err)
@@ -212,7 +212,7 @@ func TestAuth_ChangingPassword(T *testing.T) {
 		})
 		require.NoError(t, err)
 
-		unauthedClient := buildUnauthenticatedGRPCClientForTest(t)
+		unauthedClient := buildUnauthenticatedHTTPClientForTest(t)
 
 		tokenRes, err := unauthedClient.LoginForToken(ctx, &authsvc.LoginForTokenRequest{
 			Input: &authsvc.UserLoginInput{

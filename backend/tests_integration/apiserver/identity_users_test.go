@@ -26,7 +26,7 @@ func TestUsers_Creating(T *testing.T) {
 		ctx := t.Context()
 
 		input := buildUserRegistrationInputForTest(t)
-		testClient := buildUnauthenticatedGRPCClientForTest(t)
+		testClient := buildUnauthenticatedHTTPClientForTest(t)
 
 		_, err := testClient.CreateUser(ctx, &identitysvc.CreateUserRequest{Input: identityconverters.ConvertUserRegistrationInputToGRPCUserRegistrationInput(input)})
 		assert.NoError(t, err)
@@ -42,7 +42,7 @@ func TestUsers_Creating(T *testing.T) {
 		input := buildUserRegistrationInputForTest(t)
 		input.Username = ""
 
-		testClient := buildUnauthenticatedGRPCClientForTest(t)
+		testClient := buildUnauthenticatedHTTPClientForTest(t)
 		_, err := testClient.CreateUser(ctx, &identitysvc.CreateUserRequest{Input: identityconverters.ConvertUserRegistrationInputToGRPCUserRegistrationInput(input)})
 		assert.Error(t, err)
 	})
@@ -76,7 +76,7 @@ func TestUsers_Reading(T *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
-		c := buildUnauthenticatedGRPCClientForTest(t)
+		c := buildUnauthenticatedHTTPClientForTest(t)
 		u, _ := createUserAndClientForTest(t)
 
 		user, err := c.GetUser(ctx, &identitysvc.GetUserRequest{UserId: u.ID})
@@ -111,7 +111,7 @@ func TestUsers_PermissionChecking(T *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
-		testClient := buildUnauthenticatedGRPCClientForTest(t)
+		testClient := buildUnauthenticatedHTTPClientForTest(t)
 
 		response, err := testClient.CheckPermissions(ctx, &authsvc.UserPermissionsRequestInput{Permissions: []string{authorization.ReadWebhooksPermission.ID()}})
 		assert.Error(t, err)
@@ -198,7 +198,7 @@ func TestUsers_Archiving(T *testing.T) {
 		ctx := t.Context()
 
 		user, _ := createUserAndClientForTest(t)
-		testClient := buildUnauthenticatedGRPCClientForTest(t)
+		testClient := buildUnauthenticatedHTTPClientForTest(t)
 
 		_, err := testClient.ArchiveUser(ctx, &identitysvc.ArchiveUserRequest{
 			UserId: user.ID,

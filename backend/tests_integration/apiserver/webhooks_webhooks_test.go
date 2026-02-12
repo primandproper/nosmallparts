@@ -78,7 +78,7 @@ func TestWebhooks_Creating(T *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
-		c := buildUnauthenticatedGRPCClientForTest(t)
+		c := buildUnauthenticatedHTTPClientForTest(t)
 
 		_, err := c.CreateWebhook(ctx, &webhookssvc.CreateWebhookRequest{})
 		require.Error(t, err)
@@ -135,7 +135,7 @@ func TestWebhooks_Reading(T *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
-		c := buildUnauthenticatedGRPCClientForTest(t)
+		c := buildUnauthenticatedHTTPClientForTest(t)
 		_, err := c.GetWebhook(ctx, &webhookssvc.GetWebhookRequest{})
 		assert.Error(t, err)
 	})
@@ -165,7 +165,7 @@ func TestWebhooks_Listing(T *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
-		c := buildUnauthenticatedGRPCClientForTest(t)
+		c := buildUnauthenticatedHTTPClientForTest(t)
 		_, err := c.GetWebhooks(ctx, &webhookssvc.GetWebhooksRequest{})
 		assert.Error(t, err)
 	})
@@ -200,7 +200,7 @@ func TestWebhooks_Archiving(T *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
-		c := buildUnauthenticatedGRPCClientForTest(t)
+		c := buildUnauthenticatedHTTPClientForTest(t)
 		_, err := c.ArchiveWebhook(ctx, &webhookssvc.ArchiveWebhookRequest{})
 		assert.Error(t, err)
 	})
@@ -241,7 +241,7 @@ func TestWebhookTriggerEvents_Adding(T *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
-		c := buildUnauthenticatedGRPCClientForTest(t)
+		c := buildUnauthenticatedHTTPClientForTest(t)
 		_, err := c.AddWebhookTriggerEvent(ctx, &webhookssvc.AddWebhookTriggerEventRequest{})
 		assert.Error(t, err)
 	})
@@ -288,7 +288,7 @@ func TestWebhookTriggerEvents_Removing(T *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
-		c := buildUnauthenticatedGRPCClientForTest(t)
+		c := buildUnauthenticatedHTTPClientForTest(t)
 		_, err := c.ArchiveWebhookTriggerEvent(ctx, &webhookssvc.ArchiveWebhookTriggerEventRequest{})
 		assert.Error(t, err)
 	})

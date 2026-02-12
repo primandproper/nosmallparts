@@ -16,7 +16,6 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability"
 	routingcfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/routing/config"
 	textsearchcfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/search/text/config"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/server/grpc"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/server/http"
 	uploadscfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/uploads/config"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/uploads/objectstorage"
@@ -150,7 +149,6 @@ func TestEnvironmentConfigSet_Render(T *testing.T) {
 			},
 			Routing:    routingcfg.Config{},
 			HTTPServer: http.Config{},
-			GRPCServer: grpc.Config{},
 			Database: databasecfg.Config{
 				Debug: true,
 				ReadConnection: databasecfg.ConnectionDetails{

@@ -126,7 +126,7 @@ func TestWaitlists_Creating(T *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
-		c := buildUnauthenticatedGRPCClientForTest(t)
+		c := buildUnauthenticatedHTTPClientForTest(t)
 
 		_, err := c.CreateWaitlist(ctx, &waitlistssvc.CreateWaitlistRequest{})
 		require.Error(t, err)
@@ -177,7 +177,7 @@ func TestWaitlists_Reading(T *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
-		c := buildUnauthenticatedGRPCClientForTest(t)
+		c := buildUnauthenticatedHTTPClientForTest(t)
 		_, err := c.GetWaitlist(ctx, &waitlistssvc.GetWaitlistRequest{})
 		assert.Error(t, err)
 	})
@@ -207,7 +207,7 @@ func TestWaitlists_Listing(T *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
-		c := buildUnauthenticatedGRPCClientForTest(t)
+		c := buildUnauthenticatedHTTPClientForTest(t)
 		_, err := c.GetWaitlists(ctx, &waitlistssvc.GetWaitlistsRequest{})
 		assert.Error(t, err)
 	})
@@ -238,7 +238,7 @@ func TestWaitlists_ListingActive(T *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
-		c := buildUnauthenticatedGRPCClientForTest(t)
+		c := buildUnauthenticatedHTTPClientForTest(t)
 		_, err := c.GetActiveWaitlists(ctx, &waitlistssvc.GetActiveWaitlistsRequest{})
 		assert.Error(t, err)
 	})
@@ -293,7 +293,7 @@ func TestWaitlists_Updating(T *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
-		c := buildUnauthenticatedGRPCClientForTest(t)
+		c := buildUnauthenticatedHTTPClientForTest(t)
 		_, err := c.UpdateWaitlist(ctx, &waitlistssvc.UpdateWaitlistRequest{})
 		assert.Error(t, err)
 	})
@@ -328,7 +328,7 @@ func TestWaitlists_Archiving(T *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
-		c := buildUnauthenticatedGRPCClientForTest(t)
+		c := buildUnauthenticatedHTTPClientForTest(t)
 		_, err := c.ArchiveWaitlist(ctx, &waitlistssvc.ArchiveWaitlistRequest{})
 		assert.Error(t, err)
 	})
@@ -364,7 +364,7 @@ func TestWaitlists_IsNotExpired(T *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
-		c := buildUnauthenticatedGRPCClientForTest(t)
+		c := buildUnauthenticatedHTTPClientForTest(t)
 		_, err := c.WaitlistIsNotExpired(ctx, &waitlistssvc.WaitlistIsNotExpiredRequest{})
 		assert.Error(t, err)
 	})
@@ -385,7 +385,7 @@ func TestWaitlistSignups_Creating(T *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
-		c := buildUnauthenticatedGRPCClientForTest(t)
+		c := buildUnauthenticatedHTTPClientForTest(t)
 
 		_, err := c.CreateWaitlistSignup(ctx, &waitlistssvc.CreateWaitlistSignupRequest{})
 		require.Error(t, err)
@@ -450,7 +450,7 @@ func TestWaitlistSignups_Reading(T *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
-		c := buildUnauthenticatedGRPCClientForTest(t)
+		c := buildUnauthenticatedHTTPClientForTest(t)
 		_, err := c.GetWaitlistSignup(ctx, &waitlistssvc.GetWaitlistSignupRequest{})
 		assert.Error(t, err)
 	})
@@ -483,7 +483,7 @@ func TestWaitlistSignups_Listing(T *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
-		c := buildUnauthenticatedGRPCClientForTest(t)
+		c := buildUnauthenticatedHTTPClientForTest(t)
 		_, err := c.GetWaitlistSignupsForWaitlist(ctx, &waitlistssvc.GetWaitlistSignupsForWaitlistRequest{})
 		assert.Error(t, err)
 	})
@@ -541,7 +541,7 @@ func TestWaitlistSignups_Updating(T *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
-		c := buildUnauthenticatedGRPCClientForTest(t)
+		c := buildUnauthenticatedHTTPClientForTest(t)
 		_, err := c.UpdateWaitlistSignup(ctx, &waitlistssvc.UpdateWaitlistSignupRequest{})
 		assert.Error(t, err)
 	})
@@ -582,7 +582,7 @@ func TestWaitlistSignups_Archiving(T *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
-		c := buildUnauthenticatedGRPCClientForTest(t)
+		c := buildUnauthenticatedHTTPClientForTest(t)
 		_, err := c.ArchiveWaitlistSignup(ctx, &waitlistssvc.ArchiveWaitlistSignupRequest{})
 		assert.Error(t, err)
 	})

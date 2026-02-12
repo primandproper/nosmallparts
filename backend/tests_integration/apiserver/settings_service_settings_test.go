@@ -52,7 +52,7 @@ func TestServiceSettings_Creating(T *testing.T) {
 		creationRequestInput := fakes.BuildFakeServiceSettingCreationRequestInput()
 		convertedInput := settingsconverters.ConvertServiceSettingCreationRequestInputToGRPCServiceSettingCreationRequestInput(creationRequestInput)
 
-		c := buildUnauthenticatedGRPCClientForTest(t)
+		c := buildUnauthenticatedHTTPClientForTest(t)
 		created, err := c.CreateServiceSetting(ctx, &settingssvc.CreateServiceSettingRequest{
 			Input: convertedInput,
 		})
@@ -118,7 +118,7 @@ func TestServiceSettings_Reading(T *testing.T) {
 
 		created := createServiceSettingForTest(t)
 
-		c := buildUnauthenticatedGRPCClientForTest(t)
+		c := buildUnauthenticatedHTTPClientForTest(t)
 
 		_, err := c.GetServiceSetting(ctx, &settingssvc.GetServiceSettingRequest{ServiceSettingId: created.ID})
 		assert.Error(t, err)
@@ -156,7 +156,7 @@ func TestServiceSettings_Archiving(T *testing.T) {
 
 		created := createServiceSettingForTest(t)
 
-		c := buildUnauthenticatedGRPCClientForTest(t)
+		c := buildUnauthenticatedHTTPClientForTest(t)
 
 		_, err := c.ArchiveServiceSetting(ctx, &settingssvc.ArchiveServiceSettingRequest{ServiceSettingId: created.ID})
 		assert.Error(t, err)
@@ -206,7 +206,7 @@ func TestServiceSettings_Listing(T *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
-		c := buildUnauthenticatedGRPCClientForTest(t)
+		c := buildUnauthenticatedHTTPClientForTest(t)
 
 		_, err := c.GetServiceSettings(ctx, &settingssvc.GetServiceSettingsRequest{})
 		assert.Error(t, err)
@@ -234,7 +234,7 @@ func TestServiceSettings_Searching(T *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
-		c := buildUnauthenticatedGRPCClientForTest(t)
+		c := buildUnauthenticatedHTTPClientForTest(t)
 
 		_, err := c.SearchForServiceSettings(ctx, &settingssvc.SearchForServiceSettingsRequest{})
 		assert.Error(t, err)

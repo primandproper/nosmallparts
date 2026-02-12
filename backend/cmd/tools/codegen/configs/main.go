@@ -9,7 +9,6 @@ import (
 
 const (
 	defaultHTTPPort = 8000
-	defaultGRPCPort = 8001
 	maxAttempts     = 50
 	otelServiceName = "no_small_parts"
 

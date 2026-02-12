@@ -96,6 +96,11 @@ type (
 
 		SSOLoginHandler(http.ResponseWriter, *http.Request)
 		SSOLoginCallbackHandler(http.ResponseWriter, *http.Request)
+		LoginHandler(http.ResponseWriter, *http.Request)
+		// LoginForTokenHandler handles POST /api/login-for-token: returns JSON with accessToken (for API clients).
+		LoginForTokenHandler(http.ResponseWriter, *http.Request)
+		// VerifyTOTPHandler handles POST /api/verify-totp: verifies a TOTP secret for a user.
+		VerifyTOTPHandler(http.ResponseWriter, *http.Request)
 	}
 )
 

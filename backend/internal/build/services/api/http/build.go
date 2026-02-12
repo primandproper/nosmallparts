@@ -7,7 +7,9 @@ import (
 	"context"
 
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/authentication"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/authentication/cookies"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/config"
+	identitymanager "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/identity/manager"
 	analyticscfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/analytics/config"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database"
 	databasecfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/config"
@@ -21,6 +23,7 @@ import (
 	tracingcfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing/config"
 	routingcfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/routing/config"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/server/http"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/random"
 	auditrepo "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/auditlogentries"
 	identityrepo "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/identity"
 	migrations "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/migrations"
@@ -29,6 +32,7 @@ import (
 	stagesrepo "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/stages"
 	authservice "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/auth/handlers/authentication"
 	livekitsvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/livekit"
+	playscriptssvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/playscripts"
 	stagessvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/stages"
 
 	"github.com/google/wire"
@@ -56,6 +60,12 @@ func Build(
 		metricscfg.MetricsConfigProviders,
 		http.ProvidersHTTP,
 		routingcfg.RoutingConfigProviders,
+		random.RandProviders,
+		identitymanager.IDManagerProviders,
+		ProvideTextSearchConfig,
+		ProvideQueuesConfig,
+		ProvideUserTextSearcher,
+		ProvideRegisterHandler,
 		// repos
 		auditrepo.AuditRepoProviders,
 		identityrepo.IDRepoProviders,
@@ -64,8 +74,14 @@ func Build(
 		stagesrepo.StagesRepoProviders,
 		// services
 		stagessvc.StagesWebSocketProviders,
+		playscriptssvc.HTTPProviders,
 		livekitsvc.Providers,
 		ConfigProviders,
+		ProvideCookiesConfig,
+		cookies.NewCookieManager,
+		ProvideOAuth2ManagerForSession,
+		ProvideSessionFromCookieMiddleware,
+		ProvideSessionCookieHandler,
 		ProvideAPIRouter,
 	)
 

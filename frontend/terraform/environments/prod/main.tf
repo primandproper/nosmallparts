@@ -26,15 +26,14 @@ provider "google" {
 module "frontend" {
   source = "../../modules/frontend"
 
-  environment   = var.environment
-  project_id    = var.project_id
-  gcp_region    = var.gcp_region
+  environment            = var.environment
+  project_id             = var.project_id
+  gcp_region             = var.gcp_region
   artifact_repository_id = var.artifact_repository_id
 
-  frontend_backend_http_url        = var.frontend_backend_http_url
-  frontend_grpc_backend_url        = var.frontend_grpc_backend_url
-  frontend_oauth2_client_id       = var.frontend_oauth2_client_id
-  frontend_oauth2_client_secret   = var.frontend_oauth2_client_secret
+  frontend_backend_http_url           = var.frontend_backend_http_url
+  frontend_oauth2_client_id           = var.frontend_oauth2_client_id
+  frontend_oauth2_client_secret       = var.frontend_oauth2_client_secret
   frontend_next_public_backend_ws_url = var.frontend_next_public_backend_ws_url
 }
 

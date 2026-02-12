@@ -7,9 +7,6 @@ This file contains a reference of all valid service environment variables.
 */
 
 const (
-	// APIServiceGrpcAPIServerURLEnvVarKey is the environment variable name to set to override `config.APIServiceConnection.GRPCAPIServerURL`.
-	APIServiceGrpcAPIServerURLEnvVarKey = "NO_SMALL_PARTS_API_SERVICE_GRPC_API_SERVER_URL"
-
 	// APIServiceHTTPAPIServerURLEnvVarKey is the environment variable name to set to override `config.APIServiceConnection.HTTPAPIServerURL`.
 	APIServiceHTTPAPIServerURLEnvVarKey = "NO_SMALL_PARTS_API_SERVICE_HTTP_API_SERVER_URL"
 
@@ -45,15 +42,6 @@ const (
 
 	// EncodingContentTypeEnvVarKey is the environment variable name to set to override `config.Encoding.ContentType`.
 	EncodingContentTypeEnvVarKey = "NO_SMALL_PARTS_ENCODING_CONTENT_TYPE"
-
-	// GrpcPortEnvVarKey is the environment variable name to set to override `config.GRPCServer.Port`.
-	GrpcPortEnvVarKey = "NO_SMALL_PARTS_GRPC_PORT"
-
-	// GrpcTLSCertificateFilepathEnvVarKey is the environment variable name to set to override `config.GRPCServer.HTTPSCertificateFile`.
-	GrpcTLSCertificateFilepathEnvVarKey = "NO_SMALL_PARTS_GRPC_TLS_CERTIFICATE_FILEPATH"
-
-	// GrpcTLSCertificateKeyFilepathEnvVarKey is the environment variable name to set to override `config.GRPCServer.TLSCertificateKeyFile`.
-	GrpcTLSCertificateKeyFilepathEnvVarKey = "NO_SMALL_PARTS_GRPC_TLS_CERTIFICATE_KEY_FILEPATH"
 
 	// HTTPDebugEnvVarKey is the environment variable name to set to override `config.HTTPServer.Debug`.
 	HTTPDebugEnvVarKey = "NO_SMALL_PARTS_HTTP_DEBUG"

@@ -57,7 +57,7 @@ func TestServiceSettingConfigurations_Creating(T *testing.T) {
 		creationRequestInput := fakes.BuildFakeServiceSettingConfigurationCreationRequestInput()
 		convertedInput := settingsconverters.ConvertServiceSettingConfigurationCreationRequestInputToGRPCServiceSettingConfigurationCreationRequestInput(creationRequestInput)
 
-		c := buildUnauthenticatedGRPCClientForTest(t)
+		c := buildUnauthenticatedHTTPClientForTest(t)
 		created, err := c.CreateServiceSettingConfiguration(ctx, &settingssvc.CreateServiceSettingConfigurationRequest{
 			Input: convertedInput,
 		})
@@ -124,7 +124,7 @@ func TestServiceSettingConfigurations_Reading_ByName(T *testing.T) {
 		_, testClient := createUserAndClientForTest(t)
 		created := createServiceSettingConfigurationForTest(t, testClient)
 
-		c := buildUnauthenticatedGRPCClientForTest(t)
+		c := buildUnauthenticatedHTTPClientForTest(t)
 
 		_, err := c.GetServiceSettingConfigurationByName(ctx, &settingssvc.GetServiceSettingConfigurationByNameRequest{ServiceSettingConfigurationName: created.ServiceSetting.Name})
 		assert.Error(t, err)
@@ -164,7 +164,7 @@ func TestServiceSettingConfigurations_Archiving(T *testing.T) {
 		_, testClient := createUserAndClientForTest(t)
 		created := createServiceSettingConfigurationForTest(t, testClient)
 
-		c := buildUnauthenticatedGRPCClientForTest(t)
+		c := buildUnauthenticatedHTTPClientForTest(t)
 
 		_, err := c.ArchiveServiceSettingConfiguration(ctx, &settingssvc.ArchiveServiceSettingConfigurationRequest{ServiceSettingConfigurationId: created.ID})
 		assert.Error(t, err)
@@ -203,7 +203,7 @@ func TestServiceSettingConfigurations_Listing_ForUser(T *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
-		c := buildUnauthenticatedGRPCClientForTest(t)
+		c := buildUnauthenticatedHTTPClientForTest(t)
 
 		_, err := c.GetServiceSettingConfigurationsForUser(ctx, &settingssvc.GetServiceSettingConfigurationsForUserRequest{})
 		assert.Error(t, err)
@@ -234,7 +234,7 @@ func TestServiceSettingConfigurations_Listing_ForAccount(T *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
-		c := buildUnauthenticatedGRPCClientForTest(t)
+		c := buildUnauthenticatedHTTPClientForTest(t)
 
 		_, err := c.GetServiceSettingConfigurationsForAccount(ctx, &settingssvc.GetServiceSettingConfigurationsForAccountRequest{})
 		assert.Error(t, err)

@@ -35,12 +35,11 @@ func (s *AdminFrontendServer) authMiddleware(handler http.Handler) http.Handler 
 			return
 		}
 
-		c, err := localdev.BuildInsecureOAuthedGRPCClient(
+		c, err := localdev.BuildInsecureOAuthedHTTPClient(
 			ctx,
 			s.config.APIServiceConnection.OAuth2APIClientID,
 			s.config.APIServiceConnection.OAuth2APIClientSecret,
 			s.config.APIServiceConnection.HTTPAPIServerURL,
-			s.config.APIServiceConnection.GRPCAPIServerURL,
 			payload.AccessToken,
 		)
 		if err != nil {

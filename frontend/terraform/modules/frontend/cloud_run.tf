@@ -16,10 +16,6 @@ resource "google_cloud_run_v2_service" "frontend" {
         value = var.frontend_backend_http_url
       }
       env {
-        name  = "GRPC_BACKEND_URL"
-        value = var.frontend_grpc_backend_url
-      }
-      env {
         name  = "OAUTH2_CLIENT_ID"
         value = var.frontend_oauth2_client_id
       }

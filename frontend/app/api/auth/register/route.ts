@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getIdentityClient } from '@/lib/auth-client';
 
 export interface RegisterRequest {
   username: string;
@@ -21,6 +20,10 @@ export interface RegisterResponse {
   userId?: string;
   twoFactorQrCode?: string;
   twoFactorSecret?: string;
+}
+
+function getBackendUrl(): string {
+  return process.env.BACKEND_HTTP_URL || 'http://localhost:8000';
 }
 
 export async function POST(request: NextRequest): Promise<NextResponse<RegisterResponse>> {
@@ -49,36 +52,44 @@ export async function POST(request: NextRequest): Promise<NextResponse<RegisterR
       );
     }
 
-    const identityClient = getIdentityClient();
-
-    const response = await identityClient.createUser({
-      input: {
+    const backendUrl = getBackendUrl();
+    const res = await fetch(`${backendUrl}/api/register`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
         username: body.username,
         password: body.password,
         emailAddress: body.emailAddress,
         firstName: body.firstName,
         lastName: body.lastName,
-        birthday: body.birthday ? new Date(body.birthday) : undefined,
+        birthday: body.birthday ?? undefined,
         accountName: body.accountName || `${body.firstName}'s Account`,
         invitationToken: body.invitationToken || '',
         invitationId: body.invitationId || '',
         acceptedTos: body.acceptedTos,
         acceptedPrivacyPolicy: body.acceptedPrivacyPolicy,
-      },
+      }),
     });
 
-    if (!response.created) {
+    const data = await res.json().catch(() => ({}));
+
+    if (!res.ok) {
       return NextResponse.json(
-        { success: false, error: 'Registration failed - no response returned' },
-        { status: 500 }
+        { success: false, error: (data as { error?: string }).error || 'Registration failed' },
+        { status: res.status }
       );
     }
 
+    const created = data as {
+      createdUserId?: string;
+      twoFactorQrCode?: string;
+      twoFactorSecret?: string;
+    };
     return NextResponse.json({
       success: true,
-      userId: response.created.createdUserId,
-      twoFactorQrCode: response.created.twoFactorQrCode,
-      twoFactorSecret: response.created.twoFactorSecret,
+      userId: created.createdUserId,
+      twoFactorQrCode: created.twoFactorQrCode,
+      twoFactorSecret: created.twoFactorSecret,
     });
   } catch (error) {
     console.error('Registration error:', error);

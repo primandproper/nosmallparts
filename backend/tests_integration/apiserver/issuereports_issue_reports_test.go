@@ -67,7 +67,7 @@ func TestIssueReports_Creating(T *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
-		c := buildUnauthenticatedGRPCClientForTest(t)
+		c := buildUnauthenticatedHTTPClientForTest(t)
 
 		_, err := c.CreateIssueReport(ctx, &issuereportssvc.CreateIssueReportRequest{})
 		require.Error(t, err)
@@ -121,7 +121,7 @@ func TestIssueReports_Reading(T *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
-		c := buildUnauthenticatedGRPCClientForTest(t)
+		c := buildUnauthenticatedHTTPClientForTest(t)
 		_, err := c.GetIssueReport(ctx, &issuereportssvc.GetIssueReportRequest{})
 		assert.Error(t, err)
 	})
@@ -151,7 +151,7 @@ func TestIssueReports_Listing(T *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
-		c := buildUnauthenticatedGRPCClientForTest(t)
+		c := buildUnauthenticatedHTTPClientForTest(t)
 		_, err := c.GetIssueReports(ctx, &issuereportssvc.GetIssueReportsRequest{})
 		assert.Error(t, err)
 	})
@@ -186,7 +186,7 @@ func TestIssueReports_ListingForAccount(T *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
-		c := buildUnauthenticatedGRPCClientForTest(t)
+		c := buildUnauthenticatedHTTPClientForTest(t)
 		_, err := c.GetIssueReportsForAccount(ctx, &issuereportssvc.GetIssueReportsForAccountRequest{})
 		assert.Error(t, err)
 	})
@@ -225,7 +225,7 @@ func TestIssueReports_ListingForTable(T *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
-		c := buildUnauthenticatedGRPCClientForTest(t)
+		c := buildUnauthenticatedHTTPClientForTest(t)
 		_, err := c.GetIssueReportsForTable(ctx, &issuereportssvc.GetIssueReportsForTableRequest{})
 		assert.Error(t, err)
 	})
@@ -267,7 +267,7 @@ func TestIssueReports_ListingForRecord(T *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
-		c := buildUnauthenticatedGRPCClientForTest(t)
+		c := buildUnauthenticatedHTTPClientForTest(t)
 		_, err := c.GetIssueReportsForRecord(ctx, &issuereportssvc.GetIssueReportsForRecordRequest{})
 		assert.Error(t, err)
 	})
@@ -315,7 +315,7 @@ func TestIssueReports_Updating(T *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
-		c := buildUnauthenticatedGRPCClientForTest(t)
+		c := buildUnauthenticatedHTTPClientForTest(t)
 		_, err := c.UpdateIssueReport(ctx, &issuereportssvc.UpdateIssueReportRequest{})
 		assert.Error(t, err)
 	})
@@ -350,7 +350,7 @@ func TestIssueReports_Archiving(T *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
-		c := buildUnauthenticatedGRPCClientForTest(t)
+		c := buildUnauthenticatedHTTPClientForTest(t)
 		_, err := c.ArchiveIssueReport(ctx, &issuereportssvc.ArchiveIssueReportRequest{})
 		assert.Error(t, err)
 	})
