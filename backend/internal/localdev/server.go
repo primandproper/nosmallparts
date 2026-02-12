@@ -37,6 +37,8 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/pkg/client"
 
 	"golang.org/x/oauth2"
+	"google.golang.org/grpc"
+	"google.golang.org/grpc/credentials/insecure"
 )
 
 func CreatePremadeAdminUser(
@@ -221,29 +223,12 @@ func AllInOne(ctx context.Context, cfg *config.APIServiceConfig, initFuncs ...Da
 	return server, nil
 }
 
-// FetchLoginTokenForUserHTTP returns an access token for the user by calling the backend HTTP login-for-token endpoint.
-func FetchLoginTokenForUserHTTP(ctx context.Context, httpBaseURL string, loginInput *authsvc.UserLoginInput) (string, error) {
-	unauthedClient, err := client.BuildUnauthenticatedHTTPClient(httpBaseURL)
-	if err != nil {
-		return "", fmt.Errorf("initializing client: %w", err)
-	}
-
-	tokenRes, err := unauthedClient.LoginForToken(ctx, &authsvc.LoginForTokenRequest{
-		Input: loginInput,
-	})
-	if err != nil {
-		return "", fmt.Errorf("fetching login token: %w", err)
-	}
-
-	return tokenRes.Result.AccessToken, nil
-}
-
-// BuildInsecureOAuthedHTTPClient performs the OAuth2 code-for-token exchange using the given token and returns an HTTP client that sends the resulting Bearer token.
-func BuildInsecureOAuthedHTTPClient(
+func BuildInsecureOAuthedGRPCClient(
 	ctx context.Context,
 	createdClientID,
 	createdClientSecret,
 	httpTestServerAddress,
+	grpcServerAddress,
 	token string,
 ) (client.Client, error) {
 	state, err := random.GenerateBase64EncodedString(ctx, 32)
@@ -254,7 +239,7 @@ func BuildInsecureOAuthedHTTPClient(
 	oauth2Config := oauth2.Config{
 		ClientID:     createdClientID,
 		ClientSecret: createdClientSecret,
-		Scopes:       []string{"anything"},
+		Scopes:       []string{"anything"}, // TODO: This should be nil-able
 		RedirectURL:  httpTestServerAddress,
 		Endpoint: oauth2.Endpoint{
 			AuthStyle: oauth2.AuthStyleInParams,
@@ -268,7 +253,12 @@ func BuildInsecureOAuthedHTTPClient(
 		oauth2.SetAuthURLParam("code_challenge_method", "plain"),
 	)
 
-	req, err := http.NewRequestWithContext(ctx, http.MethodGet, authCodeURL, http.NoBody)
+	req, err := http.NewRequestWithContext(
+		ctx,
+		http.MethodGet,
+		authCodeURL,
+		http.NoBody,
+	)
 	if err != nil {
 		return nil, fmt.Errorf("failed to get oauth2 code: %w", err)
 	}
@@ -291,12 +281,16 @@ func BuildInsecureOAuthedHTTPClient(
 		}
 	}()
 
+	const (
+		codeKey = "code"
+	)
+
 	rl, err := res.Location()
 	if err != nil {
 		return nil, fmt.Errorf("getting location value from response: %w", err)
 	}
 
-	code := rl.Query().Get("code")
+	code := rl.Query().Get(codeKey)
 	if code == "" {
 		return nil, fmt.Errorf("code not returned from oauth2 redirect")
 	}
@@ -306,5 +300,51 @@ func BuildInsecureOAuthedHTTPClient(
 		return nil, fmt.Errorf("exchanging OAuth2 code: %w", err)
 	}
 
-	return client.BuildAuthenticatedHTTPClient(httpTestServerAddress, oauth2Token.AccessToken)
+	opts := []grpc.DialOption{
+		grpc.WithTransportCredentials(insecure.NewCredentials()),
+		grpc.WithPerRPCCredentials(&insecureOAuth{
+			TokenSource: oauth2Config.TokenSource(ctx, oauth2Token),
+		}),
+	}
+
+	c, err := client.BuildClient(grpcServerAddress, opts...)
+	if err != nil {
+		return nil, fmt.Errorf("building client: %w", err)
+	}
+
+	return c, nil
+}
+
+// Custom insecure OAuth2 credentials that skip security checks.
+type insecureOAuth struct {
+	TokenSource oauth2.TokenSource
+}
+
+func (i *insecureOAuth) GetRequestMetadata(_ context.Context, _ ...string) (map[string]string, error) {
+	token, err := i.TokenSource.Token()
+	if err != nil {
+		return nil, err
+	}
+
+	return map[string]string{"authorization": token.Type() + " " + token.AccessToken}, nil
+}
+
+func (i *insecureOAuth) RequireTransportSecurity() bool {
+	return false // Explicitly allow insecure transport
+}
+
+func FetchLoginTokenForUser(ctx context.Context, grpcServerAddr string, loginInput *authsvc.UserLoginInput) (string, error) {
+	unauthedClient, err := client.BuildUnauthenticatedGRPCClient(grpcServerAddr)
+	if err != nil {
+		return "", fmt.Errorf("initializing client: %w", err)
+	}
+
+	tokenRes, err := unauthedClient.LoginForToken(ctx, &authsvc.LoginForTokenRequest{
+		Input: loginInput,
+	})
+	if err != nil {
+		return "", fmt.Errorf("fetching login token: %w", err)
+	}
+
+	return tokenRes.Result.AccessToken, nil
 }

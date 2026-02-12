@@ -65,7 +65,7 @@ func TestUploadedMedia_Creating(T *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
-		c := buildUnauthenticatedHTTPClientForTest(t)
+		c := buildUnauthenticatedGRPCClientForTest(t)
 
 		_, err := c.CreateUploadedMedia(ctx, &uploadedmediasvc.CreateUploadedMediaRequest{})
 		require.Error(t, err)
@@ -119,7 +119,7 @@ func TestUploadedMedia_Reading(T *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
-		c := buildUnauthenticatedHTTPClientForTest(t)
+		c := buildUnauthenticatedGRPCClientForTest(t)
 		_, err := c.GetUploadedMedia(ctx, &uploadedmediasvc.GetUploadedMediaRequest{})
 		assert.Error(t, err)
 	})
@@ -205,7 +205,7 @@ func TestUploadedMedia_ReadingWithIDs(T *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
-		c := buildUnauthenticatedHTTPClientForTest(t)
+		c := buildUnauthenticatedGRPCClientForTest(t)
 		_, err := c.GetUploadedMediaWithIDs(ctx, &uploadedmediasvc.GetUploadedMediaWithIDsRequest{Ids: []string{"id1", "id2"}})
 		assert.Error(t, err)
 	})
@@ -254,7 +254,7 @@ func TestUploadedMedia_ListingForUser(T *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
-		c := buildUnauthenticatedHTTPClientForTest(t)
+		c := buildUnauthenticatedGRPCClientForTest(t)
 		_, err := c.GetUploadedMediaForUser(ctx, &uploadedmediasvc.GetUploadedMediaForUserRequest{})
 		assert.Error(t, err)
 	})
@@ -341,7 +341,7 @@ func TestUploadedMedia_Updating(T *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
-		c := buildUnauthenticatedHTTPClientForTest(t)
+		c := buildUnauthenticatedGRPCClientForTest(t)
 		_, err := c.UpdateUploadedMedia(ctx, &uploadedmediasvc.UpdateUploadedMediaRequest{})
 		assert.Error(t, err)
 	})
@@ -409,7 +409,7 @@ func TestUploadedMedia_Archiving(T *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
-		c := buildUnauthenticatedHTTPClientForTest(t)
+		c := buildUnauthenticatedGRPCClientForTest(t)
 		_, err := c.ArchiveUploadedMedia(ctx, &uploadedmediasvc.ArchiveUploadedMediaRequest{})
 		assert.Error(t, err)
 	})

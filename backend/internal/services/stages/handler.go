@@ -41,7 +41,7 @@ var upgrader = websocket.Upgrader{
 
 // Handler handles WebSocket connections for stages.
 type Handler struct {
-	stagesManager   stagesdomain.StagesManager
+	stagesRepo      stagesdomain.Repository
 	playScriptsRepo playscripts.Repository
 	connections     *platformws.ConnectionManager
 	logger          logging.Logger
@@ -52,12 +52,12 @@ type Handler struct {
 func NewHandler(
 	logger logging.Logger,
 	tracerProvider tracing.TracerProvider,
-	stagesManager stagesdomain.StagesManager,
+	stagesRepo stagesdomain.Repository,
 	playScriptsRepo playscripts.Repository,
 	connections *platformws.ConnectionManager,
 ) *Handler {
 	return &Handler{
-		stagesManager:   stagesManager,
+		stagesRepo:      stagesRepo,
 		playScriptsRepo: playScriptsRepo,
 		connections:     connections,
 		logger:          logging.EnsureLogger(logger).WithName("stages_websocket"),
@@ -155,7 +155,7 @@ func (h *Handler) cleanup(ctx context.Context, connCtx *platformws.ConnectionCon
 		h.logger.WithValue("stageID", connCtx.GroupID).WithValue("participantID", connCtx.MemberID).Debug("participant disconnected")
 
 		// Mark participant as left in database
-		if err := h.stagesManager.SetParticipantLeft(ctx, connCtx.MemberID); err != nil {
+		if err := h.stagesRepo.SetParticipantLeft(ctx, connCtx.MemberID); err != nil {
 			h.logger.Error("failed to mark participant as left", err)
 		}
 
@@ -168,7 +168,7 @@ func (h *Handler) cleanup(ctx context.Context, connCtx *platformws.ConnectionCon
 		// Archive stage if no more connections
 		if !h.connections.GroupHasConnections(ctx, connCtx.GroupID) {
 			h.logger.WithValue("stageID", connCtx.GroupID).Debug("no more connections, archiving stage")
-			if err := h.stagesManager.ArchiveStage(ctx, connCtx.GroupID); err != nil {
+			if err := h.stagesRepo.ArchiveStage(ctx, connCtx.GroupID); err != nil {
 				h.logger.Error("failed to archive stage", err)
 			}
 		}
@@ -224,7 +224,7 @@ func (h *Handler) broadcastStageState(ctx context.Context, stageID string) {
 	ctx, span := h.tracer.StartSpan(ctx)
 	defer span.End()
 
-	stage, err := h.stagesManager.GetStageByID(ctx, stageID)
+	stage, err := h.stagesRepo.GetStageByID(ctx, stageID)
 	if err != nil {
 		h.logger.Error("failed to get stage for broadcast", err)
 		return

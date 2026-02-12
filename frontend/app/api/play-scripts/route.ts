@@ -1,11 +1,20 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getBackendCookieForRequest, clearEncryptedBackendCookie } from '@/lib/backend-session-cookie';
+import { getPlayScriptsClient } from '@/lib/grpc-client';
+import {
+  PlayScript,
+  PlayScriptCastMember,
+  PlayScriptLine,
+  ScrollMode,
+} from '@/generated/play_scripts/play_scripts_messages';
+import {
+  PlayScriptCreationRequestInput,
+  PlayScriptCastMemberCreationInput,
+  PlayScriptLineCreationInput,
+} from '@/generated/play_scripts/play_scripts_service_types';
 import { CastMember, PlayLine } from '@/lib/types';
+import { Status } from '@grpc/grpc-js/build/src/constants';
 
-function getBackendUrl(): string {
-  return process.env.BACKEND_HTTP_URL || 'http://localhost:8000';
-}
-
+// Request body shape from the frontend
 interface CreatePlayScriptBody {
   title: string;
   description: string;
@@ -15,30 +24,7 @@ interface CreatePlayScriptBody {
   lines: PlayLine[];
 }
 
-interface BackendCastMember {
-  id: string;
-  name: string;
-  sortOrder: number;
-}
-
-interface BackendLine {
-  castMemberId: string;
-  lineText: string;
-  lineIndex: number;
-  direction?: string;
-  scrollMode?: string;
-  autoScrollWpm?: number;
-}
-
-interface BackendPlayScript {
-  id: string;
-  title: string;
-  description: string;
-  author?: string;
-  castMembers?: BackendCastMember[];
-  lines?: BackendLine[];
-}
-
+// Frontend Play shape (what the scripts pages expect)
 interface FrontendPlay {
   id: string;
   title: string;
@@ -49,72 +35,131 @@ interface FrontendPlay {
   lines: PlayLine[];
 }
 
-function toFrontendPlay(ps: BackendPlayScript): FrontendPlay {
-  const cast = (ps.castMembers ?? [])
-    .sort((a, b) => a.sortOrder - b.sortOrder)
-    .map((cm) => ({ id: cm.id, name: cm.name }));
-  const lines: PlayLine[] = (ps.lines ?? []).map((line) => {
-    const result: PlayLine = {
-      castMemberId: line.castMemberId,
-      text: line.lineText,
-      index: line.lineIndex,
-    };
-    if (line.direction) result.direction = line.direction;
-    if (line.scrollMode === 'manual') result.scrollMode = 'manual';
-    else if (line.scrollMode === 'auto') result.scrollMode = 'auto';
-    if (line.autoScrollWpm != null) result.autoScrollWpm = line.autoScrollWpm;
-    return result;
-  });
+// Convert a gRPC PlayScript to the frontend Play format
+function toFrontendPlay(ps: PlayScript): FrontendPlay {
   return {
     id: ps.id,
     title: ps.title,
     description: ps.description,
     author: ps.author || undefined,
-    isUserScript: true,
-    cast,
-    lines,
+    isUserScript: true, // All scripts from the backend are user-created
+    cast: (ps.castMembers || [])
+      .sort((a: PlayScriptCastMember, b: PlayScriptCastMember) => a.sortOrder - b.sortOrder)
+      .map((cm: PlayScriptCastMember) => ({
+        id: cm.id,
+        name: cm.name,
+      })),
+    lines: (ps.lines || []).map((line: PlayScriptLine) => {
+      const result: PlayLine = {
+        castMemberId: line.castMemberId,
+        text: line.lineText,
+        index: line.lineIndex,
+      };
+      if (line.direction) {
+        result.direction = line.direction;
+      }
+      if (line.scrollMode === ScrollMode.SCROLL_MODE_MANUAL) {
+        result.scrollMode = 'manual';
+      } else if (line.scrollMode === ScrollMode.SCROLL_MODE_AUTO) {
+        result.scrollMode = 'auto';
+      }
+      if (line.autoScrollWpm) {
+        result.autoScrollWpm = line.autoScrollWpm;
+      }
+      return result;
+    }),
   };
 }
 
-// GET /api/play-scripts - List public play scripts (no auth required)
+// Convert frontend scroll mode string to protobuf enum
+function toScrollModeEnum(mode?: 'auto' | 'manual'): ScrollMode {
+  switch (mode) {
+    case 'manual':
+      return ScrollMode.SCROLL_MODE_MANUAL;
+    case 'auto':
+      return ScrollMode.SCROLL_MODE_AUTO;
+    default:
+      return ScrollMode.SCROLL_MODE_UNSPECIFIED; // Will default to AUTO on backend
+  }
+}
+
+// Convert frontend CastMember to protobuf creation input
+function toCastMemberInput(cast: CastMember, index: number): PlayScriptCastMemberCreationInput {
+  return PlayScriptCastMemberCreationInput.create({
+    id: cast.id,
+    name: cast.name,
+    sortOrder: index,
+  });
+}
+
+// Convert frontend PlayLine to protobuf creation input
+function toLineInput(line: PlayLine): PlayScriptLineCreationInput {
+  return PlayScriptLineCreationInput.create({
+    castMemberId: line.castMemberId,
+    lineText: line.text,
+    lineIndex: line.index,
+    direction: line.direction || '',
+    scrollMode: toScrollModeEnum(line.scrollMode),
+    autoScrollWpm: line.autoScrollWpm || 0,
+  });
+}
+
+// Map gRPC status codes to HTTP status codes
+function grpcStatusToHttp(code: number): number {
+  switch (code) {
+    case Status.OK:
+      return 200;
+    case Status.INVALID_ARGUMENT:
+      return 400;
+    case Status.UNAUTHENTICATED:
+      return 401;
+    case Status.PERMISSION_DENIED:
+      return 403;
+    case Status.NOT_FOUND:
+      return 404;
+    case Status.ALREADY_EXISTS:
+      return 409;
+    case Status.RESOURCE_EXHAUSTED:
+      return 429;
+    case Status.INTERNAL:
+      return 500;
+    case Status.UNAVAILABLE:
+      return 503;
+    default:
+      return 500;
+  }
+}
+
+// GET /api/play-scripts - List public play scripts
 export async function GET() {
   try {
-    const backendUrl = getBackendUrl();
-    const sessionCookie = await getBackendCookieForRequest();
-    const headers: Record<string, string> = {};
-    if (sessionCookie) headers['X-Session-Cookie'] = sessionCookie;
+    const client = getPlayScriptsClient();
+    const response = await client.getPublicPlayScripts({ filter: undefined });
 
-    const response = await fetch(`${backendUrl}/api/play-scripts/public`, { headers });
-
-    if (response.status === 401 && sessionCookie) {
-      await clearEncryptedBackendCookie();
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-    }
-
-    if (!response.ok) {
-      const data = await response.json().catch(() => ({}));
-      return NextResponse.json(data, { status: response.status });
-    }
-
-    const data = (await response.json()) as { data?: BackendPlayScript[] };
-    const scripts = (data.data ?? []).map(toFrontendPlay);
+    const scripts = (response.results || []).map(toFrontendPlay);
     return NextResponse.json(scripts);
   } catch (error: unknown) {
     console.error('Error listing play scripts:', error);
+
+    if (error && typeof error === 'object' && 'code' in error) {
+      const grpcError = error as { code: number; message?: string };
+      const httpStatus = grpcStatusToHttp(grpcError.code);
+      return NextResponse.json(
+        { error: grpcError.message || 'gRPC error occurred' },
+        { status: httpStatus }
+      );
+    }
+
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }
 
-// POST /api/play-scripts - Create a play script (auth required)
+// POST /api/play-scripts - Create a play script
 export async function POST(request: NextRequest) {
   try {
-    const sessionCookie = await getBackendCookieForRequest();
-    if (!sessionCookie) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-    }
-
     const body: CreatePlayScriptBody = await request.json();
 
+    // Validate required fields
     if (!body.title?.trim()) {
       return NextResponse.json({ error: 'Title is required' }, { status: 400 });
     }
@@ -125,49 +170,46 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'At least one line is required' }, { status: 400 });
     }
 
-    const backendUrl = getBackendUrl();
-    const input = {
+    // Convert to protobuf input format
+    const input: PlayScriptCreationRequestInput = PlayScriptCreationRequestInput.create({
       title: body.title.trim(),
-      description: body.description?.trim() ?? '',
-      author: body.author?.trim() ?? '',
+      description: body.description?.trim() || '',
+      author: body.author?.trim() || '',
       isPublic: body.isPublic ?? false,
-      castMembers: body.cast.map((c, i) => ({ id: c.id, name: c.name, sortOrder: i })),
-      lines: body.lines.map((line) => ({
-        castMemberId: line.castMemberId,
-        lineText: line.text,
-        lineIndex: line.index,
-        direction: line.direction ?? '',
-        scrollMode: line.scrollMode ?? 'auto',
-        autoScrollWpm: line.autoScrollWpm ?? 0,
-      })),
-    };
-
-    const response = await fetch(`${backendUrl}/api/play-scripts`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'X-Session-Cookie': sessionCookie,
-      },
-      body: JSON.stringify(input),
+      castMembers: body.cast.map((c, i) => toCastMemberInput(c, i)),
+      lines: body.lines.map(toLineInput),
     });
 
-    if (response.status === 401) {
-      await clearEncryptedBackendCookie();
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    // Call gRPC service
+    const client = getPlayScriptsClient();
+    const response = await client.createPlayScript({ input });
+
+    // Convert response to JSON
+    const created = response.created;
+    if (!created) {
+      return NextResponse.json({ error: 'Failed to create play script' }, { status: 500 });
     }
 
-    if (!response.ok) {
-      const data = await response.json().catch(() => ({}));
-      return NextResponse.json(data, { status: response.status });
-    }
-
-    const created = (await response.json()) as BackendPlayScript;
     return NextResponse.json(
-      { success: true, playScript: toFrontendPlay(created) },
+      {
+        success: true,
+        playScript: PlayScript.toJSON(created),
+      },
       { status: 201 }
     );
   } catch (error: unknown) {
     console.error('Error creating play script:', error);
+
+    // Handle gRPC errors
+    if (error && typeof error === 'object' && 'code' in error) {
+      const grpcError = error as { code: number; message?: string };
+      const httpStatus = grpcStatusToHttp(grpcError.code);
+      return NextResponse.json(
+        { error: grpcError.message || 'gRPC error occurred' },
+        { status: httpStatus }
+      );
+    }
+
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }

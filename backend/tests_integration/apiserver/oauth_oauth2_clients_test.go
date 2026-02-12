@@ -65,7 +65,7 @@ func TestOAuth2Clients_Creating(T *testing.T) {
 		creationRequestInput := fakes.BuildFakeOAuth2ClientCreationRequestInput()
 		convertedInput := grpcconverters.ConvertOAuth2ClientCreationRequestInputToGRPCOAuth2ClientCreationRequestInput(creationRequestInput)
 
-		c := buildUnauthenticatedHTTPClientForTest(t)
+		c := buildUnauthenticatedGRPCClientForTest(t)
 		created, err := c.CreateOAuth2Client(ctx, &oauthsvc.CreateOAuth2ClientRequest{
 			Input: convertedInput,
 		})
@@ -131,7 +131,7 @@ func TestOAuth2Clients_Reading(T *testing.T) {
 
 		created := createOAuth2ClientForTest(t)
 
-		c := buildUnauthenticatedHTTPClientForTest(t)
+		c := buildUnauthenticatedGRPCClientForTest(t)
 
 		_, err := c.GetOAuth2Client(ctx, &oauthsvc.GetOAuth2ClientRequest{Oauth2ClientId: created.ID})
 		assert.Error(t, err)
@@ -169,7 +169,7 @@ func TestOAuth2Clients_Archiving(T *testing.T) {
 
 		created := createOAuth2ClientForTest(t)
 
-		c := buildUnauthenticatedHTTPClientForTest(t)
+		c := buildUnauthenticatedGRPCClientForTest(t)
 
 		_, err := c.ArchiveOAuth2Client(ctx, &oauthsvc.ArchiveOAuth2ClientRequest{Oauth2ClientId: created.ID})
 		assert.Error(t, err)
@@ -219,7 +219,7 @@ func TestOAuth2Clients_Listing(T *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
-		c := buildUnauthenticatedHTTPClientForTest(t)
+		c := buildUnauthenticatedGRPCClientForTest(t)
 
 		_, err := c.GetOAuth2Clients(ctx, &oauthsvc.GetOAuth2ClientsRequest{})
 		assert.Error(t, err)

@@ -1,6 +1,6 @@
 # Copy to terraform.tfvars and fill in. Do not commit terraform.tfvars.
 # Frontend prod – requires backend Terraform applied first.
-# Set frontend_backend_http_url from backend outputs.
+# Set frontend_backend_http_url and frontend_grpc_backend_url from backend outputs.
 
 environment  = "prod"
 project_id   = "no-small-parts"
@@ -9,6 +9,8 @@ gcp_main_zone = "us-central1-a"
 
 # From backend Terraform: terraform output -raw cloud_run_api_url
 frontend_backend_http_url = "https://nosmallparts-api-prod-xxxxx.run.app"
+# Backend gRPC host:port (e.g. nosmallparts-api-prod-xxxxx.run.app:443)
+frontend_grpc_backend_url = "nosmallparts-api-prod-xxxxx.run.app:443"
 
 # From backend Terraform: terraform output -raw artifact_registry_repository_id
 artifact_repository_id = "containers"

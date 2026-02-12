@@ -43,7 +43,7 @@ func TestAccounts_Creating(T *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
-		testClient := buildUnauthenticatedHTTPClientForTest(t)
+		testClient := buildUnauthenticatedGRPCClientForTest(t)
 
 		exampleAccount := fakes.BuildFakeAccountCreationRequestInput()
 		exampleAccountInput := identitygrpcconverters.ConvertAccountCreationRequestInputToGRPCAccountCreationRequestInput(exampleAccount)
@@ -103,7 +103,7 @@ func TestAccounts_Listing(T *testing.T) {
 
 		// create a user so that the account actually exists
 		_, _ = createUserAndClientForTest(t)
-		testClient := buildUnauthenticatedHTTPClientForTest(t)
+		testClient := buildUnauthenticatedGRPCClientForTest(t)
 
 		_, err := testClient.GetAccounts(ctx, &identitysvc.GetAccountsRequest{})
 		assert.Error(t, err)
@@ -147,7 +147,7 @@ func TestAccounts_Reading(T *testing.T) {
 		require.NoError(t, err)
 		require.NotNil(t, account)
 
-		testClient = buildUnauthenticatedHTTPClientForTest(t)
+		testClient = buildUnauthenticatedGRPCClientForTest(t)
 
 		_, err = testClient.GetAccount(ctx, &identitysvc.GetAccountRequest{AccountId: account.Result.Id})
 		assert.Error(t, err)
@@ -212,7 +212,7 @@ func TestAccounts_Updating(T *testing.T) {
 		require.NoError(t, err)
 		require.NotNil(t, account)
 
-		testClient = buildUnauthenticatedHTTPClientForTest(t)
+		testClient = buildUnauthenticatedGRPCClientForTest(t)
 
 		_, err = testClient.UpdateAccount(ctx, &identitysvc.UpdateAccountRequest{AccountId: account.Result.Id})
 		assert.Error(t, err)
@@ -279,7 +279,7 @@ func TestAccounts_Archiving(T *testing.T) {
 		require.NoError(t, err)
 		require.NotNil(t, account)
 
-		testClient = buildUnauthenticatedHTTPClientForTest(t)
+		testClient = buildUnauthenticatedGRPCClientForTest(t)
 
 		_, err = testClient.ArchiveAccount(ctx, &identitysvc.ArchiveAccountRequest{AccountId: account.Result.Id})
 		assert.Error(t, err)

@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getBackendCookieForRequest, clearEncryptedBackendCookie } from '@/lib/backend-session-cookie';
 
+// Get the Go backend URL from environment variable
 function getBackendUrl(): string {
   return process.env.BACKEND_HTTP_URL || 'http://localhost:8000';
 }
@@ -20,21 +20,8 @@ export async function GET(
       return NextResponse.json({ error: 'code is required' }, { status: 400 });
     }
 
-    const sessionCookie = await getBackendCookieForRequest();
-    const headers: Record<string, string> = {};
-    if (sessionCookie) {
-      headers['X-Session-Cookie'] = sessionCookie;
-    }
-
     const backendUrl = getBackendUrl();
-    const response = await fetch(`${backendUrl}/api/stages/${encodeURIComponent(code)}/exists`, {
-      headers,
-    });
-
-    if (response.status === 401 && sessionCookie) {
-      await clearEncryptedBackendCookie();
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-    }
+    const response = await fetch(`${backendUrl}/api/stages/${encodeURIComponent(code)}/exists`);
 
     if (!response.ok) {
       const data = await response.json();

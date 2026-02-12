@@ -37,6 +37,18 @@ func TestProvideConsumerProvider(T *testing.T) {
 		assert.NoError(t, err)
 		assert.NotNil(t, provider)
 	})
+
+	T.Run("with invalid provider", func(t *testing.T) {
+		t.Parallel()
+
+		ctx := t.Context()
+		logger := logging.NewNoopLogger()
+		cfg := &Config{}
+
+		provider, err := ProvideConsumerProvider(ctx, logger, cfg)
+		assert.Error(t, err)
+		assert.Nil(t, provider)
+	})
 }
 
 func TestProvidePublisherProvider(T *testing.T) {
@@ -56,5 +68,17 @@ func TestProvidePublisherProvider(T *testing.T) {
 		provider, err := ProvidePublisherProvider(ctx, logger, tracing.NewNoopTracerProvider(), cfg)
 		assert.NoError(t, err)
 		assert.NotNil(t, provider)
+	})
+
+	T.Run("with invalid provider", func(t *testing.T) {
+		t.Parallel()
+
+		ctx := t.Context()
+		logger := logging.NewNoopLogger()
+		cfg := &Config{}
+
+		provider, err := ProvidePublisherProvider(ctx, logger, tracing.NewNoopTracerProvider(), cfg)
+		assert.Error(t, err)
+		assert.Nil(t, provider)
 	})
 }

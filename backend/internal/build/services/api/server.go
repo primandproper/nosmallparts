@@ -8,6 +8,7 @@ import (
 	"syscall"
 	"time"
 
+	grpcapi "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/build/services/api/grpc"
 	httpapi "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/build/services/api/http"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/config"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
@@ -16,17 +17,25 @@ import (
 
 type Server struct {
 	logger     logging.Logger
+	grpcServer *grpcapi.GRPCService
 	httpServer http.Server
 }
 
 func NewServer(ctx context.Context, logger logging.Logger, cfg *config.APIServiceConfig) (*Server, error) {
+	// build our server struct.
 	httpServer, err := httpapi.Build(ctx, cfg)
 	if err != nil {
 		return nil, fmt.Errorf("could not create http server: %w", err)
 	}
 
+	grpcServer, err := grpcapi.Build(ctx, cfg)
+	if err != nil {
+		return nil, fmt.Errorf("could not create grpc server: %w", err)
+	}
+
 	return &Server{
 		logger:     logging.EnsureLogger(logger),
+		grpcServer: grpcServer,
 		httpServer: httpServer,
 	}, nil
 }
@@ -41,8 +50,11 @@ func (s *Server) Run() {
 		syscall.SIGTERM,
 	)
 
+	// Run servers
 	go s.httpServer.Serve()
+	go s.grpcServer.Serve()
 
+	// Wait for shutdown signal
 	sig := <-signalChan
 	s.logger.WithValue("signal", sig.String()).Info("received shutdown signal")
 
@@ -54,4 +66,6 @@ func (s *Server) Run() {
 	if err := s.httpServer.Shutdown(cancelCtx); err != nil {
 		s.logger.Error("shutting down HTTP server", err)
 	}
+
+	s.grpcServer.Shutdown()
 }

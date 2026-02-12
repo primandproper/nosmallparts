@@ -21,6 +21,7 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/routing/chi"
 	routingcfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/routing/config"
 	textsearchcfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/search/text/config"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/server/grpc"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/server/http"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/testutils"
 	uploadscfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/uploads/config"
@@ -82,6 +83,9 @@ func buildIntegrationTestsConfig() *config.APIServiceConfig {
 			Debug:           false,
 			Port:            defaultHTTPPort,
 			StartupDeadline: time.Minute,
+		},
+		GRPCServer: grpc.Config{
+			Port: defaultGRPCPort,
 		},
 		Database: databasecfg.Config{
 			Provider:                 databasecfg.ProviderPostgres,

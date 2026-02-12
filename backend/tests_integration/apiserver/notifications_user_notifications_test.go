@@ -54,7 +54,7 @@ func TestUserNotifications_Reading(T *testing.T) {
 		user, _ := createUserAndClientForTest(t)
 		created := createUserNotificationForTest(t, user.ID)
 
-		c := buildUnauthenticatedHTTPClientForTest(t)
+		c := buildUnauthenticatedGRPCClientForTest(t)
 
 		_, err := c.GetUserNotification(ctx, &notificationssvc.GetUserNotificationRequest{UserNotificationId: created.ID})
 		assert.Error(t, err)
@@ -105,7 +105,7 @@ func TestUserNotifications_Updating(T *testing.T) {
 		updateInput := fakes.BuildFakeUserNotificationUpdateRequestInput()
 		created.Update(updateInput)
 
-		c := buildUnauthenticatedHTTPClientForTest(t)
+		c := buildUnauthenticatedGRPCClientForTest(t)
 
 		_, err := c.UpdateUserNotification(ctx, &notificationssvc.UpdateUserNotificationRequest{
 			UserNotificationId: created.ID,
@@ -148,7 +148,7 @@ func TestUserNotifications_Listing(T *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
-		c := buildUnauthenticatedHTTPClientForTest(t)
+		c := buildUnauthenticatedGRPCClientForTest(t)
 
 		_, err := c.GetUserNotifications(ctx, &notificationssvc.GetUserNotificationsRequest{})
 		assert.Error(t, err)

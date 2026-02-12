@@ -12,8 +12,10 @@ var (
 		wire.FieldsOf(
 			new(*config.APIServiceConfig),
 			"Auth",
+			"Queues",
 			"Email",
 			"Analytics",
+			"TextSearch",
 			"FeatureFlags",
 			"Encoding",
 			"Events",

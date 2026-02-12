@@ -1,6 +1,6 @@
 # -----------------------------------------------------------------------------
-# Set frontend_backend_http_url from backend Terraform outputs (or TFC).
-# artifact_repository_id should match backend output.
+# Set frontend_backend_http_url and frontend_grpc_backend_url from backend
+# Terraform outputs (or TFC). artifact_repository_id should match backend output.
 # -----------------------------------------------------------------------------
 
 variable "environment" {
@@ -41,6 +41,11 @@ variable "artifact_repository_id" {
 variable "frontend_backend_http_url" {
   type        = string
   description = "Backend API URL (e.g. backend Terraform output cloud_run_api_url)"
+}
+
+variable "frontend_grpc_backend_url" {
+  type        = string
+  description = "Backend gRPC address (host:port)"
 }
 
 variable "frontend_oauth2_client_id" {

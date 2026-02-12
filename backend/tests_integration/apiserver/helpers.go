@@ -45,23 +45,29 @@ var (
 	adminClient client.Client
 )
 
-func buildUnauthenticatedHTTPClientForTest(t *testing.T) client.Client {
+func buildUnauthenticatedGRPCClientForTest(t *testing.T) client.Client {
 	t.Helper()
 
-	c, err := client.BuildUnauthenticatedHTTPClient(httpTestServerAddress)
+	c, err := client.BuildUnauthenticatedGRPCClient(fmt.Sprintf(":%d", apiServiceConfig.GRPCServer.Port))
 	require.NoError(t, err)
 
 	return c
 }
 
-func buildAuthedHTTPClient(ctx context.Context, token string) (client.Client, error) {
-	return localdev.BuildInsecureOAuthedHTTPClient(
+func buildAuthedGRPCClient(ctx context.Context, token string) (client.Client, error) {
+	c, err := localdev.BuildInsecureOAuthedGRPCClient(
 		ctx,
 		createdClientID,
 		createdClientSecret,
 		httpTestServerAddress,
+		fmt.Sprintf(":%d", apiServiceConfig.GRPCServer.Port),
 		token,
 	)
+	if err != nil {
+		return nil, err
+	}
+
+	return c, nil
 }
 
 func hashStringToNumber(s string) uint64 {
@@ -89,7 +95,7 @@ func createServiceUserForTest(t *testing.T, verifyTOTP bool, in *identity.UserRe
 }
 
 func createServiceUser(ctx context.Context, verifyTOTP bool, in *identity.UserRegistrationInput) (*identity.User, error) {
-	c, err := client.BuildUnauthenticatedHTTPClient(httpTestServerAddress)
+	c, err := client.BuildUnauthenticatedGRPCClient(fmt.Sprintf(":%d", apiServiceConfig.GRPCServer.Port))
 	if err != nil {
 		return nil, fmt.Errorf("initializing client: %w", err)
 	}
@@ -145,7 +151,7 @@ func createClientForUser(ctx context.Context, user *identity.User) (client.Clien
 		return nil, fmt.Errorf("fetching token for user %s: %w", user.Username, err)
 	}
 
-	oauthedClient, err := buildAuthedHTTPClient(ctx, token)
+	oauthedClient, err := buildAuthedGRPCClient(ctx, token)
 	if err != nil {
 		return nil, fmt.Errorf("building oauthed client: %w", err)
 	}
@@ -181,7 +187,7 @@ func createUserAndClientForTestWithRegistrationInput(t *testing.T, input *identi
 	ctx := t.Context()
 
 	user := createServiceUserForTest(t, true, input)
-	oauthedClient, err := buildAuthedHTTPClient(ctx, fetchLoginTokenForUserForTest(t, user))
+	oauthedClient, err := buildAuthedGRPCClient(ctx, fetchLoginTokenForUserForTest(t, user))
 	require.NoError(t, err)
 
 	return user, oauthedClient
@@ -223,7 +229,7 @@ func fetchLoginTokenForUser(ctx context.Context, user *identity.User) (string, e
 		loginInput.Password = adminUserPassword
 	}
 
-	return localdev.FetchLoginTokenForUserHTTP(ctx, httpTestServerAddress, loginInput)
+	return localdev.FetchLoginTokenForUser(ctx, fmt.Sprintf(":%d", apiServiceConfig.GRPCServer.Port), loginInput)
 }
 
 //// ChatGPT Zone

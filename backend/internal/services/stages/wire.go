@@ -13,7 +13,6 @@ import (
 var (
 	StagesWebSocketProviders = wire.NewSet(
 		ProvideConnectionManager,
-		ProvideStagesManager,
 		ProvideHandler,
 	)
 )
@@ -26,18 +25,13 @@ func ProvideConnectionManager(
 	return platformws.NewConnectionManager(tracerProvider, logger)
 }
 
-// ProvideStagesManager provides a StagesManager that delegates to the given repository.
-func ProvideStagesManager(repo stagesdomain.Repository) stagesdomain.StagesManager {
-	return NewManager(repo)
-}
-
 // ProvideHandler provides a WebSocket Handler.
 func ProvideHandler(
 	logger logging.Logger,
 	tracerProvider tracing.TracerProvider,
-	stagesManager stagesdomain.StagesManager,
+	stagesRepo stagesdomain.Repository,
 	playScriptsRepo playscripts.Repository,
 	connectionManager *platformws.ConnectionManager,
 ) *Handler {
-	return NewHandler(logger, tracerProvider, stagesManager, playScriptsRepo, connectionManager)
+	return NewHandler(logger, tracerProvider, stagesRepo, playScriptsRepo, connectionManager)
 }

@@ -29,7 +29,7 @@ func (h *Handler) CreateStageHTTP(w http.ResponseWriter, r *http.Request) {
 	ctx, span := h.tracer.StartSpan(r.Context())
 	defer span.End()
 
-	stage, err := h.stagesManager.CreateStage(ctx, &stagesdomain.StageCreationInput{
+	stage, err := h.stagesRepo.CreateStage(ctx, &stagesdomain.StageCreationInput{
 		ID:   identifiers.New(),
 		Code: generateStageCode(),
 	})
@@ -62,7 +62,7 @@ func (h *Handler) CheckStageExists(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	_, err := h.stagesManager.GetStageByCode(ctx, code)
+	_, err := h.stagesRepo.GetStageByCode(ctx, code)
 
 	exists := true
 	if err != nil {

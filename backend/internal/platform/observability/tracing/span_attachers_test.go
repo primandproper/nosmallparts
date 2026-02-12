@@ -6,25 +6,13 @@ import (
 	"net/http"
 	"testing"
 
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/authentication/sessions"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/authorization"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/filtering"
 
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 )
-
-// testSessionContextData implements the sessionContextData interface used by AttachSessionContextDataToSpan, so we avoid importing authentication/sessions (which would create an import cycle with tracing tests).
-type testSessionContextData struct {
-	servicePerms    authorization.ServiceRolePermissionChecker
-	userID          string
-	activeAccountID string
-}
-
-func (t *testSessionContextData) GetUserID() string          { return t.userID }
-func (t *testSessionContextData) GetActiveAccountID() string { return t.activeAccountID }
-func (t *testSessionContextData) GetServicePermissions() authorization.ServiceRolePermissionChecker {
-	return t.servicePerms
-}
 
 type mockSessionData struct {
 	mock.Mock
@@ -53,8 +41,12 @@ func TestAttachSessionContextDataToSpan(T *testing.T) {
 
 		_, span := StartSpan(context.Background())
 
-		AttachSessionContextDataToSpan(span, &testSessionContextData{
-			servicePerms: authorization.NewServiceRolePermissionChecker(authorization.ServiceUserRole.String()),
+		AttachSessionContextDataToSpan(span, &sessions.ContextData{
+			AccountPermissions: nil,
+			Requester: sessions.RequesterInfo{
+				ServicePermissions: authorization.NewServiceRolePermissionChecker(authorization.ServiceUserRole.String()),
+			},
+			ActiveAccountID: "",
 		})
 	})
 }

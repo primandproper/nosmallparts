@@ -23,6 +23,7 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
 	routingcfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/routing/config"
 	textsearchcfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/search/text/config"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/server/grpc"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/server/http"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/uploads/objectstorage"
 	livekitsvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/livekit"
@@ -73,8 +74,8 @@ type (
 		Encoding                encoding.Config               `envPrefix:"ENCODING_"      json:"encoding"`
 		Events                  msgconfig.Config              `envPrefix:"EVENTS_"        json:"events"`
 		Observability           observability.Config          `envPrefix:"OBSERVABILITY_" json:"observability"`
+		GRPCServer              grpc.Config                   `envPrefix:"GRPC_"          json:"grpc"`
 		Meta                    MetaSettings                  `envPrefix:"META_"          json:"meta"`
-		Cookies                 cookies.Config                `envPrefix:"COOKIES_"       json:"cookies,omitempty"`
 		Analytics               analyticscfg.Config           `envPrefix:"ANALYTICS_"     json:"analytics"`
 		Email                   emailcfg.Config               `envPrefix:"EMAIL_"         json:"email"`
 		TextSearch              textsearchcfg.Config          `envPrefix:"SEARCH_"        json:"search"`
@@ -154,6 +155,7 @@ type (
 		_ struct{} `json:"-"`
 
 		HTTPAPIServerURL      string `env:"HTTP_API_SERVER_URL"      json:"httpAPIServerURL"`
+		GRPCAPIServerURL      string `env:"GRPC_API_SERVER_URL"      json:"grpcAPIServerURL"`
 		OAuth2APIClientID     string `env:"OAUTH2_API_CLIENT_ID"     json:"oauth2APIClientID"`
 		OAuth2APIClientSecret string `env:"OAUTH2_API_CLIENT_SECRET" json:"oauth2APIClientSecret"`
 	}
@@ -236,9 +238,6 @@ func (cfg *APIServiceConfig) ValidateWithContext(ctx context.Context) error {
 		"FeatureFlags":  cfg.FeatureFlags.ValidateWithContext,
 		"TextSearch":    cfg.TextSearch.ValidateWithContext,
 		// no "Events" here, that's a collection of publisher/subscriber configs that can each optionally be setup
-	}
-	if cfg.Cookies.CookieName != "" {
-		validators["Cookies"] = cfg.Cookies.ValidateWithContext
 	}
 
 	if cfg.validateServices {

@@ -67,13 +67,18 @@ func init() {
 		log.Fatal(err)
 	}
 
-	// Use random port to avoid conflicts with other running instances
+	// Use random ports to avoid conflicts with other running instances
 	httpPort, err := getFreePort()
+	if err != nil {
+		log.Fatal(err)
+	}
+	grpcPort, err := getFreePort()
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	cfg.HTTPServer.Port = uint16(httpPort)
+	cfg.GRPCServer.Port = uint16(grpcPort)
 	httpTestServerAddress = fmt.Sprintf("http://localhost:%d", httpPort)
 
 	apiServiceConfig = cfg
