@@ -40,7 +40,8 @@ resource "google_container_cluster" "primary" {
   initial_node_count       = 1
   deletion_protection      = false
 
-  network = google_compute_network.private_network.name
+  network    = google_compute_network.private_network.name
+  subnetwork  = google_compute_subnetwork.primary.name
 
   secret_manager_config {
     enabled = true
