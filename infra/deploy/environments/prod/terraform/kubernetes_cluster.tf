@@ -111,4 +111,6 @@ resource "google_service_account_iam_member" "workload_identity_binding" {
   service_account_id = google_service_account.workload_identity_sa.name
   role               = "roles/iam.workloadIdentityUser"
   member             = "serviceAccount:${local.project_id}.svc.id.goog[prod/api-service-account]"
+
+  depends_on = [google_container_cluster.primary]
 }
