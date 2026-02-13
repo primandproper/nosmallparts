@@ -11,7 +11,6 @@ resource "google_compute_address" "static_ip" {
   }
 }
 
-# 172.16.0.0/16 avoids overlap with GCP auto-created subnets (typically 10.x.x.x).
 resource "google_compute_global_address" "private_ip_address" {
   provider = google
 
