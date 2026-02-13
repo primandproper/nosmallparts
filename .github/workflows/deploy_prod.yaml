@@ -55,23 +55,11 @@ jobs:
       - name: Set up Cloud SDK
         uses: google-github-actions/setup-gcloud@v2
 
-      - name: Get GKE credentials
-        uses: google-github-actions/get-gke-credentials@v2
-        with:
-          cluster_name: prod
-          context_name: prod_context
-          location: us-central1
-
-      - name: Copy kubeconfig for backend Terraform
-        run: |
-          mkdir -p backend/deploy/environments/prod/terraform
-          cp ${{ env.KUBECONFIG }} backend/deploy/environments/prod/terraform/terraform_kubeconfig
-
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: "1.10.3"
-          cli_config_credentials_token: ${{ secrets.TERRAFORM_CLOUD_API_TOKEN }}
+          cli_config_credentials_token: ${{ secrets.NO_SMALL_PARTS_TERRAFORM_CLOUD_API_TOKEN }}
 
       - name: Terraform Init
         working-directory: infra/deploy/environments/prod/terraform
@@ -124,7 +112,7 @@ jobs:
         uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: "1.10.3"
-          cli_config_credentials_token: ${{ secrets.TERRAFORM_CLOUD_API_TOKEN }}
+          cli_config_credentials_token: ${{ secrets.NO_SMALL_PARTS_TERRAFORM_CLOUD_API_TOKEN }}
 
       - name: Terraform Init
         working-directory: backend/deploy/environments/prod/terraform
