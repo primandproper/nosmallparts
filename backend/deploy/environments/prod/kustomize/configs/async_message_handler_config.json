@@ -1,9 +1,9 @@
 {
 	"storage": {
 		"gcpConfig": {
-			"bucketName": "userdata.nosmall.parts"
+			"bucketName": "no-small-parts-userdata"
 		},
-		"bucketName": "userdata.nosmall.parts",
+		"bucketName": "no-small-parts-userdata",
 		"provider": "gcp"
 	},
 	"queues": {

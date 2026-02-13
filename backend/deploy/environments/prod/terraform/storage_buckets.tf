@@ -7,9 +7,10 @@ data "google_iam_policy" "public_policy" {
   }
 }
 
+# Non-domain names avoid GCS domain ownership verification (must use Load Balancer for media.nosmall.parts)
 resource "google_storage_bucket" "api_media" {
   provider                    = google
-  name                        = "media.nosmall.parts"
+  name                        = "no-small-parts-media"
   location                    = "US"
   uniform_bucket_level_access = false
   force_destroy               = true
@@ -43,7 +44,7 @@ resource "google_storage_bucket_iam_policy" "api_media_policy" {
 
 resource "google_storage_bucket" "user_data_storage" {
   provider                    = google
-  name                        = "userdata.nosmall.parts"
+  name                        = "no-small-parts-userdata"
   location                    = "US"
   uniform_bucket_level_access = false
   force_destroy               = true

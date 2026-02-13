@@ -11,26 +11,6 @@ resource "cloudflare_record" "database_record" {
   comment = "Managed by Terraform"
 }
 
-resource "cloudflare_record" "api_media" {
-  count = var.PROD_CLOUDFLARE_ZONE_ID != "" ? 1 : 0
-
-  zone_id = var.PROD_CLOUDFLARE_ZONE_ID
-  name    = "media"
-  content = "c.storage.googleapis.com"
-  type    = "CNAME"
-  proxied = true
-  ttl     = 1
-  comment = "Managed by Terraform"
-}
-
-resource "cloudflare_record" "user_data_storage" {
-  count = var.PROD_CLOUDFLARE_ZONE_ID != "" ? 1 : 0
-
-  zone_id = var.PROD_CLOUDFLARE_ZONE_ID
-  name    = "userdata"
-  content = "c.storage.googleapis.com"
-  type    = "CNAME"
-  proxied = true
-  ttl     = 1
-  comment = "Managed by Terraform"
-}
+# media/userdata CNAMEs removed: buckets renamed to no-small-parts-* to avoid GCS domain verification.
+# Assets are served via https://storage.googleapis.com/no-small-parts-media/...
+# To restore custom domain URLs, add a Load Balancer + Backend Bucket mapping media.nosmall.parts -> no-small-parts-media.

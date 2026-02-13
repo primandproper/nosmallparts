@@ -179,14 +179,14 @@
 	},
 	"services": {
 		"users": {
-			"publicMediaURLPrefix": "https://media.nosmall.parts/avatars",
+			"publicMediaURLPrefix": "https://storage.googleapis.com/no-small-parts-media/avatars",
 			"uploads": {
 				"storageConfig": {
 					"gcpConfig": {
-						"bucketName": "media.nosmall.parts"
+						"bucketName": "no-small-parts-media"
 					},
 					"bucketPrefix": "avatars/",
-					"bucketName": "media.nosmall.parts",
+					"bucketName": "no-small-parts-media",
 					"uploadFilenameKey": "avatar",
 					"provider": "gcp"
 				},
@@ -197,9 +197,9 @@
 			"uploads": {
 				"storageConfig": {
 					"gcpConfig": {
-						"bucketName": "userdata.nosmall.parts"
+						"bucketName": "no-small-parts-userdata"
 					},
-					"bucketName": "userdata.nosmall.parts",
+					"bucketName": "no-small-parts-userdata",
 					"provider": "gcp"
 				},
 				"debug": false
@@ -209,10 +209,10 @@
 			"uploads": {
 				"storageConfig": {
 					"gcpConfig": {
-						"bucketName": "media.nosmall.parts"
+						"bucketName": "no-small-parts-media"
 					},
 					"bucketPrefix": "avatars/",
-					"bucketName": "media.nosmall.parts",
+					"bucketName": "no-small-parts-media",
 					"uploadFilenameKey": "avatar",
 					"provider": "gcp"
 				},
