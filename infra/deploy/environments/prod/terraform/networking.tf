@@ -18,7 +18,6 @@ resource "google_compute_global_address" "private_ip_address" {
   name          = "private-ip-address"
   purpose       = "VPC_PEERING"
   address_type  = "INTERNAL"
-  address       = "172.16.0.0"
   prefix_length = 16
   network       = google_compute_network.private_network.id
 }
