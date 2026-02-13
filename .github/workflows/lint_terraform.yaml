@@ -1,5 +1,5 @@
 ---
-on: [pull_request]
+on: [gollum] # [pull_request]
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
@@ -10,6 +10,7 @@ jobs:
   changes:
     permissions:
       pull-requests: read
+      contents: read
     timeout-minutes: 5
     runs-on: ubuntu-latest
     outputs:

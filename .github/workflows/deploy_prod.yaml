@@ -3,21 +3,23 @@ concurrency:
   group: ${{ github.ref }}
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - infra/**
-      - backend/**
-      - frontend/**
-      - skaffold.yaml
-      - proto/**
+  - pull_request
+  # push:
+  #   branches:
+  #     - main
+  #   paths:
+  #     - infra/**
+  #     - backend/**
+  #     - frontend/**
+  #     - skaffold.yaml
+  #     - proto/**
 
 name: deploy prod
 jobs:
   changes:
     permissions:
       pull-requests: read
+      contents: read
     runs-on: ubuntu-latest
     outputs:
       infra: ${{ steps.filter.outputs.infra }}
