@@ -14,28 +14,28 @@ resources:
 
 images:
   - name: no-small-parts-service-api
-    newName: us-central1-docker.pkg.dev/no-small-parts-prod/containers/no-small-parts-service-api
+    newName: us-central1-docker.pkg.dev/no-small-parts/containers/no-small-parts-service-api
     newTag: latest
 
   - name: no-small-parts-job-db-cleaner
-    newName: us-central1-docker.pkg.dev/no-small-parts-prod/containers/no-small-parts-job-db-cleaner
+    newName: us-central1-docker.pkg.dev/no-small-parts/containers/no-small-parts-job-db-cleaner
     newTag: latest
 
   - name: no-small-parts-job-search-data-index-scheduler
-    newName: us-central1-docker.pkg.dev/no-small-parts-prod/containers/no-small-parts-job-search-data-index-scheduler
+    newName: us-central1-docker.pkg.dev/no-small-parts/containers/no-small-parts-job-search-data-index-scheduler
     newTag: latest
 
   - name: no-small-parts-async-message-handler
-    newName: us-central1-docker.pkg.dev/no-small-parts-prod/containers/no-small-parts-async-message-handler
+    newName: us-central1-docker.pkg.dev/no-small-parts/containers/no-small-parts-async-message-handler
     newTag: latest
 
   - name: no-small-parts-admin-webapp
-    newName: us-central1-docker.pkg.dev/no-small-parts-prod/containers/no-small-parts-admin-webapp
+    newName: us-central1-docker.pkg.dev/no-small-parts/containers/no-small-parts-admin-webapp
     newTag: latest
 
   # Uncomment to enable MCP server deployment
   # - name: no-small-parts-mcp-server
-  #   newName: us-central1-docker.pkg.dev/no-small-parts-prod/containers/no-small-parts-mcp-server
+  #   newName: us-central1-docker.pkg.dev/no-small-parts/containers/no-small-parts-mcp-server
   #   newTag: latest
 
 # See: https://kubectl.docs.kubernetes.io/references/kustomize/kustomization/patches/

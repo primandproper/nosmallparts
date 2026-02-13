@@ -1,7 +1,7 @@
 variable "GOOGLE_CLOUD_CREDENTIALS" {}
 
 locals {
-  project_id    = "no-small-parts-prod"
+  project_id    = "no-small-parts"
   gcp_region    = "us-central1"
   gcp_main_zone = "us-central1-a"
 }

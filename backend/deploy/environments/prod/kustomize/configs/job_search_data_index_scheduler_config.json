@@ -12,7 +12,7 @@
 				"queueAddress": ""
 			},
 			"pubSub": {
-				"projectID": "no-small-parts-prod"
+				"projectID": "no-small-parts"
 			},
 			"redis": {
 				"username": "",
@@ -24,7 +24,7 @@
 				"queueAddress": ""
 			},
 			"pubSub": {
-				"projectID": "no-small-parts-prod"
+				"projectID": "no-small-parts"
 			},
 			"redis": {
 				"username": "",
