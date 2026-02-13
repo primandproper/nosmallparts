@@ -12,7 +12,7 @@ profiles:
     manifests:
       kustomize:
         paths:
-          - infra/deploy/environments/localdev/kustomize
+          - deploy/environments/localdev/kustomize
     deploy:
       kubeContext: docker-desktop
       kubectl:
@@ -22,7 +22,7 @@ profiles:
     manifests:
       kustomize:
         paths:
-          - infra/deploy/environments/prod/kustomize
+          - deploy/environments/prod/kustomize
     deploy:
       kubectl:
         defaultNamespace: prod
