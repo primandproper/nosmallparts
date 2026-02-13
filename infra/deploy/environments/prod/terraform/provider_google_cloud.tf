@@ -1,4 +1,4 @@
-variable "GOOGLE_CLOUD_CREDENTIALS" {}
+variable "PROD_GOOGLE_CLOUD_CREDENTIALS" {}
 
 locals {
   project_id    = "no-small-parts"
@@ -10,5 +10,5 @@ provider "google" {
   project     = local.project_id
   region      = local.gcp_region
   zone        = local.gcp_main_zone
-  credentials = var.GOOGLE_CLOUD_CREDENTIALS
+  credentials = var.PROD_GOOGLE_CLOUD_CREDENTIALS
 }
