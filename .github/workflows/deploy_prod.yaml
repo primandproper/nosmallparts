@@ -58,7 +58,7 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
         with:
-          terraform_version: "1.10.3"
+          terraform_version: "1.14.4"
           cli_config_credentials_token: ${{ secrets.NO_SMALL_PARTS_TERRAFORM_CLOUD_API_TOKEN }}
 
       - name: Terraform Init
@@ -111,7 +111,7 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
         with:
-          terraform_version: "1.10.3"
+          terraform_version: "1.14.4"
           cli_config_credentials_token: ${{ secrets.NO_SMALL_PARTS_TERRAFORM_CLOUD_API_TOKEN }}
 
       - name: Terraform Init
