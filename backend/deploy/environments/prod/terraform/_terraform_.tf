@@ -5,7 +5,7 @@ terraform {
     organization = "nosmallparts"
 
     workspaces {
-      name = "backend"
+      name = "prod-backend"
     }
   }
   required_providers {
