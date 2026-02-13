@@ -44,4 +44,3 @@ profiles:
     deploy:
       kubectl:
         defaultNamespace: prod
----
