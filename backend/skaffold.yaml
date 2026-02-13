@@ -161,3 +161,72 @@ profiles:
     deploy:
       kubectl:
         defaultNamespace: dev
+
+  - name: prod
+    build:
+      tagPolicy:
+        sha256: {}
+      artifacts:
+        - image: us-central1-docker.pkg.dev/no-small-parts/containers/no-small-parts-service-api
+          ko:
+            dir: .
+            flags:
+              - -trimpath
+            ldflags:
+              - -s -w
+              - -extldflags "-static"
+            main: ./cmd/services/api/http
+            fromImage: golang:1.25-trixie
+
+        - image: us-central1-docker.pkg.dev/no-small-parts/containers/no-small-parts-job-db-cleaner
+          ko:
+            dir: .
+            flags:
+              - -trimpath
+            ldflags:
+              - -s -w
+              - -extldflags "-static"
+            main: ./cmd/workers/db_cleaner
+            fromImage: golang:1.25-trixie
+
+        - image: us-central1-docker.pkg.dev/no-small-parts/containers/no-small-parts-job-search-data-index-scheduler
+          ko:
+            dir: .
+            flags:
+              - -trimpath
+            ldflags:
+              - -s -w
+              - -extldflags "-static"
+            main: ./cmd/workers/search_data_index_scheduler
+            fromImage: golang:1.25-trixie
+
+        - image: us-central1-docker.pkg.dev/no-small-parts/containers/no-small-parts-async-message-handler
+          ko:
+            dir: .
+            flags:
+              - -trimpath
+            ldflags:
+              - -s -w
+              - -extldflags "-static"
+            main: ./cmd/functions/async_message_handler
+            fromImage: golang:1.25-trixie
+
+        - image: us-central1-docker.pkg.dev/no-small-parts/containers/no-small-parts-admin-webapp
+          ko:
+            dir: .
+            flags:
+              - -trimpath
+            ldflags:
+              - -s -w
+              - -extldflags "-static"
+            main: ./cmd/services/admin
+            fromImage: golang:1.25-trixie
+
+    manifests:
+      kustomize:
+        paths:
+          - deploy/environments/prod/kustomize
+
+    deploy:
+      kubectl:
+        defaultNamespace: prod
