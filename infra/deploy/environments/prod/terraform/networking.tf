@@ -11,12 +11,14 @@ resource "google_compute_address" "static_ip" {
   }
 }
 
+# 172.16.0.0/16 avoids overlap with GCP auto-created subnets (typically 10.x.x.x).
 resource "google_compute_global_address" "private_ip_address" {
   provider = google
 
   name          = "private-ip-address"
   purpose       = "VPC_PEERING"
   address_type  = "INTERNAL"
+  address       = "172.16.0.0"
   prefix_length = 16
   network       = google_compute_network.private_network.id
 }
