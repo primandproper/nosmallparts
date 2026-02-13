@@ -12,6 +12,18 @@ data "google_container_cluster" "prod_cluster" {
   location = local.gcp_region
 }
 
+resource "kubernetes_namespace" "prod" {
+  metadata {
+    name = local.k8s_namespace
+
+    labels = {
+      (local.managed_by_label) = "terraform"
+    }
+  }
+
+  depends_on = [data.google_container_cluster.prod_cluster]
+}
+
 resource "kubernetes_secret" "cloudflare_api_key" {
   count = var.PROD_CLOUDFLARE_API_KEY != "" ? 1 : 0
 
@@ -28,7 +40,7 @@ resource "kubernetes_secret" "cloudflare_api_key" {
     }
   }
 
-  depends_on = [data.google_container_cluster.prod_cluster]
+  depends_on = [kubernetes_namespace.prod]
 
   data = {
     "token" = var.PROD_CLOUDFLARE_API_KEY
@@ -49,7 +61,7 @@ resource "kubernetes_config_map_v1" "pubsub_topics" {
     }
   }
 
-  depends_on = [data.google_container_cluster.prod_cluster]
+  depends_on = [kubernetes_namespace.prod]
 
   data = {
     data_changes               = google_pubsub_topic.data_changes_topic.name
@@ -74,7 +86,7 @@ resource "kubernetes_secret" "api_service_secrets" {
     }
   }
 
-  depends_on = [data.google_container_cluster.prod_cluster]
+  depends_on = [kubernetes_namespace.prod]
 
   data = {
     DATABASE_HOST                   = google_sql_database_instance.prod.private_ip_address
@@ -106,7 +118,7 @@ resource "kubernetes_secret" "admin_webapp_config" {
     }
   }
 
-  depends_on = [data.google_container_cluster.prod_cluster]
+  depends_on = [kubernetes_namespace.prod]
 
   data = {
     COOKIE_NAME       = "no_small_parts_session"
@@ -134,7 +146,7 @@ resource "kubernetes_secret" "grafana_cloud_creds" {
     }
   }
 
-  depends_on = [data.google_container_cluster.prod_cluster]
+  depends_on = [kubernetes_namespace.prod]
 
   data = {
     GRAFANA_CLOUD_PROMETHEUS_USERNAME = var.GRAFANA_CLOUD_PROMETHEUS_USERNAME
