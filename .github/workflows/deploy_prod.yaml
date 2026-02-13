@@ -1,246 +1,191 @@
 ---
-# Deploy API and/or frontend to prod (Cloud Run). Runs only for changed paths.
-on:
-  - pull_request
-  # push:
-  #   branches:
-  #     - main
-  #   paths:
-  #     - backend/**
-  #     - frontend/**
-  #     - terraform/**
-
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: false
+  group: ${{ github.ref }}
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - infra/**
+      - backend/**
+      - frontend/**
+      - skaffold.yaml
+      - proto/**
 
 name: deploy prod
 jobs:
-#  changes:
-#    permissions:
-#      pull-requests: read
-#      contents: read
-#    outputs:
-#      backend: ${{ steps.filter.outputs.backend }}
-#      frontend: ${{ steps.filter.outputs.frontend }}
-#    runs-on: ubuntu-latest
-#    steps:
-#      - uses: actions/checkout@v5
-#
-#      - uses: dorny/paths-filter@v3
-#        id: filter
-#        with:
-#          filters: |
-#            backend:
-#              - backend/**
-#              - backend/terraform/**
-#            frontend:
-#              - frontend/**
-#              - frontend/terraform/**
-#            terraform_backend:
-#              - backend/terraform/**
-#            terraform_frontend:
-#              - frontend/terraform/**
-
-  terraform-backend:
-#    needs: [changes]
-#    if: ${{ needs.changes.outputs.terraform_backend == 'true' || needs.changes.outputs.terraform_frontend == 'true' }}
+  changes:
+    permissions:
+      pull-requests: read
     runs-on: ubuntu-latest
-    env:
-      GCP_PROJECT: ${{ secrets.GCP_PROJECT }}
     outputs:
-      cloud_run_api_url: ${{ steps.outputs.outputs.cloud_run_api_url }}
+      infra: ${{ steps.filter.outputs.infra }}
+      backend: ${{ steps.filter.outputs.backend }}
+      frontend: ${{ steps.filter.outputs.frontend }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            infra:
+              - infra/**
+            backend:
+              - backend/**
+            frontend:
+              - frontend/**
+
+  baseline-infra:
+    needs: [changes]
+    if: needs.changes.outputs.infra == 'true'
+    timeout-minutes: 90
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v5
 
-      - name: Authenticate to GCP
+      - name: Authenticate with GCP
         uses: google-github-actions/auth@v2
         with:
-          credentials_json: ${{ secrets.GOOGLE_CLOUD_CREDENTIALS }}
+          credentials_json: ${{ secrets.DEV_GOOGLE_CLOUD_CREDENTIALS }}
+
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v2
+
+      - name: Get GKE credentials
+        uses: google-github-actions/get-gke-credentials@v2
+        with:
+          cluster_name: prod
+          context_name: prod_context
+          location: us-central1
+
+      - name: Copy kubeconfig for backend Terraform
+        run: |
+          mkdir -p backend/deploy/environments/prod/terraform
+          cp ${{ env.KUBECONFIG }} backend/deploy/environments/prod/terraform/terraform_kubeconfig
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
         with:
-          terraform_version: 1.14.4
+          terraform_version: "1.10.3"
           cli_config_credentials_token: ${{ secrets.TERRAFORM_CLOUD_API_TOKEN }}
 
-      - name: Copy API config for Terraform (optional)
-        run: |
-          if [ -f backend/deploy/environments/dev/kustomize/configs/api_service_config.json ]; then
-            cp backend/deploy/environments/dev/kustomize/configs/api_service_config.json backend/terraform/environments/prod/service-config.json
-          fi
-
-      - name: Set up Cloud SDK
-        uses: google-github-actions/setup-gcloud@v2
-
-      - name: Authorize Docker push to Artifact Registry
-        run: gcloud auth configure-docker us-central1-docker.pkg.dev
-
-      - name: Ensure Artifact Registry repository exists
-        run: |
-          gcloud artifacts repositories create containers \
-            --repository-format=docker \
-            --location=us-central1 \
-            --description="Images for No Small Parts Cloud Run" \
-            || true
-
-      - name: Build and push API image (for Terraform Cloud Run)
-        run: |
-          docker build --platform linux/amd64 \
-            -f backend/deploy/dockerfiles/api_server.Dockerfile \
-            -t us-central1-docker.pkg.dev/${{ env.GCP_PROJECT }}/containers/nosmallparts-api:latest \
-            ./backend
-          docker push us-central1-docker.pkg.dev/${{ env.GCP_PROJECT }}/containers/nosmallparts-api:latest
-
       - name: Terraform Init
-        working-directory: backend/terraform/environments/prod
+        working-directory: infra/deploy/environments/prod/terraform
         run: terraform init
 
+      - name: Terraform Validate
+        working-directory: infra/deploy/environments/prod/terraform
+        run: terraform validate -no-color
+
       - name: Terraform Apply
-        working-directory: backend/terraform/environments/prod
-        env:
-          TF_VAR_project_id: ${{ secrets.GCP_PROJECT }}
-          TF_VAR_google_cloud_credentials: ${{ secrets.GOOGLE_CLOUD_CREDENTIALS }}
-          # Use copied service-config.json so Secret Manager gets real config (not default "{}")
-          TF_VAR_api_service_config_file: service-config.json
-        run: terraform apply -auto-approve -input=false
+        working-directory: infra/deploy/environments/prod/terraform
+        run: terraform apply -auto-approve
 
-      - name: Terraform outputs
-        id: outputs
-        working-directory: backend/terraform/environments/prod
-        run: |
-          echo "cloud_run_api_url<<EOF" >> $GITHUB_OUTPUT
-          terraform output -raw cloud_run_api_url >> $GITHUB_OUTPUT
-          echo "EOF" >> $GITHUB_OUTPUT
-
-  deploy-api:
-    needs: [terraform-backend]
-#    if: ${{ needs.changes.outputs.backend == 'true' }}
+  backend-infra:
+    needs: [changes, baseline-infra]
+    if: |
+      always() &&
+      needs.changes.outputs.backend == 'true' &&
+      (needs.baseline-infra.result == 'success' || needs.baseline-infra.result == 'skipped')
+    timeout-minutes: 90
     runs-on: ubuntu-latest
-    env:
-      GCP_REGION: us-central1
-      GCP_PROJECT: ${{ secrets.GCP_PROJECT }}
-      ARTIFACT_REPO: containers
     steps:
       - name: Checkout code
         uses: actions/checkout@v5
 
-      - name: Authenticate to GCP
+      - name: Authenticate with GCP
         uses: google-github-actions/auth@v2
         with:
-          credentials_json: ${{ secrets.GOOGLE_CLOUD_CREDENTIALS }}
+          credentials_json: ${{ secrets.DEV_GOOGLE_CLOUD_CREDENTIALS }}
 
       - name: Set up Cloud SDK
         uses: google-github-actions/setup-gcloud@v2
 
-      - name: Authorize Docker push to Artifact Registry
-        run: gcloud auth configure-docker ${{ env.GCP_REGION }}-docker.pkg.dev
+      - name: Authorize Docker push to pkg.dev
+        run: gcloud auth configure-docker us-central1-docker.pkg.dev
 
-      - name: Ensure Artifact Registry repository exists
-        run: |
-          gcloud artifacts repositories create ${{ env.ARTIFACT_REPO }} \
-            --repository-format=docker \
-            --location=${{ env.GCP_REGION }} \
-            --description="Images for No Small Parts Cloud Run" \
-            || true
-
-      - name: Build and push API image
-        run: |
-          docker build --platform linux/amd64 \
-            -f backend/deploy/dockerfiles/api_server.Dockerfile \
-            -t ${{ env.GCP_REGION }}-docker.pkg.dev/${{ env.GCP_PROJECT }}/${{ env.ARTIFACT_REPO }}/nosmallparts-api:${{ github.sha }} \
-            -t ${{ env.GCP_REGION }}-docker.pkg.dev/${{ env.GCP_PROJECT }}/${{ env.ARTIFACT_REPO }}/nosmallparts-api:latest \
-            ./backend
-          docker push ${{ env.GCP_REGION }}-docker.pkg.dev/${{ env.GCP_PROJECT }}/${{ env.ARTIFACT_REPO }}/nosmallparts-api:${{ github.sha }}
-          docker push ${{ env.GCP_REGION }}-docker.pkg.dev/${{ env.GCP_PROJECT }}/${{ env.ARTIFACT_REPO }}/nosmallparts-api:latest
-
-      - name: Deploy API to Cloud Run
-        uses: google-github-actions/deploy-cloudrun@v3
+      - name: Get GKE credentials
+        uses: google-github-actions/get-gke-credentials@v2
         with:
-          service: nosmallparts-api-prod
-          project_id: ${{ env.GCP_PROJECT }}
-          region: ${{ env.GCP_REGION }}
-          image: ${{ env.GCP_REGION }}-docker.pkg.dev/${{ env.GCP_PROJECT }}/${{ env.ARTIFACT_REPO }}/nosmallparts-api:latest
+          cluster_name: prod
+          context_name: prod_context
+          location: us-central1
 
-# terraform-frontend:
-#   needs: [changes, terraform-backend]
-#   if: ${{ needs.changes.outputs.terraform_frontend == 'true' }}
-#   runs-on: ubuntu-latest
-#   env:
-#     GCP_PROJECT: ${{ secrets.GCP_PROJECT }}
-#   steps:
-#     - name: Checkout code
-#       uses: actions/checkout@v5
+      - name: Copy kubeconfig for backend Terraform
+        run: |
+          mkdir -p backend/deploy/environments/prod/terraform
+          cp ${{ env.KUBECONFIG }} backend/deploy/environments/prod/terraform/terraform_kubeconfig
 
-#     - name: Authenticate to GCP
-#       uses: google-github-actions/auth@v2
-#       with:
-#         credentials_json: ${{ secrets.GOOGLE_CLOUD_CREDENTIALS }}
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.10.3"
+          cli_config_credentials_token: ${{ secrets.TERRAFORM_CLOUD_API_TOKEN }}
 
-#     - name: Setup Terraform
-#       uses: hashicorp/setup-terraform@v3
-#       with:
-#         terraform_version: 1.14.4
-#         cli_config_credentials_token: ${{ secrets.TERRAFORM_CLOUD_API_TOKEN }}
+      - name: Terraform Init
+        working-directory: backend/deploy/environments/prod/terraform
+        run: terraform init
 
-#     - name: Terraform Init
-#       working-directory: frontend/terraform/environments/prod
-#       run: terraform init
+      - name: Terraform Validate
+        working-directory: backend/deploy/environments/prod/terraform
+        run: terraform validate -no-color
 
-#     - name: Terraform Apply
-#       working-directory: frontend/terraform/environments/prod
-#       env:
-#         TF_VAR_project_id: ${{ secrets.GCP_PROJECT }}
-#         TF_VAR_google_cloud_credentials: ${{ secrets.GOOGLE_CLOUD_CREDENTIALS }}
-#         TF_VAR_frontend_backend_http_url: ${{ needs.terraform-backend.outputs.cloud_run_api_url }}
-#         TF_VAR_frontend_grpc_backend_url: ${{ needs.terraform-backend.outputs.cloud_run_api_url }}
-#       run: terraform apply -auto-approve -input=false
-#
-#  deploy-frontend:
-#    needs: [changes, terraform]
-#    if: ${{ needs.changes.outputs.frontend == 'true' }}
-#    runs-on: ubuntu-latest
-#    env:
-#      GCP_REGION: us-central1
-#      GCP_PROJECT: ${{ secrets.GCP_PROJECT }}
-#      ARTIFACT_REPO: containers
-#    steps:
-#      - name: Checkout code
-#        uses: actions/checkout@v5
-#
-#      - name: Authenticate to GCP
-#        uses: google-github-actions/auth@v2
-#        with:
-#          credentials_json: ${{ secrets.GOOGLE_CLOUD_CREDENTIALS }}
-#
-#      - name: Set up Cloud SDK
-#        uses: google-github-actions/setup-gcloud@v2
-#
-#      - name: Authorize Docker push to Artifact Registry
-#        run: gcloud auth configure-docker ${{ env.GCP_REGION }}-docker.pkg.dev
-#
-#      - name: Ensure Artifact Registry repository exists
-#        run: |
-#          gcloud artifacts repositories create ${{ env.ARTIFACT_REPO }} \
-#            --repository-format=docker \
-#            --location=${{ env.GCP_REGION }} \
-#            --description="Images for No Small Parts Cloud Run" \
-#            || true
-#
-#      - name: Build and push frontend image
-#        run: |
-#          docker build \
-#            -t ${{ env.GCP_REGION }}-docker.pkg.dev/${{ env.GCP_PROJECT }}/${{ env.ARTIFACT_REPO }}/nosmallparts-frontend:${{ github.sha }} \
-#            -t ${{ env.GCP_REGION }}-docker.pkg.dev/${{ env.GCP_PROJECT }}/${{ env.ARTIFACT_REPO }}/nosmallparts-frontend:latest \
-#            ./frontend
-#          docker push ${{ env.GCP_REGION }}-docker.pkg.dev/${{ env.GCP_PROJECT }}/${{ env.ARTIFACT_REPO }}/nosmallparts-frontend:${{ github.sha }}
-#          docker push ${{ env.GCP_REGION }}-docker.pkg.dev/${{ env.GCP_PROJECT }}/${{ env.ARTIFACT_REPO }}/nosmallparts-frontend:latest
-#
-#      - name: Deploy frontend to Cloud Run
-#        uses: google-github-actions/deploy-cloudrun@v3
-#        with:
-#          service: nosmallparts-frontend-prod
-#          project_id: ${{ env.GCP_PROJECT }}
-#          region: ${{ env.GCP_REGION }}
-#          image: ${{ env.GCP_REGION }}-docker.pkg.dev/${{ env.GCP_PROJECT }}/${{ env.ARTIFACT_REPO }}/nosmallparts-frontend:latest
+      - name: Terraform Apply
+        working-directory: backend/deploy/environments/prod/terraform
+        run: terraform apply -auto-approve
+
+      - name: Remove kubeconfig
+        if: always()
+        run: rm -f backend/deploy/environments/prod/terraform/terraform_kubeconfig
+
+  applications:
+    needs: [changes, baseline-infra, backend-infra]
+    if: |
+      always() &&
+      !failure() &&
+      !cancelled() &&
+      (needs.changes.outputs.infra == 'true' || needs.changes.outputs.backend == 'true' || needs.changes.outputs.frontend == 'true') &&
+      (needs.baseline-infra.result == 'success' || needs.baseline-infra.result == 'skipped') &&
+      (needs.backend-infra.result == 'success' || needs.backend-infra.result == 'skipped')
+    timeout-minutes: 90
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      - name: Install Go
+        uses: actions/setup-go@v6
+        with:
+          go-version: "1.25.x"
+
+      - name: Authenticate with GCP
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.DEV_GOOGLE_CLOUD_CREDENTIALS }}
+
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v2
+
+      - name: Authorize Docker push to pkg.dev
+        run: gcloud auth configure-docker us-central1-docker.pkg.dev
+
+      - name: Get GKE credentials
+        uses: google-github-actions/get-gke-credentials@v2
+        with:
+          cluster_name: prod
+          context_name: prod_context
+          location: us-central1
+
+      - name: Install Skaffold
+        run: |
+          curl -Lo skaffold https://storage.googleapis.com/skaffold/releases/latest/skaffold-linux-amd64
+          chmod +x skaffold
+          sudo mv skaffold /usr/local/bin
+
+      - name: Deploy cert-manager
+        run: kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.16.2/cert-manager.yaml
+
+      - name: Skaffold deploy
+        run: skaffold run --filename=skaffold.yaml --build-concurrency 1 --profile prod

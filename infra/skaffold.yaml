@@ -1,0 +1,29 @@
+---
+apiVersion: skaffold/v4beta11
+kind: Config
+
+metadata:
+  name: no-small-parts-infra
+
+profiles:
+  - name: localdev
+    activation:
+      - kubeContext: docker-desktop
+    manifests:
+      kustomize:
+        paths:
+          - infra/deploy/environments/localdev/kustomize
+    deploy:
+      kubeContext: docker-desktop
+      kubectl:
+        defaultNamespace: localdev
+
+  - name: prod
+    manifests:
+      kustomize:
+        paths:
+          - infra/deploy/environments/prod/kustomize
+    deploy:
+      kubectl:
+        defaultNamespace: prod
+---
