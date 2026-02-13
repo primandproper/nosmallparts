@@ -13,7 +13,7 @@ data "google_container_cluster" "prod_cluster" {
 }
 
 resource "kubernetes_secret" "cloudflare_api_key" {
-  count = var.CLOUDFLARE_API_TOKEN != "" ? 1 : 0
+  count = var.PROD_CLOUDFLARE_API_KEY != "" ? 1 : 0
 
   metadata {
     name      = "cloudflare-api-key"
@@ -31,7 +31,7 @@ resource "kubernetes_secret" "cloudflare_api_key" {
   depends_on = [data.google_container_cluster.prod_cluster]
 
   data = {
-    "token" = var.CLOUDFLARE_API_TOKEN
+    "token" = var.PROD_CLOUDFLARE_API_KEY
   }
 }
 

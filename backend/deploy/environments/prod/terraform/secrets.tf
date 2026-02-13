@@ -51,10 +51,10 @@ variable "GRAFANA_CLOUD_TEMPO_PASSWORD" {
   sensitive = true
 }
 
-variable "CLOUDFLARE_API_TOKEN" {
+variable "PROD_CLOUDFLARE_API_KEY" {
   default = ""
   sensitive = true
 }
-variable "CLOUDFLARE_ZONE_ID" {
+variable "PROD_CLOUDFLARE_ZONE_ID" {
   default = ""
 }
