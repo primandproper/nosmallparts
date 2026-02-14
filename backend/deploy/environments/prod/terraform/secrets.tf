@@ -58,3 +58,23 @@ variable "PROD_CLOUDFLARE_API_KEY" {
 variable "PROD_CLOUDFLARE_ZONE_ID" {
   default = ""
 }
+
+# OAuth2 client credentials for apps (set in Terraform Cloud; created via playground)
+variable "ADMIN_APP_OAUTH2_CLIENT_ID" {
+  default     = ""
+  description = "OAuth2 client ID for admin webapp (admin_app)"
+}
+variable "ADMIN_APP_OAUTH2_CLIENT_SECRET" {
+  default     = ""
+  sensitive   = true
+  description = "OAuth2 client secret for admin webapp (admin_app)"
+}
+variable "WEB_APP_OAUTH2_CLIENT_ID" {
+  default     = ""
+  description = "OAuth2 client ID for frontend webapp (web_app)"
+}
+variable "WEB_APP_OAUTH2_CLIENT_SECRET" {
+  default     = ""
+  sensitive   = true
+  description = "OAuth2 client secret for frontend webapp (web_app)"
+}

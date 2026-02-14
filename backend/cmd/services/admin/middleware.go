@@ -5,7 +5,6 @@ import (
 	"errors"
 	"net/http"
 
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/localdev"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/pkg/client"
 )
 
@@ -35,14 +34,8 @@ func (s *AdminFrontendServer) authMiddleware(handler http.Handler) http.Handler 
 			return
 		}
 
-		c, err := localdev.BuildInsecureOAuthedGRPCClient(
-			ctx,
-			s.config.APIServiceConnection.OAuth2APIClientID,
-			s.config.APIServiceConnection.OAuth2APIClientSecret,
-			s.config.APIServiceConnection.HTTPAPIServerURL,
-			s.config.APIServiceConnection.GRPCAPIServerURL,
-			payload.AccessToken,
-		)
+		// Use the token from the cookie directly; no OAuth2 code exchange required.
+		c, err := client.BuildClientWithBearerToken(s.config.APIServiceConnection.GRPCAPIServerURL, payload.AccessToken)
 		if err != nil {
 			logger.Error("building client", err)
 			http.Redirect(res, req, "/login", http.StatusFound)

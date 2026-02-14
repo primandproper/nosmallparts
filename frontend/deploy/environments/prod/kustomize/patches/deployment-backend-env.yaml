@@ -1,5 +1,6 @@
 # Configure frontend to reach backend API in-cluster (gRPC, HTTP).
 # NEXT_PUBLIC_BACKEND_WS_URL is embedded at build time via Dockerfile ARG.
+# OAuth2 credentials come from frontend-config secret (Terraform-managed).
 - op: add
   path: "/spec/template/spec/containers/0/env/-"
   value:
@@ -10,3 +11,19 @@
   value:
     name: BACKEND_HTTP_URL
     value: "http://no-small-parts-api-svc:8000"
+- op: add
+  path: "/spec/template/spec/containers/0/env/-"
+  value:
+    name: OAUTH2_CLIENT_ID
+    valueFrom:
+      secretKeyRef:
+        name: frontend-config
+        key: OAUTH2_CLIENT_ID
+- op: add
+  path: "/spec/template/spec/containers/0/env/-"
+  value:
+    name: OAUTH2_CLIENT_SECRET
+    valueFrom:
+      secretKeyRef:
+        name: frontend-config
+        key: OAUTH2_CLIENT_SECRET

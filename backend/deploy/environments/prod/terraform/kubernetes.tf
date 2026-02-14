@@ -129,8 +129,30 @@ resource "kubernetes_secret" "admin_webapp_config" {
     API_SERVER_HTTP_URL  = "https://api.nosmall.parts"
     # In-cluster gRPC address; admin webapp uses insecure creds, so use plain TCP to API service, not HTTPS via ingress
     API_SERVER_GRPC_URL  = "no-small-parts-api-svc:8001"
-    OAUTH2_CLIENT_ID    = var.GOOGLE_SSO_OAUTH2_CLIENT_ID
-    OAUTH2_CLIENT_SECRET = var.GOOGLE_SSO_OAUTH2_CLIENT_SECRET
+    OAUTH2_CLIENT_ID     = var.ADMIN_APP_OAUTH2_CLIENT_ID
+    OAUTH2_CLIENT_SECRET = var.ADMIN_APP_OAUTH2_CLIENT_SECRET
+  }
+}
+
+resource "kubernetes_secret" "frontend_config" {
+  metadata {
+    name      = "frontend-config"
+    namespace = local.k8s_namespace
+
+    annotations = {
+      (local.managed_by_label) = "terraform"
+    }
+
+    labels = {
+      (local.managed_by_label) = "terraform"
+    }
+  }
+
+  depends_on = [kubernetes_namespace.prod]
+
+  data = {
+    OAUTH2_CLIENT_ID     = var.WEB_APP_OAUTH2_CLIENT_ID
+    OAUTH2_CLIENT_SECRET = var.WEB_APP_OAUTH2_CLIENT_SECRET
   }
 }
 

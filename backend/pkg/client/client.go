@@ -97,6 +97,26 @@ func BuildUnauthenticatedGRPCClient(grpcServerAddr string) (Client, error) {
 	return BuildClient(grpcServerAddr, opts...)
 }
 
+// staticBearerToken implements credentials.PerRPCCredentials for a fixed Bearer token.
+type staticBearerToken struct{ token string }
+
+func (s *staticBearerToken) GetRequestMetadata(_ context.Context, _ ...string) (map[string]string, error) {
+	return map[string]string{"authorization": "Bearer " + s.token}, nil
+}
+
+func (s *staticBearerToken) RequireTransportSecurity() bool { return false }
+
+// BuildClientWithBearerToken builds a gRPC Client that sends the given Bearer token on every call.
+// Use this when you already have a valid token (e.g. from AdminLoginForToken) and want to avoid the OAuth2 code exchange.
+func BuildClientWithBearerToken(grpcServerAddr, bearerToken string) (Client, error) {
+	opts := []grpc.DialOption{
+		grpc.WithTransportCredentials(insecure.NewCredentials()),
+		grpc.WithPerRPCCredentials(&staticBearerToken{token: bearerToken}),
+	}
+
+	return BuildClient(grpcServerAddr, opts...)
+}
+
 func WithOAuth2Credentials(
 	ctx context.Context,
 	authServerAddress,
