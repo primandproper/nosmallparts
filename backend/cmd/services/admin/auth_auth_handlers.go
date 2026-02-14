@@ -68,7 +68,21 @@ func (s *AdminFrontendServer) LoginSubmission(res http.ResponseWriter, req *http
 		}), nil
 	}
 
-	encodedCookie, err := s.cookieManager.Encode(ctx, s.config.Cookies.CookieName, &authPayload{AccessToken: tokenRes.Result.AccessToken})
+	// Exchange JWT for OAuth2 token so subsequent requests use the OAuth2 token (stored in oauth2_client_tokens).
+	oauth2Token, err := client.ExchangeJWTForOAuth2Token(
+		ctx,
+		s.config.APIServiceConnection.HTTPAPIServerURL,
+		s.config.APIServiceConnection.OAuth2APIClientID,
+		s.config.APIServiceConnection.OAuth2APIClientSecret,
+		tokenRes.Result.AccessToken,
+	)
+	if err != nil {
+		return s.componentRenderer.LoginForm(&components.LoginFormProps{
+			GeneralError: err.Error(),
+		}), nil
+	}
+
+	encodedCookie, err := s.cookieManager.Encode(ctx, s.config.Cookies.CookieName, &authPayload{AccessToken: oauth2Token.AccessToken})
 	if err != nil {
 		return s.componentRenderer.LoginForm(&components.LoginFormProps{
 			GeneralError: err.Error(),

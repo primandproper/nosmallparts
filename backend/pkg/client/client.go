@@ -106,8 +106,77 @@ func (s *staticBearerToken) GetRequestMetadata(_ context.Context, _ ...string) (
 
 func (s *staticBearerToken) RequireTransportSecurity() bool { return false }
 
+// ExchangeJWTForOAuth2Token performs the OAuth2 authorization code flow using the given JWT for
+// user authorization. The JWT is sent to /oauth2/authorize; the auth server uses it to identify
+// the user and redirects with a code; we exchange that code for an OAuth2 access token. Returns
+// the OAuth2 token (use .AccessToken for cookie storage and BuildClientWithBearerToken).
+func ExchangeJWTForOAuth2Token(
+	ctx context.Context,
+	authServerHTTPBase,
+	clientID,
+	clientSecret,
+	jwt string,
+) (*oauth2.Token, error) {
+	state, err := random.GenerateBase64EncodedString(ctx, 32)
+	if err != nil {
+		return nil, err
+	}
+
+	oauth2Config := oauth2.Config{
+		ClientID:     clientID,
+		ClientSecret: clientSecret,
+		RedirectURL:  authServerHTTPBase,
+		Endpoint: oauth2.Endpoint{
+			AuthStyle: oauth2.AuthStyleInParams,
+			AuthURL:   authServerHTTPBase + "/oauth2/authorize",
+			TokenURL:  authServerHTTPBase + "/oauth2/token",
+		},
+	}
+
+	authCodeURL := oauth2Config.AuthCodeURL(
+		state,
+		oauth2.SetAuthURLParam("code_challenge_method", "plain"),
+	)
+
+	req, err := http.NewRequestWithContext(ctx, http.MethodGet, authCodeURL, http.NoBody)
+	if err != nil {
+		return nil, fmt.Errorf("building oauth2 authorize request: %w", err)
+	}
+	req.Header.Set("Authorization", "Bearer "+jwt)
+
+	c := tracing.BuildTracedHTTPClient()
+	c.CheckRedirect = func(req *http.Request, via []*http.Request) error {
+		return http.ErrUseLastResponse
+	}
+
+	res, err := c.Do(req)
+	if err != nil {
+		return nil, fmt.Errorf("getting oauth2 code: %w", err)
+	}
+	defer func() {
+		if closeErr := res.Body.Close(); closeErr != nil {
+			log.Println("failed to close oauth2 response body", closeErr)
+		}
+	}()
+
+	location, err := res.Location()
+	if err != nil {
+		return nil, err
+	}
+	code := location.Query().Get("code")
+	if code == "" {
+		return nil, errors.New("code not returned from oauth2 redirect")
+	}
+
+	token, err := oauth2Config.Exchange(ctx, code)
+	if err != nil {
+		return nil, fmt.Errorf("exchanging oauth2 code for token: %w", err)
+	}
+	return token, nil
+}
+
 // BuildClientWithBearerToken builds a gRPC Client that sends the given Bearer token on every call.
-// Use this when you already have a valid token (e.g. from AdminLoginForToken) and want to avoid the OAuth2 code exchange.
+// Use with the OAuth2 access token from ExchangeJWTForOAuth2Token (stored in cookie after login).
 func BuildClientWithBearerToken(grpcServerAddr, bearerToken string) (Client, error) {
 	opts := []grpc.DialOption{
 		grpc.WithTransportCredentials(insecure.NewCredentials()),
@@ -124,7 +193,7 @@ func WithOAuth2Credentials(
 	clientSecret,
 	authToken string,
 ) (grpc.DialOption, error) {
-	state, err := random.GenerateBase64EncodedString(ctx, 32)
+	oauth2Token, err := ExchangeJWTForOAuth2Token(ctx, authServerAddress, clientID, clientSecret, authToken)
 	if err != nil {
 		return nil, err
 	}
@@ -138,57 +207,6 @@ func WithOAuth2Credentials(
 			AuthURL:   authServerAddress + "/oauth2/authorize",
 			TokenURL:  authServerAddress + "/oauth2/token",
 		},
-	}
-
-	authCodeURL := oauth2Config.AuthCodeURL(
-		state,
-		oauth2.SetAuthURLParam("code_challenge_method", "plain"),
-	)
-
-	req, err := http.NewRequestWithContext(
-		ctx,
-		http.MethodGet,
-		authCodeURL,
-		http.NoBody,
-	)
-	if err != nil {
-		return nil, fmt.Errorf("failed to build oauth2 code retrieval request: %w", err)
-	}
-
-	req.Header.Set("Authorization", "Bearer "+authToken)
-
-	c := tracing.BuildTracedHTTPClient()
-	c.CheckRedirect = func(req *http.Request, via []*http.Request) error {
-		return http.ErrUseLastResponse
-	}
-
-	res, err := c.Do(req)
-	if err != nil {
-		return nil, fmt.Errorf("failed to get oauth2 code: %w", err)
-	}
-	defer func() {
-		if err = res.Body.Close(); err != nil {
-			log.Println("failed to close oauth2 response body", err)
-		}
-	}()
-
-	const (
-		codeKey = "code"
-	)
-
-	rl, err := res.Location()
-	if err != nil {
-		return nil, err
-	}
-
-	code := rl.Query().Get(codeKey)
-	if code == "" {
-		return nil, errors.New("code not returned from oauth2 redirect")
-	}
-
-	oauth2Token, err := oauth2Config.Exchange(ctx, code)
-	if err != nil {
-		return nil, err
 	}
 
 	ts := oauth2.ReuseTokenSource(oauth2Token, oauth2Config.TokenSource(ctx, oauth2Token))
