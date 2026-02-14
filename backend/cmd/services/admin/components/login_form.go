@@ -6,7 +6,6 @@ import (
 	"strings"
 
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/cmd/services/admin/design"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/identity"
 
 	"golang.org/x/text/cases"
 	"golang.org/x/text/language"
@@ -133,21 +132,9 @@ type LoginFormProps struct {
 	GeneralError string
 }
 
-var (
-	// TODO: remove this.
-	premadeAdminUser = &identity.User{
-		TwoFactorSecret: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
-	}
-)
-
 // LoginForm renders a login form. You can optionally provide error messages for each field and a general error.
 // Pass empty strings to ignore them.
 func (r *ComponentRenderer) LoginForm(props *LoginFormProps) g.Node {
-	code, err := premadeAdminUser.GenerateTOTPCode()
-	if err != nil {
-		log.Println("error generating TOTP code:", err)
-	}
-
 	return ghtml.Div(
 		ghtml.ID("login-container"),
 		ghtml.Div(
@@ -165,9 +152,9 @@ func (r *ComponentRenderer) LoginForm(props *LoginFormProps) g.Node {
 				g.Attr("hx-target", "#login-container"),
 				g.Attr("hx-swap", "outerHTML"),
 
-				r.wrapInputElement("username", props.UsernameError, r.UsernameInput("username", "username", "admin_user")), // TODO: remove content
-				r.inputElement("password", props.PasswordError, "password", "password", "admin_pass"),                      // TODO: remove content
-				r.inputElement("TOTP code", props.TOTPError, "totp", "totpToken", code),
+				r.wrapInputElement("username", props.UsernameError, r.UsernameInput("username", "username", "")),
+				r.inputElement("password", props.PasswordError, "password", "password", ""),
+				r.inputElement("TOTP code (optional)", props.TOTPError, "totp", "totpToken", ""),
 
 				submitButton("Log In"),
 
