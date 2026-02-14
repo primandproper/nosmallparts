@@ -24,7 +24,7 @@ profiles:
             ldflags:
               - -s -w
               - -extldflags "-static"
-            main: ./cmd/services/api/http
+            main: ./cmd/services/api
             fromImage: golang:1.25-trixie
 
         - image: no-small-parts-job-db-cleaner
@@ -106,7 +106,7 @@ profiles:
             ldflags:
               - -s -w
               - -extldflags "-static"
-            main: ./cmd/services/api/http
+            main: ./cmd/services/api
             fromImage: golang:1.25-trixie
 
         - image: us-central1-docker.pkg.dev/no-small-parts-dev/containers/no-small-parts-job-db-cleaner
@@ -175,7 +175,7 @@ profiles:
             ldflags:
               - -s -w
               - -extldflags "-static"
-            main: ./cmd/services/api/http
+            main: ./cmd/services/api
             fromImage: golang:1.25-trixie
 
         - image: us-central1-docker.pkg.dev/no-small-parts/containers/no-small-parts-job-db-cleaner
