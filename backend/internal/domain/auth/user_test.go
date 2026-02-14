@@ -72,6 +72,41 @@ func TestUserLoginInput_ValidateWithContext(T *testing.T) {
 	})
 }
 
+func TestUserLoginInput_ValidateAdminLoginWithContext(T *testing.T) {
+	T.Parallel()
+
+	T.Run("with token", func(t *testing.T) {
+		t.Parallel()
+
+		ctx := t.Context()
+		x := &UserLoginInput{
+			Username:  t.Name(),
+			Password:  t.Name(),
+			TOTPToken: "123456",
+		}
+
+		assert.NoError(t, x.ValidateAdminLoginWithContext(ctx))
+	})
+
+	T.Run("without token rejects", func(t *testing.T) {
+		t.Parallel()
+
+		ctx := t.Context()
+		x := &UserLoginInput{
+			Username: t.Name(),
+			Password: t.Name(),
+		}
+
+		err := x.ValidateAdminLoginWithContext(ctx)
+		var validationErr validation.Errors
+		if errors.As(err, &validationErr) {
+			assert.NotNil(t, validationErr["totpToken"])
+		}
+
+		assert.Error(t, err)
+	})
+}
+
 func TestPasswordUpdateInput_ValidateWithContext(T *testing.T) {
 	T.Parallel()
 

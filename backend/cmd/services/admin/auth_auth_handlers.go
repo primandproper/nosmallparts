@@ -34,7 +34,7 @@ func (s *AdminFrontendServer) LoginSubmission(res http.ResponseWriter, req *http
 		usernameError, passwordError, totpError string
 	)
 
-	if err := loginInput.ValidateWithContext(ctx); err != nil {
+	if err := loginInput.ValidateAdminLoginWithContext(ctx); err != nil {
 		usernameError = fetchErrorString(err, "username")
 		passwordError = fetchErrorString(err, "password")
 		totpError = fetchErrorString(err, "totpToken")

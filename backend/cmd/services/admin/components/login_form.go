@@ -154,7 +154,7 @@ func (r *ComponentRenderer) LoginForm(props *LoginFormProps) g.Node {
 
 				r.wrapInputElement("username", props.UsernameError, r.UsernameInput("username", "username", "")),
 				r.inputElement("password", props.PasswordError, "password", "password", ""),
-				r.inputElement("TOTP code (optional)", props.TOTPError, "totp", "totpToken", ""),
+				r.inputElement("TOTP code", props.TOTPError, "totp", "totpToken", ""),
 
 				submitButton("Log In"),
 

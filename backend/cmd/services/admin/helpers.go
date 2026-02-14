@@ -64,7 +64,7 @@ func (s *AdminFrontendServer) buildCookie(ctx context.Context, value string) *ht
 		Path:     "/",
 		HttpOnly: true,
 		Secure:   s.config.Cookies.SecureOnly,
-		// Domain:   s.config.Cookies.Domain,
+		Domain:   s.config.Cookies.Domain,
 		Expires:  expiry,
 		SameSite: http.SameSiteLaxMode,
 		MaxAge:   int(time.Until(expiry).Seconds()),

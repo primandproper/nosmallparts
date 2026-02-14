@@ -113,11 +113,21 @@ func (i *TOTPSecretVerificationInput) ValidateWithContext(ctx context.Context) e
 }
 
 // ValidateWithContext ensures our provided UserLoginInput meets expectations.
+// TOTP is optional for regular login (users without 2FA). For admin login, call ValidateAdminLoginWithContext instead.
 func (i *UserLoginInput) ValidateWithContext(ctx context.Context) error {
 	return validation.ValidateStructWithContext(ctx, i,
 		validation.Field(&i.Username, validation.Required, validation.Length(4, math.MaxInt8)),
 		validation.Field(&i.Password, validation.Required, validation.Length(8, math.MaxInt8)),
 		validation.Field(&i.TOTPToken, validation.When(i.TOTPToken != "", is.Digit, validation.RuneLength(6, 6))),
+	)
+}
+
+// ValidateAdminLoginWithContext validates UserLoginInput for admin login. Admins are required to have verified TOTP.
+func (i *UserLoginInput) ValidateAdminLoginWithContext(ctx context.Context) error {
+	return validation.ValidateStructWithContext(ctx, i,
+		validation.Field(&i.Username, validation.Required, validation.Length(4, math.MaxInt8)),
+		validation.Field(&i.Password, validation.Required, validation.Length(8, math.MaxInt8)),
+		validation.Field(&i.TOTPToken, validation.Required, is.Digit, validation.RuneLength(6, 6)),
 	)
 }
 

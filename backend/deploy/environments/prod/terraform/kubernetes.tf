@@ -121,10 +121,11 @@ resource "kubernetes_secret" "admin_webapp_config" {
   depends_on = [kubernetes_namespace.prod]
 
   data = {
-    COOKIE_NAME       = "no_small_parts_session"
-    COOKIE_HASH_KEY   = random_string.oauth2_token_encryption_key.result
-    COOKIE_BLOCK_KEY  = random_string.jwt_signing_key.result
-    COOKIE_DOMAIN     = ".nosmall.parts"
+    COOKIE_NAME        = "no_small_parts_session"
+    COOKIE_HASH_KEY    = random_string.oauth2_token_encryption_key.result
+    COOKIE_BLOCK_KEY   = random_string.jwt_signing_key.result
+    COOKIE_DOMAIN      = ".nosmall.parts"
+    COOKIE_SECURE_ONLY = "true"
     API_SERVER_HTTP_URL  = "https://api.nosmall.parts"
     # In-cluster gRPC address; admin webapp uses insecure creds, so use plain TCP to API service, not HTTPS via ingress
     API_SERVER_GRPC_URL  = "no-small-parts-api-svc:8001"

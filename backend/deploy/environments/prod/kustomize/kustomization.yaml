@@ -167,6 +167,14 @@ patches:
       - op: add
         path: "/spec/template/spec/containers/0/env/-"
         value:
+          name: NO_SMALL_PARTS_COOKIES_SECURE_ONLY
+          valueFrom:
+            secretKeyRef:
+              name: admin-webapp-config
+              key: COOKIE_SECURE_ONLY
+      - op: add
+        path: "/spec/template/spec/containers/0/env/-"
+        value:
           name: NO_SMALL_PARTS_API_SERVICE_HTTP_API_SERVER_URL
           valueFrom:
             secretKeyRef:
