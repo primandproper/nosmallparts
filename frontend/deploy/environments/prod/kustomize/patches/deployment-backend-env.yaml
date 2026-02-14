@@ -1,0 +1,12 @@
+# Configure frontend to reach backend API in-cluster (gRPC, HTTP).
+# NEXT_PUBLIC_BACKEND_WS_URL is embedded at build time via Dockerfile ARG.
+- op: add
+  path: "/spec/template/spec/containers/0/env/-"
+  value:
+    name: GRPC_BACKEND_URL
+    value: "no-small-parts-api-svc:8001"
+- op: add
+  path: "/spec/template/spec/containers/0/env/-"
+  value:
+    name: BACKEND_HTTP_URL
+    value: "http://no-small-parts-api-svc:8000"

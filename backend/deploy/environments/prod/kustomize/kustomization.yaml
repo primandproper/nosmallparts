@@ -61,6 +61,18 @@ patches:
       version: v1
       kind: Deployment
       name: no-small-parts-service-api-deployment
+  - path: patches/deployment-grpc-port.yaml
+    target:
+      version: v1
+      kind: Deployment
+      name: no-small-parts-service-api-deployment
+
+  ### API Service - expose gRPC
+  - path: patches/service-grpc-port.yaml
+    target:
+      version: v1
+      kind: Service
+      name: no-small-parts-api-svc
 
   ### Async Message Handler - needs database, pubsub, service secrets, environment, and CSI volume
   - path: patches/deployment-secrets-csi-volume.yaml

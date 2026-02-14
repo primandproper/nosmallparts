@@ -5,6 +5,13 @@ kind: Kustomization
 resources:
   - ../../../kustomize/components/frontend
 
+patches:
+  - path: patches/deployment-backend-env.yaml
+    target:
+      version: v1
+      kind: Deployment
+      name: no-small-parts-frontend-deployment
+
 images:
   - name: no-small-parts-frontend
     newName: us-central1-docker.pkg.dev/no-small-parts/containers/no-small-parts-frontend
