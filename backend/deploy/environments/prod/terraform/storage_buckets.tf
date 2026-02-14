@@ -20,7 +20,7 @@ resource "google_storage_bucket" "api_media" {
   }
 
   cors {
-    origin          = ["https://nosmall.parts", "https://www.nosmall.parts", "https://app.nosmall.parts", "https://admin.nosmall.parts"]
+    origin          = ["https://nosmall.parts", "https://www.nosmall.parts", "https://admin.nosmall.parts"]
     method          = ["GET", "HEAD", "PUT", "POST", "DELETE"]
     response_header = ["*"]
     max_age_seconds = 3600
@@ -54,7 +54,7 @@ resource "google_storage_bucket" "user_data_storage" {
   }
 
   cors {
-    origin          = ["https://nosmall.parts", "https://www.nosmall.parts", "https://app.nosmall.parts", "https://admin.nosmall.parts"]
+    origin          = ["https://nosmall.parts", "https://www.nosmall.parts", "https://admin.nosmall.parts"]
     method          = ["GET", "HEAD", "PUT", "POST", "DELETE"]
     response_header = ["*"]
     max_age_seconds = 3600

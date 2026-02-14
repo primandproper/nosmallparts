@@ -5,14 +5,14 @@ metadata:
   name: no-small-parts-ingress
   annotations:
     kubernetes.io/ingress.class: gce
-    external-dns.alpha.kubernetes.io/hostname: "nosmall.parts"
+    external-dns.alpha.kubernetes.io/hostname: "nosmall.parts,www.nosmall.parts"
 spec:
   tls:
     - hosts:
         - api.nosmall.parts
-        - app.nosmall.parts
-        - admin.nosmall.parts
+        - nosmall.parts
         - www.nosmall.parts
+        - admin.nosmall.parts
       secretName: no-small-parts-cert
   rules:
     - host: "api.nosmall.parts"
@@ -25,7 +25,17 @@ spec:
                 name: no-small-parts-api-svc
                 port:
                   number: 8000
-    - host: "app.nosmall.parts"
+    - host: "nosmall.parts"
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: no-small-parts-frontend-svc
+                port:
+                  number: 3000
+    - host: "www.nosmall.parts"
       http:
         paths:
           - pathType: Prefix

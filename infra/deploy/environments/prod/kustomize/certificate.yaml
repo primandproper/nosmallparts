@@ -31,9 +31,9 @@ spec:
 
   dnsNames:
     - api.nosmall.parts
-    - app.nosmall.parts
-    - admin.nosmall.parts
+    - nosmall.parts
     - www.nosmall.parts
+    - admin.nosmall.parts
 
   issuerRef:
     name: letsencrypt
