@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getAuthClient } from '@/lib/auth-client';
-import { setSession } from '@/lib/session';
 
 export interface LoginRequest {
   username: string;
@@ -45,20 +44,26 @@ export async function POST(request: NextRequest): Promise<NextResponse<LoginResp
 
     const { userId, accountId, accessToken, refreshToken, expiresUtc } = response.result;
 
-    // Store session in HTTP-only cookie
-    await setSession({
+    const sessionData = {
       userId,
       accountId,
       accessToken,
       refreshToken,
       expiresAt:
         expiresUtc?.toISOString() || new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString(),
-    });
+    };
 
-    return NextResponse.json({
-      success: true,
-      userId,
+    // Set cookie on the response object so it reaches the browser (cookies().set() alone may not)
+    const res = NextResponse.json({ success: true, userId });
+    const encoded = Buffer.from(JSON.stringify(sessionData)).toString('base64');
+    res.cookies.set('nosmallparts_session', encoded, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'lax',
+      path: '/',
+      expires: new Date(sessionData.expiresAt),
     });
+    return res;
   } catch (error) {
     console.error('Login error:', error);
 

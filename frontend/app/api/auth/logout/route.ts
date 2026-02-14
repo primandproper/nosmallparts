@@ -1,11 +1,12 @@
 import { NextResponse } from 'next/server';
-import { clearSession } from '@/lib/session';
 
 export interface LogoutResponse {
   success: boolean;
 }
 
 export async function POST(): Promise<NextResponse<LogoutResponse>> {
-  await clearSession();
-  return NextResponse.json({ success: true });
+  const res = NextResponse.json({ success: true });
+  // Must match path used when setting the cookie
+  res.cookies.set('nosmallparts_session', '', { path: '/', maxAge: 0 });
+  return res;
 }
