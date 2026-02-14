@@ -27,22 +27,28 @@ func must(err error) {
 	}
 }
 
+// setEnvIfUnset sets the env var only when unset, so K8s-injected values (e.g. from secretKeyRef) are preserved.
+func setEnvIfUnset(key, value string) {
+	if os.Getenv(key) == "" {
+		must(os.Setenv(key, value))
+	}
+}
+
 func main() {
 	ctx := context.Background()
 
-	// We don't yet have a way to write these values into the AdminWebappConfig (because they're not present in the root APIConfig struct).
-	// This approach is an atrocious hack that I have to employ because I wasn't smart enough to design a better config generation system.
-	must(os.Setenv(envvars.CookiesCookieNameEnvVarKey, "dev_admin_frontend"))
-	must(os.Setenv(envvars.CookiesHashKeyEnvVarKey, base64.RawURLEncoding.EncodeToString([]byte("HEREISA32CHARSECRETWHICHISMADEUP"))))
-	must(os.Setenv(envvars.CookiesBlockKeyEnvVarKey, base64.RawURLEncoding.EncodeToString([]byte("HEREISA32CHARSECRETWHICHISMADEUP"))))
-	must(os.Setenv(envvars.APIServiceHTTPAPIServerURLEnvVarKey, "http://localhost:8000"))
-	must(os.Setenv(envvars.APIServiceGrpcAPIServerURLEnvVarKey, ":8001"))
-	must(os.Setenv(envvars.APIServiceOauth2APIClientIDEnvVarKey, strings.Repeat("A", oauth.ClientIDSize)))
-	must(os.Setenv(envvars.APIServiceOauth2APIClientSecretEnvVarKey, strings.Repeat("A", oauth.ClientSecretSize)))
-	must(os.Setenv(envvars.ServerPortEnvVarKey, "8888"))
-	must(os.Setenv(envvars.ServerStartupDeadlineEnvVarKey, time.Minute.String()))
-	must(os.Setenv(envvars.CookiesDomainEnvVarKey, "localhost"))
-	must(os.Setenv(envvars.CookiesLifetimeEnvVarKey, (7 * 24 * time.Hour).String()))
+	// Local dev defaults; only set when unset so K8s/CI-injected values (from secretKeyRef) are preserved.
+	setEnvIfUnset(envvars.CookiesCookieNameEnvVarKey, "dev_admin_frontend")
+	setEnvIfUnset(envvars.CookiesHashKeyEnvVarKey, base64.RawURLEncoding.EncodeToString([]byte("HEREISA32CHARSECRETWHICHISMADEUP")))
+	setEnvIfUnset(envvars.CookiesBlockKeyEnvVarKey, base64.RawURLEncoding.EncodeToString([]byte("HEREISA32CHARSECRETWHICHISMADEUP")))
+	setEnvIfUnset(envvars.APIServiceHTTPAPIServerURLEnvVarKey, "http://localhost:8000")
+	setEnvIfUnset(envvars.APIServiceGrpcAPIServerURLEnvVarKey, ":8001")
+	setEnvIfUnset(envvars.APIServiceOauth2APIClientIDEnvVarKey, strings.Repeat("A", oauth.ClientIDSize))
+	setEnvIfUnset(envvars.APIServiceOauth2APIClientSecretEnvVarKey, strings.Repeat("A", oauth.ClientSecretSize))
+	setEnvIfUnset(envvars.ServerPortEnvVarKey, "8888")
+	setEnvIfUnset(envvars.ServerStartupDeadlineEnvVarKey, time.Minute.String())
+	setEnvIfUnset(envvars.CookiesDomainEnvVarKey, "localhost")
+	setEnvIfUnset(envvars.CookiesLifetimeEnvVarKey, (7*24*time.Hour).String())
 
 	configFilepath := os.Getenv("CONFIGURATION_FILEPATH")
 	if configFilepath == "" {

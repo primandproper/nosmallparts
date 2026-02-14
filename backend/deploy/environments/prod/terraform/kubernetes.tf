@@ -126,7 +126,8 @@ resource "kubernetes_secret" "admin_webapp_config" {
     COOKIE_BLOCK_KEY  = random_string.jwt_signing_key.result
     COOKIE_DOMAIN     = ".nosmall.parts"
     API_SERVER_HTTP_URL  = "https://api.nosmall.parts"
-    API_SERVER_GRPC_URL  = "https://api.nosmall.parts"
+    # In-cluster gRPC address; admin webapp uses insecure creds, so use plain TCP to API service, not HTTPS via ingress
+    API_SERVER_GRPC_URL  = "no-small-parts-api-svc:8001"
     OAUTH2_CLIENT_ID    = var.GOOGLE_SSO_OAUTH2_CLIENT_ID
     OAUTH2_CLIENT_SECRET = var.GOOGLE_SSO_OAUTH2_CLIENT_SECRET
   }
