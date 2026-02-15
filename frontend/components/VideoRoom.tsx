@@ -411,6 +411,23 @@ function MockVideoRoom({
 }
 
 export function VideoRoom({ stageState, participantId, livekitToken, livekitUrl }: VideoRoomProps) {
+  const hasLiveKit = !!(livekitToken && livekitUrl);
+  const mountedAt = useRef(Date.now());
+
+  useEffect(() => {
+    console.log('[VideoRoom] Mounted', {
+      hasLiveKit,
+      participantId,
+      stageId: stageState?.id,
+      timestamp: new Date().toISOString(),
+    });
+    return () => {
+      console.log('[VideoRoom] Unmounting (duration ms:', Date.now() - mountedAt.current, ')', {
+        hasLiveKit,
+        timestamp: new Date().toISOString(),
+      });
+    };
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps -- only log mount/unmount
   // Check if current participant is audience
   const currentParticipant = (stageState.participants || []).find((p) => p.id === participantId);
   const isAudience = currentParticipant?.isAudience || false;

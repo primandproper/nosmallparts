@@ -101,6 +101,11 @@ export default function StagePage() {
   }
 
   if (!isConnected || !stageState) {
+    console.log('[Stage] Rendering "Connecting to stage"', {
+      isConnected,
+      hasStageState: !!stageState,
+      timestamp: new Date().toISOString(),
+    });
     return (
       <main className="min-h-screen stage-bg flex items-center justify-center">
         <div className="text-center">

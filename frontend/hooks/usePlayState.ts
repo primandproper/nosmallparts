@@ -248,17 +248,27 @@ export function usePlayState({
 
     ws.onmessage = handleMessage;
 
-    ws.onclose = () => {
+    ws.onclose = (event: CloseEvent) => {
+      console.log('[WS] Stages WebSocket CLOSED', {
+        code: event.code,
+        reason: event.reason || '(none)',
+        wasClean: event.wasClean,
+        timestamp: new Date().toISOString(),
+      });
       setIsConnected(false);
       isConnectingRef.current = false;
     };
 
     ws.onerror = () => {
+      console.log('[WS] Stages WebSocket ERROR', { timestamp: new Date().toISOString() });
       setError('Connection error');
       isConnectingRef.current = false;
     };
 
     return () => {
+      console.log('[WS] Effect cleanup: closing stages WebSocket (stageId/participant changed or unmount)', {
+        timestamp: new Date().toISOString(),
+      });
       ws.close();
       wsRef.current = null;
       isConnectingRef.current = false;
