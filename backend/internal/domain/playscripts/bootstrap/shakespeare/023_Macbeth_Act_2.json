@@ -1,0 +1,1077 @@
+{
+  "title": "Macbeth (Act 2)",
+  "description": "Folger Shakespeare Library edition",
+  "author": "William Shakespeare",
+  "castMembers": [
+    {
+      "id": "d68m11kn9qd8d2h7997g",
+      "name": "Narrator",
+      "sortOrder": 0
+    },
+    {
+      "id": "d68m11kn9qd8d2h79980",
+      "name": "Banquo",
+      "description": "commander, with Macbeth, of Duncan’s army",
+      "sortOrder": 1
+    },
+    {
+      "id": "d68m11kn9qd8d2h7998g",
+      "name": "Fleance",
+      "description": "his son",
+      "sortOrder": 2
+    },
+    {
+      "id": "d68m11kn9qd8d2h79990",
+      "name": "Macbeth",
+      "description": "thane of Glamis",
+      "sortOrder": 3
+    },
+    {
+      "id": "d68m11kn9qd8d2h7999g",
+      "name": "SERVANTS.X.1_Mac",
+      "sortOrder": 4
+    },
+    {
+      "id": "d68m11kn9qd8d2h799a0",
+      "name": "Lady Macbeth",
+      "sortOrder": 5
+    },
+    {
+      "id": "d68m11kn9qd8d2h799ag",
+      "name": "Lennox",
+      "sortOrder": 6
+    },
+    {
+      "id": "d68m11kn9qd8d2h799b0",
+      "name": "Macduff",
+      "description": "a Scottish noble",
+      "sortOrder": 7
+    },
+    {
+      "id": "d68m11kn9qd8d2h799bg",
+      "name": "A Porter",
+      "sortOrder": 8
+    },
+    {
+      "id": "d68m11kn9qd8d2h799c0",
+      "name": "Donalbain",
+      "description": "Duncan’s younger son",
+      "sortOrder": 9
+    },
+    {
+      "id": "d68m11kn9qd8d2h799cg",
+      "name": "Malcolm",
+      "description": "his elder son",
+      "sortOrder": 10
+    },
+    {
+      "id": "d68m11kn9qd8d2h799d0",
+      "name": "Ross",
+      "sortOrder": 11
+    },
+    {
+      "id": "d68m11kn9qd8d2h799dg",
+      "name": "An Old Man",
+      "sortOrder": 12
+    }
+  ],
+  "lines": [
+    {
+      "castMemberId": "d68m11kn9qd8d2h7997g",
+      "lineText": "Enter Banquo , and Fleance with a torch before him .",
+      "scrollMode": "auto",
+      "lineIndex": 0
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79980",
+      "lineText": "How goes the night , boy ?",
+      "scrollMode": "auto",
+      "lineIndex": 1
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7998g",
+      "lineText": "The moon is down . I have not heard the clock .",
+      "scrollMode": "auto",
+      "lineIndex": 2
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79980",
+      "lineText": "And she goes down at twelve .",
+      "scrollMode": "auto",
+      "lineIndex": 3
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7998g",
+      "lineText": "I take ’t ’tis later , sir .",
+      "scrollMode": "auto",
+      "lineIndex": 4
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7997g",
+      "lineText": "He Giving gives his sword to Fleance .",
+      "scrollMode": "auto",
+      "lineIndex": 5
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7997g",
+      "lineText": "Enter Macbeth , and a Servant with a torch .",
+      "scrollMode": "auto",
+      "lineIndex": 6
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79990",
+      "lineText": "Enter Macbeth , and a Servant with a torch . Give me my sword . — Who’s there ?",
+      "scrollMode": "auto",
+      "lineIndex": 7
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79990",
+      "lineText": "A friend .",
+      "scrollMode": "auto",
+      "lineIndex": 8
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79980",
+      "lineText": "What , sir , not yet at rest ? The King’s abed . He hath been in unusual pleasure , and Sent forth great largess to your offices . This diamond he greets your wife withal , ACT 2. SC. 1 By the name of most kind hostess , and shut up In measureless content .",
+      "scrollMode": "auto",
+      "lineIndex": 9
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7997g",
+      "lineText": "He gives Macbeth a jewel diamond .",
+      "scrollMode": "auto",
+      "lineIndex": 10
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79990",
+      "lineText": "Being unprepared , Our will became the servant to defect , Which else should free have wrought .",
+      "scrollMode": "auto",
+      "lineIndex": 11
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79980",
+      "lineText": "All’s well . I dreamt last night of the three Weïrd Sisters . To you they have showed some truth .",
+      "scrollMode": "auto",
+      "lineIndex": 12
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79990",
+      "lineText": "I think not of them . Yet , when we can entreat an hour to serve , We would spend it in some words upon that business , If you would grant the time .",
+      "scrollMode": "auto",
+      "lineIndex": 13
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79980",
+      "lineText": "At your kind’st leisure .",
+      "scrollMode": "auto",
+      "lineIndex": 14
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79990",
+      "lineText": "If you shall cleave to my consent , when ’tis , It shall make honor for you .",
+      "scrollMode": "auto",
+      "lineIndex": 15
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79980",
+      "lineText": "So I lose none In seeking to augment it , but still keep My bosom franchised and allegiance clear , I shall be counseled .",
+      "scrollMode": "auto",
+      "lineIndex": 16
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79990",
+      "lineText": "Good repose the while .",
+      "scrollMode": "auto",
+      "lineIndex": 17
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79980",
+      "lineText": "Thanks , sir . The like to you .",
+      "scrollMode": "auto",
+      "lineIndex": 18
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7997g",
+      "lineText": "Banquo and Fleance exit .",
+      "scrollMode": "auto",
+      "lineIndex": 19
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7997g",
+      "lineText": "Servant exits .",
+      "scrollMode": "auto",
+      "lineIndex": 20
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7997g",
+      "lineText": "He draws his dagger .",
+      "scrollMode": "auto",
+      "lineIndex": 21
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7997g",
+      "lineText": "A bell rings .",
+      "scrollMode": "auto",
+      "lineIndex": 22
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79990",
+      "lineText": "A bell rings . I go , and it is done . The bell invites me . Hear it not , Duncan , for it is a knell That summons thee to heaven or to hell .",
+      "scrollMode": "auto",
+      "lineIndex": 23
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7997g",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 24
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7997g",
+      "lineText": "Enter Lady Macbeth .",
+      "scrollMode": "auto",
+      "lineIndex": 25
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799a0",
+      "lineText": "That which hath made them drunk hath made me bold . What hath quenched them hath given me fire . Hark ! — Peace . It was the owl that shrieked , the fatal bellman , Which gives the stern’st good-night . He is about it . The doors are open , and the surfeited grooms Do mock their charge with snores . I have drugged their possets , That death and nature do contend about them Whether they live or die .",
+      "scrollMode": "auto",
+      "lineIndex": 26
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7997g",
+      "lineText": ", within",
+      "scrollMode": "auto",
+      "lineIndex": 27
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79990",
+      "lineText": "Who’s there ? what , ho !",
+      "scrollMode": "auto",
+      "lineIndex": 28
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7997g",
+      "lineText": "Enter Macbeth with bloody daggers .",
+      "scrollMode": "auto",
+      "lineIndex": 29
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79990",
+      "lineText": "Enter Macbeth with bloody daggers . My husband ?",
+      "scrollMode": "auto",
+      "lineIndex": 30
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79990",
+      "lineText": "I have done the deed . Didst thou not hear a noise ?",
+      "scrollMode": "auto",
+      "lineIndex": 31
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799a0",
+      "lineText": "I heard the owl scream and the crickets cry . Did not you speak ?",
+      "scrollMode": "auto",
+      "lineIndex": 32
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79990",
+      "lineText": "When ?",
+      "scrollMode": "auto",
+      "lineIndex": 33
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799a0",
+      "lineText": "Now .",
+      "scrollMode": "auto",
+      "lineIndex": 34
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79990",
+      "lineText": "As I descended ?",
+      "scrollMode": "auto",
+      "lineIndex": 35
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799a0",
+      "lineText": "Ay .",
+      "scrollMode": "auto",
+      "lineIndex": 36
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79990",
+      "lineText": "Hark ! — Who lies i’ th’ second chamber ?",
+      "scrollMode": "auto",
+      "lineIndex": 37
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799a0",
+      "lineText": "Donalbain .",
+      "scrollMode": "auto",
+      "lineIndex": 38
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79990",
+      "lineText": "This is a sorry sight .",
+      "scrollMode": "auto",
+      "lineIndex": 39
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799a0",
+      "lineText": "A foolish thought , to say a sorry sight .",
+      "scrollMode": "auto",
+      "lineIndex": 40
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79990",
+      "lineText": "There’s one did laugh in ’s sleep , and one cried Murder ! That they did wake each other . I stood and heard them . But they did say their prayers and addressed them Again to sleep .",
+      "scrollMode": "auto",
+      "lineIndex": 41
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799a0",
+      "lineText": "There are two lodged together .",
+      "scrollMode": "auto",
+      "lineIndex": 42
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79990",
+      "lineText": "One cried God bless us and Amen the other , As they had seen me with these hangman’s hands , List’ning their fear . I could not say Amen When they did say God bless us .",
+      "scrollMode": "auto",
+      "lineIndex": 43
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799a0",
+      "lineText": "Consider it not so deeply .",
+      "scrollMode": "auto",
+      "lineIndex": 44
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79990",
+      "lineText": "But wherefore could not I pronounce Amen ? I had most need of blessing , and Amen Stuck in my throat .",
+      "scrollMode": "auto",
+      "lineIndex": 45
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799a0",
+      "lineText": "These deeds must not be thought After these ways ; so , it will make us mad .",
+      "scrollMode": "auto",
+      "lineIndex": 46
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79990",
+      "lineText": "Methought I heard a voice cry Sleep no more ! Macbeth does murder sleep — the innocent sleep , Sleep that knits up the raveled sleave of care , The death of each day’s life , sore labor’s bath , Balm of hurt minds , great nature’s second course , Chief nourisher in life’s feast .",
+      "scrollMode": "auto",
+      "lineIndex": 47
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799a0",
+      "lineText": "What do you mean ?",
+      "scrollMode": "auto",
+      "lineIndex": 48
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79990",
+      "lineText": "Still it cried Sleep no more ! to all the house . Glamis hath murdered sleep , and therefore Cawdor Shall sleep no more . Macbeth shall sleep no more .",
+      "scrollMode": "auto",
+      "lineIndex": 49
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799a0",
+      "lineText": "Who was it that thus cried ? Why , worthy thane , You do unbend your noble strength to think So brainsickly of things . Go get some water And wash this filthy witness from your hand . — Why did you bring these daggers from the place ? They must lie there . Go , carry them and smear The sleepy grooms with blood .",
+      "scrollMode": "auto",
+      "lineIndex": 50
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79990",
+      "lineText": "I’ll go no more . I am afraid to think what I have done . Look on ’t again I dare not .",
+      "scrollMode": "auto",
+      "lineIndex": 51
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799a0",
+      "lineText": "Infirm of purpose ! Give me the daggers . The sleeping and the dead Are but as pictures . ’Tis the eye of childhood That fears a painted devil . If he do bleed , I’ll gild the faces of the grooms withal , For it must seem their guilt .",
+      "scrollMode": "auto",
+      "lineIndex": 52
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7997g",
+      "lineText": "She exits with the daggers .",
+      "scrollMode": "auto",
+      "lineIndex": 53
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7997g",
+      "lineText": "Knock within .",
+      "scrollMode": "auto",
+      "lineIndex": 54
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79990",
+      "lineText": "Whence is that knocking ? How is ’t with me when every noise appalls me ? What hands are here ! Ha , they pluck out mine eyes . Will all great Neptune’s ocean wash this blood Clean from my hand ? No , this my hand will rather The multitudinous seas incarnadine , Making the green one red .",
+      "scrollMode": "auto",
+      "lineIndex": 55
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7997g",
+      "lineText": "Enter Lady Macbeth .",
+      "scrollMode": "auto",
+      "lineIndex": 56
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7997g",
+      "lineText": "Knock .",
+      "scrollMode": "auto",
+      "lineIndex": 57
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7997g",
+      "lineText": "Knock .",
+      "scrollMode": "auto",
+      "lineIndex": 58
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799a0",
+      "lineText": "Knock . ACT 2. SC. 3 Hark , more knocking . Get on your nightgown , lest occasion call us And show us to be watchers . Be not lost So poorly in your thoughts .",
+      "scrollMode": "auto",
+      "lineIndex": 59
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7997g",
+      "lineText": "Knock .",
+      "scrollMode": "auto",
+      "lineIndex": 60
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79990",
+      "lineText": "Knock . Wake Duncan with thy knocking . I would thou couldst .",
+      "scrollMode": "auto",
+      "lineIndex": 61
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7997g",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 62
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7997g",
+      "lineText": "Knocking within .",
+      "scrollMode": "auto",
+      "lineIndex": 63
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7997g",
+      "lineText": "Enter a Porter .",
+      "scrollMode": "auto",
+      "lineIndex": 64
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7997g",
+      "lineText": "( Knock . )",
+      "scrollMode": "auto",
+      "lineIndex": 65
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7997g",
+      "lineText": "( Knock . )",
+      "scrollMode": "auto",
+      "lineIndex": 66
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7997g",
+      "lineText": "( Knock . )",
+      "scrollMode": "auto",
+      "lineIndex": 67
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7997g",
+      "lineText": "( Knock . )",
+      "scrollMode": "auto",
+      "lineIndex": 68
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7997g",
+      "lineText": "( Knock . )",
+      "scrollMode": "auto",
+      "lineIndex": 69
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7997g",
+      "lineText": "The Porter opens the door",
+      "scrollMode": "auto",
+      "lineIndex": 70
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7997g",
+      "lineText": "to Macduff and Lennox .",
+      "scrollMode": "auto",
+      "lineIndex": 71
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799ag",
+      "lineText": "to Macduff and Lennox . I pray you , remember the porter .",
+      "scrollMode": "auto",
+      "lineIndex": 72
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799b0",
+      "lineText": "Was it so late , friend , ere you went to bed That you do lie so late ?",
+      "scrollMode": "auto",
+      "lineIndex": 73
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799bg",
+      "lineText": "Faith , sir , we were carousing till the second cock , and drink , sir , is a great provoker of three things .",
+      "scrollMode": "auto",
+      "lineIndex": 74
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799b0",
+      "lineText": "What three things does drink especially provoke ?",
+      "scrollMode": "auto",
+      "lineIndex": 75
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799bg",
+      "lineText": "Marry , sir , nose-painting , sleep , and urine . Lechery , sir , it provokes and unprovokes . It provokes the desire , but it takes away the performance . Therefore much drink may be said to be an equivocator with lechery . It makes him , and it mars him ; it sets him on , and it takes him off ; it persuades him and disheartens him ; makes him stand to and not stand to ; in conclusion , equivocates him in a sleep and , giving him the lie , leaves him .",
+      "scrollMode": "auto",
+      "lineIndex": 76
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799b0",
+      "lineText": "I believe drink gave thee the lie last night .",
+      "scrollMode": "auto",
+      "lineIndex": 77
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799bg",
+      "lineText": "That it did , sir , i’ th’ very throat on me ; but I requited him for his lie , and , I think , being too strong for him , though he took up my legs sometime , yet I made a shift to cast him .",
+      "scrollMode": "auto",
+      "lineIndex": 78
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7997g",
+      "lineText": "Enter Macbeth .",
+      "scrollMode": "auto",
+      "lineIndex": 79
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79990",
+      "lineText": "Enter Macbeth . Our knocking has awaked him . Here he comes .",
+      "scrollMode": "auto",
+      "lineIndex": 80
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7997g",
+      "lineText": "Porter exits .",
+      "scrollMode": "auto",
+      "lineIndex": 81
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799ag",
+      "lineText": "Good morrow , noble sir .",
+      "scrollMode": "auto",
+      "lineIndex": 82
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79990",
+      "lineText": "Good morrow , both .",
+      "scrollMode": "auto",
+      "lineIndex": 83
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799b0",
+      "lineText": "Is the King stirring , worthy thane ?",
+      "scrollMode": "auto",
+      "lineIndex": 84
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79990",
+      "lineText": "Not yet .",
+      "scrollMode": "auto",
+      "lineIndex": 85
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799b0",
+      "lineText": "He did command me to call timely on him . I have almost slipped the hour .",
+      "scrollMode": "auto",
+      "lineIndex": 86
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79990",
+      "lineText": "I’ll bring you to him .",
+      "scrollMode": "auto",
+      "lineIndex": 87
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799b0",
+      "lineText": "I know this is a joyful trouble to you , But yet ’tis one .",
+      "scrollMode": "auto",
+      "lineIndex": 88
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79990",
+      "lineText": "The labor we delight in physics pain . This is the door .",
+      "scrollMode": "auto",
+      "lineIndex": 89
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799b0",
+      "lineText": "I’ll make so bold to call , For ’tis my limited service .",
+      "scrollMode": "auto",
+      "lineIndex": 90
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7997g",
+      "lineText": "Macduff exits .",
+      "scrollMode": "auto",
+      "lineIndex": 91
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799ag",
+      "lineText": "Goes the King hence today ?",
+      "scrollMode": "auto",
+      "lineIndex": 92
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79990",
+      "lineText": "He does . He did appoint so .",
+      "scrollMode": "auto",
+      "lineIndex": 93
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799ag",
+      "lineText": "The night has been unruly . Where we lay , Our chimneys were blown down and , as they say , Lamentings heard i’ th’ air , strange screams of death , And prophesying , with accents terrible , Of dire combustion and confused events New hatched to th’ woeful time . The obscure bird Clamored the livelong night . Some say the Earth earth Was feverous and did shake .",
+      "scrollMode": "auto",
+      "lineIndex": 94
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79990",
+      "lineText": "’Twas a rough night .",
+      "scrollMode": "auto",
+      "lineIndex": 95
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799ag",
+      "lineText": "My young remembrance cannot parallel A fellow to it .",
+      "scrollMode": "auto",
+      "lineIndex": 96
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7997g",
+      "lineText": "Enter Macduff .",
+      "scrollMode": "auto",
+      "lineIndex": 97
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799b0",
+      "lineText": "O horror , horror , horror ! Tongue nor heart cannot conceive nor name thee !",
+      "scrollMode": "auto",
+      "lineIndex": 98
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79990",
+      "lineText": "What’s the matter ?",
+      "scrollMode": "auto",
+      "lineIndex": 99
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799b0",
+      "lineText": "Confusion now hath made his masterpiece . Most sacrilegious murder hath broke ope The Lord’s anointed temple and stole thence The life o’ th’ building .",
+      "scrollMode": "auto",
+      "lineIndex": 100
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79990",
+      "lineText": "What is ’t you say ? The life ?",
+      "scrollMode": "auto",
+      "lineIndex": 101
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799ag",
+      "lineText": "Mean you his Majesty ?",
+      "scrollMode": "auto",
+      "lineIndex": 102
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7997g",
+      "lineText": "Macbeth and Lennox exit .",
+      "scrollMode": "auto",
+      "lineIndex": 103
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79990",
+      "lineText": "Macbeth and Lennox exit . Awake , awake ! Ring the alarum bell . — Murder and treason ! Banquo and Donalbain , Malcolm , awake ! Shake off this downy sleep , death’s counterfeit , And look on death itself . Up , up , and see The great doom’s image . Malcolm , Banquo , As from your graves rise up and walk like sprites To countenance this horror . — Ring the bell .",
+      "scrollMode": "auto",
+      "lineIndex": 104
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7997g",
+      "lineText": "Bell rings .",
+      "scrollMode": "auto",
+      "lineIndex": 105
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7997g",
+      "lineText": "Enter Lady Macbeth .",
+      "scrollMode": "auto",
+      "lineIndex": 106
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799a0",
+      "lineText": "What’s the business , That such a hideous trumpet calls to parley The sleepers of the house ? Speak , speak !",
+      "scrollMode": "auto",
+      "lineIndex": 107
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7997g",
+      "lineText": "Enter Banquo .",
+      "scrollMode": "auto",
+      "lineIndex": 108
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79980",
+      "lineText": "Enter Banquo . O Banquo , Banquo , Our royal master’s murdered .",
+      "scrollMode": "auto",
+      "lineIndex": 109
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799a0",
+      "lineText": "Woe , alas ! What , in our house ?",
+      "scrollMode": "auto",
+      "lineIndex": 110
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79980",
+      "lineText": "Too cruel anywhere . — Dear Duff , I prithee , contradict thyself And say it is not so .",
+      "scrollMode": "auto",
+      "lineIndex": 111
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7997g",
+      "lineText": "Enter Macbeth , Lennox , and Ross .",
+      "scrollMode": "auto",
+      "lineIndex": 112
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79990",
+      "lineText": "Had I but died an hour before this chance , I had lived a blessèd time ; for from this instant There’s nothing serious in mortality . All is but toys . Renown and grace is dead . The wine of life is drawn , and the mere lees Is left this vault to brag of .",
+      "scrollMode": "auto",
+      "lineIndex": 113
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7997g",
+      "lineText": "Enter Malcolm and Donalbain .",
+      "scrollMode": "auto",
+      "lineIndex": 114
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799c0",
+      "lineText": "What is amiss ?",
+      "scrollMode": "auto",
+      "lineIndex": 115
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79990",
+      "lineText": "You are , and do not know ’t . The spring , the head , the fountain of your blood Is stopped ; the very source of it is stopped .",
+      "scrollMode": "auto",
+      "lineIndex": 116
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799b0",
+      "lineText": "Your royal father’s murdered .",
+      "scrollMode": "auto",
+      "lineIndex": 117
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799cg",
+      "lineText": "O , by whom ?",
+      "scrollMode": "auto",
+      "lineIndex": 118
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799ag",
+      "lineText": "Those of his chamber , as it seemed , had done ’t . Their hands and faces were all badged with blood . So were their daggers , which unwiped we found Upon their pillows . They stared and were distracted . No man’s life was to be trusted with them .",
+      "scrollMode": "auto",
+      "lineIndex": 119
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79990",
+      "lineText": "O , yet I do repent me of my fury , That I did kill them .",
+      "scrollMode": "auto",
+      "lineIndex": 120
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799b0",
+      "lineText": "Wherefore did you so ?",
+      "scrollMode": "auto",
+      "lineIndex": 121
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79990",
+      "lineText": "Who can be wise , amazed , temp’rate , and furious , Loyal , and neutral , in a moment ? No man . Th’ expedition of my violent love Outrun the pauser , reason . Here lay Duncan , His silver skin laced with his golden blood , And his gashed stabs looked like a breach in nature For ruin’s wasteful entrance ; there the murderers , ACT 2. SC. 3 Steeped in the colors of their trade , their daggers Unmannerly breeched with gore . Who could refrain That had a heart to love , and in that heart Courage to make ’s love known ?",
+      "scrollMode": "auto",
+      "lineIndex": 122
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799a0",
+      "lineText": "Help me hence , ho !",
+      "scrollMode": "auto",
+      "lineIndex": 123
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799b0",
+      "lineText": "Look to the lady .",
+      "scrollMode": "auto",
+      "lineIndex": 124
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7997g",
+      "lineText": ", aside to Donalbain",
+      "scrollMode": "auto",
+      "lineIndex": 125
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799cg",
+      "lineText": "Why do we hold our tongues , That most may claim this argument for ours ?",
+      "scrollMode": "auto",
+      "lineIndex": 126
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7997g",
+      "lineText": ", aside to Malcolm",
+      "scrollMode": "auto",
+      "lineIndex": 127
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799c0",
+      "lineText": "What should be spoken here , where our fate , Hid in an auger hole , may rush and seize us ? Let’s away . Our tears are not yet brewed .",
+      "scrollMode": "auto",
+      "lineIndex": 128
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7997g",
+      "lineText": ", aside to Donalbain",
+      "scrollMode": "auto",
+      "lineIndex": 129
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799cg",
+      "lineText": "Nor our strong sorrow upon the foot of motion .",
+      "scrollMode": "auto",
+      "lineIndex": 130
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7997g",
+      "lineText": "Lady Macbeth is assisted to leave .",
+      "scrollMode": "auto",
+      "lineIndex": 131
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799a0",
+      "lineText": "Lady Macbeth is assisted to leave . And when we have our naked frailties hid , That suffer in exposure , let us meet And question this most bloody piece of work To know it further . Fears and scruples shake us . In the great hand of God I stand , and thence Against the undivulged pretense I fight Of treasonous malice .",
+      "scrollMode": "auto",
+      "lineIndex": 132
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799b0",
+      "lineText": "And so do I .",
+      "scrollMode": "auto",
+      "lineIndex": 133
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79990",
+      "lineText": "So all .",
+      "scrollMode": "auto",
+      "lineIndex": 134
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79990",
+      "lineText": "Let’s briefly put on manly readiness And meet i’ th’ hall together .",
+      "scrollMode": "auto",
+      "lineIndex": 135
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799b0",
+      "lineText": "Well contented .",
+      "scrollMode": "auto",
+      "lineIndex": 136
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7997g",
+      "lineText": "All but Malcolm and Donalbain exit .",
+      "scrollMode": "auto",
+      "lineIndex": 137
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799cg",
+      "lineText": "What will you do ? Let’s not consort with them . To show an unfelt sorrow is an office Which the false man does easy . I’ll to England .",
+      "scrollMode": "auto",
+      "lineIndex": 138
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799c0",
+      "lineText": "To Ireland I . Our separated fortune Shall keep us both the safer . Where we are , There’s daggers in men’s smiles . The near in blood , The nearer bloody .",
+      "scrollMode": "auto",
+      "lineIndex": 139
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799cg",
+      "lineText": "This murderous shaft that’s shot Hath not yet lighted , and our safest way Is to avoid the aim . Therefore to horse , And let us not be dainty of leave-taking But shift away . There’s warrant in that theft Which steals itself when there’s no mercy left .",
+      "scrollMode": "auto",
+      "lineIndex": 140
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7997g",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 141
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7997g",
+      "lineText": "Enter Ross with an Old Man .",
+      "scrollMode": "auto",
+      "lineIndex": 142
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799dg",
+      "lineText": "Threescore and ten I can remember well , Within the volume of which time I have seen Hours dreadful and things strange , but this sore night Hath trifled former knowings .",
+      "scrollMode": "auto",
+      "lineIndex": 143
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799d0",
+      "lineText": "Ha , good father , Thou seest the heavens , as troubled with man’s act , Threatens his bloody stage . By th’ clock ’tis day , And yet dark night strangles the traveling lamp . Is ’t night’s predominance or the day’s shame That darkness does the face of earth entomb When living light should kiss it ?",
+      "scrollMode": "auto",
+      "lineIndex": 144
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799dg",
+      "lineText": "’Tis unnatural , Even like the deed that’s done . On Tuesday last A falcon , tow’ring in her pride of place , Was by a mousing owl hawked at and killed .",
+      "scrollMode": "auto",
+      "lineIndex": 145
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799d0",
+      "lineText": "And Duncan’s horses ( a thing most strange and certain ) , ACT 2. SC. 4 Beauteous and swift , the minions of their race , Turned wild in nature , broke their stalls , flung out , Contending ’gainst obedience , as they would Make war with mankind .",
+      "scrollMode": "auto",
+      "lineIndex": 146
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799dg",
+      "lineText": "’Tis said they eat each other .",
+      "scrollMode": "auto",
+      "lineIndex": 147
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7997g",
+      "lineText": "Enter Macduff .",
+      "scrollMode": "auto",
+      "lineIndex": 148
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799b0",
+      "lineText": "Enter Macduff . Here comes the good Macduff . — How goes the world , sir , now ?",
+      "scrollMode": "auto",
+      "lineIndex": 149
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799b0",
+      "lineText": "Why , see you not ?",
+      "scrollMode": "auto",
+      "lineIndex": 150
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799d0",
+      "lineText": "Is ’t known who did this more than bloody deed ?",
+      "scrollMode": "auto",
+      "lineIndex": 151
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799b0",
+      "lineText": "Those that Macbeth hath slain .",
+      "scrollMode": "auto",
+      "lineIndex": 152
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799d0",
+      "lineText": "Alas the day , What good could they pretend ?",
+      "scrollMode": "auto",
+      "lineIndex": 153
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799b0",
+      "lineText": "They were suborned . Malcolm and Donalbain , the King’s two sons , Are stol’n away and fled , which puts upon them Suspicion of the deed .",
+      "scrollMode": "auto",
+      "lineIndex": 154
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799d0",
+      "lineText": "’Gainst nature still ! Thriftless ambition , that will ravin up Thine own lives’ means . Then ’tis most like The sovereignty will fall upon Macbeth .",
+      "scrollMode": "auto",
+      "lineIndex": 155
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799b0",
+      "lineText": "He is already named and gone to Scone To be invested .",
+      "scrollMode": "auto",
+      "lineIndex": 156
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799d0",
+      "lineText": "Where is Duncan’s body ?",
+      "scrollMode": "auto",
+      "lineIndex": 157
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799b0",
+      "lineText": "Carried to Colmekill , The sacred storehouse of his predecessors And guardian of their bones .",
+      "scrollMode": "auto",
+      "lineIndex": 158
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799d0",
+      "lineText": "Will you to Scone ?",
+      "scrollMode": "auto",
+      "lineIndex": 159
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799b0",
+      "lineText": "No , cousin , I’ll to Fife .",
+      "scrollMode": "auto",
+      "lineIndex": 160
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799d0",
+      "lineText": "Well , I will thither .",
+      "scrollMode": "auto",
+      "lineIndex": 161
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799b0",
+      "lineText": "Well , may you see things well done there . Adieu , Lest our old robes sit easier than our new .",
+      "scrollMode": "auto",
+      "lineIndex": 162
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799d0",
+      "lineText": "Farewell , father .",
+      "scrollMode": "auto",
+      "lineIndex": 163
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799dg",
+      "lineText": "God’s benison go with you and with those That would make good of bad and friends of foes .",
+      "scrollMode": "auto",
+      "lineIndex": 164
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7997g",
+      "lineText": "All exit .",
+      "scrollMode": "auto",
+      "lineIndex": 165
+    }
+  ],
+  "isPublic": true
+}

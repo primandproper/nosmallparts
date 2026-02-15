@@ -1,0 +1,1523 @@
+{
+  "title": "The Two Noble Kinsmen (Act 5)",
+  "description": "Folger Shakespeare Library edition",
+  "author": "William Shakespeare",
+  "castMembers": [
+    {
+      "id": "d68m11sn9qd8d2h79lc0",
+      "name": "Narrator",
+      "sortOrder": 0
+    },
+    {
+      "id": "d68m11sn9qd8d2h79lcg",
+      "name": "Theseus",
+      "description": "Duke of Athens",
+      "sortOrder": 1
+    },
+    {
+      "id": "d68m11sn9qd8d2h79ld0",
+      "name": "Pirithous",
+      "description": "friend to Theseus",
+      "sortOrder": 2
+    },
+    {
+      "id": "d68m11sn9qd8d2h79ldg",
+      "name": "Palamon",
+      "sortOrder": 3
+    },
+    {
+      "id": "d68m11sn9qd8d2h79le0",
+      "name": "Arcite",
+      "sortOrder": 4
+    },
+    {
+      "id": "d68m11sn9qd8d2h79leg",
+      "name": "KNIGHTS.ARCITE_TNK",
+      "sortOrder": 5
+    },
+    {
+      "id": "d68m11sn9qd8d2h79lf0",
+      "name": "KNIGHTS.PALAMON_TNK",
+      "sortOrder": 6
+    },
+    {
+      "id": "d68m11sn9qd8d2h79lfg",
+      "name": "Emilia",
+      "description": "her sister",
+      "sortOrder": 7
+    },
+    {
+      "id": "d68m11sn9qd8d2h79lg0",
+      "name": "Doctor",
+      "sortOrder": 8
+    },
+    {
+      "id": "d68m11sn9qd8d2h79lgg",
+      "name": "Wooer",
+      "sortOrder": 9
+    },
+    {
+      "id": "d68m11sn9qd8d2h79lh0",
+      "name": "Jailer",
+      "sortOrder": 10
+    },
+    {
+      "id": "d68m11sn9qd8d2h79lhg",
+      "name": "Daughter",
+      "sortOrder": 11
+    },
+    {
+      "id": "d68m11sn9qd8d2h79li0",
+      "name": "Maid_TNK",
+      "sortOrder": 12
+    },
+    {
+      "id": "d68m11sn9qd8d2h79lig",
+      "name": "Messenger",
+      "sortOrder": 13
+    },
+    {
+      "id": "d68m11sn9qd8d2h79lj0",
+      "name": "Hippolyta",
+      "description": "Queen of the Amazons, later Duchess of Athens",
+      "sortOrder": 14
+    },
+    {
+      "id": "d68m11sn9qd8d2h79ljg",
+      "name": "Servant",
+      "sortOrder": 15
+    },
+    {
+      "id": "d68m11sn9qd8d2h79lk0",
+      "name": "First Knight",
+      "sortOrder": 16
+    },
+    {
+      "id": "d68m11sn9qd8d2h79lkg",
+      "name": "Second Knight",
+      "sortOrder": 17
+    },
+    {
+      "id": "d68m11sn9qd8d2h79ll0",
+      "name": "Third Knight",
+      "sortOrder": 18
+    },
+    {
+      "id": "d68m11sn9qd8d2h79llg",
+      "name": "Messenger",
+      "sortOrder": 19
+    },
+    {
+      "id": "d68m11sn9qd8d2h79lm0",
+      "name": "Epilogue",
+      "sortOrder": 20
+    }
+  ],
+  "lines": [
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "Flourish . Enter Theseus , Pirithous , Hippolyta , and Attendants . Three altars set up onstage .",
+      "scrollMode": "auto",
+      "lineIndex": 0
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lcg",
+      "lineText": "Now let ’em enter and before the gods Tender their holy prayers . Let the temples Burn bright with sacred fires , and the altars In hallowed clouds commend their swelling incense To those above us . Let no due be wanting . They have a noble work in hand will honor The very powers that love ’em .",
+      "scrollMode": "auto",
+      "lineIndex": 1
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ld0",
+      "lineText": "Sir , they enter .",
+      "scrollMode": "auto",
+      "lineIndex": 2
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "Flourish of cornets . Enter Palamon and Arcite and their Knights .",
+      "scrollMode": "auto",
+      "lineIndex": 3
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lcg",
+      "lineText": "You valiant and strong-hearted enemies , You royal german foes , that this day come To blow that nearness out that flames between you , Lay by your anger for an hour and , dove-like , Before the holy altars of your helpers , The all-feared gods , bow down your stubborn bodies . Your ire is more than mortal ; so your help be . And as the gods regard you , fight with justice . ACT 5. SC. 1 I’ll leave you to your prayers , and betwixt you I part my wishes .",
+      "scrollMode": "auto",
+      "lineIndex": 4
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ld0",
+      "lineText": "Honor crown the worthiest !",
+      "scrollMode": "auto",
+      "lineIndex": 5
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "Theseus and his train exit .",
+      "scrollMode": "auto",
+      "lineIndex": 6
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ldg",
+      "lineText": "The glass is running now that cannot finish Till one of us expire . Think you but thus , That were there aught in me which strove to show Mine enemy in this business , were ’t one eye Against another , arm oppressed by arm , I would destroy th’ offender , coz — I would Though parcel of myself . Then from this gather How I should tender you .",
+      "scrollMode": "auto",
+      "lineIndex": 7
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79le0",
+      "lineText": "I am in labor To push your name , your ancient love , our kindred Out of my memory , and i’ th’ selfsame place To seat something I would confound . So hoist we The sails that must these vessels port even where The heavenly Limiter pleases .",
+      "scrollMode": "auto",
+      "lineIndex": 8
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "They embrace .",
+      "scrollMode": "auto",
+      "lineIndex": 9
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ldg",
+      "lineText": "They embrace . This I shall never do again .",
+      "scrollMode": "auto",
+      "lineIndex": 10
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79le0",
+      "lineText": "One farewell .",
+      "scrollMode": "auto",
+      "lineIndex": 11
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ldg",
+      "lineText": "Why , let it be so . Farewell , coz .",
+      "scrollMode": "auto",
+      "lineIndex": 12
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "Palamon and his Knights exit .",
+      "scrollMode": "auto",
+      "lineIndex": 13
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "They go to Mars’s altar , fall on their faces before it , and then kneel .",
+      "scrollMode": "auto",
+      "lineIndex": 14
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "Here they fall on their faces as formerly , and there is heard clanging of armor , with a short thunder , as the burst of a battle , whereupon they all rise and bow to the altar .",
+      "scrollMode": "auto",
+      "lineIndex": 15
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79le0",
+      "lineText": "Here they fall on their faces as formerly , and there is heard clanging of armor , with a short thunder , as the burst of a battle , whereupon they all rise and bow to the altar . O , great corrector of enormous times , Shaker of o’er-rank states , thou grand decider Of dusty and old titles , that heal’st with blood The Earth earth when it is sick , and cur’st the world O’ th’ pleurisy of people , I do take Thy signs auspiciously , and in thy name To my design march boldly . — Let us go .",
+      "scrollMode": "auto",
+      "lineIndex": 16
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 17
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "Enter Palamon and his Knights , with the former observance .",
+      "scrollMode": "auto",
+      "lineIndex": 18
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "Here they go to Venus’s altar , fall on their faces before it , and then kneel .",
+      "scrollMode": "auto",
+      "lineIndex": 19
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "Here music is heard ; doves are seen to flutter . They fall again upon their faces , then on their knees .",
+      "scrollMode": "auto",
+      "lineIndex": 20
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "They rise and bow .",
+      "scrollMode": "auto",
+      "lineIndex": 21
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ldg",
+      "lineText": "They rise and bow . Time comes on .",
+      "scrollMode": "auto",
+      "lineIndex": 22
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 23
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "Still music of recorders . Enter Emilia in white , her hair about her shoulders , wearing a wheaten wreath ; one in white holding up her train , her hair stuck with flowers ; one before her carrying a silver hind , in which is conveyed incense and sweet odors , which being set upon the altar of Diana , her maids standing aloof , she sets fire to it . Then they curtsy and kneel .",
+      "scrollMode": "auto",
+      "lineIndex": 24
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "Here the hind vanishes under the altar , and in the place ascends a rose tree , having one rose upon it .",
+      "scrollMode": "auto",
+      "lineIndex": 25
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "Here is heard a sudden twang of instruments , and the rose falls from the tree .",
+      "scrollMode": "auto",
+      "lineIndex": 26
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lfg",
+      "lineText": "Here is heard a sudden twang of instruments , and the rose falls from the tree . The flower is fall’n , the tree descends . O mistress , Thou here dischargest me . I shall be gathered ; I think so , but I know not thine own will . Unclasp thy mystery ! — I hope she’s pleased ; Her signs were gracious .",
+      "scrollMode": "auto",
+      "lineIndex": 27
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "They curtsy and exit .",
+      "scrollMode": "auto",
+      "lineIndex": 28
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "Enter Doctor , Jailer , and Wooer in the habit of Palamon .",
+      "scrollMode": "auto",
+      "lineIndex": 29
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lg0",
+      "lineText": "Has this advice I told you done any good upon her ?",
+      "scrollMode": "auto",
+      "lineIndex": 30
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lgg",
+      "lineText": "O , very much . The maids that kept her company Have half-persuaded her that I am Palamon ; Within this half-hour she came smiling to me , ACT 5. SC. 2 And asked me what I would eat , and when I would kiss her . I told her Presently , and kissed her twice .",
+      "scrollMode": "auto",
+      "lineIndex": 31
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lg0",
+      "lineText": "’Twas well done ; twenty times had been far better , For there the cure lies mainly .",
+      "scrollMode": "auto",
+      "lineIndex": 32
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lgg",
+      "lineText": "Then she told me She would watch with me tonight , for well she knew What hour my fit would take me .",
+      "scrollMode": "auto",
+      "lineIndex": 33
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lg0",
+      "lineText": "Let her do so , And when your fit comes , fit her home , And presently .",
+      "scrollMode": "auto",
+      "lineIndex": 34
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lgg",
+      "lineText": "She would have me sing .",
+      "scrollMode": "auto",
+      "lineIndex": 35
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lg0",
+      "lineText": "You did so ?",
+      "scrollMode": "auto",
+      "lineIndex": 36
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lgg",
+      "lineText": "No .",
+      "scrollMode": "auto",
+      "lineIndex": 37
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lg0",
+      "lineText": "’Twas very ill done , then . You should observe her ev’ry way .",
+      "scrollMode": "auto",
+      "lineIndex": 38
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lgg",
+      "lineText": "Alas , I have no voice , sir , to confirm her that way .",
+      "scrollMode": "auto",
+      "lineIndex": 39
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lg0",
+      "lineText": "That’s all one , if you make a noise . If she entreat again , do anything . Lie with her , if she ask you .",
+      "scrollMode": "auto",
+      "lineIndex": 40
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lh0",
+      "lineText": "Ho there , doctor !",
+      "scrollMode": "auto",
+      "lineIndex": 41
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lg0",
+      "lineText": "Yes , in the way of cure .",
+      "scrollMode": "auto",
+      "lineIndex": 42
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lh0",
+      "lineText": "But first , by your leave , I’ th’ way of honesty .",
+      "scrollMode": "auto",
+      "lineIndex": 43
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lg0",
+      "lineText": "That’s but a niceness . Ne’er cast your child away for honesty . Cure her first this way ; then if she will be honest , She has the path before her .",
+      "scrollMode": "auto",
+      "lineIndex": 44
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lh0",
+      "lineText": "Thank you , doctor .",
+      "scrollMode": "auto",
+      "lineIndex": 45
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lg0",
+      "lineText": "Pray bring her in And let’s see how she is .",
+      "scrollMode": "auto",
+      "lineIndex": 46
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lh0",
+      "lineText": "I will , and tell her Her Palamon stays for her . But , doctor , Methinks you are i’ th’ wrong still .",
+      "scrollMode": "auto",
+      "lineIndex": 47
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "Jailer exits .",
+      "scrollMode": "auto",
+      "lineIndex": 48
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lg0",
+      "lineText": "Go , go . You fathers are fine fools . Her honesty ? And we should give her physic till we find that !",
+      "scrollMode": "auto",
+      "lineIndex": 49
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lgg",
+      "lineText": "Why , do you think she is not honest , sir ?",
+      "scrollMode": "auto",
+      "lineIndex": 50
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lg0",
+      "lineText": "How old is she ?",
+      "scrollMode": "auto",
+      "lineIndex": 51
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lgg",
+      "lineText": "She’s eighteen .",
+      "scrollMode": "auto",
+      "lineIndex": 52
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lg0",
+      "lineText": "She may be . But that’s all one ; ’tis nothing to our purpose . Whate’er her father says , if you perceive Her mood inclining that way that I spoke of , Videlicet , the way of flesh — you have me ?",
+      "scrollMode": "auto",
+      "lineIndex": 53
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lgg",
+      "lineText": "Yes , very well , sir .",
+      "scrollMode": "auto",
+      "lineIndex": 54
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lg0",
+      "lineText": "Please her appetite , And do it home ; it cures her , ipso facto , The melancholy humor that infects her .",
+      "scrollMode": "auto",
+      "lineIndex": 55
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lgg",
+      "lineText": "I am of your mind , doctor .",
+      "scrollMode": "auto",
+      "lineIndex": 56
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "Enter Jailer , Daughter , and Maid .",
+      "scrollMode": "auto",
+      "lineIndex": 57
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lh0",
+      "lineText": "Enter Jailer , Daughter , and Maid . She comes ; pray humor her .",
+      "scrollMode": "auto",
+      "lineIndex": 58
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "Wooer and Doctor stand aside .",
+      "scrollMode": "auto",
+      "lineIndex": 59
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": ", to Daughter",
+      "scrollMode": "auto",
+      "lineIndex": 60
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lh0",
+      "lineText": "Come , your love Palamon stays for you , child , And has done this long hour , to visit you .",
+      "scrollMode": "auto",
+      "lineIndex": 61
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lhg",
+      "lineText": "I thank him for his gentle patience . ACT 5. SC. 2 He’s a kind gentleman , and I am much bound to him . Did you ne’er see the horse he gave me ?",
+      "scrollMode": "auto",
+      "lineIndex": 62
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lh0",
+      "lineText": "Yes .",
+      "scrollMode": "auto",
+      "lineIndex": 63
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lhg",
+      "lineText": "How do you like him ?",
+      "scrollMode": "auto",
+      "lineIndex": 64
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lh0",
+      "lineText": "He’s a very fair one .",
+      "scrollMode": "auto",
+      "lineIndex": 65
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lhg",
+      "lineText": "You never saw him dance ?",
+      "scrollMode": "auto",
+      "lineIndex": 66
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lh0",
+      "lineText": "No .",
+      "scrollMode": "auto",
+      "lineIndex": 67
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lhg",
+      "lineText": "I have , often . He dances very finely , very comely , And for a jig , come cut and long tail to him , He turns you like a top .",
+      "scrollMode": "auto",
+      "lineIndex": 68
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lh0",
+      "lineText": "That’s fine indeed .",
+      "scrollMode": "auto",
+      "lineIndex": 69
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lhg",
+      "lineText": "He’ll dance the morris twenty mile an hour , And that will founder the best hobbyhorse , If I have any skill , in all the parish , And gallops to the tune of Light o’ love . What think you of this horse ?",
+      "scrollMode": "auto",
+      "lineIndex": 70
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lh0",
+      "lineText": "Having these virtues , I think he might be brought to play at tennis .",
+      "scrollMode": "auto",
+      "lineIndex": 71
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lhg",
+      "lineText": "Alas , that’s nothing .",
+      "scrollMode": "auto",
+      "lineIndex": 72
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lh0",
+      "lineText": "Can he write and read too ?",
+      "scrollMode": "auto",
+      "lineIndex": 73
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lhg",
+      "lineText": "A very fair hand , and casts himself th’ accounts Of all his hay and provender . That hostler Must rise betime that cozens him . You know The chestnut mare the Duke has ?",
+      "scrollMode": "auto",
+      "lineIndex": 74
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lh0",
+      "lineText": "Very well .",
+      "scrollMode": "auto",
+      "lineIndex": 75
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lhg",
+      "lineText": "She is horribly in love with him , poor beast , But he is like his master , coy and scornful .",
+      "scrollMode": "auto",
+      "lineIndex": 76
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lh0",
+      "lineText": "What dowry has she ?",
+      "scrollMode": "auto",
+      "lineIndex": 77
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lhg",
+      "lineText": "Some two hundred bottles , And twenty strike of oats , but he’ll ne’er have her . He lisps in ’s neighing able to entice A miller’s mare . He’ll be the death of her .",
+      "scrollMode": "auto",
+      "lineIndex": 78
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 79
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lg0",
+      "lineText": "What stuff she utters !",
+      "scrollMode": "auto",
+      "lineIndex": 80
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "Wooer and Doctor come forward .",
+      "scrollMode": "auto",
+      "lineIndex": 81
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lh0",
+      "lineText": "Make curtsy ; here your love comes .",
+      "scrollMode": "auto",
+      "lineIndex": 82
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "Daughter curtsies .",
+      "scrollMode": "auto",
+      "lineIndex": 83
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lhg",
+      "lineText": "Daughter curtsies . That’s a fine maid ; there’s a curtsy !",
+      "scrollMode": "auto",
+      "lineIndex": 84
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lhg",
+      "lineText": "Yours to command i’ th’ way of honesty . — How far is ’t now to th’ end o’ th’ world , my masters ?",
+      "scrollMode": "auto",
+      "lineIndex": 85
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lg0",
+      "lineText": "Why , a day’s journey , wench .",
+      "scrollMode": "auto",
+      "lineIndex": 86
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": ", to Wooer",
+      "scrollMode": "auto",
+      "lineIndex": 87
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lhg",
+      "lineText": "Will you go with me ?",
+      "scrollMode": "auto",
+      "lineIndex": 88
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lgg",
+      "lineText": "What shall we do there , wench ?",
+      "scrollMode": "auto",
+      "lineIndex": 89
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lhg",
+      "lineText": "Why , play at stool-ball . What is there else to do ?",
+      "scrollMode": "auto",
+      "lineIndex": 90
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lgg",
+      "lineText": "I am content , If we shall keep our wedding there .",
+      "scrollMode": "auto",
+      "lineIndex": 91
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lhg",
+      "lineText": "’Tis true , For there , I will assure you , we shall find Some blind priest for the purpose , that will venture To marry us ; for here they are nice and foolish . Besides , my father must be hanged tomorrow , And that would be a blot i’ th’ business . Are not you Palamon ?",
+      "scrollMode": "auto",
+      "lineIndex": 92
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lgg",
+      "lineText": "Do not you know me ?",
+      "scrollMode": "auto",
+      "lineIndex": 93
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lhg",
+      "lineText": "Yes , but you care not for me ; I have nothing But this poor petticoat and two coarse smocks .",
+      "scrollMode": "auto",
+      "lineIndex": 94
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lgg",
+      "lineText": "That’s all one ; I will have you .",
+      "scrollMode": "auto",
+      "lineIndex": 95
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lhg",
+      "lineText": "Will you surely ?",
+      "scrollMode": "auto",
+      "lineIndex": 96
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": ", taking her hand",
+      "scrollMode": "auto",
+      "lineIndex": 97
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lgg",
+      "lineText": "Yes , by this fair hand , will I .",
+      "scrollMode": "auto",
+      "lineIndex": 98
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lhg",
+      "lineText": "We’ll to bed then .",
+      "scrollMode": "auto",
+      "lineIndex": 99
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lgg",
+      "lineText": "E’en when you will .",
+      "scrollMode": "auto",
+      "lineIndex": 100
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "He kisses her .",
+      "scrollMode": "auto",
+      "lineIndex": 101
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": ", wiping her face",
+      "scrollMode": "auto",
+      "lineIndex": 102
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lhg",
+      "lineText": "O , sir , you would fain be nibbling .",
+      "scrollMode": "auto",
+      "lineIndex": 103
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lgg",
+      "lineText": "Why do you rub my kiss off ?",
+      "scrollMode": "auto",
+      "lineIndex": 104
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lhg",
+      "lineText": "’Tis a sweet one , And will perfume me finely against the wedding . Is not this your cousin Arcite ?",
+      "scrollMode": "auto",
+      "lineIndex": 105
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "She indicates Doctor .",
+      "scrollMode": "auto",
+      "lineIndex": 106
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lg0",
+      "lineText": "Yes , sweetheart , And I am glad my cousin Palamon Has made so fair a choice .",
+      "scrollMode": "auto",
+      "lineIndex": 107
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lhg",
+      "lineText": "Do you think he’ll have me ?",
+      "scrollMode": "auto",
+      "lineIndex": 108
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lg0",
+      "lineText": "Yes , without doubt .",
+      "scrollMode": "auto",
+      "lineIndex": 109
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": ", to Jailer",
+      "scrollMode": "auto",
+      "lineIndex": 110
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lhg",
+      "lineText": "Do you think so too ?",
+      "scrollMode": "auto",
+      "lineIndex": 111
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lh0",
+      "lineText": "Yes .",
+      "scrollMode": "auto",
+      "lineIndex": 112
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "( To Doctor . )",
+      "scrollMode": "auto",
+      "lineIndex": 113
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lhg",
+      "lineText": "( To Doctor . ) Lord , how you’re grown ! My Palamon , I hope , will grow too , finely , Now he’s at liberty . Alas , poor chicken , He was kept down with hard meat and ill lodging , But I’ll kiss him up again .",
+      "scrollMode": "auto",
+      "lineIndex": 114
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "Enter a Messenger .",
+      "scrollMode": "auto",
+      "lineIndex": 115
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lig",
+      "lineText": "What do you here ? You’ll lose the noblest sight That e’er was seen .",
+      "scrollMode": "auto",
+      "lineIndex": 116
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lh0",
+      "lineText": "Are they i’ th’ field ?",
+      "scrollMode": "auto",
+      "lineIndex": 117
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lig",
+      "lineText": "They are . You bear a charge there too .",
+      "scrollMode": "auto",
+      "lineIndex": 118
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lh0",
+      "lineText": "I’ll away straight . — I must e’en leave you here .",
+      "scrollMode": "auto",
+      "lineIndex": 119
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lg0",
+      "lineText": "Nay , we’ll go with you . I will not lose the sight .",
+      "scrollMode": "auto",
+      "lineIndex": 120
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": ", aside to Doctor",
+      "scrollMode": "auto",
+      "lineIndex": 121
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lh0",
+      "lineText": "How did you like her ?",
+      "scrollMode": "auto",
+      "lineIndex": 122
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "Jailer and Messenger exit .",
+      "scrollMode": "auto",
+      "lineIndex": 123
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "( To Wooer . )",
+      "scrollMode": "auto",
+      "lineIndex": 124
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lh0",
+      "lineText": "( To Wooer . ) You must not from her , But still preserve her in this way .",
+      "scrollMode": "auto",
+      "lineIndex": 125
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lgg",
+      "lineText": "I will .",
+      "scrollMode": "auto",
+      "lineIndex": 126
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lg0",
+      "lineText": "Let’s get her in .",
+      "scrollMode": "auto",
+      "lineIndex": 127
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lgg",
+      "lineText": "Come , sweet , we’ll go to dinner And then we’ll play at cards .",
+      "scrollMode": "auto",
+      "lineIndex": 128
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lhg",
+      "lineText": "And shall we kiss too ?",
+      "scrollMode": "auto",
+      "lineIndex": 129
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lgg",
+      "lineText": "A hundred times .",
+      "scrollMode": "auto",
+      "lineIndex": 130
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lhg",
+      "lineText": "And twenty .",
+      "scrollMode": "auto",
+      "lineIndex": 131
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lgg",
+      "lineText": "Ay , and twenty .",
+      "scrollMode": "auto",
+      "lineIndex": 132
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lhg",
+      "lineText": "And then we’ll sleep together .",
+      "scrollMode": "auto",
+      "lineIndex": 133
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": ", to Wooer",
+      "scrollMode": "auto",
+      "lineIndex": 134
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lg0",
+      "lineText": "Take her offer .",
+      "scrollMode": "auto",
+      "lineIndex": 135
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lgg",
+      "lineText": "Yes , marry , will we .",
+      "scrollMode": "auto",
+      "lineIndex": 136
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lhg",
+      "lineText": "But you shall not hurt me .",
+      "scrollMode": "auto",
+      "lineIndex": 137
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lgg",
+      "lineText": "I will not , sweet .",
+      "scrollMode": "auto",
+      "lineIndex": 138
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lhg",
+      "lineText": "If you do , love , I’ll cry .",
+      "scrollMode": "auto",
+      "lineIndex": 139
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 140
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "Flourish . Enter Theseus , Hippolyta , Emilia , Pirithous , and some Attendants .",
+      "scrollMode": "auto",
+      "lineIndex": 141
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lfg",
+      "lineText": "I’ll no step further .",
+      "scrollMode": "auto",
+      "lineIndex": 142
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ld0",
+      "lineText": "Will you lose this sight ?",
+      "scrollMode": "auto",
+      "lineIndex": 143
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lfg",
+      "lineText": "I had rather see a wren hawk at a fly Than this decision ; ev’ry blow that falls Threats a brave life ; each stroke laments The place whereon it falls , and sounds more like A bell than blade . I will stay here . It is enough my hearing shall be punished With what shall happen , ’gainst the which there is No deafing but to hear ; not taint mine eye With dread sights it may shun .",
+      "scrollMode": "auto",
+      "lineIndex": 144
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": ", to Theseus",
+      "scrollMode": "auto",
+      "lineIndex": 145
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ld0",
+      "lineText": "Sir , my good lord , Your sister will no further .",
+      "scrollMode": "auto",
+      "lineIndex": 146
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lcg",
+      "lineText": "O , she must . She shall see deeds of honor in their kind , Which sometime show well , penciled . Nature now Shall make and act the story , the belief Both sealed with eye and ear . — You must be present ; You are the victor’s meed , the price and garland To crown the question’s title .",
+      "scrollMode": "auto",
+      "lineIndex": 147
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lfg",
+      "lineText": "Pardon me . If I were there , I’d wink .",
+      "scrollMode": "auto",
+      "lineIndex": 148
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lcg",
+      "lineText": "You must be there ; This trial is as ’twere i’ th’ night , and you The only star to shine .",
+      "scrollMode": "auto",
+      "lineIndex": 149
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lfg",
+      "lineText": "I am extinct ; There is but envy in that light which shows The one the other . Darkness , which ever was The dam of horror , who does stand accursed Of many mortal millions , may even now , ACT 5. SC. 3 By casting her black mantle over both , That neither could find other , get herself Some part of a good name , and many a murder Set off whereto she’s guilty .",
+      "scrollMode": "auto",
+      "lineIndex": 150
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lj0",
+      "lineText": "You must go .",
+      "scrollMode": "auto",
+      "lineIndex": 151
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lfg",
+      "lineText": "In faith , I will not .",
+      "scrollMode": "auto",
+      "lineIndex": 152
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lcg",
+      "lineText": "Why , the knights must kindle Their valor at your eye . Know , of this war You are the treasure , and must needs be by To give the service pay .",
+      "scrollMode": "auto",
+      "lineIndex": 153
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lfg",
+      "lineText": "Sir , pardon me . The title of a kingdom may be tried Out of itself .",
+      "scrollMode": "auto",
+      "lineIndex": 154
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lcg",
+      "lineText": "Well , well , then ; at your pleasure . Those that remain with you could wish their office To any of their enemies .",
+      "scrollMode": "auto",
+      "lineIndex": 155
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lj0",
+      "lineText": "Farewell , sister . I am like to know your husband ’fore yourself By some small start of time . He whom the gods Do of the two know best , I pray them he Be made your lot .",
+      "scrollMode": "auto",
+      "lineIndex": 156
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "Theseus , Hippolyta , Pirithous , and others , exit .",
+      "scrollMode": "auto",
+      "lineIndex": 157
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "Emilia remains , comparing again the pictures of Arcite and Palamon .",
+      "scrollMode": "auto",
+      "lineIndex": 158
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "Cornets . Trumpets sound as to a charge .",
+      "scrollMode": "auto",
+      "lineIndex": 159
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "Cornets . A great cry and noise within crying À Palamon !",
+      "scrollMode": "auto",
+      "lineIndex": 160
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "Enter Servant .",
+      "scrollMode": "auto",
+      "lineIndex": 161
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ljg",
+      "lineText": "Enter Servant . What is the chance ?",
+      "scrollMode": "auto",
+      "lineIndex": 162
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ljg",
+      "lineText": "The cry’s À Palamon .",
+      "scrollMode": "auto",
+      "lineIndex": 163
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lfg",
+      "lineText": "Then he has won . ’Twas ever likely . He looked all grace and success , and he is Doubtless the prim’st of men . I prithee run And tell me how it goes .",
+      "scrollMode": "auto",
+      "lineIndex": 164
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "Shout and cornets , crying À Palamon !",
+      "scrollMode": "auto",
+      "lineIndex": 165
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ljg",
+      "lineText": "Still Palamon .",
+      "scrollMode": "auto",
+      "lineIndex": 166
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "Servant exits .",
+      "scrollMode": "auto",
+      "lineIndex": 167
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "Addressing Arcite’s picture .",
+      "scrollMode": "auto",
+      "lineIndex": 168
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "Another cry , and shout within , and cornets .",
+      "scrollMode": "auto",
+      "lineIndex": 169
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ljg",
+      "lineText": "Another cry , and shout within , and cornets . This burst of clamor Is sure th’ end o’ th’ combat .",
+      "scrollMode": "auto",
+      "lineIndex": 170
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "Enter Servant .",
+      "scrollMode": "auto",
+      "lineIndex": 171
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ljg",
+      "lineText": "They said that Palamon had Arcite’s body Within an inch o’ th’ pyramid , that the cry Was general À Palamon . But anon , Th’ assistants made a brave redemption , and The two bold titlers at this instant are Hand to hand at it .",
+      "scrollMode": "auto",
+      "lineIndex": 172
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "Cornets . Cry within , Arcite , Arcite .",
+      "scrollMode": "auto",
+      "lineIndex": 173
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lfg",
+      "lineText": "Cornets . Cry within , Arcite , Arcite . More exulting ? Palamon still ?",
+      "scrollMode": "auto",
+      "lineIndex": 174
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ljg",
+      "lineText": "Nay , now the sound is Arcite .",
+      "scrollMode": "auto",
+      "lineIndex": 175
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lfg",
+      "lineText": "I prithee lay attention to the cry ; Set both thine ears to th’ business .",
+      "scrollMode": "auto",
+      "lineIndex": 176
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "Cornets . A great shout , and cry Arcite , victory !",
+      "scrollMode": "auto",
+      "lineIndex": 177
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ljg",
+      "lineText": "The cry is Arcite And Victory ! Hark , Arcite , victory ! The combat’s consummation is proclaimed By the wind instruments .",
+      "scrollMode": "auto",
+      "lineIndex": 178
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lfg",
+      "lineText": "Half-sights saw That Arcite was no babe . God’s lid , his richness And costliness of spirit looked through him ; it could ACT 5. SC. 3 No more be hid in him than fire in flax , Than humble banks can go to law with waters That drift-winds force to raging . I did think Good Palamon would miscarry , yet I knew not Why I did think so . Our reasons are not prophets When oft our fancies are . They are coming off . Alas , poor Palamon !",
+      "scrollMode": "auto",
+      "lineIndex": 179
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "Cornets . Enter Theseus , Hippolyta , Pirithous , Arcite as victor , and Attendants and others .",
+      "scrollMode": "auto",
+      "lineIndex": 180
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lcg",
+      "lineText": "Lo , where our sister is in expectation , Yet quaking and unsettled . — Fairest Emily , The gods by their divine arbitrament Have given you this knight ; he is a good one As ever struck at head . — Give me your hands . Receive you her , you him . Be plighted with A love that grows as you decay .",
+      "scrollMode": "auto",
+      "lineIndex": 181
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79le0",
+      "lineText": "Emily , To buy you I have lost what’s dearest to me Save what is bought , and yet I purchase cheaply , As I do rate your value .",
+      "scrollMode": "auto",
+      "lineIndex": 182
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lcg",
+      "lineText": "O loved sister , He speaks now of as brave a knight as e’er Did spur a noble steed . Surely the gods Would have him die a bachelor , lest his race Should show i’ th’ world too godlike . His behavior So charmed me that methought Alcides was To him a sow of lead . If I could praise Each part of him to th’ all I have spoke , your Arcite Did not lose by ’t , for he that was thus good Encountered yet his better . I have heard Two emulous Philomels beat the ear o’ th’ night With their contentious throats , now one the higher , Anon the other , then again the first , And by-and-by out-breasted , that the sense ACT 5. SC. 4 Could not be judge between ’em . So it fared Good space between these kinsmen , till heavens did Make hardly one the winner . — Wear the garland With joy that you have won . — For the subdued , Give them our present justice , since I know Their lives but pinch ’em . Let it here be done . The scene’s not for our seeing . Go we hence Right joyful , with some sorrow . — Arm your prize ; I know you will not lose her . — Hippolyta , I see one eye of yours conceives a tear , The which it will deliver .",
+      "scrollMode": "auto",
+      "lineIndex": 183
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lfg",
+      "lineText": "Is this winning ? O all you heavenly powers , where is your mercy ? But that your wills have said it must be so , And charge me live to comfort this unfriended , This miserable prince , that cuts away A life more worthy from him than all women , I should and would die too .",
+      "scrollMode": "auto",
+      "lineIndex": 184
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lj0",
+      "lineText": "Infinite pity That four such eyes should be so fixed on one That two must needs be blind for ’t .",
+      "scrollMode": "auto",
+      "lineIndex": 185
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lcg",
+      "lineText": "So it is .",
+      "scrollMode": "auto",
+      "lineIndex": 186
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "Flourish . They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 187
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "Enter Guard with Palamon and his Knights , pinioned ; Jailer , Executioner and Others , carrying a block and an ax .",
+      "scrollMode": "auto",
+      "lineIndex": 188
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ldg",
+      "lineText": "There’s many a man alive that hath outlived The love o’ th’ people ; yea , i’ th’ selfsame state Stands many a father with his child . Some comfort We have by so considering . We expire , And not without men’s pity . To live still , ACT 5. SC. 4 Have their good wishes ; we prevent The loathsome misery of age , beguile The gout and rheum that in lag hours attend For gray approachers ; we come towards the gods Young and unwappered , not halting under crimes Many and stale . That sure shall please the gods Sooner than such , to give us nectar with ’em , For we are more clear spirits . My dear kinsmen , Whose lives for this poor comfort are laid down , You have sold ’em too too cheap .",
+      "scrollMode": "auto",
+      "lineIndex": 189
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lk0",
+      "lineText": "What ending could be Of more content ? O’er us the victors have Fortune , whose title is as momentary As to us death is certain . A grain of honor They not o’er-weigh us .",
+      "scrollMode": "auto",
+      "lineIndex": 190
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lkg",
+      "lineText": "Let us bid farewell ; And with our patience anger tott’ring Fortune , Who at her certain’st reels .",
+      "scrollMode": "auto",
+      "lineIndex": 191
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ll0",
+      "lineText": "Come , who begins ?",
+      "scrollMode": "auto",
+      "lineIndex": 192
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "To Jailer .",
+      "scrollMode": "auto",
+      "lineIndex": 193
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ldg",
+      "lineText": "To Jailer . Ah ha , my friend , my friend , Your gentle daughter gave me freedom once ; You’ll see ’t done now forever . Pray , how does she ? I heard she was not well ; her kind of ill Gave me some sorrow .",
+      "scrollMode": "auto",
+      "lineIndex": 194
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lh0",
+      "lineText": "Sir , she’s well restored , And to be married shortly .",
+      "scrollMode": "auto",
+      "lineIndex": 195
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ldg",
+      "lineText": "By my short life , I am most glad on ’t . ’Tis the latest thing I shall be glad of ; prithee , tell her so . Commend me to her , and to piece her portion , Tender her this .",
+      "scrollMode": "auto",
+      "lineIndex": 196
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "He gives his purse to Jailer .",
+      "scrollMode": "auto",
+      "lineIndex": 197
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lk0",
+      "lineText": "Nay , let’s be offerers all .",
+      "scrollMode": "auto",
+      "lineIndex": 198
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lkg",
+      "lineText": "Is it a maid ?",
+      "scrollMode": "auto",
+      "lineIndex": 199
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ldg",
+      "lineText": "Verily , I think so . A right good creature , more to me deserving Than I can quit or speak of .",
+      "scrollMode": "auto",
+      "lineIndex": 200
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lf0",
+      "lineText": "Commend us to her .",
+      "scrollMode": "auto",
+      "lineIndex": 201
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "They give their purses .",
+      "scrollMode": "auto",
+      "lineIndex": 202
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lh0",
+      "lineText": "The gods requite you all and make her thankful !",
+      "scrollMode": "auto",
+      "lineIndex": 203
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ldg",
+      "lineText": "Adieu , and let my life be now as short As my leave-taking .",
+      "scrollMode": "auto",
+      "lineIndex": 204
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "Lays his head on the block .",
+      "scrollMode": "auto",
+      "lineIndex": 205
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lk0",
+      "lineText": "Lead , courageous cousin .",
+      "scrollMode": "auto",
+      "lineIndex": 206
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lkg",
+      "lineText": "We’ll follow cheerfully .",
+      "scrollMode": "auto",
+      "lineIndex": 207
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "A great noise within crying Run ! Save ! Hold !",
+      "scrollMode": "auto",
+      "lineIndex": 208
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "Enter in haste a Messenger .",
+      "scrollMode": "auto",
+      "lineIndex": 209
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79llg",
+      "lineText": "Hold , hold ! O , hold , hold , hold !",
+      "scrollMode": "auto",
+      "lineIndex": 210
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "Enter Pirithous in haste .",
+      "scrollMode": "auto",
+      "lineIndex": 211
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ld0",
+      "lineText": "Hold , ho ! It is a cursèd haste you made If you have done so quickly ! — Noble Palamon , The gods will show their glory in a life That thou art yet to lead .",
+      "scrollMode": "auto",
+      "lineIndex": 212
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ldg",
+      "lineText": "Can that be , When Venus , I have said , is false ? How do things fare ?",
+      "scrollMode": "auto",
+      "lineIndex": 213
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ld0",
+      "lineText": "Arise , great sir , and give the tidings ear That are most dearly sweet and bitter .",
+      "scrollMode": "auto",
+      "lineIndex": 214
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": ", rising",
+      "scrollMode": "auto",
+      "lineIndex": 215
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ldg",
+      "lineText": "What Hath waked us from our dream ?",
+      "scrollMode": "auto",
+      "lineIndex": 216
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ld0",
+      "lineText": "List then : your cousin , ACT 5. SC. 4 Mounted upon a steed that Emily Did first bestow on him — a black one , owing Not a hair worth of white , which some will say Weakens his price , and many will not buy His goodness with this note , which superstition Here finds allowance — on this horse is Arcite Trotting the stones of Athens — which the calkins Did rather tell than trample , for the horse Would make his length a mile , if ’t pleased his rider To put pride in him . As he thus went counting The flinty pavement , dancing , as ’twere , to th’ music His own hooves made — for , as they say , from iron Came music’s origin — what envious flint , Cold as old Saturn , and like him possessed With fire malevolent , darted a spark , Or what fierce sulphur else , to this end made , I comment not ; the hot horse , hot as fire , Took toy at this and fell to what disorder His power could give his will ; bounds , comes on end , Forgets school-doing , being therein trained And of kind manage . Pig-like he whines At the sharp rowel , which he frets at rather Than any jot obeys ; seeks all foul means Of boist’rous and rough jadery to disseat His lord that kept it bravely . When naught served , When neither curb would crack , girth break , nor diff’ring plunges Disroot his rider whence he grew , but that He kept him ’tween his legs , on his hind hoofs On end he stands That Arcite’s legs , being higher than his head , Seemed with strange art to hang . His victor’s wreath Even then fell off his head , and presently Backward the jade comes o’er , and his full poise Becomes the rider’s load . Yet is he living , But such a vessel ’tis that floats but for ACT 5. SC. 4 The surge that next approaches . He much desires To have some speech with you . Lo , he appears .",
+      "scrollMode": "auto",
+      "lineIndex": 217
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "Enter Theseus , Hippolyta , Emilia , and Arcite carried in a chair .",
+      "scrollMode": "auto",
+      "lineIndex": 218
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ldg",
+      "lineText": "O , miserable end of our alliance ! The gods are mighty , Arcite . If thy heart , Thy worthy , manly heart , be yet unbroken , Give me thy last words . I am Palamon , One that yet loves thee dying .",
+      "scrollMode": "auto",
+      "lineIndex": 219
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "She kisses him .",
+      "scrollMode": "auto",
+      "lineIndex": 220
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lfg",
+      "lineText": "She kisses him . ’Tis done . Take her . I die .",
+      "scrollMode": "auto",
+      "lineIndex": 221
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "He dies .",
+      "scrollMode": "auto",
+      "lineIndex": 222
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ldg",
+      "lineText": "Thy brave soul seek Elysium !",
+      "scrollMode": "auto",
+      "lineIndex": 223
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lfg",
+      "lineText": "I’ll close thine eyes , prince . Blessed souls be with thee ! Thou art a right good man , and while I live , This day I give to tears .",
+      "scrollMode": "auto",
+      "lineIndex": 224
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ldg",
+      "lineText": "And I to honor .",
+      "scrollMode": "auto",
+      "lineIndex": 225
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lcg",
+      "lineText": "In this place first you fought ; e’en very here I sundered you . Acknowledge to the gods Our thanks that you are living . His part is played , and though it were too short , He did it well . Your day is lengthened , and The blissful dew of heaven does arrouse you . The powerful Venus well hath graced her altar , And given you your love . Our master , Mars , Hath vouched his oracle , and to Arcite gave ACT 5. SC. 4 The grace of the contention . So the deities Have showed due justice . — Bear this hence .",
+      "scrollMode": "auto",
+      "lineIndex": 226
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ldg",
+      "lineText": "O cousin , That we should things desire which do cost us The loss of our desire , that naught could buy Dear love but loss of dear love .",
+      "scrollMode": "auto",
+      "lineIndex": 227
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "Arcite’s body is carried out .",
+      "scrollMode": "auto",
+      "lineIndex": 228
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lcg",
+      "lineText": "Never Fortune Did play a subtler game . The conquered triumphs ; The victor has the loss ; yet in the passage The gods have been most equal . — Palamon , Your kinsman hath confessed the right o’ th’ lady Did lie in you , for you first saw her and Even then proclaimed your fancy . He restored her As your stol’n jewel and desired your spirit To send him hence forgiven . The gods my justice Take from my hand and they themselves become The executioners . Lead your lady off , And call your lovers from the stage of death , Whom I adopt my friends . A day or two Let us look sadly , and give grace unto The funeral of Arcite , in whose end The visages of bridegrooms we’ll put on And smile with Palamon — for whom an hour , But one hour since , I was as dearly sorry As glad of Arcite , and am now as glad As for him sorry . O you heavenly charmers , What things you make of us ! For what we lack We laugh , for what we have are sorry , still Are children in some kind . Let us be thankful For that which is , and with you leave dispute That are above our question . Let’s go off And bear us like the time .",
+      "scrollMode": "auto",
+      "lineIndex": 229
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "Flourish . They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 230
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "Enter Epilogue .",
+      "scrollMode": "auto",
+      "lineIndex": 231
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lm0",
+      "lineText": "I would now ask you how you like the play , But , as it is with schoolboys , cannot say . I am cruel fearful ! Pray yet , stay a while , And let me look upon you . No man smile ? Then it goes hard , I see . He that has Loved a young handsome wench , then , show his face — ’Tis strange if none be here — and , if he will , Against his conscience let him hiss and kill Our market . ’Tis in vain , I see , to stay you . Have at the worst can come , then ! Now what say you ? And yet mistake me not : I am not bold . We have no such cause . If the tale we have told — For ’tis no other — any way content you — For to that honest purpose it was meant you — We have our end ; and you shall have ere long , I dare say , many a better , to prolong Your old loves to us . We , and all our might , Rest at your service . Gentlemen , good night .",
+      "scrollMode": "auto",
+      "lineIndex": 232
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79lc0",
+      "lineText": "Flourish . He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 233
+    }
+  ],
+  "isPublic": true
+}

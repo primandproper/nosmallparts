@@ -1,0 +1,1036 @@
+{
+  "title": "Romeo and Juliet (Act 4)",
+  "description": "Folger Shakespeare Library edition",
+  "author": "William Shakespeare",
+  "castMembers": [
+    {
+      "id": "d68m11sn9qd8d2h79gig",
+      "name": "Narrator",
+      "sortOrder": 0
+    },
+    {
+      "id": "d68m11sn9qd8d2h79gj0",
+      "name": "Friar Lawrence",
+      "sortOrder": 1
+    },
+    {
+      "id": "d68m11sn9qd8d2h79gjg",
+      "name": "Paris",
+      "description": "the Prince’s kinsman and Juliet’s suitor",
+      "sortOrder": 2
+    },
+    {
+      "id": "d68m11sn9qd8d2h79gk0",
+      "name": "Juliet",
+      "sortOrder": 3
+    },
+    {
+      "id": "d68m11sn9qd8d2h79gkg",
+      "name": "Servingman",
+      "sortOrder": 4
+    },
+    {
+      "id": "d68m11sn9qd8d2h79gl0",
+      "name": "First Servingman",
+      "sortOrder": 5
+    },
+    {
+      "id": "d68m11sn9qd8d2h79glg",
+      "name": "Capulet",
+      "description": "her father",
+      "sortOrder": 6
+    },
+    {
+      "id": "d68m11sn9qd8d2h79gm0",
+      "name": "SERVANTS.CAPULET_Rom",
+      "sortOrder": 7
+    },
+    {
+      "id": "d68m11sn9qd8d2h79gmg",
+      "name": "Nurse",
+      "sortOrder": 8
+    },
+    {
+      "id": "d68m11sn9qd8d2h79gn0",
+      "name": "Lady Capulet",
+      "description": "her mother",
+      "sortOrder": 9
+    },
+    {
+      "id": "d68m11sn9qd8d2h79gng",
+      "name": "Second Servingman",
+      "sortOrder": 10
+    },
+    {
+      "id": "d68m11sn9qd8d2h79go0",
+      "name": "First Musician",
+      "sortOrder": 11
+    },
+    {
+      "id": "d68m11sn9qd8d2h79gog",
+      "name": "Peter",
+      "sortOrder": 12
+    },
+    {
+      "id": "d68m11sn9qd8d2h79gp0",
+      "name": "Second Musician",
+      "sortOrder": 13
+    },
+    {
+      "id": "d68m11sn9qd8d2h79gpg",
+      "name": "Third Musician",
+      "sortOrder": 14
+    }
+  ],
+  "lines": [
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gig",
+      "lineText": "Enter Friar Lawrence and County Paris .",
+      "scrollMode": "auto",
+      "lineIndex": 0
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gj0",
+      "lineText": "On Thursday , sir ? The time is very short .",
+      "scrollMode": "auto",
+      "lineIndex": 1
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gjg",
+      "lineText": "My father Capulet will have it so , And I am nothing slow to slack his haste .",
+      "scrollMode": "auto",
+      "lineIndex": 2
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gj0",
+      "lineText": "You say you do not know the lady’s mind ? Uneven is the course . I like it not .",
+      "scrollMode": "auto",
+      "lineIndex": 3
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gjg",
+      "lineText": "Immoderately she weeps for Tybalt’s death , And therefore have I little talk of love , For Venus smiles not in a house of tears . Now , sir , her father counts it dangerous That she do give her sorrow so much sway , And in his wisdom hastes our marriage To stop the inundation of her tears , Which , too much minded by herself alone , May be put from her by society . Now do you know the reason of this haste .",
+      "scrollMode": "auto",
+      "lineIndex": 4
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gig",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 5
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gj0",
+      "lineText": "I would I knew not why it should be slowed . — Look , sir , here comes the lady toward my cell .",
+      "scrollMode": "auto",
+      "lineIndex": 6
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gig",
+      "lineText": "Enter Juliet .",
+      "scrollMode": "auto",
+      "lineIndex": 7
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gjg",
+      "lineText": "Happily met , my lady and my wife .",
+      "scrollMode": "auto",
+      "lineIndex": 8
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gk0",
+      "lineText": "That may be , sir , when I may be a wife .",
+      "scrollMode": "auto",
+      "lineIndex": 9
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gjg",
+      "lineText": "That may be must be , love , on Thursday next .",
+      "scrollMode": "auto",
+      "lineIndex": 10
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gk0",
+      "lineText": "What must be shall be .",
+      "scrollMode": "auto",
+      "lineIndex": 11
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gj0",
+      "lineText": "That’s a certain text .",
+      "scrollMode": "auto",
+      "lineIndex": 12
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gjg",
+      "lineText": "Come you to make confession to this father ?",
+      "scrollMode": "auto",
+      "lineIndex": 13
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gk0",
+      "lineText": "To answer that , I should confess to you .",
+      "scrollMode": "auto",
+      "lineIndex": 14
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gjg",
+      "lineText": "Do not deny to him that you love me .",
+      "scrollMode": "auto",
+      "lineIndex": 15
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gk0",
+      "lineText": "I will confess to you that I love him .",
+      "scrollMode": "auto",
+      "lineIndex": 16
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gjg",
+      "lineText": "So will you , I am sure , that you love me .",
+      "scrollMode": "auto",
+      "lineIndex": 17
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gk0",
+      "lineText": "If I do so , it will be of more price Being spoke behind your back than to your face .",
+      "scrollMode": "auto",
+      "lineIndex": 18
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gjg",
+      "lineText": "Poor soul , thy face is much abused with tears .",
+      "scrollMode": "auto",
+      "lineIndex": 19
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gk0",
+      "lineText": "The tears have got small victory by that , For it was bad enough before their spite .",
+      "scrollMode": "auto",
+      "lineIndex": 20
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gjg",
+      "lineText": "Thou wrong’st it more than tears with that report .",
+      "scrollMode": "auto",
+      "lineIndex": 21
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gk0",
+      "lineText": "That is no slander , sir , which is a truth , And what I spake , I spake it to my face .",
+      "scrollMode": "auto",
+      "lineIndex": 22
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gjg",
+      "lineText": "Thy face is mine , and thou hast slandered it .",
+      "scrollMode": "auto",
+      "lineIndex": 23
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gk0",
+      "lineText": "It may be so , for it is not mine own . — ACT 4. SC. 1 Are you at leisure , holy father , now , Or shall I come to you at evening Mass ?",
+      "scrollMode": "auto",
+      "lineIndex": 24
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gj0",
+      "lineText": "My leisure serves me , pensive daughter , now . — My lord , we must entreat the time alone .",
+      "scrollMode": "auto",
+      "lineIndex": 25
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gjg",
+      "lineText": "God shield I should disturb devotion ! — Juliet , on Thursday early will I rouse you . Till then , adieu , and keep this holy kiss .",
+      "scrollMode": "auto",
+      "lineIndex": 26
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gig",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 27
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gk0",
+      "lineText": "O , shut the door , and when thou hast done so , Come weep with me , past hope , past care , past help .",
+      "scrollMode": "auto",
+      "lineIndex": 28
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gj0",
+      "lineText": "O Juliet , I already know thy grief . It strains me past the compass of my wits . I hear thou must , and nothing may prorogue it , On Thursday next be married to this County .",
+      "scrollMode": "auto",
+      "lineIndex": 29
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gig",
+      "lineText": "She shows him her knife .",
+      "scrollMode": "auto",
+      "lineIndex": 30
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gk0",
+      "lineText": "She shows him her knife . God joined my heart and Romeo’s , thou our hands ; And ere this hand , by thee to Romeo’s sealed , Shall be the label to another deed , Or my true heart with treacherous revolt Turn to another , this shall slay them both . Therefore out of thy long-experienced time Give me some present counsel , or , behold , ’Twixt my extremes and me this bloody knife Shall play the umpire , arbitrating that Which the commission of thy years and art Could to no issue of true honor bring . Be not so long to speak . I long to die If what thou speak’st speak not of remedy .",
+      "scrollMode": "auto",
+      "lineIndex": 31
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gj0",
+      "lineText": "Hold , daughter , I do spy a kind of hope , Which craves as desperate an execution As that is desperate which we would prevent . If , rather than to marry County Paris , Thou hast the strength of will to slay thyself , Then is it likely thou wilt undertake A thing like death to chide away this shame , That cop’st with death himself to ’scape from it ; And if thou darest , I’ll give thee remedy .",
+      "scrollMode": "auto",
+      "lineIndex": 32
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gk0",
+      "lineText": "O , bid me leap , rather than marry Paris , From off the battlements of any tower , Or walk in thievish ways , or bid me lurk Where serpents are . Chain me with roaring bears , Or hide me nightly in a charnel house , O’ercovered quite with dead men’s rattling bones , With reeky shanks and yellow chapless skulls . Or bid me go into a new-made grave And hide me with a dead man in his shroud ( Things that to hear them told have made me tremble ) , And I will do it without fear or doubt , To live an unstained wife to my sweet love .",
+      "scrollMode": "auto",
+      "lineIndex": 33
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gig",
+      "lineText": "Holding out a vial .",
+      "scrollMode": "auto",
+      "lineIndex": 34
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gj0",
+      "lineText": "Holding out a vial . Take thou this vial , being then in bed , And this distilling liquor drink thou off ; When presently through all thy veins shall run A cold and drowsy humor ; for no pulse Shall keep his native progress , but surcease . No warmth , no breath shall testify thou livest . ACT 4. SC. 1 The roses in thy lips and cheeks shall fade To paly ashes , thy eyes’ windows fall Like death when he shuts up the day of life . Each part , deprived of supple government , Shall , stiff and stark and cold , appear like death , And in this borrowed likeness of shrunk death Thou shalt continue two and forty hours And then awake as from a pleasant sleep . Now , when the bridegroom in the morning comes To rouse thee from thy bed , there art thou dead . Then , as the manner of our country is , In thy best robes uncovered on the bier Thou shalt be borne to that same ancient vault Where all the kindred of the Capulets lie . In the meantime , against thou shalt awake , Shall Romeo by my letters know our drift , And hither shall he come , and he and I Will watch thy waking , and that very night Shall Romeo bear thee hence to Mantua . And this shall free thee from this present shame , If no inconstant toy nor womanish fear Abate thy valor in the acting it .",
+      "scrollMode": "auto",
+      "lineIndex": 35
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gk0",
+      "lineText": "Give me , give me ! O , tell not me of fear !",
+      "scrollMode": "auto",
+      "lineIndex": 36
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gig",
+      "lineText": ", giving Juliet the vial",
+      "scrollMode": "auto",
+      "lineIndex": 37
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gj0",
+      "lineText": "Hold , get you gone . Be strong and prosperous In this resolve . I’ll send a friar with speed To Mantua with my letters to thy lord .",
+      "scrollMode": "auto",
+      "lineIndex": 38
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gk0",
+      "lineText": "Love give me strength , and strength shall help afford . Farewell , dear father .",
+      "scrollMode": "auto",
+      "lineIndex": 39
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gig",
+      "lineText": "They exit in different directions .",
+      "scrollMode": "auto",
+      "lineIndex": 40
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gig",
+      "lineText": "Enter Father Capulet , Mother , Nurse , and Servingmen , two or three .",
+      "scrollMode": "auto",
+      "lineIndex": 41
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gig",
+      "lineText": "One or two of the Servingmen exit with Capulet’s list .",
+      "scrollMode": "auto",
+      "lineIndex": 42
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gkg",
+      "lineText": "One or two of the Servingmen exit with Capulet’s list . Sirrah , go hire me twenty cunning cooks .",
+      "scrollMode": "auto",
+      "lineIndex": 43
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gl0",
+      "lineText": "You shall have none ill , sir , for I’ll try if they can lick their fingers .",
+      "scrollMode": "auto",
+      "lineIndex": 44
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79glg",
+      "lineText": "How canst thou try them so ?",
+      "scrollMode": "auto",
+      "lineIndex": 45
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gl0",
+      "lineText": "Marry , sir , ’tis an ill cook that cannot lick his own fingers . Therefore he that cannot lick his fingers goes not with me .",
+      "scrollMode": "auto",
+      "lineIndex": 46
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gig",
+      "lineText": "Servingman exits .",
+      "scrollMode": "auto",
+      "lineIndex": 47
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gm0",
+      "lineText": "Servingman exits . We shall be much unfurnished for this time . — What , is my daughter gone to Friar Lawrence ?",
+      "scrollMode": "auto",
+      "lineIndex": 48
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gmg",
+      "lineText": "Ay , forsooth .",
+      "scrollMode": "auto",
+      "lineIndex": 49
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79glg",
+      "lineText": "Well , he may chance to do some good on her . A peevish self-willed harlotry it is .",
+      "scrollMode": "auto",
+      "lineIndex": 50
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gig",
+      "lineText": "Enter Juliet .",
+      "scrollMode": "auto",
+      "lineIndex": 51
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gmg",
+      "lineText": "See where she comes from shrift with merry look .",
+      "scrollMode": "auto",
+      "lineIndex": 52
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79glg",
+      "lineText": "How now , my headstrong , where have you been gadding ?",
+      "scrollMode": "auto",
+      "lineIndex": 53
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gig",
+      "lineText": "Kneeling .",
+      "scrollMode": "auto",
+      "lineIndex": 54
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gk0",
+      "lineText": "Kneeling . To beg your pardon . Pardon , I beseech you . Henceforward I am ever ruled by you .",
+      "scrollMode": "auto",
+      "lineIndex": 55
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79glg",
+      "lineText": "Send for the County . Go tell him of this . I’ll have this knot knit up tomorrow morning .",
+      "scrollMode": "auto",
+      "lineIndex": 56
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gk0",
+      "lineText": "I met the youthful lord at Lawrence’ cell And gave him what becomèd love I might , Not stepping o’er the bounds of modesty .",
+      "scrollMode": "auto",
+      "lineIndex": 57
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gig",
+      "lineText": "Juliet rises .",
+      "scrollMode": "auto",
+      "lineIndex": 58
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gk0",
+      "lineText": "Juliet rises . This is as ’t should be . — Let me see the County . Ay , marry , go , I say , and fetch him hither . — Now , afore God , this reverend holy friar , All our whole city is much bound to him .",
+      "scrollMode": "auto",
+      "lineIndex": 59
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gk0",
+      "lineText": "Nurse , will you go with me into my closet To help me sort such needful ornaments As you think fit to furnish me tomorrow ?",
+      "scrollMode": "auto",
+      "lineIndex": 60
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gn0",
+      "lineText": "No , not till Thursday . There is time enough .",
+      "scrollMode": "auto",
+      "lineIndex": 61
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79glg",
+      "lineText": "Go , nurse . Go with her . We’ll to church tomorrow .",
+      "scrollMode": "auto",
+      "lineIndex": 62
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gig",
+      "lineText": "Juliet and the Nurse exit .",
+      "scrollMode": "auto",
+      "lineIndex": 63
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gn0",
+      "lineText": "We shall be short in our provision . ’Tis now near night .",
+      "scrollMode": "auto",
+      "lineIndex": 64
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79glg",
+      "lineText": "Tush , I will stir about , And all things shall be well , I warrant thee , wife . Go thou to Juliet . Help to deck up her . I’ll not to bed tonight . Let me alone . I’ll play the housewife for this once . — What ho ! — They are all forth . Well , I will walk myself To County Paris , to prepare up him Against tomorrow . My heart is wondrous light Since this same wayward girl is so reclaimed .",
+      "scrollMode": "auto",
+      "lineIndex": 65
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gig",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 66
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gig",
+      "lineText": "Enter Juliet and Nurse .",
+      "scrollMode": "auto",
+      "lineIndex": 67
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gk0",
+      "lineText": "Ay , those attires are best . But , gentle nurse , I pray thee leave me to myself tonight , For I have need of many orisons To move the heavens to smile upon my state , Which , well thou knowest , is cross and full of sin .",
+      "scrollMode": "auto",
+      "lineIndex": 68
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gig",
+      "lineText": "Enter Lady Capulet .",
+      "scrollMode": "auto",
+      "lineIndex": 69
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gn0",
+      "lineText": "What , are you busy , ho ? Need you my help ?",
+      "scrollMode": "auto",
+      "lineIndex": 70
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gk0",
+      "lineText": "No , madam , we have culled such necessaries As are behooveful for our state tomorrow . So please you , let me now be left alone , And let the Nurse this night sit up with you , For I am sure you have your hands full all In this so sudden business .",
+      "scrollMode": "auto",
+      "lineIndex": 71
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gn0",
+      "lineText": "Good night . Get thee to bed and rest , for thou hast need .",
+      "scrollMode": "auto",
+      "lineIndex": 72
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gig",
+      "lineText": "Lady Capulet and the Nurse exit .",
+      "scrollMode": "auto",
+      "lineIndex": 73
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gig",
+      "lineText": "She takes out the vial .",
+      "scrollMode": "auto",
+      "lineIndex": 74
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gig",
+      "lineText": "She takes out her knife and puts it down beside her .",
+      "scrollMode": "auto",
+      "lineIndex": 75
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gk0",
+      "lineText": "She takes out her knife and puts it down beside her . No , no , this shall forbid it . Lie thou there . What if it be a poison which the Friar ACT 4. SC. 3 Subtly hath ministered to have me dead , Lest in this marriage he should be dishonored Because he married me before to Romeo ? I fear it is . And yet methinks it should not , For he hath still been tried a holy man . How if , when I am laid into the tomb , I wake before the time that Romeo Come to redeem me ? There’s a fearful point . Shall I not then be stifled in the vault , To whose foul mouth no healthsome air breathes in , And there die strangled ere my Romeo comes ? Or , if I live , is it not very like The horrible conceit of death and night , Together with the terror of the place — As in a vault , an ancient receptacle Where for this many hundred years the bones Of all my buried ancestors are packed ; Where bloody Tybalt , yet but green in earth , Lies fest’ring in his shroud ; where , as they say , At some hours in the night spirits resort — Alack , alack , is it not like that I , So early waking , what with loathsome smells , And shrieks like mandrakes torn out of the earth , That living mortals , hearing them , run mad — O , if I wake , shall I not be distraught , Environèd with all these hideous fears , And madly play with my forefathers’ joints , And pluck the mangled Tybalt from his shroud , And , in this rage , with some great kinsman’s bone , As with a club , dash out my desp’rate brains ? O look , methinks I see my cousin’s ghost Seeking out Romeo that did spit his body Upon a rapier’s point ! Stay , Tybalt , stay ! Romeo , Romeo , Romeo ! Here’s drink . I drink to thee .",
+      "scrollMode": "auto",
+      "lineIndex": 76
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gig",
+      "lineText": "She drinks and falls upon her bed within the curtains .",
+      "scrollMode": "auto",
+      "lineIndex": 77
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gig",
+      "lineText": "Enter Lady Capulet and Nurse .",
+      "scrollMode": "auto",
+      "lineIndex": 78
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gn0",
+      "lineText": "Hold , take these keys , and fetch more spices , nurse .",
+      "scrollMode": "auto",
+      "lineIndex": 79
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gmg",
+      "lineText": "They call for dates and quinces in the pastry .",
+      "scrollMode": "auto",
+      "lineIndex": 80
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gig",
+      "lineText": "Enter old Capulet .",
+      "scrollMode": "auto",
+      "lineIndex": 81
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79glg",
+      "lineText": "Come , stir , stir , stir ! The second cock hath crowed . The curfew bell hath rung . ’Tis three o’clock . — Look to the baked meats , good Angelica . Spare not for cost .",
+      "scrollMode": "auto",
+      "lineIndex": 82
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gmg",
+      "lineText": "Go , you cot-quean , go , Get you to bed . Faith , you’ll be sick tomorrow For this night’s watching .",
+      "scrollMode": "auto",
+      "lineIndex": 83
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79glg",
+      "lineText": "No , not a whit . What , I have watched ere now All night for lesser cause , and ne’er been sick .",
+      "scrollMode": "auto",
+      "lineIndex": 84
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gn0",
+      "lineText": "Ay , you have been a mouse-hunt in your time , But I will watch you from such watching now .",
+      "scrollMode": "auto",
+      "lineIndex": 85
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gig",
+      "lineText": "Lady Capulet and Nurse exit .",
+      "scrollMode": "auto",
+      "lineIndex": 86
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gig",
+      "lineText": "Enter three or four Servingmen with spits and logs and baskets .",
+      "scrollMode": "auto",
+      "lineIndex": 87
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gm0",
+      "lineText": "Enter three or four Servingmen with spits and logs and baskets . Now fellow , What is there ?",
+      "scrollMode": "auto",
+      "lineIndex": 88
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gl0",
+      "lineText": "Things for the cook , sir , but I know not what .",
+      "scrollMode": "auto",
+      "lineIndex": 89
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gig",
+      "lineText": "First Servingman exits .",
+      "scrollMode": "auto",
+      "lineIndex": 90
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gl0",
+      "lineText": "First Servingman exits . Sirrah , fetch drier logs . Call Peter . He will show thee where they are .",
+      "scrollMode": "auto",
+      "lineIndex": 91
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gng",
+      "lineText": "I have a head , sir , that will find out logs And never trouble Peter for the matter .",
+      "scrollMode": "auto",
+      "lineIndex": 92
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gig",
+      "lineText": "Second Servingman exits .",
+      "scrollMode": "auto",
+      "lineIndex": 93
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gig",
+      "lineText": "Play music .",
+      "scrollMode": "auto",
+      "lineIndex": 94
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gig",
+      "lineText": "Enter Nurse .",
+      "scrollMode": "auto",
+      "lineIndex": 95
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gmg",
+      "lineText": "Enter Nurse . Go waken Juliet . Go and trim her up . I’ll go and chat with Paris . Hie , make haste , Make haste . The bridegroom he is come already . Make haste , I say .",
+      "scrollMode": "auto",
+      "lineIndex": 96
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gig",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 97
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gig",
+      "lineText": ", approaching the bed",
+      "scrollMode": "auto",
+      "lineIndex": 98
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gig",
+      "lineText": "She opens the bed’s curtains .",
+      "scrollMode": "auto",
+      "lineIndex": 99
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gmg",
+      "lineText": "She opens the bed’s curtains . What , dressed , and in your clothes , and down again ? I must needs wake you . Lady , lady , lady ! — Alas , alas ! Help , help ! My lady’s dead . — O , weraday , that ever I was born ! — Some aqua vitae , ho ! — My lord ! My lady !",
+      "scrollMode": "auto",
+      "lineIndex": 100
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gig",
+      "lineText": "Enter Lady Capulet .",
+      "scrollMode": "auto",
+      "lineIndex": 101
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gn0",
+      "lineText": "What noise is here ?",
+      "scrollMode": "auto",
+      "lineIndex": 102
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gmg",
+      "lineText": "O lamentable day !",
+      "scrollMode": "auto",
+      "lineIndex": 103
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gn0",
+      "lineText": "What is the matter ?",
+      "scrollMode": "auto",
+      "lineIndex": 104
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gmg",
+      "lineText": "Look , look ! — O heavy day !",
+      "scrollMode": "auto",
+      "lineIndex": 105
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gn0",
+      "lineText": "O me ! O me ! My child , my only life , Revive , look up , or I will die with thee . Help , help ! Call help .",
+      "scrollMode": "auto",
+      "lineIndex": 106
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gig",
+      "lineText": "Enter Capulet .",
+      "scrollMode": "auto",
+      "lineIndex": 107
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79glg",
+      "lineText": "For shame , bring Juliet forth . Her lord is come .",
+      "scrollMode": "auto",
+      "lineIndex": 108
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gmg",
+      "lineText": "She’s dead , deceased . She’s dead , alack the day !",
+      "scrollMode": "auto",
+      "lineIndex": 109
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gn0",
+      "lineText": "Alack the day , she’s dead , she’s dead , she’s dead .",
+      "scrollMode": "auto",
+      "lineIndex": 110
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79glg",
+      "lineText": "Ha , let me see her ! Out , alas , she’s cold . Her blood is settled , and her joints are stiff . Life and these lips have long been separated . Death lies on her like an untimely frost Upon the sweetest flower of all the field .",
+      "scrollMode": "auto",
+      "lineIndex": 111
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gmg",
+      "lineText": "O lamentable day !",
+      "scrollMode": "auto",
+      "lineIndex": 112
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gn0",
+      "lineText": "O woeful time !",
+      "scrollMode": "auto",
+      "lineIndex": 113
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79glg",
+      "lineText": "Death , that hath ta’en her hence to make me wail , Ties up my tongue and will not let me speak .",
+      "scrollMode": "auto",
+      "lineIndex": 114
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gig",
+      "lineText": "Enter Friar Lawrence and the County Paris , with Musicians .",
+      "scrollMode": "auto",
+      "lineIndex": 115
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gj0",
+      "lineText": "Come , is the bride ready to go to church ?",
+      "scrollMode": "auto",
+      "lineIndex": 116
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79glg",
+      "lineText": "Ready to go , but never to return . — O son , the night before thy wedding day Hath Death lain with thy wife . There she lies , Flower as she was , deflowerèd by him . Death is my son-in-law ; Death is my heir . My daughter he hath wedded . I will die And leave him all . Life , living , all is Death’s .",
+      "scrollMode": "auto",
+      "lineIndex": 117
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gjg",
+      "lineText": "Have I thought long to see this morning’s face , And doth it give me such a sight as this ?",
+      "scrollMode": "auto",
+      "lineIndex": 118
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gn0",
+      "lineText": "Accursed , unhappy , wretched , hateful day ! Most miserable hour that e’er time saw In lasting labor of his pilgrimage ! But one , poor one , one poor and loving child , But one thing to rejoice and solace in , And cruel death hath catched it from my sight !",
+      "scrollMode": "auto",
+      "lineIndex": 119
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gmg",
+      "lineText": "O woe , O woeful , woeful , woeful day ! Most lamentable day , most woeful day That ever , ever I did yet behold ! O day , O day , O day , O hateful day ! Never was seen so black a day as this ! O woeful day , O woeful day !",
+      "scrollMode": "auto",
+      "lineIndex": 120
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gjg",
+      "lineText": "Beguiled , divorcèd , wrongèd , spited , slain ! ACT 4. SC. 5 Most detestable death , by thee beguiled , By cruel , cruel thee quite overthrown ! O love ! O life ! Not life , but love in death !",
+      "scrollMode": "auto",
+      "lineIndex": 121
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79glg",
+      "lineText": "Despised , distressèd , hated , martyred , killed ! Uncomfortable time , why cam’st thou now To murder , murder our solemnity ? O child ! O child ! My soul and not my child ! Dead art thou ! Alack , my child is dead , And with my child my joys are burièd .",
+      "scrollMode": "auto",
+      "lineIndex": 122
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gj0",
+      "lineText": "Peace , ho , for shame ! Confusion’s cure lives not In these confusions . Heaven and yourself Had part in this fair maid . Now heaven hath all , And all the better is it for the maid . Your part in her you could not keep from death , But heaven keeps his part in eternal life . The most you sought was her promotion , For ’twas your heaven she should be advanced ; And weep you now , seeing she is advanced Above the clouds , as high as heaven itself ? O , in this love you love your child so ill That you run mad , seeing that she is well . She’s not well married that lives married long , But she’s best married that dies married young . Dry up your tears , and stick your rosemary On this fair corse , and , as the custom is , And in her best array , bear her to church , For though fond nature bids us all lament , Yet nature’s tears are reason’s merriment .",
+      "scrollMode": "auto",
+      "lineIndex": 123
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79glg",
+      "lineText": "All things that we ordainèd festival Turn from their office to black funeral : Our instruments to melancholy bells , Our wedding cheer to a sad burial feast , Our solemn hymns to sullen dirges change , ACT 4. SC. 5 Our bridal flowers serve for a buried corse , And all things change them to the contrary .",
+      "scrollMode": "auto",
+      "lineIndex": 124
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gj0",
+      "lineText": "Sir , go you in , and , madam , go with him , And go , Sir Paris . Everyone prepare To follow this fair corse unto her grave . The heavens do lour upon you for some ill . Move them no more by crossing their high will .",
+      "scrollMode": "auto",
+      "lineIndex": 125
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gig",
+      "lineText": "All but the Nurse and the Musicians exit .",
+      "scrollMode": "auto",
+      "lineIndex": 126
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79go0",
+      "lineText": "Faith , we may put up our pipes and be gone .",
+      "scrollMode": "auto",
+      "lineIndex": 127
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gmg",
+      "lineText": "Honest good fellows , ah , put up , put up , For , well you know , this is a pitiful case .",
+      "scrollMode": "auto",
+      "lineIndex": 128
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79go0",
+      "lineText": "Ay , by my troth , the case may be amended .",
+      "scrollMode": "auto",
+      "lineIndex": 129
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gig",
+      "lineText": "Nurse exits .",
+      "scrollMode": "auto",
+      "lineIndex": 130
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gig",
+      "lineText": "Enter Peter .",
+      "scrollMode": "auto",
+      "lineIndex": 131
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gog",
+      "lineText": "Musicians , O musicians , Heart’s ease , Heart’s ease . O , an you will have me live , play Heart’s ease .",
+      "scrollMode": "auto",
+      "lineIndex": 132
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79go0",
+      "lineText": "Why Heart’s ease ?",
+      "scrollMode": "auto",
+      "lineIndex": 133
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gog",
+      "lineText": "O musicians , because my heart itself plays My heart is full . O , play me some merry dump to comfort me .",
+      "scrollMode": "auto",
+      "lineIndex": 134
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79go0",
+      "lineText": "Not a dump , we . ’Tis no time to play now .",
+      "scrollMode": "auto",
+      "lineIndex": 135
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gog",
+      "lineText": "You will not then ?",
+      "scrollMode": "auto",
+      "lineIndex": 136
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79go0",
+      "lineText": "No .",
+      "scrollMode": "auto",
+      "lineIndex": 137
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gog",
+      "lineText": "I will then give it you soundly .",
+      "scrollMode": "auto",
+      "lineIndex": 138
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79go0",
+      "lineText": "What will you give us ?",
+      "scrollMode": "auto",
+      "lineIndex": 139
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gog",
+      "lineText": "No money , on my faith , but the gleek . I will give you the minstrel .",
+      "scrollMode": "auto",
+      "lineIndex": 140
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79go0",
+      "lineText": "Then will I give you the serving-creature .",
+      "scrollMode": "auto",
+      "lineIndex": 141
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gog",
+      "lineText": "Then will I lay the serving-creature’s dagger on your pate . I will carry no crochets . I’ll re you , I’ll fa you . Do you note me ?",
+      "scrollMode": "auto",
+      "lineIndex": 142
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79go0",
+      "lineText": "An you re us and fa us , you note us .",
+      "scrollMode": "auto",
+      "lineIndex": 143
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gp0",
+      "lineText": "Pray you , put up your dagger and put out your wit .",
+      "scrollMode": "auto",
+      "lineIndex": 144
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gig",
+      "lineText": "Sings .",
+      "scrollMode": "auto",
+      "lineIndex": 145
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gog",
+      "lineText": "Sings . When griping griefs the heart doth wound And doleful dumps the mind oppress , Then music with her silver sound — Why silver sound ? Why music with her silver sound ? What say you , Simon Catling ?",
+      "scrollMode": "auto",
+      "lineIndex": 146
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79go0",
+      "lineText": "Marry , sir , because silver hath a sweet sound .",
+      "scrollMode": "auto",
+      "lineIndex": 147
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gog",
+      "lineText": "Prates . — What say you , Hugh Rebeck ?",
+      "scrollMode": "auto",
+      "lineIndex": 148
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gp0",
+      "lineText": "I say silver sound because musicians sound for silver .",
+      "scrollMode": "auto",
+      "lineIndex": 149
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gog",
+      "lineText": "Prates too . — What say you , James Soundpost ?",
+      "scrollMode": "auto",
+      "lineIndex": 150
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gpg",
+      "lineText": "Faith , I know not what to say .",
+      "scrollMode": "auto",
+      "lineIndex": 151
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gig",
+      "lineText": "Sings .",
+      "scrollMode": "auto",
+      "lineIndex": 152
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gog",
+      "lineText": "Sings . Then music with her silver sound With speedy help doth lend redress .",
+      "scrollMode": "auto",
+      "lineIndex": 153
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gig",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 154
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79go0",
+      "lineText": "What a pestilent knave is this same !",
+      "scrollMode": "auto",
+      "lineIndex": 155
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gp0",
+      "lineText": "Hang him , Jack . Come , we’ll in here , tarry for the mourners , and stay dinner .",
+      "scrollMode": "auto",
+      "lineIndex": 156
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gig",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 157
+    }
+  ],
+  "isPublic": true
+}

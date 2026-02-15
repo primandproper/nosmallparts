@@ -1,0 +1,890 @@
+{
+  "title": "The Winter’s Tale (Act 1)",
+  "description": "Folger Shakespeare Library edition",
+  "author": "William Shakespeare",
+  "castMembers": [
+    {
+      "id": "d68m11sn9qd8d2h79qug",
+      "name": "Narrator",
+      "sortOrder": 0
+    },
+    {
+      "id": "d68m11sn9qd8d2h79qv0",
+      "name": "Archidamus",
+      "description": "a Bohemian courtier",
+      "sortOrder": 1
+    },
+    {
+      "id": "d68m11sn9qd8d2h79qvg",
+      "name": "Camillo",
+      "description": "a courtier, friend to Leontes and then to Polixenes",
+      "sortOrder": 2
+    },
+    {
+      "id": "d68m11sn9qd8d2h79r00",
+      "name": "Polixenes",
+      "description": "King of Bohemia",
+      "sortOrder": 3
+    },
+    {
+      "id": "d68m11sn9qd8d2h79r0g",
+      "name": "Leontes",
+      "description": "King of Sicilia",
+      "sortOrder": 4
+    },
+    {
+      "id": "d68m11sn9qd8d2h79r10",
+      "name": "Hermione",
+      "description": "Queen of Sicilia",
+      "sortOrder": 5
+    },
+    {
+      "id": "d68m11sn9qd8d2h79r1g",
+      "name": "Mamillius",
+      "description": "their son",
+      "sortOrder": 6
+    },
+    {
+      "id": "d68m11sn9qd8d2h79r20",
+      "name": "ATTENDANTS_WT",
+      "sortOrder": 7
+    }
+  ],
+  "lines": [
+    {
+      "castMemberId": "d68m11sn9qd8d2h79qug",
+      "lineText": "Enter Camillo and Archidamus .",
+      "scrollMode": "auto",
+      "lineIndex": 0
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79qv0",
+      "lineText": "If you shall chance , Camillo , to visit Bohemia on the like occasion whereon my services are now on foot , you shall see , as I have said , great difference betwixt our Bohemia and your Sicilia .",
+      "scrollMode": "auto",
+      "lineIndex": 1
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79qvg",
+      "lineText": "I think this coming summer the King of Sicilia means to pay Bohemia the visitation which he justly owes him .",
+      "scrollMode": "auto",
+      "lineIndex": 2
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79qv0",
+      "lineText": "Wherein our entertainment shall shame us ; we will be justified in our loves . For indeed —",
+      "scrollMode": "auto",
+      "lineIndex": 3
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79qvg",
+      "lineText": "Beseech you —",
+      "scrollMode": "auto",
+      "lineIndex": 4
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79qv0",
+      "lineText": "Verily , I speak it in the freedom of my knowledge . We cannot with such magnificence — in so rare — I know not what to say . We will give you sleepy drinks , that your senses , unintelligent of our insufficience , may , though they cannot praise us , as little accuse us .",
+      "scrollMode": "auto",
+      "lineIndex": 5
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79qvg",
+      "lineText": "You pay a great deal too dear for what’s given freely .",
+      "scrollMode": "auto",
+      "lineIndex": 6
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79qv0",
+      "lineText": "Believe me , I speak as my understanding instructs me and as mine honesty puts it to utterance .",
+      "scrollMode": "auto",
+      "lineIndex": 7
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79qvg",
+      "lineText": "Sicilia cannot show himself over-kind to Bohemia . They were trained together in their childhoods , and there rooted betwixt them then such an ACT 1. SC. 2 affection which cannot choose but branch now . Since their more mature dignities and royal necessities made separation of their society , their encounters , though not personal , hath been royally attorneyed with interchange of gifts , letters , loving embassies , that they have seemed to be together though absent , shook hands as over a vast , and embraced as it were from the ends of opposed winds . The heavens continue their loves .",
+      "scrollMode": "auto",
+      "lineIndex": 8
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79qv0",
+      "lineText": "I think there is not in the world either malice or matter to alter it . You have an unspeakable comfort of your young Prince Mamillius . It is a gentleman of the greatest promise that ever came into my note .",
+      "scrollMode": "auto",
+      "lineIndex": 9
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79qvg",
+      "lineText": "I very well agree with you in the hopes of him . It is a gallant child — one that indeed physics the subject , makes old hearts fresh . They that went on crutches ere he was born desire yet their life to see him a man .",
+      "scrollMode": "auto",
+      "lineIndex": 10
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79qv0",
+      "lineText": "Would they else be content to die ?",
+      "scrollMode": "auto",
+      "lineIndex": 11
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79qvg",
+      "lineText": "Yes , if there were no other excuse why they should desire to live .",
+      "scrollMode": "auto",
+      "lineIndex": 12
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79qv0",
+      "lineText": "If the King had no son , they would desire to live on crutches till he had one .",
+      "scrollMode": "auto",
+      "lineIndex": 13
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79qug",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 14
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79qug",
+      "lineText": "Enter Leontes , Hermione , Mamillius , Polixenes , Camillo , and Attendants .",
+      "scrollMode": "auto",
+      "lineIndex": 15
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r00",
+      "lineText": "Nine changes of the wat’ry star hath been The shepherd’s note since we have left our throne Without a burden . Time as long again ACT 1. SC. 2 Would be filled up , my brother , with our thanks , And yet we should for perpetuity Go hence in debt . And therefore , like a cipher , Yet standing in rich place , I multiply With one We thank you many thousands more That go before it .",
+      "scrollMode": "auto",
+      "lineIndex": 16
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r0g",
+      "lineText": "Stay your thanks awhile , And pay them when you part .",
+      "scrollMode": "auto",
+      "lineIndex": 17
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r00",
+      "lineText": "Sir , that’s tomorrow . I am questioned by my fears of what may chance Or breed upon our absence , that may blow No sneaping winds at home to make us say This is put forth too truly . Besides , I have stayed To tire your Royalty .",
+      "scrollMode": "auto",
+      "lineIndex": 18
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r0g",
+      "lineText": "We are tougher , brother , Than you can put us to ’t .",
+      "scrollMode": "auto",
+      "lineIndex": 19
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r00",
+      "lineText": "No longer stay .",
+      "scrollMode": "auto",
+      "lineIndex": 20
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r0g",
+      "lineText": "One sev’nnight longer .",
+      "scrollMode": "auto",
+      "lineIndex": 21
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r00",
+      "lineText": "Very sooth , tomorrow .",
+      "scrollMode": "auto",
+      "lineIndex": 22
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r0g",
+      "lineText": "We’ll part the time between ’s , then , and in that I’ll no gainsaying .",
+      "scrollMode": "auto",
+      "lineIndex": 23
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r00",
+      "lineText": "Press me not , beseech you , so . There is no tongue that moves , none , none i’ th’ world , So soon as yours could win me . So it should now , Were there necessity in your request , although ’Twere needful I denied it . My affairs Do even drag me homeward , which to hinder Were in your love a whip to me , my stay To you a charge and trouble . To save both , Farewell , our brother .",
+      "scrollMode": "auto",
+      "lineIndex": 24
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r0g",
+      "lineText": "Tongue-tied , our queen ? Speak you .",
+      "scrollMode": "auto",
+      "lineIndex": 25
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r10",
+      "lineText": "I had thought , sir , to have held my peace until You had drawn oaths from him not to stay . You , sir , Charge him too coldly . Tell him you are sure All in Bohemia’s well . This satisfaction The bygone day proclaimed . Say this to him , He’s beat from his best ward .",
+      "scrollMode": "auto",
+      "lineIndex": 26
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r0g",
+      "lineText": "Well said , Hermione .",
+      "scrollMode": "auto",
+      "lineIndex": 27
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79qug",
+      "lineText": "To Polixenes .",
+      "scrollMode": "auto",
+      "lineIndex": 28
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r10",
+      "lineText": "To Polixenes . Yet of your royal presence I’ll adventure The borrow of a week . When at Bohemia You take my lord , I’ll give him my commission To let him there a month behind the gest Prefixed for ’s parting . — Yet , good deed , Leontes , I love thee not a jar o’ th’ clock behind What lady she her lord . — You’ll stay ?",
+      "scrollMode": "auto",
+      "lineIndex": 29
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r00",
+      "lineText": "No , madam .",
+      "scrollMode": "auto",
+      "lineIndex": 30
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r10",
+      "lineText": "Nay , but you will ?",
+      "scrollMode": "auto",
+      "lineIndex": 31
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r00",
+      "lineText": "I may not , verily .",
+      "scrollMode": "auto",
+      "lineIndex": 32
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r10",
+      "lineText": "Verily ? You put me off with limber vows . But I , Though you would seek t’ unsphere the stars with oaths , Should yet say Sir , no going . Verily , You shall not go . A lady’s verily is As potent as a lord’s . Will you go yet ? Force me to keep you as a prisoner , Not like a guest , so you shall pay your fees When you depart and save your thanks . How say you ? ACT 1. SC. 2 My prisoner or my guest ? By your dread verily , One of them you shall be .",
+      "scrollMode": "auto",
+      "lineIndex": 33
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r00",
+      "lineText": "Your guest , then , madam . To be your prisoner should import offending , Which is for me less easy to commit Than you to punish .",
+      "scrollMode": "auto",
+      "lineIndex": 34
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r10",
+      "lineText": "Not your jailer , then , But your kind hostess . Come , I’ll question you Of my lord’s tricks and yours when you were boys . You were pretty lordings then ?",
+      "scrollMode": "auto",
+      "lineIndex": 35
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r00",
+      "lineText": "We were , fair queen , Two lads that thought there was no more behind But such a day tomorrow as today , And to be boy eternal .",
+      "scrollMode": "auto",
+      "lineIndex": 36
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r10",
+      "lineText": "Was not my lord The verier wag o’ th’ two ?",
+      "scrollMode": "auto",
+      "lineIndex": 37
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r00",
+      "lineText": "We were as twinned lambs that did frisk i’ th’ sun And bleat the one at th’ other . What we changed Was innocence for innocence . We knew not The doctrine of ill-doing , nor dreamed That any did . Had we pursued that life , And our weak spirits ne’er been higher reared With stronger blood , we should have answered heaven Boldly Not guilty , the imposition cleared Hereditary ours .",
+      "scrollMode": "auto",
+      "lineIndex": 38
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r10",
+      "lineText": "By this we gather You have tripped since .",
+      "scrollMode": "auto",
+      "lineIndex": 39
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r00",
+      "lineText": "O my most sacred lady , Temptations have since then been born to ’s , for In those unfledged days was my wife a girl ; Your precious self had then not crossed the eyes Of my young playfellow .",
+      "scrollMode": "auto",
+      "lineIndex": 40
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r10",
+      "lineText": "Grace to boot ! Of this make no conclusion , lest you say ACT 1. SC. 2 Your queen and I are devils . Yet go on . Th’ offenses we have made you do we’ll answer , If you first sinned with us , and that with us You did continue fault , and that you slipped not With any but with us .",
+      "scrollMode": "auto",
+      "lineIndex": 41
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r0g",
+      "lineText": "Is he won yet ?",
+      "scrollMode": "auto",
+      "lineIndex": 42
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r10",
+      "lineText": "He’ll stay , my lord .",
+      "scrollMode": "auto",
+      "lineIndex": 43
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r0g",
+      "lineText": "At my request he would not . Hermione , my dearest , thou never spok’st To better purpose .",
+      "scrollMode": "auto",
+      "lineIndex": 44
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r10",
+      "lineText": "Never ?",
+      "scrollMode": "auto",
+      "lineIndex": 45
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r0g",
+      "lineText": "Never but once .",
+      "scrollMode": "auto",
+      "lineIndex": 46
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r10",
+      "lineText": "What , have I twice said well ? When was ’t before ? I prithee tell me . Cram ’s with praise , and make ’s As fat as tame things . One good deed dying tongueless Slaughters a thousand waiting upon that . Our praises are our wages . You may ride ’s With one soft kiss a thousand furlongs ere With spur we heat an acre . But to th’ goal : My last good deed was to entreat his stay . What was my first ? It has an elder sister , Or I mistake you . O , would her name were Grace ! But once before I spoke to th’ purpose ? When ? Nay , let me have ’t ; I long .",
+      "scrollMode": "auto",
+      "lineIndex": 47
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r0g",
+      "lineText": "Why , that was when Three crabbèd months had soured themselves to death Ere I could make thee open thy white hand And clap thyself my love ; then didst thou utter I am yours forever .",
+      "scrollMode": "auto",
+      "lineIndex": 48
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r10",
+      "lineText": "’Tis grace indeed . Why , lo you now , I have spoke to th’ purpose twice . ACT 1. SC. 2 The one forever earned a royal husband , Th’ other for some while a friend .",
+      "scrollMode": "auto",
+      "lineIndex": 49
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79qug",
+      "lineText": "She gives Polixenes her hand .",
+      "scrollMode": "auto",
+      "lineIndex": 50
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79qug",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 51
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r0g",
+      "lineText": "Too hot , too hot ! To mingle friendship far is mingling bloods . I have tremor cordis on me . My heart dances , But not for joy , not joy . This entertainment May a free face put on , derive a liberty From heartiness , from bounty , fertile bosom , And well become the agent . ’T may , I grant . But to be paddling palms and pinching fingers , As now they are , and making practiced smiles As in a looking glass , and then to sigh , as ’twere The mort o’ th’ deer — O , that is entertainment My bosom likes not , nor my brows . — Mamillius , Art thou my boy ?",
+      "scrollMode": "auto",
+      "lineIndex": 52
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r1g",
+      "lineText": "Ay , my good lord .",
+      "scrollMode": "auto",
+      "lineIndex": 53
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r0g",
+      "lineText": "I’ fecks ! Why , that’s my bawcock . What , hast smutched thy nose ? They say it is a copy out of mine . Come , captain , We must be neat — not neat , but cleanly , captain . And yet the steer , the heifer , and the calf Are all called neat . — Still virginalling Upon his palm ? — How now , you wanton calf ? Art thou my calf ?",
+      "scrollMode": "auto",
+      "lineIndex": 54
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r1g",
+      "lineText": "Yes , if you will , my lord .",
+      "scrollMode": "auto",
+      "lineIndex": 55
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r0g",
+      "lineText": "Thou want’st a rough pash and the shoots that I have To be full like me ; yet they say we are Almost as like as eggs . Women say so , That will say anything . But were they false As o’erdyed blacks , as wind , as waters , false As dice are to be wished by one that fixes ACT 1. SC. 2 No bourn ’twixt his and mine , yet were it true To say this boy were like me . Come , sir page , Look on me with your welkin eye . Sweet villain , Most dear’st , my collop ! Can thy dam ? — may ’t be ? — Affection , thy intention stabs the center . Thou dost make possible things not so held , Communicat’st with dreams — how can this be ? With what’s unreal thou coactive art , And fellow’st nothing . Then ’tis very credent Thou may’st co-join with something ; and thou dost , And that beyond commission , and I find it , And that to the infection of my brains And hard’ning of my brows .",
+      "scrollMode": "auto",
+      "lineIndex": 56
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r00",
+      "lineText": "What means Sicilia ?",
+      "scrollMode": "auto",
+      "lineIndex": 57
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r10",
+      "lineText": "He something seems unsettled .",
+      "scrollMode": "auto",
+      "lineIndex": 58
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r00",
+      "lineText": "How , my lord ?",
+      "scrollMode": "auto",
+      "lineIndex": 59
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r0g",
+      "lineText": "What cheer ? How is ’t with you , best brother ?",
+      "scrollMode": "auto",
+      "lineIndex": 60
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r10",
+      "lineText": "You look As if you held a brow of much distraction . Are you moved , my lord ?",
+      "scrollMode": "auto",
+      "lineIndex": 61
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r0g",
+      "lineText": "No , in good earnest . How sometimes nature will betray its folly , Its tenderness , and make itself a pastime To harder bosoms ! Looking on the lines Of my boy’s face , methoughts I did recoil Twenty-three years , and saw myself unbreeched , In my green velvet coat , my dagger muzzled Lest it should bite its master and so prove , As ornaments oft do , too dangerous . How like , methought , I then was to this kernel , This squash , this gentleman . — Mine honest friend , Will you take eggs for money ?",
+      "scrollMode": "auto",
+      "lineIndex": 62
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r1g",
+      "lineText": "No , my lord , I’ll fight .",
+      "scrollMode": "auto",
+      "lineIndex": 63
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r0g",
+      "lineText": "You will ? Why , happy man be ’s dole ! — My brother , Are you so fond of your young prince as we Do seem to be of ours ?",
+      "scrollMode": "auto",
+      "lineIndex": 64
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r00",
+      "lineText": "If at home , sir , He’s all my exercise , my mirth , my matter , Now my sworn friend and then mine enemy , My parasite , my soldier , statesman , all . He makes a July’s day short as December , And with his varying childness cures in me Thoughts that would thick my blood .",
+      "scrollMode": "auto",
+      "lineIndex": 65
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r0g",
+      "lineText": "So stands this squire Officed with me . We two will walk , my lord , And leave you to your graver steps . — Hermione , How thou lov’st us show in our brother’s welcome . Let what is dear in Sicily be cheap . Next to thyself and my young rover , he’s Apparent to my heart .",
+      "scrollMode": "auto",
+      "lineIndex": 66
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r10",
+      "lineText": "If you would seek us , We are yours i’ th’ garden . Shall ’s attend you there ?",
+      "scrollMode": "auto",
+      "lineIndex": 67
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79qug",
+      "lineText": "Aside .",
+      "scrollMode": "auto",
+      "lineIndex": 68
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79qug",
+      "lineText": "Exit Hermione , Polixenes , and Attendants .",
+      "scrollMode": "auto",
+      "lineIndex": 69
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r10",
+      "lineText": "Exit Hermione , Polixenes , and Attendants . Gone already . Inch thick , knee-deep , o’er head and ears a forked one ! — Go play , boy , play . Thy mother plays , and I Play too , but so disgraced a part , whose issue ACT 1. SC. 2 Will hiss me to my grave . Contempt and clamor Will be my knell . Go play , boy , play . — There have been , Or I am much deceived , cuckolds ere now ; And many a man there is , even at this present , Now while I speak this , holds his wife by th’ arm , That little thinks she has been sluiced in ’s absence , And his pond fished by his next neighbor , by Sir Smile , his neighbor . Nay , there’s comfort in ’t Whiles other men have gates and those gates opened , As mine , against their will . Should all despair That have revolted wives , the tenth of mankind Would hang themselves . Physic for ’t there’s none . It is a bawdy planet , that will strike Where ’tis predominant ; and ’tis powerful , think it , From east , west , north , and south . Be it concluded , No barricado for a belly . Know ’t , It will let in and out the enemy With bag and baggage . Many thousand on ’s Have the disease and feel ’t not . — How now , boy ?",
+      "scrollMode": "auto",
+      "lineIndex": 70
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r1g",
+      "lineText": "I am like you , they say .",
+      "scrollMode": "auto",
+      "lineIndex": 71
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r0g",
+      "lineText": "Why , that’s some comfort . — What , Camillo there ?",
+      "scrollMode": "auto",
+      "lineIndex": 72
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79qug",
+      "lineText": ", coming forward",
+      "scrollMode": "auto",
+      "lineIndex": 73
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79qvg",
+      "lineText": "Ay , my good lord .",
+      "scrollMode": "auto",
+      "lineIndex": 74
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79qug",
+      "lineText": "Mamillius exits .",
+      "scrollMode": "auto",
+      "lineIndex": 75
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r1g",
+      "lineText": "Mamillius exits . Camillo , this great sir will yet stay longer .",
+      "scrollMode": "auto",
+      "lineIndex": 76
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79qvg",
+      "lineText": "You had much ado to make his anchor hold . When you cast out , it still came home .",
+      "scrollMode": "auto",
+      "lineIndex": 77
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r0g",
+      "lineText": "Didst note it ?",
+      "scrollMode": "auto",
+      "lineIndex": 78
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79qvg",
+      "lineText": "He would not stay at your petitions , made His business more material .",
+      "scrollMode": "auto",
+      "lineIndex": 79
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79qug",
+      "lineText": "Aside .",
+      "scrollMode": "auto",
+      "lineIndex": 80
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r0g",
+      "lineText": "Aside . They’re here with me already , whisp’ring , rounding : Sicilia is a so-forth . ’Tis far gone When I shall gust it last . — How came ’t , Camillo , That he did stay ?",
+      "scrollMode": "auto",
+      "lineIndex": 81
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79qvg",
+      "lineText": "At the good queen’s entreaty .",
+      "scrollMode": "auto",
+      "lineIndex": 82
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r0g",
+      "lineText": "At the queen’s be ’t . Good should be pertinent , But so it is , it is not . Was this taken By any understanding pate but thine ? For thy conceit is soaking , will draw in More than the common blocks . Not noted , is ’t , But of the finer natures , by some severals Of headpiece extraordinary ? Lower messes Perchance are to this business purblind ? Say .",
+      "scrollMode": "auto",
+      "lineIndex": 83
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79qvg",
+      "lineText": "Business , my lord ? I think most understand Bohemia stays here longer .",
+      "scrollMode": "auto",
+      "lineIndex": 84
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r0g",
+      "lineText": "Ha ?",
+      "scrollMode": "auto",
+      "lineIndex": 85
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79qvg",
+      "lineText": "Stays here longer .",
+      "scrollMode": "auto",
+      "lineIndex": 86
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r0g",
+      "lineText": "Ay , but why ?",
+      "scrollMode": "auto",
+      "lineIndex": 87
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79qvg",
+      "lineText": "To satisfy your Highness and the entreaties Of our most gracious mistress .",
+      "scrollMode": "auto",
+      "lineIndex": 88
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r0g",
+      "lineText": "Satisfy ? Th’ entreaties of your mistress ? Satisfy ? Let that suffice . I have trusted thee , Camillo , With all the nearest things to my heart , as well My chamber-counsels , wherein , priestlike , thou Hast cleansed my bosom ; I from thee departed Thy penitent reformed . But we have been ACT 1. SC. 2 Deceived in thy integrity , deceived In that which seems so .",
+      "scrollMode": "auto",
+      "lineIndex": 89
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79qvg",
+      "lineText": "Be it forbid , my lord !",
+      "scrollMode": "auto",
+      "lineIndex": 90
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r0g",
+      "lineText": "To bide upon ’t : thou art not honest ; or , If thou inclin’st that way , thou art a coward , Which hoxes honesty behind , restraining From course required ; or else thou must be counted A servant grafted in my serious trust And therein negligent ; or else a fool That seest a game played home , the rich stake drawn , And tak’st it all for jest .",
+      "scrollMode": "auto",
+      "lineIndex": 91
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79qvg",
+      "lineText": "My gracious lord , I may be negligent , foolish , and fearful . In every one of these no man is free , But that his negligence , his folly , fear , Among the infinite doings of the world , Sometime puts forth . In your affairs , my lord , If ever I were willful-negligent , It was my folly ; if industriously I played the fool , it was my negligence , Not weighing well the end ; if ever fearful To do a thing where I the issue doubted , Whereof the execution did cry out Against the non-performance , ’twas a fear Which oft infects the wisest . These , my lord , Are such allowed infirmities that honesty Is never free of . But , beseech your Grace , Be plainer with me ; let me know my trespass By its own visage . If I then deny it , ’Tis none of mine .",
+      "scrollMode": "auto",
+      "lineIndex": 92
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r0g",
+      "lineText": "Ha’ not you seen , Camillo — But that’s past doubt ; you have , or your eyeglass ACT 1. SC. 2 Is thicker than a cuckold’s horn — or heard — For to a vision so apparent , rumor Cannot be mute — or thought — for cogitation Resides not in that man that does not think — My wife is slippery ? If thou wilt confess — Or else be impudently negative To have nor eyes nor ears nor thought — then say My wife’s a hobby-horse , deserves a name As rank as any flax-wench that puts to Before her troth-plight . Say ’t , and justify ’t .",
+      "scrollMode": "auto",
+      "lineIndex": 93
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79qvg",
+      "lineText": "I would not be a stander-by to hear My sovereign mistress clouded so without My present vengeance taken . ’Shrew my heart , You never spoke what did become you less Than this , which to reiterate were sin As deep as that , though true .",
+      "scrollMode": "auto",
+      "lineIndex": 94
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r0g",
+      "lineText": "Is whispering nothing ? Is leaning cheek to cheek ? Is meeting noses ? Kissing with inside lip ? Stopping the career Of laughter with a sigh ? — a note infallible Of breaking honesty . Horsing foot on foot ? Skulking in corners ? Wishing clocks more swift ? Hours minutes ? Noon midnight ? And all eyes Blind with the pin and web but theirs , theirs only , That would unseen be wicked ? Is this nothing ? Why , then the world and all that’s in ’t is nothing , The covering sky is nothing , Bohemia nothing , My wife is nothing , nor nothing have these nothings , If this be nothing .",
+      "scrollMode": "auto",
+      "lineIndex": 95
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79qvg",
+      "lineText": "Good my lord , be cured Of this diseased opinion , and betimes , For ’tis most dangerous .",
+      "scrollMode": "auto",
+      "lineIndex": 96
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r0g",
+      "lineText": "Say it be , ’tis true .",
+      "scrollMode": "auto",
+      "lineIndex": 97
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79qvg",
+      "lineText": "No , no , my lord .",
+      "scrollMode": "auto",
+      "lineIndex": 98
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r0g",
+      "lineText": "It is . You lie , you lie . I say thou liest , Camillo , and I hate thee , Pronounce thee a gross lout , a mindless slave , Or else a hovering temporizer that Canst with thine eyes at once see good and evil , Inclining to them both . Were my wife’s liver Infected as her life , she would not live The running of one glass .",
+      "scrollMode": "auto",
+      "lineIndex": 99
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79qvg",
+      "lineText": "Who does infect her ?",
+      "scrollMode": "auto",
+      "lineIndex": 100
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r0g",
+      "lineText": "Why , he that wears her like her medal , hanging About his neck — Bohemia , who , if I Had servants true about me , that bare eyes To see alike mine honor as their profits , Their own particular thrifts , they would do that Which should undo more doing . Ay , and thou , His cupbearer — whom I from meaner form Have benched and reared to worship , who mayst see Plainly as heaven sees Earth earth and Earth earth sees heaven How I am galled — mightst bespice a cup To give mine enemy a lasting wink , Which draft to me were cordial .",
+      "scrollMode": "auto",
+      "lineIndex": 101
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79qvg",
+      "lineText": "Sir , my lord , I could do this , and that with no rash potion , But with a ling’ring dram that should not work Maliciously like poison . But I cannot Believe this crack to be in my dread mistress , So sovereignly being honorable . I have loved thee —",
+      "scrollMode": "auto",
+      "lineIndex": 102
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r0g",
+      "lineText": "Make that thy question , and go rot ! Dost think I am so muddy , so unsettled , To appoint myself in this vexation , sully The purity and whiteness of my sheets — Which to preserve is sleep , which being spotted ACT 1. SC. 2 Is goads , thorns , nettles , tails of wasps — Give scandal to the blood o’ th’ Prince , my son , Who I do think is mine and love as mine , Without ripe moving to ’t ? Would I do this ? Could man so blench ?",
+      "scrollMode": "auto",
+      "lineIndex": 103
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79qvg",
+      "lineText": "I must believe you , sir . I do , and will fetch off Bohemia for ’t — Provided that , when he’s removed , your Highness Will take again your queen as yours at first , Even for your son’s sake , and thereby for sealing The injury of tongues in courts and kingdoms Known and allied to yours .",
+      "scrollMode": "auto",
+      "lineIndex": 104
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r0g",
+      "lineText": "Thou dost advise me Even so as I mine own course have set down . I’ll give no blemish to her honor , none .",
+      "scrollMode": "auto",
+      "lineIndex": 105
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79qvg",
+      "lineText": "My lord , Go then , and with a countenance as clear As friendship wears at feasts , keep with Bohemia And with your queen . I am his cupbearer . If from me he have wholesome beverage , Account me not your servant .",
+      "scrollMode": "auto",
+      "lineIndex": 106
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r0g",
+      "lineText": "This is all . Do ’t and thou hast the one half of my heart ; Do ’t not , thou splitt’st thine own .",
+      "scrollMode": "auto",
+      "lineIndex": 107
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79qvg",
+      "lineText": "I’ll do ’t , my lord .",
+      "scrollMode": "auto",
+      "lineIndex": 108
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r0g",
+      "lineText": "I will seem friendly , as thou hast advised me .",
+      "scrollMode": "auto",
+      "lineIndex": 109
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79qug",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 110
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79qvg",
+      "lineText": "O miserable lady ! But , for me , What case stand I in ? I must be the poisoner Of good Polixenes , and my ground to do ’t Is the obedience to a master , one Who in rebellion with himself will have All that are his so too . To do this deed , ACT 1. SC. 2 Promotion follows . If I could find example Of thousands that had struck anointed kings And flourished after , I’d not do ’t . But since Nor brass , nor stone , nor parchment bears not one , Let villainy itself forswear ’t . I must Forsake the court . To do ’t or no is certain To me a breakneck . Happy star reign now ! Here comes Bohemia .",
+      "scrollMode": "auto",
+      "lineIndex": 111
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79qug",
+      "lineText": "Enter Polixenes .",
+      "scrollMode": "auto",
+      "lineIndex": 112
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79qug",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 113
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r00",
+      "lineText": "This is strange . Methinks My favor here begins to warp . Not speak ? — Good day , Camillo .",
+      "scrollMode": "auto",
+      "lineIndex": 114
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79qvg",
+      "lineText": "Hail , most royal sir .",
+      "scrollMode": "auto",
+      "lineIndex": 115
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r00",
+      "lineText": "What is the news i’ th’ court ?",
+      "scrollMode": "auto",
+      "lineIndex": 116
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79qvg",
+      "lineText": "None rare , my lord .",
+      "scrollMode": "auto",
+      "lineIndex": 117
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r00",
+      "lineText": "The King hath on him such a countenance As he had lost some province and a region Loved as he loves himself . Even now I met him With customary compliment , when he , Wafting his eyes to th’ contrary and falling A lip of much contempt , speeds from me , and So leaves me to consider what is breeding That changes thus his manners .",
+      "scrollMode": "auto",
+      "lineIndex": 118
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79qvg",
+      "lineText": "I dare not know , my lord .",
+      "scrollMode": "auto",
+      "lineIndex": 119
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r00",
+      "lineText": "How , dare not ? Do not ? Do you know and dare not ? Be intelligent to me — ’tis thereabouts ; For to yourself what you do know , you must , And cannot say you dare not . Good Camillo , Your changed complexions are to me a mirror Which shows me mine changed too , for I must be ACT 1. SC. 2 A party in this alteration , finding Myself thus altered with ’t .",
+      "scrollMode": "auto",
+      "lineIndex": 120
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79qvg",
+      "lineText": "There is a sickness Which puts some of us in distemper , but I cannot name the disease , and it is caught Of you that yet are well .",
+      "scrollMode": "auto",
+      "lineIndex": 121
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r00",
+      "lineText": "How caught of me ? Make me not sighted like the basilisk . I have looked on thousands who have sped the better By my regard , but killed none so . Camillo , As you are certainly a gentleman , thereto Clerklike experienced , which no less adorns Our gentry than our parents’ noble names , In whose success we are gentle , I beseech you , If you know aught which does behoove my knowledge Thereof to be informed , imprison ’t not In ignorant concealment .",
+      "scrollMode": "auto",
+      "lineIndex": 122
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79qvg",
+      "lineText": "I may not answer .",
+      "scrollMode": "auto",
+      "lineIndex": 123
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r00",
+      "lineText": "A sickness caught of me , and yet I well ? I must be answered . Dost thou hear , Camillo ? I conjure thee by all the parts of man Which honor does acknowledge , whereof the least Is not this suit of mine , that thou declare What incidency thou dost guess of harm Is creeping toward me ; how far off , how near ; Which way to be prevented , if to be ; If not , how best to bear it .",
+      "scrollMode": "auto",
+      "lineIndex": 124
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79qvg",
+      "lineText": "Sir , I will tell you , Since I am charged in honor and by him That I think honorable . Therefore mark my counsel , Which must be e’en as swiftly followed as I mean to utter it , or both yourself and me Cry lost , and so goodnight .",
+      "scrollMode": "auto",
+      "lineIndex": 125
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r00",
+      "lineText": "On , good Camillo .",
+      "scrollMode": "auto",
+      "lineIndex": 126
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79qvg",
+      "lineText": "I am appointed him to murder you .",
+      "scrollMode": "auto",
+      "lineIndex": 127
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r00",
+      "lineText": "By whom , Camillo ?",
+      "scrollMode": "auto",
+      "lineIndex": 128
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79qvg",
+      "lineText": "By the King .",
+      "scrollMode": "auto",
+      "lineIndex": 129
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r00",
+      "lineText": "For what ?",
+      "scrollMode": "auto",
+      "lineIndex": 130
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79qvg",
+      "lineText": "He thinks , nay with all confidence he swears , As he had seen ’t or been an instrument To vice you to ’t , that you have touched his queen Forbiddenly .",
+      "scrollMode": "auto",
+      "lineIndex": 131
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r00",
+      "lineText": "O , then my best blood turn To an infected jelly , and my name Be yoked with his that did betray the Best ! Turn then my freshest reputation to A savor that may strike the dullest nostril Where I arrive , and my approach be shunned , Nay , hated too , worse than the great’st infection That e’er was heard or read .",
+      "scrollMode": "auto",
+      "lineIndex": 132
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79qvg",
+      "lineText": "Swear his thought over By each particular star in heaven and By all their influences , you may as well Forbid the sea for to obey the moon As or by oath remove or counsel shake The fabric of his folly , whose foundation Is piled upon his faith and will continue The standing of his body .",
+      "scrollMode": "auto",
+      "lineIndex": 133
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r00",
+      "lineText": "How should this grow ?",
+      "scrollMode": "auto",
+      "lineIndex": 134
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79qvg",
+      "lineText": "I know not . But I am sure ’tis safer to Avoid what’s grown than question how ’tis born . If therefore you dare trust my honesty , That lies enclosèd in this trunk which you Shall bear along impawned , away tonight ! ACT 1. SC. 2 Your followers I will whisper to the business , And will by twos and threes at several posterns Clear them o’ th’ city . For myself , I’ll put My fortunes to your service , which are here By this discovery lost . Be not uncertain , For , by the honor of my parents , I Have uttered truth — which if you seek to prove , I dare not stand by ; nor shall you be safer Than one condemned by the King’s own mouth , thereon His execution sworn .",
+      "scrollMode": "auto",
+      "lineIndex": 135
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79r00",
+      "lineText": "I do believe thee . I saw his heart in ’s face . Give me thy hand . Be pilot to me and thy places shall Still neighbor mine . My ships are ready and My people did expect my hence departure Two days ago . This jealousy Is for a precious creature . As she’s rare , Must it be great ; and as his person’s mighty , Must it be violent ; and as he does conceive He is dishonored by a man which ever Professed to him , why , his revenges must In that be made more bitter . Fear o’ershades me . Good expedition be my friend , and comfort The gracious queen , part of his theme , but nothing Of his ill-ta’en suspicion . Come , Camillo , I will respect thee as a father if Thou bear’st my life off hence . Let us avoid .",
+      "scrollMode": "auto",
+      "lineIndex": 136
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79qvg",
+      "lineText": "It is in mine authority to command The keys of all the posterns . Please your Highness To take the urgent hour . Come , sir , away .",
+      "scrollMode": "auto",
+      "lineIndex": 137
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79qug",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 138
+    }
+  ],
+  "isPublic": true
+}

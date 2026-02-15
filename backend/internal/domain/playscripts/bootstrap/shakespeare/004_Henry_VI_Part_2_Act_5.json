@@ -1,0 +1,935 @@
+{
+  "title": "Henry VI, Part 2 (Act 5)",
+  "description": "Folger Shakespeare Library edition",
+  "author": "William Shakespeare",
+  "castMembers": [
+    {
+      "id": "d68m11cn9qd8d2h78hk0",
+      "name": "Narrator",
+      "sortOrder": 0
+    },
+    {
+      "id": "d68m11cn9qd8d2h78hkg",
+      "name": "Buckingham",
+      "sortOrder": 1
+    },
+    {
+      "id": "d68m11cn9qd8d2h78hl0",
+      "name": "York",
+      "sortOrder": 2
+    },
+    {
+      "id": "d68m11cn9qd8d2h78hlg",
+      "name": "SOLDIERS.YORK_2H6",
+      "sortOrder": 3
+    },
+    {
+      "id": "d68m11cn9qd8d2h78hm0",
+      "name": "King Henry VI",
+      "sortOrder": 4
+    },
+    {
+      "id": "d68m11cn9qd8d2h78hmg",
+      "name": "Iden",
+      "description": "a gentleman of Kent",
+      "sortOrder": 5
+    },
+    {
+      "id": "d68m11cn9qd8d2h78hn0",
+      "name": "Queen Margaret",
+      "sortOrder": 6
+    },
+    {
+      "id": "d68m11cn9qd8d2h78hng",
+      "name": "Somerset",
+      "sortOrder": 7
+    },
+    {
+      "id": "d68m11cn9qd8d2h78ho0",
+      "name": "ATTENDANTS.YORK.0.1_2H6",
+      "sortOrder": 8
+    },
+    {
+      "id": "d68m11cn9qd8d2h78hog",
+      "name": "Edward",
+      "description": "Earl of March",
+      "sortOrder": 9
+    },
+    {
+      "id": "d68m11cn9qd8d2h78hp0",
+      "name": "Richard",
+      "sortOrder": 10
+    },
+    {
+      "id": "d68m11cn9qd8d2h78hpg",
+      "name": "Clifford",
+      "sortOrder": 11
+    },
+    {
+      "id": "d68m11cn9qd8d2h78hq0",
+      "name": "Salisbury",
+      "sortOrder": 12
+    },
+    {
+      "id": "d68m11cn9qd8d2h78hqg",
+      "name": "Warwick",
+      "description": "Salisbury’s son",
+      "sortOrder": 13
+    },
+    {
+      "id": "d68m11cn9qd8d2h78hr0",
+      "name": "Young Clifford",
+      "description": "his son",
+      "sortOrder": 14
+    }
+  ],
+  "lines": [
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hk0",
+      "lineText": "Enter York , wearing the white rose , and his army of Irish , with Attendants , Drum and Colors .",
+      "scrollMode": "auto",
+      "lineIndex": 0
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hk0",
+      "lineText": "Enter Buckingham , wearing the red rose .",
+      "scrollMode": "auto",
+      "lineIndex": 1
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hk0",
+      "lineText": "Aside .",
+      "scrollMode": "auto",
+      "lineIndex": 2
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hkg",
+      "lineText": "Aside . Whom have we here ? Buckingham , to disturb me ? The King hath sent him , sure . I must dissemble .",
+      "scrollMode": "auto",
+      "lineIndex": 3
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hkg",
+      "lineText": "York , if thou meanest well , I greet thee well .",
+      "scrollMode": "auto",
+      "lineIndex": 4
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hl0",
+      "lineText": "Humphrey of Buckingham , I accept thy greeting . Art thou a messenger , or come of pleasure ?",
+      "scrollMode": "auto",
+      "lineIndex": 5
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hkg",
+      "lineText": "A messenger from Henry , our dread liege , To know the reason of these arms in peace ; Or why thou , being a subject as I am , Against thy oath and true allegiance sworn , Should raise so great a power without his leave , Or dare to bring thy force so near the court .",
+      "scrollMode": "auto",
+      "lineIndex": 6
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hk0",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 7
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hl0",
+      "lineText": "Scarce can I speak , my choler is so great . O , I could hew up rocks and fight with flint , I am so angry at these abject terms ! And now , like Ajax Telamonius , On sheep or oxen could I spend my fury . I am far better born than is the King , More like a king , more kingly in my thoughts . But I must make fair weather yet awhile , Till Henry be more weak and I more strong . — Buckingham , I prithee , pardon me , That I have given no answer all this while . My mind was troubled with deep melancholy . The cause why I have brought this army hither Is to remove proud Somerset from the King , Seditious to his Grace and to the state .",
+      "scrollMode": "auto",
+      "lineIndex": 8
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hkg",
+      "lineText": "That is too much presumption on thy part . But if thy arms be to no other end , The King hath yielded unto thy demand : The Duke of Somerset is in the Tower .",
+      "scrollMode": "auto",
+      "lineIndex": 9
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hl0",
+      "lineText": "Upon thine honor , is he prisoner ?",
+      "scrollMode": "auto",
+      "lineIndex": 10
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hkg",
+      "lineText": "Upon mine honor , he is prisoner .",
+      "scrollMode": "auto",
+      "lineIndex": 11
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hk0",
+      "lineText": "Soldiers exit .",
+      "scrollMode": "auto",
+      "lineIndex": 12
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hlg",
+      "lineText": "Soldiers exit . And let my sovereign , virtuous Henry , Command my eldest son , nay , all my sons , As pledges of my fealty and love ; I’ll send them all as willing as I live . Lands , goods , horse , armor , anything I have Is his to use , so Somerset may die .",
+      "scrollMode": "auto",
+      "lineIndex": 13
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hkg",
+      "lineText": "York , I commend this kind submission . We twain will go into his Highness’ tent .",
+      "scrollMode": "auto",
+      "lineIndex": 14
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hk0",
+      "lineText": "They walk arm in arm .",
+      "scrollMode": "auto",
+      "lineIndex": 15
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hk0",
+      "lineText": "Enter King Henry and Attendants .",
+      "scrollMode": "auto",
+      "lineIndex": 16
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hm0",
+      "lineText": "Buckingham , doth York intend no harm to us That thus he marcheth with thee arm in arm ?",
+      "scrollMode": "auto",
+      "lineIndex": 17
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hl0",
+      "lineText": "In all submission and humility York doth present himself unto your Highness .",
+      "scrollMode": "auto",
+      "lineIndex": 18
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hm0",
+      "lineText": "Then what intends these forces thou dost bring ?",
+      "scrollMode": "auto",
+      "lineIndex": 19
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hl0",
+      "lineText": "To heave the traitor Somerset from hence And fight against that monstrous rebel Cade , Who since I heard to be discomfited .",
+      "scrollMode": "auto",
+      "lineIndex": 20
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hk0",
+      "lineText": "Enter Iden , with Cade’s head .",
+      "scrollMode": "auto",
+      "lineIndex": 21
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hmg",
+      "lineText": "If one so rude and of so mean condition May pass into the presence of a king , Lo , I present your Grace a traitor’s head , The head of Cade , whom I in combat slew .",
+      "scrollMode": "auto",
+      "lineIndex": 22
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hm0",
+      "lineText": "The head of Cade ? Great God , how just art Thou ! ACT 5. SC. 1 O , let me view his visage , being dead , That living wrought me such exceeding trouble . Tell me , my friend , art thou the man that slew him ?",
+      "scrollMode": "auto",
+      "lineIndex": 23
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hmg",
+      "lineText": "I was , an ’t like your Majesty .",
+      "scrollMode": "auto",
+      "lineIndex": 24
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hm0",
+      "lineText": "How art thou called ? And what is thy degree ?",
+      "scrollMode": "auto",
+      "lineIndex": 25
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hmg",
+      "lineText": "Alexander Iden , that’s my name , A poor esquire of Kent that loves his king .",
+      "scrollMode": "auto",
+      "lineIndex": 26
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hkg",
+      "lineText": "So please it you , my lord , ’twere not amiss He were created knight for his good service .",
+      "scrollMode": "auto",
+      "lineIndex": 27
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hk0",
+      "lineText": "He kneels .",
+      "scrollMode": "auto",
+      "lineIndex": 28
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hk0",
+      "lineText": "He rises .",
+      "scrollMode": "auto",
+      "lineIndex": 29
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hmg",
+      "lineText": "He rises . We give thee for reward a thousand marks , And will that thou henceforth attend on us .",
+      "scrollMode": "auto",
+      "lineIndex": 30
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hmg",
+      "lineText": "May Iden live to merit such a bounty , And never live but true unto his liege !",
+      "scrollMode": "auto",
+      "lineIndex": 31
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hk0",
+      "lineText": "Enter Queen Margaret and Somerset , wearing the red rose .",
+      "scrollMode": "auto",
+      "lineIndex": 32
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hk0",
+      "lineText": ", aside to Buckingham",
+      "scrollMode": "auto",
+      "lineIndex": 33
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hm0",
+      "lineText": "See , Buckingham , Somerset comes with th’ Queen . Go bid her hide him quickly from the Duke .",
+      "scrollMode": "auto",
+      "lineIndex": 34
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hk0",
+      "lineText": "Buckingham whispers to the Queen .",
+      "scrollMode": "auto",
+      "lineIndex": 35
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hn0",
+      "lineText": "For thousand Yorks he shall not hide his head , But boldly stand and front him to his face .",
+      "scrollMode": "auto",
+      "lineIndex": 36
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hk0",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 37
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hl0",
+      "lineText": "How now ? Is Somerset at liberty ? Then , York , unloose thy long-imprisoned thoughts , And let thy tongue be equal with thy heart . Shall I endure the sight of Somerset ? — False king , why hast thou broken faith with me , ACT 5. SC. 1 Knowing how hardly I can brook abuse ? King did I call thee ? No , thou art not king , Not fit to govern and rule multitudes , Which dar’st not — no , nor canst not — rule a traitor . That head of thine doth not become a crown ; Thy hand is made to grasp a palmer’s staff , And not to grace an awful princely scepter . That gold must round engirt these brows of mine , Whose smile and frown , like to Achilles’ spear , Is able with the change to kill and cure . Here is a hand to hold a scepter up And with the same to act controlling laws . Give place . By heaven , thou shalt rule no more O’er him whom heaven created for thy ruler .",
+      "scrollMode": "auto",
+      "lineIndex": 38
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hng",
+      "lineText": "O monstrous traitor ! I arrest thee , York , Of capital treason ’gainst the King and crown . Obey , audacious traitor . Kneel for grace .",
+      "scrollMode": "auto",
+      "lineIndex": 39
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hk0",
+      "lineText": "To an Attendant .",
+      "scrollMode": "auto",
+      "lineIndex": 40
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hk0",
+      "lineText": "Attendant exits .",
+      "scrollMode": "auto",
+      "lineIndex": 41
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ho0",
+      "lineText": "Attendant exits . I know , ere they will have me go to ward , They’ll pawn their swords for my enfranchisement .",
+      "scrollMode": "auto",
+      "lineIndex": 42
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hk0",
+      "lineText": ", to Buckingham",
+      "scrollMode": "auto",
+      "lineIndex": 43
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hn0",
+      "lineText": "Call hither Clifford ; bid him come amain , To say if that the bastard boys of York Shall be the surety for their traitor father .",
+      "scrollMode": "auto",
+      "lineIndex": 44
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hk0",
+      "lineText": "Buckingham exits .",
+      "scrollMode": "auto",
+      "lineIndex": 45
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hk0",
+      "lineText": ", to Queen Margaret",
+      "scrollMode": "auto",
+      "lineIndex": 46
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hk0",
+      "lineText": "Enter York’s sons Edward and Richard , wearing the white rose .",
+      "scrollMode": "auto",
+      "lineIndex": 47
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hog",
+      "lineText": "Enter York’s sons Edward and Richard , wearing the white rose . See where they come ; I’ll warrant they’ll make it good .",
+      "scrollMode": "auto",
+      "lineIndex": 48
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hk0",
+      "lineText": "Enter old Clifford and his Son , wearing the red rose .",
+      "scrollMode": "auto",
+      "lineIndex": 49
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hn0",
+      "lineText": "And here comes Clifford to deny their bail .",
+      "scrollMode": "auto",
+      "lineIndex": 50
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hk0",
+      "lineText": ", kneeling before King Henry",
+      "scrollMode": "auto",
+      "lineIndex": 51
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hpg",
+      "lineText": "Health and all happiness to my lord the King .",
+      "scrollMode": "auto",
+      "lineIndex": 52
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hk0",
+      "lineText": "He rises .",
+      "scrollMode": "auto",
+      "lineIndex": 53
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hl0",
+      "lineText": "I thank thee , Clifford . Say , what news with thee ? Nay , do not fright us with an angry look . We are thy sovereign , Clifford ; kneel again . For thy mistaking so , we pardon thee .",
+      "scrollMode": "auto",
+      "lineIndex": 54
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hpg",
+      "lineText": "This is my king , York ; I do not mistake , But thou mistakes me much to think I do . — To Bedlam with him ! Is the man grown mad ?",
+      "scrollMode": "auto",
+      "lineIndex": 55
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hm0",
+      "lineText": "Ay , Clifford , a bedlam and ambitious humor Makes him oppose himself against his king .",
+      "scrollMode": "auto",
+      "lineIndex": 56
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hpg",
+      "lineText": "He is a traitor . Let him to the Tower , And chop away that factious pate of his .",
+      "scrollMode": "auto",
+      "lineIndex": 57
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hn0",
+      "lineText": "He is arrested , but will not obey . His sons , he says , shall give their words for him .",
+      "scrollMode": "auto",
+      "lineIndex": 58
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hl0",
+      "lineText": "Will you not , sons ?",
+      "scrollMode": "auto",
+      "lineIndex": 59
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hog",
+      "lineText": "Ay , noble father , if our words will serve .",
+      "scrollMode": "auto",
+      "lineIndex": 60
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hp0",
+      "lineText": "And if words will not , then our weapons shall .",
+      "scrollMode": "auto",
+      "lineIndex": 61
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hpg",
+      "lineText": "Why , what a brood of traitors have we here !",
+      "scrollMode": "auto",
+      "lineIndex": 62
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hk0",
+      "lineText": "To an Attendant .",
+      "scrollMode": "auto",
+      "lineIndex": 63
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hl0",
+      "lineText": "To an Attendant . Bid Salisbury and Warwick come to me .",
+      "scrollMode": "auto",
+      "lineIndex": 64
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hk0",
+      "lineText": "Attendant exits .",
+      "scrollMode": "auto",
+      "lineIndex": 65
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hk0",
+      "lineText": "Enter the Earls of Warwick and Salisbury , wearing the white rose .",
+      "scrollMode": "auto",
+      "lineIndex": 66
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hpg",
+      "lineText": "Are these thy bears ? We’ll bait thy bears to death And manacle the bearherd in their chains , If thou dar’st bring them to the baiting place .",
+      "scrollMode": "auto",
+      "lineIndex": 67
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hp0",
+      "lineText": "Oft have I seen a hot o’erweening cur Run back and bite because he was withheld , Who , being suffered with the bear’s fell paw , Hath clapped his tail between his legs and cried ; And such a piece of service will you do If you oppose yourselves to match Lord Warwick .",
+      "scrollMode": "auto",
+      "lineIndex": 68
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hpg",
+      "lineText": "Hence , heap of wrath , foul indigested lump , As crooked in thy manners as thy shape !",
+      "scrollMode": "auto",
+      "lineIndex": 69
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hl0",
+      "lineText": "Nay , we shall heat you thoroughly anon .",
+      "scrollMode": "auto",
+      "lineIndex": 70
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hpg",
+      "lineText": "Take heed , lest by your heat you burn yourselves .",
+      "scrollMode": "auto",
+      "lineIndex": 71
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hm0",
+      "lineText": "Why , Warwick , hath thy knee forgot to bow ? — Old Salisbury , shame to thy silver hair , Thou mad misleader of thy brainsick son ! What , wilt thou on thy deathbed play the ruffian And seek for sorrow with thy spectacles ? O , where is faith ? O , where is loyalty ? If it be banished from the frosty head , Where shall it find a harbor in the earth ? Wilt thou go dig a grave to find out war , And shame thine honorable age with blood ? Why art thou old and want’st experience ? Or wherefore dost abuse it , if thou hast it ? For shame ! In duty bend thy knee to me That bows unto the grave with mickle age .",
+      "scrollMode": "auto",
+      "lineIndex": 72
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hq0",
+      "lineText": "My lord , I have considered with myself The title of this most renownèd duke , And in my conscience do repute his Grace The rightful heir to England’s royal seat .",
+      "scrollMode": "auto",
+      "lineIndex": 73
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hm0",
+      "lineText": "Hast thou not sworn allegiance unto me ?",
+      "scrollMode": "auto",
+      "lineIndex": 74
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hq0",
+      "lineText": "I have .",
+      "scrollMode": "auto",
+      "lineIndex": 75
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hm0",
+      "lineText": "Canst thou dispense with heaven for such an oath ?",
+      "scrollMode": "auto",
+      "lineIndex": 76
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hq0",
+      "lineText": "It is great sin to swear unto a sin , But greater sin to keep a sinful oath . Who can be bound by any solemn vow To do a murd’rous deed , to rob a man , To force a spotless virgin’s chastity , To reave the orphan of his patrimony , To wring the widow from her customed right , And have no other reason for this wrong But that he was bound by a solemn oath ?",
+      "scrollMode": "auto",
+      "lineIndex": 77
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hn0",
+      "lineText": "A subtle traitor needs no sophister .",
+      "scrollMode": "auto",
+      "lineIndex": 78
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hk0",
+      "lineText": ", to an Attendant",
+      "scrollMode": "auto",
+      "lineIndex": 79
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hm0",
+      "lineText": "Call Buckingham , and bid him arm himself .",
+      "scrollMode": "auto",
+      "lineIndex": 80
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hk0",
+      "lineText": "Attendant exits .",
+      "scrollMode": "auto",
+      "lineIndex": 81
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hk0",
+      "lineText": ", to King Henry",
+      "scrollMode": "auto",
+      "lineIndex": 82
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hl0",
+      "lineText": "Call Buckingham and all the friends thou hast , I am resolved for death or dignity .",
+      "scrollMode": "auto",
+      "lineIndex": 83
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hpg",
+      "lineText": "The first , I warrant thee , if dreams prove true .",
+      "scrollMode": "auto",
+      "lineIndex": 84
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hqg",
+      "lineText": "You were best to go to bed and dream again , To keep thee from the tempest of the field .",
+      "scrollMode": "auto",
+      "lineIndex": 85
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hpg",
+      "lineText": "I am resolved to bear a greater storm Than any thou canst conjure up today ; And that I’ll write upon thy burgonet , Might I but know thee by thy house’s badge .",
+      "scrollMode": "auto",
+      "lineIndex": 86
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hqg",
+      "lineText": "Now , by my father’s badge , old Neville’s crest , The rampant bear chained to the ragged staff , This day I’ll wear aloft my burgonet — As on a mountaintop the cedar shows That keeps his leaves in spite of any storm — Even to affright thee with the view thereof .",
+      "scrollMode": "auto",
+      "lineIndex": 87
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hpg",
+      "lineText": "And from thy burgonet I’ll rend thy bear And tread it under foot with all contempt , Despite the bearherd that protects the bear .",
+      "scrollMode": "auto",
+      "lineIndex": 88
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hr0",
+      "lineText": "And so to arms , victorious father , To quell the rebels and their complices .",
+      "scrollMode": "auto",
+      "lineIndex": 89
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hp0",
+      "lineText": "Fie ! Charity , for shame ! Speak not in spite , For you shall sup with Jesu Christ tonight .",
+      "scrollMode": "auto",
+      "lineIndex": 90
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hr0",
+      "lineText": "Foul stigmatic , that’s more than thou canst tell !",
+      "scrollMode": "auto",
+      "lineIndex": 91
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hp0",
+      "lineText": "If not in heaven , you’ll surely sup in hell .",
+      "scrollMode": "auto",
+      "lineIndex": 92
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hk0",
+      "lineText": "They exit separately .",
+      "scrollMode": "auto",
+      "lineIndex": 93
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hk0",
+      "lineText": "The sign of the Castle Inn is displayed . Alarms .",
+      "scrollMode": "auto",
+      "lineIndex": 94
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hk0",
+      "lineText": "Enter Warwick , wearing the white rose .",
+      "scrollMode": "auto",
+      "lineIndex": 95
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hk0",
+      "lineText": "Enter York , wearing the white rose .",
+      "scrollMode": "auto",
+      "lineIndex": 96
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hl0",
+      "lineText": "Enter York , wearing the white rose . How now , my noble lord ? What , all afoot ?",
+      "scrollMode": "auto",
+      "lineIndex": 97
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hl0",
+      "lineText": "The deadly-handed Clifford slew my steed , But match to match I have encountered him And made a prey for carrion kites and crows Even of the bonny beast he loved so well .",
+      "scrollMode": "auto",
+      "lineIndex": 98
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hk0",
+      "lineText": "Enter old Clifford , wearing the red rose .",
+      "scrollMode": "auto",
+      "lineIndex": 99
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hqg",
+      "lineText": "Of one or both of us the time is come .",
+      "scrollMode": "auto",
+      "lineIndex": 100
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hl0",
+      "lineText": "Hold , Warwick ! Seek thee out some other chase , For I myself must hunt this deer to death .",
+      "scrollMode": "auto",
+      "lineIndex": 101
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hqg",
+      "lineText": "Then , nobly , York ! ’Tis for a crown thou fight’st . — As I intend , Clifford , to thrive today , It grieves my soul to leave thee unassailed .",
+      "scrollMode": "auto",
+      "lineIndex": 102
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hk0",
+      "lineText": "Warwick exits .",
+      "scrollMode": "auto",
+      "lineIndex": 103
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hpg",
+      "lineText": "What seest thou in me , York ? Why dost thou pause ?",
+      "scrollMode": "auto",
+      "lineIndex": 104
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hl0",
+      "lineText": "With thy brave bearing should I be in love , But that thou art so fast mine enemy .",
+      "scrollMode": "auto",
+      "lineIndex": 105
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hpg",
+      "lineText": "Nor should thy prowess want praise and esteem , But that ’tis shown ignobly and in treason .",
+      "scrollMode": "auto",
+      "lineIndex": 106
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hl0",
+      "lineText": "So let it help me now against thy sword As I in justice and true right express it !",
+      "scrollMode": "auto",
+      "lineIndex": 107
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hpg",
+      "lineText": "My soul and body on the action both !",
+      "scrollMode": "auto",
+      "lineIndex": 108
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hl0",
+      "lineText": "A dreadful lay ! Address thee instantly .",
+      "scrollMode": "auto",
+      "lineIndex": 109
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hk0",
+      "lineText": "They fight and Clifford falls .",
+      "scrollMode": "auto",
+      "lineIndex": 110
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hpg",
+      "lineText": "La fin courrone les oeuvres .",
+      "scrollMode": "auto",
+      "lineIndex": 111
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hk0",
+      "lineText": "He dies .",
+      "scrollMode": "auto",
+      "lineIndex": 112
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hl0",
+      "lineText": "Thus war hath given thee peace , for thou art still . Peace with his soul , heaven , if it be thy will !",
+      "scrollMode": "auto",
+      "lineIndex": 113
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hk0",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 114
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hk0",
+      "lineText": "Enter young Clifford , wearing the red rose .",
+      "scrollMode": "auto",
+      "lineIndex": 115
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hk0",
+      "lineText": "He sees his father , lying dead .",
+      "scrollMode": "auto",
+      "lineIndex": 116
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hk0",
+      "lineText": "He takes his father’s body onto his back .",
+      "scrollMode": "auto",
+      "lineIndex": 117
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hr0",
+      "lineText": "He takes his father’s body onto his back . Come , thou new ruin of old Clifford’s house ; As did Aeneas old Anchises bear , So bear I thee upon my manly shoulders . But then Aeneas bare a living load , Nothing so heavy as these woes of mine .",
+      "scrollMode": "auto",
+      "lineIndex": 118
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hk0",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 119
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hk0",
+      "lineText": "Enter Richard , wearing the white rose , and Somerset , wearing the red rose , to fight .",
+      "scrollMode": "auto",
+      "lineIndex": 120
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hk0",
+      "lineText": "Richard kills Somerset under the sign of Castle Inn .",
+      "scrollMode": "auto",
+      "lineIndex": 121
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hp0",
+      "lineText": "So lie thou there . For underneath an alehouse’ paltry sign , The Castle in Saint Albans , Somerset Hath made the wizard famous in his death . Sword , hold thy temper ! Heart , be wrathful still ! Priests pray for enemies , but princes kill .",
+      "scrollMode": "auto",
+      "lineIndex": 122
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hk0",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 123
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hk0",
+      "lineText": "Fight . Excursions .",
+      "scrollMode": "auto",
+      "lineIndex": 124
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hk0",
+      "lineText": "Enter King Henry , Queen Margaret , both wearing the red rose , and Others .",
+      "scrollMode": "auto",
+      "lineIndex": 125
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hn0",
+      "lineText": "Away , my lord ! You are slow . For shame , away !",
+      "scrollMode": "auto",
+      "lineIndex": 126
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hm0",
+      "lineText": "Can we outrun the heavens ? Good Margaret , stay !",
+      "scrollMode": "auto",
+      "lineIndex": 127
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hk0",
+      "lineText": "Alarum afar off .",
+      "scrollMode": "auto",
+      "lineIndex": 128
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hn0",
+      "lineText": "Alarum afar off . If you be ta’en , we then should see the bottom Of all our fortunes ; but if we haply scape , As well we may — if not through your neglect — We shall to London get , where you are loved And where this breach now in our fortunes made May readily be stopped .",
+      "scrollMode": "auto",
+      "lineIndex": 129
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hk0",
+      "lineText": "Enter Young Clifford , wearing the red rose .",
+      "scrollMode": "auto",
+      "lineIndex": 130
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hr0",
+      "lineText": "But that my heart’s on future mischief set , I would speak blasphemy ere bid you fly ; But fly you must . Uncurable discomfit Reigns in the hearts of all our present parts . Away , for your relief ! And we will live To see their day and them our fortune give . Away , my lord , away !",
+      "scrollMode": "auto",
+      "lineIndex": 131
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hk0",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 132
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hk0",
+      "lineText": "Alarum . Retreat . Enter York , Edward , Richard , Warwick , and Soldiers , all wearing the white rose , with Drum and Colors .",
+      "scrollMode": "auto",
+      "lineIndex": 133
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hl0",
+      "lineText": "Of Salisbury , who can report of him , That winter lion , who in rage forgets Agèd contusions and all brush of time , And , like a gallant in the brow of youth , ACT 5. SC. 3 Repairs him with occasion ? This happy day Is not itself , nor have we won one foot , If Salisbury be lost .",
+      "scrollMode": "auto",
+      "lineIndex": 134
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hk0",
+      "lineText": "Enter Salisbury , wearing the white rose .",
+      "scrollMode": "auto",
+      "lineIndex": 135
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hq0",
+      "lineText": "Enter Salisbury , wearing the white rose . Now , by my sword , well hast thou fought today !",
+      "scrollMode": "auto",
+      "lineIndex": 136
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hq0",
+      "lineText": "By th’ Mass , so did we all . I thank you , Richard . God knows how long it is I have to live , And it hath pleased Him that three times today You have defended me from imminent death . Well , lords , we have not got that which we have ; ’Tis not enough our foes are this time fled , Being opposites of such repairing nature .",
+      "scrollMode": "auto",
+      "lineIndex": 137
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hl0",
+      "lineText": "I know our safety is to follow them ; For , as I hear , the King is fled to London To call a present court of Parliament . Let us pursue him ere the writs go forth . — What says Lord Warwick ? Shall we after them ?",
+      "scrollMode": "auto",
+      "lineIndex": 138
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hqg",
+      "lineText": "After them ? Nay , before them , if we can . Now , by my hand , lords , ’twas a glorious day . Saint Albans battle won by famous York Shall be eternized in all age to come . — Sound drum and trumpets , and to London all ; And more such days as these to us befall !",
+      "scrollMode": "auto",
+      "lineIndex": 139
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78hk0",
+      "lineText": "Flourish . They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 140
+    }
+  ],
+  "isPublic": true
+}

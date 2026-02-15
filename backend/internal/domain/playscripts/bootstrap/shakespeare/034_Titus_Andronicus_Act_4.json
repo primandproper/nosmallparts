@@ -1,0 +1,1250 @@
+{
+  "title": "Titus Andronicus (Act 4)",
+  "description": "Folger Shakespeare Library edition",
+  "author": "William Shakespeare",
+  "castMembers": [
+    {
+      "id": "d68m11sn9qd8d2h79nqg",
+      "name": "Narrator",
+      "sortOrder": 0
+    },
+    {
+      "id": "d68m11sn9qd8d2h79nr0",
+      "name": "Young Lucius",
+      "description": "his grandson",
+      "sortOrder": 1
+    },
+    {
+      "id": "d68m11sn9qd8d2h79nrg",
+      "name": "Marcus Andronicus",
+      "description": "Titus’s brother, a Roman tribune",
+      "sortOrder": 2
+    },
+    {
+      "id": "d68m11sn9qd8d2h79ns0",
+      "name": "Titus Andronicus",
+      "description": "a noble Roman general",
+      "sortOrder": 3
+    },
+    {
+      "id": "d68m11sn9qd8d2h79nsg",
+      "name": "Lavinia",
+      "description": "his daughter",
+      "sortOrder": 4
+    },
+    {
+      "id": "d68m11sn9qd8d2h79nt0",
+      "name": "Chiron",
+      "sortOrder": 5
+    },
+    {
+      "id": "d68m11sn9qd8d2h79ntg",
+      "name": "Aaron",
+      "description": "Tamora’s lover",
+      "sortOrder": 6
+    },
+    {
+      "id": "d68m11sn9qd8d2h79nu0",
+      "name": "Demetrius",
+      "sortOrder": 7
+    },
+    {
+      "id": "d68m11sn9qd8d2h79nug",
+      "name": "Nurse",
+      "sortOrder": 8
+    },
+    {
+      "id": "d68m11sn9qd8d2h79nv0",
+      "name": "Infant_Tit",
+      "sortOrder": 9
+    },
+    {
+      "id": "d68m11sn9qd8d2h79nvg",
+      "name": "Publius",
+      "description": "his son",
+      "sortOrder": 10
+    },
+    {
+      "id": "d68m11sn9qd8d2h79o00",
+      "name": "Caius",
+      "sortOrder": 11
+    },
+    {
+      "id": "d68m11sn9qd8d2h79o0g",
+      "name": "Sempronius",
+      "sortOrder": 12
+    },
+    {
+      "id": "d68m11sn9qd8d2h79o10",
+      "name": "Country Fellow",
+      "sortOrder": 13
+    },
+    {
+      "id": "d68m11sn9qd8d2h79o1g",
+      "name": "Saturninus",
+      "description": "elder son of the former Roman emperor, later emperor",
+      "sortOrder": 14
+    },
+    {
+      "id": "d68m11sn9qd8d2h79o20",
+      "name": "Tamora",
+      "description": "Queen of the Goths, later empress",
+      "sortOrder": 15
+    },
+    {
+      "id": "d68m11sn9qd8d2h79o2g",
+      "name": "Aemilius",
+      "description": "A Roman nobleman",
+      "sortOrder": 16
+    }
+  ],
+  "lines": [
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nqg",
+      "lineText": "Enter Lucius’ son and Lavinia running after him , and the boy flies from her with his books under his arm . Enter Titus and Marcus .",
+      "scrollMode": "auto",
+      "lineIndex": 0
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nr0",
+      "lineText": "Help , grandsire , help ! My aunt Lavinia Follows me everywhere , I know not why . — Good uncle Marcus , see how swift she comes ! — Alas , sweet aunt , I know not what you mean .",
+      "scrollMode": "auto",
+      "lineIndex": 1
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nrg",
+      "lineText": "Stand by me , Lucius . Do not fear thine aunt .",
+      "scrollMode": "auto",
+      "lineIndex": 2
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ns0",
+      "lineText": "She loves thee , boy , too well to do thee harm .",
+      "scrollMode": "auto",
+      "lineIndex": 3
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nr0",
+      "lineText": "Ay , when my father was in Rome she did .",
+      "scrollMode": "auto",
+      "lineIndex": 4
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nrg",
+      "lineText": "What means my niece Lavinia by these signs ?",
+      "scrollMode": "auto",
+      "lineIndex": 5
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ns0",
+      "lineText": "Fear her not , Lucius . Somewhat doth she mean . See , Lucius , see , how much she makes of thee . Somewhither would she have thee go with her . Ah , boy , Cornelia never with more care Read to her sons than she hath read to thee Sweet poetry and Tully’s Orator .",
+      "scrollMode": "auto",
+      "lineIndex": 6
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nrg",
+      "lineText": "Canst thou not guess wherefore she plies thee thus ?",
+      "scrollMode": "auto",
+      "lineIndex": 7
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nr0",
+      "lineText": "My lord , I know not , I , nor can I guess , Unless some fit or frenzy do possess her ; For I have heard my grandsire say full oft , Extremity of griefs would make men mad , And I have read that Hecuba of Troy Ran mad for sorrow . That made me to fear , Although , my lord , I know my noble aunt Loves me as dear as e’er my mother did , And would not but in fury fright my youth , Which made me down to throw my books and fly , Causeless , perhaps . — But pardon me , sweet aunt . And , madam , if my uncle Marcus go , I will most willingly attend your Ladyship .",
+      "scrollMode": "auto",
+      "lineIndex": 8
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nrg",
+      "lineText": "Lucius , I will .",
+      "scrollMode": "auto",
+      "lineIndex": 9
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nqg",
+      "lineText": "To Lavinia .",
+      "scrollMode": "auto",
+      "lineIndex": 10
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ns0",
+      "lineText": "To Lavinia . But thou art deeper read and better skilled . Come and take choice of all my library , And so beguile thy sorrow till the heavens Reveal the damned contriver of this deed . — Why lifts she up her arms in sequence thus ?",
+      "scrollMode": "auto",
+      "lineIndex": 11
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nrg",
+      "lineText": "I think she means that there were more than one Confederate in the fact . Ay , more there was , Or else to heaven she heaves them for revenge .",
+      "scrollMode": "auto",
+      "lineIndex": 12
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ns0",
+      "lineText": "Lucius , what book is that she tosseth so ?",
+      "scrollMode": "auto",
+      "lineIndex": 13
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nr0",
+      "lineText": "Grandsire , ’tis Ovid’s Metamorphosis . My mother gave it me .",
+      "scrollMode": "auto",
+      "lineIndex": 14
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nrg",
+      "lineText": "For love of her that’s gone , Perhaps , she culled it from among the rest .",
+      "scrollMode": "auto",
+      "lineIndex": 15
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ns0",
+      "lineText": "Soft ! So busily she turns the leaves . Help her ! What would she find ? — Lavinia , shall I read ? This is the tragic tale of Philomel , And treats of Tereus’ treason and his rape . And rape , I fear , was root of thy annoy .",
+      "scrollMode": "auto",
+      "lineIndex": 16
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nrg",
+      "lineText": "See , brother , see ! Note how she quotes the leaves .",
+      "scrollMode": "auto",
+      "lineIndex": 17
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ns0",
+      "lineText": "Lavinia , wert thou thus surprised , sweet girl , Ravished and wronged as Philomela was , Forced in the ruthless , vast , and gloomy woods ? See , see ! Ay , such a place there is where we did hunt — O , had we never , never hunted there ! — Patterned by that the poet here describes , By nature made for murders and for rapes .",
+      "scrollMode": "auto",
+      "lineIndex": 18
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nrg",
+      "lineText": "O , why should nature build so foul a den , Unless the gods delight in tragedies ?",
+      "scrollMode": "auto",
+      "lineIndex": 19
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ns0",
+      "lineText": "Give signs , sweet girl , for here are none but friends , What Roman lord it was durst do the deed . Or slunk not Saturnine , as Tarquin erst , That left the camp to sin in Lucrece’ bed ?",
+      "scrollMode": "auto",
+      "lineIndex": 20
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nqg",
+      "lineText": "They sit .",
+      "scrollMode": "auto",
+      "lineIndex": 21
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nqg",
+      "lineText": "He writes his name with his staff and guides it with feet and mouth .",
+      "scrollMode": "auto",
+      "lineIndex": 22
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nqg",
+      "lineText": "She takes the staff in her mouth , and guides it with her stumps and writes .",
+      "scrollMode": "auto",
+      "lineIndex": 23
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nsg",
+      "lineText": "She takes the staff in her mouth , and guides it with her stumps and writes . O , do you read , my lord , what she hath writ ?",
+      "scrollMode": "auto",
+      "lineIndex": 24
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ns0",
+      "lineText": "Stuprum . Chiron , Demetrius .",
+      "scrollMode": "auto",
+      "lineIndex": 25
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nrg",
+      "lineText": "What , what ! The lustful sons of Tamora Performers of this heinous , bloody deed ?",
+      "scrollMode": "auto",
+      "lineIndex": 26
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ns0",
+      "lineText": "Magni Dominator poli , Tam lentus audis scelera , tam lentus vides ?",
+      "scrollMode": "auto",
+      "lineIndex": 27
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nqg",
+      "lineText": "They all kneel .",
+      "scrollMode": "auto",
+      "lineIndex": 28
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nrg",
+      "lineText": "They all kneel . And swear with me — as , with the woeful fere And father of that chaste dishonored dame , Lord Junius Brutus swore for Lucrece’ rape — That we will prosecute by good advice Mortal revenge upon these traitorous Goths , And see their blood or die with this reproach .",
+      "scrollMode": "auto",
+      "lineIndex": 29
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nqg",
+      "lineText": "They rise .",
+      "scrollMode": "auto",
+      "lineIndex": 30
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ns0",
+      "lineText": "’Tis sure enough , an you knew how . But if you hunt these bearwhelps , then beware ; The dam will wake an if she wind you once . She’s with the lion deeply still in league , ACT 4. SC. 1 And lulls him whilst she playeth on her back ; And when he sleeps will she do what she list . You are a young huntsman , Marcus ; let alone . And come , I will go get a leaf of brass , And with a gad of steel will write these words , And lay it by . The angry northern wind Will blow these sands like Sibyl’s leaves abroad , And where’s our lesson then ? — Boy , what say you ?",
+      "scrollMode": "auto",
+      "lineIndex": 31
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nr0",
+      "lineText": "I say , my lord , that if I were a man , Their mother’s bedchamber should not be safe For these base bondmen to the yoke of Rome .",
+      "scrollMode": "auto",
+      "lineIndex": 32
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nrg",
+      "lineText": "Ay , that’s my boy ! Thy father hath full oft For his ungrateful country done the like .",
+      "scrollMode": "auto",
+      "lineIndex": 33
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nr0",
+      "lineText": "And , uncle , so will I , an if I live .",
+      "scrollMode": "auto",
+      "lineIndex": 34
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ns0",
+      "lineText": "Come , go with me into mine armory . Lucius , I’ll fit thee , and withal my boy Shall carry from me to the Empress’ sons Presents that I intend to send them both . Come , come . Thou ’lt do my message , wilt thou not ?",
+      "scrollMode": "auto",
+      "lineIndex": 35
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nr0",
+      "lineText": "Ay , with my dagger in their bosoms , grandsire .",
+      "scrollMode": "auto",
+      "lineIndex": 36
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ns0",
+      "lineText": "No , boy , not so . I’ll teach thee another course . — Lavinia , come . — Marcus , look to my house . Lucius and I’ll go brave it at the court ; Ay , marry , will we , sir , and we’ll be waited on .",
+      "scrollMode": "auto",
+      "lineIndex": 37
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nqg",
+      "lineText": "All but Marcus exit .",
+      "scrollMode": "auto",
+      "lineIndex": 38
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nrg",
+      "lineText": "O heavens , can you hear a good man groan And not relent , or not compassion him ? Marcus , attend him in his ecstasy , That hath more scars of sorrow in his heart ACT 4. SC. 2 Than foemen’s marks upon his battered shield , But yet so just that he will not revenge . Revenge the heavens for old Andronicus !",
+      "scrollMode": "auto",
+      "lineIndex": 39
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nqg",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 40
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nqg",
+      "lineText": "Enter Aaron , Chiron , and Demetrius at one door , and at the other door young Lucius and another , with a bundle of weapons and verses writ upon them .",
+      "scrollMode": "auto",
+      "lineIndex": 41
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nt0",
+      "lineText": "Demetrius , here’s the son of Lucius . He hath some message to deliver us .",
+      "scrollMode": "auto",
+      "lineIndex": 42
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ntg",
+      "lineText": "Ay , some mad message from his mad grandfather .",
+      "scrollMode": "auto",
+      "lineIndex": 43
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nqg",
+      "lineText": "Aside .",
+      "scrollMode": "auto",
+      "lineIndex": 44
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nr0",
+      "lineText": "Aside . And pray the Roman gods confound you both .",
+      "scrollMode": "auto",
+      "lineIndex": 45
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nu0",
+      "lineText": "Gramercy , lovely Lucius . What’s the news ?",
+      "scrollMode": "auto",
+      "lineIndex": 46
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nqg",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 47
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nqg",
+      "lineText": "( aside )",
+      "scrollMode": "auto",
+      "lineIndex": 48
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nr0",
+      "lineText": "( aside ) like bloody villains .",
+      "scrollMode": "auto",
+      "lineIndex": 49
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nqg",
+      "lineText": "He exits , with Attendant .",
+      "scrollMode": "auto",
+      "lineIndex": 50
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nqg",
+      "lineText": "He reads :",
+      "scrollMode": "auto",
+      "lineIndex": 51
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nu0",
+      "lineText": "He reads : Integer vitae , scelerisque purus , Non eget Mauri iaculis , nec arcu .",
+      "scrollMode": "auto",
+      "lineIndex": 52
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nt0",
+      "lineText": "O , ’tis a verse in Horace ; I know it well . I read it in the grammar long ago .",
+      "scrollMode": "auto",
+      "lineIndex": 53
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nqg",
+      "lineText": "Aside .",
+      "scrollMode": "auto",
+      "lineIndex": 54
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ntg",
+      "lineText": "Aside . Now , what a thing it is to be an ass ! Here’s no sound jest . The old man hath found their guilt And sends them weapons wrapped about with lines That wound , beyond their feeling , to the quick . But were our witty empress well afoot , She would applaud Andronicus’ conceit . But let her rest in her unrest awhile . — And now , young lords , was ’t not a happy star Led us to Rome , strangers , and , more than so , Captives , to be advancèd to this height ? It did me good before the palace gate To brave the tribune in his brother’s hearing .",
+      "scrollMode": "auto",
+      "lineIndex": 55
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nu0",
+      "lineText": "But me more good to see so great a lord Basely insinuate and send us gifts .",
+      "scrollMode": "auto",
+      "lineIndex": 56
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ntg",
+      "lineText": "Had he not reason , Lord Demetrius ? Did you not use his daughter very friendly ?",
+      "scrollMode": "auto",
+      "lineIndex": 57
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nu0",
+      "lineText": "I would we had a thousand Roman dames At such a bay , by turn to serve our lust .",
+      "scrollMode": "auto",
+      "lineIndex": 58
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nt0",
+      "lineText": "A charitable wish , and full of love !",
+      "scrollMode": "auto",
+      "lineIndex": 59
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ntg",
+      "lineText": "Here lacks but your mother for to say amen .",
+      "scrollMode": "auto",
+      "lineIndex": 60
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nt0",
+      "lineText": "And that would she , for twenty thousand more .",
+      "scrollMode": "auto",
+      "lineIndex": 61
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nu0",
+      "lineText": "Come , let us go and pray to all the gods For our belovèd mother in her pains .",
+      "scrollMode": "auto",
+      "lineIndex": 62
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nqg",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 63
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ntg",
+      "lineText": "Pray to the devils ; the gods have given us over .",
+      "scrollMode": "auto",
+      "lineIndex": 64
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nqg",
+      "lineText": "Trumpets sound offstage .",
+      "scrollMode": "auto",
+      "lineIndex": 65
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nu0",
+      "lineText": "Why do the Emperor’s trumpets flourish thus ?",
+      "scrollMode": "auto",
+      "lineIndex": 66
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nt0",
+      "lineText": "Belike for joy the Emperor hath a son .",
+      "scrollMode": "auto",
+      "lineIndex": 67
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nu0",
+      "lineText": "Soft , who comes here ?",
+      "scrollMode": "auto",
+      "lineIndex": 68
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nqg",
+      "lineText": "Enter Nurse , with a blackamoor child in her arms .",
+      "scrollMode": "auto",
+      "lineIndex": 69
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nug",
+      "lineText": "Good morrow , lords . O , tell me , did you see Aaron the Moor ?",
+      "scrollMode": "auto",
+      "lineIndex": 70
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ntg",
+      "lineText": "Well , more or less , or ne’er a whit at all , Here Aaron is . And what with Aaron now ?",
+      "scrollMode": "auto",
+      "lineIndex": 71
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nug",
+      "lineText": "O , gentle Aaron , we are all undone ! Now help , or woe betide thee evermore .",
+      "scrollMode": "auto",
+      "lineIndex": 72
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ntg",
+      "lineText": "Why , what a caterwauling dost thou keep ! What dost thou wrap and fumble in thy arms ?",
+      "scrollMode": "auto",
+      "lineIndex": 73
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nug",
+      "lineText": "O , that which I would hide from heaven’s eye , Our empress’ shame and stately Rome’s disgrace . She is delivered , lords , she is delivered .",
+      "scrollMode": "auto",
+      "lineIndex": 74
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ntg",
+      "lineText": "To whom ?",
+      "scrollMode": "auto",
+      "lineIndex": 75
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nug",
+      "lineText": "I mean , she is brought abed .",
+      "scrollMode": "auto",
+      "lineIndex": 76
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ntg",
+      "lineText": "Well , God give her good rest . What hath he sent her ?",
+      "scrollMode": "auto",
+      "lineIndex": 77
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nug",
+      "lineText": "A devil .",
+      "scrollMode": "auto",
+      "lineIndex": 78
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ntg",
+      "lineText": "Why , then she is the devil’s dam . A joyful issue !",
+      "scrollMode": "auto",
+      "lineIndex": 79
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nug",
+      "lineText": "A joyless , dismal , black , and sorrowful issue ! Here is the babe , as loathsome as a toad Amongst the fair-faced breeders of our clime . The Empress sends it thee , thy stamp , thy seal , And bids thee christen it with thy dagger’s point .",
+      "scrollMode": "auto",
+      "lineIndex": 80
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nqg",
+      "lineText": "To the baby .",
+      "scrollMode": "auto",
+      "lineIndex": 81
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ntg",
+      "lineText": "To the baby . Sweet blowse , you are a beauteous blossom , sure .",
+      "scrollMode": "auto",
+      "lineIndex": 82
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nu0",
+      "lineText": "Villain , what hast thou done ?",
+      "scrollMode": "auto",
+      "lineIndex": 83
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ntg",
+      "lineText": "That which thou canst not undo .",
+      "scrollMode": "auto",
+      "lineIndex": 84
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nt0",
+      "lineText": "Thou hast undone our mother .",
+      "scrollMode": "auto",
+      "lineIndex": 85
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ntg",
+      "lineText": "Villain , I have done thy mother .",
+      "scrollMode": "auto",
+      "lineIndex": 86
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nu0",
+      "lineText": "And therein , hellish dog , thou hast undone her . Woe to her chance , and damned her loathèd choice ! Accursed the offspring of so foul a fiend !",
+      "scrollMode": "auto",
+      "lineIndex": 87
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nt0",
+      "lineText": "It shall not live .",
+      "scrollMode": "auto",
+      "lineIndex": 88
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ntg",
+      "lineText": "It shall not die .",
+      "scrollMode": "auto",
+      "lineIndex": 89
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nug",
+      "lineText": "Aaron , it must . The mother wills it so .",
+      "scrollMode": "auto",
+      "lineIndex": 90
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ntg",
+      "lineText": "What , must it , nurse ? Then let no man but I Do execution on my flesh and blood .",
+      "scrollMode": "auto",
+      "lineIndex": 91
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nu0",
+      "lineText": "I’ll broach the tadpole on my rapier’s point . Nurse , give it me . My sword shall soon dispatch it .",
+      "scrollMode": "auto",
+      "lineIndex": 92
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nqg",
+      "lineText": ", taking the baby",
+      "scrollMode": "auto",
+      "lineIndex": 93
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ntg",
+      "lineText": "Sooner this sword shall plow thy bowels up ! Stay , murderous villains , will you kill your brother ? Now , by the burning tapers of the sky That shone so brightly when this boy was got , He dies upon my scimitar’s sharp point That touches this my firstborn son and heir . I tell you , younglings , not Enceladus ACT 4. SC. 2 With all his threat’ning band of Typhon’s brood , Nor great Alcides , nor the god of war Shall seize this prey out of his father’s hands . What , what , you sanguine , shallow-hearted boys , You white-limed walls , you alehouse painted signs ! Coal-black black is better than another hue In that it scorns to bear another hue ; For all the water in the ocean Can never turn the swan’s black legs to white , Although she lave them hourly in the flood . Tell the Empress from me , I am of age To keep mine own , excuse it how she can .",
+      "scrollMode": "auto",
+      "lineIndex": 94
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nu0",
+      "lineText": "Wilt thou betray thy noble mistress thus ?",
+      "scrollMode": "auto",
+      "lineIndex": 95
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ntg",
+      "lineText": "My mistress is my mistress , this myself , The vigor and the picture of my youth . This before all the world do I prefer ; This maugre all the world will I keep safe , Or some of you shall smoke for it in Rome .",
+      "scrollMode": "auto",
+      "lineIndex": 96
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nu0",
+      "lineText": "By this our mother is forever shamed .",
+      "scrollMode": "auto",
+      "lineIndex": 97
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nt0",
+      "lineText": "Rome will despise her for this foul escape .",
+      "scrollMode": "auto",
+      "lineIndex": 98
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nug",
+      "lineText": "The Emperor in his rage will doom her death .",
+      "scrollMode": "auto",
+      "lineIndex": 99
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nt0",
+      "lineText": "I blush to think upon this ignomy .",
+      "scrollMode": "auto",
+      "lineIndex": 100
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ntg",
+      "lineText": "Why , there’s the privilege your beauty bears . Fie , treacherous hue , that will betray with blushing The close enacts and counsels of thy heart . Here’s a young lad framed of another leer . Look how the black slave smiles upon the father , As who should say Old lad , I am thine own . ACT 4. SC. 2 He is your brother , lords , sensibly fed Of that self blood that first gave life to you , And from that womb where you imprisoned were He is enfranchisèd and come to light . Nay , he is your brother by the surer side , Although my seal be stampèd in his face .",
+      "scrollMode": "auto",
+      "lineIndex": 101
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nug",
+      "lineText": "Aaron , what shall I say unto the Empress ?",
+      "scrollMode": "auto",
+      "lineIndex": 102
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nu0",
+      "lineText": "Advise thee , Aaron , what is to be done , And we will all subscribe to thy advice . Save thou the child , so we may all be safe .",
+      "scrollMode": "auto",
+      "lineIndex": 103
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ntg",
+      "lineText": "Then sit we down , and let us all consult . My son and I will have the wind of you . Keep there . Now talk at pleasure of your safety .",
+      "scrollMode": "auto",
+      "lineIndex": 104
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nqg",
+      "lineText": ", to the Nurse",
+      "scrollMode": "auto",
+      "lineIndex": 105
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nu0",
+      "lineText": "How many women saw this child of his ?",
+      "scrollMode": "auto",
+      "lineIndex": 106
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nqg",
+      "lineText": "To the Nurse .",
+      "scrollMode": "auto",
+      "lineIndex": 107
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ntg",
+      "lineText": "To the Nurse . But say again , how many saw the child ?",
+      "scrollMode": "auto",
+      "lineIndex": 108
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nug",
+      "lineText": "Cornelia the midwife and myself , And no one else but the delivered Empress .",
+      "scrollMode": "auto",
+      "lineIndex": 109
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nqg",
+      "lineText": "He kills her .",
+      "scrollMode": "auto",
+      "lineIndex": 110
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ntg",
+      "lineText": "He kills her . Wheak , wheak ! So cries a pig preparèd to the spit .",
+      "scrollMode": "auto",
+      "lineIndex": 111
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nu0",
+      "lineText": "What mean’st thou , Aaron ? Wherefore didst thou this ?",
+      "scrollMode": "auto",
+      "lineIndex": 112
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nqg",
+      "lineText": "indicating the Nurse",
+      "scrollMode": "auto",
+      "lineIndex": 113
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ntg",
+      "lineText": "indicating the Nurse And you must needs bestow her funeral . The fields are near , and you are gallant grooms . This done , see that you take no longer days , But send the midwife presently to me . The midwife and the nurse well made away , Then let the ladies tattle what they please .",
+      "scrollMode": "auto",
+      "lineIndex": 114
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nt0",
+      "lineText": "Aaron , I see thou wilt not trust the air With secrets .",
+      "scrollMode": "auto",
+      "lineIndex": 115
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nu0",
+      "lineText": "For this care of Tamora , Herself and hers are highly bound to thee .",
+      "scrollMode": "auto",
+      "lineIndex": 116
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nqg",
+      "lineText": "Demetrius and Chiron exit , carrying the Nurse’s body .",
+      "scrollMode": "auto",
+      "lineIndex": 117
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ntg",
+      "lineText": "Now to the Goths , as swift as swallow flies , There to dispose this treasure in mine arms And secretly to greet the Empress’ friends . — Come on , you thick-lipped slave , I’ll bear you hence , ACT 4. SC. 3 For it is you that puts us to our shifts . I’ll make you feed on berries and on roots , And feed on curds and whey , and suck the goat , And cabin in a cave , and bring you up To be a warrior and command a camp .",
+      "scrollMode": "auto",
+      "lineIndex": 118
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nqg",
+      "lineText": "He exits with the baby .",
+      "scrollMode": "auto",
+      "lineIndex": 119
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nqg",
+      "lineText": "Enter Titus , old Marcus , his son Publius , young Lucius , and other gentlemen ( Caius and Sempronius ) with bows , and Titus bears the arrows with letters on the ends of them .",
+      "scrollMode": "auto",
+      "lineIndex": 120
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ns0",
+      "lineText": "Come , Marcus , come . Kinsmen , this is the way . — Sir boy , let me see your archery . Look you draw home enough and ’tis there straight . — Terras Astraea reliquit . Be you remembered , Marcus , she’s gone , she’s fled . — Sirs , take you to your tools . You , cousins , shall Go sound the ocean and cast your nets ; Happily you may catch her in the sea ; Yet there’s as little justice as at land . No ; Publius and Sempronius , you must do it . ’Tis you must dig with mattock and with spade , And pierce the inmost center of the Earth earth . Then , when you come to Pluto’s region , I pray you , deliver him this petition . Tell him it is for justice and for aid , And that it comes from old Andronicus , Shaken with sorrows in ungrateful Rome . Ah , Rome ! Well , well , I made thee miserable What time I threw the people’s suffrages On him that thus doth tyrannize o’er me . ACT 4. SC. 3 Go , get you gone , and pray be careful all , And leave you not a man-of-war unsearched . This wicked emperor may have shipped her hence , And , kinsmen , then we may go pipe for justice .",
+      "scrollMode": "auto",
+      "lineIndex": 121
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nrg",
+      "lineText": "O Publius , is not this a heavy case To see thy noble uncle thus distract ?",
+      "scrollMode": "auto",
+      "lineIndex": 122
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nvg",
+      "lineText": "Therefore , my lords , it highly us concerns By day and night t’ attend him carefully , And feed his humor kindly as we may , Till time beget some careful remedy .",
+      "scrollMode": "auto",
+      "lineIndex": 123
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nrg",
+      "lineText": "Kinsmen , his sorrows are past remedy But Join with the Goths , and with revengeful war Take wreak on Rome for this ingratitude , And vengeance on the traitor Saturnine .",
+      "scrollMode": "auto",
+      "lineIndex": 124
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ns0",
+      "lineText": "Publius , how now ? How now , my masters ? What , have you met with her ?",
+      "scrollMode": "auto",
+      "lineIndex": 125
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nvg",
+      "lineText": "No , my good lord , but Pluto sends you word , If you will have Revenge from hell , you shall . Marry , for Justice , she is so employed , He thinks , with Jove in heaven , or somewhere else , So that perforce you must needs stay a time .",
+      "scrollMode": "auto",
+      "lineIndex": 126
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nqg",
+      "lineText": "He gives them the arrows .",
+      "scrollMode": "auto",
+      "lineIndex": 127
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ns0",
+      "lineText": "He gives them the arrows . Ad Jovem , that’s for you ; — here , Ad Apollinem ; — Ad Martem , that’s for myself ; — Here , boy , to Pallas ; — here , to Mercury ; — To Saturn , Caius — not to Saturnine ! You were as good to shoot against the wind . To it , boy ! — Marcus , loose when I bid . Of my word , I have written to effect ; There’s not a god left unsolicited .",
+      "scrollMode": "auto",
+      "lineIndex": 128
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nrg",
+      "lineText": "Kinsmen , shoot all your shafts into the court . We will afflict the Emperor in his pride .",
+      "scrollMode": "auto",
+      "lineIndex": 129
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nqg",
+      "lineText": "( They shoot . )",
+      "scrollMode": "auto",
+      "lineIndex": 130
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ns0",
+      "lineText": "( They shoot . ) O , well said , Lucius ! Good boy , in Virgo’s lap ! Give it Pallas .",
+      "scrollMode": "auto",
+      "lineIndex": 131
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nrg",
+      "lineText": "My lord , I aim a mile beyond the moon . Your letter is with Jupiter by this .",
+      "scrollMode": "auto",
+      "lineIndex": 132
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ns0",
+      "lineText": "Ha , ha ! Publius , Publius , what hast thou done ? See , see , thou hast shot off one of Taurus’ horns !",
+      "scrollMode": "auto",
+      "lineIndex": 133
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nrg",
+      "lineText": "This was the sport , my lord ; when Publius shot , The Bull , being galled , gave Aries such a knock That down fell both the Ram’s horns in the court , And who should find them but the Empress’ villain ? She laughed and told the Moor he should not choose But give them to his master for a present .",
+      "scrollMode": "auto",
+      "lineIndex": 134
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nqg",
+      "lineText": "Enter a country fellow with a basket and two pigeons in it .",
+      "scrollMode": "auto",
+      "lineIndex": 135
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79o10",
+      "lineText": "Enter a country fellow with a basket and two pigeons in it . News , news from heaven ! Marcus , the post is come . — Sirrah , what tidings ? Have you any letters ? Shall I have Justice ? What says Jupiter ?",
+      "scrollMode": "auto",
+      "lineIndex": 136
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79o10",
+      "lineText": "Ho , the gibbet-maker ? He says that he hath taken them down again , for the man must not be hanged till the next week .",
+      "scrollMode": "auto",
+      "lineIndex": 137
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ns0",
+      "lineText": "But what says Jupiter , I ask thee ?",
+      "scrollMode": "auto",
+      "lineIndex": 138
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79o10",
+      "lineText": "Alas , sir , I know not Jubiter ; I never drank with him in all my life .",
+      "scrollMode": "auto",
+      "lineIndex": 139
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ns0",
+      "lineText": "Why , villain , art not thou the carrier ?",
+      "scrollMode": "auto",
+      "lineIndex": 140
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79o10",
+      "lineText": "Ay , of my pigeons , sir ; nothing else .",
+      "scrollMode": "auto",
+      "lineIndex": 141
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ns0",
+      "lineText": "Why , didst thou not come from heaven ?",
+      "scrollMode": "auto",
+      "lineIndex": 142
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79o10",
+      "lineText": "From heaven ? Alas , sir , I never came there . God forbid I should be so bold to press to heaven in my young days . Why , I am going with my pigeons to the tribunal plebs , to take up a matter of brawl betwixt my uncle and one of the Emperal’s men .",
+      "scrollMode": "auto",
+      "lineIndex": 143
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nqg",
+      "lineText": ", to Titus",
+      "scrollMode": "auto",
+      "lineIndex": 144
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nrg",
+      "lineText": "Why , sir , that is as fit as can be to serve for your oration ; and let him deliver the pigeons to the Emperor from you .",
+      "scrollMode": "auto",
+      "lineIndex": 145
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ns0",
+      "lineText": "Tell me , can you deliver an oration to the Emperor with a grace ?",
+      "scrollMode": "auto",
+      "lineIndex": 146
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79o10",
+      "lineText": "Nay , truly , sir , I could never say grace in all my life .",
+      "scrollMode": "auto",
+      "lineIndex": 147
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ns0",
+      "lineText": "Sirrah , come hither . Make no more ado , But give your pigeons to the Emperor . By me thou shalt have justice at his hands . Hold , hold ; meanwhile here’s money for thy ACT 4. SC. 4 charges . — Give me pen and ink . — Sirrah , can you with a grace deliver up a supplication ?",
+      "scrollMode": "auto",
+      "lineIndex": 148
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nqg",
+      "lineText": "He writes .",
+      "scrollMode": "auto",
+      "lineIndex": 149
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79o10",
+      "lineText": "Ay , sir .",
+      "scrollMode": "auto",
+      "lineIndex": 150
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ns0",
+      "lineText": "Then here is a supplication for you , and when you come to him , at the first approach you must kneel , then kiss his foot , then deliver up your pigeons , and then look for your reward . I’ll be at hand , sir . See you do it bravely .",
+      "scrollMode": "auto",
+      "lineIndex": 151
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nqg",
+      "lineText": "He hands him a paper .",
+      "scrollMode": "auto",
+      "lineIndex": 152
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79o10",
+      "lineText": "I warrant you , sir . Let me alone .",
+      "scrollMode": "auto",
+      "lineIndex": 153
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nqg",
+      "lineText": "He takes the knife and gives it to Marcus .",
+      "scrollMode": "auto",
+      "lineIndex": 154
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ns0",
+      "lineText": "He takes the knife and gives it to Marcus . Here , Marcus , fold it in the oration , For thou hast made it like an humble suppliant . — And when thou hast given it to the Emperor , Knock at my door and tell me what he says .",
+      "scrollMode": "auto",
+      "lineIndex": 155
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79o10",
+      "lineText": "God be with you , sir . I will .",
+      "scrollMode": "auto",
+      "lineIndex": 156
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nqg",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 157
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ns0",
+      "lineText": "Come , Marcus , let us go . — Publius , follow me .",
+      "scrollMode": "auto",
+      "lineIndex": 158
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nqg",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 159
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nqg",
+      "lineText": "Enter Emperor Saturninus and Empress Tamora and her two sons Chiron and Demetrius , with Attendants . The Emperor brings the arrows in his hand that Titus shot at him .",
+      "scrollMode": "auto",
+      "lineIndex": 160
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79o1g",
+      "lineText": "Why , lords , what wrongs are these ! Was ever seen An emperor in Rome thus overborne , Troubled , confronted thus , and for the extent Of equal justice , used in such contempt ? ACT 4. SC. 4 My lords , you know , as know the mightful gods , However these disturbers of our peace Buzz in the people’s ears , there naught hath passed But even with law against the willful sons Of old Andronicus . And what an if His sorrows have so overwhelmed his wits ? Shall we be thus afflicted in his wreaks , His fits , his frenzy , and his bitterness ? And now he writes to heaven for his redress ! See , here’s to Jove , and this to Mercury , This to Apollo , this to the god of war . Sweet scrolls to fly about the streets of Rome ! What’s this but libeling against the Senate And blazoning our unjustice everywhere ? A goodly humor is it not , my lords ? As who would say , in Rome no justice were . But if I live , his feignèd ecstasies Shall be no shelter to these outrages , But he and his shall know that justice lives In Saturninus’ health , whom , if he sleep , He’ll so awake as he in fury shall Cut off the proud’st conspirator that lives .",
+      "scrollMode": "auto",
+      "lineIndex": 161
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nqg",
+      "lineText": "( Aside . )",
+      "scrollMode": "auto",
+      "lineIndex": 162
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nqg",
+      "lineText": "Enter Country Fellow .",
+      "scrollMode": "auto",
+      "lineIndex": 163
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79o10",
+      "lineText": "Enter Country Fellow . How now , good fellow , wouldst thou speak with us ?",
+      "scrollMode": "auto",
+      "lineIndex": 164
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79o10",
+      "lineText": "Yea , forsooth , an your Mistresship be emperial .",
+      "scrollMode": "auto",
+      "lineIndex": 165
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79o20",
+      "lineText": "Empress I am , but yonder sits the Emperor .",
+      "scrollMode": "auto",
+      "lineIndex": 166
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79o10",
+      "lineText": "’Tis he ! — God and Saint Stephen give you good e’en . I have brought you a letter and a couple of pigeons here .",
+      "scrollMode": "auto",
+      "lineIndex": 167
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nqg",
+      "lineText": "Saturninus reads the letter .",
+      "scrollMode": "auto",
+      "lineIndex": 168
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79o1g",
+      "lineText": "Go , take him away , and hang him presently .",
+      "scrollMode": "auto",
+      "lineIndex": 169
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79o10",
+      "lineText": "How much money must I have ?",
+      "scrollMode": "auto",
+      "lineIndex": 170
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79o20",
+      "lineText": "Come , sirrah , you must be hanged .",
+      "scrollMode": "auto",
+      "lineIndex": 171
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79o10",
+      "lineText": "Hanged ! By ’r Lady , then I have brought up a neck to a fair end .",
+      "scrollMode": "auto",
+      "lineIndex": 172
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nqg",
+      "lineText": "He exits with Attendants .",
+      "scrollMode": "auto",
+      "lineIndex": 173
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79o1g",
+      "lineText": "Despiteful and intolerable wrongs ! Shall I endure this monstrous villainy ? I know from whence this same device proceeds . May this be borne ? — as if his traitorous sons , That died by law for murder of our brother , Have by my means been butchered wrongfully ! Go , drag the villain hither by the hair . Nor age nor honor shall shape privilege . For this proud mock , I’ll be thy slaughterman , Sly , frantic wretch , that holp’st to make me great In hope thyself should govern Rome and me .",
+      "scrollMode": "auto",
+      "lineIndex": 174
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nqg",
+      "lineText": "Enter nuntius , Aemilius .",
+      "scrollMode": "auto",
+      "lineIndex": 175
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79o1g",
+      "lineText": "What news with thee , Aemilius ?",
+      "scrollMode": "auto",
+      "lineIndex": 176
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79o2g",
+      "lineText": "Arm , my lords ! Rome never had more cause . The Goths have gathered head , and with a power ACT 4. SC. 4 Of high-resolvèd men bent to the spoil , They hither march amain under conduct Of Lucius , son to old Andronicus , Who threats , in course of this revenge , to do As much as ever Coriolanus did .",
+      "scrollMode": "auto",
+      "lineIndex": 177
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79o1g",
+      "lineText": "Is warlike Lucius general of the Goths ? These tidings nip me , and I hang the head As flowers with frost or grass beat down with storms . Ay , now begins our sorrows to approach . ’Tis he the common people love so much . Myself hath often heard them say , When I have walkèd like a private man , That Lucius’ banishment was wrongfully , And they have wished that Lucius were their emperor .",
+      "scrollMode": "auto",
+      "lineIndex": 178
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79o20",
+      "lineText": "Why should you fear ? Is not your city strong ?",
+      "scrollMode": "auto",
+      "lineIndex": 179
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79o1g",
+      "lineText": "Ay , but the citizens favor Lucius And will revolt from me to succor him .",
+      "scrollMode": "auto",
+      "lineIndex": 180
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79o20",
+      "lineText": "King , be thy thoughts imperious like thy name . Is the sun dimmed that gnats do fly in it ? The eagle suffers little birds to sing And is not careful what they mean thereby , Knowing that with the shadow of his wings He can at pleasure stint their melody . Even so mayst thou the giddy men of Rome . Then cheer thy spirit , for know , thou emperor , I will enchant the old Andronicus With words more sweet and yet more dangerous Than baits to fish or honey-stalks to sheep , Whenas the one is wounded with the bait , The other rotted with delicious feed .",
+      "scrollMode": "auto",
+      "lineIndex": 181
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79o1g",
+      "lineText": "But he will not entreat his son for us .",
+      "scrollMode": "auto",
+      "lineIndex": 182
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nqg",
+      "lineText": "To Aemilius .",
+      "scrollMode": "auto",
+      "lineIndex": 183
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79o20",
+      "lineText": "To Aemilius . Go thou before to be our ambassador . Say that the Emperor requests a parley Of warlike Lucius , and appoint the meeting Even at his father’s house , the old Andronicus .",
+      "scrollMode": "auto",
+      "lineIndex": 184
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79o1g",
+      "lineText": "Aemilius , do this message honorably , And if he stand in hostage for his safety , Bid him demand what pledge will please him best .",
+      "scrollMode": "auto",
+      "lineIndex": 185
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79o2g",
+      "lineText": "Your bidding shall I do effectually .",
+      "scrollMode": "auto",
+      "lineIndex": 186
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nqg",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 187
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79o20",
+      "lineText": "Now will I to that old Andronicus And temper him with all the art I have To pluck proud Lucius from the warlike Goths . And now , sweet emperor , be blithe again , And bury all thy fear in my devices .",
+      "scrollMode": "auto",
+      "lineIndex": 188
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79o1g",
+      "lineText": "Then go successantly , and plead to him .",
+      "scrollMode": "auto",
+      "lineIndex": 189
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79nqg",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 190
+    }
+  ],
+  "isPublic": true
+}

@@ -60,7 +60,10 @@ function ScriptEditorContent() {
     setNewCastDescription('');
   };
 
-  const handleUpdateCastMember = (id: string, updates: Partial<Pick<CastMember, 'name' | 'description'>>) => {
+  const handleUpdateCastMember = (
+    id: string,
+    updates: Partial<Pick<CastMember, 'name' | 'description'>>
+  ) => {
     setCast(cast.map((c) => (c.id === id ? { ...c, ...updates } : c)));
   };
 

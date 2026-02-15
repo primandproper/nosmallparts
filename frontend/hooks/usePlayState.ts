@@ -295,9 +295,12 @@ export function usePlayState({
         clearTimeout(reconnectTimeoutRef.current);
         reconnectTimeoutRef.current = null;
       }
-      console.log('[WS] Effect cleanup: closing stages WebSocket (stageId/participant changed or unmount)', {
-        timestamp: new Date().toISOString(),
-      });
+      console.log(
+        '[WS] Effect cleanup: closing stages WebSocket (stageId/participant changed or unmount)',
+        {
+          timestamp: new Date().toISOString(),
+        }
+      );
       ws.close();
       wsRef.current = null;
       isConnectingRef.current = false;

@@ -31,13 +31,13 @@ spec:
               value: production
           livenessProbe:
             httpGet:
-              path: "/"
+              path: '/'
               port: 3000
             initialDelaySeconds: 15
             periodSeconds: 10
           readinessProbe:
             httpGet:
-              path: "/"
+              path: '/'
               port: 3000
             initialDelaySeconds: 5
             periodSeconds: 5

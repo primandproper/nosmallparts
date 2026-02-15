@@ -1,0 +1,1111 @@
+{
+  "title": "Pericles, Prince of Tyre (Act 5)",
+  "description": "Folger Shakespeare Library edition",
+  "author": "William Shakespeare",
+  "castMembers": [
+    {
+      "id": "d68m11kn9qd8d2h79cgg",
+      "name": "Narrator",
+      "sortOrder": 0
+    },
+    {
+      "id": "d68m11kn9qd8d2h79ch0",
+      "name": "Gower",
+      "description": "fourteenth-century poet and Chorus of the play",
+      "sortOrder": 1
+    },
+    {
+      "id": "d68m11kn9qd8d2h79chg",
+      "name": "Sailor",
+      "sortOrder": 2
+    },
+    {
+      "id": "d68m11kn9qd8d2h79ci0",
+      "name": "Sailor",
+      "sortOrder": 3
+    },
+    {
+      "id": "d68m11kn9qd8d2h79cig",
+      "name": "Gentleman",
+      "sortOrder": 4
+    },
+    {
+      "id": "d68m11kn9qd8d2h79cj0",
+      "name": "Helicanus",
+      "sortOrder": 5
+    },
+    {
+      "id": "d68m11kn9qd8d2h79cjg",
+      "name": "Lysimachus",
+      "description": "governor of Mytilene",
+      "sortOrder": 6
+    },
+    {
+      "id": "d68m11kn9qd8d2h79ck0",
+      "name": "Pericles",
+      "description": "prince of Tyre",
+      "sortOrder": 7
+    },
+    {
+      "id": "d68m11kn9qd8d2h79ckg",
+      "name": "Lord",
+      "sortOrder": 8
+    },
+    {
+      "id": "d68m11kn9qd8d2h79cl0",
+      "name": "Marina",
+      "description": "daughter of Pericles and Thaisa",
+      "sortOrder": 9
+    },
+    {
+      "id": "d68m11kn9qd8d2h79clg",
+      "name": "LORDS.MYTILENE_Per",
+      "sortOrder": 10
+    },
+    {
+      "id": "d68m11kn9qd8d2h79cm0",
+      "name": "GENTLEMEN.TYRE_Per",
+      "sortOrder": 11
+    },
+    {
+      "id": "d68m11kn9qd8d2h79cmg",
+      "name": "Companion_Per",
+      "sortOrder": 12
+    },
+    {
+      "id": "d68m11kn9qd8d2h79cn0",
+      "name": "Diana",
+      "description": "goddess of chastity",
+      "sortOrder": 13
+    },
+    {
+      "id": "d68m11kn9qd8d2h79cng",
+      "name": "Thaisa",
+      "description": "princess of Pentapolis and wife to Pericles",
+      "sortOrder": 14
+    },
+    {
+      "id": "d68m11kn9qd8d2h79co0",
+      "name": "Lord Cerimon",
+      "description": "a wiseman/physician in Ephesus",
+      "sortOrder": 15
+    }
+  ],
+  "lines": [
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cgg",
+      "lineText": "Enter Gower .",
+      "scrollMode": "auto",
+      "lineIndex": 0
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79ch0",
+      "lineText": "Marina thus the brothel ’scapes , and chances Into an honest house , our story says . She sings like one immortal , and she dances As goddesslike to her admirèd lays . Deep clerks she dumbs , and with her neele composes Nature’s own shape , of bud , bird , branch , or berry , That even her art sisters the natural roses . Her inkle , silk , twin with the rubied cherry , That pupils lacks she none of noble race , Who pour their bounty on her , and her gain She gives the cursèd bawd . Here we her place , And to her father turn our thoughts again , Where we left him , on the sea . We there him lost , Where , driven before the winds , he is arrived Here where his daughter dwells ; and on this coast Suppose him now at anchor . The city strived God Neptune’s annual feast to keep , from whence Lysimachus our Tyrian ship espies , His banners sable , trimmed with rich expense , And to him in his barge with fervor hies . In your supposing once more put your sight Of heavy Pericles . Think this his bark , Where what is done in action — more , if might — Shall be discovered . Please you sit and hark .",
+      "scrollMode": "auto",
+      "lineIndex": 1
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cgg",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 2
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cgg",
+      "lineText": "Enter Helicanus , to him two Sailors , one from the Tyrian ship and one from Mytilene .",
+      "scrollMode": "auto",
+      "lineIndex": 3
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cgg",
+      "lineText": ", ( to Sailor from Mytilene )",
+      "scrollMode": "auto",
+      "lineIndex": 4
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79chg",
+      "lineText": "Where is Lord Helicanus ? He can resolve you . O , here he is . — Sir , there is a barge put off from Mytilene , And in it is Lysimachus , the Governor , Who craves to come aboard . What is your will ?",
+      "scrollMode": "auto",
+      "lineIndex": 5
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cgg",
+      "lineText": "Sailor from Mytilene exits .",
+      "scrollMode": "auto",
+      "lineIndex": 6
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79ci0",
+      "lineText": "Sailor from Mytilene exits . Call up some gentlemen .",
+      "scrollMode": "auto",
+      "lineIndex": 7
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79chg",
+      "lineText": "Ho , gentlemen , my lord calls .",
+      "scrollMode": "auto",
+      "lineIndex": 8
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cgg",
+      "lineText": "Enter two or three Gentlemen .",
+      "scrollMode": "auto",
+      "lineIndex": 9
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cig",
+      "lineText": "Doth your Lordship call ?",
+      "scrollMode": "auto",
+      "lineIndex": 10
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cj0",
+      "lineText": "Gentlemen , There is some of worth would come aboard . I pray , greet him fairly .",
+      "scrollMode": "auto",
+      "lineIndex": 11
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cgg",
+      "lineText": "Enter Lysimachus , with Lords and Sailor from Mytilene .",
+      "scrollMode": "auto",
+      "lineIndex": 12
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cgg",
+      "lineText": ", to Lysimachus",
+      "scrollMode": "auto",
+      "lineIndex": 13
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79ci0",
+      "lineText": "Sir , This is the man that can , in aught you would , Resolve you .",
+      "scrollMode": "auto",
+      "lineIndex": 14
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cgg",
+      "lineText": ", to Helicanus",
+      "scrollMode": "auto",
+      "lineIndex": 15
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cjg",
+      "lineText": "Hail , reverend sir . The gods preserve you .",
+      "scrollMode": "auto",
+      "lineIndex": 16
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cj0",
+      "lineText": "And you , to outlive the age I am , And die as I would do .",
+      "scrollMode": "auto",
+      "lineIndex": 17
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cjg",
+      "lineText": "You wish me well . Being on shore , honoring of Neptune’s triumphs , Seeing this goodly vessel ride before us , I made to it to know of whence you are .",
+      "scrollMode": "auto",
+      "lineIndex": 18
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cj0",
+      "lineText": "First , what is your place ?",
+      "scrollMode": "auto",
+      "lineIndex": 19
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cjg",
+      "lineText": "I am the governor of this place you lie before .",
+      "scrollMode": "auto",
+      "lineIndex": 20
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cj0",
+      "lineText": "Sir , Our vessel is of Tyre , in it the King , A man who for this three months hath not spoken To anyone , nor taken sustenance But to prorogue his grief .",
+      "scrollMode": "auto",
+      "lineIndex": 21
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cjg",
+      "lineText": "Upon what ground is his distemperature ?",
+      "scrollMode": "auto",
+      "lineIndex": 22
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cj0",
+      "lineText": "’Twould be too tedious to repeat , But the main grief springs from the loss Of a belovèd daughter and a wife .",
+      "scrollMode": "auto",
+      "lineIndex": 23
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cjg",
+      "lineText": "May we not see him ?",
+      "scrollMode": "auto",
+      "lineIndex": 24
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cj0",
+      "lineText": "You may , But bootless is your sight . He will not speak To any .",
+      "scrollMode": "auto",
+      "lineIndex": 25
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cjg",
+      "lineText": "Yet let me obtain my wish .",
+      "scrollMode": "auto",
+      "lineIndex": 26
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cgg",
+      "lineText": "Pericles is revealed .",
+      "scrollMode": "auto",
+      "lineIndex": 27
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79ck0",
+      "lineText": "Pericles is revealed . This was a goodly person , Till the disaster that one mortal night Drove him to this .",
+      "scrollMode": "auto",
+      "lineIndex": 28
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cjg",
+      "lineText": "Sir king , all hail ! The gods preserve you . Hail , Royal sir !",
+      "scrollMode": "auto",
+      "lineIndex": 29
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cj0",
+      "lineText": "It is in vain ; he will not speak to you .",
+      "scrollMode": "auto",
+      "lineIndex": 30
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79ckg",
+      "lineText": "Sir , we have a maid in Mytilene , I durst wager would win some words of him .",
+      "scrollMode": "auto",
+      "lineIndex": 31
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cjg",
+      "lineText": "’Tis well bethought . She , questionless , with her sweet harmony And other chosen attractions , would allure And make a batt’ry through his defended ports , Which now are midway stopped . She is all happy as the fairest of all , And , with her fellow maid , is now upon The leafy shelter that abuts against The island’s side .",
+      "scrollMode": "auto",
+      "lineIndex": 32
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cgg",
+      "lineText": "Lysimachus signals to a Lord ,",
+      "scrollMode": "auto",
+      "lineIndex": 33
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cgg",
+      "lineText": "who exits .",
+      "scrollMode": "auto",
+      "lineIndex": 34
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79ckg",
+      "lineText": "who exits . But since your kindness We have stretched thus far , let us beseech you That for our gold we may provision have , Wherein we are not destitute for want , But weary for the staleness .",
+      "scrollMode": "auto",
+      "lineIndex": 35
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cjg",
+      "lineText": "O , sir , a courtesy Which , if we should deny , the most just God For every graft would send a caterpillar , And so inflict our province . Yet once more Let me entreat to know at large the cause Of your king’s sorrow .",
+      "scrollMode": "auto",
+      "lineIndex": 36
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cj0",
+      "lineText": "Sit , sir , I will recount it to you . But see , I am prevented .",
+      "scrollMode": "auto",
+      "lineIndex": 37
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cgg",
+      "lineText": "Enter Lord with Marina and her companion .",
+      "scrollMode": "auto",
+      "lineIndex": 38
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cjg",
+      "lineText": "O , here’s the lady that I sent for . — Welcome , fair one . — Is ’t not a goodly presence ?",
+      "scrollMode": "auto",
+      "lineIndex": 39
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cj0",
+      "lineText": "She’s a gallant lady .",
+      "scrollMode": "auto",
+      "lineIndex": 40
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cjg",
+      "lineText": "She’s such a one that , were I well assured Came of a gentle kind and noble stock , I’d wish no better choice , and think me rarely wed . — Fair one , all goodness that consists in beauty : Expect even here , where is a kingly patient , If that thy prosperous and artificial feat Can draw him but to answer thee in aught , Thy sacred physic shall receive such pay As thy desires can wish .",
+      "scrollMode": "auto",
+      "lineIndex": 41
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cl0",
+      "lineText": "Sir , I will use My utmost skill in his recovery , provided That none but I and my companion maid Be suffered to come near him .",
+      "scrollMode": "auto",
+      "lineIndex": 42
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cjg",
+      "lineText": "Come , let us Leave her , and the gods make her prosperous .",
+      "scrollMode": "auto",
+      "lineIndex": 43
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cgg",
+      "lineText": "Lysimachus , Helicanus and others move aside .",
+      "scrollMode": "auto",
+      "lineIndex": 44
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cgg",
+      "lineText": "sings",
+      "scrollMode": "auto",
+      "lineIndex": 45
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cgg",
+      "lineText": "The Song .",
+      "scrollMode": "auto",
+      "lineIndex": 46
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cgg",
+      "lineText": ", coming forward",
+      "scrollMode": "auto",
+      "lineIndex": 47
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cjg",
+      "lineText": "Marked he your music ?",
+      "scrollMode": "auto",
+      "lineIndex": 48
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cl0",
+      "lineText": "No , nor looked on us .",
+      "scrollMode": "auto",
+      "lineIndex": 49
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cgg",
+      "lineText": ", moving aside",
+      "scrollMode": "auto",
+      "lineIndex": 50
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cjg",
+      "lineText": "See , she will speak to him .",
+      "scrollMode": "auto",
+      "lineIndex": 51
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cgg",
+      "lineText": ", to Pericles",
+      "scrollMode": "auto",
+      "lineIndex": 52
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cl0",
+      "lineText": "Hail , sir ! My lord , lend ear .",
+      "scrollMode": "auto",
+      "lineIndex": 53
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79ck0",
+      "lineText": "Hum , ha !",
+      "scrollMode": "auto",
+      "lineIndex": 54
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cgg",
+      "lineText": "He pushes her away .",
+      "scrollMode": "auto",
+      "lineIndex": 55
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cgg",
+      "lineText": "Aside .",
+      "scrollMode": "auto",
+      "lineIndex": 56
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cl0",
+      "lineText": "Aside . I will desist , But there is something glows upon my cheek , And whispers in mine ear Go not till he speak .",
+      "scrollMode": "auto",
+      "lineIndex": 57
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79ck0",
+      "lineText": "My fortunes — parentage — good parentage , To equal mine ! Was it not thus ? What say you ?",
+      "scrollMode": "auto",
+      "lineIndex": 58
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cl0",
+      "lineText": "I said , my lord , if you did know my parentage , You would not do me violence .",
+      "scrollMode": "auto",
+      "lineIndex": 59
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79ck0",
+      "lineText": "I do think so . Pray you turn your eyes upon me . You’re like something that — What countrywoman ? Here of these shores ?",
+      "scrollMode": "auto",
+      "lineIndex": 60
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cl0",
+      "lineText": "No , nor of any shores . Yet I was mortally brought forth , and am No other than I appear .",
+      "scrollMode": "auto",
+      "lineIndex": 61
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79ck0",
+      "lineText": "I am great with woe , and shall deliver weeping . My dearest wife was like this maid , and such A one my daughter might have been : my queen’s Square brows , her stature to an inch ; As wandlike straight , as silver-voiced ; her eyes As jewel-like , and cased as richly ; in pace Another Juno ; who starves the ears she feeds And makes them hungry the more she gives them speech . — Where do you live ?",
+      "scrollMode": "auto",
+      "lineIndex": 62
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cl0",
+      "lineText": "Where I am but a stranger . From the deck you may discern the place .",
+      "scrollMode": "auto",
+      "lineIndex": 63
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79ck0",
+      "lineText": "Where were you bred ? And how achieved you these Endowments which you make more rich to owe ?",
+      "scrollMode": "auto",
+      "lineIndex": 64
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cl0",
+      "lineText": "If I should tell my history , it would seem Like lies disdained in the reporting .",
+      "scrollMode": "auto",
+      "lineIndex": 65
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79ck0",
+      "lineText": "Prithee , speak . Falseness cannot come from thee , for thou lookest Modest as Justice , and thou seemest a palace For the crownèd Truth to dwell in . I will believe thee And make my senses credit thy relation To points that seem impossible , for thou lookest Like one I loved indeed . What were thy friends ? Didst thou not say , when I did push thee back — Which was when I perceived thee — that thou cam’st From good descending ?",
+      "scrollMode": "auto",
+      "lineIndex": 66
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cl0",
+      "lineText": "So indeed I did .",
+      "scrollMode": "auto",
+      "lineIndex": 67
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79ck0",
+      "lineText": "Report thy parentage . I think thou said’st Thou hadst been tossed from wrong to injury , ACT 5. SC. 1 And that thou thought’st thy griefs might equal mine , If both were opened .",
+      "scrollMode": "auto",
+      "lineIndex": 68
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cl0",
+      "lineText": "Some such thing I said , And said no more but what my thoughts Did warrant me was likely .",
+      "scrollMode": "auto",
+      "lineIndex": 69
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79ck0",
+      "lineText": "Tell thy story . If thine considered prove the thousand part Of my endurance , thou art a man , and I Have suffered like a girl . Yet thou dost look Like Patience gazing on kings’ graves and smiling Extremity out of act . What were thy friends ? How lost thou them ? Thy name , my most kind virgin , Recount , I do beseech thee . Come , sit by me .",
+      "scrollMode": "auto",
+      "lineIndex": 70
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cgg",
+      "lineText": "She sits .",
+      "scrollMode": "auto",
+      "lineIndex": 71
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cl0",
+      "lineText": "My name is Marina .",
+      "scrollMode": "auto",
+      "lineIndex": 72
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79ck0",
+      "lineText": "O , I am mocked , And thou by some incensèd god sent hither To make the world to laugh at me !",
+      "scrollMode": "auto",
+      "lineIndex": 73
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cl0",
+      "lineText": "Patience , good sir , Or here I’ll cease .",
+      "scrollMode": "auto",
+      "lineIndex": 74
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79ck0",
+      "lineText": "Nay , I’ll be patient . Thou little know’st how thou dost startle me To call thyself Marina .",
+      "scrollMode": "auto",
+      "lineIndex": 75
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cl0",
+      "lineText": "The name Was given me by one that had some power — My father , and a king .",
+      "scrollMode": "auto",
+      "lineIndex": 76
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79ck0",
+      "lineText": "How , a king’s daughter ? And called Marina ?",
+      "scrollMode": "auto",
+      "lineIndex": 77
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cl0",
+      "lineText": "You said you would believe me . But not to be a troubler of your peace , I will end here .",
+      "scrollMode": "auto",
+      "lineIndex": 78
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79ck0",
+      "lineText": "But are you flesh and blood ? Have you a working pulse , and are no fairy Motion ? Well , speak on . Where were you born ? And wherefore called Marina ?",
+      "scrollMode": "auto",
+      "lineIndex": 79
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cl0",
+      "lineText": "Called Marina For I was born at sea .",
+      "scrollMode": "auto",
+      "lineIndex": 80
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79ck0",
+      "lineText": "At sea ? What mother ?",
+      "scrollMode": "auto",
+      "lineIndex": 81
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cl0",
+      "lineText": "My mother was the daughter of a king , Who died the minute I was born , As my good nurse Lychorida hath oft Delivered weeping .",
+      "scrollMode": "auto",
+      "lineIndex": 82
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cgg",
+      "lineText": "Aside .",
+      "scrollMode": "auto",
+      "lineIndex": 83
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79ck0",
+      "lineText": "Aside . This is the rarest dream that e’er dull sleep Did mock sad fools withal . This cannot be My daughter , buried . — Well , where were you bred ? I’ll hear you more , to the bottom of your story , And never interrupt you .",
+      "scrollMode": "auto",
+      "lineIndex": 84
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cl0",
+      "lineText": "You scorn . Believe me , ’twere best I did give o’er .",
+      "scrollMode": "auto",
+      "lineIndex": 85
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79ck0",
+      "lineText": "I will believe you by the syllable Of what you shall deliver . Yet give me leave : How came you in these parts ? Where were you bred ?",
+      "scrollMode": "auto",
+      "lineIndex": 86
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cl0",
+      "lineText": "The King my father did in Tarsus leave me , Till cruel Cleon with his wicked wife Did seek to murder me ; and having wooed a villain To attempt it , who , having drawn to do ’t , A crew of pirates came and rescued me , Brought me to Mytilene — But , good sir , Whither will you have me ? Why do you weep ? It may be you think me an impostor . No , good faith . I am the daughter to King Pericles , If good King Pericles be .",
+      "scrollMode": "auto",
+      "lineIndex": 87
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79ck0",
+      "lineText": "Ho , Helicanus !",
+      "scrollMode": "auto",
+      "lineIndex": 88
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cj0",
+      "lineText": "Calls my lord ?",
+      "scrollMode": "auto",
+      "lineIndex": 89
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79ck0",
+      "lineText": "Thou art a grave and noble counselor , ACT 5. SC. 1 Most wise in general . Tell me , if thou canst , What this maid is , or what is like to be , That thus hath made me weep .",
+      "scrollMode": "auto",
+      "lineIndex": 90
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cj0",
+      "lineText": "I know not ; But here’s the regent , sir , of Mytilene Speaks nobly of her .",
+      "scrollMode": "auto",
+      "lineIndex": 91
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cjg",
+      "lineText": "She never would tell Her parentage . Being demanded that , She would sit still and weep .",
+      "scrollMode": "auto",
+      "lineIndex": 92
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79ck0",
+      "lineText": "O , Helicanus ! Strike me , honored sir . Give me a gash , put me to present pain , Lest this great sea of joys rushing upon me O’erbear the shores of my mortality And drown me with their sweetness . — O , come hither , Thou that beget’st him that did thee beget , Thou that wast born at sea , buried at Tarsus , And found at sea again ! — O , Helicanus , Down on thy knees ! Thank the holy gods as loud As thunder threatens us . This is Marina . — What was thy mother’s name ? Tell me but that , For truth can never be confirmed enough , Though doubts did ever sleep .",
+      "scrollMode": "auto",
+      "lineIndex": 93
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cl0",
+      "lineText": "First , sir , I pray , what is your title ?",
+      "scrollMode": "auto",
+      "lineIndex": 94
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79ck0",
+      "lineText": "I am Pericles of Tyre . But tell me now My drowned queen’s name , as in the rest you said Thou hast been godlike perfect , the heir of kingdoms , And another life to Pericles thy father .",
+      "scrollMode": "auto",
+      "lineIndex": 95
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cl0",
+      "lineText": "Is it no more to be your daughter than To say my mother’s name was Thaisa ? Thaisa was my mother , who did end The minute I began .",
+      "scrollMode": "auto",
+      "lineIndex": 96
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79ck0",
+      "lineText": "Now , blessing on thee ! Rise . Thou ’rt my child . — Give me fresh garments . — Mine own Helicanus , She is not dead at Tarsus , as she should Have been , by savage Cleon . She shall tell thee all , When thou shalt kneel , and justify in knowledge She is thy very princess . Who is this ?",
+      "scrollMode": "auto",
+      "lineIndex": 97
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cj0",
+      "lineText": "Sir , ’tis the Governor of Mytilene , Who , hearing of your melancholy state , Did come to see you .",
+      "scrollMode": "auto",
+      "lineIndex": 98
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cgg",
+      "lineText": ", to Lysimachus",
+      "scrollMode": "auto",
+      "lineIndex": 99
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cgg",
+      "lineText": "They put fresh garments on him .",
+      "scrollMode": "auto",
+      "lineIndex": 100
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79ck0",
+      "lineText": "They put fresh garments on him . O heavens bless my girl ! But hark , what music ? Tell Helicanus , my Marina , tell him o’er Point by point , for yet he seems to doubt , How sure you are my daughter . — But what music ?",
+      "scrollMode": "auto",
+      "lineIndex": 101
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cj0",
+      "lineText": "My lord , I hear none .",
+      "scrollMode": "auto",
+      "lineIndex": 102
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79ck0",
+      "lineText": "None ? The music of the spheres ! — List , my Marina .",
+      "scrollMode": "auto",
+      "lineIndex": 103
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cjg",
+      "lineText": "It is not good to cross him . Give him way .",
+      "scrollMode": "auto",
+      "lineIndex": 104
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79ck0",
+      "lineText": "Rarest sounds ! Do you not hear ?",
+      "scrollMode": "auto",
+      "lineIndex": 105
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cjg",
+      "lineText": "Music , my lord ? I hear —",
+      "scrollMode": "auto",
+      "lineIndex": 106
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79ck0",
+      "lineText": "Most heavenly music . It nips me unto list’ning , and thick slumber Hangs upon mine eyes . Let me rest .",
+      "scrollMode": "auto",
+      "lineIndex": 107
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cgg",
+      "lineText": "He sleeps .",
+      "scrollMode": "auto",
+      "lineIndex": 108
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cgg",
+      "lineText": "Lysimachus and others begin to exit .",
+      "scrollMode": "auto",
+      "lineIndex": 109
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cjg",
+      "lineText": "Lysimachus and others begin to exit . Well , my companion friends , if this but answer To my just belief , I’ll well remember you .",
+      "scrollMode": "auto",
+      "lineIndex": 110
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cgg",
+      "lineText": "All but Pericles exit .",
+      "scrollMode": "auto",
+      "lineIndex": 111
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cgg",
+      "lineText": "Diana descends .",
+      "scrollMode": "auto",
+      "lineIndex": 112
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cn0",
+      "lineText": "My temple stands in Ephesus . Hie thee thither And do upon mine altar sacrifice . There , when my maiden priests are met together , Before the people all , Reveal how thou at sea didst lose thy wife . To mourn thy crosses , with thy daughter’s , call , And give them repetition to the life . Or perform my bidding , or thou livest in woe ; Do ’t , and happy , by my silver bow . Awake , and tell thy dream .",
+      "scrollMode": "auto",
+      "lineIndex": 113
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cgg",
+      "lineText": "She ascends .",
+      "scrollMode": "auto",
+      "lineIndex": 114
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79ck0",
+      "lineText": "Celestial Dian , Goddess argentine , I will obey thee . — Helicanus !",
+      "scrollMode": "auto",
+      "lineIndex": 115
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cgg",
+      "lineText": "Enter Helicanus , Lysimachus , Marina , and Attendants .",
+      "scrollMode": "auto",
+      "lineIndex": 116
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cj0",
+      "lineText": "Sir .",
+      "scrollMode": "auto",
+      "lineIndex": 117
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79ck0",
+      "lineText": "My purpose was for Tarsus , there to strike The inhospitable Cleon , but I am For other service first . Toward Ephesus Turn our blown sails . Eftsoons I’ll tell thee why . — Shall we refresh us , sir , upon your shore , And give you gold for such provision As our intents will need ?",
+      "scrollMode": "auto",
+      "lineIndex": 118
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cjg",
+      "lineText": "Sir , With all my heart . And when you come ashore , I have another suit .",
+      "scrollMode": "auto",
+      "lineIndex": 119
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79ck0",
+      "lineText": "You shall prevail Were it to woo my daughter , for it seems You have been noble towards her .",
+      "scrollMode": "auto",
+      "lineIndex": 120
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cjg",
+      "lineText": "Sir , lend me your arm .",
+      "scrollMode": "auto",
+      "lineIndex": 121
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79ck0",
+      "lineText": "Come , my Marina .",
+      "scrollMode": "auto",
+      "lineIndex": 122
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cgg",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 123
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cgg",
+      "lineText": "Enter Gower .",
+      "scrollMode": "auto",
+      "lineIndex": 124
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79ch0",
+      "lineText": "Now our sands are almost run , More a little , and then dumb . This my last boon give me — For such kindness must relieve me — That you aptly will suppose What pageantry , what feats , what shows , What minstrelsy and pretty din The regent made in Mytilene To greet the King . So he thrived That he is promised to be wived To fair Marina , but in no wise Till he had done his sacrifice As Dian bade , whereto being bound , The interim , pray you , all confound . In feathered briefness sails are filled , And wishes fall out as they’re willed . At Ephesus the temple see Our king and all his company . That he can hither come so soon Is by your fancies’ thankful doom .",
+      "scrollMode": "auto",
+      "lineIndex": 125
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cgg",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 126
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cgg",
+      "lineText": "Enter Cerimon and Diana’s Priestesses , including Thaisa ; at another door enter Pericles , Marina , Helicanus , Lysimachus , and Attendants .",
+      "scrollMode": "auto",
+      "lineIndex": 127
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79ck0",
+      "lineText": "Hail , Dian ! To perform thy just command , I here confess myself the King of Tyre , Who , frighted from my country , did wed ACT 5. SC. 3 At Pentapolis the fair Thaisa . At sea in childbed died she , but brought forth A maid child called Marina , whom , O goddess , Wears yet thy silver livery . She at Tarsus Was nursed with Cleon , who at fourteen years He sought to murder . But her better stars Brought her to Mytilene , ’gainst whose shore riding , Her fortunes brought the maid aboard us , where , By her own most clear remembrance , she made known Herself my daughter .",
+      "scrollMode": "auto",
+      "lineIndex": 128
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cng",
+      "lineText": "Voice and favor ! You are , you are — O royal Pericles !",
+      "scrollMode": "auto",
+      "lineIndex": 129
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cgg",
+      "lineText": "She falls in a faint .",
+      "scrollMode": "auto",
+      "lineIndex": 130
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79ck0",
+      "lineText": "What means the nun ? She dies ! Help , gentlemen !",
+      "scrollMode": "auto",
+      "lineIndex": 131
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79co0",
+      "lineText": "Noble sir , If you have told Diana’s altar true , This is your wife .",
+      "scrollMode": "auto",
+      "lineIndex": 132
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79ck0",
+      "lineText": "Reverend appearer , no . I threw her overboard with these very arms .",
+      "scrollMode": "auto",
+      "lineIndex": 133
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79co0",
+      "lineText": "Upon this coast , I warrant you .",
+      "scrollMode": "auto",
+      "lineIndex": 134
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79ck0",
+      "lineText": "’Tis most certain .",
+      "scrollMode": "auto",
+      "lineIndex": 135
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79co0",
+      "lineText": "Look to the lady . O , she’s but overjoyed . Early one blustering morn this lady was Thrown upon this shore . I oped the coffin , Found there rich jewels , recovered her , and placed her Here in Diana’s temple .",
+      "scrollMode": "auto",
+      "lineIndex": 136
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79ck0",
+      "lineText": "May we see them ?",
+      "scrollMode": "auto",
+      "lineIndex": 137
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79co0",
+      "lineText": "Great sir , they shall be brought you to my house , Whither I invite you . Look , Thaisa Is recoverèd .",
+      "scrollMode": "auto",
+      "lineIndex": 138
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cgg",
+      "lineText": "Thaisa rises .",
+      "scrollMode": "auto",
+      "lineIndex": 139
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cng",
+      "lineText": "O , let me look ! If he be none of mine , my sanctity ACT 5. SC. 3 Will to my sense bend no licentious ear , But curb it , spite of seeing . — O , my lord , Are you not Pericles ? Like him you spake , Like him you are . Did you not name a tempest , A birth and death ?",
+      "scrollMode": "auto",
+      "lineIndex": 140
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79ck0",
+      "lineText": "The voice of dead Thaisa !",
+      "scrollMode": "auto",
+      "lineIndex": 141
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cng",
+      "lineText": "That Thaisa am I , supposèd dead And drowned .",
+      "scrollMode": "auto",
+      "lineIndex": 142
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79ck0",
+      "lineText": "Immortal Dian !",
+      "scrollMode": "auto",
+      "lineIndex": 143
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cgg",
+      "lineText": "She points to the ring on his hand .",
+      "scrollMode": "auto",
+      "lineIndex": 144
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cng",
+      "lineText": "She points to the ring on his hand . When we with tears parted Pentapolis , The king my father gave you such a ring .",
+      "scrollMode": "auto",
+      "lineIndex": 145
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79ck0",
+      "lineText": "This , this ! No more , you gods ! Your present kindness Makes my past miseries sports . You shall do well That on the touching of her lips I may Melt and no more be seen . — O , come , be buried A second time within these arms !",
+      "scrollMode": "auto",
+      "lineIndex": 146
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cgg",
+      "lineText": "They embrace .",
+      "scrollMode": "auto",
+      "lineIndex": 147
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cgg",
+      "lineText": ", kneeling",
+      "scrollMode": "auto",
+      "lineIndex": 148
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cl0",
+      "lineText": "My heart Leaps to be gone into my mother’s bosom .",
+      "scrollMode": "auto",
+      "lineIndex": 149
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79ck0",
+      "lineText": "Look who kneels here , flesh of thy flesh , Thaisa , Thy burden at the sea , and called Marina For she was yielded there .",
+      "scrollMode": "auto",
+      "lineIndex": 150
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cgg",
+      "lineText": ", embracing Marina",
+      "scrollMode": "auto",
+      "lineIndex": 151
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cng",
+      "lineText": "Blessed , and mine own !",
+      "scrollMode": "auto",
+      "lineIndex": 152
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cj0",
+      "lineText": "Hail , madam , and my queen .",
+      "scrollMode": "auto",
+      "lineIndex": 153
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cng",
+      "lineText": "I know you not .",
+      "scrollMode": "auto",
+      "lineIndex": 154
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79ck0",
+      "lineText": "You have heard me say , when I did fly from Tyre I left behind an ancient substitute . Can you remember what I called the man ? I have named him oft .",
+      "scrollMode": "auto",
+      "lineIndex": 155
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cng",
+      "lineText": "’Twas Helicanus then .",
+      "scrollMode": "auto",
+      "lineIndex": 156
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cgg",
+      "lineText": "They embrace .",
+      "scrollMode": "auto",
+      "lineIndex": 157
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cng",
+      "lineText": "They embrace . Now do I long to hear how you were found , How possibly preserved , and who to thank , Besides the gods , for this great miracle .",
+      "scrollMode": "auto",
+      "lineIndex": 158
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cng",
+      "lineText": "Lord Cerimon , my lord , this man Through whom the gods have shown their power , that can From first to last resolve you .",
+      "scrollMode": "auto",
+      "lineIndex": 159
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79ck0",
+      "lineText": "Reverend sir , The gods can have no mortal officer More like a god than you . Will you deliver How this dead queen relives ?",
+      "scrollMode": "auto",
+      "lineIndex": 160
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79co0",
+      "lineText": "I will , my lord . Beseech you , first go with me to my house , Where shall be shown you all was found with her , How she came placed here in the temple , No needful thing omitted .",
+      "scrollMode": "auto",
+      "lineIndex": 161
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79ck0",
+      "lineText": "Pure Dian , I bless thee for thy vision , and Will offer night oblations to thee . — Thaisa , This prince , the fair betrothèd of your daughter , Shall marry her at Pentapolis . — And now this ornament Makes me look dismal will I clip to form , And what this fourteen years no razor touched , To grace thy marriage day I’ll beautify .",
+      "scrollMode": "auto",
+      "lineIndex": 162
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cng",
+      "lineText": "Lord Cerimon hath letters of good credit , sir , My father’s dead .",
+      "scrollMode": "auto",
+      "lineIndex": 163
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79ck0",
+      "lineText": "Heavens make a star of him ! Yet there , my queen , We’ll celebrate their nuptials , and ourselves Will in that kingdom spend our following days . Our son and daughter shall in Tyrus reign . — EPILOGUE Lord Cerimon , we do our longing stay To hear the rest untold . Sir , lead ’s the way .",
+      "scrollMode": "auto",
+      "lineIndex": 164
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cgg",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 165
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cgg",
+      "lineText": "Enter Gower .",
+      "scrollMode": "auto",
+      "lineIndex": 166
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79ch0",
+      "lineText": "In Antiochus and his daughter you have heard Of monstrous lust the due and just reward . In Pericles , his queen , and daughter seen , Although assailed with fortune fierce and keen , Virtue preserved from fell destruction’s blast , Led on by heaven , and crowned with joy at last . In Helicanus may you well descry A figure of truth , of faith , of loyalty . In reverend Cerimon there well appears The worth that learnèd charity aye wears . For wicked Cleon and his wife , when fame Had spread his cursèd deed to the honored name Of Pericles , to rage the city turn , That him and his they in his palace burn . The gods for murder seemèd so content To punish , although not done , but meant . So on your patience evermore attending , New joy wait on you . Here our play has ending .",
+      "scrollMode": "auto",
+      "lineIndex": 167
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79cgg",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 168
+    }
+  ],
+  "isPublic": true
+}

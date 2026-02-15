@@ -1,0 +1,903 @@
+{
+  "title": "King John (Act 5)",
+  "description": "Folger Shakespeare Library edition",
+  "author": "William Shakespeare",
+  "castMembers": [
+    {
+      "id": "d68m11kn9qd8d2h79340",
+      "name": "Narrator",
+      "sortOrder": 0
+    },
+    {
+      "id": "d68m11kn9qd8d2h7934g",
+      "name": "John",
+      "description": "King of England, with dominion over assorted Continental territories",
+      "sortOrder": 1
+    },
+    {
+      "id": "d68m11kn9qd8d2h79350",
+      "name": "Cardinal Pandulph",
+      "description": "Papal Legate",
+      "sortOrder": 2
+    },
+    {
+      "id": "d68m11kn9qd8d2h7935g",
+      "name": "Bastard",
+      "description": "Philip Faulconbridge, her son by King Richard I",
+      "sortOrder": 3
+    },
+    {
+      "id": "d68m11kn9qd8d2h79360",
+      "name": "Louis the Dauphin",
+      "description": "his son",
+      "sortOrder": 4
+    },
+    {
+      "id": "d68m11kn9qd8d2h7936g",
+      "name": "Count Melun",
+      "sortOrder": 5
+    },
+    {
+      "id": "d68m11kn9qd8d2h79370",
+      "name": "Earl of Salisbury",
+      "sortOrder": 6
+    },
+    {
+      "id": "d68m11kn9qd8d2h7937g",
+      "name": "Hubert",
+      "description": "supporter of King John",
+      "sortOrder": 7
+    },
+    {
+      "id": "d68m11kn9qd8d2h79380",
+      "name": "Messenger",
+      "sortOrder": 8
+    },
+    {
+      "id": "d68m11kn9qd8d2h7938g",
+      "name": "Earl of Pembroke",
+      "sortOrder": 9
+    },
+    {
+      "id": "d68m11kn9qd8d2h79390",
+      "name": "Messenger",
+      "sortOrder": 10
+    },
+    {
+      "id": "d68m11kn9qd8d2h7939g",
+      "name": "Prince Henry",
+      "description": "son to King John",
+      "sortOrder": 11
+    },
+    {
+      "id": "d68m11kn9qd8d2h793a0",
+      "name": "Lord Bigot",
+      "sortOrder": 12
+    }
+  ],
+  "lines": [
+    {
+      "castMemberId": "d68m11kn9qd8d2h79340",
+      "lineText": "Enter King John and Pandulph with the crown , and their Attendants .",
+      "scrollMode": "auto",
+      "lineIndex": 0
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7934g",
+      "lineText": "Thus have I yielded up into your hand The circle of my glory .",
+      "scrollMode": "auto",
+      "lineIndex": 1
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79340",
+      "lineText": ", handing John the crown",
+      "scrollMode": "auto",
+      "lineIndex": 2
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79350",
+      "lineText": "Take again From this my hand , as holding of the Pope , Your sovereign greatness and authority .",
+      "scrollMode": "auto",
+      "lineIndex": 3
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7934g",
+      "lineText": "Now keep your holy word . Go meet the French , And from his Holiness use all your power To stop their marches ’fore we are inflamed . Our discontented counties do revolt , Our people quarrel with obedience , Swearing allegiance and the love of soul To stranger blood , to foreign royalty . This inundation of mistempered humor Rests by you only to be qualified . Then pause not , for the present time’s so sick That present med’cine must be ministered , Or overthrow incurable ensues .",
+      "scrollMode": "auto",
+      "lineIndex": 4
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79350",
+      "lineText": "It was my breath that blew this tempest up , Upon your stubborn usage of the Pope ; ACT 5. SC. 1 But since you are a gentle convertite , My tongue shall hush again this storm of war And make fair weather in your blust’ring land . On this Ascension Day , remember well : Upon your oath of service to the Pope , Go I to make the French lay down their arms .",
+      "scrollMode": "auto",
+      "lineIndex": 5
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79340",
+      "lineText": "He exits , with Attendants .",
+      "scrollMode": "auto",
+      "lineIndex": 6
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7934g",
+      "lineText": "Is this Ascension Day ? Did not the prophet Say that before Ascension Day at noon My crown I should give off ? Even so I have . I did suppose it should be on constraint , But , God be thanked , it is but voluntary .",
+      "scrollMode": "auto",
+      "lineIndex": 7
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79340",
+      "lineText": "Enter Bastard .",
+      "scrollMode": "auto",
+      "lineIndex": 8
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7935g",
+      "lineText": "All Kent hath yielded . Nothing there holds out But Dover Castle . London hath received Like a kind host the Dauphin and his powers . Your nobles will not hear you , but are gone To offer service to your enemy ; And wild amazement hurries up and down The little number of your doubtful friends .",
+      "scrollMode": "auto",
+      "lineIndex": 9
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7934g",
+      "lineText": "Would not my lords return to me again After they heard young Arthur was alive ?",
+      "scrollMode": "auto",
+      "lineIndex": 10
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7935g",
+      "lineText": "They found him dead and cast into the streets , An empty casket where the jewel of life By some damned hand was robbed and ta’en away .",
+      "scrollMode": "auto",
+      "lineIndex": 11
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7934g",
+      "lineText": "That villain Hubert told me he did live !",
+      "scrollMode": "auto",
+      "lineIndex": 12
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7935g",
+      "lineText": "So , on my soul , he did , for aught he knew . But wherefore do you droop ? Why look you sad ? Be great in act , as you have been in thought . ACT 5. SC. 1 Let not the world see fear and sad distrust Govern the motion of a kingly eye . Be stirring as the time ; be fire with fire ; Threaten the threat’ner , and outface the brow Of bragging horror . So shall inferior eyes , That borrow their behaviors from the great , Grow great by your example and put on The dauntless spirit of resolution . Away , and glister like the god of war When he intendeth to become the field . Show boldness and aspiring confidence . What , shall they seek the lion in his den And fright him there ? And make him tremble there ? O , let it not be said ! Forage , and run To meet displeasure farther from the doors , And grapple with him ere he come so nigh .",
+      "scrollMode": "auto",
+      "lineIndex": 13
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7934g",
+      "lineText": "The legate of the Pope hath been with me , And I have made a happy peace with him , And he hath promised to dismiss the powers Led by the Dauphin .",
+      "scrollMode": "auto",
+      "lineIndex": 14
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7935g",
+      "lineText": "O inglorious league ! Shall we upon the footing of our land Send fair-play orders and make compromise , Insinuation , parley , and base truce To arms invasive ? Shall a beardless boy , A cockered silken wanton , brave our fields And flesh his spirit in a warlike soil , Mocking the air with colors idly spread , And find no check ? Let us , my liege , to arms ! Perchance the Cardinal cannot make your peace ; Or if he do , let it at least be said They saw we had a purpose of defense .",
+      "scrollMode": "auto",
+      "lineIndex": 15
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7934g",
+      "lineText": "Have thou the ordering of this present time .",
+      "scrollMode": "auto",
+      "lineIndex": 16
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79340",
+      "lineText": "( Aside . )",
+      "scrollMode": "auto",
+      "lineIndex": 17
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7935g",
+      "lineText": "( Aside . ) Yet I know Our party may well meet a prouder foe .",
+      "scrollMode": "auto",
+      "lineIndex": 18
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79340",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 19
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79340",
+      "lineText": "Enter , in arms , Louis the Dauphin , Salisbury , Melun , Pembroke , Bigot , and French and English Soldiers .",
+      "scrollMode": "auto",
+      "lineIndex": 20
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79340",
+      "lineText": ", handing a paper to Melun",
+      "scrollMode": "auto",
+      "lineIndex": 21
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79360",
+      "lineText": "My Lord Melun , let this be copied out , And keep it safe for our remembrance . Return the precedent to these lords again , That having our fair order written down , Both they and we , perusing o’er these notes , May know wherefore we took the Sacrament , And keep our faiths firm and inviolable .",
+      "scrollMode": "auto",
+      "lineIndex": 22
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79370",
+      "lineText": "Upon our sides it never shall be broken . And , noble dauphin , albeit we swear A voluntary zeal and unurged faith To your proceedings , yet believe me , prince , I am not glad that such a sore of time Should seek a plaster by contemned revolt And heal the inveterate canker of one wound By making many . O , it grieves my soul That I must draw this metal from my side To be a widow-maker ! O , and there Where honorable rescue and defense Cries out upon the name of Salisbury ! But such is the infection of the time That for the health and physic of our right , We cannot deal but with the very hand Of stern injustice and confusèd wrong . ACT 5. SC. 2 And is ’t not pity , O my grievèd friends , That we , the sons and children of this isle , Was born to see so sad an hour as this , Wherein we step after a stranger , march Upon her gentle bosom , and fill up Her enemies’ ranks ? I must withdraw and weep Upon the spot of this enforcèd cause , To grace the gentry of a land remote , And follow unacquainted colors here . What , here ? O nation , that thou couldst remove , That Neptune’s arms , who clippeth thee about , Would bear thee from the knowledge of thyself And grapple thee unto a pagan shore , Where these two Christian armies might combine The blood of malice in a vein of league , And not to spend it so unneighborly .",
+      "scrollMode": "auto",
+      "lineIndex": 23
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79340",
+      "lineText": "He weeps .",
+      "scrollMode": "auto",
+      "lineIndex": 24
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79340",
+      "lineText": "Enter Pandulph .",
+      "scrollMode": "auto",
+      "lineIndex": 25
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79350",
+      "lineText": "Enter Pandulph . Look where the holy legate comes apace To give us warrant from the hand of God , And on our actions set the name of right With holy breath .",
+      "scrollMode": "auto",
+      "lineIndex": 26
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79350",
+      "lineText": "Hail , noble prince of France . The next is this : King John hath reconciled Himself to Rome ; his spirit is come in That so stood out against the holy Church , The great metropolis and See of Rome . Therefore thy threat’ning colors now wind up , And tame the savage spirit of wild war That , like a lion fostered up at hand , It may lie gently at the foot of peace And be no further harmful than in show .",
+      "scrollMode": "auto",
+      "lineIndex": 27
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79360",
+      "lineText": "Your Grace shall pardon me ; I will not back . I am too high-born to be propertied , To be a secondary at control , Or useful servingman and instrument To any sovereign state throughout the world . Your breath first kindled the dead coal of wars Between this chastised kingdom and myself And brought in matter that should feed this fire ; And now ’tis far too huge to be blown out With that same weak wind which enkindled it . You taught me how to know the face of right , Acquainted me with interest to this land , Yea , thrust this enterprise into my heart . ACT 5. SC. 2 And come you now to tell me John hath made His peace with Rome ? What is that peace to me ? I , by the honor of my marriage bed , After young Arthur claim this land for mine . And now it is half conquered , must I back Because that John hath made his peace with Rome ? Am I Rome’s slave ? What penny hath Rome borne ? What men provided ? What munition sent To underprop this action ? Is ’t not I That undergo this charge ? Who else but I , And such as to my claim are liable , Sweat in this business and maintain this war ? Have I not heard these islanders shout out Vive le Roi as I have banked their towns ? Have I not here the best cards for the game To win this easy match played for a crown ? And shall I now give o’er the yielded set ? No , no , on my soul , it never shall be said .",
+      "scrollMode": "auto",
+      "lineIndex": 28
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79350",
+      "lineText": "You look but on the outside of this work .",
+      "scrollMode": "auto",
+      "lineIndex": 29
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79340",
+      "lineText": "A trumpet sounds .",
+      "scrollMode": "auto",
+      "lineIndex": 30
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79360",
+      "lineText": "A trumpet sounds . What lusty trumpet thus doth summon us ?",
+      "scrollMode": "auto",
+      "lineIndex": 31
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79340",
+      "lineText": "Enter Bastard .",
+      "scrollMode": "auto",
+      "lineIndex": 32
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7935g",
+      "lineText": "According to the fair play of the world , Let me have audience . I am sent to speak , My holy lord of Milan , from the King . ACT 5. SC. 2 I come to learn how you have dealt for him , And , as you answer , I do know the scope And warrant limited unto my tongue .",
+      "scrollMode": "auto",
+      "lineIndex": 33
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79350",
+      "lineText": "The Dauphin is too willful-opposite And will not temporize with my entreaties . He flatly says he’ll not lay down his arms .",
+      "scrollMode": "auto",
+      "lineIndex": 34
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7935g",
+      "lineText": "By all the blood that ever fury breathed , The youth says well ! Now hear our English king , For thus his royalty doth speak in me : He is prepared — and reason too he should . This apish and unmannerly approach , This harnessed masque and unadvisèd revel , This unheard sauciness and boyish troops , The King doth smile at , and is well prepared To whip this dwarfish war , these pigmy arms , From out the circle of his territories . That hand which had the strength , even at your door , To cudgel you and make you take the hatch , To dive like buckets in concealèd wells , To crouch in litter of your stable planks , To lie like pawns locked up in chests and trunks , To hug with swine , to seek sweet safety out In vaults and prisons , and to thrill and shake Even at the crying of your nation’s crow , Thinking this voice an armèd Englishman — Shall that victorious hand be feebled here That in your chambers gave you chastisement ? No ! Know the gallant monarch is in arms , And like an eagle o’er his aerie towers To souse annoyance that comes near his nest . — And you degenerate , you ingrate revolts , You bloody Neroes , ripping up the womb Of your dear mother England , blush for shame ! For your own ladies and pale-visaged maids ACT 5. SC. 2 Like Amazons come tripping after drums , Their thimbles into armèd gauntlets change , Their needles to lances , and their gentle hearts To fierce and bloody inclination .",
+      "scrollMode": "auto",
+      "lineIndex": 35
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79360",
+      "lineText": "There end thy brave and turn thy face in peace . We grant thou canst outscold us . Fare thee well . We hold our time too precious to be spent With such a brabbler .",
+      "scrollMode": "auto",
+      "lineIndex": 36
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79350",
+      "lineText": "Give me leave to speak .",
+      "scrollMode": "auto",
+      "lineIndex": 37
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7935g",
+      "lineText": "No , I will speak .",
+      "scrollMode": "auto",
+      "lineIndex": 38
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79360",
+      "lineText": "We will attend to neither . Strike up the drums , and let the tongue of war Plead for our interest and our being here .",
+      "scrollMode": "auto",
+      "lineIndex": 39
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7935g",
+      "lineText": "Indeed , your drums being beaten will cry out , And so shall you , being beaten . Do but start An echo with the clamor of thy drum , And even at hand a drum is ready braced That shall reverberate all as loud as thine . Sound but another , and another shall , As loud as thine , rattle the welkin’s ear And mock the deep-mouthed thunder . For at hand , Not trusting to this halting legate here , Whom he hath used rather for sport than need , Is warlike John , and in his forehead sits A bare-ribbed Death , whose office is this day To feast upon whole thousands of the French .",
+      "scrollMode": "auto",
+      "lineIndex": 40
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79360",
+      "lineText": "Strike up our drums to find this danger out .",
+      "scrollMode": "auto",
+      "lineIndex": 41
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7935g",
+      "lineText": "And thou shalt find it , dauphin , do not doubt .",
+      "scrollMode": "auto",
+      "lineIndex": 42
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79340",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 43
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79340",
+      "lineText": "Alarums . Enter King John and Hubert .",
+      "scrollMode": "auto",
+      "lineIndex": 44
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7934g",
+      "lineText": "How goes the day with us ? O , tell me , Hubert .",
+      "scrollMode": "auto",
+      "lineIndex": 45
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7937g",
+      "lineText": "Badly , I fear . How fares your Majesty ?",
+      "scrollMode": "auto",
+      "lineIndex": 46
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7934g",
+      "lineText": "This fever that hath troubled me so long Lies heavy on me . O , my heart is sick .",
+      "scrollMode": "auto",
+      "lineIndex": 47
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79340",
+      "lineText": "Enter a Messenger .",
+      "scrollMode": "auto",
+      "lineIndex": 48
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79380",
+      "lineText": "My lord , your valiant kinsman , Faulconbridge , Desires your Majesty to leave the field And send him word by me which way you go .",
+      "scrollMode": "auto",
+      "lineIndex": 49
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7934g",
+      "lineText": "Tell him toward Swinstead , to the abbey there .",
+      "scrollMode": "auto",
+      "lineIndex": 50
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79380",
+      "lineText": "Be of good comfort , for the great supply That was expected by the Dauphin here Are wracked three nights ago on Goodwin Sands . This news was brought to Richard but even now . The French fight coldly and retire themselves .",
+      "scrollMode": "auto",
+      "lineIndex": 51
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7934g",
+      "lineText": "Ay me , this tyrant fever burns me up And will not let me welcome this good news . Set on toward Swinstead . To my litter straight . Weakness possesseth me , and I am faint .",
+      "scrollMode": "auto",
+      "lineIndex": 52
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79340",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 53
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79340",
+      "lineText": "Enter Salisbury , Pembroke , and Bigot .",
+      "scrollMode": "auto",
+      "lineIndex": 54
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79370",
+      "lineText": "I did not think the King so stored with friends .",
+      "scrollMode": "auto",
+      "lineIndex": 55
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7938g",
+      "lineText": "Up once again . Put spirit in the French . If they miscarry , we miscarry too .",
+      "scrollMode": "auto",
+      "lineIndex": 56
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79370",
+      "lineText": "That misbegotten devil , Faulconbridge , In spite of spite , alone upholds the day .",
+      "scrollMode": "auto",
+      "lineIndex": 57
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7938g",
+      "lineText": "They say King John , sore sick , hath left the field .",
+      "scrollMode": "auto",
+      "lineIndex": 58
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79340",
+      "lineText": "Enter Melun , wounded , led by a Soldier .",
+      "scrollMode": "auto",
+      "lineIndex": 59
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7936g",
+      "lineText": "Lead me to the revolts of England here .",
+      "scrollMode": "auto",
+      "lineIndex": 60
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79370",
+      "lineText": "When we were happy , we had other names .",
+      "scrollMode": "auto",
+      "lineIndex": 61
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7938g",
+      "lineText": "It is the Count Melun .",
+      "scrollMode": "auto",
+      "lineIndex": 62
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79370",
+      "lineText": "Wounded to death .",
+      "scrollMode": "auto",
+      "lineIndex": 63
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7936g",
+      "lineText": "Fly , noble English ; you are bought and sold . Unthread the rude eye of rebellion And welcome home again discarded faith . Seek out King John and fall before his feet , For if the French be lords of this loud day , He means to recompense the pains you take By cutting off your heads . Thus hath he sworn , And I with him , and many more with me , Upon the altar at Saint Edmundsbury , Even on that altar where we swore to you Dear amity and everlasting love .",
+      "scrollMode": "auto",
+      "lineIndex": 64
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79370",
+      "lineText": "May this be possible ? May this be true ?",
+      "scrollMode": "auto",
+      "lineIndex": 65
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7936g",
+      "lineText": "Have I not hideous death within my view , Retaining but a quantity of life , Which bleeds away even as a form of wax Resolveth from his figure ’gainst the fire ? ACT 5. SC. 4 What in the world should make me now deceive , Since I must lose the use of all deceit ? Why should I then be false , since it is true That I must die here and live hence by truth ? I say again , if Louis do win the day , He is forsworn if e’er those eyes of yours Behold another daybreak in the East . But even this night , whose black contagious breath Already smokes about the burning crest Of the old , feeble , and day-wearied sun , Even this ill night your breathing shall expire , Paying the fine of rated treachery Even with a treacherous fine of all your lives , If Louis by your assistance win the day . Commend me to one Hubert with your king ; The love of him , and this respect besides , For that my grandsire was an Englishman , Awakes my conscience to confess all this . In lieu whereof , I pray you bear me hence From forth the noise and rumor of the field , Where I may think the remnant of my thoughts In peace , and part this body and my soul With contemplation and devout desires .",
+      "scrollMode": "auto",
+      "lineIndex": 66
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79370",
+      "lineText": "We do believe thee , and beshrew my soul But I do love the favor and the form Of this most fair occasion , by the which We will untread the steps of damnèd flight , And like a bated and retirèd flood , Leaving our rankness and irregular course , Stoop low within those bounds we have o’erlooked And calmly run on in obedience Even to our ocean , to our great King John . My arm shall give thee help to bear thee hence , For I do see the cruel pangs of death ACT 5. SC. 5 Right in thine eye . — Away , my friends ! New flight , And happy newness , that intends old right .",
+      "scrollMode": "auto",
+      "lineIndex": 67
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79340",
+      "lineText": "They exit , assisting Melun .",
+      "scrollMode": "auto",
+      "lineIndex": 68
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79340",
+      "lineText": "Enter Louis , the Dauphin and his train .",
+      "scrollMode": "auto",
+      "lineIndex": 69
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79360",
+      "lineText": "The sun of heaven , methought , was loath to set , But stayed and made the western welkin blush , When English measured backward their own ground In faint retire . O , bravely came we off , When with a volley of our needless shot , After such bloody toil , we bid good night And wound our tott’ring colors clearly up , Last in the field and almost lords of it .",
+      "scrollMode": "auto",
+      "lineIndex": 70
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79340",
+      "lineText": "Enter a Messenger .",
+      "scrollMode": "auto",
+      "lineIndex": 71
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79390",
+      "lineText": "Where is my prince , the Dauphin ?",
+      "scrollMode": "auto",
+      "lineIndex": 72
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79360",
+      "lineText": "Here . What news ?",
+      "scrollMode": "auto",
+      "lineIndex": 73
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79390",
+      "lineText": "The Count Melun is slain . The English lords , By his persuasion , are again fall’n off , And your supply , which you have wished so long , Are cast away and sunk on Goodwin Sands .",
+      "scrollMode": "auto",
+      "lineIndex": 74
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79360",
+      "lineText": "Ah , foul , shrewd news . Beshrew thy very heart ! I did not think to be so sad tonight As this hath made me . Who was he that said King John did fly an hour or two before The stumbling night did part our weary powers ?",
+      "scrollMode": "auto",
+      "lineIndex": 75
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79390",
+      "lineText": "Whoever spoke it , it is true , my lord .",
+      "scrollMode": "auto",
+      "lineIndex": 76
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79360",
+      "lineText": "Well , keep good quarter and good care tonight . The day shall not be up so soon as I To try the fair adventure of tomorrow .",
+      "scrollMode": "auto",
+      "lineIndex": 77
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79340",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 78
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79340",
+      "lineText": "Enter Bastard and Hubert , severally .",
+      "scrollMode": "auto",
+      "lineIndex": 79
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7937g",
+      "lineText": "Who’s there ? Speak ho ! Speak quickly , or I shoot .",
+      "scrollMode": "auto",
+      "lineIndex": 80
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7935g",
+      "lineText": "A friend . What art thou ?",
+      "scrollMode": "auto",
+      "lineIndex": 81
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7937g",
+      "lineText": "Of the part of England .",
+      "scrollMode": "auto",
+      "lineIndex": 82
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7935g",
+      "lineText": "Whither dost thou go ?",
+      "scrollMode": "auto",
+      "lineIndex": 83
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7937g",
+      "lineText": "What’s that to thee ?",
+      "scrollMode": "auto",
+      "lineIndex": 84
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7935g",
+      "lineText": "Why may not I demand of thine affairs As well as thou of mine ? Hubert , I think ?",
+      "scrollMode": "auto",
+      "lineIndex": 85
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7937g",
+      "lineText": "Thou hast a perfect thought . I will upon all hazards well believe Thou art my friend , that know’st my tongue so well . Who art thou ?",
+      "scrollMode": "auto",
+      "lineIndex": 86
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7935g",
+      "lineText": "Who thou wilt . An if thou please , Thou mayst befriend me so much as to think I come one way of the Plantagenets .",
+      "scrollMode": "auto",
+      "lineIndex": 87
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7937g",
+      "lineText": "Unkind remembrance ! Thou and endless night Have done me shame . Brave soldier , pardon me That any accent breaking from thy tongue Should ’scape the true acquaintance of mine ear .",
+      "scrollMode": "auto",
+      "lineIndex": 88
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7935g",
+      "lineText": "Come , come . Sans compliment , what news abroad ?",
+      "scrollMode": "auto",
+      "lineIndex": 89
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7937g",
+      "lineText": "Why , here walk I in the black brow of night To find you out .",
+      "scrollMode": "auto",
+      "lineIndex": 90
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7935g",
+      "lineText": "Brief , then ; and what’s the news ?",
+      "scrollMode": "auto",
+      "lineIndex": 91
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7937g",
+      "lineText": "O my sweet sir , news fitting to the night , Black , fearful , comfortless , and horrible .",
+      "scrollMode": "auto",
+      "lineIndex": 92
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7935g",
+      "lineText": "Show me the very wound of this ill news . I am no woman ; I’ll not swoon at it .",
+      "scrollMode": "auto",
+      "lineIndex": 93
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7937g",
+      "lineText": "The King , I fear , is poisoned by a monk . I left him almost speechless , and broke out To acquaint you with this evil , that you might The better arm you to the sudden time Than if you had at leisure known of this .",
+      "scrollMode": "auto",
+      "lineIndex": 94
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7935g",
+      "lineText": "How did he take it ? Who did taste to him ?",
+      "scrollMode": "auto",
+      "lineIndex": 95
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7937g",
+      "lineText": "A monk , I tell you , a resolvèd villain , Whose bowels suddenly burst out . The King Yet speaks and peradventure may recover .",
+      "scrollMode": "auto",
+      "lineIndex": 96
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7935g",
+      "lineText": "Who didst thou leave to tend his Majesty ?",
+      "scrollMode": "auto",
+      "lineIndex": 97
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7937g",
+      "lineText": "Why , know you not ? The lords are all come back , And brought Prince Henry in their company , At whose request the King hath pardoned them , And they are all about his Majesty .",
+      "scrollMode": "auto",
+      "lineIndex": 98
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7935g",
+      "lineText": "Withhold thine indignation , mighty God , And tempt us not to bear above our power . I’ll tell thee , Hubert , half my power this night , Passing these flats , are taken by the tide . These Lincoln Washes have devourèd them . Myself , well mounted , hardly have escaped . ACT 5. SC. 7 Away before . Conduct me to the King . I doubt he will be dead or ere I come .",
+      "scrollMode": "auto",
+      "lineIndex": 99
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79340",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 100
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79340",
+      "lineText": "Enter Prince Henry , Salisbury , and Bigot .",
+      "scrollMode": "auto",
+      "lineIndex": 101
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7939g",
+      "lineText": "It is too late . The life of all his blood Is touched corruptibly , and his pure brain , Which some suppose the soul’s frail dwelling-house , Doth , by the idle comments that it makes , Foretell the ending of mortality .",
+      "scrollMode": "auto",
+      "lineIndex": 102
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79340",
+      "lineText": "Enter Pembroke .",
+      "scrollMode": "auto",
+      "lineIndex": 103
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7938g",
+      "lineText": "His Highness yet doth speak , and holds belief That being brought into the open air It would allay the burning quality Of that fell poison which assaileth him .",
+      "scrollMode": "auto",
+      "lineIndex": 104
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79340",
+      "lineText": "Bigot exits .",
+      "scrollMode": "auto",
+      "lineIndex": 105
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793a0",
+      "lineText": "Bigot exits . Doth he still rage ?",
+      "scrollMode": "auto",
+      "lineIndex": 106
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7938g",
+      "lineText": "He is more patient Than when you left him . Even now he sung .",
+      "scrollMode": "auto",
+      "lineIndex": 107
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7939g",
+      "lineText": "O vanity of sickness ! Fierce extremes In their continuance will not feel themselves . Death , having preyed upon the outward parts , Leaves them invisible , and his siege is now Against the mind , the which he pricks and wounds With many legions of strange fantasies , Which in their throng and press to that last hold ACT 5. SC. 7 Confound themselves . ’Tis strange that Death should sing . I am the cygnet to this pale faint swan , Who chants a doleful hymn to his own death , And from the organ-pipe of frailty sings His soul and body to their lasting rest .",
+      "scrollMode": "auto",
+      "lineIndex": 108
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79370",
+      "lineText": "Be of good comfort , prince , for you are born To set a form upon that indigest Which he hath left so shapeless and so rude .",
+      "scrollMode": "auto",
+      "lineIndex": 109
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79340",
+      "lineText": "King John brought in , attended by Bigot .",
+      "scrollMode": "auto",
+      "lineIndex": 110
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7934g",
+      "lineText": "Ay , marry , now my soul hath elbow-room . It would not out at windows nor at doors . There is so hot a summer in my bosom That all my bowels crumble up to dust . I am a scribbled form drawn with a pen Upon a parchment , and against this fire Do I shrink up .",
+      "scrollMode": "auto",
+      "lineIndex": 111
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7939g",
+      "lineText": "How fares your Majesty ?",
+      "scrollMode": "auto",
+      "lineIndex": 112
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7934g",
+      "lineText": "Poisoned — ill fare — dead , forsook , cast off , And none of you will bid the winter come To thrust his icy fingers in my maw , Nor let my kingdom’s rivers take their course Through my burned bosom , nor entreat the North To make his bleak winds kiss my parchèd lips And comfort me with cold . I do not ask you much . I beg cold comfort , and you are so strait And so ingrateful , you deny me that .",
+      "scrollMode": "auto",
+      "lineIndex": 113
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7939g",
+      "lineText": "O , that there were some virtue in my tears That might relieve you !",
+      "scrollMode": "auto",
+      "lineIndex": 114
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7934g",
+      "lineText": "The salt in them is hot . Within me is a hell , and there the poison ACT 5. SC. 7 Is , as a fiend , confined to tyrannize On unreprievable , condemnèd blood .",
+      "scrollMode": "auto",
+      "lineIndex": 115
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79340",
+      "lineText": "Enter Bastard .",
+      "scrollMode": "auto",
+      "lineIndex": 116
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7935g",
+      "lineText": "O , I am scalded with my violent motion And spleen of speed to see your Majesty .",
+      "scrollMode": "auto",
+      "lineIndex": 117
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7934g",
+      "lineText": "O cousin , thou art come to set mine eye . The tackle of my heart is cracked and burnt , And all the shrouds wherewith my life should sail Are turnèd to one thread , one little hair . My heart hath one poor string to stay it by , Which holds but till thy news be utterèd , And then all this thou seest is but a clod And module of confounded royalty .",
+      "scrollMode": "auto",
+      "lineIndex": 118
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7935g",
+      "lineText": "The Dauphin is preparing hitherward , Where God He knows how we shall answer him . For in a night the best part of my power , As I upon advantage did remove , Were in the Washes all unwarily Devourèd by the unexpected flood .",
+      "scrollMode": "auto",
+      "lineIndex": 119
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79340",
+      "lineText": "King John dies .",
+      "scrollMode": "auto",
+      "lineIndex": 120
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79370",
+      "lineText": "You breathe these dead news in as dead an ear . — My liege ! My lord ! — But now a king , now thus .",
+      "scrollMode": "auto",
+      "lineIndex": 121
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7939g",
+      "lineText": "Even so must I run on , and even so stop . What surety of the world , what hope , what stay , When this was now a king and now is clay ?",
+      "scrollMode": "auto",
+      "lineIndex": 122
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7935g",
+      "lineText": "Art thou gone so ? I do but stay behind To do the office for thee of revenge , And then my soul shall wait on thee to heaven , As it on Earth earth hath been thy servant still . — ACT 5. SC. 7 Now , now , you stars , that move in your right spheres , Where be your powers ? Show now your mended faiths And instantly return with me again To push destruction and perpetual shame Out of the weak door of our fainting land . Straight let us seek , or straight we shall be sought ; The Dauphin rages at our very heels .",
+      "scrollMode": "auto",
+      "lineIndex": 123
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79370",
+      "lineText": "It seems you know not , then , so much as we . The Cardinal Pandulph is within at rest , Who half an hour since came from the Dauphin , And brings from him such offers of our peace As we with honor and respect may take , With purpose presently to leave this war .",
+      "scrollMode": "auto",
+      "lineIndex": 124
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7935g",
+      "lineText": "He will the rather do it when he sees Ourselves well-sinewèd to our defense .",
+      "scrollMode": "auto",
+      "lineIndex": 125
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79370",
+      "lineText": "Nay , ’tis in a manner done already , For many carriages he hath dispatched To the sea-side , and put his cause and quarrel To the disposing of the Cardinal , With whom yourself , myself , and other lords , If you think meet , this afternoon will post To consummate this business happily .",
+      "scrollMode": "auto",
+      "lineIndex": 126
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7935g",
+      "lineText": "Let it be so . — And you , my noble prince , With other princes that may best be spared , Shall wait upon your father’s funeral .",
+      "scrollMode": "auto",
+      "lineIndex": 127
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7939g",
+      "lineText": "At Worcester must his body be interred , For so he willed it .",
+      "scrollMode": "auto",
+      "lineIndex": 128
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7935g",
+      "lineText": "Thither shall it , then , And happily may your sweet self put on The lineal state and glory of the land , ACT 5. SC. 7 To whom with all submission on my knee I do bequeath my faithful services And true subjection everlastingly .",
+      "scrollMode": "auto",
+      "lineIndex": 129
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79340",
+      "lineText": "He kneels .",
+      "scrollMode": "auto",
+      "lineIndex": 130
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79370",
+      "lineText": "And the like tender of our love we make To rest without a spot forevermore .",
+      "scrollMode": "auto",
+      "lineIndex": 131
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79340",
+      "lineText": "Salisbury , Pembroke , and Bigot kneel .",
+      "scrollMode": "auto",
+      "lineIndex": 132
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7939g",
+      "lineText": "I have a kind soul that would give you thanks And knows not how to do it but with tears .",
+      "scrollMode": "auto",
+      "lineIndex": 133
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79340",
+      "lineText": "They rise .",
+      "scrollMode": "auto",
+      "lineIndex": 134
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7935g",
+      "lineText": "O , let us pay the time but needful woe , Since it hath been beforehand with our griefs . This England never did nor never shall Lie at the proud foot of a conqueror But when it first did help to wound itself . Now these her princes are come home again , Come the three corners of the world in arms And we shall shock them . Naught shall make us rue , If England to itself do rest but true .",
+      "scrollMode": "auto",
+      "lineIndex": 135
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79340",
+      "lineText": "They exit , bearing the body of King John .",
+      "scrollMode": "auto",
+      "lineIndex": 136
+    }
+  ],
+  "isPublic": true
+}

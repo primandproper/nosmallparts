@@ -7,18 +7,26 @@
 /* eslint-disable */
 import type { CallContext, CallOptions } from 'nice-grpc-common';
 import {
+  AddTagToPlayScriptRequest,
+  AddTagToPlayScriptResponse,
   ArchivePlayScriptRequest,
   ArchivePlayScriptResponse,
   CreatePlayScriptRequest,
   CreatePlayScriptResponse,
+  CreateScriptTagRequest,
+  CreateScriptTagResponse,
   GetPlayScriptRequest,
   GetPlayScriptResponse,
   GetPlayScriptsForAccountRequest,
   GetPlayScriptsForAccountResponse,
   GetPlayScriptsRequest,
   GetPlayScriptsResponse,
+  GetPlayScriptsWithTagRequest,
+  GetPlayScriptsWithTagResponse,
   GetPublicPlayScriptsRequest,
   GetPublicPlayScriptsResponse,
+  RemoveTagFromPlayScriptRequest,
+  RemoveTagFromPlayScriptResponse,
   UpdatePlayScriptRequest,
   UpdatePlayScriptResponse,
 } from './play_scripts_service_types';
@@ -70,6 +78,14 @@ export const PlayScriptsServiceDefinition = {
       responseStream: false,
       options: {},
     },
+    getPlayScriptsWithTag: {
+      name: 'GetPlayScriptsWithTag',
+      requestType: GetPlayScriptsWithTagRequest,
+      requestStream: false,
+      responseType: GetPlayScriptsWithTagResponse,
+      responseStream: false,
+      options: {},
+    },
     updatePlayScript: {
       name: 'UpdatePlayScript',
       requestType: UpdatePlayScriptRequest,
@@ -83,6 +99,30 @@ export const PlayScriptsServiceDefinition = {
       requestType: ArchivePlayScriptRequest,
       requestStream: false,
       responseType: ArchivePlayScriptResponse,
+      responseStream: false,
+      options: {},
+    },
+    createScriptTag: {
+      name: 'CreateScriptTag',
+      requestType: CreateScriptTagRequest,
+      requestStream: false,
+      responseType: CreateScriptTagResponse,
+      responseStream: false,
+      options: {},
+    },
+    addTagToPlayScript: {
+      name: 'AddTagToPlayScript',
+      requestType: AddTagToPlayScriptRequest,
+      requestStream: false,
+      responseType: AddTagToPlayScriptResponse,
+      responseStream: false,
+      options: {},
+    },
+    removeTagFromPlayScript: {
+      name: 'RemoveTagFromPlayScript',
+      requestType: RemoveTagFromPlayScriptRequest,
+      requestStream: false,
+      responseType: RemoveTagFromPlayScriptResponse,
       responseStream: false,
       options: {},
     },
@@ -110,6 +150,10 @@ export interface PlayScriptsServiceImplementation<CallContextExt = {}> {
     request: GetPublicPlayScriptsRequest,
     context: CallContext & CallContextExt
   ): Promise<DeepPartial<GetPublicPlayScriptsResponse>>;
+  getPlayScriptsWithTag(
+    request: GetPlayScriptsWithTagRequest,
+    context: CallContext & CallContextExt
+  ): Promise<DeepPartial<GetPlayScriptsWithTagResponse>>;
   updatePlayScript(
     request: UpdatePlayScriptRequest,
     context: CallContext & CallContextExt
@@ -118,6 +162,18 @@ export interface PlayScriptsServiceImplementation<CallContextExt = {}> {
     request: ArchivePlayScriptRequest,
     context: CallContext & CallContextExt
   ): Promise<DeepPartial<ArchivePlayScriptResponse>>;
+  createScriptTag(
+    request: CreateScriptTagRequest,
+    context: CallContext & CallContextExt
+  ): Promise<DeepPartial<CreateScriptTagResponse>>;
+  addTagToPlayScript(
+    request: AddTagToPlayScriptRequest,
+    context: CallContext & CallContextExt
+  ): Promise<DeepPartial<AddTagToPlayScriptResponse>>;
+  removeTagFromPlayScript(
+    request: RemoveTagFromPlayScriptRequest,
+    context: CallContext & CallContextExt
+  ): Promise<DeepPartial<RemoveTagFromPlayScriptResponse>>;
 }
 
 export interface PlayScriptsServiceClient<CallOptionsExt = {}> {
@@ -141,6 +197,10 @@ export interface PlayScriptsServiceClient<CallOptionsExt = {}> {
     request: DeepPartial<GetPublicPlayScriptsRequest>,
     options?: CallOptions & CallOptionsExt
   ): Promise<GetPublicPlayScriptsResponse>;
+  getPlayScriptsWithTag(
+    request: DeepPartial<GetPlayScriptsWithTagRequest>,
+    options?: CallOptions & CallOptionsExt
+  ): Promise<GetPlayScriptsWithTagResponse>;
   updatePlayScript(
     request: DeepPartial<UpdatePlayScriptRequest>,
     options?: CallOptions & CallOptionsExt
@@ -149,6 +209,18 @@ export interface PlayScriptsServiceClient<CallOptionsExt = {}> {
     request: DeepPartial<ArchivePlayScriptRequest>,
     options?: CallOptions & CallOptionsExt
   ): Promise<ArchivePlayScriptResponse>;
+  createScriptTag(
+    request: DeepPartial<CreateScriptTagRequest>,
+    options?: CallOptions & CallOptionsExt
+  ): Promise<CreateScriptTagResponse>;
+  addTagToPlayScript(
+    request: DeepPartial<AddTagToPlayScriptRequest>,
+    options?: CallOptions & CallOptionsExt
+  ): Promise<AddTagToPlayScriptResponse>;
+  removeTagFromPlayScript(
+    request: DeepPartial<RemoveTagFromPlayScriptRequest>,
+    options?: CallOptions & CallOptionsExt
+  ): Promise<RemoveTagFromPlayScriptResponse>;
 }
 
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;

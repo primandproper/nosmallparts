@@ -1,0 +1,1706 @@
+{
+  "title": "Much Ado About Nothing (Act 3)",
+  "description": "Folger Shakespeare Library edition",
+  "author": "William Shakespeare",
+  "castMembers": [
+    {
+      "id": "d68m11cn9qd8d2h78m0g",
+      "name": "Narrator",
+      "sortOrder": 0
+    },
+    {
+      "id": "d68m11cn9qd8d2h78m10",
+      "name": "Hero",
+      "description": "his daughter",
+      "sortOrder": 1
+    },
+    {
+      "id": "d68m11cn9qd8d2h78m1g",
+      "name": "Margaret",
+      "sortOrder": 2
+    },
+    {
+      "id": "d68m11cn9qd8d2h78m20",
+      "name": "Ursula",
+      "sortOrder": 3
+    },
+    {
+      "id": "d68m11cn9qd8d2h78m2g",
+      "name": "Beatrice",
+      "description": "his niece",
+      "sortOrder": 4
+    },
+    {
+      "id": "d68m11cn9qd8d2h78m30",
+      "name": "Don Pedro",
+      "description": "Prince of Aragon",
+      "sortOrder": 5
+    },
+    {
+      "id": "d68m11cn9qd8d2h78m3g",
+      "name": "Count Claudio",
+      "description": "a young lord from Florence",
+      "sortOrder": 6
+    },
+    {
+      "id": "d68m11cn9qd8d2h78m40",
+      "name": "Signior Benedick",
+      "description": "a gentleman from Padua",
+      "sortOrder": 7
+    },
+    {
+      "id": "d68m11cn9qd8d2h78m4g",
+      "name": "Leonato",
+      "description": "Governor of Messina",
+      "sortOrder": 8
+    },
+    {
+      "id": "d68m11cn9qd8d2h78m50",
+      "name": "Don John",
+      "description": "Don Pedro’s brother",
+      "sortOrder": 9
+    },
+    {
+      "id": "d68m11cn9qd8d2h78m5g",
+      "name": "Dogberry",
+      "description": "Master Constable in Messina",
+      "sortOrder": 10
+    },
+    {
+      "id": "d68m11cn9qd8d2h78m60",
+      "name": "Verges",
+      "description": "Dogberry’s partner",
+      "sortOrder": 11
+    },
+    {
+      "id": "d68m11cn9qd8d2h78m6g",
+      "name": "First Watchman",
+      "sortOrder": 12
+    },
+    {
+      "id": "d68m11cn9qd8d2h78m70",
+      "name": "George Seacoal",
+      "description": "leader of the Watch",
+      "sortOrder": 13
+    },
+    {
+      "id": "d68m11cn9qd8d2h78m7g",
+      "name": "Second Watchman",
+      "sortOrder": 14
+    },
+    {
+      "id": "d68m11cn9qd8d2h78m80",
+      "name": "Borachio",
+      "sortOrder": 15
+    },
+    {
+      "id": "d68m11cn9qd8d2h78m8g",
+      "name": "Conrade",
+      "sortOrder": 16
+    },
+    {
+      "id": "d68m11cn9qd8d2h78m90",
+      "name": "Messenger",
+      "sortOrder": 17
+    }
+  ],
+  "lines": [
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m0g",
+      "lineText": "Enter Hero and two gentlewomen , Margaret and Ursula .",
+      "scrollMode": "auto",
+      "lineIndex": 0
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m10",
+      "lineText": "Good Margaret , run thee to the parlor . There shalt thou find my cousin Beatrice Proposing with the Prince and Claudio . Whisper her ear and tell her I and Ursula Walk in the orchard , and our whole discourse Is all of her . Say that thou overheardst us , And bid her steal into the pleachèd bower Where honeysuckles ripened by the sun Forbid the sun to enter , like favorites , Made proud by princes , that advance their pride Against that power that bred it . There will she hide her To listen our propose . This is thy office . Bear thee well in it , and leave us alone .",
+      "scrollMode": "auto",
+      "lineIndex": 1
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m1g",
+      "lineText": "I’ll make her come , I warrant you , presently .",
+      "scrollMode": "auto",
+      "lineIndex": 2
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m0g",
+      "lineText": "She exits .",
+      "scrollMode": "auto",
+      "lineIndex": 3
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m10",
+      "lineText": "Now , Ursula , when Beatrice doth come , As we do trace this alley up and down , Our talk must only be of Benedick . When I do name him , let it be thy part To praise him more than ever man did merit . ACT 3. SC. 1 My talk to thee must be how Benedick Is sick in love with Beatrice . Of this matter Is little Cupid’s crafty arrow made , That only wounds by hearsay . Now begin , For look where Beatrice like a lapwing runs Close by the ground , to hear our conference .",
+      "scrollMode": "auto",
+      "lineIndex": 4
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m0g",
+      "lineText": "Enter Beatrice , who hides in the bower .",
+      "scrollMode": "auto",
+      "lineIndex": 5
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m0g",
+      "lineText": ", aside to Hero",
+      "scrollMode": "auto",
+      "lineIndex": 6
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m20",
+      "lineText": "The pleasant’st angling is to see the fish Cut with her golden oars the silver stream And greedily devour the treacherous bait . So angle we for Beatrice , who even now Is couchèd in the woodbine coverture . Fear you not my part of the dialogue .",
+      "scrollMode": "auto",
+      "lineIndex": 7
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m0g",
+      "lineText": ", aside to Ursula",
+      "scrollMode": "auto",
+      "lineIndex": 8
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m0g",
+      "lineText": "They walk near the bower .",
+      "scrollMode": "auto",
+      "lineIndex": 9
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m10",
+      "lineText": "They walk near the bower . No , truly , Ursula , she is too disdainful . I know her spirits are as coy and wild As haggards of the rock .",
+      "scrollMode": "auto",
+      "lineIndex": 10
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m20",
+      "lineText": "But are you sure That Benedick loves Beatrice so entirely ?",
+      "scrollMode": "auto",
+      "lineIndex": 11
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m10",
+      "lineText": "So says the Prince and my new-trothèd lord .",
+      "scrollMode": "auto",
+      "lineIndex": 12
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m20",
+      "lineText": "And did they bid you tell her of it , madam ?",
+      "scrollMode": "auto",
+      "lineIndex": 13
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m10",
+      "lineText": "They did entreat me to acquaint her of it , But I persuaded them , if they loved Benedick , To wish him wrestle with affection And never to let Beatrice know of it .",
+      "scrollMode": "auto",
+      "lineIndex": 14
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m20",
+      "lineText": "Why did you so ? Doth not the gentleman ACT 3. SC. 1 Deserve as full as fortunate a bed As ever Beatrice shall couch upon ?",
+      "scrollMode": "auto",
+      "lineIndex": 15
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m10",
+      "lineText": "O god of love ! I know he doth deserve As much as may be yielded to a man , But Nature never framed a woman’s heart Of prouder stuff than that of Beatrice . Disdain and scorn ride sparkling in her eyes , Misprizing what they look on , and her wit Values itself so highly that to her All matter else seems weak . She cannot love , Nor take no shape nor project of affection , She is so self-endeared .",
+      "scrollMode": "auto",
+      "lineIndex": 16
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m20",
+      "lineText": "Sure , I think so , And therefore certainly it were not good She knew his love , lest she’ll make sport at it .",
+      "scrollMode": "auto",
+      "lineIndex": 17
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m10",
+      "lineText": "Why , you speak truth . I never yet saw man , How wise , how noble , young , how rarely featured , But she would spell him backward . If fair-faced , She would swear the gentleman should be her sister ; If black , why , Nature , drawing of an antic , Made a foul blot ; if tall , a lance ill-headed ; If low , an agate very vilely cut ; If speaking , why , a vane blown with all winds ; If silent , why , a block moved with none . So turns she every man the wrong side out , And never gives to truth and virtue that Which simpleness and merit purchaseth .",
+      "scrollMode": "auto",
+      "lineIndex": 18
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m20",
+      "lineText": "Sure , sure , such carping is not commendable .",
+      "scrollMode": "auto",
+      "lineIndex": 19
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m10",
+      "lineText": "No , not to be so odd and from all fashions As Beatrice is cannot be commendable . But who dare tell her so ? If I should speak , ACT 3. SC. 1 She would mock me into air . O , she would laugh me Out of myself , press me to death with wit . Therefore let Benedick , like covered fire , Consume away in sighs , waste inwardly . It were a better death than die with mocks , Which is as bad as die with tickling .",
+      "scrollMode": "auto",
+      "lineIndex": 20
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m20",
+      "lineText": "Yet tell her of it . Hear what she will say .",
+      "scrollMode": "auto",
+      "lineIndex": 21
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m10",
+      "lineText": "No , rather I will go to Benedick And counsel him to fight against his passion ; And truly I’ll devise some honest slanders To stain my cousin with . One doth not know How much an ill word may empoison liking .",
+      "scrollMode": "auto",
+      "lineIndex": 22
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m20",
+      "lineText": "O , do not do your cousin such a wrong ! She cannot be so much without true judgment , Having so swift and excellent a wit As she is prized to have , as to refuse So rare a gentleman as Signior Benedick .",
+      "scrollMode": "auto",
+      "lineIndex": 23
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m10",
+      "lineText": "He is the only man of Italy , Always excepted my dear Claudio .",
+      "scrollMode": "auto",
+      "lineIndex": 24
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m20",
+      "lineText": "I pray you be not angry with me , madam , Speaking my fancy : Signior Benedick , For shape , for bearing , argument , and valor , Goes foremost in report through Italy .",
+      "scrollMode": "auto",
+      "lineIndex": 25
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m10",
+      "lineText": "Indeed , he hath an excellent good name .",
+      "scrollMode": "auto",
+      "lineIndex": 26
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m20",
+      "lineText": "His excellence did earn it ere he had it . When are you married , madam ?",
+      "scrollMode": "auto",
+      "lineIndex": 27
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m10",
+      "lineText": "Why , every day , tomorrow . Come , go in . ACT 3. SC. 2 I’ll show thee some attires and have thy counsel Which is the best to furnish me tomorrow .",
+      "scrollMode": "auto",
+      "lineIndex": 28
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m0g",
+      "lineText": "They move away from the bower .",
+      "scrollMode": "auto",
+      "lineIndex": 29
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m0g",
+      "lineText": ", aside to Hero",
+      "scrollMode": "auto",
+      "lineIndex": 30
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m20",
+      "lineText": "She’s limed , I warrant you . We have caught her , madam .",
+      "scrollMode": "auto",
+      "lineIndex": 31
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m0g",
+      "lineText": ", aside to Ursula",
+      "scrollMode": "auto",
+      "lineIndex": 32
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m10",
+      "lineText": "If it prove so , then loving goes by haps ; Some Cupid kills with arrows , some with traps .",
+      "scrollMode": "auto",
+      "lineIndex": 33
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m0g",
+      "lineText": "Hero and Ursula exit .",
+      "scrollMode": "auto",
+      "lineIndex": 34
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m0g",
+      "lineText": ", coming forward",
+      "scrollMode": "auto",
+      "lineIndex": 35
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m2g",
+      "lineText": "What fire is in mine ears ? Can this be true ? Stand I condemned for pride and scorn so much ? Contempt , farewell , and maiden pride , adieu ! No glory lives behind the back of such . And Benedick , love on ; I will requite thee , Taming my wild heart to thy loving hand . If thou dost love , my kindness shall incite thee To bind our loves up in a holy band . For others say thou dost deserve , and I Believe it better than reportingly .",
+      "scrollMode": "auto",
+      "lineIndex": 36
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m0g",
+      "lineText": "She exits .",
+      "scrollMode": "auto",
+      "lineIndex": 37
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m0g",
+      "lineText": "Enter Prince , Claudio , Benedick , and Leonato .",
+      "scrollMode": "auto",
+      "lineIndex": 38
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m30",
+      "lineText": "I do but stay till your marriage be consummate , and then go I toward Aragon .",
+      "scrollMode": "auto",
+      "lineIndex": 39
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m3g",
+      "lineText": "I’ll bring you thither , my lord , if you’ll vouchsafe me .",
+      "scrollMode": "auto",
+      "lineIndex": 40
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m30",
+      "lineText": "Nay , that would be as great a soil in the new gloss of your marriage as to show a child his new coat and forbid him to wear it . I will only be bold with Benedick for his company , for from the crown of his head to the sole of his foot he is all mirth . He ACT 3. SC. 2 hath twice or thrice cut Cupid’s bowstring , and the little hangman dare not shoot at him . He hath a heart as sound as a bell , and his tongue is the clapper , for what his heart thinks , his tongue speaks .",
+      "scrollMode": "auto",
+      "lineIndex": 41
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m40",
+      "lineText": "Gallants , I am not as I have been .",
+      "scrollMode": "auto",
+      "lineIndex": 42
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m4g",
+      "lineText": "So say I . Methinks you are sadder .",
+      "scrollMode": "auto",
+      "lineIndex": 43
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m3g",
+      "lineText": "I hope he be in love .",
+      "scrollMode": "auto",
+      "lineIndex": 44
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m30",
+      "lineText": "Hang him , truant ! There’s no true drop of blood in him to be truly touched with love . If he be sad , he wants money .",
+      "scrollMode": "auto",
+      "lineIndex": 45
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m40",
+      "lineText": "I have the toothache .",
+      "scrollMode": "auto",
+      "lineIndex": 46
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m30",
+      "lineText": "Draw it .",
+      "scrollMode": "auto",
+      "lineIndex": 47
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m40",
+      "lineText": "Hang it !",
+      "scrollMode": "auto",
+      "lineIndex": 48
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m3g",
+      "lineText": "You must hang it first , and draw it afterwards .",
+      "scrollMode": "auto",
+      "lineIndex": 49
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m30",
+      "lineText": "What , sigh for the toothache ?",
+      "scrollMode": "auto",
+      "lineIndex": 50
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m4g",
+      "lineText": "Where is but a humor or a worm .",
+      "scrollMode": "auto",
+      "lineIndex": 51
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m40",
+      "lineText": "Well , everyone can master a grief but he that has it .",
+      "scrollMode": "auto",
+      "lineIndex": 52
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m3g",
+      "lineText": "Yet say I , he is in love .",
+      "scrollMode": "auto",
+      "lineIndex": 53
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m30",
+      "lineText": "There is no appearance of fancy in him , unless it be a fancy that he hath to strange disguises , as to be a Dutchman today , a Frenchman tomorrow , or in the shape of two countries at once , as a German from the waist downward , all slops , and a Spaniard from the hip upward , no doublet . Unless he have a fancy to this foolery , as it appears he hath , he is no fool for fancy , as you would have it appear he is .",
+      "scrollMode": "auto",
+      "lineIndex": 54
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m3g",
+      "lineText": "If he be not in love with some woman , there is no believing old signs . He brushes his hat o’ mornings . What should that bode ?",
+      "scrollMode": "auto",
+      "lineIndex": 55
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m30",
+      "lineText": "Hath any man seen him at the barber’s ?",
+      "scrollMode": "auto",
+      "lineIndex": 56
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m3g",
+      "lineText": "No , but the barber’s man hath been seen with him , and the old ornament of his cheek hath already stuffed tennis balls .",
+      "scrollMode": "auto",
+      "lineIndex": 57
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m4g",
+      "lineText": "Indeed he looks younger than he did , by the loss of a beard .",
+      "scrollMode": "auto",
+      "lineIndex": 58
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m30",
+      "lineText": "Nay , he rubs himself with civet . Can you smell him out by that ?",
+      "scrollMode": "auto",
+      "lineIndex": 59
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m3g",
+      "lineText": "That’s as much as to say , the sweet youth’s in love .",
+      "scrollMode": "auto",
+      "lineIndex": 60
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m30",
+      "lineText": "The greatest note of it is his melancholy .",
+      "scrollMode": "auto",
+      "lineIndex": 61
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m3g",
+      "lineText": "And when was he wont to wash his face ?",
+      "scrollMode": "auto",
+      "lineIndex": 62
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m30",
+      "lineText": "Yea , or to paint himself ? For the which I hear what they say of him .",
+      "scrollMode": "auto",
+      "lineIndex": 63
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m3g",
+      "lineText": "Nay , but his jesting spirit , which is now crept into a lute string and now governed by stops —",
+      "scrollMode": "auto",
+      "lineIndex": 64
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m30",
+      "lineText": "Indeed , that tells a heavy tale for him . Conclude , conclude , he is in love .",
+      "scrollMode": "auto",
+      "lineIndex": 65
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m3g",
+      "lineText": "Nay , but I know who loves him .",
+      "scrollMode": "auto",
+      "lineIndex": 66
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m30",
+      "lineText": "That would I know , too . I warrant , one that knows him not .",
+      "scrollMode": "auto",
+      "lineIndex": 67
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m3g",
+      "lineText": "Yes , and his ill conditions ; and , in despite of all , dies for him .",
+      "scrollMode": "auto",
+      "lineIndex": 68
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m30",
+      "lineText": "She shall be buried with her face upwards .",
+      "scrollMode": "auto",
+      "lineIndex": 69
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m40",
+      "lineText": "Yet is this no charm for the toothache . — Old signior , walk aside with me . I have studied eight or nine wise words to speak to you , which these hobby-horses must not hear .",
+      "scrollMode": "auto",
+      "lineIndex": 70
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m0g",
+      "lineText": "Benedick and Leonato exit .",
+      "scrollMode": "auto",
+      "lineIndex": 71
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m30",
+      "lineText": "For my life , to break with him about Beatrice !",
+      "scrollMode": "auto",
+      "lineIndex": 72
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m3g",
+      "lineText": "’Tis even so . Hero and Margaret have by this played their parts with Beatrice , and then the two bears will not bite one another when they meet .",
+      "scrollMode": "auto",
+      "lineIndex": 73
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m0g",
+      "lineText": "Enter John the Bastard .",
+      "scrollMode": "auto",
+      "lineIndex": 74
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m50",
+      "lineText": "My lord and brother , God save you .",
+      "scrollMode": "auto",
+      "lineIndex": 75
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m30",
+      "lineText": "Good e’en , brother .",
+      "scrollMode": "auto",
+      "lineIndex": 76
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m50",
+      "lineText": "If your leisure served , I would speak with you .",
+      "scrollMode": "auto",
+      "lineIndex": 77
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m30",
+      "lineText": "In private ?",
+      "scrollMode": "auto",
+      "lineIndex": 78
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m50",
+      "lineText": "If it please you . Yet Count Claudio may hear , for what I would speak of concerns him .",
+      "scrollMode": "auto",
+      "lineIndex": 79
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m30",
+      "lineText": "What’s the matter ?",
+      "scrollMode": "auto",
+      "lineIndex": 80
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m0g",
+      "lineText": ", to Claudio",
+      "scrollMode": "auto",
+      "lineIndex": 81
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m50",
+      "lineText": "Means your Lordship to be married tomorrow ?",
+      "scrollMode": "auto",
+      "lineIndex": 82
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m30",
+      "lineText": "You know he does .",
+      "scrollMode": "auto",
+      "lineIndex": 83
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m50",
+      "lineText": "I know not that , when he knows what I know .",
+      "scrollMode": "auto",
+      "lineIndex": 84
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m3g",
+      "lineText": "If there be any impediment , I pray you discover it .",
+      "scrollMode": "auto",
+      "lineIndex": 85
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m50",
+      "lineText": "You may think I love you not . Let that appear hereafter , and aim better at me by that I now will manifest . For my brother , I think he holds you well , and in dearness of heart hath holp to effect your ensuing marriage — surely suit ill spent and labor ill bestowed .",
+      "scrollMode": "auto",
+      "lineIndex": 86
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m30",
+      "lineText": "Why , what’s the matter ?",
+      "scrollMode": "auto",
+      "lineIndex": 87
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m50",
+      "lineText": "I came hither to tell you ; and , circumstances shortened , for she has been too long a-talking of , the lady is disloyal .",
+      "scrollMode": "auto",
+      "lineIndex": 88
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m3g",
+      "lineText": "Who , Hero ?",
+      "scrollMode": "auto",
+      "lineIndex": 89
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m50",
+      "lineText": "Even she : Leonato’s Hero , your Hero , every man’s Hero .",
+      "scrollMode": "auto",
+      "lineIndex": 90
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m3g",
+      "lineText": "Disloyal ?",
+      "scrollMode": "auto",
+      "lineIndex": 91
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m50",
+      "lineText": "The word is too good to paint out her wickedness . I could say she were worse . Think you of a worse title , and I will fit her to it . Wonder not till further warrant . Go but with me tonight , you shall see her chamber window entered , even the night before her wedding day . If you love her then , tomorrow wed her . But it would better fit your honor to change your mind .",
+      "scrollMode": "auto",
+      "lineIndex": 92
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m0g",
+      "lineText": ", to Prince",
+      "scrollMode": "auto",
+      "lineIndex": 93
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m3g",
+      "lineText": "May this be so ?",
+      "scrollMode": "auto",
+      "lineIndex": 94
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m30",
+      "lineText": "I will not think it .",
+      "scrollMode": "auto",
+      "lineIndex": 95
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m50",
+      "lineText": "If you dare not trust that you see , confess not that you know . If you will follow me , I will ACT 3. SC. 3 show you enough , and when you have seen more and heard more , proceed accordingly .",
+      "scrollMode": "auto",
+      "lineIndex": 96
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m3g",
+      "lineText": "If I see anything tonight why I should not marry her , tomorrow in the congregation , where I should wed , there will I shame her .",
+      "scrollMode": "auto",
+      "lineIndex": 97
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m30",
+      "lineText": "And as I wooed for thee to obtain her , I will join with thee to disgrace her .",
+      "scrollMode": "auto",
+      "lineIndex": 98
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m50",
+      "lineText": "I will disparage her no farther till you are my witnesses . Bear it coldly but till midnight , and let the issue show itself .",
+      "scrollMode": "auto",
+      "lineIndex": 99
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m30",
+      "lineText": "O day untowardly turned !",
+      "scrollMode": "auto",
+      "lineIndex": 100
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m3g",
+      "lineText": "O mischief strangely thwarting !",
+      "scrollMode": "auto",
+      "lineIndex": 101
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m50",
+      "lineText": "O plague right well prevented ! So will you say when you have seen the sequel .",
+      "scrollMode": "auto",
+      "lineIndex": 102
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m0g",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 103
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m0g",
+      "lineText": "Enter Dogberry and his compartner Verges with the Watch .",
+      "scrollMode": "auto",
+      "lineIndex": 104
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m5g",
+      "lineText": "Are you good men and true ?",
+      "scrollMode": "auto",
+      "lineIndex": 105
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m60",
+      "lineText": "Yea , or else it were pity but they should suffer salvation , body and soul .",
+      "scrollMode": "auto",
+      "lineIndex": 106
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m5g",
+      "lineText": "Nay , that were a punishment too good for them if they should have any allegiance in them , being chosen for the Prince’s watch .",
+      "scrollMode": "auto",
+      "lineIndex": 107
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m60",
+      "lineText": "Well , give them their charge , neighbor Dogberry .",
+      "scrollMode": "auto",
+      "lineIndex": 108
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m5g",
+      "lineText": "First , who think you the most desartless man to be constable ?",
+      "scrollMode": "auto",
+      "lineIndex": 109
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m6g",
+      "lineText": "Hugh Oatcake , sir , or George Seacoal , for they can write and read .",
+      "scrollMode": "auto",
+      "lineIndex": 110
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m0g",
+      "lineText": "Seacoal steps forward .",
+      "scrollMode": "auto",
+      "lineIndex": 111
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m70",
+      "lineText": "Seacoal steps forward . God hath blessed you with a good ACT 3. SC. 3 name . To be a well-favored man is the gift of fortune , but to write and read comes by nature .",
+      "scrollMode": "auto",
+      "lineIndex": 112
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m70",
+      "lineText": "Both which , master constable —",
+      "scrollMode": "auto",
+      "lineIndex": 113
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m5g",
+      "lineText": "You have . I knew it would be your answer . Well , for your favor , sir , why , give God thanks , and make no boast of it , and for your writing and reading , let that appear when there is no need of such vanity . You are thought here to be the most senseless and fit man for the constable of the watch ; therefore bear you the lantern . This is your charge : you shall comprehend all vagrom men ; you are to bid any man stand , in the Prince’s name .",
+      "scrollMode": "auto",
+      "lineIndex": 114
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m70",
+      "lineText": "How if he will not stand ?",
+      "scrollMode": "auto",
+      "lineIndex": 115
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m5g",
+      "lineText": "Why , then , take no note of him , but let him go , and presently call the rest of the watch together and thank God you are rid of a knave .",
+      "scrollMode": "auto",
+      "lineIndex": 116
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m60",
+      "lineText": "If he will not stand when he is bidden , he is none of the Prince’s subjects .",
+      "scrollMode": "auto",
+      "lineIndex": 117
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m5g",
+      "lineText": "True , and they are to meddle with none but the Prince’s subjects . — You shall also make no noise in the streets ; for , for the watch to babble and to talk is most tolerable and not to be endured .",
+      "scrollMode": "auto",
+      "lineIndex": 118
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m7g",
+      "lineText": "We will rather sleep than talk . We know what belongs to a watch .",
+      "scrollMode": "auto",
+      "lineIndex": 119
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m5g",
+      "lineText": "Why , you speak like an ancient and most quiet watchman , for I cannot see how sleeping should offend ; only have a care that your bills be not stolen . Well , you are to call at all the alehouses and bid those that are drunk get them to bed .",
+      "scrollMode": "auto",
+      "lineIndex": 120
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m70",
+      "lineText": "How if they will not ?",
+      "scrollMode": "auto",
+      "lineIndex": 121
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m5g",
+      "lineText": "Why then , let them alone till they are sober . If they make you not then the better answer , you may say they are not the men you took them for .",
+      "scrollMode": "auto",
+      "lineIndex": 122
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m70",
+      "lineText": "Well , sir .",
+      "scrollMode": "auto",
+      "lineIndex": 123
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m5g",
+      "lineText": "If you meet a thief , you may suspect him , by virtue of your office , to be no true man , and for such ACT 3. SC. 3 kind of men , the less you meddle or make with them , why , the more is for your honesty .",
+      "scrollMode": "auto",
+      "lineIndex": 124
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m70",
+      "lineText": "If we know him to be a thief , shall we not lay hands on him ?",
+      "scrollMode": "auto",
+      "lineIndex": 125
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m5g",
+      "lineText": "Truly , by your office you may , but I think they that touch pitch will be defiled . The most peaceable way for you , if you do take a thief , is to let him show himself what he is and steal out of your company .",
+      "scrollMode": "auto",
+      "lineIndex": 126
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m60",
+      "lineText": "You have been always called a merciful man , partner .",
+      "scrollMode": "auto",
+      "lineIndex": 127
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m5g",
+      "lineText": "Truly , I would not hang a dog by my will , much more a man who hath any honesty in him .",
+      "scrollMode": "auto",
+      "lineIndex": 128
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m0g",
+      "lineText": ", to the Watch",
+      "scrollMode": "auto",
+      "lineIndex": 129
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m60",
+      "lineText": "If you hear a child cry in the night , you must call to the nurse and bid her still it .",
+      "scrollMode": "auto",
+      "lineIndex": 130
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m7g",
+      "lineText": "How if the nurse be asleep and will not hear us ?",
+      "scrollMode": "auto",
+      "lineIndex": 131
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m5g",
+      "lineText": "Why , then depart in peace , and let the child wake her with crying , for the ewe that will not hear her lamb when it baas will never answer a calf when he bleats .",
+      "scrollMode": "auto",
+      "lineIndex": 132
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m60",
+      "lineText": "’Tis very true .",
+      "scrollMode": "auto",
+      "lineIndex": 133
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m5g",
+      "lineText": "This is the end of the charge . You , constable , are to present the Prince’s own person . If you meet the Prince in the night , you may stay him .",
+      "scrollMode": "auto",
+      "lineIndex": 134
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m60",
+      "lineText": "Nay , by ’r Lady , that I think he cannot .",
+      "scrollMode": "auto",
+      "lineIndex": 135
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m5g",
+      "lineText": "Five shillings to one on ’t , with any man that knows the statutes , he may stay him — marry , not without the Prince be willing , for indeed the watch ought to offend no man , and it is an offense to stay a man against his will .",
+      "scrollMode": "auto",
+      "lineIndex": 136
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m60",
+      "lineText": "By ’r Lady , I think it be so .",
+      "scrollMode": "auto",
+      "lineIndex": 137
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m5g",
+      "lineText": "Ha , ah ha ! — Well , masters , goodnight . An there be any matter of weight chances , call up me . Keep your fellows’ counsels and your own , and goodnight . — Come , neighbor .",
+      "scrollMode": "auto",
+      "lineIndex": 138
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m0g",
+      "lineText": "Dogberry and Verges begin to exit .",
+      "scrollMode": "auto",
+      "lineIndex": 139
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m70",
+      "lineText": "Well , masters , we hear our charge . Let us go sit here upon the church bench till two , and then all to bed .",
+      "scrollMode": "auto",
+      "lineIndex": 140
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m5g",
+      "lineText": "One word more , honest neighbors . I pray you watch about Signior Leonato’s door , for the wedding being there tomorrow , there is a great coil tonight . Adieu , be vigitant , I beseech you .",
+      "scrollMode": "auto",
+      "lineIndex": 141
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m0g",
+      "lineText": "Dogberry and Verges exit .",
+      "scrollMode": "auto",
+      "lineIndex": 142
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m0g",
+      "lineText": "Enter Borachio and Conrade .",
+      "scrollMode": "auto",
+      "lineIndex": 143
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m80",
+      "lineText": "What , Conrade !",
+      "scrollMode": "auto",
+      "lineIndex": 144
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m0g",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 145
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m70",
+      "lineText": "Peace , stir not .",
+      "scrollMode": "auto",
+      "lineIndex": 146
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m80",
+      "lineText": "Conrade , I say !",
+      "scrollMode": "auto",
+      "lineIndex": 147
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m8g",
+      "lineText": "Here , man , I am at thy elbow .",
+      "scrollMode": "auto",
+      "lineIndex": 148
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m80",
+      "lineText": "Mass , and my elbow itched , I thought there would a scab follow .",
+      "scrollMode": "auto",
+      "lineIndex": 149
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m8g",
+      "lineText": "I will owe thee an answer for that . And now forward with thy tale .",
+      "scrollMode": "auto",
+      "lineIndex": 150
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m80",
+      "lineText": "Stand thee close , then , under this penthouse , for it drizzles rain , and I will , like a true drunkard , utter all to thee .",
+      "scrollMode": "auto",
+      "lineIndex": 151
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m0g",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 152
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m70",
+      "lineText": "Some treason , masters . Yet stand close .",
+      "scrollMode": "auto",
+      "lineIndex": 153
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m80",
+      "lineText": "Therefore know , I have earned of Don John a thousand ducats .",
+      "scrollMode": "auto",
+      "lineIndex": 154
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m8g",
+      "lineText": "Is it possible that any villainy should be so dear ?",
+      "scrollMode": "auto",
+      "lineIndex": 155
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m80",
+      "lineText": "Thou shouldst rather ask if it were possible any villainy should be so rich . For when rich villains have need of poor ones , poor ones may make what price they will .",
+      "scrollMode": "auto",
+      "lineIndex": 156
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m8g",
+      "lineText": "I wonder at it .",
+      "scrollMode": "auto",
+      "lineIndex": 157
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m80",
+      "lineText": "That shows thou art unconfirmed . Thou knowest that the fashion of a doublet , or a hat , or a cloak , is nothing to a man .",
+      "scrollMode": "auto",
+      "lineIndex": 158
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m8g",
+      "lineText": "Yes , it is apparel .",
+      "scrollMode": "auto",
+      "lineIndex": 159
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m80",
+      "lineText": "I mean the fashion .",
+      "scrollMode": "auto",
+      "lineIndex": 160
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m8g",
+      "lineText": "Yes , the fashion is the fashion .",
+      "scrollMode": "auto",
+      "lineIndex": 161
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m80",
+      "lineText": "Tush , I may as well say the fool’s the fool . But seest thou not what a deformed thief this fashion is ?",
+      "scrollMode": "auto",
+      "lineIndex": 162
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m0g",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 163
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m6g",
+      "lineText": "I know that Deformed . He has been a vile thief this seven year . He goes up and down like a gentleman . I remember his name .",
+      "scrollMode": "auto",
+      "lineIndex": 164
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m80",
+      "lineText": "Didst thou not hear somebody ?",
+      "scrollMode": "auto",
+      "lineIndex": 165
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m8g",
+      "lineText": "No , ’twas the vane on the house .",
+      "scrollMode": "auto",
+      "lineIndex": 166
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m80",
+      "lineText": "Seest thou not , I say , what a deformed thief this fashion is , how giddily he turns about all the hot bloods between fourteen and five-and-thirty , sometimes fashioning them like Pharaoh’s soldiers in the reechy painting , sometimes like god Bel’s priests in the old church window , sometimes like the shaven Hercules in the smirched worm-eaten tapestry , where his codpiece seems as massy as his club ?",
+      "scrollMode": "auto",
+      "lineIndex": 167
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m8g",
+      "lineText": "All this I see , and I see that the fashion wears out more apparel than the man . But art not thou thyself giddy with the fashion too , that thou hast shifted out of thy tale into telling me of the fashion ?",
+      "scrollMode": "auto",
+      "lineIndex": 168
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m80",
+      "lineText": "Not so , neither . But know that I have tonight wooed Margaret , the Lady Hero’s gentlewoman , by the name of Hero . She leans me out at her mistress’ chamber window , bids me a thousand times goodnight . I tell this tale vilely . I should first tell thee how the Prince , Claudio , and my master , planted and placed and possessed by my master Don John , saw afar off in the orchard this amiable amiable encounter .",
+      "scrollMode": "auto",
+      "lineIndex": 169
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m8g",
+      "lineText": "And thought they Margaret was Hero ?",
+      "scrollMode": "auto",
+      "lineIndex": 170
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m80",
+      "lineText": "Two of them did , the Prince and Claudio , ACT 3. SC. 3 but the devil my master knew she was Margaret ; and partly by his oaths , which first possessed them , partly by the dark night , which did deceive them , but chiefly by my villainy , which did confirm any slander that Don John had made , away went Claudio enraged , swore he would meet her as he was appointed next morning at the temple , and there , before the whole congregation , shame her with what he saw o’ernight and send her home again without a husband .",
+      "scrollMode": "auto",
+      "lineIndex": 171
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m6g",
+      "lineText": "We charge you in the Prince’s name stand !",
+      "scrollMode": "auto",
+      "lineIndex": 172
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m0g",
+      "lineText": "Second Watchman exits .",
+      "scrollMode": "auto",
+      "lineIndex": 173
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m7g",
+      "lineText": "Second Watchman exits . We have here recovered the most dangerous piece of lechery that ever was known in the commonwealth .",
+      "scrollMode": "auto",
+      "lineIndex": 174
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m6g",
+      "lineText": "And one Deformed is one of them . I know him ; he wears a lock .",
+      "scrollMode": "auto",
+      "lineIndex": 175
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m0g",
+      "lineText": "Enter Dogberry , Verges , and Second Watchman .",
+      "scrollMode": "auto",
+      "lineIndex": 176
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m5g",
+      "lineText": "Masters , masters —",
+      "scrollMode": "auto",
+      "lineIndex": 177
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m0g",
+      "lineText": ", to Borachio",
+      "scrollMode": "auto",
+      "lineIndex": 178
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m6g",
+      "lineText": "You’ll be made bring Deformed forth , I warrant you .",
+      "scrollMode": "auto",
+      "lineIndex": 179
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m0g",
+      "lineText": ", to Borachio and Conrade",
+      "scrollMode": "auto",
+      "lineIndex": 180
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m5g",
+      "lineText": "Masters , never speak , we charge you , let us obey you to go with us .",
+      "scrollMode": "auto",
+      "lineIndex": 181
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m0g",
+      "lineText": ", to Conrade",
+      "scrollMode": "auto",
+      "lineIndex": 182
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m80",
+      "lineText": "We are like to prove a goodly commodity , being taken up of these men’s bills .",
+      "scrollMode": "auto",
+      "lineIndex": 183
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m8g",
+      "lineText": "A commodity in question , I warrant you . — Come , we’ll obey you .",
+      "scrollMode": "auto",
+      "lineIndex": 184
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m0g",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 185
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m0g",
+      "lineText": "Enter Hero , and Margaret , and Ursula .",
+      "scrollMode": "auto",
+      "lineIndex": 186
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m10",
+      "lineText": "Good Ursula , wake my cousin Beatrice and desire her to rise .",
+      "scrollMode": "auto",
+      "lineIndex": 187
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m20",
+      "lineText": "I will , lady .",
+      "scrollMode": "auto",
+      "lineIndex": 188
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m10",
+      "lineText": "And bid her come hither .",
+      "scrollMode": "auto",
+      "lineIndex": 189
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m20",
+      "lineText": "Well .",
+      "scrollMode": "auto",
+      "lineIndex": 190
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m0g",
+      "lineText": "Ursula exits .",
+      "scrollMode": "auto",
+      "lineIndex": 191
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m1g",
+      "lineText": "Troth , I think your other rebato were better .",
+      "scrollMode": "auto",
+      "lineIndex": 192
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m10",
+      "lineText": "No , pray thee , good Meg , I’ll wear this .",
+      "scrollMode": "auto",
+      "lineIndex": 193
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m1g",
+      "lineText": "By my troth , ’s not so good , and I warrant your cousin will say so .",
+      "scrollMode": "auto",
+      "lineIndex": 194
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m10",
+      "lineText": "My cousin’s a fool , and thou art another . I’ll wear none but this .",
+      "scrollMode": "auto",
+      "lineIndex": 195
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m1g",
+      "lineText": "I like the new tire within excellently , if the hair were a thought browner ; and your gown’s a most rare fashion , i’ faith . I saw the Duchess of Milan’s gown that they praise so .",
+      "scrollMode": "auto",
+      "lineIndex": 196
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m10",
+      "lineText": "O , that exceeds , they say .",
+      "scrollMode": "auto",
+      "lineIndex": 197
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m1g",
+      "lineText": "By my troth , ’s but a nightgown in respect of yours — cloth o’ gold , and cuts , and laced with silver , set with pearls , down sleeves , side sleeves , and skirts round underborne with a bluish tinsel . But for a fine , quaint , graceful , and excellent fashion , yours is worth ten on ’t .",
+      "scrollMode": "auto",
+      "lineIndex": 198
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m10",
+      "lineText": "God give me joy to wear it , for my heart is exceeding heavy .",
+      "scrollMode": "auto",
+      "lineIndex": 199
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m1g",
+      "lineText": "’Twill be heavier soon by the weight of a man .",
+      "scrollMode": "auto",
+      "lineIndex": 200
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m10",
+      "lineText": "Fie upon thee ! Art not ashamed ?",
+      "scrollMode": "auto",
+      "lineIndex": 201
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m1g",
+      "lineText": "Of what , lady ? Of speaking honorably ? Is not marriage honorable in a beggar ? Is not your lord honorable without marriage ? I think you would have me say Saving your reverence , a husband . An bad thinking do not wrest true speaking , ACT 3. SC. 4 I’ll offend nobody . Is there any harm in the heavier for a husband ? None , I think , an it be the right husband and the right wife . Otherwise , ’tis light and not heavy . Ask my lady Beatrice else . Here she comes .",
+      "scrollMode": "auto",
+      "lineIndex": 202
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m0g",
+      "lineText": "Enter Beatrice .",
+      "scrollMode": "auto",
+      "lineIndex": 203
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m10",
+      "lineText": "Good morrow , coz .",
+      "scrollMode": "auto",
+      "lineIndex": 204
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m2g",
+      "lineText": "Good morrow , sweet Hero .",
+      "scrollMode": "auto",
+      "lineIndex": 205
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m10",
+      "lineText": "Why , how now ? Do you speak in the sick tune ?",
+      "scrollMode": "auto",
+      "lineIndex": 206
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m2g",
+      "lineText": "I am out of all other tune , methinks .",
+      "scrollMode": "auto",
+      "lineIndex": 207
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m1g",
+      "lineText": "Clap ’s into Light o’ love . That goes without a burden . Do you sing it , and I’ll dance it .",
+      "scrollMode": "auto",
+      "lineIndex": 208
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m2g",
+      "lineText": "You light o’ love with your heels ! Then , if your husband have stables enough , you’ll see he shall lack no barns .",
+      "scrollMode": "auto",
+      "lineIndex": 209
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m1g",
+      "lineText": "O , illegitimate construction ! I scorn that with my heels .",
+      "scrollMode": "auto",
+      "lineIndex": 210
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m2g",
+      "lineText": "’Tis almost five o’clock , cousin . ’Tis time you were ready . By my troth , I am exceeding ill . Heigh-ho !",
+      "scrollMode": "auto",
+      "lineIndex": 211
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m1g",
+      "lineText": "For a hawk , a horse , or a husband ?",
+      "scrollMode": "auto",
+      "lineIndex": 212
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m2g",
+      "lineText": "For the letter that begins them all , H .",
+      "scrollMode": "auto",
+      "lineIndex": 213
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m1g",
+      "lineText": "Well , an you be not turned Turk , there’s no more sailing by the star .",
+      "scrollMode": "auto",
+      "lineIndex": 214
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m2g",
+      "lineText": "What means the fool , trow ?",
+      "scrollMode": "auto",
+      "lineIndex": 215
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m1g",
+      "lineText": "Nothing , I ; but God send everyone their heart’s desire .",
+      "scrollMode": "auto",
+      "lineIndex": 216
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m10",
+      "lineText": "These gloves the Count sent me , they are an excellent perfume .",
+      "scrollMode": "auto",
+      "lineIndex": 217
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m2g",
+      "lineText": "I am stuffed , cousin . I cannot smell .",
+      "scrollMode": "auto",
+      "lineIndex": 218
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m1g",
+      "lineText": "A maid , and stuffed ! There’s goodly catching of cold .",
+      "scrollMode": "auto",
+      "lineIndex": 219
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m2g",
+      "lineText": "O , God help me , God help me ! How long have you professed apprehension ?",
+      "scrollMode": "auto",
+      "lineIndex": 220
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m1g",
+      "lineText": "Ever since you left it . Doth not my wit become me rarely ?",
+      "scrollMode": "auto",
+      "lineIndex": 221
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m2g",
+      "lineText": "It is not seen enough ; you should wear it in your cap . By my troth , I am sick .",
+      "scrollMode": "auto",
+      "lineIndex": 222
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m1g",
+      "lineText": "Get you some of this distilled carduus benedictus and lay it to your heart . It is the only thing for a qualm .",
+      "scrollMode": "auto",
+      "lineIndex": 223
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m10",
+      "lineText": "There thou prick’st her with a thistle .",
+      "scrollMode": "auto",
+      "lineIndex": 224
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m2g",
+      "lineText": "Benedictus ! Why benedictus ? You have some moral in this benedictus ?",
+      "scrollMode": "auto",
+      "lineIndex": 225
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m1g",
+      "lineText": "Moral ? No , by my troth , I have no moral meaning ; I meant plain holy thistle . You may think perchance that I think you are in love . Nay , by ’r Lady , I am not such a fool to think what I list , nor I list not to think what I can , nor indeed I cannot think , if I would think my heart out of thinking , that you are in love or that you will be in love or that you can be in love . Yet Benedick was such another , and now is he become a man . He swore he would never marry , and yet now , in despite of his heart , he eats his meat without grudging . And how you may be converted I know not , but methinks you look with your eyes as other women do .",
+      "scrollMode": "auto",
+      "lineIndex": 226
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m2g",
+      "lineText": "What pace is this that thy tongue keeps ?",
+      "scrollMode": "auto",
+      "lineIndex": 227
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m1g",
+      "lineText": "Not a false gallop .",
+      "scrollMode": "auto",
+      "lineIndex": 228
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m0g",
+      "lineText": "Enter Ursula .",
+      "scrollMode": "auto",
+      "lineIndex": 229
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m20",
+      "lineText": "Madam , withdraw . The Prince , the Count , Signior Benedick , Don John , and all the gallants of the town are come to fetch you to church .",
+      "scrollMode": "auto",
+      "lineIndex": 230
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m10",
+      "lineText": "Help to dress me , good coz , good Meg , good Ursula .",
+      "scrollMode": "auto",
+      "lineIndex": 231
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m0g",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 232
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m0g",
+      "lineText": "Enter Leonato , and Dogberry , the Constable , and Verges , the Headborough .",
+      "scrollMode": "auto",
+      "lineIndex": 233
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m4g",
+      "lineText": "What would you with me , honest neighbor ?",
+      "scrollMode": "auto",
+      "lineIndex": 234
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m5g",
+      "lineText": "Marry , sir , I would have some confidence with you that decerns you nearly .",
+      "scrollMode": "auto",
+      "lineIndex": 235
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m4g",
+      "lineText": "Brief , I pray you , for you see it is a busy time with me .",
+      "scrollMode": "auto",
+      "lineIndex": 236
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m5g",
+      "lineText": "Marry , this it is , sir .",
+      "scrollMode": "auto",
+      "lineIndex": 237
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m60",
+      "lineText": "Yes , in truth , it is , sir .",
+      "scrollMode": "auto",
+      "lineIndex": 238
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m4g",
+      "lineText": "What is it , my good friends ?",
+      "scrollMode": "auto",
+      "lineIndex": 239
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m5g",
+      "lineText": "Goodman Verges , sir , speaks a little off the matter . An old man , sir , and his wits are not so blunt as , God help , I would desire they were , but , in faith , honest as the skin between his brows .",
+      "scrollMode": "auto",
+      "lineIndex": 240
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m60",
+      "lineText": "Yes , I thank God I am as honest as any man living that is an old man and no honester than I .",
+      "scrollMode": "auto",
+      "lineIndex": 241
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m5g",
+      "lineText": "Comparisons are odorous . Palabras , neighbor Verges .",
+      "scrollMode": "auto",
+      "lineIndex": 242
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m4g",
+      "lineText": "Neighbors , you are tedious .",
+      "scrollMode": "auto",
+      "lineIndex": 243
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m5g",
+      "lineText": "It pleases your Worship to say so , but we are the poor duke’s officers . But truly , for mine own part , if I were as tedious as a king , I could find in my heart to bestow it all of your Worship .",
+      "scrollMode": "auto",
+      "lineIndex": 244
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m4g",
+      "lineText": "All thy tediousness on me , ah ?",
+      "scrollMode": "auto",
+      "lineIndex": 245
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m5g",
+      "lineText": "Yea , an ’twere a thousand pound more than ’tis , for I hear as good exclamation on your Worship as of any man in the city , and though I be but a poor man , I am glad to hear it .",
+      "scrollMode": "auto",
+      "lineIndex": 246
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m60",
+      "lineText": "And so am I .",
+      "scrollMode": "auto",
+      "lineIndex": 247
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m4g",
+      "lineText": "I would fain know what you have to say .",
+      "scrollMode": "auto",
+      "lineIndex": 248
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m60",
+      "lineText": "Marry , sir , our watch tonight , excepting your Worship’s presence , ha’ ta’en a couple of as arrant knaves as any in Messina .",
+      "scrollMode": "auto",
+      "lineIndex": 249
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m5g",
+      "lineText": "A good old man , sir . He will be talking . As ACT 3. SC. 5 they say , When the age is in , the wit is out . God help us , it is a world to see ! — Well said , i’ faith , neighbor Verges . — Well , God’s a good man . An two men ride of a horse , one must ride behind . An honest soul , i’ faith , sir , by my troth he is , as ever broke bread , but God is to be worshiped , all men are not alike , alas , good neighbor .",
+      "scrollMode": "auto",
+      "lineIndex": 250
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m4g",
+      "lineText": "Indeed , neighbor , he comes too short of you .",
+      "scrollMode": "auto",
+      "lineIndex": 251
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m5g",
+      "lineText": "Gifts that God gives .",
+      "scrollMode": "auto",
+      "lineIndex": 252
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m4g",
+      "lineText": "I must leave you .",
+      "scrollMode": "auto",
+      "lineIndex": 253
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m5g",
+      "lineText": "One word , sir . Our watch , sir , have indeed comprehended two aspicious persons , and we would have them this morning examined before your Worship .",
+      "scrollMode": "auto",
+      "lineIndex": 254
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m4g",
+      "lineText": "Take their examination yourself and bring it me . I am now in great haste , as it may appear unto you .",
+      "scrollMode": "auto",
+      "lineIndex": 255
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m5g",
+      "lineText": "It shall be suffigance .",
+      "scrollMode": "auto",
+      "lineIndex": 256
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m4g",
+      "lineText": "Drink some wine ere you go . Fare you well .",
+      "scrollMode": "auto",
+      "lineIndex": 257
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m0g",
+      "lineText": "Enter a Messenger .",
+      "scrollMode": "auto",
+      "lineIndex": 258
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m90",
+      "lineText": "My lord , they stay for you to give your daughter to her husband .",
+      "scrollMode": "auto",
+      "lineIndex": 259
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m4g",
+      "lineText": "I’ll wait upon them . I am ready .",
+      "scrollMode": "auto",
+      "lineIndex": 260
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m0g",
+      "lineText": "He exits , with the Messenger .",
+      "scrollMode": "auto",
+      "lineIndex": 261
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m5g",
+      "lineText": "Go , good partner , go , get you to Francis Seacoal . Bid him bring his pen and inkhorn to the jail . We are now to examination these men .",
+      "scrollMode": "auto",
+      "lineIndex": 262
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m60",
+      "lineText": "And we must do it wisely .",
+      "scrollMode": "auto",
+      "lineIndex": 263
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m5g",
+      "lineText": "We will spare for no wit , I warrant you . Here’s that shall drive some of them to a noncome . Only get the learned writer to set down our excommunication and meet me at the jail .",
+      "scrollMode": "auto",
+      "lineIndex": 264
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78m0g",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 265
+    }
+  ],
+  "isPublic": true
+}

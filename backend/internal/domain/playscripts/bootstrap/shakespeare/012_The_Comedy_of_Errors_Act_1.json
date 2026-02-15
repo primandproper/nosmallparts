@@ -1,0 +1,338 @@
+{
+  "title": "The Comedy of Errors (Act 1)",
+  "description": "Folger Shakespeare Library edition",
+  "author": "William Shakespeare",
+  "castMembers": [
+    {
+      "id": "d68m11cn9qd8d2h78s0g",
+      "name": "Narrator",
+      "sortOrder": 0
+    },
+    {
+      "id": "d68m11cn9qd8d2h78s10",
+      "name": "Egeon",
+      "description": "a merchant from Syracuse",
+      "sortOrder": 1
+    },
+    {
+      "id": "d68m11cn9qd8d2h78s1g",
+      "name": "Duke",
+      "sortOrder": 2
+    },
+    {
+      "id": "d68m11cn9qd8d2h78s20",
+      "name": "Officer",
+      "description": "(also called Jailer), an Ephesian law officer",
+      "sortOrder": 3
+    },
+    {
+      "id": "d68m11cn9qd8d2h78s2g",
+      "name": "First Merchant",
+      "description": "a citizen of Ephesus",
+      "sortOrder": 4
+    },
+    {
+      "id": "d68m11cn9qd8d2h78s30",
+      "name": "Antipholus of Syracuse",
+      "description": "a traveler in search of his mother and his brother",
+      "sortOrder": 5
+    },
+    {
+      "id": "d68m11cn9qd8d2h78s3g",
+      "name": "Dromio of Syracuse",
+      "description": "Antipholus of Syracuse’s servant",
+      "sortOrder": 6
+    },
+    {
+      "id": "d68m11cn9qd8d2h78s40",
+      "name": "Dromio of Ephesus",
+      "description": "Antipholus of Ephesus’s servant",
+      "sortOrder": 7
+    }
+  ],
+  "lines": [
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s0g",
+      "lineText": "Enter Solinus the Duke of Ephesus , with Egeon the Merchant of Syracuse , Jailer , and other Attendants .",
+      "scrollMode": "auto",
+      "lineIndex": 0
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s10",
+      "lineText": "Proceed , Solinus , to procure my fall , And by the doom of death end woes and all .",
+      "scrollMode": "auto",
+      "lineIndex": 1
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s1g",
+      "lineText": "Merchant of Syracusa , plead no more . I am not partial to infringe our laws . The enmity and discord which of late Sprung from the rancorous outrage of your duke To merchants , our well-dealing countrymen , Who , wanting guilders to redeem their lives , Have sealed his rigorous statutes with their bloods , Excludes all pity from our threat’ning looks . For since the mortal and intestine jars ’Twixt thy seditious countrymen and us , It hath in solemn synods been decreed , Both by the Syracusians and ourselves , To admit no traffic to our adverse towns . Nay , more , if any born at Ephesus Be seen at Syracusian marts and fairs ; Again , if any Syracusian born Come to the bay of Ephesus , he dies , His goods confiscate to the Duke’s dispose , ACT 1. SC. 1 Unless a thousand marks be levièd To quit the penalty and to ransom him . Thy substance , valued at the highest rate , Cannot amount unto a hundred marks ; Therefore by law thou art condemned to die .",
+      "scrollMode": "auto",
+      "lineIndex": 2
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s10",
+      "lineText": "Yet this my comfort : when your words are done , My woes end likewise with the evening sun .",
+      "scrollMode": "auto",
+      "lineIndex": 3
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s1g",
+      "lineText": "Well , Syracusian , say in brief the cause Why thou departedst from thy native home And for what cause thou cam’st to Ephesus .",
+      "scrollMode": "auto",
+      "lineIndex": 4
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s10",
+      "lineText": "A heavier task could not have been imposed Than I to speak my griefs unspeakable ; Yet , that the world may witness that my end Was wrought by nature , not by vile offense , I’ll utter what my sorrow gives me leave . In Syracusa was I born , and wed Unto a woman happy but for me , And by me , had not our hap been bad . With her I lived in joy . Our wealth increased By prosperous voyages I often made To Epidamium , till my factor’s death And the great care of goods at random left Drew me from kind embracements of my spouse ; From whom my absence was not six months old Before herself — almost at fainting under The pleasing punishment that women bear — Had made provision for her following me And soon and safe arrivèd where I was . There had she not been long but she became A joyful mother of two goodly sons , And , which was strange , the one so like the other As could not be distinguished but by names . ACT 1. SC. 1 That very hour , and in the selfsame inn , A mean woman was deliverèd Of such a burden , male twins , both alike . Those , for their parents were exceeding poor , I bought and brought up to attend my sons . My wife , not meanly proud of two such boys , Made daily motions for our home return . Unwilling , I agreed . Alas , too soon We came aboard . A league from Epidamium had we sailed Before the always-wind-obeying deep Gave any tragic instance of our harm ; But longer did we not retain much hope , For what obscurèd light the heavens did grant Did but convey unto our fearful minds A doubtful warrant of immediate death , Which though myself would gladly have embraced , Yet the incessant weepings of my wife , Weeping before for what she saw must come , And piteous plainings of the pretty babes , That mourned for fashion , ignorant what to fear , Forced me to seek delays for them and me . And this it was , for other means was none : The sailors sought for safety by our boat And left the ship , then sinking-ripe , to us . My wife , more careful for the latter-born , Had fastened him unto a small spare mast , Such as seafaring men provide for storms . To him one of the other twins was bound , Whilst I had been like heedful of the other . The children thus disposed , my wife and I , Fixing our eyes on whom our care was fixed , Fastened ourselves at either end the mast And , floating straight , obedient to the stream , Was carried towards Corinth , as we thought . ACT 1. SC. 1 At length the sun , gazing upon the earth , Dispersed those vapors that offended us , And by the benefit of his wished light The seas waxed calm , and we discoverèd Two ships from far , making amain to us , Of Corinth that , of Epidaurus this . But ere they came — O , let me say no more ! Gather the sequel by that went before .",
+      "scrollMode": "auto",
+      "lineIndex": 5
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s1g",
+      "lineText": "Nay , forward , old man . Do not break off so , For we may pity though not pardon thee .",
+      "scrollMode": "auto",
+      "lineIndex": 6
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s10",
+      "lineText": "O , had the gods done so , I had not now Worthily termed them merciless to us . For , ere the ships could meet by twice five leagues , We were encountered by a mighty rock , Which being violently borne upon , Our helpful ship was splitted in the midst ; So that , in this unjust divorce of us , Fortune had left to both of us alike What to delight in , what to sorrow for . Her part , poor soul , seeming as burdenèd With lesser weight , but not with lesser woe , Was carried with more speed before the wind , And in our sight they three were taken up By fishermen of Corinth , as we thought . At length , another ship had seized on us And , knowing whom it was their hap to save , Gave healthful welcome to their shipwracked guests , And would have reft the fishers of their prey Had not their bark been very slow of sail ; And therefore homeward did they bend their course . Thus have you heard me severed from my bliss , That by misfortunes was my life prolonged To tell sad stories of my own mishaps .",
+      "scrollMode": "auto",
+      "lineIndex": 7
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s1g",
+      "lineText": "And for the sake of them thou sorrowest for , Do me the favor to dilate at full What have befall’n of them and thee till now .",
+      "scrollMode": "auto",
+      "lineIndex": 8
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s10",
+      "lineText": "My youngest boy , and yet my eldest care , At eighteen years became inquisitive After his brother , and importuned me That his attendant — so his case was like , Reft of his brother , but retained his name — Might bear him company in the quest of him , Whom whilst I labored of a love to see , I hazarded the loss of whom I loved . Five summers have I spent in farthest Greece , Roaming clean through the bounds of Asia , And , coasting homeward , came to Ephesus , Hopeless to find , yet loath to leave unsought Or that or any place that harbors men . But here must end the story of my life ; And happy were I in my timely death Could all my travels warrant me they live .",
+      "scrollMode": "auto",
+      "lineIndex": 9
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s1g",
+      "lineText": "Hapless Egeon , whom the fates have marked To bear the extremity of dire mishap , Now , trust me , were it not against our laws , Against my crown , my oath , my dignity , Which princes , would they , may not disannul , My soul should sue as advocate for thee . But though thou art adjudgèd to the death , And passèd sentence may not be recalled But to our honor’s great disparagement , Yet will I favor thee in what I can . Therefore , merchant , I’ll limit thee this day To seek thy life by beneficial help . Try all the friends thou hast in Ephesus ; Beg thou , or borrow , to make up the sum , ACT 1. SC. 2 And live . If no , then thou art doomed to die . — Jailer , take him to thy custody .",
+      "scrollMode": "auto",
+      "lineIndex": 10
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s20",
+      "lineText": "I will , my lord .",
+      "scrollMode": "auto",
+      "lineIndex": 11
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s10",
+      "lineText": "Hopeless and helpless doth Egeon wend , But to procrastinate his lifeless end .",
+      "scrollMode": "auto",
+      "lineIndex": 12
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s0g",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 13
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s0g",
+      "lineText": "Enter Antipholus of Syracuse , First Merchant , and Dromio of Syracuse .",
+      "scrollMode": "auto",
+      "lineIndex": 14
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s2g",
+      "lineText": "Therefore give out you are of Epidamium , Lest that your goods too soon be confiscate . This very day a Syracusian merchant Is apprehended for arrival here And , not being able to buy out his life , According to the statute of the town Dies ere the weary sun set in the west . There is your money that I had to keep .",
+      "scrollMode": "auto",
+      "lineIndex": 15
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s0g",
+      "lineText": "He gives money .",
+      "scrollMode": "auto",
+      "lineIndex": 16
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s0g",
+      "lineText": ", handing money to Dromio",
+      "scrollMode": "auto",
+      "lineIndex": 17
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s30",
+      "lineText": "Go bear it to the Centaur , where we host , And stay there , Dromio , till I come to thee . Within this hour it will be dinnertime . Till that , I’ll view the manners of the town , Peruse the traders , gaze upon the buildings , And then return and sleep within mine inn , For with long travel I am stiff and weary . Get thee away .",
+      "scrollMode": "auto",
+      "lineIndex": 18
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s3g",
+      "lineText": "Many a man would take you at your word And go indeed , having so good a mean .",
+      "scrollMode": "auto",
+      "lineIndex": 19
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s0g",
+      "lineText": "Dromio of Syracuse exits .",
+      "scrollMode": "auto",
+      "lineIndex": 20
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s30",
+      "lineText": "A trusty villain , sir , that very oft , When I am dull with care and melancholy , Lightens my humor with his merry jests . What , will you walk with me about the town And then go to my inn and dine with me ?",
+      "scrollMode": "auto",
+      "lineIndex": 21
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s2g",
+      "lineText": "I am invited , sir , to certain merchants , Of whom I hope to make much benefit . I crave your pardon . Soon at five o’clock , Please you , I’ll meet with you upon the mart And afterward consort you till bedtime . My present business calls me from you now .",
+      "scrollMode": "auto",
+      "lineIndex": 22
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s30",
+      "lineText": "Farewell till then . I will go lose myself And wander up and down to view the city .",
+      "scrollMode": "auto",
+      "lineIndex": 23
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s2g",
+      "lineText": "Sir , I commend you to your own content .",
+      "scrollMode": "auto",
+      "lineIndex": 24
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s0g",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 25
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s0g",
+      "lineText": "Enter Dromio of Ephesus .",
+      "scrollMode": "auto",
+      "lineIndex": 26
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s40",
+      "lineText": "Enter Dromio of Ephesus . Here comes the almanac of my true date . — What now ? How chance thou art returned so soon ?",
+      "scrollMode": "auto",
+      "lineIndex": 27
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s40",
+      "lineText": "Returned so soon ? Rather approached too late ! The capon burns ; the pig falls from the spit ; The clock hath strucken twelve upon the bell ; My mistress made it one upon my cheek . ACT 1. SC. 2 She is so hot because the meat is cold ; The meat is cold because you come not home ; You come not home because you have no stomach ; You have no stomach , having broke your fast . But we that know what ’tis to fast and pray Are penitent for your default today .",
+      "scrollMode": "auto",
+      "lineIndex": 28
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s30",
+      "lineText": "Stop in your wind , sir . Tell me this , I pray : Where have you left the money that I gave you ?",
+      "scrollMode": "auto",
+      "lineIndex": 29
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s40",
+      "lineText": "O , sixpence that I had o’ Wednesday last To pay the saddler for my mistress’ crupper ? The saddler had it , sir ; I kept it not .",
+      "scrollMode": "auto",
+      "lineIndex": 30
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s30",
+      "lineText": "I am not in a sportive humor now . Tell me , and dally not : where is the money ? We being strangers here , how dar’st thou trust So great a charge from thine own custody ?",
+      "scrollMode": "auto",
+      "lineIndex": 31
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s40",
+      "lineText": "I pray you , jest , sir , as you sit at dinner . I from my mistress come to you in post ; If I return , I shall be post indeed , For she will scour your fault upon my pate . Methinks your maw , like mine , should be your clock , And strike you home without a messenger .",
+      "scrollMode": "auto",
+      "lineIndex": 32
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s30",
+      "lineText": "Come , Dromio , come , these jests are out of season . Reserve them till a merrier hour than this . Where is the gold I gave in charge to thee ?",
+      "scrollMode": "auto",
+      "lineIndex": 33
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s40",
+      "lineText": "To me , sir ? Why , you gave no gold to me !",
+      "scrollMode": "auto",
+      "lineIndex": 34
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s30",
+      "lineText": "Come on , sir knave , have done your foolishness , And tell me how thou hast disposed thy charge .",
+      "scrollMode": "auto",
+      "lineIndex": 35
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s40",
+      "lineText": "My charge was but to fetch you from the mart Home to your house , the Phoenix , sir , to dinner . My mistress and her sister stays for you .",
+      "scrollMode": "auto",
+      "lineIndex": 36
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s30",
+      "lineText": "Now , as I am a Christian , answer me In what safe place you have bestowed my money , Or I shall break that merry sconce of yours That stands on tricks when I am undisposed . Where is the thousand marks thou hadst of me ?",
+      "scrollMode": "auto",
+      "lineIndex": 37
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s40",
+      "lineText": "I have some marks of yours upon my pate , Some of my mistress’ marks upon my shoulders , But not a thousand marks between you both . If I should pay your Worship those again , Perchance you will not bear them patiently .",
+      "scrollMode": "auto",
+      "lineIndex": 38
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s30",
+      "lineText": "Thy mistress’ marks ? What mistress , slave , hast thou ?",
+      "scrollMode": "auto",
+      "lineIndex": 39
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s40",
+      "lineText": "Your Worship’s wife , my mistress at the Phoenix , She that doth fast till you come home to dinner And prays that you will hie you home to dinner .",
+      "scrollMode": "auto",
+      "lineIndex": 40
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s0g",
+      "lineText": ", beating Dromio",
+      "scrollMode": "auto",
+      "lineIndex": 41
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s30",
+      "lineText": "What , wilt thou flout me thus unto my face , Being forbid ? There , take you that , sir knave .",
+      "scrollMode": "auto",
+      "lineIndex": 42
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s40",
+      "lineText": "What mean you , sir ? For God’s sake , hold your hands . Nay , an you will not , sir , I’ll take my heels .",
+      "scrollMode": "auto",
+      "lineIndex": 43
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s0g",
+      "lineText": "Dromio of Ephesus exits .",
+      "scrollMode": "auto",
+      "lineIndex": 44
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s30",
+      "lineText": "Upon my life , by some device or other The villain is o’erraught of all my money . They say this town is full of cozenage , As nimble jugglers that deceive the eye , ACT 1. SC. 2 Dark-working sorcerers that change the mind , Soul-killing witches that deform the body , Disguisèd cheaters , prating mountebanks , And many suchlike liberties of sin . If it prove so , I will be gone the sooner . I’ll to the Centaur to go seek this slave . I greatly fear my money is not safe .",
+      "scrollMode": "auto",
+      "lineIndex": 45
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s0g",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 46
+    }
+  ],
+  "isPublic": true
+}

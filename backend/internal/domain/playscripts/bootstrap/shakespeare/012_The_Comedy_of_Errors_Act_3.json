@@ -1,0 +1,999 @@
+{
+  "title": "The Comedy of Errors (Act 3)",
+  "description": "Folger Shakespeare Library edition",
+  "author": "William Shakespeare",
+  "castMembers": [
+    {
+      "id": "d68m11cn9qd8d2h78s7g",
+      "name": "Narrator",
+      "sortOrder": 0
+    },
+    {
+      "id": "d68m11cn9qd8d2h78s80",
+      "name": "Antipholus of Ephesus",
+      "description": "a citizen of Ephesus",
+      "sortOrder": 1
+    },
+    {
+      "id": "d68m11cn9qd8d2h78s8g",
+      "name": "Dromio of Ephesus",
+      "description": "Antipholus of Ephesus’s servant",
+      "sortOrder": 2
+    },
+    {
+      "id": "d68m11cn9qd8d2h78s90",
+      "name": "Balthasar",
+      "description": "an Ephesian merchant invited to dinner by Antipholus of Ephesus",
+      "sortOrder": 3
+    },
+    {
+      "id": "d68m11cn9qd8d2h78s9g",
+      "name": "Dromio of Syracuse",
+      "description": "Antipholus of Syracuse’s servant",
+      "sortOrder": 4
+    },
+    {
+      "id": "d68m11cn9qd8d2h78sa0",
+      "name": "Luce",
+      "description": "(also called Nell), kitchen maid betrothed to Dromio of Ephesus",
+      "sortOrder": 5
+    },
+    {
+      "id": "d68m11cn9qd8d2h78sag",
+      "name": "Adriana",
+      "description": "Antipholus of Ephesus’s wife",
+      "sortOrder": 6
+    },
+    {
+      "id": "d68m11cn9qd8d2h78sb0",
+      "name": "Angelo",
+      "description": "an Ephesian goldsmith",
+      "sortOrder": 7
+    },
+    {
+      "id": "d68m11cn9qd8d2h78sbg",
+      "name": "Luciana",
+      "description": "Adriana’s sister",
+      "sortOrder": 8
+    },
+    {
+      "id": "d68m11cn9qd8d2h78sc0",
+      "name": "Antipholus of Syracuse",
+      "description": "a traveler in search of his mother and his brother",
+      "sortOrder": 9
+    }
+  ],
+  "lines": [
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s7g",
+      "lineText": "Enter Antipholus of Ephesus , his man Dromio , Angelo the goldsmith , and Balthasar the merchant .",
+      "scrollMode": "auto",
+      "lineIndex": 0
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s80",
+      "lineText": "Good Signior Angelo , you must excuse us all ; My wife is shrewish when I keep not hours . Say that I lingered with you at your shop To see the making of her carcanet , And that tomorrow you will bring it home . But here’s a villain that would face me down He met me on the mart , and that I beat him And charged him with a thousand marks in gold , And that I did deny my wife and house . — Thou drunkard , thou , what didst thou mean by this ?",
+      "scrollMode": "auto",
+      "lineIndex": 1
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s8g",
+      "lineText": "Say what you will , sir , but I know what I know . That you beat me at the mart I have your hand to show ; If the skin were parchment and the blows you gave were ink , Your own handwriting would tell you what I think .",
+      "scrollMode": "auto",
+      "lineIndex": 2
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s80",
+      "lineText": "I think thou art an ass .",
+      "scrollMode": "auto",
+      "lineIndex": 3
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s8g",
+      "lineText": "Marry , so it doth appear By the wrongs I suffer and the blows I bear . ACT 3. SC. 1 I should kick being kicked and , being at that pass , You would keep from my heels and beware of an ass .",
+      "scrollMode": "auto",
+      "lineIndex": 4
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s80",
+      "lineText": "You’re sad , Signior Balthasar . Pray God our cheer May answer my goodwill and your good welcome here .",
+      "scrollMode": "auto",
+      "lineIndex": 5
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s90",
+      "lineText": "I hold your dainties cheap , sir , and your welcome dear .",
+      "scrollMode": "auto",
+      "lineIndex": 6
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s80",
+      "lineText": "O Signior Balthasar , either at flesh or fish A table full of welcome makes scarce one dainty dish .",
+      "scrollMode": "auto",
+      "lineIndex": 7
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s90",
+      "lineText": "Good meat , sir , is common ; that every churl affords .",
+      "scrollMode": "auto",
+      "lineIndex": 8
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s80",
+      "lineText": "And welcome more common , for that’s nothing but words .",
+      "scrollMode": "auto",
+      "lineIndex": 9
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s90",
+      "lineText": "Small cheer and great welcome makes a merry feast .",
+      "scrollMode": "auto",
+      "lineIndex": 10
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s7g",
+      "lineText": "He attempts to open the door .",
+      "scrollMode": "auto",
+      "lineIndex": 11
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s7g",
+      "lineText": "To Dromio .",
+      "scrollMode": "auto",
+      "lineIndex": 12
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s80",
+      "lineText": "To Dromio . Go , bid them let us in .",
+      "scrollMode": "auto",
+      "lineIndex": 13
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s8g",
+      "lineText": "Maud , Bridget , Marian , Ciceley , Gillian , Ginn !",
+      "scrollMode": "auto",
+      "lineIndex": 14
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s7g",
+      "lineText": ", within",
+      "scrollMode": "auto",
+      "lineIndex": 15
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s9g",
+      "lineText": "Mome , malt-horse , capon , coxcomb , idiot , patch ! Either get thee from the door or sit down at the hatch . ACT 3. SC. 1 Dost thou conjure for wenches , that thou call’st for such store When one is one too many ? Go , get thee from the door .",
+      "scrollMode": "auto",
+      "lineIndex": 16
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s8g",
+      "lineText": "What patch is made our porter ? My master stays in the street .",
+      "scrollMode": "auto",
+      "lineIndex": 17
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s7g",
+      "lineText": ", within",
+      "scrollMode": "auto",
+      "lineIndex": 18
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s9g",
+      "lineText": "Let him walk from whence he came , lest he catch cold on ’s feet .",
+      "scrollMode": "auto",
+      "lineIndex": 19
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s80",
+      "lineText": "Who talks within there ? Ho , open the door .",
+      "scrollMode": "auto",
+      "lineIndex": 20
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s7g",
+      "lineText": ", within",
+      "scrollMode": "auto",
+      "lineIndex": 21
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s9g",
+      "lineText": "Right , sir , I’ll tell you when an you’ll tell me wherefore .",
+      "scrollMode": "auto",
+      "lineIndex": 22
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s80",
+      "lineText": "Wherefore ? For my dinner . I have not dined today .",
+      "scrollMode": "auto",
+      "lineIndex": 23
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s7g",
+      "lineText": ", within",
+      "scrollMode": "auto",
+      "lineIndex": 24
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s9g",
+      "lineText": "Nor today here you must not . Come again when you may .",
+      "scrollMode": "auto",
+      "lineIndex": 25
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s80",
+      "lineText": "What art thou that keep’st me out from the house I owe ?",
+      "scrollMode": "auto",
+      "lineIndex": 26
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s7g",
+      "lineText": ", within",
+      "scrollMode": "auto",
+      "lineIndex": 27
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s9g",
+      "lineText": "The porter for this time , sir , and my name is Dromio .",
+      "scrollMode": "auto",
+      "lineIndex": 28
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s8g",
+      "lineText": "O villain , thou hast stolen both mine office and my name ! The one ne’er got me credit , the other mickle blame . If thou hadst been Dromio today in my place , Thou wouldst have changed thy face for a name , or thy name for an ass .",
+      "scrollMode": "auto",
+      "lineIndex": 29
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s7g",
+      "lineText": "Enter Luce above , unseen by Antipholus of Ephesus and his company .",
+      "scrollMode": "auto",
+      "lineIndex": 30
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78sa0",
+      "lineText": "What a coil is there , Dromio ! Who are those at the gate ?",
+      "scrollMode": "auto",
+      "lineIndex": 31
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s8g",
+      "lineText": "Let my master in , Luce .",
+      "scrollMode": "auto",
+      "lineIndex": 32
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78sa0",
+      "lineText": "Faith , no , he comes too late , And so tell your master .",
+      "scrollMode": "auto",
+      "lineIndex": 33
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s8g",
+      "lineText": "O Lord , I must laugh . Have at you with a proverb : shall I set in my staff ?",
+      "scrollMode": "auto",
+      "lineIndex": 34
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78sa0",
+      "lineText": "Have at you with another : that’s — When , can you tell ?",
+      "scrollMode": "auto",
+      "lineIndex": 35
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s7g",
+      "lineText": ", within",
+      "scrollMode": "auto",
+      "lineIndex": 36
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s9g",
+      "lineText": "If thy name be called Luce , Luce , thou hast answered him well .",
+      "scrollMode": "auto",
+      "lineIndex": 37
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s7g",
+      "lineText": ", to Luce",
+      "scrollMode": "auto",
+      "lineIndex": 38
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s80",
+      "lineText": "Do you hear , you minion ? You’ll let us in , I hope ?",
+      "scrollMode": "auto",
+      "lineIndex": 39
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78sa0",
+      "lineText": "I thought to have asked you .",
+      "scrollMode": "auto",
+      "lineIndex": 40
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s7g",
+      "lineText": ", within",
+      "scrollMode": "auto",
+      "lineIndex": 41
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s9g",
+      "lineText": "And you said no .",
+      "scrollMode": "auto",
+      "lineIndex": 42
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s8g",
+      "lineText": "So , come help . Well struck ! There was blow for blow .",
+      "scrollMode": "auto",
+      "lineIndex": 43
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s7g",
+      "lineText": ", to Luce",
+      "scrollMode": "auto",
+      "lineIndex": 44
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s80",
+      "lineText": "Thou baggage , let me in .",
+      "scrollMode": "auto",
+      "lineIndex": 45
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78sa0",
+      "lineText": "Can you tell for whose sake ?",
+      "scrollMode": "auto",
+      "lineIndex": 46
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s8g",
+      "lineText": "Master , knock the door hard .",
+      "scrollMode": "auto",
+      "lineIndex": 47
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78sa0",
+      "lineText": "Let him knock till it ache .",
+      "scrollMode": "auto",
+      "lineIndex": 48
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s80",
+      "lineText": "You’ll cry for this , minion , if I beat the door down .",
+      "scrollMode": "auto",
+      "lineIndex": 49
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s7g",
+      "lineText": "He beats on the door .",
+      "scrollMode": "auto",
+      "lineIndex": 50
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78sa0",
+      "lineText": "What needs all that , and a pair of stocks in the town ?",
+      "scrollMode": "auto",
+      "lineIndex": 51
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s7g",
+      "lineText": "Enter Adriana , above , unseen by Antipholus of Ephesus and his company .",
+      "scrollMode": "auto",
+      "lineIndex": 52
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78sag",
+      "lineText": "Who is that at the door that keeps all this noise ?",
+      "scrollMode": "auto",
+      "lineIndex": 53
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s7g",
+      "lineText": ", within",
+      "scrollMode": "auto",
+      "lineIndex": 54
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s9g",
+      "lineText": "By my troth , your town is troubled with unruly boys .",
+      "scrollMode": "auto",
+      "lineIndex": 55
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s80",
+      "lineText": "Are you there , wife ? You might have come before .",
+      "scrollMode": "auto",
+      "lineIndex": 56
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78sag",
+      "lineText": "Your wife , sir knave ? Go , get you from the door .",
+      "scrollMode": "auto",
+      "lineIndex": 57
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s7g",
+      "lineText": "Adriana and Luce exit .",
+      "scrollMode": "auto",
+      "lineIndex": 58
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s8g",
+      "lineText": "If you went in pain , master , this knave would go sore .",
+      "scrollMode": "auto",
+      "lineIndex": 59
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s7g",
+      "lineText": ", to Antipholus of Ephesus",
+      "scrollMode": "auto",
+      "lineIndex": 60
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78sb0",
+      "lineText": "Here is neither cheer , sir , nor welcome . We would fain have either .",
+      "scrollMode": "auto",
+      "lineIndex": 61
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s90",
+      "lineText": "In debating which was best , we shall part with neither .",
+      "scrollMode": "auto",
+      "lineIndex": 62
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s8g",
+      "lineText": "They stand at the door , master . Bid them welcome hither .",
+      "scrollMode": "auto",
+      "lineIndex": 63
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s80",
+      "lineText": "There is something in the wind , that we cannot get in .",
+      "scrollMode": "auto",
+      "lineIndex": 64
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s8g",
+      "lineText": "You would say so , master , if your garments were thin . Your cake here is warm within ; you stand here in the cold . ACT 3. SC. 1 It would make a man mad as a buck to be so bought and sold .",
+      "scrollMode": "auto",
+      "lineIndex": 65
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s80",
+      "lineText": "Go , fetch me something . I’ll break ope the gate .",
+      "scrollMode": "auto",
+      "lineIndex": 66
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s7g",
+      "lineText": ", within",
+      "scrollMode": "auto",
+      "lineIndex": 67
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s9g",
+      "lineText": "Break any breaking here , and I’ll break your knave’s pate .",
+      "scrollMode": "auto",
+      "lineIndex": 68
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s8g",
+      "lineText": "A man may break a word with you , sir , and words are but wind , Ay , and break it in your face , so he break it not behind .",
+      "scrollMode": "auto",
+      "lineIndex": 69
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s7g",
+      "lineText": ", within",
+      "scrollMode": "auto",
+      "lineIndex": 70
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s9g",
+      "lineText": "It seems thou want’st breaking . Out upon thee , hind !",
+      "scrollMode": "auto",
+      "lineIndex": 71
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s8g",
+      "lineText": "Here’s too much Out upon thee ! I pray thee , let me in .",
+      "scrollMode": "auto",
+      "lineIndex": 72
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s7g",
+      "lineText": ", within",
+      "scrollMode": "auto",
+      "lineIndex": 73
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s9g",
+      "lineText": "Ay , when fowls have no feathers and fish have no fin .",
+      "scrollMode": "auto",
+      "lineIndex": 74
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s7g",
+      "lineText": ", to Dromio of Ephesus",
+      "scrollMode": "auto",
+      "lineIndex": 75
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s80",
+      "lineText": "Well , I’ll break in . Go , borrow me a crow .",
+      "scrollMode": "auto",
+      "lineIndex": 76
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s8g",
+      "lineText": "A crow without feather ? Master , mean you so ? For a fish without a fin , there’s a fowl without a feather . — If a crow help us in , sirrah , we’ll pluck a crow together .",
+      "scrollMode": "auto",
+      "lineIndex": 77
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s80",
+      "lineText": "Go , get thee gone . Fetch me an iron crow .",
+      "scrollMode": "auto",
+      "lineIndex": 78
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s90",
+      "lineText": "Have patience , sir . O , let it not be so . Herein you war against your reputation , And draw within the compass of suspect Th’ unviolated honor of your wife . Once this : your long experience of her wisdom , ACT 3. SC. 1 Her sober virtue , years , and modesty Plead on her part some cause to you unknown . And doubt not , sir , but she will well excuse Why at this time the doors are made against you . Be ruled by me ; depart in patience , And let us to the Tiger all to dinner , And about evening come yourself alone To know the reason of this strange restraint . If by strong hand you offer to break in Now in the stirring passage of the day , A vulgar comment will be made of it ; And that supposèd by the common rout Against your yet ungallèd estimation That may with foul intrusion enter in And dwell upon your grave when you are dead ; For slander lives upon succession , Forever housèd where it gets possession .",
+      "scrollMode": "auto",
+      "lineIndex": 79
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s7g",
+      "lineText": "To Angelo .",
+      "scrollMode": "auto",
+      "lineIndex": 80
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s80",
+      "lineText": "To Angelo . Get you home And fetch the chain ; by this , I know , ’tis made . Bring it , I pray you , to the Porpentine , For there’s the house . That chain will I bestow — Be it for nothing but to spite my wife — Upon mine hostess there . Good sir , make haste . Since mine own doors refuse to entertain me , I’ll knock elsewhere , to see if they’ll disdain me .",
+      "scrollMode": "auto",
+      "lineIndex": 81
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78sb0",
+      "lineText": "I’ll meet you at that place some hour hence .",
+      "scrollMode": "auto",
+      "lineIndex": 82
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s80",
+      "lineText": "Do so . This jest shall cost me some expense .",
+      "scrollMode": "auto",
+      "lineIndex": 83
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s7g",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 84
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s7g",
+      "lineText": "Enter Luciana with Antipholus of Syracuse .",
+      "scrollMode": "auto",
+      "lineIndex": 85
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78sbg",
+      "lineText": "And may it be that you have quite forgot A husband’s office ? Shall , Antipholus , Even in the spring of love thy love-springs rot ? Shall love , in building , grow so ruinous ? If you did wed my sister for her wealth , Then for her wealth’s sake use her with more kindness . Or if you like elsewhere , do it by stealth — Muffle your false love with some show of blindness . Let not my sister read it in your eye ; Be not thy tongue thy own shame’s orator ; Look sweet , speak fair , become disloyalty ; Apparel vice like virtue’s harbinger . Bear a fair presence , though your heart be tainted . Teach sin the carriage of a holy saint . Be secret-false . What need she be acquainted ? What simple thief brags of his own attaint ? ’Tis double wrong to truant with your bed And let her read it in thy looks at board . Shame hath a bastard fame , well managèd ; Ill deeds is doubled with an evil word . Alas , poor women , make us but believe , Being compact of credit , that you love us . Though others have the arm , show us the sleeve ; We in your motion turn , and you may move us . ACT 3. SC. 2 Then , gentle brother , get you in again . Comfort my sister , cheer her , call her wife . ’Tis holy sport to be a little vain When the sweet breath of flattery conquers strife .",
+      "scrollMode": "auto",
+      "lineIndex": 86
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78sc0",
+      "lineText": "Sweet mistress — what your name is else I know not , Nor by what wonder you do hit of mine — Less in your knowledge and your grace you show not Than our Earth’s earth’s wonder , more than Earth earth divine . Teach me , dear creature , how to think and speak . Lay open to my earthy gross conceit , Smothered in errors , feeble , shallow , weak , The folded meaning of your words’ deceit . Against my soul’s pure truth why labor you To make it wander in an unknown field ? Are you a god ? Would you create me new ? Transform me , then , and to your power I’ll yield . But if that I am I , then well I know Your weeping sister is no wife of mine , Nor to her bed no homage do I owe . Far more , far more , to you do I decline . O , train me not , sweet mermaid , with thy note To drown me in thy sister’s flood of tears . Sing , Siren , for thyself , and I will dote . Spread o’er the silver waves thy golden hairs , And as a bed I’ll take them and there lie , And in that glorious supposition think He gains by death that hath such means to die . Let love , being light , be drownèd if she sink .",
+      "scrollMode": "auto",
+      "lineIndex": 87
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78sbg",
+      "lineText": "What , are you mad that you do reason so ?",
+      "scrollMode": "auto",
+      "lineIndex": 88
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78sc0",
+      "lineText": "Not mad , but mated — how , I do not know .",
+      "scrollMode": "auto",
+      "lineIndex": 89
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78sbg",
+      "lineText": "It is a fault that springeth from your eye .",
+      "scrollMode": "auto",
+      "lineIndex": 90
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78sc0",
+      "lineText": "For gazing on your beams , fair sun , being by .",
+      "scrollMode": "auto",
+      "lineIndex": 91
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78sbg",
+      "lineText": "Gaze when you should , and that will clear your sight .",
+      "scrollMode": "auto",
+      "lineIndex": 92
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78sc0",
+      "lineText": "As good to wink , sweet love , as look on night .",
+      "scrollMode": "auto",
+      "lineIndex": 93
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78sbg",
+      "lineText": "Why call you me love ? Call my sister so .",
+      "scrollMode": "auto",
+      "lineIndex": 94
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78sc0",
+      "lineText": "Thy sister’s sister .",
+      "scrollMode": "auto",
+      "lineIndex": 95
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78sbg",
+      "lineText": "That’s my sister .",
+      "scrollMode": "auto",
+      "lineIndex": 96
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78sc0",
+      "lineText": "No , It is thyself , mine own self’s better part , Mine eye’s clear eye , my dear heart’s dearer heart , My food , my fortune , and my sweet hope’s aim , My sole Earth’s earth’s heaven , and my heaven’s claim .",
+      "scrollMode": "auto",
+      "lineIndex": 97
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78sbg",
+      "lineText": "All this my sister is , or else should be .",
+      "scrollMode": "auto",
+      "lineIndex": 98
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78sc0",
+      "lineText": "Call thyself sister , sweet , for I am thee . Thee will I love , and with thee lead my life ; Thou hast no husband yet , nor I no wife . Give me thy hand .",
+      "scrollMode": "auto",
+      "lineIndex": 99
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78sbg",
+      "lineText": "O soft , sir . Hold you still . I’ll fetch my sister to get her goodwill .",
+      "scrollMode": "auto",
+      "lineIndex": 100
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s7g",
+      "lineText": "She exits .",
+      "scrollMode": "auto",
+      "lineIndex": 101
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s7g",
+      "lineText": "Enter Dromio of Syracuse , running .",
+      "scrollMode": "auto",
+      "lineIndex": 102
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78sc0",
+      "lineText": "Why , how now , Dromio . Where runn’st thou so fast ?",
+      "scrollMode": "auto",
+      "lineIndex": 103
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s9g",
+      "lineText": "Do you know me , sir ? Am I Dromio ? Am I your man ? Am I myself ?",
+      "scrollMode": "auto",
+      "lineIndex": 104
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78sc0",
+      "lineText": "Thou art Dromio , thou art my man , thou art thyself .",
+      "scrollMode": "auto",
+      "lineIndex": 105
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s9g",
+      "lineText": "I am an ass , I am a woman’s man , and besides myself .",
+      "scrollMode": "auto",
+      "lineIndex": 106
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78sc0",
+      "lineText": "What woman’s man ? And how besides thyself ?",
+      "scrollMode": "auto",
+      "lineIndex": 107
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s9g",
+      "lineText": "Marry , sir , besides myself I am due to a woman , one that claims me , one that haunts me , one that will have me .",
+      "scrollMode": "auto",
+      "lineIndex": 108
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78sc0",
+      "lineText": "What claim lays she to thee ?",
+      "scrollMode": "auto",
+      "lineIndex": 109
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s9g",
+      "lineText": "Marry , sir , such claim as you would lay to your horse , and she would have me as a beast ; not that I being a beast she would have me , but that she , being a very beastly creature , lays claim to me .",
+      "scrollMode": "auto",
+      "lineIndex": 110
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78sc0",
+      "lineText": "What is she ?",
+      "scrollMode": "auto",
+      "lineIndex": 111
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s9g",
+      "lineText": "A very reverend body , ay , such a one as a man may not speak of without he say sir-reverence . I have but lean luck in the match , and yet is she a wondrous fat marriage .",
+      "scrollMode": "auto",
+      "lineIndex": 112
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78sc0",
+      "lineText": "How dost thou mean a fat marriage ?",
+      "scrollMode": "auto",
+      "lineIndex": 113
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s9g",
+      "lineText": "Marry , sir , she’s the kitchen wench , and all grease , and I know not what use to put her to but to make a lamp of her and run from her by her own light . I warrant her rags and the tallow in them will burn a Poland winter . If she lives till doomsday , she’ll burn a week longer than the whole world .",
+      "scrollMode": "auto",
+      "lineIndex": 114
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78sc0",
+      "lineText": "What complexion is she of ?",
+      "scrollMode": "auto",
+      "lineIndex": 115
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s9g",
+      "lineText": "Swart like my shoe , but her face nothing like so clean kept . For why ? She sweats . A man may go overshoes in the grime of it .",
+      "scrollMode": "auto",
+      "lineIndex": 116
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78sc0",
+      "lineText": "That’s a fault that water will mend .",
+      "scrollMode": "auto",
+      "lineIndex": 117
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s9g",
+      "lineText": "No , sir , ’tis in grain ; Noah’s flood could not do it .",
+      "scrollMode": "auto",
+      "lineIndex": 118
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78sc0",
+      "lineText": "What’s her name ?",
+      "scrollMode": "auto",
+      "lineIndex": 119
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s9g",
+      "lineText": "Nell , sir , but her name and ACT 3. SC. 2 three quarters — that’s an ell and three quarters — will not measure her from hip to hip .",
+      "scrollMode": "auto",
+      "lineIndex": 120
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78sc0",
+      "lineText": "Then she bears some breadth ?",
+      "scrollMode": "auto",
+      "lineIndex": 121
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s9g",
+      "lineText": "No longer from head to foot than from hip to hip . She is spherical , like a globe . I could find out countries in her .",
+      "scrollMode": "auto",
+      "lineIndex": 122
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78sc0",
+      "lineText": "In what part of her body stands Ireland ?",
+      "scrollMode": "auto",
+      "lineIndex": 123
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s9g",
+      "lineText": "Marry , sir , in her buttocks . I found it out by the bogs .",
+      "scrollMode": "auto",
+      "lineIndex": 124
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78sc0",
+      "lineText": "Where Scotland ?",
+      "scrollMode": "auto",
+      "lineIndex": 125
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s9g",
+      "lineText": "I found it by the barrenness , hard in the palm of the hand .",
+      "scrollMode": "auto",
+      "lineIndex": 126
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78sc0",
+      "lineText": "Where France ?",
+      "scrollMode": "auto",
+      "lineIndex": 127
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s9g",
+      "lineText": "In her forehead , armed and reverted , making war against her heir .",
+      "scrollMode": "auto",
+      "lineIndex": 128
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78sc0",
+      "lineText": "Where England ?",
+      "scrollMode": "auto",
+      "lineIndex": 129
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s9g",
+      "lineText": "I looked for the chalky cliffs , but I could find no whiteness in them . But I guess it stood in her chin , by the salt rheum that ran between France and it .",
+      "scrollMode": "auto",
+      "lineIndex": 130
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78sc0",
+      "lineText": "Where Spain ?",
+      "scrollMode": "auto",
+      "lineIndex": 131
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s9g",
+      "lineText": "Faith , I saw it not , but I felt it hot in her breath .",
+      "scrollMode": "auto",
+      "lineIndex": 132
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78sc0",
+      "lineText": "Where America , the Indies ?",
+      "scrollMode": "auto",
+      "lineIndex": 133
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s9g",
+      "lineText": "O , sir , upon her nose , all o’erembellished with rubies , carbuncles , sapphires , declining their rich aspect to the hot breath of Spain , who sent whole armadas of carracks to be ballast at her nose .",
+      "scrollMode": "auto",
+      "lineIndex": 134
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78sc0",
+      "lineText": "Where stood Belgia , the Netherlands ?",
+      "scrollMode": "auto",
+      "lineIndex": 135
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s9g",
+      "lineText": "O , sir , I did not look so low . To conclude : this drudge or diviner laid claim to me , ACT 3. SC. 2 called me Dromio , swore I was assured to her , told me what privy marks I had about me , as the mark of my shoulder , the mole in my neck , the great wart on my left arm , that I , amazed , ran from her as a witch . And , I think , if my breast had not been made of faith , and my heart of steel , She had transformed me to a curtal dog and made me turn i’ th’ wheel .",
+      "scrollMode": "auto",
+      "lineIndex": 136
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78sc0",
+      "lineText": "Go , hie thee presently . Post to the road . An if the wind blow any way from shore , I will not harbor in this town tonight . If any bark put forth , come to the mart , Where I will walk till thou return to me . If everyone knows us , and we know none , ’Tis time , I think , to trudge , pack , and be gone .",
+      "scrollMode": "auto",
+      "lineIndex": 137
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s9g",
+      "lineText": "As from a bear a man would run for life , So fly I from her that would be my wife .",
+      "scrollMode": "auto",
+      "lineIndex": 138
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s7g",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 139
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78sc0",
+      "lineText": "There’s none but witches do inhabit here , And therefore ’tis high time that I were hence . She that doth call me husband , even my soul Doth for a wife abhor . But her fair sister , Possessed with such a gentle sovereign grace , Of such enchanting presence and discourse , Hath almost made me traitor to myself . But lest myself be guilty to self wrong , I’ll stop mine ears against the mermaid’s song .",
+      "scrollMode": "auto",
+      "lineIndex": 140
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s7g",
+      "lineText": "Enter Angelo with the chain .",
+      "scrollMode": "auto",
+      "lineIndex": 141
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78sb0",
+      "lineText": "Master Antipholus .",
+      "scrollMode": "auto",
+      "lineIndex": 142
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78sc0",
+      "lineText": "Ay , that’s my name .",
+      "scrollMode": "auto",
+      "lineIndex": 143
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78sb0",
+      "lineText": "I know it well , sir . Lo , here’s the chain . I thought to have ta’en you at the Porpentine ; The chain unfinished made me stay thus long .",
+      "scrollMode": "auto",
+      "lineIndex": 144
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s7g",
+      "lineText": "He gives Antipholus a chain .",
+      "scrollMode": "auto",
+      "lineIndex": 145
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78sc0",
+      "lineText": "What is your will that I shall do with this ?",
+      "scrollMode": "auto",
+      "lineIndex": 146
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78sb0",
+      "lineText": "What please yourself , sir . I have made it for you .",
+      "scrollMode": "auto",
+      "lineIndex": 147
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78sc0",
+      "lineText": "Made it for me , sir ? I bespoke it not .",
+      "scrollMode": "auto",
+      "lineIndex": 148
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78sb0",
+      "lineText": "Not once , nor twice , but twenty times you have . Go home with it , and please your wife withal , And soon at supper time I’ll visit you And then receive my money for the chain .",
+      "scrollMode": "auto",
+      "lineIndex": 149
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78sc0",
+      "lineText": "I pray you , sir , receive the money now , For fear you ne’er see chain nor money more .",
+      "scrollMode": "auto",
+      "lineIndex": 150
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78sb0",
+      "lineText": "You are a merry man , sir . Fare you well .",
+      "scrollMode": "auto",
+      "lineIndex": 151
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s7g",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 152
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78sc0",
+      "lineText": "What I should think of this I cannot tell , But this I think : there’s no man is so vain That would refuse so fair an offered chain . I see a man here needs not live by shifts When in the streets he meets such golden gifts . I’ll to the mart , and there for Dromio stay . If any ship put out , then straight away .",
+      "scrollMode": "auto",
+      "lineIndex": 153
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s7g",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 154
+    }
+  ],
+  "isPublic": true
+}

@@ -277,7 +277,7 @@ function LiveKitVideoRoom({
         }}
         onDisconnected={(reason) => {
           console.log('LiveKit disconnected', {
-            reason: reason != null ? DisconnectReason[reason] ?? reason : undefined,
+            reason: reason != null ? (DisconnectReason[reason] ?? reason) : undefined,
             raw: reason,
           });
           setConnectionState('disconnected');

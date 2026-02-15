@@ -1,0 +1,1194 @@
+{
+  "title": "The Taming of the Shrew (Act 2)",
+  "description": "Folger Shakespeare Library edition",
+  "author": "William Shakespeare",
+  "castMembers": [
+    {
+      "id": "d68m11sn9qd8d2h79hh0",
+      "name": "Narrator",
+      "sortOrder": 0
+    },
+    {
+      "id": "d68m11sn9qd8d2h79hhg",
+      "name": "Bianca",
+      "description": "his younger daughter",
+      "sortOrder": 1
+    },
+    {
+      "id": "d68m11sn9qd8d2h79hi0",
+      "name": "Katherine",
+      "description": "his elder daughter",
+      "sortOrder": 2
+    },
+    {
+      "id": "d68m11sn9qd8d2h79hig",
+      "name": "Baptista Minola",
+      "description": "father to Katherine and Bianca",
+      "sortOrder": 3
+    },
+    {
+      "id": "d68m11sn9qd8d2h79hj0",
+      "name": "Gremio",
+      "sortOrder": 4
+    },
+    {
+      "id": "d68m11sn9qd8d2h79hjg",
+      "name": "Petruchio",
+      "description": "suitor to Katherine",
+      "sortOrder": 5
+    },
+    {
+      "id": "d68m11sn9qd8d2h79hk0",
+      "name": "Hortensio",
+      "description": "(later disguised as the teacher Litio)",
+      "sortOrder": 6
+    },
+    {
+      "id": "d68m11sn9qd8d2h79hkg",
+      "name": "Lucentio",
+      "description": "(later disguised as the teacher Cambio)",
+      "sortOrder": 7
+    },
+    {
+      "id": "d68m11sn9qd8d2h79hl0",
+      "name": "Biondello",
+      "sortOrder": 8
+    },
+    {
+      "id": "d68m11sn9qd8d2h79hlg",
+      "name": "Tranio",
+      "description": "(later impersonating Lucentio)",
+      "sortOrder": 9
+    },
+    {
+      "id": "d68m11sn9qd8d2h79hm0",
+      "name": "Servant",
+      "sortOrder": 10
+    }
+  ],
+  "lines": [
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hh0",
+      "lineText": "Enter Katherine and Bianca with her hands tied .",
+      "scrollMode": "auto",
+      "lineIndex": 0
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hhg",
+      "lineText": "Good sister , wrong me not , nor wrong yourself , To make a bondmaid and a slave of me . That I disdain . But for these other goods — Unbind my hands , I’ll pull them off myself , Yea , all my raiment to my petticoat , Or what you will command me will I do , So well I know my duty to my elders .",
+      "scrollMode": "auto",
+      "lineIndex": 1
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hi0",
+      "lineText": "Of all thy suitors here I charge thee tell Whom thou lov’st best . See thou dissemble not .",
+      "scrollMode": "auto",
+      "lineIndex": 2
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hhg",
+      "lineText": "Believe me , sister , of all the men alive I never yet beheld that special face Which I could fancy more than any other .",
+      "scrollMode": "auto",
+      "lineIndex": 3
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hi0",
+      "lineText": "Minion , thou liest . Is ’t not Hortensio ?",
+      "scrollMode": "auto",
+      "lineIndex": 4
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hhg",
+      "lineText": "If you affect him , sister , here I swear I’ll plead for you myself , but you shall have him .",
+      "scrollMode": "auto",
+      "lineIndex": 5
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hi0",
+      "lineText": "O , then belike you fancy riches more . You will have Gremio to keep you fair .",
+      "scrollMode": "auto",
+      "lineIndex": 6
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hhg",
+      "lineText": "Is it for him you do envy me so ? Nay , then , you jest , and now I well perceive You have but jested with me all this while . I prithee , sister Kate , untie my hands .",
+      "scrollMode": "auto",
+      "lineIndex": 7
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hh0",
+      "lineText": "Katherine strikes her .",
+      "scrollMode": "auto",
+      "lineIndex": 8
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hi0",
+      "lineText": "If that be jest , then all the rest was so .",
+      "scrollMode": "auto",
+      "lineIndex": 9
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hh0",
+      "lineText": "Enter Baptista .",
+      "scrollMode": "auto",
+      "lineIndex": 10
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hh0",
+      "lineText": "He unties her hands .",
+      "scrollMode": "auto",
+      "lineIndex": 11
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hh0",
+      "lineText": "To Bianca .",
+      "scrollMode": "auto",
+      "lineIndex": 12
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hh0",
+      "lineText": "To Katherine .",
+      "scrollMode": "auto",
+      "lineIndex": 13
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hig",
+      "lineText": "To Katherine . For shame , thou hilding of a devilish spirit ! Why dost thou wrong her that did ne’er wrong thee ? When did she cross thee with a bitter word ?",
+      "scrollMode": "auto",
+      "lineIndex": 14
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hi0",
+      "lineText": "Her silence flouts me , and I’ll be revenged !",
+      "scrollMode": "auto",
+      "lineIndex": 15
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hh0",
+      "lineText": "She flies after Bianca .",
+      "scrollMode": "auto",
+      "lineIndex": 16
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hig",
+      "lineText": "What , in my sight ? — Bianca , get thee in .",
+      "scrollMode": "auto",
+      "lineIndex": 17
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hh0",
+      "lineText": "Bianca exits .",
+      "scrollMode": "auto",
+      "lineIndex": 18
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hi0",
+      "lineText": "What , will you not suffer me ? Nay , now I see She is your treasure , she must have a husband , I must dance barefoot on her wedding day And , for your love to her , lead apes in hell . Talk not to me . I will go sit and weep Till I can find occasion of revenge .",
+      "scrollMode": "auto",
+      "lineIndex": 19
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hh0",
+      "lineText": "She exits .",
+      "scrollMode": "auto",
+      "lineIndex": 20
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hig",
+      "lineText": "Was ever gentleman thus grieved as I ? But who comes here ?",
+      "scrollMode": "auto",
+      "lineIndex": 21
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hh0",
+      "lineText": "Enter Gremio ; Lucentio disguised as Cambio in the habit of a mean man ; Petruchio with Hortensio disguised as Litio ; and Tranio disguised as Lucentio , with his boy , Biondello bearing a lute and books .",
+      "scrollMode": "auto",
+      "lineIndex": 22
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hj0",
+      "lineText": "Good morrow , neighbor Baptista .",
+      "scrollMode": "auto",
+      "lineIndex": 23
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hig",
+      "lineText": "Good morrow , neighbor Gremio . — God save you , gentlemen .",
+      "scrollMode": "auto",
+      "lineIndex": 24
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hjg",
+      "lineText": "And you , good sir . Pray , have you not a daughter Called Katherina , fair and virtuous ?",
+      "scrollMode": "auto",
+      "lineIndex": 25
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hig",
+      "lineText": "I have a daughter , sir , called Katherina .",
+      "scrollMode": "auto",
+      "lineIndex": 26
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hh0",
+      "lineText": ", to Petruchio",
+      "scrollMode": "auto",
+      "lineIndex": 27
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hj0",
+      "lineText": "You are too blunt . Go to it orderly .",
+      "scrollMode": "auto",
+      "lineIndex": 28
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hh0",
+      "lineText": "Presenting Hortensio , disguised as Litio",
+      "scrollMode": "auto",
+      "lineIndex": 29
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hjg",
+      "lineText": "Presenting Hortensio , disguised as Litio Cunning in music and the mathematics , To instruct her fully in those sciences , Whereof I know she is not ignorant . Accept of him , or else you do me wrong . His name is Litio , born in Mantua .",
+      "scrollMode": "auto",
+      "lineIndex": 30
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hig",
+      "lineText": "You’re welcome , sir , and he for your good sake . ACT 2. SC. 1 But for my daughter Katherine , this I know , She is not for your turn , the more my grief .",
+      "scrollMode": "auto",
+      "lineIndex": 31
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hjg",
+      "lineText": "I see you do not mean to part with her , Or else you like not of my company .",
+      "scrollMode": "auto",
+      "lineIndex": 32
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hig",
+      "lineText": "Mistake me not . I speak but as I find . Whence are you , sir ? What may I call your name ?",
+      "scrollMode": "auto",
+      "lineIndex": 33
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hjg",
+      "lineText": "Petruchio is my name , Antonio’s son , A man well known throughout all Italy .",
+      "scrollMode": "auto",
+      "lineIndex": 34
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hig",
+      "lineText": "I know him well . You are welcome for his sake .",
+      "scrollMode": "auto",
+      "lineIndex": 35
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hj0",
+      "lineText": "Saving your tale , Petruchio , I pray Let us that are poor petitioners speak too ! Bacare , you are marvelous forward .",
+      "scrollMode": "auto",
+      "lineIndex": 36
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hjg",
+      "lineText": "O , pardon me , Signior Gremio , I would fain be doing .",
+      "scrollMode": "auto",
+      "lineIndex": 37
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hh0",
+      "lineText": "To Baptista .",
+      "scrollMode": "auto",
+      "lineIndex": 38
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hh0",
+      "lineText": "presenting Lucentio , disguised as Cambio",
+      "scrollMode": "auto",
+      "lineIndex": 39
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hj0",
+      "lineText": "presenting Lucentio , disguised as Cambio that hath been long studying at Rheims , as cunning in Greek , Latin , and other languages as the other in music and mathematics . His name is Cambio . Pray accept his service .",
+      "scrollMode": "auto",
+      "lineIndex": 40
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hh0",
+      "lineText": "as Lucentio .",
+      "scrollMode": "auto",
+      "lineIndex": 41
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hig",
+      "lineText": "as Lucentio . But , gentle sir , methinks you walk like a stranger . May I be so bold to know the cause of your coming ?",
+      "scrollMode": "auto",
+      "lineIndex": 42
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hh0",
+      "lineText": ", as Lucentio",
+      "scrollMode": "auto",
+      "lineIndex": 43
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hh0",
+      "lineText": "Biondello comes forward with the gifts .",
+      "scrollMode": "auto",
+      "lineIndex": 44
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hl0",
+      "lineText": "Biondello comes forward with the gifts . If you accept them , then their worth is great .",
+      "scrollMode": "auto",
+      "lineIndex": 45
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hig",
+      "lineText": "Lucentio is your name . Of whence , I pray ?",
+      "scrollMode": "auto",
+      "lineIndex": 46
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hh0",
+      "lineText": ", as Lucentio",
+      "scrollMode": "auto",
+      "lineIndex": 47
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hlg",
+      "lineText": "Of Pisa , sir , son to Vincentio .",
+      "scrollMode": "auto",
+      "lineIndex": 48
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hh0",
+      "lineText": "as Litio .",
+      "scrollMode": "auto",
+      "lineIndex": 49
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hh0",
+      "lineText": "as Cambio",
+      "scrollMode": "auto",
+      "lineIndex": 50
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hh0",
+      "lineText": "Enter a Servant .",
+      "scrollMode": "auto",
+      "lineIndex": 51
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hh0",
+      "lineText": "Servant exits with Hortensio and Lucentio .",
+      "scrollMode": "auto",
+      "lineIndex": 52
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hm0",
+      "lineText": "Servant exits with Hortensio and Lucentio . We will go walk a little in the orchard , And then to dinner . You are passing welcome , And so I pray you all to think yourselves .",
+      "scrollMode": "auto",
+      "lineIndex": 53
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hjg",
+      "lineText": "Signior Baptista , my business asketh haste , And every day I cannot come to woo . You knew my father well , and in him me , Left solely heir to all his lands and goods , Which I have bettered rather than decreased . Then tell me , if I get your daughter’s love , What dowry shall I have with her to wife ?",
+      "scrollMode": "auto",
+      "lineIndex": 54
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hig",
+      "lineText": "After my death , the one half of my lands , And , in possession , twenty thousand crowns .",
+      "scrollMode": "auto",
+      "lineIndex": 55
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hjg",
+      "lineText": "And , for that dowry , I’ll assure her of Her widowhood , be it that she survive me , In all my lands and leases whatsoever . Let specialties be therefore drawn between us , That covenants may be kept on either hand .",
+      "scrollMode": "auto",
+      "lineIndex": 56
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hig",
+      "lineText": "Ay , when the special thing is well obtained , That is , her love , for that is all in all .",
+      "scrollMode": "auto",
+      "lineIndex": 57
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hjg",
+      "lineText": "Why , that is nothing . For I tell you , father , I am as peremptory as she proud-minded ; And where two raging fires meet together , They do consume the thing that feeds their fury . Though little fire grows great with little wind , Yet extreme gusts will blow out fire and all . So I to her and so she yields to me , For I am rough and woo not like a babe .",
+      "scrollMode": "auto",
+      "lineIndex": 58
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hig",
+      "lineText": "Well mayst thou woo , and happy be thy speed . But be thou armed for some unhappy words .",
+      "scrollMode": "auto",
+      "lineIndex": 59
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hjg",
+      "lineText": "Ay , to the proof , as mountains are for winds , That shakes not , though they blow perpetually .",
+      "scrollMode": "auto",
+      "lineIndex": 60
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hh0",
+      "lineText": "Enter Hortensio as Litio with his head broke .",
+      "scrollMode": "auto",
+      "lineIndex": 61
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hig",
+      "lineText": "How now , my friend , why dost thou look so pale ?",
+      "scrollMode": "auto",
+      "lineIndex": 62
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hh0",
+      "lineText": ", as Litio",
+      "scrollMode": "auto",
+      "lineIndex": 63
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hk0",
+      "lineText": "For fear , I promise you , if I look pale .",
+      "scrollMode": "auto",
+      "lineIndex": 64
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hig",
+      "lineText": "What , will my daughter prove a good musician ?",
+      "scrollMode": "auto",
+      "lineIndex": 65
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hh0",
+      "lineText": ", as Litio",
+      "scrollMode": "auto",
+      "lineIndex": 66
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hk0",
+      "lineText": "I think she’ll sooner prove a soldier ! Iron may hold with her , but never lutes .",
+      "scrollMode": "auto",
+      "lineIndex": 67
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hig",
+      "lineText": "Why , then thou canst not break her to the lute ?",
+      "scrollMode": "auto",
+      "lineIndex": 68
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hh0",
+      "lineText": ", as Litio",
+      "scrollMode": "auto",
+      "lineIndex": 69
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hk0",
+      "lineText": "Why , no , for she hath broke the lute to me . I did but tell her she mistook her frets , And bowed her hand to teach her fingering , When , with a most impatient devilish spirit , Frets call you these ? quoth she . I’ll fume with them ! And with that word she struck me on the head , And through the instrument my pate made way , And there I stood amazèd for a while , As on a pillory , looking through the lute , While she did call me rascal fiddler , And twangling Jack , with twenty such vile terms , As had she studied to misuse me so .",
+      "scrollMode": "auto",
+      "lineIndex": 70
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hjg",
+      "lineText": "Now , by the world , it is a lusty wench . I love her ten times more than ere e’er I did . O , how I long to have some chat with her !",
+      "scrollMode": "auto",
+      "lineIndex": 71
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hh0",
+      "lineText": "as Litio",
+      "scrollMode": "auto",
+      "lineIndex": 72
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hig",
+      "lineText": "Well , go with me , and be not so discomfited . Proceed in practice with my younger daughter . She’s apt to learn , and thankful for good turns . — Signior Petruchio , will you go with us , Or shall I send my daughter Kate to you ?",
+      "scrollMode": "auto",
+      "lineIndex": 73
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hh0",
+      "lineText": "All but Petruchio exit .",
+      "scrollMode": "auto",
+      "lineIndex": 74
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hh0",
+      "lineText": "Enter Katherine .",
+      "scrollMode": "auto",
+      "lineIndex": 75
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hi0",
+      "lineText": "Enter Katherine . Good morrow , Kate , for that’s your name , I hear .",
+      "scrollMode": "auto",
+      "lineIndex": 76
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hi0",
+      "lineText": "Well have you heard , but something hard of hearing . They call me Katherine that do talk of me .",
+      "scrollMode": "auto",
+      "lineIndex": 77
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hjg",
+      "lineText": "You lie , in faith , for you are called plain Kate , And bonny Kate , and sometimes Kate the curst . But Kate , the prettiest Kate in Christendom , Kate of Kate Hall , my super-dainty Kate ( For dainties are all Kates ) — and therefore , Kate , Take this of me , Kate of my consolation : Hearing thy mildness praised in every town , Thy virtues spoke of , and thy beauty sounded ( Yet not so deeply as to thee belongs ) , Myself am moved to woo thee for my wife .",
+      "scrollMode": "auto",
+      "lineIndex": 78
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hi0",
+      "lineText": "Moved , in good time ! Let him that moved you hither ACT 2. SC. 1 Remove you hence . I knew you at the first You were a movable .",
+      "scrollMode": "auto",
+      "lineIndex": 79
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hjg",
+      "lineText": "Why , what’s a movable ?",
+      "scrollMode": "auto",
+      "lineIndex": 80
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hi0",
+      "lineText": "A joint stool .",
+      "scrollMode": "auto",
+      "lineIndex": 81
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hjg",
+      "lineText": "Thou hast hit it . Come , sit on me .",
+      "scrollMode": "auto",
+      "lineIndex": 82
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hi0",
+      "lineText": "Asses are made to bear , and so are you .",
+      "scrollMode": "auto",
+      "lineIndex": 83
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hjg",
+      "lineText": "Women are made to bear , and so are you .",
+      "scrollMode": "auto",
+      "lineIndex": 84
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hi0",
+      "lineText": "No such jade as you , if me you mean .",
+      "scrollMode": "auto",
+      "lineIndex": 85
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hjg",
+      "lineText": "Alas , good Kate , I will not burden thee , For knowing thee to be but young and light —",
+      "scrollMode": "auto",
+      "lineIndex": 86
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hi0",
+      "lineText": "Too light for such a swain as you to catch , And yet as heavy as my weight should be .",
+      "scrollMode": "auto",
+      "lineIndex": 87
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hjg",
+      "lineText": "Should be — should buzz !",
+      "scrollMode": "auto",
+      "lineIndex": 88
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hi0",
+      "lineText": "Well ta’en , and like a buzzard .",
+      "scrollMode": "auto",
+      "lineIndex": 89
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hjg",
+      "lineText": "O slow-winged turtle , shall a buzzard take thee ?",
+      "scrollMode": "auto",
+      "lineIndex": 90
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hi0",
+      "lineText": "Ay , for a turtle , as he takes a buzzard .",
+      "scrollMode": "auto",
+      "lineIndex": 91
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hjg",
+      "lineText": "Come , come , you wasp ! I’ faith , you are too angry .",
+      "scrollMode": "auto",
+      "lineIndex": 92
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hi0",
+      "lineText": "If I be waspish , best beware my sting .",
+      "scrollMode": "auto",
+      "lineIndex": 93
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hjg",
+      "lineText": "My remedy is then to pluck it out .",
+      "scrollMode": "auto",
+      "lineIndex": 94
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hi0",
+      "lineText": "Ay , if the fool could find it where it lies .",
+      "scrollMode": "auto",
+      "lineIndex": 95
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hjg",
+      "lineText": "Who knows not where a wasp does wear his sting ? In his tail .",
+      "scrollMode": "auto",
+      "lineIndex": 96
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hi0",
+      "lineText": "In his tongue .",
+      "scrollMode": "auto",
+      "lineIndex": 97
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hjg",
+      "lineText": "Whose tongue ?",
+      "scrollMode": "auto",
+      "lineIndex": 98
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hi0",
+      "lineText": "Yours , if you talk of tales , and so farewell .",
+      "scrollMode": "auto",
+      "lineIndex": 99
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hjg",
+      "lineText": "What , with my tongue in your tail ? Nay , come again , good Kate . I am a gentleman —",
+      "scrollMode": "auto",
+      "lineIndex": 100
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hi0",
+      "lineText": "That I’ll try .",
+      "scrollMode": "auto",
+      "lineIndex": 101
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hh0",
+      "lineText": "She strikes him .",
+      "scrollMode": "auto",
+      "lineIndex": 102
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hjg",
+      "lineText": "I swear I’ll cuff you if you strike again .",
+      "scrollMode": "auto",
+      "lineIndex": 103
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hi0",
+      "lineText": "So may you lose your arms . If you strike me , you are no gentleman , And if no gentleman , why then no arms .",
+      "scrollMode": "auto",
+      "lineIndex": 104
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hjg",
+      "lineText": "A herald , Kate ? O , put me in thy books .",
+      "scrollMode": "auto",
+      "lineIndex": 105
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hi0",
+      "lineText": "What is your crest ? A coxcomb ?",
+      "scrollMode": "auto",
+      "lineIndex": 106
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hjg",
+      "lineText": "A combless cock , so Kate will be my hen .",
+      "scrollMode": "auto",
+      "lineIndex": 107
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hi0",
+      "lineText": "No cock of mine . You crow too like a craven .",
+      "scrollMode": "auto",
+      "lineIndex": 108
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hjg",
+      "lineText": "Nay , come , Kate , come . You must not look so sour .",
+      "scrollMode": "auto",
+      "lineIndex": 109
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hi0",
+      "lineText": "It is my fashion when I see a crab .",
+      "scrollMode": "auto",
+      "lineIndex": 110
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hjg",
+      "lineText": "Why , here’s no crab , and therefore look not sour .",
+      "scrollMode": "auto",
+      "lineIndex": 111
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hi0",
+      "lineText": "There is , there is .",
+      "scrollMode": "auto",
+      "lineIndex": 112
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hjg",
+      "lineText": "Then show it me .",
+      "scrollMode": "auto",
+      "lineIndex": 113
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hi0",
+      "lineText": "Had I a glass , I would .",
+      "scrollMode": "auto",
+      "lineIndex": 114
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hjg",
+      "lineText": "What , you mean my face ?",
+      "scrollMode": "auto",
+      "lineIndex": 115
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hi0",
+      "lineText": "Well aimed of such a young one .",
+      "scrollMode": "auto",
+      "lineIndex": 116
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hjg",
+      "lineText": "Now , by Saint George , I am too young for you .",
+      "scrollMode": "auto",
+      "lineIndex": 117
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hi0",
+      "lineText": "Yet you are withered .",
+      "scrollMode": "auto",
+      "lineIndex": 118
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hjg",
+      "lineText": "’Tis with cares .",
+      "scrollMode": "auto",
+      "lineIndex": 119
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hi0",
+      "lineText": "I care not .",
+      "scrollMode": "auto",
+      "lineIndex": 120
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hjg",
+      "lineText": "Nay , hear you , Kate — in sooth , you ’scape not so .",
+      "scrollMode": "auto",
+      "lineIndex": 121
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hi0",
+      "lineText": "I chafe you if I tarry . Let me go .",
+      "scrollMode": "auto",
+      "lineIndex": 122
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hjg",
+      "lineText": "No , not a whit . I find you passing gentle . ’Twas told me you were rough , and coy , and sullen , And now I find report a very liar . For thou art pleasant , gamesome , passing courteous , But slow in speech , yet sweet as springtime flowers . Thou canst not frown , thou canst not look askance , Nor bite the lip as angry wenches will , Nor hast thou pleasure to be cross in talk . But thou with mildness entertain’st thy wooers , With gentle conference , soft , and affable . Why does the world report that Kate doth limp ? O sland’rous world ! Kate like the hazel twig Is straight , and slender , and as brown in hue As hazelnuts hazel nuts , and sweeter than the kernels . O , let me see thee walk ! Thou dost not halt .",
+      "scrollMode": "auto",
+      "lineIndex": 123
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hi0",
+      "lineText": "Go , fool , and whom thou keep’st command .",
+      "scrollMode": "auto",
+      "lineIndex": 124
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hjg",
+      "lineText": "Did ever Dian so become a grove As Kate this chamber with her princely gait ? O , be thou Dian and let her be Kate , And then let Kate be chaste and Dian sportful .",
+      "scrollMode": "auto",
+      "lineIndex": 125
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hi0",
+      "lineText": "Where did you study all this goodly speech ?",
+      "scrollMode": "auto",
+      "lineIndex": 126
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hjg",
+      "lineText": "It is extempore , from my mother wit .",
+      "scrollMode": "auto",
+      "lineIndex": 127
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hi0",
+      "lineText": "A witty mother , witless else her son .",
+      "scrollMode": "auto",
+      "lineIndex": 128
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hjg",
+      "lineText": "Am I not wise ?",
+      "scrollMode": "auto",
+      "lineIndex": 129
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hi0",
+      "lineText": "Yes , keep you warm .",
+      "scrollMode": "auto",
+      "lineIndex": 130
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hh0",
+      "lineText": "Enter Baptista , Gremio , and Tranio as Lucentio .",
+      "scrollMode": "auto",
+      "lineIndex": 131
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hig",
+      "lineText": "Enter Baptista , Gremio , and Tranio as Lucentio . Here comes your father . Never make denial . I must and will have Katherine to my wife .",
+      "scrollMode": "auto",
+      "lineIndex": 132
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hig",
+      "lineText": "Now , Signior Petruchio , how speed you with my daughter ?",
+      "scrollMode": "auto",
+      "lineIndex": 133
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hjg",
+      "lineText": "How but well , sir ? How but well ? It were impossible I should speed amiss .",
+      "scrollMode": "auto",
+      "lineIndex": 134
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hig",
+      "lineText": "Why , how now , daughter Katherine ? In your dumps ?",
+      "scrollMode": "auto",
+      "lineIndex": 135
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hi0",
+      "lineText": "Call you me daughter ? Now I promise you You have showed a tender fatherly regard , To wish me wed to one half lunatic , A madcap ruffian and a swearing Jack , That thinks with oaths to face the matter out .",
+      "scrollMode": "auto",
+      "lineIndex": 136
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hjg",
+      "lineText": "Father , ’tis thus : yourself and all the world That talked of her have talked amiss of her . If she be curst , it is for policy , For she’s not froward , but modest as the dove ; She is not hot , but temperate as the morn . For patience she will prove a second Grissel , And Roman Lucrece for her chastity . And to conclude , we have ’greed so well together That upon Sunday is the wedding day .",
+      "scrollMode": "auto",
+      "lineIndex": 137
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hi0",
+      "lineText": "I’ll see thee hanged on Sunday first .",
+      "scrollMode": "auto",
+      "lineIndex": 138
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hj0",
+      "lineText": "Hark , Petruchio , she says she’ll see thee hanged first .",
+      "scrollMode": "auto",
+      "lineIndex": 139
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hh0",
+      "lineText": ", as Lucentio",
+      "scrollMode": "auto",
+      "lineIndex": 140
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hlg",
+      "lineText": "Is this your speeding ? Nay , then , goodnight our part .",
+      "scrollMode": "auto",
+      "lineIndex": 141
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hjg",
+      "lineText": "Be patient , gentlemen . I choose her for myself . If she and I be pleased , what’s that to you ? ’Tis bargained ’twixt us twain , being alone , That she shall still be curst in company . I tell you , ’tis incredible to believe How much she loves me . O , the kindest Kate ! She hung about my neck , and kiss on kiss She vied so fast , protesting oath on oath , That in a twink she won me to her love . O , you are novices ! ’Tis a world to see How tame , when men and women are alone , A meacock wretch can make the curstest shrew . — Give me thy hand , Kate . I will unto Venice To buy apparel ’gainst the wedding day . — Provide the feast , father , and bid the guests . I will be sure my Katherine shall be fine .",
+      "scrollMode": "auto",
+      "lineIndex": 142
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hig",
+      "lineText": "I know not what to say , but give me your hands . God send you joy , Petruchio . ’Tis a match .",
+      "scrollMode": "auto",
+      "lineIndex": 143
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hh0",
+      "lineText": ", as Lucentio",
+      "scrollMode": "auto",
+      "lineIndex": 144
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hj0",
+      "lineText": "Amen , say we . We will be witnesses .",
+      "scrollMode": "auto",
+      "lineIndex": 145
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hjg",
+      "lineText": "Father , and wife , and gentlemen , adieu . I will to Venice . Sunday comes apace . We will have rings , and things , and fine array , And kiss me , Kate . We will be married o’ Sunday .",
+      "scrollMode": "auto",
+      "lineIndex": 146
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hh0",
+      "lineText": "Petruchio and Katherine exit through different doors .",
+      "scrollMode": "auto",
+      "lineIndex": 147
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hj0",
+      "lineText": "Was ever match clapped up so suddenly ?",
+      "scrollMode": "auto",
+      "lineIndex": 148
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hig",
+      "lineText": "Faith , gentlemen , now I play a merchant’s part And venture madly on a desperate mart .",
+      "scrollMode": "auto",
+      "lineIndex": 149
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hh0",
+      "lineText": ", as Lucentio",
+      "scrollMode": "auto",
+      "lineIndex": 150
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hlg",
+      "lineText": "’Twas a commodity lay fretting by you . ’Twill bring you gain , or perish on the seas .",
+      "scrollMode": "auto",
+      "lineIndex": 151
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hig",
+      "lineText": "The gain I seek , is quiet in the match .",
+      "scrollMode": "auto",
+      "lineIndex": 152
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hj0",
+      "lineText": "No doubt but he hath got a quiet catch . But now , Baptista , to your younger daughter . Now is the day we long have lookèd for . I am your neighbor and was suitor first .",
+      "scrollMode": "auto",
+      "lineIndex": 153
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hh0",
+      "lineText": ", as Lucentio",
+      "scrollMode": "auto",
+      "lineIndex": 154
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hlg",
+      "lineText": "And I am one that love Bianca more Than words can witness or your thoughts can guess .",
+      "scrollMode": "auto",
+      "lineIndex": 155
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hj0",
+      "lineText": "Youngling , thou canst not love so dear as I .",
+      "scrollMode": "auto",
+      "lineIndex": 156
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hh0",
+      "lineText": ", as Lucentio",
+      "scrollMode": "auto",
+      "lineIndex": 157
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hlg",
+      "lineText": "Graybeard , thy love doth freeze .",
+      "scrollMode": "auto",
+      "lineIndex": 158
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hj0",
+      "lineText": "But thine doth fry ! Skipper , stand back . ’Tis age that nourisheth .",
+      "scrollMode": "auto",
+      "lineIndex": 159
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hh0",
+      "lineText": ", as Lucentio",
+      "scrollMode": "auto",
+      "lineIndex": 160
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hlg",
+      "lineText": "But youth in ladies’ eyes that flourisheth .",
+      "scrollMode": "auto",
+      "lineIndex": 161
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hig",
+      "lineText": "Content you , gentlemen . I will compound this strife . ’Tis deeds must win the prize , and he of both That can assure my daughter greatest dower Shall have my Bianca’s love . Say , Signior Gremio , what can you assure her ?",
+      "scrollMode": "auto",
+      "lineIndex": 162
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hj0",
+      "lineText": "First , as you know , my house within the city Is richly furnishèd with plate and gold , Basins and ewers to lave her dainty hands ; My hangings all of Tyrian tapestry ; In ivory coffers I have stuffed my crowns , In cypress chests my arras counterpoints , Costly apparel , tents , and canopies , Fine linen , Turkey cushions bossed with pearl , Valance of Venice gold in needlework , Pewter and brass , and all things that belongs To house or housekeeping . Then , at my farm I have a hundred milch-kine to the pail , Six score fat oxen standing in my stalls , And all things answerable to this portion . Myself am struck in years , I must confess , And if I die tomorrow this is hers , If whilst I live she will be only mine .",
+      "scrollMode": "auto",
+      "lineIndex": 163
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hh0",
+      "lineText": ", as Lucentio",
+      "scrollMode": "auto",
+      "lineIndex": 164
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hh0",
+      "lineText": "To Baptista .",
+      "scrollMode": "auto",
+      "lineIndex": 165
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hlg",
+      "lineText": "To Baptista . Sir , list to me : I am my father’s heir and only son . If I may have your daughter to my wife , I’ll leave her houses three or four as good , Within rich Pisa walls , as any one Old Signior Gremio has in Padua , Besides two thousand ducats by the year Of fruitful land , all which shall be her jointure . — What , have I pinched you , Signior Gremio ?",
+      "scrollMode": "auto",
+      "lineIndex": 166
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hh0",
+      "lineText": "Aside .",
+      "scrollMode": "auto",
+      "lineIndex": 167
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hh0",
+      "lineText": "To Tranio .",
+      "scrollMode": "auto",
+      "lineIndex": 168
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hj0",
+      "lineText": "To Tranio . What , have I choked you with an argosy ?",
+      "scrollMode": "auto",
+      "lineIndex": 169
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hh0",
+      "lineText": ", as Lucentio",
+      "scrollMode": "auto",
+      "lineIndex": 170
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hlg",
+      "lineText": "Gremio , ’tis known my father hath no less Than three great argosies , besides two galliasses And twelve tight galleys . These I will assure her , And twice as much whate’er thou off’rest next .",
+      "scrollMode": "auto",
+      "lineIndex": 171
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hh0",
+      "lineText": "To Baptista .",
+      "scrollMode": "auto",
+      "lineIndex": 172
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hj0",
+      "lineText": "To Baptista . If you like me , she shall have me and mine .",
+      "scrollMode": "auto",
+      "lineIndex": 173
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hh0",
+      "lineText": ", as Lucentio",
+      "scrollMode": "auto",
+      "lineIndex": 174
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hlg",
+      "lineText": "Why , then , the maid is mine from all the world , By your firm promise . Gremio is outvied .",
+      "scrollMode": "auto",
+      "lineIndex": 175
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hig",
+      "lineText": "I must confess your offer is the best , And , let your father make her the assurance , She is your own ; else , you must pardon me . If you should die before him , where’s her dower ?",
+      "scrollMode": "auto",
+      "lineIndex": 176
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hh0",
+      "lineText": ", as Lucentio",
+      "scrollMode": "auto",
+      "lineIndex": 177
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hlg",
+      "lineText": "That’s but a cavil . He is old , I young .",
+      "scrollMode": "auto",
+      "lineIndex": 178
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hj0",
+      "lineText": "And may not young men die as well as old ?",
+      "scrollMode": "auto",
+      "lineIndex": 179
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hh0",
+      "lineText": "as Lucentio .",
+      "scrollMode": "auto",
+      "lineIndex": 180
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hig",
+      "lineText": "as Lucentio . Now , on the Sunday following , shall Bianca Be bride to you , if you make this assurance . If not , to Signior Gremio . And so I take my leave , and thank you both .",
+      "scrollMode": "auto",
+      "lineIndex": 181
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hh0",
+      "lineText": "Baptista exits .",
+      "scrollMode": "auto",
+      "lineIndex": 182
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hig",
+      "lineText": "Baptista exits . Now I fear thee not . Sirrah young gamester , your father were a fool To give thee all and in his waning age Set foot under thy table . Tut , a toy ! An old Italian fox is not so kind , my boy .",
+      "scrollMode": "auto",
+      "lineIndex": 183
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hh0",
+      "lineText": "Gremio exits .",
+      "scrollMode": "auto",
+      "lineIndex": 184
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hlg",
+      "lineText": "A vengeance on your crafty withered hide ! — Yet I have faced it with a card of ten . ’Tis in my head to do my master good . I see no reason but supposed Lucentio Must get a father , called supposed Vincentio — And that’s a wonder . Fathers commonly Do get their children . But in this case of wooing , A child shall get a sire , if I fail not of my cunning .",
+      "scrollMode": "auto",
+      "lineIndex": 185
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79hh0",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 186
+    }
+  ],
+  "isPublic": true
+}

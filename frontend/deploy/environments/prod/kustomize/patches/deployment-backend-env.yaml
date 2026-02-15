@@ -2,17 +2,17 @@
 # NEXT_PUBLIC_BACKEND_WS_URL is embedded at build time via Dockerfile ARG.
 # OAuth2 credentials come from frontend-config secret (Terraform-managed).
 - op: add
-  path: "/spec/template/spec/containers/0/env/-"
+  path: '/spec/template/spec/containers/0/env/-'
   value:
     name: GRPC_BACKEND_URL
-    value: "no-small-parts-api-svc:8001"
+    value: 'no-small-parts-api-svc:8001'
 - op: add
-  path: "/spec/template/spec/containers/0/env/-"
+  path: '/spec/template/spec/containers/0/env/-'
   value:
     name: BACKEND_HTTP_URL
-    value: "http://no-small-parts-api-svc:8000"
+    value: 'http://no-small-parts-api-svc:8000'
 - op: add
-  path: "/spec/template/spec/containers/0/env/-"
+  path: '/spec/template/spec/containers/0/env/-'
   value:
     name: OAUTH2_CLIENT_ID
     valueFrom:
@@ -20,7 +20,7 @@
         name: frontend-config
         key: OAUTH2_CLIENT_ID
 - op: add
-  path: "/spec/template/spec/containers/0/env/-"
+  path: '/spec/template/spec/containers/0/env/-'
   value:
     name: OAUTH2_CLIENT_SECRET
     valueFrom:
@@ -28,7 +28,7 @@
         name: frontend-config
         key: OAUTH2_CLIENT_SECRET
 - op: add
-  path: "/spec/template/spec/containers/0/env/-"
+  path: '/spec/template/spec/containers/0/env/-'
   value:
     name: COOKIE_DOMAIN
     valueFrom:

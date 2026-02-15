@@ -1,0 +1,869 @@
+{
+  "title": "Henry V (Act 5)",
+  "description": "Folger Shakespeare Library edition",
+  "author": "William Shakespeare",
+  "castMembers": [
+    {
+      "id": "d68m11cn9qd8d2h78u3g",
+      "name": "Narrator",
+      "sortOrder": 0
+    },
+    {
+      "id": "d68m11cn9qd8d2h78u40",
+      "name": "Chorus",
+      "sortOrder": 1
+    },
+    {
+      "id": "d68m11cn9qd8d2h78u4g",
+      "name": "Captain Gower",
+      "sortOrder": 2
+    },
+    {
+      "id": "d68m11cn9qd8d2h78u50",
+      "name": "Captain Fluellen",
+      "sortOrder": 3
+    },
+    {
+      "id": "d68m11cn9qd8d2h78u5g",
+      "name": "Pistol",
+      "sortOrder": 4
+    },
+    {
+      "id": "d68m11cn9qd8d2h78u60",
+      "name": "Henry V, King of England",
+      "sortOrder": 5
+    },
+    {
+      "id": "d68m11cn9qd8d2h78u6g",
+      "name": "King of France",
+      "sortOrder": 6
+    },
+    {
+      "id": "d68m11cn9qd8d2h78u70",
+      "name": "Queen Isabel of France",
+      "sortOrder": 7
+    },
+    {
+      "id": "d68m11cn9qd8d2h78u7g",
+      "name": "Duke of Burgundy",
+      "sortOrder": 8
+    },
+    {
+      "id": "d68m11cn9qd8d2h78u80",
+      "name": "Katherine",
+      "description": "Princess of France",
+      "sortOrder": 9
+    },
+    {
+      "id": "d68m11cn9qd8d2h78u8g",
+      "name": "Alice",
+      "description": "a gentlewoman attending on Katherine",
+      "sortOrder": 10
+    },
+    {
+      "id": "d68m11cn9qd8d2h78u90",
+      "name": "Earl of Westmoreland",
+      "sortOrder": 11
+    },
+    {
+      "id": "d68m11cn9qd8d2h78u9g",
+      "name": "Thomas, Duke of Exeter",
+      "description": "uncle to the King",
+      "sortOrder": 12
+    },
+    {
+      "id": "d68m11cn9qd8d2h78ua0",
+      "name": "ATTENDANTS.ENGLISH_H5",
+      "sortOrder": 13
+    }
+  ],
+  "lines": [
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u3g",
+      "lineText": "Enter Chorus .",
+      "scrollMode": "auto",
+      "lineIndex": 0
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u40",
+      "lineText": "Vouchsafe to those that have not read the story That I may prompt them ; and of such as have , I humbly pray them to admit th’ excuse Of time , of numbers , and due course of things , Which cannot in their huge and proper life Be here presented . Now we bear the King Toward Calais . Grant him there . There seen , Heave him away upon your wingèd thoughts Athwart the sea . Behold , the English beach Pales in the flood with men , wives , and boys , Whose shouts and claps outvoice the deep-mouthed sea , Which , like a mighty whiffler ’fore the King Seems to prepare his way . So let him land , And solemnly see him set on to London . So swift a pace hath thought that even now You may imagine him upon Blackheath , Where that his lords desire him to have borne His bruisèd helmet and his bended sword Before him through the city . He forbids it , Being free from vainness and self-glorious pride , Giving full trophy , signal , and ostent Quite from himself , to God . But now behold , ACT 5. SC. 1 In the quick forge and workinghouse of thought , How London doth pour out her citizens . The Mayor and all his brethren in best sort , Like to the senators of th’ antique Rome , With the plebeians swarming at their heels , Go forth and fetch their conqu’ring Caesar in — As , by a lower but by loving likelihood Were now the general of our gracious empress , As in good time he may , from Ireland coming , Bringing rebellion broachèd on his sword , How many would the peaceful city quit To welcome him ! Much more , and much more cause , Did they this Harry . Now in London place him ( As yet the lamentation of the French Invites the King of England’s stay at home ; The Emperor’s coming in behalf of France To order peace between them ) and omit All the occurrences , whatever chanced , Till Harry’s back return again to France . There must we bring him , and myself have played The interim , by remembering you ’tis past . Then brook abridgment , and your eyes advance After your thoughts , straight back again to France .",
+      "scrollMode": "auto",
+      "lineIndex": 1
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u3g",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 2
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u3g",
+      "lineText": "Enter Fluellen and Gower .",
+      "scrollMode": "auto",
+      "lineIndex": 3
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u4g",
+      "lineText": "Nay , that’s right . But why wear you your leek today ? Saint Davy’s day is past .",
+      "scrollMode": "auto",
+      "lineIndex": 4
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u50",
+      "lineText": "There is occasions and causes why and wherefore in all things . I will tell you ass my friend , Captain Gower . The rascally , scald , beggarly , lousy , pragging knave Pistol , which you and ACT 5. SC. 1 yourself and all the world know to be no petter than a fellow , look you now , of no merits , he is come to me and prings me pread and salt yesterday , look you , and bid me eat my leek . It was in a place where I could not breed no contention with him , but I will be so bold as to wear it in my cap till I see him once again , and then I will tell him a little piece of my desires .",
+      "scrollMode": "auto",
+      "lineIndex": 5
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u3g",
+      "lineText": "Enter Pistol .",
+      "scrollMode": "auto",
+      "lineIndex": 6
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u4g",
+      "lineText": "Why here he comes , swelling like a turkey-cock .",
+      "scrollMode": "auto",
+      "lineIndex": 7
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u50",
+      "lineText": "’Tis no matter for his swellings , nor his turkey-cocks . — God pless you , Aunchient Pistol , you scurvy , lousy knave , God pless you .",
+      "scrollMode": "auto",
+      "lineIndex": 8
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u5g",
+      "lineText": "Ha , art thou bedlam ? Dost thou thirst , base Trojan , to have me fold up Parca’s fatal web ? Hence . I am qualmish at the smell of leek .",
+      "scrollMode": "auto",
+      "lineIndex": 9
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u50",
+      "lineText": "I peseech you heartily , scurvy , lousy knave , at my desires and my requests and my petitions , to eat , look you , this leek . Because , look you , you do not love it , nor your affections and your appetites and your disgestions does not agree with it , I would desire you to eat it .",
+      "scrollMode": "auto",
+      "lineIndex": 10
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u5g",
+      "lineText": "Not for Cadwallader and all his goats .",
+      "scrollMode": "auto",
+      "lineIndex": 11
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u3g",
+      "lineText": "( Strikes him with a cudgel . )",
+      "scrollMode": "auto",
+      "lineIndex": 12
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u50",
+      "lineText": "( Strikes him with a cudgel . ) Will you be so good , scald knave , as eat it ?",
+      "scrollMode": "auto",
+      "lineIndex": 13
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u5g",
+      "lineText": "Base Trojan , thou shalt die .",
+      "scrollMode": "auto",
+      "lineIndex": 14
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u3g",
+      "lineText": "Strikes him .",
+      "scrollMode": "auto",
+      "lineIndex": 15
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u50",
+      "lineText": "Strikes him . You called me yesterday mountain squire , but I will make you today a squire of low degree . I pray you , fall to . If you can mock a leek , you can eat a leek .",
+      "scrollMode": "auto",
+      "lineIndex": 16
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u4g",
+      "lineText": "Enough , captain . You have astonished him .",
+      "scrollMode": "auto",
+      "lineIndex": 17
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u50",
+      "lineText": "I say I will make him eat some part of my leek , or I will peat his pate four days . — Bite , I pray you . It is good for your green wound and your ploody coxcomb .",
+      "scrollMode": "auto",
+      "lineIndex": 18
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u5g",
+      "lineText": "Must I bite ?",
+      "scrollMode": "auto",
+      "lineIndex": 19
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u50",
+      "lineText": "Yes , certainly , and out of doubt and out of question , too , and ambiguities .",
+      "scrollMode": "auto",
+      "lineIndex": 20
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u3g",
+      "lineText": "Fluellen threatens him .",
+      "scrollMode": "auto",
+      "lineIndex": 21
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u50",
+      "lineText": "Fluellen threatens him . I eat and eat , I swear —",
+      "scrollMode": "auto",
+      "lineIndex": 22
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u50",
+      "lineText": "Eat , I pray you . Will you have some more sauce to your leek ? There is not enough leek to swear by .",
+      "scrollMode": "auto",
+      "lineIndex": 23
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u5g",
+      "lineText": "Quiet thy cudgel . Thou dost see I eat .",
+      "scrollMode": "auto",
+      "lineIndex": 24
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u50",
+      "lineText": "Much good do you , scald knave , heartily . Nay , pray you throw none away . The skin is good for your broken coxcomb . When you take occásions to see leeks hereafter , I pray you mock at ’em , that is all .",
+      "scrollMode": "auto",
+      "lineIndex": 25
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u5g",
+      "lineText": "Good .",
+      "scrollMode": "auto",
+      "lineIndex": 26
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u50",
+      "lineText": "Ay , leeks is good . Hold you , there is a groat to heal your pate .",
+      "scrollMode": "auto",
+      "lineIndex": 27
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u5g",
+      "lineText": "Me , a groat ?",
+      "scrollMode": "auto",
+      "lineIndex": 28
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u50",
+      "lineText": "Yes , verily , and in truth you shall take it , or I have another leek in my pocket , which you shall eat .",
+      "scrollMode": "auto",
+      "lineIndex": 29
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u5g",
+      "lineText": "I take thy groat in earnest of revenge .",
+      "scrollMode": "auto",
+      "lineIndex": 30
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u50",
+      "lineText": "If I owe you anything , I will pay you in cudgels . You shall be a woodmonger and buy nothing of me but cudgels . God be wi’ you and keep you and heal your pate .",
+      "scrollMode": "auto",
+      "lineIndex": 31
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u3g",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 32
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u5g",
+      "lineText": "All hell shall stir for this .",
+      "scrollMode": "auto",
+      "lineIndex": 33
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u4g",
+      "lineText": "Go , go . You are a counterfeit cowardly knave . Will you mock at an ancient tradition begun upon an honorable respect and worn as a memorable trophy of predeceased valor , and dare not avouch in ACT 5. SC. 2 your deeds any of your words ? I have seen you gleeking and galling at this gentleman twice or thrice . You thought because he could not speak English in the native garb , he could not therefore handle an English cudgel . You find it otherwise , and henceforth let a Welsh correction teach you a good English condition . Fare you well .",
+      "scrollMode": "auto",
+      "lineIndex": 34
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u3g",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 35
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u5g",
+      "lineText": "Doth Fortune play the huswife with me now ? News have I that my Doll is dead i’ th’ spital of a malady of France , and there my rendezvous is quite cut off . Old I do wax , and from my weary limbs honor is cudgeled . Well , bawd I’ll turn , and something lean to cutpurse of quick hand . To England will I steal , and there I’ll steal . And patches will I get unto these cudgeled scars , And swear I got them in the Gallia wars .",
+      "scrollMode": "auto",
+      "lineIndex": 36
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u3g",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 37
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u3g",
+      "lineText": "Enter at one door , King Henry , Exeter , Bedford , Warwick , Westmoreland , and other Lords . At another , Queen Isabel of France , the King of France , the Princess Katherine and Alice , the Duke of Burgundy , and other French .",
+      "scrollMode": "auto",
+      "lineIndex": 38
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u60",
+      "lineText": "Peace to this meeting wherefor we are met . Unto our brother France and to our sister , Health and fair time of day . — Joy and good wishes To our most fair and princely cousin Katherine . — And , as a branch and member of this royalty , By whom this great assembly is contrived , We do salute you , Duke of Burgundy . — And princes French , and peers , health to you all .",
+      "scrollMode": "auto",
+      "lineIndex": 39
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u6g",
+      "lineText": "Right joyous are we to behold your face , Most worthy brother England . Fairly met . — So are you , princes English , every one .",
+      "scrollMode": "auto",
+      "lineIndex": 40
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u70",
+      "lineText": "So happy be the issue , brother Ireland , Of this good day and of this gracious meeting , As we are now glad to behold your eyes — Your eyes which hitherto have borne in them Against the French that met them in their bent The fatal balls of murdering basilisks . The venom of such looks , we fairly hope , Have lost their quality , and that this day Shall change all griefs and quarrels into love .",
+      "scrollMode": "auto",
+      "lineIndex": 41
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u60",
+      "lineText": "To cry Amen to that , thus we appear .",
+      "scrollMode": "auto",
+      "lineIndex": 42
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u70",
+      "lineText": "You English princes all , I do salute you .",
+      "scrollMode": "auto",
+      "lineIndex": 43
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u7g",
+      "lineText": "My duty to you both , on equal love , Great kings of France and England . That I have labored With all my wits , my pains , and strong endeavors To bring your most imperial Majesties Unto this bar and royal interview , Your Mightiness on both parts best can witness . Since , then , my office hath so far prevailed That face to face and royal eye to eye You have congreeted , let it not disgrace me If I demand before this royal view What rub or what impediment there is Why that the naked , poor , and mangled peace , Dear nurse of arts , plenties , and joyful births , Should not in this best garden of the world , Our fertile France , put up her lovely visage ? Alas , she hath from France too long been chased , ACT 5. SC. 2 And all her husbandry doth lie on heaps , Corrupting in its own fertility . Her vine , the merry cheerer of the heart , Unprunèd , dies . Her hedges , even-pleached , Like prisoners wildly overgrown with hair , Put forth disordered twigs . Her fallow leas The darnel , hemlock , and rank fumitory Doth root upon , while that the coulter rusts That should deracinate such savagery . The even mead , that erst brought sweetly forth The freckled cowslip , burnet , and green clover , Wanting the scythe , withal uncorrected , rank , Conceives by idleness , and nothing teems But hateful docks , rough thistles , kecksies , burrs , Losing both beauty and utility . And all our vineyards , fallows , meads , and hedges , Defective in their natures , grow to wildness . Even so our houses and ourselves and children Have lost , or do not learn for want of time , The sciences that should become our country , But grow like savages , as soldiers will That nothing do but meditate on blood , To swearing and stern looks , diffused attire , And everything that seems unnatural . Which to reduce into our former favor You are assembled , and my speech entreats That I may know the let why gentle peace Should not expel these inconveniences And bless us with her former qualities .",
+      "scrollMode": "auto",
+      "lineIndex": 44
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u60",
+      "lineText": "If , Duke of Burgundy , you would the peace , Whose want gives growth to th’ imperfections Which you have cited , you must buy that peace With full accord to all our just demands , Whose tenors and particular effects You have , enscheduled briefly , in your hands .",
+      "scrollMode": "auto",
+      "lineIndex": 45
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u7g",
+      "lineText": "The King hath heard them , to the which as yet There is no answer made .",
+      "scrollMode": "auto",
+      "lineIndex": 46
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u60",
+      "lineText": "Well then , the peace which you before so urged Lies in his answer .",
+      "scrollMode": "auto",
+      "lineIndex": 47
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u6g",
+      "lineText": "I have but with a cursitory eye O’erglanced the articles . Pleaseth your Grace To appoint some of your council presently To sit with us once more with better heed To resurvey them , we will suddenly Pass our accept and peremptory answer .",
+      "scrollMode": "auto",
+      "lineIndex": 48
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u60",
+      "lineText": "Brother , we shall . — Go , uncle Exeter , And brother Clarence , and you , brother Gloucester , Warwick , and Huntington , go with the King , And take with you free power to ratify , Augment , or alter , as your wisdoms best Shall see advantageable for our dignity , Anything in or out of our demands , And we’ll consign thereto . — Will you , fair sister , Go with the princes or stay here with us ?",
+      "scrollMode": "auto",
+      "lineIndex": 49
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u70",
+      "lineText": "Our gracious brother , I will go with them . Haply a woman’s voice may do some good When articles too nicely urged be stood on .",
+      "scrollMode": "auto",
+      "lineIndex": 50
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u60",
+      "lineText": "Yet leave our cousin Katherine here with us . She is our capital demand , comprised Within the forerank of our articles .",
+      "scrollMode": "auto",
+      "lineIndex": 51
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u70",
+      "lineText": "She hath good leave .",
+      "scrollMode": "auto",
+      "lineIndex": 52
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u3g",
+      "lineText": "All but Katherine , and the King of England , and Alice exit .",
+      "scrollMode": "auto",
+      "lineIndex": 53
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u60",
+      "lineText": "Fair Katherine , and most fair , ACT 5. SC. 2 Will you vouchsafe to teach a soldier terms Such as will enter at a lady’s ear And plead his love-suit to her gentle heart ?",
+      "scrollMode": "auto",
+      "lineIndex": 54
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u80",
+      "lineText": "Your Majesty shall mock at me . I cannot speak your England .",
+      "scrollMode": "auto",
+      "lineIndex": 55
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u60",
+      "lineText": "O fair Katherine , if you will love me soundly with your French heart , I will be glad to hear you confess it brokenly with your English tongue . Do you like me , Kate ?",
+      "scrollMode": "auto",
+      "lineIndex": 56
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u80",
+      "lineText": "Pardonnez-moi , I cannot tell wat is like me .",
+      "scrollMode": "auto",
+      "lineIndex": 57
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u60",
+      "lineText": "An angel is like you , Kate , and you are like an angel .",
+      "scrollMode": "auto",
+      "lineIndex": 58
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u3g",
+      "lineText": ", to Alice",
+      "scrollMode": "auto",
+      "lineIndex": 59
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u80",
+      "lineText": "Que dit-il ? Que je suis semblable à les anges ?",
+      "scrollMode": "auto",
+      "lineIndex": 60
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u8g",
+      "lineText": "Oui , vraiment , sauf votre Grâce , ainsi dit-il .",
+      "scrollMode": "auto",
+      "lineIndex": 61
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u60",
+      "lineText": "I said so , dear Katherine , and I must not blush to affirm it .",
+      "scrollMode": "auto",
+      "lineIndex": 62
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u80",
+      "lineText": "Ô bon Dieu , les langues des hommes sont pleines de tromperies .",
+      "scrollMode": "auto",
+      "lineIndex": 63
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u3g",
+      "lineText": ", to Alice",
+      "scrollMode": "auto",
+      "lineIndex": 64
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u60",
+      "lineText": "What says she , fair one ? That the tongues of men are full of deceits ?",
+      "scrollMode": "auto",
+      "lineIndex": 65
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u8g",
+      "lineText": "Oui , dat de tongues of de mans is be full of deceits ; dat is de Princess .",
+      "scrollMode": "auto",
+      "lineIndex": 66
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u60",
+      "lineText": "The Princess is the better Englishwoman . — I’ faith , Kate , my wooing is fit for thy understanding . I am glad thou canst speak no better English , for if thou couldst , thou wouldst find me such a plain king that thou wouldst think I had sold my farm to buy my crown . I know no ways to mince it in love , but directly to say I love you . Then if you urge me farther than to say Do you , in faith ? I wear out my suit . Give me your answer , i’ faith , do ; and so clap hands and a bargain . How say you , lady ?",
+      "scrollMode": "auto",
+      "lineIndex": 67
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u80",
+      "lineText": "Sauf votre honneur , me understand well .",
+      "scrollMode": "auto",
+      "lineIndex": 68
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u60",
+      "lineText": "Marry , if you would put me to verses or to dance for your sake , Kate , why you undid me . For the one , I have neither words nor measure ; and for the other , I have no strength in measure , yet a reasonable measure in strength . If I could win a lady at leapfrog or by vaulting into my saddle with my armor on my back , under the correction of bragging be it spoken , I should quickly leap into a wife . Or if I might buffet for my love , or bound my horse for her favors , I could lay on like a butcher and sit like a jackanapes , never off . But , before God , Kate , I cannot look greenly nor gasp out my eloquence , nor I have no cunning in protestation , only downright oaths , which I never use till urged , nor never break for urging . If thou canst love a fellow of this temper , Kate , whose face is not worth sun-burning , that never looks in his glass for love of anything he sees there , let thine eye be thy cook . I speak to thee plain soldier . If thou canst love me for this , take me . If not , to say to thee that I shall die is true , but for thy love , by the Lord , no . Yet I love thee too . And while thou liv’st , dear Kate , take a fellow of plain and uncoined constancy , for he perforce must do thee right because he hath not the gift to woo in other places . For these fellows of infinite tongue , that can rhyme themselves into ladies’ favors , they do always reason themselves out again . What ? A speaker is but a prater , a rhyme is but a ballad , a good leg will fall , a straight back will stoop , a black beard will turn white , a curled pate will grow bald , a fair face will wither , a full eye will wax hollow , but a good heart , Kate , is the sun and the moon , or rather the sun and not the moon , for it shines bright and never changes but keeps his course truly . If thou would have such a one , take me . And take me , take a soldier . Take a soldier , take a king . And what ACT 5. SC. 2 say’st thou then to my love ? Speak , my fair , and fairly , I pray thee .",
+      "scrollMode": "auto",
+      "lineIndex": 69
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u80",
+      "lineText": "Is it possible dat I sould love de enemy of France ?",
+      "scrollMode": "auto",
+      "lineIndex": 70
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u60",
+      "lineText": "No , it is not possible you should love the enemy of France , Kate . But , in loving me , you should love the friend of France , for I love France so well that I will not part with a village of it . I will have it all mine . And , Kate , when France is mine and I am yours , then yours is France and you are mine .",
+      "scrollMode": "auto",
+      "lineIndex": 71
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u80",
+      "lineText": "I cannot tell wat is dat .",
+      "scrollMode": "auto",
+      "lineIndex": 72
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u60",
+      "lineText": "No , Kate ? I will tell thee in French , which I am sure will hang upon my tongue like a new-married wife about her husband’s neck , hardly to be shook off . Je quand sur le possession de France , et quand vous avez le possession de moi — let me see , what then ? Saint Denis be my speed ! — donc vôtre est France , et vous êtes mienne . It is as easy for me , Kate , to conquer the kingdom as to speak so much more French . I shall never move thee in French , unless it be to laugh at me .",
+      "scrollMode": "auto",
+      "lineIndex": 73
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u80",
+      "lineText": "Sauf votre honneur , le français que vous parlez , il est meilleur que l’anglais lequel je parle .",
+      "scrollMode": "auto",
+      "lineIndex": 74
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u60",
+      "lineText": "No , faith , is ’t not , Kate , but thy speaking of my tongue , and I thine , most truly-falsely must needs be granted to be much at one . But , Kate , dost thou understand thus much English ? Canst thou love me ?",
+      "scrollMode": "auto",
+      "lineIndex": 75
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u80",
+      "lineText": "I cannot tell .",
+      "scrollMode": "auto",
+      "lineIndex": 76
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u60",
+      "lineText": "Can any of your neighbors tell , Kate ? I’ll ask them . Come , I know thou lovest me ; and at night , when you come into your closet , you’ll question this gentlewoman about me , and , I know , Kate , you will , to her , dispraise those parts in me that you love with your heart . But , good Kate , mock me ACT 5. SC. 2 mercifully , the rather , gentle princess , because I love thee cruelly . If ever thou beest mine , Kate , as I have a saving faith within me tells me thou shalt , I get thee with scambling , and thou must therefore needs prove a good soldier-breeder . Shall not thou and I , between Saint Denis and Saint George , compound a boy , half French , half English , that shall go to Constantinople and take the Turk by the beard ? Shall we not ? What say’st thou , my fair flower de luce ?",
+      "scrollMode": "auto",
+      "lineIndex": 77
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u80",
+      "lineText": "I do not know dat .",
+      "scrollMode": "auto",
+      "lineIndex": 78
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u60",
+      "lineText": "No , ’tis hereafter to know , but now to promise . Do but now promise , Kate , you will endeavor for your French part of such a boy ; and for my English moiety , take the word of a king and a bachelor . How answer you , la plus belle Katherine du monde , mon très cher et divin déesse ?",
+      "scrollMode": "auto",
+      "lineIndex": 79
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u80",
+      "lineText": "Your Majesté ’ave fausse French enough to deceive de most sage demoiselle dat is en France .",
+      "scrollMode": "auto",
+      "lineIndex": 80
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u60",
+      "lineText": "Now fie upon my false French . By mine honor , in true English , I love thee , Kate . By which honor I dare not swear thou lovest me , yet my blood begins to flatter me that thou dost , notwithstanding the poor and untempering effect of my visage . Now beshrew my father’s ambition ! He was thinking of civil wars when he got me ; therefore was I created with a stubborn outside , with an aspect of iron , that when I come to woo ladies , I fright them . But , in faith , Kate , the elder I wax , the better I shall appear . My comfort is that old age , that ill layer-up of beauty , can do no more spoil upon my face . Thou hast me , if thou hast me , at the worst , and thou shalt wear me , if thou wear me , better and better . And therefore tell me , most fair Katherine , will you have me ? Put off your maiden blushes , avouch the thoughts of your heart with the looks of an empress , ACT 5. SC. 2 take me by the hand , and say Harry of England , I am thine , which word thou shalt no sooner bless mine ear withal , but I will tell thee aloud England is thine , Ireland is thine , France is thine , and Henry Plantagenet is thine , who , though I speak it before his face , if he be not fellow with the best king , thou shalt find the best king of good fellows . Come , your answer in broken music , for thy voice is music , and thy English broken . Therefore , queen of all , Katherine , break thy mind to me in broken English . Wilt thou have me ?",
+      "scrollMode": "auto",
+      "lineIndex": 81
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u80",
+      "lineText": "Dat is as it shall please de roi mon père .",
+      "scrollMode": "auto",
+      "lineIndex": 82
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u60",
+      "lineText": "Nay , it will please him well , Kate ; it shall please him , Kate .",
+      "scrollMode": "auto",
+      "lineIndex": 83
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u80",
+      "lineText": "Den it sall also content me .",
+      "scrollMode": "auto",
+      "lineIndex": 84
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u60",
+      "lineText": "Upon that I kiss your hand , and I call you my queen .",
+      "scrollMode": "auto",
+      "lineIndex": 85
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u80",
+      "lineText": "Laissez , mon seigneur , laissez , laissez ! Ma foi , je ne veux point que vous abaissiez votre grandeur , en baisant la main d’ une — Notre Seigneur ! — indigne serviteur . Excusez-moi , je vous supplie , mon très puissant seigneur .",
+      "scrollMode": "auto",
+      "lineIndex": 86
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u60",
+      "lineText": "Then I will kiss your lips , Kate .",
+      "scrollMode": "auto",
+      "lineIndex": 87
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u80",
+      "lineText": "Les dames et demoiselles , pour être baisées devant leurs noces , il n’est pas la coutume de France .",
+      "scrollMode": "auto",
+      "lineIndex": 88
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u60",
+      "lineText": "Madam my interpreter , what says she ?",
+      "scrollMode": "auto",
+      "lineIndex": 89
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u8g",
+      "lineText": "Dat it is not be de fashion pour les ladies of France — I cannot tell wat is baiser en Anglish .",
+      "scrollMode": "auto",
+      "lineIndex": 90
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u60",
+      "lineText": "To kiss .",
+      "scrollMode": "auto",
+      "lineIndex": 91
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u8g",
+      "lineText": "Your Majesté entendre bettre que moi .",
+      "scrollMode": "auto",
+      "lineIndex": 92
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u60",
+      "lineText": "It is not a fashion for the maids in France to kiss before they are married , would she say ?",
+      "scrollMode": "auto",
+      "lineIndex": 93
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u8g",
+      "lineText": "Oui , vraiment .",
+      "scrollMode": "auto",
+      "lineIndex": 94
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u3g",
+      "lineText": "He kisses her .",
+      "scrollMode": "auto",
+      "lineIndex": 95
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u3g",
+      "lineText": "Enter the French power , the French King and Queen and Burgundy , and the English Lords Westmoreland and Exeter .",
+      "scrollMode": "auto",
+      "lineIndex": 96
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u6g",
+      "lineText": "Enter the French power , the French King and Queen and Burgundy , and the English Lords Westmoreland and Exeter . Here comes your father .",
+      "scrollMode": "auto",
+      "lineIndex": 97
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u7g",
+      "lineText": "God save your Majesty . My royal cousin , teach you our princess English ?",
+      "scrollMode": "auto",
+      "lineIndex": 98
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u60",
+      "lineText": "I would have her learn , my fair cousin , how perfectly I love her , and that is good English .",
+      "scrollMode": "auto",
+      "lineIndex": 99
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u7g",
+      "lineText": "Is she not apt ?",
+      "scrollMode": "auto",
+      "lineIndex": 100
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u60",
+      "lineText": "Our tongue is rough , coz , and my condition is not smooth , so that , having neither the voice nor the heart of flattery about me , I cannot so conjure up the spirit of love in her that he will appear in his true likeness .",
+      "scrollMode": "auto",
+      "lineIndex": 101
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u7g",
+      "lineText": "Pardon the frankness of my mirth if I answer you for that . If you would conjure in her , you must make a circle ; if conjure up Love in her in his true likeness , he must appear naked and blind . Can you blame her , then , being a maid yet rosed over with the virgin crimson of modesty , if she deny the appearance of a naked blind boy in her naked seeing self ? It were , my lord , a hard condition for a maid to consign to .",
+      "scrollMode": "auto",
+      "lineIndex": 102
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u60",
+      "lineText": "Yet they do wink and yield , as love is blind and enforces .",
+      "scrollMode": "auto",
+      "lineIndex": 103
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u7g",
+      "lineText": "They are then excused , my lord , when they see not what they do .",
+      "scrollMode": "auto",
+      "lineIndex": 104
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u60",
+      "lineText": "Then , good my lord , teach your cousin to consent winking .",
+      "scrollMode": "auto",
+      "lineIndex": 105
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u7g",
+      "lineText": "I will wink on her to consent , my lord , if you will teach her to know my meaning , for maids well summered and warm kept are like flies at Bartholomew-tide : blind , though they have their eyes ; and then they will endure handling , which before would not abide looking on .",
+      "scrollMode": "auto",
+      "lineIndex": 106
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u60",
+      "lineText": "This moral ties me over to time and a hot summer . And so I shall catch the fly , your cousin , in the latter end , and she must be blind too .",
+      "scrollMode": "auto",
+      "lineIndex": 107
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u7g",
+      "lineText": "As love is , my lord , before it loves .",
+      "scrollMode": "auto",
+      "lineIndex": 108
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u60",
+      "lineText": "It is so . And you may , some of you , thank love for my blindness , who cannot see many a fair French city for one fair French maid that stands in my way .",
+      "scrollMode": "auto",
+      "lineIndex": 109
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u6g",
+      "lineText": "Yes , my lord , you see them perspectively , the cities turned into a maid , for they are all girdled with maiden walls that war hath never entered .",
+      "scrollMode": "auto",
+      "lineIndex": 110
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u60",
+      "lineText": "Shall Kate be my wife ?",
+      "scrollMode": "auto",
+      "lineIndex": 111
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u6g",
+      "lineText": "So please you .",
+      "scrollMode": "auto",
+      "lineIndex": 112
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u60",
+      "lineText": "I am content , so the maiden cities you talk of may wait on her . So the maid that stood in the way for my wish shall show me the way to my will .",
+      "scrollMode": "auto",
+      "lineIndex": 113
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u6g",
+      "lineText": "We have consented to all terms of reason .",
+      "scrollMode": "auto",
+      "lineIndex": 114
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u60",
+      "lineText": "Is ’t so , my lords of England ?",
+      "scrollMode": "auto",
+      "lineIndex": 115
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u90",
+      "lineText": "The King hath granted every article , His daughter first , and , in sequel , all , According to their firm proposèd natures .",
+      "scrollMode": "auto",
+      "lineIndex": 116
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u9g",
+      "lineText": "Only he hath not yet subscribèd this : Where your Majesty demands that the King of France , having any occasion to write for matter of grant , shall name your Highness in this form and with this addition , in French : Notre très cher fils Henri , roi d’ Angleterre , héritier de France ; and thus in Latin : Praeclarissimus filius noster Henricus , rex Angliae et hœres Franciae .",
+      "scrollMode": "auto",
+      "lineIndex": 117
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u6g",
+      "lineText": "Nor this I have not , brother , so denied But your request shall make me let it pass .",
+      "scrollMode": "auto",
+      "lineIndex": 118
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u60",
+      "lineText": "I pray you , then , in love and dear alliance , Let that one article rank with the rest , And thereupon give me your daughter .",
+      "scrollMode": "auto",
+      "lineIndex": 119
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u6g",
+      "lineText": "Take her , fair son , and from her blood raise up Issue to me , that the contending kingdoms Of France and England , whose very shores look pale With envy of each other’s happiness , May cease their hatred , and this dear conjunction Plant neighborhood and Christian-like accord In their sweet bosoms , that never war advance His bleeding sword ’twixt England and fair France .",
+      "scrollMode": "auto",
+      "lineIndex": 120
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ua0",
+      "lineText": "Amen .",
+      "scrollMode": "auto",
+      "lineIndex": 121
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u60",
+      "lineText": "Now welcome , Kate , and bear me witness all That here I kiss her as my sovereign queen .",
+      "scrollMode": "auto",
+      "lineIndex": 122
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u3g",
+      "lineText": "He kisses her . Flourish .",
+      "scrollMode": "auto",
+      "lineIndex": 123
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u70",
+      "lineText": "God , the best maker of all marriages , Combine your hearts in one , your realms in one . As man and wife , being two , are one in love , So be there ’twixt your kingdoms such a spousal That never may ill office or fell jealousy , ACT 5. EPILOGUE Which troubles oft the bed of blessèd marriage , Thrust in between the paction of these kingdoms To make divorce of their incorporate league , That English may as French , French Englishmen , Receive each other . God speak this Amen !",
+      "scrollMode": "auto",
+      "lineIndex": 124
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u60",
+      "lineText": "Amen .",
+      "scrollMode": "auto",
+      "lineIndex": 125
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u60",
+      "lineText": "Prepare we for our marriage ; on which day , My Lord of Burgundy , we’ll take your oath , And all the peers’ , for surety of our leagues . Then shall I swear to Kate , and you to me , And may our oaths well kept and prosp’rous be .",
+      "scrollMode": "auto",
+      "lineIndex": 126
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u3g",
+      "lineText": "Sennet . They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 127
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u3g",
+      "lineText": "Enter Chorus as Epilogue .",
+      "scrollMode": "auto",
+      "lineIndex": 128
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u40",
+      "lineText": "Thus far with rough and all-unable pen Our bending author hath pursued the story , In little room confining mighty men , Mangling by starts the full course of their glory . Small time , but in that small most greatly lived This star of England . Fortune made his sword , By which the world’s best garden he achieved And of it left his son imperial lord . Henry the Sixth , in infant bands crowned King Of France and England , did this king succeed , Whose state so many had the managing That they lost France and made his England bleed , Which oft our stage hath shown . And for their sake , In your fair minds let this acceptance take .",
+      "scrollMode": "auto",
+      "lineIndex": 129
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78u3g",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 130
+    }
+  ],
+  "isPublic": true
+}

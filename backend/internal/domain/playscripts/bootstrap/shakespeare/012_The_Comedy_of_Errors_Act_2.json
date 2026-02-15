@@ -1,0 +1,849 @@
+{
+  "title": "The Comedy of Errors (Act 2)",
+  "description": "Folger Shakespeare Library edition",
+  "author": "William Shakespeare",
+  "castMembers": [
+    {
+      "id": "d68m11cn9qd8d2h78s4g",
+      "name": "Narrator",
+      "sortOrder": 0
+    },
+    {
+      "id": "d68m11cn9qd8d2h78s50",
+      "name": "Adriana",
+      "description": "Antipholus of Ephesus’s wife",
+      "sortOrder": 1
+    },
+    {
+      "id": "d68m11cn9qd8d2h78s5g",
+      "name": "Luciana",
+      "description": "Adriana’s sister",
+      "sortOrder": 2
+    },
+    {
+      "id": "d68m11cn9qd8d2h78s60",
+      "name": "Dromio of Ephesus",
+      "description": "Antipholus of Ephesus’s servant",
+      "sortOrder": 3
+    },
+    {
+      "id": "d68m11cn9qd8d2h78s6g",
+      "name": "Dromio of Syracuse",
+      "description": "Antipholus of Syracuse’s servant",
+      "sortOrder": 4
+    },
+    {
+      "id": "d68m11cn9qd8d2h78s70",
+      "name": "Antipholus of Syracuse",
+      "description": "a traveler in search of his mother and his brother",
+      "sortOrder": 5
+    }
+  ],
+  "lines": [
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s4g",
+      "lineText": "Enter Adriana , wife to Antipholus of Ephesus , with Luciana , her sister .",
+      "scrollMode": "auto",
+      "lineIndex": 0
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s50",
+      "lineText": "Neither my husband nor the slave returned That in such haste I sent to seek his master ? Sure , Luciana , it is two o’clock .",
+      "scrollMode": "auto",
+      "lineIndex": 1
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s5g",
+      "lineText": "Perhaps some merchant hath invited him , And from the mart he’s somewhere gone to dinner . Good sister , let us dine , and never fret . A man is master of his liberty ; Time is their master , and when they see time They’ll go or come . If so , be patient , sister .",
+      "scrollMode": "auto",
+      "lineIndex": 2
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s50",
+      "lineText": "Why should their liberty than ours be more ?",
+      "scrollMode": "auto",
+      "lineIndex": 3
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s5g",
+      "lineText": "Because their business still lies out o’ door .",
+      "scrollMode": "auto",
+      "lineIndex": 4
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s50",
+      "lineText": "Look when I serve him so , he takes it ill .",
+      "scrollMode": "auto",
+      "lineIndex": 5
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s5g",
+      "lineText": "O , know he is the bridle of your will .",
+      "scrollMode": "auto",
+      "lineIndex": 6
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s50",
+      "lineText": "There’s none but asses will be bridled so .",
+      "scrollMode": "auto",
+      "lineIndex": 7
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s5g",
+      "lineText": "Why , headstrong liberty is lashed with woe . ACT 2. SC. 1 There’s nothing situate under heaven’s eye But hath his bound in earth , in sea , in sky . The beasts , the fishes , and the wingèd fowls Are their males’ subjects and at their controls . Man , more divine , the master of all these , Lord of the wide world and wild wat’ry seas , Endued with intellectual sense and souls , Of more preeminence than fish and fowls , Are masters to their females , and their lords . Then let your will attend on their accords .",
+      "scrollMode": "auto",
+      "lineIndex": 8
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s50",
+      "lineText": "This servitude makes you to keep unwed .",
+      "scrollMode": "auto",
+      "lineIndex": 9
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s5g",
+      "lineText": "Not this , but troubles of the marriage bed .",
+      "scrollMode": "auto",
+      "lineIndex": 10
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s50",
+      "lineText": "But , were you wedded , you would bear some sway .",
+      "scrollMode": "auto",
+      "lineIndex": 11
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s5g",
+      "lineText": "Ere I learn love , I’ll practice to obey .",
+      "scrollMode": "auto",
+      "lineIndex": 12
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s50",
+      "lineText": "How if your husband start some otherwhere ?",
+      "scrollMode": "auto",
+      "lineIndex": 13
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s5g",
+      "lineText": "Till he come home again , I would forbear .",
+      "scrollMode": "auto",
+      "lineIndex": 14
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s50",
+      "lineText": "Patience unmoved ! No marvel though she pause ; They can be meek that have no other cause . A wretched soul bruised with adversity We bid be quiet when we hear it cry , But were we burdened with like weight of pain , As much or more we should ourselves complain . So thou , that hast no unkind mate to grieve thee , With urging helpless patience would relieve me ; But if thou live to see like right bereft , This fool-begged patience in thee will be left .",
+      "scrollMode": "auto",
+      "lineIndex": 15
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s5g",
+      "lineText": "Well , I will marry one day , but to try . Here comes your man . Now is your husband nigh .",
+      "scrollMode": "auto",
+      "lineIndex": 16
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s4g",
+      "lineText": "Enter Dromio of Ephesus .",
+      "scrollMode": "auto",
+      "lineIndex": 17
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s50",
+      "lineText": "Say , is your tardy master now at hand ?",
+      "scrollMode": "auto",
+      "lineIndex": 18
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s60",
+      "lineText": "Nay , he’s at two hands with me , and that my two ears can witness .",
+      "scrollMode": "auto",
+      "lineIndex": 19
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s50",
+      "lineText": "Say , didst thou speak with him ? Know’st thou his mind ?",
+      "scrollMode": "auto",
+      "lineIndex": 20
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s60",
+      "lineText": "Ay , ay , he told his mind upon mine ear . Beshrew his hand , I scarce could understand it .",
+      "scrollMode": "auto",
+      "lineIndex": 21
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s5g",
+      "lineText": "Spake he so doubtfully thou couldst not feel his meaning ?",
+      "scrollMode": "auto",
+      "lineIndex": 22
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s60",
+      "lineText": "Nay , he struck so plainly I could too well feel his blows , and withal so doubtfully that I could scarce understand them .",
+      "scrollMode": "auto",
+      "lineIndex": 23
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s50",
+      "lineText": "But say , I prithee , is he coming home ? It seems he hath great care to please his wife .",
+      "scrollMode": "auto",
+      "lineIndex": 24
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s60",
+      "lineText": "Why , mistress , sure my master is horn mad .",
+      "scrollMode": "auto",
+      "lineIndex": 25
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s50",
+      "lineText": "Horn mad , thou villain ?",
+      "scrollMode": "auto",
+      "lineIndex": 26
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s60",
+      "lineText": "I mean not cuckold mad , But sure he is stark mad . When I desired him to come home to dinner , He asked me for a thousand marks in gold . ’Tis dinnertime , quoth I . My gold , quoth he . Your meat doth burn , quoth I . My gold , quoth he . Will you come ? quoth I . My gold , quoth he . Where is the thousand marks I gave thee , villain ? The pig , quoth I , is burned . My gold , quoth he . ACT 2. SC. 1 My mistress , sir , quoth I . Hang up thy mistress ! I know not thy mistress . Out on thy mistress !",
+      "scrollMode": "auto",
+      "lineIndex": 27
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s5g",
+      "lineText": "Quoth who ?",
+      "scrollMode": "auto",
+      "lineIndex": 28
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s60",
+      "lineText": "Quoth my master . I know , quoth he , no house , no wife , no mistress . So that my errand , due unto my tongue , I thank him , I bare home upon my shoulders , For , in conclusion , he did beat me there .",
+      "scrollMode": "auto",
+      "lineIndex": 29
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s50",
+      "lineText": "Go back again , thou slave , and fetch him home .",
+      "scrollMode": "auto",
+      "lineIndex": 30
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s60",
+      "lineText": "Go back again and be new beaten home ? For God’s sake , send some other messenger .",
+      "scrollMode": "auto",
+      "lineIndex": 31
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s50",
+      "lineText": "Back , slave , or I will break thy pate across .",
+      "scrollMode": "auto",
+      "lineIndex": 32
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s60",
+      "lineText": "And he will bless that cross with other beating . Between you , I shall have a holy head .",
+      "scrollMode": "auto",
+      "lineIndex": 33
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s50",
+      "lineText": "Hence , prating peasant . Fetch thy master home .",
+      "scrollMode": "auto",
+      "lineIndex": 34
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s60",
+      "lineText": "Am I so round with you as you with me , That like a football you do spurn me thus ? You spurn me hence , and he will spurn me hither . If I last in this service , you must case me in leather .",
+      "scrollMode": "auto",
+      "lineIndex": 35
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s4g",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 36
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s5g",
+      "lineText": "Fie , how impatience loureth in your face .",
+      "scrollMode": "auto",
+      "lineIndex": 37
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s50",
+      "lineText": "His company must do his minions grace , Whilst I at home starve for a merry look . Hath homely age th’ alluring beauty took From my poor cheek ? Then he hath wasted it . Are my discourses dull ? Barren my wit ? If voluble and sharp discourse be marred , ACT 2. SC. 2 Unkindness blunts it more than marble hard . Do their gay vestments his affections bait ? That’s not my fault ; he’s master of my state . What ruins are in me that can be found By him not ruined ? Then is he the ground Of my defeatures . My decayèd fair A sunny look of his would soon repair . But , too unruly deer , he breaks the pale And feeds from home . Poor I am but his stale .",
+      "scrollMode": "auto",
+      "lineIndex": 38
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s5g",
+      "lineText": "Self-harming jealousy , fie , beat it hence .",
+      "scrollMode": "auto",
+      "lineIndex": 39
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s50",
+      "lineText": "Unfeeling fools can with such wrongs dispense . I know his eye doth homage otherwhere , Or else what lets it but he would be here ? Sister , you know he promised me a chain . Would that alone o’ love he would detain , So he would keep fair quarter with his bed . I see the jewel best enamelèd Will lose his beauty . Yet the gold bides still That others touch , and often touching will Wear gold ; yet no man that hath a name By falsehood and corruption doth it shame . Since that my beauty cannot please his eye , I’ll weep what’s left away , and weeping die .",
+      "scrollMode": "auto",
+      "lineIndex": 40
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s5g",
+      "lineText": "How many fond fools serve mad jealousy !",
+      "scrollMode": "auto",
+      "lineIndex": 41
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s4g",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 42
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s4g",
+      "lineText": "Enter Antipholus of Syracuse .",
+      "scrollMode": "auto",
+      "lineIndex": 43
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s4g",
+      "lineText": "Enter Dromio of Syracuse .",
+      "scrollMode": "auto",
+      "lineIndex": 44
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s6g",
+      "lineText": "Enter Dromio of Syracuse . How now , sir ? Is your merry humor altered ? As you love strokes , so jest with me again . You know no Centaur ? You received no gold ? Your mistress sent to have me home to dinner ? My house was at the Phoenix ? Wast thou mad , That thus so madly thou didst answer me ?",
+      "scrollMode": "auto",
+      "lineIndex": 45
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s6g",
+      "lineText": "What answer , sir ? When spake I such a word ?",
+      "scrollMode": "auto",
+      "lineIndex": 46
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s70",
+      "lineText": "Even now , even here , not half an hour since .",
+      "scrollMode": "auto",
+      "lineIndex": 47
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s6g",
+      "lineText": "I did not see you since you sent me hence , Home to the Centaur with the gold you gave me .",
+      "scrollMode": "auto",
+      "lineIndex": 48
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s70",
+      "lineText": "Villain , thou didst deny the gold’s receipt And told’st me of a mistress and a dinner , For which I hope thou felt’st I was displeased .",
+      "scrollMode": "auto",
+      "lineIndex": 49
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s6g",
+      "lineText": "I am glad to see you in this merry vein . What means this jest , I pray you , master , tell me ?",
+      "scrollMode": "auto",
+      "lineIndex": 50
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s70",
+      "lineText": "Yea , dost thou jeer and flout me in the teeth ? Think’st thou I jest ? Hold , take thou that and that .",
+      "scrollMode": "auto",
+      "lineIndex": 51
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s4g",
+      "lineText": "Beats Dromio .",
+      "scrollMode": "auto",
+      "lineIndex": 52
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s6g",
+      "lineText": "Hold , sir , for God’s sake ! Now your jest is earnest . Upon what bargain do you give it me ?",
+      "scrollMode": "auto",
+      "lineIndex": 53
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s70",
+      "lineText": "Because that I familiarly sometimes Do use you for my fool and chat with you , ACT 2. SC. 2 Your sauciness will jest upon my love And make a common of my serious hours . When the sun shines , let foolish gnats make sport , But creep in crannies when he hides his beams . If you will jest with me , know my aspect , And fashion your demeanor to my looks , Or I will beat this method in your sconce .",
+      "scrollMode": "auto",
+      "lineIndex": 54
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s6g",
+      "lineText": "Sconce call you it ? So you would leave battering , I had rather have it a head . An you use these blows long , I must get a sconce for my head and ensconce it too , or else I shall seek my wit in my shoulders . But I pray , sir , why am I beaten ?",
+      "scrollMode": "auto",
+      "lineIndex": 55
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s70",
+      "lineText": "Dost thou not know ?",
+      "scrollMode": "auto",
+      "lineIndex": 56
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s6g",
+      "lineText": "Nothing , sir , but that I am beaten .",
+      "scrollMode": "auto",
+      "lineIndex": 57
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s70",
+      "lineText": "Shall I tell you why ?",
+      "scrollMode": "auto",
+      "lineIndex": 58
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s6g",
+      "lineText": "Ay , sir , and wherefore , for they say every why hath a wherefore .",
+      "scrollMode": "auto",
+      "lineIndex": 59
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s70",
+      "lineText": "Why first : for flouting me ; and then wherefore : for urging it the second time to me .",
+      "scrollMode": "auto",
+      "lineIndex": 60
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s6g",
+      "lineText": "Was there ever any man thus beaten out of season , When in the why and the wherefore is neither rhyme nor reason ? Well , sir , I thank you .",
+      "scrollMode": "auto",
+      "lineIndex": 61
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s70",
+      "lineText": "Thank me , sir , for what ?",
+      "scrollMode": "auto",
+      "lineIndex": 62
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s6g",
+      "lineText": "Marry , sir , for this something that you gave me for nothing .",
+      "scrollMode": "auto",
+      "lineIndex": 63
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s70",
+      "lineText": "I’ll make you amends next , to give you nothing for something . But say , sir , is it dinnertime ?",
+      "scrollMode": "auto",
+      "lineIndex": 64
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s6g",
+      "lineText": "No , sir , I think the meat wants that I have .",
+      "scrollMode": "auto",
+      "lineIndex": 65
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s70",
+      "lineText": "In good time , sir , what’s that ?",
+      "scrollMode": "auto",
+      "lineIndex": 66
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s6g",
+      "lineText": "Basting .",
+      "scrollMode": "auto",
+      "lineIndex": 67
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s70",
+      "lineText": "Well , sir , then ’twill be dry .",
+      "scrollMode": "auto",
+      "lineIndex": 68
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s6g",
+      "lineText": "If it be , sir , I pray you eat none of it .",
+      "scrollMode": "auto",
+      "lineIndex": 69
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s70",
+      "lineText": "Your reason ?",
+      "scrollMode": "auto",
+      "lineIndex": 70
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s6g",
+      "lineText": "Lest it make you choleric and purchase me another dry basting .",
+      "scrollMode": "auto",
+      "lineIndex": 71
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s70",
+      "lineText": "Well , sir , learn to jest in good time . There’s a time for all things .",
+      "scrollMode": "auto",
+      "lineIndex": 72
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s6g",
+      "lineText": "I durst have denied that before you were so choleric .",
+      "scrollMode": "auto",
+      "lineIndex": 73
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s70",
+      "lineText": "By what rule , sir ?",
+      "scrollMode": "auto",
+      "lineIndex": 74
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s6g",
+      "lineText": "Marry , sir , by a rule as plain as the plain bald pate of Father Time himself .",
+      "scrollMode": "auto",
+      "lineIndex": 75
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s70",
+      "lineText": "Let’s hear it .",
+      "scrollMode": "auto",
+      "lineIndex": 76
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s6g",
+      "lineText": "There’s no time for a man to recover his hair that grows bald by nature .",
+      "scrollMode": "auto",
+      "lineIndex": 77
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s70",
+      "lineText": "May he not do it by fine and recovery ?",
+      "scrollMode": "auto",
+      "lineIndex": 78
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s6g",
+      "lineText": "Yes , to pay a fine for a periwig , and recover the lost hair of another man .",
+      "scrollMode": "auto",
+      "lineIndex": 79
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s70",
+      "lineText": "Why is Time such a niggard of hair , being , as it is , so plentiful an excrement ?",
+      "scrollMode": "auto",
+      "lineIndex": 80
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s6g",
+      "lineText": "Because it is a blessing that he bestows on beasts , and what he hath scanted men in hair , he hath given them in wit .",
+      "scrollMode": "auto",
+      "lineIndex": 81
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s70",
+      "lineText": "Why , but there’s many a man hath more hair than wit .",
+      "scrollMode": "auto",
+      "lineIndex": 82
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s6g",
+      "lineText": "Not a man of those but he hath the wit to lose his hair .",
+      "scrollMode": "auto",
+      "lineIndex": 83
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s70",
+      "lineText": "Why , thou didst conclude hairy men plain dealers without wit .",
+      "scrollMode": "auto",
+      "lineIndex": 84
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s6g",
+      "lineText": "The plainer dealer , the sooner lost . Yet he loseth it in a kind of jollity .",
+      "scrollMode": "auto",
+      "lineIndex": 85
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s70",
+      "lineText": "For what reason ?",
+      "scrollMode": "auto",
+      "lineIndex": 86
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s6g",
+      "lineText": "For two , and sound ones too .",
+      "scrollMode": "auto",
+      "lineIndex": 87
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s70",
+      "lineText": "Nay , not sound , I pray you .",
+      "scrollMode": "auto",
+      "lineIndex": 88
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s6g",
+      "lineText": "Sure ones , then .",
+      "scrollMode": "auto",
+      "lineIndex": 89
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s70",
+      "lineText": "Nay , not sure , in a thing falsing .",
+      "scrollMode": "auto",
+      "lineIndex": 90
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s6g",
+      "lineText": "Certain ones , then .",
+      "scrollMode": "auto",
+      "lineIndex": 91
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s70",
+      "lineText": "Name them .",
+      "scrollMode": "auto",
+      "lineIndex": 92
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s6g",
+      "lineText": "The one , to save the money that he spends in tiring ; the other , that at dinner they should not drop in his porridge .",
+      "scrollMode": "auto",
+      "lineIndex": 93
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s70",
+      "lineText": "You would all this time have proved there is no time for all things .",
+      "scrollMode": "auto",
+      "lineIndex": 94
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s6g",
+      "lineText": "Marry , and did , sir : namely , e’en no time to recover hair lost by nature .",
+      "scrollMode": "auto",
+      "lineIndex": 95
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s70",
+      "lineText": "But your reason was not substantial why there is no time to recover .",
+      "scrollMode": "auto",
+      "lineIndex": 96
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s6g",
+      "lineText": "Thus I mend it : Time himself is bald and therefore , to the world’s end , will have bald followers .",
+      "scrollMode": "auto",
+      "lineIndex": 97
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s70",
+      "lineText": "I knew ’twould be a bald conclusion . But soft , who wafts us yonder ?",
+      "scrollMode": "auto",
+      "lineIndex": 98
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s4g",
+      "lineText": "Enter Adriana , beckoning them , and Luciana .",
+      "scrollMode": "auto",
+      "lineIndex": 99
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s50",
+      "lineText": "Ay , ay , Antipholus , look strange and frown . Some other mistress hath thy sweet aspects . I am not Adriana , nor thy wife . The time was once when thou unurged wouldst vow That never words were music to thine ear , That never object pleasing in thine eye , That never touch well welcome to thy hand , That never meat sweet-savored in thy taste , Unless I spake , or looked , or touched , or carved to thee . How comes it now , my husband , O , how comes it ACT 2. SC. 2 That thou art then estrangèd from thyself ? Thyself I call it , being strange to me , That , undividable , incorporate , Am better than thy dear self’s better part . Ah , do not tear away thyself from me ! For know , my love , as easy mayst thou fall A drop of water in the breaking gulf , And take unmingled thence that drop again Without addition or diminishing , As take from me thyself and not me too . How dearly would it touch thee to the quick , Shouldst thou but hear I were licentious And that this body , consecrate to thee , By ruffian lust should be contaminate ! Wouldst thou not spit at me , and spurn at me , And hurl the name of husband in my face , And tear the stained skin off my harlot brow , And from my false hand cut the wedding ring , And break it with a deep-divorcing vow ? I know thou canst , and therefore see thou do it . I am possessed with an adulterate blot ; My blood is mingled with the crime of lust ; For if we two be one , and thou play false , I do digest the poison of thy flesh , Being strumpeted by thy contagion . Keep then fair league and truce with thy true bed , I live distained , thou undishonorèd .",
+      "scrollMode": "auto",
+      "lineIndex": 100
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s70",
+      "lineText": "Plead you to me , fair dame ? I know you not . In Ephesus I am but two hours old , As strange unto your town as to your talk , Who , every word by all my wit being scanned , Wants wit in all one word to understand .",
+      "scrollMode": "auto",
+      "lineIndex": 101
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s5g",
+      "lineText": "Fie , brother , how the world is changed with you ! ACT 2. SC. 2 When were you wont to use my sister thus ? She sent for you by Dromio home to dinner .",
+      "scrollMode": "auto",
+      "lineIndex": 102
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s70",
+      "lineText": "By Dromio ?",
+      "scrollMode": "auto",
+      "lineIndex": 103
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s6g",
+      "lineText": "By me ?",
+      "scrollMode": "auto",
+      "lineIndex": 104
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s50",
+      "lineText": "By thee ; and this thou didst return from him : That he did buffet thee and , in his blows , Denied my house for his , me for his wife .",
+      "scrollMode": "auto",
+      "lineIndex": 105
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s70",
+      "lineText": "Did you converse , sir , with this gentlewoman ? What is the course and drift of your compact ?",
+      "scrollMode": "auto",
+      "lineIndex": 106
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s6g",
+      "lineText": "I , sir ? I never saw her till this time .",
+      "scrollMode": "auto",
+      "lineIndex": 107
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s70",
+      "lineText": "Villain , thou liest , for even her very words Didst thou deliver to me on the mart .",
+      "scrollMode": "auto",
+      "lineIndex": 108
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s6g",
+      "lineText": "I never spake with her in all my life .",
+      "scrollMode": "auto",
+      "lineIndex": 109
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s70",
+      "lineText": "How can she thus then call us by our names — Unless it be by inspiration ?",
+      "scrollMode": "auto",
+      "lineIndex": 110
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s4g",
+      "lineText": "She takes his arm .",
+      "scrollMode": "auto",
+      "lineIndex": 111
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s50",
+      "lineText": "She takes his arm . Thou art an elm , my husband , I a vine , Whose weakness , married to thy stronger state , Makes me with thy strength to communicate . If aught possess thee from me , it is dross , Usurping ivy , brier , or idle moss , Who , all for want of pruning , with intrusion Infect thy sap and live on thy confusion .",
+      "scrollMode": "auto",
+      "lineIndex": 112
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s4g",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 113
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s70",
+      "lineText": "To me she speaks ; she moves me for her theme . What , was I married to her in my dream ? Or sleep I now and think I hear all this ? What error drives our eyes and ears amiss ? Until I know this sure uncertainty I’ll entertain the offered fallacy .",
+      "scrollMode": "auto",
+      "lineIndex": 114
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s5g",
+      "lineText": "Dromio , go bid the servants spread for dinner .",
+      "scrollMode": "auto",
+      "lineIndex": 115
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s4g",
+      "lineText": "He crosses himself .",
+      "scrollMode": "auto",
+      "lineIndex": 116
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s6g",
+      "lineText": "He crosses himself . This is the fairy land . O spite of spites ! We talk with goblins , owls , and sprites . If we obey them not , this will ensue : They’ll suck our breath , or pinch us black and blue .",
+      "scrollMode": "auto",
+      "lineIndex": 117
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s5g",
+      "lineText": "Why prat’st thou to thyself and answer’st not ? Dromio — thou , Dromio — thou snail , thou slug , thou sot .",
+      "scrollMode": "auto",
+      "lineIndex": 118
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s6g",
+      "lineText": "I am transformèd , master , am I not ?",
+      "scrollMode": "auto",
+      "lineIndex": 119
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s70",
+      "lineText": "I think thou art in mind , and so am I .",
+      "scrollMode": "auto",
+      "lineIndex": 120
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s6g",
+      "lineText": "Nay , master , both in mind and in my shape .",
+      "scrollMode": "auto",
+      "lineIndex": 121
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s70",
+      "lineText": "Thou hast thine own form .",
+      "scrollMode": "auto",
+      "lineIndex": 122
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s6g",
+      "lineText": "No , I am an ape .",
+      "scrollMode": "auto",
+      "lineIndex": 123
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s5g",
+      "lineText": "If thou art changed to aught , ’tis to an ass .",
+      "scrollMode": "auto",
+      "lineIndex": 124
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s6g",
+      "lineText": "’Tis true . She rides me , and I long for grass . ’Tis so . I am an ass ; else it could never be But I should know her as well as she knows me .",
+      "scrollMode": "auto",
+      "lineIndex": 125
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s4g",
+      "lineText": "To Dromio .",
+      "scrollMode": "auto",
+      "lineIndex": 126
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s50",
+      "lineText": "To Dromio . Sirrah , if any ask you for your master , Say he dines forth , and let no creature enter . — Come , sister . — Dromio , play the porter well .",
+      "scrollMode": "auto",
+      "lineIndex": 127
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s4g",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 128
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s70",
+      "lineText": "Am I in Earth earth , in heaven , or in hell ? Sleeping or waking , mad or well-advised ? Known unto these , and to myself disguised ! I’ll say as they say , and persever so , And in this mist at all adventures go .",
+      "scrollMode": "auto",
+      "lineIndex": 129
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s6g",
+      "lineText": "Master , shall I be porter at the gate ?",
+      "scrollMode": "auto",
+      "lineIndex": 130
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s50",
+      "lineText": "Ay , and let none enter , lest I break your pate .",
+      "scrollMode": "auto",
+      "lineIndex": 131
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s5g",
+      "lineText": "Come , come , Antipholus , we dine too late .",
+      "scrollMode": "auto",
+      "lineIndex": 132
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78s4g",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 133
+    }
+  ],
+  "isPublic": true
+}

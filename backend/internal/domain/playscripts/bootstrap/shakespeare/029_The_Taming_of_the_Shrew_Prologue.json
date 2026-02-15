@@ -1,0 +1,739 @@
+{
+  "title": "The Taming of the Shrew (Prologue)",
+  "description": "Folger Shakespeare Library edition",
+  "author": "William Shakespeare",
+  "castMembers": [
+    {
+      "id": "d68m11sn9qd8d2h79h20",
+      "name": "Narrator",
+      "sortOrder": 0
+    },
+    {
+      "id": "d68m11sn9qd8d2h79h2g",
+      "name": "Christopher Sly",
+      "description": "a beggar",
+      "sortOrder": 1
+    },
+    {
+      "id": "d68m11sn9qd8d2h79h30",
+      "name": "Hostess of an alehouse",
+      "sortOrder": 2
+    },
+    {
+      "id": "d68m11sn9qd8d2h79h3g",
+      "name": "A Lord",
+      "sortOrder": 3
+    },
+    {
+      "id": "d68m11sn9qd8d2h79h40",
+      "name": "First Huntsman",
+      "sortOrder": 4
+    },
+    {
+      "id": "d68m11sn9qd8d2h79h4g",
+      "name": "Second Huntsman",
+      "sortOrder": 5
+    },
+    {
+      "id": "d68m11sn9qd8d2h79h50",
+      "name": "Third Huntsman",
+      "sortOrder": 6
+    },
+    {
+      "id": "d68m11sn9qd8d2h79h5g",
+      "name": "Servingman",
+      "sortOrder": 7
+    },
+    {
+      "id": "d68m11sn9qd8d2h79h60",
+      "name": "Players",
+      "sortOrder": 8
+    },
+    {
+      "id": "d68m11sn9qd8d2h79h6g",
+      "name": "First Player",
+      "sortOrder": 9
+    },
+    {
+      "id": "d68m11sn9qd8d2h79h70",
+      "name": "Second Player",
+      "sortOrder": 10
+    },
+    {
+      "id": "d68m11sn9qd8d2h79h7g",
+      "name": "Second Servingman",
+      "sortOrder": 11
+    },
+    {
+      "id": "d68m11sn9qd8d2h79h80",
+      "name": "Third Servingman",
+      "sortOrder": 12
+    },
+    {
+      "id": "d68m11sn9qd8d2h79h8g",
+      "name": "Servingmen",
+      "sortOrder": 13
+    },
+    {
+      "id": "d68m11sn9qd8d2h79h90",
+      "name": "Page (disguised as a lady)",
+      "sortOrder": 14
+    },
+    {
+      "id": "d68m11sn9qd8d2h79h9g",
+      "name": "Messenger",
+      "sortOrder": 15
+    }
+  ],
+  "lines": [
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h20",
+      "lineText": "Enter Beggar ( Christopher Sly ) and Hostess .",
+      "scrollMode": "auto",
+      "lineIndex": 0
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h2g",
+      "lineText": "I’ll feeze you , in faith .",
+      "scrollMode": "auto",
+      "lineIndex": 1
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h30",
+      "lineText": "A pair of stocks , you rogue !",
+      "scrollMode": "auto",
+      "lineIndex": 2
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h2g",
+      "lineText": "You’re a baggage ! The Slys are no rogues . Look in the chronicles . We came in with Richard Conqueror . Therefore , paucas pallabris , let the world slide . Sessa !",
+      "scrollMode": "auto",
+      "lineIndex": 3
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h30",
+      "lineText": "You will not pay for the glasses you have burst ?",
+      "scrollMode": "auto",
+      "lineIndex": 4
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h2g",
+      "lineText": "No , not a denier . Go , by Saint Jeronimy ! Go to thy cold bed and warm thee .",
+      "scrollMode": "auto",
+      "lineIndex": 5
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h20",
+      "lineText": "He lies down .",
+      "scrollMode": "auto",
+      "lineIndex": 6
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h30",
+      "lineText": "I know my remedy . I must go fetch the headborough .",
+      "scrollMode": "auto",
+      "lineIndex": 7
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h20",
+      "lineText": "She exits .",
+      "scrollMode": "auto",
+      "lineIndex": 8
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h2g",
+      "lineText": "Third , or fourth , or fifth borough , I’ll answer him by law . I’ll not budge an inch , boy . Let him come , and kindly .",
+      "scrollMode": "auto",
+      "lineIndex": 9
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h20",
+      "lineText": "Falls asleep .",
+      "scrollMode": "auto",
+      "lineIndex": 10
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h20",
+      "lineText": "Wind horns within . Enter a Lord from hunting , with his train .",
+      "scrollMode": "auto",
+      "lineIndex": 11
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h3g",
+      "lineText": "Huntsman , I charge thee tender well my hounds . Breathe Merriman ( the poor cur is embossed ) And couple Clowder with the deep-mouthed brach . Saw’st thou not , boy , how Silver made it good At the hedge corner , in the coldest fault ? I would not lose the dog for twenty pound !",
+      "scrollMode": "auto",
+      "lineIndex": 12
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h40",
+      "lineText": "Why , Bellman is as good as he , my lord . He cried upon it at the merest loss , And twice today picked out the dullest scent . Trust me , I take him for the better dog .",
+      "scrollMode": "auto",
+      "lineIndex": 13
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h3g",
+      "lineText": "Thou art a fool . If Echo were as fleet , I would esteem him worth a dozen such . But sup them well , and look unto them all . Tomorrow I intend to hunt again .",
+      "scrollMode": "auto",
+      "lineIndex": 14
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h40",
+      "lineText": "I will , my lord .",
+      "scrollMode": "auto",
+      "lineIndex": 15
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h20",
+      "lineText": "First Huntsman exits .",
+      "scrollMode": "auto",
+      "lineIndex": 16
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h20",
+      "lineText": ", noticing Sly",
+      "scrollMode": "auto",
+      "lineIndex": 17
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h3g",
+      "lineText": "What’s here ? One dead , or drunk ? See doth he breathe .",
+      "scrollMode": "auto",
+      "lineIndex": 18
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h4g",
+      "lineText": "He breathes , my lord . Were he not warmed with ale , This were a bed but cold to sleep so soundly .",
+      "scrollMode": "auto",
+      "lineIndex": 19
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h3g",
+      "lineText": "O monstrous beast , how like a swine he lies ! Grim death , how foul and loathsome is thine image ! Sirs , I will practice on this drunken man . What think you , if he were conveyed to bed , Wrapped in sweet clothes , rings put upon his fingers , A most delicious banquet by his bed , And brave attendants near him when he wakes , Would not the beggar then forget himself ?",
+      "scrollMode": "auto",
+      "lineIndex": 20
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h50",
+      "lineText": "Believe me , lord , I think he cannot choose .",
+      "scrollMode": "auto",
+      "lineIndex": 21
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h4g",
+      "lineText": "It would seem strange unto him when he waked .",
+      "scrollMode": "auto",
+      "lineIndex": 22
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h3g",
+      "lineText": "Even as a flatt’ring dream or worthless fancy . Then take him up , and manage well the jest . IND. SC. 1 Carry him gently to my fairest chamber , And hang it round with all my wanton pictures ; Balm his foul head in warm distillèd waters , And burn sweet wood to make the lodging sweet ; Procure me music ready when he wakes To make a dulcet and a heavenly sound . And if he chance to speak , be ready straight And , with a low , submissive reverence , Say What is it your Honor will command ? Let one attend him with a silver basin Full of rosewater and bestrewed with flowers , Another bear the ewer , the third a diaper , And say Will ’t please your Lordship cool your hands ? Someone be ready with a costly suit , And ask him what apparel he will wear . Another tell him of his hounds and horse , And that his lady mourns at his disease . Persuade him that he hath been lunatic , And when he says he is , say that he dreams , For he is nothing but a mighty lord . This do , and do it kindly , gentle sirs . It will be pastime passing excellent If it be husbanded with modesty .",
+      "scrollMode": "auto",
+      "lineIndex": 23
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h50",
+      "lineText": "My lord , I warrant you we will play our part As he shall think by our true diligence He is no less than what we say he is .",
+      "scrollMode": "auto",
+      "lineIndex": 24
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h20",
+      "lineText": "Sly is carried out .",
+      "scrollMode": "auto",
+      "lineIndex": 25
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h20",
+      "lineText": "Sound trumpets within .",
+      "scrollMode": "auto",
+      "lineIndex": 26
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h20",
+      "lineText": "Servingman exits .",
+      "scrollMode": "auto",
+      "lineIndex": 27
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h20",
+      "lineText": "Enter Servingman .",
+      "scrollMode": "auto",
+      "lineIndex": 28
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h5g",
+      "lineText": "Enter Servingman . How now ? Who is it ?",
+      "scrollMode": "auto",
+      "lineIndex": 29
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h5g",
+      "lineText": "An ’t please your Honor , players That offer service to your Lordship .",
+      "scrollMode": "auto",
+      "lineIndex": 30
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h20",
+      "lineText": "Enter Players .",
+      "scrollMode": "auto",
+      "lineIndex": 31
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h60",
+      "lineText": "Enter Players . Now , fellows , you are welcome .",
+      "scrollMode": "auto",
+      "lineIndex": 32
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h60",
+      "lineText": "We thank your Honor .",
+      "scrollMode": "auto",
+      "lineIndex": 33
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h3g",
+      "lineText": "Do you intend to stay with me tonight ?",
+      "scrollMode": "auto",
+      "lineIndex": 34
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h6g",
+      "lineText": "So please your Lordship to accept our duty .",
+      "scrollMode": "auto",
+      "lineIndex": 35
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h3g",
+      "lineText": "With all my heart . This fellow I remember Since once he played a farmer’s eldest son . — ’Twas where you wooed the gentlewoman so well . I have forgot your name , but sure that part Was aptly fitted and naturally performed .",
+      "scrollMode": "auto",
+      "lineIndex": 36
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h70",
+      "lineText": "I think ’twas Soto that your Honor means .",
+      "scrollMode": "auto",
+      "lineIndex": 37
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h3g",
+      "lineText": "’Tis very true . Thou didst it excellent . Well , you are come to me in happy time , The rather for I have some sport in hand Wherein your cunning can assist me much . There is a lord will hear you play tonight ; But I am doubtful of your modesties , Lest , over-eying of his odd behavior ( For yet his Honor never heard a play ) , You break into some merry passion , And so offend him . For I tell you , sirs , If you should smile , he grows impatient .",
+      "scrollMode": "auto",
+      "lineIndex": 38
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h6g",
+      "lineText": "Fear not , my lord , we can contain ourselves Were he the veriest antic in the world .",
+      "scrollMode": "auto",
+      "lineIndex": 39
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h20",
+      "lineText": ", to a Servingman",
+      "scrollMode": "auto",
+      "lineIndex": 40
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h20",
+      "lineText": "One exits with the Players .",
+      "scrollMode": "auto",
+      "lineIndex": 41
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h20",
+      "lineText": "A Servingman exits .",
+      "scrollMode": "auto",
+      "lineIndex": 42
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h7g",
+      "lineText": "A Servingman exits . I know the boy will well usurp the grace , IND. SC. 2 Voice , gait , and action of a gentlewoman . I long to hear him call the drunkard husband ! And how my men will stay themselves from laughter When they do homage to this simple peasant , I’ll in to counsel them . Haply my presence May well abate the over-merry spleen Which otherwise would grow into extremes .",
+      "scrollMode": "auto",
+      "lineIndex": 43
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h20",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 44
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h20",
+      "lineText": "Enter aloft Christopher Sly , the drunkard , with Attendants , some with apparel , basin and ewer , and other appurtenances , and Lord dressed as an Attendant .",
+      "scrollMode": "auto",
+      "lineIndex": 45
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h2g",
+      "lineText": "For God’s sake , a pot of small ale .",
+      "scrollMode": "auto",
+      "lineIndex": 46
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h5g",
+      "lineText": "Will ’t please your Lord drink a cup of sack ?",
+      "scrollMode": "auto",
+      "lineIndex": 47
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h7g",
+      "lineText": "Will ’t please your Honor taste of these conserves ?",
+      "scrollMode": "auto",
+      "lineIndex": 48
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h80",
+      "lineText": "What raiment will your Honor wear today ?",
+      "scrollMode": "auto",
+      "lineIndex": 49
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h2g",
+      "lineText": "I am Christophero Sly ! Call not me Honor nor Lordship . I ne’er drank sack in my life . An if you give me any conserves , give me conserves of beef . Ne’er ask me what raiment I’ll wear , for I have no more doublets than backs , no more stockings than legs , nor no more shoes than feet , nay sometime more feet than shoes , or such shoes as my toes look through the over-leather .",
+      "scrollMode": "auto",
+      "lineIndex": 50
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h20",
+      "lineText": ", as Attendant",
+      "scrollMode": "auto",
+      "lineIndex": 51
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h3g",
+      "lineText": "Heaven cease this idle humor in your Honor ! O , that a mighty man of such descent , Of such possessions , and so high esteem Should be infusèd with so foul a spirit !",
+      "scrollMode": "auto",
+      "lineIndex": 52
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h2g",
+      "lineText": "What , would you make me mad ? Am not I Christopher Sly , old Sly’s son of Burton Heath , by birth a peddler , by education a cardmaker , by transmutation a bearherd , and now by present profession a tinker ? Ask Marian Hacket , the fat alewife of Wincot , if she know me not ! If she say I am not fourteen pence on the score for sheer ale , score me up for the lying’st knave in Christendom . What , I am not bestraught ! Here’s —",
+      "scrollMode": "auto",
+      "lineIndex": 53
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h80",
+      "lineText": "O , this it is that makes your lady mourn .",
+      "scrollMode": "auto",
+      "lineIndex": 54
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h7g",
+      "lineText": "O , this is it that makes your servants droop .",
+      "scrollMode": "auto",
+      "lineIndex": 55
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h20",
+      "lineText": ", as Attendant",
+      "scrollMode": "auto",
+      "lineIndex": 56
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h20",
+      "lineText": "Music .",
+      "scrollMode": "auto",
+      "lineIndex": 57
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h3g",
+      "lineText": "Music . And twenty cagèd nightingales do sing . Or wilt thou sleep ? We’ll have thee to a couch Softer and sweeter than the lustful bed On purpose trimmed up for Semiramis . Say thou wilt walk , we will bestrew the ground . Or wilt thou ride ? Thy horses shall be trapped , Their harness studded all with gold and pearl . Dost thou love hawking ? Thou hast hawks will soar Above the morning lark . Or wilt thou hunt ? Thy hounds shall make the welkin answer them And fetch shrill echoes from the hollow earth .",
+      "scrollMode": "auto",
+      "lineIndex": 58
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h5g",
+      "lineText": "Say thou wilt course . Thy greyhounds are as swift As breathèd stags , ay , fleeter than the roe .",
+      "scrollMode": "auto",
+      "lineIndex": 59
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h7g",
+      "lineText": "Dost thou love pictures ? We will fetch thee straight Adonis painted by a running brook , And Cytherea all in sedges hid , Which seem to move and wanton with her breath , Even as the waving sedges play with wind .",
+      "scrollMode": "auto",
+      "lineIndex": 60
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h20",
+      "lineText": ", as Attendant",
+      "scrollMode": "auto",
+      "lineIndex": 61
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h3g",
+      "lineText": "We’ll show thee Io as she was a maid And how she was beguilèd and surprised , As lively painted as the deed was done .",
+      "scrollMode": "auto",
+      "lineIndex": 62
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h80",
+      "lineText": "Or Daphne roaming through a thorny wood , Scratching her legs that one shall swear she bleeds , And at that sight shall sad Apollo weep , So workmanly the blood and tears are drawn .",
+      "scrollMode": "auto",
+      "lineIndex": 63
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h20",
+      "lineText": ", as Attendant",
+      "scrollMode": "auto",
+      "lineIndex": 64
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h3g",
+      "lineText": "Thou art a lord , and nothing but a lord ; Thou hast a lady far more beautiful Than any woman in this waning age .",
+      "scrollMode": "auto",
+      "lineIndex": 65
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h5g",
+      "lineText": "And till the tears that she hath shed for thee Like envious floods o’errun her lovely face , She was the fairest creature in the world — And yet she is inferior to none .",
+      "scrollMode": "auto",
+      "lineIndex": 66
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h2g",
+      "lineText": "Am I a lord , and have I such a lady ? Or do I dream ? Or have I dreamed till now ? I do not sleep : I see , I hear , I speak , I smell sweet savors , and I feel soft things . Upon my life , I am a lord indeed And not a tinker , nor Christopher Sly . Well , bring our lady hither to our sight , And once again a pot o’ the smallest ale .",
+      "scrollMode": "auto",
+      "lineIndex": 67
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h7g",
+      "lineText": "Will ’t please your Mightiness to wash your hands ? O , how we joy to see your wit restored ! IND. SC. 2 O , that once more you knew but what you are ! These fifteen years you have been in a dream , Or , when you waked , so waked as if you slept .",
+      "scrollMode": "auto",
+      "lineIndex": 68
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h2g",
+      "lineText": "These fifteen years ! By my fay , a goodly nap . But did I never speak of all that time ?",
+      "scrollMode": "auto",
+      "lineIndex": 69
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h5g",
+      "lineText": "Oh , yes , my lord , but very idle words . For though you lay here in this goodly chamber , Yet would you say you were beaten out of door , And rail upon the hostess of the house , And say you would present her at the leet Because she brought stone jugs and no sealed quarts . Sometimes you would call out for Cicely Hacket .",
+      "scrollMode": "auto",
+      "lineIndex": 70
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h2g",
+      "lineText": "Ay , the woman’s maid of the house .",
+      "scrollMode": "auto",
+      "lineIndex": 71
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h80",
+      "lineText": "Why , sir , you know no house , nor no such maid , Nor no such men as you have reckoned up , As Stephen Sly and old John Naps of Greete , And Peter Turph and Henry Pimpernell , And twenty more such names and men as these , Which never were , nor no man ever saw .",
+      "scrollMode": "auto",
+      "lineIndex": 72
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h2g",
+      "lineText": "Now , Lord be thanked for my good amends !",
+      "scrollMode": "auto",
+      "lineIndex": 73
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h3g",
+      "lineText": "Amen .",
+      "scrollMode": "auto",
+      "lineIndex": 74
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h2g",
+      "lineText": "I thank thee . Thou shalt not lose by it .",
+      "scrollMode": "auto",
+      "lineIndex": 75
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h20",
+      "lineText": "Enter Page as Lady , with Attendants .",
+      "scrollMode": "auto",
+      "lineIndex": 76
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h20",
+      "lineText": ", as Lady",
+      "scrollMode": "auto",
+      "lineIndex": 77
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h90",
+      "lineText": "How fares my noble lord ?",
+      "scrollMode": "auto",
+      "lineIndex": 78
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h2g",
+      "lineText": "Marry , I fare well , for here is cheer enough . Where is my wife ?",
+      "scrollMode": "auto",
+      "lineIndex": 79
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h20",
+      "lineText": ", as Lady",
+      "scrollMode": "auto",
+      "lineIndex": 80
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h90",
+      "lineText": "Here , noble lord . What is thy will with her ?",
+      "scrollMode": "auto",
+      "lineIndex": 81
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h2g",
+      "lineText": "Are you my wife , and will not call me husband ? My men should call me lord . I am your goodman .",
+      "scrollMode": "auto",
+      "lineIndex": 82
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h20",
+      "lineText": ", as Lady",
+      "scrollMode": "auto",
+      "lineIndex": 83
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h90",
+      "lineText": "My husband and my lord , my lord and husband , I am your wife in all obedience .",
+      "scrollMode": "auto",
+      "lineIndex": 84
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h2g",
+      "lineText": "I know it well . — What must I call her ?",
+      "scrollMode": "auto",
+      "lineIndex": 85
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h20",
+      "lineText": ", as Attendant",
+      "scrollMode": "auto",
+      "lineIndex": 86
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h3g",
+      "lineText": "Madam .",
+      "scrollMode": "auto",
+      "lineIndex": 87
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h2g",
+      "lineText": "Alice Madam , or Joan Madam ?",
+      "scrollMode": "auto",
+      "lineIndex": 88
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h3g",
+      "lineText": "Madam , and nothing else . So lords call ladies .",
+      "scrollMode": "auto",
+      "lineIndex": 89
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h2g",
+      "lineText": "Madam wife , they say that I have dreamed And slept above some fifteen year or more .",
+      "scrollMode": "auto",
+      "lineIndex": 90
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h20",
+      "lineText": ", as Lady",
+      "scrollMode": "auto",
+      "lineIndex": 91
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h90",
+      "lineText": "Ay , and the time seems thirty unto me , Being all this time abandoned from your bed .",
+      "scrollMode": "auto",
+      "lineIndex": 92
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h2g",
+      "lineText": "’Tis much . — Servants , leave me and her alone . — Madam , undress you , and come now to bed .",
+      "scrollMode": "auto",
+      "lineIndex": 93
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h20",
+      "lineText": ", as Lady",
+      "scrollMode": "auto",
+      "lineIndex": 94
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h90",
+      "lineText": "Thrice noble lord , let me entreat of you To pardon me yet for a night or two ; Or if not so , until the sun be set . For your physicians have expressly charged , In peril to incur your former malady , That I should yet absent me from your bed . I hope this reason stands for my excuse .",
+      "scrollMode": "auto",
+      "lineIndex": 95
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h2g",
+      "lineText": "Ay , it stands so that I may hardly tarry so long ; but I would be loath to fall into my dreams again . I will therefore tarry in despite of the flesh and the blood .",
+      "scrollMode": "auto",
+      "lineIndex": 96
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h20",
+      "lineText": "Enter a Messenger .",
+      "scrollMode": "auto",
+      "lineIndex": 97
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h9g",
+      "lineText": "Your Honor’s players , hearing your amendment , Are come to play a pleasant comedy , For so your doctors hold it very meet , IND. SC. 2 Seeing too much sadness hath congealed your blood , And melancholy is the nurse of frenzy . Therefore they thought it good you hear a play And frame your mind to mirth and merriment , Which bars a thousand harms and lengthens life .",
+      "scrollMode": "auto",
+      "lineIndex": 98
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h20",
+      "lineText": "Messenger exits .",
+      "scrollMode": "auto",
+      "lineIndex": 99
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h9g",
+      "lineText": "Messenger exits . Is not a comonty a Christmas gambold or a tumbling trick ?",
+      "scrollMode": "auto",
+      "lineIndex": 100
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h20",
+      "lineText": ", as Lady",
+      "scrollMode": "auto",
+      "lineIndex": 101
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h90",
+      "lineText": "No , my good lord , it is more pleasing stuff .",
+      "scrollMode": "auto",
+      "lineIndex": 102
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h2g",
+      "lineText": "What , household stuff ?",
+      "scrollMode": "auto",
+      "lineIndex": 103
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h20",
+      "lineText": ", as Lady",
+      "scrollMode": "auto",
+      "lineIndex": 104
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h90",
+      "lineText": "It is a kind of history .",
+      "scrollMode": "auto",
+      "lineIndex": 105
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h2g",
+      "lineText": "Well , we’ll see ’t . Come , madam wife , sit by my side , and let the world slip . We shall ne’er be younger .",
+      "scrollMode": "auto",
+      "lineIndex": 106
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79h20",
+      "lineText": "They sit .",
+      "scrollMode": "auto",
+      "lineIndex": 107
+    }
+  ],
+  "isPublic": true
+}

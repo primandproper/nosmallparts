@@ -1,0 +1,1773 @@
+{
+  "title": "The Merry Wives of Windsor (Act 2)",
+  "description": "Folger Shakespeare Library edition",
+  "author": "William Shakespeare",
+  "castMembers": [
+    {
+      "id": "d68m11sn9qd8d2h79sbg",
+      "name": "Narrator",
+      "sortOrder": 0
+    },
+    {
+      "id": "d68m11sn9qd8d2h79sc0",
+      "name": "Mistress Page",
+      "sortOrder": 1
+    },
+    {
+      "id": "d68m11sn9qd8d2h79scg",
+      "name": "Mistress Ford",
+      "sortOrder": 2
+    },
+    {
+      "id": "d68m11sn9qd8d2h79sd0",
+      "name": "Ford",
+      "description": "her husband",
+      "sortOrder": 3
+    },
+    {
+      "id": "d68m11sn9qd8d2h79sdg",
+      "name": "Pistol",
+      "sortOrder": 4
+    },
+    {
+      "id": "d68m11sn9qd8d2h79se0",
+      "name": "Nym",
+      "sortOrder": 5
+    },
+    {
+      "id": "d68m11sn9qd8d2h79seg",
+      "name": "Page",
+      "description": "her husband",
+      "sortOrder": 6
+    },
+    {
+      "id": "d68m11sn9qd8d2h79sf0",
+      "name": "Mistress Quickly",
+      "description": "the doctor’s housekeeper",
+      "sortOrder": 7
+    },
+    {
+      "id": "d68m11sn9qd8d2h79sfg",
+      "name": "Host",
+      "sortOrder": 8
+    },
+    {
+      "id": "d68m11sn9qd8d2h79sg0",
+      "name": "Shallow",
+      "description": "a visiting justice of the peace",
+      "sortOrder": 9
+    },
+    {
+      "id": "d68m11sn9qd8d2h79sgg",
+      "name": "Falstaff",
+      "description": "an impoverished knight",
+      "sortOrder": 10
+    },
+    {
+      "id": "d68m11sn9qd8d2h79sh0",
+      "name": "Robin",
+      "description": "his page",
+      "sortOrder": 11
+    },
+    {
+      "id": "d68m11sn9qd8d2h79shg",
+      "name": "Bardolph",
+      "sortOrder": 12
+    },
+    {
+      "id": "d68m11sn9qd8d2h79si0",
+      "name": "Doctor Caius",
+      "description": "a French doctor, suitor to Anne Page",
+      "sortOrder": 13
+    },
+    {
+      "id": "d68m11sn9qd8d2h79sig",
+      "name": "John Rugby",
+      "description": "the doctor’s manservant",
+      "sortOrder": 14
+    },
+    {
+      "id": "d68m11sn9qd8d2h79sj0",
+      "name": "Slender",
+      "description": "his nephew, a young gentleman suitor to Anne Page",
+      "sortOrder": 15
+    }
+  ],
+  "lines": [
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": "Enter Mistress Page reading a letter .",
+      "scrollMode": "auto",
+      "lineIndex": 0
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": "She reads .",
+      "scrollMode": "auto",
+      "lineIndex": 1
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sc0",
+      "lineText": "She reads . Ask me no reason why I love you , for though Love use Reason for his precisian , he admits him not for his counselor . You are not young ; no more am I . Go to , then , there’s sympathy . You are merry ; so am I . Ha , ha , then , there’s more sympathy . You love sack , and so do I . Would you desire better sympathy ? Let it suffice thee , Mistress Page — at the least , if the love of soldier can suffice — that I love thee . I will not say pity me — ’tis not a soldier-like phrase — but I say love me . By me , Thine own true knight , By day or night , Or any kind of light , With all his might For thee to fight , John Falstaff . What a Herod of Jewry is this ! O wicked , wicked world ! One that is well-nigh worn to pieces with age , to show himself a young gallant ! What an unweighed behavior hath this Flemish drunkard ACT 2. SC. 1 picked — with the devil’s name ! — out of my conversation , that he dares in this manner assay me ? Why , he hath not been thrice in my company ! What should I say to him ? I was then frugal of my mirth . Heaven forgive me ! Why , I’ll exhibit a bill in the Parliament for the putting down of men . How shall I be revenged on him ? For revenged I will be , as sure as his guts are made of puddings .",
+      "scrollMode": "auto",
+      "lineIndex": 2
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": "Enter Mistress Ford .",
+      "scrollMode": "auto",
+      "lineIndex": 3
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79scg",
+      "lineText": "Mistress Page ! Trust me , I was going to your house .",
+      "scrollMode": "auto",
+      "lineIndex": 4
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sc0",
+      "lineText": "And , trust me , I was coming to you . You look very ill .",
+      "scrollMode": "auto",
+      "lineIndex": 5
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79scg",
+      "lineText": "Nay , I’ll ne’er believe that . I have to show to the contrary .",
+      "scrollMode": "auto",
+      "lineIndex": 6
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sc0",
+      "lineText": "Faith , but you do , in my mind .",
+      "scrollMode": "auto",
+      "lineIndex": 7
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79scg",
+      "lineText": "Well , I do , then . Yet I say I could show you to the contrary . O Mistress Page , give me some counsel .",
+      "scrollMode": "auto",
+      "lineIndex": 8
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sc0",
+      "lineText": "What’s the matter , woman ?",
+      "scrollMode": "auto",
+      "lineIndex": 9
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79scg",
+      "lineText": "O woman , if it were not for one trifling respect , I could come to such honor !",
+      "scrollMode": "auto",
+      "lineIndex": 10
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sc0",
+      "lineText": "Hang the trifle , woman ; take the honor . What is it ? Dispense with trifles . What is it ?",
+      "scrollMode": "auto",
+      "lineIndex": 11
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79scg",
+      "lineText": "If I would but go to hell for an eternal moment or so , I could be knighted .",
+      "scrollMode": "auto",
+      "lineIndex": 12
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sc0",
+      "lineText": "What , thou liest ! Sir Alice Ford ? These knights will hack , and so thou shouldst not alter the article of thy gentry .",
+      "scrollMode": "auto",
+      "lineIndex": 13
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": "( She gives a paper to Mistress Page , who reads it . )",
+      "scrollMode": "auto",
+      "lineIndex": 14
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79scg",
+      "lineText": "( She gives a paper to Mistress Page , who reads it . ) I shall think the worse of fat men as long as I have an eye to make difference of men’s liking . And yet he would not swear ; praised women’s modesty ; and gave such ACT 2. SC. 1 orderly and well-behaved reproof to all uncomeliness that I would have sworn his disposition would have gone to the truth of his words . But they do no more adhere and keep place together than the Hundredth Psalm to the tune of Greensleeves . What tempest , I trow , threw this whale , with so many tuns of oil in his belly , ashore at Windsor ? How shall I be revenged on him ? I think the best way were to entertain him with hope till the wicked fire of lust have melted him in his own grease . Did you ever hear the like ?",
+      "scrollMode": "auto",
+      "lineIndex": 15
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": "( She gives a paper to Mistress Ford , who reads it . )",
+      "scrollMode": "auto",
+      "lineIndex": 16
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sc0",
+      "lineText": "( She gives a paper to Mistress Ford , who reads it . ) But let thine inherit first , for I protest mine never shall . I warrant he hath a thousand of these letters writ with blank space for different names — sure , more — and these are of the second edition . He will print them , out of doubt ; for he cares not what he puts into the press , when he would put us two . I had rather be a giantess and lie under Mount Pelion . Well , I will find you twenty lascivious turtles ere one chaste man .",
+      "scrollMode": "auto",
+      "lineIndex": 17
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79scg",
+      "lineText": "Why , this is the very same — the very hand , the very words . What doth he think of us ?",
+      "scrollMode": "auto",
+      "lineIndex": 18
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sc0",
+      "lineText": "Nay , I know not . It makes me almost ready to wrangle with mine own honesty . I’ll entertain myself like one that I am not acquainted withal ; for , sure , unless he know some strain in me that I know not myself , he would never have boarded me in this fury .",
+      "scrollMode": "auto",
+      "lineIndex": 19
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79scg",
+      "lineText": "Boarding call you it ? I’ll be sure to keep him above deck .",
+      "scrollMode": "auto",
+      "lineIndex": 20
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sc0",
+      "lineText": "So will I . If he come under my hatches , I’ll never to sea again . Let’s be revenged on him . Let’s appoint him a meeting , give him a show of ACT 2. SC. 1 comfort in his suit , and lead him on with a fine-baited delay till he hath pawned his horses to mine Host of the Garter .",
+      "scrollMode": "auto",
+      "lineIndex": 21
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79scg",
+      "lineText": "Nay , I will consent to act any villainy against him that may not sully the chariness of our honesty . O , that my husband saw this letter ! It would give eternal food to his jealousy .",
+      "scrollMode": "auto",
+      "lineIndex": 22
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sc0",
+      "lineText": "Why , look where he comes , and my good man too . He’s as far from jealousy as I am from giving him cause , and that , I hope , is an unmeasurable distance .",
+      "scrollMode": "auto",
+      "lineIndex": 23
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79scg",
+      "lineText": "You are the happier woman .",
+      "scrollMode": "auto",
+      "lineIndex": 24
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sc0",
+      "lineText": "Let’s consult together against this greasy knight . Come hither .",
+      "scrollMode": "auto",
+      "lineIndex": 25
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": "They talk aside .",
+      "scrollMode": "auto",
+      "lineIndex": 26
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": "Enter Ford with Pistol , and Page with Nym .",
+      "scrollMode": "auto",
+      "lineIndex": 27
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sd0",
+      "lineText": "Well , I hope it be not so .",
+      "scrollMode": "auto",
+      "lineIndex": 28
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sdg",
+      "lineText": "Hope is a curtal dog in some affairs . Sir John affects thy wife .",
+      "scrollMode": "auto",
+      "lineIndex": 29
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sd0",
+      "lineText": "Why , sir , my wife is not young .",
+      "scrollMode": "auto",
+      "lineIndex": 30
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sdg",
+      "lineText": "He woos both high and low , both rich and poor , Both young and old , one with another , Ford . He loves the gallimaufry . Ford , perpend .",
+      "scrollMode": "auto",
+      "lineIndex": 31
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sd0",
+      "lineText": "Love my wife ?",
+      "scrollMode": "auto",
+      "lineIndex": 32
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sdg",
+      "lineText": "With liver burning hot . Prevent , Or go thou like Sir Acteon , he , With Ringwood at thy heels . O , odious is the name !",
+      "scrollMode": "auto",
+      "lineIndex": 33
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sd0",
+      "lineText": "What name , sir ?",
+      "scrollMode": "auto",
+      "lineIndex": 34
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sdg",
+      "lineText": "The horn , I say . Farewell . Take heed , have open eye , for thieves do foot by night . Take heed , ere summer comes or cuckoo birds do sing . — ACT 2. SC. 1 Away , Sir Corporal Nym . — Believe it , Page . He speaks sense .",
+      "scrollMode": "auto",
+      "lineIndex": 35
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 36
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 37
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sd0",
+      "lineText": "I will be patient . I will find out this .",
+      "scrollMode": "auto",
+      "lineIndex": 38
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": ", to Page",
+      "scrollMode": "auto",
+      "lineIndex": 39
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79se0",
+      "lineText": "And this is true . I like not the humor of lying . He hath wronged me in some humors . I should have borne the humored letter to her ; but I have a sword , and it shall bite upon my necessity . He loves your wife ; there’s the short and the long . My name is Corporal Nym . I speak and I avouch . ’Tis true . My name is Nym , and Falstaff loves your wife . Adieu . I love not the humor of bread and cheese . Adieu .",
+      "scrollMode": "auto",
+      "lineIndex": 40
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 41
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 42
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79seg",
+      "lineText": "The humor of it , quoth he ? Here’s a fellow frights English out of his wits .",
+      "scrollMode": "auto",
+      "lineIndex": 43
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 44
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sd0",
+      "lineText": "I will seek out Falstaff .",
+      "scrollMode": "auto",
+      "lineIndex": 45
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 46
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79seg",
+      "lineText": "I never heard such a drawling , affecting rogue .",
+      "scrollMode": "auto",
+      "lineIndex": 47
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 48
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sd0",
+      "lineText": "If I do find it — well .",
+      "scrollMode": "auto",
+      "lineIndex": 49
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 50
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79seg",
+      "lineText": "I will not believe such a Cataian , though the priest o’ th’ town commended him for a true man .",
+      "scrollMode": "auto",
+      "lineIndex": 51
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 52
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sd0",
+      "lineText": "’Twas a good sensible fellow — well .",
+      "scrollMode": "auto",
+      "lineIndex": 53
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": "Mistress Page and Mistress Ford come forward .",
+      "scrollMode": "auto",
+      "lineIndex": 54
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": ", to Mistress Page",
+      "scrollMode": "auto",
+      "lineIndex": 55
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79seg",
+      "lineText": "How now , Meg ?",
+      "scrollMode": "auto",
+      "lineIndex": 56
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sc0",
+      "lineText": "Whither go you , George ? Hark you .",
+      "scrollMode": "auto",
+      "lineIndex": 57
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": "They talk aside .",
+      "scrollMode": "auto",
+      "lineIndex": 58
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": ", to Ford",
+      "scrollMode": "auto",
+      "lineIndex": 59
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79scg",
+      "lineText": "How now , sweet Frank ? Why art thou melancholy ?",
+      "scrollMode": "auto",
+      "lineIndex": 60
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sd0",
+      "lineText": "I melancholy ? I am not melancholy . Get you home . Go .",
+      "scrollMode": "auto",
+      "lineIndex": 61
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79scg",
+      "lineText": "Faith , thou hast some crochets in thy head now . — Will you go , Mistress Page ?",
+      "scrollMode": "auto",
+      "lineIndex": 62
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": "( Aside to Mistress Ford . )",
+      "scrollMode": "auto",
+      "lineIndex": 63
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": "Enter Mistress Quickly .",
+      "scrollMode": "auto",
+      "lineIndex": 64
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sf0",
+      "lineText": "Enter Mistress Quickly . She shall be our messenger to this paltry knight .",
+      "scrollMode": "auto",
+      "lineIndex": 65
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79scg",
+      "lineText": "Trust me , I thought on her . She’ll fit it .",
+      "scrollMode": "auto",
+      "lineIndex": 66
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": ", to Mistress Quickly",
+      "scrollMode": "auto",
+      "lineIndex": 67
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sc0",
+      "lineText": "You are come to see my daughter Anne ?",
+      "scrollMode": "auto",
+      "lineIndex": 68
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sf0",
+      "lineText": "Ay , forsooth . And , I pray , how does good Mistress Anne ?",
+      "scrollMode": "auto",
+      "lineIndex": 69
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sc0",
+      "lineText": "Go in with us and see . We have an hour’s talk with you .",
+      "scrollMode": "auto",
+      "lineIndex": 70
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": "Mistress Page , Mistress Ford , and Mistress Quickly exit .",
+      "scrollMode": "auto",
+      "lineIndex": 71
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79seg",
+      "lineText": "How now , Master Ford ?",
+      "scrollMode": "auto",
+      "lineIndex": 72
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sd0",
+      "lineText": "You heard what this knave told me , did you not ?",
+      "scrollMode": "auto",
+      "lineIndex": 73
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79seg",
+      "lineText": "Yes , and you heard what the other told me ?",
+      "scrollMode": "auto",
+      "lineIndex": 74
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sd0",
+      "lineText": "Do you think there is truth in them ?",
+      "scrollMode": "auto",
+      "lineIndex": 75
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79seg",
+      "lineText": "Hang ’em , slaves ! I do not think the knight would offer it . But these that accuse him in his intent towards our wives are a yoke of his discarded men , very rogues , now they be out of service .",
+      "scrollMode": "auto",
+      "lineIndex": 76
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sd0",
+      "lineText": "Were they his men ?",
+      "scrollMode": "auto",
+      "lineIndex": 77
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79seg",
+      "lineText": "Marry , were they .",
+      "scrollMode": "auto",
+      "lineIndex": 78
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sd0",
+      "lineText": "I like it never the better for that . Does he lie at the Garter ?",
+      "scrollMode": "auto",
+      "lineIndex": 79
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79seg",
+      "lineText": "Ay , marry , does he . If he should intend this voyage toward my wife , I would turn her loose to him ; and what he gets more of her than sharp words , let it lie on my head .",
+      "scrollMode": "auto",
+      "lineIndex": 80
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sd0",
+      "lineText": "I do not misdoubt my wife , but I would be loath to turn them together . A man may be too confident . I would have nothing lie on my head . I cannot be thus satisfied .",
+      "scrollMode": "auto",
+      "lineIndex": 81
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": "Enter Host .",
+      "scrollMode": "auto",
+      "lineIndex": 82
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79seg",
+      "lineText": "Look where my ranting Host of the Garter comes . There is either liquor in his pate or money in his purse when he looks so merrily . — How now , mine Host ?",
+      "scrollMode": "auto",
+      "lineIndex": 83
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sfg",
+      "lineText": "How now , bullyrook ? Thou ’rt a gentleman . — Cavaleiro Justice , I say !",
+      "scrollMode": "auto",
+      "lineIndex": 84
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": "Enter Shallow .",
+      "scrollMode": "auto",
+      "lineIndex": 85
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sg0",
+      "lineText": "I follow , mine Host , I follow . — Good even and twenty , good Master Page . Master Page , will you go with us ? We have sport in hand .",
+      "scrollMode": "auto",
+      "lineIndex": 86
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sfg",
+      "lineText": "Tell him , Cavaleiro Justice ; tell him , bullyrook .",
+      "scrollMode": "auto",
+      "lineIndex": 87
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sg0",
+      "lineText": "Sir , there is a fray to be fought between Sir Hugh the Welsh priest and Caius the French doctor .",
+      "scrollMode": "auto",
+      "lineIndex": 88
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sd0",
+      "lineText": "Good mine Host o’ th’ Garter , a word with you .",
+      "scrollMode": "auto",
+      "lineIndex": 89
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sfg",
+      "lineText": "What say’st thou , my bullyrook ?",
+      "scrollMode": "auto",
+      "lineIndex": 90
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": "The Host and Ford talk aside .",
+      "scrollMode": "auto",
+      "lineIndex": 91
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": ", to Page",
+      "scrollMode": "auto",
+      "lineIndex": 92
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sg0",
+      "lineText": "Will you go with us to behold it ? My merry Host hath had the measuring of their weapons and , I think , hath appointed them contrary places ; for , believe me , I hear the parson is no jester . Hark , I will tell you what our sport shall be .",
+      "scrollMode": "auto",
+      "lineIndex": 93
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": "Shallow and Page talk aside .",
+      "scrollMode": "auto",
+      "lineIndex": 94
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": ", to Ford",
+      "scrollMode": "auto",
+      "lineIndex": 95
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sfg",
+      "lineText": "Hast thou no suit against my knight , my guest cavalier ?",
+      "scrollMode": "auto",
+      "lineIndex": 96
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sd0",
+      "lineText": "None , I protest . But I’ll give you a pottle of burnt sack to give me recourse to him , and tell him my name is Brook — only for a jest .",
+      "scrollMode": "auto",
+      "lineIndex": 97
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": "( To Shallow and Page . )",
+      "scrollMode": "auto",
+      "lineIndex": 98
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sfg",
+      "lineText": "( To Shallow and Page . ) Will you go , ameers ?",
+      "scrollMode": "auto",
+      "lineIndex": 99
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sg0",
+      "lineText": "Have with you , mine Host .",
+      "scrollMode": "auto",
+      "lineIndex": 100
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79seg",
+      "lineText": "I have heard the Frenchman hath good skill in his rapier .",
+      "scrollMode": "auto",
+      "lineIndex": 101
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sg0",
+      "lineText": "Tut , sir , I could have told you more . In these times you stand on distance — your passes , stoccados , and I know not what . ’Tis the heart , Master Page ; ’tis here , ’tis here . I have seen the time , with my long sword I would have made you four tall fellows skip like rats .",
+      "scrollMode": "auto",
+      "lineIndex": 102
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sfg",
+      "lineText": "Here , boys , here , here ! Shall we wag ?",
+      "scrollMode": "auto",
+      "lineIndex": 103
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79seg",
+      "lineText": "Have with you . I had rather hear them scold than fight .",
+      "scrollMode": "auto",
+      "lineIndex": 104
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": "Page , Host , and Shallow exit .",
+      "scrollMode": "auto",
+      "lineIndex": 105
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sd0",
+      "lineText": "Though Page be a secure fool and stands so firmly on his wife’s frailty , yet I cannot put off my opinion so easily . She was in his company at Page’s house , and what they made there I know not . Well , I will look further into ’t , and I have a disguise to sound Falstaff . If I find her honest , I lose not my labor . If she be otherwise , ’tis labor well bestowed .",
+      "scrollMode": "auto",
+      "lineIndex": 106
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 107
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": "Enter Sir John Falstaff and Pistol .",
+      "scrollMode": "auto",
+      "lineIndex": 108
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sgg",
+      "lineText": "I will not lend thee a penny .",
+      "scrollMode": "auto",
+      "lineIndex": 109
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sdg",
+      "lineText": "Why then , the world’s mine oyster , which I with sword will open .",
+      "scrollMode": "auto",
+      "lineIndex": 110
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sgg",
+      "lineText": "Not a penny . I have been content , sir , you should lay my countenance to pawn . I have grated upon my good friends for three reprieves for you and your coach-fellow Nym , or else you had looked through the grate like a gemini of baboons . I am damned in hell for swearing to gentlemen my friends you were good soldiers and tall fellows . And when Mistress Bridget lost the handle of her fan , I took ’t upon mine honor thou hadst it not .",
+      "scrollMode": "auto",
+      "lineIndex": 111
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sdg",
+      "lineText": "Didst not thou share ? Hadst thou not fifteen pence ?",
+      "scrollMode": "auto",
+      "lineIndex": 112
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sgg",
+      "lineText": "Reason , you rogue , reason . Think’st thou I’ll endanger my soul gratis ? At a word , hang no more about me . I am no gibbet for you . Go — a short knife and a throng — to your manor of Pickt-hatch , go . You’ll not bear a letter for me , you rogue ? You stand upon your honor ? Why , thou unconfinable ACT 2. SC. 2 baseness , it is as much as I can do to keep the terms of my honor precise . Ay , ay , I myself sometimes , leaving the fear of God on the left hand and hiding mine honor in my necessity , am fain to shuffle , to hedge , and to lurch ; and yet you , rogue , will ensconce your rags , your cat-a-mountain looks , your red-lattice phrases , and your bold beating oaths under the shelter of your honor ! You will not do it ? You ?",
+      "scrollMode": "auto",
+      "lineIndex": 113
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sdg",
+      "lineText": "I do relent . What would thou more of man ?",
+      "scrollMode": "auto",
+      "lineIndex": 114
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": "Enter Robin .",
+      "scrollMode": "auto",
+      "lineIndex": 115
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sh0",
+      "lineText": "Sir , here’s a woman would speak with you .",
+      "scrollMode": "auto",
+      "lineIndex": 116
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sgg",
+      "lineText": "Let her approach .",
+      "scrollMode": "auto",
+      "lineIndex": 117
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": "Enter Mistress Quickly .",
+      "scrollMode": "auto",
+      "lineIndex": 118
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sf0",
+      "lineText": "Give your Worship good morrow .",
+      "scrollMode": "auto",
+      "lineIndex": 119
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sgg",
+      "lineText": "Good morrow , goodwife .",
+      "scrollMode": "auto",
+      "lineIndex": 120
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sf0",
+      "lineText": "Not so , an ’t please your Worship .",
+      "scrollMode": "auto",
+      "lineIndex": 121
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sgg",
+      "lineText": "Good maid , then .",
+      "scrollMode": "auto",
+      "lineIndex": 122
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sf0",
+      "lineText": "I’ll be sworn — as my mother was , the first hour I was born .",
+      "scrollMode": "auto",
+      "lineIndex": 123
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sgg",
+      "lineText": "I do believe the swearer . What with me ?",
+      "scrollMode": "auto",
+      "lineIndex": 124
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sf0",
+      "lineText": "Shall I vouchsafe your Worship a word or two ?",
+      "scrollMode": "auto",
+      "lineIndex": 125
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sgg",
+      "lineText": "Two thousand , fair woman , and I’ll vouchsafe thee the hearing .",
+      "scrollMode": "auto",
+      "lineIndex": 126
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sf0",
+      "lineText": "There is one Mistress Ford , sir — I pray , come a little nearer this ways . I myself dwell with Master Doctor Caius .",
+      "scrollMode": "auto",
+      "lineIndex": 127
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sgg",
+      "lineText": "Well , on . Mistress Ford , you say —",
+      "scrollMode": "auto",
+      "lineIndex": 128
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sf0",
+      "lineText": "Your Worship says very true . I pray your Worship , come a little nearer this ways .",
+      "scrollMode": "auto",
+      "lineIndex": 129
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sgg",
+      "lineText": "I warrant thee , nobody hears . Mine own people , mine own people .",
+      "scrollMode": "auto",
+      "lineIndex": 130
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sf0",
+      "lineText": "Are they so ? God bless them and make them His servants !",
+      "scrollMode": "auto",
+      "lineIndex": 131
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sgg",
+      "lineText": "Well , Mistress Ford — what of her ?",
+      "scrollMode": "auto",
+      "lineIndex": 132
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sf0",
+      "lineText": "Why , sir , she’s a good creature . Lord , Lord , your Worship’s a wanton ! Well , heaven forgive you and all of us , I pray !",
+      "scrollMode": "auto",
+      "lineIndex": 133
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sgg",
+      "lineText": "Mistress Ford — come , Mistress Ford —",
+      "scrollMode": "auto",
+      "lineIndex": 134
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sf0",
+      "lineText": "Marry , this is the short and the long of it : you have brought her into such a canaries as ’tis wonderful . The best courtier of them all , when the court lay at Windsor , could never have brought her to such a canary . Yet there has been knights , and lords , and gentlemen , with their coaches , I warrant you , coach after coach , letter after letter , gift after gift , smelling so sweetly — all musk — and so rushling , I warrant you , in silk and gold , and in such alligant terms , and in such wine and sugar of the best and the fairest , that would have won any woman’s heart ; and , I warrant you , they could never get an eye-wink of her . I had myself twenty angels given me this morning , but I defy all angels in any such sort , as they say , but in the way of honesty . And , I warrant you , they could never get her so much as sip on a cup with the proudest of them all . And yet there has been earls — nay , which is more , pensioners — but , I warrant you , all is one with her .",
+      "scrollMode": "auto",
+      "lineIndex": 135
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sgg",
+      "lineText": "But what says she to me ? Be brief , my good she-Mercury .",
+      "scrollMode": "auto",
+      "lineIndex": 136
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sf0",
+      "lineText": "Marry , she hath received your letter , for the which she thanks you a thousand times , and she gives you to notify that her husband will be absence from his house between ten and eleven .",
+      "scrollMode": "auto",
+      "lineIndex": 137
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sgg",
+      "lineText": "Ten and eleven ?",
+      "scrollMode": "auto",
+      "lineIndex": 138
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sf0",
+      "lineText": "Ay , forsooth ; and then you may come and see the picture , she says , that you wot of . Master Ford , her husband , will be from home . Alas , the sweet woman leads an ill life with him . He’s a very ACT 2. SC. 2 jealousy man . She leads a very frampold life with him , good heart .",
+      "scrollMode": "auto",
+      "lineIndex": 139
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sgg",
+      "lineText": "Ten and eleven . Woman , commend me to her . I will not fail her .",
+      "scrollMode": "auto",
+      "lineIndex": 140
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sf0",
+      "lineText": "Why , you say well . But I have another messenger to your Worship . Mistress Page hath her hearty commendations to you too ; and , let me tell you in your ear , she’s as fartuous a civil modest wife , and one , I tell you , that will not miss you morning nor evening prayer , as any is in Windsor , whoe’er be the other . And she bade me tell your Worship that her husband is seldom from home , but she hopes there will come a time . I never knew a woman so dote upon a man . Surely , I think you have charms , la ! Yes , in truth .",
+      "scrollMode": "auto",
+      "lineIndex": 141
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sgg",
+      "lineText": "Not I , I assure thee . Setting the attraction of my good parts aside , I have no other charms .",
+      "scrollMode": "auto",
+      "lineIndex": 142
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sf0",
+      "lineText": "Blessing on your heart for ’t !",
+      "scrollMode": "auto",
+      "lineIndex": 143
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sgg",
+      "lineText": "But I pray thee , tell me this : has Ford’s wife and Page’s wife acquainted each other how they love me ?",
+      "scrollMode": "auto",
+      "lineIndex": 144
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sf0",
+      "lineText": "That were a jest indeed ! They have not so little grace , I hope . That were a trick indeed ! But Mistress Page would desire you to send her your little page , of all loves . Her husband has a marvelous infection to the little page ; and , truly , Master Page is an honest man . Never a wife in Windsor leads a better life than she does . Do what she will , say what she will , take all , pay all , go to bed when she list , rise when she list — all is as she will . And , truly , she deserves it , for if there be a kind woman in Windsor , she is one . You must send her your page , no remedy .",
+      "scrollMode": "auto",
+      "lineIndex": 145
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sgg",
+      "lineText": "Why , I will .",
+      "scrollMode": "auto",
+      "lineIndex": 146
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sf0",
+      "lineText": "Nay , but do so then , and , look you , he may come and go between you both . And in any ACT 2. SC. 2 case have a nayword , that you may know one another’s mind , and the boy never need to understand anything ; for ’tis not good that children should know any wickedness . Old folks , you know , have discretion , as they say , and know the world .",
+      "scrollMode": "auto",
+      "lineIndex": 147
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": "( He gives her money . )",
+      "scrollMode": "auto",
+      "lineIndex": 148
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": "( Mistress Quickly and Robin exit . )",
+      "scrollMode": "auto",
+      "lineIndex": 149
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sf0",
+      "lineText": "( Mistress Quickly and Robin exit . ) This news distracts me .",
+      "scrollMode": "auto",
+      "lineIndex": 150
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 151
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sdg",
+      "lineText": "This punk is one of Cupid’s carriers . Clap on more sails , pursue ; up with your fights ; Give fire ! She is my prize , or ocean whelm them all !",
+      "scrollMode": "auto",
+      "lineIndex": 152
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 153
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sgg",
+      "lineText": "Sayst thou so , old Jack ? Go thy ways . I’ll make more of thy old body than I have done . Will they yet look after thee ? Wilt thou , after the expense of so much money , be now a gainer ? Good body , I thank thee . Let them say ’tis grossly done ; so it be fairly done , no matter .",
+      "scrollMode": "auto",
+      "lineIndex": 154
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": "Enter Bardolph with wine .",
+      "scrollMode": "auto",
+      "lineIndex": 155
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79shg",
+      "lineText": "Sir John , there’s one Master Brook below would fain speak with you and be acquainted with you , and hath sent your Worship a morning’s draught of sack .",
+      "scrollMode": "auto",
+      "lineIndex": 156
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": "( He hands Falstaff the wine . )",
+      "scrollMode": "auto",
+      "lineIndex": 157
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sgg",
+      "lineText": "Brook is his name ?",
+      "scrollMode": "auto",
+      "lineIndex": 158
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79shg",
+      "lineText": "Ay , sir .",
+      "scrollMode": "auto",
+      "lineIndex": 159
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": "( Bardolph exits . )",
+      "scrollMode": "auto",
+      "lineIndex": 160
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79shg",
+      "lineText": "( Bardolph exits . ) Ah ha , Mistress Ford and Mistress Page , have I encompassed you ? Go to . Via !",
+      "scrollMode": "auto",
+      "lineIndex": 161
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": "Enter Bardolph with Ford disguised as Brook .",
+      "scrollMode": "auto",
+      "lineIndex": 162
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": ", as Brook",
+      "scrollMode": "auto",
+      "lineIndex": 163
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sd0",
+      "lineText": "God bless you , sir .",
+      "scrollMode": "auto",
+      "lineIndex": 164
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sgg",
+      "lineText": "And you , sir . Would you speak with me ?",
+      "scrollMode": "auto",
+      "lineIndex": 165
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": ", as Brook",
+      "scrollMode": "auto",
+      "lineIndex": 166
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sd0",
+      "lineText": "I make bold to press with so little preparation upon you .",
+      "scrollMode": "auto",
+      "lineIndex": 167
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sgg",
+      "lineText": "You’re welcome . What’s your will ? — Give us leave , drawer .",
+      "scrollMode": "auto",
+      "lineIndex": 168
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": "Bardolph exits .",
+      "scrollMode": "auto",
+      "lineIndex": 169
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": ", as Brook",
+      "scrollMode": "auto",
+      "lineIndex": 170
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sd0",
+      "lineText": "Sir , I am a gentleman that have spent much . My name is Brook .",
+      "scrollMode": "auto",
+      "lineIndex": 171
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sgg",
+      "lineText": "Good Master Brook , I desire more acquaintance of you .",
+      "scrollMode": "auto",
+      "lineIndex": 172
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": ", as Brook",
+      "scrollMode": "auto",
+      "lineIndex": 173
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sd0",
+      "lineText": "Good Sir John , I sue for yours — not to charge you , for I must let you understand I think myself in better plight for a lender than you are , the which hath something emboldened me to this unseasoned intrusion ; for they say , if money go before , all ways do lie open .",
+      "scrollMode": "auto",
+      "lineIndex": 174
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sgg",
+      "lineText": "Money is a good soldier , sir , and will on .",
+      "scrollMode": "auto",
+      "lineIndex": 175
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": ", as Brook",
+      "scrollMode": "auto",
+      "lineIndex": 176
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": "He sets it down .",
+      "scrollMode": "auto",
+      "lineIndex": 177
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sd0",
+      "lineText": "He sets it down . If you will help to bear it , Sir John , take all , or half , for easing me of the carriage .",
+      "scrollMode": "auto",
+      "lineIndex": 178
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sgg",
+      "lineText": "Sir , I know not how I may deserve to be your porter .",
+      "scrollMode": "auto",
+      "lineIndex": 179
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": ", as Brook",
+      "scrollMode": "auto",
+      "lineIndex": 180
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sd0",
+      "lineText": "I will tell you , sir , if you will give me the hearing .",
+      "scrollMode": "auto",
+      "lineIndex": 181
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sgg",
+      "lineText": "Speak , good Master Brook . I shall be glad to be your servant .",
+      "scrollMode": "auto",
+      "lineIndex": 182
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": ", as Brook",
+      "scrollMode": "auto",
+      "lineIndex": 183
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sd0",
+      "lineText": "Sir , I hear you are a scholar — I will be brief with you — and you have been a man long known to me , though I had never so good means as desire to make myself acquainted with you . I shall discover a thing to you wherein I must very much lay open mine own imperfection . But , good Sir John , as you have one eye upon my follies , as you hear them unfolded , turn another into the register of your own , that I may pass with a reproof the easier , sith you yourself know how easy it is to be such an offender .",
+      "scrollMode": "auto",
+      "lineIndex": 184
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sgg",
+      "lineText": "Very well , sir . Proceed .",
+      "scrollMode": "auto",
+      "lineIndex": 185
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": ", as Brook",
+      "scrollMode": "auto",
+      "lineIndex": 186
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sd0",
+      "lineText": "There is a gentlewoman in this town — her husband’s name is Ford .",
+      "scrollMode": "auto",
+      "lineIndex": 187
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sgg",
+      "lineText": "Well , sir .",
+      "scrollMode": "auto",
+      "lineIndex": 188
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": ", as Brook",
+      "scrollMode": "auto",
+      "lineIndex": 189
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sd0",
+      "lineText": "I have long loved her and , I protest to you , bestowed much on her , followed her with a doting observance , engrossed opportunities to meet her , fee’d every slight occasion that could but niggardly give me sight of her , not only bought many presents to give her , but have given largely to many to know what she would have given . Briefly , I have pursued her as love hath pursued me , which hath been on the wing of all occasions . But whatsoever I have merited , either in my mind or in my means , meed I am sure I have received none , unless experience be a jewel . That I have purchased at an infinite rate , and that hath taught me to say this : Love like a shadow flies when substance love pursues , Pursuing that that flies , and flying what pursues .",
+      "scrollMode": "auto",
+      "lineIndex": 190
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sgg",
+      "lineText": "Have you received no promise of satisfaction at her hands ?",
+      "scrollMode": "auto",
+      "lineIndex": 191
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": ", as Brook",
+      "scrollMode": "auto",
+      "lineIndex": 192
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sd0",
+      "lineText": "Never .",
+      "scrollMode": "auto",
+      "lineIndex": 193
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sgg",
+      "lineText": "Have you importuned her to such a purpose ?",
+      "scrollMode": "auto",
+      "lineIndex": 194
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": ", as Brook",
+      "scrollMode": "auto",
+      "lineIndex": 195
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sd0",
+      "lineText": "Never .",
+      "scrollMode": "auto",
+      "lineIndex": 196
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sgg",
+      "lineText": "Of what quality was your love , then ?",
+      "scrollMode": "auto",
+      "lineIndex": 197
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": ", as Brook",
+      "scrollMode": "auto",
+      "lineIndex": 198
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sd0",
+      "lineText": "Like a fair house built on another man’s ground , so that I have lost my edifice by mistaking the place where I erected it .",
+      "scrollMode": "auto",
+      "lineIndex": 199
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sgg",
+      "lineText": "To what purpose have you unfolded this to me ?",
+      "scrollMode": "auto",
+      "lineIndex": 200
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": ", as Brook",
+      "scrollMode": "auto",
+      "lineIndex": 201
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sd0",
+      "lineText": "When I have told you that , I have told you all . Some say that though she appear honest to me , yet in other places she enlargeth her mirth so far that there is shrewd construction ACT 2. SC. 2 made of her . Now , Sir John , here is the heart of my purpose : you are a gentleman of excellent breeding , admirable discourse , of great admittance , authentic in your place and person , generally allowed for your many warlike , courtlike , and learned preparations .",
+      "scrollMode": "auto",
+      "lineIndex": 202
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sgg",
+      "lineText": "O , sir !",
+      "scrollMode": "auto",
+      "lineIndex": 203
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": ", as Brook",
+      "scrollMode": "auto",
+      "lineIndex": 204
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": "( He points to the bag . )",
+      "scrollMode": "auto",
+      "lineIndex": 205
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sd0",
+      "lineText": "( He points to the bag . ) Spend it , spend it , spend more ; spend all I have . Only give me so much of your time in exchange of it as to lay an amiable siege to the honesty of this Ford’s wife . Use your art of wooing ; win her to consent to you . If any man may , you may as soon as any .",
+      "scrollMode": "auto",
+      "lineIndex": 206
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sgg",
+      "lineText": "Would it apply well to the vehemency of your affection that I should win what you would enjoy ? Methinks you prescribe to yourself very preposterously .",
+      "scrollMode": "auto",
+      "lineIndex": 207
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": ", as Brook",
+      "scrollMode": "auto",
+      "lineIndex": 208
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sd0",
+      "lineText": "O , understand my drift . She dwells so securely on the excellency of her honor that the folly of my soul dares not present itself ; she is too bright to be looked against . Now , could I come to her with any detection in my hand , my desires had instance and argument to commend themselves . I could drive her then from the ward of her purity , her reputation , her marriage vow , and a thousand other her defenses , which now are too too strongly embattled against me . What say you to ’t , Sir John ?",
+      "scrollMode": "auto",
+      "lineIndex": 209
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": ", taking the bag",
+      "scrollMode": "auto",
+      "lineIndex": 210
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sgg",
+      "lineText": "Master Brook , I will first make bold with your money ; next , give me your hand ; and , last , as I am a gentleman , you shall , if you will , enjoy Ford’s wife .",
+      "scrollMode": "auto",
+      "lineIndex": 211
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": ", as Brook",
+      "scrollMode": "auto",
+      "lineIndex": 212
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sd0",
+      "lineText": "O , good sir !",
+      "scrollMode": "auto",
+      "lineIndex": 213
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sgg",
+      "lineText": "I say you shall .",
+      "scrollMode": "auto",
+      "lineIndex": 214
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": ", as Brook",
+      "scrollMode": "auto",
+      "lineIndex": 215
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sd0",
+      "lineText": "Want no money , Sir John ; you shall want none .",
+      "scrollMode": "auto",
+      "lineIndex": 216
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sgg",
+      "lineText": "Want no Mistress Ford , Master Brook ; you shall want none . I shall be with her , I may tell you , by her own appointment . Even as you came in to me , her assistant or go-between parted from me . I say I shall be with her between ten and eleven , for at that time the jealous , rascally knave her husband will be forth . Come you to me at night . You shall know how I speed .",
+      "scrollMode": "auto",
+      "lineIndex": 217
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": ", as Brook",
+      "scrollMode": "auto",
+      "lineIndex": 218
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sd0",
+      "lineText": "I am blessed in your acquaintance . Do you know Ford , sir ?",
+      "scrollMode": "auto",
+      "lineIndex": 219
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sgg",
+      "lineText": "Hang him , poor cuckoldly knave ! I know him not . Yet I wrong him to call him poor . They say the jealous wittolly knave hath masses of money , for the which his wife seems to me well-favored . I will use her as the key of the cuckoldly rogue’s coffer , and there’s my harvest home .",
+      "scrollMode": "auto",
+      "lineIndex": 220
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": ", as Brook",
+      "scrollMode": "auto",
+      "lineIndex": 221
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sd0",
+      "lineText": "I would you knew Ford , sir , that you might avoid him if you saw him .",
+      "scrollMode": "auto",
+      "lineIndex": 222
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sgg",
+      "lineText": "Hang him , mechanical salt-butter rogue ! I will stare him out of his wits . I will awe him with my cudgel ; it shall hang like a meteor o’er the cuckold’s horns . Master Brook , thou shalt know I will predominate over the peasant , and thou shalt lie with his wife . Come to me soon at night . Ford’s a knave , and I will aggravate his style . Thou , Master Brook , shalt know him for knave and cuckold . Come to me soon at night .",
+      "scrollMode": "auto",
+      "lineIndex": 223
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": "Falstaff exits .",
+      "scrollMode": "auto",
+      "lineIndex": 224
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sd0",
+      "lineText": "What a damned epicurean rascal is this ! My heart is ready to crack with impatience . Who says this is improvident jealousy ? My wife hath sent to him , the hour is fixed , the match is made . Would any man have thought this ? See the hell of having a false woman : my bed shall be abused , my coffers ransacked , my reputation gnawn at . And I shall not only receive this villainous wrong but stand under the adoption of abominable terms , ACT 2. SC. 3 and by him that does me this wrong . Terms , names ! Amaimon sounds well , Lucifer well , Barbason well ; yet they are devils’ additions , the names of fiends . But Cuckold , Wittoll , Cuckold ! The devil himself hath not such a name . Page is an ass , a secure ass . He will trust his wife , he will not be jealous . I will rather trust a Fleming with my butter , Parson Hugh the Welshman with my cheese , an Irishman with my aquavitae bottle , or a thief to walk my ambling gelding , than my wife with herself . Then she plots , then she ruminates , then she devises ; and what they think in their hearts they may effect , they will break their hearts but they will effect . God be praised for my jealousy ! Eleven o’clock the hour . I will prevent this , detect my wife , be revenged on Falstaff , and laugh at Page . I will about it . Better three hours too soon than a minute too late . Fie , fie , fie ! Cuckold , cuckold , cuckold !",
+      "scrollMode": "auto",
+      "lineIndex": 225
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 226
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": "Enter Doctor Caius and Rugby .",
+      "scrollMode": "auto",
+      "lineIndex": 227
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79si0",
+      "lineText": "Jack Rugby .",
+      "scrollMode": "auto",
+      "lineIndex": 228
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sig",
+      "lineText": "Sir ?",
+      "scrollMode": "auto",
+      "lineIndex": 229
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79si0",
+      "lineText": "Vat is the clock , Jack ?",
+      "scrollMode": "auto",
+      "lineIndex": 230
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sig",
+      "lineText": "’Tis past the hour , sir , that Sir Hugh promised to meet .",
+      "scrollMode": "auto",
+      "lineIndex": 231
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79si0",
+      "lineText": "By gar , he has save his soul dat he is no come . He has pray his Pible well dat he is no come . By gar , Jack Rugby , he is dead already if he be come .",
+      "scrollMode": "auto",
+      "lineIndex": 232
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sig",
+      "lineText": "He is wise , sir . He knew your Worship would kill him if he came .",
+      "scrollMode": "auto",
+      "lineIndex": 233
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79si0",
+      "lineText": "By gar , de herring is no dead so as I vill kill him . Take your rapier , Jack . I vill tell you how I vill kill him .",
+      "scrollMode": "auto",
+      "lineIndex": 234
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sig",
+      "lineText": "Alas , sir , I cannot fence .",
+      "scrollMode": "auto",
+      "lineIndex": 235
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79si0",
+      "lineText": "Villainy , take your rapier .",
+      "scrollMode": "auto",
+      "lineIndex": 236
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sig",
+      "lineText": "Forbear . Here’s company .",
+      "scrollMode": "auto",
+      "lineIndex": 237
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": "Enter Page , Shallow , Slender , and Host .",
+      "scrollMode": "auto",
+      "lineIndex": 238
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sfg",
+      "lineText": "God bless thee , bully doctor !",
+      "scrollMode": "auto",
+      "lineIndex": 239
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sg0",
+      "lineText": "God save you , Master Doctor Caius !",
+      "scrollMode": "auto",
+      "lineIndex": 240
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79seg",
+      "lineText": "Now , good Master Doctor !",
+      "scrollMode": "auto",
+      "lineIndex": 241
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sj0",
+      "lineText": "Give you good morrow , sir .",
+      "scrollMode": "auto",
+      "lineIndex": 242
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79si0",
+      "lineText": "Vat be all you , one , two , tree , four , come for ?",
+      "scrollMode": "auto",
+      "lineIndex": 243
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sfg",
+      "lineText": "To see thee fight , to see thee foin , to see thee traverse ; to see thee here , to see thee there ; to see thy pass , thy puncto , thy stock , thy reverse , thy distance , thy montant . Is he dead , my Ethiopian ? Is he dead , my Francisco ? Ha , bully ? What says my Aesculapius , my Galien , my heart of elder , ha ? Is he dead , bully stale ? Is he dead ?",
+      "scrollMode": "auto",
+      "lineIndex": 244
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79si0",
+      "lineText": "By gar , he is de coward jack-priest of de vorld . He is not show his face .",
+      "scrollMode": "auto",
+      "lineIndex": 245
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sfg",
+      "lineText": "Thou art a Castalion King Urinal Hector of Greece , my boy !",
+      "scrollMode": "auto",
+      "lineIndex": 246
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79si0",
+      "lineText": "I pray you , bear witness that me have stay six or seven , two , tree hours for him , and he is no come .",
+      "scrollMode": "auto",
+      "lineIndex": 247
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sg0",
+      "lineText": "He is the wiser man , Master Doctor . He is a curer of souls , and you a curer of bodies . If you should fight , you go against the hair of your professions . — Is it not true , Master Page ?",
+      "scrollMode": "auto",
+      "lineIndex": 248
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79seg",
+      "lineText": "Master Shallow , you have yourself been a great fighter , though now a man of peace .",
+      "scrollMode": "auto",
+      "lineIndex": 249
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sg0",
+      "lineText": "Bodykins , Master Page , though I now be old and of the peace , if I see a sword out , my finger ACT 2. SC. 3 itches to make one . Though we are justices and doctors and churchmen , Master Page , we have some salt of our youth in us . We are the sons of women , Master Page .",
+      "scrollMode": "auto",
+      "lineIndex": 250
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79seg",
+      "lineText": "’Tis true , Master Shallow .",
+      "scrollMode": "auto",
+      "lineIndex": 251
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sg0",
+      "lineText": "It will be found so , Master Page . — Master Doctor Caius , I am come to fetch you home . I am sworn of the peace . You have showed yourself a wise physician , and Sir Hugh hath shown himself a wise and patient churchman . You must go with me , Master Doctor .",
+      "scrollMode": "auto",
+      "lineIndex": 252
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": "( To Caius . )",
+      "scrollMode": "auto",
+      "lineIndex": 253
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sfg",
+      "lineText": "( To Caius . ) A word , Monsieur Mockwater .",
+      "scrollMode": "auto",
+      "lineIndex": 254
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79si0",
+      "lineText": "Mockvater ? Vat is dat ?",
+      "scrollMode": "auto",
+      "lineIndex": 255
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sfg",
+      "lineText": "Mockwater , in our English tongue , is valor , bully .",
+      "scrollMode": "auto",
+      "lineIndex": 256
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79si0",
+      "lineText": "By gar , then I have as much mockvater as de Englishman . Scurvy jack-dog priest ! By gar , me vill cut his ears .",
+      "scrollMode": "auto",
+      "lineIndex": 257
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sfg",
+      "lineText": "He will clapper-claw thee tightly , bully .",
+      "scrollMode": "auto",
+      "lineIndex": 258
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79si0",
+      "lineText": "Clapper-de-claw ? Vat is dat ?",
+      "scrollMode": "auto",
+      "lineIndex": 259
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sfg",
+      "lineText": "That is , he will make thee amends .",
+      "scrollMode": "auto",
+      "lineIndex": 260
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79si0",
+      "lineText": "By gar , me do look he shall clapper-de-claw me , for , by gar , me vill have it .",
+      "scrollMode": "auto",
+      "lineIndex": 261
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sfg",
+      "lineText": "And I will provoke him to ’t , or let him wag .",
+      "scrollMode": "auto",
+      "lineIndex": 262
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79si0",
+      "lineText": "Me tank you for dat .",
+      "scrollMode": "auto",
+      "lineIndex": 263
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": "( He draws Shallow , Page , and Slender aside . )",
+      "scrollMode": "auto",
+      "lineIndex": 264
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sfg",
+      "lineText": "( He draws Shallow , Page , and Slender aside . ) But first , Master guest , and Master Page , and eke Cavaleiro Slender , go you through the town to Frogmore .",
+      "scrollMode": "auto",
+      "lineIndex": 265
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79seg",
+      "lineText": "Sir Hugh is there , is he ?",
+      "scrollMode": "auto",
+      "lineIndex": 266
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sfg",
+      "lineText": "He is there . See what humor he is in ; and I will bring the doctor about by the fields . Will it do well ?",
+      "scrollMode": "auto",
+      "lineIndex": 267
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sg0",
+      "lineText": "We will do it .",
+      "scrollMode": "auto",
+      "lineIndex": 268
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79seg",
+      "lineText": "Adieu , good Master Doctor .",
+      "scrollMode": "auto",
+      "lineIndex": 269
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": "Page , Shallow , and Slender exit .",
+      "scrollMode": "auto",
+      "lineIndex": 270
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79si0",
+      "lineText": "By gar , me vill kill de priest , for he speak for a jackanape to Anne Page .",
+      "scrollMode": "auto",
+      "lineIndex": 271
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sfg",
+      "lineText": "Let him die . Sheathe thy impatience ; throw cold water on thy choler . Go about the fields with me through Frogmore . I will bring thee where Mistress Anne Page is , at a farmhouse a-feasting , and thou shalt woo her . Cried game ! Said I well ?",
+      "scrollMode": "auto",
+      "lineIndex": 272
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79si0",
+      "lineText": "By gar , me dank you vor dat . By gar , I love you , and I shall procure-a you de good guest : de earl , de knight , de lords , de gentlemen , my patients .",
+      "scrollMode": "auto",
+      "lineIndex": 273
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sfg",
+      "lineText": "For the which I will be thy adversary toward Anne Page . Said I well ?",
+      "scrollMode": "auto",
+      "lineIndex": 274
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79si0",
+      "lineText": "By gar , ’tis good . Vell said .",
+      "scrollMode": "auto",
+      "lineIndex": 275
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sfg",
+      "lineText": "Let us wag , then .",
+      "scrollMode": "auto",
+      "lineIndex": 276
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79si0",
+      "lineText": "Come at my heels , Jack Rugby .",
+      "scrollMode": "auto",
+      "lineIndex": 277
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79sbg",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 278
+    }
+  ],
+  "isPublic": true
+}

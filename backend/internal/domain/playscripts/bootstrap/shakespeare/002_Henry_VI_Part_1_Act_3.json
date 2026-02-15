@@ -1,0 +1,1423 @@
+{
+  "title": "Henry VI, Part 1 (Act 3)",
+  "description": "Folger Shakespeare Library edition",
+  "author": "William Shakespeare",
+  "castMembers": [
+    {
+      "id": "d68m114n9qd8d2h78da0",
+      "name": "Narrator",
+      "sortOrder": 0
+    },
+    {
+      "id": "d68m114n9qd8d2h78dag",
+      "name": "Winchester",
+      "description": "the king’s great-uncle",
+      "sortOrder": 1
+    },
+    {
+      "id": "d68m114n9qd8d2h78db0",
+      "name": "Gloucester",
+      "description": "the king’s uncle, and Lord Protector",
+      "sortOrder": 2
+    },
+    {
+      "id": "d68m114n9qd8d2h78dbg",
+      "name": "Warwick",
+      "sortOrder": 3
+    },
+    {
+      "id": "d68m114n9qd8d2h78dc0",
+      "name": "Somerset",
+      "sortOrder": 4
+    },
+    {
+      "id": "d68m114n9qd8d2h78dcg",
+      "name": "York",
+      "description": "and Regent of France",
+      "sortOrder": 5
+    },
+    {
+      "id": "d68m114n9qd8d2h78dd0",
+      "name": "King Henry VI",
+      "sortOrder": 6
+    },
+    {
+      "id": "d68m114n9qd8d2h78ddg",
+      "name": "Mayor",
+      "sortOrder": 7
+    },
+    {
+      "id": "d68m114n9qd8d2h78de0",
+      "name": "First Servingman",
+      "sortOrder": 8
+    },
+    {
+      "id": "d68m114n9qd8d2h78deg",
+      "name": "First Servingman",
+      "sortOrder": 9
+    },
+    {
+      "id": "d68m114n9qd8d2h78df0",
+      "name": "Third Servingman",
+      "sortOrder": 10
+    },
+    {
+      "id": "d68m114n9qd8d2h78dfg",
+      "name": "First Servingman",
+      "sortOrder": 11
+    },
+    {
+      "id": "d68m114n9qd8d2h78dg0",
+      "name": "Second Servingman",
+      "sortOrder": 12
+    },
+    {
+      "id": "d68m114n9qd8d2h78dgg",
+      "name": "Third Servingman",
+      "sortOrder": 13
+    },
+    {
+      "id": "d68m114n9qd8d2h78dh0",
+      "name": "Exeter",
+      "description": "the king’s great-uncle",
+      "sortOrder": 14
+    },
+    {
+      "id": "d68m114n9qd8d2h78dhg",
+      "name": "Suffolk",
+      "sortOrder": 15
+    },
+    {
+      "id": "d68m114n9qd8d2h78di0",
+      "name": "Pucelle",
+      "sortOrder": 16
+    },
+    {
+      "id": "d68m114n9qd8d2h78dig",
+      "name": "Soldier",
+      "sortOrder": 17
+    },
+    {
+      "id": "d68m114n9qd8d2h78dj0",
+      "name": "Watch",
+      "sortOrder": 18
+    },
+    {
+      "id": "d68m114n9qd8d2h78djg",
+      "name": "Charles",
+      "sortOrder": 19
+    },
+    {
+      "id": "d68m114n9qd8d2h78dk0",
+      "name": "Orleance",
+      "sortOrder": 20
+    },
+    {
+      "id": "d68m114n9qd8d2h78dkg",
+      "name": "Reignier",
+      "description": "Duke of Anjou and Maine, King of Naples",
+      "sortOrder": 21
+    },
+    {
+      "id": "d68m114n9qd8d2h78dl0",
+      "name": "Talbot",
+      "description": "afterwards Earl of Shrewsbury",
+      "sortOrder": 22
+    },
+    {
+      "id": "d68m114n9qd8d2h78dlg",
+      "name": "Burgundy",
+      "sortOrder": 23
+    },
+    {
+      "id": "d68m114n9qd8d2h78dm0",
+      "name": "Bedford",
+      "description": "the king’s uncle, and Regent of France",
+      "sortOrder": 24
+    },
+    {
+      "id": "d68m114n9qd8d2h78dmg",
+      "name": "Alanson",
+      "sortOrder": 25
+    },
+    {
+      "id": "d68m114n9qd8d2h78dn0",
+      "name": "Captain",
+      "sortOrder": 26
+    },
+    {
+      "id": "d68m114n9qd8d2h78dng",
+      "name": "Fastolf",
+      "sortOrder": 27
+    },
+    {
+      "id": "d68m114n9qd8d2h78do0",
+      "name": "Vernon",
+      "description": "of the White Rose or York faction",
+      "sortOrder": 28
+    },
+    {
+      "id": "d68m114n9qd8d2h78dog",
+      "name": "Basset",
+      "description": "of the Red Rose or Lancaster faction",
+      "sortOrder": 29
+    }
+  ],
+  "lines": [
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": "Flourish . Enter King Henry , Exeter , Gloucester , and Winchester ; Richard Plantagenet and Warwick , with white roses ; Somerset and Suffolk , with red roses ; and Others .",
+      "scrollMode": "auto",
+      "lineIndex": 0
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": "Gloucester offers to put up a bill . Winchester snatches it , tears it .",
+      "scrollMode": "auto",
+      "lineIndex": 1
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dag",
+      "lineText": "Com’st thou with deep premeditated lines , With written pamphlets studiously devised ? Humphrey of Gloucester , if thou canst accuse Or aught intend’st to lay unto my charge , Do it without invention , suddenly , As I with sudden and extemporal speech Purpose to answer what thou canst object .",
+      "scrollMode": "auto",
+      "lineIndex": 2
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78db0",
+      "lineText": "Presumptuous priest , this place commands my patience , Or thou shouldst find thou hast dishonored me . Think not , although in writing I preferred The manner of thy vile outrageous crimes , That therefore I have forged or am not able Verbatim to rehearse the method of my pen . No , prelate , such is thy audacious wickedness , Thy lewd , pestiferous , and dissentious pranks , As very infants prattle of thy pride . Thou art a most pernicious usurer , Froward by nature , enemy to peace , Lascivious , wanton , more than well beseems ACT 3. SC. 1 A man of thy profession and degree . And for thy treachery , what’s more manifest , In that thou laid’st a trap to take my life As well at London Bridge as at the Tower ? Besides , I fear me , if thy thoughts were sifted , The King , thy sovereign , is not quite exempt From envious malice of thy swelling heart .",
+      "scrollMode": "auto",
+      "lineIndex": 3
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dag",
+      "lineText": "Gloucester , I do defy thee . — Lords , vouchsafe To give me hearing what I shall reply . If I were covetous , ambitious , or perverse , As he will have me , how am I so poor ? Or how haps it I seek not to advance Or raise myself , but keep my wonted calling ? And for dissension , who preferreth peace More than I do , except I be provoked ? No , my good lords , it is not that offends ; It is not that that hath incensed the Duke . It is because no one should sway but he , No one but he should be about the King ; And that engenders thunder in his breast And makes him roar these accusations forth . But he shall know I am as good —",
+      "scrollMode": "auto",
+      "lineIndex": 4
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78db0",
+      "lineText": "As good ! Thou bastard of my grandfather !",
+      "scrollMode": "auto",
+      "lineIndex": 5
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dag",
+      "lineText": "Ay , lordly sir ; for what are you , I pray , But one imperious in another’s throne ?",
+      "scrollMode": "auto",
+      "lineIndex": 6
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78db0",
+      "lineText": "Am I not Protector , saucy priest ?",
+      "scrollMode": "auto",
+      "lineIndex": 7
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dag",
+      "lineText": "And am not I a prelate of the Church ?",
+      "scrollMode": "auto",
+      "lineIndex": 8
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78db0",
+      "lineText": "Yes , as an outlaw in a castle keeps , And useth it to patronage his theft .",
+      "scrollMode": "auto",
+      "lineIndex": 9
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dag",
+      "lineText": "Unreverent Gloucester !",
+      "scrollMode": "auto",
+      "lineIndex": 10
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78db0",
+      "lineText": "Thou art reverend Touching thy spiritual function , not thy life .",
+      "scrollMode": "auto",
+      "lineIndex": 11
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dag",
+      "lineText": "Rome shall remedy this .",
+      "scrollMode": "auto",
+      "lineIndex": 12
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78db0",
+      "lineText": "Roam thither then .",
+      "scrollMode": "auto",
+      "lineIndex": 13
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": ", to Winchester",
+      "scrollMode": "auto",
+      "lineIndex": 14
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dbg",
+      "lineText": "My lord , it were your duty to forbear .",
+      "scrollMode": "auto",
+      "lineIndex": 15
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dc0",
+      "lineText": "Ay , so the Bishop be not overborne . Methinks my lord should be religious , And know the office that belongs to such .",
+      "scrollMode": "auto",
+      "lineIndex": 16
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dbg",
+      "lineText": "Methinks his Lordship should be humbler . It fitteth not a prelate so to plead .",
+      "scrollMode": "auto",
+      "lineIndex": 17
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dc0",
+      "lineText": "Yes , when his holy state is touched so near .",
+      "scrollMode": "auto",
+      "lineIndex": 18
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dbg",
+      "lineText": "State holy , or unhallowed , what of that ? Is not his Grace Protector to the King ?",
+      "scrollMode": "auto",
+      "lineIndex": 19
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 20
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dcg",
+      "lineText": "Plantagenet , I see , must hold his tongue , Lest it be said Speak , sirrah , when you should ; Must your bold verdict enter talk with lords ? Else would I have a fling at Winchester .",
+      "scrollMode": "auto",
+      "lineIndex": 21
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": "A noise within : Down with the tawny coats !",
+      "scrollMode": "auto",
+      "lineIndex": 22
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dd0",
+      "lineText": "A noise within : Down with the tawny coats ! What tumult ’s this ?",
+      "scrollMode": "auto",
+      "lineIndex": 23
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dbg",
+      "lineText": "An uproar , I dare warrant , Begun through malice of the Bishop’s men .",
+      "scrollMode": "auto",
+      "lineIndex": 24
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": "A noise again : Stones ! Stones !",
+      "scrollMode": "auto",
+      "lineIndex": 25
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": "Enter Mayor .",
+      "scrollMode": "auto",
+      "lineIndex": 26
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78ddg",
+      "lineText": "O , my good lords , and virtuous Henry , Pity the city of London , pity us ! The Bishop and the Duke of Gloucester’s men , Forbidden late to carry any weapon , Have filled their pockets full of pebble stones And , banding themselves in contrary parts , Do pelt so fast at one another’s pate That many have their giddy brains knocked out ; Our windows are broke down in every street , And we , for fear , compelled to shut our shops .",
+      "scrollMode": "auto",
+      "lineIndex": 27
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": "Enter Servingmen in skirmish with bloody pates .",
+      "scrollMode": "auto",
+      "lineIndex": 28
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dd0",
+      "lineText": "We charge you , on allegiance to ourself , To hold your slaught’ring hands and keep the peace . — Pray , Uncle Gloucester , mitigate this strife .",
+      "scrollMode": "auto",
+      "lineIndex": 29
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78de0",
+      "lineText": "Nay , if we be forbidden stones , we’ll fall to it with our teeth .",
+      "scrollMode": "auto",
+      "lineIndex": 30
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78deg",
+      "lineText": "Do what you dare , we are as resolute .",
+      "scrollMode": "auto",
+      "lineIndex": 31
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": "Skirmish again .",
+      "scrollMode": "auto",
+      "lineIndex": 32
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78db0",
+      "lineText": "You of my household , leave this peevish broil , And set this unaccustomed fight aside .",
+      "scrollMode": "auto",
+      "lineIndex": 33
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78df0",
+      "lineText": "My lord , we know your Grace to be a man Just and upright , and , for your royal birth , ACT 3. SC. 1 Inferior to none but to his Majesty ; And ere that we will suffer such a prince , So kind a father of the commonweal , To be disgracèd by an inkhorn mate , We and our wives and children all will fight And have our bodies slaughtered by thy foes .",
+      "scrollMode": "auto",
+      "lineIndex": 34
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78de0",
+      "lineText": "Ay , and the very parings of our nails Shall pitch a field when we are dead .",
+      "scrollMode": "auto",
+      "lineIndex": 35
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": "Begin again .",
+      "scrollMode": "auto",
+      "lineIndex": 36
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78db0",
+      "lineText": "Stay , stay , I say ! And if you love me , as you say you do , Let me persuade you to forbear awhile .",
+      "scrollMode": "auto",
+      "lineIndex": 37
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dd0",
+      "lineText": "O , how this discord doth afflict my soul ! Can you , my Lord of Winchester , behold My sighs and tears , and will not once relent ? Who should be pitiful if you be not ? Or who should study to prefer a peace If holy churchmen take delight in broils ?",
+      "scrollMode": "auto",
+      "lineIndex": 38
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dbg",
+      "lineText": "Yield , my Lord Protector — yield , Winchester — Except you mean with obstinate repulse To slay your sovereign and destroy the realm . You see what mischief , and what murder too , Hath been enacted through your enmity . Then be at peace , except you thirst for blood .",
+      "scrollMode": "auto",
+      "lineIndex": 39
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dag",
+      "lineText": "He shall submit , or I will never yield .",
+      "scrollMode": "auto",
+      "lineIndex": 40
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78db0",
+      "lineText": "Compassion on the King commands me stoop , Or I would see his heart out ere the priest Should ever get that privilege of me .",
+      "scrollMode": "auto",
+      "lineIndex": 41
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dbg",
+      "lineText": "Behold , my Lord of Winchester , the Duke Hath banished moody discontented fury , ACT 3. SC. 1 As by his smoothèd brows it doth appear . Why look you still so stern and tragical ?",
+      "scrollMode": "auto",
+      "lineIndex": 42
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78db0",
+      "lineText": "Here , Winchester , I offer thee my hand .",
+      "scrollMode": "auto",
+      "lineIndex": 43
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": "Winchester refuses Gloucester’s hand .",
+      "scrollMode": "auto",
+      "lineIndex": 44
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dd0",
+      "lineText": "Fie , Uncle Beaufort ! I have heard you preach That malice was a great and grievous sin ; And will not you maintain the thing you teach , But prove a chief offender in the same ?",
+      "scrollMode": "auto",
+      "lineIndex": 45
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dbg",
+      "lineText": "Sweet king ! The Bishop hath a kindly gird . — For shame , my Lord of Winchester , relent ; What , shall a child instruct you what to do ?",
+      "scrollMode": "auto",
+      "lineIndex": 46
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dag",
+      "lineText": "Well , Duke of Gloucester , I will yield to thee ; Love for thy love and hand for hand I give .",
+      "scrollMode": "auto",
+      "lineIndex": 47
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": "They take each other’s hand .",
+      "scrollMode": "auto",
+      "lineIndex": 48
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 49
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78db0",
+      "lineText": "Ay , but I fear me with a hollow heart . — See here , my friends and loving countrymen , This token serveth for a flag of truce Betwixt ourselves and all our followers , So help me God , as I dissemble not .",
+      "scrollMode": "auto",
+      "lineIndex": 50
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 51
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dag",
+      "lineText": "So help me God , as I intend it not .",
+      "scrollMode": "auto",
+      "lineIndex": 52
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": "To the Servingmen .",
+      "scrollMode": "auto",
+      "lineIndex": 53
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dd0",
+      "lineText": "To the Servingmen . Away , my masters , trouble us no more , But join in friendship as your lords have done .",
+      "scrollMode": "auto",
+      "lineIndex": 54
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dfg",
+      "lineText": "Content . I’ll to the surgeon’s .",
+      "scrollMode": "auto",
+      "lineIndex": 55
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dg0",
+      "lineText": "And so will I .",
+      "scrollMode": "auto",
+      "lineIndex": 56
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dgg",
+      "lineText": "And I will see what physic the tavern affords .",
+      "scrollMode": "auto",
+      "lineIndex": 57
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": "They exit with Mayor and Others .",
+      "scrollMode": "auto",
+      "lineIndex": 58
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": ", presenting a scroll",
+      "scrollMode": "auto",
+      "lineIndex": 59
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dbg",
+      "lineText": "Accept this scroll , most gracious sovereign , Which in the right of Richard Plantagenet We do exhibit to your Majesty .",
+      "scrollMode": "auto",
+      "lineIndex": 60
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78db0",
+      "lineText": "Well urged , my Lord of Warwick . — For , sweet prince , An if your Grace mark every circumstance , You have great reason to do Richard right , Especially for those occasions At Eltham Place I told your Majesty .",
+      "scrollMode": "auto",
+      "lineIndex": 61
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dd0",
+      "lineText": "And those occasions , uncle , were of force . — Therefore , my loving lords , our pleasure is That Richard be restorèd to his blood .",
+      "scrollMode": "auto",
+      "lineIndex": 62
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dbg",
+      "lineText": "Let Richard be restorèd to his blood ; So shall his father’s wrongs be recompensed .",
+      "scrollMode": "auto",
+      "lineIndex": 63
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dag",
+      "lineText": "As will the rest , so willeth Winchester .",
+      "scrollMode": "auto",
+      "lineIndex": 64
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dd0",
+      "lineText": "If Richard will be true , not that alone But all the whole inheritance I give That doth belong unto the house of York , From whence you spring by lineal descent .",
+      "scrollMode": "auto",
+      "lineIndex": 65
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dcg",
+      "lineText": "Thy humble servant vows obedience And humble service till the point of death .",
+      "scrollMode": "auto",
+      "lineIndex": 66
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": "Plantagenet kneels .",
+      "scrollMode": "auto",
+      "lineIndex": 67
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dcg",
+      "lineText": "Plantagenet kneels . And in reguerdon of that duty done I girt thee with the valiant sword of York . ACT 3. SC. 1 Rise , Richard , like a true Plantagenet , And rise created princely Duke of York .",
+      "scrollMode": "auto",
+      "lineIndex": 68
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": ", formerly PLANTAGENET",
+      "scrollMode": "auto",
+      "lineIndex": 69
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": "standing",
+      "scrollMode": "auto",
+      "lineIndex": 70
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dcg",
+      "lineText": "And so thrive Richard as thy foes may fall ! And as my duty springs , so perish they That grudge one thought against your Majesty .",
+      "scrollMode": "auto",
+      "lineIndex": 71
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78db0",
+      "lineText": "Welcome , high prince , the mighty Duke of York .",
+      "scrollMode": "auto",
+      "lineIndex": 72
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 73
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dc0",
+      "lineText": "Perish , base prince , ignoble Duke of York .",
+      "scrollMode": "auto",
+      "lineIndex": 74
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78db0",
+      "lineText": "Now will it best avail your Majesty To cross the seas and to be crowned in France . The presence of a king engenders love Amongst his subjects and his loyal friends , As it disanimates his enemies .",
+      "scrollMode": "auto",
+      "lineIndex": 75
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dd0",
+      "lineText": "When Gloucester says the word , King Henry goes , For friendly counsel cuts off many foes .",
+      "scrollMode": "auto",
+      "lineIndex": 76
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78db0",
+      "lineText": "Your ships already are in readiness .",
+      "scrollMode": "auto",
+      "lineIndex": 77
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": "Sennet . Flourish . All but Exeter exit .",
+      "scrollMode": "auto",
+      "lineIndex": 78
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dh0",
+      "lineText": "Ay , we may march in England or in France , Not seeing what is likely to ensue . This late dissension grown betwixt the peers Burns under feignèd ashes of forged love And will at last break out into a flame . As festered members rot but by degree Till bones and flesh and sinews fall away , So will this base and envious discord breed . And now I fear that fatal prophecy Which in the time of Henry named the Fifth Was in the mouth of every sucking babe : That Henry born at Monmouth should win all , ACT 3. SC. 2 And Henry born at Windsor should lose all , Which is so plain that Exeter doth wish His days may finish ere that hapless time .",
+      "scrollMode": "auto",
+      "lineIndex": 79
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 80
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": "Enter Pucelle disguised , with four Soldiers with sacks upon their backs .",
+      "scrollMode": "auto",
+      "lineIndex": 81
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78di0",
+      "lineText": "These are the city gates , the gates of Roan , Through which our policy must make a breach . Take heed . Be wary how you place your words ; Talk like the vulgar sort of market men That come to gather money for their corn . If we have entrance , as I hope we shall , And that we find the slothful watch but weak , I’ll by a sign give notice to our friends , That Charles the Dauphin may encounter them .",
+      "scrollMode": "auto",
+      "lineIndex": 82
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dig",
+      "lineText": "Our sacks shall be a mean to sack the city , And we be lords and rulers over Roan ; Therefore we’ll knock .",
+      "scrollMode": "auto",
+      "lineIndex": 83
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": "Knock .",
+      "scrollMode": "auto",
+      "lineIndex": 84
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": ", within",
+      "scrollMode": "auto",
+      "lineIndex": 85
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dj0",
+      "lineText": "Qui là ?",
+      "scrollMode": "auto",
+      "lineIndex": 86
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78di0",
+      "lineText": "Paysans la pauvre gens de France : Poor market folks that come to sell their corn .",
+      "scrollMode": "auto",
+      "lineIndex": 87
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dj0",
+      "lineText": "Enter , go in . The market bell is rung .",
+      "scrollMode": "auto",
+      "lineIndex": 88
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 89
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78di0",
+      "lineText": "Now , Roan , I’ll shake thy bulwarks to the ground .",
+      "scrollMode": "auto",
+      "lineIndex": 90
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 91
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": "Enter Charles , Bastard , Alanson , Reignier , and Soldiers .",
+      "scrollMode": "auto",
+      "lineIndex": 92
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78djg",
+      "lineText": "Saint Dennis bless this happy stratagem And once again we’ll sleep secure in Roan .",
+      "scrollMode": "auto",
+      "lineIndex": 93
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dk0",
+      "lineText": "Here entered Pucelle and her practisants . Now she is there , how will she specify Here is the best and safest passage in ?",
+      "scrollMode": "auto",
+      "lineIndex": 94
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dkg",
+      "lineText": "By thrusting out a torch from yonder tower , Which , once discerned , shows that her meaning is : No way to that , for weakness , which she entered .",
+      "scrollMode": "auto",
+      "lineIndex": 95
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": "Enter Pucelle on the top , thrusting out a torch burning .",
+      "scrollMode": "auto",
+      "lineIndex": 96
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78di0",
+      "lineText": "Behold , this is the happy wedding torch That joineth Roan unto her countrymen , But burning fatal to the Talbonites .",
+      "scrollMode": "auto",
+      "lineIndex": 97
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dk0",
+      "lineText": "See , noble Charles , the beacon of our friend ; The burning torch , in yonder turret stands .",
+      "scrollMode": "auto",
+      "lineIndex": 98
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78djg",
+      "lineText": "Now shine it like a comet of revenge , A prophet to the fall of all our foes !",
+      "scrollMode": "auto",
+      "lineIndex": 99
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dkg",
+      "lineText": "Defer no time ; delays have dangerous ends . Enter and cry The Dauphin ! presently , And then do execution on the watch .",
+      "scrollMode": "auto",
+      "lineIndex": 100
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": "Alarum . They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 101
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": "An Alarum . Enter Talbot in an excursion .",
+      "scrollMode": "auto",
+      "lineIndex": 102
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dl0",
+      "lineText": "France , thou shalt rue this treason with thy tears , If Talbot but survive thy treachery . ACT 3. SC. 2 Pucelle , that witch , that damnèd sorceress , Hath wrought this hellish mischief unawares , That hardly we escaped the pride of France .",
+      "scrollMode": "auto",
+      "lineIndex": 103
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 104
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": "An alarum . Excursions .",
+      "scrollMode": "auto",
+      "lineIndex": 105
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": "Bedford brought in sick in a chair , carried by two Attendants . Enter Talbot and Burgundy without ; within , Pucelle with a sack of grain , Charles , Bastard , Alanson , and Reignier on the walls .",
+      "scrollMode": "auto",
+      "lineIndex": 106
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": ", to those below",
+      "scrollMode": "auto",
+      "lineIndex": 107
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": "She scatters grain on those below .",
+      "scrollMode": "auto",
+      "lineIndex": 108
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78di0",
+      "lineText": "She scatters grain on those below . I think the Duke of Burgundy will fast Before he’ll buy again at such a rate . ’Twas full of darnel . Do you like the taste ?",
+      "scrollMode": "auto",
+      "lineIndex": 109
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dlg",
+      "lineText": "Scoff on , vile fiend and shameless courtesan ! I trust ere long to choke thee with thine own , And make thee curse the harvest of that corn .",
+      "scrollMode": "auto",
+      "lineIndex": 110
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78djg",
+      "lineText": "Your Grace may starve , perhaps , before that time .",
+      "scrollMode": "auto",
+      "lineIndex": 111
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dm0",
+      "lineText": "O , let no words , but deeds , revenge this treason .",
+      "scrollMode": "auto",
+      "lineIndex": 112
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78di0",
+      "lineText": "What will you do , good graybeard ? Break a lance And run a-tilt at Death within a chair ?",
+      "scrollMode": "auto",
+      "lineIndex": 113
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dl0",
+      "lineText": "Foul fiend of France and hag of all despite , Encompassed with thy lustful paramours , Becomes it thee to taunt his valiant age And twit with cowardice a man half dead ? Damsel , I’ll have a bout with you again , Or else let Talbot perish with this shame .",
+      "scrollMode": "auto",
+      "lineIndex": 114
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": "Those below whisper together in council .",
+      "scrollMode": "auto",
+      "lineIndex": 115
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dm0",
+      "lineText": "Those below whisper together in council . God speed the Parliament ! Who shall be the Speaker ?",
+      "scrollMode": "auto",
+      "lineIndex": 116
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dl0",
+      "lineText": "Dare you come forth and meet us in the field ?",
+      "scrollMode": "auto",
+      "lineIndex": 117
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78di0",
+      "lineText": "Belike your Lordship takes us then for fools , To try if that our own be ours or no .",
+      "scrollMode": "auto",
+      "lineIndex": 118
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dl0",
+      "lineText": "I speak not to that railing Hecate , But unto thee , Alanson , and the rest . Will you , like soldiers , come and fight it out ?",
+      "scrollMode": "auto",
+      "lineIndex": 119
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dmg",
+      "lineText": "Seigneur , no .",
+      "scrollMode": "auto",
+      "lineIndex": 120
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dl0",
+      "lineText": "Seigneur , hang ! Base muleteers of France , Like peasant footboys do they keep the walls And dare not take up arms like gentlemen .",
+      "scrollMode": "auto",
+      "lineIndex": 121
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78di0",
+      "lineText": "Away , captains . Let’s get us from the walls , For Talbot means no goodness by his looks . — Goodbye , my lord . We came but to tell you That we are here .",
+      "scrollMode": "auto",
+      "lineIndex": 122
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": "They exit from the walls .",
+      "scrollMode": "auto",
+      "lineIndex": 123
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dl0",
+      "lineText": "And there will we be too , ere it be long , Or else reproach be Talbot’s greatest fame . — Vow , Burgundy , by honor of thy house , Pricked on by public wrongs sustained in France , Either to get the town again or die . And I , as sure as English Henry lives , And as his father here was conqueror , As sure as in this late-betrayèd town Great Coeur-de-lion’s heart was burièd , So sure I swear to get the town or die .",
+      "scrollMode": "auto",
+      "lineIndex": 124
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dlg",
+      "lineText": "My vows are equal partners with thy vows .",
+      "scrollMode": "auto",
+      "lineIndex": 125
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dl0",
+      "lineText": "But , ere we go , regard this dying prince , The valiant Duke of Bedford . — Come , my lord , We will bestow you in some better place , Fitter for sickness and for crazy age .",
+      "scrollMode": "auto",
+      "lineIndex": 126
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dm0",
+      "lineText": "Lord Talbot , do not so dishonor me . Here will I sit , before the walls of Roan , And will be partner of your weal or woe .",
+      "scrollMode": "auto",
+      "lineIndex": 127
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dlg",
+      "lineText": "Courageous Bedford , let us now persuade you —",
+      "scrollMode": "auto",
+      "lineIndex": 128
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dm0",
+      "lineText": "Not to be gone from hence , for once I read That stout Pendragon , in his litter sick , Came to the field and vanquishèd his foes . Methinks I should revive the soldiers’ hearts Because I ever found them as myself .",
+      "scrollMode": "auto",
+      "lineIndex": 129
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dl0",
+      "lineText": "Undaunted spirit in a dying breast , Then be it so . Heavens keep old Bedford safe ! — And now no more ado , brave Burgundy , But gather we our forces out of hand And set upon our boasting enemy .",
+      "scrollMode": "auto",
+      "lineIndex": 130
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": "He exits with Burgundy . Bedford and Attendants remain .",
+      "scrollMode": "auto",
+      "lineIndex": 131
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": "An alarum . Excursions .",
+      "scrollMode": "auto",
+      "lineIndex": 132
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": "Enter Sir John Fastolf and a Captain .",
+      "scrollMode": "auto",
+      "lineIndex": 133
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dn0",
+      "lineText": "Whither away , Sir John Fastolf , in such haste ?",
+      "scrollMode": "auto",
+      "lineIndex": 134
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dng",
+      "lineText": "Whither away ? To save myself by flight . We are like to have the overthrow again .",
+      "scrollMode": "auto",
+      "lineIndex": 135
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dn0",
+      "lineText": "What , will you fly and leave Lord Talbot ?",
+      "scrollMode": "auto",
+      "lineIndex": 136
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dng",
+      "lineText": "Ay , All the Talbots in the world , to save my life .",
+      "scrollMode": "auto",
+      "lineIndex": 137
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 138
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dn0",
+      "lineText": "Cowardly knight , ill fortune follow thee .",
+      "scrollMode": "auto",
+      "lineIndex": 139
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 140
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": "Retreat . Excursions .",
+      "scrollMode": "auto",
+      "lineIndex": 141
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": "Pucelle , Alanson , and Charles enter , pursued by English Soldiers , and fly .",
+      "scrollMode": "auto",
+      "lineIndex": 142
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dm0",
+      "lineText": "Now , quiet soul , depart when heaven please , For I have seen our enemies’ overthrow . What is the trust or strength of foolish man ? They that of late were daring with their scoffs Are glad and fain by flight to save themselves .",
+      "scrollMode": "auto",
+      "lineIndex": 143
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": "Bedford dies ,",
+      "scrollMode": "auto",
+      "lineIndex": 144
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": "and is carried in by two in his chair .",
+      "scrollMode": "auto",
+      "lineIndex": 145
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": "An alarum . Enter Talbot , Burgundy , and the rest .",
+      "scrollMode": "auto",
+      "lineIndex": 146
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dl0",
+      "lineText": "Lost and recovered in a day again ! This is a double honor , Burgundy . Yet heavens have glory for this victory .",
+      "scrollMode": "auto",
+      "lineIndex": 147
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dlg",
+      "lineText": "Warlike and martial Talbot , Burgundy Enshrines thee in his heart , and there erects Thy noble deeds as valor’s monuments .",
+      "scrollMode": "auto",
+      "lineIndex": 148
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dl0",
+      "lineText": "Thanks , gentle duke . But where is Pucelle now ? I think her old familiar is asleep . Now where’s the Bastard’s braves and Charles his gleeks ? What , all amort ? Roan hangs her head for grief ACT 3. SC. 3 That such a valiant company are fled . Now will we take some order in the town , Placing therein some expert officers , And then depart to Paris to the King , For there young Henry with his nobles lie .",
+      "scrollMode": "auto",
+      "lineIndex": 149
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dlg",
+      "lineText": "What wills Lord Talbot pleaseth Burgundy .",
+      "scrollMode": "auto",
+      "lineIndex": 150
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dl0",
+      "lineText": "But yet , before we go , let’s not forget The noble Duke of Bedford late-deceased , But see his exequies fulfilled in Roan . A braver soldier never couchèd lance , A gentler heart did never sway in court . But kings and mightiest potentates must die , For that’s the end of human misery .",
+      "scrollMode": "auto",
+      "lineIndex": 151
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 152
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": "Enter Charles , Bastard , Alanson , Pucelle , and Soldiers .",
+      "scrollMode": "auto",
+      "lineIndex": 153
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78di0",
+      "lineText": "Dismay not , princes , at this accident , Nor grieve that Roan is so recoverèd . Care is no cure , but rather corrosive For things that are not to be remedied . Let frantic Talbot triumph for a while , And like a peacock sweep along his tail ; We’ll pull his plumes and take away his train , If dauphin and the rest will be but ruled .",
+      "scrollMode": "auto",
+      "lineIndex": 154
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78djg",
+      "lineText": "We have been guided by thee hitherto , And of thy cunning had no diffidence . One sudden foil shall never breed distrust .",
+      "scrollMode": "auto",
+      "lineIndex": 155
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": ", to Pucelle",
+      "scrollMode": "auto",
+      "lineIndex": 156
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dk0",
+      "lineText": "Search out thy wit for secret policies , And we will make thee famous through the world .",
+      "scrollMode": "auto",
+      "lineIndex": 157
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": ", to Pucelle",
+      "scrollMode": "auto",
+      "lineIndex": 158
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dmg",
+      "lineText": "We’ll set thy statue in some holy place And have thee reverenced like a blessèd saint . Employ thee then , sweet virgin , for our good .",
+      "scrollMode": "auto",
+      "lineIndex": 159
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78di0",
+      "lineText": "Then thus it must be ; this doth Joan devise : By fair persuasions mixed with sugared words We will entice the Duke of Burgundy To leave the Talbot and to follow us .",
+      "scrollMode": "auto",
+      "lineIndex": 160
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78djg",
+      "lineText": "Ay , marry , sweeting , if we could do that , France were no place for Henry’s warriors , Nor should that nation boast it so with us , But be extirpèd from our provinces .",
+      "scrollMode": "auto",
+      "lineIndex": 161
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dmg",
+      "lineText": "Forever should they be expulsed from France , And not have title of an earldom here .",
+      "scrollMode": "auto",
+      "lineIndex": 162
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": "Drum sounds afar off .",
+      "scrollMode": "auto",
+      "lineIndex": 163
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": "Here sound an English march .",
+      "scrollMode": "auto",
+      "lineIndex": 164
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": "French march .",
+      "scrollMode": "auto",
+      "lineIndex": 165
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78di0",
+      "lineText": "French march . Now in the rearward comes the Duke and his . Fortune in favor makes him lag behind . Summon a parley ; we will talk with him .",
+      "scrollMode": "auto",
+      "lineIndex": 166
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": "Trumpets sound a parley .",
+      "scrollMode": "auto",
+      "lineIndex": 167
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78djg",
+      "lineText": "A parley with the Duke of Burgundy !",
+      "scrollMode": "auto",
+      "lineIndex": 168
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": "Enter Burgundy .",
+      "scrollMode": "auto",
+      "lineIndex": 169
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dlg",
+      "lineText": "Who craves a parley with the Burgundy ?",
+      "scrollMode": "auto",
+      "lineIndex": 170
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78di0",
+      "lineText": "The princely Charles of France , thy countryman .",
+      "scrollMode": "auto",
+      "lineIndex": 171
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dlg",
+      "lineText": "What say’st thou , Charles ? — for I am marching hence .",
+      "scrollMode": "auto",
+      "lineIndex": 172
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": ", aside to Pucelle",
+      "scrollMode": "auto",
+      "lineIndex": 173
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78djg",
+      "lineText": "Speak , Pucelle , and enchant him with thy words .",
+      "scrollMode": "auto",
+      "lineIndex": 174
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78di0",
+      "lineText": "Brave Burgundy , undoubted hope of France , Stay ; let thy humble handmaid speak to thee .",
+      "scrollMode": "auto",
+      "lineIndex": 175
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dlg",
+      "lineText": "Speak on , but be not over-tedious .",
+      "scrollMode": "auto",
+      "lineIndex": 176
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78di0",
+      "lineText": "Look on thy country , look on fertile France , And see the cities and the towns defaced By wasting ruin of the cruel foe . As looks the mother on her lowly babe When death doth close his tender-dying eyes , See , see the pining malady of France : Behold the wounds , the most unnatural wounds , Which thou thyself hast given her woeful breast . O , turn thy edgèd sword another way ; Strike those that hurt , and hurt not those that help . One drop of blood drawn from thy country’s bosom Should grieve thee more than streams of foreign gore . Return thee therefore with a flood of tears , And wash away thy country’s stainèd spots .",
+      "scrollMode": "auto",
+      "lineIndex": 177
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 178
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dlg",
+      "lineText": "Either she hath bewitched me with her words , Or nature makes me suddenly relent .",
+      "scrollMode": "auto",
+      "lineIndex": 179
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78di0",
+      "lineText": "Besides , all French and France exclaims on thee , Doubting thy birth and lawful progeny . Who join’st thou with but with a lordly nation That will not trust thee but for profit’s sake ? When Talbot hath set footing once in France And fashioned thee that instrument of ill , Who then but English Henry will be lord , And thou be thrust out like a fugitive ? Call we to mind , and mark but this for proof : Was not the Duke of Orleance thy foe ? And was he not in England prisoner ? But when they heard he was thine enemy , They set him free , without his ransom paid , In spite of Burgundy and all his friends . See then , thou fight’st against thy countrymen , And join’st with them will be thy slaughtermen . Come , come , return ; return , thou wandering lord . Charles and the rest will take thee in their arms .",
+      "scrollMode": "auto",
+      "lineIndex": 180
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 181
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": "He embraces Charles , Bastard , and Alanson .",
+      "scrollMode": "auto",
+      "lineIndex": 182
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dlg",
+      "lineText": "He embraces Charles , Bastard , and Alanson . My forces and my power of men are yours . So , farewell , Talbot . I’ll no longer trust thee .",
+      "scrollMode": "auto",
+      "lineIndex": 183
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 184
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78di0",
+      "lineText": "Done like a Frenchman : turn and turn again .",
+      "scrollMode": "auto",
+      "lineIndex": 185
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78djg",
+      "lineText": "Welcome , brave duke . Thy friendship makes us fresh .",
+      "scrollMode": "auto",
+      "lineIndex": 186
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dk0",
+      "lineText": "And doth beget new courage in our breasts .",
+      "scrollMode": "auto",
+      "lineIndex": 187
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dmg",
+      "lineText": "Pucelle hath bravely played her part in this And doth deserve a coronet of gold .",
+      "scrollMode": "auto",
+      "lineIndex": 188
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78djg",
+      "lineText": "Now let us on , my lords , and join our powers , And seek how we may prejudice the foe .",
+      "scrollMode": "auto",
+      "lineIndex": 189
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 190
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": "Flourish . Enter the King , Gloucester , Winchester , Exeter ; York , Warwick , and Vernon , with white roses ; Somerset , Suffolk , and Basset , with red roses . To them , with his Soldiers , Talbot .",
+      "scrollMode": "auto",
+      "lineIndex": 191
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dl0",
+      "lineText": "My gracious prince and honorable peers , Hearing of your arrival in this realm , I have awhile given truce unto my wars To do my duty to my sovereign ; In sign whereof , this arm , that hath reclaimed To your obedience fifty fortresses , Twelve cities , and seven walled towns of strength , Besides five hundred prisoners of esteem , Lets fall his sword before your Highness’ feet , And with submissive loyalty of heart Ascribes the glory of his conquest got First to my God , and next unto your Grace .",
+      "scrollMode": "auto",
+      "lineIndex": 192
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": "He kneels .",
+      "scrollMode": "auto",
+      "lineIndex": 193
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dd0",
+      "lineText": "Is this the Lord Talbot , Uncle Gloucester , That hath so long been resident in France ?",
+      "scrollMode": "auto",
+      "lineIndex": 194
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78db0",
+      "lineText": "Yes , if it please your Majesty , my liege .",
+      "scrollMode": "auto",
+      "lineIndex": 195
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dd0",
+      "lineText": "Welcome , brave captain and victorious lord . When I was young — as yet I am not old — I do remember how my father said A stouter champion never handled sword . Long since we were resolvèd of your truth , Your faithful service , and your toil in war ; Yet never have you tasted our reward Or been reguerdoned with so much as thanks , Because till now we never saw your face . Therefore stand up ; and for these good deserts We here create you Earl of Shrewsbury ; And in our coronation take your place .",
+      "scrollMode": "auto",
+      "lineIndex": 196
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": "Talbot rises .",
+      "scrollMode": "auto",
+      "lineIndex": 197
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": "Sennet . Flourish . All except Vernon and Basset exit .",
+      "scrollMode": "auto",
+      "lineIndex": 198
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78do0",
+      "lineText": "Now , sir , to you that were so hot at sea , Disgracing of these colors that I wear In honor of my noble Lord of York , Dar’st thou maintain the former words thou spak’st ?",
+      "scrollMode": "auto",
+      "lineIndex": 199
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dog",
+      "lineText": "Yes , sir , as well as you dare patronage The envious barking of your saucy tongue Against my lord the Duke of Somerset .",
+      "scrollMode": "auto",
+      "lineIndex": 200
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78do0",
+      "lineText": "Sirrah , thy lord I honor as he is .",
+      "scrollMode": "auto",
+      "lineIndex": 201
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dog",
+      "lineText": "Why , what is he ? As good a man as York .",
+      "scrollMode": "auto",
+      "lineIndex": 202
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78do0",
+      "lineText": "Hark you , not so ; in witness , take you that .",
+      "scrollMode": "auto",
+      "lineIndex": 203
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": "Strikes him .",
+      "scrollMode": "auto",
+      "lineIndex": 204
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78dog",
+      "lineText": "Villain , thou knowest the law of arms is such That whoso draws a sword ’tis present death , Or else this blow should broach thy dearest blood . ACT 3. SC. 4 But I’ll unto his Majesty , and crave I may have liberty to venge this wrong , When thou shalt see I’ll meet thee to thy cost .",
+      "scrollMode": "auto",
+      "lineIndex": 205
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 206
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78do0",
+      "lineText": "Well , miscreant , I’ll be there as soon as you , And after meet you sooner than you would .",
+      "scrollMode": "auto",
+      "lineIndex": 207
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78da0",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 208
+    }
+  ],
+  "isPublic": true
+}

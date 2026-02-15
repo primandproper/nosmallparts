@@ -1,0 +1,1071 @@
+{
+  "title": "All’s Well That Ends Well (Act 1)",
+  "description": "Folger Shakespeare Library edition",
+  "author": "William Shakespeare",
+  "castMembers": [
+    {
+      "id": "d68m11cn9qd8d2h78jc0",
+      "name": "Narrator",
+      "sortOrder": 0
+    },
+    {
+      "id": "d68m11cn9qd8d2h78jcg",
+      "name": "Countess",
+      "description": "Bertram’s mother",
+      "sortOrder": 1
+    },
+    {
+      "id": "d68m11cn9qd8d2h78jd0",
+      "name": "Bertram",
+      "description": "Count of Rossillion",
+      "sortOrder": 2
+    },
+    {
+      "id": "d68m11cn9qd8d2h78jdg",
+      "name": "Lafew",
+      "description": "a French lord",
+      "sortOrder": 3
+    },
+    {
+      "id": "d68m11cn9qd8d2h78je0",
+      "name": "Helen",
+      "description": "a gentlewoman of Rossillion",
+      "sortOrder": 4
+    },
+    {
+      "id": "d68m11cn9qd8d2h78jeg",
+      "name": "Parolles",
+      "description": "companion to Bertram",
+      "sortOrder": 5
+    },
+    {
+      "id": "d68m11cn9qd8d2h78jf0",
+      "name": "Page",
+      "sortOrder": 6
+    },
+    {
+      "id": "d68m11cn9qd8d2h78jfg",
+      "name": "King",
+      "sortOrder": 7
+    },
+    {
+      "id": "d68m11cn9qd8d2h78jg0",
+      "name": "ATTENDANTS.KING.0.1_AWW",
+      "sortOrder": 8
+    },
+    {
+      "id": "d68m11cn9qd8d2h78jgg",
+      "name": "ATTENDANTS.KING.0.2_AWW",
+      "sortOrder": 9
+    },
+    {
+      "id": "d68m11cn9qd8d2h78jh0",
+      "name": "Steward",
+      "sortOrder": 10
+    },
+    {
+      "id": "d68m11cn9qd8d2h78jhg",
+      "name": "Fool",
+      "sortOrder": 11
+    }
+  ],
+  "lines": [
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jc0",
+      "lineText": "Enter young Bertram Count of Rossillion , his mother the Countess , and Helen , Lord Lafew , all in black .",
+      "scrollMode": "auto",
+      "lineIndex": 0
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jcg",
+      "lineText": "In delivering my son from me , I bury a second husband .",
+      "scrollMode": "auto",
+      "lineIndex": 1
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jd0",
+      "lineText": "And I in going , madam , weep o’er my father’s death anew ; but I must attend his Majesty’s command , to whom I am now in ward , evermore in subjection .",
+      "scrollMode": "auto",
+      "lineIndex": 2
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jdg",
+      "lineText": "You shall find of the King a husband , madam ; you , sir , a father . He that so generally is at all times good must of necessity hold his virtue to you , whose worthiness would stir it up where it wanted rather than lack it where there is such abundance .",
+      "scrollMode": "auto",
+      "lineIndex": 3
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jcg",
+      "lineText": "What hope is there of his Majesty’s amendment ?",
+      "scrollMode": "auto",
+      "lineIndex": 4
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jdg",
+      "lineText": "He hath abandoned his physicians , madam , under whose practices he hath persecuted time with hope , and finds no other advantage in the process but only the losing of hope by time .",
+      "scrollMode": "auto",
+      "lineIndex": 5
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jcg",
+      "lineText": "This young gentlewoman had a father — O , that had , how sad a passage ’tis ! — whose skill was almost as great as his honesty ; had it stretched so far , would have made nature immortal , and death should have play for lack of work . Would for ACT 1. SC. 1 the King’s sake he were living ! I think it would be the death of the King’s disease .",
+      "scrollMode": "auto",
+      "lineIndex": 6
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jdg",
+      "lineText": "How called you the man you speak of , madam ?",
+      "scrollMode": "auto",
+      "lineIndex": 7
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jcg",
+      "lineText": "He was famous , sir , in his profession , and it was his great right to be so : Gerard de Narbon .",
+      "scrollMode": "auto",
+      "lineIndex": 8
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jdg",
+      "lineText": "He was excellent indeed , madam . The King very lately spoke of him admiringly , and mourningly . He was skillful enough to have lived still , if knowledge could be set up against mortality .",
+      "scrollMode": "auto",
+      "lineIndex": 9
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jd0",
+      "lineText": "What is it , my good lord , the King languishes of ?",
+      "scrollMode": "auto",
+      "lineIndex": 10
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jdg",
+      "lineText": "A fistula , my lord .",
+      "scrollMode": "auto",
+      "lineIndex": 11
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jd0",
+      "lineText": "I heard not of it before .",
+      "scrollMode": "auto",
+      "lineIndex": 12
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jdg",
+      "lineText": "I would it were not notorious . — Was this gentlewoman the daughter of Gerard de Narbon ?",
+      "scrollMode": "auto",
+      "lineIndex": 13
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jcg",
+      "lineText": "His sole child , my lord , and bequeathed to my overlooking . I have those hopes of her good that her education promises . Her dispositions she inherits , which makes fair gifts fairer ; for where an unclean mind carries virtuous qualities , there commendations go with pity — they are virtues and traitors too . In her they are the better for their simpleness . She derives her honesty and achieves her goodness .",
+      "scrollMode": "auto",
+      "lineIndex": 14
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jdg",
+      "lineText": "Your commendations , madam , get from her tears .",
+      "scrollMode": "auto",
+      "lineIndex": 15
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jcg",
+      "lineText": "’Tis the best brine a maiden can season her praise in . The remembrance of her father never approaches her heart but the tyranny of her sorrows takes all livelihood from her cheek . — No more of this , Helena . Go to . No more , lest it be rather thought you affect a sorrow than to have —",
+      "scrollMode": "auto",
+      "lineIndex": 16
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78je0",
+      "lineText": "I do affect a sorrow indeed , but I have it too .",
+      "scrollMode": "auto",
+      "lineIndex": 17
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jdg",
+      "lineText": "Moderate lamentation is the right of the dead , excessive grief the enemy to the living .",
+      "scrollMode": "auto",
+      "lineIndex": 18
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jcg",
+      "lineText": "If the living be enemy to the grief , the excess makes it soon mortal .",
+      "scrollMode": "auto",
+      "lineIndex": 19
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jd0",
+      "lineText": "Madam , I desire your holy wishes .",
+      "scrollMode": "auto",
+      "lineIndex": 20
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jdg",
+      "lineText": "How understand we that ?",
+      "scrollMode": "auto",
+      "lineIndex": 21
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jc0",
+      "lineText": "To Lafew .",
+      "scrollMode": "auto",
+      "lineIndex": 22
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jcg",
+      "lineText": "To Lafew . Farewell , my lord . ’Tis an unseasoned courtier . Good my lord , Advise him .",
+      "scrollMode": "auto",
+      "lineIndex": 23
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jdg",
+      "lineText": "He cannot want the best that shall Attend his love .",
+      "scrollMode": "auto",
+      "lineIndex": 24
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jcg",
+      "lineText": "Heaven bless him . — Farewell , Bertram .",
+      "scrollMode": "auto",
+      "lineIndex": 25
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jc0",
+      "lineText": "Countess exits .",
+      "scrollMode": "auto",
+      "lineIndex": 26
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jc0",
+      "lineText": "To Helen .",
+      "scrollMode": "auto",
+      "lineIndex": 27
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jcg",
+      "lineText": "To Helen . Be comfortable to my mother , your mistress , and make much of her .",
+      "scrollMode": "auto",
+      "lineIndex": 28
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jdg",
+      "lineText": "Farewell , pretty lady . You must hold the credit of your father .",
+      "scrollMode": "auto",
+      "lineIndex": 29
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jc0",
+      "lineText": "Bertram and Lafew exit .",
+      "scrollMode": "auto",
+      "lineIndex": 30
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jc0",
+      "lineText": "Enter Parolles .",
+      "scrollMode": "auto",
+      "lineIndex": 31
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jeg",
+      "lineText": "Enter Parolles . One that goes with him . I love him for his sake , And yet I know him a notorious liar , Think him a great way fool , solely a coward . Yet these fixed evils sit so fit in him That they take place when virtue’s steely bones Looks bleak i’ th’ cold wind . Withal , full oft we see Cold wisdom waiting on superfluous folly .",
+      "scrollMode": "auto",
+      "lineIndex": 32
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jeg",
+      "lineText": "Save you , fair queen .",
+      "scrollMode": "auto",
+      "lineIndex": 33
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78je0",
+      "lineText": "And you , monarch .",
+      "scrollMode": "auto",
+      "lineIndex": 34
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jeg",
+      "lineText": "No .",
+      "scrollMode": "auto",
+      "lineIndex": 35
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78je0",
+      "lineText": "And no .",
+      "scrollMode": "auto",
+      "lineIndex": 36
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jeg",
+      "lineText": "Are you meditating on virginity ?",
+      "scrollMode": "auto",
+      "lineIndex": 37
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78je0",
+      "lineText": "Ay . You have some stain of soldier in you ; let me ask you a question . Man is enemy to virginity . How may we barricado it against him ?",
+      "scrollMode": "auto",
+      "lineIndex": 38
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jeg",
+      "lineText": "Keep him out .",
+      "scrollMode": "auto",
+      "lineIndex": 39
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78je0",
+      "lineText": "But he assails , and our virginity , though valiant in the defense , yet is weak . Unfold to us some warlike resistance .",
+      "scrollMode": "auto",
+      "lineIndex": 40
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jeg",
+      "lineText": "There is none . Man setting down before you will undermine you and blow you up .",
+      "scrollMode": "auto",
+      "lineIndex": 41
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78je0",
+      "lineText": "Bless our poor virginity from underminers and blowers-up ! Is there no military policy how virgins might blow up men ?",
+      "scrollMode": "auto",
+      "lineIndex": 42
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jeg",
+      "lineText": "Virginity being blown down , man will quicklier be blown up . Marry , in blowing him down again , with the breach yourselves made you lose your city . It is not politic in the commonwealth of nature to preserve virginity . Loss of virginity is rational increase , and there was never virgin got till virginity was first lost . That you were made of is metal to make virgins . Virginity by being once lost may be ten times found ; by being ever kept , it is ever lost . ’Tis too cold a companion . Away with ’t .",
+      "scrollMode": "auto",
+      "lineIndex": 43
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78je0",
+      "lineText": "I will stand for ’t a little , though therefore I die a virgin .",
+      "scrollMode": "auto",
+      "lineIndex": 44
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jeg",
+      "lineText": "There’s little can be said in ’t . ’Tis against the rule of nature . To speak on the part of virginity is to accuse your mothers , which is most infallible disobedience . He that hangs himself is a virgin ; virginity murders itself and should be buried in highways out of all sanctified limit as a desperate offendress against nature . Virginity breeds mites , much like a cheese , consumes itself to the very paring , and so dies with feeding his own stomach . Besides , virginity is peevish , proud , idle , made of self-love , which is the most inhibited sin in the canon . Keep it not ; you cannot choose but lose by ’t . Out with ’t ! Within ten year it will make itself two , which is a goodly increase , and the principal itself not much the worse . Away with ’t !",
+      "scrollMode": "auto",
+      "lineIndex": 45
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78je0",
+      "lineText": "How might one do , sir , to lose it to her own liking ?",
+      "scrollMode": "auto",
+      "lineIndex": 46
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jeg",
+      "lineText": "Let me see . Marry , ill , to like him that ne’er it likes . ’Tis a commodity will lose the gloss with lying ; the longer kept , the less worth . Off with ’t while ’tis vendible ; answer the time of request . Virginity , like an old courtier , wears her cap out of fashion , richly suited but unsuitable , just like the ACT 1. SC. 1 brooch and the toothpick , which wear not now . Your date is better in your pie and your porridge than in your cheek . And your virginity , your old virginity , is like one of our French withered pears : it looks ill , it eats dryly ; marry many , ’tis a withered pear . It was formerly better , marry , yet ’tis a withered pear . Will you anything with it ?",
+      "scrollMode": "auto",
+      "lineIndex": 47
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78je0",
+      "lineText": "Not my virginity , yet — There shall your master have a thousand loves , A mother , and a mistress , and a friend , A phoenix , captain , and an enemy , A guide , a goddess , and a sovereign , A counselor , a traitress , and a dear ; His humble ambition , proud humility , His jarring concord , and his discord dulcet , His faith , his sweet disaster , with a world Of pretty , fond adoptious christendoms That blinking Cupid gossips . Now shall he — I know not what he shall . God send him well . The court’s a learning place , and he is one —",
+      "scrollMode": "auto",
+      "lineIndex": 48
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jeg",
+      "lineText": "What one , i’ faith ?",
+      "scrollMode": "auto",
+      "lineIndex": 49
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78je0",
+      "lineText": "That I wish well . ’Tis pity —",
+      "scrollMode": "auto",
+      "lineIndex": 50
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jeg",
+      "lineText": "What’s pity ?",
+      "scrollMode": "auto",
+      "lineIndex": 51
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78je0",
+      "lineText": "That wishing well had not a body in ’t Which might be felt , that we , the poorer born , Whose baser stars do shut us up in wishes , Might with effects of them follow our friends And show what we alone must think , which never Returns us thanks .",
+      "scrollMode": "auto",
+      "lineIndex": 52
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jc0",
+      "lineText": "Enter Page .",
+      "scrollMode": "auto",
+      "lineIndex": 53
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jf0",
+      "lineText": "Monsieur Parolles , my lord calls for you .",
+      "scrollMode": "auto",
+      "lineIndex": 54
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jeg",
+      "lineText": "Little Helen , farewell . If I can remember thee , I will think of thee at court .",
+      "scrollMode": "auto",
+      "lineIndex": 55
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78je0",
+      "lineText": "Monsieur Parolles , you were born under a charitable star .",
+      "scrollMode": "auto",
+      "lineIndex": 56
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jeg",
+      "lineText": "Under Mars , I .",
+      "scrollMode": "auto",
+      "lineIndex": 57
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78je0",
+      "lineText": "I especially think under Mars .",
+      "scrollMode": "auto",
+      "lineIndex": 58
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jeg",
+      "lineText": "Why under Mars ?",
+      "scrollMode": "auto",
+      "lineIndex": 59
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78je0",
+      "lineText": "The wars hath so kept you under that you must needs be born under Mars .",
+      "scrollMode": "auto",
+      "lineIndex": 60
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jeg",
+      "lineText": "When he was predominant .",
+      "scrollMode": "auto",
+      "lineIndex": 61
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78je0",
+      "lineText": "When he was retrograde , I think rather .",
+      "scrollMode": "auto",
+      "lineIndex": 62
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jeg",
+      "lineText": "Why think you so ?",
+      "scrollMode": "auto",
+      "lineIndex": 63
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78je0",
+      "lineText": "You go so much backward when you fight .",
+      "scrollMode": "auto",
+      "lineIndex": 64
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jeg",
+      "lineText": "That’s for advantage .",
+      "scrollMode": "auto",
+      "lineIndex": 65
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78je0",
+      "lineText": "So is running away , when fear proposes the safety . But the composition that your valor and fear makes in you is a virtue of a good wing , and I like the wear well .",
+      "scrollMode": "auto",
+      "lineIndex": 66
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jeg",
+      "lineText": "I am so full of businesses I cannot answer thee acutely . I will return perfect courtier , in the which my instruction shall serve to naturalize thee , so thou wilt be capable of a courtier’s counsel and understand what advice shall thrust upon thee , else thou diest in thine unthankfulness , and thine ignorance makes thee away . Farewell . When thou hast leisure , say thy prayers ; when thou hast none , remember thy friends . Get thee a good husband , and use him as he uses thee . So , farewell .",
+      "scrollMode": "auto",
+      "lineIndex": 67
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jc0",
+      "lineText": "Parolles and Page exit .",
+      "scrollMode": "auto",
+      "lineIndex": 68
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78je0",
+      "lineText": "Our remedies oft in ourselves do lie Which we ascribe to heaven . The fated sky Gives us free scope , only doth backward pull Our slow designs when we ourselves are dull . What power is it which mounts my love so high , That makes me see , and cannot feed mine eye ? The mightiest space in fortune nature brings To join like likes and kiss like native things . Impossible be strange attempts to those That weigh their pains in sense and do suppose ACT 1. SC. 2 What hath been cannot be . Who ever strove To show her merit that did miss her love ? The King’s disease — my project may deceive me , But my intents are fixed and will not leave me .",
+      "scrollMode": "auto",
+      "lineIndex": 69
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jc0",
+      "lineText": "She exits .",
+      "scrollMode": "auto",
+      "lineIndex": 70
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jc0",
+      "lineText": "Flourish cornets . Enter the King of France with letters , two Lords , and divers Attendants .",
+      "scrollMode": "auto",
+      "lineIndex": 71
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jfg",
+      "lineText": "The Florentines and Senoys are by th’ ears , Have fought with equal fortune , and continue A braving war .",
+      "scrollMode": "auto",
+      "lineIndex": 72
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jg0",
+      "lineText": "So ’tis reported , sir .",
+      "scrollMode": "auto",
+      "lineIndex": 73
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jfg",
+      "lineText": "Nay , ’tis most credible . We here receive it A certainty vouched from our cousin Austria , With caution that the Florentine will move us For speedy aid , wherein our dearest friend Prejudicates the business and would seem To have us make denial .",
+      "scrollMode": "auto",
+      "lineIndex": 74
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jg0",
+      "lineText": "His love and wisdom , Approved so to your Majesty , may plead For amplest credence .",
+      "scrollMode": "auto",
+      "lineIndex": 75
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jfg",
+      "lineText": "He hath armed our answer , And Florence is denied before he comes . Yet for our gentlemen that mean to see The Tuscan service , freely have they leave To stand on either part .",
+      "scrollMode": "auto",
+      "lineIndex": 76
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jgg",
+      "lineText": "It well may serve A nursery to our gentry , who are sick For breathing and exploit .",
+      "scrollMode": "auto",
+      "lineIndex": 77
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jc0",
+      "lineText": "Enter Bertram , Lafew , and Parolles .",
+      "scrollMode": "auto",
+      "lineIndex": 78
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jfg",
+      "lineText": "What’s he comes here ?",
+      "scrollMode": "auto",
+      "lineIndex": 79
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jg0",
+      "lineText": "It is the Count Rossillion , my good lord , Young Bertram .",
+      "scrollMode": "auto",
+      "lineIndex": 80
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jfg",
+      "lineText": "Youth , thou bear’st thy father’s face . Frank nature , rather curious than in haste , Hath well composed thee . Thy father’s moral parts Mayst thou inherit too . Welcome to Paris .",
+      "scrollMode": "auto",
+      "lineIndex": 81
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jd0",
+      "lineText": "My thanks and duty are your Majesty’s .",
+      "scrollMode": "auto",
+      "lineIndex": 82
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jfg",
+      "lineText": "I would I had that corporal soundness now As when thy father and myself in friendship First tried our soldiership . He did look far Into the service of the time and was Discipled of the bravest . He lasted long , But on us both did haggish age steal on And wore us out of act . It much repairs me To talk of your good father . In his youth He had the wit which I can well observe Today in our young lords ; but they may jest Till their own scorn return to them unnoted Ere they can hide their levity in honor . So like a courtier , contempt nor bitterness Were in his pride or sharpness ; if they were , His equal had awaked them , and his honor , Clock to itself , knew the true minute when Exception bid him speak , and at this time His tongue obeyed his hand . Who were below him He used as creatures of another place And bowed his eminent top to their low ranks , Making them proud of his humility , In their poor praise he humbled . Such a man Might be a copy to these younger times , Which , followed well , would demonstrate them now But goers backward .",
+      "scrollMode": "auto",
+      "lineIndex": 83
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jd0",
+      "lineText": "His good remembrance , sir , ACT 1. SC. 2 Lies richer in your thoughts than on his tomb . So in approof lives not his epitaph As in your royal speech .",
+      "scrollMode": "auto",
+      "lineIndex": 84
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jfg",
+      "lineText": "Would I were with him ! He would always say — Methinks I hear him now ; his plausive words He scattered not in ears , but grafted them To grow there and to bear . Let me not live — This his good melancholy oft began On the catastrophe and heel of pastime , When it was out — Let me not live , quoth he , After my flame lacks oil , to be the snuff Of younger spirits , whose apprehensive senses All but new things disdain , whose judgments are Mere fathers of their garments , whose constancies Expire before their fashions . This he wished . I , after him , do after him wish too , Since I nor wax nor honey can bring home , I quickly were dissolvèd from my hive To give some laborers room .",
+      "scrollMode": "auto",
+      "lineIndex": 85
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jgg",
+      "lineText": "You’re lovèd , sir . They that least lend it you shall lack you first .",
+      "scrollMode": "auto",
+      "lineIndex": 86
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jfg",
+      "lineText": "I fill a place , I know ’t . — How long is ’t , count , Since the physician at your father’s died ? He was much famed .",
+      "scrollMode": "auto",
+      "lineIndex": 87
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jd0",
+      "lineText": "Some six months since , my lord .",
+      "scrollMode": "auto",
+      "lineIndex": 88
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jfg",
+      "lineText": "If he were living , I would try him yet . — Lend me an arm . — The rest have worn me out With several applications . Nature and sickness Debate it at their leisure . Welcome , count . My son’s no dearer .",
+      "scrollMode": "auto",
+      "lineIndex": 89
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jd0",
+      "lineText": "Thank your Majesty .",
+      "scrollMode": "auto",
+      "lineIndex": 90
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jc0",
+      "lineText": "They exit . Flourish .",
+      "scrollMode": "auto",
+      "lineIndex": 91
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jc0",
+      "lineText": "Enter Countess , Steward , and Fool .",
+      "scrollMode": "auto",
+      "lineIndex": 92
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jcg",
+      "lineText": "I will now hear . What say you of this gentlewoman ?",
+      "scrollMode": "auto",
+      "lineIndex": 93
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jh0",
+      "lineText": "Madam , the care I have had to even your content I wish might be found in the calendar of my past endeavors , for then we wound our modesty and make foul the clearness of our deservings when of ourselves we publish them .",
+      "scrollMode": "auto",
+      "lineIndex": 94
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jc0",
+      "lineText": "To Fool .",
+      "scrollMode": "auto",
+      "lineIndex": 95
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jcg",
+      "lineText": "To Fool . Get you gone , sirrah . The complaints I have heard of you I do not all believe . ’Tis my slowness that I do not , for I know you lack not folly to commit them and have ability enough to make such knaveries yours .",
+      "scrollMode": "auto",
+      "lineIndex": 96
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jhg",
+      "lineText": "’Tis not unknown to you , madam , I am a poor fellow .",
+      "scrollMode": "auto",
+      "lineIndex": 97
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jcg",
+      "lineText": "Well , sir .",
+      "scrollMode": "auto",
+      "lineIndex": 98
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jhg",
+      "lineText": "No , madam , ’tis not so well that I am poor , though many of the rich are damned . But if I may have your Ladyship’s good will to go to the world , Isbel the woman and I will do as we may .",
+      "scrollMode": "auto",
+      "lineIndex": 99
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jcg",
+      "lineText": "Wilt thou needs be a beggar ?",
+      "scrollMode": "auto",
+      "lineIndex": 100
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jhg",
+      "lineText": "I do beg your good will in this case .",
+      "scrollMode": "auto",
+      "lineIndex": 101
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jcg",
+      "lineText": "In what case ?",
+      "scrollMode": "auto",
+      "lineIndex": 102
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jhg",
+      "lineText": "In Isbel’s case and mine own . Service is no heritage , and I think I shall never have the blessing of God till I have issue o’ my body , for they say bairns are blessings .",
+      "scrollMode": "auto",
+      "lineIndex": 103
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jcg",
+      "lineText": "Tell me thy reason why thou wilt marry .",
+      "scrollMode": "auto",
+      "lineIndex": 104
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jhg",
+      "lineText": "My poor body , madam , requires it . I am driven on by the flesh , and he must needs go that the devil drives .",
+      "scrollMode": "auto",
+      "lineIndex": 105
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jcg",
+      "lineText": "Is this all your Worship’s reason ?",
+      "scrollMode": "auto",
+      "lineIndex": 106
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jhg",
+      "lineText": "Faith , madam , I have other holy reasons , such as they are .",
+      "scrollMode": "auto",
+      "lineIndex": 107
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jcg",
+      "lineText": "May the world know them ?",
+      "scrollMode": "auto",
+      "lineIndex": 108
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jhg",
+      "lineText": "I have been , madam , a wicked creature , as you and all flesh and blood are , and indeed I do marry that I may repent .",
+      "scrollMode": "auto",
+      "lineIndex": 109
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jcg",
+      "lineText": "Thy marriage sooner than thy wickedness .",
+      "scrollMode": "auto",
+      "lineIndex": 110
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jhg",
+      "lineText": "I am out o’ friends , madam , and I hope to have friends for my wife’s sake .",
+      "scrollMode": "auto",
+      "lineIndex": 111
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jcg",
+      "lineText": "Such friends are thine enemies , knave .",
+      "scrollMode": "auto",
+      "lineIndex": 112
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jhg",
+      "lineText": "You’re shallow , madam , in great friends , for the knaves come to do that for me which I am aweary of . He that ears my land spares my team and gives me leave to in the crop ; if I be his cuckold , he’s my drudge . He that comforts my wife is the cherisher of my flesh and blood ; he that cherishes my flesh and blood loves my flesh and blood ; he that loves my flesh and blood is my friend . Ergo , he that kisses my wife is my friend . If men could be contented to be what they are , there were no fear in marriage , for young Charbon the Puritan and old Poysam the Papist , howsome’er their hearts are severed in religion , their heads are both one ; they may jowl horns together like any deer i’ th’ herd .",
+      "scrollMode": "auto",
+      "lineIndex": 113
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jcg",
+      "lineText": "Wilt thou ever be a foul-mouthed and calumnious knave ?",
+      "scrollMode": "auto",
+      "lineIndex": 114
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jc0",
+      "lineText": "Sings .",
+      "scrollMode": "auto",
+      "lineIndex": 115
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jhg",
+      "lineText": "Sings . For I the ballad will repeat Which men full true shall find : Your marriage comes by destiny ; Your cuckoo sings by kind .",
+      "scrollMode": "auto",
+      "lineIndex": 116
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jcg",
+      "lineText": "Get you gone , sir . I’ll talk with you more anon .",
+      "scrollMode": "auto",
+      "lineIndex": 117
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jh0",
+      "lineText": "May it please you , madam , that he bid Helen come to you . Of her I am to speak .",
+      "scrollMode": "auto",
+      "lineIndex": 118
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jcg",
+      "lineText": "Sirrah , tell my gentlewoman I would speak with her — Helen , I mean .",
+      "scrollMode": "auto",
+      "lineIndex": 119
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jc0",
+      "lineText": "sings",
+      "scrollMode": "auto",
+      "lineIndex": 120
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jhg",
+      "lineText": "Was this fair face the cause , quoth she , Why the Grecians sackèd Troy ? Fond done , done fond . Was this King Priam’s joy ? With that she sighèd as she stood , With that she sighèd as she stood , And gave this sentence then : Among nine bad if one be good , Among nine bad if one be good , There’s yet one good in ten .",
+      "scrollMode": "auto",
+      "lineIndex": 121
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jcg",
+      "lineText": "What , one good in ten ? You corrupt the song , sirrah .",
+      "scrollMode": "auto",
+      "lineIndex": 122
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jhg",
+      "lineText": "One good woman in ten , madam , which is a purifying o’ th’ song . Would God would serve the world so all the year ! We’d find no fault with the tithe-woman if I were the parson . One in ten , quoth he ? An we might have a good woman born but or every blazing star or at an earthquake , ’twould mend the lottery well . A man may draw his heart out ere he pluck one .",
+      "scrollMode": "auto",
+      "lineIndex": 123
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jcg",
+      "lineText": "You’ll be gone , sir knave , and do as I command you !",
+      "scrollMode": "auto",
+      "lineIndex": 124
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jhg",
+      "lineText": "That man should be at woman’s command , and yet no hurt done ! Though honesty be no Puritan , yet it will do no hurt ; it will wear the surplice of humility over the black gown of a big heart . I am going , forsooth . The business is for Helen to come hither .",
+      "scrollMode": "auto",
+      "lineIndex": 125
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jc0",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 126
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jcg",
+      "lineText": "Well , now .",
+      "scrollMode": "auto",
+      "lineIndex": 127
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jh0",
+      "lineText": "I know , madam , you love your gentlewoman entirely .",
+      "scrollMode": "auto",
+      "lineIndex": 128
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jcg",
+      "lineText": "Faith , I do . Her father bequeathed her to me , and she herself , without other advantage , may lawfully make title to as much love as she finds . There is more owing her than is paid , and more shall be paid her than she’ll demand .",
+      "scrollMode": "auto",
+      "lineIndex": 129
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jh0",
+      "lineText": "Madam , I was very late more near her than I think she wished me . Alone she was and did communicate to herself her own words to her own ears ; she thought , I dare vow for her , they touched not any stranger sense . Her matter was she loved your son . Fortune , she said , was no goddess , that had put such difference betwixt their two estates ; Love no god , that would not extend his might only where qualities were level ; Dian no queen of virgins , that would suffer her poor knight surprised without rescue in the first assault or ransom afterward . This she delivered in the most bitter touch of sorrow that e’er I heard virgin exclaim in , which I held my duty speedily to acquaint you withal , sithence in the loss that may happen it concerns you something to know it .",
+      "scrollMode": "auto",
+      "lineIndex": 130
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jc0",
+      "lineText": "Steward exits .",
+      "scrollMode": "auto",
+      "lineIndex": 131
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jc0",
+      "lineText": "Enter Helen .",
+      "scrollMode": "auto",
+      "lineIndex": 132
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jc0",
+      "lineText": "Aside .",
+      "scrollMode": "auto",
+      "lineIndex": 133
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78je0",
+      "lineText": "Aside . Even so it was with me when I was young . If ever we are nature’s , these are ours . This thorn Doth to our rose of youth rightly belong . Our blood to us , this to our blood is born . It is the show and seal of nature’s truth , Where love’s strong passion is impressed in youth . By our remembrances of days foregone , Such were our faults , or then we thought them none . Her eye is sick on ’t , I observe her now .",
+      "scrollMode": "auto",
+      "lineIndex": 134
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78je0",
+      "lineText": "What is your pleasure , madam ?",
+      "scrollMode": "auto",
+      "lineIndex": 135
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jcg",
+      "lineText": "You know , Helen , I am a mother to you .",
+      "scrollMode": "auto",
+      "lineIndex": 136
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78je0",
+      "lineText": "Mine honorable mistress .",
+      "scrollMode": "auto",
+      "lineIndex": 137
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jcg",
+      "lineText": "Nay , a mother . Why not a mother ? When I said a mother , Methought you saw a serpent . What’s in mother That you start at it ? I say I am your mother And put you in the catalogue of those That were enwombèd mine . ’Tis often seen Adoption strives with nature , and choice breeds A native slip to us from foreign seeds . You ne’er oppressed me with a mother’s groan , Yet I express to you a mother’s care . God’s mercy , maiden , does it curd thy blood To say I am thy mother ? What’s the matter , That this distempered messenger of wet , The many-colored Iris , rounds thine eye ? Why ? That you are my daughter ?",
+      "scrollMode": "auto",
+      "lineIndex": 138
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78je0",
+      "lineText": "That I am not .",
+      "scrollMode": "auto",
+      "lineIndex": 139
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jcg",
+      "lineText": "I say I am your mother .",
+      "scrollMode": "auto",
+      "lineIndex": 140
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78je0",
+      "lineText": "Pardon , madam . The Count Rossillion cannot be my brother . I am from humble , he from honored name ; No note upon my parents , his all noble . My master , my dear lord he is , and I His servant live and will his vassal die . He must not be my brother .",
+      "scrollMode": "auto",
+      "lineIndex": 141
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jcg",
+      "lineText": "Nor I your mother ?",
+      "scrollMode": "auto",
+      "lineIndex": 142
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78je0",
+      "lineText": "You are my mother , madam . Would you were — So that my lord your son were not my brother — Indeed my mother ! Or were you both our mothers , I care no more for than I do for heaven , So I were not his sister . Can ’t no other ACT 1. SC. 3 But , I your daughter , he must be my brother ?",
+      "scrollMode": "auto",
+      "lineIndex": 143
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jcg",
+      "lineText": "Yes , Helen , you might be my daughter-in-law . God shield you mean it not ! Daughter and mother So strive upon your pulse . What , pale again ? My fear hath catched your fondness ! Now I see The mystery of your loneliness and find Your salt tears’ head . Now to all sense ’tis gross : You love my son . Invention is ashamed Against the proclamation of thy passion To say thou dost not . Therefore tell me true , But tell me then ’tis so , for , look , thy cheeks Confess it th’ one to th’ other , and thine eyes See it so grossly shown in thy behaviors That in their kind they speak it . Only sin And hellish obstinacy tie thy tongue That truth should be suspected . Speak . Is ’t so ? If it be so , you have wound a goodly clew ; If it be not , forswear ’t ; howe’er , I charge thee , As heaven shall work in me for thine avail , To tell me truly .",
+      "scrollMode": "auto",
+      "lineIndex": 144
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78je0",
+      "lineText": "Good madam , pardon me .",
+      "scrollMode": "auto",
+      "lineIndex": 145
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jcg",
+      "lineText": "Do you love my son ?",
+      "scrollMode": "auto",
+      "lineIndex": 146
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78je0",
+      "lineText": "Your pardon , noble mistress .",
+      "scrollMode": "auto",
+      "lineIndex": 147
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jcg",
+      "lineText": "Love you my son ?",
+      "scrollMode": "auto",
+      "lineIndex": 148
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78je0",
+      "lineText": "Do not you love him , madam ?",
+      "scrollMode": "auto",
+      "lineIndex": 149
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jcg",
+      "lineText": "Go not about . My love hath in ’t a bond Whereof the world takes note . Come , come , disclose The state of your affection , for your passions Have to the full appeached .",
+      "scrollMode": "auto",
+      "lineIndex": 150
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jc0",
+      "lineText": ", kneeling",
+      "scrollMode": "auto",
+      "lineIndex": 151
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78je0",
+      "lineText": "Then I confess Here on my knee before high heaven and you That before you and next unto high heaven ACT 1. SC. 3 I love your son . My friends were poor but honest ; so ’s my love . Be not offended , for it hurts not him That he is loved of me . I follow him not By any token of presumptuous suit , Nor would I have him till I do deserve him , Yet never know how that desert should be . I know I love in vain , strive against hope , Yet in this captious and intenible sieve I still pour in the waters of my love And lack not to lose still . Thus , Indian-like , Religious in mine error , I adore The sun that looks upon his worshipper But knows of him no more . My dearest madam , Let not your hate encounter with my love For loving where you do ; but if yourself , Whose agèd honor cites a virtuous youth , Did ever in so true a flame of liking Wish chastely and love dearly , that your Dian Was both herself and Love , O then give pity To her whose state is such that cannot choose But lend and give where she is sure to lose ; That seeks not to find that her search implies , But riddle-like lives sweetly where she dies .",
+      "scrollMode": "auto",
+      "lineIndex": 152
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jcg",
+      "lineText": "Had you not lately an intent — speak truly — To go to Paris ?",
+      "scrollMode": "auto",
+      "lineIndex": 153
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78je0",
+      "lineText": "Madam , I had .",
+      "scrollMode": "auto",
+      "lineIndex": 154
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jcg",
+      "lineText": "Wherefore ? Tell true .",
+      "scrollMode": "auto",
+      "lineIndex": 155
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jc0",
+      "lineText": ", standing",
+      "scrollMode": "auto",
+      "lineIndex": 156
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78je0",
+      "lineText": "I will tell truth , by grace itself I swear . You know my father left me some prescriptions Of rare and proved effects , such as his reading And manifest experience had collected For general sovereignty ; and that he willed me ACT 1. SC. 3 In heedfull’st reservation to bestow them As notes whose faculties inclusive were More than they were in note . Amongst the rest There is a remedy , approved , set down , To cure the desperate languishings whereof The King is rendered lost .",
+      "scrollMode": "auto",
+      "lineIndex": 157
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jcg",
+      "lineText": "This was your motive for Paris , was it ? Speak .",
+      "scrollMode": "auto",
+      "lineIndex": 158
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78je0",
+      "lineText": "My lord your son made me to think of this ; Else Paris , and the medicine , and the King Had from the conversation of my thoughts Haply been absent then .",
+      "scrollMode": "auto",
+      "lineIndex": 159
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jcg",
+      "lineText": "But think you , Helen , If you should tender your supposèd aid , He would receive it ? He and his physicians Are of a mind : he that they cannot help him , They that they cannot help . How shall they credit A poor unlearnèd virgin , when the schools Emboweled of their doctrine have left off The danger to itself ?",
+      "scrollMode": "auto",
+      "lineIndex": 160
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78je0",
+      "lineText": "There’s something in ’t More than my father’s skill , which was the great’st Of his profession , that his good receipt Shall for my legacy be sanctified By th’ luckiest stars in heaven ; and would your Honor But give me leave to try success , I’d venture The well-lost life of mine on his Grace’s cure By such a day , an hour .",
+      "scrollMode": "auto",
+      "lineIndex": 161
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jcg",
+      "lineText": "Dost thou believe ’t ?",
+      "scrollMode": "auto",
+      "lineIndex": 162
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78je0",
+      "lineText": "Ay , madam , knowingly .",
+      "scrollMode": "auto",
+      "lineIndex": 163
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jcg",
+      "lineText": "Why , Helen , thou shalt have my leave and love , Means and attendants , and my loving greetings To those of mine in court . I’ll stay at home ACT 1. SC. 3 And pray God’s blessing into thy attempt . Be gone tomorrow , and be sure of this : What I can help thee to thou shalt not miss .",
+      "scrollMode": "auto",
+      "lineIndex": 164
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78jc0",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 165
+    }
+  ],
+  "isPublic": true
+}

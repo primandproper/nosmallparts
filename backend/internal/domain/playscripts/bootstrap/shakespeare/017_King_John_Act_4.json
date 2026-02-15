@@ -1,0 +1,1239 @@
+{
+  "title": "King John (Act 4)",
+  "description": "Folger Shakespeare Library edition",
+  "author": "William Shakespeare",
+  "castMembers": [
+    {
+      "id": "d68m11kn9qd8d2h792u0",
+      "name": "Narrator",
+      "sortOrder": 0
+    },
+    {
+      "id": "d68m11kn9qd8d2h792ug",
+      "name": "Hubert",
+      "description": "supporter of King John",
+      "sortOrder": 1
+    },
+    {
+      "id": "d68m11kn9qd8d2h792v0",
+      "name": "Executioner",
+      "sortOrder": 2
+    },
+    {
+      "id": "d68m11kn9qd8d2h792vg",
+      "name": "EXECUTIONERS_Jn",
+      "sortOrder": 3
+    },
+    {
+      "id": "d68m11kn9qd8d2h79300",
+      "name": "Arthur",
+      "description": "Duke of Brittany, her son",
+      "sortOrder": 4
+    },
+    {
+      "id": "d68m11kn9qd8d2h7930g",
+      "name": "John",
+      "description": "King of England, with dominion over assorted Continental territories",
+      "sortOrder": 5
+    },
+    {
+      "id": "d68m11kn9qd8d2h79310",
+      "name": "Earl of Pembroke",
+      "sortOrder": 6
+    },
+    {
+      "id": "d68m11kn9qd8d2h7931g",
+      "name": "Earl of Salisbury",
+      "sortOrder": 7
+    },
+    {
+      "id": "d68m11kn9qd8d2h79320",
+      "name": "Messenger",
+      "sortOrder": 8
+    },
+    {
+      "id": "d68m11kn9qd8d2h7932g",
+      "name": "Bastard",
+      "description": "Philip Faulconbridge, her son by King Richard I",
+      "sortOrder": 9
+    },
+    {
+      "id": "d68m11kn9qd8d2h79330",
+      "name": "Peter",
+      "description": "a Prophet",
+      "sortOrder": 10
+    },
+    {
+      "id": "d68m11kn9qd8d2h7933g",
+      "name": "Lord Bigot",
+      "sortOrder": 11
+    }
+  ],
+  "lines": [
+    {
+      "castMemberId": "d68m11kn9qd8d2h792u0",
+      "lineText": "Enter Hubert and Executioners , with irons and rope .",
+      "scrollMode": "auto",
+      "lineIndex": 0
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792ug",
+      "lineText": "Heat me these irons hot , and look thou stand Within the arras . When I strike my foot Upon the bosom of the ground , rush forth And bind the boy which you shall find with me Fast to the chair . Be heedful . Hence , and watch .",
+      "scrollMode": "auto",
+      "lineIndex": 1
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792v0",
+      "lineText": "I hope your warrant will bear out the deed .",
+      "scrollMode": "auto",
+      "lineIndex": 2
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792u0",
+      "lineText": "Executioners exit .",
+      "scrollMode": "auto",
+      "lineIndex": 3
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792vg",
+      "lineText": "Executioners exit . Young lad , come forth . I have to say with you .",
+      "scrollMode": "auto",
+      "lineIndex": 4
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792u0",
+      "lineText": "Enter Arthur .",
+      "scrollMode": "auto",
+      "lineIndex": 5
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79300",
+      "lineText": "Good morrow , Hubert .",
+      "scrollMode": "auto",
+      "lineIndex": 6
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792ug",
+      "lineText": "Good morrow , little prince .",
+      "scrollMode": "auto",
+      "lineIndex": 7
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79300",
+      "lineText": "As little prince , having so great a title To be more prince , as may be . You are sad .",
+      "scrollMode": "auto",
+      "lineIndex": 8
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792ug",
+      "lineText": "Indeed , I have been merrier .",
+      "scrollMode": "auto",
+      "lineIndex": 9
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79300",
+      "lineText": "Mercy on me ! ACT 4. SC. 1 Methinks nobody should be sad but I . Yet I remember , when I was in France , Young gentlemen would be as sad as night Only for wantonness . By my christendom , So I were out of prison and kept sheep , I should be as merry as the day is long . And so I would be here but that I doubt My uncle practices more harm to me . He is afraid of me , and I of him . Is it my fault that I was Geoffrey’s son ? No , indeed , is ’t not . And I would to heaven I were your son , so you would love me , Hubert .",
+      "scrollMode": "auto",
+      "lineIndex": 10
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792u0",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 11
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792ug",
+      "lineText": "If I talk to him , with his innocent prate He will awake my mercy , which lies dead . Therefore I will be sudden and dispatch .",
+      "scrollMode": "auto",
+      "lineIndex": 12
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79300",
+      "lineText": "Are you sick , Hubert ? You look pale today . In sooth , I would you were a little sick That I might sit all night and watch with you . I warrant I love you more than you do me .",
+      "scrollMode": "auto",
+      "lineIndex": 13
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792u0",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 14
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792u0",
+      "lineText": "He shows Arthur a paper .",
+      "scrollMode": "auto",
+      "lineIndex": 15
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792u0",
+      "lineText": "( Aside . )",
+      "scrollMode": "auto",
+      "lineIndex": 16
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792ug",
+      "lineText": "( Aside . ) How now , foolish rheum ? Turning dispiteous torture out of door ? I must be brief lest resolution drop Out at mine eyes in tender womanish tears . — Can you not read it ? Is it not fair writ ?",
+      "scrollMode": "auto",
+      "lineIndex": 17
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79300",
+      "lineText": "Too fairly , Hubert , for so foul effect . Must you with hot irons burn out both mine eyes ?",
+      "scrollMode": "auto",
+      "lineIndex": 18
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792ug",
+      "lineText": "Young boy , I must .",
+      "scrollMode": "auto",
+      "lineIndex": 19
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79300",
+      "lineText": "And will you ?",
+      "scrollMode": "auto",
+      "lineIndex": 20
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792ug",
+      "lineText": "And I will .",
+      "scrollMode": "auto",
+      "lineIndex": 21
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79300",
+      "lineText": "Have you the heart ? When your head did but ache , I knit my handkercher about your brows — The best I had , a princess wrought it me — And I did never ask it you again ; And with my hand at midnight held your head , And like the watchful minutes to the hour Still and anon cheered up the heavy time , Saying What lack you ? and Where lies your grief ? Or What good love may I perform for you ? Many a poor man’s son would have lien still And ne’er have spoke a loving word to you ; But you at your sick service had a prince . Nay , you may think my love was crafty love , And call it cunning . Do , an if you will . If heaven be pleased that you must use me ill , Why then you must . Will you put out mine eyes — These eyes that never did nor never shall So much as frown on you ?",
+      "scrollMode": "auto",
+      "lineIndex": 22
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792ug",
+      "lineText": "I have sworn to do it . And with hot irons must I burn them out .",
+      "scrollMode": "auto",
+      "lineIndex": 23
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79300",
+      "lineText": "Ah , none but in this Iron Age would do it . The iron of itself , though heat red-hot , Approaching near these eyes , would drink my tears And quench this fiery indignation Even in the matter of mine innocence ; Nay , after that , consume away in rust But for containing fire to harm mine eye . Are you more stubborn-hard than hammered iron ? An if an angel should have come to me And told me Hubert should put out mine eyes , ACT 4. SC. 1 I would not have believed him . No tongue but Hubert’s .",
+      "scrollMode": "auto",
+      "lineIndex": 24
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792u0",
+      "lineText": "stamps his foot and calls",
+      "scrollMode": "auto",
+      "lineIndex": 25
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792u0",
+      "lineText": "Enter Executioners with ropes , a heated iron , and a brazier of burning coals .",
+      "scrollMode": "auto",
+      "lineIndex": 26
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792vg",
+      "lineText": "Enter Executioners with ropes , a heated iron , and a brazier of burning coals . Do as I bid you do .",
+      "scrollMode": "auto",
+      "lineIndex": 27
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79300",
+      "lineText": "O , save me , Hubert , save me ! My eyes are out Even with the fierce looks of these bloody men .",
+      "scrollMode": "auto",
+      "lineIndex": 28
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792ug",
+      "lineText": "Give me the iron , I say , and bind him here .",
+      "scrollMode": "auto",
+      "lineIndex": 29
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792u0",
+      "lineText": "He takes the iron .",
+      "scrollMode": "auto",
+      "lineIndex": 30
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79300",
+      "lineText": "Alas , what need you be so boist’rous-rough ? I will not struggle ; I will stand stone-still . For God’s sake , Hubert , let me not be bound ! Nay , hear me , Hubert ! Drive these men away , And I will sit as quiet as a lamb . I will not stir nor wince nor speak a word Nor look upon the iron angerly . Thrust but these men away , and I’ll forgive you , Whatever torment you do put me to .",
+      "scrollMode": "auto",
+      "lineIndex": 31
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792u0",
+      "lineText": ", to Executioners",
+      "scrollMode": "auto",
+      "lineIndex": 32
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792ug",
+      "lineText": "Go stand within . Let me alone with him .",
+      "scrollMode": "auto",
+      "lineIndex": 33
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792v0",
+      "lineText": "I am best pleased to be from such a deed .",
+      "scrollMode": "auto",
+      "lineIndex": 34
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792u0",
+      "lineText": "Executioners exit .",
+      "scrollMode": "auto",
+      "lineIndex": 35
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79300",
+      "lineText": "Alas , I then have chid away my friend ! He hath a stern look but a gentle heart . Let him come back , that his compassion may Give life to yours .",
+      "scrollMode": "auto",
+      "lineIndex": 36
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792ug",
+      "lineText": "Come , boy , prepare yourself .",
+      "scrollMode": "auto",
+      "lineIndex": 37
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79300",
+      "lineText": "Is there no remedy ?",
+      "scrollMode": "auto",
+      "lineIndex": 38
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792ug",
+      "lineText": "None but to lose your eyes .",
+      "scrollMode": "auto",
+      "lineIndex": 39
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79300",
+      "lineText": "O God , that there were but a mote in yours , A grain , a dust , a gnat , a wandering hair , Any annoyance in that precious sense . Then , feeling what small things are boisterous there , Your vile intent must needs seem horrible .",
+      "scrollMode": "auto",
+      "lineIndex": 40
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792ug",
+      "lineText": "Is this your promise ? Go to , hold your tongue .",
+      "scrollMode": "auto",
+      "lineIndex": 41
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792u0",
+      "lineText": "He seizes the iron .",
+      "scrollMode": "auto",
+      "lineIndex": 42
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79300",
+      "lineText": "He seizes the iron . Lo , by my troth , the instrument is cold , And would not harm me .",
+      "scrollMode": "auto",
+      "lineIndex": 43
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792u0",
+      "lineText": ", taking back the iron",
+      "scrollMode": "auto",
+      "lineIndex": 44
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792ug",
+      "lineText": "I can heat it , boy .",
+      "scrollMode": "auto",
+      "lineIndex": 45
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79300",
+      "lineText": "No , in good sooth . The fire is dead with grief , Being create for comfort , to be used In undeserved extremes . See else yourself . There is no malice in this burning coal . The breath of heaven hath blown his spirit out And strewed repentant ashes on his head .",
+      "scrollMode": "auto",
+      "lineIndex": 46
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792ug",
+      "lineText": "But with my breath I can revive it , boy .",
+      "scrollMode": "auto",
+      "lineIndex": 47
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79300",
+      "lineText": "An if you do , you will but make it blush And glow with shame of your proceedings , Hubert . Nay , it perchance will sparkle in your eyes , ACT 4. SC. 2 And , like a dog that is compelled to fight , Snatch at his master that doth tar him on . All things that you should use to do me wrong Deny their office . Only you do lack That mercy which fierce fire and iron extends , Creatures of note for mercy-lacking uses .",
+      "scrollMode": "auto",
+      "lineIndex": 48
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792ug",
+      "lineText": "Well , see to live . I will not touch thine eye For all the treasure that thine uncle owes . Yet am I sworn , and I did purpose , boy , With this same very iron to burn them out .",
+      "scrollMode": "auto",
+      "lineIndex": 49
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79300",
+      "lineText": "O , now you look like Hubert . All this while You were disguisèd .",
+      "scrollMode": "auto",
+      "lineIndex": 50
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792ug",
+      "lineText": "Peace . No more . Adieu . Your uncle must not know but you are dead . I’ll fill these doggèd spies with false reports . And , pretty child , sleep doubtless and secure That Hubert , for the wealth of all the world , Will not offend thee .",
+      "scrollMode": "auto",
+      "lineIndex": 51
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79300",
+      "lineText": "O heaven ! I thank you , Hubert .",
+      "scrollMode": "auto",
+      "lineIndex": 52
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792ug",
+      "lineText": "Silence . No more . Go closely in with me . Much danger do I undergo for thee .",
+      "scrollMode": "auto",
+      "lineIndex": 53
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792u0",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 54
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792u0",
+      "lineText": "Enter King John , Pembroke , Salisbury , and other Lords . King John ascends the throne .",
+      "scrollMode": "auto",
+      "lineIndex": 55
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7930g",
+      "lineText": "Here once again we sit , once again crowned And looked upon , I hope , with cheerful eyes .",
+      "scrollMode": "auto",
+      "lineIndex": 56
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79310",
+      "lineText": "This once again , but that your Highness pleased , ACT 4. SC. 2 Was once superfluous . You were crowned before , And that high royalty was ne’er plucked off , The faiths of men ne’er stainèd with revolt ; Fresh expectation troubled not the land With any longed-for change or better state .",
+      "scrollMode": "auto",
+      "lineIndex": 57
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7931g",
+      "lineText": "Therefore , to be possessed with double pomp , To guard a title that was rich before , To gild refinèd gold , to paint the lily , To throw a perfume on the violet , To smooth the ice or add another hue Unto the rainbow , or with taper-light To seek the beauteous eye of heaven to garnish , Is wasteful and ridiculous excess .",
+      "scrollMode": "auto",
+      "lineIndex": 58
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79310",
+      "lineText": "But that your royal pleasure must be done , This act is as an ancient tale new told , And , in the last repeating , troublesome , Being urgèd at a time unseasonable .",
+      "scrollMode": "auto",
+      "lineIndex": 59
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7931g",
+      "lineText": "In this the antique and well-noted face Of plain old form is much disfigurèd , And like a shifted wind unto a sail , It makes the course of thoughts to fetch about , Startles and frights consideration , Makes sound opinion sick and truth suspected For putting on so new a fashioned robe .",
+      "scrollMode": "auto",
+      "lineIndex": 60
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79310",
+      "lineText": "When workmen strive to do better than well , They do confound their skill in covetousness , And oftentimes excusing of a fault Doth make the fault the worse by th’ excuse , As patches set upon a little breach Discredit more in hiding of the fault Than did the fault before it was so patched .",
+      "scrollMode": "auto",
+      "lineIndex": 61
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7931g",
+      "lineText": "To this effect , before you were new-crowned , We breathed our counsel ; but it pleased your Highness To overbear it , and we are all well pleased , Since all and every part of what we would Doth make a stand at what your Highness will .",
+      "scrollMode": "auto",
+      "lineIndex": 62
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7930g",
+      "lineText": "Some reasons of this double coronation I have possessed you with , and think them strong ; And more , more strong , when lesser is my fear , I shall endue you with . Meantime , but ask What you would have reformed that is not well , And well shall you perceive how willingly I will both hear and grant you your requests .",
+      "scrollMode": "auto",
+      "lineIndex": 63
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79310",
+      "lineText": "Then I , as one that am the tongue of these To sound the purposes of all their hearts , Both for myself and them , but chief of all Your safety , for the which myself and them Bend their best studies , heartily request Th’ enfranchisement of Arthur , whose restraint Doth move the murmuring lips of discontent To break into this dangerous argument : If what in rest you have in right you hold , Why then your fears , which , as they say , attend The steps of wrong , should move you to mew up Your tender kinsman and to choke his days With barbarous ignorance and deny his youth The rich advantage of good exercise . That the time’s enemies may not have this To grace occasions , let it be our suit That you have bid us ask , his liberty , Which for our goods we do no further ask Than whereupon our weal , on you depending , Counts it your weal he have his liberty .",
+      "scrollMode": "auto",
+      "lineIndex": 64
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792u0",
+      "lineText": "Enter Hubert .",
+      "scrollMode": "auto",
+      "lineIndex": 65
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792ug",
+      "lineText": "Enter Hubert . Hubert , what news with you ?",
+      "scrollMode": "auto",
+      "lineIndex": 66
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792u0",
+      "lineText": "King John and Hubert talk aside .",
+      "scrollMode": "auto",
+      "lineIndex": 67
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79310",
+      "lineText": "This is the man should do the bloody deed . He showed his warrant to a friend of mine . The image of a wicked heinous fault Lives in his eye . That close aspect of his Doth show the mood of a much troubled breast , And I do fearfully believe ’tis done What we so feared he had a charge to do .",
+      "scrollMode": "auto",
+      "lineIndex": 68
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7931g",
+      "lineText": "The color of the King doth come and go Between his purpose and his conscience , Like heralds ’twixt two dreadful battles set . His passion is so ripe it needs must break .",
+      "scrollMode": "auto",
+      "lineIndex": 69
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79310",
+      "lineText": "And when it breaks , I fear will issue thence The foul corruption of a sweet child’s death .",
+      "scrollMode": "auto",
+      "lineIndex": 70
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792u0",
+      "lineText": ", coming forward with Hubert",
+      "scrollMode": "auto",
+      "lineIndex": 71
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7930g",
+      "lineText": "We cannot hold mortality’s strong hand . — Good lords , although my will to give is living , The suit which you demand is gone and dead . He tells us Arthur is deceased tonight .",
+      "scrollMode": "auto",
+      "lineIndex": 72
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7931g",
+      "lineText": "Indeed , we feared his sickness was past cure .",
+      "scrollMode": "auto",
+      "lineIndex": 73
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79310",
+      "lineText": "Indeed , we heard how near his death he was Before the child himself felt he was sick . This must be answered either here or hence .",
+      "scrollMode": "auto",
+      "lineIndex": 74
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7930g",
+      "lineText": "Why do you bend such solemn brows on me ? ACT 4. SC. 2 Think you I bear the shears of destiny ? Have I commandment on the pulse of life ?",
+      "scrollMode": "auto",
+      "lineIndex": 75
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7931g",
+      "lineText": "It is apparent foul play , and ’tis shame That greatness should so grossly offer it . So thrive it in your game , and so farewell .",
+      "scrollMode": "auto",
+      "lineIndex": 76
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79310",
+      "lineText": "Stay yet , Lord Salisbury . I’ll go with thee And find th’ inheritance of this poor child , His little kingdom of a forcèd grave . That blood which owed the breadth of all this isle , Three foot of it doth hold . Bad world the while ! This must not be thus borne ; this will break out To all our sorrows , and ere long , I doubt .",
+      "scrollMode": "auto",
+      "lineIndex": 77
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792u0",
+      "lineText": "Pembroke , Salisbury , and other Lords exit .",
+      "scrollMode": "auto",
+      "lineIndex": 78
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792u0",
+      "lineText": "Enter Messenger .",
+      "scrollMode": "auto",
+      "lineIndex": 79
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79320",
+      "lineText": "Enter Messenger . A fearful eye thou hast . Where is that blood That I have seen inhabit in those cheeks ? So foul a sky clears not without a storm . Pour down thy weather : how goes all in France ?",
+      "scrollMode": "auto",
+      "lineIndex": 80
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79320",
+      "lineText": "From France to England . Never such a power For any foreign preparation Was levied in the body of a land . The copy of your speed is learned by them , For when you should be told they do prepare , The tidings comes that they are all arrived .",
+      "scrollMode": "auto",
+      "lineIndex": 81
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7930g",
+      "lineText": "O , where hath our intelligence been drunk ? Where hath it slept ? Where is my mother’s care , ACT 4. SC. 2 That such an army could be drawn in France And she not hear of it ?",
+      "scrollMode": "auto",
+      "lineIndex": 82
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79320",
+      "lineText": "My liege , her ear Is stopped with dust . The first of April died Your noble mother . And as I hear , my lord , The Lady Constance in a frenzy died Three days before . But this from rumor’s tongue I idly heard . If true or false , I know not .",
+      "scrollMode": "auto",
+      "lineIndex": 83
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792u0",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 84
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7930g",
+      "lineText": "Withhold thy speed , dreadful occasion ! O , make a league with me till I have pleased My discontented peers . What ? Mother dead ? How wildly then walks my estate in France ! — Under whose conduct came those powers of France That thou for truth giv’st out are landed here ?",
+      "scrollMode": "auto",
+      "lineIndex": 85
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79320",
+      "lineText": "Under the Dauphin .",
+      "scrollMode": "auto",
+      "lineIndex": 86
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792u0",
+      "lineText": "Enter Bastard and Peter of Pomfret .",
+      "scrollMode": "auto",
+      "lineIndex": 87
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792u0",
+      "lineText": "To Bastard .",
+      "scrollMode": "auto",
+      "lineIndex": 88
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7932g",
+      "lineText": "To Bastard . Now , what says the world To your proceedings ? Do not seek to stuff My head with more ill news , for it is full .",
+      "scrollMode": "auto",
+      "lineIndex": 89
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7932g",
+      "lineText": "But if you be afeard to hear the worst , Then let the worst , unheard , fall on your head .",
+      "scrollMode": "auto",
+      "lineIndex": 90
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7930g",
+      "lineText": "Bear with me , cousin , for I was amazed Under the tide , but now I breathe again Aloft the flood and can give audience To any tongue , speak it of what it will .",
+      "scrollMode": "auto",
+      "lineIndex": 91
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7932g",
+      "lineText": "How I have sped among the clergymen The sums I have collected shall express . ACT 4. SC. 2 But as I traveled hither through the land , I find the people strangely fantasied , Possessed with rumors , full of idle dreams , Not knowing what they fear , but full of fear . And here’s a prophet that I brought with me From forth the streets of Pomfret , whom I found With many hundreds treading on his heels , To whom he sung in rude harsh-sounding rhymes That ere the next Ascension Day at noon , Your Highness should deliver up your crown .",
+      "scrollMode": "auto",
+      "lineIndex": 92
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792u0",
+      "lineText": ", to Peter",
+      "scrollMode": "auto",
+      "lineIndex": 93
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7930g",
+      "lineText": "Thou idle dreamer , wherefore didst thou so ?",
+      "scrollMode": "auto",
+      "lineIndex": 94
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79330",
+      "lineText": "Foreknowing that the truth will fall out so .",
+      "scrollMode": "auto",
+      "lineIndex": 95
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792u0",
+      "lineText": "Hubert and Peter exit .",
+      "scrollMode": "auto",
+      "lineIndex": 96
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792ug",
+      "lineText": "Hubert and Peter exit . O my gentle cousin , Hear’st thou the news abroad , who are arrived ?",
+      "scrollMode": "auto",
+      "lineIndex": 97
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7932g",
+      "lineText": "The French , my lord . Men’s mouths are full of it . Besides , I met Lord Bigot and Lord Salisbury With eyes as red as new-enkindled fire , And others more , going to seek the grave Of Arthur , whom they say is killed tonight On your suggestion .",
+      "scrollMode": "auto",
+      "lineIndex": 98
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7930g",
+      "lineText": "Gentle kinsman , go And thrust thyself into their companies . I have a way to win their loves again . Bring them before me .",
+      "scrollMode": "auto",
+      "lineIndex": 99
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7932g",
+      "lineText": "I will seek them out .",
+      "scrollMode": "auto",
+      "lineIndex": 100
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7930g",
+      "lineText": "Nay , but make haste , the better foot before ! ACT 4. SC. 2 O , let me have no subject enemies When adverse foreigners affright my towns With dreadful pomp of stout invasion . Be Mercury , set feathers to thy heels , And fly like thought from them to me again .",
+      "scrollMode": "auto",
+      "lineIndex": 101
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7932g",
+      "lineText": "The spirit of the time shall teach me speed .",
+      "scrollMode": "auto",
+      "lineIndex": 102
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792u0",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 103
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792u0",
+      "lineText": "To Messenger .",
+      "scrollMode": "auto",
+      "lineIndex": 104
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7930g",
+      "lineText": "To Messenger . Go after him , for he perhaps shall need Some messenger betwixt me and the peers , And be thou he .",
+      "scrollMode": "auto",
+      "lineIndex": 105
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79320",
+      "lineText": "With all my heart , my liege .",
+      "scrollMode": "auto",
+      "lineIndex": 106
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792u0",
+      "lineText": "Messenger exits .",
+      "scrollMode": "auto",
+      "lineIndex": 107
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7930g",
+      "lineText": "My mother dead !",
+      "scrollMode": "auto",
+      "lineIndex": 108
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792u0",
+      "lineText": "Enter Hubert .",
+      "scrollMode": "auto",
+      "lineIndex": 109
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792ug",
+      "lineText": "My lord , they say five moons were seen tonight — Four fixèd , and the fifth did whirl about The other four in wondrous motion .",
+      "scrollMode": "auto",
+      "lineIndex": 110
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7930g",
+      "lineText": "Five moons !",
+      "scrollMode": "auto",
+      "lineIndex": 111
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792ug",
+      "lineText": "Old men and beldams in the streets Do prophesy upon it dangerously . Young Arthur’s death is common in their mouths , And when they talk of him , they shake their heads And whisper one another in the ear , And he that speaks doth grip the hearer’s wrist , Whilst he that hears makes fearful action With wrinkled brows , with nods , with rolling eyes . I saw a smith stand with his hammer , thus , The whilst his iron did on the anvil cool , ACT 4. SC. 2 With open mouth swallowing a tailor’s news , Who with his shears and measure in his hand , Standing on slippers which his nimble haste Had falsely thrust upon contrary feet , Told of a many thousand warlike French That were embattlèd and ranked in Kent . Another lean , unwashed artificer Cuts off his tale and talks of Arthur’s death .",
+      "scrollMode": "auto",
+      "lineIndex": 112
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7930g",
+      "lineText": "Why seek’st thou to possess me with these fears ? Why urgest thou so oft young Arthur’s death ? Thy hand hath murdered him . I had a mighty cause To wish him dead , but thou hadst none to kill him .",
+      "scrollMode": "auto",
+      "lineIndex": 113
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792ug",
+      "lineText": "No had , my lord ! Why , did you not provoke me ?",
+      "scrollMode": "auto",
+      "lineIndex": 114
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7930g",
+      "lineText": "It is the curse of kings to be attended By slaves that take their humors for a warrant To break within the bloody house of life , And on the winking of authority To understand a law , to know the meaning Of dangerous majesty , when perchance it frowns More upon humor than advised respect .",
+      "scrollMode": "auto",
+      "lineIndex": 115
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792u0",
+      "lineText": ", showing a paper",
+      "scrollMode": "auto",
+      "lineIndex": 116
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792ug",
+      "lineText": "Here is your hand and seal for what I did .",
+      "scrollMode": "auto",
+      "lineIndex": 117
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7930g",
+      "lineText": "O , when the last accompt twixt heaven and Earth earth Is to be made , then shall this hand and seal Witness against us to damnation ! How oft the sight of means to do ill deeds Make deeds ill done ! Hadst not thou been by , A fellow by the hand of nature marked , Quoted , and signed to do a deed of shame , This murder had not come into my mind . But taking note of thy abhorred aspect , ACT 4. SC. 2 Finding thee fit for bloody villainy , Apt , liable to be employed in danger , I faintly broke with thee of Arthur’s death ; And thou , to be endearèd to a king , Made it no conscience to destroy a prince .",
+      "scrollMode": "auto",
+      "lineIndex": 118
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792ug",
+      "lineText": "My lord —",
+      "scrollMode": "auto",
+      "lineIndex": 119
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7930g",
+      "lineText": "Hadst thou but shook thy head or made a pause When I spake darkly what I purposèd , Or turned an eye of doubt upon my face , As bid me tell my tale in express words , Deep shame had struck me dumb , made me break off , And those thy fears might have wrought fears in me . But thou didst understand me by my signs And didst in signs again parley with sin , Yea , without stop didst let thy heart consent And consequently thy rude hand to act The deed which both our tongues held vile to name . Out of my sight , and never see me more . My nobles leave me , and my state is braved , Even at my gates , with ranks of foreign powers . Nay , in the body of this fleshly land , This kingdom , this confine of blood and breath , Hostility and civil tumult reigns Between my conscience and my cousin’s death .",
+      "scrollMode": "auto",
+      "lineIndex": 120
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792ug",
+      "lineText": "Arm you against your other enemies . I’ll make a peace between your soul and you . Young Arthur is alive . This hand of mine Is yet a maiden and an innocent hand , Not painted with the crimson spots of blood . Within this bosom never entered yet The dreadful motion of a murderous thought , And you have slandered nature in my form , ACT 4. SC. 3 Which , howsoever rude exteriorly , Is yet the cover of a fairer mind Than to be butcher of an innocent child .",
+      "scrollMode": "auto",
+      "lineIndex": 121
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7930g",
+      "lineText": "Doth Arthur live ? O , haste thee to the peers , Throw this report on their incensèd rage , And make them tame to their obedience . Forgive the comment that my passion made Upon thy feature , for my rage was blind , And foul imaginary eyes of blood Presented thee more hideous than thou art . O , answer not , but to my closet bring The angry lords with all expedient haste . I conjure thee but slowly ; run more fast .",
+      "scrollMode": "auto",
+      "lineIndex": 122
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792u0",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 123
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792u0",
+      "lineText": "Enter Arthur on the walls , dressed as a shipboy .",
+      "scrollMode": "auto",
+      "lineIndex": 124
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792u0",
+      "lineText": "He jumps .",
+      "scrollMode": "auto",
+      "lineIndex": 125
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79300",
+      "lineText": "He jumps . O me , my uncle’s spirit is in these stones . Heaven take my soul , and England keep my bones .",
+      "scrollMode": "auto",
+      "lineIndex": 126
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792u0",
+      "lineText": "He dies .",
+      "scrollMode": "auto",
+      "lineIndex": 127
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792u0",
+      "lineText": "Enter Pembroke , Salisbury with a letter , and Bigot .",
+      "scrollMode": "auto",
+      "lineIndex": 128
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7931g",
+      "lineText": "Lords , I will meet him at Saint Edmundsbury ; ACT 4. SC. 3 It is our safety , and we must embrace This gentle offer of the perilous time .",
+      "scrollMode": "auto",
+      "lineIndex": 129
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79310",
+      "lineText": "Who brought that letter from the Cardinal ?",
+      "scrollMode": "auto",
+      "lineIndex": 130
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7931g",
+      "lineText": "The Count Melun , a noble lord of France , Whose private with me of the Dauphin’s love Is much more general than these lines import .",
+      "scrollMode": "auto",
+      "lineIndex": 131
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7933g",
+      "lineText": "Tomorrow morning let us meet him , then .",
+      "scrollMode": "auto",
+      "lineIndex": 132
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7931g",
+      "lineText": "Or rather then set forward , for ’twill be Two long days’ journey , lords , or ere we meet .",
+      "scrollMode": "auto",
+      "lineIndex": 133
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792u0",
+      "lineText": "Enter Bastard .",
+      "scrollMode": "auto",
+      "lineIndex": 134
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7932g",
+      "lineText": "Once more today well met , distempered lords . The King by me requests your presence straight .",
+      "scrollMode": "auto",
+      "lineIndex": 135
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7931g",
+      "lineText": "The King hath dispossessed himself of us . We will not line his thin bestainèd cloak With our pure honors , nor attend the foot That leaves the print of blood where’er it walks . Return , and tell him so . We know the worst .",
+      "scrollMode": "auto",
+      "lineIndex": 136
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7932g",
+      "lineText": "Whate’er you think , good words I think were best .",
+      "scrollMode": "auto",
+      "lineIndex": 137
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7931g",
+      "lineText": "Our griefs and not our manners reason now .",
+      "scrollMode": "auto",
+      "lineIndex": 138
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7932g",
+      "lineText": "But there is little reason in your grief . Therefore ’twere reason you had manners now .",
+      "scrollMode": "auto",
+      "lineIndex": 139
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79310",
+      "lineText": "Sir , sir , impatience hath his privilege .",
+      "scrollMode": "auto",
+      "lineIndex": 140
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7932g",
+      "lineText": "’Tis true , to hurt his master , no man’s else .",
+      "scrollMode": "auto",
+      "lineIndex": 141
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792u0",
+      "lineText": "He sees Arthur’s body .",
+      "scrollMode": "auto",
+      "lineIndex": 142
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7931g",
+      "lineText": "He sees Arthur’s body . What is he lies here ?",
+      "scrollMode": "auto",
+      "lineIndex": 143
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79310",
+      "lineText": "O Death , made proud with pure and princely beauty ! The Earth earth had not a hole to hide this deed .",
+      "scrollMode": "auto",
+      "lineIndex": 144
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7931g",
+      "lineText": "Murder , as hating what himself hath done , Doth lay it open to urge on revenge .",
+      "scrollMode": "auto",
+      "lineIndex": 145
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7933g",
+      "lineText": "Or when he doomed this beauty to a grave , Found it too precious-princely for a grave .",
+      "scrollMode": "auto",
+      "lineIndex": 146
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792u0",
+      "lineText": ", to Bastard",
+      "scrollMode": "auto",
+      "lineIndex": 147
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7931g",
+      "lineText": "Sir Richard , what think you ? You have beheld . Or have you read or heard , or could you think , Or do you almost think , although you see , That you do see ? Could thought , without this object , Form such another ? This is the very top , The height , the crest , or crest unto the crest , Of murder’s arms . This is the bloodiest shame , The wildest savagery , the vilest stroke That ever wall-eyed wrath or staring rage Presented to the tears of soft remorse .",
+      "scrollMode": "auto",
+      "lineIndex": 148
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79310",
+      "lineText": "All murders past do stand excused in this . And this , so sole and so unmatchable , Shall give a holiness , a purity , To the yet unbegotten sin of times And prove a deadly bloodshed but a jest , Exampled by this heinous spectacle .",
+      "scrollMode": "auto",
+      "lineIndex": 149
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7932g",
+      "lineText": "It is a damnèd and a bloody work , The graceless action of a heavy hand , If that it be the work of any hand .",
+      "scrollMode": "auto",
+      "lineIndex": 150
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792u0",
+      "lineText": "He kneels .",
+      "scrollMode": "auto",
+      "lineIndex": 151
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7931g",
+      "lineText": "He kneels . And breathing to his breathless excellence The incense of a vow , a holy vow : Never to taste the pleasures of the world , Never to be infected with delight , Nor conversant with ease and idleness , Till I have set a glory to this hand By giving it the worship of revenge .",
+      "scrollMode": "auto",
+      "lineIndex": 152
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792u0",
+      "lineText": ", kneeling",
+      "scrollMode": "auto",
+      "lineIndex": 153
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79310",
+      "lineText": "Our souls religiously confirm thy words .",
+      "scrollMode": "auto",
+      "lineIndex": 154
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792u0",
+      "lineText": "They rise .",
+      "scrollMode": "auto",
+      "lineIndex": 155
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792u0",
+      "lineText": "Enter Hubert .",
+      "scrollMode": "auto",
+      "lineIndex": 156
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792ug",
+      "lineText": "Lords , I am hot with haste in seeking you . Arthur doth live ; the King hath sent for you .",
+      "scrollMode": "auto",
+      "lineIndex": 157
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7931g",
+      "lineText": "O , he is bold and blushes not at death ! — Avaunt , thou hateful villain , get thee gone !",
+      "scrollMode": "auto",
+      "lineIndex": 158
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792ug",
+      "lineText": "I am no villain .",
+      "scrollMode": "auto",
+      "lineIndex": 159
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792u0",
+      "lineText": ", drawing his sword",
+      "scrollMode": "auto",
+      "lineIndex": 160
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7931g",
+      "lineText": "Must I rob the law ?",
+      "scrollMode": "auto",
+      "lineIndex": 161
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7932g",
+      "lineText": "Your sword is bright , sir . Put it up again .",
+      "scrollMode": "auto",
+      "lineIndex": 162
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7931g",
+      "lineText": "Not till I sheathe it in a murderer’s skin .",
+      "scrollMode": "auto",
+      "lineIndex": 163
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792u0",
+      "lineText": "He puts his hand on his sword .",
+      "scrollMode": "auto",
+      "lineIndex": 164
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792ug",
+      "lineText": "He puts his hand on his sword . ACT 4. SC. 3 I would not have you , lord , forget yourself , Nor tempt the danger of my true defense , Lest I , by marking of your rage , forget Your worth , your greatness , and nobility .",
+      "scrollMode": "auto",
+      "lineIndex": 165
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7933g",
+      "lineText": "Out , dunghill ! Dar’st thou brave a nobleman ?",
+      "scrollMode": "auto",
+      "lineIndex": 166
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792ug",
+      "lineText": "Not for my life . But yet I dare defend My innocent life against an emperor .",
+      "scrollMode": "auto",
+      "lineIndex": 167
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7931g",
+      "lineText": "Thou art a murderer .",
+      "scrollMode": "auto",
+      "lineIndex": 168
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792ug",
+      "lineText": "Do not prove me so . Yet I am none . Whose tongue soe’er speaks false , Not truly speaks . Who speaks not truly , lies .",
+      "scrollMode": "auto",
+      "lineIndex": 169
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792u0",
+      "lineText": ", drawing his sword",
+      "scrollMode": "auto",
+      "lineIndex": 170
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79310",
+      "lineText": "Cut him to pieces .",
+      "scrollMode": "auto",
+      "lineIndex": 171
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792u0",
+      "lineText": ", drawing his sword",
+      "scrollMode": "auto",
+      "lineIndex": 172
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7932g",
+      "lineText": "Keep the peace , I say .",
+      "scrollMode": "auto",
+      "lineIndex": 173
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7931g",
+      "lineText": "Stand by , or I shall gall you , Faulconbridge .",
+      "scrollMode": "auto",
+      "lineIndex": 174
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7932g",
+      "lineText": "Thou wert better gall the devil , Salisbury . If thou but frown on me , or stir thy foot , Or teach thy hasty spleen to do me shame , I’ll strike thee dead . Put up thy sword betime , Or I’ll so maul you and your toasting-iron That you shall think the devil is come from hell .",
+      "scrollMode": "auto",
+      "lineIndex": 175
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7933g",
+      "lineText": "What wilt thou do , renownèd Faulconbridge ? Second a villain and a murderer ?",
+      "scrollMode": "auto",
+      "lineIndex": 176
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792ug",
+      "lineText": "Lord Bigot , I am none .",
+      "scrollMode": "auto",
+      "lineIndex": 177
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7933g",
+      "lineText": "Who killed this prince ?",
+      "scrollMode": "auto",
+      "lineIndex": 178
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792ug",
+      "lineText": "’Tis not an hour since I left him well . I honored him , I loved him , and will weep My date of life out for his sweet life’s loss .",
+      "scrollMode": "auto",
+      "lineIndex": 179
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792u0",
+      "lineText": "He weeps .",
+      "scrollMode": "auto",
+      "lineIndex": 180
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7931g",
+      "lineText": "Trust not those cunning waters of his eyes , For villainy is not without such rheum , And he , long traded in it , makes it seem like rivers of remorse and innocency . Away with me , all you whose souls abhor Th’ uncleanly savors of a slaughterhouse , For I am stifled with this smell of sin .",
+      "scrollMode": "auto",
+      "lineIndex": 181
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7933g",
+      "lineText": "Away , toward Bury , to the Dauphin there .",
+      "scrollMode": "auto",
+      "lineIndex": 182
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79310",
+      "lineText": "There , tell the King , he may inquire us out .",
+      "scrollMode": "auto",
+      "lineIndex": 183
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792u0",
+      "lineText": "Lords exit .",
+      "scrollMode": "auto",
+      "lineIndex": 184
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7932g",
+      "lineText": "Here’s a good world ! Knew you of this fair work ? Beyond the infinite and boundless reach Of mercy , if thou didst this deed of death , Art thou damned , Hubert .",
+      "scrollMode": "auto",
+      "lineIndex": 185
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792ug",
+      "lineText": "Do but hear me , sir .",
+      "scrollMode": "auto",
+      "lineIndex": 186
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7932g",
+      "lineText": "Ha ! I’ll tell thee what . Thou ’rt damned as black — nay , nothing is so black — Thou art more deep damned than Prince Lucifer . There is not yet so ugly a fiend of hell As thou shalt be , if thou didst kill this child .",
+      "scrollMode": "auto",
+      "lineIndex": 187
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792ug",
+      "lineText": "Upon my soul —",
+      "scrollMode": "auto",
+      "lineIndex": 188
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7932g",
+      "lineText": "If thou didst but consent To this most cruel act , do but despair , And if thou want’st a cord , the smallest thread That ever spider twisted from her womb Will serve to strangle thee ; a rush will be a beam To hang thee on . Or wouldst thou drown thyself , Put but a little water in a spoon And it shall be as all the ocean , Enough to stifle such a villain up . I do suspect thee very grievously .",
+      "scrollMode": "auto",
+      "lineIndex": 189
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792ug",
+      "lineText": "If I in act , consent , or sin of thought Be guilty of the stealing that sweet breath Which was embounded in this beauteous clay , Let hell want pains enough to torture me . I left him well .",
+      "scrollMode": "auto",
+      "lineIndex": 190
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792u0",
+      "lineText": "Hubert takes up Arthur’s body .",
+      "scrollMode": "auto",
+      "lineIndex": 191
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792ug",
+      "lineText": "Hubert takes up Arthur’s body . How easy dost thou take all England up ! From forth this morsel of dead royalty , The life , the right , and truth of all this realm Is fled to heaven , and England now is left To tug and scamble and to part by th’ teeth The unowed interest of proud-swelling state . Now for the bare-picked bone of majesty Doth doggèd war bristle his angry crest And snarleth in the gentle eyes of peace . Now powers from home and discontents at home Meet in one line , and vast confusion waits , As doth a raven on a sick-fall’n beast , The imminent decay of wrested pomp . Now happy he whose cloak and cincture can Hold out this tempest . Bear away that child , And follow me with speed . I’ll to the King . A thousand businesses are brief in hand , And heaven itself doth frown upon the land .",
+      "scrollMode": "auto",
+      "lineIndex": 192
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792u0",
+      "lineText": "They exit , with Hubert carrying Arthur’s body .",
+      "scrollMode": "auto",
+      "lineIndex": 193
+    }
+  ],
+  "isPublic": true
+}

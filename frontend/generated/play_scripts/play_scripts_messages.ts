@@ -65,6 +65,13 @@ export interface DataCollection_PlayScriptsEntry {
   value: PlayScript | undefined;
 }
 
+export interface ScriptTag {
+  id: string;
+  name: string;
+  description: string;
+  createdAt: Date | undefined;
+}
+
 export interface PlayScript {
   createdAt: Date | undefined;
   archivedAt: Date | undefined;
@@ -78,6 +85,7 @@ export interface PlayScript {
   lines: PlayScriptLine[];
   createdByUser: string;
   belongsToAccount: string;
+  tags: ScriptTag[];
 }
 
 export interface PlayScriptCastMember {
@@ -85,6 +93,7 @@ export interface PlayScriptCastMember {
   id: string;
   playScriptId: string;
   name: string;
+  description: string;
   sortOrder: number;
 }
 
@@ -279,6 +288,118 @@ export const DataCollection_PlayScriptsEntry: MessageFns<DataCollection_PlayScri
   },
 };
 
+function createBaseScriptTag(): ScriptTag {
+  return { id: '', name: '', description: '', createdAt: undefined };
+}
+
+export const ScriptTag: MessageFns<ScriptTag> = {
+  encode(message: ScriptTag, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.id !== '') {
+      writer.uint32(10).string(message.id);
+    }
+    if (message.name !== '') {
+      writer.uint32(18).string(message.name);
+    }
+    if (message.description !== '') {
+      writer.uint32(26).string(message.description);
+    }
+    if (message.createdAt !== undefined) {
+      Timestamp.encode(toTimestamp(message.createdAt), writer.uint32(34).fork()).join();
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ScriptTag {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseScriptTag();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.id = reader.string();
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.name = reader.string();
+          continue;
+        }
+        case 3: {
+          if (tag !== 26) {
+            break;
+          }
+
+          message.description = reader.string();
+          continue;
+        }
+        case 4: {
+          if (tag !== 34) {
+            break;
+          }
+
+          message.createdAt = fromTimestamp(Timestamp.decode(reader, reader.uint32()));
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ScriptTag {
+    return {
+      id: isSet(object.id) ? globalThis.String(object.id) : '',
+      name: isSet(object.name) ? globalThis.String(object.name) : '',
+      description: isSet(object.description) ? globalThis.String(object.description) : '',
+      createdAt: isSet(object.createdAt)
+        ? fromJsonTimestamp(object.createdAt)
+        : isSet(object.created_at)
+          ? fromJsonTimestamp(object.created_at)
+          : undefined,
+    };
+  },
+
+  toJSON(message: ScriptTag): unknown {
+    const obj: any = {};
+    if (message.id !== '') {
+      obj.id = message.id;
+    }
+    if (message.name !== '') {
+      obj.name = message.name;
+    }
+    if (message.description !== '') {
+      obj.description = message.description;
+    }
+    if (message.createdAt !== undefined) {
+      obj.createdAt = message.createdAt.toISOString();
+    }
+    return obj;
+  },
+
+  create(base?: DeepPartial<ScriptTag>): ScriptTag {
+    return ScriptTag.fromPartial(base ?? {});
+  },
+  fromPartial(object: DeepPartial<ScriptTag>): ScriptTag {
+    const message = createBaseScriptTag();
+    message.id = object.id ?? '';
+    message.name = object.name ?? '';
+    message.description = object.description ?? '';
+    message.createdAt = object.createdAt ?? undefined;
+    return message;
+  },
+};
+
 function createBasePlayScript(): PlayScript {
   return {
     createdAt: undefined,
@@ -293,6 +414,7 @@ function createBasePlayScript(): PlayScript {
     lines: [],
     createdByUser: '',
     belongsToAccount: '',
+    tags: [],
   };
 }
 
@@ -333,6 +455,9 @@ export const PlayScript: MessageFns<PlayScript> = {
     }
     if (message.belongsToAccount !== '') {
       writer.uint32(98).string(message.belongsToAccount);
+    }
+    for (const v of message.tags) {
+      ScriptTag.encode(v!, writer.uint32(106).fork()).join();
     }
     return writer;
   },
@@ -440,6 +565,14 @@ export const PlayScript: MessageFns<PlayScript> = {
           message.belongsToAccount = reader.string();
           continue;
         }
+        case 13: {
+          if (tag !== 106) {
+            break;
+          }
+
+          message.tags.push(ScriptTag.decode(reader, reader.uint32()));
+          continue;
+        }
       }
       if ((tag & 7) === 4 || tag === 0) {
         break;
@@ -493,6 +626,9 @@ export const PlayScript: MessageFns<PlayScript> = {
         : isSet(object.belongs_to_account)
           ? globalThis.String(object.belongs_to_account)
           : '',
+      tags: globalThis.Array.isArray(object?.tags)
+        ? object.tags.map((e: any) => ScriptTag.fromJSON(e))
+        : [],
     };
   },
 
@@ -534,6 +670,9 @@ export const PlayScript: MessageFns<PlayScript> = {
     if (message.belongsToAccount !== '') {
       obj.belongsToAccount = message.belongsToAccount;
     }
+    if (message.tags?.length) {
+      obj.tags = message.tags.map((e) => ScriptTag.toJSON(e));
+    }
     return obj;
   },
 
@@ -554,12 +693,20 @@ export const PlayScript: MessageFns<PlayScript> = {
     message.lines = object.lines?.map((e) => PlayScriptLine.fromPartial(e)) || [];
     message.createdByUser = object.createdByUser ?? '';
     message.belongsToAccount = object.belongsToAccount ?? '';
+    message.tags = object.tags?.map((e) => ScriptTag.fromPartial(e)) || [];
     return message;
   },
 };
 
 function createBasePlayScriptCastMember(): PlayScriptCastMember {
-  return { createdAt: undefined, id: '', playScriptId: '', name: '', sortOrder: 0 };
+  return {
+    createdAt: undefined,
+    id: '',
+    playScriptId: '',
+    name: '',
+    description: '',
+    sortOrder: 0,
+  };
 }
 
 export const PlayScriptCastMember: MessageFns<PlayScriptCastMember> = {
@@ -576,8 +723,11 @@ export const PlayScriptCastMember: MessageFns<PlayScriptCastMember> = {
     if (message.name !== '') {
       writer.uint32(34).string(message.name);
     }
+    if (message.description !== '') {
+      writer.uint32(42).string(message.description);
+    }
     if (message.sortOrder !== 0) {
-      writer.uint32(40).int32(message.sortOrder);
+      writer.uint32(48).int32(message.sortOrder);
     }
     return writer;
   },
@@ -622,7 +772,15 @@ export const PlayScriptCastMember: MessageFns<PlayScriptCastMember> = {
           continue;
         }
         case 5: {
-          if (tag !== 40) {
+          if (tag !== 42) {
+            break;
+          }
+
+          message.description = reader.string();
+          continue;
+        }
+        case 6: {
+          if (tag !== 48) {
             break;
           }
 
@@ -652,6 +810,7 @@ export const PlayScriptCastMember: MessageFns<PlayScriptCastMember> = {
           ? globalThis.String(object.play_script_id)
           : '',
       name: isSet(object.name) ? globalThis.String(object.name) : '',
+      description: isSet(object.description) ? globalThis.String(object.description) : '',
       sortOrder: isSet(object.sortOrder)
         ? globalThis.Number(object.sortOrder)
         : isSet(object.sort_order)
@@ -674,6 +833,9 @@ export const PlayScriptCastMember: MessageFns<PlayScriptCastMember> = {
     if (message.name !== '') {
       obj.name = message.name;
     }
+    if (message.description !== '') {
+      obj.description = message.description;
+    }
     if (message.sortOrder !== 0) {
       obj.sortOrder = Math.round(message.sortOrder);
     }
@@ -689,6 +851,7 @@ export const PlayScriptCastMember: MessageFns<PlayScriptCastMember> = {
     message.id = object.id ?? '';
     message.playScriptId = object.playScriptId ?? '';
     message.name = object.name ?? '';
+    message.description = object.description ?? '';
     message.sortOrder = object.sortOrder ?? 0;
     return message;
   },

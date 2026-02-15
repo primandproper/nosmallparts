@@ -1,0 +1,1084 @@
+{
+  "title": "A Midsummer Night’s Dream (Act 5)",
+  "description": "Folger Shakespeare Library edition",
+  "author": "William Shakespeare",
+  "castMembers": [
+    {
+      "id": "d68m11kn9qd8d2h797mg",
+      "name": "Narrator",
+      "sortOrder": 0
+    },
+    {
+      "id": "d68m11kn9qd8d2h797n0",
+      "name": "Hippolyta",
+      "description": "queen of the Amazons",
+      "sortOrder": 1
+    },
+    {
+      "id": "d68m11kn9qd8d2h797ng",
+      "name": "Theseus",
+      "description": "duke of Athens",
+      "sortOrder": 2
+    },
+    {
+      "id": "d68m11kn9qd8d2h797o0",
+      "name": "Lysander",
+      "sortOrder": 3
+    },
+    {
+      "id": "d68m11kn9qd8d2h797og",
+      "name": "Philostrate",
+      "description": "master of the revels to Theseus",
+      "sortOrder": 4
+    },
+    {
+      "id": "d68m11kn9qd8d2h797p0",
+      "name": "Peter Quince",
+      "description": "carpenter",
+      "sortOrder": 5
+    },
+    {
+      "id": "d68m11kn9qd8d2h797pg",
+      "name": "Demetrius",
+      "sortOrder": 6
+    },
+    {
+      "id": "d68m11kn9qd8d2h797q0",
+      "name": "Tom Snout",
+      "description": "tinker",
+      "sortOrder": 7
+    },
+    {
+      "id": "d68m11kn9qd8d2h797qg",
+      "name": "Nick Bottom",
+      "description": "weaver",
+      "sortOrder": 8
+    },
+    {
+      "id": "d68m11kn9qd8d2h797r0",
+      "name": "Francis Flute",
+      "description": "bellows-mender",
+      "sortOrder": 9
+    },
+    {
+      "id": "d68m11kn9qd8d2h797rg",
+      "name": "Snug",
+      "description": "joiner",
+      "sortOrder": 10
+    },
+    {
+      "id": "d68m11kn9qd8d2h797s0",
+      "name": "Robin Starveling",
+      "description": "tailor",
+      "sortOrder": 11
+    },
+    {
+      "id": "d68m11kn9qd8d2h797sg",
+      "name": "Helena",
+      "sortOrder": 12
+    },
+    {
+      "id": "d68m11kn9qd8d2h797t0",
+      "name": "Hermia",
+      "sortOrder": 13
+    },
+    {
+      "id": "d68m11kn9qd8d2h797tg",
+      "name": "ATTENDANTS_MND",
+      "sortOrder": 14
+    },
+    {
+      "id": "d68m11kn9qd8d2h797u0",
+      "name": "Robin Goodfellow",
+      "description": "a “puck,” or hobgoblin, in Oberon’s service",
+      "sortOrder": 15
+    },
+    {
+      "id": "d68m11kn9qd8d2h797ug",
+      "name": "Oberon",
+      "description": "king of the Fairies",
+      "sortOrder": 16
+    },
+    {
+      "id": "d68m11kn9qd8d2h797v0",
+      "name": "Titania",
+      "description": "queen of the Fairies",
+      "sortOrder": 17
+    }
+  ],
+  "lines": [
+    {
+      "castMemberId": "d68m11kn9qd8d2h797mg",
+      "lineText": "Enter Theseus , Hippolyta , and Philostrate , Lords , and Attendants .",
+      "scrollMode": "auto",
+      "lineIndex": 0
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797n0",
+      "lineText": "’Tis strange , my Theseus , that these lovers speak of .",
+      "scrollMode": "auto",
+      "lineIndex": 1
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797ng",
+      "lineText": "More strange than true . I never may believe These antique fables , nor these fairy toys . Lovers and madmen have such seething brains , Such shaping fantasies , that apprehend More than cool reason ever comprehends . The lunatic , the lover , and the poet Are of imagination all compact . One sees more devils than vast hell can hold : That is the madman . The lover , all as frantic , Sees Helen’s beauty in a brow of Egypt . The poet’s eye , in a fine frenzy rolling , Doth glance from heaven to Earth earth , from Earth earth to heaven , And as imagination bodies forth The forms of things unknown , the poet’s pen Turns them to shapes and gives to airy nothing A local habitation and a name . Such tricks hath strong imagination That , if it would but apprehend some joy , ACT 5. SC. 1 It comprehends some bringer of that joy . Or in the night , imagining some fear , How easy is a bush supposed a bear !",
+      "scrollMode": "auto",
+      "lineIndex": 2
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797n0",
+      "lineText": "But all the story of the night told over , And all their minds transfigured so together , More witnesseth than fancy’s images And grows to something of great constancy , But , howsoever , strange and admirable .",
+      "scrollMode": "auto",
+      "lineIndex": 3
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797mg",
+      "lineText": "Enter Lovers : Lysander , Demetrius , Hermia , and Helena .",
+      "scrollMode": "auto",
+      "lineIndex": 4
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797ng",
+      "lineText": "Here come the lovers full of joy and mirth . — Joy , gentle friends ! Joy and fresh days of love Accompany your hearts !",
+      "scrollMode": "auto",
+      "lineIndex": 5
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797o0",
+      "lineText": "More than to us Wait in your royal walks , your board , your bed !",
+      "scrollMode": "auto",
+      "lineIndex": 6
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797ng",
+      "lineText": "Come now , what masques , what dances shall we have To wear away this long age of three hours Between our after-supper and bedtime ? Where is our usual manager of mirth ? What revels are in hand ? Is there no play To ease the anguish of a torturing hour ? Call Philostrate .",
+      "scrollMode": "auto",
+      "lineIndex": 7
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797mg",
+      "lineText": ", coming forward",
+      "scrollMode": "auto",
+      "lineIndex": 8
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797og",
+      "lineText": "Here , mighty Theseus .",
+      "scrollMode": "auto",
+      "lineIndex": 9
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797ng",
+      "lineText": "Say what abridgment have you for this evening , What masque , what music ? How shall we beguile The lazy time if not with some delight ?",
+      "scrollMode": "auto",
+      "lineIndex": 10
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797mg",
+      "lineText": ", giving Theseus a paper",
+      "scrollMode": "auto",
+      "lineIndex": 11
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797og",
+      "lineText": "There is a brief how many sports are ripe . Make choice of which your Highness will see first .",
+      "scrollMode": "auto",
+      "lineIndex": 12
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797ng",
+      "lineText": "The battle with the Centaurs , to be sung By an Athenian eunuch to the harp . We’ll none of that . That have I told my love In glory of my kinsman Hercules . The riot of the tipsy Bacchanals , Tearing the Thracian singer in their rage . That is an old device , and it was played When I from Thebes came last a conqueror . The thrice-three Muses mourning for the death Of learning , late deceased in beggary . That is some satire , keen and critical , Not sorting with a nuptial ceremony . A tedious brief scene of young Pyramus And his love Thisbe , very tragical mirth . Merry and tragical ? Tedious and brief ? That is hot ice and wondrous strange snow ! How shall we find the concord of this discord ?",
+      "scrollMode": "auto",
+      "lineIndex": 13
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797og",
+      "lineText": "A play there is , my lord , some ten words long ( Which is as brief as I have known a play ) , But by ten words , my lord , it is too long , Which makes it tedious ; for in all the play , There is not one word apt , one player fitted . And tragical , my noble lord , it is . For Pyramus therein doth kill himself , Which , when I saw rehearsed , I must confess , Made mine eyes water ; but more merry tears The passion of loud laughter never shed .",
+      "scrollMode": "auto",
+      "lineIndex": 14
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797ng",
+      "lineText": "What are they that do play it ?",
+      "scrollMode": "auto",
+      "lineIndex": 15
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797og",
+      "lineText": "Hard-handed men that work in Athens here , Which never labored in their minds till now , And now have toiled their unbreathed memories With this same play , against your nuptial .",
+      "scrollMode": "auto",
+      "lineIndex": 16
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797ng",
+      "lineText": "And we will hear it .",
+      "scrollMode": "auto",
+      "lineIndex": 17
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797og",
+      "lineText": "No , my noble lord , It is not for you . I have heard it over , And it is nothing , nothing in the world , Unless you can find sport in their intents , Extremely stretched and conned with cruel pain To do you service .",
+      "scrollMode": "auto",
+      "lineIndex": 18
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797ng",
+      "lineText": "I will hear that play , For never anything can be amiss When simpleness and duty tender it . Go , bring them in — and take your places , ladies .",
+      "scrollMode": "auto",
+      "lineIndex": 19
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797mg",
+      "lineText": "Philostrate exits .",
+      "scrollMode": "auto",
+      "lineIndex": 20
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797n0",
+      "lineText": "I love not to see wretchedness o’ercharged , And duty in his service perishing .",
+      "scrollMode": "auto",
+      "lineIndex": 21
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797ng",
+      "lineText": "Why , gentle sweet , you shall see no such thing .",
+      "scrollMode": "auto",
+      "lineIndex": 22
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797n0",
+      "lineText": "He says they can do nothing in this kind .",
+      "scrollMode": "auto",
+      "lineIndex": 23
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797mg",
+      "lineText": "Enter Philostrate .",
+      "scrollMode": "auto",
+      "lineIndex": 24
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797og",
+      "lineText": "Enter Philostrate .",
+      "scrollMode": "auto",
+      "lineIndex": 25
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797og",
+      "lineText": "So please your Grace , the Prologue is addressed .",
+      "scrollMode": "auto",
+      "lineIndex": 26
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797ng",
+      "lineText": "Let him approach .",
+      "scrollMode": "auto",
+      "lineIndex": 27
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797mg",
+      "lineText": "Enter the Prologue .",
+      "scrollMode": "auto",
+      "lineIndex": 28
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797p0",
+      "lineText": "If we offend , it is with our goodwill . That you should think we come not to offend , But with goodwill . To show our simple skill , That is the true beginning of our end . Consider , then , we come but in despite . We do not come , as minding to content you , Our true intent is . All for your delight We are not here . That you should here repent you , The actors are at hand , and , by their show , You shall know all that you are like to know .",
+      "scrollMode": "auto",
+      "lineIndex": 29
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797mg",
+      "lineText": "Prologue exits .",
+      "scrollMode": "auto",
+      "lineIndex": 30
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797ng",
+      "lineText": "This fellow doth not stand upon points .",
+      "scrollMode": "auto",
+      "lineIndex": 31
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797o0",
+      "lineText": "He hath rid his prologue like a rough colt ; he knows not the stop . A good moral , my lord : it is not enough to speak , but to speak true .",
+      "scrollMode": "auto",
+      "lineIndex": 32
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797n0",
+      "lineText": "Indeed he hath played on this prologue like a child on a recorder — a sound , but not in government .",
+      "scrollMode": "auto",
+      "lineIndex": 33
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797ng",
+      "lineText": "His speech was like a tangled chain — nothing impaired , but all disordered . Who is next ?",
+      "scrollMode": "auto",
+      "lineIndex": 34
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797mg",
+      "lineText": "Enter Pyramus ( Bottom ) , and Thisbe ( Flute ) , and Wall ( Snout ) , and Moonshine ( Starveling ) , and Lion ( Snug ) , and Prologue ( Quince ) .",
+      "scrollMode": "auto",
+      "lineIndex": 35
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797mg",
+      "lineText": ", as Prologue",
+      "scrollMode": "auto",
+      "lineIndex": 36
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797p0",
+      "lineText": "Gentles , perchance you wonder at this show . ACT 5. SC. 1 But wonder on , till truth make all things plain . This man is Pyramus , if you would know . This beauteous lady Thisbe is certain . This man with lime and roughcast doth present Wall , that vile wall which did these lovers sunder ; And through Wall’s chink , poor souls , they are content To whisper , at the which let no man wonder . This man , with lantern , dog , and bush of thorn , Presenteth Moonshine , for , if you will know , By moonshine did these lovers think no scorn To meet at Ninus’ tomb , there , there to woo . This grisly beast ( which Lion hight by name ) The trusty Thisbe coming first by night Did scare away , or rather did affright ; And , as she fled , her mantle she did fall , Which Lion vile with bloody mouth did stain . Anon comes Pyramus , sweet youth and tall , And finds his trusty Thisbe’s mantle slain . Whereat , with blade , with bloody blameful blade , He bravely broached his boiling bloody breast . And Thisbe , tarrying in mulberry shade , His dagger drew , and died . For all the rest , Let Lion , Moonshine , Wall , and lovers twain At large discourse , while here they do remain .",
+      "scrollMode": "auto",
+      "lineIndex": 37
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797ng",
+      "lineText": "I wonder if the lion be to speak .",
+      "scrollMode": "auto",
+      "lineIndex": 38
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797pg",
+      "lineText": "No wonder , my lord . One lion may when many asses do .",
+      "scrollMode": "auto",
+      "lineIndex": 39
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797mg",
+      "lineText": "Lion , Thisbe , Moonshine , and Prologue exit .",
+      "scrollMode": "auto",
+      "lineIndex": 40
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797mg",
+      "lineText": ", as Wall",
+      "scrollMode": "auto",
+      "lineIndex": 41
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797q0",
+      "lineText": "In this same interlude it doth befall That I , one Snout by name , present a wall ; And such a wall as I would have you think That had in it a crannied hole or chink , Through which the lovers , Pyramus and Thisbe , ACT 5. SC. 1 Did whisper often , very secretly . This loam , this roughcast , and this stone doth show That I am that same wall . The truth is so . And this the cranny is , right and sinister , Through which the fearful lovers are to whisper .",
+      "scrollMode": "auto",
+      "lineIndex": 42
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797ng",
+      "lineText": "Would you desire lime and hair to speak better ?",
+      "scrollMode": "auto",
+      "lineIndex": 43
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797pg",
+      "lineText": "It is the wittiest partition that ever I heard discourse , my lord .",
+      "scrollMode": "auto",
+      "lineIndex": 44
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797ng",
+      "lineText": "Pyramus draws near the wall . Silence .",
+      "scrollMode": "auto",
+      "lineIndex": 45
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797mg",
+      "lineText": ", as Pyramus",
+      "scrollMode": "auto",
+      "lineIndex": 46
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797qg",
+      "lineText": "O grim-looked night ! O night with hue so black ! O night , which ever art when day is not ! O night ! O night ! Alack , alack , alack ! I fear my Thisbe’s promise is forgot . And thou , O wall , O sweet , O lovely wall , That stand’st between her father’s ground and mine , Thou wall , O wall , O sweet and lovely wall , Show me thy chink to blink through with mine eyne . Thanks , courteous wall . Jove shield thee well for this . But what see I ? No Thisbe do I see . O wicked wall , through whom I see no bliss , Cursed be thy stones for thus deceiving me !",
+      "scrollMode": "auto",
+      "lineIndex": 47
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797ng",
+      "lineText": "The wall , methinks , being sensible , should curse again .",
+      "scrollMode": "auto",
+      "lineIndex": 48
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797qg",
+      "lineText": "No , in truth , sir , he should not . Deceiving me is Thisbe’s cue . She is to enter now , and I am to spy her through the wall . You shall see it will fall pat as I told you . Yonder she comes .",
+      "scrollMode": "auto",
+      "lineIndex": 49
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797mg",
+      "lineText": "Enter Thisbe ( Flute ) .",
+      "scrollMode": "auto",
+      "lineIndex": 50
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797mg",
+      "lineText": ", as Thisbe",
+      "scrollMode": "auto",
+      "lineIndex": 51
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797r0",
+      "lineText": "O wall , full often hast thou heard my moans ACT 5. SC. 1 For parting my fair Pyramus and me . My cherry lips have often kissed thy stones , Thy stones with lime and hair knit up in thee .",
+      "scrollMode": "auto",
+      "lineIndex": 52
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797mg",
+      "lineText": ", as Pyramus",
+      "scrollMode": "auto",
+      "lineIndex": 53
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797qg",
+      "lineText": "I see a voice ! Now will I to the chink To spy an I can hear my Thisbe’s face . Thisbe ?",
+      "scrollMode": "auto",
+      "lineIndex": 54
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797mg",
+      "lineText": ", as Thisbe",
+      "scrollMode": "auto",
+      "lineIndex": 55
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797r0",
+      "lineText": "My love ! Thou art my love , I think .",
+      "scrollMode": "auto",
+      "lineIndex": 56
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797mg",
+      "lineText": ", as Pyramus",
+      "scrollMode": "auto",
+      "lineIndex": 57
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797qg",
+      "lineText": "Think what thou wilt , I am thy lover’s grace , And , like Limander , am I trusty still .",
+      "scrollMode": "auto",
+      "lineIndex": 58
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797mg",
+      "lineText": ", as Thisbe",
+      "scrollMode": "auto",
+      "lineIndex": 59
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797r0",
+      "lineText": "And I like Helen , till the Fates me kill .",
+      "scrollMode": "auto",
+      "lineIndex": 60
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797mg",
+      "lineText": ", as Pyramus",
+      "scrollMode": "auto",
+      "lineIndex": 61
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797qg",
+      "lineText": "Not Shafalus to Procrus was so true .",
+      "scrollMode": "auto",
+      "lineIndex": 62
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797mg",
+      "lineText": ", as Thisbe",
+      "scrollMode": "auto",
+      "lineIndex": 63
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797r0",
+      "lineText": "As Shafalus to Procrus , I to you .",
+      "scrollMode": "auto",
+      "lineIndex": 64
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797mg",
+      "lineText": ", as Pyramus",
+      "scrollMode": "auto",
+      "lineIndex": 65
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797qg",
+      "lineText": "O kiss me through the hole of this vile wall .",
+      "scrollMode": "auto",
+      "lineIndex": 66
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797mg",
+      "lineText": ", as Thisbe",
+      "scrollMode": "auto",
+      "lineIndex": 67
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797r0",
+      "lineText": "I kiss the wall’s hole , not your lips at all .",
+      "scrollMode": "auto",
+      "lineIndex": 68
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797mg",
+      "lineText": ", as Pyramus",
+      "scrollMode": "auto",
+      "lineIndex": 69
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797qg",
+      "lineText": "Wilt thou at Ninny’s tomb meet me straightway ?",
+      "scrollMode": "auto",
+      "lineIndex": 70
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797mg",
+      "lineText": ", as Thisbe",
+      "scrollMode": "auto",
+      "lineIndex": 71
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797r0",
+      "lineText": "’Tide life , ’tide death , I come without delay .",
+      "scrollMode": "auto",
+      "lineIndex": 72
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797mg",
+      "lineText": "Bottom and Flute exit .",
+      "scrollMode": "auto",
+      "lineIndex": 73
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797mg",
+      "lineText": ", as Wall",
+      "scrollMode": "auto",
+      "lineIndex": 74
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797q0",
+      "lineText": "Thus have I , Wall , my part dischargèd so , And , being done , thus Wall away doth go .",
+      "scrollMode": "auto",
+      "lineIndex": 75
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797mg",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 76
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797ng",
+      "lineText": "Now is the wall down between the two neighbors .",
+      "scrollMode": "auto",
+      "lineIndex": 77
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797pg",
+      "lineText": "No remedy , my lord , when walls are so willful to hear without warning .",
+      "scrollMode": "auto",
+      "lineIndex": 78
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797n0",
+      "lineText": "This is the silliest stuff that ever I heard .",
+      "scrollMode": "auto",
+      "lineIndex": 79
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797ng",
+      "lineText": "The best in this kind are but shadows , and ACT 5. SC. 1 the worst are no worse , if imagination amend them .",
+      "scrollMode": "auto",
+      "lineIndex": 80
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797n0",
+      "lineText": "It must be your imagination , then , and not theirs .",
+      "scrollMode": "auto",
+      "lineIndex": 81
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797ng",
+      "lineText": "If we imagine no worse of them than they of themselves , they may pass for excellent men . Here come two noble beasts in , a man and a lion .",
+      "scrollMode": "auto",
+      "lineIndex": 82
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797mg",
+      "lineText": "Enter Lion ( Snug ) and Moonshine ( Starveling ) .",
+      "scrollMode": "auto",
+      "lineIndex": 83
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797mg",
+      "lineText": ", as Lion",
+      "scrollMode": "auto",
+      "lineIndex": 84
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797rg",
+      "lineText": "You ladies , you whose gentle hearts do fear The smallest monstrous mouse that creeps on floor , May now perchance both quake and tremble here , When lion rough in wildest rage doth roar . Then know that I , as Snug the joiner , am A lion fell , nor else no lion’s dam ; For if I should as lion come in strife Into this place , ’twere pity on my life .",
+      "scrollMode": "auto",
+      "lineIndex": 85
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797ng",
+      "lineText": "A very gentle beast , and of a good conscience .",
+      "scrollMode": "auto",
+      "lineIndex": 86
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797pg",
+      "lineText": "The very best at a beast , my lord , that e’er I saw .",
+      "scrollMode": "auto",
+      "lineIndex": 87
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797o0",
+      "lineText": "This lion is a very fox for his valor .",
+      "scrollMode": "auto",
+      "lineIndex": 88
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797ng",
+      "lineText": "True , and a goose for his discretion .",
+      "scrollMode": "auto",
+      "lineIndex": 89
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797pg",
+      "lineText": "Not so , my lord , for his valor cannot carry his discretion , and the fox carries the goose .",
+      "scrollMode": "auto",
+      "lineIndex": 90
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797ng",
+      "lineText": "His discretion , I am sure , cannot carry his valor , for the goose carries not the fox . It is well . Leave it to his discretion , and let us listen to the Moon .",
+      "scrollMode": "auto",
+      "lineIndex": 91
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797mg",
+      "lineText": ", as Moonshine",
+      "scrollMode": "auto",
+      "lineIndex": 92
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797s0",
+      "lineText": "This lanthorn doth the hornèd moon present .",
+      "scrollMode": "auto",
+      "lineIndex": 93
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797pg",
+      "lineText": "He should have worn the horns on his head .",
+      "scrollMode": "auto",
+      "lineIndex": 94
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797ng",
+      "lineText": "He is no crescent , and his horns are invisible within the circumference .",
+      "scrollMode": "auto",
+      "lineIndex": 95
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797mg",
+      "lineText": ", as Moonshine",
+      "scrollMode": "auto",
+      "lineIndex": 96
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797s0",
+      "lineText": "This lanthorn doth the hornèd moon present . Myself the man i’ th’ moon do seem to be .",
+      "scrollMode": "auto",
+      "lineIndex": 97
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797ng",
+      "lineText": "This is the greatest error of all the rest ; the man should be put into the lanthorn . How is it else the man i’ th’ moon ?",
+      "scrollMode": "auto",
+      "lineIndex": 98
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797pg",
+      "lineText": "He dares not come there for the candle , for you see , it is already in snuff .",
+      "scrollMode": "auto",
+      "lineIndex": 99
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797n0",
+      "lineText": "I am aweary of this moon . Would he would change .",
+      "scrollMode": "auto",
+      "lineIndex": 100
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797ng",
+      "lineText": "It appears by his small light of discretion that he is in the wane ; but yet , in courtesy , in all reason , we must stay the time .",
+      "scrollMode": "auto",
+      "lineIndex": 101
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797o0",
+      "lineText": "Proceed , Moon .",
+      "scrollMode": "auto",
+      "lineIndex": 102
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797mg",
+      "lineText": ", as Moonshine",
+      "scrollMode": "auto",
+      "lineIndex": 103
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797s0",
+      "lineText": "All that I have to say is to tell you that the lanthorn is the moon , I the man i’ th’ moon , this thornbush my thornbush , and this dog my dog .",
+      "scrollMode": "auto",
+      "lineIndex": 104
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797pg",
+      "lineText": "Why , all these should be in the lanthorn , for all these are in the moon . But silence . Here comes Thisbe .",
+      "scrollMode": "auto",
+      "lineIndex": 105
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797mg",
+      "lineText": "Enter Thisbe ( Flute ) .",
+      "scrollMode": "auto",
+      "lineIndex": 106
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797mg",
+      "lineText": ", as Thisbe",
+      "scrollMode": "auto",
+      "lineIndex": 107
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797r0",
+      "lineText": "This is old Ninny’s tomb . Where is my love ?",
+      "scrollMode": "auto",
+      "lineIndex": 108
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797mg",
+      "lineText": ", as Lion",
+      "scrollMode": "auto",
+      "lineIndex": 109
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797rg",
+      "lineText": "O !",
+      "scrollMode": "auto",
+      "lineIndex": 110
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797mg",
+      "lineText": "The Lion roars .",
+      "scrollMode": "auto",
+      "lineIndex": 111
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797mg",
+      "lineText": "Thisbe runs off , dropping her mantle .",
+      "scrollMode": "auto",
+      "lineIndex": 112
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797pg",
+      "lineText": "Well roared , Lion .",
+      "scrollMode": "auto",
+      "lineIndex": 113
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797ng",
+      "lineText": "Well run , Thisbe .",
+      "scrollMode": "auto",
+      "lineIndex": 114
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797n0",
+      "lineText": "Well shone , Moon . Truly , the Moon shines with a good grace .",
+      "scrollMode": "auto",
+      "lineIndex": 115
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797mg",
+      "lineText": "Lion worries the mantle .",
+      "scrollMode": "auto",
+      "lineIndex": 116
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797ng",
+      "lineText": "Well moused , Lion .",
+      "scrollMode": "auto",
+      "lineIndex": 117
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797mg",
+      "lineText": "Enter Pyramus ( Bottom ) .",
+      "scrollMode": "auto",
+      "lineIndex": 118
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797pg",
+      "lineText": "And then came Pyramus .",
+      "scrollMode": "auto",
+      "lineIndex": 119
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797mg",
+      "lineText": "Lion exits .",
+      "scrollMode": "auto",
+      "lineIndex": 120
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797o0",
+      "lineText": "And so the lion vanished .",
+      "scrollMode": "auto",
+      "lineIndex": 121
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797mg",
+      "lineText": ", as Pyramus",
+      "scrollMode": "auto",
+      "lineIndex": 122
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797qg",
+      "lineText": "Sweet Moon , I thank thee for thy sunny beams . I thank thee , Moon , for shining now so bright , For by thy gracious , golden , glittering gleams , I trust to take of truest Thisbe sight . — But stay ! O spite ! But mark , poor knight , What dreadful dole is here ! Eyes , do you see ! How can it be ! O dainty duck ! O dear ! Thy mantle good — What , stained with blood ? Approach , ye Furies fell ! O Fates , come , come , Cut thread and thrum , Quail , crush , conclude , and quell !",
+      "scrollMode": "auto",
+      "lineIndex": 123
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797ng",
+      "lineText": "This passion , and the death of a dear friend , would go near to make a man look sad .",
+      "scrollMode": "auto",
+      "lineIndex": 124
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797n0",
+      "lineText": "Beshrew my heart but I pity the man .",
+      "scrollMode": "auto",
+      "lineIndex": 125
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797mg",
+      "lineText": ", as Pyramus",
+      "scrollMode": "auto",
+      "lineIndex": 126
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797mg",
+      "lineText": "Pyramus stabs himself .",
+      "scrollMode": "auto",
+      "lineIndex": 127
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797mg",
+      "lineText": "Moonshine exits .",
+      "scrollMode": "auto",
+      "lineIndex": 128
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797mg",
+      "lineText": "Pyramus falls .",
+      "scrollMode": "auto",
+      "lineIndex": 129
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797qg",
+      "lineText": "Pyramus falls .",
+      "scrollMode": "auto",
+      "lineIndex": 130
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797pg",
+      "lineText": "No die , but an ace , for him , for he is but one .",
+      "scrollMode": "auto",
+      "lineIndex": 131
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797o0",
+      "lineText": "Less than an ace , man , for he is dead , he is nothing .",
+      "scrollMode": "auto",
+      "lineIndex": 132
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797ng",
+      "lineText": "With the help of a surgeon he might yet recover and yet prove an ass .",
+      "scrollMode": "auto",
+      "lineIndex": 133
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797n0",
+      "lineText": "How chance Moonshine is gone before Thisbe comes back and finds her lover ?",
+      "scrollMode": "auto",
+      "lineIndex": 134
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797mg",
+      "lineText": "Enter Thisbe ( Flute ) .",
+      "scrollMode": "auto",
+      "lineIndex": 135
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797r0",
+      "lineText": "Enter Thisbe ( Flute ) . Here she comes , and her passion ends the play .",
+      "scrollMode": "auto",
+      "lineIndex": 136
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797n0",
+      "lineText": "Methinks she should not use a long one for such a Pyramus . I hope she will be brief .",
+      "scrollMode": "auto",
+      "lineIndex": 137
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797pg",
+      "lineText": "A mote will turn the balance , which Pyramus , which Thisbe , is the better : he for a man , God warrant us ; she for a woman , God bless us .",
+      "scrollMode": "auto",
+      "lineIndex": 138
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797o0",
+      "lineText": "She hath spied him already with those sweet eyes .",
+      "scrollMode": "auto",
+      "lineIndex": 139
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797pg",
+      "lineText": "And thus she means , videlicet —",
+      "scrollMode": "auto",
+      "lineIndex": 140
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797mg",
+      "lineText": ", as Thisbe",
+      "scrollMode": "auto",
+      "lineIndex": 141
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797mg",
+      "lineText": "Thisbe stabs herself .",
+      "scrollMode": "auto",
+      "lineIndex": 142
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797r0",
+      "lineText": "Thisbe stabs herself . And farewell , friends . Thus Thisbe ends . Adieu , adieu , adieu .",
+      "scrollMode": "auto",
+      "lineIndex": 143
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797mg",
+      "lineText": "Thisbe falls .",
+      "scrollMode": "auto",
+      "lineIndex": 144
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797ng",
+      "lineText": "Moonshine and Lion are left to bury the dead .",
+      "scrollMode": "auto",
+      "lineIndex": 145
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797pg",
+      "lineText": "Ay , and Wall too .",
+      "scrollMode": "auto",
+      "lineIndex": 146
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797mg",
+      "lineText": "Bottom and Flute arise .",
+      "scrollMode": "auto",
+      "lineIndex": 147
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797qg",
+      "lineText": "No , I assure you , the wall is down that parted their fathers . Will it please you to see the Epilogue or to hear a Bergomask dance between two of our company ?",
+      "scrollMode": "auto",
+      "lineIndex": 148
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797mg",
+      "lineText": "Dance , and the players exit .",
+      "scrollMode": "auto",
+      "lineIndex": 149
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797mg",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 150
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797ng",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 151
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797mg",
+      "lineText": "Enter Robin Goodfellow .",
+      "scrollMode": "auto",
+      "lineIndex": 152
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797u0",
+      "lineText": "Now the hungry lion roars , And the wolf behowls the moon , Whilst the heavy plowman snores , All with weary task fordone . Now the wasted brands do glow , Whilst the screech-owl , screeching loud , Puts the wretch that lies in woe In remembrance of a shroud . Now it is the time of night That the graves , all gaping wide , Every one lets forth his sprite In the church-way paths to glide . And we fairies , that do run By the triple Hecate’s team From the presence of the sun , Following darkness like a dream , Now are frolic . Not a mouse Shall disturb this hallowed house . I am sent with broom before , To sweep the dust behind the door .",
+      "scrollMode": "auto",
+      "lineIndex": 153
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797mg",
+      "lineText": "Enter Oberon and Titania , King and Queen of Fairies , with all their train .",
+      "scrollMode": "auto",
+      "lineIndex": 154
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797ug",
+      "lineText": "Through the house give glimmering light , By the dead and drowsy fire . Every elf and fairy sprite , Hop as light as bird from brier , And this ditty after me , Sing and dance it trippingly .",
+      "scrollMode": "auto",
+      "lineIndex": 155
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797v0",
+      "lineText": "First rehearse your song by rote , To each word a warbling note . Hand in hand , with fairy grace , Will we sing and bless this place .",
+      "scrollMode": "auto",
+      "lineIndex": 156
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797mg",
+      "lineText": "Oberon leads the Fairies in song and dance .",
+      "scrollMode": "auto",
+      "lineIndex": 157
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797ug",
+      "lineText": "Now , until the break of day , Through this house each fairy stray . To the best bride-bed will we , Which by us shall blessèd be , And the issue there create Ever shall be fortunate . So shall all the couples three Ever true in loving be , And the blots of Nature’s hand Shall not in their issue stand . Never mole , harelip , nor scar , Nor mark prodigious , such as are Despisèd in nativity , Shall upon their children be . With this field-dew consecrate Every fairy take his gait , And each several chamber bless , Through this palace , with sweet peace . And the owner of it blest , Ever shall in safety rest . Trip away . Make no stay . Meet me all by break of day .",
+      "scrollMode": "auto",
+      "lineIndex": 158
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797mg",
+      "lineText": "All but Robin exit .",
+      "scrollMode": "auto",
+      "lineIndex": 159
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797u0",
+      "lineText": "If we shadows have offended , Think but this and all is mended : That you have but slumbered here While these visions did appear . And this weak and idle theme , ACT 5. SC. 1 No more yielding but a dream , Gentles , do not reprehend . If you pardon , we will mend . And , as I am an honest Puck , If we have unearnèd luck Now to ’scape the serpent’s tongue , We will make amends ere long . Else the Puck a liar call . So good night unto you all . Give me your hands , if we be friends , And Robin shall restore amends .",
+      "scrollMode": "auto",
+      "lineIndex": 160
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797mg",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 161
+    }
+  ],
+  "isPublic": true
+}
