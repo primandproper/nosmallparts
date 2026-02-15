@@ -56,13 +56,21 @@ export async function POST(request: NextRequest): Promise<NextResponse<LoginResp
     // Set cookie on the response object so it reaches the browser (cookies().set() alone may not)
     const res = NextResponse.json({ success: true, userId });
     const encoded = Buffer.from(JSON.stringify(sessionData)).toString('base64');
-    res.cookies.set('nosmallparts_session', encoded, {
+
+    // Secure for production (HTTPS)
+    const isSecure = process.env.NODE_ENV === 'production';
+
+    const cookieOptions: Parameters<NextResponse['cookies']['set']>[2] = {
       httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
+      secure: isSecure,
       sameSite: 'lax',
       path: '/',
       expires: new Date(sessionData.expiresAt),
-    });
+    };
+    if (process.env.COOKIE_DOMAIN) {
+      cookieOptions.domain = process.env.COOKIE_DOMAIN;
+    }
+    res.cookies.set('nosmallparts_session', encoded, cookieOptions);
     return res;
   } catch (error) {
     console.error('Login error:', error);

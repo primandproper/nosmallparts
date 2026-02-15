@@ -27,3 +27,11 @@
       secretKeyRef:
         name: frontend-config
         key: OAUTH2_CLIENT_SECRET
+- op: add
+  path: "/spec/template/spec/containers/0/env/-"
+  value:
+    name: COOKIE_DOMAIN
+    valueFrom:
+      secretKeyRef:
+        name: frontend-config
+        key: COOKIE_DOMAIN
