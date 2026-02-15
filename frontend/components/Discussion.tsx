@@ -37,12 +37,19 @@ export function Discussion({ stageState, onResetPlay }: DiscussionProps) {
                   className="flex justify-between items-center p-3 rounded-xl bg-[var(--charcoal)]/50"
                 >
                   <span className="text-[var(--cream)]">{participant.name}</span>
-                  <span className="text-[var(--gold)] text-sm">
+                  <div className="text-right">
                     {(participant.castMemberIds || [])
-                      .map((id) => getCastMemberById(stageState.selectedPlay!, id)?.name)
+                      .map((id) => getCastMemberById(stageState.selectedPlay!, id))
                       .filter(Boolean)
-                      .join(', ')}
-                  </span>
+                      .map((cm) => (
+                        <div key={cm!.id}>
+                          <span className="text-[var(--gold)] text-sm">{cm!.name}</span>
+                          {cm!.description && (
+                            <p className="text-[var(--cream)] opacity-50 text-xs">{cm!.description}</p>
+                          )}
+                        </div>
+                      ))}
+                  </div>
                 </div>
               ))}
           </div>

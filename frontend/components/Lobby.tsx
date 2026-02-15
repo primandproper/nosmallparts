@@ -270,10 +270,17 @@ export function Lobby({
                   }`}
                 >
                   <div>
-                    <span className="text-[var(--cream)] font-medium">{castMember.name}</span>
-                    <span className="text-[var(--cream)] opacity-40 text-sm ml-2">
-                      {lineCount} line{lineCount !== 1 ? 's' : ''}
-                    </span>
+                    <div>
+                      <span className="text-[var(--cream)] font-medium">{castMember.name}</span>
+                      <span className="text-[var(--cream)] opacity-40 text-sm ml-2">
+                        {lineCount} line{lineCount !== 1 ? 's' : ''}
+                      </span>
+                    </div>
+                    {castMember.description && (
+                      <p className="text-[var(--cream)] opacity-50 text-xs mt-0.5">
+                        {castMember.description}
+                      </p>
+                    )}
                   </div>
                   <div className="flex items-center gap-3">
                     {assignedTo && !isAssignedToMe && (
@@ -434,12 +441,27 @@ export function Lobby({
                 {!participant.isAudience &&
                   (participant.castMemberIds || []).length > 0 &&
                   stageState.selectedPlay && (
-                    <span className="text-[var(--cream)] opacity-60 text-xs">
-                      {(participant.castMemberIds || [])
-                        .map((id) => getCastMemberById(stageState.selectedPlay!, id)?.name)
-                        .filter(Boolean)
-                        .join(', ')}
-                    </span>
+                    <div className="text-right">
+                      <span className="text-[var(--cream)] opacity-60 text-xs">
+                        {(participant.castMemberIds || [])
+                          .map((id) => getCastMemberById(stageState.selectedPlay!, id)?.name)
+                          .filter(Boolean)
+                          .join(', ')}
+                      </span>
+                      {(() => {
+                        const castMembers = (participant.castMemberIds || [])
+                          .map((id) => getCastMemberById(stageState.selectedPlay!, id))
+                          .filter(Boolean);
+                        const descriptions = castMembers
+                          .map((cm) => cm!.description)
+                          .filter(Boolean);
+                        return descriptions.length > 0 ? (
+                          <p className="text-[var(--cream)] opacity-40 text-[10px] mt-0.5">
+                            {descriptions.join(' • ')}
+                          </p>
+                        ) : null;
+                      })()}
+                    </div>
                   )}
                 {stageState.selectedPlay && !participant.isAudience && (
                   <span

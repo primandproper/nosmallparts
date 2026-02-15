@@ -224,10 +224,10 @@ function LiveKitGrid({ stageState }: { stageState: StageState }) {
         const participant = stageState.participants.find(
           (p) => p.id === track.participant.identity
         );
-        const castMemberNames =
+        const castMembers =
           participant && stageState.selectedPlay
             ? (participant.castMemberIds || [])
-                .map((id) => getCastMemberById(stageState.selectedPlay!, id)?.name)
+                .map((id) => getCastMemberById(stageState.selectedPlay!, id))
                 .filter(Boolean)
             : [];
 
@@ -235,12 +235,24 @@ function LiveKitGrid({ stageState }: { stageState: StageState }) {
           <div key={track.participant.identity} className="video-tile relative">
             <ParticipantTile trackRef={track} className="w-full h-full" />
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3">
-              <div className="flex items-center justify-between">
-                <span className="text-[var(--cream)] text-sm font-medium">
-                  {track.participant.name || track.participant.identity}
-                </span>
-                {castMemberNames.length > 0 && (
-                  <span className="text-[var(--gold)] text-xs">{castMemberNames.join(', ')}</span>
+              <div className="flex flex-col gap-0.5">
+                <div className="flex items-center justify-between">
+                  <span className="text-[var(--cream)] text-sm font-medium">
+                    {track.participant.name || track.participant.identity}
+                  </span>
+                  {castMembers.length > 0 && (
+                    <span className="text-[var(--gold)] text-xs">
+                      {castMembers.map((cm) => cm!.name).join(', ')}
+                    </span>
+                  )}
+                </div>
+                {castMembers.some((cm) => cm!.description) && (
+                  <p className="text-[var(--cream)] opacity-50 text-xs">
+                    {castMembers
+                      .map((cm) => cm!.description)
+                      .filter(Boolean)
+                      .join(' • ')}
+                  </p>
                 )}
               </div>
             </div>
@@ -350,21 +362,25 @@ function MockVideoRoom({
         {participantsToShow.map((participant) => {
           const isMe = participant.id === participantId;
 
-          // Get cast member names or speaker lines depending on mode
-          let displayInfo: string[] = [];
+          // Get cast member info depending on mode
+          let displayNames: string[] = [];
+          let castMembers:
+            | { id: string; name: string; description?: string }[]
+            | undefined;
           if (isPerforming) {
             const speakerLines = currentLines.filter((l) =>
               (participant.castMemberIds || []).includes(l.castMemberId)
             );
-            displayInfo = speakerLines
+            displayNames = speakerLines
               .map((l) =>
                 stageState.selectedPlay ? getCastMemberNameForLine(stageState.selectedPlay, l) : ''
               )
               .filter(Boolean);
           } else if (stageState.selectedPlay) {
-            displayInfo = (participant.castMemberIds || [])
-              .map((id) => getCastMemberById(stageState.selectedPlay!, id)?.name)
-              .filter(Boolean) as string[];
+            castMembers = (participant.castMemberIds || [])
+              .map((id) => getCastMemberById(stageState.selectedPlay!, id))
+              .filter(Boolean) as { id: string; name: string; description?: string }[];
+            displayNames = castMembers.map((cm) => cm.name);
           }
 
           return (
@@ -387,13 +403,23 @@ function MockVideoRoom({
                 </div>
               )}
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3">
-                <div className="flex items-center justify-between">
-                  <span className="text-[var(--cream)] text-sm font-medium">
-                    {participant.name}
-                    {isMe && <span className="text-[var(--gold)] opacity-60 ml-1">(you)</span>}
-                  </span>
-                  {displayInfo.length > 0 && (
-                    <span className="text-[var(--gold)] text-xs">{displayInfo.join(', ')}</span>
+                <div className="flex flex-col gap-0.5">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[var(--cream)] text-sm font-medium">
+                      {participant.name}
+                      {isMe && <span className="text-[var(--gold)] opacity-60 ml-1">(you)</span>}
+                    </span>
+                    {displayNames.length > 0 && (
+                      <span className="text-[var(--gold)] text-xs">{displayNames.join(', ')}</span>
+                    )}
+                  </div>
+                  {castMembers?.some((cm) => cm.description) && (
+                    <p className="text-[var(--cream)] opacity-50 text-xs">
+                      {castMembers
+                        .map((cm) => cm.description)
+                        .filter(Boolean)
+                        .join(' • ')}
+                    </p>
                   )}
                 </div>
               </div>
