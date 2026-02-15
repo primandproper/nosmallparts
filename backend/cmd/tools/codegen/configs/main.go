@@ -40,9 +40,14 @@ func main() {
 	// - kustomize/configs/ for Kubernetes usage (hostnames overridden via env vars)
 	localdevConfig := buildLocalDevConfig()
 
+	prodOutputPath := "deploy/environments/prod/kustomize/configs"
+
 	envConfigs := map[string]*config.EnvironmentConfigSet{
 		devOutputPath: {
 			RootConfig: buildDevEnvironmentServerConfig(),
+		},
+		prodOutputPath: {
+			RootConfig: buildProdEnvironmentServerConfig(),
 		},
 		"deploy/environments/localdev/config_files": {
 			RootConfig: localdevConfig,
@@ -58,7 +63,7 @@ func main() {
 
 	for p, cfg := range envConfigs {
 		// we don't want to validate the cloud env configs because they use env vars and cluster secrets to load values
-		shouldRenderPrettyAndValidate := p != devOutputPath
+		shouldRenderPrettyAndValidate := p != devOutputPath && p != prodOutputPath
 
 		if err := cfg.Render(p, true, shouldRenderPrettyAndValidate); err != nil {
 			panic(fmt.Errorf("validating config %s: %w", p, err))

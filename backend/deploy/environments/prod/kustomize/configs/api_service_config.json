@@ -224,8 +224,8 @@
 				"provider": "paseto",
 				"audience": "https://api.nosmall.parts",
 				"base64EncodedSigningKey": "",
-				"maxAccessTokenLifetime": 0,
-				"maxRefreshTokenLifetime": 0
+				"maxAccessTokenLifetime": 604800000000000,
+				"maxRefreshTokenLifetime": 2592000000000000
 			},
 			"sso": {
 				"google": {}
