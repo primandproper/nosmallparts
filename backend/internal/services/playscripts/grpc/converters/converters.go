@@ -1,6 +1,8 @@
 package converters
 
 import (
+	"time"
+
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/playscripts"
 	grpcconverters "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/converters"
 	playscriptssvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/play_scripts"
@@ -182,6 +184,28 @@ func ConvertGRPCScriptTagToScriptTag(tag *playscriptssvc.ScriptTag) *playscripts
 		Name:        tag.Name,
 		Description: tag.Description,
 		CreatedAt:   grpcconverters.ConvertPBTimestampToTime(tag.CreatedAt),
+	}
+}
+
+// ConvertGRPCPlayScriptLineToPlayScriptLine converts a gRPC PlayScriptLine to domain PlayScriptLine.
+func ConvertGRPCPlayScriptLineToPlayScriptLine(l *playscriptssvc.PlayScriptLine) *playscripts.PlayScriptLine {
+	if l == nil {
+		return nil
+	}
+	createdAt := time.Time{}
+	if l.CreatedAt != nil {
+		createdAt = grpcconverters.ConvertPBTimestampToTime(l.CreatedAt)
+	}
+	return &playscripts.PlayScriptLine{
+		ID:            l.Id,
+		PlayScriptID:  l.PlayScriptId,
+		CastMemberID:  l.CastMemberId,
+		LineText:      l.LineText,
+		LineIndex:     int(l.LineIndex),
+		Direction:     l.Direction,
+		ScrollMode:    ConvertGRPCScrollModeToScrollMode(l.ScrollMode),
+		AutoScrollWpm: int(l.AutoScrollWpm),
+		CreatedAt:     createdAt,
 	}
 }
 

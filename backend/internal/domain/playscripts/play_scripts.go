@@ -193,6 +193,7 @@ type (
 		GetPublicPlayScripts(ctx context.Context, filter *filtering.QueryFilter) (*filtering.QueryFilteredResult[PlayScript], error)
 		CreatePlayScript(ctx context.Context, input *PlayScriptDatabaseCreationInput, castMembers []*PlayScriptCastMemberDatabaseCreationInput, lines []*PlayScriptLineDatabaseCreationInput) (*PlayScript, error)
 		UpdatePlayScript(ctx context.Context, playScript *PlayScript) error
+		UpdatePlayScriptLine(ctx context.Context, line *PlayScriptLine) error
 		ArchivePlayScript(ctx context.Context, playScriptID string) error
 	}
 )

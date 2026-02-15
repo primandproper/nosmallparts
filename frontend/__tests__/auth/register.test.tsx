@@ -296,7 +296,9 @@ describe('Registration Page', () => {
       const submitButton = screen.getByRole('button', { name: /create account/i });
       await user.click(submitButton);
 
-      expect(screen.getByText('You must accept the Terms of Service and Privacy Policy')).toBeInTheDocument();
+      expect(
+        screen.getByText('You must accept the Terms of Service and Privacy Policy')
+      ).toBeInTheDocument();
     });
 
     it('shows error when age 18 is not confirmed', async () => {

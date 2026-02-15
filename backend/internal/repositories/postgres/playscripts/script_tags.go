@@ -83,6 +83,28 @@ func (r *repository) GetScriptTagByName(ctx context.Context, name string) (*type
 	}, nil
 }
 
+// ListScriptTags fetches all script tags ordered by name.
+func (r *repository) ListScriptTags(ctx context.Context) ([]*types.ScriptTag, error) {
+	ctx, span := r.tracer.StartSpan(ctx)
+	defer span.End()
+
+	tags, err := r.generatedQuerier.ListScriptTags(ctx, r.db)
+	if err != nil {
+		return nil, observability.PrepareAndLogError(err, r.logger.Clone(), span, "listing script tags")
+	}
+
+	result := make([]*types.ScriptTag, len(tags))
+	for i, t := range tags {
+		result[i] = &types.ScriptTag{
+			ID:          t.ID,
+			Name:        t.Name,
+			Description: t.Description,
+			CreatedAt:   t.CreatedAt,
+		}
+	}
+	return result, nil
+}
+
 // GetTagsForPlayScript fetches all active tags for a play script.
 func (r *repository) GetTagsForPlayScript(ctx context.Context, playScriptID string) ([]*types.ScriptTag, error) {
 	ctx, span := r.tracer.StartSpan(ctx)

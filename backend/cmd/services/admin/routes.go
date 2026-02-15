@@ -52,6 +52,17 @@ func (s *AdminFrontendServer) setupRoutes(router routing.Router) {
 	r.Get("/issue_reports", ghttp.Adapt(s.IssueReportsList))
 	r.Get("/api/issue_reports/search", ghttp.Adapt(s.IssueReportsSearch))
 
+	// Play Scripts
+	r.Get("/play_scripts", ghttp.Adapt(s.PlayScriptsList))
+	r.Get("/api/play_scripts/search", ghttp.Adapt(s.PlayScriptsSearch))
+	r.Get(fmt.Sprintf("/play_scripts/{%s}", playScriptIDURLParamKey), ghttp.Adapt(s.PlayScriptPage))
+	r.Get(fmt.Sprintf("/play_scripts/{%s}/lines/{%s}/edit", playScriptIDURLParamKey, lineIDURLParamKey), ghttp.Adapt(s.PlayScriptLineEditPage))
+	r.Get(fmt.Sprintf("/api/play_scripts/{%s}/tags", playScriptIDURLParamKey), ghttp.Adapt(s.PlayScriptTagsSection))
+	r.Post(fmt.Sprintf("/api/play_scripts/{%s}", playScriptIDURLParamKey), ghttp.Adapt(s.PlayScriptUpdate))
+	r.Post(fmt.Sprintf("/api/play_scripts/{%s}/lines/{%s}", playScriptIDURLParamKey, lineIDURLParamKey), ghttp.Adapt(s.PlayScriptLineUpdate))
+	r.Post(fmt.Sprintf("/api/play_scripts/{%s}/tags", playScriptIDURLParamKey), ghttp.Adapt(s.PlayScriptAddTag))
+	r.Delete(fmt.Sprintf("/api/play_scripts/{%s}/tags/{%s}", playScriptIDURLParamKey, tagIDURLParamKey), ghttp.Adapt(s.PlayScriptRemoveTag))
+
 	router.Get("/login", ghttp.Adapt(s.LoginPage))
 	router.Post("/login/submit", ghttp.Adapt(s.LoginSubmission))
 

@@ -45,7 +45,9 @@ export function Discussion({ stageState, onResetPlay }: DiscussionProps) {
                         <div key={cm!.id}>
                           <span className="text-[var(--gold)] text-sm">{cm!.name}</span>
                           {cm!.description && (
-                            <p className="text-[var(--cream)] opacity-50 text-xs">{cm!.description}</p>
+                            <p className="text-[var(--cream)] opacity-50 text-xs">
+                              {cm!.description}
+                            </p>
                           )}
                         </div>
                       ))}

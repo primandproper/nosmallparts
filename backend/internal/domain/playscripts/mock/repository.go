@@ -66,6 +66,12 @@ func (m *Repository) UpdatePlayScript(ctx context.Context, playScript *playscrip
 	return args.Error(0)
 }
 
+// UpdatePlayScriptLine is a mock function.
+func (m *Repository) UpdatePlayScriptLine(ctx context.Context, line *playscripts.PlayScriptLine) error {
+	args := m.Called(ctx, line)
+	return args.Error(0)
+}
+
 // ArchivePlayScript is a mock function.
 func (m *Repository) ArchivePlayScript(ctx context.Context, playScriptID string) error {
 	args := m.Called(ctx, playScriptID)
@@ -97,6 +103,15 @@ func (m *Repository) GetScriptTagByName(ctx context.Context, name string) (*play
 		return nil, args.Error(1)
 	}
 	return args.Get(0).(*playscripts.ScriptTag), args.Error(1)
+}
+
+// ListScriptTags is a mock function.
+func (m *Repository) ListScriptTags(ctx context.Context) ([]*playscripts.ScriptTag, error) {
+	args := m.Called(ctx)
+	if args.Get(0) == nil {
+		return nil, args.Error(1)
+	}
+	return args.Get(0).([]*playscripts.ScriptTag), args.Error(1)
 }
 
 // GetTagsForPlayScript is a mock function.

@@ -1273,6 +1273,94 @@ func (x *CreateScriptTagResponse) GetCreated() *ScriptTag {
 	return nil
 }
 
+type ListScriptTagsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListScriptTagsRequest) Reset() {
+	*x = ListScriptTagsRequest{}
+	mi := &file_play_scripts_play_scripts_service_types_proto_msgTypes[22]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListScriptTagsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListScriptTagsRequest) ProtoMessage() {}
+
+func (x *ListScriptTagsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_play_scripts_play_scripts_service_types_proto_msgTypes[22]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListScriptTagsRequest.ProtoReflect.Descriptor instead.
+func (*ListScriptTagsRequest) Descriptor() ([]byte, []int) {
+	return file_play_scripts_play_scripts_service_types_proto_rawDescGZIP(), []int{22}
+}
+
+type ListScriptTagsResponse struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	ResponseDetails *types.ResponseDetails `protobuf:"bytes,1,opt,name=response_details,json=responseDetails,proto3" json:"response_details,omitempty"`
+	Results         []*ScriptTag           `protobuf:"bytes,2,rep,name=results,proto3" json:"results,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *ListScriptTagsResponse) Reset() {
+	*x = ListScriptTagsResponse{}
+	mi := &file_play_scripts_play_scripts_service_types_proto_msgTypes[23]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListScriptTagsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListScriptTagsResponse) ProtoMessage() {}
+
+func (x *ListScriptTagsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_play_scripts_play_scripts_service_types_proto_msgTypes[23]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListScriptTagsResponse.ProtoReflect.Descriptor instead.
+func (*ListScriptTagsResponse) Descriptor() ([]byte, []int) {
+	return file_play_scripts_play_scripts_service_types_proto_rawDescGZIP(), []int{23}
+}
+
+func (x *ListScriptTagsResponse) GetResponseDetails() *types.ResponseDetails {
+	if x != nil {
+		return x.ResponseDetails
+	}
+	return nil
+}
+
+func (x *ListScriptTagsResponse) GetResults() []*ScriptTag {
+	if x != nil {
+		return x.Results
+	}
+	return nil
+}
+
 type AddTagToPlayScriptRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	PlayScriptId  string                 `protobuf:"bytes,1,opt,name=play_script_id,json=playScriptId,proto3" json:"play_script_id,omitempty"`
@@ -1283,7 +1371,7 @@ type AddTagToPlayScriptRequest struct {
 
 func (x *AddTagToPlayScriptRequest) Reset() {
 	*x = AddTagToPlayScriptRequest{}
-	mi := &file_play_scripts_play_scripts_service_types_proto_msgTypes[22]
+	mi := &file_play_scripts_play_scripts_service_types_proto_msgTypes[24]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1295,7 +1383,7 @@ func (x *AddTagToPlayScriptRequest) String() string {
 func (*AddTagToPlayScriptRequest) ProtoMessage() {}
 
 func (x *AddTagToPlayScriptRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_play_scripts_play_scripts_service_types_proto_msgTypes[22]
+	mi := &file_play_scripts_play_scripts_service_types_proto_msgTypes[24]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1308,7 +1396,7 @@ func (x *AddTagToPlayScriptRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AddTagToPlayScriptRequest.ProtoReflect.Descriptor instead.
 func (*AddTagToPlayScriptRequest) Descriptor() ([]byte, []int) {
-	return file_play_scripts_play_scripts_service_types_proto_rawDescGZIP(), []int{22}
+	return file_play_scripts_play_scripts_service_types_proto_rawDescGZIP(), []int{24}
 }
 
 func (x *AddTagToPlayScriptRequest) GetPlayScriptId() string {
@@ -1334,7 +1422,7 @@ type AddTagToPlayScriptResponse struct {
 
 func (x *AddTagToPlayScriptResponse) Reset() {
 	*x = AddTagToPlayScriptResponse{}
-	mi := &file_play_scripts_play_scripts_service_types_proto_msgTypes[23]
+	mi := &file_play_scripts_play_scripts_service_types_proto_msgTypes[25]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1346,7 +1434,7 @@ func (x *AddTagToPlayScriptResponse) String() string {
 func (*AddTagToPlayScriptResponse) ProtoMessage() {}
 
 func (x *AddTagToPlayScriptResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_play_scripts_play_scripts_service_types_proto_msgTypes[23]
+	mi := &file_play_scripts_play_scripts_service_types_proto_msgTypes[25]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1359,7 +1447,7 @@ func (x *AddTagToPlayScriptResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AddTagToPlayScriptResponse.ProtoReflect.Descriptor instead.
 func (*AddTagToPlayScriptResponse) Descriptor() ([]byte, []int) {
-	return file_play_scripts_play_scripts_service_types_proto_rawDescGZIP(), []int{23}
+	return file_play_scripts_play_scripts_service_types_proto_rawDescGZIP(), []int{25}
 }
 
 func (x *AddTagToPlayScriptResponse) GetResponseDetails() *types.ResponseDetails {
@@ -1379,7 +1467,7 @@ type RemoveTagFromPlayScriptRequest struct {
 
 func (x *RemoveTagFromPlayScriptRequest) Reset() {
 	*x = RemoveTagFromPlayScriptRequest{}
-	mi := &file_play_scripts_play_scripts_service_types_proto_msgTypes[24]
+	mi := &file_play_scripts_play_scripts_service_types_proto_msgTypes[26]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1391,7 +1479,7 @@ func (x *RemoveTagFromPlayScriptRequest) String() string {
 func (*RemoveTagFromPlayScriptRequest) ProtoMessage() {}
 
 func (x *RemoveTagFromPlayScriptRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_play_scripts_play_scripts_service_types_proto_msgTypes[24]
+	mi := &file_play_scripts_play_scripts_service_types_proto_msgTypes[26]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1404,7 +1492,7 @@ func (x *RemoveTagFromPlayScriptRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RemoveTagFromPlayScriptRequest.ProtoReflect.Descriptor instead.
 func (*RemoveTagFromPlayScriptRequest) Descriptor() ([]byte, []int) {
-	return file_play_scripts_play_scripts_service_types_proto_rawDescGZIP(), []int{24}
+	return file_play_scripts_play_scripts_service_types_proto_rawDescGZIP(), []int{26}
 }
 
 func (x *RemoveTagFromPlayScriptRequest) GetPlayScriptId() string {
@@ -1430,7 +1518,7 @@ type RemoveTagFromPlayScriptResponse struct {
 
 func (x *RemoveTagFromPlayScriptResponse) Reset() {
 	*x = RemoveTagFromPlayScriptResponse{}
-	mi := &file_play_scripts_play_scripts_service_types_proto_msgTypes[25]
+	mi := &file_play_scripts_play_scripts_service_types_proto_msgTypes[27]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1442,7 +1530,7 @@ func (x *RemoveTagFromPlayScriptResponse) String() string {
 func (*RemoveTagFromPlayScriptResponse) ProtoMessage() {}
 
 func (x *RemoveTagFromPlayScriptResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_play_scripts_play_scripts_service_types_proto_msgTypes[25]
+	mi := &file_play_scripts_play_scripts_service_types_proto_msgTypes[27]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1455,12 +1543,108 @@ func (x *RemoveTagFromPlayScriptResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RemoveTagFromPlayScriptResponse.ProtoReflect.Descriptor instead.
 func (*RemoveTagFromPlayScriptResponse) Descriptor() ([]byte, []int) {
-	return file_play_scripts_play_scripts_service_types_proto_rawDescGZIP(), []int{25}
+	return file_play_scripts_play_scripts_service_types_proto_rawDescGZIP(), []int{27}
 }
 
 func (x *RemoveTagFromPlayScriptResponse) GetResponseDetails() *types.ResponseDetails {
 	if x != nil {
 		return x.ResponseDetails
+	}
+	return nil
+}
+
+type UpdatePlayScriptLineRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Line          *PlayScriptLine        `protobuf:"bytes,1,opt,name=line,proto3" json:"line,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UpdatePlayScriptLineRequest) Reset() {
+	*x = UpdatePlayScriptLineRequest{}
+	mi := &file_play_scripts_play_scripts_service_types_proto_msgTypes[28]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpdatePlayScriptLineRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdatePlayScriptLineRequest) ProtoMessage() {}
+
+func (x *UpdatePlayScriptLineRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_play_scripts_play_scripts_service_types_proto_msgTypes[28]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdatePlayScriptLineRequest.ProtoReflect.Descriptor instead.
+func (*UpdatePlayScriptLineRequest) Descriptor() ([]byte, []int) {
+	return file_play_scripts_play_scripts_service_types_proto_rawDescGZIP(), []int{28}
+}
+
+func (x *UpdatePlayScriptLineRequest) GetLine() *PlayScriptLine {
+	if x != nil {
+		return x.Line
+	}
+	return nil
+}
+
+type UpdatePlayScriptLineResponse struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	ResponseDetails *types.ResponseDetails `protobuf:"bytes,1,opt,name=response_details,json=responseDetails,proto3" json:"response_details,omitempty"`
+	Updated         *PlayScriptLine        `protobuf:"bytes,2,opt,name=updated,proto3" json:"updated,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *UpdatePlayScriptLineResponse) Reset() {
+	*x = UpdatePlayScriptLineResponse{}
+	mi := &file_play_scripts_play_scripts_service_types_proto_msgTypes[29]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UpdatePlayScriptLineResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdatePlayScriptLineResponse) ProtoMessage() {}
+
+func (x *UpdatePlayScriptLineResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_play_scripts_play_scripts_service_types_proto_msgTypes[29]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdatePlayScriptLineResponse.ProtoReflect.Descriptor instead.
+func (*UpdatePlayScriptLineResponse) Descriptor() ([]byte, []int) {
+	return file_play_scripts_play_scripts_service_types_proto_rawDescGZIP(), []int{29}
+}
+
+func (x *UpdatePlayScriptLineResponse) GetResponseDetails() *types.ResponseDetails {
+	if x != nil {
+		return x.ResponseDetails
+	}
+	return nil
+}
+
+func (x *UpdatePlayScriptLineResponse) GetUpdated() *PlayScriptLine {
+	if x != nil {
+		return x.Updated
 	}
 	return nil
 }
@@ -1688,40 +1872,66 @@ var file_play_scripts_play_scripts_service_types_proto_rawDesc = string([]byte{
 	0x6e, 0x73, 0x65, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x12, 0x31, 0x0a, 0x07, 0x63, 0x72,
 	0x65, 0x61, 0x74, 0x65, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x17, 0x2e, 0x70, 0x6c,
 	0x61, 0x79, 0x5f, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x73, 0x2e, 0x53, 0x63, 0x72, 0x69, 0x70,
-	0x74, 0x54, 0x61, 0x67, 0x52, 0x07, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x22, 0x65, 0x0a,
-	0x19, 0x41, 0x64, 0x64, 0x54, 0x61, 0x67, 0x54, 0x6f, 0x50, 0x6c, 0x61, 0x79, 0x53, 0x63, 0x72,
-	0x69, 0x70, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x24, 0x0a, 0x0e, 0x70, 0x6c,
-	0x61, 0x79, 0x5f, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01,
-	0x28, 0x09, 0x52, 0x0c, 0x70, 0x6c, 0x61, 0x79, 0x53, 0x63, 0x72, 0x69, 0x70, 0x74, 0x49, 0x64,
-	0x12, 0x22, 0x0a, 0x0d, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x5f, 0x74, 0x61, 0x67, 0x5f, 0x69,
-	0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x54,
-	0x61, 0x67, 0x49, 0x64, 0x22, 0x60, 0x0a, 0x1a, 0x41, 0x64, 0x64, 0x54, 0x61, 0x67, 0x54, 0x6f,
-	0x50, 0x6c, 0x61, 0x79, 0x53, 0x63, 0x72, 0x69, 0x70, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
-	0x73, 0x65, 0x12, 0x42, 0x0a, 0x10, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x5f, 0x64,
-	0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x17, 0x2e, 0x63,
-	0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x44, 0x65,
-	0x74, 0x61, 0x69, 0x6c, 0x73, 0x52, 0x0f, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x44,
-	0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x22, 0x6a, 0x0a, 0x1e, 0x52, 0x65, 0x6d, 0x6f, 0x76, 0x65,
-	0x54, 0x61, 0x67, 0x46, 0x72, 0x6f, 0x6d, 0x50, 0x6c, 0x61, 0x79, 0x53, 0x63, 0x72, 0x69, 0x70,
-	0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x24, 0x0a, 0x0e, 0x70, 0x6c, 0x61, 0x79,
-	0x5f, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09,
-	0x52, 0x0c, 0x70, 0x6c, 0x61, 0x79, 0x53, 0x63, 0x72, 0x69, 0x70, 0x74, 0x49, 0x64, 0x12, 0x22,
-	0x0a, 0x0d, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x5f, 0x74, 0x61, 0x67, 0x5f, 0x69, 0x64, 0x18,
-	0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x54, 0x61, 0x67,
-	0x49, 0x64, 0x22, 0x65, 0x0a, 0x1f, 0x52, 0x65, 0x6d, 0x6f, 0x76, 0x65, 0x54, 0x61, 0x67, 0x46,
-	0x72, 0x6f, 0x6d, 0x50, 0x6c, 0x61, 0x79, 0x53, 0x63, 0x72, 0x69, 0x70, 0x74, 0x52, 0x65, 0x73,
-	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x42, 0x0a, 0x10, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
-	0x65, 0x5f, 0x64, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32,
-	0x17, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
-	0x65, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x52, 0x0f, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e,
-	0x73, 0x65, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x42, 0x68, 0x5a, 0x66, 0x67, 0x69, 0x74,
-	0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x76, 0x65, 0x72, 0x79, 0x67, 0x6f, 0x6f, 0x64,
-	0x73, 0x6f, 0x66, 0x74, 0x77, 0x61, 0x72, 0x65, 0x6e, 0x6f, 0x74, 0x76, 0x69, 0x72, 0x75, 0x73,
-	0x2f, 0x6e, 0x6f, 0x73, 0x6d, 0x61, 0x6c, 0x6c, 0x70, 0x61, 0x72, 0x74, 0x73, 0x2f, 0x62, 0x61,
-	0x63, 0x6b, 0x65, 0x6e, 0x64, 0x2f, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x6c, 0x2f, 0x67,
-	0x72, 0x70, 0x63, 0x2f, 0x67, 0x65, 0x6e, 0x65, 0x72, 0x61, 0x74, 0x65, 0x64, 0x2f, 0x73, 0x65,
-	0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x70, 0x6c, 0x61, 0x79, 0x5f, 0x73, 0x63, 0x72, 0x69,
-	0x70, 0x74, 0x73, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x74, 0x54, 0x61, 0x67, 0x52, 0x07, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x22, 0x17, 0x0a,
+	0x15, 0x4c, 0x69, 0x73, 0x74, 0x53, 0x63, 0x72, 0x69, 0x70, 0x74, 0x54, 0x61, 0x67, 0x73, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x22, 0x8f, 0x01, 0x0a, 0x16, 0x4c, 0x69, 0x73, 0x74, 0x53,
+	0x63, 0x72, 0x69, 0x70, 0x74, 0x54, 0x61, 0x67, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x65, 0x12, 0x42, 0x0a, 0x10, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x5f, 0x64, 0x65,
+	0x74, 0x61, 0x69, 0x6c, 0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x17, 0x2e, 0x63, 0x6f,
+	0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x44, 0x65, 0x74,
+	0x61, 0x69, 0x6c, 0x73, 0x52, 0x0f, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x44, 0x65,
+	0x74, 0x61, 0x69, 0x6c, 0x73, 0x12, 0x31, 0x0a, 0x07, 0x72, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x73,
+	0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x17, 0x2e, 0x70, 0x6c, 0x61, 0x79, 0x5f, 0x73, 0x63,
+	0x72, 0x69, 0x70, 0x74, 0x73, 0x2e, 0x53, 0x63, 0x72, 0x69, 0x70, 0x74, 0x54, 0x61, 0x67, 0x52,
+	0x07, 0x72, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x73, 0x22, 0x65, 0x0a, 0x19, 0x41, 0x64, 0x64, 0x54,
+	0x61, 0x67, 0x54, 0x6f, 0x50, 0x6c, 0x61, 0x79, 0x53, 0x63, 0x72, 0x69, 0x70, 0x74, 0x52, 0x65,
+	0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x24, 0x0a, 0x0e, 0x70, 0x6c, 0x61, 0x79, 0x5f, 0x73, 0x63,
+	0x72, 0x69, 0x70, 0x74, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0c, 0x70,
+	0x6c, 0x61, 0x79, 0x53, 0x63, 0x72, 0x69, 0x70, 0x74, 0x49, 0x64, 0x12, 0x22, 0x0a, 0x0d, 0x73,
+	0x63, 0x72, 0x69, 0x70, 0x74, 0x5f, 0x74, 0x61, 0x67, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x0b, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x54, 0x61, 0x67, 0x49, 0x64, 0x22,
+	0x60, 0x0a, 0x1a, 0x41, 0x64, 0x64, 0x54, 0x61, 0x67, 0x54, 0x6f, 0x50, 0x6c, 0x61, 0x79, 0x53,
+	0x63, 0x72, 0x69, 0x70, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x42, 0x0a,
+	0x10, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x5f, 0x64, 0x65, 0x74, 0x61, 0x69, 0x6c,
+	0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x17, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e,
+	0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73,
+	0x52, 0x0f, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c,
+	0x73, 0x22, 0x6a, 0x0a, 0x1e, 0x52, 0x65, 0x6d, 0x6f, 0x76, 0x65, 0x54, 0x61, 0x67, 0x46, 0x72,
+	0x6f, 0x6d, 0x50, 0x6c, 0x61, 0x79, 0x53, 0x63, 0x72, 0x69, 0x70, 0x74, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x12, 0x24, 0x0a, 0x0e, 0x70, 0x6c, 0x61, 0x79, 0x5f, 0x73, 0x63, 0x72, 0x69,
+	0x70, 0x74, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0c, 0x70, 0x6c, 0x61,
+	0x79, 0x53, 0x63, 0x72, 0x69, 0x70, 0x74, 0x49, 0x64, 0x12, 0x22, 0x0a, 0x0d, 0x73, 0x63, 0x72,
+	0x69, 0x70, 0x74, 0x5f, 0x74, 0x61, 0x67, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x0b, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x54, 0x61, 0x67, 0x49, 0x64, 0x22, 0x65, 0x0a,
+	0x1f, 0x52, 0x65, 0x6d, 0x6f, 0x76, 0x65, 0x54, 0x61, 0x67, 0x46, 0x72, 0x6f, 0x6d, 0x50, 0x6c,
+	0x61, 0x79, 0x53, 0x63, 0x72, 0x69, 0x70, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
+	0x12, 0x42, 0x0a, 0x10, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x5f, 0x64, 0x65, 0x74,
+	0x61, 0x69, 0x6c, 0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x17, 0x2e, 0x63, 0x6f, 0x6d,
+	0x6d, 0x6f, 0x6e, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x44, 0x65, 0x74, 0x61,
+	0x69, 0x6c, 0x73, 0x52, 0x0f, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x44, 0x65, 0x74,
+	0x61, 0x69, 0x6c, 0x73, 0x22, 0x4f, 0x0a, 0x1b, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x50, 0x6c,
+	0x61, 0x79, 0x53, 0x63, 0x72, 0x69, 0x70, 0x74, 0x4c, 0x69, 0x6e, 0x65, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x12, 0x30, 0x0a, 0x04, 0x6c, 0x69, 0x6e, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28,
+	0x0b, 0x32, 0x1c, 0x2e, 0x70, 0x6c, 0x61, 0x79, 0x5f, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x73,
+	0x2e, 0x50, 0x6c, 0x61, 0x79, 0x53, 0x63, 0x72, 0x69, 0x70, 0x74, 0x4c, 0x69, 0x6e, 0x65, 0x52,
+	0x04, 0x6c, 0x69, 0x6e, 0x65, 0x22, 0x9a, 0x01, 0x0a, 0x1c, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65,
+	0x50, 0x6c, 0x61, 0x79, 0x53, 0x63, 0x72, 0x69, 0x70, 0x74, 0x4c, 0x69, 0x6e, 0x65, 0x52, 0x65,
+	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x42, 0x0a, 0x10, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x73, 0x65, 0x5f, 0x64, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b,
+	0x32, 0x17, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x73, 0x65, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x52, 0x0f, 0x72, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x12, 0x36, 0x0a, 0x07, 0x75, 0x70,
+	0x64, 0x61, 0x74, 0x65, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1c, 0x2e, 0x70, 0x6c,
+	0x61, 0x79, 0x5f, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x73, 0x2e, 0x50, 0x6c, 0x61, 0x79, 0x53,
+	0x63, 0x72, 0x69, 0x70, 0x74, 0x4c, 0x69, 0x6e, 0x65, 0x52, 0x07, 0x75, 0x70, 0x64, 0x61, 0x74,
+	0x65, 0x64, 0x42, 0x68, 0x5a, 0x66, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d,
+	0x2f, 0x76, 0x65, 0x72, 0x79, 0x67, 0x6f, 0x6f, 0x64, 0x73, 0x6f, 0x66, 0x74, 0x77, 0x61, 0x72,
+	0x65, 0x6e, 0x6f, 0x74, 0x76, 0x69, 0x72, 0x75, 0x73, 0x2f, 0x6e, 0x6f, 0x73, 0x6d, 0x61, 0x6c,
+	0x6c, 0x70, 0x61, 0x72, 0x74, 0x73, 0x2f, 0x62, 0x61, 0x63, 0x6b, 0x65, 0x6e, 0x64, 0x2f, 0x69,
+	0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x6c, 0x2f, 0x67, 0x72, 0x70, 0x63, 0x2f, 0x67, 0x65, 0x6e,
+	0x65, 0x72, 0x61, 0x74, 0x65, 0x64, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f,
+	0x70, 0x6c, 0x61, 0x79, 0x5f, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x73, 0x62, 0x06, 0x70, 0x72,
+	0x6f, 0x74, 0x6f, 0x33,
 })
 
 var (
@@ -1736,7 +1946,7 @@ func file_play_scripts_play_scripts_service_types_proto_rawDescGZIP() []byte {
 	return file_play_scripts_play_scripts_service_types_proto_rawDescData
 }
 
-var file_play_scripts_play_scripts_service_types_proto_msgTypes = make([]protoimpl.MessageInfo, 26)
+var file_play_scripts_play_scripts_service_types_proto_msgTypes = make([]protoimpl.MessageInfo, 30)
 var file_play_scripts_play_scripts_service_types_proto_goTypes = []any{
 	(*PlayScriptCastMemberCreationInput)(nil), // 0: play_scripts.PlayScriptCastMemberCreationInput
 	(*PlayScriptLineCreationInput)(nil),       // 1: play_scripts.PlayScriptLineCreationInput
@@ -1760,55 +1970,65 @@ var file_play_scripts_play_scripts_service_types_proto_goTypes = []any{
 	(*GetPlayScriptsWithTagResponse)(nil),     // 19: play_scripts.GetPlayScriptsWithTagResponse
 	(*CreateScriptTagRequest)(nil),            // 20: play_scripts.CreateScriptTagRequest
 	(*CreateScriptTagResponse)(nil),           // 21: play_scripts.CreateScriptTagResponse
-	(*AddTagToPlayScriptRequest)(nil),         // 22: play_scripts.AddTagToPlayScriptRequest
-	(*AddTagToPlayScriptResponse)(nil),        // 23: play_scripts.AddTagToPlayScriptResponse
-	(*RemoveTagFromPlayScriptRequest)(nil),    // 24: play_scripts.RemoveTagFromPlayScriptRequest
-	(*RemoveTagFromPlayScriptResponse)(nil),   // 25: play_scripts.RemoveTagFromPlayScriptResponse
-	(ScrollMode)(0),                           // 26: play_scripts.ScrollMode
-	(*types.ResponseDetails)(nil),             // 27: common.ResponseDetails
-	(*PlayScript)(nil),                        // 28: play_scripts.PlayScript
-	(*filtering.QueryFilter)(nil),             // 29: filtering.QueryFilter
-	(*filtering.Pagination)(nil),              // 30: filtering.Pagination
-	(*ScriptTag)(nil),                         // 31: play_scripts.ScriptTag
+	(*ListScriptTagsRequest)(nil),             // 22: play_scripts.ListScriptTagsRequest
+	(*ListScriptTagsResponse)(nil),            // 23: play_scripts.ListScriptTagsResponse
+	(*AddTagToPlayScriptRequest)(nil),         // 24: play_scripts.AddTagToPlayScriptRequest
+	(*AddTagToPlayScriptResponse)(nil),        // 25: play_scripts.AddTagToPlayScriptResponse
+	(*RemoveTagFromPlayScriptRequest)(nil),    // 26: play_scripts.RemoveTagFromPlayScriptRequest
+	(*RemoveTagFromPlayScriptResponse)(nil),   // 27: play_scripts.RemoveTagFromPlayScriptResponse
+	(*UpdatePlayScriptLineRequest)(nil),       // 28: play_scripts.UpdatePlayScriptLineRequest
+	(*UpdatePlayScriptLineResponse)(nil),      // 29: play_scripts.UpdatePlayScriptLineResponse
+	(ScrollMode)(0),                           // 30: play_scripts.ScrollMode
+	(*types.ResponseDetails)(nil),             // 31: common.ResponseDetails
+	(*PlayScript)(nil),                        // 32: play_scripts.PlayScript
+	(*filtering.QueryFilter)(nil),             // 33: filtering.QueryFilter
+	(*filtering.Pagination)(nil),              // 34: filtering.Pagination
+	(*ScriptTag)(nil),                         // 35: play_scripts.ScriptTag
+	(*PlayScriptLine)(nil),                    // 36: play_scripts.PlayScriptLine
 }
 var file_play_scripts_play_scripts_service_types_proto_depIdxs = []int32{
-	26, // 0: play_scripts.PlayScriptLineCreationInput.scroll_mode:type_name -> play_scripts.ScrollMode
+	30, // 0: play_scripts.PlayScriptLineCreationInput.scroll_mode:type_name -> play_scripts.ScrollMode
 	0,  // 1: play_scripts.PlayScriptCreationRequestInput.cast_members:type_name -> play_scripts.PlayScriptCastMemberCreationInput
 	1,  // 2: play_scripts.PlayScriptCreationRequestInput.lines:type_name -> play_scripts.PlayScriptLineCreationInput
 	2,  // 3: play_scripts.CreatePlayScriptRequest.input:type_name -> play_scripts.PlayScriptCreationRequestInput
-	27, // 4: play_scripts.CreatePlayScriptResponse.response_details:type_name -> common.ResponseDetails
-	28, // 5: play_scripts.CreatePlayScriptResponse.created:type_name -> play_scripts.PlayScript
-	27, // 6: play_scripts.GetPlayScriptResponse.response_details:type_name -> common.ResponseDetails
-	28, // 7: play_scripts.GetPlayScriptResponse.result:type_name -> play_scripts.PlayScript
-	29, // 8: play_scripts.GetPlayScriptsRequest.filter:type_name -> filtering.QueryFilter
-	27, // 9: play_scripts.GetPlayScriptsResponse.response_details:type_name -> common.ResponseDetails
-	30, // 10: play_scripts.GetPlayScriptsResponse.pagination:type_name -> filtering.Pagination
-	28, // 11: play_scripts.GetPlayScriptsResponse.results:type_name -> play_scripts.PlayScript
-	29, // 12: play_scripts.GetPlayScriptsForAccountRequest.filter:type_name -> filtering.QueryFilter
-	27, // 13: play_scripts.GetPlayScriptsForAccountResponse.response_details:type_name -> common.ResponseDetails
-	30, // 14: play_scripts.GetPlayScriptsForAccountResponse.pagination:type_name -> filtering.Pagination
-	28, // 15: play_scripts.GetPlayScriptsForAccountResponse.results:type_name -> play_scripts.PlayScript
-	29, // 16: play_scripts.GetPublicPlayScriptsRequest.filter:type_name -> filtering.QueryFilter
-	27, // 17: play_scripts.GetPublicPlayScriptsResponse.response_details:type_name -> common.ResponseDetails
-	30, // 18: play_scripts.GetPublicPlayScriptsResponse.pagination:type_name -> filtering.Pagination
-	28, // 19: play_scripts.GetPublicPlayScriptsResponse.results:type_name -> play_scripts.PlayScript
+	31, // 4: play_scripts.CreatePlayScriptResponse.response_details:type_name -> common.ResponseDetails
+	32, // 5: play_scripts.CreatePlayScriptResponse.created:type_name -> play_scripts.PlayScript
+	31, // 6: play_scripts.GetPlayScriptResponse.response_details:type_name -> common.ResponseDetails
+	32, // 7: play_scripts.GetPlayScriptResponse.result:type_name -> play_scripts.PlayScript
+	33, // 8: play_scripts.GetPlayScriptsRequest.filter:type_name -> filtering.QueryFilter
+	31, // 9: play_scripts.GetPlayScriptsResponse.response_details:type_name -> common.ResponseDetails
+	34, // 10: play_scripts.GetPlayScriptsResponse.pagination:type_name -> filtering.Pagination
+	32, // 11: play_scripts.GetPlayScriptsResponse.results:type_name -> play_scripts.PlayScript
+	33, // 12: play_scripts.GetPlayScriptsForAccountRequest.filter:type_name -> filtering.QueryFilter
+	31, // 13: play_scripts.GetPlayScriptsForAccountResponse.response_details:type_name -> common.ResponseDetails
+	34, // 14: play_scripts.GetPlayScriptsForAccountResponse.pagination:type_name -> filtering.Pagination
+	32, // 15: play_scripts.GetPlayScriptsForAccountResponse.results:type_name -> play_scripts.PlayScript
+	33, // 16: play_scripts.GetPublicPlayScriptsRequest.filter:type_name -> filtering.QueryFilter
+	31, // 17: play_scripts.GetPublicPlayScriptsResponse.response_details:type_name -> common.ResponseDetails
+	34, // 18: play_scripts.GetPublicPlayScriptsResponse.pagination:type_name -> filtering.Pagination
+	32, // 19: play_scripts.GetPublicPlayScriptsResponse.results:type_name -> play_scripts.PlayScript
 	3,  // 20: play_scripts.UpdatePlayScriptRequest.input:type_name -> play_scripts.PlayScriptUpdateRequestInput
-	27, // 21: play_scripts.UpdatePlayScriptResponse.response_details:type_name -> common.ResponseDetails
-	28, // 22: play_scripts.UpdatePlayScriptResponse.updated:type_name -> play_scripts.PlayScript
-	27, // 23: play_scripts.ArchivePlayScriptResponse.response_details:type_name -> common.ResponseDetails
-	29, // 24: play_scripts.GetPlayScriptsWithTagRequest.filter:type_name -> filtering.QueryFilter
-	27, // 25: play_scripts.GetPlayScriptsWithTagResponse.response_details:type_name -> common.ResponseDetails
-	30, // 26: play_scripts.GetPlayScriptsWithTagResponse.pagination:type_name -> filtering.Pagination
-	28, // 27: play_scripts.GetPlayScriptsWithTagResponse.results:type_name -> play_scripts.PlayScript
-	27, // 28: play_scripts.CreateScriptTagResponse.response_details:type_name -> common.ResponseDetails
-	31, // 29: play_scripts.CreateScriptTagResponse.created:type_name -> play_scripts.ScriptTag
-	27, // 30: play_scripts.AddTagToPlayScriptResponse.response_details:type_name -> common.ResponseDetails
-	27, // 31: play_scripts.RemoveTagFromPlayScriptResponse.response_details:type_name -> common.ResponseDetails
-	32, // [32:32] is the sub-list for method output_type
-	32, // [32:32] is the sub-list for method input_type
-	32, // [32:32] is the sub-list for extension type_name
-	32, // [32:32] is the sub-list for extension extendee
-	0,  // [0:32] is the sub-list for field type_name
+	31, // 21: play_scripts.UpdatePlayScriptResponse.response_details:type_name -> common.ResponseDetails
+	32, // 22: play_scripts.UpdatePlayScriptResponse.updated:type_name -> play_scripts.PlayScript
+	31, // 23: play_scripts.ArchivePlayScriptResponse.response_details:type_name -> common.ResponseDetails
+	33, // 24: play_scripts.GetPlayScriptsWithTagRequest.filter:type_name -> filtering.QueryFilter
+	31, // 25: play_scripts.GetPlayScriptsWithTagResponse.response_details:type_name -> common.ResponseDetails
+	34, // 26: play_scripts.GetPlayScriptsWithTagResponse.pagination:type_name -> filtering.Pagination
+	32, // 27: play_scripts.GetPlayScriptsWithTagResponse.results:type_name -> play_scripts.PlayScript
+	31, // 28: play_scripts.CreateScriptTagResponse.response_details:type_name -> common.ResponseDetails
+	35, // 29: play_scripts.CreateScriptTagResponse.created:type_name -> play_scripts.ScriptTag
+	31, // 30: play_scripts.ListScriptTagsResponse.response_details:type_name -> common.ResponseDetails
+	35, // 31: play_scripts.ListScriptTagsResponse.results:type_name -> play_scripts.ScriptTag
+	31, // 32: play_scripts.AddTagToPlayScriptResponse.response_details:type_name -> common.ResponseDetails
+	31, // 33: play_scripts.RemoveTagFromPlayScriptResponse.response_details:type_name -> common.ResponseDetails
+	36, // 34: play_scripts.UpdatePlayScriptLineRequest.line:type_name -> play_scripts.PlayScriptLine
+	31, // 35: play_scripts.UpdatePlayScriptLineResponse.response_details:type_name -> common.ResponseDetails
+	36, // 36: play_scripts.UpdatePlayScriptLineResponse.updated:type_name -> play_scripts.PlayScriptLine
+	37, // [37:37] is the sub-list for method output_type
+	37, // [37:37] is the sub-list for method input_type
+	37, // [37:37] is the sub-list for extension type_name
+	37, // [37:37] is the sub-list for extension extendee
+	0,  // [0:37] is the sub-list for field type_name
 }
 
 func init() { file_play_scripts_play_scripts_service_types_proto_init() }
@@ -1824,7 +2044,7 @@ func file_play_scripts_play_scripts_service_types_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_play_scripts_play_scripts_service_types_proto_rawDesc), len(file_play_scripts_play_scripts_service_types_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   26,
+			NumMessages:   30,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

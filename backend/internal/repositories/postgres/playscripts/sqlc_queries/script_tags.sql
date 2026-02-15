@@ -27,6 +27,15 @@ SELECT
 FROM script_tags
 WHERE script_tags.name = sqlc.arg(name);
 
+-- name: ListScriptTags :many
+SELECT
+	script_tags.id,
+	script_tags.name,
+	script_tags.description,
+	script_tags.created_at
+FROM script_tags
+ORDER BY script_tags.name ASC;
+
 -- name: AddTagToPlayScript :exec
 INSERT INTO play_script_tags (
 	play_script_id,

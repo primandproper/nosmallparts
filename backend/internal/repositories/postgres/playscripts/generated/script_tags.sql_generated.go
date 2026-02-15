@@ -246,6 +246,44 @@ func (q *Queries) GetTagsForPlayScript(ctx context.Context, db DBTX, playScriptI
 	return items, nil
 }
 
+const listScriptTags = `-- name: ListScriptTags :many
+SELECT
+	script_tags.id,
+	script_tags.name,
+	script_tags.description,
+	script_tags.created_at
+FROM script_tags
+ORDER BY script_tags.name ASC
+`
+
+func (q *Queries) ListScriptTags(ctx context.Context, db DBTX) ([]*ScriptTags, error) {
+	rows, err := db.QueryContext(ctx, listScriptTags)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+	items := []*ScriptTags{}
+	for rows.Next() {
+		var i ScriptTags
+		if err := rows.Scan(
+			&i.ID,
+			&i.Name,
+			&i.Description,
+			&i.CreatedAt,
+		); err != nil {
+			return nil, err
+		}
+		items = append(items, &i)
+	}
+	if err := rows.Close(); err != nil {
+		return nil, err
+	}
+	if err := rows.Err(); err != nil {
+		return nil, err
+	}
+	return items, nil
+}
+
 const removeTagFromPlayScript = `-- name: RemoveTagFromPlayScript :execrows
 UPDATE play_script_tags SET
 	archived_at = NOW()

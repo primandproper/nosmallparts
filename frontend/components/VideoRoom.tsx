@@ -364,9 +364,7 @@ function MockVideoRoom({
 
           // Get cast member info depending on mode
           let displayNames: string[] = [];
-          let castMembers:
-            | { id: string; name: string; description?: string }[]
-            | undefined;
+          let castMembers: { id: string; name: string; description?: string }[] | undefined;
           if (isPerforming) {
             const speakerLines = currentLines.filter((l) =>
               (participant.castMemberIds || []).includes(l.castMemberId)

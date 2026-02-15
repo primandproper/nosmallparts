@@ -216,6 +216,10 @@ AIR_PORT := 9999
 admin: $(ARTIFACTS_DIR) ensure_air_installed
 	$(SCRIPTS_DIR)/admin.sh $(THIS) $(ARTIFACTS_DIR)
 
+.PHONY: admin_prod
+admin_prod: $(ARTIFACTS_DIR) ensure_air_installed
+	$(SCRIPTS_DIR)/admin_prod.sh $(THIS) $(ARTIFACTS_DIR)
+
 
 .PHONY: mcp
 mcp: $(ARTIFACTS_DIR) ensure_air_installed

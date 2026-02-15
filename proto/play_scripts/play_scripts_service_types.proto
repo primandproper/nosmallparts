@@ -131,6 +131,13 @@ message CreateScriptTagResponse {
   ScriptTag created = 2;
 }
 
+message ListScriptTagsRequest {}
+
+message ListScriptTagsResponse {
+  common.ResponseDetails response_details = 1;
+  repeated ScriptTag results = 2;
+}
+
 message AddTagToPlayScriptRequest {
   string play_script_id = 1;
   string script_tag_id = 2;
@@ -147,4 +154,13 @@ message RemoveTagFromPlayScriptRequest {
 
 message RemoveTagFromPlayScriptResponse {
   common.ResponseDetails response_details = 1;
+}
+
+message UpdatePlayScriptLineRequest {
+  PlayScriptLine line = 1;
+}
+
+message UpdatePlayScriptLineResponse {
+  common.ResponseDetails response_details = 1;
+  PlayScriptLine updated = 2;
 }

@@ -20,6 +20,7 @@ type ScriptTagDataManager interface {
 	CreateScriptTag(ctx context.Context, id, name, description string) (*ScriptTag, error)
 	GetScriptTag(ctx context.Context, id string) (*ScriptTag, error)
 	GetScriptTagByName(ctx context.Context, name string) (*ScriptTag, error)
+	ListScriptTags(ctx context.Context) ([]*ScriptTag, error)
 	GetTagsForPlayScript(ctx context.Context, playScriptID string) ([]*ScriptTag, error)
 	AddTagToPlayScript(ctx context.Context, playScriptID, scriptTagID string) error
 	RemoveTagFromPlayScript(ctx context.Context, playScriptID, scriptTagID string) error

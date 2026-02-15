@@ -78,6 +78,17 @@ WHERE %s.%s = sqlc.arg(%s);`,
 					scriptTagsTableName, nameColumn, nameColumn,
 				)),
 			},
+			{
+				Annotation: QueryAnnotation{Name: "ListScriptTags", Type: ManyType},
+				Content: buildRawQuery((&builq.Builder{}).Addf(`SELECT
+	%s
+FROM %s
+ORDER BY %s.%s ASC;`,
+					strings.Join(scriptTagsFullSelect, ",\n\t"),
+					scriptTagsTableName,
+					scriptTagsTableName, nameColumn,
+				)),
+			},
 			// play_script_tags: AddTagToPlayScript - upsert to handle re-adding archived tag
 			{
 				Annotation: QueryAnnotation{Name: "AddTagToPlayScript", Type: ExecType},

@@ -32,6 +32,9 @@ type AdminFrontendServer struct {
 	oauth2ClientIDRouteParamFetcher func(req *http.Request) string
 	waitlistIDRouteParamFetcher     func(req *http.Request) string
 	issueReportIDRouteParamFetcher  func(req *http.Request) string
+	playScriptIDRouteParamFetcher   func(req *http.Request) string
+	lineIDRouteParamFetcher         func(req *http.Request) string
+	tagIDRouteParamFetcher          func(req *http.Request) string
 	config                          *config.AdminWebappConfig
 	server                          phttp.Server
 	componentRenderer               *components.ComponentRenderer
@@ -75,6 +78,9 @@ func NewAdminFrontendServer(
 		oauth2ClientIDRouteParamFetcher: rpm.BuildRouteParamStringIDFetcher(oauth2ClientIDURLParamKey),
 		waitlistIDRouteParamFetcher:     rpm.BuildRouteParamStringIDFetcher(waitlistIDURLParamKey),
 		issueReportIDRouteParamFetcher:  rpm.BuildRouteParamStringIDFetcher(issueReportIDURLParamKey),
+		playScriptIDRouteParamFetcher:   rpm.BuildRouteParamStringIDFetcher(playScriptIDURLParamKey),
+		lineIDRouteParamFetcher:         rpm.BuildRouteParamStringIDFetcher(lineIDURLParamKey),
+		tagIDRouteParamFetcher:          rpm.BuildRouteParamStringIDFetcher(tagIDURLParamKey),
 		cookieManager:                   cookieMan,
 		encoder:                         encoder,
 		config:                          cfg,

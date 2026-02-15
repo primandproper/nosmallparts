@@ -496,6 +496,40 @@ func (r *repository) CreatePlayScript(ctx context.Context, input *types.PlayScri
 	return x, nil
 }
 
+// UpdatePlayScriptLine updates a single line in a play script.
+func (r *repository) UpdatePlayScriptLine(ctx context.Context, line *types.PlayScriptLine) error {
+	ctx, span := r.tracer.StartSpan(ctx)
+	defer span.End()
+
+	if line == nil {
+		return database.ErrNilInputProvided
+	}
+	logger := r.logger.WithValue(keys.PlayScriptIDKey, line.PlayScriptID)
+	tracing.AttachToSpan(span, keys.PlayScriptIDKey, line.PlayScriptID)
+
+	autoScrollWpm := sql.NullInt32{}
+	if line.AutoScrollWpm > 0 {
+		autoScrollWpm = sql.NullInt32{Int32: int32(line.AutoScrollWpm), Valid: true}
+	}
+
+	rowsAffected, err := r.generatedQuerier.UpdatePlayScriptLine(ctx, r.db, &generated.UpdatePlayScriptLineParams{
+		ID:            line.ID,
+		CastMemberID:  line.CastMemberID,
+		LineText:      line.LineText,
+		LineIndex:     int32(line.LineIndex),
+		Direction:     database.NullStringFromString(line.Direction),
+		ScrollMode:    generated.ScrollModeEnum(line.ScrollMode),
+		AutoScrollWpm: autoScrollWpm,
+	})
+	if err != nil {
+		return observability.PrepareAndLogError(err, logger, span, "updating play script line")
+	}
+	if rowsAffected == 0 {
+		return sql.ErrNoRows
+	}
+	return nil
+}
+
 // UpdatePlayScript updates a play script in the database.
 func (r *repository) UpdatePlayScript(ctx context.Context, playScript *types.PlayScript) error {
 	ctx, span := r.tracer.StartSpan(ctx)

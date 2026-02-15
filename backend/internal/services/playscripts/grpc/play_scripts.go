@@ -66,9 +66,12 @@ func (s *serviceImpl) GetPlayScript(ctx context.Context, request *playscriptssvc
 
 	// Allow access if:
 	// 1. The play script is public, OR
-	// 2. The play script belongs to the user's account
+	// 2. The play script belongs to the user's account, OR
+	// 3. The user is a service admin (e.g. admin app users)
 	if !playScript.IsPublic && playScript.BelongsToAccount != sessionContextData.GetActiveAccountID() {
-		return nil, observability.PrepareAndLogGRPCStatus(errors.New("permission denied"), logger, span, codes.PermissionDenied, "play script does not belong to account")
+		if !sessionContextData.ServiceRolePermissionChecker().IsServiceAdmin() {
+			return nil, observability.PrepareAndLogGRPCStatus(errors.New("permission denied"), logger, span, codes.PermissionDenied, "play script does not belong to account")
+		}
 	}
 
 	x := &playscriptssvc.GetPlayScriptResponse{
@@ -202,9 +205,11 @@ func (s *serviceImpl) UpdatePlayScript(ctx context.Context, request *playscripts
 		return nil, observability.PrepareAndLogGRPCStatus(err, logger, span, codes.Internal, "failed to fetch play script")
 	}
 
-	// Verify the play script belongs to the user's account
+	// Verify the play script belongs to the user's account or user is service admin
 	if playScript.BelongsToAccount != sessionContextData.GetActiveAccountID() {
-		return nil, observability.PrepareAndLogGRPCStatus(errors.New("permission denied"), logger, span, codes.PermissionDenied, "play script does not belong to account")
+		if !sessionContextData.ServiceRolePermissionChecker().IsServiceAdmin() {
+			return nil, observability.PrepareAndLogGRPCStatus(errors.New("permission denied"), logger, span, codes.PermissionDenied, "play script does not belong to account")
+		}
 	}
 
 	// Apply updates
@@ -248,9 +253,11 @@ func (s *serviceImpl) ArchivePlayScript(ctx context.Context, request *playscript
 		return nil, observability.PrepareAndLogGRPCStatus(err, logger, span, codes.Internal, "failed to fetch play script")
 	}
 
-	// Verify the play script belongs to the user's account
+	// Verify the play script belongs to the user's account or user is service admin
 	if playScript.BelongsToAccount != sessionContextData.GetActiveAccountID() {
-		return nil, observability.PrepareAndLogGRPCStatus(errors.New("permission denied"), logger, span, codes.PermissionDenied, "play script does not belong to account")
+		if !sessionContextData.ServiceRolePermissionChecker().IsServiceAdmin() {
+			return nil, observability.PrepareAndLogGRPCStatus(errors.New("permission denied"), logger, span, codes.PermissionDenied, "play script does not belong to account")
+		}
 	}
 
 	if err = s.playScriptRepository.ArchivePlayScript(ctx, request.PlayScriptId); err != nil {

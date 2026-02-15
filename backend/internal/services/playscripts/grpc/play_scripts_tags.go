@@ -82,6 +82,15 @@ func (s *serviceImpl) AddTagToPlayScript(ctx context.Context, request *playscrip
 		return nil, observability.PrepareAndLogGRPCStatus(err, logger, span, codes.Unauthenticated, "failed to fetch session context data")
 	}
 
+	// Verify play script belongs to account or user is service admin
+	playScript, err := s.playScriptRepository.GetPlayScript(ctx, request.PlayScriptId, false)
+	if err != nil {
+		return nil, observability.PrepareAndLogGRPCStatus(err, logger, span, codes.Internal, "failed to fetch play script")
+	}
+	if playScript.BelongsToAccount != sessionContextData.GetActiveAccountID() && !sessionContextData.ServiceRolePermissionChecker().IsServiceAdmin() {
+		return nil, observability.PrepareAndLogGRPCStatus(nil, logger, span, codes.PermissionDenied, "play script does not belong to account")
+	}
+
 	if err = s.playScriptRepository.AddTagToPlayScript(ctx, request.PlayScriptId, request.ScriptTagId); err != nil {
 		return nil, observability.PrepareAndLogGRPCStatus(err, logger, span, codes.Internal, "failed to add tag to play script")
 	}
@@ -105,6 +114,15 @@ func (s *serviceImpl) RemoveTagFromPlayScript(ctx context.Context, request *play
 		return nil, observability.PrepareAndLogGRPCStatus(err, logger, span, codes.Unauthenticated, "failed to fetch session context data")
 	}
 
+	// Verify play script belongs to account or user is service admin
+	playScript, err := s.playScriptRepository.GetPlayScript(ctx, request.PlayScriptId, false)
+	if err != nil {
+		return nil, observability.PrepareAndLogGRPCStatus(err, logger, span, codes.Internal, "failed to fetch play script")
+	}
+	if playScript.BelongsToAccount != sessionContextData.GetActiveAccountID() && !sessionContextData.ServiceRolePermissionChecker().IsServiceAdmin() {
+		return nil, observability.PrepareAndLogGRPCStatus(nil, logger, span, codes.PermissionDenied, "play script does not belong to account")
+	}
+
 	if err = s.playScriptRepository.RemoveTagFromPlayScript(ctx, request.PlayScriptId, request.ScriptTagId); err != nil {
 		return nil, observability.PrepareAndLogGRPCStatus(err, logger, span, codes.Internal, "failed to remove tag from play script")
 	}
@@ -114,5 +132,71 @@ func (s *serviceImpl) RemoveTagFromPlayScript(ctx context.Context, request *play
 			TraceId:          span.SpanContext().TraceID().String(),
 			CurrentAccountId: sessionContextData.ActiveAccountID,
 		},
+	}, nil
+}
+
+func (s *serviceImpl) ListScriptTags(ctx context.Context, request *playscriptssvc.ListScriptTagsRequest) (*playscriptssvc.ListScriptTagsResponse, error) {
+	ctx, span := s.tracer.StartSpan(ctx)
+	defer span.End()
+
+	logger := s.logger.WithSpan(span)
+
+	if _, err := s.sessionContextDataFetcher(ctx); err != nil {
+		return nil, observability.PrepareAndLogGRPCStatus(err, logger, span, codes.Unauthenticated, "failed to fetch session context data")
+	}
+
+	tags, err := s.playScriptRepository.ListScriptTags(ctx)
+	if err != nil {
+		return nil, observability.PrepareAndLogGRPCStatus(err, logger, span, codes.Internal, "failed to list script tags")
+	}
+
+	results := make([]*playscriptssvc.ScriptTag, len(tags))
+	for i, tag := range tags {
+		results[i] = converters.ConvertScriptTagToGRPC(tag)
+	}
+
+	return &playscriptssvc.ListScriptTagsResponse{
+		ResponseDetails: &types.ResponseDetails{
+			TraceId: span.SpanContext().TraceID().String(),
+		},
+		Results: results,
+	}, nil
+}
+
+func (s *serviceImpl) UpdatePlayScriptLine(ctx context.Context, request *playscriptssvc.UpdatePlayScriptLineRequest) (*playscriptssvc.UpdatePlayScriptLineResponse, error) {
+	ctx, span := s.tracer.StartSpan(ctx)
+	defer span.End()
+
+	logger := s.logger.WithSpan(span)
+
+	sessionContextData, err := s.sessionContextDataFetcher(ctx)
+	if err != nil {
+		return nil, observability.PrepareAndLogGRPCStatus(err, logger, span, codes.Unauthenticated, "failed to fetch session context data")
+	}
+
+	if request.Line == nil {
+		return nil, observability.PrepareAndLogGRPCStatus(nil, logger, span, codes.InvalidArgument, "line is required")
+	}
+
+	line := converters.ConvertGRPCPlayScriptLineToPlayScriptLine(request.Line)
+
+	// Verify play script belongs to account or user is service admin
+	playScript, err := s.playScriptRepository.GetPlayScript(ctx, line.PlayScriptID, false)
+	if err != nil {
+		return nil, observability.PrepareAndLogGRPCStatus(err, logger, span, codes.Internal, "failed to fetch play script")
+	}
+	if playScript.BelongsToAccount != sessionContextData.GetActiveAccountID() && !sessionContextData.ServiceRolePermissionChecker().IsServiceAdmin() {
+		return nil, observability.PrepareAndLogGRPCStatus(nil, logger, span, codes.PermissionDenied, "play script does not belong to account")
+	}
+
+	if err := s.playScriptRepository.UpdatePlayScriptLine(ctx, line); err != nil {
+		return nil, observability.PrepareAndLogGRPCStatus(err, logger, span, codes.Internal, "failed to update play script line")
+	}
+
+	return &playscriptssvc.UpdatePlayScriptLineResponse{
+		ResponseDetails: &types.ResponseDetails{
+			TraceId: span.SpanContext().TraceID().String(),
+		},
+		Updated: request.Line,
 	}, nil
 }

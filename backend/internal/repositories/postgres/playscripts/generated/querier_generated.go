@@ -32,6 +32,7 @@ type Querier interface {
 	GetScriptTag(ctx context.Context, db DBTX, id string) (*ScriptTags, error)
 	GetScriptTagByName(ctx context.Context, db DBTX, name string) (*ScriptTags, error)
 	GetTagsForPlayScript(ctx context.Context, db DBTX, playScriptID string) ([]*ScriptTags, error)
+	ListScriptTags(ctx context.Context, db DBTX) ([]*ScriptTags, error)
 	RemoveTagFromPlayScript(ctx context.Context, db DBTX, arg *RemoveTagFromPlayScriptParams) (int64, error)
 	UpdatePlayScript(ctx context.Context, db DBTX, arg *UpdatePlayScriptParams) (int64, error)
 	UpdatePlayScriptCastMember(ctx context.Context, db DBTX, arg *UpdatePlayScriptCastMemberParams) (int64, error)

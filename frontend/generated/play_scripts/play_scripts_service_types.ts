@@ -10,6 +10,7 @@ import { ResponseDetails } from '../common';
 import { Pagination, QueryFilter } from '../filtering';
 import {
   PlayScript,
+  PlayScriptLine,
   ScriptTag,
   ScrollMode,
   scrollModeFromJSON,
@@ -143,6 +144,13 @@ export interface CreateScriptTagResponse {
   created: ScriptTag | undefined;
 }
 
+export interface ListScriptTagsRequest {}
+
+export interface ListScriptTagsResponse {
+  responseDetails: ResponseDetails | undefined;
+  results: ScriptTag[];
+}
+
 export interface AddTagToPlayScriptRequest {
   playScriptId: string;
   scriptTagId: string;
@@ -159,6 +167,15 @@ export interface RemoveTagFromPlayScriptRequest {
 
 export interface RemoveTagFromPlayScriptResponse {
   responseDetails: ResponseDetails | undefined;
+}
+
+export interface UpdatePlayScriptLineRequest {
+  line: PlayScriptLine | undefined;
+}
+
+export interface UpdatePlayScriptLineResponse {
+  responseDetails: ResponseDetails | undefined;
+  updated: PlayScriptLine | undefined;
 }
 
 function createBasePlayScriptCastMemberCreationInput(): PlayScriptCastMemberCreationInput {
@@ -2296,6 +2313,134 @@ export const CreateScriptTagResponse: MessageFns<CreateScriptTagResponse> = {
   },
 };
 
+function createBaseListScriptTagsRequest(): ListScriptTagsRequest {
+  return {};
+}
+
+export const ListScriptTagsRequest: MessageFns<ListScriptTagsRequest> = {
+  encode(_: ListScriptTagsRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ListScriptTagsRequest {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseListScriptTagsRequest();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(_: any): ListScriptTagsRequest {
+    return {};
+  },
+
+  toJSON(_: ListScriptTagsRequest): unknown {
+    const obj: any = {};
+    return obj;
+  },
+
+  create(base?: DeepPartial<ListScriptTagsRequest>): ListScriptTagsRequest {
+    return ListScriptTagsRequest.fromPartial(base ?? {});
+  },
+  fromPartial(_: DeepPartial<ListScriptTagsRequest>): ListScriptTagsRequest {
+    const message = createBaseListScriptTagsRequest();
+    return message;
+  },
+};
+
+function createBaseListScriptTagsResponse(): ListScriptTagsResponse {
+  return { responseDetails: undefined, results: [] };
+}
+
+export const ListScriptTagsResponse: MessageFns<ListScriptTagsResponse> = {
+  encode(message: ListScriptTagsResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.responseDetails !== undefined) {
+      ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
+    }
+    for (const v of message.results) {
+      ScriptTag.encode(v!, writer.uint32(18).fork()).join();
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ListScriptTagsResponse {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseListScriptTagsResponse();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.responseDetails = ResponseDetails.decode(reader, reader.uint32());
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.results.push(ScriptTag.decode(reader, reader.uint32()));
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ListScriptTagsResponse {
+    return {
+      responseDetails: isSet(object.responseDetails)
+        ? ResponseDetails.fromJSON(object.responseDetails)
+        : isSet(object.response_details)
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
+      results: globalThis.Array.isArray(object?.results)
+        ? object.results.map((e: any) => ScriptTag.fromJSON(e))
+        : [],
+    };
+  },
+
+  toJSON(message: ListScriptTagsResponse): unknown {
+    const obj: any = {};
+    if (message.responseDetails !== undefined) {
+      obj.responseDetails = ResponseDetails.toJSON(message.responseDetails);
+    }
+    if (message.results?.length) {
+      obj.results = message.results.map((e) => ScriptTag.toJSON(e));
+    }
+    return obj;
+  },
+
+  create(base?: DeepPartial<ListScriptTagsResponse>): ListScriptTagsResponse {
+    return ListScriptTagsResponse.fromPartial(base ?? {});
+  },
+  fromPartial(object: DeepPartial<ListScriptTagsResponse>): ListScriptTagsResponse {
+    const message = createBaseListScriptTagsResponse();
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
+    message.results = object.results?.map((e) => ScriptTag.fromPartial(e)) || [];
+    return message;
+  },
+};
+
 function createBaseAddTagToPlayScriptRequest(): AddTagToPlayScriptRequest {
   return { playScriptId: '', scriptTagId: '' };
 }
@@ -2607,6 +2752,159 @@ export const RemoveTagFromPlayScriptResponse: MessageFns<RemoveTagFromPlayScript
     message.responseDetails =
       object.responseDetails !== undefined && object.responseDetails !== null
         ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
+    return message;
+  },
+};
+
+function createBaseUpdatePlayScriptLineRequest(): UpdatePlayScriptLineRequest {
+  return { line: undefined };
+}
+
+export const UpdatePlayScriptLineRequest: MessageFns<UpdatePlayScriptLineRequest> = {
+  encode(
+    message: UpdatePlayScriptLineRequest,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.line !== undefined) {
+      PlayScriptLine.encode(message.line, writer.uint32(10).fork()).join();
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): UpdatePlayScriptLineRequest {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseUpdatePlayScriptLineRequest();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.line = PlayScriptLine.decode(reader, reader.uint32());
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): UpdatePlayScriptLineRequest {
+    return { line: isSet(object.line) ? PlayScriptLine.fromJSON(object.line) : undefined };
+  },
+
+  toJSON(message: UpdatePlayScriptLineRequest): unknown {
+    const obj: any = {};
+    if (message.line !== undefined) {
+      obj.line = PlayScriptLine.toJSON(message.line);
+    }
+    return obj;
+  },
+
+  create(base?: DeepPartial<UpdatePlayScriptLineRequest>): UpdatePlayScriptLineRequest {
+    return UpdatePlayScriptLineRequest.fromPartial(base ?? {});
+  },
+  fromPartial(object: DeepPartial<UpdatePlayScriptLineRequest>): UpdatePlayScriptLineRequest {
+    const message = createBaseUpdatePlayScriptLineRequest();
+    message.line =
+      object.line !== undefined && object.line !== null
+        ? PlayScriptLine.fromPartial(object.line)
+        : undefined;
+    return message;
+  },
+};
+
+function createBaseUpdatePlayScriptLineResponse(): UpdatePlayScriptLineResponse {
+  return { responseDetails: undefined, updated: undefined };
+}
+
+export const UpdatePlayScriptLineResponse: MessageFns<UpdatePlayScriptLineResponse> = {
+  encode(
+    message: UpdatePlayScriptLineResponse,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
+    if (message.responseDetails !== undefined) {
+      ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
+    }
+    if (message.updated !== undefined) {
+      PlayScriptLine.encode(message.updated, writer.uint32(18).fork()).join();
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): UpdatePlayScriptLineResponse {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseUpdatePlayScriptLineResponse();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.responseDetails = ResponseDetails.decode(reader, reader.uint32());
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.updated = PlayScriptLine.decode(reader, reader.uint32());
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): UpdatePlayScriptLineResponse {
+    return {
+      responseDetails: isSet(object.responseDetails)
+        ? ResponseDetails.fromJSON(object.responseDetails)
+        : isSet(object.response_details)
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
+      updated: isSet(object.updated) ? PlayScriptLine.fromJSON(object.updated) : undefined,
+    };
+  },
+
+  toJSON(message: UpdatePlayScriptLineResponse): unknown {
+    const obj: any = {};
+    if (message.responseDetails !== undefined) {
+      obj.responseDetails = ResponseDetails.toJSON(message.responseDetails);
+    }
+    if (message.updated !== undefined) {
+      obj.updated = PlayScriptLine.toJSON(message.updated);
+    }
+    return obj;
+  },
+
+  create(base?: DeepPartial<UpdatePlayScriptLineResponse>): UpdatePlayScriptLineResponse {
+    return UpdatePlayScriptLineResponse.fromPartial(base ?? {});
+  },
+  fromPartial(object: DeepPartial<UpdatePlayScriptLineResponse>): UpdatePlayScriptLineResponse {
+    const message = createBaseUpdatePlayScriptLineResponse();
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
+    message.updated =
+      object.updated !== undefined && object.updated !== null
+        ? PlayScriptLine.fromPartial(object.updated)
         : undefined;
     return message;
   },
