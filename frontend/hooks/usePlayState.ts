@@ -18,6 +18,7 @@ import {
 interface BackendCastMember {
   id: string;
   name: string;
+  description?: string;
   sortOrder: number;
 }
 
@@ -47,7 +48,11 @@ function convertBackendPlay(raw: BackendPlayScript): Play {
     ? raw.cast
     : (raw.castMembers || [])
         .sort((a, b) => a.sortOrder - b.sortOrder)
-        .map((cm) => ({ id: cm.id, name: cm.name }));
+        .map((cm) => ({
+          id: cm.id,
+          name: cm.name,
+          ...(cm.description && { description: cm.description }),
+        }));
 
   const lines: PlayLine[] = (raw.lines || []).map((line) => {
     // Handle both backend format (lineText/lineIndex) and frontend format (text/index)
