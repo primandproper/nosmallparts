@@ -13,6 +13,7 @@ export interface RegisterRequest {
   invitationId?: string;
   acceptedTos: boolean;
   acceptedPrivacyPolicy: boolean;
+  acceptedAge18?: boolean;
 }
 
 export interface RegisterResponse {
@@ -45,6 +46,13 @@ export async function POST(request: NextRequest): Promise<NextResponse<RegisterR
     if (!body.acceptedTos || !body.acceptedPrivacyPolicy) {
       return NextResponse.json(
         { success: false, error: 'You must accept the Terms of Service and Privacy Policy' },
+        { status: 400 }
+      );
+    }
+
+    if (!body.acceptedAge18) {
+      return NextResponse.json(
+        { success: false, error: "You must confirm you're at least 18 years old" },
         { status: 400 }
       );
     }

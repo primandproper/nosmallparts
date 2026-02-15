@@ -22,8 +22,8 @@ function RegisterForm() {
     firstName: '',
     lastName: '',
     birthday: '',
-    acceptedTos: false,
-    acceptedPrivacyPolicy: false,
+    acceptedTermsAndPrivacy: false,
+    acceptedAge18: false,
   });
   const [error, setError] = useState('');
   const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
@@ -112,8 +112,9 @@ function RegisterForm() {
     if (!/[^A-Za-z0-9]/.test(formData.password))
       return 'Must contain at least one special character';
     if (formData.password !== formData.confirmPassword) return 'Passwords do not match';
-    if (!formData.acceptedTos) return 'You must accept the Terms of Service';
-    if (!formData.acceptedPrivacyPolicy) return 'You must accept the Privacy Policy';
+    if (!formData.acceptedTermsAndPrivacy)
+      return 'You must accept the Terms of Service and Privacy Policy';
+    if (!formData.acceptedAge18) return "You must confirm you're at least 18 years old";
     return null;
   };
 
@@ -143,8 +144,9 @@ function RegisterForm() {
           lastName: formData.lastName,
           birthday: formData.birthday || undefined,
           invitationToken: invitationToken || undefined,
-          acceptedTos: formData.acceptedTos,
-          acceptedPrivacyPolicy: formData.acceptedPrivacyPolicy,
+          acceptedTos: formData.acceptedTermsAndPrivacy,
+          acceptedPrivacyPolicy: formData.acceptedTermsAndPrivacy,
+          acceptedAge18: formData.acceptedAge18,
         }),
       });
 
@@ -339,13 +341,13 @@ function RegisterForm() {
           />
         </div>
 
-        {/* Terms and Privacy */}
+        {/* Terms, Privacy, and Age */}
         <div className="space-y-3 pt-2">
           <label className="flex items-start gap-3 cursor-pointer">
             <input
               type="checkbox"
-              name="acceptedTos"
-              checked={formData.acceptedTos}
+              name="acceptedTermsAndPrivacy"
+              checked={formData.acceptedTermsAndPrivacy}
               onChange={handleChange}
               className="mt-1 w-4 h-4 rounded border-[var(--gold)]/30 bg-[var(--black)] text-[var(--gold)] focus:ring-[var(--gold)] focus:ring-offset-0"
               disabled={isLoading}
@@ -355,23 +357,24 @@ function RegisterForm() {
               <Link href="/terms" className="text-[var(--gold)] hover:underline">
                 Terms of Service
               </Link>
+              {' and '}
+              <Link href="/privacy" className="text-[var(--gold)] hover:underline">
+                Privacy Policy
+              </Link>
             </span>
           </label>
 
           <label className="flex items-start gap-3 cursor-pointer">
             <input
               type="checkbox"
-              name="acceptedPrivacyPolicy"
-              checked={formData.acceptedPrivacyPolicy}
+              name="acceptedAge18"
+              checked={formData.acceptedAge18}
               onChange={handleChange}
               className="mt-1 w-4 h-4 rounded border-[var(--gold)]/30 bg-[var(--black)] text-[var(--gold)] focus:ring-[var(--gold)] focus:ring-offset-0"
               disabled={isLoading}
             />
             <span className="text-[var(--cream)] opacity-70 text-sm">
-              I accept the{' '}
-              <Link href="/privacy" className="text-[var(--gold)] hover:underline">
-                Privacy Policy
-              </Link>
+              I&apos;m at least 18 years old
             </span>
           </label>
         </div>

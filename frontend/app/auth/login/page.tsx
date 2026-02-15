@@ -163,6 +163,15 @@ export default function LoginPage() {
             Forgot your password?
           </Link>
         </p>
+        <p className="text-[var(--cream)] opacity-40 text-xs">
+          <Link href="/terms" className="hover:text-[var(--gold)] transition-colors">
+            Terms of Service
+          </Link>
+          {' · '}
+          <Link href="/privacy" className="hover:text-[var(--gold)] transition-colors">
+            Privacy Policy
+          </Link>
+        </p>
       </div>
     </div>
   );

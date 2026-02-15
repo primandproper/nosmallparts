@@ -281,7 +281,7 @@ describe('Registration Page', () => {
       expect(screen.getByText('Username is required')).toBeInTheDocument();
     });
 
-    it('shows error when Terms of Service is not accepted', async () => {
+    it('shows error when Terms and Privacy is not accepted', async () => {
       const user = userEvent.setup();
       render(<RegisterPage />);
 
@@ -296,14 +296,14 @@ describe('Registration Page', () => {
       const submitButton = screen.getByRole('button', { name: /create account/i });
       await user.click(submitButton);
 
-      expect(screen.getByText('You must accept the Terms of Service')).toBeInTheDocument();
+      expect(screen.getByText('You must accept the Terms of Service and Privacy Policy')).toBeInTheDocument();
     });
 
-    it('shows error when Privacy Policy is not accepted', async () => {
+    it('shows error when age 18 is not confirmed', async () => {
       const user = userEvent.setup();
       render(<RegisterPage />);
 
-      // Fill in all required fields and accept TOS
+      // Fill in all required fields and accept Terms/Privacy but not age
       await user.type(screen.getByPlaceholderText('Choose a unique username'), 'testuser');
       await user.type(screen.getByPlaceholderText('Strong password required'), 'Password123!');
       await user.type(screen.getByPlaceholderText('Re-enter your password'), 'Password123!');
@@ -311,14 +311,13 @@ describe('Registration Page', () => {
       await user.type(screen.getByPlaceholderText('Jane'), 'John');
       await user.type(screen.getByPlaceholderText('Doe'), 'Doe');
 
-      // Accept TOS but not Privacy Policy
-      const tosCheckbox = screen.getByRole('checkbox', { name: /terms of service/i });
-      await user.click(tosCheckbox);
+      const termsCheckbox = screen.getByRole('checkbox', { name: /terms of service/i });
+      await user.click(termsCheckbox);
 
       const submitButton = screen.getByRole('button', { name: /create account/i });
       await user.click(submitButton);
 
-      expect(screen.getByText('You must accept the Privacy Policy')).toBeInTheDocument();
+      expect(screen.getByText("You must confirm you're at least 18 years old")).toBeInTheDocument();
     });
 
     it('submits form when all fields are valid', async () => {
@@ -337,11 +336,11 @@ describe('Registration Page', () => {
       await user.type(screen.getByPlaceholderText('Jane'), 'John');
       await user.type(screen.getByPlaceholderText('Doe'), 'Doe');
 
-      // Accept both checkboxes
-      const tosCheckbox = screen.getByRole('checkbox', { name: /terms of service/i });
-      const privacyCheckbox = screen.getByRole('checkbox', { name: /privacy policy/i });
-      await user.click(tosCheckbox);
-      await user.click(privacyCheckbox);
+      // Accept Terms/Privacy and age checkboxes
+      const termsCheckbox = screen.getByRole('checkbox', { name: /terms of service/i });
+      const ageCheckbox = screen.getByRole('checkbox', { name: /18 years old/i });
+      await user.click(termsCheckbox);
+      await user.click(ageCheckbox);
 
       const submitButton = screen.getByRole('button', { name: /create account/i });
       await user.click(submitButton);
@@ -373,11 +372,11 @@ describe('Registration Page', () => {
       await user.type(screen.getByPlaceholderText('Jane'), 'John');
       await user.type(screen.getByPlaceholderText('Doe'), 'Doe');
 
-      // Accept both checkboxes
-      const tosCheckbox = screen.getByRole('checkbox', { name: /terms of service/i });
-      const privacyCheckbox = screen.getByRole('checkbox', { name: /privacy policy/i });
-      await user.click(tosCheckbox);
-      await user.click(privacyCheckbox);
+      // Accept Terms/Privacy and age checkboxes
+      const termsCheckbox = screen.getByRole('checkbox', { name: /terms of service/i });
+      const ageCheckbox = screen.getByRole('checkbox', { name: /18 years old/i });
+      await user.click(termsCheckbox);
+      await user.click(ageCheckbox);
 
       const submitButton = screen.getByRole('button', { name: /create account/i });
       await user.click(submitButton);
@@ -403,11 +402,11 @@ describe('Registration Page', () => {
       await user.type(screen.getByPlaceholderText('Jane'), 'John');
       await user.type(screen.getByPlaceholderText('Doe'), 'Doe');
 
-      // Accept both checkboxes
-      const tosCheckbox = screen.getByRole('checkbox', { name: /terms of service/i });
-      const privacyCheckbox = screen.getByRole('checkbox', { name: /privacy policy/i });
-      await user.click(tosCheckbox);
-      await user.click(privacyCheckbox);
+      // Accept Terms/Privacy and age checkboxes
+      const termsCheckbox = screen.getByRole('checkbox', { name: /terms of service/i });
+      const ageCheckbox = screen.getByRole('checkbox', { name: /18 years old/i });
+      await user.click(termsCheckbox);
+      await user.click(ageCheckbox);
 
       const submitButton = screen.getByRole('button', { name: /create account/i });
       await user.click(submitButton);
