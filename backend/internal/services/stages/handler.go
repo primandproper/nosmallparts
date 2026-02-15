@@ -262,6 +262,21 @@ func (h *Handler) buildStageState(ctx context.Context, stage *stagesdomain.Stage
 	return state
 }
 
+// looksLikeStageCode returns true if s appears to be a stage code (6 alphanumeric chars)
+// rather than an xid-style stage ID (~20 chars). Used to choose lookup order.
+func looksLikeStageCode(s string) bool {
+	if len(s) != 6 {
+		return false
+	}
+	for _, r := range s {
+		if (r >= 'A' && r <= 'Z') || (r >= '0' && r <= '9') {
+			continue
+		}
+		return false
+	}
+	return true
+}
+
 // generateStageCode generates a 6-character stage code using cryptographic randomness.
 func generateStageCode() string {
 	const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"

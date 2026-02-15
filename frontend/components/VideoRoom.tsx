@@ -10,7 +10,7 @@ import {
   useParticipants,
   useLocalParticipant,
 } from '@livekit/components-react';
-import { Track, RoomEvent } from 'livekit-client';
+import { DisconnectReason, Track, RoomEvent } from 'livekit-client';
 import {
   StageState,
   Participant,
@@ -275,8 +275,11 @@ function LiveKitVideoRoom({
           console.log('LiveKit connected!');
           setConnectionState('connected');
         }}
-        onDisconnected={() => {
-          console.log('LiveKit disconnected');
+        onDisconnected={(reason) => {
+          console.log('LiveKit disconnected', {
+            reason: reason != null ? DisconnectReason[reason] ?? reason : undefined,
+            raw: reason,
+          });
           setConnectionState('disconnected');
         }}
         onError={(error) => {

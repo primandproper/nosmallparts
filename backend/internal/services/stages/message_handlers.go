@@ -31,12 +31,20 @@ func (h *Handler) handleJoin(ctx context.Context, connCtx *platformws.Connection
 	var stage *stagesdomain.Stage
 	var err error
 
-	// Try to find existing stage by ID or code (codes are uppercase)
+	// Try to find existing stage. Frontend sends the code (e.g. KNZJBV) in stageId when joining via URL.
+	// Codes are 6 alphanumeric chars; IDs are xid (~20 chars). Try code first when input looks like a code.
 	if stageID != "" {
-		stage, err = h.stagesRepo.GetStageByID(ctx, stageID)
-		if errors.Is(err, sql.ErrNoRows) {
-			// Try by code (uppercase for case-insensitive lookup)
-			stage, err = h.stagesRepo.GetStageByCode(ctx, strings.ToUpper(stageID))
+		codeUpper := strings.ToUpper(strings.TrimSpace(stageID))
+		if looksLikeStageCode(codeUpper) {
+			stage, err = h.stagesRepo.GetStageByCode(ctx, codeUpper)
+			if errors.Is(err, sql.ErrNoRows) {
+				stage, err = h.stagesRepo.GetStageByID(ctx, stageID)
+			}
+		} else {
+			stage, err = h.stagesRepo.GetStageByID(ctx, stageID)
+			if errors.Is(err, sql.ErrNoRows) {
+				stage, err = h.stagesRepo.GetStageByCode(ctx, codeUpper)
+			}
 		}
 	}
 
