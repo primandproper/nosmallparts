@@ -48,7 +48,7 @@ func main() {
 	setEnvIfUnset(envvars.ServerPortEnvVarKey, "8888")
 	setEnvIfUnset(envvars.ServerStartupDeadlineEnvVarKey, time.Minute.String())
 	setEnvIfUnset(envvars.CookiesDomainEnvVarKey, "localhost")
-	setEnvIfUnset(envvars.CookiesLifetimeEnvVarKey, (7*24*time.Hour).String())
+	setEnvIfUnset(envvars.CookiesLifetimeEnvVarKey, (7 * 24 * time.Hour).String())
 
 	configFilepath := os.Getenv("CONFIGURATION_FILEPATH")
 	if configFilepath == "" {

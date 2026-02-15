@@ -26,6 +26,7 @@ function ScriptEditorContent() {
   const [cast, setCast] = useState<CastMember[]>([]);
   const [lines, setLines] = useState<PlayLine[]>([]);
   const [newCastName, setNewCastName] = useState('');
+  const [newCastDescription, setNewCastDescription] = useState('');
   const [isSaving, setIsSaving] = useState(false);
   const [isPublishing, setIsPublishing] = useState(false);
   const [lastSaved, setLastSaved] = useState<Date | null>(null);
@@ -52,9 +53,15 @@ function ScriptEditorContent() {
     const newMember: CastMember = {
       id: uuidv4(),
       name: newCastName.trim(),
+      description: newCastDescription.trim() || undefined,
     };
     setCast([...cast, newMember]);
     setNewCastName('');
+    setNewCastDescription('');
+  };
+
+  const handleUpdateCastMember = (id: string, updates: Partial<Pick<CastMember, 'name' | 'description'>>) => {
+    setCast(cast.map((c) => (c.id === id ? { ...c, ...updates } : c)));
   };
 
   const handleRemoveCast = (id: string) => {
@@ -390,22 +397,42 @@ function ScriptEditorContent() {
               </h2>
 
               {/* Add cast member */}
-              <div className="flex gap-2 mb-4">
+              <div className="space-y-2 mb-4">
+                <div className="flex gap-2">
+                  <input
+                    type="text"
+                    value={newCastName}
+                    onChange={(e) => setNewCastName(e.target.value)}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter') {
+                        e.preventDefault();
+                        handleAddCast();
+                      }
+                    }}
+                    placeholder="Character name..."
+                    className="input-elegant flex-1 px-3 py-2 rounded-lg text-[var(--cream)] text-sm"
+                  />
+                  <button
+                    onClick={handleAddCast}
+                    disabled={!newCastName.trim()}
+                    className="px-3 py-2 rounded-lg bg-[var(--gold)]/20 text-[var(--gold)] hover:bg-[var(--gold)]/30 transition-colors disabled:opacity-50"
+                  >
+                    +
+                  </button>
+                </div>
                 <input
                   type="text"
-                  value={newCastName}
-                  onChange={(e) => setNewCastName(e.target.value)}
-                  onKeyDown={(e) => e.key === 'Enter' && handleAddCast()}
-                  placeholder="Character name..."
-                  className="input-elegant flex-1 px-3 py-2 rounded-lg text-[var(--cream)] text-sm"
+                  value={newCastDescription}
+                  onChange={(e) => setNewCastDescription(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter') {
+                      e.preventDefault();
+                      handleAddCast();
+                    }
+                  }}
+                  placeholder="Description (e.g. Narrator, Villain) — optional"
+                  className="input-elegant w-full px-3 py-2 rounded-lg text-[var(--cream)] text-sm opacity-80"
                 />
-                <button
-                  onClick={handleAddCast}
-                  disabled={!newCastName.trim()}
-                  className="px-3 py-2 rounded-lg bg-[var(--gold)]/20 text-[var(--gold)] hover:bg-[var(--gold)]/30 transition-colors disabled:opacity-50"
-                >
-                  +
-                </button>
               </div>
 
               {/* Cast list */}
@@ -420,21 +447,34 @@ function ScriptEditorContent() {
                     return (
                       <li
                         key={member.id}
-                        className="flex items-center justify-between p-3 rounded-lg bg-[var(--charcoal)]/30"
+                        className="p-3 rounded-lg bg-[var(--charcoal)]/30 space-y-2"
                       >
-                        <div>
-                          <span className="text-[var(--cream)]">{member.name}</span>
-                          <span className="text-[var(--cream)] opacity-40 text-xs ml-2">
-                            {lineCount} line{lineCount !== 1 ? 's' : ''}
-                          </span>
+                        <div className="flex items-center justify-between">
+                          <span className="text-[var(--cream)] font-medium">{member.name}</span>
+                          <div className="flex items-center gap-2">
+                            <span className="text-[var(--cream)] opacity-40 text-xs">
+                              {lineCount} line{lineCount !== 1 ? 's' : ''}
+                            </span>
+                            <button
+                              onClick={() => handleRemoveCast(member.id)}
+                              className="text-red-400 opacity-60 hover:opacity-100 transition-opacity text-sm"
+                              title="Remove cast member"
+                            >
+                              ✕
+                            </button>
+                          </div>
                         </div>
-                        <button
-                          onClick={() => handleRemoveCast(member.id)}
-                          className="text-red-400 opacity-60 hover:opacity-100 transition-opacity text-sm"
-                          title="Remove cast member"
-                        >
-                          ✕
-                        </button>
+                        <input
+                          type="text"
+                          value={member.description ?? ''}
+                          onChange={(e) =>
+                            handleUpdateCastMember(member.id, {
+                              description: e.target.value || undefined,
+                            })
+                          }
+                          placeholder="Add character description (optional)"
+                          className="input-elegant w-full px-3 py-1.5 rounded text-[var(--cream)] text-sm opacity-80"
+                        />
                       </li>
                     );
                   })}

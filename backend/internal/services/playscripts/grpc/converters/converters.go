@@ -40,6 +40,7 @@ func ConvertPlayScriptToGRPCPlayScript(ps *playscripts.PlayScript) *playscriptss
 			Id:           cm.ID,
 			PlayScriptId: cm.PlayScriptID,
 			Name:         cm.Name,
+			Description:  cm.Description,
 			SortOrder:    int32(cm.SortOrder),
 		}
 	}
@@ -59,6 +60,11 @@ func ConvertPlayScriptToGRPCPlayScript(ps *playscripts.PlayScript) *playscriptss
 		}
 	}
 
+	tags := make([]*playscriptssvc.ScriptTag, len(ps.Tags))
+	for i, tag := range ps.Tags {
+		tags[i] = ConvertScriptTagToGRPC(tag)
+	}
+
 	return &playscriptssvc.PlayScript{
 		CreatedAt:        grpcconverters.ConvertTimeToPBTimestamp(ps.CreatedAt),
 		ArchivedAt:       grpcconverters.ConvertTimePointerToPBTimestamp(ps.ArchivedAt),
@@ -72,6 +78,20 @@ func ConvertPlayScriptToGRPCPlayScript(ps *playscripts.PlayScript) *playscriptss
 		Lines:            lines,
 		CreatedByUser:    ps.CreatedByUser,
 		BelongsToAccount: ps.BelongsToAccount,
+		Tags:             tags,
+	}
+}
+
+// ConvertScriptTagToGRPC converts a domain ScriptTag to gRPC ScriptTag.
+func ConvertScriptTagToGRPC(tag *playscripts.ScriptTag) *playscriptssvc.ScriptTag {
+	if tag == nil {
+		return nil
+	}
+	return &playscriptssvc.ScriptTag{
+		Id:          tag.ID,
+		Name:        tag.Name,
+		Description: tag.Description,
+		CreatedAt:   grpcconverters.ConvertTimeToPBTimestamp(tag.CreatedAt),
 	}
 }
 
@@ -84,6 +104,7 @@ func ConvertGRPCPlayScriptToPlayScript(ps *playscriptssvc.PlayScript) *playscrip
 			ID:           cm.Id,
 			PlayScriptID: cm.PlayScriptId,
 			Name:         cm.Name,
+			Description:  cm.Description,
 			SortOrder:    int(cm.SortOrder),
 		}
 	}
@@ -103,6 +124,11 @@ func ConvertGRPCPlayScriptToPlayScript(ps *playscriptssvc.PlayScript) *playscrip
 		}
 	}
 
+	tags := make([]*playscripts.ScriptTag, len(ps.Tags))
+	for i, tag := range ps.Tags {
+		tags[i] = ConvertGRPCScriptTagToScriptTag(tag)
+	}
+
 	return &playscripts.PlayScript{
 		CreatedAt:        grpcconverters.ConvertPBTimestampToTime(ps.CreatedAt),
 		ArchivedAt:       grpcconverters.ConvertPBTimestampToTimePointer(ps.ArchivedAt),
@@ -114,8 +140,22 @@ func ConvertGRPCPlayScriptToPlayScript(ps *playscriptssvc.PlayScript) *playscrip
 		IsPublic:         ps.IsPublic,
 		CastMembers:      castMembers,
 		Lines:            lines,
+		Tags:             tags,
 		CreatedByUser:    ps.CreatedByUser,
 		BelongsToAccount: ps.BelongsToAccount,
+	}
+}
+
+// ConvertGRPCScriptTagToScriptTag converts a gRPC ScriptTag to domain ScriptTag.
+func ConvertGRPCScriptTagToScriptTag(tag *playscriptssvc.ScriptTag) *playscripts.ScriptTag {
+	if tag == nil {
+		return nil
+	}
+	return &playscripts.ScriptTag{
+		ID:          tag.Id,
+		Name:        tag.Name,
+		Description: tag.Description,
+		CreatedAt:   grpcconverters.ConvertPBTimestampToTime(tag.CreatedAt),
 	}
 }
 
@@ -144,6 +184,7 @@ func ConvertGRPCPlayScriptCreationRequestInputToInputs(input *playscriptssvc.Pla
 			ID:           dbID,
 			PlayScriptID: playScriptID,
 			Name:         cm.Name,
+			Description:  cm.Description,
 			SortOrder:    int(cm.SortOrder),
 		}
 	}
@@ -179,9 +220,10 @@ func ConvertPlayScriptCreationRequestInputToGRPC(input *playscripts.PlayScriptCr
 	castMembers := make([]*playscriptssvc.PlayScriptCastMemberCreationInput, len(input.CastMembers))
 	for i, cm := range input.CastMembers {
 		castMembers[i] = &playscriptssvc.PlayScriptCastMemberCreationInput{
-			Id:        cm.ID,
-			Name:      cm.Name,
-			SortOrder: int32(cm.SortOrder),
+			Id:          cm.ID,
+			Name:        cm.Name,
+			Description: cm.Description,
+			SortOrder:   int32(cm.SortOrder),
 		}
 	}
 

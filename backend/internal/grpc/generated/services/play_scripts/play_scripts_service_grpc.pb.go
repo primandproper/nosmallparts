@@ -25,8 +25,12 @@ const (
 	PlayScriptsService_GetPlayScripts_FullMethodName           = "/play_scripts.PlayScriptsService/GetPlayScripts"
 	PlayScriptsService_GetPlayScriptsForAccount_FullMethodName = "/play_scripts.PlayScriptsService/GetPlayScriptsForAccount"
 	PlayScriptsService_GetPublicPlayScripts_FullMethodName     = "/play_scripts.PlayScriptsService/GetPublicPlayScripts"
+	PlayScriptsService_GetPlayScriptsWithTag_FullMethodName    = "/play_scripts.PlayScriptsService/GetPlayScriptsWithTag"
 	PlayScriptsService_UpdatePlayScript_FullMethodName         = "/play_scripts.PlayScriptsService/UpdatePlayScript"
 	PlayScriptsService_ArchivePlayScript_FullMethodName        = "/play_scripts.PlayScriptsService/ArchivePlayScript"
+	PlayScriptsService_CreateScriptTag_FullMethodName          = "/play_scripts.PlayScriptsService/CreateScriptTag"
+	PlayScriptsService_AddTagToPlayScript_FullMethodName       = "/play_scripts.PlayScriptsService/AddTagToPlayScript"
+	PlayScriptsService_RemoveTagFromPlayScript_FullMethodName  = "/play_scripts.PlayScriptsService/RemoveTagFromPlayScript"
 )
 
 // PlayScriptsServiceClient is the client API for PlayScriptsService service.
@@ -38,8 +42,12 @@ type PlayScriptsServiceClient interface {
 	GetPlayScripts(ctx context.Context, in *GetPlayScriptsRequest, opts ...grpc.CallOption) (*GetPlayScriptsResponse, error)
 	GetPlayScriptsForAccount(ctx context.Context, in *GetPlayScriptsForAccountRequest, opts ...grpc.CallOption) (*GetPlayScriptsForAccountResponse, error)
 	GetPublicPlayScripts(ctx context.Context, in *GetPublicPlayScriptsRequest, opts ...grpc.CallOption) (*GetPublicPlayScriptsResponse, error)
+	GetPlayScriptsWithTag(ctx context.Context, in *GetPlayScriptsWithTagRequest, opts ...grpc.CallOption) (*GetPlayScriptsWithTagResponse, error)
 	UpdatePlayScript(ctx context.Context, in *UpdatePlayScriptRequest, opts ...grpc.CallOption) (*UpdatePlayScriptResponse, error)
 	ArchivePlayScript(ctx context.Context, in *ArchivePlayScriptRequest, opts ...grpc.CallOption) (*ArchivePlayScriptResponse, error)
+	CreateScriptTag(ctx context.Context, in *CreateScriptTagRequest, opts ...grpc.CallOption) (*CreateScriptTagResponse, error)
+	AddTagToPlayScript(ctx context.Context, in *AddTagToPlayScriptRequest, opts ...grpc.CallOption) (*AddTagToPlayScriptResponse, error)
+	RemoveTagFromPlayScript(ctx context.Context, in *RemoveTagFromPlayScriptRequest, opts ...grpc.CallOption) (*RemoveTagFromPlayScriptResponse, error)
 }
 
 type playScriptsServiceClient struct {
@@ -100,6 +108,16 @@ func (c *playScriptsServiceClient) GetPublicPlayScripts(ctx context.Context, in 
 	return out, nil
 }
 
+func (c *playScriptsServiceClient) GetPlayScriptsWithTag(ctx context.Context, in *GetPlayScriptsWithTagRequest, opts ...grpc.CallOption) (*GetPlayScriptsWithTagResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetPlayScriptsWithTagResponse)
+	err := c.cc.Invoke(ctx, PlayScriptsService_GetPlayScriptsWithTag_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *playScriptsServiceClient) UpdatePlayScript(ctx context.Context, in *UpdatePlayScriptRequest, opts ...grpc.CallOption) (*UpdatePlayScriptResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(UpdatePlayScriptResponse)
@@ -120,6 +138,36 @@ func (c *playScriptsServiceClient) ArchivePlayScript(ctx context.Context, in *Ar
 	return out, nil
 }
 
+func (c *playScriptsServiceClient) CreateScriptTag(ctx context.Context, in *CreateScriptTagRequest, opts ...grpc.CallOption) (*CreateScriptTagResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateScriptTagResponse)
+	err := c.cc.Invoke(ctx, PlayScriptsService_CreateScriptTag_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *playScriptsServiceClient) AddTagToPlayScript(ctx context.Context, in *AddTagToPlayScriptRequest, opts ...grpc.CallOption) (*AddTagToPlayScriptResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AddTagToPlayScriptResponse)
+	err := c.cc.Invoke(ctx, PlayScriptsService_AddTagToPlayScript_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *playScriptsServiceClient) RemoveTagFromPlayScript(ctx context.Context, in *RemoveTagFromPlayScriptRequest, opts ...grpc.CallOption) (*RemoveTagFromPlayScriptResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RemoveTagFromPlayScriptResponse)
+	err := c.cc.Invoke(ctx, PlayScriptsService_RemoveTagFromPlayScript_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // PlayScriptsServiceServer is the server API for PlayScriptsService service.
 // All implementations must embed UnimplementedPlayScriptsServiceServer
 // for forward compatibility.
@@ -129,8 +177,12 @@ type PlayScriptsServiceServer interface {
 	GetPlayScripts(context.Context, *GetPlayScriptsRequest) (*GetPlayScriptsResponse, error)
 	GetPlayScriptsForAccount(context.Context, *GetPlayScriptsForAccountRequest) (*GetPlayScriptsForAccountResponse, error)
 	GetPublicPlayScripts(context.Context, *GetPublicPlayScriptsRequest) (*GetPublicPlayScriptsResponse, error)
+	GetPlayScriptsWithTag(context.Context, *GetPlayScriptsWithTagRequest) (*GetPlayScriptsWithTagResponse, error)
 	UpdatePlayScript(context.Context, *UpdatePlayScriptRequest) (*UpdatePlayScriptResponse, error)
 	ArchivePlayScript(context.Context, *ArchivePlayScriptRequest) (*ArchivePlayScriptResponse, error)
+	CreateScriptTag(context.Context, *CreateScriptTagRequest) (*CreateScriptTagResponse, error)
+	AddTagToPlayScript(context.Context, *AddTagToPlayScriptRequest) (*AddTagToPlayScriptResponse, error)
+	RemoveTagFromPlayScript(context.Context, *RemoveTagFromPlayScriptRequest) (*RemoveTagFromPlayScriptResponse, error)
 	mustEmbedUnimplementedPlayScriptsServiceServer()
 }
 
@@ -156,11 +208,23 @@ func (UnimplementedPlayScriptsServiceServer) GetPlayScriptsForAccount(context.Co
 func (UnimplementedPlayScriptsServiceServer) GetPublicPlayScripts(context.Context, *GetPublicPlayScriptsRequest) (*GetPublicPlayScriptsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetPublicPlayScripts not implemented")
 }
+func (UnimplementedPlayScriptsServiceServer) GetPlayScriptsWithTag(context.Context, *GetPlayScriptsWithTagRequest) (*GetPlayScriptsWithTagResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetPlayScriptsWithTag not implemented")
+}
 func (UnimplementedPlayScriptsServiceServer) UpdatePlayScript(context.Context, *UpdatePlayScriptRequest) (*UpdatePlayScriptResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdatePlayScript not implemented")
 }
 func (UnimplementedPlayScriptsServiceServer) ArchivePlayScript(context.Context, *ArchivePlayScriptRequest) (*ArchivePlayScriptResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ArchivePlayScript not implemented")
+}
+func (UnimplementedPlayScriptsServiceServer) CreateScriptTag(context.Context, *CreateScriptTagRequest) (*CreateScriptTagResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateScriptTag not implemented")
+}
+func (UnimplementedPlayScriptsServiceServer) AddTagToPlayScript(context.Context, *AddTagToPlayScriptRequest) (*AddTagToPlayScriptResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AddTagToPlayScript not implemented")
+}
+func (UnimplementedPlayScriptsServiceServer) RemoveTagFromPlayScript(context.Context, *RemoveTagFromPlayScriptRequest) (*RemoveTagFromPlayScriptResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RemoveTagFromPlayScript not implemented")
 }
 func (UnimplementedPlayScriptsServiceServer) mustEmbedUnimplementedPlayScriptsServiceServer() {}
 func (UnimplementedPlayScriptsServiceServer) testEmbeddedByValue()                            {}
@@ -273,6 +337,24 @@ func _PlayScriptsService_GetPublicPlayScripts_Handler(srv interface{}, ctx conte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _PlayScriptsService_GetPlayScriptsWithTag_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetPlayScriptsWithTagRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(PlayScriptsServiceServer).GetPlayScriptsWithTag(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: PlayScriptsService_GetPlayScriptsWithTag_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(PlayScriptsServiceServer).GetPlayScriptsWithTag(ctx, req.(*GetPlayScriptsWithTagRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _PlayScriptsService_UpdatePlayScript_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdatePlayScriptRequest)
 	if err := dec(in); err != nil {
@@ -309,6 +391,60 @@ func _PlayScriptsService_ArchivePlayScript_Handler(srv interface{}, ctx context.
 	return interceptor(ctx, in, info, handler)
 }
 
+func _PlayScriptsService_CreateScriptTag_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateScriptTagRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(PlayScriptsServiceServer).CreateScriptTag(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: PlayScriptsService_CreateScriptTag_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(PlayScriptsServiceServer).CreateScriptTag(ctx, req.(*CreateScriptTagRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _PlayScriptsService_AddTagToPlayScript_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AddTagToPlayScriptRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(PlayScriptsServiceServer).AddTagToPlayScript(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: PlayScriptsService_AddTagToPlayScript_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(PlayScriptsServiceServer).AddTagToPlayScript(ctx, req.(*AddTagToPlayScriptRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _PlayScriptsService_RemoveTagFromPlayScript_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RemoveTagFromPlayScriptRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(PlayScriptsServiceServer).RemoveTagFromPlayScript(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: PlayScriptsService_RemoveTagFromPlayScript_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(PlayScriptsServiceServer).RemoveTagFromPlayScript(ctx, req.(*RemoveTagFromPlayScriptRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // PlayScriptsService_ServiceDesc is the grpc.ServiceDesc for PlayScriptsService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -337,12 +473,28 @@ var PlayScriptsService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _PlayScriptsService_GetPublicPlayScripts_Handler,
 		},
 		{
+			MethodName: "GetPlayScriptsWithTag",
+			Handler:    _PlayScriptsService_GetPlayScriptsWithTag_Handler,
+		},
+		{
 			MethodName: "UpdatePlayScript",
 			Handler:    _PlayScriptsService_UpdatePlayScript_Handler,
 		},
 		{
 			MethodName: "ArchivePlayScript",
 			Handler:    _PlayScriptsService_ArchivePlayScript_Handler,
+		},
+		{
+			MethodName: "CreateScriptTag",
+			Handler:    _PlayScriptsService_CreateScriptTag_Handler,
+		},
+		{
+			MethodName: "AddTagToPlayScript",
+			Handler:    _PlayScriptsService_AddTagToPlayScript_Handler,
+		},
+		{
+			MethodName: "RemoveTagFromPlayScript",
+			Handler:    _PlayScriptsService_RemoveTagFromPlayScript_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

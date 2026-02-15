@@ -26,7 +26,8 @@ func main() {
 
 	if strings.TrimSpace(os.Getenv("RUNNING_IN_GCP_CLOUD_RUN")) != "" {
 		if portStr := strings.TrimSpace(os.Getenv("PORT")); portStr != "" {
-			port, err := strconv.ParseUint(portStr, 10, 16)
+			var port uint64
+			port, err = strconv.ParseUint(portStr, 10, 16)
 			if err != nil {
 				log.Printf("RUNNING_IN_GCP_CLOUD_RUN set but invalid PORT %q: %v; using config port %d", portStr, err, cfg.HTTPServer.Port)
 			} else {

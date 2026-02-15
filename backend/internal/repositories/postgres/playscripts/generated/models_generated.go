@@ -6,15 +6,67 @@ package generated
 
 import (
 	"database/sql"
+	"database/sql/driver"
+	"fmt"
 	"time"
 )
 
-type PlayScriptCastMembers struct {
-	CreatedAt    time.Time
-	ID           string
-	PlayScriptID string
-	Name         string
-	SortOrder    int32
+type ScrollModeEnum string
+
+const (
+	ScrollModeEnumAuto   ScrollModeEnum = "auto"
+	ScrollModeEnumManual ScrollModeEnum = "manual"
+)
+
+func (e *ScrollModeEnum) Scan(src interface{}) error {
+	switch s := src.(type) {
+	case []byte:
+		*e = ScrollModeEnum(s)
+	case string:
+		*e = ScrollModeEnum(s)
+	default:
+		return fmt.Errorf("unsupported scan type for ScrollModeEnum: %T", src)
+	}
+	return nil
+}
+
+type NullScrollModeEnum struct {
+	ScrollModeEnum ScrollModeEnum
+	Valid          bool // Valid is true if ScrollModeEnum is not NULL
+}
+
+// Scan implements the Scanner interface.
+func (ns *NullScrollModeEnum) Scan(value interface{}) error {
+	if value == nil {
+		ns.ScrollModeEnum, ns.Valid = "", false
+		return nil
+	}
+	ns.Valid = true
+	return ns.ScrollModeEnum.Scan(value)
+}
+
+// Value implements the driver Valuer interface.
+func (ns NullScrollModeEnum) Value() (driver.Value, error) {
+	if !ns.Valid {
+		return nil, nil
+	}
+	return string(ns.ScrollModeEnum), nil
+}
+
+func (e ScrollModeEnum) Valid() bool {
+	switch e {
+	case ScrollModeEnumAuto,
+		ScrollModeEnumManual:
+		return true
+	}
+	return false
+}
+
+func AllScrollModeEnumValues() []ScrollModeEnum {
+	return []ScrollModeEnum{
+		ScrollModeEnumAuto,
+		ScrollModeEnumManual,
+	}
 }
 
 type PlayScriptLines struct {
@@ -23,7 +75,7 @@ type PlayScriptLines struct {
 	PlayScriptID  string
 	CastMemberID  string
 	LineText      string
-	ScrollMode    string
+	ScrollMode    ScrollModeEnum
 	Direction     sql.NullString
 	AutoScrollWpm sql.NullInt32
 	LineIndex     int32
@@ -40,4 +92,11 @@ type PlayScripts struct {
 	CreatedByUser    string
 	BelongsToAccount string
 	IsPublic         bool
+}
+
+type ScriptTags struct {
+	CreatedAt   time.Time
+	ID          string
+	Name        string
+	Description string
 }

@@ -134,6 +134,9 @@ export function usePlayState({
 
   const wsRef = useRef<WebSocket | null>(null);
   const isConnectingRef = useRef(false);
+  const intentionalCloseRef = useRef(false);
+  const [reconnectAttempt, setReconnectAttempt] = useState(0);
+  const reconnectTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const sendMessage = useCallback((message: object) => {
     if (wsRef.current?.readyState === WebSocket.OPEN) {
@@ -147,6 +150,7 @@ export function usePlayState({
   useEffect(() => {
     if (!stageId || !participantName || isConnectingRef.current) return;
 
+    intentionalCloseRef.current = false;
     isConnectingRef.current = true;
 
     const handleMessage = (event: MessageEvent) => {
@@ -236,6 +240,7 @@ export function usePlayState({
       console.log('[WS] Connected! Joining stage:', stageId);
       setIsConnected(true);
       setError(null);
+      setReconnectAttempt(0); // Reset backoff on successful connection
       // Join the stage
       ws.send(
         JSON.stringify({
@@ -248,6 +253,18 @@ export function usePlayState({
 
     ws.onmessage = handleMessage;
 
+    const scheduleReconnect = () => {
+      if (intentionalCloseRef.current) return;
+      const delay = Math.min(1000 * 2 ** reconnectAttempt, 30000); // 1s, 2s, 4s... capped at 30s
+      console.log('[WS] Scheduling reconnect in', delay, 'ms (attempt', reconnectAttempt + 1, ')');
+      reconnectTimeoutRef.current = setTimeout(() => {
+        reconnectTimeoutRef.current = null;
+        isConnectingRef.current = false;
+        setError(null);
+        setReconnectAttempt((a) => a + 1);
+      }, delay);
+    };
+
     ws.onclose = (event: CloseEvent) => {
       console.log('[WS] Stages WebSocket CLOSED', {
         code: event.code,
@@ -257,15 +274,27 @@ export function usePlayState({
       });
       setIsConnected(false);
       isConnectingRef.current = false;
+      if (!intentionalCloseRef.current) {
+        scheduleReconnect();
+      }
     };
 
     ws.onerror = () => {
       console.log('[WS] Stages WebSocket ERROR', { timestamp: new Date().toISOString() });
-      setError('Connection error');
+      setError(null); // Clear so we show "Connecting" not "Connection error" during retries
+      setIsConnected(false);
       isConnectingRef.current = false;
+      if (!intentionalCloseRef.current) {
+        scheduleReconnect();
+      }
     };
 
     return () => {
+      intentionalCloseRef.current = true;
+      if (reconnectTimeoutRef.current) {
+        clearTimeout(reconnectTimeoutRef.current);
+        reconnectTimeoutRef.current = null;
+      }
       console.log('[WS] Effect cleanup: closing stages WebSocket (stageId/participant changed or unmount)', {
         timestamp: new Date().toISOString(),
       });
@@ -273,7 +302,7 @@ export function usePlayState({
       wsRef.current = null;
       isConnectingRef.current = false;
     };
-  }, [stageId, participantName]);
+  }, [stageId, participantName, reconnectAttempt]);
 
   const toggleCastMember = useCallback(
     (castMemberId: string) => {

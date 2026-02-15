@@ -3,11 +3,13 @@ INSERT INTO play_script_cast_members (
 	id,
 	play_script_id,
 	name,
+	description,
 	sort_order
 ) VALUES (
 	sqlc.arg(id),
 	sqlc.arg(play_script_id),
 	sqlc.arg(name),
+	sqlc.arg(description),
 	sqlc.arg(sort_order)
 );
 
@@ -16,6 +18,7 @@ SELECT
 	play_script_cast_members.id,
 	play_script_cast_members.play_script_id,
 	play_script_cast_members.name,
+	play_script_cast_members.description,
 	play_script_cast_members.sort_order,
 	play_script_cast_members.created_at
 FROM play_script_cast_members
@@ -26,6 +29,7 @@ SELECT
 	play_script_cast_members.id,
 	play_script_cast_members.play_script_id,
 	play_script_cast_members.name,
+	play_script_cast_members.description,
 	play_script_cast_members.sort_order,
 	play_script_cast_members.created_at
 FROM play_script_cast_members
@@ -35,6 +39,7 @@ ORDER BY play_script_cast_members.sort_order ASC;
 -- name: UpdatePlayScriptCastMember :execrows
 UPDATE play_script_cast_members SET
 	name = sqlc.arg(name),
+	description = sqlc.arg(description),
 	sort_order = sqlc.arg(sort_order)
 WHERE id = sqlc.arg(id);
 

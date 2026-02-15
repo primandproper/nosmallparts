@@ -21,6 +21,7 @@ export interface PlayScriptCastMemberCreationInput {
   /** Client-provided ID for referencing in lines */
   id: string;
   name: string;
+  description: string;
   sortOrder: number;
 }
 
@@ -118,7 +119,7 @@ export interface ArchivePlayScriptResponse {
 }
 
 function createBasePlayScriptCastMemberCreationInput(): PlayScriptCastMemberCreationInput {
-  return { id: '', name: '', sortOrder: 0 };
+  return { id: '', name: '', description: '', sortOrder: 0 };
 }
 
 export const PlayScriptCastMemberCreationInput: MessageFns<PlayScriptCastMemberCreationInput> = {
@@ -132,8 +133,11 @@ export const PlayScriptCastMemberCreationInput: MessageFns<PlayScriptCastMemberC
     if (message.name !== '') {
       writer.uint32(18).string(message.name);
     }
+    if (message.description !== '') {
+      writer.uint32(26).string(message.description);
+    }
     if (message.sortOrder !== 0) {
-      writer.uint32(24).int32(message.sortOrder);
+      writer.uint32(32).int32(message.sortOrder);
     }
     return writer;
   },
@@ -162,7 +166,15 @@ export const PlayScriptCastMemberCreationInput: MessageFns<PlayScriptCastMemberC
           continue;
         }
         case 3: {
-          if (tag !== 24) {
+          if (tag !== 26) {
+            break;
+          }
+
+          message.description = reader.string();
+          continue;
+        }
+        case 4: {
+          if (tag !== 32) {
             break;
           }
 
@@ -182,6 +194,7 @@ export const PlayScriptCastMemberCreationInput: MessageFns<PlayScriptCastMemberC
     return {
       id: isSet(object.id) ? globalThis.String(object.id) : '',
       name: isSet(object.name) ? globalThis.String(object.name) : '',
+      description: isSet(object.description) ? globalThis.String(object.description) : '',
       sortOrder: isSet(object.sortOrder)
         ? globalThis.Number(object.sortOrder)
         : isSet(object.sort_order)
@@ -198,6 +211,9 @@ export const PlayScriptCastMemberCreationInput: MessageFns<PlayScriptCastMemberC
     if (message.name !== '') {
       obj.name = message.name;
     }
+    if (message.description !== '') {
+      obj.description = message.description;
+    }
     if (message.sortOrder !== 0) {
       obj.sortOrder = Math.round(message.sortOrder);
     }
@@ -213,6 +229,7 @@ export const PlayScriptCastMemberCreationInput: MessageFns<PlayScriptCastMemberC
     const message = createBasePlayScriptCastMemberCreationInput();
     message.id = object.id ?? '';
     message.name = object.name ?? '';
+    message.description = object.description ?? '';
     message.sortOrder = object.sortOrder ?? 0;
     return message;
   },

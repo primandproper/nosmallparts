@@ -33,6 +33,7 @@ function toFrontendPlay(ps: PlayScript): FrontendPlay {
       .map((cm: PlayScriptCastMember) => ({
         id: cm.id,
         name: cm.name,
+        description: cm.description || undefined,
       })),
     lines: (ps.lines || []).map((line: PlayScriptLine) => {
       const result: PlayLine = {

@@ -11,7 +11,8 @@ option go_package = "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/in
 message PlayScriptCastMemberCreationInput {
   string id = 1; // Client-provided ID for referencing in lines
   string name = 2;
-  int32 sort_order = 3;
+  string description = 3;
+  int32 sort_order = 4;
 }
 
 message PlayScriptLineCreationInput {
@@ -103,5 +104,44 @@ message ArchivePlayScriptRequest {
 }
 
 message ArchivePlayScriptResponse {
+  common.ResponseDetails response_details = 1;
+}
+
+message GetPlayScriptsWithTagRequest {
+  string tag_name = 1;
+  filtering.QueryFilter filter = 2;
+}
+
+message GetPlayScriptsWithTagResponse {
+  common.ResponseDetails response_details = 1;
+  filtering.Pagination pagination = 2;
+  repeated PlayScript results = 3;
+}
+
+message CreateScriptTagRequest {
+  string name = 1;
+  string description = 2;
+}
+
+message CreateScriptTagResponse {
+  common.ResponseDetails response_details = 1;
+  ScriptTag created = 2;
+}
+
+message AddTagToPlayScriptRequest {
+  string play_script_id = 1;
+  string script_tag_id = 2;
+}
+
+message AddTagToPlayScriptResponse {
+  common.ResponseDetails response_details = 1;
+}
+
+message RemoveTagFromPlayScriptRequest {
+  string play_script_id = 1;
+  string script_tag_id = 2;
+}
+
+message RemoveTagFromPlayScriptResponse {
   common.ResponseDetails response_details = 1;
 }

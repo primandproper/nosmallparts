@@ -7,6 +7,7 @@ package generated
 
 import (
 	"context"
+	"time"
 )
 
 const createPlayScriptCastMember = `-- name: CreatePlayScriptCastMember :exec
@@ -14,12 +15,14 @@ INSERT INTO play_script_cast_members (
 	id,
 	play_script_id,
 	name,
+	description,
 	sort_order
 ) VALUES (
 	$1,
 	$2,
 	$3,
-	$4
+	$4,
+	$5
 )
 `
 
@@ -27,6 +30,7 @@ type CreatePlayScriptCastMemberParams struct {
 	ID           string
 	PlayScriptID string
 	Name         string
+	Description  string
 	SortOrder    int32
 }
 
@@ -35,6 +39,7 @@ func (q *Queries) CreatePlayScriptCastMember(ctx context.Context, db DBTX, arg *
 		arg.ID,
 		arg.PlayScriptID,
 		arg.Name,
+		arg.Description,
 		arg.SortOrder,
 	)
 	return err
@@ -71,19 +76,30 @@ SELECT
 	play_script_cast_members.id,
 	play_script_cast_members.play_script_id,
 	play_script_cast_members.name,
+	play_script_cast_members.description,
 	play_script_cast_members.sort_order,
 	play_script_cast_members.created_at
 FROM play_script_cast_members
 WHERE play_script_cast_members.id = $1
 `
 
-func (q *Queries) GetPlayScriptCastMember(ctx context.Context, db DBTX, id string) (*PlayScriptCastMembers, error) {
+type GetPlayScriptCastMemberRow struct {
+	CreatedAt    time.Time
+	ID           string
+	PlayScriptID string
+	Name         string
+	Description  string
+	SortOrder    int32
+}
+
+func (q *Queries) GetPlayScriptCastMember(ctx context.Context, db DBTX, id string) (*GetPlayScriptCastMemberRow, error) {
 	row := db.QueryRowContext(ctx, getPlayScriptCastMember, id)
-	var i PlayScriptCastMembers
+	var i GetPlayScriptCastMemberRow
 	err := row.Scan(
 		&i.ID,
 		&i.PlayScriptID,
 		&i.Name,
+		&i.Description,
 		&i.SortOrder,
 		&i.CreatedAt,
 	)
@@ -95,6 +111,7 @@ SELECT
 	play_script_cast_members.id,
 	play_script_cast_members.play_script_id,
 	play_script_cast_members.name,
+	play_script_cast_members.description,
 	play_script_cast_members.sort_order,
 	play_script_cast_members.created_at
 FROM play_script_cast_members
@@ -102,19 +119,29 @@ WHERE play_script_cast_members.play_script_id = $1
 ORDER BY play_script_cast_members.sort_order ASC
 `
 
-func (q *Queries) GetPlayScriptCastMembersForPlayScript(ctx context.Context, db DBTX, playScriptID string) ([]*PlayScriptCastMembers, error) {
+type GetPlayScriptCastMembersForPlayScriptRow struct {
+	CreatedAt    time.Time
+	ID           string
+	PlayScriptID string
+	Name         string
+	Description  string
+	SortOrder    int32
+}
+
+func (q *Queries) GetPlayScriptCastMembersForPlayScript(ctx context.Context, db DBTX, playScriptID string) ([]*GetPlayScriptCastMembersForPlayScriptRow, error) {
 	rows, err := db.QueryContext(ctx, getPlayScriptCastMembersForPlayScript, playScriptID)
 	if err != nil {
 		return nil, err
 	}
 	defer rows.Close()
-	items := []*PlayScriptCastMembers{}
+	items := []*GetPlayScriptCastMembersForPlayScriptRow{}
 	for rows.Next() {
-		var i PlayScriptCastMembers
+		var i GetPlayScriptCastMembersForPlayScriptRow
 		if err := rows.Scan(
 			&i.ID,
 			&i.PlayScriptID,
 			&i.Name,
+			&i.Description,
 			&i.SortOrder,
 			&i.CreatedAt,
 		); err != nil {
@@ -134,18 +161,25 @@ func (q *Queries) GetPlayScriptCastMembersForPlayScript(ctx context.Context, db 
 const updatePlayScriptCastMember = `-- name: UpdatePlayScriptCastMember :execrows
 UPDATE play_script_cast_members SET
 	name = $1,
-	sort_order = $2
-WHERE id = $3
+	description = $2,
+	sort_order = $3
+WHERE id = $4
 `
 
 type UpdatePlayScriptCastMemberParams struct {
-	Name      string
-	ID        string
-	SortOrder int32
+	Name        string
+	Description string
+	ID          string
+	SortOrder   int32
 }
 
 func (q *Queries) UpdatePlayScriptCastMember(ctx context.Context, db DBTX, arg *UpdatePlayScriptCastMemberParams) (int64, error) {
-	result, err := db.ExecContext(ctx, updatePlayScriptCastMember, arg.Name, arg.SortOrder, arg.ID)
+	result, err := db.ExecContext(ctx, updatePlayScriptCastMember,
+		arg.Name,
+		arg.Description,
+		arg.SortOrder,
+		arg.ID,
+	)
 	if err != nil {
 		return 0, err
 	}

@@ -70,6 +70,7 @@ type (
 		BelongsToAccount string                  `json:"belongsToAccount"`
 		CastMembers      []*PlayScriptCastMember `json:"castMembers"`
 		Lines            []*PlayScriptLine       `json:"lines"`
+		Tags             []*ScriptTag            `json:"tags"`
 		IsPublic         bool                    `json:"isPublic"`
 	}
 
@@ -80,6 +81,7 @@ type (
 		ID           string    `json:"id"`
 		PlayScriptID string    `json:"playScriptId"`
 		Name         string    `json:"name"`
+		Description  string    `json:"description,omitempty"`
 		SortOrder    int       `json:"sortOrder"`
 	}
 
@@ -110,10 +112,11 @@ type (
 
 	// PlayScriptCastMemberCreationInput represents input for creating a cast member.
 	PlayScriptCastMemberCreationInput struct {
-		_         struct{} `json:"-"`
-		ID        string   `json:"id"` // Client-provided ID for referencing in lines
-		Name      string   `json:"name"`
-		SortOrder int      `json:"sortOrder"`
+		_           struct{} `json:"-"`
+		ID          string   `json:"id"` // Client-provided ID for referencing in lines
+		Name        string   `json:"name"`
+		Description string   `json:"description,omitempty"`
+		SortOrder   int      `json:"sortOrder"`
 	}
 
 	// PlayScriptLineCreationRequestInput represents input for creating a line.
@@ -145,6 +148,7 @@ type (
 		ID           string   `json:"-"`
 		PlayScriptID string   `json:"-"`
 		Name         string   `json:"-"`
+		Description  string   `json:"-"`
 		SortOrder    int      `json:"-"`
 	}
 

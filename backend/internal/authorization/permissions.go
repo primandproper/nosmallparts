@@ -40,12 +40,19 @@ var (
 		CreateWaitlistsPermission,
 		UpdateWaitlistsPermission,
 		ArchiveWaitlistsPermission,
+		CreateScriptTagsPermission,
+		AddTagToPlayScriptPermission,
+		RemoveTagFromPlayScriptPermission,
 	}
 
 	// AccountAdminPermissions is every account admin permission.
 	AccountAdminPermissions = []gorbac.Permission{
 		UpdateAccountPermission,
 		ArchiveAccountPermission,
+		CreatePlayScriptsPermission,
+		ReadPlayScriptsPermission,
+		UpdatePlayScriptsPermission,
+		ArchivePlayScriptsPermission,
 		TransferAccountPermission,
 		InviteUserToAccountPermission,
 		ModifyMemberPermissionsForAccountPermission,
@@ -62,6 +69,7 @@ var (
 
 	// AccountMemberPermissions is every account member permission.
 	AccountMemberPermissions = []gorbac.Permission{
+		ReadPlayScriptsPermission,
 		ReadWebhooksPermission,
 		ReadIssueReportsPermission,
 		ReadAuditLogEntriesPermission,

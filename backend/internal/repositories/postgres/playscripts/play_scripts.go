@@ -66,6 +66,7 @@ func (r *repository) GetPlayScript(ctx context.Context, playScriptID string) (*t
 			ID:           cm.ID,
 			PlayScriptID: cm.PlayScriptID,
 			Name:         cm.Name,
+			Description:  cm.Description,
 			SortOrder:    int(cm.SortOrder),
 			CreatedAt:    cm.CreatedAt,
 		}
@@ -93,6 +94,21 @@ func (r *repository) GetPlayScript(ctx context.Context, playScriptID string) (*t
 			ScrollMode:    types.ScrollMode(l.ScrollMode),
 			AutoScrollWpm: autoScrollWpm,
 			CreatedAt:     l.CreatedAt,
+		}
+	}
+
+	// Fetch tags
+	tags, err := r.generatedQuerier.GetTagsForPlayScript(ctx, r.db, playScriptID)
+	if err != nil {
+		return nil, observability.PrepareAndLogError(err, logger, span, "fetching tags for play script")
+	}
+	playScript.Tags = make([]*types.ScriptTag, len(tags))
+	for i, t := range tags {
+		playScript.Tags[i] = &types.ScriptTag{
+			ID:          t.ID,
+			Name:        t.Name,
+			Description: t.Description,
+			CreatedAt:   t.CreatedAt,
 		}
 	}
 
@@ -130,7 +146,7 @@ func (r *repository) GetPlayScripts(ctx context.Context, filter *filtering.Query
 		filteredCount, totalCount uint64
 	)
 	for _, result := range results {
-		data = append(data, &types.PlayScript{
+		ps := &types.PlayScript{
 			ID:               result.ID,
 			Title:            result.Title,
 			Description:      result.Description,
@@ -141,7 +157,15 @@ func (r *repository) GetPlayScripts(ctx context.Context, filter *filtering.Query
 			ArchivedAt:       database.TimePointerFromNullTime(result.ArchivedAt),
 			CreatedByUser:    result.CreatedByUser,
 			BelongsToAccount: result.BelongsToAccount,
-		})
+		}
+		tags, tagErr := r.generatedQuerier.GetTagsForPlayScript(ctx, r.db, result.ID)
+		if tagErr == nil {
+			ps.Tags = make([]*types.ScriptTag, len(tags))
+			for i, t := range tags {
+				ps.Tags[i] = &types.ScriptTag{ID: t.ID, Name: t.Name, Description: t.Description, CreatedAt: t.CreatedAt}
+			}
+		}
+		data = append(data, ps)
 
 		filteredCount = uint64(result.FilteredCount)
 		totalCount = uint64(result.TotalCount)
@@ -198,7 +222,7 @@ func (r *repository) GetPlayScriptsForAccount(ctx context.Context, accountID str
 		filteredCount, totalCount uint64
 	)
 	for _, result := range results {
-		data = append(data, &types.PlayScript{
+		ps := &types.PlayScript{
 			ID:               result.ID,
 			Title:            result.Title,
 			Description:      result.Description,
@@ -209,7 +233,15 @@ func (r *repository) GetPlayScriptsForAccount(ctx context.Context, accountID str
 			ArchivedAt:       database.TimePointerFromNullTime(result.ArchivedAt),
 			CreatedByUser:    result.CreatedByUser,
 			BelongsToAccount: result.BelongsToAccount,
-		})
+		}
+		tags, tagErr := r.generatedQuerier.GetTagsForPlayScript(ctx, r.db, result.ID)
+		if tagErr == nil {
+			ps.Tags = make([]*types.ScriptTag, len(tags))
+			for i, t := range tags {
+				ps.Tags[i] = &types.ScriptTag{ID: t.ID, Name: t.Name, Description: t.Description, CreatedAt: t.CreatedAt}
+			}
+		}
+		data = append(data, ps)
 
 		filteredCount = uint64(result.FilteredCount)
 		totalCount = uint64(result.TotalCount)
@@ -259,7 +291,7 @@ func (r *repository) GetPublicPlayScripts(ctx context.Context, filter *filtering
 		filteredCount, totalCount uint64
 	)
 	for _, result := range results {
-		data = append(data, &types.PlayScript{
+		ps := &types.PlayScript{
 			ID:               result.ID,
 			Title:            result.Title,
 			Description:      result.Description,
@@ -270,7 +302,15 @@ func (r *repository) GetPublicPlayScripts(ctx context.Context, filter *filtering
 			ArchivedAt:       database.TimePointerFromNullTime(result.ArchivedAt),
 			CreatedByUser:    result.CreatedByUser,
 			BelongsToAccount: result.BelongsToAccount,
-		})
+		}
+		tags, tagErr := r.generatedQuerier.GetTagsForPlayScript(ctx, r.db, result.ID)
+		if tagErr == nil {
+			ps.Tags = make([]*types.ScriptTag, len(tags))
+			for i, t := range tags {
+				ps.Tags[i] = &types.ScriptTag{ID: t.ID, Name: t.Name, Description: t.Description, CreatedAt: t.CreatedAt}
+			}
+		}
+		data = append(data, ps)
 
 		filteredCount = uint64(result.FilteredCount)
 		totalCount = uint64(result.TotalCount)
@@ -330,6 +370,7 @@ func (r *repository) CreatePlayScript(ctx context.Context, input *types.PlayScri
 			ID:           cm.ID,
 			PlayScriptID: cm.PlayScriptID,
 			Name:         cm.Name,
+			Description:  cm.Description,
 			SortOrder:    int32(cm.SortOrder),
 		}); err != nil {
 			r.RollbackTransaction(ctx, tx)
@@ -339,6 +380,7 @@ func (r *repository) CreatePlayScript(ctx context.Context, input *types.PlayScri
 			ID:           cm.ID,
 			PlayScriptID: cm.PlayScriptID,
 			Name:         cm.Name,
+			Description:  cm.Description,
 			SortOrder:    cm.SortOrder,
 			CreatedAt:    r.CurrentTime(),
 		}
@@ -358,7 +400,7 @@ func (r *repository) CreatePlayScript(ctx context.Context, input *types.PlayScri
 			LineText:      l.LineText,
 			LineIndex:     int32(l.LineIndex),
 			Direction:     database.NullStringFromString(l.Direction),
-			ScrollMode:    string(l.ScrollMode),
+			ScrollMode:    generated.ScrollModeEnum(l.ScrollMode),
 			AutoScrollWpm: autoScrollWpm,
 		}); err != nil {
 			r.RollbackTransaction(ctx, tx)

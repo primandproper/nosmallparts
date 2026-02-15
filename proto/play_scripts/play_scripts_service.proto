@@ -12,6 +12,10 @@ service PlayScriptsService {
   rpc GetPlayScripts(GetPlayScriptsRequest) returns (GetPlayScriptsResponse);
   rpc GetPlayScriptsForAccount(GetPlayScriptsForAccountRequest) returns (GetPlayScriptsForAccountResponse);
   rpc GetPublicPlayScripts(GetPublicPlayScriptsRequest) returns (GetPublicPlayScriptsResponse);
+  rpc GetPlayScriptsWithTag(GetPlayScriptsWithTagRequest) returns (GetPlayScriptsWithTagResponse);
   rpc UpdatePlayScript(UpdatePlayScriptRequest) returns (UpdatePlayScriptResponse);
   rpc ArchivePlayScript(ArchivePlayScriptRequest) returns (ArchivePlayScriptResponse);
+  rpc CreateScriptTag(CreateScriptTagRequest) returns (CreateScriptTagResponse);
+  rpc AddTagToPlayScript(AddTagToPlayScriptRequest) returns (AddTagToPlayScriptResponse);
+  rpc RemoveTagFromPlayScript(RemoveTagFromPlayScriptRequest) returns (RemoveTagFromPlayScriptResponse);
 }

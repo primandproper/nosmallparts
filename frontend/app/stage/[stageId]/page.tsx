@@ -101,7 +101,8 @@ export default function StagePage() {
   }
 
   if (!isConnected || !stageState) {
-    console.log('[Stage] Rendering "Connecting to stage"', {
+    const isReconnecting = !!stageState; // Had state before = we're reconnecting
+    console.log('[Stage] Rendering', isReconnecting ? '"Reconnecting"' : '"Connecting to stage"', {
       isConnected,
       hasStageState: !!stageState,
       timestamp: new Date().toISOString(),
@@ -110,7 +111,9 @@ export default function StagePage() {
       <main className="min-h-screen stage-bg flex items-center justify-center">
         <div className="text-center">
           <div className="text-4xl mb-4 animate-pulse">🎭</div>
-          <p className="text-[var(--gold)] text-xl">Connecting to stage...</p>
+          <p className="text-[var(--gold)] text-xl">
+            {isReconnecting ? 'Reconnecting to stage...' : 'Connecting to stage...'}
+          </p>
           <p className="text-[var(--cream)] opacity-40 text-sm mt-2">Stage: {displayCode}</p>
         </div>
       </main>

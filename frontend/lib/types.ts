@@ -3,6 +3,7 @@
 export interface CastMember {
   id: string;
   name: string;
+  description?: string;
 }
 
 export interface PlayLine {

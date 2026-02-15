@@ -21,6 +21,7 @@ var playScriptCastMembersColumns = []string{
 	idColumn,
 	playScriptIDColumn,
 	nameColumn,
+	descriptionColumn,
 	sortOrderColumn,
 	createdAtColumn,
 }
@@ -88,10 +89,12 @@ ORDER BY %s.%s ASC;`,
 				},
 				Content: buildRawQuery((&builq.Builder{}).Addf(`UPDATE %s SET
 	%s = sqlc.arg(%s),
+	%s = sqlc.arg(%s),
 	%s = sqlc.arg(%s)
 WHERE %s = sqlc.arg(%s);`,
 					playScriptCastMembersTableName,
 					nameColumn, nameColumn,
+					descriptionColumn, descriptionColumn,
 					sortOrderColumn, sortOrderColumn,
 					idColumn, idColumn,
 				)),

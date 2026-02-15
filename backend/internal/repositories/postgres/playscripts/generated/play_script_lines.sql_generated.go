@@ -37,7 +37,7 @@ type CreatePlayScriptLineParams struct {
 	PlayScriptID  string
 	CastMemberID  string
 	LineText      string
-	ScrollMode    string
+	ScrollMode    ScrollModeEnum
 	Direction     sql.NullString
 	AutoScrollWpm sql.NullInt32
 	LineIndex     int32
@@ -178,7 +178,7 @@ WHERE id = $7
 type UpdatePlayScriptLineParams struct {
 	CastMemberID  string
 	LineText      string
-	ScrollMode    string
+	ScrollMode    ScrollModeEnum
 	ID            string
 	Direction     sql.NullString
 	AutoScrollWpm sql.NullInt32
