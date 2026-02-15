@@ -67,8 +67,13 @@ patches:
       kind: Deployment
       name: no-small-parts-service-api-deployment
 
-  ### API Service - expose gRPC
+  ### API Service - expose gRPC and BackendConfig for WebSocket timeout
   - path: patches/service-grpc-port.yaml
+    target:
+      version: v1
+      kind: Service
+      name: no-small-parts-api-svc
+  - path: patches/service-backend-config.yaml
     target:
       version: v1
       kind: Service
