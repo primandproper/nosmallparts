@@ -101,6 +101,9 @@ resource "kubernetes_secret" "api_service_secrets" {
     POSTHOG_API_KEY                   = var.POSTHOG_API_KEY
     GOOGLE_SSO_OAUTH2_CLIENT_ID      = var.GOOGLE_SSO_OAUTH2_CLIENT_ID
     GOOGLE_SSO_OAUTH2_CLIENT_SECRET   = var.GOOGLE_SSO_OAUTH2_CLIENT_SECRET
+    LIVEKIT_API_KEY                   = var.LIVEKIT_API_KEY
+    LIVEKIT_API_SECRET                = var.LIVEKIT_API_SECRET
+    LIVEKIT_URL                       = var.LIVEKIT_URL
   }
 }
 

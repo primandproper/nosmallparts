@@ -78,3 +78,19 @@ variable "WEB_APP_OAUTH2_CLIENT_SECRET" {
   sensitive   = true
   description = "OAuth2 client secret for frontend webapp (web_app)"
 }
+
+# LiveKit (optional - video rooms use mock mode when unset)
+variable "LIVEKIT_API_KEY" {
+  default     = ""
+  sensitive   = true
+  description = "LiveKit Cloud API key (from dashboard). Leave empty for mock mode."
+}
+variable "LIVEKIT_API_SECRET" {
+  default     = ""
+  sensitive   = true
+  description = "LiveKit Cloud API secret. Leave empty for mock mode."
+}
+variable "LIVEKIT_URL" {
+  default     = ""
+  description = "LiveKit server URL (e.g. wss://your-project.livekit.cloud). Leave empty for mock mode."
+}
