@@ -50,6 +50,8 @@ export interface PlayScriptUpdateRequestInput {
   description?: string | undefined;
   author?: string | undefined;
   isPublic?: boolean | undefined;
+  precededById?: string | undefined;
+  precedesId?: string | undefined;
 }
 
 export interface CreatePlayScriptRequest {
@@ -63,6 +65,7 @@ export interface CreatePlayScriptResponse {
 
 export interface GetPlayScriptRequest {
   playScriptId: string;
+  includeLinkedScripts: boolean;
 }
 
 export interface GetPlayScriptResponse {
@@ -602,7 +605,14 @@ export const PlayScriptCreationRequestInput: MessageFns<PlayScriptCreationReques
 };
 
 function createBasePlayScriptUpdateRequestInput(): PlayScriptUpdateRequestInput {
-  return { title: undefined, description: undefined, author: undefined, isPublic: undefined };
+  return {
+    title: undefined,
+    description: undefined,
+    author: undefined,
+    isPublic: undefined,
+    precededById: undefined,
+    precedesId: undefined,
+  };
 }
 
 export const PlayScriptUpdateRequestInput: MessageFns<PlayScriptUpdateRequestInput> = {
@@ -621,6 +631,12 @@ export const PlayScriptUpdateRequestInput: MessageFns<PlayScriptUpdateRequestInp
     }
     if (message.isPublic !== undefined) {
       writer.uint32(32).bool(message.isPublic);
+    }
+    if (message.precededById !== undefined) {
+      writer.uint32(42).string(message.precededById);
+    }
+    if (message.precedesId !== undefined) {
+      writer.uint32(50).string(message.precedesId);
     }
     return writer;
   },
@@ -664,6 +680,22 @@ export const PlayScriptUpdateRequestInput: MessageFns<PlayScriptUpdateRequestInp
           message.isPublic = reader.bool();
           continue;
         }
+        case 5: {
+          if (tag !== 42) {
+            break;
+          }
+
+          message.precededById = reader.string();
+          continue;
+        }
+        case 6: {
+          if (tag !== 50) {
+            break;
+          }
+
+          message.precedesId = reader.string();
+          continue;
+        }
       }
       if ((tag & 7) === 4 || tag === 0) {
         break;
@@ -683,6 +715,16 @@ export const PlayScriptUpdateRequestInput: MessageFns<PlayScriptUpdateRequestInp
         : isSet(object.is_public)
           ? globalThis.Boolean(object.is_public)
           : undefined,
+      precededById: isSet(object.precededById)
+        ? globalThis.String(object.precededById)
+        : isSet(object.preceded_by_id)
+          ? globalThis.String(object.preceded_by_id)
+          : undefined,
+      precedesId: isSet(object.precedesId)
+        ? globalThis.String(object.precedesId)
+        : isSet(object.precedes_id)
+          ? globalThis.String(object.precedes_id)
+          : undefined,
     };
   },
 
@@ -700,6 +742,12 @@ export const PlayScriptUpdateRequestInput: MessageFns<PlayScriptUpdateRequestInp
     if (message.isPublic !== undefined) {
       obj.isPublic = message.isPublic;
     }
+    if (message.precededById !== undefined) {
+      obj.precededById = message.precededById;
+    }
+    if (message.precedesId !== undefined) {
+      obj.precedesId = message.precedesId;
+    }
     return obj;
   },
 
@@ -712,6 +760,8 @@ export const PlayScriptUpdateRequestInput: MessageFns<PlayScriptUpdateRequestInp
     message.description = object.description ?? undefined;
     message.author = object.author ?? undefined;
     message.isPublic = object.isPublic ?? undefined;
+    message.precededById = object.precededById ?? undefined;
+    message.precedesId = object.precedesId ?? undefined;
     return message;
   },
 };
@@ -874,13 +924,16 @@ export const CreatePlayScriptResponse: MessageFns<CreatePlayScriptResponse> = {
 };
 
 function createBaseGetPlayScriptRequest(): GetPlayScriptRequest {
-  return { playScriptId: '' };
+  return { playScriptId: '', includeLinkedScripts: false };
 }
 
 export const GetPlayScriptRequest: MessageFns<GetPlayScriptRequest> = {
   encode(message: GetPlayScriptRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
     if (message.playScriptId !== '') {
       writer.uint32(10).string(message.playScriptId);
+    }
+    if (message.includeLinkedScripts !== false) {
+      writer.uint32(16).bool(message.includeLinkedScripts);
     }
     return writer;
   },
@@ -900,6 +953,14 @@ export const GetPlayScriptRequest: MessageFns<GetPlayScriptRequest> = {
           message.playScriptId = reader.string();
           continue;
         }
+        case 2: {
+          if (tag !== 16) {
+            break;
+          }
+
+          message.includeLinkedScripts = reader.bool();
+          continue;
+        }
       }
       if ((tag & 7) === 4 || tag === 0) {
         break;
@@ -916,6 +977,11 @@ export const GetPlayScriptRequest: MessageFns<GetPlayScriptRequest> = {
         : isSet(object.play_script_id)
           ? globalThis.String(object.play_script_id)
           : '',
+      includeLinkedScripts: isSet(object.includeLinkedScripts)
+        ? globalThis.Boolean(object.includeLinkedScripts)
+        : isSet(object.include_linked_scripts)
+          ? globalThis.Boolean(object.include_linked_scripts)
+          : false,
     };
   },
 
@@ -923,6 +989,9 @@ export const GetPlayScriptRequest: MessageFns<GetPlayScriptRequest> = {
     const obj: any = {};
     if (message.playScriptId !== '') {
       obj.playScriptId = message.playScriptId;
+    }
+    if (message.includeLinkedScripts !== false) {
+      obj.includeLinkedScripts = message.includeLinkedScripts;
     }
     return obj;
   },
@@ -933,6 +1002,7 @@ export const GetPlayScriptRequest: MessageFns<GetPlayScriptRequest> = {
   fromPartial(object: DeepPartial<GetPlayScriptRequest>): GetPlayScriptRequest {
     const message = createBaseGetPlayScriptRequest();
     message.playScriptId = object.playScriptId ?? '';
+    message.includeLinkedScripts = object.includeLinkedScripts ?? false;
     return message;
   },
 };

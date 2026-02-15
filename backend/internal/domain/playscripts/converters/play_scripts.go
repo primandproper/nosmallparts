@@ -19,14 +19,20 @@ func ConvertPlayScriptToPlayScriptUpdateRequestInput(x *types.PlayScript) *types
 
 // ConvertPlayScriptCreationRequestInputToPlayScriptDatabaseCreationInput creates a PlayScriptDatabaseCreationInput from a PlayScriptCreationRequestInput.
 func ConvertPlayScriptCreationRequestInputToPlayScriptDatabaseCreationInput(x *types.PlayScriptCreationRequestInput, userID, accountID string) *types.PlayScriptDatabaseCreationInput {
+	id := x.ID
+	if id == "" {
+		id = identifiers.New()
+	}
 	out := &types.PlayScriptDatabaseCreationInput{
-		ID:               identifiers.New(),
+		ID:               id,
 		Title:            x.Title,
 		Description:      x.Description,
 		Author:           x.Author,
 		IsPublic:         x.IsPublic,
 		CreatedByUser:    userID,
 		BelongsToAccount: accountID,
+		PrecededByID:     x.PrecededByID,
+		PrecedesID:       x.PrecedesID,
 	}
 
 	return out

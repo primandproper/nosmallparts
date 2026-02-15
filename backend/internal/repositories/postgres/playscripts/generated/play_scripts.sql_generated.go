@@ -50,6 +50,8 @@ INSERT INTO play_scripts (
 	description,
 	author,
 	is_public,
+	preceded_by_id,
+	precedes_id,
 	created_by_user,
 	belongs_to_account
 ) VALUES (
@@ -59,7 +61,9 @@ INSERT INTO play_scripts (
 	$4,
 	$5,
 	$6,
-	$7
+	$7,
+	$8,
+	$9
 )
 `
 
@@ -70,6 +74,8 @@ type CreatePlayScriptParams struct {
 	Author           string
 	CreatedByUser    string
 	BelongsToAccount string
+	PrecededByID     sql.NullString
+	PrecedesID       sql.NullString
 	IsPublic         bool
 }
 
@@ -80,6 +86,8 @@ func (q *Queries) CreatePlayScript(ctx context.Context, db DBTX, arg *CreatePlay
 		arg.Description,
 		arg.Author,
 		arg.IsPublic,
+		arg.PrecededByID,
+		arg.PrecedesID,
 		arg.CreatedByUser,
 		arg.BelongsToAccount,
 	)
@@ -93,6 +101,8 @@ SELECT
 	play_scripts.description,
 	play_scripts.author,
 	play_scripts.is_public,
+	play_scripts.preceded_by_id,
+	play_scripts.precedes_id,
 	play_scripts.created_at,
 	play_scripts.last_updated_at,
 	play_scripts.archived_at,
@@ -103,15 +113,32 @@ WHERE play_scripts.archived_at IS NULL
 	AND play_scripts.id = $1
 `
 
-func (q *Queries) GetPlayScript(ctx context.Context, db DBTX, id string) (*PlayScripts, error) {
+type GetPlayScriptRow struct {
+	CreatedAt        time.Time
+	LastUpdatedAt    sql.NullTime
+	ArchivedAt       sql.NullTime
+	ID               string
+	Title            string
+	Description      string
+	Author           string
+	CreatedByUser    string
+	BelongsToAccount string
+	PrecededByID     sql.NullString
+	PrecedesID       sql.NullString
+	IsPublic         bool
+}
+
+func (q *Queries) GetPlayScript(ctx context.Context, db DBTX, id string) (*GetPlayScriptRow, error) {
 	row := db.QueryRowContext(ctx, getPlayScript, id)
-	var i PlayScripts
+	var i GetPlayScriptRow
 	err := row.Scan(
 		&i.ID,
 		&i.Title,
 		&i.Description,
 		&i.Author,
 		&i.IsPublic,
+		&i.PrecededByID,
+		&i.PrecedesID,
 		&i.CreatedAt,
 		&i.LastUpdatedAt,
 		&i.ArchivedAt,
@@ -128,6 +155,8 @@ SELECT
 	play_scripts.description,
 	play_scripts.author,
 	play_scripts.is_public,
+	play_scripts.preceded_by_id,
+	play_scripts.precedes_id,
 	play_scripts.created_at,
 	play_scripts.last_updated_at,
 	play_scripts.archived_at,
@@ -184,14 +213,16 @@ type GetPlayScriptsParams struct {
 
 type GetPlayScriptsRow struct {
 	CreatedAt        time.Time
-	LastUpdatedAt    sql.NullTime
 	ArchivedAt       sql.NullTime
-	ID               string
-	Title            string
-	Description      string
+	LastUpdatedAt    sql.NullTime
 	Author           string
+	ID               string
+	Description      string
+	Title            string
 	CreatedByUser    string
 	BelongsToAccount string
+	PrecededByID     sql.NullString
+	PrecedesID       sql.NullString
 	FilteredCount    int64
 	TotalCount       int64
 	IsPublic         bool
@@ -220,6 +251,8 @@ func (q *Queries) GetPlayScripts(ctx context.Context, db DBTX, arg *GetPlayScrip
 			&i.Description,
 			&i.Author,
 			&i.IsPublic,
+			&i.PrecededByID,
+			&i.PrecedesID,
 			&i.CreatedAt,
 			&i.LastUpdatedAt,
 			&i.ArchivedAt,
@@ -248,6 +281,8 @@ SELECT
 	play_scripts.description,
 	play_scripts.author,
 	play_scripts.is_public,
+	play_scripts.preceded_by_id,
+	play_scripts.precedes_id,
 	play_scripts.created_at,
 	play_scripts.last_updated_at,
 	play_scripts.archived_at,
@@ -309,14 +344,16 @@ type GetPlayScriptsForAccountParams struct {
 
 type GetPlayScriptsForAccountRow struct {
 	CreatedAt        time.Time
-	LastUpdatedAt    sql.NullTime
 	ArchivedAt       sql.NullTime
-	ID               string
-	Title            string
-	Description      string
+	LastUpdatedAt    sql.NullTime
 	Author           string
+	ID               string
+	Description      string
+	Title            string
 	CreatedByUser    string
 	BelongsToAccount string
+	PrecededByID     sql.NullString
+	PrecedesID       sql.NullString
 	FilteredCount    int64
 	TotalCount       int64
 	IsPublic         bool
@@ -346,6 +383,8 @@ func (q *Queries) GetPlayScriptsForAccount(ctx context.Context, db DBTX, arg *Ge
 			&i.Description,
 			&i.Author,
 			&i.IsPublic,
+			&i.PrecededByID,
+			&i.PrecedesID,
 			&i.CreatedAt,
 			&i.LastUpdatedAt,
 			&i.ArchivedAt,
@@ -374,6 +413,8 @@ SELECT
 	play_scripts.description,
 	play_scripts.author,
 	play_scripts.is_public,
+	play_scripts.preceded_by_id,
+	play_scripts.precedes_id,
 	play_scripts.created_at,
 	play_scripts.last_updated_at,
 	play_scripts.archived_at,
@@ -434,14 +475,16 @@ type GetPublicPlayScriptsParams struct {
 
 type GetPublicPlayScriptsRow struct {
 	CreatedAt        time.Time
-	LastUpdatedAt    sql.NullTime
 	ArchivedAt       sql.NullTime
-	ID               string
-	Title            string
-	Description      string
+	LastUpdatedAt    sql.NullTime
 	Author           string
+	ID               string
+	Description      string
+	Title            string
 	CreatedByUser    string
 	BelongsToAccount string
+	PrecededByID     sql.NullString
+	PrecedesID       sql.NullString
 	FilteredCount    int64
 	TotalCount       int64
 	IsPublic         bool
@@ -470,6 +513,8 @@ func (q *Queries) GetPublicPlayScripts(ctx context.Context, db DBTX, arg *GetPub
 			&i.Description,
 			&i.Author,
 			&i.IsPublic,
+			&i.PrecededByID,
+			&i.PrecedesID,
 			&i.CreatedAt,
 			&i.LastUpdatedAt,
 			&i.ArchivedAt,
@@ -497,17 +542,21 @@ UPDATE play_scripts SET
 	description = $2,
 	author = $3,
 	is_public = $4,
+	preceded_by_id = $5,
+	precedes_id = $6,
 	last_updated_at = NOW()
 WHERE archived_at IS NULL
-	AND id = $5
+	AND id = $7
 `
 
 type UpdatePlayScriptParams struct {
-	Title       string
-	Description string
-	Author      string
-	ID          string
-	IsPublic    bool
+	Title        string
+	Description  string
+	Author       string
+	ID           string
+	PrecededByID sql.NullString
+	PrecedesID   sql.NullString
+	IsPublic     bool
 }
 
 func (q *Queries) UpdatePlayScript(ctx context.Context, db DBTX, arg *UpdatePlayScriptParams) (int64, error) {
@@ -516,6 +565,8 @@ func (q *Queries) UpdatePlayScript(ctx context.Context, db DBTX, arg *UpdatePlay
 		arg.Description,
 		arg.Author,
 		arg.IsPublic,
+		arg.PrecededByID,
+		arg.PrecedesID,
 		arg.ID,
 	)
 	if err != nil {

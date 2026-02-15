@@ -187,7 +187,7 @@ func TestHandler_buildStageState(t *testing.T) {
 		stagesRepo := &fakeStagesRepo{}
 		playScriptsRepo := &playscriptsmock.Repository{}
 		expectedPlay := &playscripts.PlayScript{ID: playID, Title: "Test Play"}
-		playScriptsRepo.On("GetPlayScript", mock.Anything, playID).Return(expectedPlay, nil)
+		playScriptsRepo.On("GetPlayScript", mock.Anything, playID, false).Return(expectedPlay, nil)
 
 		h := buildTestHandler(t, stagesRepo, playScriptsRepo)
 
@@ -215,7 +215,7 @@ func TestHandler_buildStageState(t *testing.T) {
 		playID := "play-1"
 		stagesRepo := &fakeStagesRepo{}
 		playScriptsRepo := &playscriptsmock.Repository{}
-		playScriptsRepo.On("GetPlayScript", mock.Anything, playID).Return(nil, errors.New("db error"))
+		playScriptsRepo.On("GetPlayScript", mock.Anything, playID, false).Return(nil, errors.New("db error"))
 
 		h := buildTestHandler(t, stagesRepo, playScriptsRepo)
 

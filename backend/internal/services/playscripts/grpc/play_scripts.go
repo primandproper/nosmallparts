@@ -59,7 +59,7 @@ func (s *serviceImpl) GetPlayScript(ctx context.Context, request *playscriptssvc
 	}
 	logger = logger.WithValue(keys.AccountIDKey, sessionContextData.ActiveAccountID)
 
-	playScript, err := s.playScriptRepository.GetPlayScript(ctx, request.PlayScriptId)
+	playScript, err := s.playScriptRepository.GetPlayScript(ctx, request.PlayScriptId, request.IncludeLinkedScripts)
 	if err != nil {
 		return nil, observability.PrepareAndLogGRPCStatus(err, logger, span, codes.Internal, "failed to fetch play script")
 	}
@@ -197,7 +197,7 @@ func (s *serviceImpl) UpdatePlayScript(ctx context.Context, request *playscripts
 	logger = logger.WithValue(keys.AccountIDKey, sessionContextData.ActiveAccountID)
 
 	// Fetch the existing play script
-	playScript, err := s.playScriptRepository.GetPlayScript(ctx, request.PlayScriptId)
+	playScript, err := s.playScriptRepository.GetPlayScript(ctx, request.PlayScriptId, false)
 	if err != nil {
 		return nil, observability.PrepareAndLogGRPCStatus(err, logger, span, codes.Internal, "failed to fetch play script")
 	}
@@ -243,7 +243,7 @@ func (s *serviceImpl) ArchivePlayScript(ctx context.Context, request *playscript
 	logger = logger.WithValue(keys.AccountIDKey, sessionContextData.ActiveAccountID)
 
 	// Fetch the existing play script to verify ownership
-	playScript, err := s.playScriptRepository.GetPlayScript(ctx, request.PlayScriptId)
+	playScript, err := s.playScriptRepository.GetPlayScript(ctx, request.PlayScriptId, false)
 	if err != nil {
 		return nil, observability.PrepareAndLogGRPCStatus(err, logger, span, codes.Internal, "failed to fetch play script")
 	}

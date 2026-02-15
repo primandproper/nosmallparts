@@ -38,6 +38,8 @@ message PlayScriptUpdateRequestInput {
   optional string description = 2;
   optional string author = 3;
   optional bool is_public = 4;
+  optional string preceded_by_id = 5;
+  optional string precedes_id = 6;
 }
 
 message CreatePlayScriptRequest {
@@ -51,6 +53,7 @@ message CreatePlayScriptResponse {
 
 message GetPlayScriptRequest {
   string play_script_id = 1;
+  bool include_linked_scripts = 2;
 }
 
 message GetPlayScriptResponse {

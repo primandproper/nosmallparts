@@ -20,7 +20,7 @@ type Querier interface {
 	DeletePlayScriptCastMembersForPlayScript(ctx context.Context, db DBTX, playScriptID string) (int64, error)
 	DeletePlayScriptLine(ctx context.Context, db DBTX, id string) (int64, error)
 	DeletePlayScriptLinesForPlayScript(ctx context.Context, db DBTX, playScriptID string) (int64, error)
-	GetPlayScript(ctx context.Context, db DBTX, id string) (*PlayScripts, error)
+	GetPlayScript(ctx context.Context, db DBTX, id string) (*GetPlayScriptRow, error)
 	GetPlayScriptCastMember(ctx context.Context, db DBTX, id string) (*GetPlayScriptCastMemberRow, error)
 	GetPlayScriptCastMembersForPlayScript(ctx context.Context, db DBTX, playScriptID string) ([]*GetPlayScriptCastMembersForPlayScriptRow, error)
 	GetPlayScriptLine(ctx context.Context, db DBTX, id string) (*PlayScriptLines, error)

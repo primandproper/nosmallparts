@@ -5,6 +5,8 @@ INSERT INTO play_scripts (
 	description,
 	author,
 	is_public,
+	preceded_by_id,
+	precedes_id,
 	created_by_user,
 	belongs_to_account
 ) VALUES (
@@ -13,6 +15,8 @@ INSERT INTO play_scripts (
 	sqlc.arg(description),
 	sqlc.arg(author),
 	sqlc.arg(is_public),
+	sqlc.arg(preceded_by_id),
+	sqlc.arg(precedes_id),
 	sqlc.arg(created_by_user),
 	sqlc.arg(belongs_to_account)
 );
@@ -23,6 +27,8 @@ UPDATE play_scripts SET
 	description = sqlc.arg(description),
 	author = sqlc.arg(author),
 	is_public = sqlc.arg(is_public),
+	preceded_by_id = sqlc.arg(preceded_by_id),
+	precedes_id = sqlc.arg(precedes_id),
 	last_updated_at = NOW()
 WHERE archived_at IS NULL
 	AND id = sqlc.arg(id);
@@ -41,6 +47,8 @@ SELECT
 	play_scripts.description,
 	play_scripts.author,
 	play_scripts.is_public,
+	play_scripts.preceded_by_id,
+	play_scripts.precedes_id,
 	play_scripts.created_at,
 	play_scripts.last_updated_at,
 	play_scripts.archived_at,
@@ -65,6 +73,8 @@ SELECT
 	play_scripts.description,
 	play_scripts.author,
 	play_scripts.is_public,
+	play_scripts.preceded_by_id,
+	play_scripts.precedes_id,
 	play_scripts.created_at,
 	play_scripts.last_updated_at,
 	play_scripts.archived_at,
@@ -115,6 +125,8 @@ SELECT
 	play_scripts.description,
 	play_scripts.author,
 	play_scripts.is_public,
+	play_scripts.preceded_by_id,
+	play_scripts.precedes_id,
 	play_scripts.created_at,
 	play_scripts.last_updated_at,
 	play_scripts.archived_at,
@@ -169,6 +181,8 @@ SELECT
 	play_scripts.description,
 	play_scripts.author,
 	play_scripts.is_public,
+	play_scripts.preceded_by_id,
+	play_scripts.precedes_id,
 	play_scripts.created_at,
 	play_scripts.last_updated_at,
 	play_scripts.archived_at,

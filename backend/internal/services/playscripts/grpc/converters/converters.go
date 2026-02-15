@@ -65,7 +65,7 @@ func ConvertPlayScriptToGRPCPlayScript(ps *playscripts.PlayScript) *playscriptss
 		tags[i] = ConvertScriptTagToGRPC(tag)
 	}
 
-	return &playscriptssvc.PlayScript{
+	out := &playscriptssvc.PlayScript{
 		CreatedAt:        grpcconverters.ConvertTimeToPBTimestamp(ps.CreatedAt),
 		ArchivedAt:       grpcconverters.ConvertTimePointerToPBTimestamp(ps.ArchivedAt),
 		LastUpdatedAt:    grpcconverters.ConvertTimePointerToPBTimestamp(ps.LastUpdatedAt),
@@ -80,6 +80,19 @@ func ConvertPlayScriptToGRPCPlayScript(ps *playscripts.PlayScript) *playscriptss
 		BelongsToAccount: ps.BelongsToAccount,
 		Tags:             tags,
 	}
+	if ps.PrecededByID != nil {
+		out.PrecededById = ps.PrecededByID
+	}
+	if ps.PrecedesID != nil {
+		out.PrecedesId = ps.PrecedesID
+	}
+	if ps.PrecededBy != nil {
+		out.PrecededBy = ConvertPlayScriptToGRPCPlayScript(ps.PrecededBy)
+	}
+	if ps.Precedes != nil {
+		out.Precedes = ConvertPlayScriptToGRPCPlayScript(ps.Precedes)
+	}
+	return out
 }
 
 // ConvertScriptTagToGRPC converts a domain ScriptTag to gRPC ScriptTag.
@@ -129,7 +142,7 @@ func ConvertGRPCPlayScriptToPlayScript(ps *playscriptssvc.PlayScript) *playscrip
 		tags[i] = ConvertGRPCScriptTagToScriptTag(tag)
 	}
 
-	return &playscripts.PlayScript{
+	out := &playscripts.PlayScript{
 		CreatedAt:        grpcconverters.ConvertPBTimestampToTime(ps.CreatedAt),
 		ArchivedAt:       grpcconverters.ConvertPBTimestampToTimePointer(ps.ArchivedAt),
 		LastUpdatedAt:    grpcconverters.ConvertPBTimestampToTimePointer(ps.LastUpdatedAt),
@@ -144,6 +157,19 @@ func ConvertGRPCPlayScriptToPlayScript(ps *playscriptssvc.PlayScript) *playscrip
 		CreatedByUser:    ps.CreatedByUser,
 		BelongsToAccount: ps.BelongsToAccount,
 	}
+	if ps.PrecededById != nil {
+		out.PrecededByID = ps.PrecededById
+	}
+	if ps.PrecedesId != nil {
+		out.PrecedesID = ps.PrecedesId
+	}
+	if ps.PrecededBy != nil {
+		out.PrecededBy = ConvertGRPCPlayScriptToPlayScript(ps.PrecededBy)
+	}
+	if ps.Precedes != nil {
+		out.Precedes = ConvertGRPCPlayScriptToPlayScript(ps.Precedes)
+	}
+	return out
 }
 
 // ConvertGRPCScriptTagToScriptTag converts a gRPC ScriptTag to domain ScriptTag.
@@ -267,6 +293,13 @@ func ConvertGRPCPlayScriptUpdateRequestInputToPlayScriptUpdateRequestInput(input
 
 	if input.IsPublic != nil {
 		output.IsPublic = input.IsPublic
+	}
+
+	if input.PrecededById != nil {
+		output.PrecededByID = input.PrecededById
+	}
+	if input.PrecedesId != nil {
+		output.PrecedesID = input.PrecedesId
 	}
 
 	return output

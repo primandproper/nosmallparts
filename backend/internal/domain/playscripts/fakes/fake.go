@@ -43,6 +43,8 @@ func BuildFakePlayScript() *types.PlayScript {
 		ArchivedAt:       nil,
 		CreatedByUser:    BuildFakeID(),
 		BelongsToAccount: BuildFakeID(),
+		PrecededByID:     nil,
+		PrecedesID:       nil,
 	}
 }
 
@@ -145,6 +147,8 @@ func BuildFakePlayScriptDatabaseCreationInput() *types.PlayScriptDatabaseCreatio
 		IsPublic:         fake.Bool(),
 		CreatedByUser:    BuildFakeID(),
 		BelongsToAccount: BuildFakeID(),
+		PrecededByID:     nil,
+		PrecedesID:       nil,
 	}
 }
 

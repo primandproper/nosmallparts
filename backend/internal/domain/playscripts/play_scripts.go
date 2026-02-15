@@ -62,12 +62,16 @@ type (
 		CreatedAt        time.Time               `json:"createdAt"`
 		LastUpdatedAt    *time.Time              `json:"lastUpdatedAt"`
 		ArchivedAt       *time.Time              `json:"archivedAt"`
-		Description      string                  `json:"description"`
-		Title            string                  `json:"title"`
-		ID               string                  `json:"id"`
-		Author           string                  `json:"author,omitempty"`
+		Precedes         *PlayScript             `json:"precedes,omitempty"`
+		PrecededBy       *PlayScript             `json:"precededBy,omitempty"`
+		PrecedesID       *string                 `json:"precedesId,omitempty"`
+		PrecededByID     *string                 `json:"precededById,omitempty"`
 		CreatedByUser    string                  `json:"createdByUser"`
 		BelongsToAccount string                  `json:"belongsToAccount"`
+		Author           string                  `json:"author,omitempty"`
+		ID               string                  `json:"id"`
+		Title            string                  `json:"title"`
+		Description      string                  `json:"description"`
 		CastMembers      []*PlayScriptCastMember `json:"castMembers"`
 		Lines            []*PlayScriptLine       `json:"lines"`
 		Tags             []*ScriptTag            `json:"tags"`
@@ -101,13 +105,16 @@ type (
 
 	// PlayScriptCreationRequestInput represents input for creating a play script.
 	PlayScriptCreationRequestInput struct {
-		_           struct{}                              `json:"-"`
-		Title       string                                `json:"title"`
-		Description string                                `json:"description"`
-		Author      string                                `json:"author,omitempty"`
-		CastMembers []*PlayScriptCastMemberCreationInput  `json:"castMembers"`
-		Lines       []*PlayScriptLineCreationRequestInput `json:"lines"`
-		IsPublic    bool                                  `json:"isPublic"`
+		_            struct{}                              `json:"-"`
+		PrecededByID *string                               `json:"precededById,omitempty"`
+		PrecedesID   *string                               `json:"precedesId,omitempty"`
+		ID           string                                `json:"id,omitempty"`
+		Title        string                                `json:"title"`
+		Description  string                                `json:"description"`
+		Author       string                                `json:"author,omitempty"`
+		CastMembers  []*PlayScriptCastMemberCreationInput  `json:"castMembers"`
+		Lines        []*PlayScriptLineCreationRequestInput `json:"lines"`
+		IsPublic     bool                                  `json:"isPublic"`
 	}
 
 	// PlayScriptCastMemberCreationInput represents input for creating a cast member.
@@ -133,6 +140,8 @@ type (
 	// PlayScriptDatabaseCreationInput is used for creating a play script in persistence.
 	PlayScriptDatabaseCreationInput struct {
 		_                struct{} `json:"-"`
+		PrecededByID     *string  `json:"-"`
+		PrecedesID       *string  `json:"-"`
 		ID               string   `json:"-"`
 		Title            string   `json:"-"`
 		Description      string   `json:"-"`
@@ -167,16 +176,18 @@ type (
 
 	// PlayScriptUpdateRequestInput represents input for updating a play script.
 	PlayScriptUpdateRequestInput struct {
-		_           struct{} `json:"-"`
-		Title       *string  `json:"title,omitempty"`
-		Description *string  `json:"description,omitempty"`
-		Author      *string  `json:"author,omitempty"`
-		IsPublic    *bool    `json:"isPublic,omitempty"`
+		_            struct{} `json:"-"`
+		Title        *string  `json:"title,omitempty"`
+		Description  *string  `json:"description,omitempty"`
+		Author       *string  `json:"author,omitempty"`
+		IsPublic     *bool    `json:"isPublic,omitempty"`
+		PrecededByID *string  `json:"precededById,omitempty"`
+		PrecedesID   *string  `json:"precedesId,omitempty"`
 	}
 
 	// PlayScriptDataManager describes a structure capable of storing play scripts.
 	PlayScriptDataManager interface {
-		GetPlayScript(ctx context.Context, playScriptID string) (*PlayScript, error)
+		GetPlayScript(ctx context.Context, playScriptID string, includeLinkedScripts bool) (*PlayScript, error)
 		GetPlayScripts(ctx context.Context, filter *filtering.QueryFilter) (*filtering.QueryFilteredResult[PlayScript], error)
 		GetPlayScriptsForAccount(ctx context.Context, accountID string, filter *filtering.QueryFilter) (*filtering.QueryFilteredResult[PlayScript], error)
 		GetPublicPlayScripts(ctx context.Context, filter *filtering.QueryFilter) (*filtering.QueryFilteredResult[PlayScript], error)
@@ -199,6 +210,12 @@ func (p *PlayScript) Update(input *PlayScriptUpdateRequestInput) {
 	}
 	if input.IsPublic != nil && *input.IsPublic != p.IsPublic {
 		p.IsPublic = *input.IsPublic
+	}
+	if input.PrecededByID != nil {
+		p.PrecededByID = input.PrecededByID
+	}
+	if input.PrecedesID != nil {
+		p.PrecedesID = input.PrecedesID
 	}
 }
 

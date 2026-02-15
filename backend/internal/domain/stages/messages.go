@@ -56,6 +56,7 @@ type ServerMessage struct {
 	State            *StageState               `json:"state,omitempty"`
 	StageState       *StageState               `json:"stageState,omitempty"`
 	Message          *ChatMessage              `json:"message,omitempty"`
+	NextPlay         *playscripts.PlayScript   `json:"nextPlay,omitempty"`
 	Type             ServerMessageType         `json:"type"`
 	ParticipantID    string                    `json:"participantId,omitempty"`
 	Error            string                    `json:"error,omitempty"`

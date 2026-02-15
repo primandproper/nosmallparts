@@ -24,7 +24,7 @@ var (
 )
 
 // GetPlayScript fetches a play script from the database with all its cast members and lines.
-func (r *repository) GetPlayScript(ctx context.Context, playScriptID string) (*types.PlayScript, error) {
+func (r *repository) GetPlayScript(ctx context.Context, playScriptID string, includeLinkedScripts bool) (*types.PlayScript, error) {
 	ctx, span := r.tracer.StartSpan(ctx)
 	defer span.End()
 
@@ -36,9 +36,19 @@ func (r *repository) GetPlayScript(ctx context.Context, playScriptID string) (*t
 	logger = logger.WithValue(keys.PlayScriptIDKey, playScriptID)
 	tracing.AttachToSpan(span, keys.PlayScriptIDKey, playScriptID)
 
-	result, err := r.generatedQuerier.GetPlayScript(ctx, r.db, playScriptID)
+	playScript, err := r.getPlayScriptWithLinks(ctx, playScriptID, map[string]bool{playScriptID: true}, includeLinkedScripts)
 	if err != nil {
 		return nil, observability.PrepareAndLogError(err, logger, span, "fetching play script")
+	}
+	return playScript, nil
+}
+
+// getPlayScriptWithLinks fetches a play script and optionally its linked neighbors.
+// The seen map is an internal implementation detail to prevent infinite loops from cycles.
+func (r *repository) getPlayScriptWithLinks(ctx context.Context, playScriptID string, seen map[string]bool, includeLinkedScripts bool) (*types.PlayScript, error) {
+	result, err := r.generatedQuerier.GetPlayScript(ctx, r.db, playScriptID)
+	if err != nil {
+		return nil, err
 	}
 
 	playScript := &types.PlayScript{
@@ -52,12 +62,14 @@ func (r *repository) GetPlayScript(ctx context.Context, playScriptID string) (*t
 		ArchivedAt:       database.TimePointerFromNullTime(result.ArchivedAt),
 		CreatedByUser:    result.CreatedByUser,
 		BelongsToAccount: result.BelongsToAccount,
+		PrecededByID:     database.StringPointerFromNullString(result.PrecededByID),
+		PrecedesID:       database.StringPointerFromNullString(result.PrecedesID),
 	}
 
 	// Fetch cast members
 	castMembers, err := r.generatedQuerier.GetPlayScriptCastMembersForPlayScript(ctx, r.db, playScriptID)
 	if err != nil {
-		return nil, observability.PrepareAndLogError(err, logger, span, "fetching play script cast members")
+		return nil, err
 	}
 
 	playScript.CastMembers = make([]*types.PlayScriptCastMember, len(castMembers))
@@ -75,7 +87,7 @@ func (r *repository) GetPlayScript(ctx context.Context, playScriptID string) (*t
 	// Fetch lines
 	lines, err := r.generatedQuerier.GetPlayScriptLinesForPlayScript(ctx, r.db, playScriptID)
 	if err != nil {
-		return nil, observability.PrepareAndLogError(err, logger, span, "fetching play script lines")
+		return nil, err
 	}
 
 	playScript.Lines = make([]*types.PlayScriptLine, len(lines))
@@ -100,7 +112,7 @@ func (r *repository) GetPlayScript(ctx context.Context, playScriptID string) (*t
 	// Fetch tags
 	tags, err := r.generatedQuerier.GetTagsForPlayScript(ctx, r.db, playScriptID)
 	if err != nil {
-		return nil, observability.PrepareAndLogError(err, logger, span, "fetching tags for play script")
+		return nil, err
 	}
 	playScript.Tags = make([]*types.ScriptTag, len(tags))
 	for i, t := range tags {
@@ -109,6 +121,28 @@ func (r *repository) GetPlayScript(ctx context.Context, playScriptID string) (*t
 			Name:        t.Name,
 			Description: t.Description,
 			CreatedAt:   t.CreatedAt,
+		}
+	}
+
+	// Optionally fetch linked scripts (one level only, seen map prevents cycles)
+	if includeLinkedScripts {
+		if playScript.PrecedesID != nil && !seen[*playScript.PrecedesID] {
+			seen[*playScript.PrecedesID] = true
+			var next *types.PlayScript
+			next, err = r.getPlayScriptWithLinks(ctx, *playScript.PrecedesID, seen, false)
+			if err != nil {
+				return nil, err
+			}
+			playScript.Precedes = next
+		}
+		if playScript.PrecededByID != nil && !seen[*playScript.PrecededByID] {
+			seen[*playScript.PrecededByID] = true
+			var prev *types.PlayScript
+			prev, err = r.getPlayScriptWithLinks(ctx, *playScript.PrecededByID, seen, false)
+			if err != nil {
+				return nil, err
+			}
+			playScript.PrecededBy = prev
 		}
 	}
 
@@ -157,6 +191,8 @@ func (r *repository) GetPlayScripts(ctx context.Context, filter *filtering.Query
 			ArchivedAt:       database.TimePointerFromNullTime(result.ArchivedAt),
 			CreatedByUser:    result.CreatedByUser,
 			BelongsToAccount: result.BelongsToAccount,
+			PrecededByID:     database.StringPointerFromNullString(result.PrecededByID),
+			PrecedesID:       database.StringPointerFromNullString(result.PrecedesID),
 		}
 		tags, tagErr := r.generatedQuerier.GetTagsForPlayScript(ctx, r.db, result.ID)
 		if tagErr == nil {
@@ -233,6 +269,8 @@ func (r *repository) GetPlayScriptsForAccount(ctx context.Context, accountID str
 			ArchivedAt:       database.TimePointerFromNullTime(result.ArchivedAt),
 			CreatedByUser:    result.CreatedByUser,
 			BelongsToAccount: result.BelongsToAccount,
+			PrecededByID:     database.StringPointerFromNullString(result.PrecededByID),
+			PrecedesID:       database.StringPointerFromNullString(result.PrecedesID),
 		}
 		tags, tagErr := r.generatedQuerier.GetTagsForPlayScript(ctx, r.db, result.ID)
 		if tagErr == nil {
@@ -302,6 +340,8 @@ func (r *repository) GetPublicPlayScripts(ctx context.Context, filter *filtering
 			ArchivedAt:       database.TimePointerFromNullTime(result.ArchivedAt),
 			CreatedByUser:    result.CreatedByUser,
 			BelongsToAccount: result.BelongsToAccount,
+			PrecededByID:     database.StringPointerFromNullString(result.PrecededByID),
+			PrecedesID:       database.StringPointerFromNullString(result.PrecedesID),
 		}
 		tags, tagErr := r.generatedQuerier.GetTagsForPlayScript(ctx, r.db, result.ID)
 		if tagErr == nil {
@@ -356,6 +396,8 @@ func (r *repository) CreatePlayScript(ctx context.Context, input *types.PlayScri
 		Description:      input.Description,
 		Author:           input.Author,
 		IsPublic:         input.IsPublic,
+		PrecededByID:     database.NullStringFromStringPointer(input.PrecededByID),
+		PrecedesID:       database.NullStringFromStringPointer(input.PrecedesID),
 		CreatedByUser:    input.CreatedByUser,
 		BelongsToAccount: input.BelongsToAccount,
 	}); err != nil {
@@ -430,6 +472,8 @@ func (r *repository) CreatePlayScript(ctx context.Context, input *types.PlayScri
 		CreatedByUser:    input.CreatedByUser,
 		BelongsToAccount: input.BelongsToAccount,
 		CreatedAt:        r.CurrentTime(),
+		PrecededByID:     input.PrecededByID,
+		PrecedesID:       input.PrecedesID,
 	}
 
 	if _, err = r.auditLogEntryRepo.CreateAuditLogEntry(ctx, tx, &audit.AuditLogEntryDatabaseCreationInput{
@@ -471,11 +515,13 @@ func (r *repository) UpdatePlayScript(ctx context.Context, playScript *types.Pla
 	}
 
 	rowsAffected, err := r.generatedQuerier.UpdatePlayScript(ctx, tx, &generated.UpdatePlayScriptParams{
-		ID:          playScript.ID,
-		Title:       playScript.Title,
-		Description: playScript.Description,
-		Author:      playScript.Author,
-		IsPublic:    playScript.IsPublic,
+		ID:           playScript.ID,
+		Title:        playScript.Title,
+		Description:  playScript.Description,
+		Author:       playScript.Author,
+		IsPublic:     playScript.IsPublic,
+		PrecededByID: database.NullStringFromStringPointer(playScript.PrecededByID),
+		PrecedesID:   database.NullStringFromStringPointer(playScript.PrecedesID),
 	})
 	if err != nil {
 		r.RollbackTransaction(ctx, tx)

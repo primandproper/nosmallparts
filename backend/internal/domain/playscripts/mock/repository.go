@@ -16,8 +16,8 @@ type Repository struct {
 }
 
 // GetPlayScript is a mock function.
-func (m *Repository) GetPlayScript(ctx context.Context, playScriptID string) (*playscripts.PlayScript, error) {
-	args := m.Called(ctx, playScriptID)
+func (m *Repository) GetPlayScript(ctx context.Context, playScriptID string, includeLinkedScripts bool) (*playscripts.PlayScript, error) {
+	args := m.Called(ctx, playScriptID, includeLinkedScripts)
 	if args.Get(0) == nil {
 		return nil, args.Error(1)
 	}

@@ -86,6 +86,10 @@ export interface PlayScript {
   createdByUser: string;
   belongsToAccount: string;
   tags: ScriptTag[];
+  precededById?: string | undefined;
+  precedesId?: string | undefined;
+  precededBy?: PlayScript | undefined;
+  precedes?: PlayScript | undefined;
 }
 
 export interface PlayScriptCastMember {
@@ -415,6 +419,10 @@ function createBasePlayScript(): PlayScript {
     createdByUser: '',
     belongsToAccount: '',
     tags: [],
+    precededById: undefined,
+    precedesId: undefined,
+    precededBy: undefined,
+    precedes: undefined,
   };
 }
 
@@ -458,6 +466,18 @@ export const PlayScript: MessageFns<PlayScript> = {
     }
     for (const v of message.tags) {
       ScriptTag.encode(v!, writer.uint32(106).fork()).join();
+    }
+    if (message.precededById !== undefined) {
+      writer.uint32(114).string(message.precededById);
+    }
+    if (message.precedesId !== undefined) {
+      writer.uint32(122).string(message.precedesId);
+    }
+    if (message.precededBy !== undefined) {
+      PlayScript.encode(message.precededBy, writer.uint32(130).fork()).join();
+    }
+    if (message.precedes !== undefined) {
+      PlayScript.encode(message.precedes, writer.uint32(138).fork()).join();
     }
     return writer;
   },
@@ -573,6 +593,38 @@ export const PlayScript: MessageFns<PlayScript> = {
           message.tags.push(ScriptTag.decode(reader, reader.uint32()));
           continue;
         }
+        case 14: {
+          if (tag !== 114) {
+            break;
+          }
+
+          message.precededById = reader.string();
+          continue;
+        }
+        case 15: {
+          if (tag !== 122) {
+            break;
+          }
+
+          message.precedesId = reader.string();
+          continue;
+        }
+        case 16: {
+          if (tag !== 130) {
+            break;
+          }
+
+          message.precededBy = PlayScript.decode(reader, reader.uint32());
+          continue;
+        }
+        case 17: {
+          if (tag !== 138) {
+            break;
+          }
+
+          message.precedes = PlayScript.decode(reader, reader.uint32());
+          continue;
+        }
       }
       if ((tag & 7) === 4 || tag === 0) {
         break;
@@ -629,6 +681,22 @@ export const PlayScript: MessageFns<PlayScript> = {
       tags: globalThis.Array.isArray(object?.tags)
         ? object.tags.map((e: any) => ScriptTag.fromJSON(e))
         : [],
+      precededById: isSet(object.precededById)
+        ? globalThis.String(object.precededById)
+        : isSet(object.preceded_by_id)
+          ? globalThis.String(object.preceded_by_id)
+          : undefined,
+      precedesId: isSet(object.precedesId)
+        ? globalThis.String(object.precedesId)
+        : isSet(object.precedes_id)
+          ? globalThis.String(object.precedes_id)
+          : undefined,
+      precededBy: isSet(object.precededBy)
+        ? PlayScript.fromJSON(object.precededBy)
+        : isSet(object.preceded_by)
+          ? PlayScript.fromJSON(object.preceded_by)
+          : undefined,
+      precedes: isSet(object.precedes) ? PlayScript.fromJSON(object.precedes) : undefined,
     };
   },
 
@@ -673,6 +741,18 @@ export const PlayScript: MessageFns<PlayScript> = {
     if (message.tags?.length) {
       obj.tags = message.tags.map((e) => ScriptTag.toJSON(e));
     }
+    if (message.precededById !== undefined) {
+      obj.precededById = message.precededById;
+    }
+    if (message.precedesId !== undefined) {
+      obj.precedesId = message.precedesId;
+    }
+    if (message.precededBy !== undefined) {
+      obj.precededBy = PlayScript.toJSON(message.precededBy);
+    }
+    if (message.precedes !== undefined) {
+      obj.precedes = PlayScript.toJSON(message.precedes);
+    }
     return obj;
   },
 
@@ -694,6 +774,16 @@ export const PlayScript: MessageFns<PlayScript> = {
     message.createdByUser = object.createdByUser ?? '';
     message.belongsToAccount = object.belongsToAccount ?? '';
     message.tags = object.tags?.map((e) => ScriptTag.fromPartial(e)) || [];
+    message.precededById = object.precededById ?? undefined;
+    message.precedesId = object.precedesId ?? undefined;
+    message.precededBy =
+      object.precededBy !== undefined && object.precededBy !== null
+        ? PlayScript.fromPartial(object.precededBy)
+        : undefined;
+    message.precedes =
+      object.precedes !== undefined && object.precedes !== null
+        ? PlayScript.fromPartial(object.precedes)
+        : undefined;
     return message;
   },
 };

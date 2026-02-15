@@ -39,6 +39,10 @@ message PlayScript {
   string created_by_user = 11;
   string belongs_to_account = 12;
   repeated ScriptTag tags = 13;
+  optional string preceded_by_id = 14;
+  optional string precedes_id = 15;
+  optional PlayScript preceded_by = 16;
+  optional PlayScript precedes = 17;
 }
 
 message PlayScriptCastMember {

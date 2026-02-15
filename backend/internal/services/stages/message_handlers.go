@@ -374,7 +374,7 @@ func (h *Handler) handleNextLine(ctx context.Context, connCtx *platformws.Connec
 		return
 	}
 
-	play, err := h.playScriptsRepo.GetPlayScript(ctx, *stage.PlayScriptID)
+	play, err := h.playScriptsRepo.GetPlayScript(ctx, *stage.PlayScriptID, false)
 	if err != nil {
 		h.logger.Error("failed to get play", err)
 		return
@@ -393,9 +393,18 @@ func (h *Handler) handleNextLine(ctx context.Context, connCtx *platformws.Connec
 			return
 		}
 
-		h.connections.BroadcastToGroup(ctx, connCtx.GroupID, &stagesdomain.ServerMessage{
+		playEndedMsg := &stagesdomain.ServerMessage{
 			Type: stagesdomain.ServerMessageTypePlayEnded,
-		})
+		}
+		// If this act has a next act, include it so the frontend can offer "Continue to Act 2"
+		if play.PrecedesID != nil && *play.PrecedesID != "" {
+			var nextPlay *playscripts.PlayScript
+			nextPlay, err = h.playScriptsRepo.GetPlayScript(ctx, *play.PrecedesID, false)
+			if err == nil {
+				playEndedMsg.NextPlay = nextPlay
+			}
+		}
+		h.connections.BroadcastToGroup(ctx, connCtx.GroupID, playEndedMsg)
 	} else {
 		// Advance to next line
 		if err = h.stagesRepo.UpdateStage(ctx, connCtx.GroupID, &stagesdomain.StageUpdateInput{

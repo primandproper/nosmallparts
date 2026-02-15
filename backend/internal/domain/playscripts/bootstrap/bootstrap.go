@@ -31,12 +31,13 @@ func ShakespearePlayScripts() ([]*playscripts.PlayScriptCreationRequestInput, er
 	result := make([]*playscripts.PlayScriptCreationRequestInput, 0, len(names))
 	for _, name := range names {
 		path := filepath.Join("shakespeare", name)
-		data, err := shakespeareFS.ReadFile(path)
+		var data []byte
+		data, err = shakespeareFS.ReadFile(path)
 		if err != nil {
 			return nil, fmt.Errorf("read %s: %w", path, err)
 		}
 		var input playscripts.PlayScriptCreationRequestInput
-		if err := json.Unmarshal(data, &input); err != nil {
+		if err = json.Unmarshal(data, &input); err != nil {
 			return nil, fmt.Errorf("unmarshal %s: %w", path, err)
 		}
 		result = append(result, &input)

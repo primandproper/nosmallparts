@@ -12,6 +12,8 @@ const (
 	titleColumn          = "title"
 	authorColumn         = "author"
 	isPublicColumn       = "is_public"
+	precededByIDColumn   = "preceded_by_id"
+	precedesIDColumn     = "precedes_id"
 )
 
 func init() {
@@ -24,6 +26,8 @@ var playScriptsColumns = []string{
 	descriptionColumn,
 	authorColumn,
 	isPublicColumn,
+	precededByIDColumn,
+	precedesIDColumn,
 	createdAtColumn,
 	lastUpdatedAtColumn,
 	archivedAtColumn,

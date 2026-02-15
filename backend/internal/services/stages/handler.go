@@ -253,7 +253,7 @@ func (h *Handler) buildStageState(ctx context.Context, stage *stagesdomain.Stage
 
 	// Fetch selected play if set
 	if stage.PlayScriptID != nil && *stage.PlayScriptID != "" {
-		play, err := h.playScriptsRepo.GetPlayScript(ctx, *stage.PlayScriptID)
+		play, err := h.playScriptsRepo.GetPlayScript(ctx, *stage.PlayScriptID, false)
 		if err == nil {
 			state.SelectedPlay = play
 		}

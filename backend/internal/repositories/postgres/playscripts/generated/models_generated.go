@@ -81,19 +81,6 @@ type PlayScriptLines struct {
 	LineIndex     int32
 }
 
-type PlayScripts struct {
-	CreatedAt        time.Time
-	LastUpdatedAt    sql.NullTime
-	ArchivedAt       sql.NullTime
-	ID               string
-	Title            string
-	Description      string
-	Author           string
-	CreatedByUser    string
-	BelongsToAccount string
-	IsPublic         bool
-}
-
 type ScriptTags struct {
 	CreatedAt   time.Time
 	ID          string
