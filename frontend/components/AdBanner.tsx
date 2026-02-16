@@ -26,12 +26,22 @@ export function AdBanner({
   className = '',
 }: AdBannerProps) {
   useEffect(() => {
+    const isDebug =
+      typeof window !== 'undefined' &&
+      new URLSearchParams(window.location.search).get('ads_debug') === '1';
+    if (isDebug && (client || slot)) {
+      console.log('[AdSense] Ad slot diagnostic:', {
+        client: client ? `ca-pub-***${client.slice(-4)}` : 'missing',
+        slot: slot || 'missing',
+        adsbygoogleLoaded: typeof window.adsbygoogle !== 'undefined',
+      });
+    }
     try {
       (window.adsbygoogle = window.adsbygoogle || []).push({});
     } catch (err) {
       console.error('AdSense error:', err);
     }
-  }, []);
+  }, [client, slot]);
 
   if (!client || !slot) return null;
 
