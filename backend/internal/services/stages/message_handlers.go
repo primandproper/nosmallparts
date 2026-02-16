@@ -66,16 +66,27 @@ func (h *Handler) handleJoin(ctx context.Context, connCtx *platformws.Connection
 		return
 	}
 
-	// Add participant
-	participant, err := h.stagesRepo.AddParticipant(ctx, &stagesdomain.ParticipantCreationInput{
-		ID:          identifiers.New(),
-		StageID:     stage.ID,
-		DisplayName: participantName,
-	})
-	if err != nil {
-		h.logger.Error("failed to add participant", err)
+	// Try rejoin first (same displayName on same stage): reuse left participant so we keep roles.
+	participant, err := h.stagesRepo.RejoinParticipant(ctx, stage.ID, participantName)
+	if err != nil && !errors.Is(err, sql.ErrNoRows) {
+		h.logger.Error("failed to rejoin participant", err)
 		h.sendError(ctx, connCtx, "failed to join stage")
 		return
+	}
+	if participant == nil {
+		// No left participant to reuse; add new participant.
+		participant, err = h.stagesRepo.AddParticipant(ctx, &stagesdomain.ParticipantCreationInput{
+			ID:          identifiers.New(),
+			StageID:     stage.ID,
+			DisplayName: participantName,
+		})
+		if err != nil {
+			h.logger.Error("failed to add participant", err)
+			h.sendError(ctx, connCtx, "failed to join stage")
+			return
+		}
+	} else {
+		h.logger.WithValue("participantID", participant.ID).WithValue("stageID", stage.ID).Debug("rejoined existing participant")
 	}
 
 	// Update connection context

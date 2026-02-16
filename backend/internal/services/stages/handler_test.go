@@ -38,6 +38,7 @@ type fakeStagesRepo struct {
 	AddParticipantRoleFunc            func(ctx context.Context, participantID, castMemberID string) error
 	RemoveParticipantRoleFunc         func(ctx context.Context, participantID, castMemberID string) error
 	GetParticipantRolesFunc           func(ctx context.Context, participantID string) ([]string, error)
+	RejoinParticipantFunc             func(ctx context.Context, stageID, displayName string) (*stagesdomain.StageParticipant, error)
 }
 
 func (f *fakeStagesRepo) CreateStage(ctx context.Context, input *stagesdomain.StageCreationInput) (*stagesdomain.Stage, error) {
@@ -129,6 +130,13 @@ func (f *fakeStagesRepo) GetParticipantRoles(ctx context.Context, participantID 
 		return f.GetParticipantRolesFunc(ctx, participantID)
 	}
 	return nil, nil
+}
+
+func (f *fakeStagesRepo) RejoinParticipant(ctx context.Context, stageID, displayName string) (*stagesdomain.StageParticipant, error) {
+	if f.RejoinParticipantFunc != nil {
+		return f.RejoinParticipantFunc(ctx, stageID, displayName)
+	}
+	return nil, sql.ErrNoRows
 }
 
 var _ stagesdomain.Repository = (*fakeStagesRepo)(nil)

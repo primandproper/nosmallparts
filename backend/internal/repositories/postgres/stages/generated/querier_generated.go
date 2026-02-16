@@ -11,9 +11,11 @@ import (
 type Querier interface {
 	AddParticipantRole(ctx context.Context, db DBTX, arg *AddParticipantRoleParams) error
 	ArchiveStage(ctx context.Context, db DBTX, id string) (int64, error)
+	ClearParticipantLeft(ctx context.Context, db DBTX, id string) (int64, error)
 	CreateParticipant(ctx context.Context, db DBTX, arg *CreateParticipantParams) error
 	CreateStage(ctx context.Context, db DBTX, arg *CreateStageParams) error
 	GetActiveParticipantsForStage(ctx context.Context, db DBTX, stageID string) ([]*StageParticipants, error)
+	GetLeftParticipantByStageAndDisplayName(ctx context.Context, db DBTX, arg *GetLeftParticipantByStageAndDisplayNameParams) (*StageParticipants, error)
 	GetParticipant(ctx context.Context, db DBTX, id string) (*StageParticipants, error)
 	GetParticipantRoles(ctx context.Context, db DBTX, stageParticipantID string) ([]string, error)
 	GetStageByCode(ctx context.Context, db DBTX, code string) (*Stages, error)

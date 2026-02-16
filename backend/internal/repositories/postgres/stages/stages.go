@@ -312,6 +312,38 @@ func (r *repository) UpdateParticipant(ctx context.Context, participantID string
 	return nil
 }
 
+// RejoinParticipant finds a left participant by stage and display name, clears left_at, and returns the participant with roles.
+func (r *repository) RejoinParticipant(ctx context.Context, stageID, displayName string) (*types.StageParticipant, error) {
+	ctx, span := r.tracer.StartSpan(ctx)
+	defer span.End()
+
+	logger := r.logger.Clone()
+
+	if stageID == "" || displayName == "" {
+		return nil, database.ErrInvalidIDProvided
+	}
+	logger = logger.WithValue(keys.StageIDKey, stageID).WithValue("displayName", displayName)
+	tracing.AttachToSpan(span, keys.StageIDKey, stageID)
+
+	left, err := r.generatedQuerier.GetLeftParticipantByStageAndDisplayName(ctx, r.db, &generated.GetLeftParticipantByStageAndDisplayNameParams{
+		StageID:     stageID,
+		DisplayName: displayName,
+	})
+	if err != nil {
+		return nil, observability.PrepareAndLogError(err, logger, span, "finding left participant")
+	}
+
+	rowsAffected, err := r.generatedQuerier.ClearParticipantLeft(ctx, r.db, left.ID)
+	if err != nil {
+		return nil, observability.PrepareAndLogError(err, logger, span, "clearing participant left")
+	}
+	if rowsAffected == 0 {
+		return nil, sql.ErrNoRows
+	}
+
+	return r.GetParticipant(ctx, left.ID)
+}
+
 // SetParticipantLeft marks a participant as having left the stage.
 func (r *repository) SetParticipantLeft(ctx context.Context, participantID string) error {
 	ctx, span := r.tracer.StartSpan(ctx)

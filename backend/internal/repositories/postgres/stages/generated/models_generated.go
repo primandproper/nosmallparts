@@ -9,17 +9,6 @@ import (
 	"time"
 )
 
-type Stages struct {
-	CreatedAt        time.Time
-	LastUpdatedAt    sql.NullTime
-	ArchivedAt       sql.NullTime
-	ID               string
-	Code             string
-	Phase            string
-	PlayScriptID     sql.NullString
-	CurrentLineIndex int32
-}
-
 type StageParticipants struct {
 	CreatedAt   time.Time
 	LeftAt      sql.NullTime
@@ -32,7 +21,13 @@ type StageParticipants struct {
 	IsAudience  bool
 }
 
-type StageParticipantRoles struct {
-	StageParticipantID string
-	CastMemberID       string
+type Stages struct {
+	CreatedAt        time.Time
+	LastUpdatedAt    sql.NullTime
+	ArchivedAt       sql.NullTime
+	ID               string
+	Code             string
+	Phase            string
+	PlayScriptID     sql.NullString
+	CurrentLineIndex int32
 }

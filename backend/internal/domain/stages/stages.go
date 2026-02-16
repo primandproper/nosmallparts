@@ -132,6 +132,10 @@ type (
 		UpdateParticipant(ctx context.Context, participantID string, input *ParticipantUpdateInput) error
 		SetParticipantLeft(ctx context.Context, participantID string) error
 
+		// RejoinParticipant finds a left participant by stage+displayName, clears left_at, and returns the participant with roles.
+		// Returns nil, sql.ErrNoRows if no matching left participant exists.
+		RejoinParticipant(ctx context.Context, stageID, displayName string) (*StageParticipant, error)
+
 		AddParticipantRole(ctx context.Context, participantID, castMemberID string) error
 		RemoveParticipantRole(ctx context.Context, participantID, castMemberID string) error
 		GetParticipantRoles(ctx context.Context, participantID string) ([]string, error)

@@ -13,11 +13,12 @@ export function AdSenseScript() {
   useEffect(() => {
     const client = process.env.NEXT_PUBLIC_ADSENSE_PUBLISHER_ID;
     const isDebug =
-      typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('ads_debug') === '1';
+      typeof window !== 'undefined' &&
+      new URLSearchParams(window.location.search).get('ads_debug') === '1';
 
     if (isDebug) {
       console.log('[AdSense] Diagnostic:', {
-        'NEXT_PUBLIC_ADSENSE_PUBLISHER_ID': client
+        NEXT_PUBLIC_ADSENSE_PUBLISHER_ID: client
           ? `ca-pub-***${client.slice(-4)}`
           : 'NOT SET (empty at build time)',
         scriptWillLoad: !!client,

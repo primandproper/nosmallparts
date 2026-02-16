@@ -10,116 +10,24 @@ import (
 	"database/sql"
 )
 
-const createStage = `-- name: CreateStage :exec
-INSERT INTO stages (
-	id,
-	code
+const addParticipantRole = `-- name: AddParticipantRole :exec
+INSERT INTO stage_participant_roles (
+	stage_participant_id,
+	cast_member_id
 ) VALUES (
 	$1,
 	$2
-)
+) ON CONFLICT DO NOTHING
 `
 
-type CreateStageParams struct {
-	ID   string
-	Code string
+type AddParticipantRoleParams struct {
+	StageParticipantID string
+	CastMemberID       string
 }
 
-func (q *Queries) CreateStage(ctx context.Context, db DBTX, arg *CreateStageParams) error {
-	_, err := db.ExecContext(ctx, createStage, arg.ID, arg.Code)
+func (q *Queries) AddParticipantRole(ctx context.Context, db DBTX, arg *AddParticipantRoleParams) error {
+	_, err := db.ExecContext(ctx, addParticipantRole, arg.StageParticipantID, arg.CastMemberID)
 	return err
-}
-
-const getStageByID = `-- name: GetStageByID :one
-SELECT
-	stages.id,
-	stages.code,
-	stages.play_script_id,
-	stages.current_line_index,
-	stages.phase,
-	stages.created_at,
-	stages.last_updated_at,
-	stages.archived_at
-FROM stages
-WHERE stages.archived_at IS NULL
-	AND stages.id = $1
-`
-
-func (q *Queries) GetStageByID(ctx context.Context, db DBTX, id string) (*Stages, error) {
-	row := db.QueryRowContext(ctx, getStageByID, id)
-	var i Stages
-	err := row.Scan(
-		&i.ID,
-		&i.Code,
-		&i.PlayScriptID,
-		&i.CurrentLineIndex,
-		&i.Phase,
-		&i.CreatedAt,
-		&i.LastUpdatedAt,
-		&i.ArchivedAt,
-	)
-	return &i, err
-}
-
-const getStageByCode = `-- name: GetStageByCode :one
-SELECT
-	stages.id,
-	stages.code,
-	stages.play_script_id,
-	stages.current_line_index,
-	stages.phase,
-	stages.created_at,
-	stages.last_updated_at,
-	stages.archived_at
-FROM stages
-WHERE stages.archived_at IS NULL
-	AND stages.code = $1
-`
-
-func (q *Queries) GetStageByCode(ctx context.Context, db DBTX, code string) (*Stages, error) {
-	row := db.QueryRowContext(ctx, getStageByCode, code)
-	var i Stages
-	err := row.Scan(
-		&i.ID,
-		&i.Code,
-		&i.PlayScriptID,
-		&i.CurrentLineIndex,
-		&i.Phase,
-		&i.CreatedAt,
-		&i.LastUpdatedAt,
-		&i.ArchivedAt,
-	)
-	return &i, err
-}
-
-const updateStage = `-- name: UpdateStage :execrows
-UPDATE stages SET
-	play_script_id = COALESCE($1, play_script_id),
-	current_line_index = COALESCE($2, current_line_index),
-	phase = COALESCE($3, phase),
-	last_updated_at = NOW()
-WHERE archived_at IS NULL
-	AND id = $4
-`
-
-type UpdateStageParams struct {
-	ID               string
-	PlayScriptID     sql.NullString
-	Phase            sql.NullString
-	CurrentLineIndex sql.NullInt32
-}
-
-func (q *Queries) UpdateStage(ctx context.Context, db DBTX, arg *UpdateStageParams) (int64, error) {
-	result, err := db.ExecContext(ctx, updateStage,
-		arg.PlayScriptID,
-		arg.CurrentLineIndex,
-		arg.Phase,
-		arg.ID,
-	)
-	if err != nil {
-		return 0, err
-	}
-	return result.RowsAffected()
 }
 
 const archiveStage = `-- name: ArchiveStage :execrows
@@ -132,6 +40,21 @@ WHERE archived_at IS NULL
 
 func (q *Queries) ArchiveStage(ctx context.Context, db DBTX, id string) (int64, error) {
 	result, err := db.ExecContext(ctx, archiveStage, id)
+	if err != nil {
+		return 0, err
+	}
+	return result.RowsAffected()
+}
+
+const clearParticipantLeft = `-- name: ClearParticipantLeft :execrows
+UPDATE stage_participants SET
+	left_at = NULL
+WHERE id = $1
+	AND left_at IS NOT NULL
+`
+
+func (q *Queries) ClearParticipantLeft(ctx context.Context, db DBTX, id string) (int64, error) {
+	result, err := db.ExecContext(ctx, clearParticipantLeft, id)
 	if err != nil {
 		return 0, err
 	}
@@ -169,36 +92,24 @@ func (q *Queries) CreateParticipant(ctx context.Context, db DBTX, arg *CreatePar
 	return err
 }
 
-const getParticipant = `-- name: GetParticipant :one
-SELECT
-	stage_participants.id,
-	stage_participants.stage_id,
-	stage_participants.user_id,
-	stage_participants.display_name,
-	stage_participants.is_director,
-	stage_participants.is_ready,
-	stage_participants.is_audience,
-	stage_participants.created_at,
-	stage_participants.left_at
-FROM stage_participants
-WHERE stage_participants.id = $1
+const createStage = `-- name: CreateStage :exec
+INSERT INTO stages (
+	id,
+	code
+) VALUES (
+	$1,
+	$2
+)
 `
 
-func (q *Queries) GetParticipant(ctx context.Context, db DBTX, id string) (*StageParticipants, error) {
-	row := db.QueryRowContext(ctx, getParticipant, id)
-	var i StageParticipants
-	err := row.Scan(
-		&i.ID,
-		&i.StageID,
-		&i.UserID,
-		&i.DisplayName,
-		&i.IsDirector,
-		&i.IsReady,
-		&i.IsAudience,
-		&i.CreatedAt,
-		&i.LeftAt,
-	)
-	return &i, err
+type CreateStageParams struct {
+	ID   string
+	Code string
+}
+
+func (q *Queries) CreateStage(ctx context.Context, db DBTX, arg *CreateStageParams) error {
+	_, err := db.ExecContext(ctx, createStage, arg.ID, arg.Code)
+	return err
 }
 
 const getActiveParticipantsForStage = `-- name: GetActiveParticipantsForStage :many
@@ -251,92 +162,77 @@ func (q *Queries) GetActiveParticipantsForStage(ctx context.Context, db DBTX, st
 	return items, nil
 }
 
-const updateParticipant = `-- name: UpdateParticipant :execrows
-UPDATE stage_participants SET
-	is_director = COALESCE($1, is_director),
-	is_ready = COALESCE($2, is_ready),
-	is_audience = COALESCE($3, is_audience)
-WHERE id = $4
+const getLeftParticipantByStageAndDisplayName = `-- name: GetLeftParticipantByStageAndDisplayName :one
+SELECT
+	stage_participants.id,
+	stage_participants.stage_id,
+	stage_participants.user_id,
+	stage_participants.display_name,
+	stage_participants.is_director,
+	stage_participants.is_ready,
+	stage_participants.is_audience,
+	stage_participants.created_at,
+	stage_participants.left_at
+FROM stage_participants
+WHERE stage_participants.stage_id = $1
+	AND stage_participants.display_name = $2
+	AND stage_participants.left_at IS NOT NULL
+ORDER BY stage_participants.left_at DESC
+LIMIT 1
 `
 
-type UpdateParticipantParams struct {
-	ID         string
-	IsDirector sql.NullBool
-	IsReady    sql.NullBool
-	IsAudience sql.NullBool
+type GetLeftParticipantByStageAndDisplayNameParams struct {
+	StageID     string
+	DisplayName string
 }
 
-func (q *Queries) UpdateParticipant(ctx context.Context, db DBTX, arg *UpdateParticipantParams) (int64, error) {
-	result, err := db.ExecContext(ctx, updateParticipant,
-		arg.IsDirector,
-		arg.IsReady,
-		arg.IsAudience,
-		arg.ID,
+func (q *Queries) GetLeftParticipantByStageAndDisplayName(ctx context.Context, db DBTX, arg *GetLeftParticipantByStageAndDisplayNameParams) (*StageParticipants, error) {
+	row := db.QueryRowContext(ctx, getLeftParticipantByStageAndDisplayName, arg.StageID, arg.DisplayName)
+	var i StageParticipants
+	err := row.Scan(
+		&i.ID,
+		&i.StageID,
+		&i.UserID,
+		&i.DisplayName,
+		&i.IsDirector,
+		&i.IsReady,
+		&i.IsAudience,
+		&i.CreatedAt,
+		&i.LeftAt,
 	)
-	if err != nil {
-		return 0, err
-	}
-	return result.RowsAffected()
+	return &i, err
 }
 
-const setParticipantLeft = `-- name: SetParticipantLeft :execrows
-UPDATE stage_participants SET
-	left_at = NOW()
-WHERE id = $1
-	AND left_at IS NULL
+const getParticipant = `-- name: GetParticipant :one
+SELECT
+	stage_participants.id,
+	stage_participants.stage_id,
+	stage_participants.user_id,
+	stage_participants.display_name,
+	stage_participants.is_director,
+	stage_participants.is_ready,
+	stage_participants.is_audience,
+	stage_participants.created_at,
+	stage_participants.left_at
+FROM stage_participants
+WHERE stage_participants.id = $1
 `
 
-func (q *Queries) SetParticipantLeft(ctx context.Context, db DBTX, id string) (int64, error) {
-	result, err := db.ExecContext(ctx, setParticipantLeft, id)
-	if err != nil {
-		return 0, err
-	}
-	return result.RowsAffected()
-}
-
-const addParticipantRole = `-- name: AddParticipantRole :exec
-INSERT INTO stage_participant_roles (
-	stage_participant_id,
-	cast_member_id
-) VALUES (
-	$1,
-	$2
-) ON CONFLICT DO NOTHING
-`
-
-type AddParticipantRoleParams struct {
-	StageParticipantID string
-	CastMemberID       string
-}
-
-func (q *Queries) AddParticipantRole(ctx context.Context, db DBTX, arg *AddParticipantRoleParams) error {
-	_, err := db.ExecContext(ctx, addParticipantRole,
-		arg.StageParticipantID,
-		arg.CastMemberID,
+func (q *Queries) GetParticipant(ctx context.Context, db DBTX, id string) (*StageParticipants, error) {
+	row := db.QueryRowContext(ctx, getParticipant, id)
+	var i StageParticipants
+	err := row.Scan(
+		&i.ID,
+		&i.StageID,
+		&i.UserID,
+		&i.DisplayName,
+		&i.IsDirector,
+		&i.IsReady,
+		&i.IsAudience,
+		&i.CreatedAt,
+		&i.LeftAt,
 	)
-	return err
-}
-
-const removeParticipantRole = `-- name: RemoveParticipantRole :execrows
-DELETE FROM stage_participant_roles
-WHERE stage_participant_id = $1
-	AND cast_member_id = $2
-`
-
-type RemoveParticipantRoleParams struct {
-	StageParticipantID string
-	CastMemberID       string
-}
-
-func (q *Queries) RemoveParticipantRole(ctx context.Context, db DBTX, arg *RemoveParticipantRoleParams) (int64, error) {
-	result, err := db.ExecContext(ctx, removeParticipantRole,
-		arg.StageParticipantID,
-		arg.CastMemberID,
-	)
-	if err != nil {
-		return 0, err
-	}
-	return result.RowsAffected()
+	return &i, err
 }
 
 const getParticipantRoles = `-- name: GetParticipantRoles :many
@@ -367,4 +263,158 @@ func (q *Queries) GetParticipantRoles(ctx context.Context, db DBTX, stagePartici
 		return nil, err
 	}
 	return items, nil
+}
+
+const getStageByCode = `-- name: GetStageByCode :one
+SELECT
+	stages.id,
+	stages.code,
+	stages.play_script_id,
+	stages.current_line_index,
+	stages.phase,
+	stages.created_at,
+	stages.last_updated_at,
+	stages.archived_at
+FROM stages
+WHERE stages.archived_at IS NULL
+	AND stages.code = $1
+`
+
+func (q *Queries) GetStageByCode(ctx context.Context, db DBTX, code string) (*Stages, error) {
+	row := db.QueryRowContext(ctx, getStageByCode, code)
+	var i Stages
+	err := row.Scan(
+		&i.ID,
+		&i.Code,
+		&i.PlayScriptID,
+		&i.CurrentLineIndex,
+		&i.Phase,
+		&i.CreatedAt,
+		&i.LastUpdatedAt,
+		&i.ArchivedAt,
+	)
+	return &i, err
+}
+
+const getStageByID = `-- name: GetStageByID :one
+SELECT
+	stages.id,
+	stages.code,
+	stages.play_script_id,
+	stages.current_line_index,
+	stages.phase,
+	stages.created_at,
+	stages.last_updated_at,
+	stages.archived_at
+FROM stages
+WHERE stages.archived_at IS NULL
+	AND stages.id = $1
+`
+
+func (q *Queries) GetStageByID(ctx context.Context, db DBTX, id string) (*Stages, error) {
+	row := db.QueryRowContext(ctx, getStageByID, id)
+	var i Stages
+	err := row.Scan(
+		&i.ID,
+		&i.Code,
+		&i.PlayScriptID,
+		&i.CurrentLineIndex,
+		&i.Phase,
+		&i.CreatedAt,
+		&i.LastUpdatedAt,
+		&i.ArchivedAt,
+	)
+	return &i, err
+}
+
+const removeParticipantRole = `-- name: RemoveParticipantRole :execrows
+DELETE FROM stage_participant_roles
+WHERE stage_participant_id = $1
+	AND cast_member_id = $2
+`
+
+type RemoveParticipantRoleParams struct {
+	StageParticipantID string
+	CastMemberID       string
+}
+
+func (q *Queries) RemoveParticipantRole(ctx context.Context, db DBTX, arg *RemoveParticipantRoleParams) (int64, error) {
+	result, err := db.ExecContext(ctx, removeParticipantRole, arg.StageParticipantID, arg.CastMemberID)
+	if err != nil {
+		return 0, err
+	}
+	return result.RowsAffected()
+}
+
+const setParticipantLeft = `-- name: SetParticipantLeft :execrows
+UPDATE stage_participants SET
+	left_at = NOW()
+WHERE id = $1
+	AND left_at IS NULL
+`
+
+func (q *Queries) SetParticipantLeft(ctx context.Context, db DBTX, id string) (int64, error) {
+	result, err := db.ExecContext(ctx, setParticipantLeft, id)
+	if err != nil {
+		return 0, err
+	}
+	return result.RowsAffected()
+}
+
+const updateParticipant = `-- name: UpdateParticipant :execrows
+UPDATE stage_participants SET
+	is_director = COALESCE($1, is_director),
+	is_ready = COALESCE($2, is_ready),
+	is_audience = COALESCE($3, is_audience)
+WHERE id = $4
+`
+
+type UpdateParticipantParams struct {
+	ID         string
+	IsDirector sql.NullBool
+	IsReady    sql.NullBool
+	IsAudience sql.NullBool
+}
+
+func (q *Queries) UpdateParticipant(ctx context.Context, db DBTX, arg *UpdateParticipantParams) (int64, error) {
+	result, err := db.ExecContext(ctx, updateParticipant,
+		arg.IsDirector,
+		arg.IsReady,
+		arg.IsAudience,
+		arg.ID,
+	)
+	if err != nil {
+		return 0, err
+	}
+	return result.RowsAffected()
+}
+
+const updateStage = `-- name: UpdateStage :execrows
+UPDATE stages SET
+	play_script_id = COALESCE($1, play_script_id),
+	current_line_index = COALESCE($2, current_line_index),
+	phase = COALESCE($3, phase),
+	last_updated_at = NOW()
+WHERE archived_at IS NULL
+	AND id = $4
+`
+
+type UpdateStageParams struct {
+	ID               string
+	PlayScriptID     sql.NullString
+	Phase            sql.NullString
+	CurrentLineIndex sql.NullInt32
+}
+
+func (q *Queries) UpdateStage(ctx context.Context, db DBTX, arg *UpdateStageParams) (int64, error) {
+	result, err := db.ExecContext(ctx, updateStage,
+		arg.PlayScriptID,
+		arg.CurrentLineIndex,
+		arg.Phase,
+		arg.ID,
+	)
+	if err != nil {
+		return 0, err
+	}
+	return result.RowsAffected()
 }

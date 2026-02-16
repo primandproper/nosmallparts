@@ -107,6 +107,30 @@ UPDATE stage_participants SET
 WHERE id = sqlc.arg(id)
 	AND left_at IS NULL;
 
+-- name: GetLeftParticipantByStageAndDisplayName :one
+SELECT
+	stage_participants.id,
+	stage_participants.stage_id,
+	stage_participants.user_id,
+	stage_participants.display_name,
+	stage_participants.is_director,
+	stage_participants.is_ready,
+	stage_participants.is_audience,
+	stage_participants.created_at,
+	stage_participants.left_at
+FROM stage_participants
+WHERE stage_participants.stage_id = sqlc.arg(stage_id)
+	AND stage_participants.display_name = sqlc.arg(display_name)
+	AND stage_participants.left_at IS NOT NULL
+ORDER BY stage_participants.left_at DESC
+LIMIT 1;
+
+-- name: ClearParticipantLeft :execrows
+UPDATE stage_participants SET
+	left_at = NULL
+WHERE id = sqlc.arg(id)
+	AND left_at IS NOT NULL;
+
 -- name: AddParticipantRole :exec
 INSERT INTO stage_participant_roles (
 	stage_participant_id,
