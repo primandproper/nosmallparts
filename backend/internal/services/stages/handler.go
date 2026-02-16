@@ -20,11 +20,17 @@ const (
 	// Time allowed to write a message to the peer.
 	writeWait = 10 * time.Second
 
-	// Time allowed to read the next pong message from the peer.
-	pongWait = 60 * time.Second
+	// Send pings to peer every 30 seconds.
+	pingPeriod = 30 * time.Second
 
-	// Send pings to peer with this period. Must be less than pongWait.
-	pingPeriod = (pongWait * 9) / 10
+	// Circuit breaker: close connection only after this many consecutive pings
+	// without a pong. Tolerates brief stalls (e.g. browser tab backgrounded).
+	pongFailuresBeforeClose = 5
+
+	// Read deadline: reset on each pong. Slightly longer than
+	// pingPeriod*pongFailuresBeforeClose so we don't close via read timeout
+	// before the circuit breaker would.
+	readDeadline = (pongFailuresBeforeClose + 2) * pingPeriod
 
 	// Maximum message size allowed from peer.
 	maxMessageSize = 512 * 1024 // 512KB
@@ -81,12 +87,12 @@ func (h *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 	// Configure connection
 	conn.SetReadLimit(maxMessageSize)
-	if err = conn.SetReadDeadline(time.Now().Add(pongWait)); err != nil {
+	if err = conn.SetReadDeadline(time.Now().Add(readDeadline)); err != nil {
 		observability.AcknowledgeError(err, h.logger, span, "failed to set read deadline")
 	}
 	conn.SetPongHandler(func(string) error {
 		connCtx.MarkAlive()
-		if err = conn.SetReadDeadline(time.Now().Add(pongWait)); err != nil {
+		if err = conn.SetReadDeadline(time.Now().Add(readDeadline)); err != nil {
 			observability.AcknowledgeError(err, h.logger, span, "failed to set read deadline")
 		}
 		return nil
@@ -99,21 +105,29 @@ func (h *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	h.readPump(ctx, connCtx)
 }
 
-// heartbeat sends periodic ping messages to keep the connection alive.
+// heartbeat sends periodic ping messages and closes the connection only after
+// pongFailuresBeforeClose consecutive pings without a pong (circuit breaker).
 func (h *Handler) heartbeat(connCtx *platformws.ConnectionContext) {
 	ticker := time.NewTicker(pingPeriod)
 	connCtx.SetHeartbeatTicker(ticker)
 	defer ticker.Stop()
 
+	consecutiveMissed := 0
+
 	for {
 		select {
 		case <-ticker.C:
-			if !connCtx.CheckAlive() {
-				h.logger.Debug("connection dead, closing")
-				if err := connCtx.Conn.Close(); err != nil {
-					observability.AcknowledgeError(err, h.logger, nil, "failed to close connection")
+			if connCtx.CheckAlive() {
+				consecutiveMissed = 0
+			} else {
+				consecutiveMissed++
+				if consecutiveMissed >= pongFailuresBeforeClose {
+					h.logger.WithValue("consecutiveMissed", consecutiveMissed).Debug("connection dead after consecutive missed pongs, closing")
+					if err := connCtx.Conn.Close(); err != nil {
+						observability.AcknowledgeError(err, h.logger, nil, "failed to close connection")
+					}
+					return
 				}
-				return
 			}
 			connCtx.MarkDead()
 			if err := connCtx.Conn.SetWriteDeadline(time.Now().Add(writeWait)); err != nil {
