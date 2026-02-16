@@ -60,7 +60,7 @@ export function ScriptCard({ script, isDraft = false, onClick, onDelete }: Scrip
       )}
 
       {/* Stats */}
-      <div className="flex items-center gap-4 text-sm">
+      <div className="flex items-center gap-4 text-sm flex-wrap">
         <div className="flex items-center gap-1.5 text-[var(--cream)] opacity-50">
           <span>👥</span>
           <span>
@@ -73,6 +73,17 @@ export function ScriptCard({ script, isDraft = false, onClick, onDelete }: Scrip
             {lineCount} line{lineCount !== 1 ? 's' : ''}
           </span>
         </div>
+        {script.ratingStats && script.ratingStats.ratingCount > 0 && (
+          <div className="flex items-center gap-1.5 text-[var(--gold)] opacity-80">
+            <span>★</span>
+            <span>
+              {script.ratingStats.averageRating.toFixed(1)} ({script.ratingStats.ratingCount})
+            </span>
+            {typeof script.userRating === 'number' && script.userRating > 0 && (
+              <span className="text-[var(--cream)] opacity-60 text-xs">· you: {script.userRating}★</span>
+            )}
+          </div>
+        )}
       </div>
 
       {/* Cast preview */}

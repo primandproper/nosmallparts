@@ -94,6 +94,13 @@ func ConvertPlayScriptToGRPCPlayScript(ps *playscripts.PlayScript) *playscriptss
 	if ps.Precedes != nil {
 		out.Precedes = ConvertPlayScriptToGRPCPlayScript(ps.Precedes)
 	}
+	if ps.RatingStats != nil {
+		out.RatingStats = &playscriptssvc.PlayScriptRatingStats{
+			AverageRating: ps.RatingStats.AverageRating,
+			RatingCount:   int32(ps.RatingStats.RatingCount),
+		}
+	}
+	out.UserRating = int32(ps.UserRating)
 	return out
 }
 
@@ -170,6 +177,23 @@ func ConvertGRPCPlayScriptToPlayScript(ps *playscriptssvc.PlayScript) *playscrip
 	}
 	if ps.Precedes != nil {
 		out.Precedes = ConvertGRPCPlayScriptToPlayScript(ps.Precedes)
+	}
+	return out
+}
+
+// ConvertPlayScriptRatingToGRPC converts a domain PlayScriptRating to gRPC PlayScriptRating.
+func ConvertPlayScriptRatingToGRPC(r *playscripts.PlayScriptRating) *playscriptssvc.PlayScriptRating {
+	if r == nil {
+		return nil
+	}
+	out := &playscriptssvc.PlayScriptRating{
+		Id:            r.ID,
+		PlayScriptId:  r.PlayScriptID,
+		BelongsToUser: r.BelongsToUser,
+		Rating:        int32(r.Rating),
+		CreatedAt:     grpcconverters.ConvertTimeToPBTimestamp(r.CreatedAt),
+		LastUpdatedAt: grpcconverters.ConvertTimePointerToPBTimestamp(r.LastUpdatedAt),
+		ArchivedAt:    grpcconverters.ConvertTimePointerToPBTimestamp(r.ArchivedAt),
 	}
 	return out
 }

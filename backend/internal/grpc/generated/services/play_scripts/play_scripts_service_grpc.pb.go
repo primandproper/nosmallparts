@@ -33,6 +33,7 @@ const (
 	PlayScriptsService_AddTagToPlayScript_FullMethodName       = "/play_scripts.PlayScriptsService/AddTagToPlayScript"
 	PlayScriptsService_RemoveTagFromPlayScript_FullMethodName  = "/play_scripts.PlayScriptsService/RemoveTagFromPlayScript"
 	PlayScriptsService_UpdatePlayScriptLine_FullMethodName     = "/play_scripts.PlayScriptsService/UpdatePlayScriptLine"
+	PlayScriptsService_RatePlayScript_FullMethodName           = "/play_scripts.PlayScriptsService/RatePlayScript"
 )
 
 // PlayScriptsServiceClient is the client API for PlayScriptsService service.
@@ -52,6 +53,7 @@ type PlayScriptsServiceClient interface {
 	AddTagToPlayScript(ctx context.Context, in *AddTagToPlayScriptRequest, opts ...grpc.CallOption) (*AddTagToPlayScriptResponse, error)
 	RemoveTagFromPlayScript(ctx context.Context, in *RemoveTagFromPlayScriptRequest, opts ...grpc.CallOption) (*RemoveTagFromPlayScriptResponse, error)
 	UpdatePlayScriptLine(ctx context.Context, in *UpdatePlayScriptLineRequest, opts ...grpc.CallOption) (*UpdatePlayScriptLineResponse, error)
+	RatePlayScript(ctx context.Context, in *RatePlayScriptRequest, opts ...grpc.CallOption) (*RatePlayScriptResponse, error)
 }
 
 type playScriptsServiceClient struct {
@@ -192,6 +194,16 @@ func (c *playScriptsServiceClient) UpdatePlayScriptLine(ctx context.Context, in 
 	return out, nil
 }
 
+func (c *playScriptsServiceClient) RatePlayScript(ctx context.Context, in *RatePlayScriptRequest, opts ...grpc.CallOption) (*RatePlayScriptResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RatePlayScriptResponse)
+	err := c.cc.Invoke(ctx, PlayScriptsService_RatePlayScript_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // PlayScriptsServiceServer is the server API for PlayScriptsService service.
 // All implementations must embed UnimplementedPlayScriptsServiceServer
 // for forward compatibility.
@@ -209,6 +221,7 @@ type PlayScriptsServiceServer interface {
 	AddTagToPlayScript(context.Context, *AddTagToPlayScriptRequest) (*AddTagToPlayScriptResponse, error)
 	RemoveTagFromPlayScript(context.Context, *RemoveTagFromPlayScriptRequest) (*RemoveTagFromPlayScriptResponse, error)
 	UpdatePlayScriptLine(context.Context, *UpdatePlayScriptLineRequest) (*UpdatePlayScriptLineResponse, error)
+	RatePlayScript(context.Context, *RatePlayScriptRequest) (*RatePlayScriptResponse, error)
 	mustEmbedUnimplementedPlayScriptsServiceServer()
 }
 
@@ -257,6 +270,9 @@ func (UnimplementedPlayScriptsServiceServer) RemoveTagFromPlayScript(context.Con
 }
 func (UnimplementedPlayScriptsServiceServer) UpdatePlayScriptLine(context.Context, *UpdatePlayScriptLineRequest) (*UpdatePlayScriptLineResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdatePlayScriptLine not implemented")
+}
+func (UnimplementedPlayScriptsServiceServer) RatePlayScript(context.Context, *RatePlayScriptRequest) (*RatePlayScriptResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RatePlayScript not implemented")
 }
 func (UnimplementedPlayScriptsServiceServer) mustEmbedUnimplementedPlayScriptsServiceServer() {}
 func (UnimplementedPlayScriptsServiceServer) testEmbeddedByValue()                            {}
@@ -513,6 +529,24 @@ func _PlayScriptsService_UpdatePlayScriptLine_Handler(srv interface{}, ctx conte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _PlayScriptsService_RatePlayScript_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RatePlayScriptRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(PlayScriptsServiceServer).RatePlayScript(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: PlayScriptsService_RatePlayScript_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(PlayScriptsServiceServer).RatePlayScript(ctx, req.(*RatePlayScriptRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // PlayScriptsService_ServiceDesc is the grpc.ServiceDesc for PlayScriptsService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -571,6 +605,10 @@ var PlayScriptsService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdatePlayScriptLine",
 			Handler:    _PlayScriptsService_UpdatePlayScriptLine_Handler,
+		},
+		{
+			MethodName: "RatePlayScript",
+			Handler:    _PlayScriptsService_RatePlayScript_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

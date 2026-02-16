@@ -107,18 +107,17 @@ export function swapLineIndices(lines: PlayLine[], fromIndex: number, toIndex: n
  * missing character or dialogue. Used to highlight invalid lines in the UI.
  */
 export function getInvalidLineIndices(lines: PlayLine[]): Set<number> {
-  return new Set(
-    lines.filter((l) => !l.castMemberId || !l.text.trim()).map((l) => l.index)
-  );
+  return new Set(lines.filter((l) => !l.castMemberId || !l.text.trim()).map((l) => l.index));
 }
 
 /**
  * Returns human-readable line numbers (1-based) for invalid lines.
  * Used for error messages.
  */
-export function getInvalidLineNumbers(
-  lines: PlayLine[]
-): { invalidIndices: Set<number>; displayNumbers: number[] } {
+export function getInvalidLineNumbers(lines: PlayLine[]): {
+  invalidIndices: Set<number>;
+  displayNumbers: number[];
+} {
   const invalidIndices = getInvalidLineIndices(lines);
   const sortedIndices = getSortedLineIndices(lines);
   const displayNumbers = Array.from(invalidIndices)

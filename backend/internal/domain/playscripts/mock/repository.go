@@ -143,3 +143,48 @@ func (m *Repository) GetPlayScriptsWithTag(ctx context.Context, tagName string, 
 	}
 	return args.Get(0).(*filtering.QueryFilteredResult[playscripts.PlayScript]), args.Error(1)
 }
+
+// RatePlayScript is a mock function.
+func (m *Repository) RatePlayScript(ctx context.Context, userID, playScriptID string, rating int) (*playscripts.PlayScriptRating, error) {
+	args := m.Called(ctx, userID, playScriptID, rating)
+	if args.Get(0) == nil {
+		return nil, args.Error(1)
+	}
+	return args.Get(0).(*playscripts.PlayScriptRating), args.Error(1)
+}
+
+// GetUserRatingForPlayScript is a mock function.
+func (m *Repository) GetUserRatingForPlayScript(ctx context.Context, userID, playScriptID string) (*playscripts.PlayScriptRating, error) {
+	args := m.Called(ctx, userID, playScriptID)
+	if args.Get(0) == nil {
+		return nil, args.Error(1)
+	}
+	return args.Get(0).(*playscripts.PlayScriptRating), args.Error(1)
+}
+
+// GetRatingStatsForPlayScript is a mock function.
+func (m *Repository) GetRatingStatsForPlayScript(ctx context.Context, playScriptID string) (*playscripts.PlayScriptRatingStats, error) {
+	args := m.Called(ctx, playScriptID)
+	if args.Get(0) == nil {
+		return nil, args.Error(1)
+	}
+	return args.Get(0).(*playscripts.PlayScriptRatingStats), args.Error(1)
+}
+
+// GetRatingStatsForPlayScripts is a mock function.
+func (m *Repository) GetRatingStatsForPlayScripts(ctx context.Context, playScriptIDs []string) (map[string]*playscripts.PlayScriptRatingStats, error) {
+	args := m.Called(ctx, playScriptIDs)
+	if args.Get(0) == nil {
+		return nil, args.Error(1)
+	}
+	return args.Get(0).(map[string]*playscripts.PlayScriptRatingStats), args.Error(1)
+}
+
+// GetUserRatingsForPlayScripts is a mock function.
+func (m *Repository) GetUserRatingsForPlayScripts(ctx context.Context, userID string, playScriptIDs []string) (map[string]int, error) {
+	args := m.Called(ctx, userID, playScriptIDs)
+	if args.Get(0) == nil {
+		return nil, args.Error(1)
+	}
+	return args.Get(0).(map[string]int), args.Error(1)
+}

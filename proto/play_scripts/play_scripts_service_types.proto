@@ -164,3 +164,13 @@ message UpdatePlayScriptLineResponse {
   common.ResponseDetails response_details = 1;
   PlayScriptLine updated = 2;
 }
+
+message RatePlayScriptRequest {
+  string play_script_id = 1;
+  int32 rating = 2; // 1-5
+}
+
+message RatePlayScriptResponse {
+  common.ResponseDetails response_details = 1;
+  PlayScriptRating created = 2;
+}

@@ -150,6 +150,10 @@ func AttachQueryFilterToSpan(span trace.Span, filter *filtering.QueryFilter) {
 		if filter.SortBy != nil {
 			AttachToSpan(span, keys.FilterSortByKey, *filter.SortBy)
 		}
+
+		if filter.SearchQuery != nil {
+			AttachToSpan(span, keys.FilterSearchQueryKey, *filter.SearchQuery)
+		}
 	} else {
 		AttachToSpan(span, keys.FilterIsNilKey, true)
 	}

@@ -50,5 +50,8 @@ func ProvidePlayScriptsMethodPermissions() PlayScriptsMethodPermissions {
 		playscriptssvc.PlayScriptsService_UpdatePlayScriptLine_FullMethodName: {
 			authorization.UpdatePlayScriptsPermission,
 		},
+		playscriptssvc.PlayScriptsService_RatePlayScript_FullMethodName: {
+			authorization.RatePlayScriptsPermission,
+		},
 	}
 }

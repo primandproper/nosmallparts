@@ -11,6 +11,7 @@ import { Pagination, QueryFilter } from '../filtering';
 import {
   PlayScript,
   PlayScriptLine,
+  PlayScriptRating,
   ScriptTag,
   ScrollMode,
   scrollModeFromJSON,
@@ -176,6 +177,17 @@ export interface UpdatePlayScriptLineRequest {
 export interface UpdatePlayScriptLineResponse {
   responseDetails: ResponseDetails | undefined;
   updated: PlayScriptLine | undefined;
+}
+
+export interface RatePlayScriptRequest {
+  playScriptId: string;
+  /** 1-5 */
+  rating: number;
+}
+
+export interface RatePlayScriptResponse {
+  responseDetails: ResponseDetails | undefined;
+  created: PlayScriptRating | undefined;
 }
 
 function createBasePlayScriptCastMemberCreationInput(): PlayScriptCastMemberCreationInput {
@@ -2905,6 +2917,172 @@ export const UpdatePlayScriptLineResponse: MessageFns<UpdatePlayScriptLineRespon
     message.updated =
       object.updated !== undefined && object.updated !== null
         ? PlayScriptLine.fromPartial(object.updated)
+        : undefined;
+    return message;
+  },
+};
+
+function createBaseRatePlayScriptRequest(): RatePlayScriptRequest {
+  return { playScriptId: '', rating: 0 };
+}
+
+export const RatePlayScriptRequest: MessageFns<RatePlayScriptRequest> = {
+  encode(message: RatePlayScriptRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.playScriptId !== '') {
+      writer.uint32(10).string(message.playScriptId);
+    }
+    if (message.rating !== 0) {
+      writer.uint32(16).int32(message.rating);
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): RatePlayScriptRequest {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseRatePlayScriptRequest();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.playScriptId = reader.string();
+          continue;
+        }
+        case 2: {
+          if (tag !== 16) {
+            break;
+          }
+
+          message.rating = reader.int32();
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): RatePlayScriptRequest {
+    return {
+      playScriptId: isSet(object.playScriptId)
+        ? globalThis.String(object.playScriptId)
+        : isSet(object.play_script_id)
+          ? globalThis.String(object.play_script_id)
+          : '',
+      rating: isSet(object.rating) ? globalThis.Number(object.rating) : 0,
+    };
+  },
+
+  toJSON(message: RatePlayScriptRequest): unknown {
+    const obj: any = {};
+    if (message.playScriptId !== '') {
+      obj.playScriptId = message.playScriptId;
+    }
+    if (message.rating !== 0) {
+      obj.rating = Math.round(message.rating);
+    }
+    return obj;
+  },
+
+  create(base?: DeepPartial<RatePlayScriptRequest>): RatePlayScriptRequest {
+    return RatePlayScriptRequest.fromPartial(base ?? {});
+  },
+  fromPartial(object: DeepPartial<RatePlayScriptRequest>): RatePlayScriptRequest {
+    const message = createBaseRatePlayScriptRequest();
+    message.playScriptId = object.playScriptId ?? '';
+    message.rating = object.rating ?? 0;
+    return message;
+  },
+};
+
+function createBaseRatePlayScriptResponse(): RatePlayScriptResponse {
+  return { responseDetails: undefined, created: undefined };
+}
+
+export const RatePlayScriptResponse: MessageFns<RatePlayScriptResponse> = {
+  encode(message: RatePlayScriptResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.responseDetails !== undefined) {
+      ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
+    }
+    if (message.created !== undefined) {
+      PlayScriptRating.encode(message.created, writer.uint32(18).fork()).join();
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): RatePlayScriptResponse {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseRatePlayScriptResponse();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.responseDetails = ResponseDetails.decode(reader, reader.uint32());
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.created = PlayScriptRating.decode(reader, reader.uint32());
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): RatePlayScriptResponse {
+    return {
+      responseDetails: isSet(object.responseDetails)
+        ? ResponseDetails.fromJSON(object.responseDetails)
+        : isSet(object.response_details)
+          ? ResponseDetails.fromJSON(object.response_details)
+          : undefined,
+      created: isSet(object.created) ? PlayScriptRating.fromJSON(object.created) : undefined,
+    };
+  },
+
+  toJSON(message: RatePlayScriptResponse): unknown {
+    const obj: any = {};
+    if (message.responseDetails !== undefined) {
+      obj.responseDetails = ResponseDetails.toJSON(message.responseDetails);
+    }
+    if (message.created !== undefined) {
+      obj.created = PlayScriptRating.toJSON(message.created);
+    }
+    return obj;
+  },
+
+  create(base?: DeepPartial<RatePlayScriptResponse>): RatePlayScriptResponse {
+    return RatePlayScriptResponse.fromPartial(base ?? {});
+  },
+  fromPartial(object: DeepPartial<RatePlayScriptResponse>): RatePlayScriptResponse {
+    const message = createBaseRatePlayScriptResponse();
+    message.responseDetails =
+      object.responseDetails !== undefined && object.responseDetails !== null
+        ? ResponseDetails.fromPartial(object.responseDetails)
+        : undefined;
+    message.created =
+      object.created !== undefined && object.created !== null
+        ? PlayScriptRating.fromPartial(object.created)
         : undefined;
     return message;
   },

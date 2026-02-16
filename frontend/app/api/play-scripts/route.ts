@@ -35,11 +35,13 @@ interface FrontendPlay {
   isUserScript?: boolean;
   cast: CastMember[];
   lines: PlayLine[];
+  ratingStats?: { averageRating: number; ratingCount: number };
+  userRating?: number;
 }
 
 // Convert a gRPC PlayScript to the frontend Play format
 function toFrontendPlay(ps: PlayScript): FrontendPlay {
-  return {
+  const result: FrontendPlay = {
     id: ps.id,
     title: ps.title,
     description: ps.description,
@@ -53,25 +55,33 @@ function toFrontendPlay(ps: PlayScript): FrontendPlay {
         description: cm.description || undefined,
       })),
     lines: (ps.lines || []).map((line: PlayScriptLine) => {
-      const result: PlayLine = {
+      const playLine: PlayLine = {
         castMemberId: line.castMemberId,
         text: line.lineText,
         index: line.lineIndex,
       };
       if (line.direction) {
-        result.direction = line.direction;
+        playLine.direction = line.direction;
       }
       if (line.scrollMode === ScrollMode.SCROLL_MODE_MANUAL) {
-        result.scrollMode = 'manual';
+        playLine.scrollMode = 'manual';
       } else if (line.scrollMode === ScrollMode.SCROLL_MODE_AUTO) {
-        result.scrollMode = 'auto';
+        playLine.scrollMode = 'auto';
       }
       if (line.autoScrollWpm) {
-        result.autoScrollWpm = line.autoScrollWpm;
+        playLine.autoScrollWpm = line.autoScrollWpm;
       }
-      return result;
+      return playLine;
     }),
+    ...(ps.ratingStats && {
+      ratingStats: {
+        averageRating: ps.ratingStats.averageRating,
+        ratingCount: ps.ratingStats.ratingCount,
+      },
+    }),
+    ...(ps.userRating ? { userRating: ps.userRating } : {}),
   };
+  return result;
 }
 
 // Convert frontend scroll mode string to protobuf enum

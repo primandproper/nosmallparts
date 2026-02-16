@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useRouter, useParams } from 'next/navigation';
 import { usePlayState } from '@/hooks/usePlayState';
 import { useLiveKit } from '@/hooks/useLiveKit';
@@ -19,6 +19,8 @@ export default function StagePage() {
   const [playerName, setPlayerName] = useState<string | null>(null);
   const [isReady, setIsReady] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [pendingRatingPlayId, setPendingRatingPlayId] = useState<string | null>(null);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
     const name = sessionStorage.getItem('playerName');
@@ -29,6 +31,32 @@ export default function StagePage() {
     setPlayerName(name);
     setIsReady(true);
   }, [router]);
+
+  // Check auth for rating modal
+  useEffect(() => {
+    fetch('/api/auth/session')
+      .then((res) => res.json())
+      .then((data: { authenticated?: boolean }) => setIsAuthenticated(!!data.authenticated))
+      .catch(() => setIsAuthenticated(false));
+  }, []);
+
+  const prevPhaseRef = useRef<string | undefined>();
+
+  // Set pending rating when we first transition to discussion with a selected play;
+  // clear when leaving discussion (e.g. reset to lobby)
+  useEffect(() => {
+    const prevPhase = prevPhaseRef.current;
+    prevPhaseRef.current = stageState?.phase;
+    if (
+      prevPhase === 'performing' &&
+      stageState?.phase === 'discussion' &&
+      stageState.selectedPlay
+    ) {
+      setPendingRatingPlayId(stageState.selectedPlay.id);
+    } else if (stageState?.phase !== 'discussion') {
+      setPendingRatingPlayId(null);
+    }
+  }, [stageState?.phase, stageState?.selectedPlay?.id]);
 
   const {
     stageState,
@@ -217,7 +245,14 @@ export default function StagePage() {
             )}
 
             {stageState.phase === 'discussion' && (
-              <Discussion stageState={stageState} onResetPlay={resetPlay} />
+              <Discussion
+                stageState={stageState}
+                onResetPlay={resetPlay}
+                playId={pendingRatingPlayId}
+                playTitle={stageState.selectedPlay?.title}
+                onRatingComplete={() => setPendingRatingPlayId(null)}
+                isAuthenticated={isAuthenticated}
+              />
             )}
 
             {/* Chat - always visible */}

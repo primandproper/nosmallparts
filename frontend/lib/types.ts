@@ -15,6 +15,11 @@ export interface PlayLine {
   autoScrollWpm?: number; // Words per minute for auto-scroll (default: 150)
 }
 
+export interface PlayRatingStats {
+  averageRating: number;
+  ratingCount: number;
+}
+
 export interface Play {
   id: string;
   title: string;
@@ -22,6 +27,8 @@ export interface Play {
   author?: string;
   cast: CastMember[];
   lines: PlayLine[];
+  ratingStats?: PlayRatingStats;
+  userRating?: number;
 }
 
 export interface Participant {

@@ -41,6 +41,8 @@ func (s *serviceImpl) GetPlayScriptsWithTag(ctx context.Context, request *playsc
 		Pagination: grpcconverters.ConvertPaginationToGRPCPagination(playScripts.Pagination, filter),
 	}
 
+	s.enrichPlayScriptsWithRatings(ctx, playScripts.Data, sessionContextData.Requester.UserID)
+
 	for _, ps := range playScripts.Data {
 		x.Results = append(x.Results, converters.ConvertPlayScriptToGRPCPlayScript(ps))
 	}
@@ -189,7 +191,7 @@ func (s *serviceImpl) UpdatePlayScriptLine(ctx context.Context, request *playscr
 		return nil, observability.PrepareAndLogGRPCStatus(nil, logger, span, codes.PermissionDenied, "play script does not belong to account")
 	}
 
-	if err := s.playScriptRepository.UpdatePlayScriptLine(ctx, line); err != nil {
+	if err = s.playScriptRepository.UpdatePlayScriptLine(ctx, line); err != nil {
 		return nil, observability.PrepareAndLogGRPCStatus(err, logger, span, codes.Internal, "failed to update play script line")
 	}
 

@@ -11,15 +11,18 @@ import (
 type Querier interface {
 	AddTagToPlayScript(ctx context.Context, db DBTX, arg *AddTagToPlayScriptParams) error
 	ArchivePlayScript(ctx context.Context, db DBTX, id string) (int64, error)
+	ArchiveRatingForUserAndPlay(ctx context.Context, db DBTX, arg *ArchiveRatingForUserAndPlayParams) (int64, error)
 	CheckPlayScriptExistence(ctx context.Context, db DBTX, id string) (bool, error)
 	CreatePlayScript(ctx context.Context, db DBTX, arg *CreatePlayScriptParams) error
 	CreatePlayScriptCastMember(ctx context.Context, db DBTX, arg *CreatePlayScriptCastMemberParams) error
 	CreatePlayScriptLine(ctx context.Context, db DBTX, arg *CreatePlayScriptLineParams) error
+	CreatePlayScriptRating(ctx context.Context, db DBTX, arg *CreatePlayScriptRatingParams) error
 	CreateScriptTag(ctx context.Context, db DBTX, arg *CreateScriptTagParams) error
 	DeletePlayScriptCastMember(ctx context.Context, db DBTX, id string) (int64, error)
 	DeletePlayScriptCastMembersForPlayScript(ctx context.Context, db DBTX, playScriptID string) (int64, error)
 	DeletePlayScriptLine(ctx context.Context, db DBTX, id string) (int64, error)
 	DeletePlayScriptLinesForPlayScript(ctx context.Context, db DBTX, playScriptID string) (int64, error)
+	GetActiveRatingForUserAndPlay(ctx context.Context, db DBTX, arg *GetActiveRatingForUserAndPlayParams) (*PlayScriptRatings, error)
 	GetPlayScript(ctx context.Context, db DBTX, id string) (*GetPlayScriptRow, error)
 	GetPlayScriptCastMember(ctx context.Context, db DBTX, id string) (*GetPlayScriptCastMemberRow, error)
 	GetPlayScriptCastMembersForPlayScript(ctx context.Context, db DBTX, playScriptID string) ([]*GetPlayScriptCastMembersForPlayScriptRow, error)
@@ -29,9 +32,12 @@ type Querier interface {
 	GetPlayScriptsForAccount(ctx context.Context, db DBTX, arg *GetPlayScriptsForAccountParams) ([]*GetPlayScriptsForAccountRow, error)
 	GetPlayScriptsWithTag(ctx context.Context, db DBTX, arg *GetPlayScriptsWithTagParams) ([]*GetPlayScriptsWithTagRow, error)
 	GetPublicPlayScripts(ctx context.Context, db DBTX, arg *GetPublicPlayScriptsParams) ([]*GetPublicPlayScriptsRow, error)
+	GetRatingStatsForPlayScript(ctx context.Context, db DBTX, playScriptID string) (*GetRatingStatsForPlayScriptRow, error)
+	GetRatingStatsForPlayScripts(ctx context.Context, db DBTX, playScriptIds []string) ([]*GetRatingStatsForPlayScriptsRow, error)
 	GetScriptTag(ctx context.Context, db DBTX, id string) (*ScriptTags, error)
 	GetScriptTagByName(ctx context.Context, db DBTX, name string) (*ScriptTags, error)
 	GetTagsForPlayScript(ctx context.Context, db DBTX, playScriptID string) ([]*ScriptTags, error)
+	GetUserRatingsForPlayScripts(ctx context.Context, db DBTX, arg *GetUserRatingsForPlayScriptsParams) ([]*GetUserRatingsForPlayScriptsRow, error)
 	ListScriptTags(ctx context.Context, db DBTX) ([]*ScriptTags, error)
 	RemoveTagFromPlayScript(ctx context.Context, db DBTX, arg *RemoveTagFromPlayScriptParams) (int64, error)
 	UpdatePlayScript(ctx context.Context, db DBTX, arg *UpdatePlayScriptParams) (int64, error)

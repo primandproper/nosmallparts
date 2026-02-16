@@ -20,4 +20,5 @@ service PlayScriptsService {
   rpc AddTagToPlayScript(AddTagToPlayScriptRequest) returns (AddTagToPlayScriptResponse);
   rpc RemoveTagFromPlayScript(RemoveTagFromPlayScriptRequest) returns (RemoveTagFromPlayScriptResponse);
   rpc UpdatePlayScriptLine(UpdatePlayScriptLineRequest) returns (UpdatePlayScriptLineResponse);
+  rpc RatePlayScript(RatePlayScriptRequest) returns (RatePlayScriptResponse);
 }

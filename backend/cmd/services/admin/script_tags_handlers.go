@@ -41,13 +41,13 @@ func (s *AdminFrontendServer) ScriptTagsList(_ http.ResponseWriter, req *http.Re
 	}
 
 	tablePageResult, err := components.TablePage(&components.TablePageProps[*playscriptssvc.ScriptTag]{
-		Title:        "Script Tags",
-		BaseSubtitle: "Manage tags for categorizing play scripts",
-		Palette:      &design.StandardPalette,
-		ShowSearch:   true,
+		Title:             "Script Tags",
+		BaseSubtitle:      "Manage tags for categorizing play scripts",
+		Palette:           &design.StandardPalette,
+		ShowSearch:        true,
 		SearchPlaceholder: "Search tags...",
 		HTMXSearchTarget:  "/api/script_tags/search",
-		Data:         tagsRes.Results,
+		Data:              tagsRes.Results,
 		Actions: []g.Node{
 			components.ActionButton("Create Tag", "/script_tags/new", &design.StandardPalette, true),
 		},
@@ -67,7 +67,7 @@ func (s *AdminFrontendServer) ScriptTagsList(_ http.ResponseWriter, req *http.Re
 				"created_at": renderTimestamp,
 			},
 		},
-		RowLinkGenerator: nil, // No detail page; tags are view-only from list
+		RowLinkGenerator:      nil, // No detail page; tags are view-only from list
 		EmptyStateTitle:       "No script tags found",
 		EmptyStateDescription: "Create tags to categorize play scripts (e.g., comedy, drama, one-act).",
 		EmptyStateActions: []g.Node{
@@ -192,9 +192,9 @@ func (s *AdminFrontendServer) ScriptTagNewPage(_ http.ResponseWriter, req *http.
 		Palette:      &design.StandardPalette,
 		Data:         emptyInput,
 		FormOptions: &components.FormOptions[*playscriptssvc.CreateScriptTagRequest]{
-			FormID:   "create-script-tag-form",
-			Action:   "/api/script_tags",
-			Method:   "POST",
+			FormID:        "create-script-tag-form",
+			Action:        "/api/script_tags",
+			Method:        "POST",
 			EnabledFields: []string{"name", "description"},
 			FieldConfigs: map[string]*components.FieldConfig{
 				"name": {
@@ -244,7 +244,7 @@ func (s *AdminFrontendServer) ScriptTagCreate(res http.ResponseWriter, req *http
 		return page("Script Tags", s.renderScriptTagsError("Error: No API client available")), nil
 	}
 
-	if err := req.ParseForm(); err != nil {
+	if err = req.ParseForm(); err != nil {
 		return page("Script Tags", s.renderScriptTagsError(fmt.Sprintf("Error parsing form: %v", err))), nil
 	}
 

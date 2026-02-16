@@ -152,6 +152,27 @@ func BuildFakePlayScriptDatabaseCreationInput() *types.PlayScriptDatabaseCreatio
 	}
 }
 
+// BuildFakePlayScriptRating builds a fake PlayScriptRating.
+func BuildFakePlayScriptRating() *types.PlayScriptRating {
+	return &types.PlayScriptRating{
+		ID:            BuildFakeID(),
+		PlayScriptID:  BuildFakeID(),
+		BelongsToUser: BuildFakeID(),
+		Rating:        fake.Number(1, 5),
+		CreatedAt:     BuildFakeTime(),
+		LastUpdatedAt: nil,
+		ArchivedAt:    nil,
+	}
+}
+
+// BuildFakePlayScriptRatingStats builds a fake PlayScriptRatingStats.
+func BuildFakePlayScriptRatingStats() *types.PlayScriptRatingStats {
+	return &types.PlayScriptRatingStats{
+		AverageRating: float64(fake.Number(10, 50)) / 10,
+		RatingCount:   fake.Number(0, 100),
+	}
+}
+
 // BuildFakePlayScriptUpdateRequestInput builds a fake PlayScriptUpdateRequestInput.
 func BuildFakePlayScriptUpdateRequestInput() *types.PlayScriptUpdateRequestInput {
 	title := fake.BookTitle()

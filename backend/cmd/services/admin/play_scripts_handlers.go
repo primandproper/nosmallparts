@@ -495,7 +495,7 @@ func (s *AdminFrontendServer) PlayScriptUpdate(res http.ResponseWriter, req *htt
 		return page("Play Scripts", s.renderPlayScriptsError("Error: No play script ID provided")), nil
 	}
 
-	if err := req.ParseForm(); err != nil {
+	if err = req.ParseForm(); err != nil {
 		return page("Play Scripts", s.renderPlayScriptsError(fmt.Sprintf("Error parsing form: %v", err))), nil
 	}
 
@@ -581,7 +581,7 @@ func (s *AdminFrontendServer) PlayScriptLineEditPage(_ http.ResponseWriter, req 
 		)
 	}
 
-	scrollModeOptions := []struct {
+	scrollModeOptions := []*struct {
 		Value string
 		Label string
 	}{
@@ -707,16 +707,23 @@ func (s *AdminFrontendServer) PlayScriptLineUpdate(res http.ResponseWriter, req 
 		return g.El("div", ghtml.P(ghtml.Class("text-sm text-red-600"), g.Text("Error: Missing play script or line ID"))), nil
 	}
 
-	if err := req.ParseForm(); err != nil {
+	if err = req.ParseForm(); err != nil {
 		return g.El("div", ghtml.P(ghtml.Class("text-sm text-red-600"), g.Text(fmt.Sprintf("Error: %v", err)))), nil
 	}
 
 	lineText := req.FormValue("line_text")
 	castMemberID := req.FormValue("cast_member_id")
-	lineIndex, _ := strconv.ParseInt(req.FormValue("line_index"), 10, 32)
+	lineIndex, err := strconv.ParseInt(req.FormValue("line_index"), 10, 32)
+	if err != nil {
+		return g.El("div", ghtml.P(ghtml.Class("text-sm text-red-600"), g.Text(fmt.Sprintf("Error: %v", err)))), nil
+	}
+
 	direction := req.FormValue("direction")
 	scrollModeStr := req.FormValue("scroll_mode")
-	autoScrollWpm, _ := strconv.ParseInt(req.FormValue("auto_scroll_wpm"), 10, 32)
+	autoScrollWpm, err := strconv.ParseInt(req.FormValue("auto_scroll_wpm"), 10, 32)
+	if err != nil {
+		return g.El("div", ghtml.P(ghtml.Class("text-sm text-red-600"), g.Text(fmt.Sprintf("Error: %v", err)))), nil
+	}
 
 	scrollMode := playscriptssvc.ScrollMode_SCROLL_MODE_AUTO
 	if scrollModeStr == "manual" || scrollModeStr == "SCROLL_MODE_MANUAL" {
@@ -757,7 +764,7 @@ func (s *AdminFrontendServer) PlayScriptAddTag(res http.ResponseWriter, req *htt
 		return g.El("div", ghtml.P(ghtml.Class("text-sm text-red-600"), g.Text("Error: No play script ID"))), nil
 	}
 
-	if err := req.ParseForm(); err != nil {
+	if err = req.ParseForm(); err != nil {
 		return g.El("div", ghtml.P(ghtml.Class("text-sm text-red-600"), g.Text("Error parsing form"))), nil
 	}
 

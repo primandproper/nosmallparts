@@ -1,13 +1,38 @@
 'use client';
-
 import { StageState, getCastMemberById } from '@/lib/types';
+import { RatingModal } from '@/components/RatingModal';
 
 interface DiscussionProps {
   stageState: StageState;
   onResetPlay: () => void;
+  playId?: string | null;
+  playTitle?: string;
+  onRatingComplete?: () => void;
+  isAuthenticated?: boolean;
 }
 
-export function Discussion({ stageState, onResetPlay }: DiscussionProps) {
+export function Discussion({
+  stageState,
+  onResetPlay,
+  playId,
+  playTitle,
+  onRatingComplete,
+  isAuthenticated,
+}: DiscussionProps) {
+
+  const handleSubmitRating = async (rating: number) => {
+    if (!playId) return;
+    const res = await fetch(`/api/play-scripts/${playId}/rate`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ rating }),
+      credentials: 'include',
+    });
+    if (!res.ok) {
+      const data = await res.json().catch(() => ({}));
+      throw new Error(data?.error || 'Failed to submit rating');
+    }
+  };
   return (
     <div className="card-elegant rounded-2xl p-6 space-y-6">
       {/* Header */}
@@ -60,6 +85,14 @@ export function Discussion({ stageState, onResetPlay }: DiscussionProps) {
 
       {/* Actions */}
       <div className="space-y-3 pt-2">
+        {playId && isAuthenticated && (
+          <RatingModal
+            playId={playId}
+            playTitle={playTitle || stageState.selectedPlay?.title || 'This play'}
+            onSubmit={handleSubmitRating}
+            onDismiss={onRatingComplete ?? (() => {})}
+          />
+        )}
         <button onClick={onResetPlay} className="btn-primary w-full py-4 rounded-xl text-lg">
           <span>🎭 Perform Again</span>
         </button>

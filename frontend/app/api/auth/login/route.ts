@@ -53,12 +53,7 @@ export async function POST(request: NextRequest): Promise<NextResponse<LoginResp
       throw new Error('BACKEND_HTTP_URL is required for OAuth2 token exchange');
     }
 
-    const oauth2Token = await exchangeJwtForOAuth2Token(
-      httpBase,
-      clientId,
-      clientSecret,
-      jwt
-    );
+    const oauth2Token = await exchangeJwtForOAuth2Token(httpBase, clientId, clientSecret, jwt);
 
     const sessionData = {
       userId,

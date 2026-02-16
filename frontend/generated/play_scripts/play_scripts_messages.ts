@@ -90,6 +90,24 @@ export interface PlayScript {
   precedesId?: string | undefined;
   precededBy?: PlayScript | undefined;
   precedes?: PlayScript | undefined;
+  ratingStats?: PlayScriptRatingStats | undefined;
+  /** 0 if user has not rated */
+  userRating: number;
+}
+
+export interface PlayScriptRatingStats {
+  averageRating: number;
+  ratingCount: number;
+}
+
+export interface PlayScriptRating {
+  id: string;
+  playScriptId: string;
+  belongsToUser: string;
+  rating: number;
+  createdAt: Date | undefined;
+  lastUpdatedAt: Date | undefined;
+  archivedAt: Date | undefined;
 }
 
 export interface PlayScriptCastMember {
@@ -423,6 +441,8 @@ function createBasePlayScript(): PlayScript {
     precedesId: undefined,
     precededBy: undefined,
     precedes: undefined,
+    ratingStats: undefined,
+    userRating: 0,
   };
 }
 
@@ -478,6 +498,12 @@ export const PlayScript: MessageFns<PlayScript> = {
     }
     if (message.precedes !== undefined) {
       PlayScript.encode(message.precedes, writer.uint32(138).fork()).join();
+    }
+    if (message.ratingStats !== undefined) {
+      PlayScriptRatingStats.encode(message.ratingStats, writer.uint32(146).fork()).join();
+    }
+    if (message.userRating !== 0) {
+      writer.uint32(152).int32(message.userRating);
     }
     return writer;
   },
@@ -625,6 +651,22 @@ export const PlayScript: MessageFns<PlayScript> = {
           message.precedes = PlayScript.decode(reader, reader.uint32());
           continue;
         }
+        case 18: {
+          if (tag !== 146) {
+            break;
+          }
+
+          message.ratingStats = PlayScriptRatingStats.decode(reader, reader.uint32());
+          continue;
+        }
+        case 19: {
+          if (tag !== 152) {
+            break;
+          }
+
+          message.userRating = reader.int32();
+          continue;
+        }
       }
       if ((tag & 7) === 4 || tag === 0) {
         break;
@@ -697,6 +739,16 @@ export const PlayScript: MessageFns<PlayScript> = {
           ? PlayScript.fromJSON(object.preceded_by)
           : undefined,
       precedes: isSet(object.precedes) ? PlayScript.fromJSON(object.precedes) : undefined,
+      ratingStats: isSet(object.ratingStats)
+        ? PlayScriptRatingStats.fromJSON(object.ratingStats)
+        : isSet(object.rating_stats)
+          ? PlayScriptRatingStats.fromJSON(object.rating_stats)
+          : undefined,
+      userRating: isSet(object.userRating)
+        ? globalThis.Number(object.userRating)
+        : isSet(object.user_rating)
+          ? globalThis.Number(object.user_rating)
+          : 0,
     };
   },
 
@@ -753,6 +805,12 @@ export const PlayScript: MessageFns<PlayScript> = {
     if (message.precedes !== undefined) {
       obj.precedes = PlayScript.toJSON(message.precedes);
     }
+    if (message.ratingStats !== undefined) {
+      obj.ratingStats = PlayScriptRatingStats.toJSON(message.ratingStats);
+    }
+    if (message.userRating !== 0) {
+      obj.userRating = Math.round(message.userRating);
+    }
     return obj;
   },
 
@@ -784,6 +842,279 @@ export const PlayScript: MessageFns<PlayScript> = {
       object.precedes !== undefined && object.precedes !== null
         ? PlayScript.fromPartial(object.precedes)
         : undefined;
+    message.ratingStats =
+      object.ratingStats !== undefined && object.ratingStats !== null
+        ? PlayScriptRatingStats.fromPartial(object.ratingStats)
+        : undefined;
+    message.userRating = object.userRating ?? 0;
+    return message;
+  },
+};
+
+function createBasePlayScriptRatingStats(): PlayScriptRatingStats {
+  return { averageRating: 0, ratingCount: 0 };
+}
+
+export const PlayScriptRatingStats: MessageFns<PlayScriptRatingStats> = {
+  encode(message: PlayScriptRatingStats, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.averageRating !== 0) {
+      writer.uint32(9).double(message.averageRating);
+    }
+    if (message.ratingCount !== 0) {
+      writer.uint32(16).int32(message.ratingCount);
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): PlayScriptRatingStats {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBasePlayScriptRatingStats();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 9) {
+            break;
+          }
+
+          message.averageRating = reader.double();
+          continue;
+        }
+        case 2: {
+          if (tag !== 16) {
+            break;
+          }
+
+          message.ratingCount = reader.int32();
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): PlayScriptRatingStats {
+    return {
+      averageRating: isSet(object.averageRating)
+        ? globalThis.Number(object.averageRating)
+        : isSet(object.average_rating)
+          ? globalThis.Number(object.average_rating)
+          : 0,
+      ratingCount: isSet(object.ratingCount)
+        ? globalThis.Number(object.ratingCount)
+        : isSet(object.rating_count)
+          ? globalThis.Number(object.rating_count)
+          : 0,
+    };
+  },
+
+  toJSON(message: PlayScriptRatingStats): unknown {
+    const obj: any = {};
+    if (message.averageRating !== 0) {
+      obj.averageRating = message.averageRating;
+    }
+    if (message.ratingCount !== 0) {
+      obj.ratingCount = Math.round(message.ratingCount);
+    }
+    return obj;
+  },
+
+  create(base?: DeepPartial<PlayScriptRatingStats>): PlayScriptRatingStats {
+    return PlayScriptRatingStats.fromPartial(base ?? {});
+  },
+  fromPartial(object: DeepPartial<PlayScriptRatingStats>): PlayScriptRatingStats {
+    const message = createBasePlayScriptRatingStats();
+    message.averageRating = object.averageRating ?? 0;
+    message.ratingCount = object.ratingCount ?? 0;
+    return message;
+  },
+};
+
+function createBasePlayScriptRating(): PlayScriptRating {
+  return {
+    id: '',
+    playScriptId: '',
+    belongsToUser: '',
+    rating: 0,
+    createdAt: undefined,
+    lastUpdatedAt: undefined,
+    archivedAt: undefined,
+  };
+}
+
+export const PlayScriptRating: MessageFns<PlayScriptRating> = {
+  encode(message: PlayScriptRating, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.id !== '') {
+      writer.uint32(10).string(message.id);
+    }
+    if (message.playScriptId !== '') {
+      writer.uint32(18).string(message.playScriptId);
+    }
+    if (message.belongsToUser !== '') {
+      writer.uint32(26).string(message.belongsToUser);
+    }
+    if (message.rating !== 0) {
+      writer.uint32(32).int32(message.rating);
+    }
+    if (message.createdAt !== undefined) {
+      Timestamp.encode(toTimestamp(message.createdAt), writer.uint32(42).fork()).join();
+    }
+    if (message.lastUpdatedAt !== undefined) {
+      Timestamp.encode(toTimestamp(message.lastUpdatedAt), writer.uint32(50).fork()).join();
+    }
+    if (message.archivedAt !== undefined) {
+      Timestamp.encode(toTimestamp(message.archivedAt), writer.uint32(58).fork()).join();
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): PlayScriptRating {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBasePlayScriptRating();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.id = reader.string();
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.playScriptId = reader.string();
+          continue;
+        }
+        case 3: {
+          if (tag !== 26) {
+            break;
+          }
+
+          message.belongsToUser = reader.string();
+          continue;
+        }
+        case 4: {
+          if (tag !== 32) {
+            break;
+          }
+
+          message.rating = reader.int32();
+          continue;
+        }
+        case 5: {
+          if (tag !== 42) {
+            break;
+          }
+
+          message.createdAt = fromTimestamp(Timestamp.decode(reader, reader.uint32()));
+          continue;
+        }
+        case 6: {
+          if (tag !== 50) {
+            break;
+          }
+
+          message.lastUpdatedAt = fromTimestamp(Timestamp.decode(reader, reader.uint32()));
+          continue;
+        }
+        case 7: {
+          if (tag !== 58) {
+            break;
+          }
+
+          message.archivedAt = fromTimestamp(Timestamp.decode(reader, reader.uint32()));
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): PlayScriptRating {
+    return {
+      id: isSet(object.id) ? globalThis.String(object.id) : '',
+      playScriptId: isSet(object.playScriptId)
+        ? globalThis.String(object.playScriptId)
+        : isSet(object.play_script_id)
+          ? globalThis.String(object.play_script_id)
+          : '',
+      belongsToUser: isSet(object.belongsToUser)
+        ? globalThis.String(object.belongsToUser)
+        : isSet(object.belongs_to_user)
+          ? globalThis.String(object.belongs_to_user)
+          : '',
+      rating: isSet(object.rating) ? globalThis.Number(object.rating) : 0,
+      createdAt: isSet(object.createdAt)
+        ? fromJsonTimestamp(object.createdAt)
+        : isSet(object.created_at)
+          ? fromJsonTimestamp(object.created_at)
+          : undefined,
+      lastUpdatedAt: isSet(object.lastUpdatedAt)
+        ? fromJsonTimestamp(object.lastUpdatedAt)
+        : isSet(object.last_updated_at)
+          ? fromJsonTimestamp(object.last_updated_at)
+          : undefined,
+      archivedAt: isSet(object.archivedAt)
+        ? fromJsonTimestamp(object.archivedAt)
+        : isSet(object.archived_at)
+          ? fromJsonTimestamp(object.archived_at)
+          : undefined,
+    };
+  },
+
+  toJSON(message: PlayScriptRating): unknown {
+    const obj: any = {};
+    if (message.id !== '') {
+      obj.id = message.id;
+    }
+    if (message.playScriptId !== '') {
+      obj.playScriptId = message.playScriptId;
+    }
+    if (message.belongsToUser !== '') {
+      obj.belongsToUser = message.belongsToUser;
+    }
+    if (message.rating !== 0) {
+      obj.rating = Math.round(message.rating);
+    }
+    if (message.createdAt !== undefined) {
+      obj.createdAt = message.createdAt.toISOString();
+    }
+    if (message.lastUpdatedAt !== undefined) {
+      obj.lastUpdatedAt = message.lastUpdatedAt.toISOString();
+    }
+    if (message.archivedAt !== undefined) {
+      obj.archivedAt = message.archivedAt.toISOString();
+    }
+    return obj;
+  },
+
+  create(base?: DeepPartial<PlayScriptRating>): PlayScriptRating {
+    return PlayScriptRating.fromPartial(base ?? {});
+  },
+  fromPartial(object: DeepPartial<PlayScriptRating>): PlayScriptRating {
+    const message = createBasePlayScriptRating();
+    message.id = object.id ?? '';
+    message.playScriptId = object.playScriptId ?? '';
+    message.belongsToUser = object.belongsToUser ?? '';
+    message.rating = object.rating ?? 0;
+    message.createdAt = object.createdAt ?? undefined;
+    message.lastUpdatedAt = object.lastUpdatedAt ?? undefined;
+    message.archivedAt = object.archivedAt ?? undefined;
     return message;
   },
 };

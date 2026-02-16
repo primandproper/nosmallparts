@@ -23,6 +23,8 @@ const (
 	FilterCursorKey = "query_filter.cursor"
 	// FilterLimitKey is the standard key for referring to a types.QueryFilter's limit.
 	FilterLimitKey = "query_filter.limit"
+	// FilterSearchQueryKey is the standard key for referring to a types.QueryFilter's SearchQuery field.
+	FilterSearchQueryKey = "query_filter.search_query"
 	// FilterIsNilKey is the standard key for referring to a types.QueryFilter's null status.
 	FilterIsNilKey = "query_filter.is_nil"
 	// URLKey is the standard key for referring to a URL.

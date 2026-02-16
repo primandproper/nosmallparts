@@ -52,6 +52,8 @@ const (
 	QueryKeyIncludeArchived = "includeArchived"
 	// QueryKeySortBy is the query param key for sort order in a query.
 	QueryKeySortBy = "sortBy"
+	// QueryKeySearch is the query param key for text search in a query.
+	QueryKeySearch = "search"
 )
 
 type (
@@ -78,6 +80,7 @@ type (
 		MaxResponseSize *uint8     `json:"maxResponseSize,omitempty"`
 		IncludeArchived *bool      `json:"includeArchived,omitempty"`
 		Cursor          *string    `json:"cursor,omitempty"`
+		SearchQuery     *string    `json:"searchQuery,omitempty"`
 	}
 
 	QueryFilteredResult[T any] struct {
@@ -105,6 +108,10 @@ func (qf *QueryFilter) AttachToLogger(logger logging.Logger) logging.Logger {
 
 	if qf.Cursor != nil {
 		l = l.WithValue(QueryKeyCursor, qf.Cursor)
+	}
+
+	if qf.SearchQuery != nil {
+		l = l.WithValue(QueryKeySearch, qf.SearchQuery)
 	}
 
 	if qf.MaxResponseSize != nil {
@@ -138,6 +145,13 @@ func (qf *QueryFilter) AttachToLogger(logger logging.Logger) logging.Logger {
 func (qf *QueryFilter) FromParams(params url.Values) {
 	if i := params.Get(QueryKeyCursor); i != "" {
 		qf.Cursor = &i
+	}
+
+	// Support both "search" (admin) and "q" (textsearch/API) for search query param
+	if i := params.Get(QueryKeySearch); i != "" {
+		qf.SearchQuery = &i
+	} else if j := params.Get("q"); j != "" {
+		qf.SearchQuery = &j
 	}
 
 	if i, err := strconv.ParseUint(params.Get(QueryKeyLimit), 10, 64); err == nil {
@@ -189,6 +203,10 @@ func (qf *QueryFilter) ToValues() url.Values {
 
 	if qf.Cursor != nil {
 		v.Set(QueryKeyCursor, *qf.Cursor)
+	}
+
+	if qf.SearchQuery != nil {
+		v.Set(QueryKeySearch, *qf.SearchQuery)
 	}
 
 	if qf.MaxResponseSize != nil {

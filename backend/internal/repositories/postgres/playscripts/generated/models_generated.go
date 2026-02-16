@@ -81,6 +81,16 @@ type PlayScriptLines struct {
 	LineIndex     int32
 }
 
+type PlayScriptRatings struct {
+	CreatedAt     time.Time
+	LastUpdatedAt sql.NullTime
+	ArchivedAt    sql.NullTime
+	ID            string
+	PlayScriptID  string
+	BelongsToUser string
+	Rating        int32
+}
+
 type ScriptTags struct {
 	CreatedAt   time.Time
 	ID          string

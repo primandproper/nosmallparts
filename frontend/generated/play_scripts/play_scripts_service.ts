@@ -27,6 +27,8 @@ import {
   GetPublicPlayScriptsResponse,
   ListScriptTagsRequest,
   ListScriptTagsResponse,
+  RatePlayScriptRequest,
+  RatePlayScriptResponse,
   RemoveTagFromPlayScriptRequest,
   RemoveTagFromPlayScriptResponse,
   UpdatePlayScriptLineRequest,
@@ -146,6 +148,14 @@ export const PlayScriptsServiceDefinition = {
       responseStream: false,
       options: {},
     },
+    ratePlayScript: {
+      name: 'RatePlayScript',
+      requestType: RatePlayScriptRequest,
+      requestStream: false,
+      responseType: RatePlayScriptResponse,
+      responseStream: false,
+      options: {},
+    },
   },
 } as const;
 
@@ -202,6 +212,10 @@ export interface PlayScriptsServiceImplementation<CallContextExt = {}> {
     request: UpdatePlayScriptLineRequest,
     context: CallContext & CallContextExt
   ): Promise<DeepPartial<UpdatePlayScriptLineResponse>>;
+  ratePlayScript(
+    request: RatePlayScriptRequest,
+    context: CallContext & CallContextExt
+  ): Promise<DeepPartial<RatePlayScriptResponse>>;
 }
 
 export interface PlayScriptsServiceClient<CallOptionsExt = {}> {
@@ -257,6 +271,10 @@ export interface PlayScriptsServiceClient<CallOptionsExt = {}> {
     request: DeepPartial<UpdatePlayScriptLineRequest>,
     options?: CallOptions & CallOptionsExt
   ): Promise<UpdatePlayScriptLineResponse>;
+  ratePlayScript(
+    request: DeepPartial<RatePlayScriptRequest>,
+    options?: CallOptions & CallOptionsExt
+  ): Promise<RatePlayScriptResponse>;
 }
 
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;

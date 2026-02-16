@@ -30,7 +30,7 @@ var file_play_scripts_play_scripts_service_proto_rawDesc = string([]byte{
 	0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x73, 0x1a, 0x2d, 0x70, 0x6c, 0x61, 0x79, 0x5f, 0x73, 0x63,
 	0x72, 0x69, 0x70, 0x74, 0x73, 0x2f, 0x70, 0x6c, 0x61, 0x79, 0x5f, 0x73, 0x63, 0x72, 0x69, 0x70,
 	0x74, 0x73, 0x5f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x73,
-	0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x32, 0xe0, 0x0a, 0x0a, 0x12, 0x50, 0x6c, 0x61, 0x79, 0x53,
+	0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x32, 0xbd, 0x0b, 0x0a, 0x12, 0x50, 0x6c, 0x61, 0x79, 0x53,
 	0x63, 0x72, 0x69, 0x70, 0x74, 0x73, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x61, 0x0a,
 	0x10, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x50, 0x6c, 0x61, 0x79, 0x53, 0x63, 0x72, 0x69, 0x70,
 	0x74, 0x12, 0x25, 0x2e, 0x70, 0x6c, 0x61, 0x79, 0x5f, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x73,
@@ -116,14 +116,20 @@ var file_play_scripts_play_scripts_service_proto_rawDesc = string([]byte{
 	0x70, 0x74, 0x4c, 0x69, 0x6e, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2a, 0x2e,
 	0x70, 0x6c, 0x61, 0x79, 0x5f, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x73, 0x2e, 0x55, 0x70, 0x64,
 	0x61, 0x74, 0x65, 0x50, 0x6c, 0x61, 0x79, 0x53, 0x63, 0x72, 0x69, 0x70, 0x74, 0x4c, 0x69, 0x6e,
-	0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x42, 0x68, 0x5a, 0x66, 0x67, 0x69, 0x74,
-	0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x76, 0x65, 0x72, 0x79, 0x67, 0x6f, 0x6f, 0x64,
-	0x73, 0x6f, 0x66, 0x74, 0x77, 0x61, 0x72, 0x65, 0x6e, 0x6f, 0x74, 0x76, 0x69, 0x72, 0x75, 0x73,
-	0x2f, 0x6e, 0x6f, 0x73, 0x6d, 0x61, 0x6c, 0x6c, 0x70, 0x61, 0x72, 0x74, 0x73, 0x2f, 0x62, 0x61,
-	0x63, 0x6b, 0x65, 0x6e, 0x64, 0x2f, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x6c, 0x2f, 0x67,
-	0x72, 0x70, 0x63, 0x2f, 0x67, 0x65, 0x6e, 0x65, 0x72, 0x61, 0x74, 0x65, 0x64, 0x2f, 0x73, 0x65,
-	0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x70, 0x6c, 0x61, 0x79, 0x5f, 0x73, 0x63, 0x72, 0x69,
-	0x70, 0x74, 0x73, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x5b, 0x0a, 0x0e, 0x52, 0x61, 0x74,
+	0x65, 0x50, 0x6c, 0x61, 0x79, 0x53, 0x63, 0x72, 0x69, 0x70, 0x74, 0x12, 0x23, 0x2e, 0x70, 0x6c,
+	0x61, 0x79, 0x5f, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x73, 0x2e, 0x52, 0x61, 0x74, 0x65, 0x50,
+	0x6c, 0x61, 0x79, 0x53, 0x63, 0x72, 0x69, 0x70, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x1a, 0x24, 0x2e, 0x70, 0x6c, 0x61, 0x79, 0x5f, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x73, 0x2e,
+	0x52, 0x61, 0x74, 0x65, 0x50, 0x6c, 0x61, 0x79, 0x53, 0x63, 0x72, 0x69, 0x70, 0x74, 0x52, 0x65,
+	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x42, 0x68, 0x5a, 0x66, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62,
+	0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x76, 0x65, 0x72, 0x79, 0x67, 0x6f, 0x6f, 0x64, 0x73, 0x6f, 0x66,
+	0x74, 0x77, 0x61, 0x72, 0x65, 0x6e, 0x6f, 0x74, 0x76, 0x69, 0x72, 0x75, 0x73, 0x2f, 0x6e, 0x6f,
+	0x73, 0x6d, 0x61, 0x6c, 0x6c, 0x70, 0x61, 0x72, 0x74, 0x73, 0x2f, 0x62, 0x61, 0x63, 0x6b, 0x65,
+	0x6e, 0x64, 0x2f, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x6c, 0x2f, 0x67, 0x72, 0x70, 0x63,
+	0x2f, 0x67, 0x65, 0x6e, 0x65, 0x72, 0x61, 0x74, 0x65, 0x64, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69,
+	0x63, 0x65, 0x73, 0x2f, 0x70, 0x6c, 0x61, 0x79, 0x5f, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x73,
+	0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 })
 
 var file_play_scripts_play_scripts_service_proto_goTypes = []any{
@@ -140,19 +146,21 @@ var file_play_scripts_play_scripts_service_proto_goTypes = []any{
 	(*AddTagToPlayScriptRequest)(nil),        // 10: play_scripts.AddTagToPlayScriptRequest
 	(*RemoveTagFromPlayScriptRequest)(nil),   // 11: play_scripts.RemoveTagFromPlayScriptRequest
 	(*UpdatePlayScriptLineRequest)(nil),      // 12: play_scripts.UpdatePlayScriptLineRequest
-	(*CreatePlayScriptResponse)(nil),         // 13: play_scripts.CreatePlayScriptResponse
-	(*GetPlayScriptResponse)(nil),            // 14: play_scripts.GetPlayScriptResponse
-	(*GetPlayScriptsResponse)(nil),           // 15: play_scripts.GetPlayScriptsResponse
-	(*GetPlayScriptsForAccountResponse)(nil), // 16: play_scripts.GetPlayScriptsForAccountResponse
-	(*GetPublicPlayScriptsResponse)(nil),     // 17: play_scripts.GetPublicPlayScriptsResponse
-	(*GetPlayScriptsWithTagResponse)(nil),    // 18: play_scripts.GetPlayScriptsWithTagResponse
-	(*UpdatePlayScriptResponse)(nil),         // 19: play_scripts.UpdatePlayScriptResponse
-	(*ArchivePlayScriptResponse)(nil),        // 20: play_scripts.ArchivePlayScriptResponse
-	(*CreateScriptTagResponse)(nil),          // 21: play_scripts.CreateScriptTagResponse
-	(*ListScriptTagsResponse)(nil),           // 22: play_scripts.ListScriptTagsResponse
-	(*AddTagToPlayScriptResponse)(nil),       // 23: play_scripts.AddTagToPlayScriptResponse
-	(*RemoveTagFromPlayScriptResponse)(nil),  // 24: play_scripts.RemoveTagFromPlayScriptResponse
-	(*UpdatePlayScriptLineResponse)(nil),     // 25: play_scripts.UpdatePlayScriptLineResponse
+	(*RatePlayScriptRequest)(nil),            // 13: play_scripts.RatePlayScriptRequest
+	(*CreatePlayScriptResponse)(nil),         // 14: play_scripts.CreatePlayScriptResponse
+	(*GetPlayScriptResponse)(nil),            // 15: play_scripts.GetPlayScriptResponse
+	(*GetPlayScriptsResponse)(nil),           // 16: play_scripts.GetPlayScriptsResponse
+	(*GetPlayScriptsForAccountResponse)(nil), // 17: play_scripts.GetPlayScriptsForAccountResponse
+	(*GetPublicPlayScriptsResponse)(nil),     // 18: play_scripts.GetPublicPlayScriptsResponse
+	(*GetPlayScriptsWithTagResponse)(nil),    // 19: play_scripts.GetPlayScriptsWithTagResponse
+	(*UpdatePlayScriptResponse)(nil),         // 20: play_scripts.UpdatePlayScriptResponse
+	(*ArchivePlayScriptResponse)(nil),        // 21: play_scripts.ArchivePlayScriptResponse
+	(*CreateScriptTagResponse)(nil),          // 22: play_scripts.CreateScriptTagResponse
+	(*ListScriptTagsResponse)(nil),           // 23: play_scripts.ListScriptTagsResponse
+	(*AddTagToPlayScriptResponse)(nil),       // 24: play_scripts.AddTagToPlayScriptResponse
+	(*RemoveTagFromPlayScriptResponse)(nil),  // 25: play_scripts.RemoveTagFromPlayScriptResponse
+	(*UpdatePlayScriptLineResponse)(nil),     // 26: play_scripts.UpdatePlayScriptLineResponse
+	(*RatePlayScriptResponse)(nil),           // 27: play_scripts.RatePlayScriptResponse
 }
 var file_play_scripts_play_scripts_service_proto_depIdxs = []int32{
 	0,  // 0: play_scripts.PlayScriptsService.CreatePlayScript:input_type -> play_scripts.CreatePlayScriptRequest
@@ -168,21 +176,23 @@ var file_play_scripts_play_scripts_service_proto_depIdxs = []int32{
 	10, // 10: play_scripts.PlayScriptsService.AddTagToPlayScript:input_type -> play_scripts.AddTagToPlayScriptRequest
 	11, // 11: play_scripts.PlayScriptsService.RemoveTagFromPlayScript:input_type -> play_scripts.RemoveTagFromPlayScriptRequest
 	12, // 12: play_scripts.PlayScriptsService.UpdatePlayScriptLine:input_type -> play_scripts.UpdatePlayScriptLineRequest
-	13, // 13: play_scripts.PlayScriptsService.CreatePlayScript:output_type -> play_scripts.CreatePlayScriptResponse
-	14, // 14: play_scripts.PlayScriptsService.GetPlayScript:output_type -> play_scripts.GetPlayScriptResponse
-	15, // 15: play_scripts.PlayScriptsService.GetPlayScripts:output_type -> play_scripts.GetPlayScriptsResponse
-	16, // 16: play_scripts.PlayScriptsService.GetPlayScriptsForAccount:output_type -> play_scripts.GetPlayScriptsForAccountResponse
-	17, // 17: play_scripts.PlayScriptsService.GetPublicPlayScripts:output_type -> play_scripts.GetPublicPlayScriptsResponse
-	18, // 18: play_scripts.PlayScriptsService.GetPlayScriptsWithTag:output_type -> play_scripts.GetPlayScriptsWithTagResponse
-	19, // 19: play_scripts.PlayScriptsService.UpdatePlayScript:output_type -> play_scripts.UpdatePlayScriptResponse
-	20, // 20: play_scripts.PlayScriptsService.ArchivePlayScript:output_type -> play_scripts.ArchivePlayScriptResponse
-	21, // 21: play_scripts.PlayScriptsService.CreateScriptTag:output_type -> play_scripts.CreateScriptTagResponse
-	22, // 22: play_scripts.PlayScriptsService.ListScriptTags:output_type -> play_scripts.ListScriptTagsResponse
-	23, // 23: play_scripts.PlayScriptsService.AddTagToPlayScript:output_type -> play_scripts.AddTagToPlayScriptResponse
-	24, // 24: play_scripts.PlayScriptsService.RemoveTagFromPlayScript:output_type -> play_scripts.RemoveTagFromPlayScriptResponse
-	25, // 25: play_scripts.PlayScriptsService.UpdatePlayScriptLine:output_type -> play_scripts.UpdatePlayScriptLineResponse
-	13, // [13:26] is the sub-list for method output_type
-	0,  // [0:13] is the sub-list for method input_type
+	13, // 13: play_scripts.PlayScriptsService.RatePlayScript:input_type -> play_scripts.RatePlayScriptRequest
+	14, // 14: play_scripts.PlayScriptsService.CreatePlayScript:output_type -> play_scripts.CreatePlayScriptResponse
+	15, // 15: play_scripts.PlayScriptsService.GetPlayScript:output_type -> play_scripts.GetPlayScriptResponse
+	16, // 16: play_scripts.PlayScriptsService.GetPlayScripts:output_type -> play_scripts.GetPlayScriptsResponse
+	17, // 17: play_scripts.PlayScriptsService.GetPlayScriptsForAccount:output_type -> play_scripts.GetPlayScriptsForAccountResponse
+	18, // 18: play_scripts.PlayScriptsService.GetPublicPlayScripts:output_type -> play_scripts.GetPublicPlayScriptsResponse
+	19, // 19: play_scripts.PlayScriptsService.GetPlayScriptsWithTag:output_type -> play_scripts.GetPlayScriptsWithTagResponse
+	20, // 20: play_scripts.PlayScriptsService.UpdatePlayScript:output_type -> play_scripts.UpdatePlayScriptResponse
+	21, // 21: play_scripts.PlayScriptsService.ArchivePlayScript:output_type -> play_scripts.ArchivePlayScriptResponse
+	22, // 22: play_scripts.PlayScriptsService.CreateScriptTag:output_type -> play_scripts.CreateScriptTagResponse
+	23, // 23: play_scripts.PlayScriptsService.ListScriptTags:output_type -> play_scripts.ListScriptTagsResponse
+	24, // 24: play_scripts.PlayScriptsService.AddTagToPlayScript:output_type -> play_scripts.AddTagToPlayScriptResponse
+	25, // 25: play_scripts.PlayScriptsService.RemoveTagFromPlayScript:output_type -> play_scripts.RemoveTagFromPlayScriptResponse
+	26, // 26: play_scripts.PlayScriptsService.UpdatePlayScriptLine:output_type -> play_scripts.UpdatePlayScriptLineResponse
+	27, // 27: play_scripts.PlayScriptsService.RatePlayScript:output_type -> play_scripts.RatePlayScriptResponse
+	14, // [14:28] is the sub-list for method output_type
+	0,  // [0:14] is the sub-list for method input_type
 	0,  // [0:0] is the sub-list for extension type_name
 	0,  // [0:0] is the sub-list for extension extendee
 	0,  // [0:0] is the sub-list for field type_name

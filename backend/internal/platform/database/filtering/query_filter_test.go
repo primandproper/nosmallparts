@@ -65,6 +65,7 @@ func TestQueryFilter_FromParams(T *testing.T) {
 			UpdatedBefore:   pointer.To(tt),
 			SortBy:          SortDescending,
 			IncludeArchived: pointer.To(true),
+			SearchQuery:     pointer.To(t.Name()),
 		}
 
 		exampleInput := url.Values{
@@ -167,6 +168,7 @@ func TestExtractQueryFilter(T *testing.T) {
 			UpdatedAfter:    pointer.To(tt),
 			UpdatedBefore:   pointer.To(tt),
 			SortBy:          SortDescending,
+			SearchQuery:     pointer.To(t.Name()),
 		}
 		exampleInput := url.Values{
 			textsearch.QueryKeySearch: []string{t.Name()},

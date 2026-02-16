@@ -19,6 +19,7 @@ export interface QueryFilter {
   maxResponseSize?: number | undefined;
   includeArchived?: boolean | undefined;
   cursor?: string | undefined;
+  searchQuery?: string | undefined;
 }
 
 export interface Pagination {
@@ -40,6 +41,7 @@ function createBaseQueryFilter(): QueryFilter {
     maxResponseSize: undefined,
     includeArchived: undefined,
     cursor: undefined,
+    searchQuery: undefined,
   };
 }
 
@@ -68,6 +70,9 @@ export const QueryFilter: MessageFns<QueryFilter> = {
     }
     if (message.cursor !== undefined) {
       writer.uint32(74).string(message.cursor);
+    }
+    if (message.searchQuery !== undefined) {
+      writer.uint32(82).string(message.searchQuery);
     }
     return writer;
   },
@@ -143,6 +148,14 @@ export const QueryFilter: MessageFns<QueryFilter> = {
           message.cursor = reader.string();
           continue;
         }
+        case 10: {
+          if (tag !== 82) {
+            break;
+          }
+
+          message.searchQuery = reader.string();
+          continue;
+        }
       }
       if ((tag & 7) === 4 || tag === 0) {
         break;
@@ -190,6 +203,11 @@ export const QueryFilter: MessageFns<QueryFilter> = {
           ? globalThis.Boolean(object.include_archived)
           : undefined,
       cursor: isSet(object.cursor) ? globalThis.String(object.cursor) : undefined,
+      searchQuery: isSet(object.searchQuery)
+        ? globalThis.String(object.searchQuery)
+        : isSet(object.search_query)
+          ? globalThis.String(object.search_query)
+          : undefined,
     };
   },
 
@@ -219,6 +237,9 @@ export const QueryFilter: MessageFns<QueryFilter> = {
     if (message.cursor !== undefined) {
       obj.cursor = message.cursor;
     }
+    if (message.searchQuery !== undefined) {
+      obj.searchQuery = message.searchQuery;
+    }
     return obj;
   },
 
@@ -235,6 +256,7 @@ export const QueryFilter: MessageFns<QueryFilter> = {
     message.maxResponseSize = object.maxResponseSize ?? undefined;
     message.includeArchived = object.includeArchived ?? undefined;
     message.cursor = object.cursor ?? undefined;
+    message.searchQuery = object.searchQuery ?? undefined;
     return message;
   },
 };

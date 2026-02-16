@@ -13,6 +13,8 @@ const (
 	UpdatePlayScriptsPermission Permission = "update.play_scripts"
 	// ArchivePlayScriptsPermission is an account admin permission.
 	ArchivePlayScriptsPermission Permission = "archive.play_scripts"
+	// RatePlayScriptsPermission allows a user to rate a play script.
+	RatePlayScriptsPermission Permission = "rate.play_scripts"
 
 	// CreateScriptTagsPermission is a service admin permission for creating script tags.
 	CreateScriptTagsPermission Permission = "create.script_tags"
@@ -29,6 +31,7 @@ var (
 		ReadPlayScriptsPermission,
 		UpdatePlayScriptsPermission,
 		ArchivePlayScriptsPermission,
+		RatePlayScriptsPermission,
 		CreateScriptTagsPermission,
 		AddTagToPlayScriptPermission,
 		RemoveTagFromPlayScriptPermission,

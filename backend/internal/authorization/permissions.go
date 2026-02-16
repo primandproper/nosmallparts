@@ -53,6 +53,7 @@ var (
 		ReadPlayScriptsPermission,
 		UpdatePlayScriptsPermission,
 		ArchivePlayScriptsPermission,
+		RatePlayScriptsPermission,
 		TransferAccountPermission,
 		InviteUserToAccountPermission,
 		ModifyMemberPermissionsForAccountPermission,
@@ -70,6 +71,7 @@ var (
 	// AccountMemberPermissions is every account member permission.
 	AccountMemberPermissions = []gorbac.Permission{
 		ReadPlayScriptsPermission,
+		RatePlayScriptsPermission,
 		ReadWebhooksPermission,
 		ReadIssueReportsPermission,
 		ReadAuditLogEntriesPermission,

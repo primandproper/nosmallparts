@@ -15,6 +15,7 @@ message QueryFilter {
   optional uint32 max_response_size = 7;
   optional bool include_archived = 8;
   optional string cursor = 9;
+  optional string search_query = 10;
 }
 
 message Pagination {

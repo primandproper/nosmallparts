@@ -9,7 +9,7 @@ import { AdBannerPlaceholder } from '@/components/AdBanner';
 
 type ScriptWithMeta = Play & { isUserScript?: boolean };
 
-type FilterType = 'all' | 'sample' | 'published' | 'drafts';
+type FilterType = 'all' | 'drafts';
 
 export default function ScriptsPage() {
   const router = useRouter();
@@ -50,11 +50,7 @@ export default function ScriptsPage() {
     }
 
     if (filter !== 'drafts') {
-      const filteredScripts = scripts.filter((s) => {
-        if (filter === 'sample') return !s.isUserScript;
-        if (filter === 'published') return s.isUserScript;
-        return true;
-      });
+      const filteredScripts = scripts; // all scripts when not on drafts-only
       items = [...items, ...filteredScripts.map((s) => ({ script: s, isDraft: false }))];
     }
 
@@ -149,8 +145,6 @@ export default function ScriptsPage() {
             {(
               [
                 { value: 'all', label: 'All' },
-                { value: 'sample', label: 'Samples' },
-                { value: 'published', label: 'Published' },
                 { value: 'drafts', label: 'My Drafts' },
               ] as { value: FilterType; label: string }[]
             ).map(({ value, label }) => (

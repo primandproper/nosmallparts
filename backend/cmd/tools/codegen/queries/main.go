@@ -51,6 +51,7 @@ func main() {
 		"internal/repositories/postgres/playscripts/sqlc_queries/play_script_cast_members.sql":    buildPlayScriptCastMembersQueries(databaseToUse),
 		"internal/repositories/postgres/playscripts/sqlc_queries/play_script_lines.sql":           buildPlayScriptLinesQueries(databaseToUse),
 		"internal/repositories/postgres/playscripts/sqlc_queries/script_tags.sql":                 buildScriptTagsQueries(databaseToUse),
+		"internal/repositories/postgres/playscripts/sqlc_queries/play_script_ratings.sql":         buildPlayScriptRatingsQueries(databaseToUse),
 	}
 
 	checkOnly := *checkOnlyFlag

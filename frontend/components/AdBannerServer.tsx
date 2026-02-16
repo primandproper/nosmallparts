@@ -15,12 +15,17 @@ export function AdBannerServer({
 }) {
   const client =
     process.env.ADSENSE_PUBLISHER_ID || process.env.NEXT_PUBLIC_ADSENSE_PUBLISHER_ID || '';
-  const slot =
-    process.env.ADSENSE_SLOT_ID || process.env.NEXT_PUBLIC_ADSENSE_SLOT_ID || '';
+  const slot = process.env.ADSENSE_SLOT_ID || process.env.NEXT_PUBLIC_ADSENSE_SLOT_ID || '';
 
   if (!client || !slot) return null;
 
   return (
-    <AdBanner client={client} slot={slot} format={format} responsive={responsive} className={className} />
+    <AdBanner
+      client={client}
+      slot={slot}
+      format={format}
+      responsive={responsive}
+      className={className}
+    />
   );
 }

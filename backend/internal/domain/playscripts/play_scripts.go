@@ -53,6 +53,8 @@ func init() {
 	gob.Register(new(PlayScriptCreationRequestInput))
 	gob.Register(new(PlayScriptDatabaseCreationInput))
 	gob.Register(new(PlayScriptUpdateRequestInput))
+	gob.Register(new(PlayScriptRating))
+	gob.Register(new(PlayScriptRatingStats))
 }
 
 type (
@@ -66,15 +68,17 @@ type (
 		PrecededBy       *PlayScript             `json:"precededBy,omitempty"`
 		PrecedesID       *string                 `json:"precedesId,omitempty"`
 		PrecededByID     *string                 `json:"precededById,omitempty"`
-		CreatedByUser    string                  `json:"createdByUser"`
-		BelongsToAccount string                  `json:"belongsToAccount"`
+		RatingStats      *PlayScriptRatingStats  `json:"ratingStats,omitempty"`
 		Author           string                  `json:"author,omitempty"`
+		BelongsToAccount string                  `json:"belongsToAccount"`
 		ID               string                  `json:"id"`
 		Title            string                  `json:"title"`
 		Description      string                  `json:"description"`
+		CreatedByUser    string                  `json:"createdByUser"`
 		CastMembers      []*PlayScriptCastMember `json:"castMembers"`
 		Lines            []*PlayScriptLine       `json:"lines"`
 		Tags             []*ScriptTag            `json:"tags"`
+		UserRating       int                     `json:"userRating,omitempty"`
 		IsPublic         bool                    `json:"isPublic"`
 	}
 

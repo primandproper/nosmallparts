@@ -4,6 +4,7 @@ import (
 	"context"
 	"errors"
 
+	playscripts "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/playscripts"
 	grpcconverters "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/converters"
 	playscriptssvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/play_scripts"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/types"
@@ -112,6 +113,8 @@ func (s *serviceImpl) GetPlayScripts(ctx context.Context, request *playscriptssv
 		Pagination: grpcconverters.ConvertPaginationToGRPCPagination(playScripts.Pagination, filter),
 	}
 
+	s.enrichPlayScriptsWithRatings(ctx, playScripts.Data, sessionContextData.Requester.UserID)
+
 	for _, playScript := range playScripts.Data {
 		x.Results = append(x.Results, converters.ConvertPlayScriptToGRPCPlayScript(playScript))
 	}
@@ -146,6 +149,8 @@ func (s *serviceImpl) GetPlayScriptsForAccount(ctx context.Context, request *pla
 		Pagination: grpcconverters.ConvertPaginationToGRPCPagination(playScripts.Pagination, filter),
 	}
 
+	s.enrichPlayScriptsWithRatings(ctx, playScripts.Data, sessionContextData.Requester.UserID)
+
 	for _, playScript := range playScripts.Data {
 		x.Results = append(x.Results, converters.ConvertPlayScriptToGRPCPlayScript(playScript))
 	}
@@ -179,6 +184,8 @@ func (s *serviceImpl) GetPublicPlayScripts(ctx context.Context, request *playscr
 		},
 		Pagination: grpcconverters.ConvertPaginationToGRPCPagination(playScripts.Pagination, filter),
 	}
+
+	s.enrichPlayScriptsWithRatings(ctx, playScripts.Data, sessionContextData.Requester.UserID)
 
 	for _, playScript := range playScripts.Data {
 		x.Results = append(x.Results, converters.ConvertPlayScriptToGRPCPlayScript(playScript))
@@ -230,6 +237,67 @@ func (s *serviceImpl) UpdatePlayScript(ctx context.Context, request *playscripts
 			CurrentAccountId: sessionContextData.ActiveAccountID,
 		},
 		Updated: converters.ConvertPlayScriptToGRPCPlayScript(playScript),
+	}
+
+	return x, nil
+}
+
+// enrichPlayScriptsWithRatings attaches rating stats and user ratings to each play script.
+func (s *serviceImpl) enrichPlayScriptsWithRatings(ctx context.Context, playScripts []*playscripts.PlayScript, userID string) {
+	if len(playScripts) == 0 {
+		return
+	}
+	ids := make([]string, len(playScripts))
+	for i, ps := range playScripts {
+		ids[i] = ps.ID
+	}
+	stats, err := s.playScriptRepository.GetRatingStatsForPlayScripts(ctx, ids)
+	if err != nil {
+		return
+	}
+	userRatings, err := s.playScriptRepository.GetUserRatingsForPlayScripts(ctx, userID, ids)
+	if err != nil {
+		return
+	}
+	for _, ps := range playScripts {
+		if s, ok := stats[ps.ID]; ok {
+			ps.RatingStats = s
+		}
+		if r, ok := userRatings[ps.ID]; ok {
+			ps.UserRating = r
+		}
+	}
+}
+
+func (s *serviceImpl) RatePlayScript(ctx context.Context, request *playscriptssvc.RatePlayScriptRequest) (*playscriptssvc.RatePlayScriptResponse, error) {
+	ctx, span := s.tracer.StartSpan(ctx)
+	defer span.End()
+
+	logger := s.logger.WithSpan(span).WithValue(keys.PlayScriptIDKey, request.PlayScriptId)
+
+	sessionContextData, err := s.sessionContextDataFetcher(ctx)
+	if err != nil {
+		return nil, observability.PrepareAndLogGRPCStatus(err, logger, span, codes.Unauthenticated, "failed to fetch session context data")
+	}
+	userID := sessionContextData.Requester.UserID
+	logger = logger.WithValue(keys.UserIDKey, userID)
+
+	rating := int(request.Rating)
+	if rating < 1 || rating > 5 {
+		return nil, observability.PrepareAndLogGRPCStatus(errors.New("rating must be between 1 and 5"), logger, span, codes.InvalidArgument, "invalid rating")
+	}
+
+	created, err := s.playScriptRepository.RatePlayScript(ctx, userID, request.PlayScriptId, rating)
+	if err != nil {
+		return nil, observability.PrepareAndLogGRPCStatus(err, logger, span, codes.Internal, "failed to rate play script")
+	}
+
+	x := &playscriptssvc.RatePlayScriptResponse{
+		ResponseDetails: &types.ResponseDetails{
+			TraceId:          span.SpanContext().TraceID().String(),
+			CurrentAccountId: sessionContextData.ActiveAccountID,
+		},
+		Created: converters.ConvertPlayScriptRatingToGRPC(created),
 	}
 
 	return x, nil
