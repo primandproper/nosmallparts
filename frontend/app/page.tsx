@@ -188,10 +188,6 @@ function HomeContent() {
             <h1 className="font-[Cormorant_Garamond] text-5xl md:text-6xl font-bold text-gold-gradient mb-4 tracking-wide">
               No Small Parts
             </h1>
-            <div className="decorative-line w-48 mx-auto mb-4" />
-            <p className="text-[var(--cream)] opacity-60 text-lg font-light tracking-wide">
-              Take the stage. Perform together.
-            </p>
           </div>
 
           {/* Form Card */}
@@ -271,17 +267,10 @@ function HomeContent() {
               className="text-[var(--gold)] hover:text-[var(--gold-light)] transition-colors inline-flex items-center gap-2"
             >
               <span>📚</span>
-              <span>Browse Scripts Library</span>
+              <span>Browse Scripts</span>
               <span>→</span>
             </Link>
           </div>
-
-          {/* Footer text */}
-          <p className="text-center text-[var(--cream)] opacity-40 text-sm mt-4 animate-fade-up animate-delay-4">
-            Create a stage and share the code with your cast,
-            <br />
-            or enter an existing code to join the performance.
-          </p>
         </div>
       </div>
     </main>

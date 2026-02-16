@@ -6,7 +6,14 @@ export interface LogoutResponse {
 
 export async function POST(): Promise<NextResponse<LogoutResponse>> {
   const res = NextResponse.json({ success: true });
-  const opts: Parameters<NextResponse['cookies']['set']>[2] = { path: '/', maxAge: 0 };
+  // Match login cookie options so the browser clears the cookie
+  const opts: Parameters<NextResponse['cookies']['set']>[2] = {
+    path: '/',
+    maxAge: 0,
+    httpOnly: true,
+    secure: process.env.NODE_ENV === 'production',
+    sameSite: 'lax',
+  };
   if (process.env.COOKIE_DOMAIN) {
     opts.domain = process.env.COOKIE_DOMAIN;
   }
