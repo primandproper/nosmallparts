@@ -80,7 +80,9 @@ export function ScriptCard({ script, isDraft = false, onClick, onDelete }: Scrip
               {script.ratingStats.averageRating.toFixed(1)} ({script.ratingStats.ratingCount})
             </span>
             {typeof script.userRating === 'number' && script.userRating > 0 && (
-              <span className="text-[var(--cream)] opacity-60 text-xs">· you: {script.userRating}★</span>
+              <span className="text-[var(--cream)] opacity-60 text-xs">
+                · you: {script.userRating}★
+              </span>
             )}
           </div>
         )}

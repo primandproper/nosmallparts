@@ -22,10 +22,7 @@ function grpcStatusToHttp(code: number): number {
 }
 
 // POST /api/play-scripts/[id]/rate - Rate a play script (1-5)
-export async function POST(
-  request: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
-) {
+export async function POST(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   try {
     const session = await getSession();
     if (!session?.accessToken) {
@@ -39,7 +36,8 @@ export async function POST(
     }
 
     const body = await request.json();
-    const rating = typeof body.rating === 'number' ? body.rating : parseInt(String(body.rating), 10);
+    const rating =
+      typeof body.rating === 'number' ? body.rating : parseInt(String(body.rating), 10);
 
     if (Number.isNaN(rating) || rating < 1 || rating > 5) {
       return NextResponse.json(

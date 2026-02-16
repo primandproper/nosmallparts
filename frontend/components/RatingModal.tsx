@@ -73,9 +73,7 @@ export function RatingModal({
           ))}
         </div>
 
-        {error && (
-          <p className="text-red-400 text-sm text-center">{error}</p>
-        )}
+        {error && <p className="text-red-400 text-sm text-center">{error}</p>}
 
         <div className="flex flex-col gap-2">
           <button

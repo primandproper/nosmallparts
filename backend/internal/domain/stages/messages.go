@@ -18,6 +18,7 @@ const (
 	ClientMessageTypeStartPlay        ClientMessageType = "startPlay"
 	ClientMessageTypeNextLine         ClientMessageType = "nextLine"
 	ClientMessageTypeResetPlay        ClientMessageType = "resetPlay"
+	ClientMessageTypeHeartbeat        ClientMessageType = "heartbeat"
 )
 
 // ServerMessageType represents the type of server message.

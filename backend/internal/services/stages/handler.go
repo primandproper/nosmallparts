@@ -201,6 +201,8 @@ func (h *Handler) handleMessage(ctx context.Context, connCtx *platformws.Connect
 		h.handleNextLine(ctx, connCtx)
 	case stagesdomain.ClientMessageTypeResetPlay:
 		h.handleResetPlay(ctx, connCtx)
+	case stagesdomain.ClientMessageTypeHeartbeat:
+		h.handleHeartbeat(ctx, connCtx)
 	default:
 		h.sendError(ctx, connCtx, "unknown message type")
 	}

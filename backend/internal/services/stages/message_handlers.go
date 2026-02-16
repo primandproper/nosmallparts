@@ -468,6 +468,31 @@ func (h *Handler) handleResetPlay(ctx context.Context, connCtx *platformws.Conne
 	h.broadcastStageState(ctx, connCtx.GroupID)
 }
 
+// handleHeartbeat handles a client heartbeat request by returning the current stage state.
+// This allows clients to reconcile and recover from desync (e.g. missed lineAdvanced broadcasts).
+func (h *Handler) handleHeartbeat(ctx context.Context, connCtx *platformws.ConnectionContext) {
+	ctx, span := h.tracer.StartSpan(ctx)
+	defer span.End()
+
+	if connCtx.GroupID == "" {
+		return
+	}
+
+	stage, err := h.stagesRepo.GetStageByID(ctx, connCtx.GroupID)
+	if err != nil {
+		h.logger.Error("failed to get stage for heartbeat", err)
+		return
+	}
+
+	stageState := h.buildStageState(ctx, stage)
+	if err = connCtx.WriteJSON(&stagesdomain.ServerMessage{
+		Type:  stagesdomain.ServerMessageTypeStageState,
+		State: stageState,
+	}); err != nil {
+		observability.AcknowledgeError(err, h.logger, span, "failed to send heartbeat stage state")
+	}
+}
+
 // sendAvailablePlays sends the list of available plays to a participant.
 func (h *Handler) sendAvailablePlays(ctx context.Context, connCtx *platformws.ConnectionContext) {
 	ctx, span := h.tracer.StartSpan(ctx)

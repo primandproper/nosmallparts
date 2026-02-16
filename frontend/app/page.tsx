@@ -275,7 +275,6 @@ function HomeContent() {
             <br />
             or enter an existing code to join the performance.
           </p>
-
         </div>
       </div>
     </main>

@@ -142,6 +142,9 @@ export function usePlayState({
   const intentionalCloseRef = useRef(false);
   const [reconnectAttempt, setReconnectAttempt] = useState(0);
   const reconnectTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const heartbeatIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  const HEARTBEAT_INTERVAL_MS = 25_000;
 
   const sendMessage = useCallback((message: object) => {
     if (wsRef.current?.readyState === WebSocket.OPEN) {
@@ -175,6 +178,13 @@ export function usePlayState({
               );
               setParticipantId(message.participantId);
               setStageState(state);
+              // Start heartbeat to periodically reconcile state (recovers from missed lineAdvanced etc)
+              if (heartbeatIntervalRef.current) clearInterval(heartbeatIntervalRef.current);
+              heartbeatIntervalRef.current = setInterval(() => {
+                if (wsRef.current?.readyState === WebSocket.OPEN) {
+                  wsRef.current.send(JSON.stringify({ type: 'heartbeat' }));
+                }
+              }, HEARTBEAT_INTERVAL_MS);
             }
             break;
           case 'stageState':
@@ -296,6 +306,10 @@ export function usePlayState({
 
     return () => {
       intentionalCloseRef.current = true;
+      if (heartbeatIntervalRef.current) {
+        clearInterval(heartbeatIntervalRef.current);
+        heartbeatIntervalRef.current = null;
+      }
       if (reconnectTimeoutRef.current) {
         clearTimeout(reconnectTimeoutRef.current);
         reconnectTimeoutRef.current = null;

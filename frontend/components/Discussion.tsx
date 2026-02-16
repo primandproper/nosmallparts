@@ -19,7 +19,6 @@ export function Discussion({
   onRatingComplete,
   isAuthenticated,
 }: DiscussionProps) {
-
   const handleSubmitRating = async (rating: number) => {
     if (!playId) return;
     const res = await fetch(`/api/play-scripts/${playId}/rate`, {
