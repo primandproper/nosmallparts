@@ -388,10 +388,13 @@ func (h *Handler) handleNextLine(ctx context.Context, connCtx *platformws.Connec
 		return
 	}
 
-	newLineIndex := stage.CurrentLineIndex + 1
+	// Use turn-based indexing (unique line indices) to match frontend semantics.
+	// Frontend uses getLineIndices(play) and currentLineIndex as offset into that.
+	turnIndices := playscripts.GetSortedUniqueLineIndices(play)
+	newTurnIndex := stage.CurrentLineIndex + 1
 
-	// Check if we've reached the end
-	if newLineIndex >= len(play.Lines) {
+	// Check if we've reached the end (last turn completed)
+	if newTurnIndex >= len(turnIndices) {
 		// End the play
 		discussionPhase := stagesdomain.StagePhaseDiscussion
 		if err = h.stagesRepo.UpdateStage(ctx, connCtx.GroupID, &stagesdomain.StageUpdateInput{
@@ -414,18 +417,18 @@ func (h *Handler) handleNextLine(ctx context.Context, connCtx *platformws.Connec
 		}
 		h.connections.BroadcastToGroupAsync(ctx, connCtx.GroupID, playEndedMsg)
 	} else {
-		// Advance to next line
+		// Advance to next turn
 		if err = h.stagesRepo.UpdateStage(ctx, connCtx.GroupID, &stagesdomain.StageUpdateInput{
-			CurrentLineIndex: &newLineIndex,
+			CurrentLineIndex: &newTurnIndex,
 		}); err != nil {
 			logger.Error("failed to advance line", err)
 			return
 		}
 
-		logger.WithValue("stageID", connCtx.GroupID).WithValue("lineIndex", newLineIndex).Debug("advanced to next line")
+		logger.WithValue("stageID", connCtx.GroupID).WithValue("turnIndex", newTurnIndex).Debug("advanced to next turn")
 		h.connections.BroadcastToGroupAsync(ctx, connCtx.GroupID, &stagesdomain.ServerMessage{
 			Type:             stagesdomain.ServerMessageTypeLineAdvanced,
-			CurrentLineIndex: newLineIndex,
+			CurrentLineIndex: newTurnIndex,
 		})
 	}
 

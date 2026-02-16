@@ -3,6 +3,7 @@ package playscripts
 import (
 	"context"
 	"encoding/gob"
+	"sort"
 	"time"
 
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/filtering"
@@ -258,4 +259,19 @@ func (p *PlayScriptUpdateRequestInput) ValidateWithContext(ctx context.Context) 
 		p,
 		validation.Field(&p.Title, validation.When(p.Title != nil, validation.Required)),
 	)
+}
+
+// GetSortedUniqueLineIndices returns the sorted unique LineIndex values from a play's lines.
+// This defines "turns" - the frontend uses the same logic; backend must match for correct speaker resolution.
+func GetSortedUniqueLineIndices(play *PlayScript) []int {
+	seen := make(map[int]struct{})
+	for _, l := range play.Lines {
+		seen[l.LineIndex] = struct{}{}
+	}
+	indices := make([]int, 0, len(seen))
+	for i := range seen {
+		indices = append(indices, i)
+	}
+	sort.Ints(indices)
+	return indices
 }

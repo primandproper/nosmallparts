@@ -22,7 +22,7 @@
 
 ### 1. GitHub Actions secrets (for build-time inlining)
 
-Add these repo secrets; they are passed to Skaffold for `NEXT_PUBLIC_*` build args:
+The frontend is deployed to Kubernetes via Skaffold. Add these repo secrets; they are passed to Skaffold for `NEXT_PUBLIC_*` build args:
 
 - `NO_SMALL_PARTS_ADSENSE_PUBLISHER_ID` — e.g. `ca-pub-xxxxxxxxxxxxxxxx`
 - `NO_SMALL_PARTS_ADSENSE_SLOT_ID` — e.g. `1234567890`
