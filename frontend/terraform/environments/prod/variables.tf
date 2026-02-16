@@ -63,3 +63,15 @@ variable "frontend_next_public_backend_ws_url" {
   default     = ""
   description = "WebSocket URL for stages (browser)"
 }
+
+variable "ADSENSE_PUBLISHER_ID" {
+  type        = string
+  default     = ""
+  description = "Google AdSense publisher ID (ca-pub-...)"
+}
+
+variable "ADSENSE_SLOT_ID" {
+  type        = string
+  default     = ""
+  description = "Google AdSense ad slot ID"
+}

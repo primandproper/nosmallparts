@@ -3,6 +3,9 @@
 import { useEffect } from 'react';
 
 interface AdBannerProps {
+  /** Publisher ID (ca-pub-...) – from AdBannerServer or env */
+  client: string;
+  /** Ad slot ID from AdSense dashboard */
   slot: string;
   format?: 'auto' | 'horizontal' | 'vertical' | 'rectangle';
   responsive?: boolean;
@@ -16,6 +19,7 @@ declare global {
 }
 
 export function AdBanner({
+  client,
   slot,
   format = 'auto',
   responsive = true,
@@ -23,19 +27,20 @@ export function AdBanner({
 }: AdBannerProps) {
   useEffect(() => {
     try {
-      // Push ad when component mounts
       (window.adsbygoogle = window.adsbygoogle || []).push({});
     } catch (err) {
       console.error('AdSense error:', err);
     }
   }, []);
 
+  if (!client || !slot) return null;
+
   return (
     <div className={`ad-container ${className}`}>
       <ins
         className="adsbygoogle"
         style={{ display: 'block' }}
-        data-ad-client="ca-pub-8295255064000727"
+        data-ad-client={client}
         data-ad-slot={slot}
         data-ad-format={format}
         data-full-width-responsive={responsive ? 'true' : 'false'}

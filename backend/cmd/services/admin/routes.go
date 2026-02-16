@@ -52,6 +52,12 @@ func (s *AdminFrontendServer) setupRoutes(router routing.Router) {
 	r.Get("/issue_reports", ghttp.Adapt(s.IssueReportsList))
 	r.Get("/api/issue_reports/search", ghttp.Adapt(s.IssueReportsSearch))
 
+	// Script Tags
+	r.Get("/script_tags", ghttp.Adapt(s.ScriptTagsList))
+	r.Get("/script_tags/new", ghttp.Adapt(s.ScriptTagNewPage))
+	r.Get("/api/script_tags/search", ghttp.Adapt(s.ScriptTagsSearch))
+	r.Post("/api/script_tags", ghttp.Adapt(s.ScriptTagCreate))
+
 	// Play Scripts
 	r.Get("/play_scripts", ghttp.Adapt(s.PlayScriptsList))
 	r.Get("/api/play_scripts/search", ghttp.Adapt(s.PlayScriptsSearch))

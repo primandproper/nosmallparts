@@ -36,6 +36,8 @@ module "frontend" {
   frontend_oauth2_client_id           = var.frontend_oauth2_client_id
   frontend_oauth2_client_secret       = var.frontend_oauth2_client_secret
   frontend_next_public_backend_ws_url = var.frontend_next_public_backend_ws_url
+  ADSENSE_PUBLISHER_ID                = var.ADSENSE_PUBLISHER_ID
+  ADSENSE_SLOT_ID                     = var.ADSENSE_SLOT_ID
 }
 
 output "cloud_run_frontend_url" {

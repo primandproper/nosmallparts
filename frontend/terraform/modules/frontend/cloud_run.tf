@@ -31,6 +31,14 @@ resource "google_cloud_run_v2_service" "frontend" {
         name  = "NEXT_PUBLIC_BACKEND_WS_URL"
         value = var.frontend_next_public_backend_ws_url
       }
+      env {
+        name  = "ADSENSE_PUBLISHER_ID"
+        value = var.ADSENSE_PUBLISHER_ID
+      }
+      env {
+        name  = "ADSENSE_SLOT_ID"
+        value = var.ADSENSE_SLOT_ID
+      }
     }
   }
 }

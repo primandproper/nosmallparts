@@ -10,7 +10,7 @@ import { Stage } from '@/components/Stage';
 import { Countdown } from '@/components/Countdown';
 import { Discussion } from '@/components/Discussion';
 import { Chat } from '@/components/Chat';
-import { AdBanner } from '@/components/AdBanner';
+import { AdBannerServer } from '@/components/AdBannerServer';
 
 export default function StagePage() {
   const params = useParams();
@@ -230,7 +230,7 @@ export default function StagePage() {
             />
 
             {/* Ad Banner */}
-            <AdBanner slot="REPLACEME" />
+            <AdBannerServer />
           </div>
         </div>
       </div>

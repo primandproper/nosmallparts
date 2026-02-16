@@ -19,3 +19,7 @@ artifact_repository_id = "containers"
 # frontend_oauth2_client_id = "..."
 # frontend_oauth2_client_secret = "..."
 # frontend_next_public_backend_ws_url = "wss://..."
+
+# AdSense (set in TFC as ADSENSE_PUBLISHER_ID and ADSENSE_SLOT_ID)
+# ADSENSE_PUBLISHER_ID = "ca-pub-xxxxxxxxxxxxxxxx"
+# ADSENSE_SLOT_ID = "1234567890"

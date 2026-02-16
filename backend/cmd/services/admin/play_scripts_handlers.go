@@ -304,8 +304,6 @@ func (s *AdminFrontendServer) PlayScriptPage(_ http.ResponseWriter, req *http.Re
 		return page("Play Script", s.renderPlayScriptsError(fmt.Sprintf("Error creating form: %v", err))), nil
 	}
 
-	// Lines section
-	linesSection := s.renderPlayScriptLinesSection(play)
 	// Tags section - loaded via HTMX
 	tagsSection := components.CardWithHeader(
 		"Tags",
@@ -319,13 +317,15 @@ func (s *AdminFrontendServer) PlayScriptPage(_ http.ResponseWriter, req *http.Re
 			components.LoadingSpinner(&design.StandardPalette),
 		),
 	)
+	// Lines section
+	linesSection := s.renderPlayScriptLinesSection(play)
 
 	return page("Play Script",
 		ghtml.Div(
 			ghtml.Class("space-y-6"),
 			formPageResult.Node,
-			linesSection,
 			tagsSection,
+			linesSection,
 		),
 	), nil
 }
