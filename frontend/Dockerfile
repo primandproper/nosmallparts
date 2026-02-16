@@ -12,9 +12,11 @@ RUN npm ci
 # Copy source code
 COPY . .
 
-# Build-time config for client-side (NEXT_PUBLIC_*). Default matches prod; override via --build-arg.
+# Build-time config for client-side (NEXT_PUBLIC_*). Override via --build-arg.
 ARG NEXT_PUBLIC_BACKEND_WS_URL=wss://api.nosmall.parts/ws/stages
 ENV NEXT_PUBLIC_BACKEND_WS_URL=$NEXT_PUBLIC_BACKEND_WS_URL
+ARG NEXT_PUBLIC_ADSENSE_PUBLISHER_ID=
+ENV NEXT_PUBLIC_ADSENSE_PUBLISHER_ID=$NEXT_PUBLIC_ADSENSE_PUBLISHER_ID
 
 # Build the Next.js app
 RUN npm run build

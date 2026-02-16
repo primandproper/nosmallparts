@@ -8,8 +8,9 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const adsenseClient =
-    process.env.ADSENSE_PUBLISHER_ID || process.env.NEXT_PUBLIC_ADSENSE_PUBLISHER_ID || '';
+  // Use only NEXT_PUBLIC_* so server and client see the same value (prevents hydration mismatch).
+  // ADSENSE_PUBLISHER_ID is server-only and would cause different <head> output.
+  const adsenseClient = process.env.NEXT_PUBLIC_ADSENSE_PUBLISHER_ID || '';
 
   return (
     <html lang="en">

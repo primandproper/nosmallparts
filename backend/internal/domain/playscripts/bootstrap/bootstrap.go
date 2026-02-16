@@ -10,7 +10,7 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/playscripts"
 )
 
-//go:embed shakespeare/*.json
+//go:embed shakespeare/*.json movies/*.json tvshows/*.json
 var shakespeareFS embed.FS
 
 // ShakespearePlayScripts returns all play script creation requests from the embedded
@@ -52,6 +52,70 @@ const IdealLineCountMin = 30
 // IdealLineCountMax is the maximum number of lines for an "ideal" play script.
 // Scripts with more lines typically exceed ~15 minutes of performance time.
 const IdealLineCountMax = 120
+
+// MoviePlayScripts returns all play script creation requests from the embedded
+// movies/ JSON files, sorted by filename.
+func MoviePlayScripts() ([]*playscripts.PlayScriptCreationRequestInput, error) {
+	entries, err := shakespeareFS.ReadDir("movies")
+	if err != nil {
+		return nil, fmt.Errorf("read movies dir: %w", err)
+	}
+	var names []string
+	for _, e := range entries {
+		if !e.IsDir() && filepath.Ext(e.Name()) == ".json" {
+			names = append(names, e.Name())
+		}
+	}
+	sort.Strings(names)
+
+	result := make([]*playscripts.PlayScriptCreationRequestInput, 0, len(names))
+	for _, name := range names {
+		path := filepath.Join("movies", name)
+		var data []byte
+		data, err = shakespeareFS.ReadFile(path)
+		if err != nil {
+			return nil, fmt.Errorf("read %s: %w", path, err)
+		}
+		var input playscripts.PlayScriptCreationRequestInput
+		if err = json.Unmarshal(data, &input); err != nil {
+			return nil, fmt.Errorf("unmarshal %s: %w", path, err)
+		}
+		result = append(result, &input)
+	}
+	return result, nil
+}
+
+// TVShowPlayScripts returns all play script creation requests from the embedded
+// tvshows/ JSON files, sorted by filename.
+func TVShowPlayScripts() ([]*playscripts.PlayScriptCreationRequestInput, error) {
+	entries, err := shakespeareFS.ReadDir("tvshows")
+	if err != nil {
+		return nil, fmt.Errorf("read tvshows dir: %w", err)
+	}
+	var names []string
+	for _, e := range entries {
+		if !e.IsDir() && filepath.Ext(e.Name()) == ".json" {
+			names = append(names, e.Name())
+		}
+	}
+	sort.Strings(names)
+
+	result := make([]*playscripts.PlayScriptCreationRequestInput, 0, len(names))
+	for _, name := range names {
+		path := filepath.Join("tvshows", name)
+		var data []byte
+		data, err = shakespeareFS.ReadFile(path)
+		if err != nil {
+			return nil, fmt.Errorf("read %s: %w", path, err)
+		}
+		var input playscripts.PlayScriptCreationRequestInput
+		if err = json.Unmarshal(data, &input); err != nil {
+			return nil, fmt.Errorf("unmarshal %s: %w", path, err)
+		}
+		result = append(result, &input)
+	}
+	return result, nil
+}
 
 // IdealPlayScripts returns play scripts that are appropriately sized for a ~15 minute
 // session: not too short (e.g. prologues) and not too long. It filters the Shakespeare

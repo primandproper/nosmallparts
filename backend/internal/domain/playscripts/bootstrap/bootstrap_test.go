@@ -58,3 +58,56 @@ func TestIdealPlayScripts(t *testing.T) {
 		t.Error("expected Comedy of Errors Act 1 (47 lines) to be in IdealPlayScripts")
 	}
 }
+
+func TestMoviePlayScripts(t *testing.T) {
+	scripts, err := MoviePlayScripts()
+	if err != nil {
+		t.Fatalf("MoviePlayScripts: %v", err)
+	}
+	if len(scripts) == 0 {
+		t.Fatal("expected at least one movie script")
+	}
+	// Spot check: Superbad should be in the collection
+	var foundSuperbad bool
+	for _, s := range scripts {
+		if s.Title == "Superbad (Excerpt)" {
+			foundSuperbad = true
+			if len(s.CastMembers) != 6 {
+				t.Errorf("Superbad: expected 6 cast members, got %d", len(s.CastMembers))
+			}
+			if len(s.Lines) != 69 {
+				t.Errorf("Superbad: expected 69 lines, got %d", len(s.Lines))
+			}
+			break
+		}
+	}
+	if !foundSuperbad {
+		t.Error("expected Superbad (Excerpt) to be in MoviePlayScripts")
+	}
+}
+
+func TestTVShowPlayScripts(t *testing.T) {
+	scripts, err := TVShowPlayScripts()
+	if err != nil {
+		t.Fatalf("TVShowPlayScripts: %v", err)
+	}
+	if len(scripts) == 0 {
+		t.Fatal("expected at least one TV show script")
+	}
+	var foundBreakingBad bool
+	for _, s := range scripts {
+		if s.Title == "Breaking Bad (Excerpt)" {
+			foundBreakingBad = true
+			if len(s.CastMembers) != 2 {
+				t.Errorf("Breaking Bad: expected 2 cast members, got %d", len(s.CastMembers))
+			}
+			if len(s.Lines) != 39 {
+				t.Errorf("Breaking Bad: expected 39 lines, got %d", len(s.Lines))
+			}
+			break
+		}
+	}
+	if !foundBreakingBad {
+		t.Error("expected Breaking Bad (Excerpt) to be in TVShowPlayScripts")
+	}
+}
