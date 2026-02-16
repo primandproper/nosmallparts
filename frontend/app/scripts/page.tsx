@@ -61,7 +61,8 @@ export default function ScriptsPage() {
           item.script.title.toLowerCase().includes(query) ||
           item.script.description.toLowerCase().includes(query) ||
           (item.script.author && item.script.author.toLowerCase().includes(query)) ||
-          (item.script.cast || []).some((c) => c.name.toLowerCase().includes(query))
+          (item.script.cast || []).some((c) => c.name.toLowerCase().includes(query)) ||
+          (item.script.tags || []).some((t) => t.name.toLowerCase().includes(query))
         );
       });
     }

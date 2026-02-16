@@ -536,6 +536,144 @@ func (q *Queries) GetPublicPlayScripts(ctx context.Context, db DBTX, arg *GetPub
 	return items, nil
 }
 
+const searchPlayScriptsForXParticipants = `-- name: SearchPlayScriptsForXParticipants :many
+SELECT
+	play_scripts.id,
+	play_scripts.title,
+	play_scripts.description,
+	play_scripts.author,
+	play_scripts.is_public,
+	play_scripts.preceded_by_id,
+	play_scripts.precedes_id,
+	play_scripts.created_at,
+	play_scripts.last_updated_at,
+	play_scripts.archived_at,
+	play_scripts.created_by_user,
+	play_scripts.belongs_to_account,
+	(
+		SELECT COUNT(play_scripts.id)
+		FROM play_scripts
+		WHERE play_scripts.archived_at IS NULL
+			AND
+			play_scripts.created_at > COALESCE($1, (SELECT NOW() - '999 years'::INTERVAL))
+			AND play_scripts.created_at < COALESCE($2, (SELECT NOW() + '999 years'::INTERVAL))
+			AND (
+				play_scripts.last_updated_at IS NULL
+				OR play_scripts.last_updated_at > COALESCE($3, (SELECT NOW() - '999 years'::INTERVAL))
+			)
+			AND (
+				play_scripts.last_updated_at IS NULL
+				OR play_scripts.last_updated_at < COALESCE($4, (SELECT NOW() + '999 years'::INTERVAL))
+			)
+			AND (NOT COALESCE($5, false)::boolean OR play_scripts.archived_at = NULL)
+			AND (play_scripts.is_public = TRUE OR play_scripts.belongs_to_account = $6)
+			AND (SELECT COUNT(*) FROM play_script_cast_members WHERE play_script_cast_members.play_script_id = play_scripts.id) = $7
+	) AS filtered_count,
+	(
+		SELECT COUNT(play_scripts.id)
+		FROM play_scripts
+		WHERE play_scripts.archived_at IS NULL
+			AND (play_scripts.is_public = TRUE OR play_scripts.belongs_to_account = $6)
+			AND (SELECT COUNT(*) FROM play_script_cast_members WHERE play_script_cast_members.play_script_id = play_scripts.id) = $7
+	) AS total_count
+FROM play_scripts
+WHERE play_scripts.archived_at IS NULL
+	AND (SELECT COUNT(*) FROM play_script_cast_members WHERE play_script_cast_members.play_script_id = play_scripts.id) = $7
+	AND (play_scripts.is_public = TRUE OR play_scripts.belongs_to_account = $6)
+	AND play_scripts.created_at > COALESCE($1, (SELECT NOW() - '999 years'::INTERVAL))
+	AND play_scripts.created_at < COALESCE($2, (SELECT NOW() + '999 years'::INTERVAL))
+	AND (
+		play_scripts.last_updated_at IS NULL
+		OR play_scripts.last_updated_at > COALESCE($4, (SELECT NOW() - '999 years'::INTERVAL))
+	)
+	AND (
+		play_scripts.last_updated_at IS NULL
+		OR play_scripts.last_updated_at < COALESCE($3, (SELECT NOW() + '999 years'::INTERVAL))
+	)
+	AND (play_scripts.is_public = TRUE OR play_scripts.belongs_to_account = $6)
+	AND (SELECT COUNT(*) FROM play_script_cast_members WHERE play_script_cast_members.play_script_id = play_scripts.id) = $7
+	AND play_scripts.id > COALESCE($8, '')
+ORDER BY play_scripts.id ASC
+LIMIT COALESCE($9, 50)
+`
+
+type SearchPlayScriptsForXParticipantsParams struct {
+	ResultLimit      interface{}
+	CreatedAfter     sql.NullTime
+	CreatedBefore    sql.NullTime
+	UpdatedBefore    sql.NullTime
+	UpdatedAfter     sql.NullTime
+	BelongsToAccount string
+	ParticipantCount string
+	Cursor           sql.NullString
+	IncludeArchived  sql.NullBool
+}
+
+type SearchPlayScriptsForXParticipantsRow struct {
+	CreatedAt        time.Time
+	ArchivedAt       sql.NullTime
+	LastUpdatedAt    sql.NullTime
+	Author           string
+	ID               string
+	Description      string
+	Title            string
+	CreatedByUser    string
+	BelongsToAccount string
+	PrecededByID     sql.NullString
+	PrecedesID       sql.NullString
+	FilteredCount    int64
+	TotalCount       int64
+	IsPublic         bool
+}
+
+func (q *Queries) SearchPlayScriptsForXParticipants(ctx context.Context, db DBTX, arg *SearchPlayScriptsForXParticipantsParams) ([]*SearchPlayScriptsForXParticipantsRow, error) {
+	rows, err := db.QueryContext(ctx, searchPlayScriptsForXParticipants,
+		arg.CreatedAfter,
+		arg.CreatedBefore,
+		arg.UpdatedBefore,
+		arg.UpdatedAfter,
+		arg.IncludeArchived,
+		arg.BelongsToAccount,
+		arg.ParticipantCount,
+		arg.Cursor,
+		arg.ResultLimit,
+	)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+	items := []*SearchPlayScriptsForXParticipantsRow{}
+	for rows.Next() {
+		var i SearchPlayScriptsForXParticipantsRow
+		if err := rows.Scan(
+			&i.ID,
+			&i.Title,
+			&i.Description,
+			&i.Author,
+			&i.IsPublic,
+			&i.PrecededByID,
+			&i.PrecedesID,
+			&i.CreatedAt,
+			&i.LastUpdatedAt,
+			&i.ArchivedAt,
+			&i.CreatedByUser,
+			&i.BelongsToAccount,
+			&i.FilteredCount,
+			&i.TotalCount,
+		); err != nil {
+			return nil, err
+		}
+		items = append(items, &i)
+	}
+	if err := rows.Close(); err != nil {
+		return nil, err
+	}
+	if err := rows.Err(); err != nil {
+		return nil, err
+	}
+	return items, nil
+}
+
 const updatePlayScript = `-- name: UpdatePlayScript :execrows
 UPDATE play_scripts SET
 	title = $1,

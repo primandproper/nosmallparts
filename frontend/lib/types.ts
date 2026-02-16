@@ -20,6 +20,12 @@ export interface PlayRatingStats {
   ratingCount: number;
 }
 
+export interface ScriptTag {
+  id: string;
+  name: string;
+  description?: string;
+}
+
 export interface Play {
   id: string;
   title: string;
@@ -27,6 +33,7 @@ export interface Play {
   author?: string;
   cast: CastMember[];
   lines: PlayLine[];
+  tags?: ScriptTag[];
   ratingStats?: PlayRatingStats;
   userRating?: number;
 }

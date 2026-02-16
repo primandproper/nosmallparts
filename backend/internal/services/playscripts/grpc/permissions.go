@@ -35,6 +35,9 @@ func ProvidePlayScriptsMethodPermissions() PlayScriptsMethodPermissions {
 		playscriptssvc.PlayScriptsService_GetPlayScriptsWithTag_FullMethodName: {
 			authorization.ReadPlayScriptsPermission,
 		},
+		playscriptssvc.PlayScriptsService_SearchPlayScriptsForXParticipants_FullMethodName: {
+			authorization.ReadPlayScriptsPermission,
+		},
 		playscriptssvc.PlayScriptsService_CreateScriptTag_FullMethodName: {
 			authorization.CreateScriptTagsPermission,
 		},

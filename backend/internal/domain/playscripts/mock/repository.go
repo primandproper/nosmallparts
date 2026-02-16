@@ -51,6 +51,15 @@ func (m *Repository) GetPublicPlayScripts(ctx context.Context, filter *filtering
 	return args.Get(0).(*filtering.QueryFilteredResult[playscripts.PlayScript]), args.Error(1)
 }
 
+// SearchPlayScriptsForXParticipants is a mock function.
+func (m *Repository) SearchPlayScriptsForXParticipants(ctx context.Context, participantCount int, accountID string, filter *filtering.QueryFilter) (*filtering.QueryFilteredResult[playscripts.PlayScript], error) {
+	args := m.Called(ctx, participantCount, accountID, filter)
+	if args.Get(0) == nil {
+		return nil, args.Error(1)
+	}
+	return args.Get(0).(*filtering.QueryFilteredResult[playscripts.PlayScript]), args.Error(1)
+}
+
 // CreatePlayScript is a mock function.
 func (m *Repository) CreatePlayScript(ctx context.Context, input *playscripts.PlayScriptDatabaseCreationInput, castMembers []*playscripts.PlayScriptCastMemberDatabaseCreationInput, lines []*playscripts.PlayScriptLineDatabaseCreationInput) (*playscripts.PlayScript, error) {
 	args := m.Called(ctx, input, castMembers, lines)

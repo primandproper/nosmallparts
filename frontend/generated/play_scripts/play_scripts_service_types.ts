@@ -135,6 +135,17 @@ export interface GetPlayScriptsWithTagResponse {
   results: PlayScript[];
 }
 
+export interface SearchPlayScriptsForXParticipantsRequest {
+  participantCount: number;
+  filter: QueryFilter | undefined;
+}
+
+export interface SearchPlayScriptsForXParticipantsResponse {
+  responseDetails: ResponseDetails | undefined;
+  pagination: Pagination | undefined;
+  results: PlayScript[];
+}
+
 export interface CreateScriptTagRequest {
   name: string;
   description: string;
@@ -2159,6 +2170,215 @@ export const GetPlayScriptsWithTagResponse: MessageFns<GetPlayScriptsWithTagResp
     return message;
   },
 };
+
+function createBaseSearchPlayScriptsForXParticipantsRequest(): SearchPlayScriptsForXParticipantsRequest {
+  return { participantCount: 0, filter: undefined };
+}
+
+export const SearchPlayScriptsForXParticipantsRequest: MessageFns<SearchPlayScriptsForXParticipantsRequest> =
+  {
+    encode(
+      message: SearchPlayScriptsForXParticipantsRequest,
+      writer: BinaryWriter = new BinaryWriter()
+    ): BinaryWriter {
+      if (message.participantCount !== 0) {
+        writer.uint32(8).int32(message.participantCount);
+      }
+      if (message.filter !== undefined) {
+        QueryFilter.encode(message.filter, writer.uint32(18).fork()).join();
+      }
+      return writer;
+    },
+
+    decode(
+      input: BinaryReader | Uint8Array,
+      length?: number
+    ): SearchPlayScriptsForXParticipantsRequest {
+      const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+      const end = length === undefined ? reader.len : reader.pos + length;
+      const message = createBaseSearchPlayScriptsForXParticipantsRequest();
+      while (reader.pos < end) {
+        const tag = reader.uint32();
+        switch (tag >>> 3) {
+          case 1: {
+            if (tag !== 8) {
+              break;
+            }
+
+            message.participantCount = reader.int32();
+            continue;
+          }
+          case 2: {
+            if (tag !== 18) {
+              break;
+            }
+
+            message.filter = QueryFilter.decode(reader, reader.uint32());
+            continue;
+          }
+        }
+        if ((tag & 7) === 4 || tag === 0) {
+          break;
+        }
+        reader.skip(tag & 7);
+      }
+      return message;
+    },
+
+    fromJSON(object: any): SearchPlayScriptsForXParticipantsRequest {
+      return {
+        participantCount: isSet(object.participantCount)
+          ? globalThis.Number(object.participantCount)
+          : isSet(object.participant_count)
+            ? globalThis.Number(object.participant_count)
+            : 0,
+        filter: isSet(object.filter) ? QueryFilter.fromJSON(object.filter) : undefined,
+      };
+    },
+
+    toJSON(message: SearchPlayScriptsForXParticipantsRequest): unknown {
+      const obj: any = {};
+      if (message.participantCount !== 0) {
+        obj.participantCount = Math.round(message.participantCount);
+      }
+      if (message.filter !== undefined) {
+        obj.filter = QueryFilter.toJSON(message.filter);
+      }
+      return obj;
+    },
+
+    create(
+      base?: DeepPartial<SearchPlayScriptsForXParticipantsRequest>
+    ): SearchPlayScriptsForXParticipantsRequest {
+      return SearchPlayScriptsForXParticipantsRequest.fromPartial(base ?? {});
+    },
+    fromPartial(
+      object: DeepPartial<SearchPlayScriptsForXParticipantsRequest>
+    ): SearchPlayScriptsForXParticipantsRequest {
+      const message = createBaseSearchPlayScriptsForXParticipantsRequest();
+      message.participantCount = object.participantCount ?? 0;
+      message.filter =
+        object.filter !== undefined && object.filter !== null
+          ? QueryFilter.fromPartial(object.filter)
+          : undefined;
+      return message;
+    },
+  };
+
+function createBaseSearchPlayScriptsForXParticipantsResponse(): SearchPlayScriptsForXParticipantsResponse {
+  return { responseDetails: undefined, pagination: undefined, results: [] };
+}
+
+export const SearchPlayScriptsForXParticipantsResponse: MessageFns<SearchPlayScriptsForXParticipantsResponse> =
+  {
+    encode(
+      message: SearchPlayScriptsForXParticipantsResponse,
+      writer: BinaryWriter = new BinaryWriter()
+    ): BinaryWriter {
+      if (message.responseDetails !== undefined) {
+        ResponseDetails.encode(message.responseDetails, writer.uint32(10).fork()).join();
+      }
+      if (message.pagination !== undefined) {
+        Pagination.encode(message.pagination, writer.uint32(18).fork()).join();
+      }
+      for (const v of message.results) {
+        PlayScript.encode(v!, writer.uint32(26).fork()).join();
+      }
+      return writer;
+    },
+
+    decode(
+      input: BinaryReader | Uint8Array,
+      length?: number
+    ): SearchPlayScriptsForXParticipantsResponse {
+      const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+      const end = length === undefined ? reader.len : reader.pos + length;
+      const message = createBaseSearchPlayScriptsForXParticipantsResponse();
+      while (reader.pos < end) {
+        const tag = reader.uint32();
+        switch (tag >>> 3) {
+          case 1: {
+            if (tag !== 10) {
+              break;
+            }
+
+            message.responseDetails = ResponseDetails.decode(reader, reader.uint32());
+            continue;
+          }
+          case 2: {
+            if (tag !== 18) {
+              break;
+            }
+
+            message.pagination = Pagination.decode(reader, reader.uint32());
+            continue;
+          }
+          case 3: {
+            if (tag !== 26) {
+              break;
+            }
+
+            message.results.push(PlayScript.decode(reader, reader.uint32()));
+            continue;
+          }
+        }
+        if ((tag & 7) === 4 || tag === 0) {
+          break;
+        }
+        reader.skip(tag & 7);
+      }
+      return message;
+    },
+
+    fromJSON(object: any): SearchPlayScriptsForXParticipantsResponse {
+      return {
+        responseDetails: isSet(object.responseDetails)
+          ? ResponseDetails.fromJSON(object.responseDetails)
+          : isSet(object.response_details)
+            ? ResponseDetails.fromJSON(object.response_details)
+            : undefined,
+        pagination: isSet(object.pagination) ? Pagination.fromJSON(object.pagination) : undefined,
+        results: globalThis.Array.isArray(object?.results)
+          ? object.results.map((e: any) => PlayScript.fromJSON(e))
+          : [],
+      };
+    },
+
+    toJSON(message: SearchPlayScriptsForXParticipantsResponse): unknown {
+      const obj: any = {};
+      if (message.responseDetails !== undefined) {
+        obj.responseDetails = ResponseDetails.toJSON(message.responseDetails);
+      }
+      if (message.pagination !== undefined) {
+        obj.pagination = Pagination.toJSON(message.pagination);
+      }
+      if (message.results?.length) {
+        obj.results = message.results.map((e) => PlayScript.toJSON(e));
+      }
+      return obj;
+    },
+
+    create(
+      base?: DeepPartial<SearchPlayScriptsForXParticipantsResponse>
+    ): SearchPlayScriptsForXParticipantsResponse {
+      return SearchPlayScriptsForXParticipantsResponse.fromPartial(base ?? {});
+    },
+    fromPartial(
+      object: DeepPartial<SearchPlayScriptsForXParticipantsResponse>
+    ): SearchPlayScriptsForXParticipantsResponse {
+      const message = createBaseSearchPlayScriptsForXParticipantsResponse();
+      message.responseDetails =
+        object.responseDetails !== undefined && object.responseDetails !== null
+          ? ResponseDetails.fromPartial(object.responseDetails)
+          : undefined;
+      message.pagination =
+        object.pagination !== undefined && object.pagination !== null
+          ? Pagination.fromPartial(object.pagination)
+          : undefined;
+      message.results = object.results?.map((e) => PlayScript.fromPartial(e)) || [];
+      return message;
+    },
+  };
 
 function createBaseCreateScriptTagRequest(): CreateScriptTagRequest {
   return { name: '', description: '' };

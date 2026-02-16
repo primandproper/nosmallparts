@@ -200,6 +200,42 @@ WHERE %s.%s IS NULL
 					buildCursorLimitClause(playScriptsTableName),
 				)),
 			},
+			{
+				Annotation: QueryAnnotation{
+					Name: "SearchPlayScriptsForXParticipants",
+					Type: ManyType,
+				},
+				Content: buildRawQuery((&builq.Builder{}).Addf(`SELECT
+	%s,
+	%s,
+	%s
+FROM %s
+WHERE %s.%s IS NULL
+	AND (SELECT COUNT(*) FROM play_script_cast_members WHERE play_script_cast_members.play_script_id = %s.id) = sqlc.arg(participant_count)
+	AND (%s.%s = TRUE OR %s.%s = sqlc.arg(belongs_to_account))
+	%s
+%s;`,
+					strings.Join(fullSelectColumns, ",\n\t"),
+					buildFilterCountSelect(playScriptsTableName, true, true, nil,
+						fmt.Sprintf("(%s.%s = TRUE OR %s.%s = sqlc.arg(belongs_to_account))", playScriptsTableName, isPublicColumn, playScriptsTableName, belongsToAccountColumn),
+						"(SELECT COUNT(*) FROM play_script_cast_members WHERE play_script_cast_members.play_script_id = play_scripts.id) = sqlc.arg(participant_count)",
+					),
+					buildTotalCountSelect(playScriptsTableName, true, nil,
+						fmt.Sprintf("(%s.%s = TRUE OR %s.%s = sqlc.arg(belongs_to_account))", playScriptsTableName, isPublicColumn, playScriptsTableName, belongsToAccountColumn),
+						"(SELECT COUNT(*) FROM play_script_cast_members WHERE play_script_cast_members.play_script_id = play_scripts.id) = sqlc.arg(participant_count)",
+					),
+					playScriptsTableName,
+					playScriptsTableName, archivedAtColumn,
+					playScriptsTableName,
+					playScriptsTableName, isPublicColumn,
+					playScriptsTableName, belongsToAccountColumn,
+					buildFilterConditions(playScriptsTableName, true, false,
+						fmt.Sprintf("(%s.%s = TRUE OR %s.%s = sqlc.arg(belongs_to_account))", playScriptsTableName, isPublicColumn, playScriptsTableName, belongsToAccountColumn),
+						"(SELECT COUNT(*) FROM play_script_cast_members WHERE play_script_cast_members.play_script_id = play_scripts.id) = sqlc.arg(participant_count)",
+					),
+					buildCursorLimitClause(playScriptsTableName),
+				)),
+			},
 		}
 	default:
 		return nil

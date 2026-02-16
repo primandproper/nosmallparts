@@ -13,7 +13,7 @@ import {
   PlayScriptCastMemberCreationInput,
   PlayScriptLineCreationInput,
 } from '@/generated/play_scripts/play_scripts_service_types';
-import { CastMember, PlayLine } from '@/lib/types';
+import { CastMember, PlayLine, ScriptTag } from '@/lib/types';
 import { Status } from '@grpc/grpc-js/build/src/constants';
 
 // Request body shape from the frontend
@@ -35,6 +35,7 @@ interface FrontendPlay {
   isUserScript?: boolean;
   cast: CastMember[];
   lines: PlayLine[];
+  tags?: ScriptTag[];
   ratingStats?: { averageRating: number; ratingCount: number };
   userRating?: number;
 }
@@ -73,6 +74,11 @@ function toFrontendPlay(ps: PlayScript): FrontendPlay {
       }
       return playLine;
     }),
+    tags: (ps.tags || []).map((t) => ({
+      id: t.id,
+      name: t.name,
+      description: t.description || undefined,
+    })),
     ...(ps.ratingStats && {
       ratingStats: {
         averageRating: ps.ratingStats.averageRating,

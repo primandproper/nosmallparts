@@ -13,6 +13,7 @@ service PlayScriptsService {
   rpc GetPlayScriptsForAccount(GetPlayScriptsForAccountRequest) returns (GetPlayScriptsForAccountResponse);
   rpc GetPublicPlayScripts(GetPublicPlayScriptsRequest) returns (GetPublicPlayScriptsResponse);
   rpc GetPlayScriptsWithTag(GetPlayScriptsWithTagRequest) returns (GetPlayScriptsWithTagResponse);
+  rpc SearchPlayScriptsForXParticipants(SearchPlayScriptsForXParticipantsRequest) returns (SearchPlayScriptsForXParticipantsResponse);
   rpc UpdatePlayScript(UpdatePlayScriptRequest) returns (UpdatePlayScriptResponse);
   rpc ArchivePlayScript(ArchivePlayScriptRequest) returns (ArchivePlayScriptResponse);
   rpc CreateScriptTag(CreateScriptTagRequest) returns (CreateScriptTagResponse);

@@ -31,6 +31,8 @@ import {
   RatePlayScriptResponse,
   RemoveTagFromPlayScriptRequest,
   RemoveTagFromPlayScriptResponse,
+  SearchPlayScriptsForXParticipantsRequest,
+  SearchPlayScriptsForXParticipantsResponse,
   UpdatePlayScriptLineRequest,
   UpdatePlayScriptLineResponse,
   UpdatePlayScriptRequest,
@@ -89,6 +91,14 @@ export const PlayScriptsServiceDefinition = {
       requestType: GetPlayScriptsWithTagRequest,
       requestStream: false,
       responseType: GetPlayScriptsWithTagResponse,
+      responseStream: false,
+      options: {},
+    },
+    searchPlayScriptsForXParticipants: {
+      name: 'SearchPlayScriptsForXParticipants',
+      requestType: SearchPlayScriptsForXParticipantsRequest,
+      requestStream: false,
+      responseType: SearchPlayScriptsForXParticipantsResponse,
       responseStream: false,
       options: {},
     },
@@ -184,6 +194,10 @@ export interface PlayScriptsServiceImplementation<CallContextExt = {}> {
     request: GetPlayScriptsWithTagRequest,
     context: CallContext & CallContextExt
   ): Promise<DeepPartial<GetPlayScriptsWithTagResponse>>;
+  searchPlayScriptsForXParticipants(
+    request: SearchPlayScriptsForXParticipantsRequest,
+    context: CallContext & CallContextExt
+  ): Promise<DeepPartial<SearchPlayScriptsForXParticipantsResponse>>;
   updatePlayScript(
     request: UpdatePlayScriptRequest,
     context: CallContext & CallContextExt
@@ -243,6 +257,10 @@ export interface PlayScriptsServiceClient<CallOptionsExt = {}> {
     request: DeepPartial<GetPlayScriptsWithTagRequest>,
     options?: CallOptions & CallOptionsExt
   ): Promise<GetPlayScriptsWithTagResponse>;
+  searchPlayScriptsForXParticipants(
+    request: DeepPartial<SearchPlayScriptsForXParticipantsRequest>,
+    options?: CallOptions & CallOptionsExt
+  ): Promise<SearchPlayScriptsForXParticipantsResponse>;
   updatePlayScript(
     request: DeepPartial<UpdatePlayScriptRequest>,
     options?: CallOptions & CallOptionsExt

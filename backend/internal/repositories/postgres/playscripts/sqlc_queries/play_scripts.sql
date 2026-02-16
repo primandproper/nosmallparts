@@ -229,3 +229,63 @@ WHERE play_scripts.archived_at IS NULL
 	AND play_scripts.id > COALESCE(sqlc.narg(cursor), '')
 ORDER BY play_scripts.id ASC
 LIMIT COALESCE(sqlc.narg(result_limit), 50);
+
+-- name: SearchPlayScriptsForXParticipants :many
+SELECT
+	play_scripts.id,
+	play_scripts.title,
+	play_scripts.description,
+	play_scripts.author,
+	play_scripts.is_public,
+	play_scripts.preceded_by_id,
+	play_scripts.precedes_id,
+	play_scripts.created_at,
+	play_scripts.last_updated_at,
+	play_scripts.archived_at,
+	play_scripts.created_by_user,
+	play_scripts.belongs_to_account,
+	(
+		SELECT COUNT(play_scripts.id)
+		FROM play_scripts
+		WHERE play_scripts.archived_at IS NULL
+			AND
+			play_scripts.created_at > COALESCE(sqlc.narg(created_after), (SELECT NOW() - '999 years'::INTERVAL))
+			AND play_scripts.created_at < COALESCE(sqlc.narg(created_before), (SELECT NOW() + '999 years'::INTERVAL))
+			AND (
+				play_scripts.last_updated_at IS NULL
+				OR play_scripts.last_updated_at > COALESCE(sqlc.narg(updated_before), (SELECT NOW() - '999 years'::INTERVAL))
+			)
+			AND (
+				play_scripts.last_updated_at IS NULL
+				OR play_scripts.last_updated_at < COALESCE(sqlc.narg(updated_after), (SELECT NOW() + '999 years'::INTERVAL))
+			)
+			AND (NOT COALESCE(sqlc.narg(include_archived), false)::boolean OR play_scripts.archived_at = NULL)
+			AND (play_scripts.is_public = TRUE OR play_scripts.belongs_to_account = sqlc.arg(belongs_to_account))
+			AND (SELECT COUNT(*) FROM play_script_cast_members WHERE play_script_cast_members.play_script_id = play_scripts.id) = sqlc.arg(participant_count)
+	) AS filtered_count,
+	(
+		SELECT COUNT(play_scripts.id)
+		FROM play_scripts
+		WHERE play_scripts.archived_at IS NULL
+			AND (play_scripts.is_public = TRUE OR play_scripts.belongs_to_account = sqlc.arg(belongs_to_account))
+			AND (SELECT COUNT(*) FROM play_script_cast_members WHERE play_script_cast_members.play_script_id = play_scripts.id) = sqlc.arg(participant_count)
+	) AS total_count
+FROM play_scripts
+WHERE play_scripts.archived_at IS NULL
+	AND (SELECT COUNT(*) FROM play_script_cast_members WHERE play_script_cast_members.play_script_id = play_scripts.id) = sqlc.arg(participant_count)
+	AND (play_scripts.is_public = TRUE OR play_scripts.belongs_to_account = sqlc.arg(belongs_to_account))
+	AND play_scripts.created_at > COALESCE(sqlc.narg(created_after), (SELECT NOW() - '999 years'::INTERVAL))
+	AND play_scripts.created_at < COALESCE(sqlc.narg(created_before), (SELECT NOW() + '999 years'::INTERVAL))
+	AND (
+		play_scripts.last_updated_at IS NULL
+		OR play_scripts.last_updated_at > COALESCE(sqlc.narg(updated_after), (SELECT NOW() - '999 years'::INTERVAL))
+	)
+	AND (
+		play_scripts.last_updated_at IS NULL
+		OR play_scripts.last_updated_at < COALESCE(sqlc.narg(updated_before), (SELECT NOW() + '999 years'::INTERVAL))
+	)
+	AND (play_scripts.is_public = TRUE OR play_scripts.belongs_to_account = sqlc.arg(belongs_to_account))
+	AND (SELECT COUNT(*) FROM play_script_cast_members WHERE play_script_cast_members.play_script_id = play_scripts.id) = sqlc.arg(participant_count)
+	AND play_scripts.id > COALESCE(sqlc.narg(cursor), '')
+ORDER BY play_scripts.id ASC
+LIMIT COALESCE(sqlc.narg(result_limit), 50);

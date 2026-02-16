@@ -40,6 +40,7 @@ type Querier interface {
 	GetUserRatingsForPlayScripts(ctx context.Context, db DBTX, arg *GetUserRatingsForPlayScriptsParams) ([]*GetUserRatingsForPlayScriptsRow, error)
 	ListScriptTags(ctx context.Context, db DBTX) ([]*ScriptTags, error)
 	RemoveTagFromPlayScript(ctx context.Context, db DBTX, arg *RemoveTagFromPlayScriptParams) (int64, error)
+	SearchPlayScriptsForXParticipants(ctx context.Context, db DBTX, arg *SearchPlayScriptsForXParticipantsParams) ([]*SearchPlayScriptsForXParticipantsRow, error)
 	UpdatePlayScript(ctx context.Context, db DBTX, arg *UpdatePlayScriptParams) (int64, error)
 	UpdatePlayScriptCastMember(ctx context.Context, db DBTX, arg *UpdatePlayScriptCastMemberParams) (int64, error)
 	UpdatePlayScriptLine(ctx context.Context, db DBTX, arg *UpdatePlayScriptLineParams) (int64, error)

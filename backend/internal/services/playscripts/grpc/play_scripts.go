@@ -194,6 +194,46 @@ func (s *serviceImpl) GetPublicPlayScripts(ctx context.Context, request *playscr
 	return x, nil
 }
 
+func (s *serviceImpl) SearchPlayScriptsForXParticipants(ctx context.Context, request *playscriptssvc.SearchPlayScriptsForXParticipantsRequest) (*playscriptssvc.SearchPlayScriptsForXParticipantsResponse, error) {
+	ctx, span := s.tracer.StartSpan(ctx)
+	defer span.End()
+
+	logger := s.logger.WithSpan(span)
+
+	if request.ParticipantCount < 1 {
+		return nil, observability.PrepareAndLogGRPCStatus(nil, logger, span, codes.InvalidArgument, "participant_count must be at least 1")
+	}
+
+	sessionContextData, err := s.sessionContextDataFetcher(ctx)
+	if err != nil {
+		return nil, observability.PrepareAndLogGRPCStatus(err, logger, span, codes.Unauthenticated, "failed to fetch session context data")
+	}
+	logger = logger.WithValue(keys.AccountIDKey, sessionContextData.ActiveAccountID)
+
+	filter := grpcconverters.ConvertGRPCQueryFilterToQueryFilter(request.Filter)
+
+	playScripts, err := s.playScriptRepository.SearchPlayScriptsForXParticipants(ctx, int(request.ParticipantCount), sessionContextData.ActiveAccountID, filter)
+	if err != nil {
+		return nil, observability.PrepareAndLogGRPCStatus(err, logger, span, codes.Internal, "failed to search play scripts for participant count")
+	}
+
+	x := &playscriptssvc.SearchPlayScriptsForXParticipantsResponse{
+		ResponseDetails: &types.ResponseDetails{
+			TraceId:          span.SpanContext().TraceID().String(),
+			CurrentAccountId: sessionContextData.ActiveAccountID,
+		},
+		Pagination: grpcconverters.ConvertPaginationToGRPCPagination(playScripts.Pagination, filter),
+	}
+
+	s.enrichPlayScriptsWithRatings(ctx, playScripts.Data, sessionContextData.Requester.UserID)
+
+	for _, playScript := range playScripts.Data {
+		x.Results = append(x.Results, converters.ConvertPlayScriptToGRPCPlayScript(playScript))
+	}
+
+	return x, nil
+}
+
 func (s *serviceImpl) UpdatePlayScript(ctx context.Context, request *playscriptssvc.UpdatePlayScriptRequest) (*playscriptssvc.UpdatePlayScriptResponse, error) {
 	ctx, span := s.tracer.StartSpan(ctx)
 	defer span.End()

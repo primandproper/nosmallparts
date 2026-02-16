@@ -196,6 +196,7 @@ type (
 		GetPlayScripts(ctx context.Context, filter *filtering.QueryFilter) (*filtering.QueryFilteredResult[PlayScript], error)
 		GetPlayScriptsForAccount(ctx context.Context, accountID string, filter *filtering.QueryFilter) (*filtering.QueryFilteredResult[PlayScript], error)
 		GetPublicPlayScripts(ctx context.Context, filter *filtering.QueryFilter) (*filtering.QueryFilteredResult[PlayScript], error)
+		SearchPlayScriptsForXParticipants(ctx context.Context, participantCount int, accountID string, filter *filtering.QueryFilter) (*filtering.QueryFilteredResult[PlayScript], error)
 		CreatePlayScript(ctx context.Context, input *PlayScriptDatabaseCreationInput, castMembers []*PlayScriptCastMemberDatabaseCreationInput, lines []*PlayScriptLineDatabaseCreationInput) (*PlayScript, error)
 		UpdatePlayScript(ctx context.Context, playScript *PlayScript) error
 		UpdatePlayScriptLine(ctx context.Context, line *PlayScriptLine) error

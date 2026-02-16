@@ -3,6 +3,7 @@ package playscripts
 import (
 	"context"
 	"database/sql"
+	"strconv"
 
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/audit"
 	types "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/playscripts"
@@ -408,6 +409,59 @@ func (r *repository) GetPublicPlayScripts(ctx context.Context, filter *filtering
 	)
 
 	return x, nil
+}
+
+// SearchPlayScriptsForXParticipants fetches play scripts that have exactly the given number of cast members,
+// scoped to public scripts or scripts belonging to the account.
+func (r *repository) SearchPlayScriptsForXParticipants(ctx context.Context, participantCount int, accountID string, filter *filtering.QueryFilter) (*filtering.QueryFilteredResult[types.PlayScript], error) {
+	ctx, span := r.tracer.StartSpan(ctx)
+	defer span.End()
+
+	logger := r.logger.Clone()
+	if filter == nil {
+		filter = filtering.DefaultQueryFilter()
+	}
+	logger = filter.AttachToLogger(logger)
+	tracing.AttachToSpan(span, "participantCount", participantCount)
+	tracing.AttachToSpan(span, keys.AccountIDKey, accountID)
+
+	results, err := r.generatedQuerier.SearchPlayScriptsForXParticipants(ctx, r.db, &generated.SearchPlayScriptsForXParticipantsParams{
+		CreatedAfter:     database.NullTimeFromTimePointer(filter.CreatedAfter),
+		CreatedBefore:    database.NullTimeFromTimePointer(filter.CreatedBefore),
+		UpdatedBefore:    database.NullTimeFromTimePointer(filter.UpdatedBefore),
+		UpdatedAfter:     database.NullTimeFromTimePointer(filter.UpdatedAfter),
+		IncludeArchived:  database.NullBoolFromBoolPointer(filter.IncludeArchived),
+		BelongsToAccount: accountID,
+		ParticipantCount: strconv.Itoa(participantCount),
+		Cursor:           database.NullStringFromStringPointer(filter.Cursor),
+		ResultLimit:      database.NullInt32FromUint8Pointer(filter.MaxResponseSize),
+	})
+	if err != nil {
+		return nil, observability.PrepareAndLogError(err, logger, span, "searching play scripts for participant count")
+	}
+
+	data := make([]*types.PlayScript, 0, len(results))
+	var filteredCount, totalCount uint64
+	for _, row := range results {
+		data = append(data, &types.PlayScript{
+			ID:               row.ID,
+			Title:            row.Title,
+			Description:      row.Description,
+			Author:           row.Author,
+			IsPublic:         row.IsPublic,
+			CreatedAt:        row.CreatedAt,
+			LastUpdatedAt:    database.TimePointerFromNullTime(row.LastUpdatedAt),
+			ArchivedAt:       database.TimePointerFromNullTime(row.ArchivedAt),
+			CreatedByUser:    row.CreatedByUser,
+			BelongsToAccount: row.BelongsToAccount,
+			PrecededByID:     database.StringPointerFromNullString(row.PrecededByID),
+			PrecedesID:       database.StringPointerFromNullString(row.PrecedesID),
+		})
+		filteredCount = uint64(row.FilteredCount)
+		totalCount = uint64(row.TotalCount)
+	}
+
+	return filtering.NewQueryFilteredResult(data, filteredCount, totalCount, func(t *types.PlayScript) string { return t.ID }, filter), nil
 }
 
 // CreatePlayScript creates a play script in the database with all its cast members and lines.

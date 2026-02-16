@@ -88,6 +88,20 @@ export function ScriptCard({ script, isDraft = false, onClick, onDelete }: Scrip
         )}
       </div>
 
+      {/* Tags */}
+      {(script.tags || []).length > 0 && (
+        <div className="flex flex-wrap gap-1.5 mt-2">
+          {(script.tags || []).map((tag) => (
+            <span
+              key={tag.id}
+              className="px-2 py-0.5 rounded text-xs bg-[var(--gold)]/20 text-[var(--gold)] border border-[var(--gold)]/30"
+            >
+              {tag.name}
+            </span>
+          ))}
+        </div>
+      )}
+
       {/* Cast preview */}
       {castCount > 0 && (
         <div className="mt-3 pt-3 border-t border-[var(--cream)]/10">
