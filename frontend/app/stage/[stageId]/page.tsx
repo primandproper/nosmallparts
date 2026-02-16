@@ -40,24 +40,6 @@ export default function StagePage() {
       .catch(() => setIsAuthenticated(false));
   }, []);
 
-  const prevPhaseRef = useRef<string | undefined>();
-
-  // Set pending rating when we first transition to discussion with a selected play;
-  // clear when leaving discussion (e.g. reset to lobby)
-  useEffect(() => {
-    const prevPhase = prevPhaseRef.current;
-    prevPhaseRef.current = stageState?.phase;
-    if (
-      prevPhase === 'performing' &&
-      stageState?.phase === 'discussion' &&
-      stageState.selectedPlay
-    ) {
-      setPendingRatingPlayId(stageState.selectedPlay.id);
-    } else if (stageState?.phase !== 'discussion') {
-      setPendingRatingPlayId(null);
-    }
-  }, [stageState?.phase, stageState?.selectedPlay?.id]);
-
   const {
     stageState,
     participantId,
@@ -84,6 +66,24 @@ export default function StagePage() {
     participantId,
     participantName: playerName || '',
   });
+
+  const prevPhaseRef = useRef<string | undefined>();
+
+  // Set pending rating when we first transition to discussion with a selected play;
+  // clear when leaving discussion (e.g. reset to lobby)
+  useEffect(() => {
+    const prevPhase = prevPhaseRef.current;
+    prevPhaseRef.current = stageState?.phase;
+    if (
+      prevPhase === 'performing' &&
+      stageState?.phase === 'discussion' &&
+      stageState.selectedPlay
+    ) {
+      setPendingRatingPlayId(stageState.selectedPlay.id);
+    } else if (stageState?.phase !== 'discussion') {
+      setPendingRatingPlayId(null);
+    }
+  }, [stageState?.phase, stageState?.selectedPlay?.id]);
 
   // Use the short code from stageState when available, fall back to URL param
   const displayCode = stageState?.code || stageId;
