@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { Metadata } from 'nice-grpc';
 import { getPlayScriptsClient } from '@/lib/grpc-client';
+import { getSession } from '@/lib/session';
 import {
   PlayScript,
   PlayScriptCastMember,
@@ -86,6 +88,11 @@ function grpcStatusToHttp(code: number): number {
 // GET /api/play-scripts/[id] - Get a single play script
 export async function GET(_request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   try {
+    const session = await getSession();
+    if (!session?.accessToken) {
+      return NextResponse.json({ error: 'Authentication required' }, { status: 401 });
+    }
+
     const { id } = await params;
 
     if (!id?.trim()) {
@@ -93,7 +100,10 @@ export async function GET(_request: NextRequest, { params }: { params: Promise<{
     }
 
     const client = getPlayScriptsClient();
-    const response = await client.getPlayScript({ playScriptId: id });
+    const response = await client.getPlayScript(
+      { playScriptId: id },
+      { metadata: Metadata({ Authorization: `Bearer ${session.accessToken}` }) }
+    );
 
     if (!response.result) {
       return NextResponse.json({ error: 'Play script not found' }, { status: 404 });
@@ -122,6 +132,11 @@ export async function DELETE(
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const session = await getSession();
+    if (!session?.accessToken) {
+      return NextResponse.json({ error: 'Authentication required' }, { status: 401 });
+    }
+
     const { id } = await params;
 
     if (!id?.trim()) {
@@ -129,7 +144,10 @@ export async function DELETE(
     }
 
     const client = getPlayScriptsClient();
-    await client.archivePlayScript({ playScriptId: id });
+    await client.archivePlayScript(
+      { playScriptId: id },
+      { metadata: Metadata({ Authorization: `Bearer ${session.accessToken}` }) }
+    );
 
     return NextResponse.json({ success: true });
   } catch (error: unknown) {

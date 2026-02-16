@@ -137,8 +137,16 @@ function grpcStatusToHttp(code: number): number {
 // GET /api/play-scripts - List public play scripts
 export async function GET() {
   try {
+    const session = await getSession();
+    if (!session?.accessToken) {
+      return NextResponse.json({ error: 'Authentication required' }, { status: 401 });
+    }
+
     const client = getPlayScriptsClient();
-    const response = await client.getPublicPlayScripts({ filter: undefined });
+    const response = await client.getPublicPlayScripts(
+      { filter: undefined },
+      { metadata: Metadata({ Authorization: `Bearer ${session.accessToken}` }) }
+    );
 
     const scripts = (response.results || []).map(toFrontendPlay);
     return NextResponse.json(scripts);
