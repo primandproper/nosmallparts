@@ -95,6 +95,8 @@ func (h *Handler) handleJoin(ctx context.Context, connCtx *platformws.Connection
 		return
 	}
 	stageState := h.buildStageState(ctx, stage)
+	hasSelectedPlay := stageState.SelectedPlay != nil
+	h.logger.WithValue("stageID", stage.ID).WithValue("code", stage.Code).WithValue("hasSelectedPlay", hasSelectedPlay).Debug("sending join confirmation")
 
 	// Send join confirmation to the new participant
 	if err = connCtx.WriteJSON(&stagesdomain.ServerMessage{
@@ -358,7 +360,10 @@ func (h *Handler) handleNextLine(ctx context.Context, connCtx *platformws.Connec
 	ctx, span := h.tracer.StartSpan(ctx)
 	defer span.End()
 
+	h.logger.WithValue("groupID", connCtx.GroupID).Debug("handleNextLine received")
+
 	if connCtx.GroupID == "" {
+		h.logger.Warn("nextLine ignored: connection has no GroupID (join may not have completed)")
 		return
 	}
 
@@ -371,6 +376,7 @@ func (h *Handler) handleNextLine(ctx context.Context, connCtx *platformws.Connec
 
 	// Get the play to check number of lines
 	if stage.PlayScriptID == nil || *stage.PlayScriptID == "" {
+		h.logger.WithValue("stageID", connCtx.GroupID).Warn("nextLine ignored: no play selected on stage")
 		return
 	}
 
@@ -414,6 +420,7 @@ func (h *Handler) handleNextLine(ctx context.Context, connCtx *platformws.Connec
 			return
 		}
 
+		h.logger.WithValue("stageID", connCtx.GroupID).WithValue("lineIndex", newLineIndex).Debug("advanced to next line")
 		h.connections.BroadcastToGroup(ctx, connCtx.GroupID, &stagesdomain.ServerMessage{
 			Type:             stagesdomain.ServerMessageTypeLineAdvanced,
 			CurrentLineIndex: newLineIndex,

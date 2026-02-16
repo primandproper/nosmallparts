@@ -252,9 +252,14 @@ func (h *Handler) buildStageState(ctx context.Context, stage *stagesdomain.Stage
 	}
 
 	// Fetch selected play if set
+	if stage.PlayScriptID == nil || *stage.PlayScriptID == "" {
+		h.logger.WithValue("stageID", stage.ID).Debug("stage has no play selected")
+	}
 	if stage.PlayScriptID != nil && *stage.PlayScriptID != "" {
 		play, err := h.playScriptsRepo.GetPlayScript(ctx, *stage.PlayScriptID, false)
-		if err == nil {
+		if err != nil {
+			h.logger.WithValue("stageID", stage.ID).WithValue("playScriptID", *stage.PlayScriptID).Error("failed to fetch selected play for stage state", err)
+		} else {
 			state.SelectedPlay = play
 		}
 	}
