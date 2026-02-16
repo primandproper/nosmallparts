@@ -111,6 +111,18 @@ func (m *ConnectionManager) BroadcastToGroup(ctx context.Context, groupID string
 	}
 }
 
+// BroadcastToGroupAsync runs BroadcastToGroup in a goroutine. Use when calling from a
+// WebSocket read handler—writing to the same connection from its read goroutine can deadlock.
+func (m *ConnectionManager) BroadcastToGroupAsync(ctx context.Context, groupID string, msg interface{}) {
+	go m.BroadcastToGroup(ctx, groupID, msg)
+}
+
+// BroadcastToGroupFilteredAsync runs BroadcastToGroupFiltered in a goroutine. Use when
+// calling from a WebSocket read handler.
+func (m *ConnectionManager) BroadcastToGroupFilteredAsync(ctx context.Context, groupID string, msg interface{}, includeFunc func(memberID string) bool) {
+	go m.BroadcastToGroupFiltered(ctx, groupID, msg, includeFunc)
+}
+
 // BroadcastToGroupFiltered sends a message to connections in a group for which includeFunc returns true.
 func (m *ConnectionManager) BroadcastToGroupFiltered(ctx context.Context, groupID string, msg interface{}, includeFunc func(memberID string) bool) {
 	_, span := m.tracer.StartSpan(ctx)

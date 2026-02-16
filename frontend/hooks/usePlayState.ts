@@ -255,7 +255,8 @@ export function usePlayState({
       console.log('[WS] Connected! Joining stage:', stageId);
       setIsConnected(true);
       setError(null);
-      setReconnectAttempt(0); // Reset backoff on successful connection
+      // Do NOT reset reconnectAttempt here: the effect depends on it, so changing it
+      // triggers cleanup which closes this newly-opened connection (reconnect loop).
       // Join the stage
       ws.send(
         JSON.stringify({

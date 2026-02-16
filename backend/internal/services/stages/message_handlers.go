@@ -98,23 +98,23 @@ func (h *Handler) handleJoin(ctx context.Context, connCtx *platformws.Connection
 	hasSelectedPlay := stageState.SelectedPlay != nil
 	h.logger.WithValue("stageID", stage.ID).WithValue("code", stage.Code).WithValue("hasSelectedPlay", hasSelectedPlay).Debug("sending join confirmation")
 
-	// Send join confirmation to the new participant
-	if err = connCtx.WriteJSON(&stagesdomain.ServerMessage{
-		Type:          stagesdomain.ServerMessageTypeJoined,
-		ParticipantID: participant.ID,
-		StageState:    stageState,
-	}); err != nil {
-		observability.AcknowledgeError(err, h.logger, span, "joining stage")
-	}
-
-	// Send available plays
-	h.sendAvailablePlays(ctx, connCtx)
-
-	// Broadcast updated state to all participants
-	h.connections.BroadcastToGroup(ctx, stage.ID, &stagesdomain.ServerMessage{
-		Type:  stagesdomain.ServerMessageTypeStageState,
-		State: stageState,
-	})
+	// Send joined + available plays + broadcast in a goroutine: writing to the sender's
+	// connection from its read handler can deadlock in gorilla/websocket.
+	go func() {
+		if err := connCtx.WriteJSON(&stagesdomain.ServerMessage{
+			Type:          stagesdomain.ServerMessageTypeJoined,
+			ParticipantID: participant.ID,
+			StageState:    stageState,
+		}); err != nil {
+			observability.AcknowledgeError(err, h.logger, span, "joining stage")
+			return
+		}
+		h.sendAvailablePlays(ctx, connCtx)
+		h.connections.BroadcastToGroup(ctx, stage.ID, &stagesdomain.ServerMessage{
+			Type:  stagesdomain.ServerMessageTypeStageState,
+			State: stageState,
+		})
+	}()
 }
 
 // handleToggleCastMember handles toggling a cast member assignment.
@@ -295,16 +295,17 @@ func (h *Handler) handleSendChat(ctx context.Context, connCtx *platformws.Connec
 
 	if msg.CastOnly {
 		// Only send to non-audience members
-		h.connections.BroadcastToGroupFiltered(ctx, connCtx.GroupID, serverMsg, func(participantID string) bool {
+		includeFunc := func(participantID string) bool {
 			var p *stagesdomain.StageParticipant
 			p, err = h.stagesRepo.GetParticipant(ctx, participantID)
 			if err != nil {
 				return false // Exclude if we can't fetch
 			}
 			return !p.IsAudience
-		})
+		}
+		h.connections.BroadcastToGroupFilteredAsync(ctx, connCtx.GroupID, serverMsg, includeFunc)
 	} else {
-		h.connections.BroadcastToGroup(ctx, connCtx.GroupID, serverMsg)
+		h.connections.BroadcastToGroupAsync(ctx, connCtx.GroupID, serverMsg)
 	}
 }
 
@@ -325,8 +326,8 @@ func (h *Handler) handleStartPlay(ctx context.Context, connCtx *platformws.Conne
 		return
 	}
 
-	// Broadcast countdown start
-	h.connections.BroadcastToGroup(ctx, connCtx.GroupID, &stagesdomain.ServerMessage{
+	// Broadcast countdown start (async: avoid deadlock when writing to sender from read handler)
+	h.connections.BroadcastToGroupAsync(ctx, connCtx.GroupID, &stagesdomain.ServerMessage{
 		Type:     stagesdomain.ServerMessageTypeCountdownStart,
 		Duration: 3, // 3 second countdown
 	})
@@ -411,7 +412,7 @@ func (h *Handler) handleNextLine(ctx context.Context, connCtx *platformws.Connec
 				playEndedMsg.NextPlay = nextPlay
 			}
 		}
-		h.connections.BroadcastToGroup(ctx, connCtx.GroupID, playEndedMsg)
+		h.connections.BroadcastToGroupAsync(ctx, connCtx.GroupID, playEndedMsg)
 	} else {
 		// Advance to next line
 		if err = h.stagesRepo.UpdateStage(ctx, connCtx.GroupID, &stagesdomain.StageUpdateInput{
@@ -422,7 +423,7 @@ func (h *Handler) handleNextLine(ctx context.Context, connCtx *platformws.Connec
 		}
 
 		logger.WithValue("stageID", connCtx.GroupID).WithValue("lineIndex", newLineIndex).Debug("advanced to next line")
-		h.connections.BroadcastToGroup(ctx, connCtx.GroupID, &stagesdomain.ServerMessage{
+		h.connections.BroadcastToGroupAsync(ctx, connCtx.GroupID, &stagesdomain.ServerMessage{
 			Type:             stagesdomain.ServerMessageTypeLineAdvanced,
 			CurrentLineIndex: newLineIndex,
 		})
@@ -528,7 +529,7 @@ func (h *Handler) broadcastCastMembersUpdated(ctx context.Context, stageID strin
 		return
 	}
 
-	h.connections.BroadcastToGroup(ctx, stageID, &stagesdomain.ServerMessage{
+	h.connections.BroadcastToGroupAsync(ctx, stageID, &stagesdomain.ServerMessage{
 		Type:         stagesdomain.ServerMessageTypeCastMembersUpdated,
 		Participants: participants,
 	})

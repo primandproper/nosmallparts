@@ -236,10 +236,9 @@ func (h *Handler) sendError(ctx context.Context, connCtx *platformws.ConnectionC
 }
 
 // broadcastStageState broadcasts the current stage state to all connected clients.
+// Uses async broadcast: writing to a connection from within its read handler can
+// deadlock in gorilla/websocket (requires different goroutines for read vs write).
 func (h *Handler) broadcastStageState(ctx context.Context, stageID string) {
-	ctx, span := h.tracer.StartSpan(ctx)
-	defer span.End()
-
 	stage, err := h.stagesRepo.GetStageByID(ctx, stageID)
 	if err != nil {
 		h.logger.Error("failed to get stage for broadcast", err)
@@ -247,11 +246,12 @@ func (h *Handler) broadcastStageState(ctx context.Context, stageID string) {
 	}
 
 	stageState := h.buildStageState(ctx, stage)
-
-	h.connections.BroadcastToGroup(ctx, stageID, &stagesdomain.ServerMessage{
+	msg := &stagesdomain.ServerMessage{
 		Type:  stagesdomain.ServerMessageTypeStageState,
 		State: stageState,
-	})
+	}
+
+	h.connections.BroadcastToGroupAsync(ctx, stageID, msg)
 }
 
 // buildStageState constructs a StageState from a Stage.
