@@ -94,3 +94,13 @@ variable "LIVEKIT_URL" {
   default     = ""
   description = "LiveKit server URL (e.g. wss://your-project.livekit.cloud). Leave empty for mock mode."
 }
+
+# AdSense (optional - set in Terraform Cloud; also pass as env in CI for build args)
+variable "ADSENSE_PUBLISHER_ID" {
+  default     = ""
+  description = "Google AdSense publisher ID (ca-pub-...). Leave empty to disable ads."
+}
+variable "ADSENSE_SLOT_ID" {
+  default     = ""
+  description = "Google AdSense ad slot ID. Leave empty to disable ads."
+}

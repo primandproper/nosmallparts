@@ -157,6 +157,8 @@ resource "kubernetes_secret" "frontend_config" {
     OAUTH2_CLIENT_ID     = var.WEB_APP_OAUTH2_CLIENT_ID
     OAUTH2_CLIENT_SECRET = var.WEB_APP_OAUTH2_CLIENT_SECRET
     COOKIE_DOMAIN        = ".nosmall.parts"
+    ADSENSE_PUBLISHER_ID = var.ADSENSE_PUBLISHER_ID
+    ADSENSE_SLOT_ID      = var.ADSENSE_SLOT_ID
   }
 }
 

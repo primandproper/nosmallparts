@@ -35,3 +35,21 @@
       secretKeyRef:
         name: frontend-config
         key: COOKIE_DOMAIN
+- op: add
+  path: '/spec/template/spec/containers/0/env/-'
+  value:
+    name: ADSENSE_PUBLISHER_ID
+    valueFrom:
+      secretKeyRef:
+        name: frontend-config
+        key: ADSENSE_PUBLISHER_ID
+        optional: true
+- op: add
+  path: '/spec/template/spec/containers/0/env/-'
+  value:
+    name: ADSENSE_SLOT_ID
+    valueFrom:
+      secretKeyRef:
+        name: frontend-config
+        key: ADSENSE_SLOT_ID
+        optional: true

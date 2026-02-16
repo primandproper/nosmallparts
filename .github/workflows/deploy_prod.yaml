@@ -178,4 +178,8 @@ jobs:
         run: kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.16.2/cert-manager.yaml
 
       - name: Skaffold deploy
+        env:
+          # Passed to Skaffold templating for NEXT_PUBLIC_* build args (inlined at build time)
+          ADSENSE_PUBLISHER_ID: ${{ secrets.NO_SMALL_PARTS_ADSENSE_PUBLISHER_ID }}
+          ADSENSE_SLOT_ID: ${{ secrets.NO_SMALL_PARTS_ADSENSE_SLOT_ID }}
         run: skaffold run --filename=skaffold.yaml --build-concurrency 1 --profile prod

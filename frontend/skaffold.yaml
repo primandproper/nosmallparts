@@ -36,6 +36,10 @@ profiles:
         - image: us-central1-docker.pkg.dev/no-small-parts/containers/no-small-parts-frontend
           docker:
             dockerfile: Dockerfile
+            buildArgs:
+              # Inlined at build time for client bundle. Set ADSENSE_* env in CI before skaffold run.
+              NEXT_PUBLIC_ADSENSE_PUBLISHER_ID: '{{ default "" .ADSENSE_PUBLISHER_ID }}'
+              NEXT_PUBLIC_ADSENSE_SLOT_ID: '{{ default "" .ADSENSE_SLOT_ID }}'
           context: .
     manifests:
       kustomize:
