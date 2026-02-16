@@ -144,7 +144,7 @@ export function usePlayState({
   const reconnectTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const heartbeatIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
-  const HEARTBEAT_INTERVAL_MS = 25_000;
+  const HEARTBEAT_INTERVAL_MS = 5_000; // Reconcile sooner when state desyncs (e.g. missed lineAdvanced)
 
   const sendMessage = useCallback((message: object) => {
     if (wsRef.current?.readyState === WebSocket.OPEN) {
