@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { Metadata } from 'nice-grpc';
 import { getPlayScriptsClient } from '@/lib/grpc-client';
+import { getSession } from '@/lib/session';
 import {
   PlayScript,
   PlayScriptCastMember,
@@ -159,6 +161,11 @@ export async function GET() {
 // POST /api/play-scripts - Create a play script
 export async function POST(request: NextRequest) {
   try {
+    const session = await getSession();
+    if (!session?.accessToken) {
+      return NextResponse.json({ error: 'Authentication required' }, { status: 401 });
+    }
+
     const body: CreatePlayScriptBody = await request.json();
 
     // Validate required fields
@@ -182,9 +189,12 @@ export async function POST(request: NextRequest) {
       lines: body.lines.map(toLineInput),
     });
 
-    // Call gRPC service
+    // Call gRPC service with auth
     const client = getPlayScriptsClient();
-    const response = await client.createPlayScript({ input });
+    const response = await client.createPlayScript(
+      { input },
+      { metadata: Metadata({ Authorization: `Bearer ${session.accessToken}` }) }
+    );
 
     // Convert response to JSON
     const created = response.created;

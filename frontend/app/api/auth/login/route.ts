@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getAuthClient } from '@/lib/auth-client';
+import { exchangeJwtForOAuth2Token } from '@/lib/oauth2-exchange';
+import { getOAuth2ClientCredentials } from '@/lib/session';
 
 export interface LoginRequest {
   username: string;
@@ -42,15 +44,28 @@ export async function POST(request: NextRequest): Promise<NextResponse<LoginResp
       );
     }
 
-    const { userId, accountId, accessToken, refreshToken, expiresUtc } = response.result;
+    const { userId, accountId, accessToken: jwt } = response.result;
+
+    // Exchange JWT for OAuth2 token; the gRPC auth interceptor only accepts OAuth2 tokens
+    const { clientId, clientSecret } = getOAuth2ClientCredentials();
+    const httpBase = process.env.BACKEND_HTTP_URL;
+    if (!httpBase) {
+      throw new Error('BACKEND_HTTP_URL is required for OAuth2 token exchange');
+    }
+
+    const oauth2Token = await exchangeJwtForOAuth2Token(
+      httpBase,
+      clientId,
+      clientSecret,
+      jwt
+    );
 
     const sessionData = {
       userId,
       accountId,
-      accessToken,
-      refreshToken,
-      expiresAt:
-        expiresUtc?.toISOString() || new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString(),
+      accessToken: oauth2Token.accessToken,
+      refreshToken: oauth2Token.refreshToken ?? '',
+      expiresAt: oauth2Token.expiresAt,
     };
 
     // Set cookie on the response object so it reaches the browser (cookies().set() alone may not)
