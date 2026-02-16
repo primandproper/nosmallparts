@@ -360,29 +360,30 @@ func (h *Handler) handleNextLine(ctx context.Context, connCtx *platformws.Connec
 	ctx, span := h.tracer.StartSpan(ctx)
 	defer span.End()
 
-	h.logger.WithValue("groupID", connCtx.GroupID).Debug("handleNextLine received")
+	logger := h.logger.WithValue("groupID", connCtx.GroupID)
+	logger.Debug("handleNextLine received")
 
 	if connCtx.GroupID == "" {
-		h.logger.Warn("nextLine ignored: connection has no GroupID (join may not have completed)")
+		logger.Info("nextLine ignored: connection has no GroupID (join may not have completed)")
 		return
 	}
 
 	// Get current stage state
 	stage, err := h.stagesRepo.GetStageByID(ctx, connCtx.GroupID)
 	if err != nil {
-		h.logger.Error("failed to get stage", err)
+		logger.Error("failed to get stage", err)
 		return
 	}
 
 	// Get the play to check number of lines
 	if stage.PlayScriptID == nil || *stage.PlayScriptID == "" {
-		h.logger.WithValue("stageID", connCtx.GroupID).Warn("nextLine ignored: no play selected on stage")
+		logger.WithValue("stageID", connCtx.GroupID).Info("nextLine ignored: no play selected on stage")
 		return
 	}
 
 	play, err := h.playScriptsRepo.GetPlayScript(ctx, *stage.PlayScriptID, false)
 	if err != nil {
-		h.logger.Error("failed to get play", err)
+		logger.Error("failed to get play", err)
 		return
 	}
 
@@ -395,7 +396,7 @@ func (h *Handler) handleNextLine(ctx context.Context, connCtx *platformws.Connec
 		if err = h.stagesRepo.UpdateStage(ctx, connCtx.GroupID, &stagesdomain.StageUpdateInput{
 			Phase: &discussionPhase,
 		}); err != nil {
-			h.logger.Error("failed to update stage to discussion", err)
+			logger.Error("failed to update stage to discussion", err)
 			return
 		}
 
@@ -416,11 +417,11 @@ func (h *Handler) handleNextLine(ctx context.Context, connCtx *platformws.Connec
 		if err = h.stagesRepo.UpdateStage(ctx, connCtx.GroupID, &stagesdomain.StageUpdateInput{
 			CurrentLineIndex: &newLineIndex,
 		}); err != nil {
-			h.logger.Error("failed to advance line", err)
+			logger.Error("failed to advance line", err)
 			return
 		}
 
-		h.logger.WithValue("stageID", connCtx.GroupID).WithValue("lineIndex", newLineIndex).Debug("advanced to next line")
+		logger.WithValue("stageID", connCtx.GroupID).WithValue("lineIndex", newLineIndex).Debug("advanced to next line")
 		h.connections.BroadcastToGroup(ctx, connCtx.GroupID, &stagesdomain.ServerMessage{
 			Type:             stagesdomain.ServerMessageTypeLineAdvanced,
 			CurrentLineIndex: newLineIndex,

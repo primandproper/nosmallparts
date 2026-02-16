@@ -10,6 +10,10 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/playscripts"
 )
 
+const (
+	jsonExtension = ".json"
+)
+
 //go:embed shakespeare/*.json movies/*.json tvshows/*.json
 var shakespeareFS embed.FS
 
@@ -22,7 +26,7 @@ func ShakespearePlayScripts() ([]*playscripts.PlayScriptCreationRequestInput, er
 	}
 	var names []string
 	for _, e := range entries {
-		if !e.IsDir() && filepath.Ext(e.Name()) == ".json" {
+		if !e.IsDir() && filepath.Ext(e.Name()) == jsonExtension {
 			names = append(names, e.Name())
 		}
 	}
@@ -62,7 +66,7 @@ func MoviePlayScripts() ([]*playscripts.PlayScriptCreationRequestInput, error) {
 	}
 	var names []string
 	for _, e := range entries {
-		if !e.IsDir() && filepath.Ext(e.Name()) == ".json" {
+		if !e.IsDir() && filepath.Ext(e.Name()) == jsonExtension {
 			names = append(names, e.Name())
 		}
 	}
@@ -94,7 +98,7 @@ func TVShowPlayScripts() ([]*playscripts.PlayScriptCreationRequestInput, error) 
 	}
 	var names []string
 	for _, e := range entries {
-		if !e.IsDir() && filepath.Ext(e.Name()) == ".json" {
+		if !e.IsDir() && filepath.Ext(e.Name()) == jsonExtension {
 			names = append(names, e.Name())
 		}
 	}
