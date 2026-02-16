@@ -49,13 +49,3 @@ export function AdBanner({
   );
 }
 
-// Placeholder component for development (shows where ads will appear)
-export function AdBannerPlaceholder({ className = '' }: { className?: string }) {
-  return (
-    <div className={`ad-container ${className}`}>
-      <div className="bg-[var(--charcoal)]/50 border border-dashed border-[var(--cream)]/20 rounded-xl p-4 text-center">
-        <span className="text-[var(--cream)] opacity-30 text-sm">📢 Advertisement</span>
-      </div>
-    </div>
-  );
-}

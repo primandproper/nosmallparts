@@ -2,6 +2,33 @@
 
 This is a place to use the available API for experiments.
 
+## Bootstrap scripts (main.go)
+
+Loads bootstrap play scripts (movies, TV) and inserts them directly into the database. Requires a database connection (e.g. via Cloud SQL proxy or port-forward).
+
+```bash
+# 1. Proxy the database (e.g. Cloud SQL Auth Proxy or kubectl port-forward)
+# make proxy_dev_db   # or your preferred method
+
+# 2. Set env vars
+export PLAYGROUND_DATABASE_URL="postgres://user:password@127.0.0.1:5434/no-small-parts?sslmode=disable"
+# Or use individual vars:
+# export PLAYGROUND_DB_HOST=127.0.0.1
+# export PLAYGROUND_DB_PORT=5434
+# export PLAYGROUND_DB_NAME=no-small-parts
+# export PLAYGROUND_DB_USER=...
+# export PLAYGROUND_DB_PASSWORD=...
+
+# 3. Ownership - use valid user/account IDs from the target DB
+export PLAYGROUND_CREATED_BY_USER=<user_id>
+export PLAYGROUND_BELONGS_TO_ACCOUNT=<account_id>
+
+# 4. Run
+go run ./cmd/playground
+```
+
+Do not commit real credentials.
+
 ## Connecting to the dev database
 
 To connect to dev, you'll need to run `make proxy_dev_db`, and then run code that connects to the database.

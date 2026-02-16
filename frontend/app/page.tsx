@@ -3,7 +3,6 @@
 import { useState, useEffect, useRef, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
-import { AdBannerPlaceholder } from '@/components/AdBanner';
 import { useAuth } from '@/hooks/useAuth';
 
 function Star({ style }: { style: React.CSSProperties }) {
@@ -277,10 +276,6 @@ function HomeContent() {
             or enter an existing code to join the performance.
           </p>
 
-          {/* Ad Banner */}
-          <div className="mt-8 animate-fade-up animate-delay-4">
-            <AdBannerPlaceholder className="max-w-lg mx-auto" />
-          </div>
         </div>
       </div>
     </main>

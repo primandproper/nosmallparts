@@ -5,7 +5,6 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { Play, getDrafts, deleteDraft } from '@/lib/types';
 import { ScriptCard } from '@/components/ScriptCard';
-import { AdBannerPlaceholder } from '@/components/AdBanner';
 
 type ScriptWithMeta = Play & { isUserScript?: boolean };
 
@@ -204,10 +203,6 @@ export default function ScriptsPage() {
           </div>
         )}
 
-        {/* Ad Banner */}
-        <div className="mt-12">
-          <AdBannerPlaceholder />
-        </div>
       </div>
     </main>
   );

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
-import Script from 'next/script';
 import './globals.css';
+import { AdSenseScript } from '@/components/AdSenseScript';
 
 export const metadata: Metadata = {
   title: 'No Small Parts',
@@ -8,23 +8,12 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  // Use only NEXT_PUBLIC_* so server and client see the same value (prevents hydration mismatch).
-  // ADSENSE_PUBLISHER_ID is server-only and would cause different <head> output.
-  const adsenseClient = process.env.NEXT_PUBLIC_ADSENSE_PUBLISHER_ID || '';
-
   return (
     <html lang="en">
-      <head>
-        {adsenseClient && (
-          <Script
-            async
-            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseClient}`}
-            crossOrigin="anonymous"
-            strategy="afterInteractive"
-          />
-        )}
-      </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <AdSenseScript />
+      </body>
     </html>
   );
 }
