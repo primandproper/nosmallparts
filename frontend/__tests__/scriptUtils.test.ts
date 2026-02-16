@@ -342,21 +342,24 @@ describe('scriptUtils', () => {
       const invalidLines: PlayLine[] = [{ castMemberId: '', text: 'Hello', index: 0 }];
       const result = validatePlay('My Play', cast, invalidLines);
       expect(result.valid).toBe(false);
-      expect(result.error).toBe('All lines must have a character and dialogue');
+      expect(result.error).toBe('Line 1 needs a character and dialogue');
+      expect(result.invalidLineIndices).toEqual(new Set([0]));
     });
 
     it('returns error for line without text', () => {
       const invalidLines: PlayLine[] = [{ castMemberId: 'alice', text: '', index: 0 }];
       const result = validatePlay('My Play', cast, invalidLines);
       expect(result.valid).toBe(false);
-      expect(result.error).toBe('All lines must have a character and dialogue');
+      expect(result.error).toBe('Line 1 needs a character and dialogue');
+      expect(result.invalidLineIndices).toEqual(new Set([0]));
     });
 
     it('returns error for line with whitespace-only text', () => {
       const invalidLines: PlayLine[] = [{ castMemberId: 'alice', text: '   ', index: 0 }];
       const result = validatePlay('My Play', cast, invalidLines);
       expect(result.valid).toBe(false);
-      expect(result.error).toBe('All lines must have a character and dialogue');
+      expect(result.error).toBe('Line 1 needs a character and dialogue');
+      expect(result.invalidLineIndices).toEqual(new Set([0]));
     });
 
     it('validates simultaneous lines correctly', () => {

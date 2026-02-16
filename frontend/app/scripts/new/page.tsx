@@ -9,6 +9,8 @@ import {
   getSortedLineIndices,
   getFirstAvailableCastMemberId,
   getNextLineIndex,
+  getInvalidLineIndices,
+  validatePlay,
 } from '@/lib/scriptUtils';
 import { TurnEditor } from '@/components/LineEditor';
 import { useAuth } from '@/hooks/useAuth';
@@ -31,6 +33,7 @@ function ScriptEditorContent() {
   const [isPublishing, setIsPublishing] = useState(false);
   const [lastSaved, setLastSaved] = useState<Date | null>(null);
   const [currentId, setCurrentId] = useState<string | null>(null);
+  const [invalidLineIndices, setInvalidLineIndices] = useState<Set<number> | null>(null);
 
   // Load draft if editing
   useEffect(() => {
@@ -46,6 +49,15 @@ function ScriptEditorContent() {
       }
     }
   }, [draftId]);
+
+  // Clear validation highlights when user fixes all invalid lines
+  useEffect(() => {
+    setInvalidLineIndices((prev) => {
+      if (!prev) return prev;
+      const stillInvalid = getInvalidLineIndices(lines);
+      return stillInvalid.size === 0 ? null : stillInvalid;
+    });
+  }, [lines]);
 
   const handleAddCast = () => {
     if (!newCastName.trim()) return;
@@ -181,22 +193,13 @@ function ScriptEditorContent() {
   }, [title, handleSaveDraft]);
 
   const handlePublish = async () => {
-    if (!title.trim()) {
-      alert('Please enter a title');
+    const validation = validatePlay(title, cast, lines);
+    if (!validation.valid) {
+      setInvalidLineIndices(validation.invalidLineIndices ?? null);
+      alert(validation.error);
       return;
     }
-    if (cast.length === 0) {
-      alert('Please add at least one cast member');
-      return;
-    }
-    if (lines.length === 0) {
-      alert('Please add at least one line');
-      return;
-    }
-    if (lines.some((l) => !l.castMemberId || !l.text.trim())) {
-      alert('All lines must have a character and dialogue');
-      return;
-    }
+    setInvalidLineIndices(null);
 
     setIsPublishing(true);
     try {
@@ -373,9 +376,11 @@ function ScriptEditorContent() {
                         <TurnEditor
                           key={`line-${lineIdx}`}
                           lineIndex={position}
+                          lineIdx={lineIdx}
                           lines={group.lines}
                           cast={cast}
                           lineArrayIndices={group.arrayIndices}
+                          invalidLineIndices={invalidLineIndices}
                           onUpdateLine={handleUpdateLine}
                           onDeleteLine={handleDeleteSingleLine}
                           onAddSimultaneous={() => handleAddSimultaneousSpeaker(lineIdx)}

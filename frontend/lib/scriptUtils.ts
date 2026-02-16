@@ -103,13 +103,39 @@ export function swapLineIndices(lines: PlayLine[], fromIndex: number, toIndex: n
 }
 
 /**
+ * Returns the set of line indices (group keys) that have at least one line
+ * missing character or dialogue. Used to highlight invalid lines in the UI.
+ */
+export function getInvalidLineIndices(lines: PlayLine[]): Set<number> {
+  return new Set(
+    lines.filter((l) => !l.castMemberId || !l.text.trim()).map((l) => l.index)
+  );
+}
+
+/**
+ * Returns human-readable line numbers (1-based) for invalid lines.
+ * Used for error messages.
+ */
+export function getInvalidLineNumbers(
+  lines: PlayLine[]
+): { invalidIndices: Set<number>; displayNumbers: number[] } {
+  const invalidIndices = getInvalidLineIndices(lines);
+  const sortedIndices = getSortedLineIndices(lines);
+  const displayNumbers = Array.from(invalidIndices)
+    .map((lineIdx) => sortedIndices.indexOf(lineIdx) + 1)
+    .filter((n) => n > 0)
+    .sort((a, b) => a - b);
+  return { invalidIndices, displayNumbers };
+}
+
+/**
  * Validate a play before publishing
  */
 export function validatePlay(
   title: string,
   cast: CastMember[],
   lines: PlayLine[]
-): { valid: boolean; error?: string } {
+): { valid: boolean; error?: string; invalidLineIndices?: Set<number> } {
   if (!title.trim()) {
     return { valid: false, error: 'Please enter a title' };
   }
@@ -119,8 +145,18 @@ export function validatePlay(
   if (lines.length === 0) {
     return { valid: false, error: 'Please add at least one line' };
   }
-  if (lines.some((l) => !l.castMemberId || !l.text.trim())) {
-    return { valid: false, error: 'All lines must have a character and dialogue' };
+  const { invalidIndices, displayNumbers } = getInvalidLineNumbers(lines);
+  if (invalidIndices.size > 0) {
+    const lineList =
+      displayNumbers.length <= 3
+        ? displayNumbers.join(', ')
+        : `${displayNumbers.slice(0, 2).join(', ')}, and ${displayNumbers.length - 2} more`;
+    const verb = displayNumbers.length > 1 ? 'need' : 'needs';
+    return {
+      valid: false,
+      error: `Line${displayNumbers.length > 1 ? 's' : ''} ${lineList} ${verb} a character and dialogue`,
+      invalidLineIndices: invalidIndices,
+    };
   }
   return { valid: true };
 }

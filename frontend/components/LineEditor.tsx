@@ -26,9 +26,9 @@ function SingleLine({
     : availableCast;
   return (
     <div className="space-y-2 p-3 rounded-lg bg-[var(--black)]/30">
-      {/* Top row: Character, Direction, Delete */}
+      {/* Top row: Character, Delete - direction moved below dialogue for tab flow */}
       <div className="flex gap-3 items-center">
-        {/* Character selector */}
+        {/* Character selector - first in tab order */}
         <div className="w-40 shrink-0">
           <select
             value={line.castMemberId}
@@ -44,21 +44,12 @@ function SingleLine({
           </select>
         </div>
 
-        {/* Direction */}
-        <div className="flex-1">
-          <input
-            type="text"
-            value={line.direction || ''}
-            onChange={(e) => onUpdate({ ...line, direction: e.target.value || undefined })}
-            placeholder="Stage direction (e.g., angrily, whispering)..."
-            className="input-elegant w-full px-3 py-2 rounded-lg text-[var(--cream)] text-sm italic"
-          />
-        </div>
-
-        {/* Delete button */}
+        {/* Delete button - not in main tab flow for transcription */}
         {showDeleteButton && onDelete && (
           <button
+            type="button"
             onClick={onDelete}
+            tabIndex={-1}
             className="p-2 rounded hover:bg-red-500/20 text-red-400 opacity-60 hover:opacity-100 transition-opacity shrink-0"
             title="Remove this line"
           >
@@ -67,7 +58,7 @@ function SingleLine({
         )}
       </div>
 
-      {/* Dialogue textarea */}
+      {/* Dialogue textarea - second in tab order (main typing area) */}
       <textarea
         value={line.text}
         onChange={(e) => onUpdate({ ...line, text: e.target.value })}
@@ -75,14 +66,25 @@ function SingleLine({
         className="input-elegant w-full px-3 py-3 rounded-lg text-[var(--cream)] text-base min-h-[80px] resize-y"
         rows={2}
       />
+
+      {/* Direction - last, tab past when not needed */}
+      <input
+        type="text"
+        value={line.direction || ''}
+        onChange={(e) => onUpdate({ ...line, direction: e.target.value || undefined })}
+        placeholder="Stage direction (optional, e.g., angrily, whispering)"
+        className="input-elegant w-full px-3 py-2 rounded-lg text-[var(--cream)] text-sm italic opacity-80"
+      />
     </div>
   );
 }
 
 interface LineGroupEditorProps {
   lineIndex: number;
+  lineIdx: number; // Actual line index (for validation highlighting)
   lines: PlayLine[]; // All lines spoken simultaneously
   cast: CastMember[];
+  invalidLineIndices: Set<number> | null;
   onUpdateLine: (lineArrayIndex: number, line: PlayLine) => void;
   onDeleteLine: (lineArrayIndex: number) => void;
   onAddSimultaneous: () => void;
@@ -95,8 +97,10 @@ interface LineGroupEditorProps {
 
 export function TurnEditor({
   lineIndex,
+  lineIdx,
   lines,
   cast,
+  invalidLineIndices,
   onUpdateLine,
   onDeleteLine,
   onAddSimultaneous,
@@ -106,13 +110,26 @@ export function TurnEditor({
   canMoveDown,
   lineArrayIndices,
 }: LineGroupEditorProps) {
+  const isInvalid = invalidLineIndices?.has(lineIdx) ?? false;
+
   return (
-    <div className="p-4 rounded-xl bg-[var(--charcoal)]/30 border border-[var(--cream)]/10 space-y-3">
+    <div
+      className={`p-4 rounded-xl border space-y-3 transition-colors ${
+        isInvalid
+          ? 'bg-red-500/10 border-red-500/50'
+          : 'bg-[var(--charcoal)]/30 border-[var(--cream)]/10'
+      }`}
+    >
       {/* Line header */}
       <div className="flex items-center justify-between">
         <span className="text-[var(--gold)] text-xs font-medium">
           Line {lineIndex + 1}
-          {lines.length > 1 && (
+          {isInvalid && (
+            <span className="ml-2 text-red-400 text-xs font-normal">
+              — needs character and dialogue
+            </span>
+          )}
+          {lines.length > 1 && !isInvalid && (
             <span className="ml-2 px-2 py-0.5 rounded-full text-xs bg-purple-500/20 text-purple-400 border border-purple-500/30">
               {lines.length} speaking
             </span>
@@ -121,6 +138,8 @@ export function TurnEditor({
         <div className="flex items-center gap-1">
           {canMoveUp && (
             <button
+              type="button"
+              tabIndex={-1}
               onClick={() => onMoveLineGroup('up')}
               className="p-1.5 rounded hover:bg-[var(--cream)]/10 text-[var(--cream)] opacity-40 hover:opacity-100 transition-opacity"
               title="Move line up"
@@ -130,6 +149,8 @@ export function TurnEditor({
           )}
           {canMoveDown && (
             <button
+              type="button"
+              tabIndex={-1}
               onClick={() => onMoveLineGroup('down')}
               className="p-1.5 rounded hover:bg-[var(--cream)]/10 text-[var(--cream)] opacity-40 hover:opacity-100 transition-opacity"
               title="Move line down"
@@ -138,6 +159,8 @@ export function TurnEditor({
             </button>
           )}
           <button
+            type="button"
+            tabIndex={-1}
             onClick={onDeleteLineGroup}
             className="p-1.5 rounded hover:bg-red-500/20 text-red-400 opacity-60 hover:opacity-100 transition-opacity ml-2"
             title="Delete this line"
@@ -171,7 +194,7 @@ export function TurnEditor({
         })}
       </div>
 
-      {/* Add simultaneous speaker button */}
+      {/* Add simultaneous speaker - subtle link, skipped when tabbing */}
       {(() => {
         const usedCastIds = lines.map((l) => l.castMemberId).filter(Boolean);
         const availableCastCount = cast.filter((c) => !usedCastIds.includes(c.id)).length;
@@ -179,16 +202,18 @@ export function TurnEditor({
 
         return (
           <button
+            type="button"
             onClick={onAddSimultaneous}
             disabled={!canAddMore}
-            className="w-full py-2 rounded-lg text-xs text-purple-400 bg-purple-500/10 hover:bg-purple-500/20 border border-purple-500/20 hover:border-purple-500/30 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            tabIndex={-1}
+            className="text-xs text-[var(--cream)]/40 hover:text-[var(--cream)]/70 transition-colors disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:text-[var(--cream)]/40"
             title={
               canAddMore
                 ? 'Add another character speaking at the same time'
                 : 'All cast members are already speaking'
             }
           >
-            + Add simultaneous speaker
+            + add simultaneous speaker
           </button>
         );
       })()}

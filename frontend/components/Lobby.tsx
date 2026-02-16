@@ -131,6 +131,18 @@ function PlaySelector({
                       <div className="text-xs text-[var(--cream)] opacity-50 mt-1 line-clamp-2">
                         {play.description}
                       </div>
+                      {(play.cast || []).length > 0 && (
+                        <div className="text-xs text-[var(--cream)] opacity-60 mt-1.5 space-y-0.5">
+                          {(play.cast || []).map((cm) => (
+                            <div key={cm.id}>
+                              <span className="font-medium">{cm.name}</span>
+                              {cm.description && (
+                                <span className="opacity-80"> — {cm.description}</span>
+                              )}
+                            </div>
+                          ))}
+                        </div>
+                      )}
                     </div>
                     <div className="text-right shrink-0">
                       <div className="text-xs text-[var(--gold)]">
@@ -277,7 +289,7 @@ export function Lobby({
                       </span>
                     </div>
                     {castMember.description && (
-                      <p className="text-[var(--cream)] opacity-50 text-xs mt-0.5">
+                      <p className="text-[var(--cream)] opacity-80 text-sm mt-1">
                         {castMember.description}
                       </p>
                     )}
@@ -456,7 +468,7 @@ export function Lobby({
                           .map((cm) => cm!.description)
                           .filter(Boolean);
                         return descriptions.length > 0 ? (
-                          <p className="text-[var(--cream)] opacity-40 text-[10px] mt-0.5">
+                          <p className="text-[var(--cream)] opacity-70 text-xs mt-0.5">
                             {descriptions.join(' • ')}
                           </p>
                         ) : null;

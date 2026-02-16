@@ -343,6 +343,47 @@ func (r *repository) GetPublicPlayScripts(ctx context.Context, filter *filtering
 			PrecededByID:     database.StringPointerFromNullString(result.PrecededByID),
 			PrecedesID:       database.StringPointerFromNullString(result.PrecedesID),
 		}
+
+		// Eager-load cast members and lines for list display (roles count, line count, cast preview)
+		castMembers, err := r.generatedQuerier.GetPlayScriptCastMembersForPlayScript(ctx, r.db, result.ID)
+		if err != nil {
+			return nil, observability.PrepareAndLogError(err, logger, span, "fetching cast members for play script")
+		}
+		ps.CastMembers = make([]*types.PlayScriptCastMember, len(castMembers))
+		for i, cm := range castMembers {
+			ps.CastMembers[i] = &types.PlayScriptCastMember{
+				ID:           cm.ID,
+				PlayScriptID: cm.PlayScriptID,
+				Name:         cm.Name,
+				Description:  cm.Description,
+				SortOrder:    int(cm.SortOrder),
+				CreatedAt:    cm.CreatedAt,
+			}
+		}
+
+		lines, err := r.generatedQuerier.GetPlayScriptLinesForPlayScript(ctx, r.db, result.ID)
+		if err != nil {
+			return nil, observability.PrepareAndLogError(err, logger, span, "fetching lines for play script")
+		}
+		ps.Lines = make([]*types.PlayScriptLine, len(lines))
+		for i, l := range lines {
+			autoScrollWpm := 0
+			if l.AutoScrollWpm.Valid {
+				autoScrollWpm = int(l.AutoScrollWpm.Int32)
+			}
+			ps.Lines[i] = &types.PlayScriptLine{
+				ID:            l.ID,
+				PlayScriptID:  l.PlayScriptID,
+				CastMemberID:  l.CastMemberID,
+				LineText:      l.LineText,
+				LineIndex:     int(l.LineIndex),
+				Direction:     database.StringFromNullString(l.Direction),
+				ScrollMode:    types.ScrollMode(l.ScrollMode),
+				AutoScrollWpm: autoScrollWpm,
+				CreatedAt:     l.CreatedAt,
+			}
+		}
+
 		tags, tagErr := r.generatedQuerier.GetTagsForPlayScript(ctx, r.db, result.ID)
 		if tagErr == nil {
 			ps.Tags = make([]*types.ScriptTag, len(tags))
