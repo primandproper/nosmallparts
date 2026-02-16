@@ -6,6 +6,7 @@ interface SessionData {
   authenticated: boolean;
   userId?: string;
   accountId?: string;
+  firstName?: string;
 }
 
 interface UseAuthReturn {
@@ -13,6 +14,7 @@ interface UseAuthReturn {
   isAuthenticated: boolean;
   userId: string | null;
   accountId: string | null;
+  firstName: string | null;
   logout: () => Promise<void>;
   refreshSession: () => Promise<void>;
 }
@@ -52,6 +54,7 @@ export function useAuth(): UseAuthReturn {
     isAuthenticated: session?.authenticated ?? false,
     userId: session?.userId ?? null,
     accountId: session?.accountId ?? null,
+    firstName: session?.firstName ?? null,
     logout,
     refreshSession,
   };

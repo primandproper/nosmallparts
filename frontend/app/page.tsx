@@ -37,7 +37,7 @@ function Stars() {
 function HomeContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const { isAuthenticated, isLoading: authLoading, logout } = useAuth();
+  const { isAuthenticated, isLoading: authLoading, firstName, logout } = useAuth();
   const [playerName, setPlayerName] = useState('');
   const [stageCode, setStageCode] = useState('');
   const [isCreating, setIsCreating] = useState(false);
@@ -51,6 +51,13 @@ function HomeContent() {
     }
     nameInputRef.current?.focus();
   }, [searchParams]);
+
+  // Pre-fill name with logged-in user's first name when available
+  useEffect(() => {
+    if (isAuthenticated && firstName?.trim() && !playerName) {
+      setPlayerName(firstName.trim());
+    }
+  }, [isAuthenticated, firstName]);
 
   const extractStageCode = (input: string): string => {
     try {

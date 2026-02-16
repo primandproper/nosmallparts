@@ -112,30 +112,6 @@ export function Stage({ stageState, participantId, onNextLine }: StageProps) {
         </div>
       )}
 
-      {/* Character display */}
-      {currentParticipant && (currentParticipant.castMemberIds || []).length > 0 && (
-        <div className="text-center">
-          <span className="text-[var(--cream)] opacity-30 text-xs uppercase tracking-wider">
-            Playing as
-          </span>
-          <div className="mt-1 space-y-1">
-            {(currentParticipant.castMemberIds || [])
-              .map((id) => getCastMemberById(stageState.selectedPlay!, id))
-              .filter(Boolean)
-              .map((cm) => (
-                <div key={cm!.id}>
-                  <p className="text-[var(--gold)] font-medium">{cm!.name}</p>
-                  {cm!.description && (
-                    <p className="text-[var(--cream)] opacity-50 text-xs mt-0.5">
-                      {cm!.description}
-                    </p>
-                  )}
-                </div>
-              ))}
-          </div>
-        </div>
-      )}
-
       {/* Director view */}
       {currentParticipant &&
         (currentParticipant.castMemberIds || []).length === 0 &&
