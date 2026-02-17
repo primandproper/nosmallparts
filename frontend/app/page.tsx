@@ -260,17 +260,19 @@ function HomeContent() {
             </form>
           </div>
 
-          {/* Scripts Library Link */}
-          <div className="text-center mt-8 animate-fade-up animate-delay-4">
-            <Link
-              href="/scripts"
-              className="text-[var(--gold)] hover:text-[var(--gold-light)] transition-colors inline-flex items-center gap-2"
-            >
-              <span>📚</span>
-              <span>Browse Scripts</span>
-              <span>→</span>
-            </Link>
-          </div>
+          {/* Scripts Library Link - only show when authenticated since scripts require auth */}
+          {isAuthenticated && (
+            <div className="text-center mt-8 animate-fade-up animate-delay-4">
+              <Link
+                href="/scripts"
+                className="text-[var(--gold)] hover:text-[var(--gold-light)] transition-colors inline-flex items-center gap-2"
+              >
+                <span>📚</span>
+                <span>Browse Scripts</span>
+                <span>→</span>
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     </main>

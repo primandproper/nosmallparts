@@ -3,7 +3,7 @@
 import { Play } from '@/lib/types';
 
 interface ScriptCardProps {
-  script: Play & { isUserScript?: boolean };
+  script: Play;
   isDraft?: boolean;
   onClick?: () => void;
   onDelete?: () => void;
@@ -13,18 +13,10 @@ export function ScriptCard({ script, isDraft = false, onClick, onDelete }: Scrip
   const lineCount = (script.lines || []).length;
   const castCount = (script.cast || []).length;
 
-  // Determine badge type
-  const getBadge = () => {
-    if (isDraft) {
-      return { text: 'Draft', className: 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30' };
-    }
-    if (script.isUserScript) {
-      return { text: 'Published', className: 'bg-green-500/20 text-green-400 border-green-500/30' };
-    }
-    return { text: 'Sample', className: 'bg-purple-500/20 text-purple-400 border-purple-500/30' };
-  };
-
-  const badge = getBadge();
+  // Only drafts get a badge
+  const badge = isDraft
+    ? { text: 'Draft', className: 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30' }
+    : null;
 
   return (
     <div
@@ -45,11 +37,13 @@ export function ScriptCard({ script, isDraft = false, onClick, onDelete }: Scrip
         </div>
 
         {/* Badge */}
-        <span
-          className={`px-2 py-1 rounded-full text-xs font-medium border shrink-0 ${badge.className}`}
-        >
-          {badge.text}
-        </span>
+        {badge && (
+          <span
+            className={`px-2 py-1 rounded-full text-xs font-medium border shrink-0 ${badge.className}`}
+          >
+            {badge.text}
+          </span>
+        )}
       </div>
 
       {/* Description */}
@@ -111,8 +105,8 @@ export function ScriptCard({ script, isDraft = false, onClick, onDelete }: Scrip
         </div>
       )}
 
-      {/* Delete button for drafts/user scripts */}
-      {onDelete && (isDraft || script.isUserScript) && (
+      {/* Delete button for drafts only */}
+      {onDelete && isDraft && (
         <button
           onClick={(e) => {
             e.stopPropagation();

@@ -122,15 +122,6 @@ export default function ScriptDetailPage() {
               </h1>
               {script.author && <p className="text-[var(--gold)] text-lg">by {script.author}</p>}
             </div>
-            <span
-              className={`px-3 py-1 rounded-full text-sm font-medium border ${
-                script.isUserScript
-                  ? 'bg-green-500/20 text-green-400 border-green-500/30'
-                  : 'bg-purple-500/20 text-purple-400 border-purple-500/30'
-              }`}
-            >
-              {script.isUserScript ? 'Published' : 'Sample'}
-            </span>
           </div>
 
           {script.description && (
