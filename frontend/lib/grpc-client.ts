@@ -1,23 +1,25 @@
 import { createChannel, createClient, ChannelCredentials } from 'nice-grpc';
-import { PlayScriptsServiceDefinition } from '@/generated/play_scripts/play_scripts_service';
+import { PlayScriptsServiceDefinition } from '../generated/play_scripts/play_scripts_service';
+import { StagesServiceDefinition } from '../generated/stages/stages_service';
 
 // Get the gRPC backend URL from environment variable
 // This should only be used server-side (in API routes)
 function getGrpcBackendUrl(): string {
   const url = process.env.GRPC_BACKEND_URL;
   if (!url) {
-    // Default to localhost for development
-    return 'localhost:50051';
+    // Default to localhost for development (gRPC typically on 8001)
+    return 'localhost:8001';
   }
   return url;
 }
 
-// Create a singleton channel and client
+// Create a singleton channel and clients
 // Note: This is lazily initialized to avoid issues during build time
 let _channel: ReturnType<typeof createChannel> | null = null;
 let _playScriptsClient: ReturnType<
   typeof createClient<typeof PlayScriptsServiceDefinition>
 > | null = null;
+let _stagesClient: ReturnType<typeof createClient<typeof StagesServiceDefinition>> | null = null;
 
 function getChannel() {
   if (!_channel) {
@@ -37,4 +39,15 @@ export function getPlayScriptsClient() {
     _playScriptsClient = createClient(PlayScriptsServiceDefinition, getChannel());
   }
   return _playScriptsClient;
+}
+
+/**
+ * Get the StagesService gRPC client.
+ * This should only be called from server-side code (WebSocket server, API routes).
+ */
+export function getStagesClient() {
+  if (!_stagesClient) {
+    _stagesClient = createClient(StagesServiceDefinition, getChannel());
+  }
+  return _stagesClient;
 }

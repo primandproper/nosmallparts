@@ -34,6 +34,7 @@ import (
 	oauthrepo "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/oauth"
 	playscriptsrepo "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/playscripts"
 	settingsrepo "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/settings"
+	stagesrepo "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/stages"
 	uploadedmediarepo "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/uploadedmedia"
 	waitlistsrepo "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/waitlists"
 	webhooksrepo "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/webhooks"
@@ -49,6 +50,7 @@ import (
 	oauthsvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/oauth/grpc"
 	playscriptssvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/playscripts/grpc"
 	settingssvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/settings/grpc"
+	stagesgrpc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/stages/grpc"
 	uploadedmediacfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/uploadedmedia/config"
 	uploadedmediasvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/uploadedmedia/grpc"
 	waitlistssvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/waitlists/grpc"
@@ -93,6 +95,7 @@ func Build(
 		waitlistsrepo.WaitlistsRepoProviders,
 		dataprivacyrepo.DataPrivProviders,
 		playscriptsrepo.PlayScriptsRepoProviders,
+		stagesrepo.StagesRepoProviders,
 		// services
 		authhttpsvc.AuthHTTPServiceProviders,
 		auditsvc.AuditSvcProviders,
@@ -108,6 +111,7 @@ func Build(
 		oauthsvc.OAuthSvcProviders,
 		waitlistssvc.WaitlistsSvcProviders,
 		playscriptssvc.PlayScriptsSvcProviders,
+		stagesgrpc.StagesSvcProviders,
 		uploadedmediacfg.UploadedMediaConfigProviders,
 		// manager
 		identitymgr.IDManagerProviders,

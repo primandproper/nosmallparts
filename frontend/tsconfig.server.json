@@ -8,6 +8,6 @@
     "esModuleInterop": true,
     "declaration": false
   },
-  "include": ["server.ts", "lib/stages/**/*.ts"],
-  "exclude": ["node_modules", ".next", "app", "components", "hooks", "generated"]
+  "include": ["server.ts", "lib/ws-stage-handler.ts", "lib/grpc-client.ts"],
+  "exclude": ["node_modules", ".next", "app", "components", "hooks"]
 }

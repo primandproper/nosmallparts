@@ -241,21 +241,19 @@ export interface StageConfig {
 export type RoomConfig = StageConfig;
 
 function getWsUrl(): string {
-  // Allow override via environment variable
-  const envUrl =
-    typeof process !== 'undefined' ? process.env.NEXT_PUBLIC_BACKEND_WS_URL : undefined;
+  // BFF WebSocket: same origin as Next.js (no cross-origin). Override for custom deployments.
+  const envUrl = typeof process !== 'undefined' ? process.env.NEXT_PUBLIC_WS_URL : undefined;
   if (envUrl) {
     return envUrl;
   }
 
   if (typeof window === 'undefined') {
-    return 'ws://localhost:8000/ws/stages';
+    return 'ws://localhost:3000/ws/stage';
   }
 
-  // Use ws:// for http:// and wss:// for https://
-  const { protocol, hostname } = window.location;
+  const { protocol, host } = window.location;
   const wsProtocol = protocol === 'https:' ? 'wss:' : 'ws:';
-  return `${wsProtocol}//${hostname}:8000/ws/stages`;
+  return `${wsProtocol}//${host}/ws/stage`;
 }
 
 export function getConfig(): StageConfig {

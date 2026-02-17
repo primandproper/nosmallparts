@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "ts-node --project tsconfig.server.json server.ts",
     "build": "next build",
-    "start": "next start",
+    "start": "NODE_ENV=production npx ts-node --project tsconfig.server.json server.ts",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
     "test": "jest",
@@ -25,7 +25,9 @@
     "nice-grpc": "^2.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "uuid": "^9.0.0"
+    "ts-node": "^10.9.2",
+    "uuid": "^9.0.0",
+    "ws": "^8.18.0"
   },
   "devDependencies": {
     "@playwright/test": "^1.41.0",
@@ -38,6 +40,7 @@
     "@types/react": "^18.2.48",
     "@types/react-dom": "^18.2.18",
     "@types/uuid": "^9.0.0",
+    "@types/ws": "^8.5.13",
     "autoprefixer": "^10.4.17",
     "eslint": "^8.57.1",
     "eslint-config-next": "14.1.0",

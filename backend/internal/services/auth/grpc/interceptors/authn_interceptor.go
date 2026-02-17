@@ -66,6 +66,17 @@ func ProvideAuthInterceptor(
 			"/identity.IdentityService/CreateUser",
 			"/auth.AuthService/VerifyTOTPSecret",
 			"/auth.AuthService/LoginForToken",
+			// Stages service: anonymous participants join by display name, no auth required
+			"/stages.StagesService/JoinStage",
+			"/stages.StagesService/GetStageState",
+			"/stages.StagesService/UpdateParticipant",
+			"/stages.StagesService/ToggleRole",
+			"/stages.StagesService/UpdateStage",
+			"/stages.StagesService/SendChat",
+			"/stages.StagesService/LeaveStage",
+			"/stages.StagesService/StartPlay",
+			"/stages.StagesService/NextLine",
+			"/stages.StagesService/ResetPlay",
 		},
 	}
 }

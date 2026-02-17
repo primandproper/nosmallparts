@@ -24,7 +24,7 @@ import (
 	tracingcfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing/config"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/qrcodes"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/random"
-	grpc14 "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/server/grpc"
+	grpc15 "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/server/grpc"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/uploads/objectstorage"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/auditlogentries"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/auth"
@@ -35,6 +35,7 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/oauth"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/playscripts"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/settings"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/stages"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/uploadedmedia"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/waitlists"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/webhooks"
@@ -50,6 +51,7 @@ import (
 	grpc8 "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/oauth/grpc"
 	grpc13 "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/playscripts/grpc"
 	grpc9 "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/settings/grpc"
+	grpc14 "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/stages/grpc"
 	grpc10 "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/uploadedmedia/grpc"
 	grpc12 "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/waitlists/grpc"
 	grpc11 "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/webhooks/grpc"
@@ -169,12 +171,15 @@ func Build(ctx context.Context, cfg *config.APIServiceConfig) (*GRPCService, err
 	waitlistsMethodPermissions := grpc12.ProvideMethodPermissions()
 	webhooksMethodPermissions := grpc11.ProvideMethodPermissions()
 	playScriptsMethodPermissions := grpc13.ProvidePlayScriptsMethodPermissions()
-	methodPermissionsMap := AggregateMethodPermissions(authMethodPermissions, identityMethodPermissions, issueReportsMethodPermissions, notificationsMethodPermissions, oAuthMethodPermissions, settingsMethodPermissions, uploadedMediaMethodPermissions, waitlistsMethodPermissions, webhooksMethodPermissions, playScriptsMethodPermissions)
+	stagesMethodPermissions := grpc14.ProvideStagesMethodPermissions()
+	methodPermissionsMap := AggregateMethodPermissions(authMethodPermissions, identityMethodPermissions, issueReportsMethodPermissions, notificationsMethodPermissions, oAuthMethodPermissions, settingsMethodPermissions, uploadedMediaMethodPermissions, waitlistsMethodPermissions, webhooksMethodPermissions, playScriptsMethodPermissions, stagesMethodPermissions)
 	authInterceptor := interceptors.ProvideAuthInterceptor(tracerProvider, logger, identityRepository, manageManager, methodPermissionsMap)
 	v2 := BuildUnaryServerInterceptors(authInterceptor)
 	v3 := BuildStreamServerInterceptors()
-	v4 := BuildRegistrationFuncs(auditServiceServer, authServiceServer, dataPrivacyServiceServer, identityServiceServer, internalOperationsServer, issueReportsServiceServer, userNotificationsServiceServer, oAuthServiceServer, settingsServiceServer, uploadedMediaServiceServer, waitlistsServiceServer, webhooksServiceServer, playScriptsServiceServer)
-	server, err := grpc14.NewGRPCServer(grpcConfig, logger, v2, v3, v4...)
+	stagesRepository := stages.ProvideStagesRepository(logger, tracerProvider, client)
+	stagesServiceServer := grpc14.NewService(logger, tracerProvider, stagesRepository, playscriptsRepository)
+	v4 := BuildRegistrationFuncs(auditServiceServer, authServiceServer, dataPrivacyServiceServer, identityServiceServer, internalOperationsServer, issueReportsServiceServer, userNotificationsServiceServer, oAuthServiceServer, settingsServiceServer, uploadedMediaServiceServer, waitlistsServiceServer, webhooksServiceServer, playScriptsServiceServer, stagesServiceServer)
+	server, err := grpc15.NewGRPCServer(grpcConfig, logger, v2, v3, v4...)
 	if err != nil {
 		return nil, err
 	}

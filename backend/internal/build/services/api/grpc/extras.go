@@ -13,6 +13,7 @@ import (
 	oauthsvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/oauth"
 	playscriptssvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/play_scripts"
 	settingssvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/settings"
+	stagessvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/stages"
 	uploadedmediasvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/uploaded_media"
 	waitlistssvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/waitlists"
 	webhookssvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/webhooks"
@@ -30,6 +31,7 @@ import (
 	oauthgrpc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/oauth/grpc"
 	playscriptsgrpc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/playscripts/grpc"
 	settingsgrpc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/settings/grpc"
+	stagesgrpc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/stages/grpc"
 	uploadedmediagrpc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/uploadedmedia/grpc"
 	waitlistsgrpc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/waitlists/grpc"
 	webhooksgrpc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/webhooks/grpc"
@@ -51,6 +53,7 @@ func BuildRegistrationFuncs(
 	waitlistsService waitlistssvc.WaitlistsServiceServer,
 	webhooksService webhookssvc.WebhooksServiceServer,
 	playScriptsService playscriptssvc.PlayScriptsServiceServer,
+	stagesService stagessvc.StagesServiceServer,
 ) []platformgrpc.RegistrationFunc {
 	return []platformgrpc.RegistrationFunc{
 		func(server *grpc.Server) {
@@ -67,6 +70,7 @@ func BuildRegistrationFuncs(
 			waitlistssvc.RegisterWaitlistsServiceServer(server, waitlistsService)
 			webhookssvc.RegisterWebhooksServiceServer(server, webhooksService)
 			playscriptssvc.RegisterPlayScriptsServiceServer(server, playScriptsService)
+			stagessvc.RegisterStagesServiceServer(server, stagesService)
 		},
 	}
 }
@@ -113,6 +117,7 @@ func AggregateMethodPermissions(
 	waitlistsPermissions waitlistsgrpc.WaitlistsMethodPermissions,
 	webhooksPermissions webhooksgrpc.WebhooksMethodPermissions,
 	playScriptsPermissions playscriptsgrpc.PlayScriptsMethodPermissions,
+	stagesPermissions stagesgrpc.StagesMethodPermissions,
 ) interceptors.MethodPermissionsMap {
 	result := make(interceptors.MethodPermissionsMap)
 
@@ -145,6 +150,9 @@ func AggregateMethodPermissions(
 		result[method] = perms
 	}
 	for method, perms := range playScriptsPermissions {
+		result[method] = perms
+	}
+	for method, perms := range stagesPermissions {
 		result[method] = perms
 	}
 
