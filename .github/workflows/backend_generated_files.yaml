@@ -1,10 +1,10 @@
 ---
-on: [gollum]
-#  pull_request:
-#    paths:
-#      - backend/cmd/**
-#      - backend/pkg/**
-#      - backend/internal/**
+on:
+  pull_request:
+    paths:
+      - backend/cmd/**
+      - backend/pkg/**
+      - backend/internal/**
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
