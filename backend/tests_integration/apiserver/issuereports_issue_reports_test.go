@@ -106,7 +106,7 @@ func TestIssueReports_Reading(T *testing.T) {
 		assert.NotNil(t, retrieved)
 	})
 
-	T.Run("nonexistent MealPlanTaskID", func(t *testing.T) {
+	T.Run("nonexistent ID", func(t *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
@@ -295,7 +295,7 @@ func TestIssueReports_Updating(T *testing.T) {
 		assert.Equal(t, newDetails, updated.Updated.Details)
 	})
 
-	T.Run("nonexistent MealPlanTaskID", func(t *testing.T) {
+	T.Run("nonexistent ID", func(t *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 

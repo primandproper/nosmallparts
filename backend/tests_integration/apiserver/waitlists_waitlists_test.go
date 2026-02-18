@@ -162,7 +162,7 @@ func TestWaitlists_Reading(T *testing.T) {
 		assert.NotNil(t, retrieved)
 	})
 
-	T.Run("nonexistent MealPlanTaskID", func(t *testing.T) {
+	T.Run("nonexistent ID", func(t *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
@@ -275,7 +275,7 @@ func TestWaitlists_Updating(T *testing.T) {
 		assert.WithinDuration(t, newValidUntil, grpcconverters.ConvertGRPCWaitlistToWaitlist(retrieved.Result).ValidUntil, time.Second)
 	})
 
-	T.Run("nonexistent MealPlanTaskID", func(t *testing.T) {
+	T.Run("nonexistent ID", func(t *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
@@ -350,7 +350,7 @@ func TestWaitlists_IsNotExpired(T *testing.T) {
 		assert.True(t, result.IsNotExpired)
 	})
 
-	T.Run("nonexistent MealPlanTaskID", func(t *testing.T) {
+	T.Run("nonexistent ID", func(t *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
@@ -431,7 +431,7 @@ func TestWaitlistSignups_Reading(T *testing.T) {
 		assert.NotNil(t, retrieved)
 	})
 
-	T.Run("nonexistent MealPlanTaskID", func(t *testing.T) {
+	T.Run("nonexistent ID", func(t *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
@@ -519,7 +519,7 @@ func TestWaitlistSignups_Updating(T *testing.T) {
 		assert.Equal(t, newNotes, retrieved.Result.Notes)
 	})
 
-	T.Run("nonexistent MealPlanTaskID", func(t *testing.T) {
+	T.Run("nonexistent ID", func(t *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 

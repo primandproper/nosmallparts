@@ -120,7 +120,7 @@ func TestWebhooks_Reading(T *testing.T) {
 		assert.NotNil(t, retrieved)
 	})
 
-	T.Run("nonexistent MealPlanTaskID", func(t *testing.T) {
+	T.Run("nonexistent ID", func(t *testing.T) {
 		t.Parallel()
 		ctx := t.Context()
 
