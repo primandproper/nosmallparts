@@ -71,64 +71,64 @@ jobs:
 
       - name: Terraform Apply
         working-directory: infra/deploy/environments/prod/terraform
-        run: terraform apply -auto-approve
-
-  backend-infra:
-    needs: [changes, baseline-infra]
-    if: |
-      always() &&
-      needs.changes.outputs.backend == 'true' &&
-      (needs.baseline-infra.result == 'success' || needs.baseline-infra.result == 'skipped')
-    timeout-minutes: 90
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v5
-
-      - name: Authenticate with GCP
-        uses: google-github-actions/auth@v2
-        with:
-          credentials_json: ${{ secrets.NO_SMALL_PARTS_GCP_CREDENTIALS }}
-
-      - name: Set up Cloud SDK
-        uses: google-github-actions/setup-gcloud@v2
-
-      - name: Authorize Docker push to pkg.dev
-        run: gcloud auth configure-docker us-central1-docker.pkg.dev
-
-      - name: Get GKE credentials
-        uses: google-github-actions/get-gke-credentials@v2
-        with:
-          cluster_name: prod
-          context_name: prod_context
-          location: us-central1
-
-      - name: Copy kubeconfig for backend Terraform
-        run: |
-          mkdir -p backend/deploy/environments/prod/terraform
-          cp ${{ env.KUBECONFIG }} backend/deploy/environments/prod/terraform/terraform_kubeconfig
-
-      - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v3
-        with:
-          terraform_version: "1.14.4"
-          cli_config_credentials_token: ${{ secrets.NO_SMALL_PARTS_TERRAFORM_CLOUD_API_TOKEN }}
-
-      - name: Terraform Init
-        working-directory: backend/deploy/environments/prod/terraform
-        run: terraform init
-
-      - name: Terraform Validate
-        working-directory: backend/deploy/environments/prod/terraform
-        run: terraform validate -no-color
-
-      - name: Terraform Apply
-        working-directory: backend/deploy/environments/prod/terraform
         run: terraform destroy -auto-approve
 
-      - name: Remove kubeconfig
-        if: always()
-        run: rm -f backend/deploy/environments/prod/terraform/terraform_kubeconfig
+  # backend-infra:
+  #   needs: [changes, baseline-infra]
+  #   if: |
+  #     always() &&
+  #     needs.changes.outputs.backend == 'true' &&
+  #     (needs.baseline-infra.result == 'success' || needs.baseline-infra.result == 'skipped')
+  #   timeout-minutes: 90
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout code
+  #       uses: actions/checkout@v5
+
+  #     - name: Authenticate with GCP
+  #       uses: google-github-actions/auth@v2
+  #       with:
+  #         credentials_json: ${{ secrets.NO_SMALL_PARTS_GCP_CREDENTIALS }}
+
+  #     - name: Set up Cloud SDK
+  #       uses: google-github-actions/setup-gcloud@v2
+
+  #     - name: Authorize Docker push to pkg.dev
+  #       run: gcloud auth configure-docker us-central1-docker.pkg.dev
+
+  #     - name: Get GKE credentials
+  #       uses: google-github-actions/get-gke-credentials@v2
+  #       with:
+  #         cluster_name: prod
+  #         context_name: prod_context
+  #         location: us-central1
+
+  #     - name: Copy kubeconfig for backend Terraform
+  #       run: |
+  #         mkdir -p backend/deploy/environments/prod/terraform
+  #         cp ${{ env.KUBECONFIG }} backend/deploy/environments/prod/terraform/terraform_kubeconfig
+
+  #     - name: Setup Terraform
+  #       uses: hashicorp/setup-terraform@v3
+  #       with:
+  #         terraform_version: "1.14.4"
+  #         cli_config_credentials_token: ${{ secrets.NO_SMALL_PARTS_TERRAFORM_CLOUD_API_TOKEN }}
+
+  #     - name: Terraform Init
+  #       working-directory: backend/deploy/environments/prod/terraform
+  #       run: terraform init
+
+  #     - name: Terraform Validate
+  #       working-directory: backend/deploy/environments/prod/terraform
+  #       run: terraform validate -no-color
+
+  #     - name: Terraform Apply
+  #       working-directory: backend/deploy/environments/prod/terraform
+  #       run: terraform destroy -auto-approve
+
+  #     - name: Remove kubeconfig
+  #       if: always()
+  #       run: rm -f backend/deploy/environments/prod/terraform/terraform_kubeconfig
 
   # applications:
   #   needs: [changes, baseline-infra, backend-infra]
