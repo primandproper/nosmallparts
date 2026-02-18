@@ -1,0 +1,92 @@
+{
+	"queues": {
+		"dataChangesTopicName": "",
+		"outboundEmailsTopicName": "",
+		"searchIndexRequestsTopicName": "",
+		"userDataAggregationTopicName": "",
+		"webhookExecutionRequestsTopicName": ""
+	},
+	"events": {
+		"consumers": {
+			"sqs": {
+				"queueAddress": ""
+			},
+			"pubSub": {
+				"projectID": "no-small-parts"
+			},
+			"redis": {
+				"username": "",
+				"queueAddress": null
+			}
+		},
+		"publishers": {
+			"sqs": {
+				"queueAddress": ""
+			},
+			"pubSub": {
+				"projectID": "no-small-parts"
+			},
+			"redis": {
+				"username": "",
+				"queueAddress": null
+			}
+		}
+	},
+	"observability": {
+		"logging": {
+			"serviceName": "search_data_index_scheduler",
+			"level": "debug",
+			"otelslog": {
+				"endpointURL": "otel-collector-svc.prod.svc.cluster.local:4317",
+				"insecure": true,
+				"timeout": 2000000000
+			},
+			"provider": "otelslog"
+		},
+		"metrics": {
+			"otelgrpc": {
+				"metricsCollectorEndpoint": "otel-collector-svc.prod.svc.cluster.local:4317",
+				"collectionInterval": 30000000000,
+				"insecure": true,
+				"enableRuntimeMetrics": false,
+				"enableHostMetrics": false
+			},
+			"serviceName": "search_data_index_scheduler",
+			"provider": "otelgrpc"
+		},
+		"tracing": {
+			"otelgrpc": {
+				"collector_endpoint": "otel-collector-svc.prod.svc.cluster.local:4317",
+				"insecure": true
+			},
+			"service_name": "search_data_index_scheduler",
+			"provider": "otelgrpc",
+			"spanCollectionProbability": 1
+		}
+	},
+	"database": {
+		"oauth2TokenEncryptionKey": "",
+		"provider": "postgres",
+		"readConnection": {
+			"username": "api_db_user",
+			"password": "",
+			"database": "no-small-parts",
+			"hostname": "",
+			"port": 5432,
+			"disableSSL": false
+		},
+		"writeConnection": {
+			"username": "api_db_user",
+			"password": "",
+			"database": "no-small-parts",
+			"hostname": "",
+			"port": 5432,
+			"disableSSL": false
+		},
+		"maxPingAttempts": 50,
+		"pingWaitPeriod": 1000000000,
+		"debug": true,
+		"logQueries": true,
+		"runMigrations": true
+	}
+}

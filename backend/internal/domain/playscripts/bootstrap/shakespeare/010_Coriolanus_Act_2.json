@@ -1,0 +1,1723 @@
+{
+  "title": "Coriolanus (Act 2)",
+  "description": "Folger Shakespeare Library edition",
+  "author": "William Shakespeare",
+  "castMembers": [
+    {
+      "id": "d68m11cn9qd8d2h78p90",
+      "name": "Narrator",
+      "sortOrder": 0
+    },
+    {
+      "id": "d68m11cn9qd8d2h78p9g",
+      "name": "Menenius",
+      "description": "patrician",
+      "sortOrder": 1
+    },
+    {
+      "id": "d68m11cn9qd8d2h78pa0",
+      "name": "Brutus",
+      "description": "tribune",
+      "sortOrder": 2
+    },
+    {
+      "id": "d68m11cn9qd8d2h78pag",
+      "name": "Sicinius",
+      "description": "tribune",
+      "sortOrder": 3
+    },
+    {
+      "id": "d68m11cn9qd8d2h78pb0",
+      "name": "Volumnia",
+      "description": "his mother",
+      "sortOrder": 4
+    },
+    {
+      "id": "d68m11cn9qd8d2h78pbg",
+      "name": "Virgilia",
+      "description": "his wife",
+      "sortOrder": 5
+    },
+    {
+      "id": "d68m11cn9qd8d2h78pc0",
+      "name": "Valeria",
+      "description": "friend to Volumnia and Virgilia",
+      "sortOrder": 6
+    },
+    {
+      "id": "d68m11cn9qd8d2h78pcg",
+      "name": "Herald",
+      "sortOrder": 7
+    },
+    {
+      "id": "d68m11cn9qd8d2h78pd0",
+      "name": "Martius",
+      "description": "later Caius Martius Coriolanus",
+      "sortOrder": 8
+    },
+    {
+      "id": "d68m11cn9qd8d2h78pdg",
+      "name": "Cominius",
+      "description": "patrician and general",
+      "sortOrder": 9
+    },
+    {
+      "id": "d68m11cn9qd8d2h78pe0",
+      "name": "Messenger",
+      "sortOrder": 10
+    },
+    {
+      "id": "d68m11cn9qd8d2h78peg",
+      "name": "First Officer",
+      "sortOrder": 11
+    },
+    {
+      "id": "d68m11cn9qd8d2h78pf0",
+      "name": "Second Officer",
+      "sortOrder": 12
+    },
+    {
+      "id": "d68m11cn9qd8d2h78pfg",
+      "name": "SENATORS.ROMAN.0.1_Cor",
+      "sortOrder": 13
+    },
+    {
+      "id": "d68m11cn9qd8d2h78pg0",
+      "name": "Roman , ,",
+      "sortOrder": 14
+    },
+    {
+      "id": "d68m11cn9qd8d2h78pgg",
+      "name": "First Citizen",
+      "sortOrder": 15
+    },
+    {
+      "id": "d68m11cn9qd8d2h78ph0",
+      "name": "Second Citizen",
+      "sortOrder": 16
+    },
+    {
+      "id": "d68m11cn9qd8d2h78phg",
+      "name": "Third Citizen",
+      "sortOrder": 17
+    },
+    {
+      "id": "d68m11cn9qd8d2h78pi0",
+      "name": "Fourth Citizen",
+      "sortOrder": 18
+    },
+    {
+      "id": "d68m11cn9qd8d2h78pig",
+      "name": "Fifth Citizen",
+      "sortOrder": 19
+    },
+    {
+      "id": "d68m11cn9qd8d2h78pj0",
+      "name": "Sixth Citizen",
+      "sortOrder": 20
+    },
+    {
+      "id": "d68m11cn9qd8d2h78pjg",
+      "name": "Seventh Citizen",
+      "sortOrder": 21
+    },
+    {
+      "id": "d68m11cn9qd8d2h78pk0",
+      "name": "CITIZENS.ROMAN.8_Cor",
+      "sortOrder": 22
+    }
+  ],
+  "lines": [
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p90",
+      "lineText": "Enter Menenius with the two Tribunes of the people , Sicinius and Brutus .",
+      "scrollMode": "auto",
+      "lineIndex": 0
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p9g",
+      "lineText": "The augurer tells me we shall have news tonight .",
+      "scrollMode": "auto",
+      "lineIndex": 1
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pa0",
+      "lineText": "Good or bad ?",
+      "scrollMode": "auto",
+      "lineIndex": 2
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p9g",
+      "lineText": "Not according to the prayer of the people , for they love not Martius .",
+      "scrollMode": "auto",
+      "lineIndex": 3
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pag",
+      "lineText": "Nature teaches beasts to know their friends .",
+      "scrollMode": "auto",
+      "lineIndex": 4
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p9g",
+      "lineText": "Pray you , who does the wolf love ?",
+      "scrollMode": "auto",
+      "lineIndex": 5
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pag",
+      "lineText": "The lamb .",
+      "scrollMode": "auto",
+      "lineIndex": 6
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p9g",
+      "lineText": "Ay , to devour him , as the hungry plebeians would the noble Martius .",
+      "scrollMode": "auto",
+      "lineIndex": 7
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pa0",
+      "lineText": "He’s a lamb indeed , that baas like a bear .",
+      "scrollMode": "auto",
+      "lineIndex": 8
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p9g",
+      "lineText": "He’s a bear indeed , that lives like a lamb . You two are old men ; tell me one thing that I shall ask you .",
+      "scrollMode": "auto",
+      "lineIndex": 9
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pa0",
+      "lineText": "Well , sir .",
+      "scrollMode": "auto",
+      "lineIndex": 10
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p9g",
+      "lineText": "In what enormity is Martius poor in , that you two have not in abundance ?",
+      "scrollMode": "auto",
+      "lineIndex": 11
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pa0",
+      "lineText": "He’s poor in no one fault , but stored with all .",
+      "scrollMode": "auto",
+      "lineIndex": 12
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pag",
+      "lineText": "Especially in pride .",
+      "scrollMode": "auto",
+      "lineIndex": 13
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pa0",
+      "lineText": "And topping all others in boasting .",
+      "scrollMode": "auto",
+      "lineIndex": 14
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p9g",
+      "lineText": "This is strange now . Do you two know how you are censured here in the city , I mean of us o’ th’ right-hand file , do you ?",
+      "scrollMode": "auto",
+      "lineIndex": 15
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pa0",
+      "lineText": "Why , how are we censured ?",
+      "scrollMode": "auto",
+      "lineIndex": 16
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p9g",
+      "lineText": "Because you talk of pride now , will you not be angry ?",
+      "scrollMode": "auto",
+      "lineIndex": 17
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pa0",
+      "lineText": "Well , well , sir , well ?",
+      "scrollMode": "auto",
+      "lineIndex": 18
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p9g",
+      "lineText": "Why , ’tis no great matter ; for a very little thief of occasion will rob you of a great deal of patience . Give your dispositions the reins , and be angry at your pleasures , at the least , if you take it as a pleasure to you in being so . You blame Martius for being proud .",
+      "scrollMode": "auto",
+      "lineIndex": 19
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pa0",
+      "lineText": "We do it not alone , sir .",
+      "scrollMode": "auto",
+      "lineIndex": 20
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p9g",
+      "lineText": "I know you can do very little alone , for your helps are many , or else your actions would grow wondrous single . Your abilities are too infantlike for doing much alone . You talk of pride . O , that you could turn your eyes toward the napes of your necks and make but an interior survey of your good selves ! O , that you could !",
+      "scrollMode": "auto",
+      "lineIndex": 21
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pa0",
+      "lineText": "What then , sir ?",
+      "scrollMode": "auto",
+      "lineIndex": 22
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p9g",
+      "lineText": "Why , then you should discover a brace of unmeriting , proud , violent , testy magistrates , alias fools , as any in Rome .",
+      "scrollMode": "auto",
+      "lineIndex": 23
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pag",
+      "lineText": "Menenius , you are known well enough , too .",
+      "scrollMode": "auto",
+      "lineIndex": 24
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p9g",
+      "lineText": "I am known to be a humorous patrician and one that loves a cup of hot wine with not a drop of allaying Tiber in ’t ; said to be something imperfect in favoring the first complaint , hasty and tinder-like upon too trivial motion ; one that converses more with the buttock of the night than with the forehead of the morning . What I think I utter , and spend my malice in my breath . Meeting two such wealsmen as you are — I cannot call you Lycurguses — if the drink you give me touch my palate adversely , I make a crooked face at it . I cannot say your Worships have delivered the matter well when I find the ass in compound with the ACT 2. SC. 1 major part of your syllables . And though I must be content to bear with those that say you are reverend grave men , yet they lie deadly that tell you have good faces . If you see this in the map of my microcosm , follows it that I am known well enough too ? What harm can your bisson conspectuities glean out of this character , if I be known well enough , too ?",
+      "scrollMode": "auto",
+      "lineIndex": 25
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pa0",
+      "lineText": "Come , sir , come ; we know you well enough .",
+      "scrollMode": "auto",
+      "lineIndex": 26
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p9g",
+      "lineText": "You know neither me , yourselves , nor anything . You are ambitious for poor knaves’ caps and legs . You wear out a good wholesome forenoon in hearing a cause between an orange-wife and a faucet-seller , and then rejourn the controversy of threepence to a second day of audience . When you are hearing a matter between party and party , if you chance to be pinched with the colic , you make faces like mummers , set up the bloody flag against all patience , and , in roaring for a chamber pot , dismiss the controversy bleeding , the more entangled by your hearing . All the peace you make in their cause is calling both the parties knaves . You are a pair of strange ones .",
+      "scrollMode": "auto",
+      "lineIndex": 27
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pa0",
+      "lineText": "Come , come . You are well understood to be a perfecter giber for the table than a necessary bencher in the Capitol .",
+      "scrollMode": "auto",
+      "lineIndex": 28
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p90",
+      "lineText": "He begins to exit . Brutus and Sicinius stand aside .",
+      "scrollMode": "auto",
+      "lineIndex": 29
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p90",
+      "lineText": "Enter Volumnia , Virgilia , and Valeria .",
+      "scrollMode": "auto",
+      "lineIndex": 30
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pb0",
+      "lineText": "Enter Volumnia , Virgilia , and Valeria . How now , my as fair as noble ladies — and the moon , were she earthly , no nobler — whither do you follow your eyes so fast ?",
+      "scrollMode": "auto",
+      "lineIndex": 31
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pb0",
+      "lineText": "Honorable Menenius , my boy Martius approaches . For the love of Juno , let’s go !",
+      "scrollMode": "auto",
+      "lineIndex": 32
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p9g",
+      "lineText": "Ha ? Martius coming home ?",
+      "scrollMode": "auto",
+      "lineIndex": 33
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pb0",
+      "lineText": "Ay , worthy Menenius , and with most prosperous approbation .",
+      "scrollMode": "auto",
+      "lineIndex": 34
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p90",
+      "lineText": "( He throws his cap in the air . )",
+      "scrollMode": "auto",
+      "lineIndex": 35
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p9g",
+      "lineText": "( He throws his cap in the air . ) Hoo ! Martius coming home ?",
+      "scrollMode": "auto",
+      "lineIndex": 36
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pc0",
+      "lineText": "Nay , ’tis true .",
+      "scrollMode": "auto",
+      "lineIndex": 37
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p90",
+      "lineText": "She produces a paper .",
+      "scrollMode": "auto",
+      "lineIndex": 38
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pb0",
+      "lineText": "She produces a paper . The state hath another , his wife another , and I think there’s one at home for you .",
+      "scrollMode": "auto",
+      "lineIndex": 39
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p9g",
+      "lineText": "I will make my very house reel tonight . A letter for me ?",
+      "scrollMode": "auto",
+      "lineIndex": 40
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pbg",
+      "lineText": "Yes , certain , there’s a letter for you ; I saw ’t .",
+      "scrollMode": "auto",
+      "lineIndex": 41
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p9g",
+      "lineText": "A letter for me ? It gives me an estate of seven years’ health , in which time I will make a lip at the physician . The most sovereign prescription in Galen is but empiricutic and , to this preservative , of no better report than a horse drench . Is he not wounded ? He was wont to come home wounded .",
+      "scrollMode": "auto",
+      "lineIndex": 42
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pbg",
+      "lineText": "O no , no , no !",
+      "scrollMode": "auto",
+      "lineIndex": 43
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pb0",
+      "lineText": "O , he is wounded , I thank the gods for ’t .",
+      "scrollMode": "auto",
+      "lineIndex": 44
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p9g",
+      "lineText": "So do I too , if it be not too much . Brings he victory in his pocket , the wounds become him .",
+      "scrollMode": "auto",
+      "lineIndex": 45
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pb0",
+      "lineText": "On ’s brows , Menenius . He comes the third time home with the oaken garland .",
+      "scrollMode": "auto",
+      "lineIndex": 46
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p9g",
+      "lineText": "Has he disciplined Aufidius soundly ?",
+      "scrollMode": "auto",
+      "lineIndex": 47
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pb0",
+      "lineText": "Titus Lartius writes they fought together , but Aufidius got off .",
+      "scrollMode": "auto",
+      "lineIndex": 48
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p9g",
+      "lineText": "And ’twas time for him too , I’ll warrant him that . An he had stayed by him , I would not have been so ’fidiused for all the chests in Corioles and the gold that’s in them . Is the Senate possessed of this ?",
+      "scrollMode": "auto",
+      "lineIndex": 49
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pb0",
+      "lineText": "Good ladies , let’s go . — Yes , yes , yes . The Senate has letters from the General , wherein he gives my son the whole name of the war . He hath in this action outdone his former deeds doubly .",
+      "scrollMode": "auto",
+      "lineIndex": 50
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pc0",
+      "lineText": "In troth , there’s wondrous things spoke of him .",
+      "scrollMode": "auto",
+      "lineIndex": 51
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p9g",
+      "lineText": "Wondrous ? Ay , I warrant you , and not without his true purchasing .",
+      "scrollMode": "auto",
+      "lineIndex": 52
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pbg",
+      "lineText": "The gods grant them true .",
+      "scrollMode": "auto",
+      "lineIndex": 53
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pb0",
+      "lineText": "True ? Pow waw !",
+      "scrollMode": "auto",
+      "lineIndex": 54
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p90",
+      "lineText": "( To the Tribunes . )",
+      "scrollMode": "auto",
+      "lineIndex": 55
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p9g",
+      "lineText": "( To the Tribunes . ) God save your good Worships ! Martius is coming home ; he has more cause to be proud . — Where is he wounded ?",
+      "scrollMode": "auto",
+      "lineIndex": 56
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pb0",
+      "lineText": "I’ th’ shoulder and i’ th’ left arm . There will be large cicatrices to show the people when he shall stand for his place . He received in the repulse of Tarquin seven hurts i’ th’ body .",
+      "scrollMode": "auto",
+      "lineIndex": 57
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p9g",
+      "lineText": "One i’ th’ neck and two i’ th’ thigh — there’s nine that I know .",
+      "scrollMode": "auto",
+      "lineIndex": 58
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pb0",
+      "lineText": "He had , before this last expedition , twenty-five wounds upon him .",
+      "scrollMode": "auto",
+      "lineIndex": 59
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p90",
+      "lineText": "( A shout and flourish . )",
+      "scrollMode": "auto",
+      "lineIndex": 60
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p9g",
+      "lineText": "( A shout and flourish . ) Hark , the trumpets !",
+      "scrollMode": "auto",
+      "lineIndex": 61
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pb0",
+      "lineText": "These are the ushers of Martius : before him he carries noise , and behind him he leaves tears . Death , that dark spirit , in ’s nervy arm doth lie , Which , being advanced , declines , and then men die .",
+      "scrollMode": "auto",
+      "lineIndex": 62
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p90",
+      "lineText": "A sennet .",
+      "scrollMode": "auto",
+      "lineIndex": 63
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p90",
+      "lineText": "Enter Cominius the General and Titus Lartius , between them Coriolanus crowned with an oaken garland , with Captains and Soldiers and a Herald . Trumpets sound .",
+      "scrollMode": "auto",
+      "lineIndex": 64
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pcg",
+      "lineText": "Know , Rome , that all alone Martius did fight Within Corioles’ gates , where he hath won , With fame , a name to Martius Caius ; these In honor follows Coriolanus . Welcome to Rome , renownèd Coriolanus .",
+      "scrollMode": "auto",
+      "lineIndex": 65
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p90",
+      "lineText": "Sound flourish .",
+      "scrollMode": "auto",
+      "lineIndex": 66
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p9g",
+      "lineText": "Welcome to Rome , renownèd Coriolanus !",
+      "scrollMode": "auto",
+      "lineIndex": 67
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pd0",
+      "lineText": "No more of this . It does offend my heart . Pray now , no more .",
+      "scrollMode": "auto",
+      "lineIndex": 68
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pdg",
+      "lineText": "Look , sir , your mother .",
+      "scrollMode": "auto",
+      "lineIndex": 69
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pd0",
+      "lineText": "O , You have , I know , petitioned all the gods For my prosperity .",
+      "scrollMode": "auto",
+      "lineIndex": 70
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p90",
+      "lineText": "Kneels .",
+      "scrollMode": "auto",
+      "lineIndex": 71
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p90",
+      "lineText": "He stands .",
+      "scrollMode": "auto",
+      "lineIndex": 72
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pd0",
+      "lineText": "He stands . My gentle Martius , worthy Caius , and By deed-achieving honor newly named — What is it ? Coriolanus must I call thee ? But , O , thy wife —",
+      "scrollMode": "auto",
+      "lineIndex": 73
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pd0",
+      "lineText": "My gracious silence , hail . Wouldst thou have laughed had I come coffined home , That weep’st to see me triumph ? Ah , my dear , ACT 2. SC. 1 Such eyes the widows in Corioles wear And mothers that lack sons .",
+      "scrollMode": "auto",
+      "lineIndex": 74
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p9g",
+      "lineText": "Now the gods crown thee !",
+      "scrollMode": "auto",
+      "lineIndex": 75
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p90",
+      "lineText": "( To Valeria . )",
+      "scrollMode": "auto",
+      "lineIndex": 76
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pd0",
+      "lineText": "( To Valeria . ) O , my sweet lady , pardon .",
+      "scrollMode": "auto",
+      "lineIndex": 77
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pb0",
+      "lineText": "I know not where to turn . O , welcome home ! — And , welcome , general . — And you’re welcome all .",
+      "scrollMode": "auto",
+      "lineIndex": 78
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p9g",
+      "lineText": "A hundred thousand welcomes ! I could weep , And I could laugh ; I am light and heavy . Welcome . A curse begin at very root on ’s heart That is not glad to see thee ! You are three That Rome should dote on ; yet , by the faith of men , We have some old crab trees here at home that will not Be grafted to your relish . Yet welcome , warriors ! We call a nettle but a nettle , and The faults of fools but folly .",
+      "scrollMode": "auto",
+      "lineIndex": 79
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pdg",
+      "lineText": "Ever right .",
+      "scrollMode": "auto",
+      "lineIndex": 80
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pd0",
+      "lineText": "Menenius ever , ever .",
+      "scrollMode": "auto",
+      "lineIndex": 81
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pcg",
+      "lineText": "Give way there , and go on !",
+      "scrollMode": "auto",
+      "lineIndex": 82
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p90",
+      "lineText": ", to Volumnia and Virgilia",
+      "scrollMode": "auto",
+      "lineIndex": 83
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pd0",
+      "lineText": "Your hand and yours . Ere in our own house I do shade my head , The good patricians must be visited , From whom I have received not only greetings , But with them change of honors .",
+      "scrollMode": "auto",
+      "lineIndex": 84
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pb0",
+      "lineText": "I have lived To see inherited my very wishes And the buildings of my fancy . Only There’s one thing wanting , which I doubt not but Our Rome will cast upon thee .",
+      "scrollMode": "auto",
+      "lineIndex": 85
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pd0",
+      "lineText": "Know , good mother , I had rather be their servant in my way Than sway with them in theirs .",
+      "scrollMode": "auto",
+      "lineIndex": 86
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pdg",
+      "lineText": "On , to the Capitol .",
+      "scrollMode": "auto",
+      "lineIndex": 87
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p90",
+      "lineText": "Flourish of cornets . They exit in state , as before .",
+      "scrollMode": "auto",
+      "lineIndex": 88
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p90",
+      "lineText": "Brutus and Sicinius come forward .",
+      "scrollMode": "auto",
+      "lineIndex": 89
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pa0",
+      "lineText": "All tongues speak of him , and the blearèd sights Are spectacled to see him . Your prattling nurse Into a rapture lets her baby cry While she chats him . The kitchen malkin pins Her richest lockram ’bout her reechy neck , Clamb’ring the walls to eye him . Stalls , bulks , windows Are smothered up , leads filled , and ridges horsed With variable complexions , all agreeing In earnestness to see him . Seld-shown flamens Do press among the popular throngs and puff To win a vulgar station . Our veiled dames Commit the war of white and damask in Their nicely-gauded cheeks to th’ wanton spoil Of Phoebus’ burning kisses . Such a pother , As if that whatsoever god who leads him Were slyly crept into his human powers And gave him graceful posture .",
+      "scrollMode": "auto",
+      "lineIndex": 90
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pag",
+      "lineText": "On the sudden I warrant him consul .",
+      "scrollMode": "auto",
+      "lineIndex": 91
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pa0",
+      "lineText": "Then our office may , During his power , go sleep .",
+      "scrollMode": "auto",
+      "lineIndex": 92
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pag",
+      "lineText": "He cannot temp’rately transport his honors From where he should begin and end , but will Lose those he hath won .",
+      "scrollMode": "auto",
+      "lineIndex": 93
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pa0",
+      "lineText": "In that there’s comfort .",
+      "scrollMode": "auto",
+      "lineIndex": 94
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pag",
+      "lineText": "Doubt not The commoners , for whom we stand , but they Upon their ancient malice will forget With the least cause these his new honors — which That he will give them make I as little question As he is proud to do ’t .",
+      "scrollMode": "auto",
+      "lineIndex": 95
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pa0",
+      "lineText": "I heard him swear , Were he to stand for consul , never would he Appear i’ th’ marketplace nor on him put The napless vesture of humility , Nor showing , as the manner is , his wounds To th’ people , beg their stinking breaths .",
+      "scrollMode": "auto",
+      "lineIndex": 96
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pag",
+      "lineText": "’Tis right .",
+      "scrollMode": "auto",
+      "lineIndex": 97
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pa0",
+      "lineText": "It was his word . O , he would miss it rather Than carry it but by the suit of the gentry to him And the desire of the nobles .",
+      "scrollMode": "auto",
+      "lineIndex": 98
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pag",
+      "lineText": "I wish no better Than have him hold that purpose and to put it In execution .",
+      "scrollMode": "auto",
+      "lineIndex": 99
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pa0",
+      "lineText": "’Tis most like he will .",
+      "scrollMode": "auto",
+      "lineIndex": 100
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pag",
+      "lineText": "It shall be to him then as our good wills , A sure destruction .",
+      "scrollMode": "auto",
+      "lineIndex": 101
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pa0",
+      "lineText": "So it must fall out To him , or our authority’s for an end . We must suggest the people in what hatred He still hath held them ; that to ’s power he would Have made them mules , silenced their pleaders , and Dispropertied their freedoms ; holding them In human action and capacity Of no more soul nor fitness for the world Than camels in their war , who have their provand Only for bearing burdens , and sore blows For sinking under them .",
+      "scrollMode": "auto",
+      "lineIndex": 102
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pag",
+      "lineText": "This , as you say , suggested At some time when his soaring insolence Shall touch the people — which time shall not want If he be put upon ’t , and that’s as easy As to set dogs on sheep — will be his fire To kindle their dry stubble , and their blaze Shall darken him forever .",
+      "scrollMode": "auto",
+      "lineIndex": 103
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p90",
+      "lineText": "Enter a Messenger .",
+      "scrollMode": "auto",
+      "lineIndex": 104
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pa0",
+      "lineText": "What’s the matter ?",
+      "scrollMode": "auto",
+      "lineIndex": 105
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pe0",
+      "lineText": "You are sent for to the Capitol . ’Tis thought That Martius shall be consul . I have seen The dumb men throng to see him , and the blind To hear him speak ; matrons flung gloves , Ladies and maids their scarves and handkerchiefs , Upon him as he passed ; the nobles bended As to Jove’s statue , and the Commons made A shower and thunder with their caps and shouts . I never saw the like .",
+      "scrollMode": "auto",
+      "lineIndex": 106
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pa0",
+      "lineText": "Let’s to the Capitol , And carry with us ears and eyes for th’ time , But hearts for the event .",
+      "scrollMode": "auto",
+      "lineIndex": 107
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pag",
+      "lineText": "Have with you .",
+      "scrollMode": "auto",
+      "lineIndex": 108
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p90",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 109
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p90",
+      "lineText": "Enter two Officers , to lay cushions , as it were in the Capitol .",
+      "scrollMode": "auto",
+      "lineIndex": 110
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78peg",
+      "lineText": "Come , come . They are almost here . How many stand for consulships ?",
+      "scrollMode": "auto",
+      "lineIndex": 111
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pf0",
+      "lineText": "Three , they say ; but ’tis thought of everyone Coriolanus will carry it .",
+      "scrollMode": "auto",
+      "lineIndex": 112
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78peg",
+      "lineText": "That’s a brave fellow , but he’s vengeance proud and loves not the common people .",
+      "scrollMode": "auto",
+      "lineIndex": 113
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pf0",
+      "lineText": "’Faith , there hath been many great men that have flattered the people who ne’er loved them ; and there be many that they have loved they know not wherefore ; so that , if they love they know not why , they hate upon no better a ground . Therefore , for Coriolanus neither to care whether they love or hate him manifests the true knowledge he has in their disposition and , out of his noble carelessness , lets them plainly see ’t .",
+      "scrollMode": "auto",
+      "lineIndex": 114
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78peg",
+      "lineText": "If he did not care whether he had their love or no , he waved indifferently ’twixt doing them neither good nor harm ; but he seeks their hate with greater devotion than they can render it him and leaves nothing undone that may fully discover him their opposite . Now , to seem to affect the malice and displeasure of the people is as bad as that which he dislikes , to flatter them for their love .",
+      "scrollMode": "auto",
+      "lineIndex": 115
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pf0",
+      "lineText": "He hath deserved worthily of his country , and his ascent is not by such easy degrees as those who , having been supple and courteous to the people , bonneted , without any further deed to have them at all into their estimation and report ; but he hath so planted his honors in their eyes and his actions in their hearts that for their tongues to be silent and not confess so much were a kind of ingrateful injury . To report otherwise were a malice that , giving itself the lie , would pluck reproof and rebuke from every ear that heard it .",
+      "scrollMode": "auto",
+      "lineIndex": 116
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78peg",
+      "lineText": "No more of him ; he’s a worthy man . Make way . They are coming .",
+      "scrollMode": "auto",
+      "lineIndex": 117
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p90",
+      "lineText": "A sennet . Enter the Patricians and the Tribunes of the people , Lictors before them ; Coriolanus , Menenius , Cominius the consul . The Patricians sit . Sicinius ACT 2. SC. 2 and Brutus take their places by themselves . Coriolanus stands .",
+      "scrollMode": "auto",
+      "lineIndex": 118
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p9g",
+      "lineText": "Having determined of the Volsces and To send for Titus Lartius , it remains , As the main point of this our after-meeting , To gratify his noble service that Hath thus stood for his country . Therefore please you , Most reverend and grave elders , to desire The present consul and last general In our well-found successes to report A little of that worthy work performed By Martius Caius Coriolanus , whom We met here both to thank and to remember With honors like himself .",
+      "scrollMode": "auto",
+      "lineIndex": 119
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p90",
+      "lineText": "Coriolanus sits .",
+      "scrollMode": "auto",
+      "lineIndex": 120
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p90",
+      "lineText": "( To the Tribunes . )",
+      "scrollMode": "auto",
+      "lineIndex": 121
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pfg",
+      "lineText": "( To the Tribunes . ) Masters o’ th’ people , We do request your kindest ears and , after , Your loving motion toward the common body To yield what passes here .",
+      "scrollMode": "auto",
+      "lineIndex": 122
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pag",
+      "lineText": "We are convented Upon a pleasing treaty and have hearts Inclinable to honor and advance The theme of our assembly .",
+      "scrollMode": "auto",
+      "lineIndex": 123
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pa0",
+      "lineText": "Which the rather We shall be blest to do if he remember A kinder value of the people than He hath hereto prized them at .",
+      "scrollMode": "auto",
+      "lineIndex": 124
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p9g",
+      "lineText": "That’s off , that’s off ! I would you rather had been silent . Please you To hear Cominius speak ?",
+      "scrollMode": "auto",
+      "lineIndex": 125
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pa0",
+      "lineText": "Most willingly , But yet my caution was more pertinent Than the rebuke you give it .",
+      "scrollMode": "auto",
+      "lineIndex": 126
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p90",
+      "lineText": "Coriolanus rises and offers to go away .",
+      "scrollMode": "auto",
+      "lineIndex": 127
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pd0",
+      "lineText": "Coriolanus rises and offers to go away . Nay , keep your place .",
+      "scrollMode": "auto",
+      "lineIndex": 128
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pfg",
+      "lineText": "Sit , Coriolanus . Never shame to hear What you have nobly done .",
+      "scrollMode": "auto",
+      "lineIndex": 129
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pd0",
+      "lineText": "Your Honors , pardon . I had rather have my wounds to heal again Than hear say how I got them .",
+      "scrollMode": "auto",
+      "lineIndex": 130
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pa0",
+      "lineText": "Sir , I hope My words disbenched you not ?",
+      "scrollMode": "auto",
+      "lineIndex": 131
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pd0",
+      "lineText": "No , sir . Yet oft , When blows have made me stay , I fled from words . You soothed not , therefore hurt not ; but your people , I love them as they weigh .",
+      "scrollMode": "auto",
+      "lineIndex": 132
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p9g",
+      "lineText": "Pray now , sit down .",
+      "scrollMode": "auto",
+      "lineIndex": 133
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pd0",
+      "lineText": "I had rather have one scratch my head i’ th’ sun When the alarum were struck than idly sit To hear my nothings monstered .",
+      "scrollMode": "auto",
+      "lineIndex": 134
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p90",
+      "lineText": "Coriolanus exits .",
+      "scrollMode": "auto",
+      "lineIndex": 135
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p9g",
+      "lineText": "Masters of the people , Your multiplying spawn how can he flatter — That’s thousand to one good one — when you now see He had rather venture all his limbs for honor Than one on ’s ears to hear it . — Proceed , Cominius .",
+      "scrollMode": "auto",
+      "lineIndex": 136
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pdg",
+      "lineText": "I shall lack voice . The deeds of Coriolanus Should not be uttered feebly . It is held That valor is the chiefest virtue and ACT 2. SC. 2 Most dignifies the haver ; if it be , The man I speak of cannot in the world Be singly counterpoised . At sixteen years , When Tarquin made a head for Rome , he fought Beyond the mark of others . Our then dictator , Whom with all praise I point at , saw him fight When with his Amazonian chin he drove The bristled lips before him . He bestrid An o’erpressed Roman and i’ th’ Consul’s view Slew three opposers . Tarquin’s self he met And struck him on his knee . In that day’s feats , When he might act the woman in the scene , He proved best man i’ th’ field and for his meed Was brow-bound with the oak . His pupil age Man-entered thus , he waxèd like a sea , And in the brunt of seventeen battles since He lurched all swords of the garland . For this last , Before and in Corioles , let me say , I cannot speak him home . He stopped the flyers And by his rare example made the coward Turn terror into sport . As weeds before A vessel under sail , so men obeyed And fell below his stem . His sword , Death’s stamp , Where it did mark , it took ; from face to foot He was a thing of blood , whose every motion Was timed with dying cries . Alone he entered The mortal gate o’ th’ city , which he painted With shunless destiny ; aidless came off And with a sudden reinforcement struck Corioles like a planet . Now all’s his , When by and by the din of war gan pierce His ready sense ; then straight his doubled spirit Requickened what in flesh was fatigate , And to the battle came he , where he did Run reeking o’er the lives of men as if ’Twere a perpetual spoil ; and till we called ACT 2. SC. 2 Both field and city ours , he never stood To ease his breast with panting .",
+      "scrollMode": "auto",
+      "lineIndex": 137
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p9g",
+      "lineText": "Worthy man !",
+      "scrollMode": "auto",
+      "lineIndex": 138
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pfg",
+      "lineText": "He cannot but with measure fit the honors Which we devise him .",
+      "scrollMode": "auto",
+      "lineIndex": 139
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pdg",
+      "lineText": "Our spoils he kicked at And looked upon things precious as they were The common muck of the world . He covets less Than misery itself would give , rewards His deeds with doing them , and is content To spend the time to end it .",
+      "scrollMode": "auto",
+      "lineIndex": 140
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p9g",
+      "lineText": "He’s right noble . Let him be called for .",
+      "scrollMode": "auto",
+      "lineIndex": 141
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pfg",
+      "lineText": "Call Coriolanus .",
+      "scrollMode": "auto",
+      "lineIndex": 142
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78peg",
+      "lineText": "He doth appear .",
+      "scrollMode": "auto",
+      "lineIndex": 143
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p90",
+      "lineText": "Enter Coriolanus .",
+      "scrollMode": "auto",
+      "lineIndex": 144
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p9g",
+      "lineText": "The Senate , Coriolanus , are well pleased To make thee consul .",
+      "scrollMode": "auto",
+      "lineIndex": 145
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pd0",
+      "lineText": "I do owe them still My life and services .",
+      "scrollMode": "auto",
+      "lineIndex": 146
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p9g",
+      "lineText": "It then remains That you do speak to the people .",
+      "scrollMode": "auto",
+      "lineIndex": 147
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pd0",
+      "lineText": "I do beseech you , Let me o’erleap that custom , for I cannot Put on the gown , stand naked , and entreat them For my wounds’ sake to give their suffrage . Please you That I may pass this doing .",
+      "scrollMode": "auto",
+      "lineIndex": 148
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pag",
+      "lineText": "Sir , the people Must have their voices ; neither will they bate One jot of ceremony .",
+      "scrollMode": "auto",
+      "lineIndex": 149
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p90",
+      "lineText": ", to Coriolanus",
+      "scrollMode": "auto",
+      "lineIndex": 150
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p9g",
+      "lineText": "Put them not to ’t . Pray you , go fit you to the custom , and ACT 2. SC. 3 Take to you , as your predecessors have , Your honor with your form .",
+      "scrollMode": "auto",
+      "lineIndex": 151
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pd0",
+      "lineText": "It is a part That I shall blush in acting , and might well Be taken from the people .",
+      "scrollMode": "auto",
+      "lineIndex": 152
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p90",
+      "lineText": ", to Sicinius",
+      "scrollMode": "auto",
+      "lineIndex": 153
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pa0",
+      "lineText": "Mark you that ?",
+      "scrollMode": "auto",
+      "lineIndex": 154
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pd0",
+      "lineText": "To brag unto them Thus I did , and thus ! Show them th’ unaching scars , which I should hide , As if I had received them for the hire Of their breath only !",
+      "scrollMode": "auto",
+      "lineIndex": 155
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p9g",
+      "lineText": "Do not stand upon ’t . — We recommend to you , tribunes of the people , Our purpose to them , and to our noble consul Wish we all joy and honor .",
+      "scrollMode": "auto",
+      "lineIndex": 156
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pg0",
+      "lineText": "To Coriolanus come all joy and honor !",
+      "scrollMode": "auto",
+      "lineIndex": 157
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p90",
+      "lineText": "Flourish cornets . Then they exit . Sicinius and Brutus remain .",
+      "scrollMode": "auto",
+      "lineIndex": 158
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pa0",
+      "lineText": "You see how he intends to use the people .",
+      "scrollMode": "auto",
+      "lineIndex": 159
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pag",
+      "lineText": "May they perceive ’s intent ! He will require them As if he did contemn what he requested Should be in them to give .",
+      "scrollMode": "auto",
+      "lineIndex": 160
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pa0",
+      "lineText": "Come , we’ll inform them Of our proceedings here . On th’ marketplace I know they do attend us .",
+      "scrollMode": "auto",
+      "lineIndex": 161
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p90",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 162
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p90",
+      "lineText": "Enter seven or eight Citizens .",
+      "scrollMode": "auto",
+      "lineIndex": 163
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pgg",
+      "lineText": "Once , if he do require our voices , we ought not to deny him .",
+      "scrollMode": "auto",
+      "lineIndex": 164
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ph0",
+      "lineText": "We may , sir , if we will .",
+      "scrollMode": "auto",
+      "lineIndex": 165
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78phg",
+      "lineText": "We have power in ourselves to do it , but it is a power that we have no power to do ; for , if he show us his wounds and tell us his deeds , we are to put our tongues into those wounds and speak for them . So , if he tell us his noble deeds , we must also tell him our noble acceptance of them . Ingratitude is monstrous , and for the multitude to be ingrateful were to make a monster of the multitude , of the which , we being members , should bring ourselves to be monstrous members .",
+      "scrollMode": "auto",
+      "lineIndex": 166
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pgg",
+      "lineText": "And to make us no better thought of , a little help will serve ; for once we stood up about the corn , he himself stuck not to call us the many-headed multitude .",
+      "scrollMode": "auto",
+      "lineIndex": 167
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78phg",
+      "lineText": "We have been called so of many ; not that our heads are some brown , some black , some abram , some bald , but that our wits are so diversely colored ; and truly I think if all our wits were to issue out of one skull , they would fly east , west , north , south , and their consent of one direct way should be at once to all the points o’ th’ compass .",
+      "scrollMode": "auto",
+      "lineIndex": 168
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ph0",
+      "lineText": "Think you so ? Which way do you judge my wit would fly ?",
+      "scrollMode": "auto",
+      "lineIndex": 169
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78phg",
+      "lineText": "Nay , your wit will not so soon out as another man’s will ; ’tis strongly wedged up in a blockhead . But if it were at liberty , ’twould sure southward .",
+      "scrollMode": "auto",
+      "lineIndex": 170
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ph0",
+      "lineText": "Why that way ?",
+      "scrollMode": "auto",
+      "lineIndex": 171
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78phg",
+      "lineText": "To lose itself in a fog , where , being three parts melted away with rotten dews , the fourth would return for conscience’ sake , to help to get thee a wife .",
+      "scrollMode": "auto",
+      "lineIndex": 172
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ph0",
+      "lineText": "You are never without your tricks . You may , you may .",
+      "scrollMode": "auto",
+      "lineIndex": 173
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p90",
+      "lineText": "Enter Coriolanus in a gown of humility , with Menenius .",
+      "scrollMode": "auto",
+      "lineIndex": 174
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pd0",
+      "lineText": "Enter Coriolanus in a gown of humility , with Menenius . Here he comes , and in the gown of humility . Mark his behavior . We are not to stay all together , but to come by him where he stands , by ones , by twos , and by threes . He’s to make his requests by particulars , wherein every one of us has a single honor in giving him our own voices with our own tongues . Therefore follow me , and I’ll direct you how you shall go by him .",
+      "scrollMode": "auto",
+      "lineIndex": 175
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pgg",
+      "lineText": "Content , content .",
+      "scrollMode": "auto",
+      "lineIndex": 176
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p90",
+      "lineText": "Citizens exit .",
+      "scrollMode": "auto",
+      "lineIndex": 177
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p9g",
+      "lineText": "O sir , you are not right . Have you not known The worthiest men have done ’t ?",
+      "scrollMode": "auto",
+      "lineIndex": 178
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pd0",
+      "lineText": "What must I say ? I pray , sir ? — plague upon ’t ! I cannot bring My tongue to such a pace . Look , sir , my wounds ! I got them in my country’s service when Some certain of your brethren roared and ran From th’ noise of our own drums .",
+      "scrollMode": "auto",
+      "lineIndex": 179
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p9g",
+      "lineText": "O me , the gods ! You must not speak of that . You must desire them To think upon you .",
+      "scrollMode": "auto",
+      "lineIndex": 180
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pd0",
+      "lineText": "Think upon me ? Hang ’em ! I would they would forget me , like the virtues Which our divines lose by ’em .",
+      "scrollMode": "auto",
+      "lineIndex": 181
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p9g",
+      "lineText": "You’ll mar all . I’ll leave you . Pray you , speak to ’em , I pray you , In wholesome manner .",
+      "scrollMode": "auto",
+      "lineIndex": 182
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p90",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 183
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p90",
+      "lineText": "Enter three of the Citizens .",
+      "scrollMode": "auto",
+      "lineIndex": 184
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pgg",
+      "lineText": "Enter three of the Citizens . So , here comes a brace . — You know the cause , sir , of my standing here .",
+      "scrollMode": "auto",
+      "lineIndex": 185
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78phg",
+      "lineText": "We do , sir . Tell us what hath brought you to ’t .",
+      "scrollMode": "auto",
+      "lineIndex": 186
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pd0",
+      "lineText": "Mine own desert .",
+      "scrollMode": "auto",
+      "lineIndex": 187
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ph0",
+      "lineText": "Your own desert ?",
+      "scrollMode": "auto",
+      "lineIndex": 188
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pd0",
+      "lineText": "Ay , but not mine own desire .",
+      "scrollMode": "auto",
+      "lineIndex": 189
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78phg",
+      "lineText": "How , not your own desire ?",
+      "scrollMode": "auto",
+      "lineIndex": 190
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pd0",
+      "lineText": "No , sir , ’twas never my desire yet to trouble the poor with begging .",
+      "scrollMode": "auto",
+      "lineIndex": 191
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78phg",
+      "lineText": "You must think if we give you anything , we hope to gain by you .",
+      "scrollMode": "auto",
+      "lineIndex": 192
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pd0",
+      "lineText": "Well then , I pray , your price o’ th’ consulship ?",
+      "scrollMode": "auto",
+      "lineIndex": 193
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pgg",
+      "lineText": "The price is to ask it kindly .",
+      "scrollMode": "auto",
+      "lineIndex": 194
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pd0",
+      "lineText": "Kindly , sir , I pray , let me ha ’t . I have wounds to show you , which shall be yours in private . — Your good voice , sir . What say you ?",
+      "scrollMode": "auto",
+      "lineIndex": 195
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ph0",
+      "lineText": "You shall ha ’t , worthy sir .",
+      "scrollMode": "auto",
+      "lineIndex": 196
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pd0",
+      "lineText": "A match , sir . There’s in all two worthy voices begged . I have your alms . Adieu .",
+      "scrollMode": "auto",
+      "lineIndex": 197
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p90",
+      "lineText": ", to the other Citizens",
+      "scrollMode": "auto",
+      "lineIndex": 198
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78phg",
+      "lineText": "But this is something odd .",
+      "scrollMode": "auto",
+      "lineIndex": 199
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ph0",
+      "lineText": "An ’twere to give again — but ’tis no matter .",
+      "scrollMode": "auto",
+      "lineIndex": 200
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p90",
+      "lineText": "These citizens exit .",
+      "scrollMode": "auto",
+      "lineIndex": 201
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p90",
+      "lineText": "Enter two other Citizens .",
+      "scrollMode": "auto",
+      "lineIndex": 202
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pd0",
+      "lineText": "Pray you now , if it may stand with the tune of your voices that I may be consul , I have here the customary gown .",
+      "scrollMode": "auto",
+      "lineIndex": 203
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pi0",
+      "lineText": "You have deserved nobly of your country , and you have not deserved nobly .",
+      "scrollMode": "auto",
+      "lineIndex": 204
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pd0",
+      "lineText": "Your enigma ?",
+      "scrollMode": "auto",
+      "lineIndex": 205
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pi0",
+      "lineText": "You have been a scourge to her enemies ; you have been a rod to her friends . You have not indeed loved the common people .",
+      "scrollMode": "auto",
+      "lineIndex": 206
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pd0",
+      "lineText": "You should account me the more virtuous that I have not been common in my love . I will , sir , flatter my sworn brother , the people , to earn a dearer estimation of them ; ’tis a condition they account gentle . And since the wisdom of their choice is rather to have my hat than my heart , I will practice the insinuating nod and be off to them most counterfeitly . That is , sir , I will counterfeit the bewitchment of some popular man and give it bountiful to the desirers . Therefore , beseech you , I may be consul .",
+      "scrollMode": "auto",
+      "lineIndex": 207
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pig",
+      "lineText": "We hope to find you our friend , and therefore give you our voices heartily .",
+      "scrollMode": "auto",
+      "lineIndex": 208
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pi0",
+      "lineText": "You have received many wounds for your country .",
+      "scrollMode": "auto",
+      "lineIndex": 209
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pd0",
+      "lineText": "I will not seal your knowledge with showing them . I will make much of your voices and so trouble you no farther .",
+      "scrollMode": "auto",
+      "lineIndex": 210
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pi0",
+      "lineText": "The gods give you joy , sir , heartily .",
+      "scrollMode": "auto",
+      "lineIndex": 211
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p90",
+      "lineText": "Citizens exit .",
+      "scrollMode": "auto",
+      "lineIndex": 212
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p90",
+      "lineText": "Enter three Citizens more .",
+      "scrollMode": "auto",
+      "lineIndex": 213
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pj0",
+      "lineText": "Enter three Citizens more . Here come more voices . — Your voices ! For your voices I have fought ; Watched for your voices ; for your voices bear Of wounds two dozen odd . Battles thrice six I have seen and heard of ; for your voices have Done many things , some less , some more . Your voices ! Indeed , I would be consul .",
+      "scrollMode": "auto",
+      "lineIndex": 214
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pj0",
+      "lineText": "He has done nobly , and cannot go without any honest man’s voice .",
+      "scrollMode": "auto",
+      "lineIndex": 215
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pjg",
+      "lineText": "Therefore let him be consul . The gods give him joy , and make him good friend to the people !",
+      "scrollMode": "auto",
+      "lineIndex": 216
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pj0",
+      "lineText": "Amen , amen . God save thee , noble consul .",
+      "scrollMode": "auto",
+      "lineIndex": 217
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p90",
+      "lineText": "Citizens exit .",
+      "scrollMode": "auto",
+      "lineIndex": 218
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pd0",
+      "lineText": "Worthy voices !",
+      "scrollMode": "auto",
+      "lineIndex": 219
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p90",
+      "lineText": "Enter Menenius , with Brutus and Sicinius .",
+      "scrollMode": "auto",
+      "lineIndex": 220
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p9g",
+      "lineText": "You have stood your limitation , and the Tribunes Endue you with the people’s voice . Remains That in th’ official marks invested , you Anon do meet the Senate .",
+      "scrollMode": "auto",
+      "lineIndex": 221
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pd0",
+      "lineText": "Is this done ?",
+      "scrollMode": "auto",
+      "lineIndex": 222
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pag",
+      "lineText": "The custom of request you have discharged . The people do admit you , and are summoned To meet anon upon your approbation .",
+      "scrollMode": "auto",
+      "lineIndex": 223
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pd0",
+      "lineText": "Where ? At the Senate House ?",
+      "scrollMode": "auto",
+      "lineIndex": 224
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pag",
+      "lineText": "There , Coriolanus .",
+      "scrollMode": "auto",
+      "lineIndex": 225
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pd0",
+      "lineText": "May I change these garments ?",
+      "scrollMode": "auto",
+      "lineIndex": 226
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pag",
+      "lineText": "You may , sir .",
+      "scrollMode": "auto",
+      "lineIndex": 227
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pd0",
+      "lineText": "That I’ll straight do and , knowing myself again , Repair to th’ Senate House .",
+      "scrollMode": "auto",
+      "lineIndex": 228
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p9g",
+      "lineText": "I’ll keep you company . — Will you along ?",
+      "scrollMode": "auto",
+      "lineIndex": 229
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pa0",
+      "lineText": "We stay here for the people .",
+      "scrollMode": "auto",
+      "lineIndex": 230
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p90",
+      "lineText": "Coriolanus and Menenius exit .",
+      "scrollMode": "auto",
+      "lineIndex": 231
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pd0",
+      "lineText": "Coriolanus and Menenius exit . He has it now ; and by his looks , methinks , ’Tis warm at ’s heart .",
+      "scrollMode": "auto",
+      "lineIndex": 232
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pa0",
+      "lineText": "With a proud heart he wore His humble weeds . Will you dismiss the people ?",
+      "scrollMode": "auto",
+      "lineIndex": 233
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p90",
+      "lineText": "Enter the Plebeians .",
+      "scrollMode": "auto",
+      "lineIndex": 234
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pag",
+      "lineText": "How now , my masters , have you chose this man ?",
+      "scrollMode": "auto",
+      "lineIndex": 235
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pgg",
+      "lineText": "He has our voices , sir .",
+      "scrollMode": "auto",
+      "lineIndex": 236
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pa0",
+      "lineText": "We pray the gods he may deserve your loves .",
+      "scrollMode": "auto",
+      "lineIndex": 237
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ph0",
+      "lineText": "Amen , sir . To my poor unworthy notice , He mocked us when he begged our voices .",
+      "scrollMode": "auto",
+      "lineIndex": 238
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78phg",
+      "lineText": "Certainly , he flouted us downright .",
+      "scrollMode": "auto",
+      "lineIndex": 239
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pgg",
+      "lineText": "No , ’tis his kind of speech . He did not mock us .",
+      "scrollMode": "auto",
+      "lineIndex": 240
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ph0",
+      "lineText": "Not one amongst us , save yourself , but says He used us scornfully . He should have showed us His marks of merit , wounds received for ’s country .",
+      "scrollMode": "auto",
+      "lineIndex": 241
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pag",
+      "lineText": "Why , so he did , I am sure .",
+      "scrollMode": "auto",
+      "lineIndex": 242
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pgg",
+      "lineText": "No , no . No man saw ’em .",
+      "scrollMode": "auto",
+      "lineIndex": 243
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78phg",
+      "lineText": "He said he had wounds , which he could show in private , ACT 2. SC. 3 And with his hat , thus waving it in scorn , I would be consul , says he . Agèd custom , But by your voices , will not so permit me ; Your voices therefore . When we granted that , Here was I thank you for your voices . Thank you . Your most sweet voices ! Now you have left your voices , I have no further with you . Was not this mockery ?",
+      "scrollMode": "auto",
+      "lineIndex": 244
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pag",
+      "lineText": "Why either were you ignorant to see ’t Or , seeing it , of such childish friendliness To yield your voices ?",
+      "scrollMode": "auto",
+      "lineIndex": 245
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pa0",
+      "lineText": "Could you not have told him As you were lessoned ? When he had no power , But was a petty servant to the state , He was your enemy , ever spake against Your liberties and the charters that you bear I’ th’ body of the weal ; and , now arriving A place of potency and sway o’ th’ state , If he should still malignantly remain Fast foe to th’ plebeii , your voices might Be curses to yourselves . You should have said That as his worthy deeds did claim no less Than what he stood for , so his gracious nature Would think upon you for your voices , and Translate his malice towards you into love , Standing your friendly lord .",
+      "scrollMode": "auto",
+      "lineIndex": 246
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pag",
+      "lineText": "Thus to have said , As you were fore-advised , had touched his spirit And tried his inclination ; from him plucked Either his gracious promise , which you might , As cause had called you up , have held him to ; Or else it would have galled his surly nature , Which easily endures not article Tying him to aught . So putting him to rage , ACT 2. SC. 3 You should have ta’en th’ advantage of his choler And passed him unelected .",
+      "scrollMode": "auto",
+      "lineIndex": 247
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pa0",
+      "lineText": "Did you perceive He did solicit you in free contempt When he did need your loves , and do you think That his contempt shall not be bruising to you When he hath power to crush ? Why , had your bodies No heart among you ? Or had you tongues to cry Against the rectorship of judgment ?",
+      "scrollMode": "auto",
+      "lineIndex": 248
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pag",
+      "lineText": "Have you ere now denied the asker ? And now Again , of him that did not ask but mock , Bestow your sued-for tongues ?",
+      "scrollMode": "auto",
+      "lineIndex": 249
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78phg",
+      "lineText": "He’s not confirmed . We may deny him yet .",
+      "scrollMode": "auto",
+      "lineIndex": 250
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ph0",
+      "lineText": "And will deny him . I’ll have five hundred voices of that sound .",
+      "scrollMode": "auto",
+      "lineIndex": 251
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pgg",
+      "lineText": "I twice five hundred , and their friends to piece ’em .",
+      "scrollMode": "auto",
+      "lineIndex": 252
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pa0",
+      "lineText": "Get you hence instantly , and tell those friends They have chose a consul that will from them take Their liberties , make them of no more voice Than dogs that are as often beat for barking As therefor kept to do so .",
+      "scrollMode": "auto",
+      "lineIndex": 253
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pag",
+      "lineText": "Let them assemble And , on a safer judgment , all revoke Your ignorant election . Enforce his pride And his old hate unto you . Besides , forget not With what contempt he wore the humble weed , How in his suit he scorned you ; but your loves , Thinking upon his services , took from you Th’ apprehension of his present portance , Which most gibingly , ungravely , he did fashion After the inveterate hate he bears you .",
+      "scrollMode": "auto",
+      "lineIndex": 254
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pa0",
+      "lineText": "Lay A fault on us , your tribunes , that we labored , No impediment between , but that you must Cast your election on him .",
+      "scrollMode": "auto",
+      "lineIndex": 255
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pag",
+      "lineText": "Say you chose him More after our commandment than as guided By your own true affections , and that your minds , Preoccupied with what you rather must do Than what you should , made you against the grain To voice him consul . Lay the fault on us .",
+      "scrollMode": "auto",
+      "lineIndex": 256
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pa0",
+      "lineText": "Ay , spare us not . Say we read lectures to you , How youngly he began to serve his country , How long continued , and what stock he springs of , The noble house o’ th’ Martians , from whence came That Ancus Martius , Numa’s daughter’s son , Who after great Hostilius here was king , Of the same house Publius and Quintus were , That our best water brought by conduits hither ; And Censorinus , that was so surnamed , And nobly namèd so , twice being censor , Was his great ancestor .",
+      "scrollMode": "auto",
+      "lineIndex": 257
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pag",
+      "lineText": "One thus descended , That hath besides well in his person wrought To be set high in place , we did commend To your remembrances ; but you have found , Scaling his present bearing with his past , That he’s your fixèd enemy , and revoke Your sudden approbation .",
+      "scrollMode": "auto",
+      "lineIndex": 258
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pa0",
+      "lineText": "Say you ne’er had done ’t — Harp on that still — but by our putting on . And presently , when you have drawn your number , Repair to th’ Capitol .",
+      "scrollMode": "auto",
+      "lineIndex": 259
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pgg",
+      "lineText": "We will so . Almost all Repent in their election .",
+      "scrollMode": "auto",
+      "lineIndex": 260
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p90",
+      "lineText": "Plebeians exit .",
+      "scrollMode": "auto",
+      "lineIndex": 261
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pa0",
+      "lineText": "Let them go on . ACT 2. SC. 3 This mutiny were better put in hazard Than stay , past doubt , for greater . If , as his nature is , he fall in rage With their refusal , both observe and answer The vantage of his anger .",
+      "scrollMode": "auto",
+      "lineIndex": 262
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78pag",
+      "lineText": "To th’ Capitol , come . We will be there before the stream o’ th’ people , And this shall seem , as partly ’tis , their own , Which we have goaded onward .",
+      "scrollMode": "auto",
+      "lineIndex": 263
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78p90",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 264
+    }
+  ],
+  "isPublic": true
+}

@@ -1,0 +1,814 @@
+{
+  "title": "The Merchant of Venice (Act 1)",
+  "description": "Folger Shakespeare Library edition",
+  "author": "William Shakespeare",
+  "castMembers": [
+    {
+      "id": "d68m11kn9qd8d2h797vg",
+      "name": "Narrator",
+      "sortOrder": 0
+    },
+    {
+      "id": "d68m11kn9qd8d2h79800",
+      "name": "Antonio",
+      "description": "a merchant of Venice",
+      "sortOrder": 1
+    },
+    {
+      "id": "d68m11kn9qd8d2h7980g",
+      "name": "Salarino",
+      "sortOrder": 2
+    },
+    {
+      "id": "d68m11kn9qd8d2h79810",
+      "name": "Solanio",
+      "sortOrder": 3
+    },
+    {
+      "id": "d68m11kn9qd8d2h7981g",
+      "name": "Bassanio",
+      "description": "a Venetian gentleman, suitor to Portia",
+      "sortOrder": 4
+    },
+    {
+      "id": "d68m11kn9qd8d2h79820",
+      "name": "Lorenzo",
+      "sortOrder": 5
+    },
+    {
+      "id": "d68m11kn9qd8d2h7982g",
+      "name": "Gratiano",
+      "sortOrder": 6
+    },
+    {
+      "id": "d68m11kn9qd8d2h79830",
+      "name": "Portia",
+      "description": "an heiress of Belmont",
+      "sortOrder": 7
+    },
+    {
+      "id": "d68m11kn9qd8d2h7983g",
+      "name": "Nerissa",
+      "description": "her waiting-gentlewoman",
+      "sortOrder": 8
+    },
+    {
+      "id": "d68m11kn9qd8d2h79840",
+      "name": "Servingman",
+      "sortOrder": 9
+    },
+    {
+      "id": "d68m11kn9qd8d2h7984g",
+      "name": "Shylock",
+      "description": "a Jewish moneylender in Venice",
+      "sortOrder": 10
+    }
+  ],
+  "lines": [
+    {
+      "castMemberId": "d68m11kn9qd8d2h797vg",
+      "lineText": "Enter Antonio , Salarino , and Solanio .",
+      "scrollMode": "auto",
+      "lineIndex": 0
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79800",
+      "lineText": "In sooth I know not why I am so sad . It wearies me , you say it wearies you . But how I caught it , found it , or came by it , What stuff ’tis made of , whereof it is born , I am to learn . And such a want-wit sadness makes of me That I have much ado to know myself .",
+      "scrollMode": "auto",
+      "lineIndex": 1
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7980g",
+      "lineText": "Your mind is tossing on the ocean , There where your argosies with portly sail ( Like signiors and rich burghers on the flood , Or , as it were , the pageants of the sea ) Do overpeer the petty traffickers That curtsy to them , do them reverence , As they fly by them with their woven wings .",
+      "scrollMode": "auto",
+      "lineIndex": 2
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79810",
+      "lineText": "Believe me , sir , had I such venture forth , The better part of my affections would Be with my hopes abroad . I should be still Plucking the grass to know where sits the wind , Piring in maps for ports and piers and roads ; And every object that might make me fear ACT 1. SC. 1 Misfortune to my ventures , out of doubt Would make me sad .",
+      "scrollMode": "auto",
+      "lineIndex": 3
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7980g",
+      "lineText": "My wind cooling my broth Would blow me to an ague when I thought What harm a wind too great might do at sea . I should not see the sandy hourglass run But I should think of shallows and of flats , And see my wealthy Andrew docked in sand , Vailing her high top lower than her ribs To kiss her burial . Should I go to church And see the holy edifice of stone And not bethink me straight of dangerous rocks , Which , touching but my gentle vessel’s side , Would scatter all her spices on the stream , Enrobe the roaring waters with my silks , And , in a word , but even now worth this And now worth nothing ? Shall I have the thought To think on this , and shall I lack the thought That such a thing bechanced would make me sad ? But tell not me : I know Antonio Is sad to think upon his merchandise .",
+      "scrollMode": "auto",
+      "lineIndex": 4
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79800",
+      "lineText": "Believe me , no . I thank my fortune for it , My ventures are not in one bottom trusted , Nor to one place ; nor is my whole estate Upon the fortune of this present year : Therefore my merchandise makes me not sad .",
+      "scrollMode": "auto",
+      "lineIndex": 5
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79810",
+      "lineText": "Why then you are in love .",
+      "scrollMode": "auto",
+      "lineIndex": 6
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79800",
+      "lineText": "Fie , fie !",
+      "scrollMode": "auto",
+      "lineIndex": 7
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797vg",
+      "lineText": "Enter Bassanio , Lorenzo , and Gratiano .",
+      "scrollMode": "auto",
+      "lineIndex": 8
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7981g",
+      "lineText": "Enter Bassanio , Lorenzo , and Gratiano . Here comes Bassanio , your most noble kinsman , Gratiano , and Lorenzo . Fare you well . We leave you now with better company .",
+      "scrollMode": "auto",
+      "lineIndex": 9
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7980g",
+      "lineText": "I would have stayed till I had made you merry , If worthier friends had not prevented me .",
+      "scrollMode": "auto",
+      "lineIndex": 10
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79800",
+      "lineText": "Your worth is very dear in my regard . I take it your own business calls on you , And you embrace th’ occasion to depart .",
+      "scrollMode": "auto",
+      "lineIndex": 11
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7980g",
+      "lineText": "Good morrow , my good lords .",
+      "scrollMode": "auto",
+      "lineIndex": 12
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7981g",
+      "lineText": "Good signiors both , when shall we laugh ? Say , when ? You grow exceeding strange . Must it be so ?",
+      "scrollMode": "auto",
+      "lineIndex": 13
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7980g",
+      "lineText": "We’ll make our leisures to attend on yours .",
+      "scrollMode": "auto",
+      "lineIndex": 14
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797vg",
+      "lineText": "Salarino and Solanio exit .",
+      "scrollMode": "auto",
+      "lineIndex": 15
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79820",
+      "lineText": "My Lord Bassanio , since you have found Antonio , We two will leave you . But at dinner time I pray you have in mind where we must meet .",
+      "scrollMode": "auto",
+      "lineIndex": 16
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7981g",
+      "lineText": "I will not fail you .",
+      "scrollMode": "auto",
+      "lineIndex": 17
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7982g",
+      "lineText": "You look not well , Signior Antonio . You have too much respect upon the world . ACT 1. SC. 1 They lose it that do buy it with much care . Believe me , you are marvelously changed .",
+      "scrollMode": "auto",
+      "lineIndex": 18
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79800",
+      "lineText": "I hold the world but as the world , Gratiano , A stage where every man must play a part , And mine a sad one .",
+      "scrollMode": "auto",
+      "lineIndex": 19
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7982g",
+      "lineText": "Let me play the fool . With mirth and laughter let old wrinkles come , And let my liver rather heat with wine Than my heart cool with mortifying groans . Why should a man whose blood is warm within Sit like his grandsire cut in alabaster ? Sleep when he wakes ? And creep into the jaundice By being peevish ? I tell thee what , Antonio ( I love thee , and ’tis my love that speaks ) : There are a sort of men whose visages Do cream and mantle like a standing pond And do a willful stillness entertain With purpose to be dressed in an opinion Of wisdom , gravity , profound conceit , As who should say I am Sir Oracle , And when I ope my lips , let no dog bark . O my Antonio , I do know of these That therefore only are reputed wise For saying nothing , when , I am very sure , If they should speak , would almost damn those ears Which , hearing them , would call their brothers fools . I’ll tell thee more of this another time . But fish not with this melancholy bait For this fool gudgeon , this opinion . — Come , good Lorenzo . — Fare you well a while . I’ll end my exhortation after dinner .",
+      "scrollMode": "auto",
+      "lineIndex": 20
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79820",
+      "lineText": "Well , we will leave you then till dinner time . I must be one of these same dumb wise men , For Gratiano never lets me speak .",
+      "scrollMode": "auto",
+      "lineIndex": 21
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7982g",
+      "lineText": "Well , keep me company but two years more , Thou shalt not know the sound of thine own tongue .",
+      "scrollMode": "auto",
+      "lineIndex": 22
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79800",
+      "lineText": "Fare you well . I’ll grow a talker for this gear .",
+      "scrollMode": "auto",
+      "lineIndex": 23
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7982g",
+      "lineText": "Thanks , i’ faith , for silence is only commendable In a neat’s tongue dried and a maid not vendible .",
+      "scrollMode": "auto",
+      "lineIndex": 24
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797vg",
+      "lineText": "Gratiano and Lorenzo exit .",
+      "scrollMode": "auto",
+      "lineIndex": 25
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79800",
+      "lineText": "Is that anything now ?",
+      "scrollMode": "auto",
+      "lineIndex": 26
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7981g",
+      "lineText": "Gratiano speaks an infinite deal of nothing , more than any man in all Venice . His reasons are as two grains of wheat hid in two bushels of chaff : you shall seek all day ere you find them , and when you have them , they are not worth the search .",
+      "scrollMode": "auto",
+      "lineIndex": 27
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79800",
+      "lineText": "Well , tell me now what lady is the same To whom you swore a secret pilgrimage , That you today promised to tell me of ?",
+      "scrollMode": "auto",
+      "lineIndex": 28
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7981g",
+      "lineText": "’Tis not unknown to you , Antonio , How much I have disabled mine estate By something showing a more swelling port Than my faint means would grant continuance . Nor do I now make moan to be abridged From such a noble rate . But my chief care Is to come fairly off from the great debts Wherein my time , something too prodigal , Hath left me gaged . To you , Antonio , I owe the most in money and in love , And from your love I have a warranty To unburden all my plots and purposes How to get clear of all the debts I owe .",
+      "scrollMode": "auto",
+      "lineIndex": 29
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79800",
+      "lineText": "I pray you , good Bassanio , let me know it ; ACT 1. SC. 1 And if it stand , as you yourself still do , Within the eye of honor , be assured My purse , my person , my extremest means Lie all unlocked to your occasions .",
+      "scrollMode": "auto",
+      "lineIndex": 30
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7981g",
+      "lineText": "In my school days , when I had lost one shaft , I shot his fellow of the selfsame flight The selfsame way with more advisèd watch To find the other forth ; and by adventuring both I oft found both . I urge this childhood proof Because what follows is pure innocence . I owe you much , and , like a willful youth , That which I owe is lost . But if you please To shoot another arrow that self way Which you did shoot the first , I do not doubt , As I will watch the aim , or to find both Or bring your latter hazard back again , And thankfully rest debtor for the first .",
+      "scrollMode": "auto",
+      "lineIndex": 31
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79800",
+      "lineText": "You know me well , and herein spend but time To wind about my love with circumstance ; And out of doubt you do me now more wrong In making question of my uttermost Than if you had made waste of all I have . Then do but say to me what I should do That in your knowledge may by me be done , And I am prest unto it . Therefore speak .",
+      "scrollMode": "auto",
+      "lineIndex": 32
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7981g",
+      "lineText": "In Belmont is a lady richly left , And she is fair , and , fairer than that word , Of wondrous virtues . Sometimes from her eyes I did receive fair speechless messages . Her name is Portia , nothing undervalued To Cato’s daughter , Brutus’ Portia . Nor is the wide world ignorant of her worth , For the four winds blow in from every coast ACT 1. SC. 2 Renownèd suitors , and her sunny locks Hang on her temples like a golden fleece , Which makes her seat of Belmont Colchos’ strond , And many Jasons come in quest of her . O my Antonio , had I but the means To hold a rival place with one of them , I have a mind presages me such thrift That I should questionless be fortunate !",
+      "scrollMode": "auto",
+      "lineIndex": 33
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79800",
+      "lineText": "Thou know’st that all my fortunes are at sea ; Neither have I money nor commodity To raise a present sum . Therefore go forth : Try what my credit can in Venice do ; That shall be racked even to the uttermost To furnish thee to Belmont to fair Portia . Go presently inquire , and so will I , Where money is , and I no question make To have it of my trust , or for my sake .",
+      "scrollMode": "auto",
+      "lineIndex": 34
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797vg",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 35
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797vg",
+      "lineText": "Enter Portia with her waiting woman Nerissa .",
+      "scrollMode": "auto",
+      "lineIndex": 36
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79830",
+      "lineText": "By my troth , Nerissa , my little body is aweary of this great world .",
+      "scrollMode": "auto",
+      "lineIndex": 37
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7983g",
+      "lineText": "You would be , sweet madam , if your miseries were in the same abundance as your good fortunes are . And yet , for aught I see , they are as sick that surfeit with too much as they that starve with nothing . It is no mean happiness , therefore , to be seated in the mean . Superfluity comes sooner by white hairs , but competency lives longer .",
+      "scrollMode": "auto",
+      "lineIndex": 38
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79830",
+      "lineText": "Good sentences , and well pronounced .",
+      "scrollMode": "auto",
+      "lineIndex": 39
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7983g",
+      "lineText": "They would be better if well followed .",
+      "scrollMode": "auto",
+      "lineIndex": 40
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79830",
+      "lineText": "If to do were as easy as to know what were good to do , chapels had been churches , and poor men’s cottages princes’ palaces . It is a good divine that follows his own instructions . I can easier teach twenty what were good to be done than to be one of the twenty to follow mine own teaching . The brain may devise laws for the blood , but a hot temper leaps o’er a cold decree : such a hare is madness the youth , to skip o’er the meshes of good counsel the cripple . But this reasoning is not in the fashion to choose me a husband . O , me , the word choose ! I may neither choose who I would nor refuse who I dislike . So is the will of a living daughter curbed by the will of a dead father . Is it not hard , Nerissa , that I cannot choose one , nor refuse none ?",
+      "scrollMode": "auto",
+      "lineIndex": 41
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7983g",
+      "lineText": "Your father was ever virtuous , and holy men at their death have good inspirations . Therefore the lottery that he hath devised in these three chests of gold , silver , and lead , whereof who chooses his meaning chooses you , will no doubt never be chosen by any rightly but one who you shall rightly love . But what warmth is there in your affection towards any of these princely suitors that are already come ?",
+      "scrollMode": "auto",
+      "lineIndex": 42
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79830",
+      "lineText": "I pray thee , overname them , and as thou namest them , I will describe them , and according to my description level at my affection .",
+      "scrollMode": "auto",
+      "lineIndex": 43
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7983g",
+      "lineText": "First , there is the Neapolitan prince .",
+      "scrollMode": "auto",
+      "lineIndex": 44
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79830",
+      "lineText": "Ay , that’s a colt indeed , for he doth nothing but talk of his horse , and he makes it a great appropriation to his own good parts that he can shoe him himself . I am much afeard my lady his mother played false with a smith .",
+      "scrollMode": "auto",
+      "lineIndex": 45
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7983g",
+      "lineText": "Then is there the County Palatine .",
+      "scrollMode": "auto",
+      "lineIndex": 46
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79830",
+      "lineText": "He doth nothing but frown , as who should say An you will not have me , choose . He hears ACT 1. SC. 2 merry tales and smiles not . I fear he will prove the weeping philosopher when he grows old , being so full of unmannerly sadness in his youth . I had rather be married to a death’s-head with a bone in his mouth than to either of these . God defend me from these two !",
+      "scrollMode": "auto",
+      "lineIndex": 47
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7983g",
+      "lineText": "How say you by the French lord , Monsieur Le Bon ?",
+      "scrollMode": "auto",
+      "lineIndex": 48
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79830",
+      "lineText": "God made him , and therefore let him pass for a man . In truth , I know it is a sin to be a mocker , but he ! — why , he hath a horse better than the Neapolitan’s , a better bad habit of frowning than the Count Palatine . He is every man in no man . If a throstle sing , he falls straight a-cap’ring . He will fence with his own shadow . If I should marry him , I should marry twenty husbands ! If he would despise me , I would forgive him , for if he love me to madness , I shall never requite him .",
+      "scrollMode": "auto",
+      "lineIndex": 49
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7983g",
+      "lineText": "What say you then to Falconbridge , the young baron of England ?",
+      "scrollMode": "auto",
+      "lineIndex": 50
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79830",
+      "lineText": "You know I say nothing to him , for he understands not me , nor I him . He hath neither Latin , French , nor Italian ; and you will come into the court and swear that I have a poor pennyworth in the English . He is a proper man’s picture , but alas , who can converse with a dumb show ? How oddly he is suited ! I think he bought his doublet in Italy , his round hose in France , his bonnet in Germany , and his behavior everywhere .",
+      "scrollMode": "auto",
+      "lineIndex": 51
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7983g",
+      "lineText": "What think you of the Scottish lord , his neighbor ?",
+      "scrollMode": "auto",
+      "lineIndex": 52
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79830",
+      "lineText": "That he hath a neighborly charity in him , for he borrowed a box of the ear of the Englishman , and swore he would pay him again when he was able . I think the Frenchman became his surety and sealed under for another .",
+      "scrollMode": "auto",
+      "lineIndex": 53
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7983g",
+      "lineText": "How like you the young German , the Duke of Saxony’s nephew ?",
+      "scrollMode": "auto",
+      "lineIndex": 54
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79830",
+      "lineText": "Very vilely in the morning , when he is sober , and most vilely in the afternoon , when he is drunk . When he is best he is a little worse than a man , and when he is worst he is little better than a beast . An the worst fall that ever fell , I hope I shall make shift to go without him .",
+      "scrollMode": "auto",
+      "lineIndex": 55
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7983g",
+      "lineText": "If he should offer to choose , and choose the right casket , you should refuse to perform your father’s will if you should refuse to accept him .",
+      "scrollMode": "auto",
+      "lineIndex": 56
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79830",
+      "lineText": "Therefore , for fear of the worst , I pray thee set a deep glass of Rhenish wine on the contrary casket , for if the devil be within and that temptation without , I know he will choose it . I will do anything , Nerissa , ere I will be married to a sponge .",
+      "scrollMode": "auto",
+      "lineIndex": 57
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7983g",
+      "lineText": "You need not fear , lady , the having any of these lords . They have acquainted me with their determinations , which is indeed to return to their home and to trouble you with no more suit , unless you may be won by some other sort than your father’s imposition depending on the caskets .",
+      "scrollMode": "auto",
+      "lineIndex": 58
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79830",
+      "lineText": "If I live to be as old as Sibylla , I will die as chaste as Diana unless I be obtained by the manner of my father’s will . I am glad this parcel of wooers are so reasonable , for there is not one among them but I dote on his very absence . And I pray God grant them a fair departure !",
+      "scrollMode": "auto",
+      "lineIndex": 59
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7983g",
+      "lineText": "Do you not remember , lady , in your father’s time , a Venetian , a scholar and a soldier , that came hither in company of the Marquess of Montferrat ?",
+      "scrollMode": "auto",
+      "lineIndex": 60
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79830",
+      "lineText": "Yes , yes , it was Bassanio — as I think so was he called .",
+      "scrollMode": "auto",
+      "lineIndex": 61
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7983g",
+      "lineText": "True , madam . He , of all the men that ever my foolish eyes looked upon , was the best deserving a fair lady .",
+      "scrollMode": "auto",
+      "lineIndex": 62
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797vg",
+      "lineText": "Enter a Servingman .",
+      "scrollMode": "auto",
+      "lineIndex": 63
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79840",
+      "lineText": "Enter a Servingman . How now , what news ?",
+      "scrollMode": "auto",
+      "lineIndex": 64
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79840",
+      "lineText": "The four strangers seek for you , madam , to take their leave . And there is a forerunner come from a fifth , the Prince of Morocco , who brings word the Prince his master will be here tonight .",
+      "scrollMode": "auto",
+      "lineIndex": 65
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797vg",
+      "lineText": "To Servingman .",
+      "scrollMode": "auto",
+      "lineIndex": 66
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79830",
+      "lineText": "To Servingman . Sirrah , go before . — Whiles we shut the gate upon one wooer , another knocks at the door .",
+      "scrollMode": "auto",
+      "lineIndex": 67
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797vg",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 68
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797vg",
+      "lineText": "Enter Bassanio with Shylock the Jew .",
+      "scrollMode": "auto",
+      "lineIndex": 69
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7984g",
+      "lineText": "Three thousand ducats , well .",
+      "scrollMode": "auto",
+      "lineIndex": 70
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7981g",
+      "lineText": "Ay , sir , for three months .",
+      "scrollMode": "auto",
+      "lineIndex": 71
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7984g",
+      "lineText": "For three months , well .",
+      "scrollMode": "auto",
+      "lineIndex": 72
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7981g",
+      "lineText": "For the which , as I told you , Antonio shall be bound .",
+      "scrollMode": "auto",
+      "lineIndex": 73
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7984g",
+      "lineText": "Antonio shall become bound , well .",
+      "scrollMode": "auto",
+      "lineIndex": 74
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7981g",
+      "lineText": "May you stead me ? Will you pleasure me ? Shall I know your answer ?",
+      "scrollMode": "auto",
+      "lineIndex": 75
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7984g",
+      "lineText": "Three thousand ducats for three months , and Antonio bound .",
+      "scrollMode": "auto",
+      "lineIndex": 76
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7981g",
+      "lineText": "Your answer to that ?",
+      "scrollMode": "auto",
+      "lineIndex": 77
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7984g",
+      "lineText": "Antonio is a good man .",
+      "scrollMode": "auto",
+      "lineIndex": 78
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7981g",
+      "lineText": "Have you heard any imputation to the contrary ?",
+      "scrollMode": "auto",
+      "lineIndex": 79
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7984g",
+      "lineText": "Ho , no , no , no , no ! My meaning in saying he is a good man is to have you understand me that he is sufficient . Yet his means are in supposition : he hath an argosy bound to Tripolis , another to the Indies . I understand , moreover , upon the Rialto , he hath a third at Mexico , a fourth for England , and other ventures he hath squandered abroad . But ships are but boards , sailors but men ; there be land rats and water rats , water thieves and land thieves — I mean pirates — and then there is the peril of waters , winds , and rocks . The man is , notwithstanding , sufficient . Three thousand ducats . I think I may take his bond .",
+      "scrollMode": "auto",
+      "lineIndex": 80
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7981g",
+      "lineText": "Be assured you may .",
+      "scrollMode": "auto",
+      "lineIndex": 81
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7984g",
+      "lineText": "I will be assured I may . And that I may be assured , I will bethink me . May I speak with Antonio ?",
+      "scrollMode": "auto",
+      "lineIndex": 82
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7981g",
+      "lineText": "If it please you to dine with us .",
+      "scrollMode": "auto",
+      "lineIndex": 83
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7984g",
+      "lineText": "Yes , to smell pork ! To eat of the habitation which your prophet the Nazarite conjured the devil into ! I will buy with you , sell with you , talk with you , walk with you , and so following ; but I will not eat with you , drink with you , nor pray with you . — What news on the Rialto ? — Who is he comes here ?",
+      "scrollMode": "auto",
+      "lineIndex": 84
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797vg",
+      "lineText": "Enter Antonio .",
+      "scrollMode": "auto",
+      "lineIndex": 85
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7981g",
+      "lineText": "This is Signior Antonio .",
+      "scrollMode": "auto",
+      "lineIndex": 86
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797vg",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 87
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7984g",
+      "lineText": "How like a fawning publican he looks ! I hate him for he is a Christian , But more for that in low simplicity He lends out money gratis and brings down The rate of usance here with us in Venice . If I can catch him once upon the hip , I will feed fat the ancient grudge I bear him . ACT 1. SC. 3 He hates our sacred nation , and he rails , Even there where merchants most do congregate , On me , my bargains , and my well-won thrift , Which he calls interest . Cursèd be my tribe If I forgive him !",
+      "scrollMode": "auto",
+      "lineIndex": 88
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7981g",
+      "lineText": "Shylock , do you hear ?",
+      "scrollMode": "auto",
+      "lineIndex": 89
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797vg",
+      "lineText": "To Antonio .",
+      "scrollMode": "auto",
+      "lineIndex": 90
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7984g",
+      "lineText": "To Antonio . Rest you fair , good signior ! Your Worship was the last man in our mouths .",
+      "scrollMode": "auto",
+      "lineIndex": 91
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797vg",
+      "lineText": "To Bassanio .",
+      "scrollMode": "auto",
+      "lineIndex": 92
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79800",
+      "lineText": "To Bassanio . Is he yet possessed How much you would ?",
+      "scrollMode": "auto",
+      "lineIndex": 93
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7984g",
+      "lineText": "Ay , ay , three thousand ducats .",
+      "scrollMode": "auto",
+      "lineIndex": 94
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79800",
+      "lineText": "And for three months .",
+      "scrollMode": "auto",
+      "lineIndex": 95
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797vg",
+      "lineText": "To Bassanio .",
+      "scrollMode": "auto",
+      "lineIndex": 96
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7984g",
+      "lineText": "To Bassanio . You told me so . — Well then , your bond . And let me see — but hear you : Methoughts you said you neither lend nor borrow Upon advantage .",
+      "scrollMode": "auto",
+      "lineIndex": 97
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79800",
+      "lineText": "I do never use it .",
+      "scrollMode": "auto",
+      "lineIndex": 98
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7984g",
+      "lineText": "When Jacob grazed his Uncle Laban’s sheep — This Jacob from our holy Abram was ACT 1. SC. 3 ( As his wise mother wrought in his behalf ) The third possessor ; ay , he was the third —",
+      "scrollMode": "auto",
+      "lineIndex": 99
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79800",
+      "lineText": "And what of him ? Did he take interest ?",
+      "scrollMode": "auto",
+      "lineIndex": 100
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7984g",
+      "lineText": "No , not take interest , not , as you would say , Directly interest . Mark what Jacob did . When Laban and himself were compromised That all the eanlings which were streaked and pied Should fall as Jacob’s hire , the ewes being rank In end of autumn turnèd to the rams , And when the work of generation was Between these woolly breeders in the act , The skillful shepherd pilled me certain wands , And in the doing of the deed of kind He stuck them up before the fulsome ewes , Who then conceiving did in eaning time Fall parti-colored lambs , and those were Jacob’s . This was a way to thrive , and he was blest ; And thrift is blessing if men steal it not .",
+      "scrollMode": "auto",
+      "lineIndex": 101
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79800",
+      "lineText": "This was a venture , sir , that Jacob served for , A thing not in his power to bring to pass , But swayed and fashioned by the hand of heaven . Was this inserted to make interest good ? Or is your gold and silver ewes and rams ?",
+      "scrollMode": "auto",
+      "lineIndex": 102
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7984g",
+      "lineText": "I cannot tell ; I make it breed as fast . But note me , signior —",
+      "scrollMode": "auto",
+      "lineIndex": 103
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797vg",
+      "lineText": ", aside to Bassanio",
+      "scrollMode": "auto",
+      "lineIndex": 104
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79800",
+      "lineText": "Mark you this , Bassanio , The devil can cite Scripture for his purpose ! An evil soul producing holy witness Is like a villain with a smiling cheek , A goodly apple rotten at the heart . O , what a goodly outside falsehood hath !",
+      "scrollMode": "auto",
+      "lineIndex": 105
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7984g",
+      "lineText": "Three thousand ducats . ’Tis a good round sum . Three months from twelve , then let me see , the rate —",
+      "scrollMode": "auto",
+      "lineIndex": 106
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79800",
+      "lineText": "Well , Shylock , shall we be beholding to you ?",
+      "scrollMode": "auto",
+      "lineIndex": 107
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7984g",
+      "lineText": "Signior Antonio , many a time and oft In the Rialto you have rated me About my moneys and my usances . Still have I borne it with a patient shrug ( For suff’rance is the badge of all our tribe ) . You call me misbeliever , cutthroat dog , And spet upon my Jewish gaberdine , And all for use of that which is mine own . Well then , it now appears you need my help . Go to , then . You come to me and you say Shylock , we would have moneys — you say so , You , that did void your rheum upon my beard , And foot me as you spurn a stranger cur Over your threshold . Moneys is your suit . What should I say to you ? Should I not say Hath a dog money ? Is it possible A cur can lend three thousand ducats ? Or Shall I bend low , and in a bondman’s key , With bated breath and whisp’ring humbleness , Say this : Fair sir , you spet on me on Wednesday last ; You spurned me such a day ; another time You called me dog ; and for these courtesies I’ll lend you thus much moneys ?",
+      "scrollMode": "auto",
+      "lineIndex": 108
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79800",
+      "lineText": "I am as like to call thee so again , To spet on thee again , to spurn thee , too . If thou wilt lend this money , lend it not As to thy friends , for when did friendship take ACT 1. SC. 3 A breed for barren metal of his friend ? But lend it rather to thine enemy , Who , if he break , thou mayst with better face Exact the penalty .",
+      "scrollMode": "auto",
+      "lineIndex": 109
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7984g",
+      "lineText": "Why , look you how you storm ! I would be friends with you and have your love , Forget the shames that you have stained me with , Supply your present wants , and take no doit Of usance for my moneys , and you’ll not hear me ! This is kind I offer .",
+      "scrollMode": "auto",
+      "lineIndex": 110
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7981g",
+      "lineText": "This were kindness !",
+      "scrollMode": "auto",
+      "lineIndex": 111
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7984g",
+      "lineText": "This kindness will I show . Go with me to a notary , seal me there Your single bond ; and in a merry sport , If you repay me not on such a day , In such a place , such sum or sums as are Expressed in the condition , let the forfeit Be nominated for an equal pound Of your fair flesh , to be cut off and taken In what part of your body pleaseth me .",
+      "scrollMode": "auto",
+      "lineIndex": 112
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79800",
+      "lineText": "Content , in faith . I’ll seal to such a bond , And say there is much kindness in the Jew .",
+      "scrollMode": "auto",
+      "lineIndex": 113
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7981g",
+      "lineText": "You shall not seal to such a bond for me ! I’ll rather dwell in my necessity .",
+      "scrollMode": "auto",
+      "lineIndex": 114
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79800",
+      "lineText": "Why , fear not , man , I will not forfeit it ! Within these two months — that’s a month before This bond expires — I do expect return Of thrice three times the value of this bond .",
+      "scrollMode": "auto",
+      "lineIndex": 115
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7984g",
+      "lineText": "O father Abram , what these Christians are , Whose own hard dealings teaches them suspect The thoughts of others ! Pray you tell me this : If he should break his day , what should I gain ACT 1. SC. 3 By the exaction of the forfeiture ? A pound of man’s flesh taken from a man Is not so estimable , profitable neither , As flesh of muttons , beefs , or goats . I say , To buy his favor I extend this friendship . If he will take it , so . If not , adieu ; And for my love I pray you wrong me not .",
+      "scrollMode": "auto",
+      "lineIndex": 116
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79800",
+      "lineText": "Yes , Shylock , I will seal unto this bond .",
+      "scrollMode": "auto",
+      "lineIndex": 117
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7984g",
+      "lineText": "Then meet me forthwith at the notary’s . Give him direction for this merry bond , And I will go and purse the ducats straight , See to my house left in the fearful guard Of an unthrifty knave , and presently I’ll be with you .",
+      "scrollMode": "auto",
+      "lineIndex": 118
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797vg",
+      "lineText": "Shylock exits .",
+      "scrollMode": "auto",
+      "lineIndex": 119
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7984g",
+      "lineText": "Shylock exits . The Hebrew will turn Christian ; he grows kind .",
+      "scrollMode": "auto",
+      "lineIndex": 120
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7981g",
+      "lineText": "I like not fair terms and a villain’s mind .",
+      "scrollMode": "auto",
+      "lineIndex": 121
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79800",
+      "lineText": "Come on , in this there can be no dismay ; My ships come home a month before the day .",
+      "scrollMode": "auto",
+      "lineIndex": 122
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h797vg",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 123
+    }
+  ],
+  "isPublic": true
+}

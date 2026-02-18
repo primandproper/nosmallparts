@@ -1,0 +1,547 @@
+{
+  "title": "King John (Act 1)",
+  "description": "Folger Shakespeare Library edition",
+  "author": "William Shakespeare",
+  "castMembers": [
+    {
+      "id": "d68m11kn9qd8d2h792bg",
+      "name": "Narrator",
+      "sortOrder": 0
+    },
+    {
+      "id": "d68m11kn9qd8d2h792c0",
+      "name": "John",
+      "description": "King of England, with dominion over assorted Continental territories",
+      "sortOrder": 1
+    },
+    {
+      "id": "d68m11kn9qd8d2h792cg",
+      "name": "Chatillion",
+      "description": "ambassador from France to King John",
+      "sortOrder": 2
+    },
+    {
+      "id": "d68m11kn9qd8d2h792d0",
+      "name": "Queen Eleanor",
+      "description": "King John’s mother, widow of King Henry II",
+      "sortOrder": 3
+    },
+    {
+      "id": "d68m11kn9qd8d2h792dg",
+      "name": "Earl of Essex",
+      "sortOrder": 4
+    },
+    {
+      "id": "d68m11kn9qd8d2h792e0",
+      "name": "Robert Faulconbridge",
+      "description": "her son by Sir Robert Faulconbridge",
+      "sortOrder": 5
+    },
+    {
+      "id": "d68m11kn9qd8d2h792eg",
+      "name": "Bastard",
+      "description": "Philip Faulconbridge, her son by King Richard I",
+      "sortOrder": 6
+    },
+    {
+      "id": "d68m11kn9qd8d2h792f0",
+      "name": "Lady Faulconbridge",
+      "sortOrder": 7
+    },
+    {
+      "id": "d68m11kn9qd8d2h792fg",
+      "name": "James Gurney",
+      "description": "her servant",
+      "sortOrder": 8
+    }
+  ],
+  "lines": [
+    {
+      "castMemberId": "d68m11kn9qd8d2h792bg",
+      "lineText": "Enter King John , Queen Eleanor , Pembroke , Essex , and Salisbury , with the Chatillion of France .",
+      "scrollMode": "auto",
+      "lineIndex": 0
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792c0",
+      "lineText": "Now say , Chatillion , what would France with us ?",
+      "scrollMode": "auto",
+      "lineIndex": 1
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792cg",
+      "lineText": "Thus , after greeting , speaks the King of France In my behavior to the majesty , The borrowed majesty , of England here .",
+      "scrollMode": "auto",
+      "lineIndex": 2
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792d0",
+      "lineText": "A strange beginning : borrowed majesty !",
+      "scrollMode": "auto",
+      "lineIndex": 3
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792c0",
+      "lineText": "Silence , good mother . Hear the embassy .",
+      "scrollMode": "auto",
+      "lineIndex": 4
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792cg",
+      "lineText": "Philip of France , in right and true behalf Of thy deceasèd brother Geoffrey’s son , Arthur Plantagenet , lays most lawful claim To this fair island and the territories , To Ireland , Poitiers , Anjou , Touraine , Maine , Desiring thee to lay aside the sword Which sways usurpingly these several titles , And put the same into young Arthur’s hand , Thy nephew and right royal sovereign .",
+      "scrollMode": "auto",
+      "lineIndex": 5
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792c0",
+      "lineText": "What follows if we disallow of this ?",
+      "scrollMode": "auto",
+      "lineIndex": 6
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792cg",
+      "lineText": "The proud control of fierce and bloody war , To enforce these rights so forcibly withheld .",
+      "scrollMode": "auto",
+      "lineIndex": 7
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792c0",
+      "lineText": "Here have we war for war and blood for blood , Controlment for controlment : so answer France .",
+      "scrollMode": "auto",
+      "lineIndex": 8
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792cg",
+      "lineText": "Then take my king’s defiance from my mouth , The farthest limit of my embassy .",
+      "scrollMode": "auto",
+      "lineIndex": 9
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792c0",
+      "lineText": "Bear mine to him , and so depart in peace . Be thou as lightning in the eyes of France , For ere thou canst report , I will be there ; The thunder of my cannon shall be heard . So , hence . Be thou the trumpet of our wrath And sullen presage of your own decay . — An honorable conduct let him have . Pembroke , look to ’t . — Farewell , Chatillion .",
+      "scrollMode": "auto",
+      "lineIndex": 10
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792bg",
+      "lineText": "Chatillion and Pembroke exit .",
+      "scrollMode": "auto",
+      "lineIndex": 11
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792bg",
+      "lineText": ", aside to King John",
+      "scrollMode": "auto",
+      "lineIndex": 12
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792d0",
+      "lineText": "What now , my son ! Have I not ever said How that ambitious Constance would not cease Till she had kindled France and all the world Upon the right and party of her son ? This might have been prevented and made whole With very easy arguments of love , Which now the manage of two kingdoms must With fearful bloody issue arbitrate .",
+      "scrollMode": "auto",
+      "lineIndex": 13
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792bg",
+      "lineText": ", aside to Queen Eleanor",
+      "scrollMode": "auto",
+      "lineIndex": 14
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792c0",
+      "lineText": "Our strong possession and our right for us .",
+      "scrollMode": "auto",
+      "lineIndex": 15
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792bg",
+      "lineText": ", aside to King John",
+      "scrollMode": "auto",
+      "lineIndex": 16
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792d0",
+      "lineText": "Your strong possession much more than your right , Or else it must go wrong with you and me — So much my conscience whispers in your ear , Which none but God and you and I shall hear .",
+      "scrollMode": "auto",
+      "lineIndex": 17
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792bg",
+      "lineText": "Enter a Sheriff ,",
+      "scrollMode": "auto",
+      "lineIndex": 18
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792bg",
+      "lineText": "who speaks aside to Essex .",
+      "scrollMode": "auto",
+      "lineIndex": 19
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792dg",
+      "lineText": "My liege , here is the strangest controversy Come from the country to be judged by you That e’er I heard . Shall I produce the men ?",
+      "scrollMode": "auto",
+      "lineIndex": 20
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792bg",
+      "lineText": "Sheriff exits .",
+      "scrollMode": "auto",
+      "lineIndex": 21
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792bg",
+      "lineText": "Enter Robert Faulconbridge and Philip Faulconbridge .",
+      "scrollMode": "auto",
+      "lineIndex": 22
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792e0",
+      "lineText": "Enter Robert Faulconbridge and Philip Faulconbridge . What men are you ?",
+      "scrollMode": "auto",
+      "lineIndex": 23
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792eg",
+      "lineText": "Your faithful subject I , a gentleman , Born in Northamptonshire , and eldest son , As I suppose , to Robert Faulconbridge , A soldier , by the honor-giving hand Of Coeur de Lion knighted in the field .",
+      "scrollMode": "auto",
+      "lineIndex": 24
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792bg",
+      "lineText": ", to Robert Faulconbridge",
+      "scrollMode": "auto",
+      "lineIndex": 25
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792c0",
+      "lineText": "What art thou ?",
+      "scrollMode": "auto",
+      "lineIndex": 26
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792e0",
+      "lineText": "The son and heir to that same Faulconbridge .",
+      "scrollMode": "auto",
+      "lineIndex": 27
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792c0",
+      "lineText": "Is that the elder , and art thou the heir ? You came not of one mother then , it seems .",
+      "scrollMode": "auto",
+      "lineIndex": 28
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792eg",
+      "lineText": "Most certain of one mother , mighty king — That is well known — and , as I think , one father . But for the certain knowledge of that truth I put you o’er to heaven and to my mother . Of that I doubt , as all men’s children may .",
+      "scrollMode": "auto",
+      "lineIndex": 29
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792d0",
+      "lineText": "Out on thee , rude man ! Thou dost shame thy mother And wound her honor with this diffidence .",
+      "scrollMode": "auto",
+      "lineIndex": 30
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792eg",
+      "lineText": "I , madam ? No , I have no reason for it . That is my brother’s plea , and none of mine , ACT 1. SC. 1 The which if he can prove , he pops me out At least from fair five hundred pound a year . Heaven guard my mother’s honor and my land !",
+      "scrollMode": "auto",
+      "lineIndex": 31
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792c0",
+      "lineText": "A good blunt fellow . — Why , being younger born , Doth he lay claim to thine inheritance ?",
+      "scrollMode": "auto",
+      "lineIndex": 32
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792eg",
+      "lineText": "I know not why , except to get the land . But once he slandered me with bastardy . But whe’er I be as true begot or no , That still I lay upon my mother’s head . But that I am as well begot , my liege — Fair fall the bones that took the pains for me ! — Compare our faces and be judge yourself . If old Sir Robert did beget us both And were our father , and this son like him , O , old Sir Robert , father , on my knee I give heaven thanks I was not like to thee !",
+      "scrollMode": "auto",
+      "lineIndex": 33
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792c0",
+      "lineText": "Why , what a madcap hath heaven lent us here !",
+      "scrollMode": "auto",
+      "lineIndex": 34
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792bg",
+      "lineText": ", aside to King John",
+      "scrollMode": "auto",
+      "lineIndex": 35
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792d0",
+      "lineText": "He hath a trick of Coeur de Lion’s face ; The accent of his tongue affecteth him . Do you not read some tokens of my son In the large composition of this man ?",
+      "scrollMode": "auto",
+      "lineIndex": 36
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792bg",
+      "lineText": ", aside to Queen Eleanor",
+      "scrollMode": "auto",
+      "lineIndex": 37
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792bg",
+      "lineText": "To Robert Faulconbridge",
+      "scrollMode": "auto",
+      "lineIndex": 38
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792c0",
+      "lineText": "To Robert Faulconbridge Sirrah , speak . What doth move you to claim your brother’s land ?",
+      "scrollMode": "auto",
+      "lineIndex": 39
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792eg",
+      "lineText": "Because he hath a half-face , like my father . With half that face would he have all my land — A half-faced groat five hundred pound a year !",
+      "scrollMode": "auto",
+      "lineIndex": 40
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792e0",
+      "lineText": "My gracious liege , when that my father lived , Your brother did employ my father much —",
+      "scrollMode": "auto",
+      "lineIndex": 41
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792eg",
+      "lineText": "Well , sir , by this you cannot get my land . Your tale must be how he employed my mother .",
+      "scrollMode": "auto",
+      "lineIndex": 42
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792e0",
+      "lineText": "And once dispatched him in an embassy To Germany , there with the Emperor To treat of high affairs touching that time . Th’ advantage of his absence took the King And in the meantime sojourned at my father’s ; Where how he did prevail I shame to speak . But truth is truth : large lengths of seas and shores Between my father and my mother lay , As I have heard my father speak himself , When this same lusty gentleman was got . Upon his deathbed he by will bequeathed His lands to me , and took it on his death That this my mother’s son was none of his ; An if he were , he came into the world Full fourteen weeks before the course of time . Then , good my liege , let me have what is mine , My father’s land , as was my father’s will .",
+      "scrollMode": "auto",
+      "lineIndex": 43
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792c0",
+      "lineText": "Sirrah , your brother is legitimate . Your father’s wife did after wedlock bear him , An if she did play false , the fault was hers , Which fault lies on the hazards of all husbands That marry wives . Tell me , how if my brother , Who as you say took pains to get this son , Had of your father claimed this son for his ? In sooth , good friend , your father might have kept This calf , bred from his cow , from all the world ; In sooth he might . Then if he were my brother’s , My brother might not claim him , nor your father , Being none of his , refuse him . This concludes : My mother’s son did get your father’s heir ; Your father’s heir must have your father’s land .",
+      "scrollMode": "auto",
+      "lineIndex": 44
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792e0",
+      "lineText": "Shall then my father’s will be of no force To dispossess that child which is not his ?",
+      "scrollMode": "auto",
+      "lineIndex": 45
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792eg",
+      "lineText": "Of no more force to dispossess me , sir , Than was his will to get me , as I think .",
+      "scrollMode": "auto",
+      "lineIndex": 46
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792d0",
+      "lineText": "Whether hadst thou rather : be a Faulconbridge And , like thy brother , to enjoy thy land , Or the reputed son of Coeur de Lion , Lord of thy presence , and no land besides ?",
+      "scrollMode": "auto",
+      "lineIndex": 47
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792eg",
+      "lineText": "Madam , an if my brother had my shape And I had his , Sir Robert’s his like him , And if my legs were two such riding-rods , My arms such eel-skins stuffed , my face so thin That in mine ear I durst not stick a rose , Lest men should say Look where three-farthings goes , And , to his shape , were heir to all this land , Would I might never stir from off this place , I would give it every foot to have this face . I would not be Sir Nob in any case .",
+      "scrollMode": "auto",
+      "lineIndex": 48
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792d0",
+      "lineText": "I like thee well . Wilt thou forsake thy fortune , Bequeath thy land to him , and follow me ? I am a soldier and now bound to France .",
+      "scrollMode": "auto",
+      "lineIndex": 49
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792eg",
+      "lineText": "Brother , take you my land . I’ll take my chance . Your face hath got five hundred pound a year , Yet sell your face for five pence and ’tis dear . — Madam , I’ll follow you unto the death .",
+      "scrollMode": "auto",
+      "lineIndex": 50
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792d0",
+      "lineText": "Nay , I would have you go before me thither .",
+      "scrollMode": "auto",
+      "lineIndex": 51
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792eg",
+      "lineText": "Our country manners give our betters way .",
+      "scrollMode": "auto",
+      "lineIndex": 52
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792c0",
+      "lineText": "What is thy name ?",
+      "scrollMode": "auto",
+      "lineIndex": 53
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792eg",
+      "lineText": "Philip , my liege , so is my name begun , Philip , good old Sir Robert’s wife’s eldest son .",
+      "scrollMode": "auto",
+      "lineIndex": 54
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792bg",
+      "lineText": "Philip kneels . King John dubs him a knight , tapping him on the shoulder with his sword .",
+      "scrollMode": "auto",
+      "lineIndex": 55
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792eg",
+      "lineText": "Philip kneels . King John dubs him a knight , tapping him on the shoulder with his sword . Arise Sir Richard and Plantagenet .",
+      "scrollMode": "auto",
+      "lineIndex": 56
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792bg",
+      "lineText": "rising",
+      "scrollMode": "auto",
+      "lineIndex": 57
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792bg",
+      "lineText": "to Robert Faulconbridge",
+      "scrollMode": "auto",
+      "lineIndex": 58
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792eg",
+      "lineText": "Brother by th’ mother’s side , give me your hand . My father gave me honor , yours gave land . Now blessèd be the hour , by night or day , When I was got , Sir Robert was away !",
+      "scrollMode": "auto",
+      "lineIndex": 59
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792d0",
+      "lineText": "The very spirit of Plantagenet ! I am thy grandam , Richard . Call me so .",
+      "scrollMode": "auto",
+      "lineIndex": 60
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792eg",
+      "lineText": "Madam , by chance but not by truth . What though ? Something about , a little from the right , In at the window , or else o’er the hatch . Who dares not stir by day must walk by night , And have is have , however men do catch . Near or far off , well won is still well shot , And I am I , howe’er I was begot .",
+      "scrollMode": "auto",
+      "lineIndex": 61
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792bg",
+      "lineText": ", to Robert Faulconbridge",
+      "scrollMode": "auto",
+      "lineIndex": 62
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792c0",
+      "lineText": "Go , Faulconbridge , now hast thou thy desire . A landless knight makes thee a landed squire . — Come , madam , — and come , Richard . We must speed For France , for France , for it is more than need .",
+      "scrollMode": "auto",
+      "lineIndex": 63
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792bg",
+      "lineText": "All but Bastard exit .",
+      "scrollMode": "auto",
+      "lineIndex": 64
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792bg",
+      "lineText": "Enter Lady Faulconbridge and James Gurney .",
+      "scrollMode": "auto",
+      "lineIndex": 65
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792f0",
+      "lineText": "Enter Lady Faulconbridge and James Gurney . But who comes in such haste in riding robes ? What woman post is this ? Hath she no husband That will take pains to blow a horn before her ? O me , ’tis my mother . — How now , good lady ? What brings you here to court so hastily ?",
+      "scrollMode": "auto",
+      "lineIndex": 66
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792f0",
+      "lineText": "Where is that slave thy brother ? Where is he That holds in chase mine honor up and down ?",
+      "scrollMode": "auto",
+      "lineIndex": 67
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792eg",
+      "lineText": "My brother Robert , old Sir Robert’s son ? Colbrand the Giant , that same mighty man ? Is it Sir Robert’s son that you seek so ?",
+      "scrollMode": "auto",
+      "lineIndex": 68
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792f0",
+      "lineText": "Sir Robert’s son ? Ay , thou unreverent boy , Sir Robert’s son . Why scorn’st thou at Sir Robert ? He is Sir Robert’s son , and so art thou .",
+      "scrollMode": "auto",
+      "lineIndex": 69
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792eg",
+      "lineText": "James Gurney , wilt thou give us leave awhile ?",
+      "scrollMode": "auto",
+      "lineIndex": 70
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792fg",
+      "lineText": "Good leave , good Philip .",
+      "scrollMode": "auto",
+      "lineIndex": 71
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792bg",
+      "lineText": "James Gurney exits .",
+      "scrollMode": "auto",
+      "lineIndex": 72
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792fg",
+      "lineText": "James Gurney exits . Madam , I was not old Sir Robert’s son . Sir Robert might have eat his part in me Upon Good Friday and ne’er broke his fast . Sir Robert could do well — marry , to confess — Could he get me . Sir Robert could not do it ; We know his handiwork . Therefore , good mother , To whom am I beholding for these limbs ? Sir Robert never holp to make this leg .",
+      "scrollMode": "auto",
+      "lineIndex": 73
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792f0",
+      "lineText": "Hast thou conspirèd with thy brother too , That for thine own gain shouldst defend mine honor ? What means this scorn , thou most untoward knave ?",
+      "scrollMode": "auto",
+      "lineIndex": 74
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792eg",
+      "lineText": "Knight , knight , good mother , Basilisco-like . What , I am dubbed ! I have it on my shoulder . But , mother , I am not Sir Robert’s son . I have disclaimed Sir Robert and my land . Legitimation , name , and all is gone . Then , good my mother , let me know my father — Some proper man , I hope . Who was it , mother ?",
+      "scrollMode": "auto",
+      "lineIndex": 75
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792f0",
+      "lineText": "Hast thou denied thyself a Faulconbridge ?",
+      "scrollMode": "auto",
+      "lineIndex": 76
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792eg",
+      "lineText": "As faithfully as I deny the devil .",
+      "scrollMode": "auto",
+      "lineIndex": 77
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792f0",
+      "lineText": "King Richard Coeur de Lion was thy father . By long and vehement suit I was seduced To make room for him in my husband’s bed . Heaven lay not my transgression to my charge ! Thou art the issue of my dear offense , Which was so strongly urged past my defense .",
+      "scrollMode": "auto",
+      "lineIndex": 78
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792eg",
+      "lineText": "Now , by this light , were I to get again , Madam , I would not wish a better father . Some sins do bear their privilege on Earth earth , And so doth yours . Your fault was not your folly . Needs must you lay your heart at his dispose , Subjected tribute to commanding love , Against whose fury and unmatchèd force The aweless lion could not wage the fight , Nor keep his princely heart from Richard’s hand . He that perforce robs lions of their hearts ACT 1. SC. 1 May easily win a woman’s . Ay , my mother , With all my heart I thank thee for my father . Who lives and dares but say thou didst not well When I was got , I’ll send his soul to hell . Come , lady , I will show thee to my kin , And they shall say when Richard me begot , If thou hadst said him nay , it had been sin . Who says it was , he lies . I say ’twas not .",
+      "scrollMode": "auto",
+      "lineIndex": 79
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792bg",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 80
+    }
+  ],
+  "isPublic": true
+}

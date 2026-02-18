@@ -1,0 +1,477 @@
+package identity
+
+import (
+	"context"
+	"database/sql"
+	"fmt"
+
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/authorization"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/audit"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/identity"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/filtering"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/identifiers"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/keys"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
+	generated "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/identity/generated"
+)
+
+const (
+	resourceTypeAccounts = "accounts"
+)
+
+var (
+	_ identity.AccountDataManager = (*repository)(nil)
+)
+
+// GetAccount fetches an account from the database.
+func (r *repository) GetAccount(ctx context.Context, accountID string) (*identity.Account, error) {
+	ctx, span := r.tracer.StartSpan(ctx)
+	defer span.End()
+
+	if accountID == "" {
+		return nil, database.ErrInvalidIDProvided
+	}
+	tracing.AttachToSpan(span, keys.AccountIDKey, accountID)
+
+	results, err := r.generatedQuerier.GetAccountByIDWithMemberships(ctx, r.readDB, accountID)
+	if err != nil {
+		return nil, observability.PrepareError(err, span, "executing accounts list retrieval query")
+	}
+
+	var account *identity.Account
+	for _, result := range results {
+		if account == nil {
+			account = &identity.Account{
+				CreatedAt:                  result.CreatedAt,
+				SubscriptionPlanID:         database.StringPointerFromNullString(result.SubscriptionPlanID),
+				LastUpdatedAt:              database.TimePointerFromNullTime(result.LastUpdatedAt),
+				ArchivedAt:                 database.TimePointerFromNullTime(result.ArchivedAt),
+				ContactPhone:               result.ContactPhone,
+				BillingStatus:              result.BillingStatus,
+				AddressLine1:               result.AddressLine1,
+				AddressLine2:               result.AddressLine2,
+				City:                       result.City,
+				State:                      result.State,
+				ZipCode:                    result.ZipCode,
+				Country:                    result.Country,
+				Latitude:                   database.Float64PointerFromNullString(result.Latitude),
+				Longitude:                  database.Float64PointerFromNullString(result.Longitude),
+				PaymentProcessorCustomerID: result.PaymentProcessorCustomerID,
+				BelongsToUser:              result.BelongsToUser,
+				ID:                         result.ID,
+				Name:                       result.Name,
+				WebhookEncryptionKey:       result.WebhookHmacSecret,
+				Members:                    nil,
+			}
+		}
+
+		account.Members = append(account.Members, &identity.AccountUserMembershipWithUser{
+			CreatedAt:     result.MembershipCreatedAt,
+			LastUpdatedAt: database.TimePointerFromNullTime(result.MembershipLastUpdatedAt),
+			ArchivedAt:    database.TimePointerFromNullTime(result.MembershipArchivedAt),
+			ID:            result.MembershipID,
+			BelongsToUser: &identity.User{
+				CreatedAt:                  result.UserCreatedAt,
+				PasswordLastChangedAt:      database.TimePointerFromNullTime(result.UserPasswordLastChangedAt),
+				LastUpdatedAt:              database.TimePointerFromNullTime(result.UserLastUpdatedAt),
+				LastAcceptedTermsOfService: database.TimePointerFromNullTime(result.UserLastAcceptedTermsOfService),
+				LastAcceptedPrivacyPolicy:  database.TimePointerFromNullTime(result.UserLastAcceptedPrivacyPolicy),
+				TwoFactorSecretVerifiedAt:  database.TimePointerFromNullTime(result.UserTwoFactorSecretVerifiedAt),
+				AvatarSrc:                  database.StringPointerFromNullString(result.UserAvatarSrc),
+				Birthday:                   database.TimePointerFromNullTime(result.UserBirthday),
+				ArchivedAt:                 database.TimePointerFromNullTime(result.UserArchivedAt),
+				AccountStatusExplanation:   result.UserUserAccountStatusExplanation,
+				ID:                         result.UserID,
+				AccountStatus:              result.UserUserAccountStatus,
+				Username:                   result.UserUsername,
+				FirstName:                  result.UserFirstName,
+				LastName:                   result.UserLastName,
+				EmailAddress:               result.UserEmailAddress,
+				EmailAddressVerifiedAt:     database.TimePointerFromNullTime(result.UserEmailAddressVerifiedAt),
+				ServiceRole:                result.UserServiceRole,
+				RequiresPasswordChange:     result.UserRequiresPasswordChange,
+			},
+			BelongsToAccount: result.MembershipBelongsToAccount,
+			AccountRole:      result.MembershipAccountRole,
+			DefaultAccount:   result.MembershipDefaultAccount,
+		})
+	}
+
+	if account == nil {
+		return nil, sql.ErrNoRows
+	}
+
+	return account, nil
+}
+
+// getAccountsForUser fetches a list of accounts from the database that meet a particular filter.
+func (r *repository) getAccountsForUser(ctx context.Context, querier database.SQLQueryExecutor, userID string, filter *filtering.QueryFilter) (*filtering.QueryFilteredResult[identity.Account], error) {
+	ctx, span := r.tracer.StartSpan(ctx)
+	defer span.End()
+
+	logger := r.logger.Clone()
+
+	if userID == "" {
+		return nil, database.ErrInvalidIDProvided
+	}
+	tracing.AttachToSpan(span, keys.UserIDKey, userID)
+	logger = logger.WithValue(keys.UserIDKey, userID)
+
+	if filter == nil {
+		filter = filtering.DefaultQueryFilter()
+	}
+	logger = filter.AttachToLogger(logger)
+	tracing.AttachQueryFilterToSpan(span, filter)
+
+	args := &generated.GetAccountsForUserParams{
+		BelongsToUser:   userID,
+		CreatedBefore:   database.NullTimeFromTimePointer(filter.CreatedBefore),
+		CreatedAfter:    database.NullTimeFromTimePointer(filter.CreatedAfter),
+		UpdatedBefore:   database.NullTimeFromTimePointer(filter.UpdatedBefore),
+		UpdatedAfter:    database.NullTimeFromTimePointer(filter.UpdatedAfter),
+		Cursor:          database.NullStringFromStringPointer(filter.Cursor),
+		ResultLimit:     database.NullInt32FromUint8Pointer(filter.MaxResponseSize),
+		IncludeArchived: database.NullBoolFromBoolPointer(filter.IncludeArchived),
+	}
+	results, err := r.generatedQuerier.GetAccountsForUser(ctx, querier, args)
+	if err != nil {
+		return nil, observability.PrepareAndLogError(err, logger, span, "executing accounts list retrieval query")
+	}
+
+	if len(results) == 0 {
+		return nil, sql.ErrNoRows
+	}
+
+	var (
+		data                      []*identity.Account
+		filteredCount, totalCount uint64
+	)
+	for _, result := range results {
+		data = append(data, &identity.Account{
+			CreatedAt:                  result.CreatedAt,
+			SubscriptionPlanID:         database.StringPointerFromNullString(result.SubscriptionPlanID),
+			LastUpdatedAt:              database.TimePointerFromNullTime(result.LastUpdatedAt),
+			ArchivedAt:                 database.TimePointerFromNullTime(result.ArchivedAt),
+			ContactPhone:               result.ContactPhone,
+			BillingStatus:              result.BillingStatus,
+			AddressLine1:               result.AddressLine1,
+			AddressLine2:               result.AddressLine2,
+			City:                       result.City,
+			State:                      result.State,
+			ZipCode:                    result.ZipCode,
+			Country:                    result.Country,
+			Latitude:                   database.Float64PointerFromNullString(result.Latitude),
+			Longitude:                  database.Float64PointerFromNullString(result.Longitude),
+			PaymentProcessorCustomerID: result.PaymentProcessorCustomerID,
+			BelongsToUser:              result.BelongsToUser,
+			ID:                         result.ID,
+			Name:                       result.Name,
+			Members:                    nil,
+		})
+		filteredCount = uint64(result.FilteredCount)
+		totalCount = uint64(result.TotalCount)
+	}
+
+	x := filtering.NewQueryFilteredResult(
+		data,
+		filteredCount,
+		totalCount,
+		func(t *identity.Account) string {
+			return t.ID
+		},
+		filter,
+	)
+
+	return x, nil
+}
+
+// GetAccounts fetches a list of accounts from the database that meet a particular filter.
+func (r *repository) GetAccounts(ctx context.Context, userID string, filter *filtering.QueryFilter) (x *filtering.QueryFilteredResult[identity.Account], err error) {
+	return r.getAccountsForUser(ctx, r.readDB, userID, filter)
+}
+
+// CreateAccount creates an account in the database.
+func (r *repository) CreateAccount(ctx context.Context, input *identity.AccountDatabaseCreationInput) (*identity.Account, error) {
+	ctx, span := r.tracer.StartSpan(ctx)
+	defer span.End()
+
+	if input == nil {
+		return nil, database.ErrNilInputProvided
+	}
+
+	logger := r.logger.WithValue(keys.UserIDKey, input.BelongsToUser)
+
+	// begin account creation transaction
+	tx, err := r.writeDB.BeginTx(ctx, nil)
+	if err != nil {
+		return nil, observability.PrepareAndLogError(err, logger, span, "beginning transaction")
+	}
+
+	// create the account.
+	if writeErr := r.generatedQuerier.CreateAccount(ctx, tx, &generated.CreateAccountParams{
+		City:              input.City,
+		Name:              input.Name,
+		BillingStatus:     identity.UnpaidAccountBillingStatus,
+		ContactPhone:      input.ContactPhone,
+		AddressLine1:      input.AddressLine1,
+		AddressLine2:      input.AddressLine2,
+		ID:                input.ID,
+		State:             input.State,
+		ZipCode:           input.ZipCode,
+		Country:           input.Country,
+		BelongsToUser:     input.BelongsToUser,
+		WebhookHmacSecret: input.WebhookEncryptionKey,
+		Latitude:          database.NullStringFromFloat64Pointer(input.Latitude),
+		Longitude:         database.NullStringFromFloat64Pointer(input.Longitude),
+	}); writeErr != nil {
+		r.RollbackTransaction(ctx, tx)
+		return nil, observability.PrepareError(writeErr, span, "creating account")
+	}
+
+	account := &identity.Account{
+		ID:            input.ID,
+		Name:          input.Name,
+		BelongsToUser: input.BelongsToUser,
+		BillingStatus: identity.UnpaidAccountBillingStatus,
+		ContactPhone:  input.ContactPhone,
+		AddressLine1:  input.AddressLine1,
+		AddressLine2:  input.AddressLine2,
+		City:          input.City,
+		State:         input.State,
+		ZipCode:       input.ZipCode,
+		Country:       input.Country,
+		Latitude:      input.Latitude,
+		Longitude:     input.Longitude,
+		CreatedAt:     r.CurrentTime(),
+	}
+
+	if _, err = r.auditLogEntryRepo.CreateAuditLogEntry(ctx, tx, &audit.AuditLogEntryDatabaseCreationInput{
+		BelongsToAccount: &account.ID,
+		ID:               identifiers.New(),
+		ResourceType:     resourceTypeAccounts,
+		RelevantID:       account.ID,
+		EventType:        audit.AuditLogEventTypeCreated,
+		BelongsToUser:    account.BelongsToUser,
+	}); err != nil {
+		r.RollbackTransaction(ctx, tx)
+		return nil, observability.PrepareError(err, span, "creating audit log entry")
+	}
+
+	accountMembershipID := identifiers.New()
+	if err = r.generatedQuerier.AddUserToAccount(ctx, tx, &generated.AddUserToAccountParams{
+		ID:               accountMembershipID,
+		BelongsToUser:    account.BelongsToUser,
+		BelongsToAccount: account.ID,
+		AccountRole:      authorization.AccountAdminRole.String(),
+	}); err != nil {
+		r.RollbackTransaction(ctx, tx)
+		return nil, observability.PrepareAndLogError(err, logger, span, "performing account membership creation query")
+	}
+
+	if _, err = r.auditLogEntryRepo.CreateAuditLogEntry(ctx, tx, &audit.AuditLogEntryDatabaseCreationInput{
+		BelongsToAccount: &account.ID,
+		ID:               identifiers.New(),
+		ResourceType:     resourceTypeAccountUserMemberships,
+		RelevantID:       accountMembershipID,
+		EventType:        audit.AuditLogEventTypeCreated,
+		BelongsToUser:    account.BelongsToUser,
+	}); err != nil {
+		r.RollbackTransaction(ctx, tx)
+		return nil, observability.PrepareError(err, span, "creating audit log entry")
+	}
+
+	if err = tx.Commit(); err != nil {
+		return nil, observability.PrepareAndLogError(err, logger, span, "committing transaction")
+	}
+
+	tracing.AttachToSpan(span, keys.AccountIDKey, account.ID)
+	logger.Info("account created")
+
+	return account, nil
+}
+
+// UpdateAccount updates a particular account. Note that UpdateAccount expects the provided input to have a valid ID.
+func (r *repository) UpdateAccount(ctx context.Context, updated *identity.Account) error {
+	ctx, span := r.tracer.StartSpan(ctx)
+	defer span.End()
+
+	if updated == nil {
+		return database.ErrNilInputProvided
+	}
+	logger := r.logger.WithValue(keys.AccountIDKey, updated.ID)
+	tracing.AttachToSpan(span, keys.AccountIDKey, updated.ID)
+
+	tx, err := r.writeDB.BeginTx(ctx, nil)
+	if err != nil {
+		return observability.PrepareAndLogError(err, logger, span, "beginning transaction")
+	}
+
+	account, err := r.GetAccount(ctx, updated.ID)
+	if err != nil {
+		r.RollbackTransaction(ctx, tx)
+		return observability.PrepareError(err, span, "fetching account")
+	}
+
+	if _, err = r.generatedQuerier.UpdateAccount(ctx, tx, &generated.UpdateAccountParams{
+		Name:          updated.Name,
+		ContactPhone:  updated.ContactPhone,
+		AddressLine1:  updated.AddressLine1,
+		AddressLine2:  updated.AddressLine2,
+		City:          updated.City,
+		State:         updated.State,
+		ZipCode:       updated.ZipCode,
+		Country:       updated.Country,
+		BelongsToUser: updated.BelongsToUser,
+		ID:            updated.ID,
+		Latitude:      database.NullStringFromFloat64Pointer(updated.Latitude),
+		Longitude:     database.NullStringFromFloat64Pointer(updated.Longitude),
+	}); err != nil {
+		return observability.PrepareAndLogError(err, logger, span, "updating account")
+	}
+
+	if _, err = r.auditLogEntryRepo.CreateAuditLogEntry(ctx, tx, &audit.AuditLogEntryDatabaseCreationInput{
+		BelongsToAccount: &updated.ID,
+		ID:               identifiers.New(),
+		ResourceType:     resourceTypeAccounts,
+		RelevantID:       updated.ID,
+		EventType:        audit.AuditLogEventTypeUpdated,
+		BelongsToUser:    account.BelongsToUser,
+		Changes:          buildChangesForAccount(account, updated),
+	}); err != nil {
+		r.RollbackTransaction(ctx, tx)
+		return observability.PrepareError(err, span, "creating audit log entry")
+	}
+
+	if err = tx.Commit(); err != nil {
+		return observability.PrepareAndLogError(err, logger, span, "committing transaction")
+	}
+
+	logger.Info("account updated")
+
+	return nil
+}
+
+func buildChangesForAccount(account, updated *identity.Account) map[string]*audit.ChangeLog {
+	changes := map[string]*audit.ChangeLog{}
+
+	if account.Name != updated.Name {
+		changes["name"] = &audit.ChangeLog{
+			OldValue: account.Name,
+			NewValue: updated.Name,
+		}
+	}
+
+	if account.ContactPhone != updated.ContactPhone {
+		changes["contact_phone"] = &audit.ChangeLog{
+			OldValue: account.ContactPhone,
+			NewValue: updated.ContactPhone,
+		}
+	}
+
+	if account.AddressLine1 != updated.AddressLine1 {
+		changes["address_line_1"] = &audit.ChangeLog{
+			OldValue: account.AddressLine1,
+			NewValue: updated.AddressLine1,
+		}
+	}
+
+	if account.AddressLine2 != updated.AddressLine2 {
+		changes["address_line_2"] = &audit.ChangeLog{
+			OldValue: account.AddressLine2,
+			NewValue: updated.AddressLine2,
+		}
+	}
+
+	if account.City != updated.City {
+		changes["city"] = &audit.ChangeLog{
+			OldValue: account.City,
+			NewValue: updated.City,
+		}
+	}
+
+	if account.State != updated.State {
+		changes["state"] = &audit.ChangeLog{
+			OldValue: account.State,
+			NewValue: updated.State,
+		}
+	}
+
+	if account.ZipCode != updated.ZipCode {
+		changes["zip_code"] = &audit.ChangeLog{
+			OldValue: account.ZipCode,
+			NewValue: updated.ZipCode,
+		}
+	}
+
+	if account.Country != updated.Country {
+		changes["country"] = &audit.ChangeLog{
+			OldValue: account.Country,
+			NewValue: updated.Country,
+		}
+	}
+
+	if account.Latitude != updated.Latitude {
+		changes["latitude"] = &audit.ChangeLog{
+			OldValue: fmt.Sprintf("%v", account.Latitude),
+			NewValue: fmt.Sprintf("%v", updated.Latitude),
+		}
+	}
+
+	if account.Longitude != updated.Longitude {
+		changes["longitude"] = &audit.ChangeLog{
+			OldValue: fmt.Sprintf("%v", account.Longitude),
+			NewValue: fmt.Sprintf("%v", updated.Longitude),
+		}
+	}
+
+	return changes
+}
+
+// ArchiveAccount archives an account from the database by its ID.
+func (r *repository) ArchiveAccount(ctx context.Context, accountID, ownerID string) error {
+	ctx, span := r.tracer.StartSpan(ctx)
+	defer span.End()
+
+	logger := r.logger.Clone()
+
+	if accountID == "" || ownerID == "" {
+		return database.ErrInvalidIDProvided
+	}
+	tracing.AttachToSpan(span, keys.UserIDKey, ownerID)
+	logger = logger.WithValue(keys.UserIDKey, ownerID)
+	tracing.AttachToSpan(span, keys.AccountIDKey, accountID)
+	logger = logger.WithValue(keys.AccountIDKey, accountID)
+
+	tx, err := r.writeDB.BeginTx(ctx, nil)
+	if err != nil {
+		return observability.PrepareAndLogError(err, logger, span, "beginning transaction")
+	}
+
+	if _, err = r.generatedQuerier.ArchiveAccount(ctx, tx, &generated.ArchiveAccountParams{
+		BelongsToUser: ownerID,
+		ID:            accountID,
+	}); err != nil {
+		r.RollbackTransaction(ctx, tx)
+		return observability.PrepareAndLogError(err, logger, span, "archiving account")
+	}
+
+	if _, err = r.auditLogEntryRepo.CreateAuditLogEntry(ctx, tx, &audit.AuditLogEntryDatabaseCreationInput{
+		BelongsToAccount: &accountID,
+		ID:               identifiers.New(),
+		ResourceType:     resourceTypeAccounts,
+		RelevantID:       accountID,
+		EventType:        audit.AuditLogEventTypeCreated,
+		BelongsToUser:    ownerID,
+	}); err != nil {
+		r.RollbackTransaction(ctx, tx)
+		return observability.PrepareError(err, span, "creating audit log entry")
+	}
+
+	if err = tx.Commit(); err != nil {
+		return observability.PrepareAndLogError(err, logger, span, "committing transaction")
+	}
+
+	return nil
+}

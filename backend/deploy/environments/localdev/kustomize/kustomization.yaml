@@ -1,0 +1,132 @@
+---
+# See: https://kubectl.docs.kubernetes.io/references/kustomize/kustomization/
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+# See: https://kubectl.docs.kubernetes.io/references/kustomize/kustomization/resource/
+resources:
+  - namespace.yaml
+  - ../../../kustomize/components/api_server
+  - ../../../kustomize/components/workers
+  - ../../../kustomize/components/admin_webapp
+  # Uncomment to enable MCP server deployment
+  # - ../../../kustomize/components/mcp_server
+
+# See: https://kubectl.docs.kubernetes.io/references/kustomize/kustomization/patches/
+patches:
+  # API Server - override hostnames for K8s and use local images
+  - path: patches/deployment-k8s-hostnames.yaml
+    target:
+      version: v1
+      kind: Deployment
+      name: no-small-parts-service-api-deployment
+  - path: patches/deployment-local-image-pull.yaml
+    target:
+      version: v1
+      kind: Deployment
+      name: no-small-parts-service-api-deployment
+
+  # Admin Webapp - override hostnames for K8s and use local images
+  - path: patches/deployment-k8s-hostnames.yaml
+    target:
+      version: v1
+      kind: Deployment
+      name: no-small-parts-admin-webapp-deployment
+  - path: patches/deployment-local-image-pull.yaml
+    target:
+      version: v1
+      kind: Deployment
+      name: no-small-parts-admin-webapp-deployment
+
+  # DB Cleaner CronJob
+  - path: patches/cronjob-k8s-hostnames.yaml
+    target:
+      kind: CronJob
+      name: no-small-parts-job-db-cleaner
+  - path: patches/cronjob-local-image-pull.yaml
+    target:
+      kind: CronJob
+      name: no-small-parts-job-db-cleaner
+
+  # Meal Plan Finalizer CronJob
+  - path: patches/cronjob-k8s-hostnames.yaml
+    target:
+      kind: CronJob
+      name: no-small-parts-job-meal-plan-finalizer
+  - path: patches/cronjob-local-image-pull.yaml
+    target:
+      kind: CronJob
+      name: no-small-parts-job-meal-plan-finalizer
+
+  # Meal Plan Grocery List Init CronJob
+  - path: patches/cronjob-k8s-hostnames.yaml
+    target:
+      kind: CronJob
+      name: no-small-parts-job-meal-plan-grocery-list-init
+  - path: patches/cronjob-local-image-pull.yaml
+    target:
+      kind: CronJob
+      name: no-small-parts-job-meal-plan-grocery-list-init
+
+  # Meal Plan Task Creator CronJob
+  - path: patches/cronjob-k8s-hostnames.yaml
+    target:
+      kind: CronJob
+      name: no-small-parts-job-meal-plan-task-creator
+  - path: patches/cronjob-local-image-pull.yaml
+    target:
+      kind: CronJob
+      name: no-small-parts-job-meal-plan-task-creator
+
+  # Search Data Index Scheduler CronJob
+  - path: patches/cronjob-k8s-hostnames.yaml
+    target:
+      kind: CronJob
+      name: no-small-parts-job-search-data-index-scheduler
+  - path: patches/cronjob-local-image-pull.yaml
+    target:
+      kind: CronJob
+      name: no-small-parts-job-search-data-index-scheduler
+
+labels:
+  - pairs:
+      app.kubernetes.io/name: no-small-parts-backend
+      deployed_by: skaffold
+
+# Config files are symlinked from ../config_files/ to avoid duplication
+# K8s-specific hostnames are injected via env var patches above
+configMapGenerator:
+  - name: no-small-parts-service-api-config
+    namespace: localdev
+    files:
+      - config.json=configs/api_service_config.json
+
+  - name: no-small-parts-job-db-cleaner-config
+    namespace: localdev
+    files:
+      - config.json=configs/job_db_cleaner_config.json
+
+  - name: no-small-parts-job-search-data-index-scheduler-config
+    namespace: localdev
+    files:
+      - config.json=configs/job_search_data_index_scheduler_config.json
+
+  - name: no-small-parts-admin-webapp-config
+    namespace: localdev
+    files:
+      - config.json=configs/admin_webapp_config.json
+
+  # Uncomment to enable MCP server deployment
+  # - name: no-small-parts-mcp-server-config
+  #   namespace: localdev
+  #   files:
+  #     - config.json=configs/mcp_server_config.json
+
+generatorOptions:
+  disableNameSuffixHash: true
+  labels:
+    generated_by: skaffold
+    deployed_by: skaffold
+  annotations:
+    generated_by: skaffold
+    deployed_by: skaffold

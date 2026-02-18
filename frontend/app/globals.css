@@ -1,0 +1,304 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap');
+
+:root {
+  --gold: #d4a853;
+  --gold-light: #f0d78c;
+  --gold-dark: #a67c32;
+  --cream: #faf6f0;
+  --charcoal: #1a1a1a;
+  --black: #0a0a0a;
+  --black-light: #141414;
+  --black-lighter: #1e1e1e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: var(--black);
+  color: var(--cream);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Dark stage background */
+.stage-bg {
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(212, 168, 83, 0.03) 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 80%, rgba(212, 168, 83, 0.02) 0%, transparent 40%),
+    radial-gradient(ellipse at 80% 80%, rgba(212, 168, 83, 0.02) 0%, transparent 40%),
+    linear-gradient(180deg, #0a0a0a 0%, #0d0d0d 50%, #0a0a0a 100%);
+  position: relative;
+}
+
+.stage-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.02;
+  pointer-events: none;
+}
+
+/* Spotlight effect */
+.spotlight {
+  position: relative;
+}
+
+.spotlight::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+  height: 500px;
+  background: radial-gradient(ellipse at center top, rgba(212, 168, 83, 0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* Golden text effect */
+.text-gold-gradient {
+  background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 50%, var(--gold-dark) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Elegant card */
+.card-elegant {
+  background: linear-gradient(145deg, rgba(30, 30, 30, 0.9) 0%, rgba(20, 20, 20, 0.95) 100%);
+  border: 1px solid rgba(212, 168, 83, 0.15);
+  box-shadow:
+    0 4px 30px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03),
+    0 0 60px rgba(212, 168, 83, 0.03);
+  backdrop-filter: blur(10px);
+}
+
+/* Input styling */
+.input-elegant {
+  background: rgba(10, 10, 10, 0.8);
+  border: 1px solid rgba(212, 168, 83, 0.15);
+  transition: all 0.3s ease;
+}
+
+.input-elegant:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 20px rgba(212, 168, 83, 0.1);
+  outline: none;
+}
+
+.input-elegant::placeholder {
+  color: rgba(250, 246, 240, 0.25);
+}
+
+/* Button styling */
+.btn-primary {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+  color: var(--black);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.btn-primary:hover::before {
+  opacity: 1;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(212, 168, 83, 0.25);
+}
+
+.btn-primary:disabled {
+  background: rgba(212, 168, 83, 0.2);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.btn-primary:disabled::before {
+  display: none;
+}
+
+.btn-primary span {
+  position: relative;
+  z-index: 1;
+}
+
+/* Secondary button */
+.btn-secondary {
+  background: transparent;
+  border: 1px solid rgba(212, 168, 83, 0.3);
+  color: var(--gold);
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: rgba(212, 168, 83, 0.1);
+  border-color: var(--gold);
+}
+
+/* Decorative elements */
+.decorative-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--gold) 50%, transparent 100%);
+  opacity: 0.2;
+}
+
+/* Stars animation */
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.2);
+  }
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: var(--gold-light);
+  border-radius: 50%;
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+/* Fade in animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.6s ease-out forwards;
+}
+
+.animate-delay-1 {
+  animation-delay: 0.1s;
+  opacity: 0;
+}
+.animate-delay-2 {
+  animation-delay: 0.2s;
+  opacity: 0;
+}
+.animate-delay-3 {
+  animation-delay: 0.3s;
+  opacity: 0;
+}
+.animate-delay-4 {
+  animation-delay: 0.4s;
+  opacity: 0;
+}
+
+/* Subtle side gradients */
+.curtain-left,
+.curtain-right {
+  position: fixed;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.curtain-left {
+  left: 0;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, transparent 100%);
+}
+
+.curtain-right {
+  right: 0;
+  background: linear-gradient(-90deg, rgba(0, 0, 0, 0.5) 0%, transparent 100%);
+}
+
+/* Scroll styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gold-dark);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold);
+}
+
+/* Video grid styling */
+.video-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.video-tile {
+  aspect-ratio: 16/9;
+  background: linear-gradient(135deg, var(--black-lighter) 0%, var(--black-light) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+.video-tile.speaking {
+  border-color: var(--gold);
+  box-shadow: 0 0 40px rgba(212, 168, 83, 0.2);
+}
+
+/* Countdown styling */
+@keyframes countPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+.countdown-number {
+  animation: countPulse 1s ease-in-out infinite;
+}
+
+/* Toast/notification */
+.toast {
+  background: linear-gradient(135deg, var(--black-lighter) 0%, var(--black-light) 100%);
+  border: 1px solid rgba(212, 168, 83, 0.2);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}

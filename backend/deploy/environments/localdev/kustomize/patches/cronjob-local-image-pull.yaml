@@ -1,0 +1,4 @@
+# For local development, use local images instead of pulling from registry
+- op: replace
+  path: "/spec/jobTemplate/spec/template/spec/containers/0/imagePullPolicy"
+  value: "IfNotPresent"

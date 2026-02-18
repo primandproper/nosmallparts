@@ -1,0 +1,220 @@
+{
+	"queues": {
+		"dataChangesTopicName": "data_changes",
+		"outboundEmailsTopicName": "outbound_emails",
+		"searchIndexRequestsTopicName": "search_index_requests",
+		"userDataAggregationTopicName": "user_data_aggregation_requests",
+		"webhookExecutionRequestsTopicName": "webhook_execution_requests"
+	},
+	"liveKit": {},
+	"appleAppSiteAssociation": {},
+	"routing": {
+		"chiConfig": {
+			"serviceName": "no_small_parts",
+			"enableCORSForLocalhost": true
+		},
+		"provider": "chi"
+	},
+	"encoding": {
+		"contentType": "application/json"
+	},
+	"events": {
+		"consumers": {
+			"provider": "redis",
+			"sqs": {
+				"queueAddress": ""
+			},
+			"pubSub": {
+				"projectID": ""
+			},
+			"redis": {
+				"username": "",
+				"queueAddress": [
+					"worker_queue:6379"
+				]
+			}
+		},
+		"publishers": {
+			"provider": "redis",
+			"sqs": {
+				"queueAddress": ""
+			},
+			"pubSub": {
+				"projectID": ""
+			},
+			"redis": {
+				"username": "",
+				"queueAddress": [
+					"worker_queue:6379"
+				]
+			}
+		}
+	},
+	"observability": {
+		"logging": {
+			"serviceName": "no_small_parts",
+			"level": "info",
+			"provider": "slog"
+		},
+		"metrics": {
+			"serviceName": ""
+		},
+		"tracing": {
+			"otelgrpc": {
+				"collector_endpoint": "http://tracing-server:14268/api/traces"
+			},
+			"service_name": "no_small_parts",
+			"provider": "otelgrpc",
+			"spanCollectionProbability": 1
+		}
+	},
+	"grpc": {
+		"port": 8001
+	},
+	"meta": {
+		"runMode": "testing",
+		"debug": false
+	},
+	"analytics": {
+		"segment": null,
+		"posthog": null,
+		"rudderstack": null,
+		"provider": "",
+		"circuitBreaker": {
+			"name": "feature_flagger",
+			"circuitBreakerErrorPercentage": 0.5,
+			"circuitBreakerMinimumOccurrenceThreshold": 100
+		}
+	},
+	"email": {
+		"sendgrid": null,
+		"mailgun": null,
+		"mailjet": null,
+		"provider": "",
+		"circuitBreakerConfig": {
+			"name": "",
+			"circuitBreakerErrorPercentage": 0,
+			"circuitBreakerMinimumOccurrenceThreshold": 0
+		}
+	},
+	"search": {
+		"algolia": null,
+		"elasticsearch": null,
+		"provider": "",
+		"circuitBreakerConfig": {
+			"name": "feature_flagger",
+			"circuitBreakerErrorPercentage": 0.5,
+			"circuitBreakerMinimumOccurrenceThreshold": 100
+		}
+	},
+	"featureFlags": {
+		"launchDarkly": null,
+		"posthog": null,
+		"provider": "",
+		"circuitBreakingConfig": {
+			"name": "feature_flagger",
+			"circuitBreakerErrorPercentage": 0.5,
+			"circuitBreakerMinimumOccurrenceThreshold": 100
+		}
+	},
+	"http": {
+		"startupDeadline": 60000000000,
+		"port": 8000,
+		"debug": false
+	},
+	"auth": {
+		"sso": {
+			"google": {}
+		},
+		"tokens": {
+			"provider": "",
+			"audience": "",
+			"base64EncodedSigningKey": "",
+			"maxAccessTokenLifetime": 0,
+			"maxRefreshTokenLifetime": 0
+		}
+	},
+	"database": {
+		"oauth2TokenEncryptionKey": "HEREISA32CHARSECRETWHICHISMADEUP",
+		"provider": "postgres",
+		"readConnection": {
+			"username": "dbuser",
+			"password": "hunter2",
+			"database": "no-small-parts",
+			"hostname": "pgdatabase",
+			"port": 5432,
+			"disableSSL": true
+		},
+		"writeConnection": {
+			"username": "dbuser",
+			"password": "hunter2",
+			"database": "no-small-parts",
+			"hostname": "pgdatabase",
+			"port": 5432,
+			"disableSSL": true
+		},
+		"maxPingAttempts": 50,
+		"pingWaitPeriod": 1500000000,
+		"debug": true,
+		"logQueries": true,
+		"runMigrations": true
+	},
+	"services": {
+		"users": {
+			"publicMediaURLPrefix": "",
+			"uploads": {
+				"storageConfig": {
+					"bucketName": "avatars",
+					"provider": "memory"
+				},
+				"debug": false
+			}
+		},
+		"dataPrivacy": {
+			"uploads": {
+				"storageConfig": {
+					"filesystem": {
+						"rootDirectory": "/tmp"
+					},
+					"bucketName": "userdata",
+					"provider": "filesystem"
+				},
+				"debug": false
+			}
+		},
+		"uploadedMedia": {
+			"uploads": {
+				"storageConfig": {
+					"bucketName": "avatars",
+					"provider": "memory"
+				},
+				"debug": false
+			}
+		},
+		"auth": {
+			"tokens": {
+				"provider": "paseto",
+				"audience": "https://api.nosmall.parts",
+				"base64EncodedSigningKey": "SEVSRUlTQTMyQ0hBUlNFQ1JFVFdISUNISVNNQURFVVA=",
+				"maxAccessTokenLifetime": 0,
+				"maxRefreshTokenLifetime": 0
+			},
+			"sso": {
+				"google": {}
+			},
+			"oauth2": {
+				"domain": "http://localhost:9000",
+				"accessTokenLifespan": 3600000000000,
+				"refreshTokenLifespan": 3600000000000,
+				"debug": false
+			},
+			"jwtLifetime": 300000000000,
+			"enableUserSignup": true,
+			"minimumUsernameLength": 3,
+			"minimumPasswordLength": 8
+		},
+		"oauth2Clients": {
+			"creationEnabled": false
+		}
+	}
+}

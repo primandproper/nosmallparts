@@ -1,2 +1,2 @@
-# nosmallparts
-a website for friends
+# no small parts
+funny website

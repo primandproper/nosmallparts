@@ -1,0 +1,19 @@
+---
+apiVersion: skaffold/v4beta11
+kind: Config
+
+requires:
+  - configs: ["no-small-parts-infra"]
+    path: ./infra/skaffold.yaml
+    activeProfiles:
+      - name: prod
+
+  - configs: ["no-small-parts-backend"]
+    path: ./backend/skaffold.yaml
+    activeProfiles:
+      - name: prod
+
+  - configs: ["no-small-parts-frontend"]
+    path: ./frontend/skaffold.yaml
+    activeProfiles:
+      - name: prod

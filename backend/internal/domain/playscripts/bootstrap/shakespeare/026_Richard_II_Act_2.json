@@ -1,0 +1,1142 @@
+{
+  "title": "Richard II (Act 2)",
+  "description": "Folger Shakespeare Library edition",
+  "author": "William Shakespeare",
+  "castMembers": [
+    {
+      "id": "d68m11kn9qd8d2h79d00",
+      "name": "Narrator",
+      "sortOrder": 0
+    },
+    {
+      "id": "d68m11kn9qd8d2h79d0g",
+      "name": "John of Gaunt",
+      "description": "Duke of Lancaster",
+      "sortOrder": 1
+    },
+    {
+      "id": "d68m11kn9qd8d2h79d10",
+      "name": "Duke of York",
+      "sortOrder": 2
+    },
+    {
+      "id": "d68m11kn9qd8d2h79d1g",
+      "name": "Queen",
+      "sortOrder": 3
+    },
+    {
+      "id": "d68m11kn9qd8d2h79d20",
+      "name": "King Richard II",
+      "sortOrder": 4
+    },
+    {
+      "id": "d68m11kn9qd8d2h79d2g",
+      "name": "Earl of Northumberland",
+      "sortOrder": 5
+    },
+    {
+      "id": "d68m11kn9qd8d2h79d30",
+      "name": "Lord Ross",
+      "sortOrder": 6
+    },
+    {
+      "id": "d68m11kn9qd8d2h79d3g",
+      "name": "Lord Willoughby",
+      "sortOrder": 7
+    },
+    {
+      "id": "d68m11kn9qd8d2h79d40",
+      "name": "Bushy",
+      "sortOrder": 8
+    },
+    {
+      "id": "d68m11kn9qd8d2h79d4g",
+      "name": "Green",
+      "sortOrder": 9
+    },
+    {
+      "id": "d68m11kn9qd8d2h79d50",
+      "name": "Servingman",
+      "sortOrder": 10
+    },
+    {
+      "id": "d68m11kn9qd8d2h79d5g",
+      "name": "Bagot",
+      "sortOrder": 11
+    },
+    {
+      "id": "d68m11kn9qd8d2h79d60",
+      "name": "Henry Bolingbroke",
+      "description": "Duke of Hereford, son to John of Gaunt, and later King Henry IV",
+      "sortOrder": 12
+    },
+    {
+      "id": "d68m11kn9qd8d2h79d6g",
+      "name": "Harry Percy",
+      "description": "son of Northumberland, later known as “Hotspur”",
+      "sortOrder": 13
+    },
+    {
+      "id": "d68m11kn9qd8d2h79d70",
+      "name": "Lord Berkeley",
+      "sortOrder": 14
+    },
+    {
+      "id": "d68m11kn9qd8d2h79d7g",
+      "name": "Welsh Captain",
+      "sortOrder": 15
+    },
+    {
+      "id": "d68m11kn9qd8d2h79d80",
+      "name": "Earl of Salisbury",
+      "sortOrder": 16
+    }
+  ],
+  "lines": [
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d00",
+      "lineText": "Enter John of Gaunt sick , with the Duke of York , and Attendants .",
+      "scrollMode": "auto",
+      "lineIndex": 0
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d0g",
+      "lineText": "Will the King come , that I may breathe my last In wholesome counsel to his unstaid youth ?",
+      "scrollMode": "auto",
+      "lineIndex": 1
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d10",
+      "lineText": "Vex not yourself , nor strive not with your breath , For all in vain comes counsel to his ear .",
+      "scrollMode": "auto",
+      "lineIndex": 2
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d0g",
+      "lineText": "O , but they say the tongues of dying men Enforce attention like deep harmony . Where words are scarce , they are seldom spent in vain , For they breathe truth that breathe their words in pain . He that no more must say is listened more Than they whom youth and ease have taught to gloze . More are men’s ends marked than their lives before . The setting sun , and music at the close , As the last taste of sweets , is sweetest last , Writ in remembrance more than things long past . Though Richard my life’s counsel would not hear , My death’s sad tale may yet undeaf his ear .",
+      "scrollMode": "auto",
+      "lineIndex": 3
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d10",
+      "lineText": "No , it is stopped with other flattering sounds , As praises , of whose taste the wise are fond ; Lascivious meters , to whose venom sound The open ear of youth doth always listen ; Report of fashions in proud Italy , Whose manners still our tardy-apish nation Limps after in base imitation . Where doth the world thrust forth a vanity — So it be new , there’s no respect how vile — That is not quickly buzzed into his ears ? Then all too late comes counsel to be heard Where will doth mutiny with wit’s regard . Direct not him whose way himself will choose . ’Tis breath thou lack’st , and that breath wilt thou lose .",
+      "scrollMode": "auto",
+      "lineIndex": 4
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d0g",
+      "lineText": "Methinks I am a prophet new inspired , And thus expiring do foretell of him : His rash fierce blaze of riot cannot last , For violent fires soon burn out themselves ; Small showers last long , but sudden storms are short ; He tires betimes that spurs too fast betimes ; With eager feeding food doth choke the feeder ; Light vanity , insatiate cormorant , Consuming means , soon preys upon itself . This royal throne of kings , this sceptered isle , This earth of majesty , this seat of Mars , This other Eden , demi-paradise , This fortress built by Nature for herself Against infection and the hand of war , This happy breed of men , this little world , This precious stone set in the silver sea , Which serves it in the office of a wall , Or as a moat defensive to a house , ACT 2. SC. 1 Against the envy of less happier lands , This blessèd plot , this earth , this realm , this England , This nurse , this teeming womb of royal kings , Feared by their breed and famous by their birth , Renownèd for their deeds as far from home For Christian service and true chivalry As is the sepulcher in stubborn Jewry Of the world’s ransom , blessèd Mary’s son , This land of such dear souls , this dear dear land , Dear for her reputation through the world , Is now leased out — I die pronouncing it — Like to a tenement or pelting farm . England , bound in with the triumphant sea , Whose rocky shore beats back the envious siege Of wat’ry Neptune , is now bound in with shame , With inky blots and rotten parchment bonds . That England that was wont to conquer others Hath made a shameful conquest of itself . Ah , would the scandal vanish with my life , How happy then were my ensuing death !",
+      "scrollMode": "auto",
+      "lineIndex": 5
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d00",
+      "lineText": "Enter King and Queen , Aumerle , Bushy , Green , Bagot , Ross , Willoughby , etc.",
+      "scrollMode": "auto",
+      "lineIndex": 6
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d10",
+      "lineText": "The King is come . Deal mildly with his youth , For young hot colts being reined do rage the more .",
+      "scrollMode": "auto",
+      "lineIndex": 7
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d00",
+      "lineText": ", to Gaunt",
+      "scrollMode": "auto",
+      "lineIndex": 8
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d1g",
+      "lineText": "How fares our noble uncle Lancaster ?",
+      "scrollMode": "auto",
+      "lineIndex": 9
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d00",
+      "lineText": ", to Gaunt",
+      "scrollMode": "auto",
+      "lineIndex": 10
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d20",
+      "lineText": "What comfort , man ? How is ’t with agèd Gaunt ?",
+      "scrollMode": "auto",
+      "lineIndex": 11
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d0g",
+      "lineText": "O , how that name befits my composition ! Old Gaunt indeed , and gaunt in being old . Within me grief hath kept a tedious fast , And who abstains from meat that is not gaunt ? ACT 2. SC. 1 For sleeping England long time have I watched ; Watching breeds leanness , leanness is all gaunt . The pleasure that some fathers feed upon Is my strict fast — I mean my children’s looks — And , therein fasting , hast thou made me gaunt . Gaunt am I for the grave , gaunt as a grave , Whose hollow womb inherits naught but bones .",
+      "scrollMode": "auto",
+      "lineIndex": 12
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d20",
+      "lineText": "Can sick men play so nicely with their names ?",
+      "scrollMode": "auto",
+      "lineIndex": 13
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d0g",
+      "lineText": "No , misery makes sport to mock itself . Since thou dost seek to kill my name in me , I mock my name , great king , to flatter thee .",
+      "scrollMode": "auto",
+      "lineIndex": 14
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d20",
+      "lineText": "Should dying men flatter with those that live ?",
+      "scrollMode": "auto",
+      "lineIndex": 15
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d0g",
+      "lineText": "No , no , men living flatter those that die .",
+      "scrollMode": "auto",
+      "lineIndex": 16
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d20",
+      "lineText": "Thou , now a-dying , sayest thou flatterest me .",
+      "scrollMode": "auto",
+      "lineIndex": 17
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d0g",
+      "lineText": "O , no , thou diest , though I the sicker be .",
+      "scrollMode": "auto",
+      "lineIndex": 18
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d20",
+      "lineText": "I am in health , I breathe , and see thee ill .",
+      "scrollMode": "auto",
+      "lineIndex": 19
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d0g",
+      "lineText": "Now He that made me knows I see thee ill , Ill in myself to see , and in thee , seeing ill . Thy deathbed is no lesser than thy land , Wherein thou liest in reputation sick ; And thou , too careless-patient as thou art , Commit’st thy anointed body to the cure Of those physicians that first wounded thee . A thousand flatterers sit within thy crown , Whose compass is no bigger than thy head , And yet encagèd in so small a verge , The waste is no whit lesser than thy land . ACT 2. SC. 1 O , had thy grandsire with a prophet’s eye Seen how his son’s son should destroy his sons , From forth thy reach he would have laid thy shame , Deposing thee before thou wert possessed , Which art possessed now to depose thyself . Why , cousin , wert thou regent of the world , It were a shame to let this land by lease ; But , for thy world enjoying but this land , Is it not more than shame to shame it so ? Landlord of England art thou now , not king . Thy state of law is bondslave to the law , And thou —",
+      "scrollMode": "auto",
+      "lineIndex": 20
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d20",
+      "lineText": "A lunatic lean-witted fool , Presuming on an ague’s privilege , Darest with thy frozen admonition Make pale our cheek , chasing the royal blood With fury from his native residence . Now , by my seat’s right royal majesty , Wert thou not brother to great Edward’s son , This tongue that runs so roundly in thy head Should run thy head from thy unreverent shoulders .",
+      "scrollMode": "auto",
+      "lineIndex": 21
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d0g",
+      "lineText": "O , spare me not , my brother Edward’s son , For that I was his father Edward’s son ! That blood already , like the pelican , Hast thou tapped out and drunkenly caroused . My brother Gloucester — plain , well-meaning soul , Whom fair befall in heaven ’mongst happy souls — May be a precedent and witness good That thou respect’st not spilling Edward’s blood . Join with the present sickness that I have , And thy unkindness be like crooked age To crop at once a too-long withered flower . Live in thy shame , but die not shame with thee ! These words hereafter thy tormentors be ! — ACT 2. SC. 1 Convey me to my bed , then to my grave . Love they to live that love and honor have .",
+      "scrollMode": "auto",
+      "lineIndex": 22
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d00",
+      "lineText": "He exits , carried off by Attendants .",
+      "scrollMode": "auto",
+      "lineIndex": 23
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d20",
+      "lineText": "And let them die that age and sullens have , For both hast thou , and both become the grave .",
+      "scrollMode": "auto",
+      "lineIndex": 24
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d10",
+      "lineText": "I do beseech your Majesty , impute his words To wayward sickliness and age in him . He loves you , on my life , and holds you dear As Harry , Duke of Hereford , were he here .",
+      "scrollMode": "auto",
+      "lineIndex": 25
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d20",
+      "lineText": "Right , you say true : as Hereford’s love , so his ; As theirs , so mine ; and all be as it is .",
+      "scrollMode": "auto",
+      "lineIndex": 26
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d00",
+      "lineText": "Enter Northumberland .",
+      "scrollMode": "auto",
+      "lineIndex": 27
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d2g",
+      "lineText": "My liege , old Gaunt commends him to your Majesty .",
+      "scrollMode": "auto",
+      "lineIndex": 28
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d20",
+      "lineText": "What says he ?",
+      "scrollMode": "auto",
+      "lineIndex": 29
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d2g",
+      "lineText": "Nay , nothing ; all is said . His tongue is now a stringless instrument ; Words , life , and all , old Lancaster hath spent .",
+      "scrollMode": "auto",
+      "lineIndex": 30
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d10",
+      "lineText": "Be York the next that must be bankrupt so ! Though death be poor , it ends a mortal woe .",
+      "scrollMode": "auto",
+      "lineIndex": 31
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d20",
+      "lineText": "The ripest fruit first falls , and so doth he ; His time is spent , our pilgrimage must be . So much for that . Now for our Irish wars : We must supplant those rough rugheaded kern , Which live like venom where no venom else But only they have privilege to live . And , for these great affairs do ask some charge , Towards our assistance we do seize to us ACT 2. SC. 1 The plate , coin , revenues , and movables Whereof our uncle Gaunt did stand possessed .",
+      "scrollMode": "auto",
+      "lineIndex": 32
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d10",
+      "lineText": "How long shall I be patient ? Ah , how long Shall tender duty make me suffer wrong ? Not Gloucester’s death , nor Hereford’s banishment , Nor Gaunt’s rebukes , nor England’s private wrongs , Nor the prevention of poor Bolingbroke About his marriage , nor my own disgrace , Have ever made me sour my patient cheek Or bend one wrinkle on my sovereign’s face . I am the last of noble Edward’s sons , Of whom thy father , Prince of Wales , was first . In war was never lion raged more fierce , In peace was never gentle lamb more mild , Than was that young and princely gentleman . His face thou hast , for even so looked he , Accomplished with the number of thy hours ; But when he frowned , it was against the French And not against his friends . His noble hand Did win what he did spend , and spent not that Which his triumphant father’s hand had won . His hands were guilty of no kindred blood , But bloody with the enemies of his kin . O , Richard ! York is too far gone with grief , Or else he never would compare between .",
+      "scrollMode": "auto",
+      "lineIndex": 33
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d20",
+      "lineText": "Why , uncle , what’s the matter ?",
+      "scrollMode": "auto",
+      "lineIndex": 34
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d10",
+      "lineText": "O , my liege , Pardon me if you please . If not , I , pleased Not to be pardoned , am content withal . Seek you to seize and gripe into your hands The royalties and rights of banished Hereford ? Is not Gaunt dead ? And doth not Hereford live ? Was not Gaunt just ? And is not Harry true ? Did not the one deserve to have an heir ? ACT 2. SC. 1 Is not his heir a well-deserving son ? Take Hereford’s rights away , and take from time His charters and his customary rights ; Let not tomorrow then ensue today ; Be not thyself ; for how art thou a king But by fair sequence and succession ? Now afore God — God forbid I say true ! — If you do wrongfully seize Hereford’s rights , Call in the letters patents that he hath By his attorneys general to sue His livery , and deny his offered homage , You pluck a thousand dangers on your head , You lose a thousand well-disposèd hearts , And prick my tender patience to those thoughts Which honor and allegiance cannot think .",
+      "scrollMode": "auto",
+      "lineIndex": 35
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d20",
+      "lineText": "Think what you will , we seize into our hands His plate , his goods , his money , and his lands .",
+      "scrollMode": "auto",
+      "lineIndex": 36
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d10",
+      "lineText": "I’ll not be by the while . My liege , farewell . What will ensue hereof there’s none can tell ; But by bad courses may be understood That their events can never fall out good .",
+      "scrollMode": "auto",
+      "lineIndex": 37
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d00",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 38
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d20",
+      "lineText": "Go , Bushy , to the Earl of Wiltshire straight . Bid him repair to us to Ely House To see this business . Tomorrow next We will for Ireland , and ’tis time , I trow . And we create , in absence of ourself , Our uncle York Lord Governor of England , For he is just and always loved us well . — Come on , our queen . Tomorrow must we part . Be merry , for our time of stay is short .",
+      "scrollMode": "auto",
+      "lineIndex": 39
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d00",
+      "lineText": "King and Queen exit with others ; Northumberland , Willoughby , and Ross remain .",
+      "scrollMode": "auto",
+      "lineIndex": 40
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d2g",
+      "lineText": "Well , lords , the Duke of Lancaster is dead .",
+      "scrollMode": "auto",
+      "lineIndex": 41
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d30",
+      "lineText": "And living too , for now his son is duke .",
+      "scrollMode": "auto",
+      "lineIndex": 42
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d3g",
+      "lineText": "Barely in title , not in revenues .",
+      "scrollMode": "auto",
+      "lineIndex": 43
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d2g",
+      "lineText": "Richly in both , if justice had her right .",
+      "scrollMode": "auto",
+      "lineIndex": 44
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d30",
+      "lineText": "My heart is great , but it must break with silence Ere ’t be disburdened with a liberal tongue .",
+      "scrollMode": "auto",
+      "lineIndex": 45
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d2g",
+      "lineText": "Nay , speak thy mind , and let him ne’er speak more That speaks thy words again to do thee harm !",
+      "scrollMode": "auto",
+      "lineIndex": 46
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d00",
+      "lineText": ", to Ross",
+      "scrollMode": "auto",
+      "lineIndex": 47
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d3g",
+      "lineText": "Tends that thou wouldst speak to the Duke of Hereford ? If it be so , out with it boldly , man . Quick is mine ear to hear of good towards him .",
+      "scrollMode": "auto",
+      "lineIndex": 48
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d30",
+      "lineText": "No good at all that I can do for him , Unless you call it good to pity him , Bereft and gelded of his patrimony .",
+      "scrollMode": "auto",
+      "lineIndex": 49
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d2g",
+      "lineText": "Now , afore God , ’tis shame such wrongs are borne In him , a royal prince , and many more Of noble blood in this declining land . The King is not himself , but basely led By flatterers ; and what they will inform Merely in hate ’gainst any of us all , That will the King severely prosecute ’Gainst us , our lives , our children , and our heirs .",
+      "scrollMode": "auto",
+      "lineIndex": 50
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d30",
+      "lineText": "The commons hath he pilled with grievous taxes , And quite lost their hearts . The nobles hath he fined For ancient quarrels , and quite lost their hearts .",
+      "scrollMode": "auto",
+      "lineIndex": 51
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d3g",
+      "lineText": "And daily new exactions are devised , As blanks , benevolences , and I wot not what . But what i’ God’s name doth become of this ?",
+      "scrollMode": "auto",
+      "lineIndex": 52
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d2g",
+      "lineText": "Wars hath not wasted it , for warred he hath not , But basely yielded upon compromise That which his noble ancestors achieved with blows . More hath he spent in peace than they in wars .",
+      "scrollMode": "auto",
+      "lineIndex": 53
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d30",
+      "lineText": "The Earl of Wiltshire hath the realm in farm .",
+      "scrollMode": "auto",
+      "lineIndex": 54
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d3g",
+      "lineText": "The King grown bankrupt like a broken man .",
+      "scrollMode": "auto",
+      "lineIndex": 55
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d2g",
+      "lineText": "Reproach and dissolution hangeth over him .",
+      "scrollMode": "auto",
+      "lineIndex": 56
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d30",
+      "lineText": "He hath not money for these Irish wars , His burdenous taxations notwithstanding , But by the robbing of the banished duke .",
+      "scrollMode": "auto",
+      "lineIndex": 57
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d2g",
+      "lineText": "His noble kinsman . Most degenerate king ! But , lords , we hear this fearful tempest sing , Yet seek no shelter to avoid the storm ; We see the wind sit sore upon our sails , And yet we strike not , but securely perish .",
+      "scrollMode": "auto",
+      "lineIndex": 58
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d30",
+      "lineText": "We see the very wrack that we must suffer , And unavoided is the danger now For suffering so the causes of our wrack .",
+      "scrollMode": "auto",
+      "lineIndex": 59
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d2g",
+      "lineText": "Not so . Even through the hollow eyes of death I spy life peering ; but I dare not say How near the tidings of our comfort is .",
+      "scrollMode": "auto",
+      "lineIndex": 60
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d3g",
+      "lineText": "Nay , let us share thy thoughts , as thou dost ours .",
+      "scrollMode": "auto",
+      "lineIndex": 61
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d30",
+      "lineText": "Be confident to speak , Northumberland . We three are but thyself , and speaking so Thy words are but as thoughts . Therefore be bold .",
+      "scrollMode": "auto",
+      "lineIndex": 62
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d2g",
+      "lineText": "Then thus : I have from Le Port Blanc , A bay in Brittany , received intelligence That Harry Duke of Hereford , Rainold Lord Cobham , That late broke from the Duke of Exeter , His brother , archbishop late of Canterbury , Sir Thomas Erpingham , Sir John Ramston , Sir John Norbery , Sir Robert Waterton , and Francis Coint — All these well furnished by the Duke of Brittany With eight tall ships , three thousand men of war , Are making hither with all due expedience And shortly mean to touch our northern shore . Perhaps they had ere this , but that they stay The first departing of the King for Ireland . If then we shall shake off our slavish yoke , Imp out our drooping country’s broken wing , Redeem from broking pawn the blemished crown , Wipe off the dust that hides our scepter’s gilt , And make high majesty look like itself , Away with me in post to Ravenspurgh . But if you faint , as fearing to do so , Stay and be secret , and myself will go .",
+      "scrollMode": "auto",
+      "lineIndex": 63
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d30",
+      "lineText": "To horse , to horse ! Urge doubts to them that fear .",
+      "scrollMode": "auto",
+      "lineIndex": 64
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d3g",
+      "lineText": "Hold out my horse , and I will first be there .",
+      "scrollMode": "auto",
+      "lineIndex": 65
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d00",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 66
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d00",
+      "lineText": "Enter the Queen , Bushy , and Bagot .",
+      "scrollMode": "auto",
+      "lineIndex": 67
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d40",
+      "lineText": "Madam , your Majesty is too much sad . You promised , when you parted with the King , To lay aside life-harming heaviness And entertain a cheerful disposition .",
+      "scrollMode": "auto",
+      "lineIndex": 68
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d1g",
+      "lineText": "To please the King I did ; to please myself I cannot do it . Yet I know no cause Why I should welcome such a guest as grief , Save bidding farewell to so sweet a guest As my sweet Richard . Yet again methinks Some unborn sorrow ripe in Fortune’s womb Is coming towards me , and my inward soul With nothing trembles . At some thing it grieves More than with parting from my lord the King .",
+      "scrollMode": "auto",
+      "lineIndex": 69
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d40",
+      "lineText": "Each substance of a grief hath twenty shadows Which shows like grief itself but is not so ; For sorrow’s eyes , glazed with blinding tears , Divides one thing entire to many objects , Like perspectives , which rightly gazed upon Show nothing but confusion , eyed awry Distinguish form . So your sweet Majesty , Looking awry upon your lord’s departure , Find shapes of grief more than himself to wail , Which , looked on as it is , is naught but shadows Of what it is not . Then , thrice-gracious queen , More than your lord’s departure weep not . More is not seen , Or if it be , ’tis with false sorrow’s eye , Which for things true weeps things imaginary .",
+      "scrollMode": "auto",
+      "lineIndex": 70
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d1g",
+      "lineText": "It may be so , but yet my inward soul Persuades me it is otherwise . Howe’er it be , ACT 2. SC. 2 I cannot but be sad — so heavy sad As thought , on thinking on no thought I think , Makes me with heavy nothing faint and shrink .",
+      "scrollMode": "auto",
+      "lineIndex": 71
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d40",
+      "lineText": "’Tis nothing but conceit , my gracious lady .",
+      "scrollMode": "auto",
+      "lineIndex": 72
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d1g",
+      "lineText": "’Tis nothing less . Conceit is still derived From some forefather grief . Mine is not so , For nothing hath begot my something grief — Or something hath the nothing that I grieve . ’Tis in reversion that I do possess , But what it is that is not yet known what , I cannot name . ’Tis nameless woe , I wot .",
+      "scrollMode": "auto",
+      "lineIndex": 73
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d00",
+      "lineText": "Enter Green .",
+      "scrollMode": "auto",
+      "lineIndex": 74
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d4g",
+      "lineText": "God save your Majesty ! — And well met , gentlemen . I hope the King is not yet shipped for Ireland .",
+      "scrollMode": "auto",
+      "lineIndex": 75
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d1g",
+      "lineText": "Why hopest thou so ? ’Tis better hope he is , For his designs crave haste , his haste good hope . Then wherefore dost thou hope he is not shipped ?",
+      "scrollMode": "auto",
+      "lineIndex": 76
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d4g",
+      "lineText": "That he , our hope , might have retired his power And driven into despair an enemy’s hope , Who strongly hath set footing in this land . The banished Bolingbroke repeals himself And with uplifted arms is safe arrived At Ravenspurgh .",
+      "scrollMode": "auto",
+      "lineIndex": 77
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d1g",
+      "lineText": "Now God in heaven forbid !",
+      "scrollMode": "auto",
+      "lineIndex": 78
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d4g",
+      "lineText": "Ah , madam , ’tis too true . And that is worse , The Lord Northumberland , his son young Harry Percy , The Lords of Ross , Beaumont , and Willoughby , With all their powerful friends , are fled to him .",
+      "scrollMode": "auto",
+      "lineIndex": 79
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d40",
+      "lineText": "Why have you not proclaimed Northumberland And all the rest revolted faction traitors ?",
+      "scrollMode": "auto",
+      "lineIndex": 80
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d4g",
+      "lineText": "We have ; whereupon the Earl of Worcester Hath broken his staff , resigned his stewardship , And all the Household servants fled with him To Bolingbroke .",
+      "scrollMode": "auto",
+      "lineIndex": 81
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d1g",
+      "lineText": "So , Green , thou art the midwife to my woe , And Bolingbroke my sorrow’s dismal heir . Now hath my soul brought forth her prodigy , And I , a gasping new-delivered mother , Have woe to woe , sorrow to sorrow joined .",
+      "scrollMode": "auto",
+      "lineIndex": 82
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d40",
+      "lineText": "Despair not , madam .",
+      "scrollMode": "auto",
+      "lineIndex": 83
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d1g",
+      "lineText": "Who shall hinder me ? I will despair , and be at enmity With cozening hope . He is a flatterer , A parasite , a keeper-back of death , Who gently would dissolve the bands of life Which false hope lingers in extremity .",
+      "scrollMode": "auto",
+      "lineIndex": 84
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d00",
+      "lineText": "Enter York .",
+      "scrollMode": "auto",
+      "lineIndex": 85
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d4g",
+      "lineText": "Here comes the Duke of York .",
+      "scrollMode": "auto",
+      "lineIndex": 86
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d1g",
+      "lineText": "With signs of war about his agèd neck . O , full of careful business are his looks ! — Uncle , for God’s sake speak comfortable words .",
+      "scrollMode": "auto",
+      "lineIndex": 87
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d10",
+      "lineText": "Should I do so , I should belie my thoughts . Comfort’s in heaven , and we are on the Earth earth , Where nothing lives but crosses , cares , and grief . Your husband , he is gone to save far off Whilst others come to make him lose at home . Here am I left to underprop his land , ACT 2. SC. 2 Who , weak with age , cannot support myself . Now comes the sick hour that his surfeit made ; Now shall he try his friends that flattered him .",
+      "scrollMode": "auto",
+      "lineIndex": 88
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d00",
+      "lineText": "Enter a Servingman .",
+      "scrollMode": "auto",
+      "lineIndex": 89
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d50",
+      "lineText": "My lord , your son was gone before I came .",
+      "scrollMode": "auto",
+      "lineIndex": 90
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d10",
+      "lineText": "He was ? Why , so go all which way it will . The nobles they are fled ; , the commons they are cold , And will , I fear , revolt on Hereford’s side . Sirrah , get thee to Plashy , to my sister Gloucester ; Bid her send me presently a thousand pound . Hold , take my ring .",
+      "scrollMode": "auto",
+      "lineIndex": 91
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d50",
+      "lineText": "My lord , I had forgot to tell your Lordship : Today as I came by I callèd there — But I shall grieve you to report the rest .",
+      "scrollMode": "auto",
+      "lineIndex": 92
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d10",
+      "lineText": "What is ’t , knave ?",
+      "scrollMode": "auto",
+      "lineIndex": 93
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d50",
+      "lineText": "An hour before I came , the Duchess died .",
+      "scrollMode": "auto",
+      "lineIndex": 94
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d00",
+      "lineText": "Servingman exits .",
+      "scrollMode": "auto",
+      "lineIndex": 95
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d00",
+      "lineText": "To Queen .",
+      "scrollMode": "auto",
+      "lineIndex": 96
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d50",
+      "lineText": "To Queen . Come , cousin , I’ll dispose of you . — Gentlemen , go muster up your men And meet me presently at Berkeley . I should to Plashy too , But time will not permit . All is uneven , And everything is left at six and seven .",
+      "scrollMode": "auto",
+      "lineIndex": 97
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d00",
+      "lineText": "Duke of York and Queen exit . Bushy , Green , and Bagot remain .",
+      "scrollMode": "auto",
+      "lineIndex": 98
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d40",
+      "lineText": "The wind sits fair for news to go for Ireland , But none returns . For us to levy power Proportionable to the enemy Is all unpossible .",
+      "scrollMode": "auto",
+      "lineIndex": 99
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d4g",
+      "lineText": "Besides , our nearness to the King in love Is near the hate of those love not the King .",
+      "scrollMode": "auto",
+      "lineIndex": 100
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d5g",
+      "lineText": "And that is the wavering commons , for their love Lies in their purses , and whoso empties them By so much fills their hearts with deadly hate .",
+      "scrollMode": "auto",
+      "lineIndex": 101
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d40",
+      "lineText": "Wherein the King stands generally condemned .",
+      "scrollMode": "auto",
+      "lineIndex": 102
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d5g",
+      "lineText": "If judgment lie in them , then so do we , Because we ever have been near the King .",
+      "scrollMode": "auto",
+      "lineIndex": 103
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d4g",
+      "lineText": "Well , I will for refuge straight to Bristow Castle . The Earl of Wiltshire is already there .",
+      "scrollMode": "auto",
+      "lineIndex": 104
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d40",
+      "lineText": "Thither will I with you , for little office Will the hateful commons perform for us , Except like curs to tear us all to pieces . — Will you go along with us ?",
+      "scrollMode": "auto",
+      "lineIndex": 105
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d5g",
+      "lineText": "No , I will to Ireland to his Majesty . Farewell . If heart’s presages be not vain , We three here part that ne’er shall meet again .",
+      "scrollMode": "auto",
+      "lineIndex": 106
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d40",
+      "lineText": "That’s as York thrives to beat back Bolingbroke .",
+      "scrollMode": "auto",
+      "lineIndex": 107
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d4g",
+      "lineText": "Alas , poor duke , the task he undertakes Is numb’ring sands and drinking oceans dry . Where one on his side fights , thousands will fly . Farewell at once , for once , for all , and ever .",
+      "scrollMode": "auto",
+      "lineIndex": 108
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d40",
+      "lineText": "Well , we may meet again .",
+      "scrollMode": "auto",
+      "lineIndex": 109
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d5g",
+      "lineText": "I fear me , never .",
+      "scrollMode": "auto",
+      "lineIndex": 110
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d00",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 111
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d00",
+      "lineText": "Enter Bolingbroke , Duke of Hereford , and Northumberland .",
+      "scrollMode": "auto",
+      "lineIndex": 112
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d60",
+      "lineText": "How far is it , my lord , to Berkeley now ?",
+      "scrollMode": "auto",
+      "lineIndex": 113
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d2g",
+      "lineText": "Believe me , noble lord , I am a stranger here in Gloucestershire . These high wild hills and rough uneven ways Draws out our miles and makes them wearisome . And yet your fair discourse hath been as sugar , Making the hard way sweet and delectable . But I bethink me what a weary way From Ravenspurgh to Cotshall will be found ACT 2. SC. 3 In Ross and Willoughby , wanting your company , Which , I protest , hath very much beguiled The tediousness and process of my travel . But theirs is sweetened with the hope to have The present benefit which I possess , And hope to joy is little less in joy Than hope enjoyed . By this the weary lords Shall make their way seem short as mine hath done By sight of what I have , your noble company .",
+      "scrollMode": "auto",
+      "lineIndex": 114
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d60",
+      "lineText": "Of much less value is my company Than your good words . But who comes here ?",
+      "scrollMode": "auto",
+      "lineIndex": 115
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d00",
+      "lineText": "Enter Harry Percy .",
+      "scrollMode": "auto",
+      "lineIndex": 116
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d2g",
+      "lineText": "It is my son , young Harry Percy , Sent from my brother Worcester whencesoever . — Harry , how fares your uncle ?",
+      "scrollMode": "auto",
+      "lineIndex": 117
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d6g",
+      "lineText": "I had thought , my lord , to have learned his health of you .",
+      "scrollMode": "auto",
+      "lineIndex": 118
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d2g",
+      "lineText": "Why , is he not with the Queen ?",
+      "scrollMode": "auto",
+      "lineIndex": 119
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d6g",
+      "lineText": "No , my good lord , he hath forsook the court , Broken his staff of office , and dispersed The Household of the King .",
+      "scrollMode": "auto",
+      "lineIndex": 120
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d2g",
+      "lineText": "What was his reason ? He was not so resolved When last we spake together .",
+      "scrollMode": "auto",
+      "lineIndex": 121
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d6g",
+      "lineText": "Because your Lordship was proclaimèd traitor . But he , my lord , is gone to Ravenspurgh To offer service to the Duke of Hereford , And sent me over by Berkeley to discover What power the Duke of York had levied there , Then with directions to repair to Ravenspurgh .",
+      "scrollMode": "auto",
+      "lineIndex": 122
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d2g",
+      "lineText": "Have you forgot the Duke of Hereford , boy ?",
+      "scrollMode": "auto",
+      "lineIndex": 123
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d6g",
+      "lineText": "No , my good lord , for that is not forgot Which ne’er I did remember . To my knowledge I never in my life did look on him .",
+      "scrollMode": "auto",
+      "lineIndex": 124
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d2g",
+      "lineText": "Then learn to know him now . This is the Duke .",
+      "scrollMode": "auto",
+      "lineIndex": 125
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d00",
+      "lineText": ", to Bolingbroke",
+      "scrollMode": "auto",
+      "lineIndex": 126
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d6g",
+      "lineText": "My gracious lord , I tender you my service , Such as it is , being tender , raw , and young , Which elder days shall ripen and confirm To more approvèd service and desert .",
+      "scrollMode": "auto",
+      "lineIndex": 127
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d60",
+      "lineText": "I thank thee , gentle Percy , and be sure I count myself in nothing else so happy As in a soul rememb’ring my good friends ; And as my fortune ripens with thy love , It shall be still thy true love’s recompense . My heart this covenant makes , my hand thus seals it .",
+      "scrollMode": "auto",
+      "lineIndex": 128
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d00",
+      "lineText": "Gives Percy his hand .",
+      "scrollMode": "auto",
+      "lineIndex": 129
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d00",
+      "lineText": ", to Percy",
+      "scrollMode": "auto",
+      "lineIndex": 130
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d2g",
+      "lineText": "How far is it to Berkeley , and what stir Keeps good old York there with his men of war ?",
+      "scrollMode": "auto",
+      "lineIndex": 131
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d6g",
+      "lineText": "There stands the castle by yon tuft of trees , Manned with three hundred men , as I have heard , And in it are the Lords of York , Berkeley , and Seymour , None else of name and noble estimate .",
+      "scrollMode": "auto",
+      "lineIndex": 132
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d00",
+      "lineText": "Enter Ross and Willoughby .",
+      "scrollMode": "auto",
+      "lineIndex": 133
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d2g",
+      "lineText": "Here come the Lords of Ross and Willoughby , Bloody with spurring , fiery red with haste .",
+      "scrollMode": "auto",
+      "lineIndex": 134
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d60",
+      "lineText": "Welcome , my lords . I wot your love pursues A banished traitor . All my treasury Is yet but unfelt thanks , which , more enriched , Shall be your love and labor’s recompense .",
+      "scrollMode": "auto",
+      "lineIndex": 135
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d30",
+      "lineText": "Your presence makes us rich , most noble lord .",
+      "scrollMode": "auto",
+      "lineIndex": 136
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d3g",
+      "lineText": "And far surmounts our labor to attain it .",
+      "scrollMode": "auto",
+      "lineIndex": 137
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d60",
+      "lineText": "Evermore thank’s the exchequer of the poor , Which , till my infant fortune comes to years , Stands for my bounty . But who comes here ?",
+      "scrollMode": "auto",
+      "lineIndex": 138
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d00",
+      "lineText": "Enter Berkeley .",
+      "scrollMode": "auto",
+      "lineIndex": 139
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d2g",
+      "lineText": "It is my Lord of Berkeley , as I guess .",
+      "scrollMode": "auto",
+      "lineIndex": 140
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d00",
+      "lineText": ", to Bolingbroke",
+      "scrollMode": "auto",
+      "lineIndex": 141
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d70",
+      "lineText": "My Lord of Hereford , my message is to you .",
+      "scrollMode": "auto",
+      "lineIndex": 142
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d60",
+      "lineText": "My lord , my answer is — to Lancaster ; And I am come to seek that name in England . And I must find that title in your tongue Before I make reply to aught you say .",
+      "scrollMode": "auto",
+      "lineIndex": 143
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d70",
+      "lineText": "Mistake me not , my lord , ’tis not my meaning To rase one title of your honor out . To you , my lord , I come , what lord you will , From the most gracious regent of this land , The Duke of York , to know what pricks you on To take advantage of the absent time , And fright our native peace with self-borne arms .",
+      "scrollMode": "auto",
+      "lineIndex": 144
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d00",
+      "lineText": "Enter York .",
+      "scrollMode": "auto",
+      "lineIndex": 145
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d00",
+      "lineText": "He kneels .",
+      "scrollMode": "auto",
+      "lineIndex": 146
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d60",
+      "lineText": "He kneels . My noble uncle .",
+      "scrollMode": "auto",
+      "lineIndex": 147
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d10",
+      "lineText": "Show me thy humble heart , and not thy knee , Whose duty is deceivable and false .",
+      "scrollMode": "auto",
+      "lineIndex": 148
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d00",
+      "lineText": ", standing",
+      "scrollMode": "auto",
+      "lineIndex": 149
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d60",
+      "lineText": "My gracious uncle —",
+      "scrollMode": "auto",
+      "lineIndex": 150
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d10",
+      "lineText": "Tut , tut ! Grace me no grace , nor uncle me no uncle . I am no traitor’s uncle , and that word grace In an ungracious mouth is but profane . Why have those banished and forbidden legs Dared once to touch a dust of England’s ground ? But then , more why : why have they dared to march So many miles upon her peaceful bosom , Frighting her pale-faced villages with war And ostentation of despisèd arms ? Com’st thou because the anointed king is hence ? Why , foolish boy , the King is left behind And in my loyal bosom lies his power . Were I but now lord of such hot youth As when brave Gaunt thy father and myself Rescued the Black Prince , that young Mars of men , From forth the ranks of many thousand French , O , then , how quickly should this arm of mine , Now prisoner to the palsy , chastise thee And minister correction to thy fault !",
+      "scrollMode": "auto",
+      "lineIndex": 151
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d60",
+      "lineText": "My gracious uncle , let me know my fault . On what condition stands it and wherein ?",
+      "scrollMode": "auto",
+      "lineIndex": 152
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d10",
+      "lineText": "Even in condition of the worst degree , In gross rebellion and detested treason . Thou art a banished man , and here art come , Before the expiration of thy time , In braving arms against thy sovereign .",
+      "scrollMode": "auto",
+      "lineIndex": 153
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d60",
+      "lineText": "As I was banished , I was banished Hereford , But as I come , I come for Lancaster . And , noble uncle , I beseech your Grace Look on my wrongs with an indifferent eye . You are my father , for methinks in you I see old Gaunt alive . O , then , my father , Will you permit that I shall stand condemned A wandering vagabond , my rights and royalties Plucked from my arms perforce and given away To upstart unthrifts ? Wherefore was I born ? If that my cousin king be king in England , It must be granted I am Duke of Lancaster . You have a son , Aumerle , my noble cousin . Had you first died and he been thus trod down , He should have found his uncle Gaunt a father To rouse his wrongs and chase them to the bay . I am denied to sue my livery here , And yet my letters patents give me leave . My father’s goods are all distrained and sold , And these , and all , are all amiss employed . What would you have me do ? I am a subject , And I challenge law . Attorneys are denied me , And therefore personally I lay my claim To my inheritance of free descent .",
+      "scrollMode": "auto",
+      "lineIndex": 154
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d00",
+      "lineText": ", to York",
+      "scrollMode": "auto",
+      "lineIndex": 155
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d2g",
+      "lineText": "The noble duke hath been too much abused .",
+      "scrollMode": "auto",
+      "lineIndex": 156
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d00",
+      "lineText": ", to York",
+      "scrollMode": "auto",
+      "lineIndex": 157
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d30",
+      "lineText": "It stands your Grace upon to do him right .",
+      "scrollMode": "auto",
+      "lineIndex": 158
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d00",
+      "lineText": ", to York",
+      "scrollMode": "auto",
+      "lineIndex": 159
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d3g",
+      "lineText": "Base men by his endowments are made great .",
+      "scrollMode": "auto",
+      "lineIndex": 160
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d10",
+      "lineText": "My lords of England , let me tell you this : I have had feeling of my cousin’s wrongs And labored all I could to do him right . But in this kind to come , in braving arms , ACT 2. SC. 3 Be his own carver , and cut out his way To find out right with wrong , it may not be . And you that do abet him in this kind Cherish rebellion and are rebels all .",
+      "scrollMode": "auto",
+      "lineIndex": 161
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d2g",
+      "lineText": "The noble duke hath sworn his coming is But for his own , and for the right of that We all have strongly sworn to give him aid . And let him never see joy that breaks that oath .",
+      "scrollMode": "auto",
+      "lineIndex": 162
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d10",
+      "lineText": "Well , well . I see the issue of these arms . I cannot mend it , I must needs confess , Because my power is weak and all ill-left . But if I could , by Him that gave me life , I would attach you all and make you stoop Unto the sovereign mercy of the King . But since I cannot , be it known unto you I do remain as neuter . So fare you well — Unless you please to enter in the castle And there repose you for this night .",
+      "scrollMode": "auto",
+      "lineIndex": 163
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d60",
+      "lineText": "An offer , uncle , that we will accept . But we must win your Grace to go with us To Bristow Castle , which they say is held By Bushy , Bagot , and their complices , The caterpillars of the commonwealth , Which I have sworn to weed and pluck away .",
+      "scrollMode": "auto",
+      "lineIndex": 164
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d10",
+      "lineText": "It may be I will go with you ; but yet I’ll pause , For I am loath to break our country’s laws . Nor friends nor foes , to me welcome you are . Things past redress are now with me past care .",
+      "scrollMode": "auto",
+      "lineIndex": 165
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d00",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 166
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d00",
+      "lineText": "Enter Earl of Salisbury and a Welsh Captain .",
+      "scrollMode": "auto",
+      "lineIndex": 167
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d7g",
+      "lineText": "My Lord of Salisbury , we have stayed ten days And hardly kept our countrymen together , And yet we hear no tidings from the King . Therefore we will disperse ourselves . Farewell .",
+      "scrollMode": "auto",
+      "lineIndex": 168
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d80",
+      "lineText": "Stay yet another day , thou trusty Welshman . The King reposeth all his confidence in thee .",
+      "scrollMode": "auto",
+      "lineIndex": 169
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d7g",
+      "lineText": "’Tis thought the King is dead . We will not stay . The bay trees in our country are all withered , And meteors fright the fixèd stars of heaven ; The pale-faced moon looks bloody on the Earth earth , And lean-looked prophets whisper fearful change ; Rich men look sad , and ruffians dance and leap , The one in fear to lose what they enjoy , The other to enjoy by rage and war . These signs forerun the death or fall of kings . Farewell . Our countrymen are gone and fled , As well assured Richard their king is dead .",
+      "scrollMode": "auto",
+      "lineIndex": 170
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d00",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 171
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d80",
+      "lineText": "Ah , Richard ! With the eyes of heavy mind I see thy glory like a shooting star Fall to the base earth from the firmament . Thy sun sets weeping in the lowly west , Witnessing storms to come , woe , and unrest . Thy friends are fled to wait upon thy foes , And crossly to thy good all fortune goes .",
+      "scrollMode": "auto",
+      "lineIndex": 172
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79d00",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 173
+    }
+  ],
+  "isPublic": true
+}

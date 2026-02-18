@@ -1,0 +1,142 @@
+{
+	"storage": {
+		"gcpConfig": {
+			"bucketName": "no-small-parts-userdata"
+		},
+		"bucketName": "no-small-parts-userdata",
+		"provider": "gcp"
+	},
+	"queues": {
+		"dataChangesTopicName": "",
+		"outboundEmailsTopicName": "",
+		"searchIndexRequestsTopicName": "",
+		"userDataAggregationTopicName": "",
+		"webhookExecutionRequestsTopicName": ""
+	},
+	"encoding": {
+		"contentType": ""
+	},
+	"events": {
+		"consumers": {
+			"sqs": {
+				"queueAddress": ""
+			},
+			"pubSub": {
+				"projectID": "no-small-parts"
+			},
+			"redis": {
+				"username": "",
+				"queueAddress": null
+			}
+		},
+		"publishers": {
+			"sqs": {
+				"queueAddress": ""
+			},
+			"pubSub": {
+				"projectID": "no-small-parts"
+			},
+			"redis": {
+				"username": "",
+				"queueAddress": null
+			}
+		}
+	},
+	"observability": {
+		"logging": {
+			"serviceName": "async_message_handler",
+			"level": "debug",
+			"otelslog": {
+				"endpointURL": "otel-collector-svc.prod.svc.cluster.local:4317",
+				"insecure": true,
+				"timeout": 2000000000
+			},
+			"provider": "otelslog"
+		},
+		"metrics": {
+			"otelgrpc": {
+				"metricsCollectorEndpoint": "otel-collector-svc.prod.svc.cluster.local:4317",
+				"collectionInterval": 30000000000,
+				"insecure": true,
+				"enableRuntimeMetrics": false,
+				"enableHostMetrics": false
+			},
+			"serviceName": "async_message_handler",
+			"provider": "otelgrpc"
+		},
+		"tracing": {
+			"otelgrpc": {
+				"collector_endpoint": "otel-collector-svc.prod.svc.cluster.local:4317",
+				"insecure": true
+			},
+			"service_name": "async_message_handler",
+			"provider": "otelgrpc",
+			"spanCollectionProbability": 1
+		}
+	},
+	"email": {
+		"sendgrid": {
+			"apiToken": ""
+		},
+		"mailgun": null,
+		"mailjet": null,
+		"provider": "",
+		"circuitBreakerConfig": {
+			"name": "dev_emailer",
+			"circuitBreakerErrorPercentage": 0.5,
+			"circuitBreakerMinimumOccurrenceThreshold": 100
+		}
+	},
+	"analytics": {
+		"segment": {
+			"apiToken": ""
+		},
+		"posthog": null,
+		"rudderstack": null,
+		"provider": "",
+		"circuitBreaker": {
+			"name": "dev_analytics",
+			"circuitBreakerErrorPercentage": 0.5,
+			"circuitBreakerMinimumOccurrenceThreshold": 100
+		}
+	},
+	"search": {
+		"algolia": {
+			"appID": "",
+			"writeAPIKey": "",
+			"timeout": 0
+		},
+		"elasticsearch": null,
+		"provider": "",
+		"circuitBreakerConfig": {
+			"name": "dev_text_searcher",
+			"circuitBreakerErrorPercentage": 0.5,
+			"circuitBreakerMinimumOccurrenceThreshold": 100
+		}
+	},
+	"database": {
+		"oauth2TokenEncryptionKey": "",
+		"provider": "postgres",
+		"readConnection": {
+			"username": "api_db_user",
+			"password": "",
+			"database": "no-small-parts",
+			"hostname": "",
+			"port": 5432,
+			"disableSSL": false
+		},
+		"writeConnection": {
+			"username": "api_db_user",
+			"password": "",
+			"database": "no-small-parts",
+			"hostname": "",
+			"port": 5432,
+			"disableSSL": false
+		},
+		"maxPingAttempts": 50,
+		"pingWaitPeriod": 1000000000,
+		"debug": true,
+		"logQueries": true,
+		"runMigrations": true
+	}
+}

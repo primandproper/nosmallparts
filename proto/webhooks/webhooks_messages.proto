@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+package webhooks;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/webhooks";
+
+message WebhookList {
+  repeated Webhook webhooks = 1;
+}
+
+message DataCollection {
+  map<string, WebhookList> webhooks = 1;
+}
+
+message Webhook {
+  google.protobuf.Timestamp created_at = 1;
+  google.protobuf.Timestamp archived_at = 2;
+  google.protobuf.Timestamp last_updated_at = 3;
+  string name = 4;
+  string url = 5;
+  WebhookMethod method = 6;
+  string id = 7;
+  string belongs_to_account = 8;
+  WebhookContentType content_type = 9;
+  repeated WebhookTriggerEvent events = 10;
+}
+
+message WebhookTriggerEvent {
+  google.protobuf.Timestamp created_at = 1;
+  google.protobuf.Timestamp archived_at = 2;
+  string id = 3;
+  string belongs_to_webhook = 4;
+  string trigger_event = 5;
+}
+
+enum WebhookContentType {
+  WEBHOOK_CONTENT_TYPE_JSON = 0;
+  WEBHOOK_CONTENT_TYPE_XML = 1;
+}
+
+enum WebhookMethod {
+  WEBHOOK_METHOD_GET = 0;
+  WEBHOOK_METHOD_PUT = 1;
+  WEBHOOK_METHOD_PATCH = 2;
+  WEBHOOK_METHOD_POST = 3;
+  WEBHOOK_METHOD_DELETE = 4;
+}

@@ -1,0 +1,871 @@
+{
+  "title": "Love’s Labor’s Lost (Act 2)",
+  "description": "Folger Shakespeare Library edition",
+  "author": "William Shakespeare",
+  "castMembers": [
+    {
+      "id": "d68m11kn9qd8d2h793fg",
+      "name": "Narrator",
+      "sortOrder": 0
+    },
+    {
+      "id": "d68m11kn9qd8d2h793g0",
+      "name": "Boyet",
+      "description": "a lord attending the Princess",
+      "sortOrder": 1
+    },
+    {
+      "id": "d68m11kn9qd8d2h793gg",
+      "name": "Princess",
+      "sortOrder": 2
+    },
+    {
+      "id": "d68m11kn9qd8d2h793h0",
+      "name": "A Lord",
+      "sortOrder": 3
+    },
+    {
+      "id": "d68m11kn9qd8d2h793hg",
+      "name": "Maria",
+      "sortOrder": 4
+    },
+    {
+      "id": "d68m11kn9qd8d2h793i0",
+      "name": "Katherine",
+      "sortOrder": 5
+    },
+    {
+      "id": "d68m11kn9qd8d2h793ig",
+      "name": "Rosaline",
+      "sortOrder": 6
+    },
+    {
+      "id": "d68m11kn9qd8d2h793j0",
+      "name": "King",
+      "description": "also known as Ferdinand",
+      "sortOrder": 7
+    },
+    {
+      "id": "d68m11kn9qd8d2h793jg",
+      "name": "Longaville",
+      "sortOrder": 8
+    },
+    {
+      "id": "d68m11kn9qd8d2h793k0",
+      "name": "Dumaine",
+      "sortOrder": 9
+    },
+    {
+      "id": "d68m11kn9qd8d2h793kg",
+      "name": "Berowne",
+      "sortOrder": 10
+    }
+  ],
+  "lines": [
+    {
+      "castMemberId": "d68m11kn9qd8d2h793fg",
+      "lineText": "Enter the Princess of France , with three attending Ladies ( Rosaline , Maria , and Katherine ) , Boyet and other Lords .",
+      "scrollMode": "auto",
+      "lineIndex": 0
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793g0",
+      "lineText": "Now , madam , summon up your dearest spirits . Consider who the King your father sends , To whom he sends , and what’s his embassy . Yourself , held precious in the world’s esteem , To parley with the sole inheritor Of all perfections that a man may owe , Matchless Navarre ; the plea of no less weight Than Aquitaine , a dowry for a queen . Be now as prodigal of all dear grace As nature was in making graces dear When she did starve the general world besides And prodigally gave them all to you .",
+      "scrollMode": "auto",
+      "lineIndex": 1
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793gg",
+      "lineText": "Good Lord Boyet , my beauty , though but mean , Needs not the painted flourish of your praise . Beauty is bought by judgment of the eye , Not uttered by base sale of chapmen’s tongues . I am less proud to hear you tell my worth Than you much willing to be counted wise In spending your wit in the praise of mine . But now to task the tasker : good Boyet , ACT 2. SC. 1 You are not ignorant all-telling fame Doth noise abroad Navarre hath made a vow , Till painful study shall outwear three years , No woman may approach his silent court . Therefore to ’s seemeth it a needful course , Before we enter his forbidden gates , To know his pleasure , and in that behalf , Bold of your worthiness , we single you As our best-moving fair solicitor . Tell him the daughter of the King of France On serious business craving quick dispatch , Importunes personal conference with his Grace . Haste , signify so much , while we attend , Like humble-visaged suitors , his high will .",
+      "scrollMode": "auto",
+      "lineIndex": 2
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793g0",
+      "lineText": "Proud of employment , willingly I go .",
+      "scrollMode": "auto",
+      "lineIndex": 3
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793fg",
+      "lineText": "Boyet exits .",
+      "scrollMode": "auto",
+      "lineIndex": 4
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793g0",
+      "lineText": "Boyet exits . Who are the votaries , my loving lords , That are vow-fellows with this virtuous duke ?",
+      "scrollMode": "auto",
+      "lineIndex": 5
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793h0",
+      "lineText": "Lord Longaville is one .",
+      "scrollMode": "auto",
+      "lineIndex": 6
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793gg",
+      "lineText": "Know you the man ?",
+      "scrollMode": "auto",
+      "lineIndex": 7
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793hg",
+      "lineText": "I know him , madam . At a marriage feast Between Lord Perigort and the beauteous heir Of Jaques Falconbridge , solemnizèd In Normandy , saw I this Longaville . A man of sovereign parts he is esteemed , Well fitted in arts , glorious in arms . Nothing becomes him ill that he would well . The only soil of his fair virtue’s gloss , If virtue’s gloss will stain with any soil , Is a sharp wit matched with too blunt a will , Whose edge hath power to cut , whose will still wills It should none spare that come within his power .",
+      "scrollMode": "auto",
+      "lineIndex": 8
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793gg",
+      "lineText": "Some merry mocking lord , belike . Is ’t so ?",
+      "scrollMode": "auto",
+      "lineIndex": 9
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793hg",
+      "lineText": "They say so most that most his humors know .",
+      "scrollMode": "auto",
+      "lineIndex": 10
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793gg",
+      "lineText": "Such short-lived wits do wither as they grow . Who are the rest ?",
+      "scrollMode": "auto",
+      "lineIndex": 11
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793i0",
+      "lineText": "The young Dumaine , a well-accomplished youth , Of all that virtue love for virtue loved . Most power to do most harm , least knowing ill ; For he hath wit to make an ill shape good , And shape to win grace though he had no wit . I saw him at the Duke Alanson’s once , And much too little of that good I saw Is my report to his great worthiness .",
+      "scrollMode": "auto",
+      "lineIndex": 12
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793ig",
+      "lineText": "Another of these students at that time Was there with him , if I have heard a truth . Berowne they call him , but a merrier man , Within the limit of becoming mirth , I never spent an hour’s talk withal . His eye begets occasion for his wit , For every object that the one doth catch The other turns to a mirth-moving jest , Which his fair tongue , conceit’s expositor , Delivers in such apt and gracious words That agèd ears play truant at his tales , And younger hearings are quite ravishèd , So sweet and voluble is his discourse .",
+      "scrollMode": "auto",
+      "lineIndex": 13
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793gg",
+      "lineText": "God bless my ladies , are they all in love , That every one her own hath garnishèd With such bedecking ornaments of praise ?",
+      "scrollMode": "auto",
+      "lineIndex": 14
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793h0",
+      "lineText": "Here comes Boyet .",
+      "scrollMode": "auto",
+      "lineIndex": 15
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793fg",
+      "lineText": "Enter Boyet .",
+      "scrollMode": "auto",
+      "lineIndex": 16
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793gg",
+      "lineText": "Now , what admittance , lord ?",
+      "scrollMode": "auto",
+      "lineIndex": 17
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793fg",
+      "lineText": "Enter King of Navarre , Longaville , Dumaine , and Berowne .",
+      "scrollMode": "auto",
+      "lineIndex": 18
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793j0",
+      "lineText": "Enter King of Navarre , Longaville , Dumaine , and Berowne . Here comes Navarre .",
+      "scrollMode": "auto",
+      "lineIndex": 19
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793j0",
+      "lineText": "Fair Princess , welcome to the court of Navarre .",
+      "scrollMode": "auto",
+      "lineIndex": 20
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793gg",
+      "lineText": "Fair I give you back again , and welcome I have not yet . The roof of this court is too high to be yours , and welcome to the wide fields too base to be mine .",
+      "scrollMode": "auto",
+      "lineIndex": 21
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793j0",
+      "lineText": "You shall be welcome , madam , to my court .",
+      "scrollMode": "auto",
+      "lineIndex": 22
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793gg",
+      "lineText": "I will be welcome , then . Conduct me thither .",
+      "scrollMode": "auto",
+      "lineIndex": 23
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793j0",
+      "lineText": "Hear me , dear lady . I have sworn an oath .",
+      "scrollMode": "auto",
+      "lineIndex": 24
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793gg",
+      "lineText": "Our Lady help my lord ! He’ll be forsworn .",
+      "scrollMode": "auto",
+      "lineIndex": 25
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793j0",
+      "lineText": "Not for the world , fair madam , by my will .",
+      "scrollMode": "auto",
+      "lineIndex": 26
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793gg",
+      "lineText": "Why , will shall break it , will and nothing else .",
+      "scrollMode": "auto",
+      "lineIndex": 27
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793j0",
+      "lineText": "Your Ladyship is ignorant what it is .",
+      "scrollMode": "auto",
+      "lineIndex": 28
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793gg",
+      "lineText": "Were my lord so , his ignorance were wise , Where now his knowledge must prove ignorance . I hear your Grace hath sworn out housekeeping . ’Tis deadly sin to keep that oath , my lord , And sin to break it . But pardon me , I am too sudden bold . To teach a teacher ill beseemeth me . Vouchsafe to read the purpose of my coming , And suddenly resolve me in my suit .",
+      "scrollMode": "auto",
+      "lineIndex": 29
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793fg",
+      "lineText": "She gives him a paper .",
+      "scrollMode": "auto",
+      "lineIndex": 30
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793j0",
+      "lineText": "Madam , I will , if suddenly I may .",
+      "scrollMode": "auto",
+      "lineIndex": 31
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793gg",
+      "lineText": "You will the sooner that I were away , For you’ll prove perjured if you make me stay .",
+      "scrollMode": "auto",
+      "lineIndex": 32
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793fg",
+      "lineText": "They walk aside while the King reads the paper .",
+      "scrollMode": "auto",
+      "lineIndex": 33
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793fg",
+      "lineText": ", to Rosaline",
+      "scrollMode": "auto",
+      "lineIndex": 34
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793kg",
+      "lineText": "Did not I dance with you in Brabant once ?",
+      "scrollMode": "auto",
+      "lineIndex": 35
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793ig",
+      "lineText": "Did not I dance with you in Brabant once ?",
+      "scrollMode": "auto",
+      "lineIndex": 36
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793kg",
+      "lineText": "I know you did .",
+      "scrollMode": "auto",
+      "lineIndex": 37
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793ig",
+      "lineText": "How needless was it then To ask the question .",
+      "scrollMode": "auto",
+      "lineIndex": 38
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793kg",
+      "lineText": "You must not be so quick .",
+      "scrollMode": "auto",
+      "lineIndex": 39
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793ig",
+      "lineText": "’Tis long of you that spur me with such questions .",
+      "scrollMode": "auto",
+      "lineIndex": 40
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793kg",
+      "lineText": "Your wit’s too hot , it speeds too fast ; ’twill tire .",
+      "scrollMode": "auto",
+      "lineIndex": 41
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793ig",
+      "lineText": "Not till it leave the rider in the mire .",
+      "scrollMode": "auto",
+      "lineIndex": 42
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793kg",
+      "lineText": "What time o’ day ?",
+      "scrollMode": "auto",
+      "lineIndex": 43
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793ig",
+      "lineText": "The hour that fools should ask .",
+      "scrollMode": "auto",
+      "lineIndex": 44
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793kg",
+      "lineText": "Now fair befall your mask .",
+      "scrollMode": "auto",
+      "lineIndex": 45
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793ig",
+      "lineText": "Fair fall the face it covers .",
+      "scrollMode": "auto",
+      "lineIndex": 46
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793kg",
+      "lineText": "And send you many lovers .",
+      "scrollMode": "auto",
+      "lineIndex": 47
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793ig",
+      "lineText": "Amen , so you be none .",
+      "scrollMode": "auto",
+      "lineIndex": 48
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793kg",
+      "lineText": "Nay , then , will I be gone .",
+      "scrollMode": "auto",
+      "lineIndex": 49
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793fg",
+      "lineText": ", coming forward with the Princess",
+      "scrollMode": "auto",
+      "lineIndex": 50
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793j0",
+      "lineText": "Madam , your father here doth intimate The payment of a hundred thousand crowns , Being but the one half of an entire sum Disbursèd by my father in his wars . But say that he or we , as neither have , Received that sum , yet there remains unpaid A hundred thousand more , in surety of the which One part of Aquitaine is bound to us , Although not valued to the money’s worth . If then the King your father will restore But that one half which is unsatisfied , We will give up our right in Aquitaine , And hold fair friendship with his Majesty . But that , it seems , he little purposeth ; For here he doth demand to have repaid A hundred thousand crowns , and not demands , On payment of a hundred thousand crowns , To have his title live in Aquitaine — Which we much rather had depart withal , And have the money by our father lent , Than Aquitaine , so gelded as it is . Dear Princess , were not his requests so far From reason’s yielding , your fair self should make A yielding ’gainst some reason in my breast , And go well satisfied to France again .",
+      "scrollMode": "auto",
+      "lineIndex": 51
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793gg",
+      "lineText": "You do the King my father too much wrong , And wrong the reputation of your name , In so unseeming to confess receipt Of that which hath so faithfully been paid .",
+      "scrollMode": "auto",
+      "lineIndex": 52
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793j0",
+      "lineText": "I do protest I never heard of it ; And if you prove it , I’ll repay it back Or yield up Aquitaine .",
+      "scrollMode": "auto",
+      "lineIndex": 53
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793gg",
+      "lineText": "We arrest your word . — Boyet , you can produce acquittances For such a sum from special officers Of Charles his father .",
+      "scrollMode": "auto",
+      "lineIndex": 54
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793j0",
+      "lineText": "Satisfy me so .",
+      "scrollMode": "auto",
+      "lineIndex": 55
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793g0",
+      "lineText": "So please your Grace , the packet is not come Where that and other specialties are bound . Tomorrow you shall have a sight of them .",
+      "scrollMode": "auto",
+      "lineIndex": 56
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793j0",
+      "lineText": "It shall suffice me ; at which interview All liberal reason I will yield unto . Meantime receive such welcome at my hand As honor ( without breach of honor ) may Make tender of to thy true worthiness . You may not come , fair princess , within my gates , But here without you shall be so received As you shall deem yourself lodged in my heart , Though so denied fair harbor in my house . Your own good thoughts excuse me , and farewell . Tomorrow shall we visit you again .",
+      "scrollMode": "auto",
+      "lineIndex": 57
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793gg",
+      "lineText": "Sweet health and fair desires consort your Grace .",
+      "scrollMode": "auto",
+      "lineIndex": 58
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793j0",
+      "lineText": "Thy own wish wish I thee in every place .",
+      "scrollMode": "auto",
+      "lineIndex": 59
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793fg",
+      "lineText": "He exits with Dumaine , Longaville , and Attendants .",
+      "scrollMode": "auto",
+      "lineIndex": 60
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793fg",
+      "lineText": ", to Rosaline",
+      "scrollMode": "auto",
+      "lineIndex": 61
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793kg",
+      "lineText": "Lady , I will commend you to my own heart .",
+      "scrollMode": "auto",
+      "lineIndex": 62
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793ig",
+      "lineText": "Pray you , do my commendations . I would be glad to see it .",
+      "scrollMode": "auto",
+      "lineIndex": 63
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793kg",
+      "lineText": "I would you heard it groan .",
+      "scrollMode": "auto",
+      "lineIndex": 64
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793ig",
+      "lineText": "Is the fool sick ?",
+      "scrollMode": "auto",
+      "lineIndex": 65
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793kg",
+      "lineText": "Sick at the heart .",
+      "scrollMode": "auto",
+      "lineIndex": 66
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793ig",
+      "lineText": "Alack , let it blood .",
+      "scrollMode": "auto",
+      "lineIndex": 67
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793kg",
+      "lineText": "Would that do it good ?",
+      "scrollMode": "auto",
+      "lineIndex": 68
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793ig",
+      "lineText": "My physic says ay .",
+      "scrollMode": "auto",
+      "lineIndex": 69
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793kg",
+      "lineText": "Will you prick ’t with your eye ?",
+      "scrollMode": "auto",
+      "lineIndex": 70
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793ig",
+      "lineText": "No point , with my knife .",
+      "scrollMode": "auto",
+      "lineIndex": 71
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793kg",
+      "lineText": "Now God save thy life .",
+      "scrollMode": "auto",
+      "lineIndex": 72
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793ig",
+      "lineText": "And yours from long living .",
+      "scrollMode": "auto",
+      "lineIndex": 73
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793kg",
+      "lineText": "I cannot stay thanksgiving .",
+      "scrollMode": "auto",
+      "lineIndex": 74
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793fg",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 75
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793fg",
+      "lineText": "Enter Dumaine .",
+      "scrollMode": "auto",
+      "lineIndex": 76
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793fg",
+      "lineText": ", to Boyet",
+      "scrollMode": "auto",
+      "lineIndex": 77
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793k0",
+      "lineText": "Sir , I pray you , a word . What lady is that same ?",
+      "scrollMode": "auto",
+      "lineIndex": 78
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793g0",
+      "lineText": "The heir of Alanson , Katherine her name .",
+      "scrollMode": "auto",
+      "lineIndex": 79
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793k0",
+      "lineText": "A gallant lady , monsieur . Fare you well .",
+      "scrollMode": "auto",
+      "lineIndex": 80
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793fg",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 81
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793fg",
+      "lineText": "Enter Longaville .",
+      "scrollMode": "auto",
+      "lineIndex": 82
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793fg",
+      "lineText": ", to Boyet",
+      "scrollMode": "auto",
+      "lineIndex": 83
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793jg",
+      "lineText": "I beseech you , a word . What is she in the white ?",
+      "scrollMode": "auto",
+      "lineIndex": 84
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793g0",
+      "lineText": "A woman sometimes , an you saw her in the light .",
+      "scrollMode": "auto",
+      "lineIndex": 85
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793jg",
+      "lineText": "Perchance light in the light . I desire her name .",
+      "scrollMode": "auto",
+      "lineIndex": 86
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793g0",
+      "lineText": "She hath but one for herself ; to desire that were a shame .",
+      "scrollMode": "auto",
+      "lineIndex": 87
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793jg",
+      "lineText": "Pray you , sir , whose daughter ?",
+      "scrollMode": "auto",
+      "lineIndex": 88
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793g0",
+      "lineText": "Her mother’s , I have heard .",
+      "scrollMode": "auto",
+      "lineIndex": 89
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793jg",
+      "lineText": "God’s blessing on your beard !",
+      "scrollMode": "auto",
+      "lineIndex": 90
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793g0",
+      "lineText": "Good sir , be not offended . She is an heir of Falconbridge .",
+      "scrollMode": "auto",
+      "lineIndex": 91
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793jg",
+      "lineText": "Nay , my choler is ended . She is a most sweet lady .",
+      "scrollMode": "auto",
+      "lineIndex": 92
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793g0",
+      "lineText": "Not unlike , sir , that may be .",
+      "scrollMode": "auto",
+      "lineIndex": 93
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793fg",
+      "lineText": "Longaville exits .",
+      "scrollMode": "auto",
+      "lineIndex": 94
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793fg",
+      "lineText": "Enter Berowne .",
+      "scrollMode": "auto",
+      "lineIndex": 95
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793fg",
+      "lineText": ", to Boyet",
+      "scrollMode": "auto",
+      "lineIndex": 96
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793kg",
+      "lineText": "What’s her name in the cap ?",
+      "scrollMode": "auto",
+      "lineIndex": 97
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793g0",
+      "lineText": "Rosaline , by good hap .",
+      "scrollMode": "auto",
+      "lineIndex": 98
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793kg",
+      "lineText": "Is she wedded or no ?",
+      "scrollMode": "auto",
+      "lineIndex": 99
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793g0",
+      "lineText": "To her will , sir , or so .",
+      "scrollMode": "auto",
+      "lineIndex": 100
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793kg",
+      "lineText": "You are welcome , sir . Adieu .",
+      "scrollMode": "auto",
+      "lineIndex": 101
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793g0",
+      "lineText": "Farewell to me , sir , and welcome to you .",
+      "scrollMode": "auto",
+      "lineIndex": 102
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793fg",
+      "lineText": "Berowne exits .",
+      "scrollMode": "auto",
+      "lineIndex": 103
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793hg",
+      "lineText": "That last is Berowne , the merry madcap lord . Not a word with him but a jest .",
+      "scrollMode": "auto",
+      "lineIndex": 104
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793g0",
+      "lineText": "And every jest but a word .",
+      "scrollMode": "auto",
+      "lineIndex": 105
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793gg",
+      "lineText": "It was well done of you to take him at his word .",
+      "scrollMode": "auto",
+      "lineIndex": 106
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793g0",
+      "lineText": "I was as willing to grapple as he was to board .",
+      "scrollMode": "auto",
+      "lineIndex": 107
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793i0",
+      "lineText": "Two hot sheeps , marry .",
+      "scrollMode": "auto",
+      "lineIndex": 108
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793g0",
+      "lineText": "And wherefore not ships ? No sheep , sweet lamb , unless we feed on your lips .",
+      "scrollMode": "auto",
+      "lineIndex": 109
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793i0",
+      "lineText": "You sheep and I pasture . Shall that finish the jest ?",
+      "scrollMode": "auto",
+      "lineIndex": 110
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793g0",
+      "lineText": "So you grant pasture for me .",
+      "scrollMode": "auto",
+      "lineIndex": 111
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793fg",
+      "lineText": "He tries to kiss her .",
+      "scrollMode": "auto",
+      "lineIndex": 112
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793i0",
+      "lineText": "Not so , gentle beast , My lips are no common , though several they be .",
+      "scrollMode": "auto",
+      "lineIndex": 113
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793g0",
+      "lineText": "Belonging to whom ?",
+      "scrollMode": "auto",
+      "lineIndex": 114
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793i0",
+      "lineText": "To my fortunes and me .",
+      "scrollMode": "auto",
+      "lineIndex": 115
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793gg",
+      "lineText": "Good wits will be jangling ; but , gentles , agree , This civil war of wits were much better used On Navarre and his bookmen , for here ’tis abused .",
+      "scrollMode": "auto",
+      "lineIndex": 116
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793g0",
+      "lineText": "If my observation , which very seldom lies , By the heart’s still rhetoric , disclosèd wi’ th’ eyes , Deceive me not now , Navarre is infected .",
+      "scrollMode": "auto",
+      "lineIndex": 117
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793gg",
+      "lineText": "With what ?",
+      "scrollMode": "auto",
+      "lineIndex": 118
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793g0",
+      "lineText": "With that which we lovers entitle affected .",
+      "scrollMode": "auto",
+      "lineIndex": 119
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793gg",
+      "lineText": "Your reason ?",
+      "scrollMode": "auto",
+      "lineIndex": 120
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793g0",
+      "lineText": "Why , all his behaviors did make their retire To the court of his eye , peeping thorough desire . His heart like an agate with your print impressed , Proud with his form , in his eye pride expressed . His tongue , all impatient to speak and not see , Did stumble with haste in his eyesight to be ; All senses to that sense did make their repair , To feel only looking on fairest of fair . Methought all his senses were locked in his eye , As jewels in crystal for some prince to buy , Who , tend’ring their own worth from where they were glassed , Did point you to buy them along as you passed . His face’s own margent did quote such amazes That all eyes saw his eyes enchanted with gazes . I’ll give you Aquitaine , and all that is his , An you give him for my sake but one loving kiss .",
+      "scrollMode": "auto",
+      "lineIndex": 121
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793fg",
+      "lineText": ", to her Ladies",
+      "scrollMode": "auto",
+      "lineIndex": 122
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793gg",
+      "lineText": "Come , to our pavilion . Boyet is disposed .",
+      "scrollMode": "auto",
+      "lineIndex": 123
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793g0",
+      "lineText": "But to speak that in words which his eye hath disclosed . I only have made a mouth of his eye By adding a tongue which I know will not lie .",
+      "scrollMode": "auto",
+      "lineIndex": 124
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793hg",
+      "lineText": "Thou art an old lovemonger and speakest skillfully .",
+      "scrollMode": "auto",
+      "lineIndex": 125
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793i0",
+      "lineText": "He is Cupid’s grandfather , and learns news of him .",
+      "scrollMode": "auto",
+      "lineIndex": 126
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793ig",
+      "lineText": "Then was Venus like her mother , for her father is but grim .",
+      "scrollMode": "auto",
+      "lineIndex": 127
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793g0",
+      "lineText": "Do you hear , my mad wenches ?",
+      "scrollMode": "auto",
+      "lineIndex": 128
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793hg",
+      "lineText": "No .",
+      "scrollMode": "auto",
+      "lineIndex": 129
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793g0",
+      "lineText": "What then , do you see ?",
+      "scrollMode": "auto",
+      "lineIndex": 130
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793hg",
+      "lineText": "Ay , our way to be gone .",
+      "scrollMode": "auto",
+      "lineIndex": 131
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793g0",
+      "lineText": "You are too hard for me .",
+      "scrollMode": "auto",
+      "lineIndex": 132
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h793fg",
+      "lineText": "They all exit .",
+      "scrollMode": "auto",
+      "lineIndex": 133
+    }
+  ],
+  "isPublic": true
+}

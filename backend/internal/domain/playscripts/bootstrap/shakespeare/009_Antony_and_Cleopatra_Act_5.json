@@ -1,0 +1,1357 @@
+{
+  "title": "Antony and Cleopatra (Act 5)",
+  "description": "Folger Shakespeare Library edition",
+  "author": "William Shakespeare",
+  "castMembers": [
+    {
+      "id": "d68m11cn9qd8d2h78oh0",
+      "name": "Narrator",
+      "sortOrder": 0
+    },
+    {
+      "id": "d68m11cn9qd8d2h78ohg",
+      "name": "Octavius Caesar",
+      "description": "a triumvir of Rome",
+      "sortOrder": 1
+    },
+    {
+      "id": "d68m11cn9qd8d2h78oi0",
+      "name": "Dolabella",
+      "sortOrder": 2
+    },
+    {
+      "id": "d68m11cn9qd8d2h78oig",
+      "name": "Dercetus",
+      "sortOrder": 3
+    },
+    {
+      "id": "d68m11cn9qd8d2h78oj0",
+      "name": "Agrippa",
+      "sortOrder": 4
+    },
+    {
+      "id": "d68m11cn9qd8d2h78ojg",
+      "name": "Maecenas",
+      "sortOrder": 5
+    },
+    {
+      "id": "d68m11cn9qd8d2h78ok0",
+      "name": "An Egyptian",
+      "sortOrder": 6
+    },
+    {
+      "id": "d68m11cn9qd8d2h78okg",
+      "name": "Proculeius",
+      "sortOrder": 7
+    },
+    {
+      "id": "d68m11cn9qd8d2h78ol0",
+      "name": "Gallus",
+      "sortOrder": 8
+    },
+    {
+      "id": "d68m11cn9qd8d2h78olg",
+      "name": "Cleopatra",
+      "description": "Queen of Egypt",
+      "sortOrder": 9
+    },
+    {
+      "id": "d68m11cn9qd8d2h78om0",
+      "name": "Iras",
+      "sortOrder": 10
+    },
+    {
+      "id": "d68m11cn9qd8d2h78omg",
+      "name": "Charmian",
+      "sortOrder": 11
+    },
+    {
+      "id": "d68m11cn9qd8d2h78on0",
+      "name": "ATTENDANTS.CAESAR_Ant",
+      "sortOrder": 12
+    },
+    {
+      "id": "d68m11cn9qd8d2h78ong",
+      "name": "Seleucus",
+      "description": "Cleopatra’s treasurer",
+      "sortOrder": 13
+    },
+    {
+      "id": "d68m11cn9qd8d2h78oo0",
+      "name": "Guardsman",
+      "sortOrder": 14
+    },
+    {
+      "id": "d68m11cn9qd8d2h78oog",
+      "name": "A Countryman",
+      "sortOrder": 15
+    },
+    {
+      "id": "d68m11cn9qd8d2h78op0",
+      "name": "First Guard",
+      "sortOrder": 16
+    },
+    {
+      "id": "d68m11cn9qd8d2h78opg",
+      "name": "Second Guard",
+      "sortOrder": 17
+    }
+  ],
+  "lines": [
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oh0",
+      "lineText": "Enter Caesar with Agrippa , Dolabella , Maecenas , Gallus , and Proculeius , his council of war .",
+      "scrollMode": "auto",
+      "lineIndex": 0
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oh0",
+      "lineText": ", aside to Dolabella",
+      "scrollMode": "auto",
+      "lineIndex": 1
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ohg",
+      "lineText": "Go to him , Dolabella , bid him yield . Being so frustrate , tell him , he mocks The pauses that he makes .",
+      "scrollMode": "auto",
+      "lineIndex": 2
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oi0",
+      "lineText": "Caesar , I shall .",
+      "scrollMode": "auto",
+      "lineIndex": 3
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oh0",
+      "lineText": "Dolabella exits .",
+      "scrollMode": "auto",
+      "lineIndex": 4
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oh0",
+      "lineText": "Enter Dercetus with the sword of Antony .",
+      "scrollMode": "auto",
+      "lineIndex": 5
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ohg",
+      "lineText": "Wherefore is that ? And what art thou that dar’st Appear thus to us ?",
+      "scrollMode": "auto",
+      "lineIndex": 6
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oig",
+      "lineText": "I am called Dercetus . Mark Antony I served , who best was worthy Best to be served . Whilst he stood up and spoke , He was my master , and I wore my life To spend upon his haters . If thou please To take me to thee , as I was to him I’ll be to Caesar ; if thou pleasest not , I yield thee up my life .",
+      "scrollMode": "auto",
+      "lineIndex": 7
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ohg",
+      "lineText": "What is ’t thou say’st ?",
+      "scrollMode": "auto",
+      "lineIndex": 8
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oig",
+      "lineText": "I say , O Caesar , Antony is dead .",
+      "scrollMode": "auto",
+      "lineIndex": 9
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ohg",
+      "lineText": "The breaking of so great a thing should make A greater crack . The round world Should have shook lions into civil streets And citizens to their dens . The death of Antony Is not a single doom ; in the name lay A moiety of the world .",
+      "scrollMode": "auto",
+      "lineIndex": 10
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oig",
+      "lineText": "He is dead , Caesar , Not by a public minister of justice , Nor by a hirèd knife , but that self hand Which writ his honor in the acts it did Hath , with the courage which the heart did lend it , Splitted the heart . This is his sword . I robbed his wound of it . Behold it stained With his most noble blood .",
+      "scrollMode": "auto",
+      "lineIndex": 11
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ohg",
+      "lineText": "Look you sad , friends ? The gods rebuke me , but it is tidings To wash the eyes of kings .",
+      "scrollMode": "auto",
+      "lineIndex": 12
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oj0",
+      "lineText": "And strange it is That nature must compel us to lament Our most persisted deeds .",
+      "scrollMode": "auto",
+      "lineIndex": 13
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ojg",
+      "lineText": "His taints and honors Waged equal with him .",
+      "scrollMode": "auto",
+      "lineIndex": 14
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oj0",
+      "lineText": "A rarer spirit never Did steer humanity , but you gods will give us Some faults to make us men . Caesar is touched .",
+      "scrollMode": "auto",
+      "lineIndex": 15
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ojg",
+      "lineText": "When such a spacious mirror’s set before him , He needs must see himself .",
+      "scrollMode": "auto",
+      "lineIndex": 16
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oh0",
+      "lineText": "Enter an Egyptian .",
+      "scrollMode": "auto",
+      "lineIndex": 17
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ok0",
+      "lineText": "Enter an Egyptian . But I will tell you at some meeter season . The business of this man looks out of him . We’ll hear him what he says . — Whence are you ?",
+      "scrollMode": "auto",
+      "lineIndex": 18
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ok0",
+      "lineText": "A poor Egyptian yet , the Queen my mistress , Confined in all she has , her monument , Of thy intents desires instruction , That she preparedly preparèdly may frame herself To th’ way she’s forced to .",
+      "scrollMode": "auto",
+      "lineIndex": 19
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ohg",
+      "lineText": "Bid her have good heart . She soon shall know of us , by some of ours , How honorable and how kindly we Determine for her . For Caesar cannot live To be ungentle .",
+      "scrollMode": "auto",
+      "lineIndex": 20
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ok0",
+      "lineText": "So the gods preserve thee .",
+      "scrollMode": "auto",
+      "lineIndex": 21
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oh0",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 22
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ohg",
+      "lineText": "Come hither , Proculeius . Go and say We purpose her no shame . Give her what comforts The quality of her passion shall require , Lest , in her greatness , by some mortal stroke She do defeat us , for her life in Rome Would be eternal in our triumph . Go , And with your speediest bring us what she says And how you find of her .",
+      "scrollMode": "auto",
+      "lineIndex": 23
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78okg",
+      "lineText": "Caesar , I shall .",
+      "scrollMode": "auto",
+      "lineIndex": 24
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oh0",
+      "lineText": "Proculeius exits .",
+      "scrollMode": "auto",
+      "lineIndex": 25
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oh0",
+      "lineText": "Gallus exits .",
+      "scrollMode": "auto",
+      "lineIndex": 26
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ol0",
+      "lineText": "Gallus exits . Where’s Dolabella , To second Proculeius ?",
+      "scrollMode": "auto",
+      "lineIndex": 27
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oj0",
+      "lineText": "Dolabella !",
+      "scrollMode": "auto",
+      "lineIndex": 28
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ohg",
+      "lineText": "Let him alone , for I remember now How he’s employed . He shall in time be ready . Go with me to my tent , where you shall see How hardly I was drawn into this war , How calm and gentle I proceeded still In all my writings . Go with me and see What I can show in this .",
+      "scrollMode": "auto",
+      "lineIndex": 29
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oh0",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 30
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oh0",
+      "lineText": "Enter Cleopatra , Charmian , and Iras .",
+      "scrollMode": "auto",
+      "lineIndex": 31
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78olg",
+      "lineText": "My desolation does begin to make A better life . ’Tis paltry to be Caesar ; Not being Fortune , he’s but Fortune’s knave , A minister of her will . And it is great To do that thing that ends all other deeds , Which shackles accidents and bolts up change , Which sleeps and never palates more the dung , The beggar’s nurse , and Caesar’s .",
+      "scrollMode": "auto",
+      "lineIndex": 32
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oh0",
+      "lineText": "Enter Proculeius .",
+      "scrollMode": "auto",
+      "lineIndex": 33
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78okg",
+      "lineText": "Caesar sends greeting to the Queen of Egypt , And bids thee study on what fair demands Thou mean’st to have him grant thee .",
+      "scrollMode": "auto",
+      "lineIndex": 34
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78olg",
+      "lineText": "What’s thy name ?",
+      "scrollMode": "auto",
+      "lineIndex": 35
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78okg",
+      "lineText": "My name is Proculeius .",
+      "scrollMode": "auto",
+      "lineIndex": 36
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78olg",
+      "lineText": "Antony Did tell me of you , bade me trust you , but I do not greatly care to be deceived That have no use for trusting . If your master Would have a queen his beggar , you must tell him That majesty , to keep decorum , must No less beg than a kingdom . If he please To give me conquered Egypt for my son , He gives me so much of mine own as I Will kneel to him with thanks .",
+      "scrollMode": "auto",
+      "lineIndex": 37
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78okg",
+      "lineText": "Be of good cheer . You’re fall’n into a princely hand ; fear nothing . Make your full reference freely to my lord , Who is so full of grace that it flows over On all that need . Let me report to him Your sweet dependency , and you shall find A conqueror that will pray in aid for kindness Where he for grace is kneeled to .",
+      "scrollMode": "auto",
+      "lineIndex": 38
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78olg",
+      "lineText": "Pray you tell him I am his fortune’s vassal and I send him The greatness he has got . I hourly learn A doctrine of obedience , and would gladly Look him i’ th’ face .",
+      "scrollMode": "auto",
+      "lineIndex": 39
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78okg",
+      "lineText": "This I’ll report , dear lady . Have comfort , for I know your plight is pitied Of him that caused it .",
+      "scrollMode": "auto",
+      "lineIndex": 40
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oh0",
+      "lineText": "Gallus and Soldiers enter and seize Cleopatra .",
+      "scrollMode": "auto",
+      "lineIndex": 41
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ol0",
+      "lineText": "You see how easily she may be surprised . Guard her till Caesar come .",
+      "scrollMode": "auto",
+      "lineIndex": 42
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78om0",
+      "lineText": "Royal queen !",
+      "scrollMode": "auto",
+      "lineIndex": 43
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78omg",
+      "lineText": "O , Cleopatra , thou art taken , queen !",
+      "scrollMode": "auto",
+      "lineIndex": 44
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oh0",
+      "lineText": ", drawing a dagger",
+      "scrollMode": "auto",
+      "lineIndex": 45
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78olg",
+      "lineText": "Quick , quick , good hands !",
+      "scrollMode": "auto",
+      "lineIndex": 46
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oh0",
+      "lineText": ", seizing the dagger",
+      "scrollMode": "auto",
+      "lineIndex": 47
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78okg",
+      "lineText": "Hold , worthy lady , hold ! Do not yourself such wrong , who are in this Relieved , but not betrayed .",
+      "scrollMode": "auto",
+      "lineIndex": 48
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78olg",
+      "lineText": "What , of death , too , That rids our dogs of languish ?",
+      "scrollMode": "auto",
+      "lineIndex": 49
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78okg",
+      "lineText": "Cleopatra , Do not abuse my master’s bounty by Th’ undoing of yourself . Let the world see His nobleness well acted , which your death Will never let come forth .",
+      "scrollMode": "auto",
+      "lineIndex": 50
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78olg",
+      "lineText": "Where art thou , Death ? Come hither , come ! Come , come , and take a queen Worth many babes and beggars .",
+      "scrollMode": "auto",
+      "lineIndex": 51
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78okg",
+      "lineText": "O , temperance , lady !",
+      "scrollMode": "auto",
+      "lineIndex": 52
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78olg",
+      "lineText": "Sir , I will eat no meat ; I’ll not drink , sir . If idle talk will once be necessary — I’ll not sleep neither . This mortal house I’ll ruin , Do Caesar what he can . Know , sir , that I Will not wait pinioned at your master’s court , Nor once be chastised with the sober eye Of dull Octavia . Shall they hoist me up And show me to the shouting varletry Of censuring Rome ? Rather a ditch in Egypt Be gentle grave unto me ; rather on Nilus’ mud Lay me stark naked , and let the waterflies Blow me into abhorring ; rather make My country’s high pyramides my gibbet And hang me up in chains !",
+      "scrollMode": "auto",
+      "lineIndex": 53
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78okg",
+      "lineText": "You do extend These thoughts of horror further than you shall Find cause in Caesar .",
+      "scrollMode": "auto",
+      "lineIndex": 54
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oh0",
+      "lineText": "Enter Dolabella .",
+      "scrollMode": "auto",
+      "lineIndex": 55
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oi0",
+      "lineText": "Proculeius , What thou hast done thy master Caesar knows , ACT 5. SC. 2 And he hath sent for thee . For the Queen , I’ll take her to my guard .",
+      "scrollMode": "auto",
+      "lineIndex": 56
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oh0",
+      "lineText": "To Cleopatra .",
+      "scrollMode": "auto",
+      "lineIndex": 57
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78okg",
+      "lineText": "To Cleopatra . To Caesar I will speak what you shall please , If you’ll employ me to him .",
+      "scrollMode": "auto",
+      "lineIndex": 58
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78olg",
+      "lineText": "Say I would die .",
+      "scrollMode": "auto",
+      "lineIndex": 59
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oh0",
+      "lineText": "Proculeius , Gallus , and Soldiers exit exits .",
+      "scrollMode": "auto",
+      "lineIndex": 60
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oi0",
+      "lineText": "Most noble empress , you have heard of me .",
+      "scrollMode": "auto",
+      "lineIndex": 61
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78olg",
+      "lineText": "I cannot tell .",
+      "scrollMode": "auto",
+      "lineIndex": 62
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oi0",
+      "lineText": "Assuredly you know me .",
+      "scrollMode": "auto",
+      "lineIndex": 63
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78olg",
+      "lineText": "No matter , sir , what I have heard or known . You laugh when boys or women tell their dreams ; Is ’t not your trick ?",
+      "scrollMode": "auto",
+      "lineIndex": 64
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oi0",
+      "lineText": "I understand not , madam .",
+      "scrollMode": "auto",
+      "lineIndex": 65
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78olg",
+      "lineText": "I dreamt there was an emperor Antony . O , such another sleep , that I might see But such another man .",
+      "scrollMode": "auto",
+      "lineIndex": 66
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oi0",
+      "lineText": "If it might please you —",
+      "scrollMode": "auto",
+      "lineIndex": 67
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78olg",
+      "lineText": "His face was as the heavens , and therein stuck A sun and moon , which kept their course and lighted The little O , the Earth earth .",
+      "scrollMode": "auto",
+      "lineIndex": 68
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oi0",
+      "lineText": "Most sovereign creature —",
+      "scrollMode": "auto",
+      "lineIndex": 69
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78olg",
+      "lineText": "His legs bestrid the ocean , his reared arm Crested the world . His voice was propertied As all the tunèd spheres , and that to friends ; But when he meant to quail and shake the orb , ACT 5. SC. 2 He was as rattling thunder . For his bounty , There was no winter in ’t ; an autumn ’twas That grew the more by reaping . His delights Were dolphin-like ; they showed his back above The element they lived in . In his livery Walked crowns and crownets ; realms and islands were As plates dropped from his pocket .",
+      "scrollMode": "auto",
+      "lineIndex": 70
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oi0",
+      "lineText": "Cleopatra —",
+      "scrollMode": "auto",
+      "lineIndex": 71
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78olg",
+      "lineText": "Think you there was , or might be , such a man As this I dreamt of ?",
+      "scrollMode": "auto",
+      "lineIndex": 72
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oi0",
+      "lineText": "Gentle madam , no .",
+      "scrollMode": "auto",
+      "lineIndex": 73
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78olg",
+      "lineText": "You lie up to the hearing of the gods ! But if there be nor ever were one such , It’s past the size of dreaming . Nature wants stuff To vie strange forms with fancy , yet t’ imagine An Antony were nature’s piece ’gainst fancy , Condemning shadows quite .",
+      "scrollMode": "auto",
+      "lineIndex": 74
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oi0",
+      "lineText": "Hear me , good madam . Your loss is as yourself , great ; and you bear it As answering to the weight . Would I might never O’ertake pursued success but I do feel , By the rebound of yours , a grief that smites My very heart at root .",
+      "scrollMode": "auto",
+      "lineIndex": 75
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78olg",
+      "lineText": "I thank you , sir . Know you what Caesar means to do with me ?",
+      "scrollMode": "auto",
+      "lineIndex": 76
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oi0",
+      "lineText": "I am loath to tell you what I would you knew .",
+      "scrollMode": "auto",
+      "lineIndex": 77
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78olg",
+      "lineText": "Nay , pray you , sir .",
+      "scrollMode": "auto",
+      "lineIndex": 78
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oi0",
+      "lineText": "Though he be honorable —",
+      "scrollMode": "auto",
+      "lineIndex": 79
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78olg",
+      "lineText": "He’ll lead me , then , in triumph .",
+      "scrollMode": "auto",
+      "lineIndex": 80
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oi0",
+      "lineText": "Madam , he will . I know ’t .",
+      "scrollMode": "auto",
+      "lineIndex": 81
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oh0",
+      "lineText": "Flourish . Enter Caesar , Proculeius , Gallus , Maecenas , and others of his train .",
+      "scrollMode": "auto",
+      "lineIndex": 82
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78okg",
+      "lineText": "Make way there ! Caesar !",
+      "scrollMode": "auto",
+      "lineIndex": 83
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ohg",
+      "lineText": "Which is the Queen of Egypt ?",
+      "scrollMode": "auto",
+      "lineIndex": 84
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oi0",
+      "lineText": "It is the Emperor , madam .",
+      "scrollMode": "auto",
+      "lineIndex": 85
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oh0",
+      "lineText": "Cleopatra kneels .",
+      "scrollMode": "auto",
+      "lineIndex": 86
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ohg",
+      "lineText": "Arise . You shall not kneel . I pray you , rise . Rise , Egypt .",
+      "scrollMode": "auto",
+      "lineIndex": 87
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78olg",
+      "lineText": "Sir , the gods Will have it thus . My master and my lord I must obey .",
+      "scrollMode": "auto",
+      "lineIndex": 88
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oh0",
+      "lineText": "She stands .",
+      "scrollMode": "auto",
+      "lineIndex": 89
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ohg",
+      "lineText": "Take to you no hard thoughts . The record of what injuries you did us , Though written in our flesh , we shall remember As things but done by chance .",
+      "scrollMode": "auto",
+      "lineIndex": 90
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78olg",
+      "lineText": "Sole sir o’ th’ world , I cannot project mine own cause so well To make it clear , but do confess I have Been laden with like frailties which before Have often shamed our sex .",
+      "scrollMode": "auto",
+      "lineIndex": 91
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ohg",
+      "lineText": "Cleopatra , know We will extenuate rather than enforce . If you apply yourself to our intents , Which towards you are most gentle , you shall find A benefit in this change ; but if you seek To lay on me a cruelty by taking Antony’s course , you shall bereave yourself Of my good purposes , and put your children To that destruction which I’ll guard them from If thereon you rely . I’ll take my leave .",
+      "scrollMode": "auto",
+      "lineIndex": 92
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78olg",
+      "lineText": "And may through all the world . ’Tis yours , and we , Your scutcheons and your signs of conquest , shall Hang in what place you please . Here , my good lord .",
+      "scrollMode": "auto",
+      "lineIndex": 93
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oh0",
+      "lineText": "She holds out a paper .",
+      "scrollMode": "auto",
+      "lineIndex": 94
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ohg",
+      "lineText": "You shall advise me in all for Cleopatra .",
+      "scrollMode": "auto",
+      "lineIndex": 95
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78olg",
+      "lineText": "This is the brief of money , plate , and jewels I am possessed of . ’Tis exactly valued , Not petty things admitted . — Where’s Seleucus ?",
+      "scrollMode": "auto",
+      "lineIndex": 96
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oh0",
+      "lineText": "Enter Seleucus .",
+      "scrollMode": "auto",
+      "lineIndex": 97
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ong",
+      "lineText": "Here , madam .",
+      "scrollMode": "auto",
+      "lineIndex": 98
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78olg",
+      "lineText": "This is my treasurer . Let him speak , my lord , Upon his peril , that I have reserved To myself nothing . — Speak the truth , Seleucus .",
+      "scrollMode": "auto",
+      "lineIndex": 99
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ong",
+      "lineText": "Madam , I had rather seel my lips Than to my peril speak that which is not .",
+      "scrollMode": "auto",
+      "lineIndex": 100
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78olg",
+      "lineText": "What have I kept back ?",
+      "scrollMode": "auto",
+      "lineIndex": 101
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ong",
+      "lineText": "Enough to purchase what you have made known .",
+      "scrollMode": "auto",
+      "lineIndex": 102
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ohg",
+      "lineText": "Nay , blush not , Cleopatra . I approve Your wisdom in the deed .",
+      "scrollMode": "auto",
+      "lineIndex": 103
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78olg",
+      "lineText": "See , Caesar , O , behold How pomp is followed ! Mine will now be yours , And should we shift estates , yours would be mine . The ingratitude of this Seleucus does Even make me wild . — O slave , of no more trust Than love that’s hired ! What , goest thou back ? Thou shalt Go back , I warrant thee ! But I’ll catch thine eyes Though they had wings . Slave , soulless villain , dog ! O rarely base !",
+      "scrollMode": "auto",
+      "lineIndex": 104
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ohg",
+      "lineText": "Good queen , let us entreat you —",
+      "scrollMode": "auto",
+      "lineIndex": 105
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oh0",
+      "lineText": "To Seleucus .",
+      "scrollMode": "auto",
+      "lineIndex": 106
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78olg",
+      "lineText": "To Seleucus . Prithee , go hence , Or I shall show the cinders of my spirits Through th’ ashes of my chance . Wert thou a man , Thou wouldst have mercy on me .",
+      "scrollMode": "auto",
+      "lineIndex": 107
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ohg",
+      "lineText": "Forbear , Seleucus .",
+      "scrollMode": "auto",
+      "lineIndex": 108
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oh0",
+      "lineText": "Seleucus exits .",
+      "scrollMode": "auto",
+      "lineIndex": 109
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78olg",
+      "lineText": "Be it known that we , the greatest , are misthought For things that others do ; and when we fall , We answer others’ merits in our name — Are therefore to be pitied .",
+      "scrollMode": "auto",
+      "lineIndex": 110
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ohg",
+      "lineText": "Cleopatra , Not what you have reserved nor what acknowledged Put we i’ th’ roll of conquest . Still be ’t yours ! Bestow it at your pleasure , and believe Caesar’s no merchant to make prize with you Of things that merchants sold . Therefore be cheered . Make not your thoughts your prisons . No , dear queen , For we intend so to dispose you as Yourself shall give us counsel . Feed and sleep . Our care and pity is so much upon you That we remain your friend . And so adieu .",
+      "scrollMode": "auto",
+      "lineIndex": 111
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78olg",
+      "lineText": "My master and my lord !",
+      "scrollMode": "auto",
+      "lineIndex": 112
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ohg",
+      "lineText": "Not so . Adieu .",
+      "scrollMode": "auto",
+      "lineIndex": 113
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oh0",
+      "lineText": "Flourish . Caesar and his train exit .",
+      "scrollMode": "auto",
+      "lineIndex": 114
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78olg",
+      "lineText": "He words me , girls , he words me , that I should not Be noble to myself . But hark thee , Charmian .",
+      "scrollMode": "auto",
+      "lineIndex": 115
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oh0",
+      "lineText": "She whispers to Charmian .",
+      "scrollMode": "auto",
+      "lineIndex": 116
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78om0",
+      "lineText": "Finish , good lady . The bright day is done , And we are for the dark .",
+      "scrollMode": "auto",
+      "lineIndex": 117
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oh0",
+      "lineText": ", to Charmian",
+      "scrollMode": "auto",
+      "lineIndex": 118
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78olg",
+      "lineText": "Hie thee again . I have spoke already , and it is provided . Go put it to the haste .",
+      "scrollMode": "auto",
+      "lineIndex": 119
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78omg",
+      "lineText": "Madam , I will .",
+      "scrollMode": "auto",
+      "lineIndex": 120
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oh0",
+      "lineText": "Enter Dolabella .",
+      "scrollMode": "auto",
+      "lineIndex": 121
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oi0",
+      "lineText": "Where’s the Queen ?",
+      "scrollMode": "auto",
+      "lineIndex": 122
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78omg",
+      "lineText": "Behold , sir .",
+      "scrollMode": "auto",
+      "lineIndex": 123
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oh0",
+      "lineText": "She exits .",
+      "scrollMode": "auto",
+      "lineIndex": 124
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78olg",
+      "lineText": "Dolabella .",
+      "scrollMode": "auto",
+      "lineIndex": 125
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oi0",
+      "lineText": "Madam , as thereto sworn by your command , Which my love makes religion to obey , I tell you this : Caesar through Syria Intends his journey , and within three days You with your children will he send before . Make your best use of this . I have performed Your pleasure and my promise .",
+      "scrollMode": "auto",
+      "lineIndex": 126
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78olg",
+      "lineText": "Dolabella , I shall remain your debtor .",
+      "scrollMode": "auto",
+      "lineIndex": 127
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oi0",
+      "lineText": "I your servant . Adieu , good queen . I must attend on Caesar .",
+      "scrollMode": "auto",
+      "lineIndex": 128
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oh0",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 129
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oi0",
+      "lineText": "He exits . Now , Iras , what think’st thou ? ACT 5. SC. 2 Thou an Egyptian puppet shall be shown In Rome as well as I . Mechanic slaves With greasy aprons , rules , and hammers shall Uplift us to the view . In their thick breaths , Rank of gross diet , shall we be enclouded And forced to drink their vapor .",
+      "scrollMode": "auto",
+      "lineIndex": 130
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78om0",
+      "lineText": "The gods forbid !",
+      "scrollMode": "auto",
+      "lineIndex": 131
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78olg",
+      "lineText": "Nay , ’tis most certain , Iras . Saucy lictors Will catch at us like strumpets , and scald rhymers Ballad us out o’ tune . The quick comedians Extemporally will stage us and present Our Alexandrian revels . Antony Shall be brought drunken forth , and I shall see Some squeaking Cleopatra boy my greatness I’ th’ posture of a whore .",
+      "scrollMode": "auto",
+      "lineIndex": 132
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78om0",
+      "lineText": "O the good gods !",
+      "scrollMode": "auto",
+      "lineIndex": 133
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78olg",
+      "lineText": "Nay , that’s certain .",
+      "scrollMode": "auto",
+      "lineIndex": 134
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78om0",
+      "lineText": "I’ll never see ’t ! For I am sure mine nails Are stronger than mine eyes .",
+      "scrollMode": "auto",
+      "lineIndex": 135
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oh0",
+      "lineText": "Enter Charmian .",
+      "scrollMode": "auto",
+      "lineIndex": 136
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oh0",
+      "lineText": "Iras exits .",
+      "scrollMode": "auto",
+      "lineIndex": 137
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oh0",
+      "lineText": "A noise within .",
+      "scrollMode": "auto",
+      "lineIndex": 138
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78om0",
+      "lineText": "A noise within . Wherefore’s this noise ?",
+      "scrollMode": "auto",
+      "lineIndex": 139
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oh0",
+      "lineText": "Enter a Guardsman .",
+      "scrollMode": "auto",
+      "lineIndex": 140
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oo0",
+      "lineText": "Here is a rural fellow That will not be denied your Highness’ presence . He brings you figs .",
+      "scrollMode": "auto",
+      "lineIndex": 141
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oh0",
+      "lineText": "Guardsman exits .",
+      "scrollMode": "auto",
+      "lineIndex": 142
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oo0",
+      "lineText": "Guardsman exits . What poor an instrument May do a noble deed ! He brings me liberty . My resolution’s placed , and I have nothing Of woman in me . Now from head to foot I am marble-constant . Now the fleeting moon No planet is of mine .",
+      "scrollMode": "auto",
+      "lineIndex": 143
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oh0",
+      "lineText": "Enter Guardsman and Countryman , with a basket .",
+      "scrollMode": "auto",
+      "lineIndex": 144
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oo0",
+      "lineText": "This is the man .",
+      "scrollMode": "auto",
+      "lineIndex": 145
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oh0",
+      "lineText": "Guardsman exits .",
+      "scrollMode": "auto",
+      "lineIndex": 146
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oo0",
+      "lineText": "Guardsman exits . Hast thou the pretty worm of Nilus there That kills and pains not ?",
+      "scrollMode": "auto",
+      "lineIndex": 147
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oog",
+      "lineText": "Truly I have him , but I would not be the party that should desire you to touch him , for his biting is immortal . Those that do die of it do seldom or never recover .",
+      "scrollMode": "auto",
+      "lineIndex": 148
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78olg",
+      "lineText": "Remember’st thou any that have died on ’t ?",
+      "scrollMode": "auto",
+      "lineIndex": 149
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oog",
+      "lineText": "Very many , men and women too . I heard of one of them no longer than yesterday — a very honest woman , but something given to lie , as a woman should not do but in the way of honesty — how she died of the biting of it , what pain she felt . Truly , she makes a very good report o’ th’ worm . But he that will believe all that they say shall never be saved by half that they do . But this is most falliable , the worm’s an odd worm .",
+      "scrollMode": "auto",
+      "lineIndex": 150
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78olg",
+      "lineText": "Get thee hence . Farewell .",
+      "scrollMode": "auto",
+      "lineIndex": 151
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oog",
+      "lineText": "I wish you all joy of the worm .",
+      "scrollMode": "auto",
+      "lineIndex": 152
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oh0",
+      "lineText": "He sets down the basket .",
+      "scrollMode": "auto",
+      "lineIndex": 153
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78olg",
+      "lineText": "Farewell .",
+      "scrollMode": "auto",
+      "lineIndex": 154
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oog",
+      "lineText": "You must think this , look you , that the worm will do his kind .",
+      "scrollMode": "auto",
+      "lineIndex": 155
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78olg",
+      "lineText": "Ay , ay , farewell .",
+      "scrollMode": "auto",
+      "lineIndex": 156
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oog",
+      "lineText": "Look you , the worm is not to be trusted but in the keeping of wise people , for indeed there is no goodness in the worm .",
+      "scrollMode": "auto",
+      "lineIndex": 157
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78olg",
+      "lineText": "Take thou no care ; it shall be heeded .",
+      "scrollMode": "auto",
+      "lineIndex": 158
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oog",
+      "lineText": "Very good . Give it nothing , I pray you , for it is not worth the feeding .",
+      "scrollMode": "auto",
+      "lineIndex": 159
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78olg",
+      "lineText": "Will it eat me ?",
+      "scrollMode": "auto",
+      "lineIndex": 160
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oog",
+      "lineText": "You must not think I am so simple but I know the devil himself will not eat a woman . I know that a woman is a dish for the gods if the devil dress her not . But truly these same whoreson devils do the gods great harm in their women , for in every ten that they make , the devils mar five .",
+      "scrollMode": "auto",
+      "lineIndex": 161
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78olg",
+      "lineText": "Well , get thee gone . Farewell .",
+      "scrollMode": "auto",
+      "lineIndex": 162
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oog",
+      "lineText": "Yes , forsooth . I wish you joy o’ th’ worm .",
+      "scrollMode": "auto",
+      "lineIndex": 163
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oh0",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 164
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oh0",
+      "lineText": "Enter Iras bearing Cleopatra’s royal regalia .",
+      "scrollMode": "auto",
+      "lineIndex": 165
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oh0",
+      "lineText": "Charmian and Iras begin to dress her .",
+      "scrollMode": "auto",
+      "lineIndex": 166
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oh0",
+      "lineText": "She kisses them . Iras falls and dies .",
+      "scrollMode": "auto",
+      "lineIndex": 167
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78olg",
+      "lineText": "She kisses them . Iras falls and dies . Have I the aspic in my lips ? Dost fall ? If thou and nature can so gently part , The stroke of death is as a lover’s pinch , Which hurts and is desired . Dost thou lie still ? If thus thou vanishest , thou tell’st the world It is not worth leave-taking .",
+      "scrollMode": "auto",
+      "lineIndex": 168
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78omg",
+      "lineText": "Dissolve , thick cloud , and rain , that I may say The gods themselves do weep !",
+      "scrollMode": "auto",
+      "lineIndex": 169
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oh0",
+      "lineText": "She places an asp on her breast .",
+      "scrollMode": "auto",
+      "lineIndex": 170
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78olg",
+      "lineText": "She places an asp on her breast . With thy sharp teeth this knot intrinsicate Of life at once untie . Poor venomous fool , Be angry and dispatch . O , couldst thou speak , That I might hear thee call great Caesar ass Unpolicied !",
+      "scrollMode": "auto",
+      "lineIndex": 171
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78omg",
+      "lineText": "O eastern star !",
+      "scrollMode": "auto",
+      "lineIndex": 172
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78olg",
+      "lineText": "Peace , peace ! Dost thou not see my baby at my breast , That sucks the nurse asleep ?",
+      "scrollMode": "auto",
+      "lineIndex": 173
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78omg",
+      "lineText": "O , break ! O , break !",
+      "scrollMode": "auto",
+      "lineIndex": 174
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oh0",
+      "lineText": "She places an asp on her arm .",
+      "scrollMode": "auto",
+      "lineIndex": 175
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78olg",
+      "lineText": "She places an asp on her arm . What should I stay —",
+      "scrollMode": "auto",
+      "lineIndex": 176
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oh0",
+      "lineText": "Dies .",
+      "scrollMode": "auto",
+      "lineIndex": 177
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oh0",
+      "lineText": "She closes Cleopatra’s eyes .",
+      "scrollMode": "auto",
+      "lineIndex": 178
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78omg",
+      "lineText": "She closes Cleopatra’s eyes . ACT 5. SC. 2 And golden Phoebus , never be beheld Of eyes again so royal . Your crown’s awry . I’ll mend it , and then play —",
+      "scrollMode": "auto",
+      "lineIndex": 179
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oh0",
+      "lineText": "Enter the Guard rustling in .",
+      "scrollMode": "auto",
+      "lineIndex": 180
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78op0",
+      "lineText": "Where’s the Queen ?",
+      "scrollMode": "auto",
+      "lineIndex": 181
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78omg",
+      "lineText": "Speak softly . Wake her not .",
+      "scrollMode": "auto",
+      "lineIndex": 182
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78op0",
+      "lineText": "Caesar hath sent —",
+      "scrollMode": "auto",
+      "lineIndex": 183
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oh0",
+      "lineText": "She takes out an asp .",
+      "scrollMode": "auto",
+      "lineIndex": 184
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78omg",
+      "lineText": "She takes out an asp . O , come apace , dispatch ! I partly feel thee .",
+      "scrollMode": "auto",
+      "lineIndex": 185
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78op0",
+      "lineText": "Approach , ho ! All’s not well . Caesar’s beguiled .",
+      "scrollMode": "auto",
+      "lineIndex": 186
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78opg",
+      "lineText": "There’s Dolabella sent from Caesar . Call him .",
+      "scrollMode": "auto",
+      "lineIndex": 187
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oh0",
+      "lineText": "A Guardsman exits .",
+      "scrollMode": "auto",
+      "lineIndex": 188
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78op0",
+      "lineText": "What work is here , Charmian ? Is this well done ?",
+      "scrollMode": "auto",
+      "lineIndex": 189
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78omg",
+      "lineText": "It is well done , and fitting for a princess Descended of so many royal kings . Ah , soldier !",
+      "scrollMode": "auto",
+      "lineIndex": 190
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oh0",
+      "lineText": "Charmian dies .",
+      "scrollMode": "auto",
+      "lineIndex": 191
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oh0",
+      "lineText": "Enter Dolabella .",
+      "scrollMode": "auto",
+      "lineIndex": 192
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oi0",
+      "lineText": "How goes it here ?",
+      "scrollMode": "auto",
+      "lineIndex": 193
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78opg",
+      "lineText": "All dead .",
+      "scrollMode": "auto",
+      "lineIndex": 194
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oi0",
+      "lineText": "Caesar , thy thoughts Touch their effects in this . Thyself art coming To see performed the dreaded act which thou So sought’st to hinder .",
+      "scrollMode": "auto",
+      "lineIndex": 195
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oh0",
+      "lineText": "Enter Caesar and all his train , marching .",
+      "scrollMode": "auto",
+      "lineIndex": 196
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78okg",
+      "lineText": "A way there , a way for Caesar !",
+      "scrollMode": "auto",
+      "lineIndex": 197
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oi0",
+      "lineText": "O sir , you are too sure an augurer : That you did fear is done .",
+      "scrollMode": "auto",
+      "lineIndex": 198
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ohg",
+      "lineText": "Bravest at the last , She leveled at our purposes and , being royal , Took her own way . The manner of their deaths ? I do not see them bleed .",
+      "scrollMode": "auto",
+      "lineIndex": 199
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oi0",
+      "lineText": "Who was last with them ?",
+      "scrollMode": "auto",
+      "lineIndex": 200
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78op0",
+      "lineText": "A simple countryman that brought her figs . This was his basket .",
+      "scrollMode": "auto",
+      "lineIndex": 201
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ohg",
+      "lineText": "Poisoned , then .",
+      "scrollMode": "auto",
+      "lineIndex": 202
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78op0",
+      "lineText": "O Caesar , This Charmian lived but now ; she stood and spake . I found her trimming up the diadem On her dead mistress ; tremblingly she stood , And on the sudden dropped .",
+      "scrollMode": "auto",
+      "lineIndex": 203
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ohg",
+      "lineText": "O , noble weakness ! If they had swallowed poison , ’twould appear By external swelling ; but she looks like sleep , As she would catch another Antony In her strong toil of grace .",
+      "scrollMode": "auto",
+      "lineIndex": 204
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oi0",
+      "lineText": "Here on her breast There is a vent of blood , and something blown . The like is on her arm .",
+      "scrollMode": "auto",
+      "lineIndex": 205
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78op0",
+      "lineText": "This is an aspic’s trail , and these fig leaves Have slime upon them , such as th’ aspic leaves Upon the caves of Nile .",
+      "scrollMode": "auto",
+      "lineIndex": 206
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ohg",
+      "lineText": "Most probable That so she died , for her physician tells me She hath pursued conclusions infinite Of easy ways to die . Take up her bed , And bear her women from the monument . She shall be buried by her Antony . ACT 5. SC. 2 No grave upon the earth shall clip in it A pair so famous . High events as these Strike those that make them ; and their story is No less in pity than his glory which Brought them to be lamented . Our army shall In solemn show attend this funeral , And then to Rome . Come , Dolabella , see High order in this great solemnity .",
+      "scrollMode": "auto",
+      "lineIndex": 207
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78oh0",
+      "lineText": "They all exit , the Guards bearing the dead bodies .",
+      "scrollMode": "auto",
+      "lineIndex": 208
+    }
+  ],
+  "isPublic": true
+}

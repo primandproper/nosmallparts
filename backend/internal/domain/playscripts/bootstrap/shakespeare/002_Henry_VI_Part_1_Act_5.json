@@ -1,0 +1,1430 @@
+{
+  "title": "Henry VI, Part 1 (Act 5)",
+  "description": "Folger Shakespeare Library edition",
+  "author": "William Shakespeare",
+  "castMembers": [
+    {
+      "id": "d68m114n9qd8d2h78e60",
+      "name": "Narrator",
+      "sortOrder": 0
+    },
+    {
+      "id": "d68m114n9qd8d2h78e6g",
+      "name": "King Henry VI",
+      "sortOrder": 1
+    },
+    {
+      "id": "d68m114n9qd8d2h78e70",
+      "name": "Gloucester",
+      "description": "the king’s uncle, and Lord Protector",
+      "sortOrder": 2
+    },
+    {
+      "id": "d68m114n9qd8d2h78e7g",
+      "name": "ATTENDANTS.ENGLISH.0.1_1H6",
+      "sortOrder": 3
+    },
+    {
+      "id": "d68m114n9qd8d2h78e80",
+      "name": "Exeter",
+      "description": "the king’s great-uncle",
+      "sortOrder": 4
+    },
+    {
+      "id": "d68m114n9qd8d2h78e8g",
+      "name": "AMBASSADORS.ARMAGNAC.1_1H6",
+      "sortOrder": 5
+    },
+    {
+      "id": "d68m114n9qd8d2h78e90",
+      "name": "Winchester",
+      "description": "the king’s great-uncle",
+      "sortOrder": 6
+    },
+    {
+      "id": "d68m114n9qd8d2h78e9g",
+      "name": "Legate",
+      "sortOrder": 7
+    },
+    {
+      "id": "d68m114n9qd8d2h78ea0",
+      "name": "Charles",
+      "sortOrder": 8
+    },
+    {
+      "id": "d68m114n9qd8d2h78eag",
+      "name": "Alanson",
+      "sortOrder": 9
+    },
+    {
+      "id": "d68m114n9qd8d2h78eb0",
+      "name": "Pucelle",
+      "sortOrder": 10
+    },
+    {
+      "id": "d68m114n9qd8d2h78ebg",
+      "name": "Scout",
+      "sortOrder": 11
+    },
+    {
+      "id": "d68m114n9qd8d2h78ec0",
+      "name": "Burgundy",
+      "sortOrder": 12
+    },
+    {
+      "id": "d68m114n9qd8d2h78ecg",
+      "name": "SPIRITS_1H6",
+      "sortOrder": 13
+    },
+    {
+      "id": "d68m114n9qd8d2h78ed0",
+      "name": "York",
+      "description": "and Regent of France",
+      "sortOrder": 14
+    },
+    {
+      "id": "d68m114n9qd8d2h78edg",
+      "name": "Suffolk",
+      "sortOrder": 15
+    },
+    {
+      "id": "d68m114n9qd8d2h78ee0",
+      "name": "Margaret",
+      "description": "his daughter",
+      "sortOrder": 16
+    },
+    {
+      "id": "d68m114n9qd8d2h78eeg",
+      "name": "Reignier",
+      "description": "Duke of Anjou and Maine, King of Naples",
+      "sortOrder": 17
+    },
+    {
+      "id": "d68m114n9qd8d2h78ef0",
+      "name": "Shepherd",
+      "description": "Pucelle’s father",
+      "sortOrder": 18
+    },
+    {
+      "id": "d68m114n9qd8d2h78efg",
+      "name": "Warwick",
+      "sortOrder": 19
+    },
+    {
+      "id": "d68m114n9qd8d2h78eg0",
+      "name": "Orleance",
+      "sortOrder": 20
+    }
+  ],
+  "lines": [
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": "Sennet . Enter King , Gloucester , and Exeter , with Attendants .",
+      "scrollMode": "auto",
+      "lineIndex": 0
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": ", to Gloucester",
+      "scrollMode": "auto",
+      "lineIndex": 1
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e6g",
+      "lineText": "Have you perused the letters from the Pope , The Emperor , and the Earl of Armagnac ?",
+      "scrollMode": "auto",
+      "lineIndex": 2
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e70",
+      "lineText": "I have , my lord , and their intent is this : They humbly sue unto your Excellence To have a godly peace concluded of Between the realms of England and of France .",
+      "scrollMode": "auto",
+      "lineIndex": 3
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e6g",
+      "lineText": "How doth your Grace affect their motion ?",
+      "scrollMode": "auto",
+      "lineIndex": 4
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e70",
+      "lineText": "Well , my good lord , and as the only means To stop effusion of our Christian blood And stablish quietness on every side .",
+      "scrollMode": "auto",
+      "lineIndex": 5
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e6g",
+      "lineText": "Ay , marry , uncle , for I always thought It was both impious and unnatural That such immanity and bloody strife Should reign among professors of one faith .",
+      "scrollMode": "auto",
+      "lineIndex": 6
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e70",
+      "lineText": "Besides , my lord , the sooner to effect And surer bind this knot of amity , The Earl of Armagnac , near knit to Charles , A man of great authority in France , Proffers his only daughter to your Grace In marriage , with a large and sumptuous dowry .",
+      "scrollMode": "auto",
+      "lineIndex": 7
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": "An Attendant exits .",
+      "scrollMode": "auto",
+      "lineIndex": 8
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e7g",
+      "lineText": "An Attendant exits . I shall be well content with any choice Tends to God’s glory and my country’s weal .",
+      "scrollMode": "auto",
+      "lineIndex": 9
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": "Enter Winchester , dressed in cardinal’s robes , and the Ambassador of Armagnac , a Papal Legate , and another Ambassador .",
+      "scrollMode": "auto",
+      "lineIndex": 10
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 11
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e80",
+      "lineText": "What , is my Lord of Winchester installed And called unto a cardinal’s degree ? Then I perceive that will be verified Henry the Fifth did sometime prophesy : If once he come to be a cardinal , He’ll make his cap coequal with the crown .",
+      "scrollMode": "auto",
+      "lineIndex": 12
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e6g",
+      "lineText": "My Lords Ambassadors , your several suits Have been considered and debated on ; Your purpose is both good and reasonable , And therefore are we certainly resolved To draw conditions of a friendly peace , Which by my Lord of Winchester we mean Shall be transported presently to France .",
+      "scrollMode": "auto",
+      "lineIndex": 13
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": ", to the Ambassador of Armagnac",
+      "scrollMode": "auto",
+      "lineIndex": 14
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e70",
+      "lineText": "And for the proffer of my lord your master , I have informed his Highness so at large As , liking of the lady’s virtuous gifts , Her beauty , and the value of her dower , He doth intend she shall be England’s queen .",
+      "scrollMode": "auto",
+      "lineIndex": 15
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": ", handing a jewel to the Ambassador",
+      "scrollMode": "auto",
+      "lineIndex": 16
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e6g",
+      "lineText": "In argument and proof of which contract , Bear her this jewel , pledge of my affection . — And so , my Lord Protector , see them guarded And safely brought to Dover , where , inshipped , Commit them to the fortune of the sea .",
+      "scrollMode": "auto",
+      "lineIndex": 17
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": "All except Winchester and Legate exit .",
+      "scrollMode": "auto",
+      "lineIndex": 18
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e90",
+      "lineText": "Stay , my Lord Legate ; you shall first receive The sum of money which I promisèd Should be delivered to his Holiness For clothing me in these grave ornaments .",
+      "scrollMode": "auto",
+      "lineIndex": 19
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e9g",
+      "lineText": "I will attend upon your Lordship’s leisure .",
+      "scrollMode": "auto",
+      "lineIndex": 20
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 21
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e90",
+      "lineText": "Now Winchester will not submit , I trow , Or be inferior to the proudest peer . Humphrey of Gloucester , thou shalt well perceive That neither in birth or for authority The Bishop will be overborne by thee . I’ll either make thee stoop and bend thy knee , Or sack this country with a mutiny .",
+      "scrollMode": "auto",
+      "lineIndex": 22
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 23
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": "Enter Charles , Burgundy , Alanson , Bastard , Reignier , and Joan la Pucelle , with Soldiers .",
+      "scrollMode": "auto",
+      "lineIndex": 24
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78ea0",
+      "lineText": "These news , my lords , may cheer our drooping spirits : ’Tis said the stout Parisians do revolt And turn again unto the warlike French .",
+      "scrollMode": "auto",
+      "lineIndex": 25
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78eag",
+      "lineText": "Then march to Paris , royal Charles of France , And keep not back your powers in dalliance .",
+      "scrollMode": "auto",
+      "lineIndex": 26
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78eb0",
+      "lineText": "Peace be amongst them if they turn to us ; Else ruin combat with their palaces !",
+      "scrollMode": "auto",
+      "lineIndex": 27
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": "Enter Scout .",
+      "scrollMode": "auto",
+      "lineIndex": 28
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78ebg",
+      "lineText": "Success unto our valiant general , And happiness to his accomplices .",
+      "scrollMode": "auto",
+      "lineIndex": 29
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78ea0",
+      "lineText": "What tidings send our scouts ? I prithee speak .",
+      "scrollMode": "auto",
+      "lineIndex": 30
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78ebg",
+      "lineText": "The English army that divided was Into two parties is now conjoined in one , And means to give you battle presently .",
+      "scrollMode": "auto",
+      "lineIndex": 31
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78ea0",
+      "lineText": "Somewhat too sudden , sirs , the warning is , But we will presently provide for them .",
+      "scrollMode": "auto",
+      "lineIndex": 32
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78ec0",
+      "lineText": "I trust the ghost of Talbot is not there . Now he is gone , my lord , you need not fear .",
+      "scrollMode": "auto",
+      "lineIndex": 33
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78eb0",
+      "lineText": "Of all base passions , fear is most accursed . Command the conquest , Charles , it shall be thine ; Let Henry fret and all the world repine .",
+      "scrollMode": "auto",
+      "lineIndex": 34
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78ea0",
+      "lineText": "Then on , my lords , and France be fortunate !",
+      "scrollMode": "auto",
+      "lineIndex": 35
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 36
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": "Alarum . Excursions .",
+      "scrollMode": "auto",
+      "lineIndex": 37
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": "Enter Joan la Pucelle .",
+      "scrollMode": "auto",
+      "lineIndex": 38
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": "Thunder .",
+      "scrollMode": "auto",
+      "lineIndex": 39
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": "Enter Fiends .",
+      "scrollMode": "auto",
+      "lineIndex": 40
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": "They walk , and speak not .",
+      "scrollMode": "auto",
+      "lineIndex": 41
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": "They hang their heads .",
+      "scrollMode": "auto",
+      "lineIndex": 42
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": "They shake their heads .",
+      "scrollMode": "auto",
+      "lineIndex": 43
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": "They depart .",
+      "scrollMode": "auto",
+      "lineIndex": 44
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78ecg",
+      "lineText": "They depart . See , they forsake me . Now the time is come That France must vail her lofty-plumèd crest And let her head fall into England’s lap . My ancient incantations are too weak , And hell too strong for me to buckle with . Now , France , thy glory droopeth to the dust .",
+      "scrollMode": "auto",
+      "lineIndex": 45
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": "She exits .",
+      "scrollMode": "auto",
+      "lineIndex": 46
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": "Excursions . Burgundy and York fight hand to hand . Burgundy and the French fly",
+      "scrollMode": "auto",
+      "lineIndex": 47
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": "York and English soldiers capture Joan la Pucelle .",
+      "scrollMode": "auto",
+      "lineIndex": 48
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78ed0",
+      "lineText": "Damsel of France , I think I have you fast . Unchain your spirits now with spelling charms , And try if they can gain your liberty . A goodly prize , fit for the devil’s grace ! See how the ugly witch doth bend her brows As if with Circe she would change my shape .",
+      "scrollMode": "auto",
+      "lineIndex": 49
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78eb0",
+      "lineText": "Changed to a worser shape thou canst not be .",
+      "scrollMode": "auto",
+      "lineIndex": 50
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78ed0",
+      "lineText": "O , Charles the Dauphin is a proper man ; No shape but his can please your dainty eye .",
+      "scrollMode": "auto",
+      "lineIndex": 51
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78eb0",
+      "lineText": "A plaguing mischief light on Charles and thee , And may you both be suddenly surprised By bloody hands in sleeping on your beds !",
+      "scrollMode": "auto",
+      "lineIndex": 52
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78ed0",
+      "lineText": "Fell banning hag ! Enchantress , hold thy tongue .",
+      "scrollMode": "auto",
+      "lineIndex": 53
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78eb0",
+      "lineText": "I prithee give me leave to curse awhile .",
+      "scrollMode": "auto",
+      "lineIndex": 54
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78ed0",
+      "lineText": "Curse , miscreant , when thou com’st to the stake .",
+      "scrollMode": "auto",
+      "lineIndex": 55
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 56
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": "Alarum . Enter Suffolk with Margaret in his hand .",
+      "scrollMode": "auto",
+      "lineIndex": 57
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": "Gazes on her .",
+      "scrollMode": "auto",
+      "lineIndex": 58
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78edg",
+      "lineText": "Gazes on her . O fairest beauty , do not fear nor fly , For I will touch thee but with reverent hands . I kiss these fingers for eternal peace ACT 5. SC. 3 And lay them gently on thy tender side . Who art thou ? Say , that I may honor thee .",
+      "scrollMode": "auto",
+      "lineIndex": 59
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78ee0",
+      "lineText": "Margaret my name , and daughter to a king , The King of Naples , whosoe’er thou art .",
+      "scrollMode": "auto",
+      "lineIndex": 60
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": "She is going .",
+      "scrollMode": "auto",
+      "lineIndex": 61
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": "( Aside . )",
+      "scrollMode": "auto",
+      "lineIndex": 62
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78ee0",
+      "lineText": "( Aside . ) I have no power to let her pass . My hand would free her , but my heart says no . As plays the sun upon the glassy streams , Twinkling another counterfeited beam , So seems this gorgeous beauty to mine eyes . Fain would I woo her , yet I dare not speak . I’ll call for pen and ink and write my mind . Fie , de la Pole , disable not thyself ! Hast not a tongue ? Is she not here ? Wilt thou be daunted at a woman’s sight ? Ay . Beauty’s princely majesty is such Confounds the tongue and makes the senses rough .",
+      "scrollMode": "auto",
+      "lineIndex": 63
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78ee0",
+      "lineText": "Say , Earl of Suffolk , if thy name be so , What ransom must I pay before I pass ? For I perceive I am thy prisoner .",
+      "scrollMode": "auto",
+      "lineIndex": 64
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 65
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78edg",
+      "lineText": "How canst thou tell she will deny thy suit Before thou make a trial of her love ?",
+      "scrollMode": "auto",
+      "lineIndex": 66
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78ee0",
+      "lineText": "Why speak’st thou not ? What ransom must I pay ?",
+      "scrollMode": "auto",
+      "lineIndex": 67
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 68
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78edg",
+      "lineText": "She’s beautiful , and therefore to be wooed ; She is a woman , therefore to be won .",
+      "scrollMode": "auto",
+      "lineIndex": 69
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78ee0",
+      "lineText": "Wilt thou accept of ransom , yea or no ?",
+      "scrollMode": "auto",
+      "lineIndex": 70
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 71
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78edg",
+      "lineText": "Fond man , remember that thou hast a wife ; Then how can Margaret be thy paramour ?",
+      "scrollMode": "auto",
+      "lineIndex": 72
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 73
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78ee0",
+      "lineText": "I were best to leave him , for he will not hear .",
+      "scrollMode": "auto",
+      "lineIndex": 74
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 75
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78edg",
+      "lineText": "There all is marred ; there lies a cooling card .",
+      "scrollMode": "auto",
+      "lineIndex": 76
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 77
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78ee0",
+      "lineText": "He talks at random ; sure the man is mad .",
+      "scrollMode": "auto",
+      "lineIndex": 78
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 79
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78edg",
+      "lineText": "And yet a dispensation may be had .",
+      "scrollMode": "auto",
+      "lineIndex": 80
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78ee0",
+      "lineText": "And yet I would that you would answer me .",
+      "scrollMode": "auto",
+      "lineIndex": 81
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 82
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78edg",
+      "lineText": "I’ll win this Lady Margaret . For whom ? Why , for my king . Tush , that’s a wooden thing !",
+      "scrollMode": "auto",
+      "lineIndex": 83
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 84
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78ee0",
+      "lineText": "He talks of wood . It is some carpenter .",
+      "scrollMode": "auto",
+      "lineIndex": 85
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 86
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78edg",
+      "lineText": "Yet so my fancy may be satisfied , And peace establishèd between these realms . But there remains a scruple in that , too ; For though her father be the King of Naples , Duke of Anjou and Maine , yet is he poor , And our nobility will scorn the match .",
+      "scrollMode": "auto",
+      "lineIndex": 87
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78ee0",
+      "lineText": "Hear you , captain ? Are you not at leisure ?",
+      "scrollMode": "auto",
+      "lineIndex": 88
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 89
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78edg",
+      "lineText": "It shall be so , disdain they ne’er so much . Henry is youthful , and will quickly yield . — Madam , I have a secret to reveal .",
+      "scrollMode": "auto",
+      "lineIndex": 90
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 91
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78ee0",
+      "lineText": "What though I be enthralled , he seems a knight , And will not any way dishonor me .",
+      "scrollMode": "auto",
+      "lineIndex": 92
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78edg",
+      "lineText": "Lady , vouchsafe to listen what I say .",
+      "scrollMode": "auto",
+      "lineIndex": 93
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 94
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78ee0",
+      "lineText": "Perhaps I shall be rescued by the French , And then I need not crave his courtesy .",
+      "scrollMode": "auto",
+      "lineIndex": 95
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78edg",
+      "lineText": "Sweet madam , give me hearing in a cause .",
+      "scrollMode": "auto",
+      "lineIndex": 96
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 97
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78ee0",
+      "lineText": "Tush , women have been captivate ere now .",
+      "scrollMode": "auto",
+      "lineIndex": 98
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78edg",
+      "lineText": "Lady , wherefore talk you so ?",
+      "scrollMode": "auto",
+      "lineIndex": 99
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78ee0",
+      "lineText": "I cry you mercy , ’tis but quid for quo .",
+      "scrollMode": "auto",
+      "lineIndex": 100
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78edg",
+      "lineText": "Say , gentle princess , would you not suppose Your bondage happy , to be made a queen ?",
+      "scrollMode": "auto",
+      "lineIndex": 101
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78ee0",
+      "lineText": "To be a queen in bondage is more vile Than is a slave in base servility , For princes should be free .",
+      "scrollMode": "auto",
+      "lineIndex": 102
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78edg",
+      "lineText": "And so shall you , If happy England’s royal king be free .",
+      "scrollMode": "auto",
+      "lineIndex": 103
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78ee0",
+      "lineText": "Why , what concerns his freedom unto me ?",
+      "scrollMode": "auto",
+      "lineIndex": 104
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78edg",
+      "lineText": "I’ll undertake to make thee Henry’s queen , To put a golden scepter in thy hand And set a precious crown upon thy head , If thou wilt condescend to be my —",
+      "scrollMode": "auto",
+      "lineIndex": 105
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78ee0",
+      "lineText": "What ?",
+      "scrollMode": "auto",
+      "lineIndex": 106
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78edg",
+      "lineText": "His love .",
+      "scrollMode": "auto",
+      "lineIndex": 107
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78ee0",
+      "lineText": "I am unworthy to be Henry’s wife .",
+      "scrollMode": "auto",
+      "lineIndex": 108
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78edg",
+      "lineText": "No , gentle madam , I unworthy am To woo so fair a dame to be his wife , And have no portion in the choice myself . How say you , madam ? Are you so content ?",
+      "scrollMode": "auto",
+      "lineIndex": 109
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78ee0",
+      "lineText": "An if my father please , I am content .",
+      "scrollMode": "auto",
+      "lineIndex": 110
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": "A Soldier exits .",
+      "scrollMode": "auto",
+      "lineIndex": 111
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": "Enter Captains and Trumpets .",
+      "scrollMode": "auto",
+      "lineIndex": 112
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": "Sound a parley .",
+      "scrollMode": "auto",
+      "lineIndex": 113
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": "Enter Reignier on the walls .",
+      "scrollMode": "auto",
+      "lineIndex": 114
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78eeg",
+      "lineText": "Enter Reignier on the walls . See , Reignier , see thy daughter prisoner !",
+      "scrollMode": "auto",
+      "lineIndex": 115
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78eeg",
+      "lineText": "To whom ?",
+      "scrollMode": "auto",
+      "lineIndex": 116
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78edg",
+      "lineText": "To me .",
+      "scrollMode": "auto",
+      "lineIndex": 117
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78eeg",
+      "lineText": "Suffolk , what remedy ? I am a soldier and unapt to weep Or to exclaim on Fortune’s fickleness .",
+      "scrollMode": "auto",
+      "lineIndex": 118
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78edg",
+      "lineText": "Yes , there is remedy enough , my lord : Consent , and , for thy Honor give consent , Thy daughter shall be wedded to my king , Whom I with pain have wooed and won thereto ; And this her easy-held imprisonment Hath gained thy daughter princely liberty .",
+      "scrollMode": "auto",
+      "lineIndex": 119
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78eeg",
+      "lineText": "Speaks Suffolk as he thinks ?",
+      "scrollMode": "auto",
+      "lineIndex": 120
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78edg",
+      "lineText": "Fair Margaret knows That Suffolk doth not flatter , face , or feign .",
+      "scrollMode": "auto",
+      "lineIndex": 121
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78eeg",
+      "lineText": "Upon thy princely warrant , I descend To give thee answer of thy just demand .",
+      "scrollMode": "auto",
+      "lineIndex": 122
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": "He exits from the walls .",
+      "scrollMode": "auto",
+      "lineIndex": 123
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78edg",
+      "lineText": "And here I will expect thy coming .",
+      "scrollMode": "auto",
+      "lineIndex": 124
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": "Trumpets sound .",
+      "scrollMode": "auto",
+      "lineIndex": 125
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": "Enter Reignier , below .",
+      "scrollMode": "auto",
+      "lineIndex": 126
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78eeg",
+      "lineText": "Welcome , brave earl , into our territories . Command in Anjou what your Honor pleases .",
+      "scrollMode": "auto",
+      "lineIndex": 127
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78edg",
+      "lineText": "Thanks , Reignier , happy for so sweet a child , Fit to be made companion with a king . What answer makes your Grace unto my suit ?",
+      "scrollMode": "auto",
+      "lineIndex": 128
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78eeg",
+      "lineText": "Since thou dost deign to woo her little worth To be the princely bride of such a lord , Upon condition I may quietly Enjoy mine own , the country Maine and Anjou , Free from oppression or the stroke of war , My daughter shall be Henry’s , if he please .",
+      "scrollMode": "auto",
+      "lineIndex": 129
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78edg",
+      "lineText": "That is her ransom ; I deliver her , And those two counties I will undertake Your Grace shall well and quietly enjoy .",
+      "scrollMode": "auto",
+      "lineIndex": 130
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78eeg",
+      "lineText": "And I , again in Henry’s royal name As deputy unto that gracious king , Give thee her hand for sign of plighted faith .",
+      "scrollMode": "auto",
+      "lineIndex": 131
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": "Aside .",
+      "scrollMode": "auto",
+      "lineIndex": 132
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78edg",
+      "lineText": "Aside . And yet methinks I could be well content To be mine own attorney in this case . — ACT 5. SC. 3 I’ll over then to England with this news , And make this marriage to be solemnized . So farewell , Reignier ; set this diamond safe In golden palaces , as it becomes .",
+      "scrollMode": "auto",
+      "lineIndex": 133
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": ", embracing Suffolk",
+      "scrollMode": "auto",
+      "lineIndex": 134
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78eeg",
+      "lineText": "I do embrace thee , as I would embrace The Christian prince King Henry , were he here .",
+      "scrollMode": "auto",
+      "lineIndex": 135
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": ", to Suffolk",
+      "scrollMode": "auto",
+      "lineIndex": 136
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78ee0",
+      "lineText": "Farewell , my lord ; good wishes , praise , and prayers Shall Suffolk ever have of Margaret .",
+      "scrollMode": "auto",
+      "lineIndex": 137
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": "She is going ,",
+      "scrollMode": "auto",
+      "lineIndex": 138
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": "Reignier exits .",
+      "scrollMode": "auto",
+      "lineIndex": 139
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78edg",
+      "lineText": "Farewell , sweet madam . But , hark you , Margaret , No princely commendations to my king ?",
+      "scrollMode": "auto",
+      "lineIndex": 140
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78ee0",
+      "lineText": "Such commendations as becomes a maid , A virgin , and his servant , say to him .",
+      "scrollMode": "auto",
+      "lineIndex": 141
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78edg",
+      "lineText": "Words sweetly placed and modestly directed . But , madam , I must trouble you again : No loving token to his Majesty ?",
+      "scrollMode": "auto",
+      "lineIndex": 142
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78ee0",
+      "lineText": "Yes , my good lord : a pure unspotted heart , Never yet taint with love , I send the King .",
+      "scrollMode": "auto",
+      "lineIndex": 143
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78edg",
+      "lineText": "And this withal .",
+      "scrollMode": "auto",
+      "lineIndex": 144
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": "Kiss her .",
+      "scrollMode": "auto",
+      "lineIndex": 145
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78ee0",
+      "lineText": "That for thyself . I will not so presume To send such peevish tokens to a king .",
+      "scrollMode": "auto",
+      "lineIndex": 146
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": "She exits .",
+      "scrollMode": "auto",
+      "lineIndex": 147
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78edg",
+      "lineText": "O , wert thou for myself ! But , Suffolk , stay . Thou mayst not wander in that labyrinth . There Minotaurs and ugly treasons lurk . Solicit Henry with her wondrous praise ; Bethink thee on her virtues that surmount ACT 5. SC. 4 And natural graces that extinguish art ; Repeat their semblance often on the seas , That , when thou com’st to kneel at Henry’s feet , Thou mayst bereave him of his wits with wonder .",
+      "scrollMode": "auto",
+      "lineIndex": 148
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 149
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": "Enter York , Warwick , Shepherd , and Pucelle , guarded .",
+      "scrollMode": "auto",
+      "lineIndex": 150
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78ed0",
+      "lineText": "Bring forth that sorceress condemned to burn .",
+      "scrollMode": "auto",
+      "lineIndex": 151
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78ef0",
+      "lineText": "Ah , Joan , this kills thy father’s heart outright . Have I sought every country far and near , And , now it is my chance to find thee out , Must I behold thy timeless cruel death ? Ah , Joan , sweet daughter Joan , I’ll die with thee .",
+      "scrollMode": "auto",
+      "lineIndex": 152
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78eb0",
+      "lineText": "Decrepit miser , base ignoble wretch ! I am descended of a gentler blood . Thou art no father nor no friend of mine .",
+      "scrollMode": "auto",
+      "lineIndex": 153
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78ef0",
+      "lineText": "Out , out ! — My lords , an please you , ’tis not so ! I did beget her , all the parish knows ; Her mother liveth yet , can testify She was the first fruit of my bach’lorship .",
+      "scrollMode": "auto",
+      "lineIndex": 154
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78efg",
+      "lineText": "Graceless , wilt thou deny thy parentage ?",
+      "scrollMode": "auto",
+      "lineIndex": 155
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78ed0",
+      "lineText": "This argues what her kind of life hath been , Wicked and vile ; and so her death concludes .",
+      "scrollMode": "auto",
+      "lineIndex": 156
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78ef0",
+      "lineText": "Fie , Joan , that thou wilt be so obstacle ! ACT 5. SC. 4 God knows thou art a collop of my flesh , And for thy sake have I shed many a tear . Deny me not , I prithee , gentle Joan .",
+      "scrollMode": "auto",
+      "lineIndex": 157
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78eb0",
+      "lineText": "Peasant , avaunt ! — You have suborned this man Of purpose to obscure my noble birth .",
+      "scrollMode": "auto",
+      "lineIndex": 158
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78ef0",
+      "lineText": "’Tis true , I gave a noble to the priest The morn that I was wedded to her mother . — Kneel down and take my blessing , good my girl . Wilt thou not stoop ? Now cursèd be the time Of thy nativity ! I would the milk Thy mother gave thee when thou suck’dst her breast Had been a little ratsbane for thy sake ! Or else , when thou didst keep my lambs afield , I wish some ravenous wolf had eaten thee ! Dost thou deny thy father , cursèd drab ? O burn her , burn her ! Hanging is too good .",
+      "scrollMode": "auto",
+      "lineIndex": 159
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 160
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78ed0",
+      "lineText": "Take her away , for she hath lived too long To fill the world with vicious qualities .",
+      "scrollMode": "auto",
+      "lineIndex": 161
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78eb0",
+      "lineText": "First , let me tell you whom you have condemned : Not one begotten of a shepherd swain , But issued from the progeny of kings , Virtuous and holy , chosen from above By inspiration of celestial grace To work exceeding miracles on earth . I never had to do with wicked spirits . But you , that are polluted with your lusts , Stained with the guiltless blood of innocents , Corrupt and tainted with a thousand vices , Because you want the grace that others have , You judge it straight a thing impossible ACT 5. SC. 4 To compass wonders but by help of devils . No , misconceivèd ! Joan of Arc hath been A virgin from her tender infancy , Chaste and immaculate in very thought , Whose maiden blood , thus rigorously effused , Will cry for vengeance at the gates of heaven .",
+      "scrollMode": "auto",
+      "lineIndex": 162
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78ed0",
+      "lineText": "Ay , ay . — Away with her to execution .",
+      "scrollMode": "auto",
+      "lineIndex": 163
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78efg",
+      "lineText": "And hark you , sirs : because she is a maid , Spare for no faggots ; let there be enow . Place barrels of pitch upon the fatal stake That so her torture may be shortenèd .",
+      "scrollMode": "auto",
+      "lineIndex": 164
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78eb0",
+      "lineText": "Will nothing turn your unrelenting hearts ? Then , Joan , discover thine infirmity , That warranteth by law to be thy privilege : I am with child , you bloody homicides . Murder not then the fruit within my womb , Although you hale me to a violent death .",
+      "scrollMode": "auto",
+      "lineIndex": 165
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78ed0",
+      "lineText": "Now heaven forfend , the holy maid with child ?",
+      "scrollMode": "auto",
+      "lineIndex": 166
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": ", to Pucelle",
+      "scrollMode": "auto",
+      "lineIndex": 167
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78efg",
+      "lineText": "The greatest miracle that e’er you wrought ! Is all your strict preciseness come to this ?",
+      "scrollMode": "auto",
+      "lineIndex": 168
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78ed0",
+      "lineText": "She and the Dauphin have been juggling . I did imagine what would be her refuge .",
+      "scrollMode": "auto",
+      "lineIndex": 169
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78efg",
+      "lineText": "Well , go to , we’ll have no bastards live , Especially since Charles must father it .",
+      "scrollMode": "auto",
+      "lineIndex": 170
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78eb0",
+      "lineText": "You are deceived ; my child is none of his . It was Alanson that enjoyed my love .",
+      "scrollMode": "auto",
+      "lineIndex": 171
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78ed0",
+      "lineText": "Alanson , that notorious Machiavel ? It dies an if it had a thousand lives !",
+      "scrollMode": "auto",
+      "lineIndex": 172
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78eb0",
+      "lineText": "O , give me leave ! I have deluded you . ’Twas neither Charles nor yet the Duke I named , But Reignier , King of Naples , that prevailed .",
+      "scrollMode": "auto",
+      "lineIndex": 173
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78efg",
+      "lineText": "A married man ? That’s most intolerable .",
+      "scrollMode": "auto",
+      "lineIndex": 174
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78ed0",
+      "lineText": "Why , here’s a girl ! I think she knows not well — There were so many — whom she may accuse .",
+      "scrollMode": "auto",
+      "lineIndex": 175
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78efg",
+      "lineText": "It’s sign she hath been liberal and free .",
+      "scrollMode": "auto",
+      "lineIndex": 176
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78ed0",
+      "lineText": "And yet , forsooth , she is a virgin pure ! — Strumpet , thy words condemn thy brat and thee . Use no entreaty , for it is in vain .",
+      "scrollMode": "auto",
+      "lineIndex": 177
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78eb0",
+      "lineText": "Then lead me hence , with whom I leave my curse : May never glorious sun reflex his beams Upon the country where you make abode , But darkness and the gloomy shade of death Environ you , till mischief and despair Drive you to break your necks or hang yourselves .",
+      "scrollMode": "auto",
+      "lineIndex": 178
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": "She exits , led by Guards .",
+      "scrollMode": "auto",
+      "lineIndex": 179
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78ed0",
+      "lineText": "Break thou in pieces , and consume to ashes , Thou foul accursèd minister of hell !",
+      "scrollMode": "auto",
+      "lineIndex": 180
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": "Enter Winchester , as Cardinal .",
+      "scrollMode": "auto",
+      "lineIndex": 181
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e90",
+      "lineText": "Lord Regent , I do greet your Excellence With letters of commission from the King . For know , my lords , the states of Christendom , ACT 5. SC. 4 Moved with remorse of these outrageous broils , Have earnestly implored a general peace Betwixt our nation and the aspiring French ; And here at hand the Dauphin and his train Approacheth to confer about some matter .",
+      "scrollMode": "auto",
+      "lineIndex": 182
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78ed0",
+      "lineText": "Is all our travail turned to this effect ? After the slaughter of so many peers , So many captains , gentlemen , and soldiers That in this quarrel have been overthrown And sold their bodies for their country’s benefit , Shall we at last conclude effeminate peace ? Have we not lost most part of all the towns — By treason , falsehood , and by treachery — Our great progenitors had conquerèd ? O , Warwick , Warwick , I foresee with grief The utter loss of all the realm of France !",
+      "scrollMode": "auto",
+      "lineIndex": 183
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78efg",
+      "lineText": "Be patient , York ; if we conclude a peace It shall be with such strict and severe covenants As little shall the Frenchmen gain thereby .",
+      "scrollMode": "auto",
+      "lineIndex": 184
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": "Enter Charles , Alanson , Bastard , Reignier , with Attendants .",
+      "scrollMode": "auto",
+      "lineIndex": 185
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78ea0",
+      "lineText": "Since , lords of England , it is thus agreed That peaceful truce shall be proclaimed in France , We come to be informèd by yourselves What the conditions of that league must be .",
+      "scrollMode": "auto",
+      "lineIndex": 186
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78ed0",
+      "lineText": "Speak , Winchester , for boiling choler chokes The hollow passage of my poisoned voice By sight of these our baleful enemies .",
+      "scrollMode": "auto",
+      "lineIndex": 187
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e90",
+      "lineText": "Charles and the rest , it is enacted thus : ACT 5. SC. 4 That , in regard King Henry gives consent , Of mere compassion and of lenity , To ease your country of distressful war And suffer you to breathe in fruitful peace , You shall become true liegemen to his crown . And , Charles , upon condition thou wilt swear To pay him tribute and submit thyself , Thou shalt be placed as viceroy under him , And still enjoy thy regal dignity .",
+      "scrollMode": "auto",
+      "lineIndex": 188
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78eag",
+      "lineText": "Must he be then as shadow of himself — Adorn his temples with a coronet , And yet , in substance and authority , Retain but privilege of a private man ? This proffer is absurd and reasonless .",
+      "scrollMode": "auto",
+      "lineIndex": 189
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78ea0",
+      "lineText": "’Tis known already that I am possessed With more than half the Gallian territories , And therein reverenced for their lawful king . Shall I , for lucre of the rest unvanquished , Detract so much from that prerogative As to be called but viceroy of the whole ? No , lord ambassador , I’ll rather keep That which I have than , coveting for more , Be cast from possibility of all .",
+      "scrollMode": "auto",
+      "lineIndex": 190
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78ed0",
+      "lineText": "Insulting Charles , hast thou by secret means Used intercession to obtain a league And , now the matter grows to compromise , Stand’st thou aloof upon comparison ? Either accept the title thou usurp’st , Of benefit proceeding from our king And not of any challenge of desert , Or we will plague thee with incessant wars .",
+      "scrollMode": "auto",
+      "lineIndex": 191
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": ", aside to Charles",
+      "scrollMode": "auto",
+      "lineIndex": 192
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78eeg",
+      "lineText": "My lord , you do not well in obstinacy ACT 5. SC. 4 To cavil in the course of this contract . If once it be neglected , ten to one We shall not find like opportunity .",
+      "scrollMode": "auto",
+      "lineIndex": 193
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": ", aside to Charles",
+      "scrollMode": "auto",
+      "lineIndex": 194
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78eag",
+      "lineText": "To say the truth , it is your policy To save your subjects from such massacre And ruthless slaughters as are daily seen By our proceeding in hostility ; And therefore take this compact of a truce Although you break it when your pleasure serves .",
+      "scrollMode": "auto",
+      "lineIndex": 195
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78efg",
+      "lineText": "How say’st thou , Charles ? Shall our condition stand ?",
+      "scrollMode": "auto",
+      "lineIndex": 196
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78ea0",
+      "lineText": "It shall — only reserved you claim no interest In any of our towns of garrison .",
+      "scrollMode": "auto",
+      "lineIndex": 197
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": "Charles , Alanson , Bastard , and Reignier swear allegiance to Henry .",
+      "scrollMode": "auto",
+      "lineIndex": 198
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78ea0",
+      "lineText": "Charles , Alanson , Bastard , and Reignier swear allegiance to Henry . So , now dismiss your army when you please ; Hang up your ensigns , let your drums be still , For here we entertain a solemn peace .",
+      "scrollMode": "auto",
+      "lineIndex": 199
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 200
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": "Enter Suffolk in conference with the King , Gloucester , and Exeter , with Attendants .",
+      "scrollMode": "auto",
+      "lineIndex": 201
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e6g",
+      "lineText": "Your wondrous rare description , noble earl , Of beauteous Margaret hath astonished me . ACT 5. SC. 5 Her virtues gracèd with external gifts Do breed love’s settled passions in my heart , And like as rigor of tempestuous gusts Provokes the mightiest hulk against the tide , So am I driven by breath of her renown Either to suffer shipwrack , or arrive Where I may have fruition of her love .",
+      "scrollMode": "auto",
+      "lineIndex": 202
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78edg",
+      "lineText": "Tush , my good lord , this superficial tale Is but a preface of her worthy praise . The chief perfections of that lovely dame , Had I sufficient skill to utter them , Would make a volume of enticing lines Able to ravish any dull conceit ; And , which is more , she is not so divine , So full replete with choice of all delights , But with as humble lowliness of mind She is content to be at your command — Command , I mean , of virtuous chaste intents — To love and honor Henry as her lord .",
+      "scrollMode": "auto",
+      "lineIndex": 203
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e6g",
+      "lineText": "And otherwise will Henry ne’er presume . — Therefore , my Lord Protector , give consent That Margaret may be England’s royal queen .",
+      "scrollMode": "auto",
+      "lineIndex": 204
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e70",
+      "lineText": "So should I give consent to flatter sin . You know , my lord , your Highness is betrothed Unto another lady of esteem . How shall we then dispense with that contract And not deface your honor with reproach ?",
+      "scrollMode": "auto",
+      "lineIndex": 205
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78edg",
+      "lineText": "As doth a ruler with unlawful oaths ; Or one that , at a triumph having vowed To try his strength , forsaketh yet the lists By reason of his adversary’s odds . ACT 5. SC. 5 A poor earl’s daughter is unequal odds , And therefore may be broke without offense .",
+      "scrollMode": "auto",
+      "lineIndex": 206
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e70",
+      "lineText": "Why , what , I pray , is Margaret more than that ? Her father is no better than an earl , Although in glorious titles he excel .",
+      "scrollMode": "auto",
+      "lineIndex": 207
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78edg",
+      "lineText": "Yes , my lord , her father is a king , The King of Naples and Jerusalem , And of such great authority in France As his alliance will confirm our peace , And keep the Frenchmen in allegiance .",
+      "scrollMode": "auto",
+      "lineIndex": 208
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e70",
+      "lineText": "And so the Earl of Armagnac may do , Because he is near kinsman unto Charles .",
+      "scrollMode": "auto",
+      "lineIndex": 209
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e80",
+      "lineText": "Besides , his wealth doth warrant a liberal dower , Where Reignier sooner will receive than give .",
+      "scrollMode": "auto",
+      "lineIndex": 210
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78edg",
+      "lineText": "A dower , my lords ? Disgrace not so your king That he should be so abject , base , and poor , To choose for wealth and not for perfect love . Henry is able to enrich his queen , And not to seek a queen to make him rich ; So worthless peasants bargain for their wives , As market men for oxen , sheep , or horse . Marriage is a matter of more worth Than to be dealt in by attorneyship . Not whom we will , but whom his Grace affects , Must be companion of his nuptial bed . And therefore , lords , since he affects her most , Most of all these reasons bindeth us In our opinions she should be preferred . For what is wedlock forcèd but a hell , An age of discord and continual strife ? ACT 5. SC. 5 Whereas the contrary bringeth bliss And is a pattern of celestial peace . Whom should we match with Henry , being a king , But Margaret , that is daughter to a king ? Her peerless feature , joinèd with her birth , Approves her fit for none but for a king . Her valiant courage and undaunted spirit , More than in women commonly is seen , Will answer our hope in issue of a king . For Henry , son unto a conqueror , Is likely to beget more conquerors , If with a lady of so high resolve As is fair Margaret he be linked in love . Then yield , my lords , and here conclude with me That Margaret shall be queen , and none but she .",
+      "scrollMode": "auto",
+      "lineIndex": 211
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e6g",
+      "lineText": "Whether it be through force of your report , My noble Lord of Suffolk , or for that My tender youth was never yet attaint With any passion of inflaming love , I cannot tell ; but this I am assured : I feel such sharp dissension in my breast , Such fierce alarums both of hope and fear , As I am sick with working of my thoughts . Take therefore shipping ; post , my lord , to France ; Agree to any covenants , and procure That Lady Margaret do vouchsafe to come To cross the seas to England and be crowned King Henry’s faithful and anointed queen . For your expenses and sufficient charge , Among the people gather up a tenth . Be gone , I say , for till you do return , I rest perplexèd with a thousand cares . — And you , good uncle , banish all offense . If you do censure me by what you were , ACT 5. SC. 5 Not what you are , I know it will excuse This sudden execution of my will . And so conduct me where , from company , I may revolve and ruminate my grief .",
+      "scrollMode": "auto",
+      "lineIndex": 212
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": "He exits with Attendants .",
+      "scrollMode": "auto",
+      "lineIndex": 213
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e70",
+      "lineText": "Ay , grief , I fear me , both at first and last .",
+      "scrollMode": "auto",
+      "lineIndex": 214
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": "Gloucester exits with Exeter .",
+      "scrollMode": "auto",
+      "lineIndex": 215
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78edg",
+      "lineText": "Thus Suffolk hath prevailed , and thus he goes As did the youthful Paris once to Greece , With hope to find the like event in love , But prosper better than the Trojan did . Margaret shall now be queen , and rule the King , But I will rule both her , the King , and realm .",
+      "scrollMode": "auto",
+      "lineIndex": 216
+    },
+    {
+      "castMemberId": "d68m114n9qd8d2h78e60",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 217
+    }
+  ],
+  "isPublic": true
+}

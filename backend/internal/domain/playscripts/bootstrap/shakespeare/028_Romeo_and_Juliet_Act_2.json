@@ -1,0 +1,1515 @@
+{
+  "title": "Romeo and Juliet (Act 2)",
+  "description": "Folger Shakespeare Library edition",
+  "author": "William Shakespeare",
+  "castMembers": [
+    {
+      "id": "d68m11sn9qd8d2h79g6g",
+      "name": "Narrator",
+      "sortOrder": 0
+    },
+    {
+      "id": "d68m11sn9qd8d2h79g70",
+      "name": "Chorus_Rom",
+      "sortOrder": 1
+    },
+    {
+      "id": "d68m11sn9qd8d2h79g7g",
+      "name": "Romeo",
+      "sortOrder": 2
+    },
+    {
+      "id": "d68m11sn9qd8d2h79g80",
+      "name": "Benvolio",
+      "description": "their kinsman",
+      "sortOrder": 3
+    },
+    {
+      "id": "d68m11sn9qd8d2h79g8g",
+      "name": "Mercutio",
+      "description": "the Prince’s kinsman and Romeo’s friend",
+      "sortOrder": 4
+    },
+    {
+      "id": "d68m11sn9qd8d2h79g90",
+      "name": "Juliet",
+      "sortOrder": 5
+    },
+    {
+      "id": "d68m11sn9qd8d2h79g9g",
+      "name": "Nurse",
+      "sortOrder": 6
+    },
+    {
+      "id": "d68m11sn9qd8d2h79ga0",
+      "name": "Friar Lawrence",
+      "sortOrder": 7
+    },
+    {
+      "id": "d68m11sn9qd8d2h79gag",
+      "name": "Peter",
+      "sortOrder": 8
+    }
+  ],
+  "lines": [
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g6g",
+      "lineText": "Enter Chorus .",
+      "scrollMode": "auto",
+      "lineIndex": 0
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g70",
+      "lineText": "Now old desire doth in his deathbed lie , And young affection gapes to be his heir . That fair for which love groaned for and would die , With tender Juliet matched , is now not fair . Now Romeo is beloved and loves again , Alike bewitchèd by the charm of looks , But to his foe supposed he must complain , And she steal love’s sweet bait from fearful hooks . Being held a foe , he may not have access To breathe such vows as lovers use to swear , And she as much in love , her means much less To meet her new belovèd anywhere . But passion lends them power , time means , to meet , Temp’ring extremities with extreme sweet .",
+      "scrollMode": "auto",
+      "lineIndex": 1
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g6g",
+      "lineText": "Chorus exits .",
+      "scrollMode": "auto",
+      "lineIndex": 2
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g6g",
+      "lineText": "Enter Romeo alone .",
+      "scrollMode": "auto",
+      "lineIndex": 3
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "Can I go forward when my heart is here ? Turn back , dull earth , and find thy center out .",
+      "scrollMode": "auto",
+      "lineIndex": 4
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g6g",
+      "lineText": "He withdraws .",
+      "scrollMode": "auto",
+      "lineIndex": 5
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g6g",
+      "lineText": "Enter Benvolio with Mercutio .",
+      "scrollMode": "auto",
+      "lineIndex": 6
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g80",
+      "lineText": "Romeo , my cousin Romeo , Romeo !",
+      "scrollMode": "auto",
+      "lineIndex": 7
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g8g",
+      "lineText": "He is wise And , on my life , hath stol’n him home to bed .",
+      "scrollMode": "auto",
+      "lineIndex": 8
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g80",
+      "lineText": "He ran this way and leapt this orchard wall . Call , good Mercutio .",
+      "scrollMode": "auto",
+      "lineIndex": 9
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g8g",
+      "lineText": "Nay , I’ll conjure too . Romeo ! Humors ! Madman ! Passion ! Lover ! Appear thou in the likeness of a sigh . Speak but one rhyme and I am satisfied . Cry but Ay me , pronounce but love and dove . Speak to my gossip Venus one fair word , One nickname for her purblind son and heir , Young Abraham Cupid , he that shot so trim When King Cophetua loved the beggar maid . — He heareth not , he stirreth not , he moveth not . The ape is dead , and I must conjure him . — I conjure thee by Rosaline’s bright eyes , By her high forehead , and her scarlet lip , By her fine foot , straight leg , and quivering thigh , And the demesnes that there adjacent lie , That in thy likeness thou appear to us .",
+      "scrollMode": "auto",
+      "lineIndex": 10
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g80",
+      "lineText": "An if he hear thee , thou wilt anger him .",
+      "scrollMode": "auto",
+      "lineIndex": 11
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g8g",
+      "lineText": "This cannot anger him . ’Twould anger him To raise a spirit in his mistress’ circle Of some strange nature , letting it there stand Till she had laid it and conjured it down . That were some spite . My invocation Is fair and honest . In his mistress’ name , I conjure only but to raise up him .",
+      "scrollMode": "auto",
+      "lineIndex": 12
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g80",
+      "lineText": "Come , he hath hid himself among these trees ACT 2. SC. 2 To be consorted with the humorous night . Blind is his love and best befits the dark .",
+      "scrollMode": "auto",
+      "lineIndex": 13
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g8g",
+      "lineText": "If love be blind , love cannot hit the mark . Now will he sit under a medlar tree And wish his mistress were that kind of fruit As maids call medlars when they laugh alone . — O Romeo , that she were , O , that she were An open-arse , thou a pop’rin pear . Romeo , good night . I’ll to my truckle bed ; This field-bed is too cold for me to sleep . — Come , shall we go ?",
+      "scrollMode": "auto",
+      "lineIndex": 14
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g80",
+      "lineText": "Go , then , for ’tis in vain To seek him here that means not to be found .",
+      "scrollMode": "auto",
+      "lineIndex": 15
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g6g",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 16
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g6g",
+      "lineText": "Romeo comes forward .",
+      "scrollMode": "auto",
+      "lineIndex": 17
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g6g",
+      "lineText": "Enter Juliet above .",
+      "scrollMode": "auto",
+      "lineIndex": 18
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g90",
+      "lineText": "Enter Juliet above . But soft , what light through yonder window breaks ? It is the East , and Juliet is the sun . Arise , fair sun , and kill the envious moon , Who is already sick and pale with grief That thou , her maid , art far more fair than she . Be not her maid since she is envious . Her vestal livery is but sick and green , And none but fools do wear it . Cast it off . It is my lady . O , it is my love ! O , that she knew she were ! She speaks , yet she says nothing . What of that ? Her eye discourses ; I will answer it . ACT 2. SC. 2 I am too bold . ’Tis not to me she speaks . Two of the fairest stars in all the heaven , Having some business , do entreat her eyes To twinkle in their spheres till they return . What if her eyes were there , they in her head ? The brightness of her cheek would shame those stars As daylight doth a lamp ; her eye in heaven Would through the airy region stream so bright That birds would sing and think it were not night . See how she leans her cheek upon her hand . O , that I were a glove upon that hand , That I might touch that cheek !",
+      "scrollMode": "auto",
+      "lineIndex": 19
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g90",
+      "lineText": "Ay me .",
+      "scrollMode": "auto",
+      "lineIndex": 20
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g6g",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 21
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "She speaks . O , speak again , bright angel , for thou art As glorious to this night , being o’er my head , As is a wingèd messenger of heaven Unto the white-upturnèd wond’ring eyes Of mortals that fall back to gaze on him When he bestrides the lazy puffing clouds And sails upon the bosom of the air .",
+      "scrollMode": "auto",
+      "lineIndex": 22
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g90",
+      "lineText": "O Romeo , Romeo , wherefore art thou Romeo ? Deny thy father and refuse thy name , Or , if thou wilt not , be but sworn my love , And I’ll no longer be a Capulet .",
+      "scrollMode": "auto",
+      "lineIndex": 23
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g6g",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 24
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "Shall I hear more , or shall I speak at this ?",
+      "scrollMode": "auto",
+      "lineIndex": 25
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g90",
+      "lineText": "’Tis but thy name that is my enemy . Thou art thyself , though not a Montague . What’s Montague ? It is nor hand , nor foot , Nor arm , nor face . O , be some other name Belonging to a man . What’s in a name ? That which we call a rose ACT 2. SC. 2 By any other word would smell as sweet . So Romeo would , were he not Romeo called , Retain that dear perfection which he owes Without that title . Romeo , doff thy name , And , for thy name , which is no part of thee , Take all myself .",
+      "scrollMode": "auto",
+      "lineIndex": 26
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "I take thee at thy word . Call me but love , and I’ll be new baptized . Henceforth I never will be Romeo .",
+      "scrollMode": "auto",
+      "lineIndex": 27
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g90",
+      "lineText": "What man art thou that , thus bescreened in night , So stumblest on my counsel ?",
+      "scrollMode": "auto",
+      "lineIndex": 28
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "By a name I know not how to tell thee who I am . My name , dear saint , is hateful to myself Because it is an enemy to thee . Had I it written , I would tear the word .",
+      "scrollMode": "auto",
+      "lineIndex": 29
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g90",
+      "lineText": "My ears have yet not drunk a hundred words Of thy tongue’s uttering , yet I know the sound . Art thou not Romeo , and a Montague ?",
+      "scrollMode": "auto",
+      "lineIndex": 30
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "Neither , fair maid , if either thee dislike .",
+      "scrollMode": "auto",
+      "lineIndex": 31
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g90",
+      "lineText": "How camest thou hither , tell me , and wherefore ? The orchard walls are high and hard to climb , And the place death , considering who thou art , If any of my kinsmen find thee here .",
+      "scrollMode": "auto",
+      "lineIndex": 32
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "With love’s light wings did I o’erperch these walls , For stony limits cannot hold love out , And what love can do , that dares love attempt . Therefore thy kinsmen are no stop to me .",
+      "scrollMode": "auto",
+      "lineIndex": 33
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g90",
+      "lineText": "If they do see thee , they will murder thee .",
+      "scrollMode": "auto",
+      "lineIndex": 34
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "Alack , there lies more peril in thine eye Than twenty of their swords . Look thou but sweet , And I am proof against their enmity .",
+      "scrollMode": "auto",
+      "lineIndex": 35
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g90",
+      "lineText": "I would not for the world they saw thee here .",
+      "scrollMode": "auto",
+      "lineIndex": 36
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "I have night’s cloak to hide me from their eyes , And , but thou love me , let them find me here . My life were better ended by their hate Than death proroguèd , wanting of thy love .",
+      "scrollMode": "auto",
+      "lineIndex": 37
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g90",
+      "lineText": "By whose direction found’st thou out this place ?",
+      "scrollMode": "auto",
+      "lineIndex": 38
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "By love , that first did prompt me to inquire . He lent me counsel , and I lent him eyes . I am no pilot ; yet , wert thou as far As that vast shore washed with the farthest sea , I should adventure for such merchandise .",
+      "scrollMode": "auto",
+      "lineIndex": 39
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g90",
+      "lineText": "Thou knowest the mask of night is on my face , Else would a maiden blush bepaint my cheek For that which thou hast heard me speak tonight . Fain would I dwell on form ; fain , fain deny What I have spoke . But farewell compliment . Dost thou love me ? I know thou wilt say Ay , And I will take thy word . Yet , if thou swear’st , Thou mayst prove false . At lovers’ perjuries , They say , Jove laughs . O gentle Romeo , If thou dost love , pronounce it faithfully . Or , if thou thinkest I am too quickly won , I’ll frown and be perverse and say thee nay , So thou wilt woo , but else not for the world . In truth , fair Montague , I am too fond , And therefore thou mayst think my havior light . But trust me , gentleman , I’ll prove more true ACT 2. SC. 2 Than those that have more coying to be strange . I should have been more strange , I must confess , But that thou overheard’st ere I was ware My true-love passion . Therefore pardon me , And not impute this yielding to light love , Which the dark night hath so discoverèd .",
+      "scrollMode": "auto",
+      "lineIndex": 40
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "Lady , by yonder blessèd moon I vow , That tips with silver all these fruit-tree tops —",
+      "scrollMode": "auto",
+      "lineIndex": 41
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g90",
+      "lineText": "O , swear not by the moon , th’ inconstant moon , That monthly changes in her circled orb , Lest that thy love prove likewise variable .",
+      "scrollMode": "auto",
+      "lineIndex": 42
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "What shall I swear by ?",
+      "scrollMode": "auto",
+      "lineIndex": 43
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g90",
+      "lineText": "Do not swear at all . Or , if thou wilt , swear by thy gracious self , Which is the god of my idolatry , And I’ll believe thee .",
+      "scrollMode": "auto",
+      "lineIndex": 44
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "If my heart’s dear love —",
+      "scrollMode": "auto",
+      "lineIndex": 45
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g90",
+      "lineText": "Well , do not swear . Although I joy in thee , I have no joy of this contract tonight . It is too rash , too unadvised , too sudden , Too like the lightning , which doth cease to be Ere one can say It lightens . Sweet , good night . This bud of love , by summer’s ripening breath , May prove a beauteous flower when next we meet . Good night , good night . As sweet repose and rest Come to thy heart as that within my breast .",
+      "scrollMode": "auto",
+      "lineIndex": 46
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "O , wilt thou leave me so unsatisfied ?",
+      "scrollMode": "auto",
+      "lineIndex": 47
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g90",
+      "lineText": "What satisfaction canst thou have tonight ?",
+      "scrollMode": "auto",
+      "lineIndex": 48
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "Th’ exchange of thy love’s faithful vow for mine .",
+      "scrollMode": "auto",
+      "lineIndex": 49
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g90",
+      "lineText": "I gave thee mine before thou didst request it , And yet I would it were to give again .",
+      "scrollMode": "auto",
+      "lineIndex": 50
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "Wouldst thou withdraw it ? For what purpose , love ?",
+      "scrollMode": "auto",
+      "lineIndex": 51
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g6g",
+      "lineText": "Nurse calls from within .",
+      "scrollMode": "auto",
+      "lineIndex": 52
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g9g",
+      "lineText": "Nurse calls from within . I hear some noise within . Dear love , adieu . — Anon , good nurse . — Sweet Montague , be true . Stay but a little ; I will come again .",
+      "scrollMode": "auto",
+      "lineIndex": 53
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g6g",
+      "lineText": "She exits .",
+      "scrollMode": "auto",
+      "lineIndex": 54
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "O blessèd , blessèd night ! I am afeard , Being in night , all this is but a dream , Too flattering sweet to be substantial .",
+      "scrollMode": "auto",
+      "lineIndex": 55
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g6g",
+      "lineText": "Reenter Juliet above .",
+      "scrollMode": "auto",
+      "lineIndex": 56
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g90",
+      "lineText": "Three words , dear Romeo , and good night indeed . If that thy bent of love be honorable , Thy purpose marriage , send me word tomorrow , By one that I’ll procure to come to thee , Where and what time thou wilt perform the rite , And all my fortunes at thy foot I’ll lay And follow thee my lord throughout the world .",
+      "scrollMode": "auto",
+      "lineIndex": 57
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g6g",
+      "lineText": ", within",
+      "scrollMode": "auto",
+      "lineIndex": 58
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g9g",
+      "lineText": "Madam .",
+      "scrollMode": "auto",
+      "lineIndex": 59
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g90",
+      "lineText": "I come anon . — But if thou meanest not well , I do beseech thee —",
+      "scrollMode": "auto",
+      "lineIndex": 60
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g6g",
+      "lineText": ", within",
+      "scrollMode": "auto",
+      "lineIndex": 61
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g9g",
+      "lineText": "Madam .",
+      "scrollMode": "auto",
+      "lineIndex": 62
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g90",
+      "lineText": "By and by , I come . — To cease thy strife and leave me to my grief . Tomorrow will I send .",
+      "scrollMode": "auto",
+      "lineIndex": 63
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "So thrive my soul —",
+      "scrollMode": "auto",
+      "lineIndex": 64
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g90",
+      "lineText": "A thousand times good night .",
+      "scrollMode": "auto",
+      "lineIndex": 65
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g6g",
+      "lineText": "She exits .",
+      "scrollMode": "auto",
+      "lineIndex": 66
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "A thousand times the worse to want thy light . Love goes toward love as schoolboys from their books , But love from love , toward school with heavy looks .",
+      "scrollMode": "auto",
+      "lineIndex": 67
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g6g",
+      "lineText": "Going .",
+      "scrollMode": "auto",
+      "lineIndex": 68
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g6g",
+      "lineText": "Enter Juliet above again .",
+      "scrollMode": "auto",
+      "lineIndex": 69
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g90",
+      "lineText": "Hist , Romeo , hist ! O , for a falc’ner’s voice To lure this tassel-gentle back again ! Bondage is hoarse and may not speak aloud , Else would I tear the cave where Echo lies And make her airy tongue more hoarse than mine With repetition of My Romeo !",
+      "scrollMode": "auto",
+      "lineIndex": 70
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "It is my soul that calls upon my name . How silver-sweet sound lovers’ tongues by night , Like softest music to attending ears .",
+      "scrollMode": "auto",
+      "lineIndex": 71
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g90",
+      "lineText": "Romeo .",
+      "scrollMode": "auto",
+      "lineIndex": 72
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "My dear .",
+      "scrollMode": "auto",
+      "lineIndex": 73
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g90",
+      "lineText": "What o’clock tomorrow Shall I send to thee ?",
+      "scrollMode": "auto",
+      "lineIndex": 74
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "By the hour of nine .",
+      "scrollMode": "auto",
+      "lineIndex": 75
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g90",
+      "lineText": "I will not fail . ’Tis twenty year till then . I have forgot why I did call thee back .",
+      "scrollMode": "auto",
+      "lineIndex": 76
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "Let me stand here till thou remember it .",
+      "scrollMode": "auto",
+      "lineIndex": 77
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g90",
+      "lineText": "I shall forget , to have thee still stand there , Rememb’ring how I love thy company .",
+      "scrollMode": "auto",
+      "lineIndex": 78
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "And I’ll still stay , to have thee still forget , Forgetting any other home but this .",
+      "scrollMode": "auto",
+      "lineIndex": 79
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g90",
+      "lineText": "’Tis almost morning . I would have thee gone , And yet no farther than a wanton’s bird , That lets it hop a little from his hand , Like a poor prisoner in his twisted gyves , And with a silken thread plucks it back again , So loving-jealous of his liberty .",
+      "scrollMode": "auto",
+      "lineIndex": 80
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "I would I were thy bird .",
+      "scrollMode": "auto",
+      "lineIndex": 81
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g90",
+      "lineText": "Sweet , so would I . Yet I should kill thee with much cherishing . Good night , good night . Parting is such sweet sorrow That I shall say Good night till it be morrow .",
+      "scrollMode": "auto",
+      "lineIndex": 82
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g6g",
+      "lineText": "She exits .",
+      "scrollMode": "auto",
+      "lineIndex": 83
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "Sleep dwell upon thine eyes , peace in thy breast . Would I were sleep and peace so sweet to rest . Hence will I to my ghostly friar’s close cell , His help to crave , and my dear hap to tell .",
+      "scrollMode": "auto",
+      "lineIndex": 84
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g6g",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 85
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g6g",
+      "lineText": "Enter Friar Lawrence alone with a basket .",
+      "scrollMode": "auto",
+      "lineIndex": 86
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g6g",
+      "lineText": "Enter Romeo .",
+      "scrollMode": "auto",
+      "lineIndex": 87
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "Enter Romeo . Within the infant rind of this weak flower Poison hath residence and medicine power : For this , being smelt , with that part cheers each part ; Being tasted , stays all senses with the heart . Two such opposèd kings encamp them still In man as well as herbs — grace and rude will ; And where the worser is predominant , Full soon the canker death eats up that plant .",
+      "scrollMode": "auto",
+      "lineIndex": 88
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "Good morrow , father .",
+      "scrollMode": "auto",
+      "lineIndex": 89
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ga0",
+      "lineText": "Benedicite . What early tongue so sweet saluteth me ? Young son , it argues a distempered head So soon to bid Good morrow to thy bed . Care keeps his watch in every old man’s eye , And , where care lodges , sleep will never lie ; But where unbruisèd youth with unstuffed brain ACT 2. SC. 3 Doth couch his limbs , there golden sleep doth reign . Therefore thy earliness doth me assure Thou art uproused with some distemp’rature , Or , if not so , then here I hit it right : Our Romeo hath not been in bed tonight .",
+      "scrollMode": "auto",
+      "lineIndex": 90
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "That last is true . The sweeter rest was mine .",
+      "scrollMode": "auto",
+      "lineIndex": 91
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ga0",
+      "lineText": "God pardon sin ! Wast thou with Rosaline ?",
+      "scrollMode": "auto",
+      "lineIndex": 92
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "With Rosaline , my ghostly father ? No . I have forgot that name and that name’s woe .",
+      "scrollMode": "auto",
+      "lineIndex": 93
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ga0",
+      "lineText": "That’s my good son . But where hast thou been then ?",
+      "scrollMode": "auto",
+      "lineIndex": 94
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "I’ll tell thee ere thou ask it me again . I have been feasting with mine enemy , Where on a sudden one hath wounded me That’s by me wounded . Both our remedies Within thy help and holy physic lies . I bear no hatred , blessèd man , for , lo , My intercession likewise steads my foe .",
+      "scrollMode": "auto",
+      "lineIndex": 95
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ga0",
+      "lineText": "Be plain , good son , and homely in thy drift . Riddling confession finds but riddling shrift .",
+      "scrollMode": "auto",
+      "lineIndex": 96
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "Then plainly know my heart’s dear love is set On the fair daughter of rich Capulet . As mine on hers , so hers is set on mine , And all combined , save what thou must combine By holy marriage . When and where and how We met , we wooed , and made exchange of vow I’ll tell thee as we pass , but this I pray , That thou consent to marry us today .",
+      "scrollMode": "auto",
+      "lineIndex": 97
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ga0",
+      "lineText": "Holy Saint Francis , what a change is here ! Is Rosaline , that thou didst love so dear , So soon forsaken ? Young men’s love then lies Not truly in their hearts , but in their eyes . Jesu Maria , what a deal of brine Hath washed thy sallow cheeks for Rosaline ! How much salt water thrown away in waste To season love , that of it doth not taste ! The sun not yet thy sighs from heaven clears , Thy old groans yet ringing in mine ancient ears . Lo , here upon thy cheek the stain doth sit Of an old tear that is not washed off yet . If e’er thou wast thyself , and these woes thine , Thou and these woes were all for Rosaline . And art thou changed ? Pronounce this sentence then : Women may fall when there’s no strength in men .",
+      "scrollMode": "auto",
+      "lineIndex": 98
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "Thou chid’st me oft for loving Rosaline .",
+      "scrollMode": "auto",
+      "lineIndex": 99
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ga0",
+      "lineText": "For doting , not for loving , pupil mine .",
+      "scrollMode": "auto",
+      "lineIndex": 100
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "And bad’st me bury love .",
+      "scrollMode": "auto",
+      "lineIndex": 101
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ga0",
+      "lineText": "Not in a grave To lay one in , another out to have .",
+      "scrollMode": "auto",
+      "lineIndex": 102
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "I pray thee , chide me not . Her I love now Doth grace for grace and love for love allow . The other did not so .",
+      "scrollMode": "auto",
+      "lineIndex": 103
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ga0",
+      "lineText": "O , she knew well Thy love did read by rote , that could not spell . But come , young waverer , come , go with me . In one respect I’ll thy assistant be , For this alliance may so happy prove To turn your households’ rancor to pure love .",
+      "scrollMode": "auto",
+      "lineIndex": 104
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "O , let us hence . I stand on sudden haste .",
+      "scrollMode": "auto",
+      "lineIndex": 105
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ga0",
+      "lineText": "Wisely and slow . They stumble that run fast .",
+      "scrollMode": "auto",
+      "lineIndex": 106
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g6g",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 107
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g6g",
+      "lineText": "Enter Benvolio and Mercutio .",
+      "scrollMode": "auto",
+      "lineIndex": 108
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g8g",
+      "lineText": "Where the devil should this Romeo be ? Came he not home tonight ?",
+      "scrollMode": "auto",
+      "lineIndex": 109
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g80",
+      "lineText": "Not to his father’s . I spoke with his man .",
+      "scrollMode": "auto",
+      "lineIndex": 110
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g8g",
+      "lineText": "Why , that same pale hard-hearted wench , that Rosaline , Torments him so that he will sure run mad .",
+      "scrollMode": "auto",
+      "lineIndex": 111
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g80",
+      "lineText": "Tybalt , the kinsman to old Capulet , Hath sent a letter to his father’s house .",
+      "scrollMode": "auto",
+      "lineIndex": 112
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g8g",
+      "lineText": "A challenge , on my life .",
+      "scrollMode": "auto",
+      "lineIndex": 113
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g80",
+      "lineText": "Romeo will answer it .",
+      "scrollMode": "auto",
+      "lineIndex": 114
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g8g",
+      "lineText": "Any man that can write may answer a letter .",
+      "scrollMode": "auto",
+      "lineIndex": 115
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g80",
+      "lineText": "Nay , he will answer the letter’s master , how he dares , being dared .",
+      "scrollMode": "auto",
+      "lineIndex": 116
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g8g",
+      "lineText": "Alas , poor Romeo , he is already dead , stabbed with a white wench’s black eye , run through the ear with a love-song , the very pin of his heart cleft with the blind bow-boy’s butt shaft . And is he a man to encounter Tybalt ?",
+      "scrollMode": "auto",
+      "lineIndex": 117
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g80",
+      "lineText": "Why , what is Tybalt ?",
+      "scrollMode": "auto",
+      "lineIndex": 118
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g8g",
+      "lineText": "More than prince of cats . O , he’s the courageous captain of compliments . He fights as you sing prick-song , keeps time , distance , and proportion . ACT 2. SC. 4 He rests his minim rests , one , two , and the third in your bosom — the very butcher of a silk button , a duelist , a duelist , a gentleman of the very first house of the first and second cause . Ah , the immortal passado , the punto reverso , the hay !",
+      "scrollMode": "auto",
+      "lineIndex": 119
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g80",
+      "lineText": "The what ?",
+      "scrollMode": "auto",
+      "lineIndex": 120
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g8g",
+      "lineText": "The pox of such antic , lisping , affecting phantasimes , these new tuners of accent : By Jesu , a very good blade ! A very tall man ! A very good whore ! Why , is not this a lamentable thing , grandsire , that we should be thus afflicted with these strange flies , these fashion-mongers , these pardon-me ’s , who stand so much on the new form that they cannot sit at ease on the old bench ? O their bones , their bones !",
+      "scrollMode": "auto",
+      "lineIndex": 121
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g6g",
+      "lineText": "Enter Romeo .",
+      "scrollMode": "auto",
+      "lineIndex": 122
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g80",
+      "lineText": "Here comes Romeo , here comes Romeo .",
+      "scrollMode": "auto",
+      "lineIndex": 123
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g8g",
+      "lineText": "Without his roe , like a dried herring . O flesh , flesh , how art thou fishified ! Now is he for the numbers that Petrarch flowed in . Laura to his lady was a kitchen wench ( marry , she had a better love to berhyme her ) , Dido a dowdy , Cleopatra a gypsy , Helen and Hero hildings and harlots , Thisbe a gray eye or so , but not to the purpose . — Signior Romeo , bonjour . There’s a French salutation to your French slop . You gave us the counterfeit fairly last night .",
+      "scrollMode": "auto",
+      "lineIndex": 124
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "Good morrow to you both . What counterfeit did I give you ?",
+      "scrollMode": "auto",
+      "lineIndex": 125
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g8g",
+      "lineText": "The slip , sir , the slip . Can you not conceive ?",
+      "scrollMode": "auto",
+      "lineIndex": 126
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "Pardon , good Mercutio , my business was great , and in such a case as mine a man may strain courtesy .",
+      "scrollMode": "auto",
+      "lineIndex": 127
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g8g",
+      "lineText": "That’s as much as to say such a case as yours constrains a man to bow in the hams .",
+      "scrollMode": "auto",
+      "lineIndex": 128
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "Meaning , to curtsy .",
+      "scrollMode": "auto",
+      "lineIndex": 129
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g8g",
+      "lineText": "Thou hast most kindly hit it .",
+      "scrollMode": "auto",
+      "lineIndex": 130
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "A most courteous exposition .",
+      "scrollMode": "auto",
+      "lineIndex": 131
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g8g",
+      "lineText": "Nay , I am the very pink of courtesy .",
+      "scrollMode": "auto",
+      "lineIndex": 132
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "Pink for flower .",
+      "scrollMode": "auto",
+      "lineIndex": 133
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g8g",
+      "lineText": "Right .",
+      "scrollMode": "auto",
+      "lineIndex": 134
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "Why , then is my pump well flowered .",
+      "scrollMode": "auto",
+      "lineIndex": 135
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g8g",
+      "lineText": "Sure wit , follow me this jest now till thou hast worn out thy pump , that when the single sole of it is worn , the jest may remain , after the wearing , solely singular .",
+      "scrollMode": "auto",
+      "lineIndex": 136
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "O single-soled jest , solely singular for the singleness .",
+      "scrollMode": "auto",
+      "lineIndex": 137
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g8g",
+      "lineText": "Come between us , good Benvolio . My wits faints .",
+      "scrollMode": "auto",
+      "lineIndex": 138
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "Switch and spurs , switch and spurs , or I’ll cry a match .",
+      "scrollMode": "auto",
+      "lineIndex": 139
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g8g",
+      "lineText": "Nay , if our wits run the wild-goose chase , I am done , for thou hast more of the wild goose in one of thy wits than , I am sure , I have in my whole five . Was I with you there for the goose ?",
+      "scrollMode": "auto",
+      "lineIndex": 140
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "Thou wast never with me for anything when thou wast not there for the goose .",
+      "scrollMode": "auto",
+      "lineIndex": 141
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g8g",
+      "lineText": "I will bite thee by the ear for that jest .",
+      "scrollMode": "auto",
+      "lineIndex": 142
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "Nay , good goose , bite not .",
+      "scrollMode": "auto",
+      "lineIndex": 143
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g8g",
+      "lineText": "Thy wit is a very bitter sweeting ; it is a most sharp sauce .",
+      "scrollMode": "auto",
+      "lineIndex": 144
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "And is it not , then , well served into a sweet goose ?",
+      "scrollMode": "auto",
+      "lineIndex": 145
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g8g",
+      "lineText": "O , here’s a wit of cheveril that stretches from an inch narrow to an ell broad .",
+      "scrollMode": "auto",
+      "lineIndex": 146
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "I stretch it out for that word broad , which added to the goose , proves thee far and wide a broad goose .",
+      "scrollMode": "auto",
+      "lineIndex": 147
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g8g",
+      "lineText": "Why , is not this better now than groaning for love ? Now art thou sociable , now art thou Romeo , now art thou what thou art , by art as well as ACT 2. SC. 4 by nature . For this driveling love is like a great natural that runs lolling up and down to hide his bauble in a hole .",
+      "scrollMode": "auto",
+      "lineIndex": 148
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g80",
+      "lineText": "Stop there , stop there .",
+      "scrollMode": "auto",
+      "lineIndex": 149
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g8g",
+      "lineText": "Thou desirest me to stop in my tale against the hair .",
+      "scrollMode": "auto",
+      "lineIndex": 150
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g80",
+      "lineText": "Thou wouldst else have made thy tale large .",
+      "scrollMode": "auto",
+      "lineIndex": 151
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g8g",
+      "lineText": "O , thou art deceived . I would have made it short , for I was come to the whole depth of my tale and meant indeed to occupy the argument no longer .",
+      "scrollMode": "auto",
+      "lineIndex": 152
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g6g",
+      "lineText": "Enter Nurse and her man Peter .",
+      "scrollMode": "auto",
+      "lineIndex": 153
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "Here’s goodly gear . A sail , a sail !",
+      "scrollMode": "auto",
+      "lineIndex": 154
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g8g",
+      "lineText": "Two , two — a shirt and a smock .",
+      "scrollMode": "auto",
+      "lineIndex": 155
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g9g",
+      "lineText": "Peter .",
+      "scrollMode": "auto",
+      "lineIndex": 156
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gag",
+      "lineText": "Anon .",
+      "scrollMode": "auto",
+      "lineIndex": 157
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g9g",
+      "lineText": "My fan , Peter .",
+      "scrollMode": "auto",
+      "lineIndex": 158
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g8g",
+      "lineText": "Good Peter , to hide her face , for her fan’s the fairer face .",
+      "scrollMode": "auto",
+      "lineIndex": 159
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g9g",
+      "lineText": "God you good morrow , gentlemen .",
+      "scrollMode": "auto",
+      "lineIndex": 160
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g8g",
+      "lineText": "God you good e’en , fair gentlewoman .",
+      "scrollMode": "auto",
+      "lineIndex": 161
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g9g",
+      "lineText": "Is it good e’en ?",
+      "scrollMode": "auto",
+      "lineIndex": 162
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g8g",
+      "lineText": "’Tis no less , I tell you , for the bawdy hand of the dial is now upon the prick of noon .",
+      "scrollMode": "auto",
+      "lineIndex": 163
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g9g",
+      "lineText": "Out upon you ! What a man are you ?",
+      "scrollMode": "auto",
+      "lineIndex": 164
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "One , gentlewoman , that God hath made , himself to mar .",
+      "scrollMode": "auto",
+      "lineIndex": 165
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g9g",
+      "lineText": "By my troth , it is well said : for himself to mar , quoth he ? Gentlemen , can any of you tell me where I may find the young Romeo ?",
+      "scrollMode": "auto",
+      "lineIndex": 166
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "I can tell you , but young Romeo will be older when you have found him than he was when you sought him . I am the youngest of that name , for fault of a worse .",
+      "scrollMode": "auto",
+      "lineIndex": 167
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g9g",
+      "lineText": "You say well .",
+      "scrollMode": "auto",
+      "lineIndex": 168
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g8g",
+      "lineText": "Yea , is the worst well ? Very well took , i’ faith , wisely , wisely .",
+      "scrollMode": "auto",
+      "lineIndex": 169
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g9g",
+      "lineText": "If you be he , sir , I desire some confidence with you .",
+      "scrollMode": "auto",
+      "lineIndex": 170
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g80",
+      "lineText": "She will indite him to some supper .",
+      "scrollMode": "auto",
+      "lineIndex": 171
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g8g",
+      "lineText": "A bawd , a bawd , a bawd . So ho !",
+      "scrollMode": "auto",
+      "lineIndex": 172
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "What hast thou found ?",
+      "scrollMode": "auto",
+      "lineIndex": 173
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g6g",
+      "lineText": "Singing .",
+      "scrollMode": "auto",
+      "lineIndex": 174
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g8g",
+      "lineText": "Singing . An old hare hoar , And an old hare hoar , Is very good meat in Lent . But a hare that is hoar Is too much for a score When it hoars ere it be spent . Romeo , will you come to your father’s ? We’ll to dinner thither .",
+      "scrollMode": "auto",
+      "lineIndex": 175
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "I will follow you .",
+      "scrollMode": "auto",
+      "lineIndex": 176
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g8g",
+      "lineText": "Farewell , ancient lady . Farewell , lady , lady , lady .",
+      "scrollMode": "auto",
+      "lineIndex": 177
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g6g",
+      "lineText": "Mercutio and Benvolio exit .",
+      "scrollMode": "auto",
+      "lineIndex": 178
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g9g",
+      "lineText": "I pray you , sir , what saucy merchant was this that was so full of his ropery ?",
+      "scrollMode": "auto",
+      "lineIndex": 179
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "A gentleman , nurse , that loves to hear himself talk and will speak more in a minute than he will stand to in a month .",
+      "scrollMode": "auto",
+      "lineIndex": 180
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g6g",
+      "lineText": "To Peter .",
+      "scrollMode": "auto",
+      "lineIndex": 181
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g9g",
+      "lineText": "To Peter . And thou must stand by too and suffer every knave to use me at his pleasure .",
+      "scrollMode": "auto",
+      "lineIndex": 182
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gag",
+      "lineText": "I saw no man use you at his pleasure . If I had , my weapon should quickly have been out . I warrant you , I dare draw as soon as another man , if I see occasion in a good quarrel , and the law on my side .",
+      "scrollMode": "auto",
+      "lineIndex": 183
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g6g",
+      "lineText": "To Romeo .",
+      "scrollMode": "auto",
+      "lineIndex": 184
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g9g",
+      "lineText": "To Romeo . Pray you , sir , a word . And , as I told you , my young lady bid me inquire you out . What she bid me say , I will keep to myself . But first let me tell you , if you should lead her in a fool’s paradise , as they say , it were a very gross kind of behavior , as they say . For the gentlewoman is young ; and therefore , if you should deal double with her , truly it were an ill thing to be offered to any gentlewoman , and very weak dealing .",
+      "scrollMode": "auto",
+      "lineIndex": 185
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "Nurse , commend me to thy lady and mistress . I protest unto thee —",
+      "scrollMode": "auto",
+      "lineIndex": 186
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g9g",
+      "lineText": "Good heart , and i’ faith I will tell her as much . Lord , Lord , she will be a joyful woman .",
+      "scrollMode": "auto",
+      "lineIndex": 187
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "What wilt thou tell her , nurse ? Thou dost not mark me .",
+      "scrollMode": "auto",
+      "lineIndex": 188
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g9g",
+      "lineText": "I will tell her , sir , that you do protest , which , as I take it , is a gentlemanlike offer .",
+      "scrollMode": "auto",
+      "lineIndex": 189
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "Bid her devise Some means to come to shrift this afternoon , And there she shall at Friar Lawrence’ cell Be shrived and married . Here is for thy pains .",
+      "scrollMode": "auto",
+      "lineIndex": 190
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g6g",
+      "lineText": "Offering her money .",
+      "scrollMode": "auto",
+      "lineIndex": 191
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g9g",
+      "lineText": "No , truly , sir , not a penny .",
+      "scrollMode": "auto",
+      "lineIndex": 192
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "Go to , I say you shall .",
+      "scrollMode": "auto",
+      "lineIndex": 193
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g9g",
+      "lineText": "This afternoon , sir ? Well , she shall be there .",
+      "scrollMode": "auto",
+      "lineIndex": 194
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "And stay , good nurse , behind the abbey wall . Within this hour my man shall be with thee And bring thee cords made like a tackled stair , Which to the high topgallant of my joy Must be my convoy in the secret night . Farewell . Be trusty , and I’ll quit thy pains . Farewell . Commend me to thy mistress .",
+      "scrollMode": "auto",
+      "lineIndex": 195
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g9g",
+      "lineText": "Now , God in heaven bless thee ! Hark you , sir .",
+      "scrollMode": "auto",
+      "lineIndex": 196
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "What sayst thou , my dear nurse ?",
+      "scrollMode": "auto",
+      "lineIndex": 197
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g9g",
+      "lineText": "Is your man secret ? Did you ne’er hear say Two may keep counsel , putting one away ?",
+      "scrollMode": "auto",
+      "lineIndex": 198
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "Warrant thee , my man’s as true as steel .",
+      "scrollMode": "auto",
+      "lineIndex": 199
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g9g",
+      "lineText": "Well , sir , my mistress is the sweetest lady . Lord , Lord , when ’twas a little prating thing — O , there is a nobleman in town , one Paris , that would fain lay knife aboard , but she , good soul , had as lief see a toad , a very toad , as see him . I anger her sometimes and tell her that Paris is the properer man , but I’ll warrant you , when I say so , she looks as pale as any clout in the versal world . Doth not rosemary and Romeo begin both with a letter ?",
+      "scrollMode": "auto",
+      "lineIndex": 200
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "Ay , nurse , what of that ? Both with an R .",
+      "scrollMode": "auto",
+      "lineIndex": 201
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g9g",
+      "lineText": "Ah , mocker , that’s the dog’s name . R is for the — No , I know it begins with some other letter , and she hath the prettiest sententious of it , of you and rosemary , that it would do you good to hear it .",
+      "scrollMode": "auto",
+      "lineIndex": 202
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "Commend me to thy lady .",
+      "scrollMode": "auto",
+      "lineIndex": 203
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g9g",
+      "lineText": "Ay , a thousand times . — Peter .",
+      "scrollMode": "auto",
+      "lineIndex": 204
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79gag",
+      "lineText": "Anon .",
+      "scrollMode": "auto",
+      "lineIndex": 205
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g9g",
+      "lineText": "Before and apace .",
+      "scrollMode": "auto",
+      "lineIndex": 206
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g6g",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 207
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g6g",
+      "lineText": "Enter Juliet .",
+      "scrollMode": "auto",
+      "lineIndex": 208
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g6g",
+      "lineText": "Enter Nurse and Peter .",
+      "scrollMode": "auto",
+      "lineIndex": 209
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g9g",
+      "lineText": "Enter Nurse and Peter . O God , she comes ! — O , honey nurse , what news ? Hast thou met with him ? Send thy man away .",
+      "scrollMode": "auto",
+      "lineIndex": 210
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g9g",
+      "lineText": "Peter , stay at the gate .",
+      "scrollMode": "auto",
+      "lineIndex": 211
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g6g",
+      "lineText": "Peter exits .",
+      "scrollMode": "auto",
+      "lineIndex": 212
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g90",
+      "lineText": "Now , good sweet nurse — O Lord , why lookest thou sad ? Though news be sad , yet tell them merrily . If good , thou shamest the music of sweet news By playing it to me with so sour a face .",
+      "scrollMode": "auto",
+      "lineIndex": 213
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g9g",
+      "lineText": "I am aweary . Give me leave awhile . Fie , how my bones ache ! What a jaunt have I !",
+      "scrollMode": "auto",
+      "lineIndex": 214
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g90",
+      "lineText": "I would thou hadst my bones , and I thy news . Nay , come , I pray thee , speak . Good , good nurse , speak .",
+      "scrollMode": "auto",
+      "lineIndex": 215
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g9g",
+      "lineText": "Jesu , what haste ! Can you not stay awhile ? Do you not see that I am out of breath ?",
+      "scrollMode": "auto",
+      "lineIndex": 216
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g90",
+      "lineText": "How art thou out of breath , when thou hast breath To say to me that thou art out of breath ? The excuse that thou dost make in this delay ACT 2. SC. 5 Is longer than the tale thou dost excuse . Is thy news good or bad ? Answer to that . Say either , and I’ll stay the circumstance . Let me be satisfied ; is ’t good or bad ?",
+      "scrollMode": "auto",
+      "lineIndex": 217
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g9g",
+      "lineText": "Well , you have made a simple choice . You know not how to choose a man . Romeo ? No , not he . Though his face be better than any man’s , yet his leg excels all men’s , and for a hand and a foot and a body , though they be not to be talked on , yet they are past compare . He is not the flower of courtesy , but I’ll warrant him as gentle as a lamb . Go thy ways , wench . Serve God . What , have you dined at home ?",
+      "scrollMode": "auto",
+      "lineIndex": 218
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g90",
+      "lineText": "No , no . But all this did I know before . What says he of our marriage ? What of that ?",
+      "scrollMode": "auto",
+      "lineIndex": 219
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g9g",
+      "lineText": "Lord , how my head aches ! What a head have I ! It beats as it would fall in twenty pieces . My back o’ t’ other side ! Ah , my back , my back ! Beshrew your heart for sending me about To catch my death with jaunting up and down .",
+      "scrollMode": "auto",
+      "lineIndex": 220
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g90",
+      "lineText": "I’ faith , I am sorry that thou art not well . Sweet , sweet , sweet nurse , tell me , what says my love ?",
+      "scrollMode": "auto",
+      "lineIndex": 221
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g9g",
+      "lineText": "Your love says , like an honest gentleman , and a courteous , and a kind , and a handsome , and , I warrant , a virtuous — Where is your mother ?",
+      "scrollMode": "auto",
+      "lineIndex": 222
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g90",
+      "lineText": "Where is my mother ? Why , she is within . Where should she be ? How oddly thou repliest : Your love says , like an honest gentleman , Where is your mother ?",
+      "scrollMode": "auto",
+      "lineIndex": 223
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g9g",
+      "lineText": "O God’s lady dear , Are you so hot ? Marry , come up , I trow . ACT 2. SC. 6 Is this the poultice for my aching bones ? Henceforward do your messages yourself .",
+      "scrollMode": "auto",
+      "lineIndex": 224
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g90",
+      "lineText": "Here’s such a coil . Come , what says Romeo ?",
+      "scrollMode": "auto",
+      "lineIndex": 225
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g9g",
+      "lineText": "Have you got leave to go to shrift today ?",
+      "scrollMode": "auto",
+      "lineIndex": 226
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g90",
+      "lineText": "I have .",
+      "scrollMode": "auto",
+      "lineIndex": 227
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g9g",
+      "lineText": "Then hie you hence to Friar Lawrence’ cell . There stays a husband to make you a wife . Now comes the wanton blood up in your cheeks ; They’ll be in scarlet straight at any news . Hie you to church . I must another way , To fetch a ladder by the which your love Must climb a bird’s nest soon when it is dark . I am the drudge and toil in your delight , But you shall bear the burden soon at night . Go . I’ll to dinner . Hie you to the cell .",
+      "scrollMode": "auto",
+      "lineIndex": 228
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g90",
+      "lineText": "Hie to high fortune ! Honest nurse , farewell .",
+      "scrollMode": "auto",
+      "lineIndex": 229
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g6g",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 230
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g6g",
+      "lineText": "Enter Friar Lawrence and Romeo .",
+      "scrollMode": "auto",
+      "lineIndex": 231
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ga0",
+      "lineText": "So smile the heavens upon this holy act That after-hours with sorrow chide us not .",
+      "scrollMode": "auto",
+      "lineIndex": 232
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "Amen , amen . But come what sorrow can , It cannot countervail the exchange of joy That one short minute gives me in her sight . Do thou but close our hands with holy words , Then love-devouring death do what he dare , It is enough I may but call her mine .",
+      "scrollMode": "auto",
+      "lineIndex": 233
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g6g",
+      "lineText": "Enter Juliet .",
+      "scrollMode": "auto",
+      "lineIndex": 234
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g90",
+      "lineText": "Enter Juliet . Here comes the lady . O , so light a foot Will ne’er wear out the everlasting flint . A lover may bestride the gossamers That idles in the wanton summer air , And yet not fall , so light is vanity .",
+      "scrollMode": "auto",
+      "lineIndex": 235
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g90",
+      "lineText": "Good even to my ghostly confessor .",
+      "scrollMode": "auto",
+      "lineIndex": 236
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ga0",
+      "lineText": "Romeo shall thank thee , daughter , for us both .",
+      "scrollMode": "auto",
+      "lineIndex": 237
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g90",
+      "lineText": "As much to him , else is his thanks too much .",
+      "scrollMode": "auto",
+      "lineIndex": 238
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g7g",
+      "lineText": "Ah , Juliet , if the measure of thy joy Be heaped like mine , and that thy skill be more To blazon it , then sweeten with thy breath This neighbor air , and let rich music’s tongue Unfold the imagined happiness that both Receive in either by this dear encounter .",
+      "scrollMode": "auto",
+      "lineIndex": 239
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g90",
+      "lineText": "Conceit , more rich in matter than in words , Brags of his substance , not of ornament . They are but beggars that can count their worth , But my true love is grown to such excess I cannot sum up sum of half my wealth .",
+      "scrollMode": "auto",
+      "lineIndex": 240
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ga0",
+      "lineText": "Come , come with me , and we will make short work , For , by your leaves , you shall not stay alone Till Holy Church incorporate two in one .",
+      "scrollMode": "auto",
+      "lineIndex": 241
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79g6g",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 242
+    }
+  ],
+  "isPublic": true
+}

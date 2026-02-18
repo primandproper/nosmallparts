@@ -1,0 +1,1458 @@
+{
+  "title": "Henry VIII (Act 1)",
+  "description": "Folger Shakespeare Library edition",
+  "author": "William Shakespeare",
+  "castMembers": [
+    {
+      "id": "d68m11cn9qd8d2h78ubg",
+      "name": "Narrator",
+      "sortOrder": 0
+    },
+    {
+      "id": "d68m11cn9qd8d2h78uc0",
+      "name": "Buckingham",
+      "sortOrder": 1
+    },
+    {
+      "id": "d68m11cn9qd8d2h78ucg",
+      "name": "Norfolk",
+      "sortOrder": 2
+    },
+    {
+      "id": "d68m11cn9qd8d2h78ud0",
+      "name": "Abergavenny",
+      "description": "Buckingham’s son-in-law",
+      "sortOrder": 3
+    },
+    {
+      "id": "d68m11cn9qd8d2h78udg",
+      "name": "Wolsey",
+      "description": "Archbishop of Canterbury",
+      "sortOrder": 4
+    },
+    {
+      "id": "d68m11cn9qd8d2h78ue0",
+      "name": "Secretary",
+      "sortOrder": 5
+    },
+    {
+      "id": "d68m11cn9qd8d2h78ueg",
+      "name": "Brandon",
+      "sortOrder": 6
+    },
+    {
+      "id": "d68m11cn9qd8d2h78uf0",
+      "name": "Sergeant",
+      "sortOrder": 7
+    },
+    {
+      "id": "d68m11cn9qd8d2h78ufg",
+      "name": "King",
+      "sortOrder": 8
+    },
+    {
+      "id": "d68m11cn9qd8d2h78ug0",
+      "name": "Queen Katherine",
+      "description": "Henry’s first wife, later Princess Dowager",
+      "sortOrder": 9
+    },
+    {
+      "id": "d68m11cn9qd8d2h78ugg",
+      "name": "Surveyor",
+      "sortOrder": 10
+    },
+    {
+      "id": "d68m11cn9qd8d2h78uh0",
+      "name": "Chamberlain",
+      "sortOrder": 11
+    },
+    {
+      "id": "d68m11cn9qd8d2h78uhg",
+      "name": "Sands",
+      "sortOrder": 12
+    },
+    {
+      "id": "d68m11cn9qd8d2h78ui0",
+      "name": "Lovell",
+      "sortOrder": 13
+    },
+    {
+      "id": "d68m11cn9qd8d2h78uig",
+      "name": "LADIES_H8",
+      "sortOrder": 14
+    },
+    {
+      "id": "d68m11cn9qd8d2h78uj0",
+      "name": "GENTLEMEN_H8",
+      "sortOrder": 15
+    },
+    {
+      "id": "d68m11cn9qd8d2h78ujg",
+      "name": "Anne",
+      "description": "Katherine’s lady-in-waiting, later Henry’s second wife and queen",
+      "sortOrder": 16
+    },
+    {
+      "id": "d68m11cn9qd8d2h78uk0",
+      "name": "Guilford",
+      "sortOrder": 17
+    },
+    {
+      "id": "d68m11cn9qd8d2h78ukg",
+      "name": "Servant",
+      "sortOrder": 18
+    },
+    {
+      "id": "d68m11cn9qd8d2h78ul0",
+      "name": "MASKERS_H8",
+      "sortOrder": 19
+    }
+  ],
+  "lines": [
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ubg",
+      "lineText": "Enter the Duke of Norfolk at one door ; at the other , the Duke of Buckingham and the Lord Abergavenny .",
+      "scrollMode": "auto",
+      "lineIndex": 0
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uc0",
+      "lineText": "Good morrow , and well met . How have you done Since last we saw in France ?",
+      "scrollMode": "auto",
+      "lineIndex": 1
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ucg",
+      "lineText": "I thank your Grace , Healthful , and ever since a fresh admirer Of what I saw there .",
+      "scrollMode": "auto",
+      "lineIndex": 2
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uc0",
+      "lineText": "An untimely ague Stayed me a prisoner in my chamber when Those suns of glory , those two lights of men , Met in the vale of Andren .",
+      "scrollMode": "auto",
+      "lineIndex": 3
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ucg",
+      "lineText": "’Twixt Guynes and Arde . I was then present , saw them salute on horseback , Beheld them when they lighted , how they clung In their embracement , as they grew together — Which had they , what four throned ones could have weighed Such a compounded one ?",
+      "scrollMode": "auto",
+      "lineIndex": 4
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uc0",
+      "lineText": "All the whole time I was my chamber’s prisoner .",
+      "scrollMode": "auto",
+      "lineIndex": 5
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ucg",
+      "lineText": "Then you lost The view of earthly glory . Men might say Till this time pomp was single , but now married To one above itself . Each following day ACT 1. SC. 1 Became the next day’s master , till the last Made former wonders its . Today the French , All clinquant , all in gold , like heathen gods , Shone down the English , and tomorrow they Made Britain India : every man that stood Showed like a mine . Their dwarfish pages were As cherubins , all gilt . The madams too , Not used to toil , did almost sweat to bear The pride upon them , that their very labor Was to them as a painting . Now this masque Was cried incomparable ; and th’ ensuing night Made it a fool and beggar . The two kings , Equal in luster , were now best , now worst , As presence did present them : him in eye Still him in praise ; and being present both , ’Twas said they saw but one , and no discerner Durst wag his tongue in censure . When these suns — For so they phrase ’em — by their heralds challenged The noble spirits to arms , they did perform Beyond thought’s compass , that former fabulous story , Being now seen possible enough , got credit That Bevis was believed .",
+      "scrollMode": "auto",
+      "lineIndex": 6
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uc0",
+      "lineText": "O , you go far .",
+      "scrollMode": "auto",
+      "lineIndex": 7
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ucg",
+      "lineText": "As I belong to worship , and affect In honor honesty , the tract of everything Would by a good discourser lose some life Which action’s self was tongue to . All was royal ; To the disposing of it naught rebelled . Order gave each thing view . The office did Distinctly his full function .",
+      "scrollMode": "auto",
+      "lineIndex": 8
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uc0",
+      "lineText": "Who did guide , I mean who set the body and the limbs Of this great sport together , as you guess ?",
+      "scrollMode": "auto",
+      "lineIndex": 9
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ucg",
+      "lineText": "One , certes , that promises no element In such a business .",
+      "scrollMode": "auto",
+      "lineIndex": 10
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uc0",
+      "lineText": "I pray you who , my lord ?",
+      "scrollMode": "auto",
+      "lineIndex": 11
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ucg",
+      "lineText": "All this was ordered by the good discretion Of the right reverend Cardinal of York .",
+      "scrollMode": "auto",
+      "lineIndex": 12
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uc0",
+      "lineText": "The devil speed him ! No man’s pie is freed From his ambitious finger . What had he To do in these fierce vanities ? I wonder That such a keech can with his very bulk Take up the rays o’ th’ beneficial sun And keep it from the Earth earth .",
+      "scrollMode": "auto",
+      "lineIndex": 13
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ucg",
+      "lineText": "Surely , sir , There’s in him stuff that puts him to these ends ; For , being not propped by ancestry , whose grace Chalks successors their way , nor called upon For high feats done to th’ crown , neither allied To eminent assistants , but spiderlike , Out of his self-drawing web , he gives us note The force of his own merit makes his way — A gift that heaven gives for him which buys A place next to the King .",
+      "scrollMode": "auto",
+      "lineIndex": 14
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ud0",
+      "lineText": "I cannot tell What heaven hath given him — let some graver eye Pierce into that — but I can see his pride Peep through each part of him . Whence has he that ? If not from hell , the devil is a niggard , Or has given all before , and he begins A new hell in himself .",
+      "scrollMode": "auto",
+      "lineIndex": 15
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uc0",
+      "lineText": "Why the devil , Upon this French going-out , took he upon him , Without the privity o’ th’ King , t’ appoint Who should attend on him ? He makes up the file Of all the gentry , for the most part such To whom as great a charge as little honor He meant to lay upon ; and his own letter , The honorable board of council out , Must fetch him in he papers .",
+      "scrollMode": "auto",
+      "lineIndex": 16
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ud0",
+      "lineText": "I do know Kinsmen of mine , three at the least , that have By this so sickened their estates that never They shall abound as formerly .",
+      "scrollMode": "auto",
+      "lineIndex": 17
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uc0",
+      "lineText": "O , many Have broke their backs with laying manors on ’em For this great journey . What did this vanity But minister communication of A most poor issue ?",
+      "scrollMode": "auto",
+      "lineIndex": 18
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ucg",
+      "lineText": "Grievingly I think The peace between the French and us not values The cost that did conclude it .",
+      "scrollMode": "auto",
+      "lineIndex": 19
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uc0",
+      "lineText": "Every man , After the hideous storm that followed , was A thing inspired and , not consulting , broke Into a general prophecy : that this tempest , Dashing the garment of this peace , aboded The sudden breach on ’t .",
+      "scrollMode": "auto",
+      "lineIndex": 20
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ucg",
+      "lineText": "Which is budded out , For France hath flawed the league and hath attached Our merchants’ goods at Bordeaux .",
+      "scrollMode": "auto",
+      "lineIndex": 21
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ud0",
+      "lineText": "Is it therefore Th’ ambassador is silenced ?",
+      "scrollMode": "auto",
+      "lineIndex": 22
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ucg",
+      "lineText": "Marry , is ’t .",
+      "scrollMode": "auto",
+      "lineIndex": 23
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ud0",
+      "lineText": "A proper title of a peace , and purchased At a superfluous rate !",
+      "scrollMode": "auto",
+      "lineIndex": 24
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uc0",
+      "lineText": "Why , all this business Our reverend cardinal carried .",
+      "scrollMode": "auto",
+      "lineIndex": 25
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ucg",
+      "lineText": "Like it your Grace , The state takes notice of the private difference Betwixt you and the Cardinal . I advise you — And take it from a heart that wishes towards you Honor and plenteous safety — that you read The Cardinal’s malice and his potency Together ; to consider further that ACT 1. SC. 1 What his high hatred would effect wants not A minister in his power . You know his nature , That he’s revengeful , and I know his sword Hath a sharp edge ; it’s long , and ’t may be said It reaches far , and where ’twill not extend , Thither he darts it . Bosom up my counsel ; You’ll find it wholesome . Lo where comes that rock That I advise your shunning .",
+      "scrollMode": "auto",
+      "lineIndex": 26
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ubg",
+      "lineText": "Enter Cardinal Wolsey , the purse borne before him , certain of the Guard , and two Secretaries with papers .",
+      "scrollMode": "auto",
+      "lineIndex": 27
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ubg",
+      "lineText": "The Cardinal in his passage fixeth his eye on Buckingham , and Buckingham on him , both full of disdain .",
+      "scrollMode": "auto",
+      "lineIndex": 28
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ubg",
+      "lineText": ", aside to a Secretary",
+      "scrollMode": "auto",
+      "lineIndex": 29
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78udg",
+      "lineText": "The Duke of Buckingham’s surveyor , ha ? Where’s his examination ?",
+      "scrollMode": "auto",
+      "lineIndex": 30
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ue0",
+      "lineText": "Here , so please you .",
+      "scrollMode": "auto",
+      "lineIndex": 31
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ubg",
+      "lineText": "He hands Wolsey a paper .",
+      "scrollMode": "auto",
+      "lineIndex": 32
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78udg",
+      "lineText": "Is he in person ready ?",
+      "scrollMode": "auto",
+      "lineIndex": 33
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ue0",
+      "lineText": "Ay , please your Grace .",
+      "scrollMode": "auto",
+      "lineIndex": 34
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78udg",
+      "lineText": "Well , we shall then know more , and Buckingham Shall lessen this big look .",
+      "scrollMode": "auto",
+      "lineIndex": 35
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ubg",
+      "lineText": "Cardinal Wolsey and his train exit .",
+      "scrollMode": "auto",
+      "lineIndex": 36
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uc0",
+      "lineText": "This butcher’s cur is venomed-mouthed , and I Have not the power to muzzle him ; therefore best Not wake him in his slumber . A beggar’s book Outworths a noble’s blood .",
+      "scrollMode": "auto",
+      "lineIndex": 37
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ucg",
+      "lineText": "What , are you chafed ? Ask God for temp’rance . That’s th’ appliance only Which your disease requires .",
+      "scrollMode": "auto",
+      "lineIndex": 38
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uc0",
+      "lineText": "I read in ’s looks Matter against me , and his eye reviled Me as his abject object . At this instant ACT 1. SC. 1 He bores me with some trick . He’s gone to th’ King . I’ll follow and outstare him .",
+      "scrollMode": "auto",
+      "lineIndex": 39
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ucg",
+      "lineText": "Stay , my lord , And let your reason with your choler question What ’tis you go about . To climb steep hills Requires slow pace at first . Anger is like A full hot horse who , being allowed his way , Self-mettle tires him . Not a man in England Can advise me like you ; be to yourself As you would to your friend .",
+      "scrollMode": "auto",
+      "lineIndex": 40
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uc0",
+      "lineText": "I’ll to the King , And from a mouth of honor quite cry down This Ipswich fellow’s insolence , or proclaim There’s difference in no persons .",
+      "scrollMode": "auto",
+      "lineIndex": 41
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ucg",
+      "lineText": "Be advised . Heat not a furnace for your foe so hot That it do singe yourself . We may outrun By violent swiftness that which we run at And lose by overrunning . Know you not The fire that mounts the liquor till ’t run o’er In seeming to augment it wastes it ? Be advised . I say again there is no English soul More stronger to direct you than yourself , If with the sap of reason you would quench Or but allay the fire of passion .",
+      "scrollMode": "auto",
+      "lineIndex": 42
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uc0",
+      "lineText": "Sir , I am thankful to you , and I’ll go along By your prescription . But this top-proud fellow — Whom from the flow of gall I name not , but From sincere motions — by intelligence , And proofs as clear as founts in July when We see each grain of gravel , I do know To be corrupt and treasonous .",
+      "scrollMode": "auto",
+      "lineIndex": 43
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ucg",
+      "lineText": "Say not treasonous .",
+      "scrollMode": "auto",
+      "lineIndex": 44
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uc0",
+      "lineText": "To th’ King I’ll say ’t , and make my vouch as strong ACT 1. SC. 1 As shore of rock . Attend . This holy fox , Or wolf , or both — for he is equal rav’nous As he is subtle , and as prone to mischief As able to perform ’t , his mind and place Infecting one another , yea reciprocally — Only to show his pomp as well in France As here at home , suggests the King our master To this last costly treaty , th’ interview That swallowed so much treasure and like a glass Did break i’ th’ rinsing .",
+      "scrollMode": "auto",
+      "lineIndex": 45
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ucg",
+      "lineText": "Faith , and so it did .",
+      "scrollMode": "auto",
+      "lineIndex": 46
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uc0",
+      "lineText": "Pray give me favor , sir . This cunning cardinal The articles o’ th’ combination drew As himself pleased ; and they were ratified As he cried Thus let be , to as much end As give a crutch to th’ dead . But our Count Cardinal Has done this , and ’tis well , for worthy Wolsey , Who cannot err , he did it . Now this follows — Which , as I take it , is a kind of puppy To th’ old dam treason : Charles the Emperor , Under pretense to see the Queen his aunt — For ’twas indeed his color , but he came To whisper Wolsey — here makes visitation ; His fears were that the interview betwixt England and France might through their amity Breed him some prejudice , for from this league Peeped harms that menaced him ; privily Deals with our cardinal and , as I trow — Which I do well , for I am sure the Emperor Paid ere he promised , whereby his suit was granted Ere it was asked . But when the way was made And paved with gold , the Emperor thus desired That he would please to alter the King’s course And break the foresaid peace . Let the King know — As soon he shall by me — that thus the Cardinal ACT 1. SC. 1 Does buy and sell his honor as he pleases And for his own advantage .",
+      "scrollMode": "auto",
+      "lineIndex": 47
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ucg",
+      "lineText": "I am sorry To hear this of him , and could wish he were Something mistaken in ’t .",
+      "scrollMode": "auto",
+      "lineIndex": 48
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uc0",
+      "lineText": "No , not a syllable . I do pronounce him in that very shape He shall appear in proof .",
+      "scrollMode": "auto",
+      "lineIndex": 49
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ubg",
+      "lineText": "Enter Brandon , a Sergeant-at-Arms before him , and two or three of the Guard .",
+      "scrollMode": "auto",
+      "lineIndex": 50
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ueg",
+      "lineText": "Your office , Sergeant : execute it .",
+      "scrollMode": "auto",
+      "lineIndex": 51
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ubg",
+      "lineText": ", to Buckingham",
+      "scrollMode": "auto",
+      "lineIndex": 52
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uf0",
+      "lineText": "Sir , My lord the Duke of Buckingham and Earl Of Hertford , Stafford , and Northampton , I Arrest thee of high treason , in the name Of our most sovereign king .",
+      "scrollMode": "auto",
+      "lineIndex": 53
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ubg",
+      "lineText": ", to Norfolk",
+      "scrollMode": "auto",
+      "lineIndex": 54
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uc0",
+      "lineText": "Lo you , my lord , The net has fall’n upon me . I shall perish Under device and practice .",
+      "scrollMode": "auto",
+      "lineIndex": 55
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ueg",
+      "lineText": "I am sorry To see you ta’en from liberty , to look on The business present . ’Tis his Highness’ pleasure You shall to th’ Tower .",
+      "scrollMode": "auto",
+      "lineIndex": 56
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uc0",
+      "lineText": "It will help me nothing To plead mine innocence , for that dye is on me Which makes my whit’st part black . The will of heaven Be done in this and all things . I obey . O my Lord Abergavenny , fare you well .",
+      "scrollMode": "auto",
+      "lineIndex": 57
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ueg",
+      "lineText": "Nay , he must bear you company . — The King Is pleased you shall to th’ Tower , till you know How he determines further .",
+      "scrollMode": "auto",
+      "lineIndex": 58
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ud0",
+      "lineText": "As the Duke said , The will of heaven be done , and the King’s pleasure By me obeyed .",
+      "scrollMode": "auto",
+      "lineIndex": 59
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ueg",
+      "lineText": "Here is a warrant from The King t’ attach Lord Mountacute , and the bodies Of the Duke’s confessor , John de la Car , One Gilbert Peck , his counselor —",
+      "scrollMode": "auto",
+      "lineIndex": 60
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uc0",
+      "lineText": "So , so ; These are the limbs o’ th’ plot . No more , I hope .",
+      "scrollMode": "auto",
+      "lineIndex": 61
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ueg",
+      "lineText": "A monk o’ th’ Chartreux .",
+      "scrollMode": "auto",
+      "lineIndex": 62
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uc0",
+      "lineText": "O , Michael Hopkins ?",
+      "scrollMode": "auto",
+      "lineIndex": 63
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ueg",
+      "lineText": "He .",
+      "scrollMode": "auto",
+      "lineIndex": 64
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ubg",
+      "lineText": "To Norfolk .",
+      "scrollMode": "auto",
+      "lineIndex": 65
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uc0",
+      "lineText": "To Norfolk . My lord , farewell .",
+      "scrollMode": "auto",
+      "lineIndex": 66
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ubg",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 67
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ubg",
+      "lineText": "Cornets . Enter King Henry , leaning on the Cardinal’s shoulder , with the Nobles , Sir Thomas Lovell , and Attendants , including a Secretary of the Cardinal . The Cardinal places himself under the King’s feet on his right side .",
+      "scrollMode": "auto",
+      "lineIndex": 68
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ubg",
+      "lineText": ", to Wolsey",
+      "scrollMode": "auto",
+      "lineIndex": 69
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ufg",
+      "lineText": "My life itself , and the best heart of it , Thanks you for this great care . I stood i’ th’ level Of a full-charged confederacy , and give thanks To you that choked it . — Let be called before us That gentleman of Buckingham’s ; in person I’ll hear him his confessions justify , And point by point the treasons of his master He shall again relate .",
+      "scrollMode": "auto",
+      "lineIndex": 70
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ubg",
+      "lineText": "A noise within crying Room for the Queen !",
+      "scrollMode": "auto",
+      "lineIndex": 71
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ubg",
+      "lineText": "Enter the Queen Katherine , ushered by the Duke of Norfolk , and the Duke of Suffolk .",
+      "scrollMode": "auto",
+      "lineIndex": 72
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ubg",
+      "lineText": "She kneels .",
+      "scrollMode": "auto",
+      "lineIndex": 73
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ubg",
+      "lineText": "The King riseth from his state .",
+      "scrollMode": "auto",
+      "lineIndex": 74
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ug0",
+      "lineText": "Nay , we must longer kneel ; I am a suitor .",
+      "scrollMode": "auto",
+      "lineIndex": 75
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ubg",
+      "lineText": "He takes her up , kisses and placeth her by him .",
+      "scrollMode": "auto",
+      "lineIndex": 76
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ufg",
+      "lineText": "He takes her up , kisses and placeth her by him . Half your suit Never name to us ; you have half our power . The other moiety ere you ask is given ; Repeat your will , and take it .",
+      "scrollMode": "auto",
+      "lineIndex": 77
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ug0",
+      "lineText": "Thank your Majesty . That you would love yourself , and in that love Not unconsidered leave your honor nor The dignity of your office , is the point Of my petition .",
+      "scrollMode": "auto",
+      "lineIndex": 78
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ufg",
+      "lineText": "Lady mine , proceed .",
+      "scrollMode": "auto",
+      "lineIndex": 79
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ug0",
+      "lineText": "I am solicited , not by a few , And those of true condition , that your subjects Are in great grievance . There have been commissions Sent down among ’em which hath flawed the heart Of all their loyalties , wherein , although My good Lord Cardinal , they vent reproaches Most bitterly on you as putter-on Of these exactions , yet the King our master , Whose honor heaven shield from soil , even he escapes not Language unmannerly — yea , such which breaks The sides of loyalty and almost appears In loud rebellion .",
+      "scrollMode": "auto",
+      "lineIndex": 80
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ucg",
+      "lineText": "Not almost appears — It doth appear . For , upon these taxations , The clothiers all , not able to maintain ACT 1. SC. 2 The many to them longing , have put off The spinsters , carders , fullers , weavers , who , Unfit for other life , compelled by hunger And lack of other means , in desperate manner Daring th’ event to th’ teeth , are all in uproar , And danger serves among them .",
+      "scrollMode": "auto",
+      "lineIndex": 81
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ufg",
+      "lineText": "Taxation ? Wherein ? And what taxation ? My Lord Cardinal , You that are blamed for it alike with us , Know you of this taxation ?",
+      "scrollMode": "auto",
+      "lineIndex": 82
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78udg",
+      "lineText": "Please you , sir , I know but of a single part in aught Pertains to th’ state , and front but in that file Where others tell steps with me .",
+      "scrollMode": "auto",
+      "lineIndex": 83
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ug0",
+      "lineText": "No , my lord ? You know no more than others ? But you frame Things that are known alike , which are not wholesome To those which would not know them , and yet must Perforce be their acquaintance . These exactions Whereof my sovereign would have note , they are Most pestilent to th’ hearing , and to bear ’em The back is sacrifice to th’ load . They say They are devised by you , or else you suffer Too hard an exclamation .",
+      "scrollMode": "auto",
+      "lineIndex": 84
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ufg",
+      "lineText": "Still exaction ! The nature of it ? In what kind , let’s know , Is this exaction ?",
+      "scrollMode": "auto",
+      "lineIndex": 85
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ug0",
+      "lineText": "I am much too venturous In tempting of your patience , but am boldened Under your promised pardon . The subjects’ grief Comes through commissions which compels from each The sixth part of his substance , to be levied Without delay , and the pretense for this Is named your wars in France . This makes bold mouths . ACT 1. SC. 2 Tongues spit their duties out , and cold hearts freeze Allegiance in them . Their curses now Live where their prayers did ; and it’s come to pass This tractable obedience is a slave To each incensèd will . I would your Highness Would give it quick consideration , for There is no primer baseness .",
+      "scrollMode": "auto",
+      "lineIndex": 86
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ufg",
+      "lineText": "By my life , This is against our pleasure .",
+      "scrollMode": "auto",
+      "lineIndex": 87
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78udg",
+      "lineText": "And for me , I have no further gone in this than by A single voice , and that not passed me but By learnèd approbation of the judges . If I am Traduced by ignorant tongues , which neither know My faculties nor person , yet will be The chronicles of my doing , let me say ’Tis but the fate of place , and the rough brake That virtue must go through . We must not stint Our necessary actions in the fear To cope malicious censurers , which ever , As ravenous fishes , do a vessel follow That is new trimmed , but benefit no further Than vainly longing . What we oft do best , By sick interpreters , once weak ones , is Not ours or not allowed ; what worst , as oft , Hitting a grosser quality , is cried up For our best act . If we shall stand still In fear our motion will be mocked or carped at , We should take root here where we sit , Or sit state-statues only .",
+      "scrollMode": "auto",
+      "lineIndex": 88
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ufg",
+      "lineText": "Things done well , And with a care , exempt themselves from fear ; Things done without example , in their issue Are to be feared . Have you a precedent Of this commission ? I believe , not any . We must not rend our subjects from our laws ACT 1. SC. 2 And stick them in our will . Sixth part of each ? A trembling contribution ! Why , we take From every tree lop , bark , and part o’ th’ timber , And though we leave it with a root , thus hacked , The air will drink the sap . To every county Where this is questioned send our letters with Free pardon to each man that has denied The force of this commission . Pray look to ’t ; I put it to your care .",
+      "scrollMode": "auto",
+      "lineIndex": 89
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ubg",
+      "lineText": ", aside to his Secretary",
+      "scrollMode": "auto",
+      "lineIndex": 90
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78udg",
+      "lineText": "A word with you . Let there be letters writ to every shire Of the King’s grace and pardon . The grievèd commons Hardly conceive of me . Let it be noised That through our intercession this revokement And pardon comes . I shall anon advise you Further in the proceeding .",
+      "scrollMode": "auto",
+      "lineIndex": 91
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ubg",
+      "lineText": "Secretary exits .",
+      "scrollMode": "auto",
+      "lineIndex": 92
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ubg",
+      "lineText": "Enter Buckingham’s Surveyor .",
+      "scrollMode": "auto",
+      "lineIndex": 93
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ubg",
+      "lineText": ", to the King",
+      "scrollMode": "auto",
+      "lineIndex": 94
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ug0",
+      "lineText": "I am sorry that the Duke of Buckingham Is run in your displeasure .",
+      "scrollMode": "auto",
+      "lineIndex": 95
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ufg",
+      "lineText": "It grieves many . The gentleman is learnèd and a most rare speaker ; To nature none more bound ; his training such That he may furnish and instruct great teachers And never seek for aid out of himself . Yet see , When these so noble benefits shall prove Not well disposed , the mind growing once corrupt , They turn to vicious forms ten times more ugly Than ever they were fair . This man so complete , Who was enrolled ’mongst wonders , and when we Almost with ravished list’ning could not find His hour of speech a minute — he , my lady , Hath into monstrous habits put the graces That once were his , and is become as black As if besmeared in hell . Sit by us . You shall hear — ACT 1. SC. 2 This was his gentleman in trust — of him Things to strike honor sad . — Bid him recount The fore-recited practices , whereof We cannot feel too little , hear too much .",
+      "scrollMode": "auto",
+      "lineIndex": 96
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78udg",
+      "lineText": "Stand forth , and with bold spirit relate what you Most like a careful subject have collected Out of the Duke of Buckingham .",
+      "scrollMode": "auto",
+      "lineIndex": 97
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ufg",
+      "lineText": "Speak freely .",
+      "scrollMode": "auto",
+      "lineIndex": 98
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ugg",
+      "lineText": "First , it was usual with him — every day It would infect his speech — that if the King Should without issue die , he’ll carry it so To make the scepter his . These very words I’ve heard him utter to his son-in-law , Lord Abergavenny , to whom by oath he menaced Revenge upon the Cardinal .",
+      "scrollMode": "auto",
+      "lineIndex": 99
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78udg",
+      "lineText": "Please your Highness , note This dangerous conception in this point : Not friended by his wish to your high person , His will is most malignant , and it stretches Beyond you to your friends .",
+      "scrollMode": "auto",
+      "lineIndex": 100
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ug0",
+      "lineText": "My learnèd Lord Cardinal , Deliver all with charity .",
+      "scrollMode": "auto",
+      "lineIndex": 101
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ubg",
+      "lineText": ", to Surveyor",
+      "scrollMode": "auto",
+      "lineIndex": 102
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ufg",
+      "lineText": "Speak on . How grounded he his title to the crown Upon our fail ? To this point hast thou heard him At any time speak aught ?",
+      "scrollMode": "auto",
+      "lineIndex": 103
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ugg",
+      "lineText": "He was brought to this By a vain prophecy of Nicholas Henton .",
+      "scrollMode": "auto",
+      "lineIndex": 104
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ufg",
+      "lineText": "What was that Henton ?",
+      "scrollMode": "auto",
+      "lineIndex": 105
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ugg",
+      "lineText": "Sir , a Chartreux friar , His confessor , who fed him every minute With words of sovereignty .",
+      "scrollMode": "auto",
+      "lineIndex": 106
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ufg",
+      "lineText": "How know’st thou this ?",
+      "scrollMode": "auto",
+      "lineIndex": 107
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ugg",
+      "lineText": "Not long before your Highness sped to France , The Duke being at the Rose , within the parish Saint Laurence Poultney , did of me demand What was the speech among the Londoners Concerning the French journey . I replied Men fear the French would prove perfidious , To the King’s danger . Presently the Duke Said ’twas the fear indeed , and that he doubted ’Twould prove the verity of certain words Spoke by a holy monk that oft , says he , Hath sent to me , wishing me to permit John de la Car , my chaplain , a choice hour To hear from him a matter of some moment ; Whom after under the confession’s seal He solemnly had sworn that what he spoke My chaplain to no creature living but To me should utter , with demure confidence This pausingly ensued : Neither the King , nor ’s heirs — Tell you the Duke — shall prosper . Bid him strive To gain the love o’ th’ commonalty ; the Duke Shall govern England .",
+      "scrollMode": "auto",
+      "lineIndex": 108
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ug0",
+      "lineText": "If I know you well , You were the Duke’s surveyor , and lost your office On the complaint o’ th’ tenants . Take good heed You charge not in your spleen a noble person And spoil your nobler soul . I say , take heed — Yes , heartily beseech you .",
+      "scrollMode": "auto",
+      "lineIndex": 109
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ufg",
+      "lineText": "Let him on . — Go forward .",
+      "scrollMode": "auto",
+      "lineIndex": 110
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ugg",
+      "lineText": "On my soul , I’ll speak but truth . I told my lord the Duke , by th’ devil’s illusions The monk might be deceived , and that ’twas dangerous For him to ruminate on this so far until It forged him some design , which , being believed , ACT 1. SC. 2 It was much like to do . He answered Tush , It can do me no damage , adding further That had the King in his last sickness failed , The Cardinal’s and Sir Thomas Lovell’s heads Should have gone off .",
+      "scrollMode": "auto",
+      "lineIndex": 111
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ufg",
+      "lineText": "Ha ! What , so rank ? Ah ha ! There’s mischief in this man ! Canst thou say further ?",
+      "scrollMode": "auto",
+      "lineIndex": 112
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ugg",
+      "lineText": "I can , my liege .",
+      "scrollMode": "auto",
+      "lineIndex": 113
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ufg",
+      "lineText": "Proceed .",
+      "scrollMode": "auto",
+      "lineIndex": 114
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ugg",
+      "lineText": "Being at Greenwich , After your Highness had reproved the Duke About Sir William Blumer —",
+      "scrollMode": "auto",
+      "lineIndex": 115
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ufg",
+      "lineText": "I remember of such a time , being my sworn servant , The Duke retained him his . But on . What hence ?",
+      "scrollMode": "auto",
+      "lineIndex": 116
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ugg",
+      "lineText": "If , quoth he , I for this had been committed , As to the Tower , I thought , I would have played The part my father meant to act upon Th’ usurper Richard , who , being at Salisbury , Made suit to come in ’s presence ; which if granted , As he made semblance of his duty , would Have put his knife into him .",
+      "scrollMode": "auto",
+      "lineIndex": 117
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ufg",
+      "lineText": "A giant traitor !",
+      "scrollMode": "auto",
+      "lineIndex": 118
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78udg",
+      "lineText": "Now , madam , may his Highness live in freedom And this man out of prison ?",
+      "scrollMode": "auto",
+      "lineIndex": 119
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ug0",
+      "lineText": "God mend all .",
+      "scrollMode": "auto",
+      "lineIndex": 120
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ubg",
+      "lineText": ", to Surveyor",
+      "scrollMode": "auto",
+      "lineIndex": 121
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ufg",
+      "lineText": "There’s something more would out of thee . What sayst ?",
+      "scrollMode": "auto",
+      "lineIndex": 122
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ugg",
+      "lineText": "After the Duke his father with the knife , He stretched him , and with one hand on his dagger , Another spread on ’s breast , mounting his eyes , He did discharge a horrible oath whose tenor ACT 1. SC. 3 Was , were he evil used , he would outgo His father by as much as a performance Does an irresolute purpose .",
+      "scrollMode": "auto",
+      "lineIndex": 123
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ufg",
+      "lineText": "There’s his period , To sheathe his knife in us ! He is attached . Call him to present trial . If he may Find mercy in the law , ’tis his ; if none , Let him not seek ’t of us . By day and night , He’s traitor to th’ height !",
+      "scrollMode": "auto",
+      "lineIndex": 124
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ubg",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 125
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ubg",
+      "lineText": "Enter Lord Chamberlain and Lord Sands .",
+      "scrollMode": "auto",
+      "lineIndex": 126
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uh0",
+      "lineText": "Is ’t possible the spells of France should juggle Men into such strange mysteries ?",
+      "scrollMode": "auto",
+      "lineIndex": 127
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uhg",
+      "lineText": "New customs , Though they be never so ridiculous — Nay , let ’em be unmanly — yet are followed .",
+      "scrollMode": "auto",
+      "lineIndex": 128
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uh0",
+      "lineText": "As far as I see , all the good our English Have got by the late voyage is but merely A fit or two o’ th’ face ; but they are shrewd ones , For when they hold ’em , you would swear directly Their very noses had been counselors To Pepin or Clotharius , they keep state so .",
+      "scrollMode": "auto",
+      "lineIndex": 129
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uhg",
+      "lineText": "They have all new legs and lame ones ; one would take it , That never see ’em pace before , the spavin Or springhalt reigned among ’em .",
+      "scrollMode": "auto",
+      "lineIndex": 130
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ubg",
+      "lineText": "Enter Sir Thomas Lovell .",
+      "scrollMode": "auto",
+      "lineIndex": 131
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ui0",
+      "lineText": "Enter Sir Thomas Lovell . How now ? What news , Sir Thomas Lovell ?",
+      "scrollMode": "auto",
+      "lineIndex": 132
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ui0",
+      "lineText": "Faith , my lord , I hear of none but the new proclamation That’s clapped upon the court gate .",
+      "scrollMode": "auto",
+      "lineIndex": 133
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uh0",
+      "lineText": "What is ’t for ?",
+      "scrollMode": "auto",
+      "lineIndex": 134
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ui0",
+      "lineText": "The reformation of our traveled gallants That fill the court with quarrels , talk , and tailors .",
+      "scrollMode": "auto",
+      "lineIndex": 135
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uh0",
+      "lineText": "I’m glad ’tis there ; now I would pray our monsieurs To think an English courtier may be wise And never see the Louvre .",
+      "scrollMode": "auto",
+      "lineIndex": 136
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ui0",
+      "lineText": "They must either — For so run the conditions — leave those remnants Of fool and feather that they got in France , With all their honorable points of ignorance Pertaining thereunto , as fights and fireworks , Abusing better men than they can be Out of a foreign wisdom , renouncing clean The faith they have in tennis and tall stockings , Short blistered breeches , and those types of travel , And understand again like honest men , Or pack to their old playfellows . There , I take it , They may cum privilegio oui away The lag end of their lewdness and be laughed at .",
+      "scrollMode": "auto",
+      "lineIndex": 137
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uhg",
+      "lineText": "’Tis time to give ’em physic , their diseases Are grown so catching .",
+      "scrollMode": "auto",
+      "lineIndex": 138
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uh0",
+      "lineText": "What a loss our ladies Will have of these trim vanities !",
+      "scrollMode": "auto",
+      "lineIndex": 139
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ui0",
+      "lineText": "Ay , marry , There will be woe indeed , lords . The sly whoresons ACT 1. SC. 3 Have got a speeding trick to lay down ladies . A French song and a fiddle has no fellow .",
+      "scrollMode": "auto",
+      "lineIndex": 140
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uhg",
+      "lineText": "The devil fiddle ’em ! I am glad they are going , For sure there’s no converting of ’em . Now An honest country lord , as I am , beaten A long time out of play , may bring his plainsong , And have an hour of hearing , and , by ’r Lady , Held current music too .",
+      "scrollMode": "auto",
+      "lineIndex": 141
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uh0",
+      "lineText": "Well said , Lord Sands . Your colt’s tooth is not cast yet ?",
+      "scrollMode": "auto",
+      "lineIndex": 142
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uhg",
+      "lineText": "No , my lord , Nor shall not while I have a stump .",
+      "scrollMode": "auto",
+      "lineIndex": 143
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uh0",
+      "lineText": "Sir Thomas , Whither were you a-going ?",
+      "scrollMode": "auto",
+      "lineIndex": 144
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ui0",
+      "lineText": "To the Cardinal’s . Your Lordship is a guest too .",
+      "scrollMode": "auto",
+      "lineIndex": 145
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uh0",
+      "lineText": "O , ’tis true . This night he makes a supper , and a great one , To many lords and ladies . There will be The beauty of this kingdom , I’ll assure you .",
+      "scrollMode": "auto",
+      "lineIndex": 146
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ui0",
+      "lineText": "That churchman bears a bounteous mind indeed , A hand as fruitful as the land that feeds us . His dews fall everywhere .",
+      "scrollMode": "auto",
+      "lineIndex": 147
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uh0",
+      "lineText": "No doubt he’s noble ; He had a black mouth that said other of him .",
+      "scrollMode": "auto",
+      "lineIndex": 148
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uhg",
+      "lineText": "He may , my lord . ’Has wherewithal . In him , Sparing would show a worse sin than ill doctrine . Men of his way should be most liberal ; They are set here for examples .",
+      "scrollMode": "auto",
+      "lineIndex": 149
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uh0",
+      "lineText": "True , they are so , But few now give so great ones . My barge stays . Your Lordship shall along . — Come , good Sir Thomas , We shall be late else , which I would not be , ACT 1. SC. 4 For I was spoke to , with Sir Henry Guilford This night to be comptrollers .",
+      "scrollMode": "auto",
+      "lineIndex": 150
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uhg",
+      "lineText": "I am your Lordship’s .",
+      "scrollMode": "auto",
+      "lineIndex": 151
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ubg",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 152
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ubg",
+      "lineText": "Hautboys . A small table under a state for the Cardinal , a longer table for the guests . Then enter Anne Bullen and divers other ladies and gentlemen as guests at one door ; at another door enter Sir Henry Guilford .",
+      "scrollMode": "auto",
+      "lineIndex": 153
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ubg",
+      "lineText": "Enter Lord Chamberlain , Lord Sands , and Sir Thomas Lovell .",
+      "scrollMode": "auto",
+      "lineIndex": 154
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uh0",
+      "lineText": "Enter Lord Chamberlain , Lord Sands , and Sir Thomas Lovell . O , my lord , you’re tardy ! The very thought of this fair company Clapped wings to me .",
+      "scrollMode": "auto",
+      "lineIndex": 155
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uh0",
+      "lineText": "You are young , Sir Harry Guilford .",
+      "scrollMode": "auto",
+      "lineIndex": 156
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uhg",
+      "lineText": "Sir Thomas Lovell , had the Cardinal But half my lay thoughts in him , some of these Should find a running banquet , ere they rested , I think would better please ’em . By my life , They are a sweet society of fair ones .",
+      "scrollMode": "auto",
+      "lineIndex": 157
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ui0",
+      "lineText": "O , that your Lordship were but now confessor To one or two of these !",
+      "scrollMode": "auto",
+      "lineIndex": 158
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uhg",
+      "lineText": "I would I were . They should find easy penance .",
+      "scrollMode": "auto",
+      "lineIndex": 159
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ui0",
+      "lineText": "Faith , how easy ?",
+      "scrollMode": "auto",
+      "lineIndex": 160
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uhg",
+      "lineText": "As easy as a down bed would afford it .",
+      "scrollMode": "auto",
+      "lineIndex": 161
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ubg",
+      "lineText": "The guests are seated .",
+      "scrollMode": "auto",
+      "lineIndex": 162
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uig",
+      "lineText": "The guests are seated . His Grace is ent’ring . Nay , you must not freeze ; Two women placed together makes cold weather . My Lord Sands , you are one will keep ’em waking . Pray sit between these ladies .",
+      "scrollMode": "auto",
+      "lineIndex": 163
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ubg",
+      "lineText": "He sits between Anne Bullen and another lady .",
+      "scrollMode": "auto",
+      "lineIndex": 164
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uhg",
+      "lineText": "He sits between Anne Bullen and another lady . If I chance to talk a little wild , forgive me ; I had it from my father .",
+      "scrollMode": "auto",
+      "lineIndex": 165
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ujg",
+      "lineText": "Was he mad , sir ?",
+      "scrollMode": "auto",
+      "lineIndex": 166
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uhg",
+      "lineText": "O , very mad , exceeding mad , in love too ; But he would bite none . Just as I do now , He would kiss you twenty with a breath .",
+      "scrollMode": "auto",
+      "lineIndex": 167
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ubg",
+      "lineText": "He kisses Anne .",
+      "scrollMode": "auto",
+      "lineIndex": 168
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uh0",
+      "lineText": "Well said , my lord . So , now you’re fairly seated , gentlemen , The penance lies on you if these fair ladies Pass away frowning .",
+      "scrollMode": "auto",
+      "lineIndex": 169
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uhg",
+      "lineText": "For my little cure , Let me alone .",
+      "scrollMode": "auto",
+      "lineIndex": 170
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ubg",
+      "lineText": "Hautboys . Enter Cardinal Wolsey , with Attendants and Servants , and takes his state .",
+      "scrollMode": "auto",
+      "lineIndex": 171
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78udg",
+      "lineText": "You’re welcome , my fair guests . That noble lady ACT 1. SC. 4 Or gentleman that is not freely merry Is not my friend . This to confirm my welcome , And to you all good health .",
+      "scrollMode": "auto",
+      "lineIndex": 172
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ubg",
+      "lineText": "He drinks to them .",
+      "scrollMode": "auto",
+      "lineIndex": 173
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uhg",
+      "lineText": "Your Grace is noble . Let me have such a bowl may hold my thanks And save me so much talking .",
+      "scrollMode": "auto",
+      "lineIndex": 174
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78udg",
+      "lineText": "My Lord Sands , I am beholding to you . Cheer your neighbors . — Ladies , you are not merry . — Gentlemen , Whose fault is this ?",
+      "scrollMode": "auto",
+      "lineIndex": 175
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uhg",
+      "lineText": "The red wine first must rise In their fair cheeks , my lord . Then we shall have ’em Talk us to silence .",
+      "scrollMode": "auto",
+      "lineIndex": 176
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ujg",
+      "lineText": "You are a merry gamester , My Lord Sands .",
+      "scrollMode": "auto",
+      "lineIndex": 177
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ubg",
+      "lineText": "He drinks to her .",
+      "scrollMode": "auto",
+      "lineIndex": 178
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uhg",
+      "lineText": "He drinks to her . For ’tis to such a thing —",
+      "scrollMode": "auto",
+      "lineIndex": 179
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ujg",
+      "lineText": "You cannot show me .",
+      "scrollMode": "auto",
+      "lineIndex": 180
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uhg",
+      "lineText": "I told your Grace they would talk anon .",
+      "scrollMode": "auto",
+      "lineIndex": 181
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ubg",
+      "lineText": "Drum and Trumpet . Chambers discharged .",
+      "scrollMode": "auto",
+      "lineIndex": 182
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78udg",
+      "lineText": "What’s that ?",
+      "scrollMode": "auto",
+      "lineIndex": 183
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uh0",
+      "lineText": "Look out there , some of you .",
+      "scrollMode": "auto",
+      "lineIndex": 184
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ubg",
+      "lineText": "Servants exit .",
+      "scrollMode": "auto",
+      "lineIndex": 185
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78udg",
+      "lineText": "What warlike voice , And to what end , is this ? — Nay , ladies , fear not . By all the laws of war you’re privileged .",
+      "scrollMode": "auto",
+      "lineIndex": 186
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ubg",
+      "lineText": "Enter a Servant .",
+      "scrollMode": "auto",
+      "lineIndex": 187
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uh0",
+      "lineText": "How now , what is ’t ?",
+      "scrollMode": "auto",
+      "lineIndex": 188
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ukg",
+      "lineText": "A noble troop of strangers , For so they seem . They’ve left their barge and landed , And hither make , as great ambassadors From foreign princes .",
+      "scrollMode": "auto",
+      "lineIndex": 189
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ubg",
+      "lineText": "Lord Chamberlain exits , with Attendants .",
+      "scrollMode": "auto",
+      "lineIndex": 190
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ubg",
+      "lineText": "All rise , and tables removed .",
+      "scrollMode": "auto",
+      "lineIndex": 191
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ubg",
+      "lineText": "Hautboys . Enter King and others as masquers , habited like shepherds , ushered by the Lord Chamberlain . They pass directly before the Cardinal and gracefully salute him .",
+      "scrollMode": "auto",
+      "lineIndex": 192
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ufg",
+      "lineText": "Hautboys . Enter King and others as masquers , habited like shepherds , ushered by the Lord Chamberlain . They pass directly before the Cardinal and gracefully salute him . A noble company ! What are their pleasures ?",
+      "scrollMode": "auto",
+      "lineIndex": 193
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uh0",
+      "lineText": "Because they speak no English , thus they prayed To tell your Grace : that , having heard by fame Of this so noble and so fair assembly This night to meet here , they could do no less , Out of the great respect they bear to beauty , But leave their flocks and , under your fair conduct , Crave leave to view these ladies and entreat An hour of revels with ’em .",
+      "scrollMode": "auto",
+      "lineIndex": 194
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78udg",
+      "lineText": "Say , Lord Chamberlain , They have done my poor house grace , for which I pay ’em A thousand thanks and pray ’em take their pleasures .",
+      "scrollMode": "auto",
+      "lineIndex": 195
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ubg",
+      "lineText": "The masquers choose Ladies . The King chooses Anne Bullen .",
+      "scrollMode": "auto",
+      "lineIndex": 196
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ufg",
+      "lineText": "The fairest hand I ever touched ! O beauty , Till now I never knew thee .",
+      "scrollMode": "auto",
+      "lineIndex": 197
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ubg",
+      "lineText": "Music , Dance .",
+      "scrollMode": "auto",
+      "lineIndex": 198
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78udg",
+      "lineText": "My lord !",
+      "scrollMode": "auto",
+      "lineIndex": 199
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uh0",
+      "lineText": "Your Grace ?",
+      "scrollMode": "auto",
+      "lineIndex": 200
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78udg",
+      "lineText": "Pray tell ’em thus much from me : There should be one amongst ’em by his person More worthy this place than myself , to whom , If I but knew him , with my love and duty I would surrender it .",
+      "scrollMode": "auto",
+      "lineIndex": 201
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uh0",
+      "lineText": "I will , my lord .",
+      "scrollMode": "auto",
+      "lineIndex": 202
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ubg",
+      "lineText": "Whisper with the masquers .",
+      "scrollMode": "auto",
+      "lineIndex": 203
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78udg",
+      "lineText": "What say they ?",
+      "scrollMode": "auto",
+      "lineIndex": 204
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uh0",
+      "lineText": "Such a one they all confess There is indeed , which they would have your Grace Find out , and he will take it .",
+      "scrollMode": "auto",
+      "lineIndex": 205
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ubg",
+      "lineText": "He leaves his state .",
+      "scrollMode": "auto",
+      "lineIndex": 206
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ubg",
+      "lineText": "He bows before the King .",
+      "scrollMode": "auto",
+      "lineIndex": 207
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78udg",
+      "lineText": "He bows before the King . Here I’ll make My royal choice .",
+      "scrollMode": "auto",
+      "lineIndex": 208
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ubg",
+      "lineText": ", unmasking",
+      "scrollMode": "auto",
+      "lineIndex": 209
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ufg",
+      "lineText": "You have found him , cardinal . You hold a fair assembly ; you do well , lord . You are a churchman , or I’ll tell you , cardinal , I should judge now unhappily .",
+      "scrollMode": "auto",
+      "lineIndex": 210
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78udg",
+      "lineText": "I am glad Your Grace is grown so pleasant .",
+      "scrollMode": "auto",
+      "lineIndex": 211
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ufg",
+      "lineText": "My Lord Chamberlain , Prithee come hither . What fair lady’s that ?",
+      "scrollMode": "auto",
+      "lineIndex": 212
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78uh0",
+      "lineText": "An ’t please your Grace , Sir Thomas Bullen’s daughter , The Viscount Rochford , one of her Highness’ women .",
+      "scrollMode": "auto",
+      "lineIndex": 213
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ubg",
+      "lineText": "He kisses Anne .",
+      "scrollMode": "auto",
+      "lineIndex": 214
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ufg",
+      "lineText": "He kisses Anne . A health , gentlemen ! Let it go round .",
+      "scrollMode": "auto",
+      "lineIndex": 215
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ubg",
+      "lineText": "He drinks a toast .",
+      "scrollMode": "auto",
+      "lineIndex": 216
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78udg",
+      "lineText": "Sir Thomas Lovell , is the banquet ready I’ th’ privy chamber ?",
+      "scrollMode": "auto",
+      "lineIndex": 217
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ui0",
+      "lineText": "Yes , my lord .",
+      "scrollMode": "auto",
+      "lineIndex": 218
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78udg",
+      "lineText": "Your Grace , I fear , with dancing is a little heated .",
+      "scrollMode": "auto",
+      "lineIndex": 219
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ufg",
+      "lineText": "I fear , too much .",
+      "scrollMode": "auto",
+      "lineIndex": 220
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78udg",
+      "lineText": "There’s fresher air , my lord , In the next chamber .",
+      "scrollMode": "auto",
+      "lineIndex": 221
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ufg",
+      "lineText": "Lead in your ladies ev’ry one . — Sweet partner , I must not yet forsake you . — Let’s be merry , Good my Lord Cardinal . I have half a dozen healths To drink to these fair ladies , and a measure To lead ’em once again , and then let’s dream Who’s best in favor . Let the music knock it .",
+      "scrollMode": "auto",
+      "lineIndex": 222
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ubg",
+      "lineText": "They exit , with Trumpets .",
+      "scrollMode": "auto",
+      "lineIndex": 223
+    }
+  ],
+  "isPublic": true
+}

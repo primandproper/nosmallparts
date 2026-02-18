@@ -1,0 +1,1025 @@
+{
+  "title": "Henry V (Act 2)",
+  "description": "Folger Shakespeare Library edition",
+  "author": "William Shakespeare",
+  "castMembers": [
+    {
+      "id": "d68m11cn9qd8d2h78t00",
+      "name": "Narrator",
+      "sortOrder": 0
+    },
+    {
+      "id": "d68m11cn9qd8d2h78t0g",
+      "name": "Chorus",
+      "sortOrder": 1
+    },
+    {
+      "id": "d68m11cn9qd8d2h78t10",
+      "name": "Bardolph",
+      "sortOrder": 2
+    },
+    {
+      "id": "d68m11cn9qd8d2h78t1g",
+      "name": "Nym",
+      "sortOrder": 3
+    },
+    {
+      "id": "d68m11cn9qd8d2h78t20",
+      "name": "Pistol",
+      "sortOrder": 4
+    },
+    {
+      "id": "d68m11cn9qd8d2h78t2g",
+      "name": "Hostess Quickly",
+      "sortOrder": 5
+    },
+    {
+      "id": "d68m11cn9qd8d2h78t30",
+      "name": "Boy",
+      "description": "their servant",
+      "sortOrder": 6
+    },
+    {
+      "id": "d68m11cn9qd8d2h78t3g",
+      "name": "John, Duke of Bedford",
+      "sortOrder": 7
+    },
+    {
+      "id": "d68m11cn9qd8d2h78t40",
+      "name": "Thomas, Duke of Exeter",
+      "description": "uncle to the King",
+      "sortOrder": 8
+    },
+    {
+      "id": "d68m11cn9qd8d2h78t4g",
+      "name": "Earl of Westmoreland",
+      "sortOrder": 9
+    },
+    {
+      "id": "d68m11cn9qd8d2h78t50",
+      "name": "Henry V, King of England",
+      "sortOrder": 10
+    },
+    {
+      "id": "d68m11cn9qd8d2h78t5g",
+      "name": "Lord Scroop of Masham",
+      "sortOrder": 11
+    },
+    {
+      "id": "d68m11cn9qd8d2h78t60",
+      "name": "Earl of Cambridge",
+      "sortOrder": 12
+    },
+    {
+      "id": "d68m11cn9qd8d2h78t6g",
+      "name": "Sir Thomas Grey",
+      "sortOrder": 13
+    },
+    {
+      "id": "d68m11cn9qd8d2h78t70",
+      "name": "ATTENDANTS.ENGLISH.0_H5",
+      "sortOrder": 14
+    },
+    {
+      "id": "d68m11cn9qd8d2h78t7g",
+      "name": "King of France",
+      "sortOrder": 15
+    },
+    {
+      "id": "d68m11cn9qd8d2h78t80",
+      "name": "Dauphin",
+      "sortOrder": 16
+    },
+    {
+      "id": "d68m11cn9qd8d2h78t8g",
+      "name": "Constable of France",
+      "sortOrder": 17
+    },
+    {
+      "id": "d68m11cn9qd8d2h78t90",
+      "name": "Messenger",
+      "sortOrder": 18
+    }
+  ],
+  "lines": [
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t00",
+      "lineText": "Enter Chorus .",
+      "scrollMode": "auto",
+      "lineIndex": 0
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t0g",
+      "lineText": "Now all the youth of England are on fire , And silken dalliance in the wardrobe lies ; Now thrive the armorers , and honor’s thought Reigns solely in the breast of every man . They sell the pasture now to buy the horse , Following the mirror of all Christian kings With wingèd heels , as English Mercurys . For now sits Expectation in the air And hides a sword , from hilts unto the point , With crowns imperial , crowns , and coronets Promised to Harry and his followers . The French , advised by good intelligence Of this most dreadful preparation , Shake in their fear , and with pale policy Seek to divert the English purposes . O England , model to thy inward greatness , Like little body with a mighty heart , What might’st thou do , that honor would thee do , Were all thy children kind and natural ! But see , thy fault France hath in thee found out , A nest of hollow bosoms , which he fills With treacherous crowns , and three corrupted men — One , Richard , Earl of Cambridge , and the second , ACT 2. SC. 1 Henry , Lord Scroop of Masham , and the third , Sir Thomas Grey , knight , of Northumberland — Have , for the gilt of France ( O guilt indeed ! ) , Confirmed conspiracy with fearful France , And by their hands this grace of kings must die , If hell and treason hold their promises , Ere he take ship for France , and in Southampton . Linger your patience on , and we’ll digest Th’ abuse of distance , force a play . The sum is paid , the traitors are agreed , The King is set from London , and the scene Is now transported , gentles , to Southampton . There is the playhouse now , there must you sit , And thence to France shall we convey you safe And bring you back , charming the narrow seas To give you gentle pass ; for , if we may , We’ll not offend one stomach with our play . But , till the King come forth , and not till then , Unto Southampton do we shift our scene .",
+      "scrollMode": "auto",
+      "lineIndex": 1
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t00",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 2
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t00",
+      "lineText": "Enter Corporal Nym and Lieutenant Bardolph .",
+      "scrollMode": "auto",
+      "lineIndex": 3
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t10",
+      "lineText": "Well met , Corporal Nym .",
+      "scrollMode": "auto",
+      "lineIndex": 4
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t1g",
+      "lineText": "Good morrow , Lieutenant Bardolph .",
+      "scrollMode": "auto",
+      "lineIndex": 5
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t10",
+      "lineText": "What , are Ancient Pistol and you friends yet ?",
+      "scrollMode": "auto",
+      "lineIndex": 6
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t1g",
+      "lineText": "For my part , I care not . I say little , but when time shall serve , there shall be smiles ; but that shall be as it may . I dare not fight , but I will wink and hold out mine iron . It is a simple one , but what though ? It will toast cheese , and it will endure cold as another man’s sword will , and there’s an end .",
+      "scrollMode": "auto",
+      "lineIndex": 7
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t10",
+      "lineText": "I will bestow a breakfast to make you ACT 2. SC. 1 friends , and we’ll be all three sworn brothers to France . Let ’t be so , good Corporal Nym .",
+      "scrollMode": "auto",
+      "lineIndex": 8
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t1g",
+      "lineText": "Faith , I will live so long as I may , that’s the certain of it ; and when I cannot live any longer , I will do as I may . That is my rest , that is the rendezvous of it .",
+      "scrollMode": "auto",
+      "lineIndex": 9
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t10",
+      "lineText": "It is certain , corporal , that he is married to Nell Quickly , and certainly she did you wrong , for you were troth-plight to her .",
+      "scrollMode": "auto",
+      "lineIndex": 10
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t1g",
+      "lineText": "I cannot tell . Things must be as they may . Men may sleep , and they may have their throats about them at that time , and some say knives have edges . It must be as it may . Though patience be a tired mare , yet she will plod . There must be conclusions . Well , I cannot tell .",
+      "scrollMode": "auto",
+      "lineIndex": 11
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t00",
+      "lineText": "Enter Pistol and Hostess Quickly .",
+      "scrollMode": "auto",
+      "lineIndex": 12
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t10",
+      "lineText": "Here comes Ancient Pistol and his wife . Good corporal , be patient here . — How now , mine host Pistol ?",
+      "scrollMode": "auto",
+      "lineIndex": 13
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t20",
+      "lineText": "Base tyke , call’st thou me host ? Now , by this hand , I swear I scorn the term , nor shall my Nell keep lodgers .",
+      "scrollMode": "auto",
+      "lineIndex": 14
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t00",
+      "lineText": "Nym and Pistol draw their swords .",
+      "scrollMode": "auto",
+      "lineIndex": 15
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t1g",
+      "lineText": "Nym and Pistol draw their swords . O well-a-day , Lady ! If he be not hewn now , we shall see willful adultery and murder committed .",
+      "scrollMode": "auto",
+      "lineIndex": 16
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t10",
+      "lineText": "Good lieutenant , good corporal , offer nothing here .",
+      "scrollMode": "auto",
+      "lineIndex": 17
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t1g",
+      "lineText": "Pish !",
+      "scrollMode": "auto",
+      "lineIndex": 18
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t20",
+      "lineText": "Pish for thee , Iceland dog , thou prick-eared cur of Iceland !",
+      "scrollMode": "auto",
+      "lineIndex": 19
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t2g",
+      "lineText": "Good Corporal Nym , show thy valor , and put up your sword .",
+      "scrollMode": "auto",
+      "lineIndex": 20
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t00",
+      "lineText": "To Pistol .",
+      "scrollMode": "auto",
+      "lineIndex": 21
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t1g",
+      "lineText": "To Pistol . I would have you solus .",
+      "scrollMode": "auto",
+      "lineIndex": 22
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t20",
+      "lineText": "Solus , egregious dog ? O viper vile , the solus in thy most marvelous face , the solus in thy teeth and in thy throat and in thy hateful lungs , yea , in thy maw , perdy , and , which is worse , within thy nasty mouth ! I do retort the solus in thy bowels , for I can take , and Pistol’s cock is up , and flashing fire will follow .",
+      "scrollMode": "auto",
+      "lineIndex": 23
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t1g",
+      "lineText": "I am not Barbason , you cannot conjure me . I have an humor to knock you indifferently well . If you grow foul with me , Pistol , I will scour you with my rapier , as I may , in fair terms . If you would walk off , I would prick your guts a little in good terms , as I may , and that’s the humor of it .",
+      "scrollMode": "auto",
+      "lineIndex": 24
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t20",
+      "lineText": "O braggart vile and damnèd furious wight , The grave doth gape , and doting death is near . Therefore exhale .",
+      "scrollMode": "auto",
+      "lineIndex": 25
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t10",
+      "lineText": "Hear me , hear me what I say : he that strikes the first stroke , I’ll run him up to the hilts , as I am a soldier .",
+      "scrollMode": "auto",
+      "lineIndex": 26
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t00",
+      "lineText": "He draws .",
+      "scrollMode": "auto",
+      "lineIndex": 27
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t00",
+      "lineText": "Pistol and Nym and then Bardolph sheathe their swords .",
+      "scrollMode": "auto",
+      "lineIndex": 28
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t20",
+      "lineText": "Pistol and Nym and then Bardolph sheathe their swords . Give me thy fist , thy forefoot to me give . Thy spirits are most tall .",
+      "scrollMode": "auto",
+      "lineIndex": 29
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t00",
+      "lineText": ", to Pistol",
+      "scrollMode": "auto",
+      "lineIndex": 30
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t1g",
+      "lineText": "I will cut thy throat one time or other in fair terms , that is the humor of it .",
+      "scrollMode": "auto",
+      "lineIndex": 31
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t20",
+      "lineText": "Couple à gorge , that is the word . I defy thee again . O hound of Crete , think’st thou my spouse to get ? No , to the spital go , and from the powd’ring tub of infamy fetch forth the lazar kite of Cressid’s kind , Doll Tearsheet she by name , and her espouse . I ACT 2. SC. 1 have , and I will hold , the quondam Quickly for the only she : and pauca , there’s enough too ! Go to .",
+      "scrollMode": "auto",
+      "lineIndex": 32
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t00",
+      "lineText": "Enter the Boy .",
+      "scrollMode": "auto",
+      "lineIndex": 33
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t30",
+      "lineText": "Mine host Pistol , you must come to my master , and your hostess . He is very sick and would to bed . — Good Bardolph , put thy face between his sheets , and do the office of a warming-pan . Faith , he’s very ill .",
+      "scrollMode": "auto",
+      "lineIndex": 34
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t10",
+      "lineText": "Away , you rogue !",
+      "scrollMode": "auto",
+      "lineIndex": 35
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t2g",
+      "lineText": "By my troth , he’ll yield the crow a pudding one of these days . The King has killed his heart . Good husband , come home presently .",
+      "scrollMode": "auto",
+      "lineIndex": 36
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t00",
+      "lineText": "She exits with the Boy .",
+      "scrollMode": "auto",
+      "lineIndex": 37
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t10",
+      "lineText": "Come , shall I make you two friends ? We must to France together . Why the devil should we keep knives to cut one another’s throats ?",
+      "scrollMode": "auto",
+      "lineIndex": 38
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t20",
+      "lineText": "Let floods o’erswell and fiends for food howl on !",
+      "scrollMode": "auto",
+      "lineIndex": 39
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t1g",
+      "lineText": "You’ll pay me the eight shillings I won of you at betting ?",
+      "scrollMode": "auto",
+      "lineIndex": 40
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t20",
+      "lineText": "Base is the slave that pays .",
+      "scrollMode": "auto",
+      "lineIndex": 41
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t1g",
+      "lineText": "That now I will have , that’s the humor of it .",
+      "scrollMode": "auto",
+      "lineIndex": 42
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t20",
+      "lineText": "As manhood shall compound . Push home .",
+      "scrollMode": "auto",
+      "lineIndex": 43
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t00",
+      "lineText": "They draw .",
+      "scrollMode": "auto",
+      "lineIndex": 44
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t00",
+      "lineText": ", drawing his sword",
+      "scrollMode": "auto",
+      "lineIndex": 45
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t10",
+      "lineText": "By this sword , he that makes the first thrust , I’ll kill him . By this sword , I will .",
+      "scrollMode": "auto",
+      "lineIndex": 46
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t00",
+      "lineText": ", sheathing his sword",
+      "scrollMode": "auto",
+      "lineIndex": 47
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t20",
+      "lineText": "Sword is an oath , and oaths must have their course .",
+      "scrollMode": "auto",
+      "lineIndex": 48
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t10",
+      "lineText": "Corporal Nym , an thou wilt be friends , be friends ; an thou wilt not , why then be enemies with me too . Prithee , put up .",
+      "scrollMode": "auto",
+      "lineIndex": 49
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t00",
+      "lineText": ", to Nym",
+      "scrollMode": "auto",
+      "lineIndex": 50
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t20",
+      "lineText": "A noble shalt thou have , and present pay , and liquor likewise will I give to thee , and ACT 2. SC. 2 friendship shall combine , and brotherhood . I’ll live by Nym , and Nym shall live by me . Is not this just ? For I shall sutler be unto the camp , and profits will accrue . Give me thy hand .",
+      "scrollMode": "auto",
+      "lineIndex": 51
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t1g",
+      "lineText": "I shall have my noble ?",
+      "scrollMode": "auto",
+      "lineIndex": 52
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t20",
+      "lineText": "In cash , most justly paid .",
+      "scrollMode": "auto",
+      "lineIndex": 53
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t1g",
+      "lineText": "Well , then , that’s the humor of ’t .",
+      "scrollMode": "auto",
+      "lineIndex": 54
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t00",
+      "lineText": "Nym and Bardolph sheathe their swords .",
+      "scrollMode": "auto",
+      "lineIndex": 55
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t00",
+      "lineText": "Enter Hostess .",
+      "scrollMode": "auto",
+      "lineIndex": 56
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t2g",
+      "lineText": "As ever you come of women , come in quickly to Sir John . Ah , poor heart , he is so shaked of a burning quotidian-tertian that it is most lamentable to behold . Sweet men , come to him .",
+      "scrollMode": "auto",
+      "lineIndex": 57
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t1g",
+      "lineText": "The King hath run bad humors on the knight , that’s the even of it .",
+      "scrollMode": "auto",
+      "lineIndex": 58
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t20",
+      "lineText": "Nym , thou hast spoke the right . His heart is fracted and corroborate .",
+      "scrollMode": "auto",
+      "lineIndex": 59
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t1g",
+      "lineText": "The King is a good king , but it must be as it may ; he passes some humors and careers .",
+      "scrollMode": "auto",
+      "lineIndex": 60
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t20",
+      "lineText": "Let us condole the knight , for , lambkins , we will live .",
+      "scrollMode": "auto",
+      "lineIndex": 61
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t00",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 62
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t00",
+      "lineText": "Enter Exeter , Bedford , and Westmoreland .",
+      "scrollMode": "auto",
+      "lineIndex": 63
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t3g",
+      "lineText": "’Fore God , his Grace is bold to trust these traitors .",
+      "scrollMode": "auto",
+      "lineIndex": 64
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t40",
+      "lineText": "They shall be apprehended by and by .",
+      "scrollMode": "auto",
+      "lineIndex": 65
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t4g",
+      "lineText": "How smooth and even they do bear themselves , As if allegiance in their bosoms sat Crownèd with faith and constant loyalty .",
+      "scrollMode": "auto",
+      "lineIndex": 66
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t3g",
+      "lineText": "The King hath note of all that they intend , By interception which they dream not of .",
+      "scrollMode": "auto",
+      "lineIndex": 67
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t40",
+      "lineText": "Nay , but the man that was his bedfellow , Whom he hath dulled and cloyed with gracious favors — That he should , for a foreign purse , so sell His sovereign’s life to death and treachery !",
+      "scrollMode": "auto",
+      "lineIndex": 68
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t00",
+      "lineText": "Sound Trumpets . Enter the King of England , Scroop , Cambridge , and Grey , with Attendants .",
+      "scrollMode": "auto",
+      "lineIndex": 69
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t50",
+      "lineText": "Now sits the wind fair , and we will aboard . — My Lord of Cambridge , and my kind Lord of Masham , And you , my gentle knight , give me your thoughts . Think you not that the powers we bear with us Will cut their passage through the force of France , Doing the execution and the act For which we have in head assembled them ?",
+      "scrollMode": "auto",
+      "lineIndex": 70
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t5g",
+      "lineText": "No doubt , my liege , if each man do his best .",
+      "scrollMode": "auto",
+      "lineIndex": 71
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t50",
+      "lineText": "I doubt not that , since we are well persuaded We carry not a heart with us from hence That grows not in a fair consent with ours , Nor leave not one behind that doth not wish Success and conquest to attend on us .",
+      "scrollMode": "auto",
+      "lineIndex": 72
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t60",
+      "lineText": "Never was monarch better feared and loved Than is your Majesty . There’s not , I think , a subject That sits in heart-grief and uneasiness Under the sweet shade of your government .",
+      "scrollMode": "auto",
+      "lineIndex": 73
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t6g",
+      "lineText": "True . Those that were your father’s enemies ACT 2. SC. 2 Have steeped their galls in honey , and do serve you With hearts create of duty and of zeal .",
+      "scrollMode": "auto",
+      "lineIndex": 74
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t50",
+      "lineText": "We therefore have great cause of thankfulness , And shall forget the office of our hand Sooner than quittance of desert and merit According to the weight and worthiness .",
+      "scrollMode": "auto",
+      "lineIndex": 75
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t5g",
+      "lineText": "So service shall with steelèd sinews toil , And labor shall refresh itself with hope To do your Grace incessant services .",
+      "scrollMode": "auto",
+      "lineIndex": 76
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t50",
+      "lineText": "We judge no less . — Uncle of Exeter , Enlarge the man committed yesterday That railed against our person . We consider It was excess of wine that set him on , And on his more advice we pardon him .",
+      "scrollMode": "auto",
+      "lineIndex": 77
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t5g",
+      "lineText": "That’s mercy , but too much security . Let him be punished , sovereign , lest example Breed , by his sufferance , more of such a kind .",
+      "scrollMode": "auto",
+      "lineIndex": 78
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t50",
+      "lineText": "O , let us yet be merciful .",
+      "scrollMode": "auto",
+      "lineIndex": 79
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t60",
+      "lineText": "So may your Highness , and yet punish too .",
+      "scrollMode": "auto",
+      "lineIndex": 80
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t6g",
+      "lineText": "Sir , you show great mercy if you give him life After the taste of much correction .",
+      "scrollMode": "auto",
+      "lineIndex": 81
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t50",
+      "lineText": "Alas , your too much love and care of me Are heavy orisons ’gainst this poor wretch . If little faults proceeding on distemper Shall not be winked at , how shall we stretch our eye When capital crimes , chewed , swallowed , and digested , Appear before us ? We’ll yet enlarge that man , ACT 2. SC. 2 Though Cambridge , Scroop , and Grey , in their dear care And tender preservation of our person , Would have him punished . And now to our French causes . Who are the late commissioners ?",
+      "scrollMode": "auto",
+      "lineIndex": 82
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t60",
+      "lineText": "I one , my lord . Your Highness bade me ask for it today .",
+      "scrollMode": "auto",
+      "lineIndex": 83
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t5g",
+      "lineText": "So did you me , my liege .",
+      "scrollMode": "auto",
+      "lineIndex": 84
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t6g",
+      "lineText": "And I , my royal sovereign .",
+      "scrollMode": "auto",
+      "lineIndex": 85
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t00",
+      "lineText": ", giving them papers",
+      "scrollMode": "auto",
+      "lineIndex": 86
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t50",
+      "lineText": "Then Richard , Earl of Cambridge , there is yours — There yours , Lord Scroop of Masham . — And , sir knight , Grey of Northumberland , this same is yours . — Read them , and know I know your worthiness . — My Lord of Westmoreland and uncle Exeter , We will aboard tonight . — Why how now , gentlemen ? What see you in those papers , that you lose So much complexion ? — Look you , how they change . Their cheeks are paper . — Why , what read you there That have so cowarded and chased your blood Out of appearance ?",
+      "scrollMode": "auto",
+      "lineIndex": 87
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t60",
+      "lineText": "I do confess my fault , And do submit me to your Highness’ mercy .",
+      "scrollMode": "auto",
+      "lineIndex": 88
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t6g",
+      "lineText": "To which we all appeal .",
+      "scrollMode": "auto",
+      "lineIndex": 89
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t50",
+      "lineText": "The mercy that was quick in us but late By your own counsel is suppressed and killed . You must not dare , for shame , to talk of mercy , For your own reasons turn into your bosoms As dogs upon their masters , worrying you . — See you , my princes and my noble peers , These English monsters . My Lord of Cambridge here , You know how apt our love was to accord ACT 2. SC. 2 To furnish him with all appurtenants Belonging to his honor , and this man Hath , for a few light crowns , lightly conspired And sworn unto the practices of France To kill us here in Hampton ; to the which This knight , no less for bounty bound to us Than Cambridge is , hath likewise sworn . — But O , What shall I say to thee , Lord Scroop , thou cruel , Ingrateful , savage , and inhuman creature ? Thou that didst bear the key of all my counsels , That knew’st the very bottom of my soul , That almost mightst have coined me into gold , Wouldst thou have practiced on me for thy use — May it be possible that foreign hire Could out of thee extract one spark of evil That might annoy my finger ? ’Tis so strange That , though the truth of it stands off as gross As black and white , my eye will scarcely see it . Treason and murder ever kept together , As two yoke-devils sworn to either’s purpose , Working so grossly in a natural cause That admiration did not whoop at them . But thou , ’gainst all proportion , didst bring in Wonder to wait on treason and on murder , And whatsoever cunning fiend it was That wrought upon thee so preposterously Hath got the voice in hell for excellence . All other devils that suggest by treasons Do botch and bungle up damnation With patches , colors , and with forms being fetched From glist’ring semblances of piety ; But he that tempered thee bade thee stand up , Gave thee no instance why thou shouldst do treason , Unless to dub thee with the name of traitor . If that same demon that hath gulled thee thus Should with his lion gait walk the whole world , ACT 2. SC. 2 He might return to vasty Tartar back And tell the legions I can never win A soul so easy as that Englishman’s . O , how hast thou with jealousy infected The sweetness of affiance ! Show men dutiful ? Why , so didst thou . Seem they grave and learnèd ? Why , so didst thou . Come they of noble family ? Why , so didst thou . Seem they religious ? Why , so didst thou . Or are they spare in diet , Free from gross passion or of mirth or anger , Constant in spirit , not swerving with the blood , Garnished and decked in modest complement , Not working with the eye without the ear , And but in purgèd judgment trusting neither ? Such and so finely bolted didst thou seem . And thus thy fall hath left a kind of blot To mark the full-fraught man and best endued With some suspicion . I will weep for thee , For this revolt of thine methinks is like Another fall of man . — Their faults are open . Arrest them to the answer of the law , And God acquit them of their practices .",
+      "scrollMode": "auto",
+      "lineIndex": 90
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t40",
+      "lineText": "I arrest thee of high treason , by the name of Richard , Earl of Cambridge . — I arrest thee of high treason , by the name of Henry , Lord Scroop of Masham . — I arrest thee of high treason , by the name of Thomas Grey , knight , of Northumberland .",
+      "scrollMode": "auto",
+      "lineIndex": 91
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t5g",
+      "lineText": "Our purposes God justly hath discovered , And I repent my fault more than my death , Which I beseech your Highness to forgive , Although my body pay the price of it .",
+      "scrollMode": "auto",
+      "lineIndex": 92
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t60",
+      "lineText": "For me , the gold of France did not seduce , Although I did admit it as a motive The sooner to effect what I intended ; ACT 2. SC. 2 But God be thankèd for prevention , Which I in sufferance heartily will rejoice , Beseeching God and you to pardon me .",
+      "scrollMode": "auto",
+      "lineIndex": 93
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t6g",
+      "lineText": "Never did faithful subject more rejoice At the discovery of most dangerous treason Than I do at this hour joy o’er myself , Prevented from a damnèd enterprise . My fault , but not my body , pardon , sovereign .",
+      "scrollMode": "auto",
+      "lineIndex": 94
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t00",
+      "lineText": "They exit under guard .",
+      "scrollMode": "auto",
+      "lineIndex": 95
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t60",
+      "lineText": "They exit under guard . Now , lords , for France , the enterprise whereof Shall be to you as us , like glorious . We doubt not of a fair and lucky war , Since God so graciously hath brought to light This dangerous treason lurking in our way To hinder our beginnings . We doubt not now ACT 2. SC. 3 But every rub is smoothèd on our way . Then forth , dear countrymen . Let us deliver Our puissance into the hand of God , Putting it straight in expedition . Cheerly to sea . The signs of war advance . No king of England if not king of France .",
+      "scrollMode": "auto",
+      "lineIndex": 96
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t00",
+      "lineText": "Flourish . They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 97
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t00",
+      "lineText": "Enter Pistol , Nym , Bardolph , Boy , and Hostess .",
+      "scrollMode": "auto",
+      "lineIndex": 98
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t2g",
+      "lineText": "Prithee , honey-sweet husband , let me bring thee to Staines .",
+      "scrollMode": "auto",
+      "lineIndex": 99
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t20",
+      "lineText": "No ; for my manly heart doth earn . — Bardolph , be blithe . — Nym , rouse thy vaunting veins . — Boy , bristle thy courage up . For Falstaff , he is dead , and we must earn therefore .",
+      "scrollMode": "auto",
+      "lineIndex": 100
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t10",
+      "lineText": "Would I were with him , wheresome’er he is , either in heaven or in hell .",
+      "scrollMode": "auto",
+      "lineIndex": 101
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t2g",
+      "lineText": "Nay , sure , he’s not in hell ! He’s in Arthur’s bosom , if ever man went to Arthur’s bosom . He made a finer end , and went away an it had been any christom child . He parted ev’n just between twelve and one , ev’n at the turning o’ th’ tide ; for after I saw him fumble with the sheets and play with flowers and smile upon his finger’s end , I knew there was but one way , for his nose was as sharp as a pen and he talked of green fields . How now , Sir John ? quoth I . What , man , be o’ good cheer ! So he cried out God , God , God ! three or four times . Now I , to comfort him , bid him he should not think of God ; I hoped there was no need to trouble himself with any such thoughts yet . So he bade me lay more clothes on his feet . I put my hand into the bed and felt them , and they were as cold as any stone . Then I ACT 2. SC. 3 felt to his knees , and so upward and upward , and all was as cold as any stone .",
+      "scrollMode": "auto",
+      "lineIndex": 102
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t1g",
+      "lineText": "They say he cried out of sack .",
+      "scrollMode": "auto",
+      "lineIndex": 103
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t2g",
+      "lineText": "Ay , that he did .",
+      "scrollMode": "auto",
+      "lineIndex": 104
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t10",
+      "lineText": "And of women .",
+      "scrollMode": "auto",
+      "lineIndex": 105
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t2g",
+      "lineText": "Nay , that he did not .",
+      "scrollMode": "auto",
+      "lineIndex": 106
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t30",
+      "lineText": "Yes , that he did , and said they were devils incarnate .",
+      "scrollMode": "auto",
+      "lineIndex": 107
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t2g",
+      "lineText": "He could never abide carnation . ’Twas a color he never liked .",
+      "scrollMode": "auto",
+      "lineIndex": 108
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t30",
+      "lineText": "He said once , the devil would have him about women .",
+      "scrollMode": "auto",
+      "lineIndex": 109
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t2g",
+      "lineText": "He did in some sort , indeed , handle women , but then he was rheumatic and talked of the Whore of Babylon .",
+      "scrollMode": "auto",
+      "lineIndex": 110
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t30",
+      "lineText": "Do you not remember he saw a flea stick upon Bardolph’s nose , and he said it was a black soul burning in hell ?",
+      "scrollMode": "auto",
+      "lineIndex": 111
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t10",
+      "lineText": "Well , the fuel is gone that maintained that fire . That’s all the riches I got in his service .",
+      "scrollMode": "auto",
+      "lineIndex": 112
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t1g",
+      "lineText": "Shall we shog ? The King will be gone from Southampton .",
+      "scrollMode": "auto",
+      "lineIndex": 113
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t00",
+      "lineText": "They kiss .",
+      "scrollMode": "auto",
+      "lineIndex": 114
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t20",
+      "lineText": "They kiss . Look to my chattels and my movables . Let senses rule . The word is Pitch and pay . Trust none , for oaths are straws , men’s faiths are wafer-cakes , and Holdfast is the only dog , my duck . Therefore , Caveto be thy counselor . Go , clear thy crystals . — Yoke-fellows in arms , let us to France , like horse-leeches , my boys , to suck , to suck , the very blood to suck .",
+      "scrollMode": "auto",
+      "lineIndex": 115
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t30",
+      "lineText": "And that’s but unwholesome food , they say .",
+      "scrollMode": "auto",
+      "lineIndex": 116
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t20",
+      "lineText": "Touch her soft mouth , and march .",
+      "scrollMode": "auto",
+      "lineIndex": 117
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t00",
+      "lineText": ", kissing the Hostess",
+      "scrollMode": "auto",
+      "lineIndex": 118
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t10",
+      "lineText": "Farewell , hostess .",
+      "scrollMode": "auto",
+      "lineIndex": 119
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t1g",
+      "lineText": "I cannot kiss , that is the humor of it . But adieu .",
+      "scrollMode": "auto",
+      "lineIndex": 120
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t00",
+      "lineText": ", to the Hostess",
+      "scrollMode": "auto",
+      "lineIndex": 121
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t20",
+      "lineText": "Let huswifery appear . Keep close , I thee command .",
+      "scrollMode": "auto",
+      "lineIndex": 122
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t2g",
+      "lineText": "Farewell . Adieu .",
+      "scrollMode": "auto",
+      "lineIndex": 123
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t00",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 124
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t00",
+      "lineText": "Flourish . Enter the French King , the Dauphin , the Dukes of Berri and Brittany , the Constable , and others .",
+      "scrollMode": "auto",
+      "lineIndex": 125
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t7g",
+      "lineText": "Thus comes the English with full power upon us , And more than carefully it us concerns To answer royally in our defenses . Therefore the Dukes of Berri and of Brittany , Of Brabant and of Orléans , shall make forth , And you , Prince Dauphin , with all swift dispatch , To line and new-repair our towns of war With men of courage and with means defendant . For England his approaches makes as fierce As waters to the sucking of a gulf . It fits us then to be as provident As fear may teach us out of late examples Left by the fatal and neglected English Upon our fields .",
+      "scrollMode": "auto",
+      "lineIndex": 126
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t80",
+      "lineText": "My most redoubted father , It is most meet we arm us ’gainst the foe , For peace itself should not so dull a kingdom , Though war nor no known quarrel were in question But that defenses , musters , preparations Should be maintained , assembled , and collected As were a war in expectation . Therefore I say ’tis meet we all go forth To view the sick and feeble parts of France . And let us do it with no show of fear , No , with no more than if we heard that England ACT 2. SC. 4 Were busied with a Whitsun morris-dance . For , my good liege , she is so idly kinged , Her scepter so fantastically borne By a vain , giddy , shallow , humorous youth , That fear attends her not .",
+      "scrollMode": "auto",
+      "lineIndex": 127
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t8g",
+      "lineText": "O peace , Prince Dauphin ! You are too much mistaken in this king . Question your Grace the late ambassadors With what great state he heard their embassy , How well supplied with noble councillors , How modest in exception , and withal How terrible in constant resolution , And you shall find his vanities forespent Were but the outside of the Roman Brutus , Covering discretion with a coat of folly , As gardeners do with ordure hide those roots That shall first spring and be most delicate .",
+      "scrollMode": "auto",
+      "lineIndex": 128
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t80",
+      "lineText": "Well , ’tis not so , my Lord High Constable . But though we think it so , it is no matter . In cases of defense , ’tis best to weigh The enemy more mighty than he seems . So the proportions of defense are filled , Which of a weak and niggardly projection Doth , like a miser , spoil his coat with scanting A little cloth .",
+      "scrollMode": "auto",
+      "lineIndex": 129
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t7g",
+      "lineText": "Think we King Harry strong , And , princes , look you strongly arm to meet him . The kindred of him hath been fleshed upon us , And he is bred out of that bloody strain That haunted us in our familiar paths . Witness our too-much-memorable shame When Cressy battle fatally was struck And all our princes captived by the hand Of that black name , Edward , Black Prince of Wales , ACT 2. SC. 4 Whiles that his mountain sire , on mountain standing Up in the air , crowned with the golden sun , Saw his heroical seed and smiled to see him Mangle the work of nature and deface The patterns that by God and by French fathers Had twenty years been made . This is a stem Of that victorious stock , and let us fear The native mightiness and fate of him .",
+      "scrollMode": "auto",
+      "lineIndex": 130
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t00",
+      "lineText": "Enter a Messenger .",
+      "scrollMode": "auto",
+      "lineIndex": 131
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t90",
+      "lineText": "Ambassadors from Harry King of England Do crave admittance to your Majesty .",
+      "scrollMode": "auto",
+      "lineIndex": 132
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t00",
+      "lineText": "Messenger exits .",
+      "scrollMode": "auto",
+      "lineIndex": 133
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t90",
+      "lineText": "Messenger exits . You see this chase is hotly followed , friends .",
+      "scrollMode": "auto",
+      "lineIndex": 134
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t80",
+      "lineText": "Turn head and stop pursuit , for coward dogs Most spend their mouths when what they seem to threaten Runs far before them . Good my sovereign , Take up the English short , and let them know Of what a monarchy you are the head . Self-love , my liege , is not so vile a sin As self-neglecting .",
+      "scrollMode": "auto",
+      "lineIndex": 135
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t00",
+      "lineText": "Enter Exeter , with Lords and Attendants .",
+      "scrollMode": "auto",
+      "lineIndex": 136
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t7g",
+      "lineText": "From our brother of England ?",
+      "scrollMode": "auto",
+      "lineIndex": 137
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t00",
+      "lineText": "He offers a paper .",
+      "scrollMode": "auto",
+      "lineIndex": 138
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t40",
+      "lineText": "He offers a paper . In every branch truly demonstrative , Willing you overlook this pedigree , And when you find him evenly derived From his most famed of famous ancestors , Edward the Third , he bids you then resign Your crown and kingdom , indirectly held From him , the native and true challenger .",
+      "scrollMode": "auto",
+      "lineIndex": 139
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t7g",
+      "lineText": "Or else what follows ?",
+      "scrollMode": "auto",
+      "lineIndex": 140
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t40",
+      "lineText": "Bloody constraint , for if you hide the crown Even in your hearts , there will he rake for it . Therefore in fierce tempest is he coming , In thunder and in earthquake like a Jove , That , if requiring fail , he will compel , And bids you , in the bowels of the Lord , Deliver up the crown and to take mercy On the poor souls for whom this hungry war Opens his vasty jaws , and on your head Turning the widows’ tears , the orphans’ cries , The dead men’s blood , the privèd maidens’ groans , For husbands , fathers , and betrothèd lovers That shall be swallowed in this controversy . This is his claim , his threat’ning , and my message — Unless the Dauphin be in presence here , To whom expressly I bring greeting too .",
+      "scrollMode": "auto",
+      "lineIndex": 141
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t7g",
+      "lineText": "For us , we will consider of this further . ACT 2. SC. 4 Tomorrow shall you bear our full intent Back to our brother of England .",
+      "scrollMode": "auto",
+      "lineIndex": 142
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t00",
+      "lineText": ", to Exeter",
+      "scrollMode": "auto",
+      "lineIndex": 143
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t80",
+      "lineText": "For the Dauphin , I stand here for him . What to him from England ?",
+      "scrollMode": "auto",
+      "lineIndex": 144
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t40",
+      "lineText": "Scorn and defiance , slight regard , contempt , And anything that may not misbecome The mighty sender , doth he prize you at . Thus says my king : an if your father’s Highness Do not , in grant of all demands at large , Sweeten the bitter mock you sent his Majesty , He’ll call you to so hot an answer of it That caves and womby vaultages of France Shall chide your trespass and return your mock In second accent of his ordinance .",
+      "scrollMode": "auto",
+      "lineIndex": 145
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t80",
+      "lineText": "Say , if my father render fair return , It is against my will , for I desire Nothing but odds with England . To that end , As matching to his youth and vanity , I did present him with the Paris balls .",
+      "scrollMode": "auto",
+      "lineIndex": 146
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t40",
+      "lineText": "He’ll make your Paris Louvre shake for it , Were it the mistress court of mighty Europe . And be assured you’ll find a difference , As we his subjects have in wonder found , Between the promise of his greener days And these he masters now . Now he weighs time Even to the utmost grain . That you shall read In your own losses , if he stay in France .",
+      "scrollMode": "auto",
+      "lineIndex": 147
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t7g",
+      "lineText": "Tomorrow shall you know our mind at full .",
+      "scrollMode": "auto",
+      "lineIndex": 148
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t00",
+      "lineText": "Flourish .",
+      "scrollMode": "auto",
+      "lineIndex": 149
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t40",
+      "lineText": "Dispatch us with all speed , lest that our king ACT 2. SC. 4 Come here himself to question our delay , For he is footed in this land already .",
+      "scrollMode": "auto",
+      "lineIndex": 150
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t7g",
+      "lineText": "You shall be soon dispatched with fair conditions . A night is but small breath and little pause To answer matters of this consequence .",
+      "scrollMode": "auto",
+      "lineIndex": 151
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78t00",
+      "lineText": "Flourish . They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 152
+    }
+  ],
+  "isPublic": true
+}

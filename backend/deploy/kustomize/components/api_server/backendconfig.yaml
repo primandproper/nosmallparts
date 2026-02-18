@@ -1,0 +1,11 @@
+# BackendConfig increases the GCP HTTP(S) Load Balancer backend timeout from the default
+# 30 seconds to 3600 seconds (1 hour). This is required for WebSocket connections
+# (e.g. /ws/stages) which are long-lived. Without this, the load balancer closes
+# idle-looking connections at 30s, causing code 1006 disconnects.
+---
+apiVersion: cloud.google.com/v1
+kind: BackendConfig
+metadata:
+  name: api-backend-config
+spec:
+  timeoutSec: 3600

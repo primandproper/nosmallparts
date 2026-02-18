@@ -1,0 +1,111 @@
+---
+receivers:
+  otlp:
+    protocols:
+      grpc:
+        endpoint: "0.0.0.0:4317"
+
+extensions:
+  health_check:
+    endpoint: "0.0.0.0:13133"
+
+  basicauth/prometheus:
+    client_auth:
+      username: ${env:PROMETHEUS_USERNAME}
+      password: ${env:PROMETHEUS_PASSWORD}
+
+  basicauth/loki:
+    client_auth:
+      username: ${env:LOKI_USERNAME}
+      password: ${env:LOKI_PASSWORD}
+
+  basicauth/tempo:
+    client_auth:
+      username: ${env:TEMPO_USERNAME}
+      password: ${env:TEMPO_PASSWORD}
+
+exporters:
+  debug:
+
+  prometheusremotewrite:
+    endpoint: "https://prometheus-prod-13-prod-us-east-0.grafana.net/api/prom/push"
+    auth:
+      authenticator: basicauth/prometheus
+
+  otlp:
+    endpoint: "https://tempo-prod-04-prod-us-east-0.grafana.net:443"
+    tls:
+      insecure: true
+    auth:
+      authenticator: basicauth/tempo
+
+  otlphttp:
+    endpoint: "https://logs-prod-006.grafana.net/otlp"
+    auth:
+      authenticator: basicauth/loki
+
+processors:
+  batch:
+    timeout: 1s
+    send_batch_size: 500
+    send_batch_max_size: 1500
+
+  logdedup:
+    interval: 60s
+    log_count_attribute: dedup_count
+    timezone: 'America/Chicago'
+    exclude_fields:
+      - body.time
+
+  probabilistic_sampler:
+    sampling_percentage: 15
+
+  resource:
+    attributes:
+      - action: insert
+        key: service_name
+        from_attribute: service.name
+
+  redaction:
+    allow_all_keys: true
+    blocked_values: []
+    summary: debug
+
+service:
+  telemetry:
+    logs:
+      encoding: json
+      disable_caller: true
+      disable_stacktrace: true
+    metrics:
+      level: none
+
+  extensions:
+    - health_check
+    - basicauth/prometheus
+    - basicauth/loki
+    - basicauth/tempo
+  pipelines:
+    traces:
+      receivers:
+        - otlp
+      processors:
+        - batch
+      exporters:
+        - otlp
+    metrics:
+      receivers:
+        - otlp
+      processors:
+        - batch
+      exporters:
+        - debug
+    logs:
+      receivers:
+        - otlp
+      processors:
+        - resource
+        - logdedup
+        - batch
+      exporters:
+        - otlphttp

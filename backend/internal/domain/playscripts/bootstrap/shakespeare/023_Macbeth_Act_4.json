@@ -1,0 +1,1259 @@
+{
+  "title": "Macbeth (Act 4)",
+  "description": "Folger Shakespeare Library edition",
+  "author": "William Shakespeare",
+  "castMembers": [
+    {
+      "id": "d68m11kn9qd8d2h799lg",
+      "name": "Narrator",
+      "sortOrder": 0
+    },
+    {
+      "id": "d68m11kn9qd8d2h799m0",
+      "name": "First Witch",
+      "sortOrder": 1
+    },
+    {
+      "id": "d68m11kn9qd8d2h799mg",
+      "name": "Second Witch",
+      "sortOrder": 2
+    },
+    {
+      "id": "d68m11kn9qd8d2h799n0",
+      "name": "Third Witch",
+      "sortOrder": 3
+    },
+    {
+      "id": "d68m11kn9qd8d2h799ng",
+      "name": "Hecate",
+      "sortOrder": 4
+    },
+    {
+      "id": "d68m11kn9qd8d2h799o0",
+      "name": "Macbeth",
+      "description": "thane of Glamis",
+      "sortOrder": 5
+    },
+    {
+      "id": "d68m11kn9qd8d2h799og",
+      "name": "First Apparition",
+      "sortOrder": 6
+    },
+    {
+      "id": "d68m11kn9qd8d2h799p0",
+      "name": "Second Apparition",
+      "sortOrder": 7
+    },
+    {
+      "id": "d68m11kn9qd8d2h799pg",
+      "name": "Third Apparition",
+      "sortOrder": 8
+    },
+    {
+      "id": "d68m11kn9qd8d2h799q0",
+      "name": "SPIRITS.KINGS_Mac",
+      "sortOrder": 9
+    },
+    {
+      "id": "d68m11kn9qd8d2h799qg",
+      "name": "Banquo",
+      "description": "commander, with Macbeth, of Duncan’s army",
+      "sortOrder": 10
+    },
+    {
+      "id": "d68m11kn9qd8d2h799r0",
+      "name": "Lennox",
+      "sortOrder": 11
+    },
+    {
+      "id": "d68m11kn9qd8d2h799rg",
+      "name": "Lady Macduff",
+      "sortOrder": 12
+    },
+    {
+      "id": "d68m11kn9qd8d2h799s0",
+      "name": "Ross",
+      "sortOrder": 13
+    },
+    {
+      "id": "d68m11kn9qd8d2h799sg",
+      "name": "Their son",
+      "sortOrder": 14
+    },
+    {
+      "id": "d68m11kn9qd8d2h799t0",
+      "name": "Messenger",
+      "sortOrder": 15
+    },
+    {
+      "id": "d68m11kn9qd8d2h799tg",
+      "name": "Three Murderers in Macbeth’s service",
+      "sortOrder": 16
+    },
+    {
+      "id": "d68m11kn9qd8d2h799u0",
+      "name": "Murderer",
+      "sortOrder": 17
+    },
+    {
+      "id": "d68m11kn9qd8d2h799ug",
+      "name": "Malcolm",
+      "description": "his elder son",
+      "sortOrder": 18
+    },
+    {
+      "id": "d68m11kn9qd8d2h799v0",
+      "name": "Macduff",
+      "description": "a Scottish noble",
+      "sortOrder": 19
+    },
+    {
+      "id": "d68m11kn9qd8d2h799vg",
+      "name": "A Doctor at the English court",
+      "sortOrder": 20
+    }
+  ],
+  "lines": [
+    {
+      "castMemberId": "d68m11kn9qd8d2h799lg",
+      "lineText": "Thunder . Enter the three Witches .",
+      "scrollMode": "auto",
+      "lineIndex": 0
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799m0",
+      "lineText": "Thrice the brinded cat hath mewed .",
+      "scrollMode": "auto",
+      "lineIndex": 1
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799mg",
+      "lineText": "Thrice , and once the hedge-pig whined .",
+      "scrollMode": "auto",
+      "lineIndex": 2
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799n0",
+      "lineText": "Harpier cries ’Tis time , ’tis time !",
+      "scrollMode": "auto",
+      "lineIndex": 3
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799m0",
+      "lineText": "Round about the cauldron go ; In the poisoned entrails throw . Toad , that under cold stone Days and nights has thirty-one Sweltered venom sleeping got , Boil thou first i’ th’ charmèd pot .",
+      "scrollMode": "auto",
+      "lineIndex": 4
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799lg",
+      "lineText": "The Witches circle the cauldron .",
+      "scrollMode": "auto",
+      "lineIndex": 5
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799m0",
+      "lineText": "Double , double toil and trouble ; Fire burn , and cauldron bubble .",
+      "scrollMode": "auto",
+      "lineIndex": 6
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799mg",
+      "lineText": "Fillet of a fenny snake In the cauldron boil and bake . Eye of newt and toe of frog , Wool of bat and tongue of dog , Adder’s fork and blindworm’s sting , ACT 4. SC. 1 Lizard’s leg and howlet’s wing , For a charm of powerful trouble , Like a hell-broth boil and bubble .",
+      "scrollMode": "auto",
+      "lineIndex": 7
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799m0",
+      "lineText": "Double , double toil and trouble ; Fire burn , and cauldron bubble .",
+      "scrollMode": "auto",
+      "lineIndex": 8
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799n0",
+      "lineText": "Scale of dragon , tooth of wolf , Witch’s mummy , maw and gulf Of the ravined salt-sea shark , Root of hemlock digged i’ th’ dark , Liver of blaspheming Jew , Gall of goat and slips of yew Slivered in the moon’s eclipse , Nose of Turk and Tartar’s lips , Finger of birth-strangled babe Ditch-delivered by a drab , Make the gruel thick and slab . Add thereto a tiger’s chaudron For th’ ingredience of our cauldron .",
+      "scrollMode": "auto",
+      "lineIndex": 9
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799m0",
+      "lineText": "Double , double toil and trouble ; Fire burn , and cauldron bubble .",
+      "scrollMode": "auto",
+      "lineIndex": 10
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799mg",
+      "lineText": "Cool it with a baboon’s blood . Then the charm is firm and good .",
+      "scrollMode": "auto",
+      "lineIndex": 11
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799lg",
+      "lineText": "Enter Hecate to the other three Witches .",
+      "scrollMode": "auto",
+      "lineIndex": 12
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799ng",
+      "lineText": "O , well done ! I commend your pains , And everyone shall share i’ th’ gains . And now about the cauldron sing Like elves and fairies in a ring , Enchanting all that you put in .",
+      "scrollMode": "auto",
+      "lineIndex": 13
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799lg",
+      "lineText": "Music and a song : Black Spirits , etc.",
+      "scrollMode": "auto",
+      "lineIndex": 14
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799lg",
+      "lineText": "Hecate exits .",
+      "scrollMode": "auto",
+      "lineIndex": 15
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799mg",
+      "lineText": "By the pricking of my thumbs , Something wicked this way comes . Open , locks , Whoever knocks .",
+      "scrollMode": "auto",
+      "lineIndex": 16
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799lg",
+      "lineText": "Enter Macbeth .",
+      "scrollMode": "auto",
+      "lineIndex": 17
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799o0",
+      "lineText": "How now , you secret , black , and midnight hags ? What is ’t you do ?",
+      "scrollMode": "auto",
+      "lineIndex": 18
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799m0",
+      "lineText": "A deed without a name .",
+      "scrollMode": "auto",
+      "lineIndex": 19
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799o0",
+      "lineText": "I conjure you by that which you profess ( Howe’er you come to know it ) , answer me . Though you untie the winds and let them fight Against the churches , though the yeasty waves Confound and swallow navigation up , Though bladed corn be lodged and trees blown down , Though castles topple on their warders’ heads , Though palaces and pyramids do slope Their heads to their foundations , though the treasure Of nature’s germens tumble all together Even till destruction sicken , answer me To what I ask you .",
+      "scrollMode": "auto",
+      "lineIndex": 20
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799m0",
+      "lineText": "Speak .",
+      "scrollMode": "auto",
+      "lineIndex": 21
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799mg",
+      "lineText": "Demand .",
+      "scrollMode": "auto",
+      "lineIndex": 22
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799n0",
+      "lineText": "We’ll answer .",
+      "scrollMode": "auto",
+      "lineIndex": 23
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799m0",
+      "lineText": "Say if th’ hadst rather hear it from our mouths Or from our masters’ .",
+      "scrollMode": "auto",
+      "lineIndex": 24
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799o0",
+      "lineText": "Call ’em . Let me see ’em .",
+      "scrollMode": "auto",
+      "lineIndex": 25
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799m0",
+      "lineText": "Pour in sow’s blood that hath eaten Her nine farrow ; grease that’s sweaten ACT 4. SC. 1 From the murderers’ gibbet throw Into the flame .",
+      "scrollMode": "auto",
+      "lineIndex": 26
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799m0",
+      "lineText": "Come high or low ; Thyself and office deftly show .",
+      "scrollMode": "auto",
+      "lineIndex": 27
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799lg",
+      "lineText": "Thunder . First Apparition , an Armed Head .",
+      "scrollMode": "auto",
+      "lineIndex": 28
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799o0",
+      "lineText": "Tell me , thou unknown power —",
+      "scrollMode": "auto",
+      "lineIndex": 29
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799m0",
+      "lineText": "He knows thy thought . Hear his speech but say thou naught .",
+      "scrollMode": "auto",
+      "lineIndex": 30
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799og",
+      "lineText": "Macbeth ! Macbeth ! Macbeth ! Beware Macduff ! Beware the Thane of Fife ! Dismiss me . Enough .",
+      "scrollMode": "auto",
+      "lineIndex": 31
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799lg",
+      "lineText": "He descends .",
+      "scrollMode": "auto",
+      "lineIndex": 32
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799o0",
+      "lineText": "Whate’er thou art , for thy good caution , thanks . Thou hast harped my fear aright . But one word more —",
+      "scrollMode": "auto",
+      "lineIndex": 33
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799m0",
+      "lineText": "He will not be commanded . Here’s another More potent than the first .",
+      "scrollMode": "auto",
+      "lineIndex": 34
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799lg",
+      "lineText": "Thunder . Second Apparition , a Bloody Child .",
+      "scrollMode": "auto",
+      "lineIndex": 35
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799p0",
+      "lineText": "Macbeth ! Macbeth ! Macbeth ! —",
+      "scrollMode": "auto",
+      "lineIndex": 36
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799o0",
+      "lineText": "Had I three ears , I’d hear thee .",
+      "scrollMode": "auto",
+      "lineIndex": 37
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799p0",
+      "lineText": "Be bloody , bold , and resolute . Laugh to scorn The power of man , for none of woman born Shall harm Macbeth .",
+      "scrollMode": "auto",
+      "lineIndex": 38
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799lg",
+      "lineText": "He descends .",
+      "scrollMode": "auto",
+      "lineIndex": 39
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799lg",
+      "lineText": "Thunder . Third Apparition , a Child Crowned , with a tree in his hand .",
+      "scrollMode": "auto",
+      "lineIndex": 40
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799pg",
+      "lineText": "Thunder . Third Apparition , a Child Crowned , with a tree in his hand . What is this That rises like the issue of a king And wears upon his baby brow the round And top of sovereignty ?",
+      "scrollMode": "auto",
+      "lineIndex": 41
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799m0",
+      "lineText": "Listen but speak not to ’t .",
+      "scrollMode": "auto",
+      "lineIndex": 42
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799pg",
+      "lineText": "Be lion-mettled , proud , and take no care Who chafes , who frets , or where conspirers are . Macbeth shall never vanquished be until Great Birnam Wood to high Dunsinane Hill Shall come against him .",
+      "scrollMode": "auto",
+      "lineIndex": 43
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799lg",
+      "lineText": "He descends .",
+      "scrollMode": "auto",
+      "lineIndex": 44
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799o0",
+      "lineText": "That will never be . Who can impress the forest , bid the tree Unfix his earthbound root ? Sweet bodements , good ! Rebellious dead , rise never till the Wood wood Of Birnam rise , and our high-placed Macbeth Shall live the lease of nature , pay his breath To time and mortal custom . Yet my heart Throbs to know one thing . Tell me , if your art Can tell so much : shall Banquo’s issue ever Reign in this kingdom ?",
+      "scrollMode": "auto",
+      "lineIndex": 45
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799m0",
+      "lineText": "Seek to know no more .",
+      "scrollMode": "auto",
+      "lineIndex": 46
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799lg",
+      "lineText": "Cauldron sinks . Hautboys .",
+      "scrollMode": "auto",
+      "lineIndex": 47
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799o0",
+      "lineText": "Cauldron sinks . Hautboys . Why sinks that cauldron ? And what noise is this ?",
+      "scrollMode": "auto",
+      "lineIndex": 48
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799m0",
+      "lineText": "Show .",
+      "scrollMode": "auto",
+      "lineIndex": 49
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799mg",
+      "lineText": "Show .",
+      "scrollMode": "auto",
+      "lineIndex": 50
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799n0",
+      "lineText": "Show .",
+      "scrollMode": "auto",
+      "lineIndex": 51
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799m0",
+      "lineText": "Show his eyes and grieve his heart . Come like shadows ; so depart .",
+      "scrollMode": "auto",
+      "lineIndex": 52
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799lg",
+      "lineText": "A show of eight kings , the eighth king with a glass in his hand , and Banquo last .",
+      "scrollMode": "auto",
+      "lineIndex": 53
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799lg",
+      "lineText": "The Apparitions disappear .",
+      "scrollMode": "auto",
+      "lineIndex": 54
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799q0",
+      "lineText": "The Apparitions disappear . What , is this so ?",
+      "scrollMode": "auto",
+      "lineIndex": 55
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799m0",
+      "lineText": "Ay , sir , all this is so . But why Stands Macbeth thus amazedly ? Come , sisters , cheer we up his sprites And show the best of our delights . I’ll charm the air to give a sound While you perform your antic round , That this great king may kindly say Our duties did his welcome pay .",
+      "scrollMode": "auto",
+      "lineIndex": 56
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799lg",
+      "lineText": "Music . The Witches dance and vanish .",
+      "scrollMode": "auto",
+      "lineIndex": 57
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799o0",
+      "lineText": "Where are they ? Gone ? Let this pernicious hour Stand aye accursèd in the calendar ! — Come in , without there .",
+      "scrollMode": "auto",
+      "lineIndex": 58
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799lg",
+      "lineText": "Enter Lennox .",
+      "scrollMode": "auto",
+      "lineIndex": 59
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799r0",
+      "lineText": "What’s your Grace’s will ?",
+      "scrollMode": "auto",
+      "lineIndex": 60
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799o0",
+      "lineText": "Saw you the Weïrd Sisters ?",
+      "scrollMode": "auto",
+      "lineIndex": 61
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799r0",
+      "lineText": "No , my lord .",
+      "scrollMode": "auto",
+      "lineIndex": 62
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799o0",
+      "lineText": "Came they not by you ?",
+      "scrollMode": "auto",
+      "lineIndex": 63
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799r0",
+      "lineText": "No , indeed , my lord .",
+      "scrollMode": "auto",
+      "lineIndex": 64
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799o0",
+      "lineText": "Infected be the air whereon they ride , And damned all those that trust them ! I did hear The galloping of horse . Who was ’t came by ?",
+      "scrollMode": "auto",
+      "lineIndex": 65
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799r0",
+      "lineText": "’Tis two or three , my lord , that bring you word Macduff is fled to England .",
+      "scrollMode": "auto",
+      "lineIndex": 66
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799o0",
+      "lineText": "Fled to England ?",
+      "scrollMode": "auto",
+      "lineIndex": 67
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799r0",
+      "lineText": "Ay , my good lord .",
+      "scrollMode": "auto",
+      "lineIndex": 68
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799lg",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 69
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799o0",
+      "lineText": "Time , thou anticipat’st my dread exploits . The flighty purpose never is o’ertook Unless the deed go with it . From this moment The very firstlings of my heart shall be The firstlings of my hand . And even now , To crown my thoughts with acts , be it thought and done : The castle of Macduff I will surprise , Seize upon Fife , give to th’ edge o’ th’ sword His wife , his babes , and all unfortunate souls That trace him in his line . No boasting like a fool ; This deed I’ll do before this purpose cool . But no more sights ! — Where are these gentlemen ? Come bring me where they are .",
+      "scrollMode": "auto",
+      "lineIndex": 70
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799lg",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 71
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799lg",
+      "lineText": "Enter Macduff’s Wife , her Son , and Ross .",
+      "scrollMode": "auto",
+      "lineIndex": 72
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799rg",
+      "lineText": "What had he done to make him fly the land ?",
+      "scrollMode": "auto",
+      "lineIndex": 73
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799s0",
+      "lineText": "You must have patience , madam .",
+      "scrollMode": "auto",
+      "lineIndex": 74
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799rg",
+      "lineText": "He had none . His flight was madness . When our actions do not , Our fears do make us traitors .",
+      "scrollMode": "auto",
+      "lineIndex": 75
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799s0",
+      "lineText": "You know not Whether it was his wisdom or his fear .",
+      "scrollMode": "auto",
+      "lineIndex": 76
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799rg",
+      "lineText": "Wisdom ? To leave his wife , to leave his babes , His mansion and his titles in a place From whence himself does fly ? He loves us not ; He wants the natural touch ; for the poor wren , ( The most diminutive of birds , ) will fight , Her young ones in her nest , against the owl . All is the fear , and nothing is the love , As little is the wisdom , where the flight So runs against all reason .",
+      "scrollMode": "auto",
+      "lineIndex": 77
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799s0",
+      "lineText": "My dearest coz , I pray you school yourself . But for your husband , He is noble , wise , judicious , and best knows The fits o’ th’ season . I dare not speak much further ; But cruel are the times when we are traitors And do not know ourselves ; when we hold rumor From what we fear , yet know not what we fear , But float upon a wild and violent sea Each way and move — I take my leave of you . Shall not be long but I’ll be here again . Things at the worst will cease or else climb upward To what they were before . — My pretty cousin , Blessing upon you .",
+      "scrollMode": "auto",
+      "lineIndex": 78
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799rg",
+      "lineText": "Fathered he is , and yet he’s fatherless .",
+      "scrollMode": "auto",
+      "lineIndex": 79
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799s0",
+      "lineText": "I am so much a fool , should I stay longer It would be my disgrace and your discomfort . I take my leave at once .",
+      "scrollMode": "auto",
+      "lineIndex": 80
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799lg",
+      "lineText": "Ross exits .",
+      "scrollMode": "auto",
+      "lineIndex": 81
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799rg",
+      "lineText": "Sirrah , your father’s dead . And what will you do now ? How will you live ?",
+      "scrollMode": "auto",
+      "lineIndex": 82
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799sg",
+      "lineText": "As birds do , mother .",
+      "scrollMode": "auto",
+      "lineIndex": 83
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799rg",
+      "lineText": "What , with worms and flies ?",
+      "scrollMode": "auto",
+      "lineIndex": 84
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799sg",
+      "lineText": "With what I get , I mean ; and so do they .",
+      "scrollMode": "auto",
+      "lineIndex": 85
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799rg",
+      "lineText": "Poor bird , thou ’dst never fear the net nor lime , The pitfall nor the gin .",
+      "scrollMode": "auto",
+      "lineIndex": 86
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799sg",
+      "lineText": "Why should I , mother ? Poor birds they are not set for . My father is not dead , for all your saying .",
+      "scrollMode": "auto",
+      "lineIndex": 87
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799rg",
+      "lineText": "Yes , he is dead . How wilt thou do for a father ?",
+      "scrollMode": "auto",
+      "lineIndex": 88
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799sg",
+      "lineText": "Nay , how will you do for a husband ?",
+      "scrollMode": "auto",
+      "lineIndex": 89
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799rg",
+      "lineText": "Why , I can buy me twenty at any market .",
+      "scrollMode": "auto",
+      "lineIndex": 90
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799sg",
+      "lineText": "Then you’ll buy ’em to sell again .",
+      "scrollMode": "auto",
+      "lineIndex": 91
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799rg",
+      "lineText": "Thou speak’st with all thy wit , And yet , i’ faith , with wit enough for thee .",
+      "scrollMode": "auto",
+      "lineIndex": 92
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799sg",
+      "lineText": "Was my father a traitor , mother ?",
+      "scrollMode": "auto",
+      "lineIndex": 93
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799rg",
+      "lineText": "Ay , that he was .",
+      "scrollMode": "auto",
+      "lineIndex": 94
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799sg",
+      "lineText": "What is a traitor ?",
+      "scrollMode": "auto",
+      "lineIndex": 95
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799rg",
+      "lineText": "Why , one that swears and lies .",
+      "scrollMode": "auto",
+      "lineIndex": 96
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799sg",
+      "lineText": "And be all traitors that do so ?",
+      "scrollMode": "auto",
+      "lineIndex": 97
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799rg",
+      "lineText": "Every one that does so is a traitor and must be hanged .",
+      "scrollMode": "auto",
+      "lineIndex": 98
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799sg",
+      "lineText": "And must they all be hanged that swear and lie ?",
+      "scrollMode": "auto",
+      "lineIndex": 99
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799rg",
+      "lineText": "Every one .",
+      "scrollMode": "auto",
+      "lineIndex": 100
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799sg",
+      "lineText": "Who must hang them ?",
+      "scrollMode": "auto",
+      "lineIndex": 101
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799rg",
+      "lineText": "Why , the honest men .",
+      "scrollMode": "auto",
+      "lineIndex": 102
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799sg",
+      "lineText": "Then the liars and swearers are fools , for there are liars and swearers enough to beat the honest men and hang up them .",
+      "scrollMode": "auto",
+      "lineIndex": 103
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799rg",
+      "lineText": "Now God help thee , poor monkey ! But how wilt thou do for a father ?",
+      "scrollMode": "auto",
+      "lineIndex": 104
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799sg",
+      "lineText": "If he were dead , you’d weep for him . If you would not , it were a good sign that I should quickly have a new father .",
+      "scrollMode": "auto",
+      "lineIndex": 105
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799rg",
+      "lineText": "Poor prattler , how thou talk’st !",
+      "scrollMode": "auto",
+      "lineIndex": 106
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799lg",
+      "lineText": "Enter a Messenger .",
+      "scrollMode": "auto",
+      "lineIndex": 107
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799t0",
+      "lineText": "Bless you , fair dame . I am not to you known , Though in your state of honor I am perfect . I doubt some danger does approach you nearly . If you will take a homely man’s advice , Be not found here . Hence with your little ones ! To fright you thus methinks I am too savage ; To do worse to you were fell cruelty , Which is too nigh your person . Heaven preserve you ! I dare abide no longer .",
+      "scrollMode": "auto",
+      "lineIndex": 108
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799lg",
+      "lineText": "Messenger exits .",
+      "scrollMode": "auto",
+      "lineIndex": 109
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799lg",
+      "lineText": "Enter Murderers .",
+      "scrollMode": "auto",
+      "lineIndex": 110
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799tg",
+      "lineText": "Enter Murderers . What are these faces ?",
+      "scrollMode": "auto",
+      "lineIndex": 111
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799u0",
+      "lineText": "Where is your husband ?",
+      "scrollMode": "auto",
+      "lineIndex": 112
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799rg",
+      "lineText": "I hope in no place so unsanctified Where such as thou mayst find him .",
+      "scrollMode": "auto",
+      "lineIndex": 113
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799u0",
+      "lineText": "He’s a traitor .",
+      "scrollMode": "auto",
+      "lineIndex": 114
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799sg",
+      "lineText": "Thou liest , thou shag-eared villain !",
+      "scrollMode": "auto",
+      "lineIndex": 115
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799lg",
+      "lineText": "Stabbing him .",
+      "scrollMode": "auto",
+      "lineIndex": 116
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799u0",
+      "lineText": "Stabbing him . Young fry of treachery !",
+      "scrollMode": "auto",
+      "lineIndex": 117
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799sg",
+      "lineText": "He has killed me , mother . Run away , I pray you .",
+      "scrollMode": "auto",
+      "lineIndex": 118
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799lg",
+      "lineText": "Lady Macduff exits , crying Murder ! followed by the Murderers bearing the Son’s body .",
+      "scrollMode": "auto",
+      "lineIndex": 119
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799lg",
+      "lineText": "Enter Malcolm and Macduff .",
+      "scrollMode": "auto",
+      "lineIndex": 120
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799ug",
+      "lineText": "Let us seek out some desolate shade and there Weep our sad bosoms empty .",
+      "scrollMode": "auto",
+      "lineIndex": 121
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799v0",
+      "lineText": "Let us rather Hold fast the mortal sword and , like good men , Bestride our downfall’n birthdom . Each new morn New widows howl , new orphans cry , new sorrows Strike heaven on the face , that it resounds As if it felt with Scotland , and yelled out Like syllable of dolor .",
+      "scrollMode": "auto",
+      "lineIndex": 122
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799ug",
+      "lineText": "What I believe , I’ll wail ; What know , believe ; and what I can redress , As I shall find the time to friend , I will . What you have spoke , it may be so , perchance . This tyrant , whose sole name blisters our tongues , Was once thought honest . You have loved him well . He hath not touched you yet . I am young , but something ACT 4. SC. 3 You may deserve of him through me , and wisdom To offer up a weak , poor , innocent lamb T’ appease an angry god .",
+      "scrollMode": "auto",
+      "lineIndex": 123
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799v0",
+      "lineText": "I am not treacherous .",
+      "scrollMode": "auto",
+      "lineIndex": 124
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799ug",
+      "lineText": "But Macbeth is . A good and virtuous nature may recoil In an imperial charge . But I shall crave your pardon . That which you are , my thoughts cannot transpose . Angels are bright still , though the brightest fell . Though all things foul would wear the brows of grace , Yet grace must still look so .",
+      "scrollMode": "auto",
+      "lineIndex": 125
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799v0",
+      "lineText": "I have lost my hopes .",
+      "scrollMode": "auto",
+      "lineIndex": 126
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799ug",
+      "lineText": "Perchance even there where I did find my doubts . Why in that rawness left you wife and child , Those precious motives , those strong knots of love , Without leave-taking ? I pray you , Let not my jealousies be your dishonors , But mine own safeties . You may be rightly just , Whatever I shall think .",
+      "scrollMode": "auto",
+      "lineIndex": 127
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799v0",
+      "lineText": "Bleed , bleed , poor country ! Great tyranny , lay thou thy basis sure , For goodness dare not check thee . Wear thou thy wrongs ; The title is affeered . — Fare thee well , lord . I would not be the villain that thou think’st For the whole space that’s in the tyrant’s grasp , And the rich East to boot .",
+      "scrollMode": "auto",
+      "lineIndex": 128
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799ug",
+      "lineText": "Be not offended . I speak not as in absolute fear of you . I think our country sinks beneath the yoke . It weeps , it bleeds , and each new day a gash Is added to her wounds . I think withal ACT 4. SC. 3 There would be hands uplifted in my right ; And here from gracious England have I offer Of goodly thousands . But , for all this , When I shall tread upon the tyrant’s head Or wear it on my sword , yet my poor country Shall have more vices than it had before , More suffer , and more sundry ways than ever , By him that shall succeed .",
+      "scrollMode": "auto",
+      "lineIndex": 129
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799v0",
+      "lineText": "What should he be ?",
+      "scrollMode": "auto",
+      "lineIndex": 130
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799ug",
+      "lineText": "It is myself I mean , in whom I know All the particulars of vice so grafted That , when they shall be opened , black Macbeth Will seem as pure as snow , and the poor state Esteem him as a lamb , being compared With my confineless harms .",
+      "scrollMode": "auto",
+      "lineIndex": 131
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799v0",
+      "lineText": "Not in the legions Of horrid hell can come a devil more damned In evils to top Macbeth .",
+      "scrollMode": "auto",
+      "lineIndex": 132
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799ug",
+      "lineText": "I grant him bloody , Luxurious , avaricious , false , deceitful , Sudden , malicious , smacking of every sin That has a name . But there’s no bottom , none , In my voluptuousness . Your wives , your daughters , Your matrons , and your maids could not fill up The cistern of my lust , and my desire All continent impediments would o’erbear That did oppose my will . Better Macbeth Than such an one to reign .",
+      "scrollMode": "auto",
+      "lineIndex": 133
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799v0",
+      "lineText": "Boundless intemperance In nature is a tyranny . It hath been Th’ untimely emptying of the happy throne And fall of many kings . But fear not yet To take upon you what is yours . You may Convey your pleasures in a spacious plenty And yet seem cold — the time you may so hoodwink . ACT 4. SC. 3 We have willing dames enough . There cannot be That vulture in you to devour so many As will to greatness dedicate themselves , Finding it so inclined .",
+      "scrollMode": "auto",
+      "lineIndex": 134
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799ug",
+      "lineText": "With this there grows In my most ill-composed affection such A stanchless avarice that , were I king , I should cut off the nobles for their lands , Desire his jewels , and this other’s house ; And my more-having would be as a sauce To make me hunger more , that I should forge Quarrels unjust against the good and loyal , Destroying them for wealth .",
+      "scrollMode": "auto",
+      "lineIndex": 135
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799v0",
+      "lineText": "This avarice Sticks deeper , grows with more pernicious root Than summer-seeming lust , and it hath been The sword of our slain kings . Yet do not fear . Scotland hath foisons to fill up your will Of your mere own . All these are portable , With other graces weighed .",
+      "scrollMode": "auto",
+      "lineIndex": 136
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799ug",
+      "lineText": "But I have none . The king-becoming graces , As justice , verity , temp’rance , stableness , Bounty , perseverance , mercy , lowliness , Devotion , patience , courage , fortitude , I have no relish of them but abound In the division of each several crime , Acting it many ways . Nay , had I power , I should Pour the sweet milk of concord into hell , Uproar the universal peace , confound All unity on earth .",
+      "scrollMode": "auto",
+      "lineIndex": 137
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799v0",
+      "lineText": "O Scotland , Scotland !",
+      "scrollMode": "auto",
+      "lineIndex": 138
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799ug",
+      "lineText": "If such a one be fit to govern , speak . I am as I have spoken .",
+      "scrollMode": "auto",
+      "lineIndex": 139
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799v0",
+      "lineText": "Fit to govern ? ACT 4. SC. 3 No , not to live . — O nation miserable , With an untitled tyrant bloody-sceptered , When shalt thou see thy wholesome days again , Since that the truest issue of thy throne By his own interdiction stands accursed And does blaspheme his breed ? — Thy royal father Was a most sainted king . The queen that bore thee , Oft’ner upon her knees than on her feet , Died every day she lived . Fare thee well . These evils thou repeat’st upon thyself Hath banished me from Scotland . — O my breast , Thy hope ends here !",
+      "scrollMode": "auto",
+      "lineIndex": 140
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799ug",
+      "lineText": "Macduff , this noble passion , Child of integrity , hath from my soul Wiped the black scruples , reconciled my thoughts To thy good truth and honor . Devilish Macbeth By many of these trains hath sought to win me Into his power , and modest wisdom plucks me From overcredulous haste . But God above Deal between thee and me , for even now I put myself to thy direction and Unspeak mine own detraction , here abjure The taints and blames I laid upon myself For strangers to my nature . I am yet Unknown to woman , never was forsworn , Scarcely have coveted what was mine own , At no time broke my faith , would not betray The devil to his fellow , and delight No less in truth than life . My first false speaking Was this upon myself . What I am truly Is thine and my poor country’s to command — Whither indeed , before thy here-approach , Old Siward with ten thousand warlike men , Already at a point , was setting forth . Now we’ll together , and the chance of goodness Be like our warranted quarrel . Why are you silent ?",
+      "scrollMode": "auto",
+      "lineIndex": 141
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799v0",
+      "lineText": "Such welcome and unwelcome things at once ’Tis hard to reconcile .",
+      "scrollMode": "auto",
+      "lineIndex": 142
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799lg",
+      "lineText": "Enter a Doctor .",
+      "scrollMode": "auto",
+      "lineIndex": 143
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799ug",
+      "lineText": "Well , more anon . — Comes the King forth , I pray you ?",
+      "scrollMode": "auto",
+      "lineIndex": 144
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799vg",
+      "lineText": "Ay , sir . There are a crew of wretched souls That stay his cure . Their malady convinces The great assay of art , but at his touch ( Such sanctity hath heaven given his hand ) They presently amend .",
+      "scrollMode": "auto",
+      "lineIndex": 145
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799ug",
+      "lineText": "I thank you , doctor .",
+      "scrollMode": "auto",
+      "lineIndex": 146
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799lg",
+      "lineText": "Doctor exits .",
+      "scrollMode": "auto",
+      "lineIndex": 147
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799v0",
+      "lineText": "What’s the disease he means ?",
+      "scrollMode": "auto",
+      "lineIndex": 148
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799ug",
+      "lineText": "’Tis called the evil : A most miraculous work in this good king , Which often since my here-remain in England I have seen him do . How he solicits heaven Himself best knows , but strangely visited people All swoll’n and ulcerous , pitiful to the eye , The mere despair of surgery , he cures , Hanging a golden stamp about their necks , Put on with holy prayers ; and , ’tis spoken , To the succeeding royalty he leaves The healing benediction . With this strange virtue , He hath a heavenly gift of prophecy , And sundry blessings hang about his throne That speak him full of grace .",
+      "scrollMode": "auto",
+      "lineIndex": 149
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799lg",
+      "lineText": "Enter Ross .",
+      "scrollMode": "auto",
+      "lineIndex": 150
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799v0",
+      "lineText": "See who comes here .",
+      "scrollMode": "auto",
+      "lineIndex": 151
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799ug",
+      "lineText": "My countryman , but yet I know him not .",
+      "scrollMode": "auto",
+      "lineIndex": 152
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799v0",
+      "lineText": "My ever-gentle cousin , welcome hither .",
+      "scrollMode": "auto",
+      "lineIndex": 153
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799ug",
+      "lineText": "I know him now . — Good God betimes remove The means that makes us strangers !",
+      "scrollMode": "auto",
+      "lineIndex": 154
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799s0",
+      "lineText": "Sir , amen .",
+      "scrollMode": "auto",
+      "lineIndex": 155
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799v0",
+      "lineText": "Stands Scotland where it did ?",
+      "scrollMode": "auto",
+      "lineIndex": 156
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799s0",
+      "lineText": "Alas , poor country , Almost afraid to know itself . It cannot Be called our mother , but our grave , where nothing But who knows nothing is once seen to smile ; Where sighs and groans and shrieks that rent the air Are made , not marked ; where violent sorrow seems A modern ecstasy . The dead man’s knell Is there scarce asked for who , and good men’s lives Expire before the flowers in their caps , Dying or ere they sicken .",
+      "scrollMode": "auto",
+      "lineIndex": 157
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799v0",
+      "lineText": "O relation too nice and yet too true !",
+      "scrollMode": "auto",
+      "lineIndex": 158
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799ug",
+      "lineText": "What’s the newest grief ?",
+      "scrollMode": "auto",
+      "lineIndex": 159
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799s0",
+      "lineText": "That of an hour’s age doth hiss the speaker . Each minute teems a new one .",
+      "scrollMode": "auto",
+      "lineIndex": 160
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799v0",
+      "lineText": "How does my wife ?",
+      "scrollMode": "auto",
+      "lineIndex": 161
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799s0",
+      "lineText": "Why , well .",
+      "scrollMode": "auto",
+      "lineIndex": 162
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799v0",
+      "lineText": "And all my children ?",
+      "scrollMode": "auto",
+      "lineIndex": 163
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799s0",
+      "lineText": "Well too .",
+      "scrollMode": "auto",
+      "lineIndex": 164
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799v0",
+      "lineText": "The tyrant has not battered at their peace ?",
+      "scrollMode": "auto",
+      "lineIndex": 165
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799s0",
+      "lineText": "No , they were well at peace when I did leave ’em .",
+      "scrollMode": "auto",
+      "lineIndex": 166
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799v0",
+      "lineText": "Be not a niggard of your speech . How goes ’t ?",
+      "scrollMode": "auto",
+      "lineIndex": 167
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799s0",
+      "lineText": "When I came hither to transport the tidings ACT 4. SC. 3 Which I have heavily borne , there ran a rumor Of many worthy fellows that were out ; Which was to my belief witnessed the rather For that I saw the tyrant’s power afoot . Now is the time of help . Your eye in Scotland Would create soldiers , make our women fight To doff their dire distresses .",
+      "scrollMode": "auto",
+      "lineIndex": 168
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799ug",
+      "lineText": "Be ’t their comfort We are coming thither . Gracious England hath Lent us good Siward and ten thousand men ; An older and a better soldier none That Christendom gives out .",
+      "scrollMode": "auto",
+      "lineIndex": 169
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799s0",
+      "lineText": "Would I could answer This comfort with the like . But I have words That would be howled out in the desert air , Where hearing should not latch them .",
+      "scrollMode": "auto",
+      "lineIndex": 170
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799v0",
+      "lineText": "What concern they — The general cause , or is it a fee-grief Due to some single breast ?",
+      "scrollMode": "auto",
+      "lineIndex": 171
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799s0",
+      "lineText": "No mind that’s honest But in it shares some woe , though the main part Pertains to you alone .",
+      "scrollMode": "auto",
+      "lineIndex": 172
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799v0",
+      "lineText": "If it be mine , Keep it not from me . Quickly let me have it .",
+      "scrollMode": "auto",
+      "lineIndex": 173
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799s0",
+      "lineText": "Let not your ears despise my tongue forever , Which shall possess them with the heaviest sound That ever yet they heard .",
+      "scrollMode": "auto",
+      "lineIndex": 174
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799v0",
+      "lineText": "Hum ! I guess at it .",
+      "scrollMode": "auto",
+      "lineIndex": 175
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799s0",
+      "lineText": "Your castle is surprised , your wife and babes Savagely slaughtered . To relate the manner Were on the quarry of these murdered deer To add the death of you .",
+      "scrollMode": "auto",
+      "lineIndex": 176
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799ug",
+      "lineText": "Merciful heaven ! — ACT 4. SC. 3 What , man , ne’er pull your hat upon your brows . Give sorrow words . The grief that does not speak Whispers the o’erfraught heart and bids it break .",
+      "scrollMode": "auto",
+      "lineIndex": 177
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799v0",
+      "lineText": "My children too ?",
+      "scrollMode": "auto",
+      "lineIndex": 178
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799s0",
+      "lineText": "Wife , children , servants , all that could be found .",
+      "scrollMode": "auto",
+      "lineIndex": 179
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799v0",
+      "lineText": "And I must be from thence ? My wife killed too ?",
+      "scrollMode": "auto",
+      "lineIndex": 180
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799s0",
+      "lineText": "I have said .",
+      "scrollMode": "auto",
+      "lineIndex": 181
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799ug",
+      "lineText": "Be comforted . Let’s make us med’cines of our great revenge To cure this deadly grief .",
+      "scrollMode": "auto",
+      "lineIndex": 182
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799v0",
+      "lineText": "He has no children . All my pretty ones ? Did you say all ? O hell-kite ! All ? What , all my pretty chickens and their dam At one fell swoop ?",
+      "scrollMode": "auto",
+      "lineIndex": 183
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799ug",
+      "lineText": "Dispute it like a man .",
+      "scrollMode": "auto",
+      "lineIndex": 184
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799v0",
+      "lineText": "I shall do so , But I must also feel it as a man . I cannot but remember such things were That were most precious to me . Did heaven look on And would not take their part ? Sinful Macduff , They were all struck for thee ! Naught that I am , Not for their own demerits , but for mine , Fell slaughter on their souls . Heaven rest them now .",
+      "scrollMode": "auto",
+      "lineIndex": 185
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799ug",
+      "lineText": "Be this the whetstone of your sword . Let grief Convert to anger . Blunt not the heart ; enrage it .",
+      "scrollMode": "auto",
+      "lineIndex": 186
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799v0",
+      "lineText": "O , I could play the woman with mine eyes And braggart with my tongue ! But , gentle heavens , Cut short all intermission ! Front to front Bring thou this fiend of Scotland and myself . Within my sword’s length set him . If he ’scape , Heaven forgive him too .",
+      "scrollMode": "auto",
+      "lineIndex": 187
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799ug",
+      "lineText": "This tune goes manly . Come , go we to the King . Our power is ready ; Our lack is nothing but our leave . Macbeth Is ripe for shaking , and the powers above Put on their instruments . Receive what cheer you may . The night is long that never finds the day .",
+      "scrollMode": "auto",
+      "lineIndex": 188
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h799lg",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 189
+    }
+  ],
+  "isPublic": true
+}

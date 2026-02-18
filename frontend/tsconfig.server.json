@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "outDir": "./dist",
+    "noEmit": false,
+    "esModuleInterop": true,
+    "declaration": false
+  },
+  "include": ["server.ts", "lib/ws-stage-handler.ts", "lib/grpc-client.ts"],
+  "exclude": ["node_modules", ".next", "app", "components", "hooks"]
+}

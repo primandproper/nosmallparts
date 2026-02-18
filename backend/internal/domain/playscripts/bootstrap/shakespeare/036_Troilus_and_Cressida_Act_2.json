@@ -1,0 +1,1602 @@
+{
+  "title": "Troilus and Cressida (Act 2)",
+  "description": "Folger Shakespeare Library edition",
+  "author": "William Shakespeare",
+  "castMembers": [
+    {
+      "id": "d68m11sn9qd8d2h79pkg",
+      "name": "Narrator",
+      "sortOrder": 0
+    },
+    {
+      "id": "d68m11sn9qd8d2h79pl0",
+      "name": "Ajax",
+      "sortOrder": 1
+    },
+    {
+      "id": "d68m11sn9qd8d2h79plg",
+      "name": "Thersites",
+      "description": "cynical critic",
+      "sortOrder": 2
+    },
+    {
+      "id": "d68m11sn9qd8d2h79pm0",
+      "name": "Achilles",
+      "sortOrder": 3
+    },
+    {
+      "id": "d68m11sn9qd8d2h79pmg",
+      "name": "Patroclus",
+      "description": "Achilles’ favorite companion",
+      "sortOrder": 4
+    },
+    {
+      "id": "d68m11sn9qd8d2h79pn0",
+      "name": "Priam",
+      "description": "king of Troy",
+      "sortOrder": 5
+    },
+    {
+      "id": "d68m11sn9qd8d2h79png",
+      "name": "Hector",
+      "sortOrder": 6
+    },
+    {
+      "id": "d68m11sn9qd8d2h79po0",
+      "name": "Troilus",
+      "sortOrder": 7
+    },
+    {
+      "id": "d68m11sn9qd8d2h79pog",
+      "name": "Helenus",
+      "sortOrder": 8
+    },
+    {
+      "id": "d68m11sn9qd8d2h79pp0",
+      "name": "Cassandra",
+      "description": "Priam’s daughter, a soothsayer",
+      "sortOrder": 9
+    },
+    {
+      "id": "d68m11sn9qd8d2h79ppg",
+      "name": "Paris",
+      "sortOrder": 10
+    },
+    {
+      "id": "d68m11sn9qd8d2h79pq0",
+      "name": "Agamemnon",
+      "description": "the general",
+      "sortOrder": 11
+    },
+    {
+      "id": "d68m11sn9qd8d2h79pqg",
+      "name": "Ulysses",
+      "sortOrder": 12
+    },
+    {
+      "id": "d68m11sn9qd8d2h79pr0",
+      "name": "Nestor",
+      "sortOrder": 13
+    },
+    {
+      "id": "d68m11sn9qd8d2h79prg",
+      "name": "Diomedes",
+      "sortOrder": 14
+    },
+    {
+      "id": "d68m11sn9qd8d2h79ps0",
+      "name": "Calchas",
+      "description": "her father",
+      "sortOrder": 15
+    }
+  ],
+  "lines": [
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pkg",
+      "lineText": "Enter Ajax and Thersites .",
+      "scrollMode": "auto",
+      "lineIndex": 0
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pl0",
+      "lineText": "Thersites !",
+      "scrollMode": "auto",
+      "lineIndex": 1
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79plg",
+      "lineText": "Agamemnon — how if he had boils , full , all over , generally ?",
+      "scrollMode": "auto",
+      "lineIndex": 2
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pl0",
+      "lineText": "Thersites !",
+      "scrollMode": "auto",
+      "lineIndex": 3
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79plg",
+      "lineText": "And those boils did run ? Say so . Did not the general run , then ? Were not that a botchy core ?",
+      "scrollMode": "auto",
+      "lineIndex": 4
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pl0",
+      "lineText": "Dog !",
+      "scrollMode": "auto",
+      "lineIndex": 5
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79plg",
+      "lineText": "Then there would come some matter from him . I see none now .",
+      "scrollMode": "auto",
+      "lineIndex": 6
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pl0",
+      "lineText": "Thou bitchwolf’s son , canst thou not hear ? Feel , then .",
+      "scrollMode": "auto",
+      "lineIndex": 7
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pkg",
+      "lineText": "Strikes him .",
+      "scrollMode": "auto",
+      "lineIndex": 8
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79plg",
+      "lineText": "The plague of Greece upon thee , thou mongrel beef-witted lord !",
+      "scrollMode": "auto",
+      "lineIndex": 9
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pl0",
+      "lineText": "Speak , then , thou unsalted leaven , speak . I will beat thee into handsomeness .",
+      "scrollMode": "auto",
+      "lineIndex": 10
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79plg",
+      "lineText": "I shall sooner rail thee into wit and holiness , but I think thy horse will sooner con an oration than thou learn a prayer without book . Thou canst strike , canst thou ? A red murrain o’ thy jade’s tricks .",
+      "scrollMode": "auto",
+      "lineIndex": 11
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pl0",
+      "lineText": "Toadstool , learn me the proclamation .",
+      "scrollMode": "auto",
+      "lineIndex": 12
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79plg",
+      "lineText": "Dost thou think I have no sense , thou strikest me thus ?",
+      "scrollMode": "auto",
+      "lineIndex": 13
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pl0",
+      "lineText": "The proclamation !",
+      "scrollMode": "auto",
+      "lineIndex": 14
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79plg",
+      "lineText": "Thou art proclaimed a fool , I think .",
+      "scrollMode": "auto",
+      "lineIndex": 15
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pl0",
+      "lineText": "Do not , porpentine , do not . My fingers itch .",
+      "scrollMode": "auto",
+      "lineIndex": 16
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79plg",
+      "lineText": "I would thou didst itch from head to foot , and I had the scratching of thee ; I would make thee the loathsomest scab in Greece . When thou art forth in the incursions , thou strikest as slow as another .",
+      "scrollMode": "auto",
+      "lineIndex": 17
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pl0",
+      "lineText": "I say , the proclamation !",
+      "scrollMode": "auto",
+      "lineIndex": 18
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79plg",
+      "lineText": "Thou grumblest and railest every hour on Achilles , and thou art as full of envy at his greatness as Cerberus is at Proserpina’s beauty , ay , that thou bark’st at him .",
+      "scrollMode": "auto",
+      "lineIndex": 19
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pl0",
+      "lineText": "Mistress Thersites !",
+      "scrollMode": "auto",
+      "lineIndex": 20
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79plg",
+      "lineText": "Thou shouldst strike him —",
+      "scrollMode": "auto",
+      "lineIndex": 21
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pl0",
+      "lineText": "Cobloaf !",
+      "scrollMode": "auto",
+      "lineIndex": 22
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79plg",
+      "lineText": "He would pound thee into shivers with his fist as a sailor breaks a biscuit .",
+      "scrollMode": "auto",
+      "lineIndex": 23
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pl0",
+      "lineText": "You whoreson cur !",
+      "scrollMode": "auto",
+      "lineIndex": 24
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pkg",
+      "lineText": "Strikes him .",
+      "scrollMode": "auto",
+      "lineIndex": 25
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79plg",
+      "lineText": "Do , do .",
+      "scrollMode": "auto",
+      "lineIndex": 26
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pl0",
+      "lineText": "Thou stool for a witch !",
+      "scrollMode": "auto",
+      "lineIndex": 27
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79plg",
+      "lineText": "Ay , do , do , thou sodden-witted lord . Thou hast no more brain than I have in mine elbows ; an asinego may tutor thee , thou scurvy-valiant ass . Thou art here but to thrash Trojans , and thou art bought and sold among those of any wit , like a barbarian slave . If thou use to beat me , I will begin at thy heel and tell what thou art by inches , thou thing of no bowels , thou .",
+      "scrollMode": "auto",
+      "lineIndex": 28
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pl0",
+      "lineText": "You dog !",
+      "scrollMode": "auto",
+      "lineIndex": 29
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79plg",
+      "lineText": "You scurvy lord !",
+      "scrollMode": "auto",
+      "lineIndex": 30
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pl0",
+      "lineText": "You cur !",
+      "scrollMode": "auto",
+      "lineIndex": 31
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pkg",
+      "lineText": "Strikes him .",
+      "scrollMode": "auto",
+      "lineIndex": 32
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79plg",
+      "lineText": "Mars his idiot ! Do , rudeness , do , camel , do , do .",
+      "scrollMode": "auto",
+      "lineIndex": 33
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pkg",
+      "lineText": "Enter Achilles and Patroclus .",
+      "scrollMode": "auto",
+      "lineIndex": 34
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pm0",
+      "lineText": "Why , how now , Ajax ? Wherefore do you thus ? — How now , Thersites ? What’s the matter , man ?",
+      "scrollMode": "auto",
+      "lineIndex": 35
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79plg",
+      "lineText": "You see him there , do you ?",
+      "scrollMode": "auto",
+      "lineIndex": 36
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pm0",
+      "lineText": "Ay , what’s the matter ?",
+      "scrollMode": "auto",
+      "lineIndex": 37
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79plg",
+      "lineText": "Nay , look upon him .",
+      "scrollMode": "auto",
+      "lineIndex": 38
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pm0",
+      "lineText": "So I do . What’s the matter ?",
+      "scrollMode": "auto",
+      "lineIndex": 39
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79plg",
+      "lineText": "Nay , but regard him well .",
+      "scrollMode": "auto",
+      "lineIndex": 40
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pm0",
+      "lineText": "Well , why , so I do .",
+      "scrollMode": "auto",
+      "lineIndex": 41
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79plg",
+      "lineText": "But yet you look not well upon him , for whosomever you take him to be , he is Ajax .",
+      "scrollMode": "auto",
+      "lineIndex": 42
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pm0",
+      "lineText": "I know that , fool .",
+      "scrollMode": "auto",
+      "lineIndex": 43
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79plg",
+      "lineText": "Ay , but that fool knows not himself .",
+      "scrollMode": "auto",
+      "lineIndex": 44
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pl0",
+      "lineText": "Therefore I beat thee .",
+      "scrollMode": "auto",
+      "lineIndex": 45
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79plg",
+      "lineText": "Lo , lo , lo , lo , what modicums of wit he utters ! His evasions have ears thus long . I have bobbed his brain more than he has beat my bones . I will buy nine sparrows for a penny , and his pia mater is not worth the ninth part of a sparrow . This lord , Achilles — Ajax , who wears his wit in his belly , and his guts in his head — I’ll tell you what I say of him .",
+      "scrollMode": "auto",
+      "lineIndex": 46
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pm0",
+      "lineText": "What ?",
+      "scrollMode": "auto",
+      "lineIndex": 47
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79plg",
+      "lineText": "I say , this Ajax —",
+      "scrollMode": "auto",
+      "lineIndex": 48
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pkg",
+      "lineText": "Ajax menaces him .",
+      "scrollMode": "auto",
+      "lineIndex": 49
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pm0",
+      "lineText": "Nay , good Ajax .",
+      "scrollMode": "auto",
+      "lineIndex": 50
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79plg",
+      "lineText": "Has not so much wit —",
+      "scrollMode": "auto",
+      "lineIndex": 51
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pkg",
+      "lineText": ", to Ajax",
+      "scrollMode": "auto",
+      "lineIndex": 52
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pm0",
+      "lineText": "Nay , I must hold you .",
+      "scrollMode": "auto",
+      "lineIndex": 53
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79plg",
+      "lineText": "As will stop the eye of Helen’s needle , for whom he comes to fight .",
+      "scrollMode": "auto",
+      "lineIndex": 54
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pm0",
+      "lineText": "Peace , fool !",
+      "scrollMode": "auto",
+      "lineIndex": 55
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79plg",
+      "lineText": "I would have peace and quietness , but the fool will not — he there , that he . Look you there .",
+      "scrollMode": "auto",
+      "lineIndex": 56
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pl0",
+      "lineText": "O , thou damned cur , I shall —",
+      "scrollMode": "auto",
+      "lineIndex": 57
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pm0",
+      "lineText": "Will you set your wit to a fool’s ?",
+      "scrollMode": "auto",
+      "lineIndex": 58
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79plg",
+      "lineText": "No , I warrant you . The fool’s will shame it .",
+      "scrollMode": "auto",
+      "lineIndex": 59
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pmg",
+      "lineText": "Good words , Thersites .",
+      "scrollMode": "auto",
+      "lineIndex": 60
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pkg",
+      "lineText": ", to Ajax",
+      "scrollMode": "auto",
+      "lineIndex": 61
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pm0",
+      "lineText": "What’s the quarrel ?",
+      "scrollMode": "auto",
+      "lineIndex": 62
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pl0",
+      "lineText": "I bade the vile owl go learn me the tenor of the proclamation , and he rails upon me .",
+      "scrollMode": "auto",
+      "lineIndex": 63
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79plg",
+      "lineText": "I serve thee not .",
+      "scrollMode": "auto",
+      "lineIndex": 64
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pl0",
+      "lineText": "Well , go to , go to .",
+      "scrollMode": "auto",
+      "lineIndex": 65
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79plg",
+      "lineText": "I serve here voluntary .",
+      "scrollMode": "auto",
+      "lineIndex": 66
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pm0",
+      "lineText": "Your last service was suff’rance ; ’twas not voluntary . No man is beaten voluntary . Ajax was here the voluntary , and you as under an impress .",
+      "scrollMode": "auto",
+      "lineIndex": 67
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79plg",
+      "lineText": "E’en so . A great deal of your wit , too , lies in your sinews , or else there be liars . Hector shall have a great catch an he knock out either of your brains ; he were as good crack a fusty nut with no kernel .",
+      "scrollMode": "auto",
+      "lineIndex": 68
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pm0",
+      "lineText": "What , with me too , Thersites ?",
+      "scrollMode": "auto",
+      "lineIndex": 69
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79plg",
+      "lineText": "There’s Ulysses and old Nestor — whose wit was moldy ere your grandsires had nails on their toes — yoke you like draft-oxen and make you plow up the wars .",
+      "scrollMode": "auto",
+      "lineIndex": 70
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pm0",
+      "lineText": "What ? What ?",
+      "scrollMode": "auto",
+      "lineIndex": 71
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79plg",
+      "lineText": "Yes , good sooth . To , Achilles ! To , Ajax ! To —",
+      "scrollMode": "auto",
+      "lineIndex": 72
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pl0",
+      "lineText": "I shall cut out your tongue .",
+      "scrollMode": "auto",
+      "lineIndex": 73
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79plg",
+      "lineText": "’Tis no matter . I shall speak as much as thou afterwards .",
+      "scrollMode": "auto",
+      "lineIndex": 74
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pmg",
+      "lineText": "No more words , Thersites . Peace .",
+      "scrollMode": "auto",
+      "lineIndex": 75
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79plg",
+      "lineText": "I will hold my peace when Achilles’ brach bids me , shall I ?",
+      "scrollMode": "auto",
+      "lineIndex": 76
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pm0",
+      "lineText": "There’s for you , Patroclus .",
+      "scrollMode": "auto",
+      "lineIndex": 77
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79plg",
+      "lineText": "I will see you hanged like clodpolls ere I come any more to your tents . I will keep where there is wit stirring and leave the faction of fools .",
+      "scrollMode": "auto",
+      "lineIndex": 78
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pkg",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 79
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pmg",
+      "lineText": "A good riddance .",
+      "scrollMode": "auto",
+      "lineIndex": 80
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pkg",
+      "lineText": ", to Ajax",
+      "scrollMode": "auto",
+      "lineIndex": 81
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pm0",
+      "lineText": "Marry , this , sir , is proclaimed through all our host : That Hector , by the fifth hour of the sun , Will with a trumpet ’twixt our tents and Troy Tomorrow morning call some knight to arms That hath a stomach , and such a one that dare Maintain — I know not what ; ’tis trash . Farewell .",
+      "scrollMode": "auto",
+      "lineIndex": 82
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pl0",
+      "lineText": "Farewell . Who shall answer him ?",
+      "scrollMode": "auto",
+      "lineIndex": 83
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pm0",
+      "lineText": "I know not . ’Tis put to lott’ry . Otherwise , He knew his man .",
+      "scrollMode": "auto",
+      "lineIndex": 84
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pkg",
+      "lineText": "Achilles and Patroclus exit .",
+      "scrollMode": "auto",
+      "lineIndex": 85
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pl0",
+      "lineText": "O , meaning you ? I will go learn more of it .",
+      "scrollMode": "auto",
+      "lineIndex": 86
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pkg",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 87
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pkg",
+      "lineText": "Enter Priam , Hector , Troilus , Paris and Helenas .",
+      "scrollMode": "auto",
+      "lineIndex": 88
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pn0",
+      "lineText": "After so many hours , lives , speeches spent , Thus once again says Nestor from the Greeks : Deliver Helen , and all damage else — As honor , loss of time , travel , expense , Wounds , friends , and what else dear that is consumed In hot digestion of this cormorant war — Shall be struck off . — Hector , what say you to ’t ?",
+      "scrollMode": "auto",
+      "lineIndex": 89
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79png",
+      "lineText": "Though no man lesser fears the Greeks than I As far as toucheth my particular , Yet , dread Priam , There is no lady of more softer bowels , More spongy to suck in the sense of fear , More ready to cry out Who knows what follows ? Than Hector is . The wound of peace is surety , Surety secure ; but modest doubt is called The beacon of the wise , the tent that searches To th’ bottom of the worst . Let Helen go . Since the first sword was drawn about this question , Every tithe soul , ’mongst many thousand dismes , Hath been as dear as Helen ; I mean , of ours . If we have lost so many tenths of ours To guard a thing not ours — nor worth to us , Had it our name , the value of one ten — ACT 2. SC. 2 What merit’s in that reason which denies The yielding of her up ?",
+      "scrollMode": "auto",
+      "lineIndex": 90
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79po0",
+      "lineText": "Fie , fie , my brother , Weigh you the worth and honor of a king So great as our dread father’s in a scale Of common ounces ? Will you with counters sum The past-proportion of his infinite , And buckle in a waist most fathomless With spans and inches so diminutive As fears and reasons ? Fie , for godly shame !",
+      "scrollMode": "auto",
+      "lineIndex": 91
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pog",
+      "lineText": "No marvel though you bite so sharp at reasons , You are so empty of them . Should not our father Bear the great sway of his affairs with reason , Because your speech hath none that tell him so ?",
+      "scrollMode": "auto",
+      "lineIndex": 92
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79po0",
+      "lineText": "You are for dreams and slumbers , brother priest . You fur your gloves with reason . Here are your reasons : You know an enemy intends you harm ; You know a sword employed is perilous , And reason flies the object of all harm . Who marvels , then , when Helenus beholds A Grecian and his sword , if he do set The very wings of reason to his heels And fly like chidden Mercury from Jove Or like a star disorbed ? Nay , if we talk of reason , Let’s shut our gates and sleep . Manhood and honor Should have hare hearts , would they but fat their thoughts With this crammed reason . Reason and respect Make livers pale and lustihood deject .",
+      "scrollMode": "auto",
+      "lineIndex": 93
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79png",
+      "lineText": "Brother , she is not worth what she doth cost The keeping .",
+      "scrollMode": "auto",
+      "lineIndex": 94
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79po0",
+      "lineText": "What’s aught but as ’tis valued ?",
+      "scrollMode": "auto",
+      "lineIndex": 95
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79png",
+      "lineText": "But value dwells not in particular will ; It holds his estimate and dignity As well wherein ’tis precious of itself As in the prizer . ’Tis mad idolatry To make the service greater than the god ; And the will dotes that is attributive To what infectiously itself affects Without some image of th’ affected merit .",
+      "scrollMode": "auto",
+      "lineIndex": 96
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79po0",
+      "lineText": "I take today a wife , and my election Is led on in the conduct of my will — My will enkindled by mine eyes and ears , Two traded pilots ’twixt the dangerous shores Of will and judgment . How may I avoid , Although my will distaste what it elected , The wife I choose ? There can be no evasion To blench from this and to stand firm by honor . We turn not back the silks upon the merchant When we have soiled them , nor the remainder viands We do not throw in unrespective sieve Because we now are full . It was thought meet Paris should do some vengeance on the Greeks . Your breath with full consent bellied his sails ; The seas and winds , old wranglers , took a truce And did him service . He touched the ports desired , And for an old aunt whom the Greeks held captive , He brought a Grecian queen , whose youth and freshness Wrinkles Apollo’s and makes pale the morning . Why keep we her ? The Grecians keep our aunt . Is she worth keeping ? Why , she is a pearl Whose price hath launched above a thousand ships And turned crowned kings to merchants . If you’ll avouch ’twas wisdom Paris went — ACT 2. SC. 2 As you must needs , for you all cried Go , go — If you’ll confess he brought home worthy prize — As you must needs , for you all clapped your hands And cried Inestimable — why do you now The issue of your proper wisdoms rate And do a deed that never Fortune did , Beggar the estimation which you prized Richer than sea and land ? O , theft most base , That we have stol’n what we do fear to keep ! But thieves unworthy of a thing so stol’n , That in their country did them that disgrace We fear to warrant in our native place .",
+      "scrollMode": "auto",
+      "lineIndex": 97
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pkg",
+      "lineText": ", within",
+      "scrollMode": "auto",
+      "lineIndex": 98
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pp0",
+      "lineText": "Cry , Trojans , cry !",
+      "scrollMode": "auto",
+      "lineIndex": 99
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pn0",
+      "lineText": "What noise ? What shriek is this ?",
+      "scrollMode": "auto",
+      "lineIndex": 100
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79po0",
+      "lineText": "’Tis our mad sister . I do know her voice .",
+      "scrollMode": "auto",
+      "lineIndex": 101
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pkg",
+      "lineText": ", within",
+      "scrollMode": "auto",
+      "lineIndex": 102
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pp0",
+      "lineText": "Cry , Trojans !",
+      "scrollMode": "auto",
+      "lineIndex": 103
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79png",
+      "lineText": "It is Cassandra .",
+      "scrollMode": "auto",
+      "lineIndex": 104
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pkg",
+      "lineText": "Enter Cassandra raving .",
+      "scrollMode": "auto",
+      "lineIndex": 105
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pp0",
+      "lineText": "Cry , Trojans , cry ! Lend me ten thousand eyes , And I will fill them with prophetic tears .",
+      "scrollMode": "auto",
+      "lineIndex": 106
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79png",
+      "lineText": "Peace , sister , peace !",
+      "scrollMode": "auto",
+      "lineIndex": 107
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pp0",
+      "lineText": "Virgins and boys , mid-age and wrinkled elders , Soft infancy , that nothing canst but cry , Add to my clamors . Let us pay betimes A moiety of that mass of moan to come . Cry , Trojans , cry ! Practice your eyes with tears . Troy must not be , nor goodly Ilium stand . Our firebrand brother Paris burns us all . Cry , Trojans , cry ! A Helen and a woe ! Cry , cry ! Troy burns , or else let Helen go .",
+      "scrollMode": "auto",
+      "lineIndex": 108
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pkg",
+      "lineText": "She exits .",
+      "scrollMode": "auto",
+      "lineIndex": 109
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79png",
+      "lineText": "Now , youthful Troilus , do not these high strains Of divination in our sister work Some touches of remorse ? Or is your blood So madly hot that no discourse of reason Nor fear of bad success in a bad cause Can qualify the same ?",
+      "scrollMode": "auto",
+      "lineIndex": 110
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79po0",
+      "lineText": "Why , brother Hector , We may not think the justness of each act Such and no other than event doth form it , Nor once deject the courage of our minds Because Cassandra’s mad . Her brainsick raptures Cannot distaste the goodness of a quarrel Which hath our several honors all engaged To make it gracious . For my private part , I am no more touched than all Priam’s sons ; And Jove forbid there should be done amongst us Such things as might offend the weakest spleen To fight for and maintain !",
+      "scrollMode": "auto",
+      "lineIndex": 111
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ppg",
+      "lineText": "Else might the world convince of levity As well my undertakings as your counsels . But I attest the gods , your full consent Gave wings to my propension and cut off All fears attending on so dire a project . For what , alas , can these my single arms ? What propugnation is in one man’s valor To stand the push and enmity of those This quarrel would excite ? Yet , I protest , Were I alone to pass the difficulties And had as ample power as I have will , Paris should ne’er retract what he hath done Nor faint in the pursuit .",
+      "scrollMode": "auto",
+      "lineIndex": 112
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pn0",
+      "lineText": "Paris , you speak Like one besotted on your sweet delights . You have the honey still , but these the gall . So to be valiant is no praise at all .",
+      "scrollMode": "auto",
+      "lineIndex": 113
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ppg",
+      "lineText": "Sir , I propose not merely to myself The pleasures such a beauty brings with it , But I would have the soil of her fair rape Wiped off in honorable keeping her . What treason were it to the ransacked queen , Disgrace to your great worths , and shame to me , Now to deliver her possession up On terms of base compulsion ? Can it be That so degenerate a strain as this Should once set footing in your generous bosoms ? There’s not the meanest spirit on our party Without a heart to dare or sword to draw When Helen is defended , nor none so noble Whose life were ill bestowed or death unfamed Where Helen is the subject . Then I say , Well may we fight for her whom , we know well , The world’s large spaces cannot parallel .",
+      "scrollMode": "auto",
+      "lineIndex": 114
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79png",
+      "lineText": "Paris and Troilus , you have both said well , And on the cause and question now in hand Have glozed — but superficially , not much Unlike young men , whom Aristotle thought Unfit to hear moral philosophy . The reasons you allege do more conduce To the hot passion of distempered blood Than to make up a free determination ’Twixt right and wrong , for pleasure and revenge Have ears more deaf than adders to the voice Of any true decision . Nature craves All dues be rendered to their owners . Now , What nearer debt in all humanity Than wife is to the husband ? If this law Of nature be corrupted through affection , And that great minds , of partial indulgence To their benumbèd wills , resist the same , ACT 2. SC. 2 There is a law in each well-ordered nation To curb those raging appetites that are Most disobedient and refractory . If Helen , then , be wife to Sparta’s king , As it is known she is , these moral laws Of nature and of nations speak aloud To have her back returned . Thus to persist In doing wrong extenuates not wrong , But makes it much more heavy . Hector’s opinion Is this in way of truth ; yet , ne’ertheless , My sprightly brethren , I propend to you In resolution to keep Helen still , For ’tis a cause that hath no mean dependence Upon our joint and several dignities .",
+      "scrollMode": "auto",
+      "lineIndex": 115
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79po0",
+      "lineText": "Why , there you touched the life of our design ! Were it not glory that we more affected Than the performance of our heaving spleens , I would not wish a drop of Trojan blood Spent more in her defense . But , worthy Hector , She is a theme of honor and renown , A spur to valiant and magnanimous deeds , Whose present courage may beat down our foes , And fame in time to come canonize us ; For I presume brave Hector would not lose So rich advantage of a promised glory As smiles upon the forehead of this action For the wide world’s revenue .",
+      "scrollMode": "auto",
+      "lineIndex": 116
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79png",
+      "lineText": "I am yours , You valiant offspring of great Priamus . I have a roisting challenge sent amongst The dull and factious nobles of the Greeks Will strike amazement to their drowsy spirits . I was advertised their great general slept , Whilst emulation in the army crept . This , I presume , will wake him .",
+      "scrollMode": "auto",
+      "lineIndex": 117
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pkg",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 118
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pkg",
+      "lineText": "Enter Thersites , alone .",
+      "scrollMode": "auto",
+      "lineIndex": 119
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79plg",
+      "lineText": "How now , Thersites ? What , lost in the labyrinth of thy fury ? Shall the elephant Ajax carry it thus ? He beats me , and I rail at him . O , worthy satisfaction ! Would it were otherwise , that I could beat him whilst he railed at me . ’Sfoot , I’ll learn to conjure and raise devils but I’ll see some issue of my spiteful execrations . Then there’s Achilles , a rare enginer ! If Troy be not taken till these two undermine it , the walls will stand till they fall of themselves . O thou great thunder-darter of Olympus , forget that thou art Jove , the king of gods ; and , Mercury , lose all the serpentine craft of thy caduceus , if you take not that little , little , less than little wit from them that they have , which short-armed ignorance itself knows is so abundant scarce it will not in circumvention deliver a fly from a spider without drawing their massy irons and cutting the web . After this , the vengeance on the whole camp ! Or rather , the Neapolitan bone-ache ! For that , methinks , is the curse depending on those that war for a placket . I have said my prayers , and devil Envy say Amen . — What ho , my lord Achilles !",
+      "scrollMode": "auto",
+      "lineIndex": 120
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pkg",
+      "lineText": ", within",
+      "scrollMode": "auto",
+      "lineIndex": 121
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pmg",
+      "lineText": "Who’s there ? Thersites ? Good Thersites , come in and rail .",
+      "scrollMode": "auto",
+      "lineIndex": 122
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pkg",
+      "lineText": "Enter Patroclus .",
+      "scrollMode": "auto",
+      "lineIndex": 123
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pmg",
+      "lineText": "Enter Patroclus . Where’s Achilles ?",
+      "scrollMode": "auto",
+      "lineIndex": 124
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pmg",
+      "lineText": "What , art thou devout ? Wast thou in prayer ?",
+      "scrollMode": "auto",
+      "lineIndex": 125
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79plg",
+      "lineText": "Ay . The heavens hear me !",
+      "scrollMode": "auto",
+      "lineIndex": 126
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pmg",
+      "lineText": "Amen .",
+      "scrollMode": "auto",
+      "lineIndex": 127
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pkg",
+      "lineText": ", within",
+      "scrollMode": "auto",
+      "lineIndex": 128
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pm0",
+      "lineText": "Who’s there ?",
+      "scrollMode": "auto",
+      "lineIndex": 129
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pmg",
+      "lineText": "Thersites , my lord .",
+      "scrollMode": "auto",
+      "lineIndex": 130
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pkg",
+      "lineText": ", within",
+      "scrollMode": "auto",
+      "lineIndex": 131
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pkg",
+      "lineText": "Enter Achilles .",
+      "scrollMode": "auto",
+      "lineIndex": 132
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pkg",
+      "lineText": "To Thersites .",
+      "scrollMode": "auto",
+      "lineIndex": 133
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pm0",
+      "lineText": "To Thersites . Art thou come ? Why , my cheese , my digestion , why hast thou not served thyself in to my table so many meals ? Come , what’s Agamemnon ?",
+      "scrollMode": "auto",
+      "lineIndex": 134
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79plg",
+      "lineText": "Thy commander , Achilles . — Then , tell me , Patroclus , what’s Achilles ?",
+      "scrollMode": "auto",
+      "lineIndex": 135
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pmg",
+      "lineText": "Thy lord , Thersites . Then , tell me , I pray thee , what’s Thersites ?",
+      "scrollMode": "auto",
+      "lineIndex": 136
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79plg",
+      "lineText": "Thy knower , Patroclus . Then , tell me , Patroclus , what art thou ?",
+      "scrollMode": "auto",
+      "lineIndex": 137
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pmg",
+      "lineText": "Thou must tell that knowest .",
+      "scrollMode": "auto",
+      "lineIndex": 138
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pm0",
+      "lineText": "O tell , tell .",
+      "scrollMode": "auto",
+      "lineIndex": 139
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79plg",
+      "lineText": "I’ll decline the whole question . Agamemnon commands Achilles , Achilles is my lord , I am Patroclus’ knower , and Patroclus is a fool .",
+      "scrollMode": "auto",
+      "lineIndex": 140
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pmg",
+      "lineText": "You rascal !",
+      "scrollMode": "auto",
+      "lineIndex": 141
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79plg",
+      "lineText": "Peace , fool . I have not done .",
+      "scrollMode": "auto",
+      "lineIndex": 142
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pkg",
+      "lineText": ", to Patroclus",
+      "scrollMode": "auto",
+      "lineIndex": 143
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pm0",
+      "lineText": "He is a privileged man . — Proceed , Thersites .",
+      "scrollMode": "auto",
+      "lineIndex": 144
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79plg",
+      "lineText": "Agamemnon is a fool , Achilles is a fool , Thersites is a fool , and , as aforesaid , Patroclus is a fool .",
+      "scrollMode": "auto",
+      "lineIndex": 145
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pm0",
+      "lineText": "Derive this . Come .",
+      "scrollMode": "auto",
+      "lineIndex": 146
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79plg",
+      "lineText": "Agamemnon is a fool to offer to command Achilles , Achilles is a fool to be commanded of Agamemnon , Thersites is a fool to serve such a fool , and this Patroclus is a fool positive .",
+      "scrollMode": "auto",
+      "lineIndex": 147
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pmg",
+      "lineText": "Why am I a fool ?",
+      "scrollMode": "auto",
+      "lineIndex": 148
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pkg",
+      "lineText": "Enter at a distance Agamemnon , Ulysses , Nestor , Diomedes , Ajax , and Calchas .",
+      "scrollMode": "auto",
+      "lineIndex": 149
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pq0",
+      "lineText": "Enter at a distance Agamemnon , Ulysses , Nestor , Diomedes , Ajax , and Calchas . Look you , who comes here ?",
+      "scrollMode": "auto",
+      "lineIndex": 150
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pm0",
+      "lineText": "Patroclus , I’ll speak with nobody . — Come in with me , Thersites .",
+      "scrollMode": "auto",
+      "lineIndex": 151
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pkg",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 152
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79plg",
+      "lineText": "Here is such patchery , such juggling , and such knavery . All the argument is a whore and a cuckold , a good quarrel to draw emulous factions and bleed to death upon . Now the dry serpigo on the subject , and war and lechery confound all !",
+      "scrollMode": "auto",
+      "lineIndex": 153
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pkg",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 154
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pkg",
+      "lineText": ", to Patroclus",
+      "scrollMode": "auto",
+      "lineIndex": 155
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pq0",
+      "lineText": "Where is Achilles ?",
+      "scrollMode": "auto",
+      "lineIndex": 156
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pmg",
+      "lineText": "Within his tent , but ill-disposed , my lord .",
+      "scrollMode": "auto",
+      "lineIndex": 157
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pq0",
+      "lineText": "Let it be known to him that we are here . He shent our messengers , and we lay by Our appertainments , visiting of him . Let him be told so , lest perchance he think We dare not move the question of our place Or know not what we are .",
+      "scrollMode": "auto",
+      "lineIndex": 158
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pmg",
+      "lineText": "I shall say so to him .",
+      "scrollMode": "auto",
+      "lineIndex": 159
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pkg",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 160
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pqg",
+      "lineText": "We saw him at the opening of his tent . He is not sick .",
+      "scrollMode": "auto",
+      "lineIndex": 161
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pl0",
+      "lineText": "Yes , lion-sick , sick of proud heart . You may call it melancholy if you will favor the man , but , by my ACT 2. SC. 3 head , ’tis pride . But , why , why ? Let him show us a cause . — A word , my lord .",
+      "scrollMode": "auto",
+      "lineIndex": 162
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pkg",
+      "lineText": "He and Agamemnon walk aside .",
+      "scrollMode": "auto",
+      "lineIndex": 163
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pr0",
+      "lineText": "What moves Ajax thus to bay at him ?",
+      "scrollMode": "auto",
+      "lineIndex": 164
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pqg",
+      "lineText": "Achilles hath inveigled his fool from him .",
+      "scrollMode": "auto",
+      "lineIndex": 165
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pr0",
+      "lineText": "Who , Thersites ?",
+      "scrollMode": "auto",
+      "lineIndex": 166
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pqg",
+      "lineText": "He .",
+      "scrollMode": "auto",
+      "lineIndex": 167
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pr0",
+      "lineText": "Then will Ajax lack matter , if he have lost his argument .",
+      "scrollMode": "auto",
+      "lineIndex": 168
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pqg",
+      "lineText": "No . You see , he is his argument that has his argument : Achilles .",
+      "scrollMode": "auto",
+      "lineIndex": 169
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pr0",
+      "lineText": "All the better . Their fraction is more our wish than their faction . But it was a strong composure a fool could disunite .",
+      "scrollMode": "auto",
+      "lineIndex": 170
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pkg",
+      "lineText": "Enter Patroclus .",
+      "scrollMode": "auto",
+      "lineIndex": 171
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pmg",
+      "lineText": "Enter Patroclus . Here comes Patroclus .",
+      "scrollMode": "auto",
+      "lineIndex": 172
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pr0",
+      "lineText": "No Achilles with him .",
+      "scrollMode": "auto",
+      "lineIndex": 173
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pqg",
+      "lineText": "The elephant hath joints , but none for courtesy ; his legs are legs for necessity , not for flexure .",
+      "scrollMode": "auto",
+      "lineIndex": 174
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pkg",
+      "lineText": ", to Agamemnon",
+      "scrollMode": "auto",
+      "lineIndex": 175
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pmg",
+      "lineText": "Achilles bids me say he is much sorry If anything more than your sport and pleasure Did move your greatness and this noble state To call upon him . He hopes it is no other But for your health and your digestion sake , An after-dinner’s breath .",
+      "scrollMode": "auto",
+      "lineIndex": 176
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pq0",
+      "lineText": "Hear you , Patroclus : We are too well acquainted with these answers , But his evasion , winged thus swift with scorn , Cannot outfly our apprehensions . Much attribute he hath , and much the reason Why we ascribe it to him . Yet all his virtues , Not virtuously on his own part beheld , ACT 2. SC. 3 Do in our eyes begin to lose their gloss , Yea , and like fair fruit in an unwholesome dish , Are like to rot untasted . Go and tell him We come to speak with him ; and you shall not sin If you do say we think him overproud And underhonest , in self-assumption greater Than in the note of judgment ; and worthier than himself Here tend the savage strangeness he puts on , Disguise the holy strength of their command , And underwrite in an observing kind His humorous predominance — yea , watch His course and time , his ebbs and flows , as if The passage and whole carriage of this action Rode on his tide . Go tell him this , and add That , if he overhold his price so much , We’ll none of him . But let him , like an engine Not portable , lie under this report : Bring action hither ; this cannot go to war . A stirring dwarf we do allowance give Before a sleeping giant . Tell him so .",
+      "scrollMode": "auto",
+      "lineIndex": 177
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pmg",
+      "lineText": "I shall , and bring his answer presently .",
+      "scrollMode": "auto",
+      "lineIndex": 178
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pq0",
+      "lineText": "In second voice we’ll not be satisfied ; We come to speak with him . — Ulysses , enter you .",
+      "scrollMode": "auto",
+      "lineIndex": 179
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pkg",
+      "lineText": "Ulysses exits , with Patroclus .",
+      "scrollMode": "auto",
+      "lineIndex": 180
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pl0",
+      "lineText": "What is he more than another ?",
+      "scrollMode": "auto",
+      "lineIndex": 181
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pq0",
+      "lineText": "No more than what he thinks he is .",
+      "scrollMode": "auto",
+      "lineIndex": 182
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pl0",
+      "lineText": "Is he so much ? Do you not think he thinks himself a better man than I am ?",
+      "scrollMode": "auto",
+      "lineIndex": 183
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pq0",
+      "lineText": "No question .",
+      "scrollMode": "auto",
+      "lineIndex": 184
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pl0",
+      "lineText": "Will you subscribe his thought and say he is ?",
+      "scrollMode": "auto",
+      "lineIndex": 185
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pq0",
+      "lineText": "No , noble Ajax . You are as strong , as valiant , as wise , no less noble , much more gentle , and altogether more tractable .",
+      "scrollMode": "auto",
+      "lineIndex": 186
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pl0",
+      "lineText": "Why should a man be proud ? How doth pride grow ? I know not what pride is .",
+      "scrollMode": "auto",
+      "lineIndex": 187
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pq0",
+      "lineText": "Your mind is the clearer , Ajax , and your virtues the fairer . He that is proud eats up himself . Pride is his own glass , his own trumpet , his own chronicle ; and whatever praises itself but in the deed devours the deed in the praise .",
+      "scrollMode": "auto",
+      "lineIndex": 188
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pl0",
+      "lineText": "I do hate a proud man as I hate the engendering of toads .",
+      "scrollMode": "auto",
+      "lineIndex": 189
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pkg",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 190
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pr0",
+      "lineText": "And yet he loves himself . Is ’t not strange ?",
+      "scrollMode": "auto",
+      "lineIndex": 191
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pkg",
+      "lineText": "Enter Ulysses .",
+      "scrollMode": "auto",
+      "lineIndex": 192
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pqg",
+      "lineText": "Achilles will not to the field tomorrow .",
+      "scrollMode": "auto",
+      "lineIndex": 193
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pq0",
+      "lineText": "What’s his excuse ?",
+      "scrollMode": "auto",
+      "lineIndex": 194
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pqg",
+      "lineText": "He doth rely on none , But carries on the stream of his dispose , Without observance or respect of any , In will peculiar and in self-admission .",
+      "scrollMode": "auto",
+      "lineIndex": 195
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pq0",
+      "lineText": "Why , will he not , upon our fair request , Untent his person and share th’ air with us ?",
+      "scrollMode": "auto",
+      "lineIndex": 196
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pqg",
+      "lineText": "Things small as nothing , for request’s sake only , He makes important . Possessed he is with greatness And speaks not to himself but with a pride That quarrels at self-breath . Imagined worth Holds in his blood such swoll’n and hot discourse That ’twixt his mental and his active parts Kingdomed Achilles in commotion rages And batters down himself . What should I say ? He is so plaguy proud that the death-tokens of it Cry No recovery .",
+      "scrollMode": "auto",
+      "lineIndex": 197
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pq0",
+      "lineText": "Let Ajax go to him . — ACT 2. SC. 3 Dear lord , go you and greet him in his tent . ’Tis said he holds you well and will be led At your request a little from himself .",
+      "scrollMode": "auto",
+      "lineIndex": 198
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pqg",
+      "lineText": "O Agamemnon , let it not be so ! We’ll consecrate the steps that Ajax makes When they go from Achilles . Shall the proud lord That bastes his arrogance with his own seam And never suffers matter of the world Enter his thoughts , save such as doth revolve And ruminate himself — shall he be worshipped Of that we hold an idol more than he ? No . This thrice-worthy and right valiant lord Shall not so stale his palm , nobly acquired , Nor , by my will , assubjugate his merit , As amply titled as Achilles is , By going to Achilles . That were to enlard his fat-already pride And add more coals to Cancer when he burns With entertaining great Hyperion . This lord go to him ? Jupiter forbid And say in thunder Achilles , go to him .",
+      "scrollMode": "auto",
+      "lineIndex": 199
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pkg",
+      "lineText": ", aside to Diomedes",
+      "scrollMode": "auto",
+      "lineIndex": 200
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pr0",
+      "lineText": "O , this is well ; he rubs the vein of him .",
+      "scrollMode": "auto",
+      "lineIndex": 201
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pkg",
+      "lineText": ", aside to Nestor",
+      "scrollMode": "auto",
+      "lineIndex": 202
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79prg",
+      "lineText": "And how his silence drinks up this applause !",
+      "scrollMode": "auto",
+      "lineIndex": 203
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pl0",
+      "lineText": "If I go to him , with my armèd fist I’ll pash him o’er the face .",
+      "scrollMode": "auto",
+      "lineIndex": 204
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pq0",
+      "lineText": "O , no , you shall not go .",
+      "scrollMode": "auto",
+      "lineIndex": 205
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pl0",
+      "lineText": "An he be proud with me , I’ll feeze his pride . Let me go to him .",
+      "scrollMode": "auto",
+      "lineIndex": 206
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pqg",
+      "lineText": "Not for the worth that hangs upon our quarrel .",
+      "scrollMode": "auto",
+      "lineIndex": 207
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pl0",
+      "lineText": "A paltry , insolent fellow .",
+      "scrollMode": "auto",
+      "lineIndex": 208
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pkg",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 209
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pr0",
+      "lineText": "How he describes himself !",
+      "scrollMode": "auto",
+      "lineIndex": 210
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pl0",
+      "lineText": "Can he not be sociable ?",
+      "scrollMode": "auto",
+      "lineIndex": 211
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pkg",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 212
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pqg",
+      "lineText": "The raven chides blackness .",
+      "scrollMode": "auto",
+      "lineIndex": 213
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pl0",
+      "lineText": "I’ll let his humorous blood .",
+      "scrollMode": "auto",
+      "lineIndex": 214
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pkg",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 215
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pq0",
+      "lineText": "He will be the physician that should be the patient .",
+      "scrollMode": "auto",
+      "lineIndex": 216
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pl0",
+      "lineText": "An all men were of my mind —",
+      "scrollMode": "auto",
+      "lineIndex": 217
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pkg",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 218
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pqg",
+      "lineText": "Wit would be out of fashion .",
+      "scrollMode": "auto",
+      "lineIndex": 219
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pl0",
+      "lineText": "— he should not bear it so ; he should eat swords first . Shall pride carry it ?",
+      "scrollMode": "auto",
+      "lineIndex": 220
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pkg",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 221
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pr0",
+      "lineText": "An ’twould , you’d carry half .",
+      "scrollMode": "auto",
+      "lineIndex": 222
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pkg",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 223
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pqg",
+      "lineText": "He would have ten shares .",
+      "scrollMode": "auto",
+      "lineIndex": 224
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pl0",
+      "lineText": "I will knead him ; I’ll make him supple .",
+      "scrollMode": "auto",
+      "lineIndex": 225
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pkg",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 226
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pr0",
+      "lineText": "He’s not yet through warm . Force him with praises . Pour in , pour in ; his ambition is dry .",
+      "scrollMode": "auto",
+      "lineIndex": 227
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pkg",
+      "lineText": ", to Agamemnon",
+      "scrollMode": "auto",
+      "lineIndex": 228
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pqg",
+      "lineText": "My lord , you feed too much on this dislike .",
+      "scrollMode": "auto",
+      "lineIndex": 229
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pkg",
+      "lineText": ", to Agamemnon",
+      "scrollMode": "auto",
+      "lineIndex": 230
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pr0",
+      "lineText": "Our noble general , do not do so .",
+      "scrollMode": "auto",
+      "lineIndex": 231
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pkg",
+      "lineText": ", to Agamemnon",
+      "scrollMode": "auto",
+      "lineIndex": 232
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79prg",
+      "lineText": "You must prepare to fight without Achilles .",
+      "scrollMode": "auto",
+      "lineIndex": 233
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pqg",
+      "lineText": "Why , ’tis this naming of him does him harm . Here is a man — but ’tis before his face ; I will be silent .",
+      "scrollMode": "auto",
+      "lineIndex": 234
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pr0",
+      "lineText": "Wherefore should you so ? He is not emulous , as Achilles is .",
+      "scrollMode": "auto",
+      "lineIndex": 235
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pqg",
+      "lineText": "Know the whole world , he is as valiant —",
+      "scrollMode": "auto",
+      "lineIndex": 236
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pl0",
+      "lineText": "A whoreson dog , that shall palter with us thus ! Would he were a Trojan !",
+      "scrollMode": "auto",
+      "lineIndex": 237
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pr0",
+      "lineText": "What a vice were it in Ajax now —",
+      "scrollMode": "auto",
+      "lineIndex": 238
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pqg",
+      "lineText": "If he were proud —",
+      "scrollMode": "auto",
+      "lineIndex": 239
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79prg",
+      "lineText": "Or covetous of praise —",
+      "scrollMode": "auto",
+      "lineIndex": 240
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pqg",
+      "lineText": "Ay , or surly borne —",
+      "scrollMode": "auto",
+      "lineIndex": 241
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79prg",
+      "lineText": "Or strange , or self-affected —",
+      "scrollMode": "auto",
+      "lineIndex": 242
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pkg",
+      "lineText": ", to Ajax",
+      "scrollMode": "auto",
+      "lineIndex": 243
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pqg",
+      "lineText": "Thank the heavens , lord , thou art of sweet composure . Praise him that gat thee , she that gave thee suck ; Famed be thy tutor , and thy parts of nature Thrice famed beyond , beyond thy erudition ; But he that disciplined thine arms to fight , Let Mars divide eternity in twain And give him half ; and for thy vigor , Bull-bearing Milo his addition yield To sinewy Ajax . I will not praise thy wisdom , Which like a bourn , a pale , a shore confines Thy spacious and dilated parts . Here’s Nestor , Instructed by the antiquary times ; He must , he is , he cannot but be wise . — But pardon , father Nestor , were your days As green as Ajax’ and your brain so tempered , You should not have the eminence of him , But be as Ajax .",
+      "scrollMode": "auto",
+      "lineIndex": 244
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pl0",
+      "lineText": "Shall I call you father ?",
+      "scrollMode": "auto",
+      "lineIndex": 245
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pr0",
+      "lineText": "Ay , my good son .",
+      "scrollMode": "auto",
+      "lineIndex": 246
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79prg",
+      "lineText": "Be ruled by him , Lord Ajax .",
+      "scrollMode": "auto",
+      "lineIndex": 247
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pqg",
+      "lineText": "There is no tarrying here ; the hart Achilles Keeps thicket . Please it our great general To call together all his state of war . Fresh kings are come to Troy . Tomorrow We must with all our main of power stand fast . And here’s a lord — come knights from east to west And cull their flower , Ajax shall cope the best .",
+      "scrollMode": "auto",
+      "lineIndex": 248
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pq0",
+      "lineText": "Go we to council . Let Achilles sleep . Light boats sail swift , though greater hulks draw deep .",
+      "scrollMode": "auto",
+      "lineIndex": 249
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79pkg",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 250
+    }
+  ],
+  "isPublic": true
+}

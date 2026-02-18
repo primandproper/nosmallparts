@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package stages;
+
+option go_package = "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/stages";
+
+// StagePhase represents the current phase of a stage session.
+enum StagePhase {
+  STAGE_PHASE_UNSPECIFIED = 0;
+  STAGE_PHASE_LOBBY = 1;
+  STAGE_PHASE_COUNTDOWN = 2;
+  STAGE_PHASE_PERFORMING = 3;
+  STAGE_PHASE_DISCUSSION = 4;
+}
+
+message StageParticipant {
+  string id = 1;
+  string stage_id = 2;
+  string name = 3;
+  repeated string cast_member_ids = 4;
+  bool is_director = 5;
+  bool is_ready = 6;
+  bool is_audience = 7;
+}
+
+message ChatMessage {
+  string id = 1;
+  string sender_id = 2;
+  string sender_name = 3;
+  string text = 4;
+  bool cast_only = 5;
+  int64 timestamp = 6;
+}

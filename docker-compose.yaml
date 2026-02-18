@@ -1,0 +1,93 @@
+---
+# Simplified docker-compose for running the full stack locally
+# Use: make docker-up
+
+services:
+  postgres:
+    container_name: nosmallparts_postgres
+    hostname: pgdatabase
+    image: postgres:17
+    environment:
+      POSTGRES_DB: 'no-small-parts'
+      POSTGRES_PASSWORD: 'hunter2'
+      POSTGRES_USER: 'dbuser'
+    ports:
+      - '5432:5432'
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U dbuser -d no-small-parts']
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - nosmallparts
+
+  redis:
+    container_name: nosmallparts_redis
+    hostname: redis
+    image: redis:7-bullseye
+    ports:
+      - '6379:6379'
+    healthcheck:
+      test: ['CMD', 'redis-cli', 'ping']
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - nosmallparts
+
+  backend:
+    container_name: nosmallparts_backend
+    hostname: backend
+    build:
+      context: ./backend
+      dockerfile: deploy/dockerfiles/api_server.Dockerfile
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      CONFIGURATION_FILEPATH: '/etc/config'
+      NO_SMALL_PARTS_LIVEKIT_API_KEY: '${LIVEKIT_API_KEY}'
+      NO_SMALL_PARTS_LIVEKIT_API_SECRET: '${LIVEKIT_API_SECRET}'
+      NO_SMALL_PARTS_LIVEKIT_URL: '${LIVEKIT_URL}'
+    ports:
+      - '8000:8000'
+      - '8001:8001'
+    volumes:
+      - source: './backend/deploy/environments/localdev/config_files/api_service_config.json'
+        target: '/etc/config'
+        type: 'bind'
+    healthcheck:
+      test: ['CMD-SHELL', 'curl -f http://localhost:8000/_ops_/ready || exit 1']
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+    networks:
+      - nosmallparts
+
+  frontend:
+    container_name: nosmallparts_frontend
+    hostname: frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    depends_on:
+      backend:
+        condition: service_healthy
+    environment:
+      GRPC_BACKEND_URL: 'backend:8001'
+      BACKEND_HTTP_URL: 'http://backend:8000'
+      NEXT_PUBLIC_BACKEND_WS_URL: 'ws://localhost:8000/ws/stages'
+      # OAuth2 client credentials for authenticated backend requests (must match a client seeded in the backend, e.g. by localdev).
+      OAUTH2_CLIENT_ID: '${OAUTH2_CLIENT_ID:-AAAAAAAAAAAAAAAA}'
+      OAUTH2_CLIENT_SECRET: '${OAUTH2_CLIENT_SECRET:-AAAAAAAAAAAAAAAA}'
+    ports:
+      - '3000:3000'
+    networks:
+      - nosmallparts
+
+networks:
+  nosmallparts:
+    driver: bridge

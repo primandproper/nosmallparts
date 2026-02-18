@@ -1,0 +1,13 @@
+# Terraform
+.terraform/
+.terraform.lock.hcl
+*.tfstate
+*.tfstate.*
+*.tfvars
+!*.tfvars.example
+terraform_kubeconfig
+
+# Local / generated
+*.json
+*.yaml
+*.config

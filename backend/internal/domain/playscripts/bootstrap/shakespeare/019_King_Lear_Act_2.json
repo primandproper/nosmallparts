@@ -1,0 +1,1599 @@
+{
+  "title": "King Lear (Act 2)",
+  "description": "Folger Shakespeare Library edition",
+  "author": "William Shakespeare",
+  "castMembers": [
+    {
+      "id": "d68m11kn9qd8d2h794jg",
+      "name": "Narrator",
+      "sortOrder": 0
+    },
+    {
+      "id": "d68m11kn9qd8d2h794k0",
+      "name": "Edmund",
+      "description": "his younger and illegitimate son",
+      "sortOrder": 1
+    },
+    {
+      "id": "d68m11kn9qd8d2h794kg",
+      "name": "Curan",
+      "description": "gentleman of Gloucester’s household",
+      "sortOrder": 2
+    },
+    {
+      "id": "d68m11kn9qd8d2h794l0",
+      "name": "Edgar",
+      "description": "his elder son",
+      "sortOrder": 3
+    },
+    {
+      "id": "d68m11kn9qd8d2h794lg",
+      "name": "Earl of Gloucester",
+      "sortOrder": 4
+    },
+    {
+      "id": "d68m11kn9qd8d2h794m0",
+      "name": "Three",
+      "sortOrder": 5
+    },
+    {
+      "id": "d68m11kn9qd8d2h794mg",
+      "name": "Duke of Cornwall",
+      "description": "her husband",
+      "sortOrder": 6
+    },
+    {
+      "id": "d68m11kn9qd8d2h794n0",
+      "name": "Regan",
+      "description": "Lear’s second daughter",
+      "sortOrder": 7
+    },
+    {
+      "id": "d68m11kn9qd8d2h794ng",
+      "name": "Oswald",
+      "description": "her steward",
+      "sortOrder": 8
+    },
+    {
+      "id": "d68m11kn9qd8d2h794o0",
+      "name": "Earl of Kent",
+      "sortOrder": 9
+    },
+    {
+      "id": "d68m11kn9qd8d2h794og",
+      "name": "Lear",
+      "sortOrder": 10
+    },
+    {
+      "id": "d68m11kn9qd8d2h794p0",
+      "name": "Gentleman",
+      "sortOrder": 11
+    },
+    {
+      "id": "d68m11kn9qd8d2h794pg",
+      "name": "Fool",
+      "sortOrder": 12
+    },
+    {
+      "id": "d68m11kn9qd8d2h794q0",
+      "name": "Goneril",
+      "description": "Lear’s eldest daughter",
+      "sortOrder": 13
+    }
+  ],
+  "lines": [
+    {
+      "castMemberId": "d68m11kn9qd8d2h794jg",
+      "lineText": "Enter Edmund , the Bastard and Curan , severally .",
+      "scrollMode": "auto",
+      "lineIndex": 0
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794k0",
+      "lineText": "Save thee , Curan .",
+      "scrollMode": "auto",
+      "lineIndex": 1
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794kg",
+      "lineText": "And you , sir . I have been with your father and given him notice that the Duke of Cornwall and Regan his duchess will be here with him this night .",
+      "scrollMode": "auto",
+      "lineIndex": 2
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794k0",
+      "lineText": "How comes that ?",
+      "scrollMode": "auto",
+      "lineIndex": 3
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794kg",
+      "lineText": "Nay , I know not . You have heard of the news abroad ? — I mean the whispered ones , for they are yet but ear-kissing arguments .",
+      "scrollMode": "auto",
+      "lineIndex": 4
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794k0",
+      "lineText": "Not I . Pray you , what are they ?",
+      "scrollMode": "auto",
+      "lineIndex": 5
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794kg",
+      "lineText": "Have you heard of no likely wars toward ’twixt the dukes of Cornwall and Albany ?",
+      "scrollMode": "auto",
+      "lineIndex": 6
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794k0",
+      "lineText": "Not a word .",
+      "scrollMode": "auto",
+      "lineIndex": 7
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794kg",
+      "lineText": "You may do , then , in time . Fare you well , sir .",
+      "scrollMode": "auto",
+      "lineIndex": 8
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794jg",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 9
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794jg",
+      "lineText": "Enter Edgar .",
+      "scrollMode": "auto",
+      "lineIndex": 10
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794l0",
+      "lineText": "Enter Edgar . My father watches . O sir , fly this place ! ACT 2. SC. 1 Intelligence is given where you are hid . You have now the good advantage of the night . Have you not spoken ’gainst the Duke of Cornwall ? He’s coming hither , now , i’ th’ night , i’ th’ haste , And Regan with him . Have you nothing said Upon his party ’gainst the Duke of Albany ? Advise yourself .",
+      "scrollMode": "auto",
+      "lineIndex": 11
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794l0",
+      "lineText": "I am sure on ’t , not a word .",
+      "scrollMode": "auto",
+      "lineIndex": 12
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794jg",
+      "lineText": "They draw .",
+      "scrollMode": "auto",
+      "lineIndex": 13
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794jg",
+      "lineText": "Aside to Edgar .",
+      "scrollMode": "auto",
+      "lineIndex": 14
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794jg",
+      "lineText": "Edgar exits .",
+      "scrollMode": "auto",
+      "lineIndex": 15
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794jg",
+      "lineText": "He wounds his arm .",
+      "scrollMode": "auto",
+      "lineIndex": 16
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794k0",
+      "lineText": "He wounds his arm . Father , father ! Stop , stop ! No help ?",
+      "scrollMode": "auto",
+      "lineIndex": 17
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794jg",
+      "lineText": "Enter Gloucester , and Servants with torches .",
+      "scrollMode": "auto",
+      "lineIndex": 18
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794lg",
+      "lineText": "Now , Edmund , where’s the villain ?",
+      "scrollMode": "auto",
+      "lineIndex": 19
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794k0",
+      "lineText": "Here stood he in the dark , his sharp sword out , Mumbling of wicked charms , conjuring the moon To stand auspicious mistress .",
+      "scrollMode": "auto",
+      "lineIndex": 20
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794lg",
+      "lineText": "But where is he ?",
+      "scrollMode": "auto",
+      "lineIndex": 21
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794k0",
+      "lineText": "Look , sir , I bleed .",
+      "scrollMode": "auto",
+      "lineIndex": 22
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794lg",
+      "lineText": "Where is the villain , Edmund ?",
+      "scrollMode": "auto",
+      "lineIndex": 23
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794k0",
+      "lineText": "Fled this way , sir , when by no means he could —",
+      "scrollMode": "auto",
+      "lineIndex": 24
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794jg",
+      "lineText": "Servants exit .",
+      "scrollMode": "auto",
+      "lineIndex": 25
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794m0",
+      "lineText": "Servants exit . By no means what ?",
+      "scrollMode": "auto",
+      "lineIndex": 26
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794k0",
+      "lineText": "Persuade me to the murder of your Lordship , But that I told him the revenging gods ’Gainst parricides did all the thunder bend , Spoke with how manifold and strong a bond The child was bound to th’ father — sir , in fine , Seeing how loathly opposite I stood To his unnatural purpose , in fell motion With his preparèd sword he charges home My unprovided body , lanced mine arm ; And when he saw my best alarumed spirits , Bold in the quarrel’s right , roused to th’ encounter , Or whether ghasted by the noise I made , Full suddenly he fled .",
+      "scrollMode": "auto",
+      "lineIndex": 27
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794lg",
+      "lineText": "Let him fly far ! Not in this land shall he remain uncaught , And found — dispatch . The noble duke my master , My worthy arch and patron , comes tonight . By his authority I will proclaim it That he which finds him shall deserve our thanks , Bringing the murderous coward to the stake ; He that conceals him , death .",
+      "scrollMode": "auto",
+      "lineIndex": 28
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794k0",
+      "lineText": "When I dissuaded him from his intent And found him pight to do it , with curst speech I threatened to discover him . He replied Thou unpossessing bastard , dost thou think If I would stand against thee , would the reposal Of any trust , virtue , or worth in thee Make thy words faithed ? No . What I should deny — As this I would , though thou didst produce ACT 2. SC. 1 My very character — I’d turn it all To thy suggestion , plot , and damnèd practice . And thou must make a dullard of the world If they not thought the profits of my death Were very pregnant and potential spurs spirits To make thee seek it .",
+      "scrollMode": "auto",
+      "lineIndex": 29
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794jg",
+      "lineText": "Tucket within .",
+      "scrollMode": "auto",
+      "lineIndex": 30
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794lg",
+      "lineText": "Tucket within . Hark , the Duke’s trumpets . I know not why he comes . All ports I’ll bar . The villain shall not ’scape . The Duke must grant me that . Besides , his picture I will send far and near , that all the kingdom May have due note of him . And of my land , Loyal and natural boy , I’ll work the means To make thee capable .",
+      "scrollMode": "auto",
+      "lineIndex": 31
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794jg",
+      "lineText": "Enter Cornwall , Regan , and Attendants .",
+      "scrollMode": "auto",
+      "lineIndex": 32
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794mg",
+      "lineText": "How now , my noble friend ? Since I came hither , Which I can call but now , I have heard strange news .",
+      "scrollMode": "auto",
+      "lineIndex": 33
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794n0",
+      "lineText": "If it be true , all vengeance comes too short Which can pursue th’ offender . How dost , my lord ?",
+      "scrollMode": "auto",
+      "lineIndex": 34
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794lg",
+      "lineText": "O madam , my old heart is cracked ; it’s cracked .",
+      "scrollMode": "auto",
+      "lineIndex": 35
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794n0",
+      "lineText": "What , did my father’s godson seek your life ? He whom my father named , your Edgar ?",
+      "scrollMode": "auto",
+      "lineIndex": 36
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794lg",
+      "lineText": "O lady , lady , shame would have it hid !",
+      "scrollMode": "auto",
+      "lineIndex": 37
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794n0",
+      "lineText": "Was he not companion with the riotous knights That tended upon my father ?",
+      "scrollMode": "auto",
+      "lineIndex": 38
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794lg",
+      "lineText": "I know not , madam . ’Tis too bad , too bad .",
+      "scrollMode": "auto",
+      "lineIndex": 39
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794k0",
+      "lineText": "Yes , madam , he was of that consort .",
+      "scrollMode": "auto",
+      "lineIndex": 40
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794n0",
+      "lineText": "No marvel , then , though he were ill affected . ’Tis they have put him on the old man’s death , To have th’ expense and waste of his revenues . I have this present evening from my sister Been well informed of them , and with such cautions That if they come to sojourn at my house I’ll not be there .",
+      "scrollMode": "auto",
+      "lineIndex": 41
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794mg",
+      "lineText": "Nor I , assure thee , Regan . — Edmund , I hear that you have shown your father A childlike office .",
+      "scrollMode": "auto",
+      "lineIndex": 42
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794k0",
+      "lineText": "It was my duty , sir .",
+      "scrollMode": "auto",
+      "lineIndex": 43
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794lg",
+      "lineText": "He did bewray his practice , and received This hurt you see striving to apprehend him .",
+      "scrollMode": "auto",
+      "lineIndex": 44
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794mg",
+      "lineText": "Is he pursued ?",
+      "scrollMode": "auto",
+      "lineIndex": 45
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794lg",
+      "lineText": "Ay , my good lord .",
+      "scrollMode": "auto",
+      "lineIndex": 46
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794mg",
+      "lineText": "If he be taken , he shall never more Be feared of doing harm . Make your own purpose , How in my strength you please . — For you , Edmund , Whose virtue and obedience doth this instant So much commend itself , you shall be ours . Natures of such deep trust we shall much need . You we first seize on .",
+      "scrollMode": "auto",
+      "lineIndex": 47
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794k0",
+      "lineText": "I shall serve you , sir , Truly , however else .",
+      "scrollMode": "auto",
+      "lineIndex": 48
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794lg",
+      "lineText": "For him I thank your Grace .",
+      "scrollMode": "auto",
+      "lineIndex": 49
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794mg",
+      "lineText": "You know not why we came to visit you —",
+      "scrollMode": "auto",
+      "lineIndex": 50
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794n0",
+      "lineText": "Thus out of season , threading dark-eyed night . ACT 2. SC. 2 Occasions , noble Gloucester , of some poise , Wherein we must have use of your advice . Our father he hath writ , so hath our sister , Of differences , which I best thought it fit To answer from our home . The several messengers From hence attend dispatch . Our good old friend , Lay comforts to your bosom and bestow Your needful counsel to our businesses , Which craves the instant use .",
+      "scrollMode": "auto",
+      "lineIndex": 51
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794lg",
+      "lineText": "I serve you , madam . Your Graces are right welcome .",
+      "scrollMode": "auto",
+      "lineIndex": 52
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794jg",
+      "lineText": "Flourish . They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 53
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794jg",
+      "lineText": "Enter Kent in disguise and Oswald , the Steward , severally .",
+      "scrollMode": "auto",
+      "lineIndex": 54
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794ng",
+      "lineText": "Good dawning to thee , friend . Art of this house ?",
+      "scrollMode": "auto",
+      "lineIndex": 55
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794o0",
+      "lineText": "Ay .",
+      "scrollMode": "auto",
+      "lineIndex": 56
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794ng",
+      "lineText": "Where may we set our horses ?",
+      "scrollMode": "auto",
+      "lineIndex": 57
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794o0",
+      "lineText": "I’ th’ mire .",
+      "scrollMode": "auto",
+      "lineIndex": 58
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794ng",
+      "lineText": "Prithee , if thou lov’st me , tell me .",
+      "scrollMode": "auto",
+      "lineIndex": 59
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794o0",
+      "lineText": "I love thee not .",
+      "scrollMode": "auto",
+      "lineIndex": 60
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794ng",
+      "lineText": "Why then , I care not for thee .",
+      "scrollMode": "auto",
+      "lineIndex": 61
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794o0",
+      "lineText": "If I had thee in Lipsbury pinfold , I would make thee care for me .",
+      "scrollMode": "auto",
+      "lineIndex": 62
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794ng",
+      "lineText": "Why dost thou use me thus ? I know thee not .",
+      "scrollMode": "auto",
+      "lineIndex": 63
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794o0",
+      "lineText": "Fellow , I know thee .",
+      "scrollMode": "auto",
+      "lineIndex": 64
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794ng",
+      "lineText": "What dost thou know me for ?",
+      "scrollMode": "auto",
+      "lineIndex": 65
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794o0",
+      "lineText": "A knave , a rascal , an eater of broken meats ; a base , proud , shallow , beggarly , three-suited , hundred-pound , filthy worsted-stocking knave ; a lily-livered , action-taking , whoreson , glass-gazing , superserviceable , finical rogue ; one-trunk-inheriting ACT 2. SC. 2 slave ; one that wouldst be a bawd in way of good service , and art nothing but the composition of a knave , beggar , coward , pander , and the son and heir of a mongrel bitch ; one whom I will beat into clamorous whining if thou deny’st the least syllable of thy addition .",
+      "scrollMode": "auto",
+      "lineIndex": 66
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794ng",
+      "lineText": "Why , what a monstrous fellow art thou thus to rail on one that is neither known of thee nor knows thee !",
+      "scrollMode": "auto",
+      "lineIndex": 67
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794jg",
+      "lineText": "He draws his sword .",
+      "scrollMode": "auto",
+      "lineIndex": 68
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794o0",
+      "lineText": "He draws his sword . Draw , you rogue , for though it be night , yet the moon shines . I’ll make a sop o’ th’ moonshine of you , you whoreson , cullionly barbermonger . Draw !",
+      "scrollMode": "auto",
+      "lineIndex": 69
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794ng",
+      "lineText": "Away ! I have nothing to do with thee .",
+      "scrollMode": "auto",
+      "lineIndex": 70
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794o0",
+      "lineText": "Draw , you rascal ! You come with letters against the King and take Vanity the puppet’s part against the royalty of her father . Draw , you rogue , or I’ll so carbonado your shanks ! Draw , you rascal ! Come your ways .",
+      "scrollMode": "auto",
+      "lineIndex": 71
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794ng",
+      "lineText": "Help , ho ! Murder ! Help !",
+      "scrollMode": "auto",
+      "lineIndex": 72
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794o0",
+      "lineText": "Strike , you slave ! Stand , rogue ! Stand , you neat slave ! Strike !",
+      "scrollMode": "auto",
+      "lineIndex": 73
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794jg",
+      "lineText": "He beats Oswald .",
+      "scrollMode": "auto",
+      "lineIndex": 74
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794ng",
+      "lineText": "Help , ho ! Murder , murder !",
+      "scrollMode": "auto",
+      "lineIndex": 75
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794jg",
+      "lineText": "Enter Bastard Edmund , with his rapier drawn , Cornwall , Regan , Gloucester , Servants .",
+      "scrollMode": "auto",
+      "lineIndex": 76
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794k0",
+      "lineText": "How now , what’s the matter ? Part !",
+      "scrollMode": "auto",
+      "lineIndex": 77
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794o0",
+      "lineText": "With you , goodman boy , if you please . Come , I’ll flesh you . Come on , young master .",
+      "scrollMode": "auto",
+      "lineIndex": 78
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794lg",
+      "lineText": "Weapons ? Arms ? What’s the matter here ?",
+      "scrollMode": "auto",
+      "lineIndex": 79
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794mg",
+      "lineText": "Keep peace , upon your lives ! He dies that strikes again . What is the matter ?",
+      "scrollMode": "auto",
+      "lineIndex": 80
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794n0",
+      "lineText": "The messengers from our sister and the King .",
+      "scrollMode": "auto",
+      "lineIndex": 81
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794mg",
+      "lineText": "What is your difference ? Speak .",
+      "scrollMode": "auto",
+      "lineIndex": 82
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794ng",
+      "lineText": "I am scarce in breath , my lord .",
+      "scrollMode": "auto",
+      "lineIndex": 83
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794o0",
+      "lineText": "No marvel , you have so bestirred your valor . You cowardly rascal , nature disclaims in thee ; a tailor made thee .",
+      "scrollMode": "auto",
+      "lineIndex": 84
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794mg",
+      "lineText": "Thou art a strange fellow . A tailor make a man ?",
+      "scrollMode": "auto",
+      "lineIndex": 85
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794o0",
+      "lineText": "A tailor , sir . A stonecutter or a painter could not have made him so ill , though they had been but two years o’ th’ trade .",
+      "scrollMode": "auto",
+      "lineIndex": 86
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794mg",
+      "lineText": "Speak yet , how grew your quarrel ?",
+      "scrollMode": "auto",
+      "lineIndex": 87
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794ng",
+      "lineText": "This ancient ruffian , sir , whose life I have spared at suit of his gray beard —",
+      "scrollMode": "auto",
+      "lineIndex": 88
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794o0",
+      "lineText": "Thou whoreson zed , thou unnecessary letter ! — My lord , if you will give me leave , I will tread this unbolted villain into mortar and daub the wall of a jakes with him . — Spare my gray beard , you wagtail ?",
+      "scrollMode": "auto",
+      "lineIndex": 89
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794mg",
+      "lineText": "Peace , sirrah ! You beastly knave , know you no reverence ?",
+      "scrollMode": "auto",
+      "lineIndex": 90
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794o0",
+      "lineText": "Yes , sir , but anger hath a privilege .",
+      "scrollMode": "auto",
+      "lineIndex": 91
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794mg",
+      "lineText": "Why art thou angry ?",
+      "scrollMode": "auto",
+      "lineIndex": 92
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794o0",
+      "lineText": "That such a slave as this should wear a sword , Who wears no honesty . Such smiling rogues as these , Like rats , oft bite the holy cords atwain Which are too intrinse t’ unloose ; smooth every passion That in the natures of their lords rebel — , Being oil to fire , snow to the colder moods — , Renege , affirm , and turn their halcyon beaks With every gale and vary of their masters , ACT 2. SC. 2 Knowing naught , like dogs , but following . — A plague upon your epileptic visage ! Smile you my speeches , as I were a fool ? Goose , if I had you upon Sarum plain , I’d drive you cackling home to Camelot .",
+      "scrollMode": "auto",
+      "lineIndex": 93
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794mg",
+      "lineText": "What , art thou mad , old fellow ?",
+      "scrollMode": "auto",
+      "lineIndex": 94
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794lg",
+      "lineText": "How fell you out ? Say that .",
+      "scrollMode": "auto",
+      "lineIndex": 95
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794o0",
+      "lineText": "No contraries hold more antipathy Than I and such a knave .",
+      "scrollMode": "auto",
+      "lineIndex": 96
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794mg",
+      "lineText": "Why dost thou call him knave ? What is his fault ?",
+      "scrollMode": "auto",
+      "lineIndex": 97
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794o0",
+      "lineText": "His countenance likes me not .",
+      "scrollMode": "auto",
+      "lineIndex": 98
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794mg",
+      "lineText": "No more , perchance , does mine , nor his , nor hers .",
+      "scrollMode": "auto",
+      "lineIndex": 99
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794o0",
+      "lineText": "Sir , ’tis my occupation to be plain : I have seen better faces in my time Than stands on any shoulder that I see Before me at this instant .",
+      "scrollMode": "auto",
+      "lineIndex": 100
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794mg",
+      "lineText": "This is some fellow Who , having been praised for bluntness , doth affect A saucy roughness and constrains the garb Quite from his nature . He cannot flatter , he . An honest mind and plain , he must speak truth ! An they will take it , so ; if not , he’s plain . These kind of knaves I know , which in this plainness Harbor more craft and more corrupter ends Than twenty silly-ducking observants That stretch their duties nicely .",
+      "scrollMode": "auto",
+      "lineIndex": 101
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794o0",
+      "lineText": "Sir , in good faith , in sincere verity , Under th’ allowance of your great aspect , Whose influence , like the wreath of radiant fire On flick’ring Phoebus’ front —",
+      "scrollMode": "auto",
+      "lineIndex": 102
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794mg",
+      "lineText": "What mean’st by this ?",
+      "scrollMode": "auto",
+      "lineIndex": 103
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794o0",
+      "lineText": "To go out of my dialect , which you discommend so much . I know , sir , I am no flatterer . He that beguiled you in a plain accent was a plain knave , which for my part I will not be , though I should win your displeasure to entreat me to ’t .",
+      "scrollMode": "auto",
+      "lineIndex": 104
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794jg",
+      "lineText": ", to Oswald",
+      "scrollMode": "auto",
+      "lineIndex": 105
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794mg",
+      "lineText": "What was th’ offense you gave him ?",
+      "scrollMode": "auto",
+      "lineIndex": 106
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794ng",
+      "lineText": "I never gave him any . It pleased the King his master very late To strike at me , upon his misconstruction ; When he , compact , and flattering his displeasure , Tripped me behind ; being down , insulted , railed , And put upon him such a deal of man That worthied him , got praises of the King For him attempting who was self-subdued ; And in the fleshment of this dread exploit , Drew on me here again .",
+      "scrollMode": "auto",
+      "lineIndex": 107
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794o0",
+      "lineText": "None of these rogues and cowards But Ajax is their fool .",
+      "scrollMode": "auto",
+      "lineIndex": 108
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794mg",
+      "lineText": "Fetch forth the stocks . — You stubborn ancient knave , you reverent braggart , We’ll teach you .",
+      "scrollMode": "auto",
+      "lineIndex": 109
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794o0",
+      "lineText": "Sir , I am too old to learn . Call not your stocks for me . I serve the King , On whose employment I was sent to you . You shall do small respect , show too bold malice Against the grace and person of my master , Stocking his messenger .",
+      "scrollMode": "auto",
+      "lineIndex": 110
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794mg",
+      "lineText": "Fetch forth the stocks . — As I have life and honor , There shall he sit till noon .",
+      "scrollMode": "auto",
+      "lineIndex": 111
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794n0",
+      "lineText": "Till noon ? Till night , my lord , and all night , too .",
+      "scrollMode": "auto",
+      "lineIndex": 112
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794o0",
+      "lineText": "Why , madam , if I were your father’s dog , You should not use me so .",
+      "scrollMode": "auto",
+      "lineIndex": 113
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794n0",
+      "lineText": "Sir , being his knave , I will .",
+      "scrollMode": "auto",
+      "lineIndex": 114
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794mg",
+      "lineText": "This is a fellow of the selfsame color Our sister speaks of . — Come , bring away the stocks .",
+      "scrollMode": "auto",
+      "lineIndex": 115
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794jg",
+      "lineText": "Stocks brought out .",
+      "scrollMode": "auto",
+      "lineIndex": 116
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794lg",
+      "lineText": "Let me beseech your Grace not to do so . His fault is much , and the good king his master Will check him for ’t . Your purposed low correction Is such as basest and contemned’st wretches For pilf’rings and most common trespasses Are punished with . The King must take it ill That he , so slightly valued in his messenger , Should have him thus restrained .",
+      "scrollMode": "auto",
+      "lineIndex": 117
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794mg",
+      "lineText": "I’ll answer that .",
+      "scrollMode": "auto",
+      "lineIndex": 118
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794n0",
+      "lineText": "My sister may receive it much more worse To have her gentleman abused , assaulted For following her affairs . — Put in his legs .",
+      "scrollMode": "auto",
+      "lineIndex": 119
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794jg",
+      "lineText": "Kent is put in the stocks .",
+      "scrollMode": "auto",
+      "lineIndex": 120
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794mg",
+      "lineText": "Come , my good lord , away .",
+      "scrollMode": "auto",
+      "lineIndex": 121
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794jg",
+      "lineText": "All but Gloucester and Kent exit .",
+      "scrollMode": "auto",
+      "lineIndex": 122
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794lg",
+      "lineText": "I am sorry for thee , friend . ’Tis the Duke’s pleasure , Whose disposition all the world well knows Will not be rubbed nor stopped . I’ll entreat for thee .",
+      "scrollMode": "auto",
+      "lineIndex": 123
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794o0",
+      "lineText": "Pray , do not , sir . I have watched and traveled hard . Some time I shall sleep out ; the rest I’ll whistle . A good man’s fortune may grow out at heels . Give you good morrow .",
+      "scrollMode": "auto",
+      "lineIndex": 124
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794lg",
+      "lineText": "The Duke’s to blame in this . ’Twill be ill taken .",
+      "scrollMode": "auto",
+      "lineIndex": 125
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794jg",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 126
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794jg",
+      "lineText": "He takes out a paper .",
+      "scrollMode": "auto",
+      "lineIndex": 127
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794o0",
+      "lineText": "He takes out a paper . Approach , thou beacon to this under globe , That by thy comfortable beams I may Peruse this letter . Nothing almost sees miracles But misery . I know ’tis from Cordelia , Who hath most fortunately been informed Of my obscurèd course , and shall find time From this enormous state , seeking to give Losses their remedies . All weary and o’erwatched , Take vantage , heavy eyes , not to behold This shameful lodging . Fortune , good night . Smile once more ; turn thy wheel .",
+      "scrollMode": "auto",
+      "lineIndex": 128
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794jg",
+      "lineText": "Sleeps .",
+      "scrollMode": "auto",
+      "lineIndex": 129
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794jg",
+      "lineText": "Enter Edgar .",
+      "scrollMode": "auto",
+      "lineIndex": 130
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794l0",
+      "lineText": "I heard myself proclaimed , And by the happy hollow of a tree Escaped the hunt . No port is free ; no place That guard and most unusual vigilance Does not attend my taking . Whiles I may ’scape , I will preserve myself , and am bethought To take the basest and most poorest shape That ever penury in contempt of man Brought near to beast . My face I’ll grime with filth , Blanket my loins , elf all my hairs in knots , And with presented nakedness outface ACT 2. SC. 4 The winds and persecutions of the sky . The country gives me proof and precedent Of Bedlam beggars who with roaring voices Strike in their numbed and mortifièd arms Pins , wooden pricks , nails , sprigs of rosemary , And , with this horrible object , from low farms , Poor pelting villages , sheepcotes , and mills , Sometime with lunatic bans , sometime with prayers , Enforce their charity . Poor Turlygod ! Poor Tom ! That’s something yet . Edgar I nothing am .",
+      "scrollMode": "auto",
+      "lineIndex": 131
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794jg",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 132
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794jg",
+      "lineText": "Enter Lear , Fool , and Gentleman .",
+      "scrollMode": "auto",
+      "lineIndex": 133
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794og",
+      "lineText": "’Tis strange that they should so depart from home And not send back my messenger .",
+      "scrollMode": "auto",
+      "lineIndex": 134
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794p0",
+      "lineText": "As I learned , The night before there was no purpose in them Of this remove .",
+      "scrollMode": "auto",
+      "lineIndex": 135
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794jg",
+      "lineText": ", waking",
+      "scrollMode": "auto",
+      "lineIndex": 136
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794o0",
+      "lineText": "Hail to thee , noble master .",
+      "scrollMode": "auto",
+      "lineIndex": 137
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794og",
+      "lineText": "Ha ? Mak’st thou this shame thy pastime ?",
+      "scrollMode": "auto",
+      "lineIndex": 138
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794o0",
+      "lineText": "No , my lord .",
+      "scrollMode": "auto",
+      "lineIndex": 139
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794pg",
+      "lineText": "Ha , ha , he wears cruel garters . Horses are tied by the heads , dogs and bears by th’ neck , monkeys by th’ loins , and men by th’ legs . When a man’s overlusty at legs , then he wears wooden netherstocks .",
+      "scrollMode": "auto",
+      "lineIndex": 140
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794og",
+      "lineText": "What’s he that hath so much thy place mistook To set thee here ?",
+      "scrollMode": "auto",
+      "lineIndex": 141
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794o0",
+      "lineText": "It is both he and she , Your son and daughter .",
+      "scrollMode": "auto",
+      "lineIndex": 142
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794og",
+      "lineText": "No .",
+      "scrollMode": "auto",
+      "lineIndex": 143
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794o0",
+      "lineText": "Yes .",
+      "scrollMode": "auto",
+      "lineIndex": 144
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794og",
+      "lineText": "No , I say .",
+      "scrollMode": "auto",
+      "lineIndex": 145
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794o0",
+      "lineText": "I say yea .",
+      "scrollMode": "auto",
+      "lineIndex": 146
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794og",
+      "lineText": "By Jupiter , I swear no .",
+      "scrollMode": "auto",
+      "lineIndex": 147
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794o0",
+      "lineText": "By Juno , I swear ay .",
+      "scrollMode": "auto",
+      "lineIndex": 148
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794og",
+      "lineText": "They durst not do ’t . They could not , would not do ’t . ’Tis worse than murder To do upon respect such violent outrage . Resolve me with all modest haste which way Thou might’st deserve or they impose this usage , Coming from us .",
+      "scrollMode": "auto",
+      "lineIndex": 149
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794o0",
+      "lineText": "My lord , when at their home I did commend your Highness’ letters to them , Ere I was risen from the place that showed My duty kneeling , came there a reeking post , Stewed in his haste , half breathless , panting forth From Goneril his mistress salutations ; Delivered letters , spite of intermission , Which presently they read ; on whose contents They summoned up their meiny , straight took horse , Commanded me to follow and attend The leisure of their answer , gave me cold looks ; And meeting here the other messenger , Whose welcome , I perceived , had poisoned mine , Being the very fellow which of late Displayed so saucily against your Highness , Having more man than wit about me , drew . He raised the house with loud and coward cries . Your son and daughter found this trespass worth The shame which here it suffers .",
+      "scrollMode": "auto",
+      "lineIndex": 150
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794pg",
+      "lineText": "Winter’s not gone yet if the wild geese fly that way . ACT 2. SC. 4 Fathers that wear rags Do make their children blind , But fathers that bear bags Shall see their children kind . Fortune , that arrant whore , Ne’er turns the key to th’ poor . But , for all this , thou shalt have as many dolors for thy daughters as thou canst tell in a year .",
+      "scrollMode": "auto",
+      "lineIndex": 151
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794og",
+      "lineText": "O , how this mother swells up toward my heart ! Hysterica passio , down , thou climbing sorrow ! Thy element’s below . — Where is this daughter ?",
+      "scrollMode": "auto",
+      "lineIndex": 152
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794o0",
+      "lineText": "With the Earl , sir , here within .",
+      "scrollMode": "auto",
+      "lineIndex": 153
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794jg",
+      "lineText": ", to Fool and Gentleman",
+      "scrollMode": "auto",
+      "lineIndex": 154
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794og",
+      "lineText": "Follow me not . Stay here .",
+      "scrollMode": "auto",
+      "lineIndex": 155
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794jg",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 156
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794p0",
+      "lineText": "Made you no more offense but what you speak of ?",
+      "scrollMode": "auto",
+      "lineIndex": 157
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794o0",
+      "lineText": "None . How chance the King comes with so small a number ?",
+      "scrollMode": "auto",
+      "lineIndex": 158
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794pg",
+      "lineText": "An thou hadst been set i’ th’ stocks for that question , thou ’dst well deserved it .",
+      "scrollMode": "auto",
+      "lineIndex": 159
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794o0",
+      "lineText": "Why , Fool ?",
+      "scrollMode": "auto",
+      "lineIndex": 160
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794pg",
+      "lineText": "We’ll set thee to school to an ant to teach thee there’s no laboring i’ th’ winter . All that follow their noses are led by their eyes but blind men , and there’s not a nose among twenty but can smell him that’s stinking . Let go thy hold when a great wheel runs down a hill lest it break thy neck with following ; but the great one that goes upward , let him draw thee after . When a wise man gives thee better counsel , give me mine again . I would have none but knaves follow it , since a Fool gives it . That sir which serves and And seeks for gain , And follows but for form , Will pack when it begins to rain ACT 2. SC. 4 And leave thee in the storm . But I will tarry ; the Fool will stay , And let the wise man fly . The knave turns fool that runs away ; The Fool no knave , perdie .",
+      "scrollMode": "auto",
+      "lineIndex": 161
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794o0",
+      "lineText": "Where learned you this , Fool ?",
+      "scrollMode": "auto",
+      "lineIndex": 162
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794pg",
+      "lineText": "Not i’ th’ stocks , fool .",
+      "scrollMode": "auto",
+      "lineIndex": 163
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794jg",
+      "lineText": "Enter Lear and Gloucester .",
+      "scrollMode": "auto",
+      "lineIndex": 164
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794og",
+      "lineText": "Deny to speak with me ? They are sick ? They are weary ? They have traveled all the night ? Mere fetches , The images of revolt and flying off . Fetch me a better answer .",
+      "scrollMode": "auto",
+      "lineIndex": 165
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794lg",
+      "lineText": "My dear lord , You know the fiery quality of the Duke , How unremovable and fixed he is In his own course .",
+      "scrollMode": "auto",
+      "lineIndex": 166
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794og",
+      "lineText": "Vengeance , plague , death , confusion ! Fiery ? What quality ? Why Gloucester , Gloucester , I’d speak with the Duke of Cornwall and his wife .",
+      "scrollMode": "auto",
+      "lineIndex": 167
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794lg",
+      "lineText": "Well , my good lord , I have informed them so .",
+      "scrollMode": "auto",
+      "lineIndex": 168
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794og",
+      "lineText": "Informed them ? Dost thou understand me , man ?",
+      "scrollMode": "auto",
+      "lineIndex": 169
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794lg",
+      "lineText": "Ay , my good lord .",
+      "scrollMode": "auto",
+      "lineIndex": 170
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794jg",
+      "lineText": "Noticing Kent again .",
+      "scrollMode": "auto",
+      "lineIndex": 171
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794og",
+      "lineText": "Noticing Kent again . Death on my state ! Wherefore Should he sit here ? This act persuades me That this remotion of the Duke and her Is practice only . Give me my servant forth . Go tell the Duke and ’s wife I’d speak with them . Now , presently , bid them come forth and hear me , Or at their chamber door I’ll beat the drum Till it cry sleep to death .",
+      "scrollMode": "auto",
+      "lineIndex": 172
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794lg",
+      "lineText": "I would have all well betwixt you .",
+      "scrollMode": "auto",
+      "lineIndex": 173
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794jg",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 174
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794og",
+      "lineText": "O me , my heart , my rising heart ! But down !",
+      "scrollMode": "auto",
+      "lineIndex": 175
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794pg",
+      "lineText": "Cry to it , nuncle , as the cockney did to the eels when she put ’em i’ th’ paste alive . She knapped ’em o’ th’ coxcombs with a stick and cried Down , wantons , down ! ’Twas her brother that in pure kindness to his horse buttered his hay .",
+      "scrollMode": "auto",
+      "lineIndex": 176
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794jg",
+      "lineText": "Enter Cornwall , Regan , Gloucester , Servants .",
+      "scrollMode": "auto",
+      "lineIndex": 177
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794og",
+      "lineText": "Good morrow to you both .",
+      "scrollMode": "auto",
+      "lineIndex": 178
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794mg",
+      "lineText": "Hail to your Grace .",
+      "scrollMode": "auto",
+      "lineIndex": 179
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794jg",
+      "lineText": "Kent here set at liberty .",
+      "scrollMode": "auto",
+      "lineIndex": 180
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794n0",
+      "lineText": "I am glad to see your Highness .",
+      "scrollMode": "auto",
+      "lineIndex": 181
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794jg",
+      "lineText": "To Kent .",
+      "scrollMode": "auto",
+      "lineIndex": 182
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794og",
+      "lineText": "To Kent . O , are you free ? Some other time for that . — Belovèd Regan , Thy sister’s naught . O Regan , she hath tied Sharp-toothed unkindness , like a vulture , here . I can scarce speak to thee . Thou ’lt not believe With how depraved a quality — O Regan !",
+      "scrollMode": "auto",
+      "lineIndex": 183
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794n0",
+      "lineText": "I pray you , sir , take patience . I have hope You less know how to value her desert Than she to scant her duty .",
+      "scrollMode": "auto",
+      "lineIndex": 184
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794og",
+      "lineText": "Say ? How is that ?",
+      "scrollMode": "auto",
+      "lineIndex": 185
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794n0",
+      "lineText": "I cannot think my sister in the least Would fail her obligation . If , sir , perchance She have restrained the riots of your followers , ’Tis on such ground and to such wholesome end As clears her from all blame .",
+      "scrollMode": "auto",
+      "lineIndex": 186
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794og",
+      "lineText": "My curses on her .",
+      "scrollMode": "auto",
+      "lineIndex": 187
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794n0",
+      "lineText": "O sir , you are old . Nature in you stands on the very verge Of his confine . You should be ruled and led By some discretion that discerns your state Better than you yourself . Therefore , I pray you That to our sister you do make return . Say you have wronged her .",
+      "scrollMode": "auto",
+      "lineIndex": 188
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794jg",
+      "lineText": "He kneels .",
+      "scrollMode": "auto",
+      "lineIndex": 189
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794og",
+      "lineText": "He kneels . Dear daughter , I confess that I am old . Age is unnecessary . On my knees I beg That you’ll vouchsafe me raiment , bed , and food .",
+      "scrollMode": "auto",
+      "lineIndex": 190
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794n0",
+      "lineText": "Good sir , no more . These are unsightly tricks . Return you to my sister .",
+      "scrollMode": "auto",
+      "lineIndex": 191
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794jg",
+      "lineText": ", rising",
+      "scrollMode": "auto",
+      "lineIndex": 192
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794og",
+      "lineText": "Never , Regan . She hath abated me of half my train , Looked black upon me , struck me with her tongue Most serpentlike upon the very heart . All the stored vengeances of heaven fall On her ingrateful top ! Strike her young bones , You taking airs , with lameness !",
+      "scrollMode": "auto",
+      "lineIndex": 193
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794mg",
+      "lineText": "Fie , sir , fie !",
+      "scrollMode": "auto",
+      "lineIndex": 194
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794og",
+      "lineText": "You nimble lightnings , dart your blinding flames Into her scornful eyes ! Infect her beauty , You fen-sucked fogs drawn by the powerful sun To fall and blister !",
+      "scrollMode": "auto",
+      "lineIndex": 195
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794n0",
+      "lineText": "O , the blest gods ! So will you wish on me When the rash mood is on .",
+      "scrollMode": "auto",
+      "lineIndex": 196
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794og",
+      "lineText": "No , Regan , thou shalt never have my curse . Thy tender-hefted nature shall not give Thee o’er to harshness . Her eyes are fierce , but thine Do comfort and not burn . ’Tis not in thee To grudge my pleasures , to cut off my train , To bandy hasty words , to scant my sizes , And , in conclusion , to oppose the bolt Against my coming in . Thou better know’st The offices of nature , bond of childhood , Effects of courtesy , dues of gratitude . Thy half o’ th’ kingdom hast thou not forgot , Wherein I thee endowed .",
+      "scrollMode": "auto",
+      "lineIndex": 197
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794n0",
+      "lineText": "Good sir , to to’ th’ purpose .",
+      "scrollMode": "auto",
+      "lineIndex": 198
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794jg",
+      "lineText": "Tucket within .",
+      "scrollMode": "auto",
+      "lineIndex": 199
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794og",
+      "lineText": "Who put my man i’ th’ stocks ?",
+      "scrollMode": "auto",
+      "lineIndex": 200
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794mg",
+      "lineText": "What trumpet’s that ?",
+      "scrollMode": "auto",
+      "lineIndex": 201
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794jg",
+      "lineText": "Enter Oswald , the Steward .",
+      "scrollMode": "auto",
+      "lineIndex": 202
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794ng",
+      "lineText": "Enter Oswald , the Steward . Is your lady come ?",
+      "scrollMode": "auto",
+      "lineIndex": 203
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794og",
+      "lineText": "This is a slave whose easy-borrowed pride Dwells in the fickle grace of her he follows . — Out , varlet , from my sight !",
+      "scrollMode": "auto",
+      "lineIndex": 204
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794mg",
+      "lineText": "What means your Grace ?",
+      "scrollMode": "auto",
+      "lineIndex": 205
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794jg",
+      "lineText": "Enter Goneril .",
+      "scrollMode": "auto",
+      "lineIndex": 206
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794jg",
+      "lineText": "To Goneril .",
+      "scrollMode": "auto",
+      "lineIndex": 207
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794jg",
+      "lineText": "Regan takes Goneril’s hand .",
+      "scrollMode": "auto",
+      "lineIndex": 208
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794n0",
+      "lineText": "Regan takes Goneril’s hand . O Regan , will you take her by the hand ?",
+      "scrollMode": "auto",
+      "lineIndex": 209
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794q0",
+      "lineText": "Why not by th’ hand , sir ? How have I offended ? All’s not offense that indiscretion finds And dotage terms so .",
+      "scrollMode": "auto",
+      "lineIndex": 210
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794og",
+      "lineText": "O sides , you are too tough ! Will you yet hold ? — How came my man i’ th’ stocks ?",
+      "scrollMode": "auto",
+      "lineIndex": 211
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794mg",
+      "lineText": "I set him there , sir , but his own disorders Deserved much less advancement .",
+      "scrollMode": "auto",
+      "lineIndex": 212
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794og",
+      "lineText": "You ? Did you ?",
+      "scrollMode": "auto",
+      "lineIndex": 213
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794n0",
+      "lineText": "I pray you , father , being weak , seem so . If till the expiration of your month ACT 2. SC. 4 You will return and sojourn with my sister , Dismissing half your train , come then to me . I am now from home and out of that provision Which shall be needful for your entertainment .",
+      "scrollMode": "auto",
+      "lineIndex": 214
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794og",
+      "lineText": "Return to her ? And fifty men dismissed ? No ! Rather I abjure all roofs , and choose To wage against the enmity o’ th’ air , To be a comrade with the wolf and owl , Necessity’s sharp pinch . Return with her ? Why the hot-blooded France , that dowerless took Our youngest born — I could as well be brought To knee his throne and , squire-like , pension beg To keep base life afoot . Return with her ? Persuade me rather to be slave and sumpter To this detested groom .",
+      "scrollMode": "auto",
+      "lineIndex": 215
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794jg",
+      "lineText": "He indicates Oswald .",
+      "scrollMode": "auto",
+      "lineIndex": 216
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794q0",
+      "lineText": "At your choice , sir .",
+      "scrollMode": "auto",
+      "lineIndex": 217
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794og",
+      "lineText": "I prithee , daughter , do not make me mad . I will not trouble thee , my child . Farewell . We’ll no more meet , no more see one another . But yet thou art my flesh , my blood , my daughter , Or , rather , a disease that’s in my flesh , Which I must needs call mine . Thou art a boil , A plague-sore or embossèd carbuncle In my corrupted blood . But I’ll not chide thee . Let shame come when it will ; I do not call it . I do not bid the thunder-bearer shoot , Nor tell tales of thee to high-judging Jove . Mend when thou canst . Be better at thy leisure . I can be patient . I can stay with Regan , I and my hundred knights .",
+      "scrollMode": "auto",
+      "lineIndex": 218
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794n0",
+      "lineText": "Not altogether so . I looked not for you yet , nor am provided For your fit welcome . Give ear , sir , to my sister , For those that mingle reason with your passion ACT 2. SC. 4 Must be content to think you old , and so — But she knows what she does .",
+      "scrollMode": "auto",
+      "lineIndex": 219
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794og",
+      "lineText": "Is this well spoken ?",
+      "scrollMode": "auto",
+      "lineIndex": 220
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794n0",
+      "lineText": "I dare avouch it , sir . What , fifty followers ? Is it not well ? What should you need of more ? Yea , or so many , sith that both charge and danger Speak ’gainst so great a number ? How in one house Should many people under two commands Hold amity ? ’Tis hard , almost impossible .",
+      "scrollMode": "auto",
+      "lineIndex": 221
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794q0",
+      "lineText": "Why might not you , my lord , receive attendance From those that she calls servants , or from mine ?",
+      "scrollMode": "auto",
+      "lineIndex": 222
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794n0",
+      "lineText": "Why not , my lord ? If then they chanced to slack you , We could control them . If you will come to me ( For now I spy a danger ) , I entreat you To bring but five-and-twenty . To no more Will I give place or notice .",
+      "scrollMode": "auto",
+      "lineIndex": 223
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794og",
+      "lineText": "I gave you all —",
+      "scrollMode": "auto",
+      "lineIndex": 224
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794n0",
+      "lineText": "And in good time you gave it .",
+      "scrollMode": "auto",
+      "lineIndex": 225
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794og",
+      "lineText": "Made you my guardians , my depositaries , But kept a reservation to be followed With such a number . What , must I come to you With five-and-twenty ? Regan , said you so ?",
+      "scrollMode": "auto",
+      "lineIndex": 226
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794n0",
+      "lineText": "And speak ’t again , my lord . No more with me .",
+      "scrollMode": "auto",
+      "lineIndex": 227
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794jg",
+      "lineText": "To Goneril .",
+      "scrollMode": "auto",
+      "lineIndex": 228
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794og",
+      "lineText": "To Goneril . I’ll go with thee . Thy fifty yet doth double five-and-twenty , And thou art twice her love .",
+      "scrollMode": "auto",
+      "lineIndex": 229
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794q0",
+      "lineText": "Hear me , my lord . ACT 2. SC. 4 What need you five-and-twenty , ten , or five , To follow in a house where twice so many Have a command to tend you ?",
+      "scrollMode": "auto",
+      "lineIndex": 230
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794n0",
+      "lineText": "What need one ?",
+      "scrollMode": "auto",
+      "lineIndex": 231
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794jg",
+      "lineText": "Storm and tempest .",
+      "scrollMode": "auto",
+      "lineIndex": 232
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794og",
+      "lineText": "Storm and tempest . Shall break into a hundred thousand flaws Or ere I’ll weep . — O Fool , I shall go mad !",
+      "scrollMode": "auto",
+      "lineIndex": 233
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794jg",
+      "lineText": "Lear , Kent , and Fool exit with Gloucester and the Gentleman .",
+      "scrollMode": "auto",
+      "lineIndex": 234
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794mg",
+      "lineText": "Let us withdraw . ’Twill be a storm .",
+      "scrollMode": "auto",
+      "lineIndex": 235
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794n0",
+      "lineText": "This house is little . The old man and ’s people Cannot be well bestowed .",
+      "scrollMode": "auto",
+      "lineIndex": 236
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794q0",
+      "lineText": "’Tis his own blame hath put himself from rest , And must needs taste his folly .",
+      "scrollMode": "auto",
+      "lineIndex": 237
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794n0",
+      "lineText": "For his particular , I’ll receive him gladly , But not one follower .",
+      "scrollMode": "auto",
+      "lineIndex": 238
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794q0",
+      "lineText": "So am I purposed . Where is my lord of Gloucester ?",
+      "scrollMode": "auto",
+      "lineIndex": 239
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794jg",
+      "lineText": "Enter Gloucester .",
+      "scrollMode": "auto",
+      "lineIndex": 240
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794lg",
+      "lineText": "Enter Gloucester . He is returned .",
+      "scrollMode": "auto",
+      "lineIndex": 241
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794lg",
+      "lineText": "The King is in high rage .",
+      "scrollMode": "auto",
+      "lineIndex": 242
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794mg",
+      "lineText": "Whither is he going ?",
+      "scrollMode": "auto",
+      "lineIndex": 243
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794lg",
+      "lineText": "He calls to horse , but will I know not whither .",
+      "scrollMode": "auto",
+      "lineIndex": 244
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794mg",
+      "lineText": "’Tis best to give him way . He leads himself .",
+      "scrollMode": "auto",
+      "lineIndex": 245
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794jg",
+      "lineText": ", to Gloucester",
+      "scrollMode": "auto",
+      "lineIndex": 246
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794q0",
+      "lineText": "My lord , entreat him by no means to stay .",
+      "scrollMode": "auto",
+      "lineIndex": 247
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794lg",
+      "lineText": "Alack , the night comes on , and the high winds Do sorely ruffle . For many miles about There’s scarce a bush .",
+      "scrollMode": "auto",
+      "lineIndex": 248
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794n0",
+      "lineText": "O sir , to willful men The injuries that they themselves procure Must be their schoolmasters . Shut up your doors . He is attended with a desperate train , And what they may incense him to , being apt To have his ear abused , wisdom bids fear .",
+      "scrollMode": "auto",
+      "lineIndex": 249
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794mg",
+      "lineText": "Shut up your doors , my lord . ’Tis a wild night . My Regan counsels well . Come out o’ th’ storm .",
+      "scrollMode": "auto",
+      "lineIndex": 250
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h794jg",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 251
+    }
+  ],
+  "isPublic": true
+}

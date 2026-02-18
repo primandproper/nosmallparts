@@ -1,0 +1,1290 @@
+{
+  "title": "Timon of Athens (Act 4)",
+  "description": "Folger Shakespeare Library edition",
+  "author": "William Shakespeare",
+  "castMembers": [
+    {
+      "id": "d68m11sn9qd8d2h79mr0",
+      "name": "Narrator",
+      "sortOrder": 0
+    },
+    {
+      "id": "d68m11sn9qd8d2h79mrg",
+      "name": "Timon",
+      "description": "a noble Athenian",
+      "sortOrder": 1
+    },
+    {
+      "id": "d68m11sn9qd8d2h79ms0",
+      "name": "First Servant",
+      "sortOrder": 2
+    },
+    {
+      "id": "d68m11sn9qd8d2h79msg",
+      "name": "Flavius",
+      "description": "his steward",
+      "sortOrder": 3
+    },
+    {
+      "id": "d68m11sn9qd8d2h79mt0",
+      "name": "SERVANTS.TIMON.0_Tim",
+      "sortOrder": 4
+    },
+    {
+      "id": "d68m11sn9qd8d2h79mtg",
+      "name": "Third Servant",
+      "sortOrder": 5
+    },
+    {
+      "id": "d68m11sn9qd8d2h79mu0",
+      "name": "Other  of Timon",
+      "sortOrder": 6
+    },
+    {
+      "id": "d68m11sn9qd8d2h79mug",
+      "name": "Alcibiades",
+      "description": "an Athenian Captain",
+      "sortOrder": 7
+    },
+    {
+      "id": "d68m11sn9qd8d2h79mv0",
+      "name": "Phrynia",
+      "sortOrder": 8
+    },
+    {
+      "id": "d68m11sn9qd8d2h79mvg",
+      "name": "Timandra",
+      "sortOrder": 9
+    },
+    {
+      "id": "d68m11sn9qd8d2h79n00",
+      "name": "Apemantus",
+      "description": "a Cynic philosopher",
+      "sortOrder": 10
+    },
+    {
+      "id": "d68m11sn9qd8d2h79n0g",
+      "name": "First Bandit",
+      "sortOrder": 11
+    },
+    {
+      "id": "d68m11sn9qd8d2h79n10",
+      "name": "Second Bandit",
+      "sortOrder": 12
+    },
+    {
+      "id": "d68m11sn9qd8d2h79n1g",
+      "name": "Third Bandit",
+      "sortOrder": 13
+    }
+  ],
+  "lines": [
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mr0",
+      "lineText": "Enter Timon .",
+      "scrollMode": "auto",
+      "lineIndex": 0
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "Let me look back upon thee . O thou wall That girdles in those wolves , dive in the earth And fence not Athens ! Matrons , turn incontinent ! Obedience fail in children ! Slaves and fools , Pluck the grave wrinkled Senate from the bench And minister in their steads ! To general filths Convert o’ th’ instant , green virginity ! Do ’t in your parents’ eyes ! Bankrupts , hold fast ! Rather than render back , out with your knives And cut your trusters’ throats ! Bound servants , steal ! Large-handed robbers your grave masters are , And pill by law . Maid , to thy master’s bed ! Thy mistress is o’ th’ brothel . Son of sixteen , Pluck the lined crutch from thy old limping sire ; With it beat out his brains ! Piety and fear , Religion to the gods , peace , justice , truth , Domestic awe , night rest , and neighborhood , Instruction , manners , mysteries , and trades , Degrees , observances , customs , and laws , Decline to your confounding contraries , And yet confusion live ! Plagues incident to men , Your potent and infectious fevers heap On Athens , ripe for stroke ! Thou cold sciatica , ACT 4. SC. 2 Cripple our senators , that their limbs may halt As lamely as their manners ! Lust and liberty , Creep in the minds and marrows of our youth , That ’gainst the stream of virtue they may strive And drown themselves in riot ! Itches , blains , Sow all th’ Athenian bosoms , and their crop Be general leprosy ! Breath infect breath , That their society , as their friendship , may Be merely poison ! Nothing I’ll bear from thee But nakedness , thou detestable town ! Take thou that too , with multiplying bans ! Timon will to the woods , where he shall find Th’ unkindest beast more kinder than mankind . The gods confound — hear me , you good gods all ! — Th’ Athenians both within and out that wall , And grant , as Timon grows , his hate may grow To the whole race of mankind , high and low ! Amen .",
+      "scrollMode": "auto",
+      "lineIndex": 1
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mr0",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 2
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mr0",
+      "lineText": "Enter Steward Flavius with two or three Servants .",
+      "scrollMode": "auto",
+      "lineIndex": 3
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ms0",
+      "lineText": "Hear you , Master Steward , where’s our master ? Are we undone , cast off , nothing remaining ?",
+      "scrollMode": "auto",
+      "lineIndex": 4
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79msg",
+      "lineText": "Alack , my fellows , what should I say to you ? Let me be recorded by the righteous gods , I am as poor as you .",
+      "scrollMode": "auto",
+      "lineIndex": 5
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79ms0",
+      "lineText": "Such a house broke ? So noble a master fall’n , all gone , and not One friend to take his fortune by the arm And go along with him ?",
+      "scrollMode": "auto",
+      "lineIndex": 6
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mr0",
+      "lineText": "Enter other Servants .",
+      "scrollMode": "auto",
+      "lineIndex": 7
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mt0",
+      "lineText": "Enter other Servants . More of our fellows .",
+      "scrollMode": "auto",
+      "lineIndex": 8
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79msg",
+      "lineText": "All broken implements of a ruined house .",
+      "scrollMode": "auto",
+      "lineIndex": 9
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mtg",
+      "lineText": "Yet do our hearts wear Timon’s livery . That see I by our faces . We are fellows still , Serving alike in sorrow . Leaked is our bark , And we , poor mates , stand on the dying deck , Hearing the surges threat . We must all part Into this sea of air .",
+      "scrollMode": "auto",
+      "lineIndex": 10
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mr0",
+      "lineText": "( He offers them money . )",
+      "scrollMode": "auto",
+      "lineIndex": 11
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mr0",
+      "lineText": "The Servants embrace and part several ways .",
+      "scrollMode": "auto",
+      "lineIndex": 12
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mu0",
+      "lineText": "The Servants embrace and part several ways . O , the fierce wretchedness that glory brings us ! Who would not wish to be from wealth exempt , Since riches point to misery and contempt ? Who would be so mocked with glory , or to live But in a dream of friendship , To have his pomp and all what state compounds But only painted , like his varnished friends ? ACT 4. SC. 3 Poor honest lord , brought low by his own heart , Undone by goodness ! Strange unusual blood When man’s worst sin is he does too much good ! Who then dares to be half so kind again ? For bounty , that makes gods , do still mar men . My dearest lord , blest to be most accursed , Rich only to be wretched , thy great fortunes Are made thy chief afflictions . Alas , kind lord ! He’s flung in rage from this ingrateful seat Of monstrous friends , Nor has he with him to supply his life , Or that which can command it . I’ll follow and inquire him out . I’ll ever serve his mind with my best will . Whilst I have gold , I’ll be his steward still .",
+      "scrollMode": "auto",
+      "lineIndex": 13
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mr0",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 14
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mr0",
+      "lineText": "Enter Timon in the woods , with a spade .",
+      "scrollMode": "auto",
+      "lineIndex": 15
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mr0",
+      "lineText": "( Digging , he finds gold . )",
+      "scrollMode": "auto",
+      "lineIndex": 16
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mr0",
+      "lineText": "( March afar off . )",
+      "scrollMode": "auto",
+      "lineIndex": 17
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "( March afar off . ) Ha ? A drum ? Thou ’rt quick , ACT 4. SC. 3 But yet I’ll bury thee . Thou ’lt go , strong thief , When gouty keepers of thee cannot stand . Nay , stay thou out for earnest .",
+      "scrollMode": "auto",
+      "lineIndex": 18
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mr0",
+      "lineText": "He buries the gold , keeping some out .",
+      "scrollMode": "auto",
+      "lineIndex": 19
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mr0",
+      "lineText": "Enter Alcibiades , with Drum and Fife , in warlike manner , and Phrynia and Timandra .",
+      "scrollMode": "auto",
+      "lineIndex": 20
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mug",
+      "lineText": "What art thou there ? Speak .",
+      "scrollMode": "auto",
+      "lineIndex": 21
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "A beast , as thou art . The canker gnaw thy heart For showing me again the eyes of man !",
+      "scrollMode": "auto",
+      "lineIndex": 22
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mug",
+      "lineText": "What is thy name ? Is man so hateful to thee That art thyself a man ?",
+      "scrollMode": "auto",
+      "lineIndex": 23
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "I am Misanthropos and hate mankind . For thy part , I do wish thou wert a dog , That I might love thee something .",
+      "scrollMode": "auto",
+      "lineIndex": 24
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mug",
+      "lineText": "I know thee well . But in thy fortunes am unlearned and strange .",
+      "scrollMode": "auto",
+      "lineIndex": 25
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "I know thee too , and more than that I know thee I not desire to know . Follow thy drum . With man’s blood paint the ground gules , gules ! Religious canons , civil laws are cruel . Then what should war be ? This fell whore of thine Hath in her more destruction than thy sword , For all her cherubin look .",
+      "scrollMode": "auto",
+      "lineIndex": 26
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mv0",
+      "lineText": "Thy lips rot off !",
+      "scrollMode": "auto",
+      "lineIndex": 27
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "I will not kiss thee . Then the rot returns To thine own lips again .",
+      "scrollMode": "auto",
+      "lineIndex": 28
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mug",
+      "lineText": "How came the noble Timon to this change ?",
+      "scrollMode": "auto",
+      "lineIndex": 29
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "As the moon does , by wanting light to give . ACT 4. SC. 3 But then renew I could not , like the moon ; There were no suns to borrow of .",
+      "scrollMode": "auto",
+      "lineIndex": 30
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mug",
+      "lineText": "Noble Timon , what friendship may I do thee ?",
+      "scrollMode": "auto",
+      "lineIndex": 31
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "None , but to maintain my opinion .",
+      "scrollMode": "auto",
+      "lineIndex": 32
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mug",
+      "lineText": "What is it , Timon ?",
+      "scrollMode": "auto",
+      "lineIndex": 33
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "Promise me friendship , but perform none . If thou wilt not promise , the gods plague thee , for thou art a man . If thou dost perform , confound thee , for thou art a man .",
+      "scrollMode": "auto",
+      "lineIndex": 34
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mug",
+      "lineText": "I have heard in some sort of thy miseries .",
+      "scrollMode": "auto",
+      "lineIndex": 35
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "Thou saw’st them when I had prosperity .",
+      "scrollMode": "auto",
+      "lineIndex": 36
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mug",
+      "lineText": "I see them now . Then was a blessèd time .",
+      "scrollMode": "auto",
+      "lineIndex": 37
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "As thine is now , held with a brace of harlots .",
+      "scrollMode": "auto",
+      "lineIndex": 38
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mvg",
+      "lineText": "Is this th’ Athenian minion whom the world Voiced so regardfully ?",
+      "scrollMode": "auto",
+      "lineIndex": 39
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "Art thou Timandra ?",
+      "scrollMode": "auto",
+      "lineIndex": 40
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mvg",
+      "lineText": "Yes .",
+      "scrollMode": "auto",
+      "lineIndex": 41
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "Be a whore still . They love thee not that use thee . Give them diseases , leaving with thee their lust . Make use of thy salt hours . Season the slaves For tubs and baths . Bring down rose-cheeked youth To the tub-fast and the diet .",
+      "scrollMode": "auto",
+      "lineIndex": 42
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mvg",
+      "lineText": "Hang thee , monster !",
+      "scrollMode": "auto",
+      "lineIndex": 43
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mug",
+      "lineText": "Pardon him , sweet Timandra , for his wits Are drowned and lost in his calamities . — I have but little gold of late , brave Timon , The want whereof doth daily make revolt ACT 4. SC. 3 In my penurious band . I have heard and grieved How cursèd Athens , mindless of thy worth , Forgetting thy great deeds when neighbor states , But for thy sword and fortune , trod upon them —",
+      "scrollMode": "auto",
+      "lineIndex": 44
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "I prithee , beat thy drum and get thee gone .",
+      "scrollMode": "auto",
+      "lineIndex": 45
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mug",
+      "lineText": "I am thy friend and pity thee , dear Timon .",
+      "scrollMode": "auto",
+      "lineIndex": 46
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "How dost thou pity him whom thou dost trouble ? I had rather be alone .",
+      "scrollMode": "auto",
+      "lineIndex": 47
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mug",
+      "lineText": "Why , fare thee well . Here is some gold for thee .",
+      "scrollMode": "auto",
+      "lineIndex": 48
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "Keep it . I cannot eat it .",
+      "scrollMode": "auto",
+      "lineIndex": 49
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mug",
+      "lineText": "When I have laid proud Athens on a heap —",
+      "scrollMode": "auto",
+      "lineIndex": 50
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "Warr’st thou ’gainst Athens ?",
+      "scrollMode": "auto",
+      "lineIndex": 51
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mug",
+      "lineText": "Ay , Timon , and have cause .",
+      "scrollMode": "auto",
+      "lineIndex": 52
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "The gods confound them all in thy conquest , And thee after , when thou hast conquered !",
+      "scrollMode": "auto",
+      "lineIndex": 53
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mug",
+      "lineText": "Why me , Timon ?",
+      "scrollMode": "auto",
+      "lineIndex": 54
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mr0",
+      "lineText": "( He offers gold . )",
+      "scrollMode": "auto",
+      "lineIndex": 55
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "( He offers gold . ) There’s gold to pay thy soldiers . Make large confusion and , thy fury spent , Confounded be thyself ! Speak not . Begone .",
+      "scrollMode": "auto",
+      "lineIndex": 56
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mug",
+      "lineText": "Hast thou gold yet ? I’ll take the gold thou givest me , Not all thy counsel .",
+      "scrollMode": "auto",
+      "lineIndex": 57
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "Dost thou or dost thou not , heaven’s curse upon thee !",
+      "scrollMode": "auto",
+      "lineIndex": 58
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mv0",
+      "lineText": "Give us some gold , good Timon . Hast thou more ?",
+      "scrollMode": "auto",
+      "lineIndex": 59
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mr0",
+      "lineText": "( He begins throwing gold into their aprons . )",
+      "scrollMode": "auto",
+      "lineIndex": 60
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "( He begins throwing gold into their aprons . ) You are not oathable , Although I know you’ll swear — terribly swear Into strong shudders and to heavenly agues Th’ immortal gods that hear you . Spare your oaths . I’ll trust to your conditions . Be whores still . And he whose pious breath seeks to convert you , Be strong in whore , allure him , burn him up . Let your close fire predominate his smoke , And be no turncoats . Yet may your pains six months Be quite contrary . And thatch your poor thin roofs ACT 4. SC. 3 With burdens of the dead — some that were hanged , No matter ; wear them , betray with them . Whore still . Paint till a horse may mire upon your face . A pox of wrinkles !",
+      "scrollMode": "auto",
+      "lineIndex": 61
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mv0",
+      "lineText": "Well , more gold . What then ? Believe ’t that we’ll do anything for gold .",
+      "scrollMode": "auto",
+      "lineIndex": 62
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "Consumptions sow In hollow bones of man ; strike their sharp shins , And mar men’s spurring . Crack the lawyer’s voice , That he may never more false title plead Nor sound his quillets shrilly . Hoar the flamen , That scolds against the quality of flesh And not believes himself . Down with the nose — Down with it flat , take the bridge quite away — Of him that , his particular to foresee , Smells from the general weal . Make curled-pate ruffians bald , And let the unscarred braggarts of the war Derive some pain from you . Plague all , That your activity may defeat and quell The source of all erection . There’s more gold . Do you damn others , and let this damn you , And ditches grave you all !",
+      "scrollMode": "auto",
+      "lineIndex": 63
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mv0",
+      "lineText": "More counsel with more money , bounteous Timon .",
+      "scrollMode": "auto",
+      "lineIndex": 64
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "More whore , more mischief first ! I have given you earnest .",
+      "scrollMode": "auto",
+      "lineIndex": 65
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mug",
+      "lineText": "Strike up the drum towards Athens . — Farewell , Timon . If I thrive well , I’ll visit thee again .",
+      "scrollMode": "auto",
+      "lineIndex": 66
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "If I hope well , I’ll never see thee more .",
+      "scrollMode": "auto",
+      "lineIndex": 67
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mug",
+      "lineText": "I never did thee harm .",
+      "scrollMode": "auto",
+      "lineIndex": 68
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "Yes , thou spok’st well of me .",
+      "scrollMode": "auto",
+      "lineIndex": 69
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mug",
+      "lineText": "Call’st thou that harm ?",
+      "scrollMode": "auto",
+      "lineIndex": 70
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "Men daily find it . Get thee away , and take Thy beagles with thee .",
+      "scrollMode": "auto",
+      "lineIndex": 71
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mr0",
+      "lineText": ", to the Women",
+      "scrollMode": "auto",
+      "lineIndex": 72
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mug",
+      "lineText": "We but offend him . — Strike .",
+      "scrollMode": "auto",
+      "lineIndex": 73
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mr0",
+      "lineText": "The drum sounds ; all but Timon exit .",
+      "scrollMode": "auto",
+      "lineIndex": 74
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mr0",
+      "lineText": "( He digs . )",
+      "scrollMode": "auto",
+      "lineIndex": 75
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mr0",
+      "lineText": "Enter Apemantus .",
+      "scrollMode": "auto",
+      "lineIndex": 76
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79n00",
+      "lineText": "Enter Apemantus . More man ? Plague , plague !",
+      "scrollMode": "auto",
+      "lineIndex": 77
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79n00",
+      "lineText": "I was directed hither . Men report Thou dost affect my manners and dost use them .",
+      "scrollMode": "auto",
+      "lineIndex": 78
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "’Tis , then , because thou dost not keep a dog , Whom I would imitate . Consumption catch thee !",
+      "scrollMode": "auto",
+      "lineIndex": 79
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79n00",
+      "lineText": "This is in thee a nature but infected , A poor unmanly melancholy sprung From change of future . Why this spade ? This place ? This slavelike habit and these looks of care ? Thy flatterers yet wear silk , drink wine , lie soft , Hug their diseased perfumes , and have forgot That ever Timon was . Shame not these woods By putting on the cunning of a carper . Be thou a flatterer now , and seek to thrive By that which has undone thee . Hinge thy knee , And let his very breath whom thou ’lt observe Blow off thy cap ; praise his most vicious strain , And call it excellent . Thou wast told thus . Thou gav’st thine ears , like tapsters that bade welcome , To knaves and all approachers . ’Tis most just That thou turn rascal . Had’st thou wealth again , Rascals should have ’t . Do not assume my likeness .",
+      "scrollMode": "auto",
+      "lineIndex": 80
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "Were I like thee , I’d throw away myself .",
+      "scrollMode": "auto",
+      "lineIndex": 81
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79n00",
+      "lineText": "Thou hast cast away thyself , being like thyself — A madman so long , now a fool . What , think’st That the bleak air , thy boisterous chamberlain , Will put thy shirt on warm ? Will these moist trees , That have outlived the eagle , page thy heels And skip when thou point’st out ? Will the cold brook , Candied with ice , caudle thy morning taste To cure thy o’ernight’s surfeit ? Call the creatures Whose naked natures live in all the spite Of wreakful heaven , whose bare unhousèd trunks , ACT 4. SC. 3 To the conflicting elements exposed , Answer mere nature . Bid them flatter thee . O , thou shalt find —",
+      "scrollMode": "auto",
+      "lineIndex": 82
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "A fool of thee . Depart .",
+      "scrollMode": "auto",
+      "lineIndex": 83
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79n00",
+      "lineText": "I love thee better now than e’er I did .",
+      "scrollMode": "auto",
+      "lineIndex": 84
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "I hate thee worse .",
+      "scrollMode": "auto",
+      "lineIndex": 85
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79n00",
+      "lineText": "Why ?",
+      "scrollMode": "auto",
+      "lineIndex": 86
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "Thou flatter’st misery .",
+      "scrollMode": "auto",
+      "lineIndex": 87
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79n00",
+      "lineText": "I flatter not but say thou art a caitiff .",
+      "scrollMode": "auto",
+      "lineIndex": 88
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "Why dost thou seek me out ?",
+      "scrollMode": "auto",
+      "lineIndex": 89
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79n00",
+      "lineText": "To vex thee .",
+      "scrollMode": "auto",
+      "lineIndex": 90
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "Always a villain’s office or a fool’s . Dost please thyself in ’t ?",
+      "scrollMode": "auto",
+      "lineIndex": 91
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79n00",
+      "lineText": "Ay .",
+      "scrollMode": "auto",
+      "lineIndex": 92
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "What , a knave too ?",
+      "scrollMode": "auto",
+      "lineIndex": 93
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79n00",
+      "lineText": "If thou didst put this sour cold habit on To castigate thy pride , ’twere well , but thou Dost it enforcedly . Thou ’dst courtier be again Wert thou not beggar . Willing misery Outlives incertain pomp , is crowned before ; The one is filling still , never complete , The other at high wish . Best state , contentless , Hath a distracted and most wretched being , Worse than the worst , content . Thou shouldst desire to die , being miserable .",
+      "scrollMode": "auto",
+      "lineIndex": 94
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "Not by his breath that is more miserable . Thou art a slave whom Fortune’s tender arm With favor never clasped but bred a dog . Hadst thou , like us from our first swathe , proceeded The sweet degrees that this brief world affords ACT 4. SC. 3 To such as may the passive drugs of it Freely command , thou wouldst have plunged thyself In general riot , melted down thy youth In different beds of lust , and never learned The icy precepts of respect , but followed The sugared game before thee . But myself — Who had the world as my confectionary , The mouths , the tongues , the eyes and hearts of men At duty , more than I could frame employment , That numberless upon me stuck as leaves Do on the oak , have with one winter’s brush Fell from their boughs and left me open , bare , For every storm that blows — I to bear this , That never knew but better , is some burden . Thy nature did commence in sufferance . Time Hath made thee hard in ’t . Why shouldst thou hate men ? They never flattered thee . What hast thou given ? If thou wilt curse , thy father , that poor rag , Must be thy subject , who in spite put stuff To some she-beggar and compounded thee Poor rogue hereditary . Hence , begone . If thou hadst not been born the worst of men , Thou hadst been a knave and flatterer .",
+      "scrollMode": "auto",
+      "lineIndex": 95
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79n00",
+      "lineText": "Art thou proud yet ?",
+      "scrollMode": "auto",
+      "lineIndex": 96
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "Ay , that I am not thee .",
+      "scrollMode": "auto",
+      "lineIndex": 97
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79n00",
+      "lineText": "I , that I was no prodigal .",
+      "scrollMode": "auto",
+      "lineIndex": 98
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "I , that I am one now . Were all the wealth I have shut up in thee , I’d give thee leave to hang it . Get thee gone . That the whole life of Athens were in this ! Thus would I eat it .",
+      "scrollMode": "auto",
+      "lineIndex": 99
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mr0",
+      "lineText": "He gnaws a root .",
+      "scrollMode": "auto",
+      "lineIndex": 100
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mr0",
+      "lineText": ", offering food",
+      "scrollMode": "auto",
+      "lineIndex": 101
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79n00",
+      "lineText": "Here , I will mend thy feast .",
+      "scrollMode": "auto",
+      "lineIndex": 102
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "First mend my company . Take away thyself .",
+      "scrollMode": "auto",
+      "lineIndex": 103
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79n00",
+      "lineText": "So I shall mend mine own by th’ lack of thine .",
+      "scrollMode": "auto",
+      "lineIndex": 104
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "’Tis not well mended so ; it is but botched . If not , I would it were .",
+      "scrollMode": "auto",
+      "lineIndex": 105
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79n00",
+      "lineText": "What wouldst thou have to Athens ?",
+      "scrollMode": "auto",
+      "lineIndex": 106
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "Thee thither in a whirlwind . If thou wilt , Tell them there I have gold . Look , so I have .",
+      "scrollMode": "auto",
+      "lineIndex": 107
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79n00",
+      "lineText": "Here is no use for gold .",
+      "scrollMode": "auto",
+      "lineIndex": 108
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "The best and truest , For here it sleeps and does no hired harm .",
+      "scrollMode": "auto",
+      "lineIndex": 109
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79n00",
+      "lineText": "Where liest a-nights , Timon ?",
+      "scrollMode": "auto",
+      "lineIndex": 110
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "Under that’s above me . Where feed’st thou a-days , Apemantus ?",
+      "scrollMode": "auto",
+      "lineIndex": 111
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79n00",
+      "lineText": "Where my stomach finds meat , or rather where I eat it .",
+      "scrollMode": "auto",
+      "lineIndex": 112
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "Would poison were obedient and knew my mind !",
+      "scrollMode": "auto",
+      "lineIndex": 113
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79n00",
+      "lineText": "Where wouldst thou send it ?",
+      "scrollMode": "auto",
+      "lineIndex": 114
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "To sauce thy dishes .",
+      "scrollMode": "auto",
+      "lineIndex": 115
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79n00",
+      "lineText": "The middle of humanity thou never knewest , but the extremity of both ends . When thou wast in thy gilt and thy perfume , they mocked thee for too much curiosity . In thy rags thou know’st none , but art despised for the contrary . There’s a medlar for thee . Eat it .",
+      "scrollMode": "auto",
+      "lineIndex": 116
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "On what I hate I feed not .",
+      "scrollMode": "auto",
+      "lineIndex": 117
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79n00",
+      "lineText": "Dost hate a medlar ?",
+      "scrollMode": "auto",
+      "lineIndex": 118
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "Ay , though it look like thee .",
+      "scrollMode": "auto",
+      "lineIndex": 119
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79n00",
+      "lineText": "An thou ’dst hated meddlers sooner , thou shouldst have loved thyself better now . What man didst thou ever know unthrift that was beloved after his means ?",
+      "scrollMode": "auto",
+      "lineIndex": 120
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "Who , without those means thou talk’st of , didst thou ever know beloved ?",
+      "scrollMode": "auto",
+      "lineIndex": 121
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79n00",
+      "lineText": "Myself .",
+      "scrollMode": "auto",
+      "lineIndex": 122
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "I understand thee . Thou hadst some means to keep a dog .",
+      "scrollMode": "auto",
+      "lineIndex": 123
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79n00",
+      "lineText": "What things in the world canst thou nearest compare to thy flatterers ?",
+      "scrollMode": "auto",
+      "lineIndex": 124
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "Women nearest , but men — men are the things themselves . What wouldst thou do with the world , Apemantus , if it lay in thy power ?",
+      "scrollMode": "auto",
+      "lineIndex": 125
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79n00",
+      "lineText": "Give it the beasts , to be rid of the men .",
+      "scrollMode": "auto",
+      "lineIndex": 126
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "Wouldst thou have thyself fall in the confusion of men and remain a beast with the beasts ?",
+      "scrollMode": "auto",
+      "lineIndex": 127
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79n00",
+      "lineText": "Ay , Timon .",
+      "scrollMode": "auto",
+      "lineIndex": 128
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "A beastly ambition , which the gods grant thee t’ attain to ! If thou wert the lion , the fox would beguile thee . If thou wert the lamb , the fox would eat thee . If thou wert the fox , the lion would suspect thee when peradventure thou wert accused by the ass . If thou wert the ass , thy dullness would torment thee , and still thou lived’st but as a breakfast to the wolf . If thou wert the wolf , thy greediness would afflict thee , and oft thou shouldst hazard thy life for thy dinner . Wert thou the unicorn , pride and wrath would confound thee and make thine own self the conquest of thy fury . Wert thou a bear , thou wouldst be killed by the horse . Wert thou a horse , thou wouldst be seized by the leopard . Wert thou a leopard , thou wert germane to the lion , and the spots of thy kindred were jurors on thy life . All thy safety were remotion , and thy defense absence . What beast couldst thou be that were not subject to a beast ? And what a beast art thou already that seest not thy loss in transformation !",
+      "scrollMode": "auto",
+      "lineIndex": 129
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79n00",
+      "lineText": "If thou couldst please me with speaking to ACT 4. SC. 3 me , thou mightst have hit upon it here . The commonwealth of Athens is become a forest of beasts .",
+      "scrollMode": "auto",
+      "lineIndex": 130
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "How , has the ass broke the wall that thou art out of the city ?",
+      "scrollMode": "auto",
+      "lineIndex": 131
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79n00",
+      "lineText": "Yonder comes a poet and a painter . The plague of company light upon thee ! I will fear to catch it and give way . When I know not what else to do , I’ll see thee again .",
+      "scrollMode": "auto",
+      "lineIndex": 132
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "When there is nothing living but thee , thou shalt be welcome . I had rather be a beggar’s dog than Apemantus .",
+      "scrollMode": "auto",
+      "lineIndex": 133
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79n00",
+      "lineText": "Thou art the cap of all the fools alive .",
+      "scrollMode": "auto",
+      "lineIndex": 134
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "Would thou wert clean enough to spit upon !",
+      "scrollMode": "auto",
+      "lineIndex": 135
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79n00",
+      "lineText": "A plague on thee ! Thou art too bad to curse .",
+      "scrollMode": "auto",
+      "lineIndex": 136
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "All villains that do stand by thee are pure .",
+      "scrollMode": "auto",
+      "lineIndex": 137
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79n00",
+      "lineText": "There is no leprosy but what thou speak’st .",
+      "scrollMode": "auto",
+      "lineIndex": 138
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "If I name thee . I’ll beat thee , but I should infect my hands .",
+      "scrollMode": "auto",
+      "lineIndex": 139
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79n00",
+      "lineText": "I would my tongue could rot them off !",
+      "scrollMode": "auto",
+      "lineIndex": 140
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "Away , thou issue of a mangy dog ! Choler does kill me that thou art alive . I swoon to see thee .",
+      "scrollMode": "auto",
+      "lineIndex": 141
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79n00",
+      "lineText": "Would thou wouldst burst !",
+      "scrollMode": "auto",
+      "lineIndex": 142
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "Away , thou tedious rogue ! I am sorry I shall lose a stone by thee .",
+      "scrollMode": "auto",
+      "lineIndex": 143
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mr0",
+      "lineText": "Timon throws a stone at Apemantus .",
+      "scrollMode": "auto",
+      "lineIndex": 144
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79n00",
+      "lineText": "Beast !",
+      "scrollMode": "auto",
+      "lineIndex": 145
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "Slave !",
+      "scrollMode": "auto",
+      "lineIndex": 146
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79n00",
+      "lineText": "Toad !",
+      "scrollMode": "auto",
+      "lineIndex": 147
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mr0",
+      "lineText": "( To his gold . )",
+      "scrollMode": "auto",
+      "lineIndex": 148
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "( To his gold . ) O thou sweet king-killer and dear divorce ’Twixt natural son and sire , thou bright defiler Of Hymen’s purest bed , thou valiant Mars , Thou ever young , fresh , loved , and delicate wooer , Whose blush doth thaw the consecrated snow That lies on Dian’s lap ; thou visible god , That sold’rest close impossibilities And mak’st them kiss , that speak’st with every tongue To every purpose ! O thou touch of hearts , Think thy slave , man , rebels , and by thy virtue Set them into confounding odds , that beasts May have the world in empire !",
+      "scrollMode": "auto",
+      "lineIndex": 149
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79n00",
+      "lineText": "Would ’twere so ! But not till I am dead . I’ll say thou ’st gold ; Thou wilt be thronged to shortly .",
+      "scrollMode": "auto",
+      "lineIndex": 150
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "Thronged to ?",
+      "scrollMode": "auto",
+      "lineIndex": 151
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79n00",
+      "lineText": "Ay .",
+      "scrollMode": "auto",
+      "lineIndex": 152
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "Thy back , I prithee .",
+      "scrollMode": "auto",
+      "lineIndex": 153
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79n00",
+      "lineText": "Live and love thy misery .",
+      "scrollMode": "auto",
+      "lineIndex": 154
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "Long live so , and so die . I am quit .",
+      "scrollMode": "auto",
+      "lineIndex": 155
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mr0",
+      "lineText": "Enter the Banditti .",
+      "scrollMode": "auto",
+      "lineIndex": 156
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79n00",
+      "lineText": "More things like men . — Eat , Timon , and abhor them .",
+      "scrollMode": "auto",
+      "lineIndex": 157
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mr0",
+      "lineText": "Apemantus exits .",
+      "scrollMode": "auto",
+      "lineIndex": 158
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79n0g",
+      "lineText": "Where should he have this gold ? It is ACT 4. SC. 3 some poor fragment , some slender ort of his remainder . The mere want of gold and the falling-from of his friends drove him into this melancholy .",
+      "scrollMode": "auto",
+      "lineIndex": 159
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79n10",
+      "lineText": "It is noised he hath a mass of treasure .",
+      "scrollMode": "auto",
+      "lineIndex": 160
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79n1g",
+      "lineText": "Let us make the assay upon him . If he care not for ’t , he will supply us easily . If he covetously reserve it , how shall ’s get it ?",
+      "scrollMode": "auto",
+      "lineIndex": 161
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79n10",
+      "lineText": "True , for he bears it not about him . ’Tis hid .",
+      "scrollMode": "auto",
+      "lineIndex": 162
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79n0g",
+      "lineText": "Is not this he ?",
+      "scrollMode": "auto",
+      "lineIndex": 163
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79n10",
+      "lineText": "Where ?",
+      "scrollMode": "auto",
+      "lineIndex": 164
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79n10",
+      "lineText": "’Tis his description .",
+      "scrollMode": "auto",
+      "lineIndex": 165
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79n1g",
+      "lineText": "He . I know him .",
+      "scrollMode": "auto",
+      "lineIndex": 166
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79n0g",
+      "lineText": "Save thee , Timon .",
+      "scrollMode": "auto",
+      "lineIndex": 167
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "Now , thieves ?",
+      "scrollMode": "auto",
+      "lineIndex": 168
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79n0g",
+      "lineText": "Soldiers , not thieves .",
+      "scrollMode": "auto",
+      "lineIndex": 169
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "Both , too , and women’s sons .",
+      "scrollMode": "auto",
+      "lineIndex": 170
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79n0g",
+      "lineText": "We are not thieves , but men that much do want .",
+      "scrollMode": "auto",
+      "lineIndex": 171
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "Your greatest want is , you want much of meat . Why should you want ? Behold , the earth hath roots . Within this mile break forth a hundred springs . The oaks bear mast , the briars scarlet hips . The bounteous huswife Nature on each bush Lays her full mess before you . Want ? Why want ?",
+      "scrollMode": "auto",
+      "lineIndex": 172
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79n0g",
+      "lineText": "We cannot live on grass , on berries , water , As beasts and birds and fishes .",
+      "scrollMode": "auto",
+      "lineIndex": 173
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mr0",
+      "lineText": "( He gives them gold . )",
+      "scrollMode": "auto",
+      "lineIndex": 174
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mr0",
+      "lineText": "( He gives them gold . )",
+      "scrollMode": "auto",
+      "lineIndex": 175
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "( He gives them gold . ) Cut throats . All that you meet are thieves . To Athens go . Break open shops . Nothing can you steal But thieves do lose it . Steal less for this I give you , And gold confound you howsoe’er ! Amen .",
+      "scrollMode": "auto",
+      "lineIndex": 176
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79n1g",
+      "lineText": "Has almost charmed me from my profession by persuading me to it .",
+      "scrollMode": "auto",
+      "lineIndex": 177
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79n0g",
+      "lineText": "’Tis in the malice of mankind that he thus advises us , not to have us thrive in our mystery .",
+      "scrollMode": "auto",
+      "lineIndex": 178
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79n10",
+      "lineText": "I’ll believe him as an enemy and give over my trade .",
+      "scrollMode": "auto",
+      "lineIndex": 179
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79n0g",
+      "lineText": "Let us first see peace in Athens . There is no time so miserable but a man may be true .",
+      "scrollMode": "auto",
+      "lineIndex": 180
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mr0",
+      "lineText": "Thieves exit .",
+      "scrollMode": "auto",
+      "lineIndex": 181
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mr0",
+      "lineText": "Enter Flavius , the Steward , to Timon .",
+      "scrollMode": "auto",
+      "lineIndex": 182
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79msg",
+      "lineText": "O you gods ! ACT 4. SC. 3 Is yond despised and ruinous man my lord ? Full of decay and flailing ? O , monument And wonder of good deeds evilly bestowed ! What an alteration of honor has desp’rate want made ! What viler thing upon the Earth earth than friends , Who can bring noblest minds to basest ends ! How rarely does it meet with this time’s guise , When man was wished to love his enemies ! Grant I may ever love , and rather woo Those that would mischief me than those that do ! Has caught me in his eye . I will present My honest grief unto him and as my lord Still serve him with my life . — My dearest master .",
+      "scrollMode": "auto",
+      "lineIndex": 183
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "Away ! What art thou ?",
+      "scrollMode": "auto",
+      "lineIndex": 184
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79msg",
+      "lineText": "Have you forgot me , sir ?",
+      "scrollMode": "auto",
+      "lineIndex": 185
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "Why dost ask that ? I have forgot all men . Then , if thou grant’st thou ’rt a man , I have forgot thee .",
+      "scrollMode": "auto",
+      "lineIndex": 186
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79msg",
+      "lineText": "An honest poor servant of yours .",
+      "scrollMode": "auto",
+      "lineIndex": 187
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "Then I know thee not . I never had honest man about me , I . All I kept were knaves to serve in meat to villains .",
+      "scrollMode": "auto",
+      "lineIndex": 188
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79msg",
+      "lineText": "The gods are witness , Ne’er did poor steward wear a truer grief For his undone lord than mine eyes for you .",
+      "scrollMode": "auto",
+      "lineIndex": 189
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mr0",
+      "lineText": "He weeps .",
+      "scrollMode": "auto",
+      "lineIndex": 190
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "What , dost thou weep ? Come nearer , then . I love thee Because thou art a woman and disclaim’st Flinty mankind , whose eyes do never give But thorough lust and laughter . Pity’s sleeping . ACT 4. SC. 3 Strange times that weep with laughing , not with weeping !",
+      "scrollMode": "auto",
+      "lineIndex": 191
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79msg",
+      "lineText": "I beg of you to know me , good my lord , T’ accept my grief , and , whilst this poor wealth lasts , To entertain me as your steward still .",
+      "scrollMode": "auto",
+      "lineIndex": 192
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mr0",
+      "lineText": "He offers money .",
+      "scrollMode": "auto",
+      "lineIndex": 193
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "Had I a steward So true , so just , and now so comfortable ? It almost turns my dangerous nature mild . Let me behold thy face . Surely this man Was born of woman . Forgive my general and exceptless rashness , You perpetual-sober gods . I do proclaim One honest man — mistake me not , but one ; No more , I pray ! — and he’s a steward . How fain would I have hated all mankind , And thou redeem’st thyself . But all , save thee , I fell with curses . Methinks thou art more honest now than wise , For by oppressing and betraying me Thou mightst have sooner got another service ; For many so arrive at second masters Upon their first lord’s neck . But tell me true — For I must ever doubt , though ne’er so sure — Is not thy kindness subtle , covetous , A usuring kindness , and as rich men deal gifts , Expecting in return twenty for one ?",
+      "scrollMode": "auto",
+      "lineIndex": 194
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79msg",
+      "lineText": "No , my most worthy master , in whose breast Doubt and suspect , alas , are placed too late . You should have feared false times when you did feast . Suspect still comes where an estate is least . That which I show , heaven knows , is merely love , Duty , and zeal to your unmatchèd mind , ACT 4. SC. 3 Care of your food and living . And believe it , My most honored lord , For any benefit that points to me , Either in hope or present , I’d exchange For this one wish , that you had power and wealth To requite me by making rich yourself .",
+      "scrollMode": "auto",
+      "lineIndex": 195
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mr0",
+      "lineText": "( Timon offers gold . )",
+      "scrollMode": "auto",
+      "lineIndex": 196
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "( Timon offers gold . ) The gods out of my misery Has sent thee treasure . Go , live rich and happy , But thus conditioned : thou shalt build from men ; Hate all , curse all , show charity to none , But let the famished flesh slide from the bone Ere thou relieve the beggar ; give to dogs What thou deniest to men ; let prisons swallow ’em , Debts wither ’em to nothing ; be men like blasted woods , And may diseases lick up their false bloods ! And so farewell and thrive .",
+      "scrollMode": "auto",
+      "lineIndex": 197
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79msg",
+      "lineText": "O , let me stay And comfort you , my master .",
+      "scrollMode": "auto",
+      "lineIndex": 198
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mrg",
+      "lineText": "If thou hat’st curses , Stay not . Fly whilst thou art blest and free . Ne’er see thou man , and let me ne’er see thee .",
+      "scrollMode": "auto",
+      "lineIndex": 199
+    },
+    {
+      "castMemberId": "d68m11sn9qd8d2h79mr0",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 200
+    }
+  ],
+  "isPublic": true
+}

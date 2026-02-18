@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package play_scripts;
+
+import "play_scripts/play_scripts_service_types.proto";
+
+option go_package = "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/play_scripts";
+
+service PlayScriptsService {
+  rpc CreatePlayScript(CreatePlayScriptRequest) returns (CreatePlayScriptResponse);
+  rpc GetPlayScript(GetPlayScriptRequest) returns (GetPlayScriptResponse);
+  rpc GetPlayScripts(GetPlayScriptsRequest) returns (GetPlayScriptsResponse);
+  rpc GetPlayScriptsForAccount(GetPlayScriptsForAccountRequest) returns (GetPlayScriptsForAccountResponse);
+  rpc GetPublicPlayScripts(GetPublicPlayScriptsRequest) returns (GetPublicPlayScriptsResponse);
+  rpc GetPlayScriptsWithTag(GetPlayScriptsWithTagRequest) returns (GetPlayScriptsWithTagResponse);
+  rpc SearchPlayScriptsForXParticipants(SearchPlayScriptsForXParticipantsRequest) returns (SearchPlayScriptsForXParticipantsResponse);
+  rpc UpdatePlayScript(UpdatePlayScriptRequest) returns (UpdatePlayScriptResponse);
+  rpc ArchivePlayScript(ArchivePlayScriptRequest) returns (ArchivePlayScriptResponse);
+  rpc CreateScriptTag(CreateScriptTagRequest) returns (CreateScriptTagResponse);
+  rpc ListScriptTags(ListScriptTagsRequest) returns (ListScriptTagsResponse);
+  rpc AddTagToPlayScript(AddTagToPlayScriptRequest) returns (AddTagToPlayScriptResponse);
+  rpc RemoveTagFromPlayScript(RemoveTagFromPlayScriptRequest) returns (RemoveTagFromPlayScriptResponse);
+  rpc UpdatePlayScriptLine(UpdatePlayScriptLineRequest) returns (UpdatePlayScriptLineResponse);
+  rpc RatePlayScript(RatePlayScriptRequest) returns (RatePlayScriptResponse);
+}

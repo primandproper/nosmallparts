@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package stages;
+
+import "stages/stages_service_types.proto";
+
+option go_package = "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/stages";
+
+service StagesService {
+  rpc JoinStage(JoinStageRequest) returns (JoinStageResponse);
+  rpc GetStageState(GetStageStateRequest) returns (GetStageStateResponse);
+  rpc UpdateParticipant(UpdateParticipantRequest) returns (UpdateParticipantResponse);
+  rpc ToggleRole(ToggleRoleRequest) returns (ToggleRoleResponse);
+  rpc UpdateStage(UpdateStageRequest) returns (UpdateStageResponse);
+  rpc SendChat(SendChatRequest) returns (SendChatResponse);
+  rpc LeaveStage(LeaveStageRequest) returns (LeaveStageResponse);
+  rpc StartPlay(StartPlayRequest) returns (StartPlayResponse);
+  rpc NextLine(NextLineRequest) returns (NextLineResponse);
+  rpc ResetPlay(ResetPlayRequest) returns (ResetPlayResponse);
+}

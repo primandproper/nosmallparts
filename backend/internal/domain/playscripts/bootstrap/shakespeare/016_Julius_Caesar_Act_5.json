@@ -1,0 +1,1170 @@
+{
+  "title": "Julius Caesar (Act 5)",
+  "description": "Folger Shakespeare Library edition",
+  "author": "William Shakespeare",
+  "castMembers": [
+    {
+      "id": "d68m11kn9qd8d2h79230",
+      "name": "Narrator",
+      "sortOrder": 0
+    },
+    {
+      "id": "d68m11kn9qd8d2h7923g",
+      "name": "Octavius",
+      "sortOrder": 1
+    },
+    {
+      "id": "d68m11kn9qd8d2h79240",
+      "name": "Mark Antony",
+      "sortOrder": 2
+    },
+    {
+      "id": "d68m11kn9qd8d2h7924g",
+      "name": "A Messenger",
+      "sortOrder": 3
+    },
+    {
+      "id": "d68m11kn9qd8d2h79250",
+      "name": "Marcus Brutus",
+      "sortOrder": 4
+    },
+    {
+      "id": "d68m11kn9qd8d2h7925g",
+      "name": "Caius Cassius",
+      "sortOrder": 5
+    },
+    {
+      "id": "d68m11kn9qd8d2h79260",
+      "name": "Lucilius",
+      "sortOrder": 6
+    },
+    {
+      "id": "d68m11kn9qd8d2h7926g",
+      "name": "Messala",
+      "sortOrder": 7
+    },
+    {
+      "id": "d68m11kn9qd8d2h79270",
+      "name": "Titinius",
+      "sortOrder": 8
+    },
+    {
+      "id": "d68m11kn9qd8d2h7927g",
+      "name": "Pindarus",
+      "description": "slave to Cassius, freed upon Cassius’s death",
+      "sortOrder": 9
+    },
+    {
+      "id": "d68m11kn9qd8d2h79280",
+      "name": "Young Cato",
+      "sortOrder": 10
+    },
+    {
+      "id": "d68m11kn9qd8d2h7928g",
+      "name": "First Soldier",
+      "sortOrder": 11
+    },
+    {
+      "id": "d68m11kn9qd8d2h79290",
+      "name": "Second Soldier",
+      "sortOrder": 12
+    },
+    {
+      "id": "d68m11kn9qd8d2h7929g",
+      "name": "Clitus",
+      "sortOrder": 13
+    },
+    {
+      "id": "d68m11kn9qd8d2h792a0",
+      "name": "Dardanus",
+      "sortOrder": 14
+    },
+    {
+      "id": "d68m11kn9qd8d2h792ag",
+      "name": "Volumnius",
+      "sortOrder": 15
+    },
+    {
+      "id": "d68m11kn9qd8d2h792b0",
+      "name": "Strato",
+      "sortOrder": 16
+    }
+  ],
+  "lines": [
+    {
+      "castMemberId": "d68m11kn9qd8d2h79230",
+      "lineText": "Enter Octavius , Antony , and their army .",
+      "scrollMode": "auto",
+      "lineIndex": 0
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7923g",
+      "lineText": "Now , Antony , our hopes are answerèd . You said the enemy would not come down But keep the hills and upper regions . It proves not so ; their battles are at hand . They mean to warn us at Philippi here , Answering before we do demand of them .",
+      "scrollMode": "auto",
+      "lineIndex": 1
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79240",
+      "lineText": "Tut , I am in their bosoms , and I know Wherefore they do it . They could be content To visit other places , and come down With fearful bravery , thinking by this face To fasten in our thoughts that they have courage . But ’tis not so .",
+      "scrollMode": "auto",
+      "lineIndex": 2
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79230",
+      "lineText": "Enter a Messenger .",
+      "scrollMode": "auto",
+      "lineIndex": 3
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7924g",
+      "lineText": "Prepare you , generals . The enemy comes on in gallant show . Their bloody sign of battle is hung out , And something to be done immediately .",
+      "scrollMode": "auto",
+      "lineIndex": 4
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79240",
+      "lineText": "Octavius , lead your battle softly on Upon the left hand of the even field .",
+      "scrollMode": "auto",
+      "lineIndex": 5
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7923g",
+      "lineText": "Upon the right hand , I ; keep thou the left .",
+      "scrollMode": "auto",
+      "lineIndex": 6
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79240",
+      "lineText": "Why do you cross me in this exigent ?",
+      "scrollMode": "auto",
+      "lineIndex": 7
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7923g",
+      "lineText": "I do not cross you , but I will do so .",
+      "scrollMode": "auto",
+      "lineIndex": 8
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79230",
+      "lineText": "March .",
+      "scrollMode": "auto",
+      "lineIndex": 9
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79230",
+      "lineText": "Drum . Enter Brutus , Cassius , and their army including Lucilius , Titinius , and Messala .",
+      "scrollMode": "auto",
+      "lineIndex": 10
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79250",
+      "lineText": "They stand and would have parley .",
+      "scrollMode": "auto",
+      "lineIndex": 11
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7925g",
+      "lineText": "Stand fast , Titinius . We must out and talk .",
+      "scrollMode": "auto",
+      "lineIndex": 12
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7923g",
+      "lineText": "Mark Antony , shall we give sign of battle ?",
+      "scrollMode": "auto",
+      "lineIndex": 13
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79240",
+      "lineText": "No , Caesar , we will answer on their charge . Make forth . The Generals would have some words .",
+      "scrollMode": "auto",
+      "lineIndex": 14
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79230",
+      "lineText": ", to his Officers",
+      "scrollMode": "auto",
+      "lineIndex": 15
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7923g",
+      "lineText": "Stir not until the signal .",
+      "scrollMode": "auto",
+      "lineIndex": 16
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79230",
+      "lineText": "The Generals step forward .",
+      "scrollMode": "auto",
+      "lineIndex": 17
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79250",
+      "lineText": "Words before blows ; is it so , countrymen ?",
+      "scrollMode": "auto",
+      "lineIndex": 18
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7923g",
+      "lineText": "Not that we love words better , as you do .",
+      "scrollMode": "auto",
+      "lineIndex": 19
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79250",
+      "lineText": "Good words are better than bad strokes , Octavius .",
+      "scrollMode": "auto",
+      "lineIndex": 20
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79240",
+      "lineText": "In your bad strokes , Brutus , you give good words . Witness the hole you made in Caesar’s heart , Crying Long live , hail , Caesar !",
+      "scrollMode": "auto",
+      "lineIndex": 21
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7925g",
+      "lineText": "Antony , The posture of your blows are yet unknown , But , for your words , they rob the Hybla bees And leave them honeyless .",
+      "scrollMode": "auto",
+      "lineIndex": 22
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79240",
+      "lineText": "Not stingless too .",
+      "scrollMode": "auto",
+      "lineIndex": 23
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79250",
+      "lineText": "O yes , and soundless too , ACT 5. SC. 1 For you have stolen their buzzing , Antony , And very wisely threat before you sting .",
+      "scrollMode": "auto",
+      "lineIndex": 24
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79240",
+      "lineText": "Villains , you did not so when your vile daggers Hacked one another in the sides of Caesar . You showed your teeth like apes and fawned like hounds And bowed like bondmen , kissing Caesar’s feet , Whilst damnèd Casca , like a cur , behind Struck Caesar on the neck . O you flatterers !",
+      "scrollMode": "auto",
+      "lineIndex": 25
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7925g",
+      "lineText": "Flatterers ? — Now , Brutus , thank yourself ! This tongue had not offended so today If Cassius might have ruled .",
+      "scrollMode": "auto",
+      "lineIndex": 26
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79230",
+      "lineText": "He draws .",
+      "scrollMode": "auto",
+      "lineIndex": 27
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7923g",
+      "lineText": "He draws . When think you that the sword goes up again ? Never , till Caesar’s three and thirty wounds Be well avenged , or till another Caesar Have added slaughter to the sword of traitors .",
+      "scrollMode": "auto",
+      "lineIndex": 28
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79250",
+      "lineText": "Caesar , thou canst not die by traitors’ hands Unless thou bring’st them with thee .",
+      "scrollMode": "auto",
+      "lineIndex": 29
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7923g",
+      "lineText": "So I hope . I was not born to die on Brutus’ sword .",
+      "scrollMode": "auto",
+      "lineIndex": 30
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79250",
+      "lineText": "O , if thou wert the noblest of thy strain , Young man , thou couldst not die more honorable .",
+      "scrollMode": "auto",
+      "lineIndex": 31
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7925g",
+      "lineText": "A peevish schoolboy , worthless of such honor , Joined with a masker and a reveler !",
+      "scrollMode": "auto",
+      "lineIndex": 32
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79240",
+      "lineText": "Old Cassius still .",
+      "scrollMode": "auto",
+      "lineIndex": 33
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7923g",
+      "lineText": "Come , Antony , away ! — ACT 5. SC. 1 Defiance , traitors , hurl we in your teeth . If you dare fight today , come to the field ; If not , when you have stomachs .",
+      "scrollMode": "auto",
+      "lineIndex": 34
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79230",
+      "lineText": "Octavius , Antony , and their army exit .",
+      "scrollMode": "auto",
+      "lineIndex": 35
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7925g",
+      "lineText": "Why now , blow wind , swell billow , and swim bark ! The storm is up , and all is on the hazard .",
+      "scrollMode": "auto",
+      "lineIndex": 36
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79250",
+      "lineText": "Ho , Lucilius , hark , a word with you .",
+      "scrollMode": "auto",
+      "lineIndex": 37
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79230",
+      "lineText": "Lucilius and Messala stand forth .",
+      "scrollMode": "auto",
+      "lineIndex": 38
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79260",
+      "lineText": "My lord ?",
+      "scrollMode": "auto",
+      "lineIndex": 39
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79230",
+      "lineText": "Brutus and Lucilius step aside together .",
+      "scrollMode": "auto",
+      "lineIndex": 40
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7925g",
+      "lineText": "Messala .",
+      "scrollMode": "auto",
+      "lineIndex": 41
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7926g",
+      "lineText": "What says my general ?",
+      "scrollMode": "auto",
+      "lineIndex": 42
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7925g",
+      "lineText": "Messala , This is my birthday , as this very day Was Cassius born . Give me thy hand , Messala . Be thou my witness that against my will ( As Pompey was ) am I compelled to set Upon one battle all our liberties . You know that I held Epicurus strong And his opinion . Now I change my mind And partly credit things that do presage . Coming from Sardis , on our former ensign Two mighty eagles fell , and there they perched , Gorging and feeding from our soldiers’ hands , Who to Philippi here consorted us . This morning are they fled away and gone , And in their steads do ravens , crows , and kites Fly o’er our heads and downward look on us As we were sickly prey . Their shadows seem A canopy most fatal , under which Our army lies , ready to give up the ghost .",
+      "scrollMode": "auto",
+      "lineIndex": 43
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7926g",
+      "lineText": "Believe not so .",
+      "scrollMode": "auto",
+      "lineIndex": 44
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7925g",
+      "lineText": "I but believe it partly , For I am fresh of spirit and resolved To meet all perils very constantly .",
+      "scrollMode": "auto",
+      "lineIndex": 45
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79250",
+      "lineText": "Even so , Lucilius .",
+      "scrollMode": "auto",
+      "lineIndex": 46
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79230",
+      "lineText": "Brutus returns to Cassius .",
+      "scrollMode": "auto",
+      "lineIndex": 47
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7925g",
+      "lineText": "Now , most noble Brutus , The gods today stand friendly that we may , Lovers in peace , lead on our days to age . But since the affairs of men rests still incertain , Let’s reason with the worst that may befall . If we do lose this battle , then is this The very last time we shall speak together . What are you then determinèd to do ?",
+      "scrollMode": "auto",
+      "lineIndex": 48
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79250",
+      "lineText": "Even by the rule of that philosophy By which I did blame Cato for the death Which he did give himself ( I know not how , But I do find it cowardly and vile , For fear of what might fall , so to prevent The time of life ) , arming myself with patience To stay the providence of some high powers That govern us below .",
+      "scrollMode": "auto",
+      "lineIndex": 49
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7925g",
+      "lineText": "Then , if we lose this battle , You are contented to be led in triumph Thorough the streets of Rome ?",
+      "scrollMode": "auto",
+      "lineIndex": 50
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79250",
+      "lineText": "No , Cassius , no . Think not , thou noble Roman , That ever Brutus will go bound to Rome . He bears too great a mind . But this same day Must end that work the ides of March begun . And whether we shall meet again , I know not . Therefore our everlasting farewell take . Forever and forever farewell , Cassius . If we do meet again , why we shall smile ; If not , why then this parting was well made .",
+      "scrollMode": "auto",
+      "lineIndex": 51
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7925g",
+      "lineText": "Forever and forever farewell , Brutus . If we do meet again , we’ll smile indeed ; If not , ’tis true this parting was well made .",
+      "scrollMode": "auto",
+      "lineIndex": 52
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79250",
+      "lineText": "Why then , lead on . — O , that a man might know The end of this day’s business ere it come ! But it sufficeth that the day will end , And then the end is known . — Come ho , away !",
+      "scrollMode": "auto",
+      "lineIndex": 53
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79230",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 54
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79230",
+      "lineText": "Alarum . Enter Brutus and Messala .",
+      "scrollMode": "auto",
+      "lineIndex": 55
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79230",
+      "lineText": "He hands Messala papers .",
+      "scrollMode": "auto",
+      "lineIndex": 56
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79230",
+      "lineText": "Loud alarum .",
+      "scrollMode": "auto",
+      "lineIndex": 57
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79250",
+      "lineText": "Loud alarum . Let them set on at once , for I perceive But cold demeanor in Octavius’ wing , And sudden push gives them the overthrow . Ride , ride , Messala ! Let them all come down .",
+      "scrollMode": "auto",
+      "lineIndex": 58
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79230",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 59
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79230",
+      "lineText": "Alarums . Enter Cassius carrying a standard and Titinius .",
+      "scrollMode": "auto",
+      "lineIndex": 60
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7925g",
+      "lineText": "O , look , Titinius , look , the villains fly ! Myself have to mine own turned enemy . This ensign here of mine was turning back ; I slew the coward and did take it from him .",
+      "scrollMode": "auto",
+      "lineIndex": 61
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79270",
+      "lineText": "O Cassius , Brutus gave the word too early , Who , having some advantage on Octavius , Took it too eagerly . His soldiers fell to spoil , Whilst we by Antony are all enclosed .",
+      "scrollMode": "auto",
+      "lineIndex": 62
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79230",
+      "lineText": "Enter Pindarus .",
+      "scrollMode": "auto",
+      "lineIndex": 63
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7927g",
+      "lineText": "Fly further off , my lord , fly further off ! Mark Antony is in your tents , my lord . Fly therefore , noble Cassius , fly far off .",
+      "scrollMode": "auto",
+      "lineIndex": 64
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7925g",
+      "lineText": "This hill is far enough . — Look , look , Titinius , Are those my tents where I perceive the fire ?",
+      "scrollMode": "auto",
+      "lineIndex": 65
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79270",
+      "lineText": "They are , my lord .",
+      "scrollMode": "auto",
+      "lineIndex": 66
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7925g",
+      "lineText": "Titinius , if thou lovest me , Mount thou my horse and hide thy spurs in him Till he have brought thee up to yonder troops And here again , that I may rest assured Whether yond troops are friend or enemy .",
+      "scrollMode": "auto",
+      "lineIndex": 67
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79270",
+      "lineText": "I will be here again even with a thought .",
+      "scrollMode": "auto",
+      "lineIndex": 68
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79230",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 69
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79230",
+      "lineText": "Pindarus goes up .",
+      "scrollMode": "auto",
+      "lineIndex": 70
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7927g",
+      "lineText": "Pindarus goes up . This day I breathèd first . Time is come round , And where I did begin , there shall I end ; My life is run his compass . — Sirrah , what news ?",
+      "scrollMode": "auto",
+      "lineIndex": 71
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79230",
+      "lineText": ", above .",
+      "scrollMode": "auto",
+      "lineIndex": 72
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7927g",
+      "lineText": "O my lord !",
+      "scrollMode": "auto",
+      "lineIndex": 73
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7925g",
+      "lineText": "What news ?",
+      "scrollMode": "auto",
+      "lineIndex": 74
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79230",
+      "lineText": "Shout .",
+      "scrollMode": "auto",
+      "lineIndex": 75
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7927g",
+      "lineText": "Shout . And hark , they shout for joy .",
+      "scrollMode": "auto",
+      "lineIndex": 76
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79230",
+      "lineText": "Pindarus comes down .",
+      "scrollMode": "auto",
+      "lineIndex": 77
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79230",
+      "lineText": "Pindarus stabs him .",
+      "scrollMode": "auto",
+      "lineIndex": 78
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7927g",
+      "lineText": "Pindarus stabs him . Caesar , thou art revenged Even with the sword that killed thee .",
+      "scrollMode": "auto",
+      "lineIndex": 79
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79230",
+      "lineText": "He dies .",
+      "scrollMode": "auto",
+      "lineIndex": 80
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7927g",
+      "lineText": "So I am free , yet would not so have been , Durst I have done my will . — O Cassius ! — Far from this country Pindarus shall run , Where never Roman shall take note of him .",
+      "scrollMode": "auto",
+      "lineIndex": 81
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79230",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 82
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79230",
+      "lineText": "Enter Titinius and Messala .",
+      "scrollMode": "auto",
+      "lineIndex": 83
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7926g",
+      "lineText": "It is but change , Titinius , for Octavius Is overthrown by noble Brutus’ power , As Cassius’ legions are by Antony .",
+      "scrollMode": "auto",
+      "lineIndex": 84
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79270",
+      "lineText": "These tidings will well comfort Cassius .",
+      "scrollMode": "auto",
+      "lineIndex": 85
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7926g",
+      "lineText": "Where did you leave him ?",
+      "scrollMode": "auto",
+      "lineIndex": 86
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79270",
+      "lineText": "All disconsolate , With Pindarus his bondman , on this hill .",
+      "scrollMode": "auto",
+      "lineIndex": 87
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7926g",
+      "lineText": "Is not that he that lies upon the ground ?",
+      "scrollMode": "auto",
+      "lineIndex": 88
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79270",
+      "lineText": "He lies not like the living . O my heart !",
+      "scrollMode": "auto",
+      "lineIndex": 89
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7926g",
+      "lineText": "Is not that he ?",
+      "scrollMode": "auto",
+      "lineIndex": 90
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79270",
+      "lineText": "No , this was he , Messala , But Cassius is no more . O setting sun , As in thy red rays thou dost sink to night , So in his red blood Cassius’ day is set . The sun of Rome is set . Our day is gone ; Clouds , dews , and dangers come . Our deeds are done . Mistrust of my success hath done this deed .",
+      "scrollMode": "auto",
+      "lineIndex": 91
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7926g",
+      "lineText": "Mistrust of good success hath done this deed . O hateful error , melancholy’s child , Why dost thou show to the apt thoughts of men The things that are not ? O error , soon conceived , Thou never com’st unto a happy birth But kill’st the mother that engendered thee !",
+      "scrollMode": "auto",
+      "lineIndex": 92
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79270",
+      "lineText": "What , Pindarus ! Where art thou , Pindarus ?",
+      "scrollMode": "auto",
+      "lineIndex": 93
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7926g",
+      "lineText": "Seek him , Titinius , whilst I go to meet The noble Brutus , thrusting this report Into his ears . I may say thrusting it , For piercing steel and darts envenomèd Shall be as welcome to the ears of Brutus As tidings of this sight .",
+      "scrollMode": "auto",
+      "lineIndex": 94
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79230",
+      "lineText": "Messala exits .",
+      "scrollMode": "auto",
+      "lineIndex": 95
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79230",
+      "lineText": "Laying the garland on Cassius’ brow .",
+      "scrollMode": "auto",
+      "lineIndex": 96
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79270",
+      "lineText": "Laying the garland on Cassius’ brow . Thy Brutus bid me give it thee , and I Will do his bidding . — Brutus , come apace , And see how I regarded Caius Cassius . — By your leave , gods , this is a Roman’s part . Come , Cassius’ sword , and find Titinius’ heart !",
+      "scrollMode": "auto",
+      "lineIndex": 97
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79230",
+      "lineText": "He dies on Cassius’ sword .",
+      "scrollMode": "auto",
+      "lineIndex": 98
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79230",
+      "lineText": "Alarum . Enter Brutus , Messala , young Cato , Strato , Volumnius , and Lucilius , Labeo , and Flavius .",
+      "scrollMode": "auto",
+      "lineIndex": 99
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79250",
+      "lineText": "Where , where , Messala , doth his body lie ?",
+      "scrollMode": "auto",
+      "lineIndex": 100
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7926g",
+      "lineText": "Lo , yonder , and Titinius mourning it .",
+      "scrollMode": "auto",
+      "lineIndex": 101
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79250",
+      "lineText": "Titinius’ face is upward .",
+      "scrollMode": "auto",
+      "lineIndex": 102
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79280",
+      "lineText": "He is slain .",
+      "scrollMode": "auto",
+      "lineIndex": 103
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79250",
+      "lineText": "O Julius Caesar , thou art mighty yet ; Thy spirit walks abroad and turns our swords In our own proper entrails .",
+      "scrollMode": "auto",
+      "lineIndex": 104
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79230",
+      "lineText": "Low alarums .",
+      "scrollMode": "auto",
+      "lineIndex": 105
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79280",
+      "lineText": "Brave Titinius ! — Look whe’er he have not crowned dead Cassius .",
+      "scrollMode": "auto",
+      "lineIndex": 106
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79250",
+      "lineText": "Are yet two Romans living such as these ? — The last of all the Romans , fare thee well . ACT 5. SC. 4 It is impossible that ever Rome Should breed thy fellow . — Friends , I owe more tears To this dead man than you shall see me pay . — I shall find time , Cassius ; I shall find time . — Come , therefore , and to Thasos send his body . His funerals shall not be in our camp , Lest it discomfort us . — Lucilius , come . — And come , young Cato . Let us to the field . — Labeo and Flavius , set our battles on . ’Tis three o’clock , and , Romans , yet ere night We shall try fortune in a second fight .",
+      "scrollMode": "auto",
+      "lineIndex": 107
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79230",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 108
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79230",
+      "lineText": "Alarum . Enter Brutus , Messala , Cato , Lucilius , and Flavius .",
+      "scrollMode": "auto",
+      "lineIndex": 109
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79250",
+      "lineText": "Yet , countrymen , O , yet hold up your heads !",
+      "scrollMode": "auto",
+      "lineIndex": 110
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79230",
+      "lineText": "Brutus , Messala , and Flavius exit .",
+      "scrollMode": "auto",
+      "lineIndex": 111
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79280",
+      "lineText": "What bastard doth not ? Who will go with me ? I will proclaim my name about the field . I am the son of Marcus Cato , ho ! A foe to tyrants and my country’s friend . I am the son of Marcus Cato , ho !",
+      "scrollMode": "auto",
+      "lineIndex": 112
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79230",
+      "lineText": "Enter Soldiers",
+      "scrollMode": "auto",
+      "lineIndex": 113
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79230",
+      "lineText": "and fight .",
+      "scrollMode": "auto",
+      "lineIndex": 114
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79230",
+      "lineText": "Cato is killed .",
+      "scrollMode": "auto",
+      "lineIndex": 115
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79280",
+      "lineText": "Cato is killed . O young and noble Cato , art thou down ? ACT 5. SC. 4 Why , now thou diest as bravely as Titinius And mayst be honored , being Cato’s son .",
+      "scrollMode": "auto",
+      "lineIndex": 116
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79230",
+      "lineText": ", seizing Lucilius",
+      "scrollMode": "auto",
+      "lineIndex": 117
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7928g",
+      "lineText": "Yield , or thou diest .",
+      "scrollMode": "auto",
+      "lineIndex": 118
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79230",
+      "lineText": "Offering money .",
+      "scrollMode": "auto",
+      "lineIndex": 119
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79260",
+      "lineText": "Offering money . Kill Brutus and be honored in his death .",
+      "scrollMode": "auto",
+      "lineIndex": 120
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7928g",
+      "lineText": "We must not . A noble prisoner !",
+      "scrollMode": "auto",
+      "lineIndex": 121
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79230",
+      "lineText": "Enter Antony .",
+      "scrollMode": "auto",
+      "lineIndex": 122
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79290",
+      "lineText": "Room , ho ! Tell Antony Brutus is ta’en .",
+      "scrollMode": "auto",
+      "lineIndex": 123
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7928g",
+      "lineText": "I’ll tell the news . Here comes the General . — Brutus is ta’en , Brutus is ta’en , my lord .",
+      "scrollMode": "auto",
+      "lineIndex": 124
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79240",
+      "lineText": "Where is he ?",
+      "scrollMode": "auto",
+      "lineIndex": 125
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79260",
+      "lineText": "Safe , Antony , Brutus is safe enough . I dare assure thee that no enemy Shall ever take alive the noble Brutus . The gods defend him from so great a shame ! When you do find him , or alive or dead , He will be found like Brutus , like himself .",
+      "scrollMode": "auto",
+      "lineIndex": 126
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79240",
+      "lineText": "This is not Brutus , friend , but I assure you , A prize no less in worth . Keep this man safe . Give him all kindness . I had rather have Such men my friends than enemies . Go on , And see whe’er Brutus be alive or dead , And bring us word unto Octavius’ tent How everything is chanced .",
+      "scrollMode": "auto",
+      "lineIndex": 127
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79230",
+      "lineText": "They exit in different directions .",
+      "scrollMode": "auto",
+      "lineIndex": 128
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79230",
+      "lineText": "Enter Brutus , Dardanus , Clitus , Strato , and Volumnius .",
+      "scrollMode": "auto",
+      "lineIndex": 129
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79250",
+      "lineText": "Come , poor remains of friends , rest on this rock .",
+      "scrollMode": "auto",
+      "lineIndex": 130
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79230",
+      "lineText": "He sits down .",
+      "scrollMode": "auto",
+      "lineIndex": 131
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7929g",
+      "lineText": "Statilius showed the torchlight , but , my lord , He came not back . He is or ta’en or slain .",
+      "scrollMode": "auto",
+      "lineIndex": 132
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79250",
+      "lineText": "Sit thee down , Clitus . Slaying is the word ; It is a deed in fashion . Hark thee , Clitus .",
+      "scrollMode": "auto",
+      "lineIndex": 133
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79230",
+      "lineText": "He whispers to Clitus .",
+      "scrollMode": "auto",
+      "lineIndex": 134
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7929g",
+      "lineText": "What , I , my lord ? No , not for all the world .",
+      "scrollMode": "auto",
+      "lineIndex": 135
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79250",
+      "lineText": "Peace , then , no words .",
+      "scrollMode": "auto",
+      "lineIndex": 136
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7929g",
+      "lineText": "I’ll rather kill myself .",
+      "scrollMode": "auto",
+      "lineIndex": 137
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79250",
+      "lineText": "Hark thee , Dardanus .",
+      "scrollMode": "auto",
+      "lineIndex": 138
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79230",
+      "lineText": "He whispers to Dardanus .",
+      "scrollMode": "auto",
+      "lineIndex": 139
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792a0",
+      "lineText": "Shall I do such a deed ?",
+      "scrollMode": "auto",
+      "lineIndex": 140
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7929g",
+      "lineText": "O Dardanus !",
+      "scrollMode": "auto",
+      "lineIndex": 141
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792a0",
+      "lineText": "O Clitus !",
+      "scrollMode": "auto",
+      "lineIndex": 142
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79230",
+      "lineText": "Dardanus and Clitus step aside .",
+      "scrollMode": "auto",
+      "lineIndex": 143
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7929g",
+      "lineText": "What ill request did Brutus make to thee ?",
+      "scrollMode": "auto",
+      "lineIndex": 144
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792a0",
+      "lineText": "To kill him , Clitus . Look , he meditates .",
+      "scrollMode": "auto",
+      "lineIndex": 145
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7929g",
+      "lineText": "Now is that noble vessel full of grief , That it runs over even at his eyes .",
+      "scrollMode": "auto",
+      "lineIndex": 146
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79250",
+      "lineText": "Come hither , good Volumnius . List a word .",
+      "scrollMode": "auto",
+      "lineIndex": 147
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792ag",
+      "lineText": "What says my lord ?",
+      "scrollMode": "auto",
+      "lineIndex": 148
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79250",
+      "lineText": "Why this , Volumnius : ACT 5. SC. 5 The ghost of Caesar hath appeared to me Two several times by night — at Sardis once And this last night here in Philippi fields . I know my hour is come .",
+      "scrollMode": "auto",
+      "lineIndex": 149
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792ag",
+      "lineText": "Not so , my lord .",
+      "scrollMode": "auto",
+      "lineIndex": 150
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79230",
+      "lineText": "Low alarums .",
+      "scrollMode": "auto",
+      "lineIndex": 151
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79250",
+      "lineText": "Low alarums . It is more worthy to leap in ourselves Than tarry till they push us . Good Volumnius , Thou know’st that we two went to school together ; Even for that our love of old , I prithee , Hold thou my sword hilts whilst I run on it .",
+      "scrollMode": "auto",
+      "lineIndex": 152
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792ag",
+      "lineText": "That’s not an office for a friend , my lord .",
+      "scrollMode": "auto",
+      "lineIndex": 153
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79230",
+      "lineText": "Alarum continues .",
+      "scrollMode": "auto",
+      "lineIndex": 154
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7929g",
+      "lineText": "Fly , fly , my lord ! There is no tarrying here .",
+      "scrollMode": "auto",
+      "lineIndex": 155
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79250",
+      "lineText": "Farewell to you — and you — and you , Volumnius . — Strato , thou hast been all this while asleep . Farewell to thee , too , Strato . — Countrymen , My heart doth joy that yet in all my life I found no man but he was true to me . I shall have glory by this losing day More than Octavius and Mark Antony By this vile conquest shall attain unto . So fare you well at once , for Brutus’ tongue Hath almost ended his life’s history . Night hangs upon mine eyes ; my bones would rest , That have but labored to attain this hour .",
+      "scrollMode": "auto",
+      "lineIndex": 156
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79230",
+      "lineText": "Alarum . Cry within Fly , fly , fly !",
+      "scrollMode": "auto",
+      "lineIndex": 157
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7929g",
+      "lineText": "Fly , my lord , fly !",
+      "scrollMode": "auto",
+      "lineIndex": 158
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79230",
+      "lineText": "All exit but Brutus and Strato .",
+      "scrollMode": "auto",
+      "lineIndex": 159
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792a0",
+      "lineText": "All exit but Brutus and Strato . ACT 5. SC. 5 I prithee , Strato , stay thou by thy lord . Thou art a fellow of a good respect ; Thy life hath had some smatch of honor in it . Hold , then , my sword , and turn away thy face While I do run upon it . Wilt thou , Strato ?",
+      "scrollMode": "auto",
+      "lineIndex": 160
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792b0",
+      "lineText": "Give me your hand first . Fare you well , my lord .",
+      "scrollMode": "auto",
+      "lineIndex": 161
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79230",
+      "lineText": "Brutus runs on his sword .",
+      "scrollMode": "auto",
+      "lineIndex": 162
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79250",
+      "lineText": "Brutus runs on his sword . Caesar , now be still . I killed not thee with half so good a will .",
+      "scrollMode": "auto",
+      "lineIndex": 163
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79230",
+      "lineText": "He dies .",
+      "scrollMode": "auto",
+      "lineIndex": 164
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79230",
+      "lineText": "Alarum . Retreat . Enter Antony , Octavius , Messala , Lucilius , and the army .",
+      "scrollMode": "auto",
+      "lineIndex": 165
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7923g",
+      "lineText": "What man is that ?",
+      "scrollMode": "auto",
+      "lineIndex": 166
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7926g",
+      "lineText": "My master’s man . — Strato , where is thy master ?",
+      "scrollMode": "auto",
+      "lineIndex": 167
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792b0",
+      "lineText": "Free from the bondage you are in , Messala . The conquerors can but make a fire of him , For Brutus only overcame himself , And no man else hath honor by his death .",
+      "scrollMode": "auto",
+      "lineIndex": 168
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79260",
+      "lineText": "So Brutus should be found . — I thank thee , Brutus , That thou hast proved Lucilius’ saying true .",
+      "scrollMode": "auto",
+      "lineIndex": 169
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7923g",
+      "lineText": "All that served Brutus , I will entertain them . — Fellow , wilt thou bestow thy time with me ?",
+      "scrollMode": "auto",
+      "lineIndex": 170
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792b0",
+      "lineText": "Ay , if Messala will prefer me to you .",
+      "scrollMode": "auto",
+      "lineIndex": 171
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7923g",
+      "lineText": "Do so , good Messala .",
+      "scrollMode": "auto",
+      "lineIndex": 172
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7926g",
+      "lineText": "How died my master , Strato ?",
+      "scrollMode": "auto",
+      "lineIndex": 173
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h792b0",
+      "lineText": "I held the sword , and he did run on it .",
+      "scrollMode": "auto",
+      "lineIndex": 174
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7926g",
+      "lineText": "Octavius , then take him to follow thee , That did the latest service to my master .",
+      "scrollMode": "auto",
+      "lineIndex": 175
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79240",
+      "lineText": "This was the noblest Roman of them all . All the conspirators save only he Did that they did in envy of great Caesar . He only in a general honest thought And common good to all made one of them . His life was gentle and the elements So mixed in him that nature might stand up And say to all the world This was a man .",
+      "scrollMode": "auto",
+      "lineIndex": 176
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7923g",
+      "lineText": "According to his virtue , let us use him With all respect and rites of burial . Within my tent his bones tonight shall lie , Most like a soldier , ordered honorably . So call the field to rest , and let’s away To part the glories of this happy day .",
+      "scrollMode": "auto",
+      "lineIndex": 177
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79230",
+      "lineText": "They all exit .",
+      "scrollMode": "auto",
+      "lineIndex": 178
+    }
+  ],
+  "isPublic": true
+}

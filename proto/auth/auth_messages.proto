@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package auth;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/auth";
+
+message ChangeActiveAccountInput {
+  string account_id = 1;
+}
+
+message PasswordResetToken {
+  google.protobuf.Timestamp created_at = 1;
+  google.protobuf.Timestamp expires_at = 2;
+  google.protobuf.Timestamp redeemed_at = 3;
+  google.protobuf.Timestamp last_updated_at = 4;
+  string id = 5;
+  string token = 6;
+  string belongs_to_user = 7;
+}
+
+message PasswordUpdateInput {
+  string new_password = 1;
+  string current_password = 2;
+  string totp_token = 3;
+}
+
+message TOTPSecretRefreshInput {
+  string current_password = 1;
+  string totp_token = 2;
+}
+
+message TOTPSecretVerificationInput {
+  string totp_token = 1;
+  string user_id = 2;
+}
+
+message UserLoginInput {
+  string username = 1;
+  string password = 2;
+  string totp_token = 3;
+}

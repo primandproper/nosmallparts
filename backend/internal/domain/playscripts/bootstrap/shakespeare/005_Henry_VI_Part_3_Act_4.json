@@ -1,0 +1,1545 @@
+{
+  "title": "Henry VI, Part 3 (Act 4)",
+  "description": "Folger Shakespeare Library edition",
+  "author": "William Shakespeare",
+  "castMembers": [
+    {
+      "id": "d68m11cn9qd8d2h78il0",
+      "name": "Narrator",
+      "sortOrder": 0
+    },
+    {
+      "id": "d68m11cn9qd8d2h78ilg",
+      "name": "Richard",
+      "description": "later Duke of Gloucester",
+      "sortOrder": 1
+    },
+    {
+      "id": "d68m11cn9qd8d2h78im0",
+      "name": "George",
+      "description": "later Duke of Clarence",
+      "sortOrder": 2
+    },
+    {
+      "id": "d68m11cn9qd8d2h78img",
+      "name": "Somerset",
+      "sortOrder": 3
+    },
+    {
+      "id": "d68m11cn9qd8d2h78in0",
+      "name": "Edward",
+      "description": "Earl of March, later King Edward IV",
+      "sortOrder": 4
+    },
+    {
+      "id": "d68m11cn9qd8d2h78ing",
+      "name": "Montague",
+      "sortOrder": 5
+    },
+    {
+      "id": "d68m11cn9qd8d2h78io0",
+      "name": "Hastings",
+      "sortOrder": 6
+    },
+    {
+      "id": "d68m11cn9qd8d2h78iog",
+      "name": "Lady Grey",
+      "description": "later Queen Elizabeth",
+      "sortOrder": 7
+    },
+    {
+      "id": "d68m11cn9qd8d2h78ip0",
+      "name": "Post",
+      "sortOrder": 8
+    },
+    {
+      "id": "d68m11cn9qd8d2h78ipg",
+      "name": "Pembroke",
+      "sortOrder": 9
+    },
+    {
+      "id": "d68m11cn9qd8d2h78iq0",
+      "name": "Stafford",
+      "sortOrder": 10
+    },
+    {
+      "id": "d68m11cn9qd8d2h78iqg",
+      "name": "Oxford",
+      "sortOrder": 11
+    },
+    {
+      "id": "d68m11cn9qd8d2h78ir0",
+      "name": "SOLDIERS.FRENCH_3H6",
+      "sortOrder": 12
+    },
+    {
+      "id": "d68m11cn9qd8d2h78irg",
+      "name": "First Watch",
+      "sortOrder": 13
+    },
+    {
+      "id": "d68m11cn9qd8d2h78is0",
+      "name": "Second Watch",
+      "sortOrder": 14
+    },
+    {
+      "id": "d68m11cn9qd8d2h78isg",
+      "name": "Third Watch",
+      "sortOrder": 15
+    },
+    {
+      "id": "d68m11cn9qd8d2h78it0",
+      "name": "Warwick",
+      "sortOrder": 16
+    },
+    {
+      "id": "d68m11cn9qd8d2h78itg",
+      "name": "Rivers",
+      "description": "brother to the queen",
+      "sortOrder": 17
+    },
+    {
+      "id": "d68m11cn9qd8d2h78iu0",
+      "name": "Huntsman",
+      "sortOrder": 18
+    },
+    {
+      "id": "d68m11cn9qd8d2h78iug",
+      "name": "King Henry VI",
+      "sortOrder": 19
+    },
+    {
+      "id": "d68m11cn9qd8d2h78iv0",
+      "name": "Lieutenant",
+      "sortOrder": 20
+    },
+    {
+      "id": "d68m11cn9qd8d2h78ivg",
+      "name": "HenryVII_R3",
+      "sortOrder": 21
+    },
+    {
+      "id": "d68m11cn9qd8d2h78j00",
+      "name": "Mayor",
+      "sortOrder": 22
+    },
+    {
+      "id": "d68m11cn9qd8d2h78j0g",
+      "name": "Montgomery",
+      "sortOrder": 23
+    },
+    {
+      "id": "d68m11cn9qd8d2h78j10",
+      "name": "Soldier",
+      "sortOrder": 24
+    },
+    {
+      "id": "d68m11cn9qd8d2h78j1g",
+      "name": "SOLDIERS.YORK_3H6",
+      "sortOrder": 25
+    },
+    {
+      "id": "d68m11cn9qd8d2h78j20",
+      "name": "ALDERMEN_3H6",
+      "sortOrder": 26
+    },
+    {
+      "id": "d68m11cn9qd8d2h78j2g",
+      "name": "SOLDIERS.MONTGOMERY_3H6",
+      "sortOrder": 27
+    },
+    {
+      "id": "d68m11cn9qd8d2h78j30",
+      "name": "Exeter",
+      "sortOrder": 28
+    },
+    {
+      "id": "d68m11cn9qd8d2h78j3g",
+      "name": "SOLDIERS.YORK.0_3H6",
+      "sortOrder": 29
+    }
+  ],
+  "lines": [
+    {
+      "castMemberId": "d68m11cn9qd8d2h78il0",
+      "lineText": "Enter Richard of Gloucester , Clarence , Somerset , and Montague , all wearing the white rose .",
+      "scrollMode": "auto",
+      "lineIndex": 0
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ilg",
+      "lineText": "Now tell me , brother Clarence , what think you Of this new marriage with the Lady Grey ? Hath not our brother made a worthy choice ?",
+      "scrollMode": "auto",
+      "lineIndex": 1
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78im0",
+      "lineText": "Alas , you know ’tis far from hence to France . How could he stay till Warwick made return ?",
+      "scrollMode": "auto",
+      "lineIndex": 2
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78il0",
+      "lineText": "Flourish .",
+      "scrollMode": "auto",
+      "lineIndex": 3
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78img",
+      "lineText": "My lords , forbear this talk . Here comes the King .",
+      "scrollMode": "auto",
+      "lineIndex": 4
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ilg",
+      "lineText": "And his well-chosen bride .",
+      "scrollMode": "auto",
+      "lineIndex": 5
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78im0",
+      "lineText": "I mind to tell him plainly what I think .",
+      "scrollMode": "auto",
+      "lineIndex": 6
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78il0",
+      "lineText": "Enter King Edward , with Attendants , Lady Grey , now Queen Elizabeth , Pembroke , Stafford , Hastings , and others , all wearing the white rose . Four stand on one side , and four on the other .",
+      "scrollMode": "auto",
+      "lineIndex": 7
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78in0",
+      "lineText": "Now , brother of Clarence , how like you our choice , That you stand pensive , as half malcontent ?",
+      "scrollMode": "auto",
+      "lineIndex": 8
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78im0",
+      "lineText": "As well as Lewis of France or the Earl of Warwick , ACT 4. SC. 1 Which are so weak of courage and in judgment That they’ll take no offense at our abuse .",
+      "scrollMode": "auto",
+      "lineIndex": 9
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78in0",
+      "lineText": "Suppose they take offense without a cause , They are but Lewis and Warwick ; I am Edward , Your king and Warwick’s , and must have my will .",
+      "scrollMode": "auto",
+      "lineIndex": 10
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ilg",
+      "lineText": "And shall have your will because our king . Yet hasty marriage seldom proveth well .",
+      "scrollMode": "auto",
+      "lineIndex": 11
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78in0",
+      "lineText": "Yea , brother Richard , are you offended too ?",
+      "scrollMode": "auto",
+      "lineIndex": 12
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ilg",
+      "lineText": "Not I . No , God forbid that I should wish them severed Whom God hath joined together . Ay , and ’twere pity To sunder them that yoke so well together .",
+      "scrollMode": "auto",
+      "lineIndex": 13
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78in0",
+      "lineText": "Setting your scorns and your mislike aside , Tell me some reason why the Lady Grey Should not become my wife and England’s queen ? And you too , Somerset and Montague , Speak freely what you think .",
+      "scrollMode": "auto",
+      "lineIndex": 14
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78im0",
+      "lineText": "Then this is mine opinion : that King Lewis Becomes your enemy for mocking him About the marriage of the Lady Bona .",
+      "scrollMode": "auto",
+      "lineIndex": 15
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ilg",
+      "lineText": "And Warwick , doing what you gave in charge , Is now dishonorèd by this new marriage .",
+      "scrollMode": "auto",
+      "lineIndex": 16
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78in0",
+      "lineText": "What if both Lewis and Warwick be appeased By such invention as I can devise ?",
+      "scrollMode": "auto",
+      "lineIndex": 17
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ing",
+      "lineText": "Yet to have joined with France in such alliance Would more have strengthened this our commonwealth ’Gainst foreign storms than any home-bred marriage .",
+      "scrollMode": "auto",
+      "lineIndex": 18
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78io0",
+      "lineText": "Why , knows not Montague that of itself England is safe , if true within itself ?",
+      "scrollMode": "auto",
+      "lineIndex": 19
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ing",
+      "lineText": "But the safer when ’tis backed with France .",
+      "scrollMode": "auto",
+      "lineIndex": 20
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78io0",
+      "lineText": "’Tis better using France than trusting France . Let us be backed with God and with the seas Which He hath giv’n for fence impregnable , And with their helps only defend ourselves . In them and in ourselves our safety lies .",
+      "scrollMode": "auto",
+      "lineIndex": 21
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78im0",
+      "lineText": "For this one speech , Lord Hastings well deserves To have the heir of the Lord Hungerford .",
+      "scrollMode": "auto",
+      "lineIndex": 22
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78in0",
+      "lineText": "Ay , what of that ? It was my will and grant , And for this once my will shall stand for law .",
+      "scrollMode": "auto",
+      "lineIndex": 23
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ilg",
+      "lineText": "And yet methinks your Grace hath not done well To give the heir and daughter of Lord Scales Unto the brother of your loving bride . She better would have fitted me or Clarence ; But in your bride you bury brotherhood .",
+      "scrollMode": "auto",
+      "lineIndex": 24
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78im0",
+      "lineText": "Or else you would not have bestowed the heir Of the Lord Bonville on your new wife’s son , And leave your brothers to go speed elsewhere .",
+      "scrollMode": "auto",
+      "lineIndex": 25
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78in0",
+      "lineText": "Alas , poor Clarence , is it for a wife That thou art malcontent ? I will provide thee .",
+      "scrollMode": "auto",
+      "lineIndex": 26
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78im0",
+      "lineText": "In choosing for yourself you showed your judgment , Which , being shallow , you shall give me leave To play the broker in mine own behalf . And to that end , I shortly mind to leave you .",
+      "scrollMode": "auto",
+      "lineIndex": 27
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78in0",
+      "lineText": "Leave me or tarry , Edward will be king And not be tied unto his brother’s will .",
+      "scrollMode": "auto",
+      "lineIndex": 28
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78iog",
+      "lineText": "My lords , before it pleased his Majesty To raise my state to title of a queen , Do me but right and you must all confess That I was not ignoble of descent , And meaner than myself have had like fortune . But as this title honors me and mine , So your dislikes , to whom I would be pleasing , Doth cloud my joys with danger and with sorrow .",
+      "scrollMode": "auto",
+      "lineIndex": 29
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78in0",
+      "lineText": "My love , forbear to fawn upon their frowns . What danger or what sorrow can befall thee So long as Edward is thy constant friend And their true sovereign , whom they must obey ? Nay , whom they shall obey , and love thee too , Unless they seek for hatred at my hands ; Which if they do , yet will I keep thee safe , And they shall feel the vengeance of my wrath .",
+      "scrollMode": "auto",
+      "lineIndex": 30
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78il0",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 31
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ilg",
+      "lineText": "I hear , yet say not much , but think the more .",
+      "scrollMode": "auto",
+      "lineIndex": 32
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78il0",
+      "lineText": "Enter a Post .",
+      "scrollMode": "auto",
+      "lineIndex": 33
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78in0",
+      "lineText": "Now , messenger , what letters or what news from France ?",
+      "scrollMode": "auto",
+      "lineIndex": 34
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ip0",
+      "lineText": "My sovereign liege , no letters and few words But such as I without your special pardon Dare not relate .",
+      "scrollMode": "auto",
+      "lineIndex": 35
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78in0",
+      "lineText": "Go to , we pardon thee . Therefore , in brief , Tell me their words as near as thou canst guess them . What answer makes King Lewis unto our letters ?",
+      "scrollMode": "auto",
+      "lineIndex": 36
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ip0",
+      "lineText": "At my depart , these were his very words : Go tell false Edward , the supposèd king , That Lewis of France is sending over maskers To revel it with him and his new bride .",
+      "scrollMode": "auto",
+      "lineIndex": 37
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78in0",
+      "lineText": "Is Lewis so brave ? Belike he thinks me Henry . But what said Lady Bona to my marriage ?",
+      "scrollMode": "auto",
+      "lineIndex": 38
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ip0",
+      "lineText": "These were her words , uttered with mild disdain : Tell him , in hope he’ll prove a widower shortly , I’ll wear the willow garland for his sake .",
+      "scrollMode": "auto",
+      "lineIndex": 39
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78in0",
+      "lineText": "I blame not her ; she could say little less ; She had the wrong . But what said Henry’s queen ? For I have heard that she was there in place .",
+      "scrollMode": "auto",
+      "lineIndex": 40
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ip0",
+      "lineText": "Tell him , quoth she , my mourning weeds are done , And I am ready to put armor on .",
+      "scrollMode": "auto",
+      "lineIndex": 41
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78in0",
+      "lineText": "Belike she minds to play the Amazon . But what said Warwick to these injuries ?",
+      "scrollMode": "auto",
+      "lineIndex": 42
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ip0",
+      "lineText": "He , more incensed against your Majesty Than all the rest , discharged me with these words : Tell him from me that he hath done me wrong , And therefore I’ll uncrown him ere ’t be long .",
+      "scrollMode": "auto",
+      "lineIndex": 43
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78in0",
+      "lineText": "Ha ! Durst the traitor breathe out so proud words ? Well , I will arm me , being thus forewarned . They shall have wars and pay for their presumption . But say , is Warwick friends with Margaret ?",
+      "scrollMode": "auto",
+      "lineIndex": 44
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ip0",
+      "lineText": "Ay , gracious sovereign , they are so linked in friendship ACT 4. SC. 1 That young Prince Edward marries Warwick’s daughter .",
+      "scrollMode": "auto",
+      "lineIndex": 45
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78il0",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 46
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78im0",
+      "lineText": "Belike the elder ; Clarence will have the younger . — Now , brother king , farewell , and sit you fast , For I will hence to Warwick’s other daughter , That , though I want a kingdom , yet in marriage I may not prove inferior to yourself . You that love me and Warwick , follow me .",
+      "scrollMode": "auto",
+      "lineIndex": 47
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78il0",
+      "lineText": "Clarence exits , and Somerset follows .",
+      "scrollMode": "auto",
+      "lineIndex": 48
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78il0",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 49
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ilg",
+      "lineText": "Not I . My thoughts aim at a further matter : I stay not for the love of Edward , but the crown .",
+      "scrollMode": "auto",
+      "lineIndex": 50
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78il0",
+      "lineText": "Pembroke and Stafford exit .",
+      "scrollMode": "auto",
+      "lineIndex": 51
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ipg",
+      "lineText": "Pembroke and Stafford exit . But ere I go , Hastings and Montague , Resolve my doubt : you twain , of all the rest , Are near to Warwick by blood and by alliance . Tell me if you love Warwick more than me . If it be so , then both depart to him . I rather wish you foes than hollow friends . But if you mind to hold your true obedience , Give me assurance with some friendly vow , That I may never have you in suspect .",
+      "scrollMode": "auto",
+      "lineIndex": 52
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ing",
+      "lineText": "So God help Montague as he proves true !",
+      "scrollMode": "auto",
+      "lineIndex": 53
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78io0",
+      "lineText": "And Hastings as he favors Edward’s cause !",
+      "scrollMode": "auto",
+      "lineIndex": 54
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78in0",
+      "lineText": "Now , brother Richard , will you stand by us ?",
+      "scrollMode": "auto",
+      "lineIndex": 55
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ilg",
+      "lineText": "Ay , in despite of all that shall withstand you .",
+      "scrollMode": "auto",
+      "lineIndex": 56
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78in0",
+      "lineText": "Why , so . Then am I sure of victory . Now therefore let us hence and lose no hour Till we meet Warwick with his foreign power .",
+      "scrollMode": "auto",
+      "lineIndex": 57
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78il0",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 58
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78il0",
+      "lineText": "Enter Warwick and Oxford in England , wearing the red rose , with French Soldiers .",
+      "scrollMode": "auto",
+      "lineIndex": 59
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78il0",
+      "lineText": "Enter Clarence and Somerset .",
+      "scrollMode": "auto",
+      "lineIndex": 60
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78im0",
+      "lineText": "Enter Clarence and Somerset . But see where Somerset and Clarence comes . — Speak suddenly , my lords : are we all friends ?",
+      "scrollMode": "auto",
+      "lineIndex": 61
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78im0",
+      "lineText": "Fear not that , my lord .",
+      "scrollMode": "auto",
+      "lineIndex": 62
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78il0",
+      "lineText": "They all cry Henry !",
+      "scrollMode": "auto",
+      "lineIndex": 63
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78iqg",
+      "lineText": "They all cry Henry ! Why then , let’s on our way in silent sort . For Warwick and his friends , God and Saint George !",
+      "scrollMode": "auto",
+      "lineIndex": 64
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78il0",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 65
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78il0",
+      "lineText": "Enter three Watchmen to guard King Edward’s tent , all wearing the white rose .",
+      "scrollMode": "auto",
+      "lineIndex": 66
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78irg",
+      "lineText": "Come on , my masters , each man take his stand . The King by this is set him down to sleep .",
+      "scrollMode": "auto",
+      "lineIndex": 67
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78is0",
+      "lineText": "What , will he not to bed ?",
+      "scrollMode": "auto",
+      "lineIndex": 68
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78irg",
+      "lineText": "Why , no , for he hath made a solemn vow Never to lie and take his natural rest Till Warwick or himself be quite suppressed .",
+      "scrollMode": "auto",
+      "lineIndex": 69
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78is0",
+      "lineText": "Tomorrow , then , belike shall be the day , If Warwick be so near as men report .",
+      "scrollMode": "auto",
+      "lineIndex": 70
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78isg",
+      "lineText": "But say , I pray , what nobleman is that That with the King here resteth in his tent ?",
+      "scrollMode": "auto",
+      "lineIndex": 71
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78irg",
+      "lineText": "’Tis the Lord Hastings , the King’s chiefest friend .",
+      "scrollMode": "auto",
+      "lineIndex": 72
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78isg",
+      "lineText": "O , is it so ? But why commands the King That his chief followers lodge in towns about him , While he himself keeps in the cold field ?",
+      "scrollMode": "auto",
+      "lineIndex": 73
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78is0",
+      "lineText": "’Tis the more honor , because more dangerous .",
+      "scrollMode": "auto",
+      "lineIndex": 74
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78isg",
+      "lineText": "Ay , but give me worship and quietness ; I like it better than a dangerous honor . If Warwick knew in what estate he stands , ’Tis to be doubted he would waken him .",
+      "scrollMode": "auto",
+      "lineIndex": 75
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78irg",
+      "lineText": "Unless our halberds did shut up his passage .",
+      "scrollMode": "auto",
+      "lineIndex": 76
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78is0",
+      "lineText": "Ay , wherefore else guard we his royal tent But to defend his person from night foes ?",
+      "scrollMode": "auto",
+      "lineIndex": 77
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78il0",
+      "lineText": "Enter Warwick , Clarence , Oxford , Somerset , all wearing the red rose , and French Soldiers , silent all .",
+      "scrollMode": "auto",
+      "lineIndex": 78
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78it0",
+      "lineText": "This is his tent , and see where stand his guard . Courage , my masters . Honor , now or never ! But follow me , and Edward shall be ours .",
+      "scrollMode": "auto",
+      "lineIndex": 79
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78irg",
+      "lineText": "Who goes there ?",
+      "scrollMode": "auto",
+      "lineIndex": 80
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78is0",
+      "lineText": "Stay , or thou diest !",
+      "scrollMode": "auto",
+      "lineIndex": 81
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78il0",
+      "lineText": "Warwick and the rest cry all Warwick , Warwick !",
+      "scrollMode": "auto",
+      "lineIndex": 82
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78il0",
+      "lineText": "who fly , crying Arm , Arm ! Warwick and the rest following them .",
+      "scrollMode": "auto",
+      "lineIndex": 83
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78il0",
+      "lineText": "The drum playing and trumpet sounding , enter Warwick , Somerset , and the rest , bringing King Edward out in his gown , sitting in a chair .",
+      "scrollMode": "auto",
+      "lineIndex": 84
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78il0",
+      "lineText": "Richard and Hastings flies over the stage .",
+      "scrollMode": "auto",
+      "lineIndex": 85
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78img",
+      "lineText": "What are they that fly there ?",
+      "scrollMode": "auto",
+      "lineIndex": 86
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78it0",
+      "lineText": "Richard and Hastings . Let them go . Here is the Duke .",
+      "scrollMode": "auto",
+      "lineIndex": 87
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78in0",
+      "lineText": "The Duke ? Why , Warwick , when we parted , thou call’dst me king .",
+      "scrollMode": "auto",
+      "lineIndex": 88
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78it0",
+      "lineText": "Ay , but the case is altered . When you disgraced me in my embassade , Then I degraded you from being king And come now to create you Duke of York . Alas , how should you govern any kingdom That know not how to use ambassadors , Nor how to be contented with one wife , Nor how to use your brothers brotherly , Nor how to study for the people’s welfare , Nor how to shroud yourself from enemies ?",
+      "scrollMode": "auto",
+      "lineIndex": 89
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78in0",
+      "lineText": "Yea , brother of Clarence , art thou here too ? Nay , then , I see that Edward needs must down . Yet , Warwick , in despite of all mischance , Of thee thyself and all thy complices , Edward will always bear himself as king . Though Fortune’s malice overthrow my state , My mind exceeds the compass of her wheel .",
+      "scrollMode": "auto",
+      "lineIndex": 90
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78il0",
+      "lineText": "Takes off his crown .",
+      "scrollMode": "auto",
+      "lineIndex": 91
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78it0",
+      "lineText": "Takes off his crown . But Henry now shall wear the English crown And be true king indeed , thou but the shadow . — My lord of Somerset , at my request , See that forthwith Duke Edward be conveyed Unto my brother , Archbishop of York . When I have fought with Pembroke and his fellows , I’ll follow you and tell what answer Lewis and the Lady Bona send to him . — Now for awhile farewell , good Duke of York .",
+      "scrollMode": "auto",
+      "lineIndex": 92
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78il0",
+      "lineText": "They begin to lead him out forcibly .",
+      "scrollMode": "auto",
+      "lineIndex": 93
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78in0",
+      "lineText": "What Fates impose , that men must needs abide ; It boots not to resist both wind and tide .",
+      "scrollMode": "auto",
+      "lineIndex": 94
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78il0",
+      "lineText": "Somerset and Soldiers exit , guarding King Edward .",
+      "scrollMode": "auto",
+      "lineIndex": 95
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78iqg",
+      "lineText": "What now remains , my lords , for us to do But march to London with our soldiers ?",
+      "scrollMode": "auto",
+      "lineIndex": 96
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78it0",
+      "lineText": "Ay , that’s the first thing that we have to do , To free King Henry from imprisonment And see him seated in the regal throne .",
+      "scrollMode": "auto",
+      "lineIndex": 97
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78il0",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 98
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78il0",
+      "lineText": "Enter Rivers and Queen Elizabeth , wearing the white rose .",
+      "scrollMode": "auto",
+      "lineIndex": 99
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78itg",
+      "lineText": "Madam , what makes you in this sudden change ?",
+      "scrollMode": "auto",
+      "lineIndex": 100
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78iog",
+      "lineText": "Why , brother Rivers , are you yet to learn What late misfortune is befall’n King Edward ?",
+      "scrollMode": "auto",
+      "lineIndex": 101
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78itg",
+      "lineText": "What , loss of some pitched battle against Warwick ?",
+      "scrollMode": "auto",
+      "lineIndex": 102
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78iog",
+      "lineText": "No , but the loss of his own royal person .",
+      "scrollMode": "auto",
+      "lineIndex": 103
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78itg",
+      "lineText": "Then is my sovereign slain ?",
+      "scrollMode": "auto",
+      "lineIndex": 104
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78iog",
+      "lineText": "Ay , almost slain , for he is taken prisoner , Either betrayed by falsehood of his guard Or by his foe surprised at unawares ; And , as I further have to understand , Is new committed to the Bishop of York , Fell Warwick’s brother and by that our foe .",
+      "scrollMode": "auto",
+      "lineIndex": 105
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78itg",
+      "lineText": "These news I must confess are full of grief ; Yet , gracious madam , bear it as you may . Warwick may lose that now hath won the day .",
+      "scrollMode": "auto",
+      "lineIndex": 106
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78iog",
+      "lineText": "Till then fair hope must hinder life’s decay ; And I the rather wean me from despair For love of Edward’s offspring in my womb . This is it that makes me bridle passion And bear with mildness my misfortune’s cross . Ay , ay , for this I draw in many a tear And stop the rising of blood-sucking sighs , Lest with my sighs or tears I blast or drown King Edward’s fruit , true heir to th’ English crown .",
+      "scrollMode": "auto",
+      "lineIndex": 107
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78itg",
+      "lineText": "But , madam , where is Warwick then become ?",
+      "scrollMode": "auto",
+      "lineIndex": 108
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78iog",
+      "lineText": "I am informèd that he comes towards London To set the crown once more on Henry’s head . Guess thou the rest : King Edward’s friends must down . But to prevent the tyrant’s violence — For trust not him that hath once broken faith — I’ll hence forthwith unto the sanctuary To save at least the heir of Edward’s right . There shall I rest secure from force and fraud . Come , therefore , let us fly while we may fly . If Warwick take us , we are sure to die .",
+      "scrollMode": "auto",
+      "lineIndex": 109
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78il0",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 110
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78il0",
+      "lineText": "Enter Richard of Gloucester , Lord Hastings , and Sir William Stanley , with Soldiers , all wearing the white rose .",
+      "scrollMode": "auto",
+      "lineIndex": 111
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ilg",
+      "lineText": "Now , my Lord Hastings and Sir William Stanley , Leave off to wonder why I drew you hither Into this chiefest thicket of the park . Thus stands the case : you know our king , my brother , Is prisoner to the Bishop here , at whose hands He hath good usage and great liberty , And , often but attended with weak guard , Comes hunting this way to disport himself . I have advertised him by secret means That , if about this hour he make this way Under the color of his usual game , He shall here find his friends with horse and men To set him free from his captivity .",
+      "scrollMode": "auto",
+      "lineIndex": 112
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78il0",
+      "lineText": "Enter King Edward , wearing the white rose , and a Huntsman with him .",
+      "scrollMode": "auto",
+      "lineIndex": 113
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78iu0",
+      "lineText": "This way , my lord , for this way lies the game .",
+      "scrollMode": "auto",
+      "lineIndex": 114
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78in0",
+      "lineText": "Nay , this way , man . See where the huntsmen stand . — Now , brother of Gloucester , Lord Hastings , and the rest , Stand you thus close to steal the Bishop’s deer ?",
+      "scrollMode": "auto",
+      "lineIndex": 115
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ilg",
+      "lineText": "Brother , the time and case requireth haste . Your horse stands ready at the park corner .",
+      "scrollMode": "auto",
+      "lineIndex": 116
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78in0",
+      "lineText": "But whither shall we then ?",
+      "scrollMode": "auto",
+      "lineIndex": 117
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78io0",
+      "lineText": "To Lynn , my lord , and shipped from thence to Flanders .",
+      "scrollMode": "auto",
+      "lineIndex": 118
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ilg",
+      "lineText": "Well guessed , believe me , for that was my meaning .",
+      "scrollMode": "auto",
+      "lineIndex": 119
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78in0",
+      "lineText": "Stanley , I will requite thy forwardness .",
+      "scrollMode": "auto",
+      "lineIndex": 120
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ilg",
+      "lineText": "But wherefore stay we ? ’Tis no time to talk .",
+      "scrollMode": "auto",
+      "lineIndex": 121
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78in0",
+      "lineText": "Huntsman , what sayst thou ? Wilt thou go along ?",
+      "scrollMode": "auto",
+      "lineIndex": 122
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78iu0",
+      "lineText": "Better do so than tarry and be hanged .",
+      "scrollMode": "auto",
+      "lineIndex": 123
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ilg",
+      "lineText": "Come then , away ! Let’s ha’ no more ado .",
+      "scrollMode": "auto",
+      "lineIndex": 124
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78in0",
+      "lineText": "Bishop , farewell ; shield thee from Warwick’s frown , And pray that I may repossess the crown .",
+      "scrollMode": "auto",
+      "lineIndex": 125
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78il0",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 126
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78il0",
+      "lineText": "Flourish . Enter King Henry the Sixth , Clarence , Warwick , Somerset , young Henry Earl of Richmond , Oxford , Montague , all wearing the red rose , and Lieutenant of the Tower .",
+      "scrollMode": "auto",
+      "lineIndex": 127
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78iug",
+      "lineText": "Master lieutenant , now that God and friends Have shaken Edward from the regal seat And turned my captive state to liberty , My fear to hope , my sorrows unto joys , At our enlargement what are thy due fees ?",
+      "scrollMode": "auto",
+      "lineIndex": 128
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78iv0",
+      "lineText": "Subjects may challenge nothing of their sov’reigns , But , if an humble prayer may prevail , I then crave pardon of your Majesty .",
+      "scrollMode": "auto",
+      "lineIndex": 129
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78iug",
+      "lineText": "For what , lieutenant ? For well using me ? ACT 4. SC. 6 Nay , be thou sure I’ll well requite thy kindness , For that it made my imprisonment a pleasure , Ay , such a pleasure as encagèd birds Conceive when , after many moody thoughts , At last by notes of household harmony They quite forget their loss of liberty . — But , Warwick , after God thou sett’st me free , And chiefly , therefore , I thank God and thee . He was the author , thou the instrument . Therefore , that I may conquer Fortune’s spite By living low where Fortune cannot hurt me , And that the people of this blessèd land May not be punished with my thwarting stars , Warwick , although my head still wear the crown , I here resign my government to thee , For thou art fortunate in all thy deeds .",
+      "scrollMode": "auto",
+      "lineIndex": 130
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78it0",
+      "lineText": "Your Grace hath still been famed for virtuous And now may seem as wise as virtuous By spying and avoiding Fortune’s malice , For few men rightly temper with the stars . Yet , in this one thing let me blame your Grace : For choosing me when Clarence is in place .",
+      "scrollMode": "auto",
+      "lineIndex": 131
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78im0",
+      "lineText": "No , Warwick , thou art worthy of the sway , To whom the heav’ns in thy nativity Adjudged an olive branch and laurel crown As likely to be blest in peace and war ; And therefore I yield thee my free consent .",
+      "scrollMode": "auto",
+      "lineIndex": 132
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78it0",
+      "lineText": "And I choose Clarence only for Protector .",
+      "scrollMode": "auto",
+      "lineIndex": 133
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78il0",
+      "lineText": "He joins their hands .",
+      "scrollMode": "auto",
+      "lineIndex": 134
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78iug",
+      "lineText": "He joins their hands . I make you both Protectors of this land , While I myself will lead a private life And in devotion spend my latter days , To sin’s rebuke and my Creator’s praise .",
+      "scrollMode": "auto",
+      "lineIndex": 135
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78it0",
+      "lineText": "What answers Clarence to his sovereign’s will ?",
+      "scrollMode": "auto",
+      "lineIndex": 136
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78im0",
+      "lineText": "That he consents , if Warwick yield consent , For on thy fortune I repose myself .",
+      "scrollMode": "auto",
+      "lineIndex": 137
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78it0",
+      "lineText": "Why , then , though loath , yet must I be content . We’ll yoke together like a double shadow To Henry’s body , and supply his place — I mean , in bearing weight of government — While he enjoys the honor and his ease . And , Clarence , now then it is more than needful Forthwith that Edward be pronounced a traitor And all his lands and goods be confiscate .",
+      "scrollMode": "auto",
+      "lineIndex": 138
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78im0",
+      "lineText": "What else ? And that succession be determinèd .",
+      "scrollMode": "auto",
+      "lineIndex": 139
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78it0",
+      "lineText": "Ay , therein Clarence shall not want his part .",
+      "scrollMode": "auto",
+      "lineIndex": 140
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78iug",
+      "lineText": "But with the first of all your chief affairs Let me entreat — for I command no more — That Margaret your queen and my son Edward Be sent for , to return from France with speed , For till I see them here , by doubtful fear My joy of liberty is half eclipsed .",
+      "scrollMode": "auto",
+      "lineIndex": 141
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78im0",
+      "lineText": "It shall be done , my sovereign , with all speed .",
+      "scrollMode": "auto",
+      "lineIndex": 142
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78iug",
+      "lineText": "My lord of Somerset , what youth is that Of whom you seem to have so tender care ?",
+      "scrollMode": "auto",
+      "lineIndex": 143
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78img",
+      "lineText": "My liege , it is young Henry , Earl of Richmond .",
+      "scrollMode": "auto",
+      "lineIndex": 144
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78il0",
+      "lineText": ", to Richmond",
+      "scrollMode": "auto",
+      "lineIndex": 145
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78il0",
+      "lineText": "Lays his hand on Richmond’s head .",
+      "scrollMode": "auto",
+      "lineIndex": 146
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78iug",
+      "lineText": "Lays his hand on Richmond’s head . If secret powers Suggest but truth to my divining thoughts , This pretty lad will prove our country’s bliss . His looks are full of peaceful majesty , His head by nature framed to wear a crown , His hand to wield a scepter , and himself Likely in time to bless a regal throne . Make much of him , my lords , for this is he Must help you more than you are hurt by me .",
+      "scrollMode": "auto",
+      "lineIndex": 147
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78il0",
+      "lineText": "Enter a Post .",
+      "scrollMode": "auto",
+      "lineIndex": 148
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78it0",
+      "lineText": "What news , my friend ?",
+      "scrollMode": "auto",
+      "lineIndex": 149
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ip0",
+      "lineText": "That Edward is escapèd from your brother And fled , as he hears since , to Burgundy .",
+      "scrollMode": "auto",
+      "lineIndex": 150
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78it0",
+      "lineText": "Unsavory news ! But how made he escape ?",
+      "scrollMode": "auto",
+      "lineIndex": 151
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ip0",
+      "lineText": "He was conveyed by Richard , Duke of Gloucester , And the Lord Hastings , who attended him In secret ambush on the forest side And from the Bishop’s huntsmen rescued him , For hunting was his daily exercise .",
+      "scrollMode": "auto",
+      "lineIndex": 152
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78it0",
+      "lineText": "My brother was too careless of his charge . But let us hence , my sovereign , to provide A salve for any sore that may betide .",
+      "scrollMode": "auto",
+      "lineIndex": 153
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78il0",
+      "lineText": "All but Somerset , Richmond , and Oxford exit .",
+      "scrollMode": "auto",
+      "lineIndex": 154
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78il0",
+      "lineText": ", to Oxford",
+      "scrollMode": "auto",
+      "lineIndex": 155
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78img",
+      "lineText": "My lord , I like not of this flight of Edward’s , For doubtless Burgundy will yield him help , ACT 4. SC. 7 And we shall have more wars before ’t be long . As Henry’s late presaging prophecy Did glad my heart with hope of this young Richmond , So doth my heart misgive me in these conflicts What may befall him , to his harm and ours . Therefore , Lord Oxford , to prevent the worst , Forthwith we’ll send him hence to Brittany Till storms be past of civil enmity .",
+      "scrollMode": "auto",
+      "lineIndex": 156
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78iqg",
+      "lineText": "Ay , for if Edward repossess the crown , ’Tis like that Richmond , with the rest , shall down .",
+      "scrollMode": "auto",
+      "lineIndex": 157
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78img",
+      "lineText": "It shall be so . He shall to Brittany . Come , therefore , let’s about it speedily .",
+      "scrollMode": "auto",
+      "lineIndex": 158
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78il0",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 159
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78il0",
+      "lineText": "Flourish . Enter King Edward , Richard , Hastings , and Soldiers , all wearing the white rose .",
+      "scrollMode": "auto",
+      "lineIndex": 160
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78in0",
+      "lineText": "Now , brother Richard , Lord Hastings , and the rest : Yet thus far Fortune maketh us amends , And says that once more I shall interchange My wanèd state for Henry’s regal crown . Well have we passed , and now re-passed , the seas , And brought desirèd help from Burgundy . What then remains , we being thus arrived From Ravenspurgh Haven before the gates of York , But that we enter as into our dukedom ?",
+      "scrollMode": "auto",
+      "lineIndex": 161
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78il0",
+      "lineText": "Hastings knocks at the gate .",
+      "scrollMode": "auto",
+      "lineIndex": 162
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ilg",
+      "lineText": "The gates made fast ? Brother , I like not this . ACT 4. SC. 7 For many men that stumble at the threshold Are well foretold that danger lurks within .",
+      "scrollMode": "auto",
+      "lineIndex": 163
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78in0",
+      "lineText": "Tush , man , abodements must not now affright us . By fair or foul means we must enter in , For hither will our friends repair to us .",
+      "scrollMode": "auto",
+      "lineIndex": 164
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78io0",
+      "lineText": "My liege , I’ll knock once more to summon them .",
+      "scrollMode": "auto",
+      "lineIndex": 165
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78il0",
+      "lineText": "He knocks .",
+      "scrollMode": "auto",
+      "lineIndex": 166
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78il0",
+      "lineText": "Enter on the walls the Mayor of York and his brethren , the Aldermen .",
+      "scrollMode": "auto",
+      "lineIndex": 167
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78j00",
+      "lineText": "My lords , we were forewarnèd of your coming , And shut the gates for safety of ourselves , For now we owe allegiance unto Henry .",
+      "scrollMode": "auto",
+      "lineIndex": 168
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78in0",
+      "lineText": "But , master mayor , if Henry be your king , Yet Edward , at the least , is Duke of York .",
+      "scrollMode": "auto",
+      "lineIndex": 169
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78j00",
+      "lineText": "True , my good lord , I know you for no less .",
+      "scrollMode": "auto",
+      "lineIndex": 170
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78in0",
+      "lineText": "Why , and I challenge nothing but my dukedom , As being well content with that alone .",
+      "scrollMode": "auto",
+      "lineIndex": 171
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78il0",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 172
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ilg",
+      "lineText": "But when the fox hath once got in his nose , He’ll soon find means to make the body follow .",
+      "scrollMode": "auto",
+      "lineIndex": 173
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78io0",
+      "lineText": "Why , master mayor , why stand you in a doubt ? Open the gates . We are King Henry’s friends .",
+      "scrollMode": "auto",
+      "lineIndex": 174
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78j00",
+      "lineText": "Ay , say you so ? The gates shall then be opened .",
+      "scrollMode": "auto",
+      "lineIndex": 175
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78il0",
+      "lineText": "He descends with the Aldermen .",
+      "scrollMode": "auto",
+      "lineIndex": 176
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ilg",
+      "lineText": "A wise stout captain , and soon persuaded .",
+      "scrollMode": "auto",
+      "lineIndex": 177
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78io0",
+      "lineText": "The good old man would fain that all were well , So ’twere not long of him ; but being entered , I doubt not , I , but we shall soon persuade Both him and all his brothers unto reason .",
+      "scrollMode": "auto",
+      "lineIndex": 178
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78il0",
+      "lineText": "Enter the Mayor and two Aldermen .",
+      "scrollMode": "auto",
+      "lineIndex": 179
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78il0",
+      "lineText": "Takes his keys .",
+      "scrollMode": "auto",
+      "lineIndex": 180
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78in0",
+      "lineText": "Takes his keys . For Edward will defend the town and thee And all those friends that deign to follow me .",
+      "scrollMode": "auto",
+      "lineIndex": 181
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78il0",
+      "lineText": "March . Enter Montgomery , with Drum and Soldiers .",
+      "scrollMode": "auto",
+      "lineIndex": 182
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ilg",
+      "lineText": "Brother , this is Sir John Montgomery , Our trusty friend , unless I be deceived .",
+      "scrollMode": "auto",
+      "lineIndex": 183
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78in0",
+      "lineText": "Welcome , Sir John . But why come you in arms ?",
+      "scrollMode": "auto",
+      "lineIndex": 184
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78j0g",
+      "lineText": "To help King Edward in his time of storm , As every loyal subject ought to do .",
+      "scrollMode": "auto",
+      "lineIndex": 185
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78in0",
+      "lineText": "Thanks , good Montgomery . But we now forget Our title to the crown , and only claim Our dukedom , till God please to send the rest .",
+      "scrollMode": "auto",
+      "lineIndex": 186
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78j0g",
+      "lineText": "Then fare you well , for I will hence again . I came to serve a king and not a duke . — Drummer , strike up , and let us march away .",
+      "scrollMode": "auto",
+      "lineIndex": 187
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78il0",
+      "lineText": "The Drum begins to march .",
+      "scrollMode": "auto",
+      "lineIndex": 188
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78in0",
+      "lineText": "Nay , stay , Sir John , a while , and we’ll debate By what safe means the crown may be recovered .",
+      "scrollMode": "auto",
+      "lineIndex": 189
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78j0g",
+      "lineText": "What talk you of debating ? In few words , If you’ll not here proclaim yourself our king , I’ll leave you to your fortune and be gone To keep them back that come to succor you . Why shall we fight if you pretend no title ?",
+      "scrollMode": "auto",
+      "lineIndex": 190
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ilg",
+      "lineText": "Why , brother , wherefore stand you on nice points ?",
+      "scrollMode": "auto",
+      "lineIndex": 191
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78in0",
+      "lineText": "When we grow stronger , then we’ll make our claim . Till then ’tis wisdom to conceal our meaning .",
+      "scrollMode": "auto",
+      "lineIndex": 192
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78io0",
+      "lineText": "Away with scrupulous wit ! Now arms must rule .",
+      "scrollMode": "auto",
+      "lineIndex": 193
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ilg",
+      "lineText": "And fearless minds climb soonest unto crowns . Brother , we will proclaim you out of hand ; The bruit thereof will bring you many friends .",
+      "scrollMode": "auto",
+      "lineIndex": 194
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78in0",
+      "lineText": "Then be it as you will , for ’tis my right , And Henry but usurps the diadem .",
+      "scrollMode": "auto",
+      "lineIndex": 195
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78j0g",
+      "lineText": "Ay , now my sovereign speaketh like himself , And now will I be Edward’s champion .",
+      "scrollMode": "auto",
+      "lineIndex": 196
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78io0",
+      "lineText": "Sound , trumpet ! Edward shall be here proclaimed . — Come , fellow soldier , make thou proclamation .",
+      "scrollMode": "auto",
+      "lineIndex": 197
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78il0",
+      "lineText": "Flourish . Sound .",
+      "scrollMode": "auto",
+      "lineIndex": 198
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78il0",
+      "lineText": "reads",
+      "scrollMode": "auto",
+      "lineIndex": 199
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78j10",
+      "lineText": "Edward the Fourth , by the Grace of God , King of England and France , and Lord of Ireland , \u0026c .",
+      "scrollMode": "auto",
+      "lineIndex": 200
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78j0g",
+      "lineText": "And whosoe’er gainsays King Edward’s right , By this I challenge him to single fight .",
+      "scrollMode": "auto",
+      "lineIndex": 201
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78il0",
+      "lineText": "Throws down his gauntlet .",
+      "scrollMode": "auto",
+      "lineIndex": 202
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ilg",
+      "lineText": "Long live Edward the Fourth !",
+      "scrollMode": "auto",
+      "lineIndex": 203
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78in0",
+      "lineText": "Thanks , brave Montgomery , and thanks unto you all . If fortune serve me , I’ll requite this kindness . Now , for this night let’s harbor here in York , And when the morning sun shall raise his car Above the border of this horizon , We’ll forward towards Warwick and his mates ; For well I wot that Henry is no soldier . Ah , froward Clarence , how evil it beseems thee To flatter Henry and forsake thy brother ! Yet , as we may , we’ll meet both thee and Warwick . Come on , brave soldiers ; doubt not of the day ; And that once gotten , doubt not of large pay .",
+      "scrollMode": "auto",
+      "lineIndex": 204
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78il0",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 205
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78il0",
+      "lineText": "Flourish . Enter King Henry , Warwick , Montague , Clarence , Oxford , and Exeter , all wearing the red rose .",
+      "scrollMode": "auto",
+      "lineIndex": 206
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78it0",
+      "lineText": "What counsel , lords ? Edward from Belgia , With hasty Germans and blunt Hollanders , Hath passed in safety through the Narrow Seas , And with his troops doth march amain to London , And many giddy people flock to him .",
+      "scrollMode": "auto",
+      "lineIndex": 207
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78iug",
+      "lineText": "Let’s levy men and beat him back again .",
+      "scrollMode": "auto",
+      "lineIndex": 208
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78im0",
+      "lineText": "A little fire is quickly trodden out , Which , being suffered , rivers cannot quench .",
+      "scrollMode": "auto",
+      "lineIndex": 209
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78it0",
+      "lineText": "In Warwickshire I have true-hearted friends , Not mutinous in peace yet bold in war . Those will I muster up ; and thou , son Clarence , Shalt stir up in Suffolk , Norfolk , and in Kent ACT 4. SC. 8 The knights and gentlemen to come with thee . — Thou , brother Montague , in Buckingham , Northampton , and in Leicestershire shalt find Men well inclined to hear what thou command’st . — And thou , brave Oxford , wondrous well beloved , In Oxfordshire shalt muster up thy friends . — My sovereign , with the loving citizens , Like to his island girt in with the ocean , Or modest Dian circled with her nymphs , Shall rest in London till we come to him . Fair lords , take leave , and stand not to reply . — Farewell , my sovereign .",
+      "scrollMode": "auto",
+      "lineIndex": 210
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78iug",
+      "lineText": "Farewell , my Hector and my Troy’s true hope .",
+      "scrollMode": "auto",
+      "lineIndex": 211
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78im0",
+      "lineText": "In sign of truth , I kiss your Highness’ hand .",
+      "scrollMode": "auto",
+      "lineIndex": 212
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78iug",
+      "lineText": "Well-minded Clarence , be thou fortunate .",
+      "scrollMode": "auto",
+      "lineIndex": 213
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ing",
+      "lineText": "Comfort , my lord ; and so I take my leave .",
+      "scrollMode": "auto",
+      "lineIndex": 214
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78iqg",
+      "lineText": "And thus I seal my truth , and bid adieu .",
+      "scrollMode": "auto",
+      "lineIndex": 215
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78il0",
+      "lineText": "He kisses Henry’s hand .",
+      "scrollMode": "auto",
+      "lineIndex": 216
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78iug",
+      "lineText": "Sweet Oxford and my loving Montague And all at once , once more a happy farewell .",
+      "scrollMode": "auto",
+      "lineIndex": 217
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78it0",
+      "lineText": "Farewell , sweet lords . Let’s meet at Coventry .",
+      "scrollMode": "auto",
+      "lineIndex": 218
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78il0",
+      "lineText": "All but King Henry and Exeter exit .",
+      "scrollMode": "auto",
+      "lineIndex": 219
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78iug",
+      "lineText": "Here at the palace will I rest awhile . Cousin of Exeter , what thinks your Lordship ? Methinks the power that Edward hath in field Should not be able to encounter mine .",
+      "scrollMode": "auto",
+      "lineIndex": 220
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78j30",
+      "lineText": "The doubt is that he will seduce the rest .",
+      "scrollMode": "auto",
+      "lineIndex": 221
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78iug",
+      "lineText": "That’s not my fear . My meed hath got me fame . I have not stopped mine ears to their demands , Nor posted off their suits with slow delays . My pity hath been balm to heal their wounds , My mildness hath allayed their swelling griefs , My mercy dried their water-flowing tears . I have not been desirous of their wealth Nor much oppressed them with great subsidies , Nor forward of revenge , though they much erred . Then why should they love Edward more than me ? No , Exeter , these graces challenge grace ; And when the lion fawns upon the lamb , The lamb will never cease to follow him .",
+      "scrollMode": "auto",
+      "lineIndex": 222
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78il0",
+      "lineText": "Shout within À York ! À York !",
+      "scrollMode": "auto",
+      "lineIndex": 223
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78j30",
+      "lineText": "Hark , hark , my lord , what shouts are these ?",
+      "scrollMode": "auto",
+      "lineIndex": 224
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78il0",
+      "lineText": "Enter King Edward and Richard and Soldiers , all wearing the white rose .",
+      "scrollMode": "auto",
+      "lineIndex": 225
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78il0",
+      "lineText": "Soldiers exit with King Henry and Exeter .",
+      "scrollMode": "auto",
+      "lineIndex": 226
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78j3g",
+      "lineText": "Soldiers exit with King Henry and Exeter . And , lords , towards Coventry bend we our course , Where peremptory Warwick now remains . The sun shines hot , and if we use delay , Cold biting winter mars our hoped-for hay .",
+      "scrollMode": "auto",
+      "lineIndex": 227
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ilg",
+      "lineText": "Away betimes , before his forces join , And take the great-grown traitor unawares . Brave warriors , march amain towards Coventry .",
+      "scrollMode": "auto",
+      "lineIndex": 228
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78il0",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 229
+    }
+  ],
+  "isPublic": true
+}

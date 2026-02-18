@@ -1,0 +1,775 @@
+{
+  "title": "Henry VIII (Act 4)",
+  "description": "Folger Shakespeare Library edition",
+  "author": "William Shakespeare",
+  "castMembers": [
+    {
+      "id": "d68m11cn9qd8d2h78v5g",
+      "name": "Narrator",
+      "sortOrder": 0
+    },
+    {
+      "id": "d68m11cn9qd8d2h78v60",
+      "name": "First Gentleman",
+      "sortOrder": 1
+    },
+    {
+      "id": "d68m11cn9qd8d2h78v6g",
+      "name": "Second Gentleman",
+      "sortOrder": 2
+    },
+    {
+      "id": "d68m11cn9qd8d2h78v70",
+      "name": "Dorset_H8",
+      "sortOrder": 3
+    },
+    {
+      "id": "d68m11cn9qd8d2h78v7g",
+      "name": "Surrey",
+      "description": "Buckingham’s son-in-law",
+      "sortOrder": 4
+    },
+    {
+      "id": "d68m11cn9qd8d2h78v80",
+      "name": "Suffolk",
+      "sortOrder": 5
+    },
+    {
+      "id": "d68m11cn9qd8d2h78v8g",
+      "name": "Norfolk",
+      "sortOrder": 6
+    },
+    {
+      "id": "d68m11cn9qd8d2h78v90",
+      "name": "LADIES_H8",
+      "sortOrder": 7
+    },
+    {
+      "id": "d68m11cn9qd8d2h78v9g",
+      "name": "Third Gentleman",
+      "sortOrder": 8
+    },
+    {
+      "id": "d68m11cn9qd8d2h78va0",
+      "name": "Griffith",
+      "description": "attendant on Katherine",
+      "sortOrder": 9
+    },
+    {
+      "id": "d68m11cn9qd8d2h78vag",
+      "name": "Queen Katherine",
+      "description": "Henry’s first wife, later Princess Dowager",
+      "sortOrder": 10
+    },
+    {
+      "id": "d68m11cn9qd8d2h78vb0",
+      "name": "Patience",
+      "description": "woman to Katherine",
+      "sortOrder": 11
+    },
+    {
+      "id": "d68m11cn9qd8d2h78vbg",
+      "name": "Messenger",
+      "sortOrder": 12
+    },
+    {
+      "id": "d68m11cn9qd8d2h78vc0",
+      "name": "Capuchius",
+      "description": "ambassador from the Emperor Charles",
+      "sortOrder": 13
+    }
+  ],
+  "lines": [
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v5g",
+      "lineText": "Enter two Gentlemen , meeting one another , the First Gentleman carrying a paper .",
+      "scrollMode": "auto",
+      "lineIndex": 0
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v60",
+      "lineText": "You’re well met once again .",
+      "scrollMode": "auto",
+      "lineIndex": 1
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v6g",
+      "lineText": "So are you .",
+      "scrollMode": "auto",
+      "lineIndex": 2
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v60",
+      "lineText": "You come to take your stand here and behold The Lady Anne pass from her coronation ?",
+      "scrollMode": "auto",
+      "lineIndex": 3
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v6g",
+      "lineText": "’Tis all my business . At our last encounter , The Duke of Buckingham came from his trial .",
+      "scrollMode": "auto",
+      "lineIndex": 4
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v60",
+      "lineText": "’Tis very true . But that time offered sorrow , This general joy .",
+      "scrollMode": "auto",
+      "lineIndex": 5
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v6g",
+      "lineText": "’Tis well . The citizens I am sure have shown at full their royal minds , As , let ’em have their rights , they are ever forward In celebration of this day with shows , Pageants , and sights of honor .",
+      "scrollMode": "auto",
+      "lineIndex": 6
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v60",
+      "lineText": "Never greater , Nor , I’ll assure you , better taken , sir .",
+      "scrollMode": "auto",
+      "lineIndex": 7
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v6g",
+      "lineText": "May I be bold to ask what that contains , That paper in your hand ?",
+      "scrollMode": "auto",
+      "lineIndex": 8
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v60",
+      "lineText": "Yes , ’tis the list ACT 4. SC. 1 Of those that claim their offices this day By custom of the coronation . The Duke of Suffolk is the first , and claims To be High Steward ; next , the Duke of Norfolk , He to be Earl Marshal . You may read the rest .",
+      "scrollMode": "auto",
+      "lineIndex": 9
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v5g",
+      "lineText": "He offers him the paper .",
+      "scrollMode": "auto",
+      "lineIndex": 10
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v6g",
+      "lineText": "I thank you , sir . Had I not known those customs , I should have been beholding to your paper . But I beseech you , what’s become of Katherine , The Princess Dowager ? How goes her business ?",
+      "scrollMode": "auto",
+      "lineIndex": 11
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v60",
+      "lineText": "That I can tell you too . The Archbishop Of Canterbury , accompanied with other Learnèd and reverend fathers of his order , Held a late court at Dunstable , six miles off From Ampthill , where the Princess lay , to which She was often cited by them , but appeared not ; And , to be short , for not appearance and The King’s late scruple , by the main assent Of all these learnèd men she was divorced , And the late marriage made of none effect ; Since which she was removed to Kymmalton , Where she remains now sick .",
+      "scrollMode": "auto",
+      "lineIndex": 12
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v5g",
+      "lineText": "Hautboys . A lively flourish of trumpets .",
+      "scrollMode": "auto",
+      "lineIndex": 13
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v5g",
+      "lineText": "Then , enter two Judges ; Lord Chancellor , with purse and mace before him . Choristers singing . Music . Enter Mayor of London , bearing the mace . Then Garter , in his coat of arms , and on his head he wore a gilt copper crown .",
+      "scrollMode": "auto",
+      "lineIndex": 14
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v5g",
+      "lineText": "Enter Marques Dorset , bearing a scepter of gold ; on his head a demi-coronal of gold . With him , the Earl of Surrey , bearing the rod of silver with the dove , crowned with an earl’s coronet . Collars of S’s .",
+      "scrollMode": "auto",
+      "lineIndex": 15
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v70",
+      "lineText": "Enter Marques Dorset , bearing a scepter of gold ; on his head a demi-coronal of gold . With him , the Earl of Surrey , bearing the rod of silver with the dove , crowned with an earl’s coronet . Collars of S’s . Who’s that that bears the scepter ?",
+      "scrollMode": "auto",
+      "lineIndex": 16
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v60",
+      "lineText": "Marques Dorset , And that the Earl of Surrey with the rod .",
+      "scrollMode": "auto",
+      "lineIndex": 17
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v5g",
+      "lineText": "Enter Duke of Suffolk , in his robe of estate , his coronet on his head , bearing a long white wand , as High Steward . With him , the Duke of Norfolk , with the rod of Marshalship , a coronet on his head . Collars of S’s .",
+      "scrollMode": "auto",
+      "lineIndex": 18
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v80",
+      "lineText": "Enter Duke of Suffolk , in his robe of estate , his coronet on his head , bearing a long white wand , as High Steward . With him , the Duke of Norfolk , with the rod of Marshalship , a coronet on his head . Collars of S’s . That should be The Duke of Suffolk .",
+      "scrollMode": "auto",
+      "lineIndex": 19
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v60",
+      "lineText": "’Tis the same : High Steward .",
+      "scrollMode": "auto",
+      "lineIndex": 20
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v6g",
+      "lineText": "And that my Lord of Norfolk ?",
+      "scrollMode": "auto",
+      "lineIndex": 21
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v60",
+      "lineText": "Yes .",
+      "scrollMode": "auto",
+      "lineIndex": 22
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v5g",
+      "lineText": "Enter a canopy , borne by four of the Cinque-ports , under it the Queen in her robe , in her hair , richly adorned with pearl , crowned . On each side her , the Bishops of London and Winchester .",
+      "scrollMode": "auto",
+      "lineIndex": 23
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v6g",
+      "lineText": "Heaven bless thee ! Thou hast the sweetest face I ever looked on . — Sir , as I have a soul , she is an angel . Our king has all the Indies in his arms , And more , and richer , when he strains that lady . I cannot blame his conscience .",
+      "scrollMode": "auto",
+      "lineIndex": 24
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v60",
+      "lineText": "They that bear The cloth of honor over her are four barons Of the Cinque-ports .",
+      "scrollMode": "auto",
+      "lineIndex": 25
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v5g",
+      "lineText": "Enter the Old Duchess of Norfolk , in a coronal of gold wrought with flowers , bearing the Queen’s train . Certain Ladies or Countesses , with plain circlets of gold without flowers .",
+      "scrollMode": "auto",
+      "lineIndex": 26
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v90",
+      "lineText": "Enter the Old Duchess of Norfolk , in a coronal of gold wrought with flowers , bearing the Queen’s train . Certain Ladies or Countesses , with plain circlets of gold without flowers . I take it she that carries up the train Is that old noble lady , Duchess of Norfolk .",
+      "scrollMode": "auto",
+      "lineIndex": 27
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v60",
+      "lineText": "It is , and all the rest are countesses .",
+      "scrollMode": "auto",
+      "lineIndex": 28
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v6g",
+      "lineText": "Their coronets say so . These are stars indeed .",
+      "scrollMode": "auto",
+      "lineIndex": 29
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v60",
+      "lineText": "And sometimes falling ones .",
+      "scrollMode": "auto",
+      "lineIndex": 30
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v6g",
+      "lineText": "No more of that .",
+      "scrollMode": "auto",
+      "lineIndex": 31
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v5g",
+      "lineText": "The Coronation procession exits , having passed over the stage in order and state , and then a great flourish of trumpets .",
+      "scrollMode": "auto",
+      "lineIndex": 32
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v5g",
+      "lineText": "Enter a third Gentleman .",
+      "scrollMode": "auto",
+      "lineIndex": 33
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v60",
+      "lineText": "God save you , sir . Where have you been broiling ?",
+      "scrollMode": "auto",
+      "lineIndex": 34
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v9g",
+      "lineText": "Among the crowd i’ th’ Abbey , where a finger Could not be wedged in more . I am stifled With the mere rankness of their joy .",
+      "scrollMode": "auto",
+      "lineIndex": 35
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v6g",
+      "lineText": "You saw The ceremony ?",
+      "scrollMode": "auto",
+      "lineIndex": 36
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v9g",
+      "lineText": "That I did .",
+      "scrollMode": "auto",
+      "lineIndex": 37
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v60",
+      "lineText": "How was it ?",
+      "scrollMode": "auto",
+      "lineIndex": 38
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v9g",
+      "lineText": "Well worth the seeing .",
+      "scrollMode": "auto",
+      "lineIndex": 39
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v6g",
+      "lineText": "Good sir , speak it to us !",
+      "scrollMode": "auto",
+      "lineIndex": 40
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v9g",
+      "lineText": "As well as I am able . The rich stream Of lords and ladies , having brought the Queen ACT 4. SC. 1 To a prepared place in the choir , fell off A distance from her , while her Grace sat down To rest awhile , some half an hour or so , In a rich chair of state , opposing freely The beauty of her person to the people . Believe me , sir , she is the goodliest woman That ever lay by man , which when the people Had the full view of , such a noise arose As the shrouds make at sea in a stiff tempest — As loud and to as many tunes . Hats , cloaks , Doublets , I think , flew up , and had their faces Been loose , this day they had been lost . Such joy I never saw before . Great-bellied women That had not half a week to go , like rams In the old time of war , would shake the press And make ’em reel before ’em . No man living Could say This is my wife there , all were woven So strangely in one piece .",
+      "scrollMode": "auto",
+      "lineIndex": 41
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v6g",
+      "lineText": "But what followed ?",
+      "scrollMode": "auto",
+      "lineIndex": 42
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v9g",
+      "lineText": "At length her Grace rose , and with modest paces Came to the altar , where she kneeled and saintlike Cast her fair eyes to heaven and prayed devoutly , Then rose again and bowed her to the people . When by the Archbishop of Canterbury She had all the royal makings of a queen — As , holy oil , Edward Confessor’s crown , The rod , and bird of peace , and all such emblems — Laid nobly on her ; which performed , the choir , With all the choicest music of the kingdom , Together sung Te Deum . So she parted , And with the same full state paced back again To York Place , where the feast is held .",
+      "scrollMode": "auto",
+      "lineIndex": 43
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v60",
+      "lineText": "Sir , You must no more call it York Place ; that’s past , ACT 4. SC. 1 For since the Cardinal fell , that title’s lost . ’Tis now the King’s and called Whitehall .",
+      "scrollMode": "auto",
+      "lineIndex": 44
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v9g",
+      "lineText": "I know it , But ’tis so lately altered that the old name Is fresh about me .",
+      "scrollMode": "auto",
+      "lineIndex": 45
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v6g",
+      "lineText": "What two reverend bishops Were those that went on each side of the Queen ?",
+      "scrollMode": "auto",
+      "lineIndex": 46
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v9g",
+      "lineText": "Stokeley and Gardiner , the one of Winchester , Newly preferred from the King’s secretary , The other London .",
+      "scrollMode": "auto",
+      "lineIndex": 47
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v6g",
+      "lineText": "He of Winchester Is held no great good lover of the Archbishop’s , The virtuous Cranmer .",
+      "scrollMode": "auto",
+      "lineIndex": 48
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v9g",
+      "lineText": "All the land knows that . However , yet there is no great breach . When it comes , Cranmer will find a friend will not shrink from him .",
+      "scrollMode": "auto",
+      "lineIndex": 49
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v6g",
+      "lineText": "Who may that be , I pray you ?",
+      "scrollMode": "auto",
+      "lineIndex": 50
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v9g",
+      "lineText": "Thomas Cromwell , A man in much esteem with th’ King , and truly A worthy friend . The King has made him Master o’ th’ Jewel House , And one already of the Privy Council .",
+      "scrollMode": "auto",
+      "lineIndex": 51
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v6g",
+      "lineText": "He will deserve more .",
+      "scrollMode": "auto",
+      "lineIndex": 52
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v9g",
+      "lineText": "Yes , without all doubt . Come , gentlemen , you shall go my way , Which is to th’ court , and there you shall be my guests , Something I can command . As I walk thither , I’ll tell you more .",
+      "scrollMode": "auto",
+      "lineIndex": 53
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v60",
+      "lineText": "You may command us , sir .",
+      "scrollMode": "auto",
+      "lineIndex": 54
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v5g",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 55
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v5g",
+      "lineText": "Enter Katherine Dowager , sick , led between Griffith , her gentleman usher , and Patience , her woman .",
+      "scrollMode": "auto",
+      "lineIndex": 56
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78va0",
+      "lineText": "How does your Grace ?",
+      "scrollMode": "auto",
+      "lineIndex": 57
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v5g",
+      "lineText": "She sits .",
+      "scrollMode": "auto",
+      "lineIndex": 58
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78vag",
+      "lineText": "She sits . So . Now , methinks , I feel a little ease . Didst thou not tell me , Griffith , as thou ledst me , That the great child of honor , Cardinal Wolsey , Was dead ?",
+      "scrollMode": "auto",
+      "lineIndex": 59
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78va0",
+      "lineText": "Yes , madam , but I think your Grace , Out of the pain you suffered , gave no ear to ’t .",
+      "scrollMode": "auto",
+      "lineIndex": 60
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78vag",
+      "lineText": "Prithee , good Griffith , tell me how he died . If well , he stepped before me happily For my example .",
+      "scrollMode": "auto",
+      "lineIndex": 61
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78va0",
+      "lineText": "Well , the voice goes , madam ; For after the stout Earl Northumberland Arrested him at York and brought him forward , As a man sorely tainted , to his answer , He fell sick suddenly and grew so ill He could not sit his mule .",
+      "scrollMode": "auto",
+      "lineIndex": 62
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78vag",
+      "lineText": "Alas , poor man !",
+      "scrollMode": "auto",
+      "lineIndex": 63
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78va0",
+      "lineText": "At last , with easy roads , he came to Leicester , Lodged in the abbey , where the reverend abbot With all his convent honorably received him ; To whom he gave these words : O Father Abbot , An old man , broken with the storms of state , Is come to lay his weary bones among you . Give him a little earth , for charity . So went to bed , where eagerly his sickness ACT 4. SC. 2 Pursued him still ; and three nights after this , About the hour of eight , which he himself Foretold should be his last , full of repentance , Continual meditations , tears , and sorrows , He gave his honors to the world again , His blessèd part to heaven , and slept in peace .",
+      "scrollMode": "auto",
+      "lineIndex": 64
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78vag",
+      "lineText": "So may he rest . His faults lie gently on him ! Yet thus far , Griffith , give me leave to speak him , And yet with charity . He was a man Of an unbounded stomach , ever ranking Himself with princes ; one that by suggestion Tied all the kingdom . Simony was fair play . His own opinion was his law . I’ th’ presence He would say untruths , and be ever double Both in his words and meaning . He was never , But where he meant to ruin , pitiful . His promises were , as he then was , mighty , But his performance , as he is now , nothing . Of his own body he was ill , and gave The clergy ill example .",
+      "scrollMode": "auto",
+      "lineIndex": 65
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78va0",
+      "lineText": "Noble madam , Men’s evil manners live in brass ; their virtues We write in water . May it please your Highness To hear me speak his good now ?",
+      "scrollMode": "auto",
+      "lineIndex": 66
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78vag",
+      "lineText": "Yes , good Griffith ; I were malicious else .",
+      "scrollMode": "auto",
+      "lineIndex": 67
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78va0",
+      "lineText": "This cardinal , Though from an humble stock , undoubtedly Was fashioned to much honor . From his cradle He was a scholar , and a ripe and good one : Exceeding wise , fair-spoken , and persuading ; Lofty and sour to them that loved him not , But , to those men that sought him , sweet as summer . And though he were unsatisfied in getting , Which was a sin , yet in bestowing , madam , ACT 4. SC. 2 He was most princely . Ever witness for him Those twins of learning that he raised in you , Ipswich and Oxford , one of which fell with him , Unwilling to outlive the good that did it ; The other , though unfinished , yet so famous , So excellent in art , and still so rising , That Christendom shall ever speak his virtue . His overthrow heaped happiness upon him , For then , and not till then , he felt himself , And found the blessedness of being little . And , to add greater honors to his age Than man could give him , he died fearing God .",
+      "scrollMode": "auto",
+      "lineIndex": 68
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78vag",
+      "lineText": "After my death I wish no other herald , No other speaker of my living actions , To keep mine honor from corruption But such an honest chronicler as Griffith . Whom I most hated living , thou hast made me , With thy religious truth and modesty , Now in his ashes honor . Peace be with him ! — Patience , be near me still , and set me lower . I have not long to trouble thee . — Good Griffith , Cause the musicians play me that sad note I named my knell , whilst I sit meditating On that celestial harmony I go to .",
+      "scrollMode": "auto",
+      "lineIndex": 69
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v5g",
+      "lineText": "Sad and solemn music .",
+      "scrollMode": "auto",
+      "lineIndex": 70
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78va0",
+      "lineText": "She is asleep . Good wench , let’s sit down quiet , For fear we wake her . Softly , gentle Patience .",
+      "scrollMode": "auto",
+      "lineIndex": 71
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v5g",
+      "lineText": "They sit .",
+      "scrollMode": "auto",
+      "lineIndex": 72
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v5g",
+      "lineText": "The Vision . Enter , solemnly tripping one after another , six Personages clad in white robes , wearing on their heads garlands of bays , and golden vizards on their faces , branches of bays or palm in their hands . They ACT 4. SC. 2 first congee unto her , then dance ; and , at certain changes , the first two hold a spare garland over her head , at which the other four make reverent curtsies . Then the two that held the garland deliver the same to the other next two , who observe the same order in their changes and holding the garland over her head ; which done , they deliver the same garland to the last two , who likewise observe the same order . At which , as it were by inspiration , she makes in her sleep signs of rejoicing and holdeth up her hands to heaven ; and so , in their dancing , vanish , carrying the garland with them .",
+      "scrollMode": "auto",
+      "lineIndex": 73
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v5g",
+      "lineText": "The music continues .",
+      "scrollMode": "auto",
+      "lineIndex": 74
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v5g",
+      "lineText": ", waking",
+      "scrollMode": "auto",
+      "lineIndex": 75
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78vag",
+      "lineText": "Spirits of peace , where are you ? Are you all gone , And leave me here in wretchedness behind you ?",
+      "scrollMode": "auto",
+      "lineIndex": 76
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78va0",
+      "lineText": "Madam , we are here .",
+      "scrollMode": "auto",
+      "lineIndex": 77
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78vag",
+      "lineText": "It is not you I call for . Saw you none enter since I slept ?",
+      "scrollMode": "auto",
+      "lineIndex": 78
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78va0",
+      "lineText": "None , madam .",
+      "scrollMode": "auto",
+      "lineIndex": 79
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78vag",
+      "lineText": "No ? Saw you not , even now , a blessed troop Invite me to a banquet , whose bright faces Cast thousand beams upon me , like the sun ? They promised me eternal happiness And brought me garlands , Griffith , which I feel I am not worthy yet to wear . I shall , assuredly .",
+      "scrollMode": "auto",
+      "lineIndex": 80
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78va0",
+      "lineText": "I am most joyful , madam , such good dreams Possess your fancy .",
+      "scrollMode": "auto",
+      "lineIndex": 81
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78vag",
+      "lineText": "Bid the music leave . They are harsh and heavy to me .",
+      "scrollMode": "auto",
+      "lineIndex": 82
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v5g",
+      "lineText": "Music ceases .",
+      "scrollMode": "auto",
+      "lineIndex": 83
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v5g",
+      "lineText": ", aside to Griffith",
+      "scrollMode": "auto",
+      "lineIndex": 84
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78vb0",
+      "lineText": "Do you note How much her Grace is altered on the sudden ? ACT 4. SC. 2 How long her face is drawn ? How pale she looks , And of an earthy cold ? Mark her eyes .",
+      "scrollMode": "auto",
+      "lineIndex": 85
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v5g",
+      "lineText": ", aside to Patience",
+      "scrollMode": "auto",
+      "lineIndex": 86
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78va0",
+      "lineText": "She is going , wench . Pray , pray .",
+      "scrollMode": "auto",
+      "lineIndex": 87
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78vb0",
+      "lineText": "Heaven comfort her !",
+      "scrollMode": "auto",
+      "lineIndex": 88
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v5g",
+      "lineText": "Enter a Messenger .",
+      "scrollMode": "auto",
+      "lineIndex": 89
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v5g",
+      "lineText": ", to Katherine",
+      "scrollMode": "auto",
+      "lineIndex": 90
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78vbg",
+      "lineText": "An ’t like your Grace —",
+      "scrollMode": "auto",
+      "lineIndex": 91
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78vag",
+      "lineText": "You are a saucy fellow . Deserve we no more reverence ?",
+      "scrollMode": "auto",
+      "lineIndex": 92
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v5g",
+      "lineText": ", to Messenger",
+      "scrollMode": "auto",
+      "lineIndex": 93
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78va0",
+      "lineText": "You are to blame , Knowing she will not lose her wonted greatness , To use so rude behavior . Go to . Kneel .",
+      "scrollMode": "auto",
+      "lineIndex": 94
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v5g",
+      "lineText": ", kneeling",
+      "scrollMode": "auto",
+      "lineIndex": 95
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78vbg",
+      "lineText": "I humbly do entreat your Highness’ pardon . My haste made me unmannerly . There is staying A gentleman sent from the King to see you .",
+      "scrollMode": "auto",
+      "lineIndex": 96
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v5g",
+      "lineText": "Messenger rises .",
+      "scrollMode": "auto",
+      "lineIndex": 97
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v5g",
+      "lineText": "Messenger exits .",
+      "scrollMode": "auto",
+      "lineIndex": 98
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v5g",
+      "lineText": "Enter Lord Capuchius .",
+      "scrollMode": "auto",
+      "lineIndex": 99
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78vc0",
+      "lineText": "Enter Lord Capuchius . If my sight fail not , You should be Lord Ambassador from the Emperor , My royal nephew , and your name Capuchius .",
+      "scrollMode": "auto",
+      "lineIndex": 100
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78vc0",
+      "lineText": "Madam , the same . Your servant .",
+      "scrollMode": "auto",
+      "lineIndex": 101
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78vag",
+      "lineText": "O my lord , The times and titles now are altered strangely With me since first you knew me . But I pray you , What is your pleasure with me ?",
+      "scrollMode": "auto",
+      "lineIndex": 102
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78vc0",
+      "lineText": "Noble lady , First , mine own service to your Grace ; the next , The King’s request that I would visit you , ACT 4. SC. 2 Who grieves much for your weakness , and by me Sends you his princely commendations , And heartily entreats you take good comfort .",
+      "scrollMode": "auto",
+      "lineIndex": 103
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78vag",
+      "lineText": "O , my good lord , that comfort comes too late ; ’Tis like a pardon after execution . That gentle physic given in time had cured me . But now I am past all comforts here but prayers . How does his Highness ?",
+      "scrollMode": "auto",
+      "lineIndex": 104
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78vc0",
+      "lineText": "Madam , in good health .",
+      "scrollMode": "auto",
+      "lineIndex": 105
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78vag",
+      "lineText": "So may he ever do , and ever flourish , When I shall dwell with worms , and my poor name Banished the kingdom . — Patience , is that letter I caused you write yet sent away ?",
+      "scrollMode": "auto",
+      "lineIndex": 106
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78vb0",
+      "lineText": "No , madam .",
+      "scrollMode": "auto",
+      "lineIndex": 107
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v5g",
+      "lineText": "She presents a paper to Katherine , who gives it to Capuchius .",
+      "scrollMode": "auto",
+      "lineIndex": 108
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78vag",
+      "lineText": "Sir , I most humbly pray you to deliver This to my lord the King —",
+      "scrollMode": "auto",
+      "lineIndex": 109
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78vc0",
+      "lineText": "Most willing , madam .",
+      "scrollMode": "auto",
+      "lineIndex": 110
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78vag",
+      "lineText": "In which I have commended to his goodness The model of our chaste loves , his young daughter — The dews of heaven fall thick in blessings on her ! — Beseeching him to give her virtuous breeding — She is young and of a noble , modest nature ; I hope she will deserve well — and a little To love her for her mother’s sake that loved him , Heaven knows how dearly . My next poor petition Is that his noble Grace would have some pity Upon my wretched women , that so long Have followed both my fortunes faithfully , Of which there is not one , I dare avow — And now I should not lie — but will deserve , ACT 4. SC. 2 For virtue and true beauty of the soul , For honesty and decent carriage , A right good husband . Let him be a noble ; And sure those men are happy that shall have ’em . The last is for my men — they are the poorest , But poverty could never draw ’em from me — That they may have their wages duly paid ’em , And something over to remember me by . If heaven had pleased to have given me longer life And able means , we had not parted thus . These are the whole contents . And , good my lord , By that you love the dearest in this world , As you wish Christian peace to souls departed , Stand these poor people’s friend , and urge the King To do me this last right .",
+      "scrollMode": "auto",
+      "lineIndex": 111
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78vc0",
+      "lineText": "By heaven , I will , Or let me lose the fashion of a man !",
+      "scrollMode": "auto",
+      "lineIndex": 112
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78vag",
+      "lineText": "I thank you , honest lord . Remember me In all humility unto his Highness . Say his long trouble now is passing Out of this world . Tell him in death I blessed him , For so I will . Mine eyes grow dim . Farewell , My lord . — Griffith , farewell . — Nay , Patience , You must not leave me yet . I must to bed ; Call in more women . When I am dead , good wench , Let me be used with honor . Strew me over With maiden flowers , that all the world may know I was a chaste wife to my grave . Embalm me , Then lay me forth . Although unqueened , yet like A queen and daughter to a king inter me . I can no more .",
+      "scrollMode": "auto",
+      "lineIndex": 113
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78v5g",
+      "lineText": "They exit , leading Katherine .",
+      "scrollMode": "auto",
+      "lineIndex": 114
+    }
+  ],
+  "isPublic": true
+}

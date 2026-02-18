@@ -1,0 +1,1523 @@
+{
+  "title": "Henry VI, Part 3 (Act 3)",
+  "description": "Folger Shakespeare Library edition",
+  "author": "William Shakespeare",
+  "castMembers": [
+    {
+      "id": "d68m11cn9qd8d2h78id0",
+      "name": "Narrator",
+      "sortOrder": 0
+    },
+    {
+      "id": "d68m11cn9qd8d2h78idg",
+      "name": "First Gamekeeper",
+      "sortOrder": 1
+    },
+    {
+      "id": "d68m11cn9qd8d2h78ie0",
+      "name": "Second Gamekeeper",
+      "sortOrder": 2
+    },
+    {
+      "id": "d68m11cn9qd8d2h78ieg",
+      "name": "King Henry VI",
+      "sortOrder": 3
+    },
+    {
+      "id": "d68m11cn9qd8d2h78if0",
+      "name": "Edward",
+      "description": "Earl of March, later King Edward IV",
+      "sortOrder": 4
+    },
+    {
+      "id": "d68m11cn9qd8d2h78ifg",
+      "name": "Richard",
+      "description": "later Duke of Gloucester",
+      "sortOrder": 5
+    },
+    {
+      "id": "d68m11cn9qd8d2h78ig0",
+      "name": "George",
+      "description": "later Duke of Clarence",
+      "sortOrder": 6
+    },
+    {
+      "id": "d68m11cn9qd8d2h78igg",
+      "name": "Lady Grey",
+      "description": "later Queen Elizabeth",
+      "sortOrder": 7
+    },
+    {
+      "id": "d68m11cn9qd8d2h78ih0",
+      "name": "Nobleman",
+      "sortOrder": 8
+    },
+    {
+      "id": "d68m11cn9qd8d2h78ihg",
+      "name": "King Lewis",
+      "sortOrder": 9
+    },
+    {
+      "id": "d68m11cn9qd8d2h78ii0",
+      "name": "Queen Margaret",
+      "sortOrder": 10
+    },
+    {
+      "id": "d68m11cn9qd8d2h78iig",
+      "name": "Warwick",
+      "sortOrder": 11
+    },
+    {
+      "id": "d68m11cn9qd8d2h78ij0",
+      "name": "Prince Edward",
+      "sortOrder": 12
+    },
+    {
+      "id": "d68m11cn9qd8d2h78ijg",
+      "name": "Oxford",
+      "sortOrder": 13
+    },
+    {
+      "id": "d68m11cn9qd8d2h78ik0",
+      "name": "Lady Bona",
+      "description": "his sister-in-law",
+      "sortOrder": 14
+    },
+    {
+      "id": "d68m11cn9qd8d2h78ikg",
+      "name": "Post",
+      "sortOrder": 15
+    }
+  ],
+  "lines": [
+    {
+      "castMemberId": "d68m11cn9qd8d2h78id0",
+      "lineText": "Enter two Gamekeepers , with crossbows in their hands .",
+      "scrollMode": "auto",
+      "lineIndex": 0
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78idg",
+      "lineText": "Under this thick-grown brake we’ll shroud ourselves , For through this laund anon the deer will come ; And in this covert will we make our stand , Culling the principal of all the deer .",
+      "scrollMode": "auto",
+      "lineIndex": 1
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ie0",
+      "lineText": "I’ll stay above the hill , so both may shoot .",
+      "scrollMode": "auto",
+      "lineIndex": 2
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78idg",
+      "lineText": "That cannot be . The noise of thy crossbow Will scare the herd , and so my shoot is lost . Here stand we both , and aim we at the best . And for the time shall not seem tedious , I’ll tell thee what befell me on a day In this self place where now we mean to stand .",
+      "scrollMode": "auto",
+      "lineIndex": 3
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ie0",
+      "lineText": "Here comes a man ; let’s stay till he be past .",
+      "scrollMode": "auto",
+      "lineIndex": 4
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78id0",
+      "lineText": "Enter King Henry , in disguise , with a prayer book .",
+      "scrollMode": "auto",
+      "lineIndex": 5
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ieg",
+      "lineText": "From Scotland am I stol’n , even of pure love , To greet mine own land with my wishful sight . No , Harry , Harry , ’tis no land of thine ! Thy place is filled , thy scepter wrung from thee , ACT 3. SC. 1 Thy balm washed off wherewith thou wast anointed . No bending knee will call thee Caesar now , No humble suitors press to speak for right , No , not a man comes for redress of thee ; For how can I help them an not myself ?",
+      "scrollMode": "auto",
+      "lineIndex": 6
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78id0",
+      "lineText": ", aside to Second Gamekeeper",
+      "scrollMode": "auto",
+      "lineIndex": 7
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78idg",
+      "lineText": "Ay , here’s a deer whose skin’s a keeper’s fee . This is the quondam king . Let’s seize upon him .",
+      "scrollMode": "auto",
+      "lineIndex": 8
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ieg",
+      "lineText": "Let me embrace the sour adversaries , For wise men say it is the wisest course .",
+      "scrollMode": "auto",
+      "lineIndex": 9
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78id0",
+      "lineText": ", aside to First Gamekeeper",
+      "scrollMode": "auto",
+      "lineIndex": 10
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ie0",
+      "lineText": "Why linger we ? Let us lay hands upon him .",
+      "scrollMode": "auto",
+      "lineIndex": 11
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78id0",
+      "lineText": ", aside to Second Gamekeeper",
+      "scrollMode": "auto",
+      "lineIndex": 12
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78idg",
+      "lineText": "Forbear awhile ; we’ll hear a little more .",
+      "scrollMode": "auto",
+      "lineIndex": 13
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ieg",
+      "lineText": "My queen and son are gone to France for aid , And , as I hear , the great commanding Warwick Is thither gone to crave the French king’s sister To wife for Edward . If this news be true , Poor queen and son , your labor is but lost , For Warwick is a subtle orator , And Lewis a prince soon won with moving words . By this account , then , Margaret may win him , For she’s a woman to be pitied much . Her sighs will make a batt’ry in his breast , Her tears will pierce into a marble heart . The tiger will be mild whiles she doth mourn , And Nero will be tainted with remorse To hear and see her plaints , her brinish tears . Ay , but she’s come to beg , Warwick to give ; She on his left side craving aid for Henry ; He on his right asking a wife for Edward . She weeps and says her Henry is deposed ; He smiles and says his Edward is installed ; That she , poor wretch , for grief can speak no more , ACT 3. SC. 1 Whiles Warwick tells his title , smooths the wrong , Inferreth arguments of mighty strength , And in conclusion wins the King from her With promise of his sister and what else To strengthen and support King Edward’s place . O Margaret , thus ’twill be , and thou , poor soul , Art then forsaken , as thou went’st forlorn .",
+      "scrollMode": "auto",
+      "lineIndex": 14
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ie0",
+      "lineText": "Say , what art thou that talk’st of kings and queens ?",
+      "scrollMode": "auto",
+      "lineIndex": 15
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ieg",
+      "lineText": "More than I seem , and less than I was born to : A man at least , for less I should not be ; And men may talk of kings , and why not I ?",
+      "scrollMode": "auto",
+      "lineIndex": 16
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ie0",
+      "lineText": "Ay , but thou talk’st as if thou wert a king .",
+      "scrollMode": "auto",
+      "lineIndex": 17
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ieg",
+      "lineText": "Why , so I am in mind , and that’s enough .",
+      "scrollMode": "auto",
+      "lineIndex": 18
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ie0",
+      "lineText": "But if thou be a king , where is thy crown ?",
+      "scrollMode": "auto",
+      "lineIndex": 19
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ieg",
+      "lineText": "My crown is in my heart , not on my head ; Not decked with diamonds and Indian stones , Nor to be seen . My crown is called content ; A crown it is that seldom kings enjoy .",
+      "scrollMode": "auto",
+      "lineIndex": 20
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ie0",
+      "lineText": "Well , if you be a king crowned with content , Your crown content and you must be contented To go along with us . For , as we think , You are the king King Edward hath deposed ; And we his subjects sworn in all allegiance Will apprehend you as his enemy .",
+      "scrollMode": "auto",
+      "lineIndex": 21
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ieg",
+      "lineText": "But did you never swear and break an oath ?",
+      "scrollMode": "auto",
+      "lineIndex": 22
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ie0",
+      "lineText": "No , never such an oath , nor will not now .",
+      "scrollMode": "auto",
+      "lineIndex": 23
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ieg",
+      "lineText": "Where did you dwell when I was King of England ?",
+      "scrollMode": "auto",
+      "lineIndex": 24
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ie0",
+      "lineText": "Here in this country , where we now remain .",
+      "scrollMode": "auto",
+      "lineIndex": 25
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ieg",
+      "lineText": "I was anointed king at nine months old . My father and my grandfather were kings , And you were sworn true subjects unto me . And tell me , then , have you not broke your oaths ?",
+      "scrollMode": "auto",
+      "lineIndex": 26
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78idg",
+      "lineText": "No , for we were subjects but while you were king .",
+      "scrollMode": "auto",
+      "lineIndex": 27
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ieg",
+      "lineText": "Why , am I dead ? Do I not breathe a man ? Ah , simple men , you know not what you swear . Look as I blow this feather from my face And as the air blows it to me again , Obeying with my wind when I do blow And yielding to another when it blows , Commanded always by the greater gust , Such is the lightness of you common men . But do not break your oaths , for of that sin My mild entreaty shall not make you guilty . Go where you will , the King shall be commanded , And be you kings : command , and I’ll obey .",
+      "scrollMode": "auto",
+      "lineIndex": 28
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78idg",
+      "lineText": "We are true subjects to the King , King Edward .",
+      "scrollMode": "auto",
+      "lineIndex": 29
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ieg",
+      "lineText": "So would you be again to Henry If he were seated as King Edward is .",
+      "scrollMode": "auto",
+      "lineIndex": 30
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78idg",
+      "lineText": "We charge you in God’s name and the King’s To go with us unto the officers .",
+      "scrollMode": "auto",
+      "lineIndex": 31
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ieg",
+      "lineText": "In God’s name , lead . Your king’s name be obeyed , And what God will , that let your king perform . And what he will , I humbly yield unto .",
+      "scrollMode": "auto",
+      "lineIndex": 32
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78id0",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 33
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78id0",
+      "lineText": "Enter King Edward , Richard , Duke of Gloucester , George , Duke of Clarence , Lady Grey , and Attendants .",
+      "scrollMode": "auto",
+      "lineIndex": 34
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78if0",
+      "lineText": "Brother of Gloucester , at Saint Albans field This lady’s husband , Sir Richard Grey , was slain , His land then seized on by the conqueror . Her suit is now to repossess those lands , Which we in justice cannot well deny , Because in quarrel of the house of York The worthy gentleman did lose his life .",
+      "scrollMode": "auto",
+      "lineIndex": 35
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ifg",
+      "lineText": "Your Highness shall do well to grant her suit ; It were dishonor to deny it her .",
+      "scrollMode": "auto",
+      "lineIndex": 36
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78if0",
+      "lineText": "It were no less , but yet I’ll make a pause .",
+      "scrollMode": "auto",
+      "lineIndex": 37
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78id0",
+      "lineText": ", aside to Clarence",
+      "scrollMode": "auto",
+      "lineIndex": 38
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ifg",
+      "lineText": "Yea , is it so ? I see the lady hath a thing to grant Before the King will grant her humble suit .",
+      "scrollMode": "auto",
+      "lineIndex": 39
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78id0",
+      "lineText": ", formerly GEORGE",
+      "scrollMode": "auto",
+      "lineIndex": 40
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78id0",
+      "lineText": ", aside to Richard",
+      "scrollMode": "auto",
+      "lineIndex": 41
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ig0",
+      "lineText": "He knows the game ; how true he keeps the wind !",
+      "scrollMode": "auto",
+      "lineIndex": 42
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78id0",
+      "lineText": ", aside to Clarence",
+      "scrollMode": "auto",
+      "lineIndex": 43
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ifg",
+      "lineText": "Silence !",
+      "scrollMode": "auto",
+      "lineIndex": 44
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78if0",
+      "lineText": "Widow , we will consider of your suit , And come some other time to know our mind .",
+      "scrollMode": "auto",
+      "lineIndex": 45
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78igg",
+      "lineText": "Right gracious lord , I cannot brook delay . May it please your Highness to resolve me now , And what your pleasure is shall satisfy me .",
+      "scrollMode": "auto",
+      "lineIndex": 46
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78id0",
+      "lineText": ", aside to Clarence",
+      "scrollMode": "auto",
+      "lineIndex": 47
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ifg",
+      "lineText": "Ay , widow ? Then I’ll warrant you all your lands , An if what pleases him shall pleasure you . Fight closer , or , good faith , you’ll catch a blow .",
+      "scrollMode": "auto",
+      "lineIndex": 48
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78id0",
+      "lineText": ", aside to Richard",
+      "scrollMode": "auto",
+      "lineIndex": 49
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ig0",
+      "lineText": "I fear her not , unless she chance to fall .",
+      "scrollMode": "auto",
+      "lineIndex": 50
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78id0",
+      "lineText": ", aside to Clarence",
+      "scrollMode": "auto",
+      "lineIndex": 51
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ifg",
+      "lineText": "God forbid that , for he’ll take vantages .",
+      "scrollMode": "auto",
+      "lineIndex": 52
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78if0",
+      "lineText": "How many children hast thou , widow ? Tell me .",
+      "scrollMode": "auto",
+      "lineIndex": 53
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78id0",
+      "lineText": ", aside to Richard",
+      "scrollMode": "auto",
+      "lineIndex": 54
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ig0",
+      "lineText": "I think he means to beg a child of her .",
+      "scrollMode": "auto",
+      "lineIndex": 55
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78id0",
+      "lineText": ", aside to Clarence",
+      "scrollMode": "auto",
+      "lineIndex": 56
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ifg",
+      "lineText": "Nay , then , whip me ; he’ll rather give her two .",
+      "scrollMode": "auto",
+      "lineIndex": 57
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78igg",
+      "lineText": "Three , my most gracious lord .",
+      "scrollMode": "auto",
+      "lineIndex": 58
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78id0",
+      "lineText": ", aside to Clarence",
+      "scrollMode": "auto",
+      "lineIndex": 59
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ifg",
+      "lineText": "You shall have four if you’ll be ruled by him .",
+      "scrollMode": "auto",
+      "lineIndex": 60
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78if0",
+      "lineText": "’Twere pity they should lose their father’s lands .",
+      "scrollMode": "auto",
+      "lineIndex": 61
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78igg",
+      "lineText": "Be pitiful , dread lord , and grant it then .",
+      "scrollMode": "auto",
+      "lineIndex": 62
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78if0",
+      "lineText": "Lords , give us leave . I’ll try this widow’s wit .",
+      "scrollMode": "auto",
+      "lineIndex": 63
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78id0",
+      "lineText": "Richard and Clarence stand aside .",
+      "scrollMode": "auto",
+      "lineIndex": 64
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78id0",
+      "lineText": ", aside to Clarence",
+      "scrollMode": "auto",
+      "lineIndex": 65
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ifg",
+      "lineText": "Ay , good leave have you , for you will have leave Till youth take leave and leave you to the crutch .",
+      "scrollMode": "auto",
+      "lineIndex": 66
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78if0",
+      "lineText": "Now tell me , madam , do you love your children ?",
+      "scrollMode": "auto",
+      "lineIndex": 67
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78igg",
+      "lineText": "Ay , full as dearly as I love myself .",
+      "scrollMode": "auto",
+      "lineIndex": 68
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78if0",
+      "lineText": "And would you not do much to do them good ?",
+      "scrollMode": "auto",
+      "lineIndex": 69
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78igg",
+      "lineText": "To do them good I would sustain some harm .",
+      "scrollMode": "auto",
+      "lineIndex": 70
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78if0",
+      "lineText": "Then get your husband’s lands to do them good .",
+      "scrollMode": "auto",
+      "lineIndex": 71
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78igg",
+      "lineText": "Therefore I came unto your Majesty .",
+      "scrollMode": "auto",
+      "lineIndex": 72
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78if0",
+      "lineText": "I’ll tell you how these lands are to be got .",
+      "scrollMode": "auto",
+      "lineIndex": 73
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78igg",
+      "lineText": "So shall you bind me to your Highness’ service .",
+      "scrollMode": "auto",
+      "lineIndex": 74
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78if0",
+      "lineText": "What service wilt thou do me if I give them ?",
+      "scrollMode": "auto",
+      "lineIndex": 75
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78igg",
+      "lineText": "What you command that rests in me to do .",
+      "scrollMode": "auto",
+      "lineIndex": 76
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78if0",
+      "lineText": "But you will take exceptions to my boon .",
+      "scrollMode": "auto",
+      "lineIndex": 77
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78igg",
+      "lineText": "No , gracious lord , except I cannot do it .",
+      "scrollMode": "auto",
+      "lineIndex": 78
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78if0",
+      "lineText": "Ay , but thou canst do what I mean to ask .",
+      "scrollMode": "auto",
+      "lineIndex": 79
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78igg",
+      "lineText": "Why , then , I will do what your Grace commands .",
+      "scrollMode": "auto",
+      "lineIndex": 80
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78id0",
+      "lineText": ", aside to Clarence",
+      "scrollMode": "auto",
+      "lineIndex": 81
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ifg",
+      "lineText": "He plies her hard , and much rain wears the marble .",
+      "scrollMode": "auto",
+      "lineIndex": 82
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78id0",
+      "lineText": ", aside to Richard",
+      "scrollMode": "auto",
+      "lineIndex": 83
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ig0",
+      "lineText": "As red as fire ! Nay , then , her wax must melt .",
+      "scrollMode": "auto",
+      "lineIndex": 84
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78igg",
+      "lineText": "Why stops my lord ? Shall I not hear my task ?",
+      "scrollMode": "auto",
+      "lineIndex": 85
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78if0",
+      "lineText": "An easy task ; ’tis but to love a king .",
+      "scrollMode": "auto",
+      "lineIndex": 86
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78igg",
+      "lineText": "That’s soon performed because I am a subject .",
+      "scrollMode": "auto",
+      "lineIndex": 87
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78if0",
+      "lineText": "Why , then , thy husband’s lands I freely give thee .",
+      "scrollMode": "auto",
+      "lineIndex": 88
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78igg",
+      "lineText": "I take my leave with many thousand thanks .",
+      "scrollMode": "auto",
+      "lineIndex": 89
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78id0",
+      "lineText": "She curtsies and begins to exit .",
+      "scrollMode": "auto",
+      "lineIndex": 90
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78id0",
+      "lineText": ", aside to Clarence",
+      "scrollMode": "auto",
+      "lineIndex": 91
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ifg",
+      "lineText": "The match is made ; she seals it with a cursy .",
+      "scrollMode": "auto",
+      "lineIndex": 92
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78if0",
+      "lineText": "But stay thee ; ’tis the fruits of love I mean .",
+      "scrollMode": "auto",
+      "lineIndex": 93
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78igg",
+      "lineText": "The fruits of love I mean , my loving liege .",
+      "scrollMode": "auto",
+      "lineIndex": 94
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78if0",
+      "lineText": "Ay , but , I fear me , in another sense . What love , think’st thou , I sue so much to get ?",
+      "scrollMode": "auto",
+      "lineIndex": 95
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78igg",
+      "lineText": "My love till death , my humble thanks , my prayers , That love which virtue begs and virtue grants .",
+      "scrollMode": "auto",
+      "lineIndex": 96
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78if0",
+      "lineText": "No , by my troth , I did not mean such love .",
+      "scrollMode": "auto",
+      "lineIndex": 97
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78igg",
+      "lineText": "Why , then , you mean not as I thought you did .",
+      "scrollMode": "auto",
+      "lineIndex": 98
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78if0",
+      "lineText": "But now you partly may perceive my mind .",
+      "scrollMode": "auto",
+      "lineIndex": 99
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78igg",
+      "lineText": "My mind will never grant what I perceive Your Highness aims at , if I aim aright .",
+      "scrollMode": "auto",
+      "lineIndex": 100
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78if0",
+      "lineText": "To tell thee plain , I aim to lie with thee .",
+      "scrollMode": "auto",
+      "lineIndex": 101
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78igg",
+      "lineText": "To tell you plain , I had rather lie in prison .",
+      "scrollMode": "auto",
+      "lineIndex": 102
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78if0",
+      "lineText": "Why , then , thou shalt not have thy husband’s lands .",
+      "scrollMode": "auto",
+      "lineIndex": 103
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78igg",
+      "lineText": "Why , then , mine honesty shall be my dower , For by that loss I will not purchase them .",
+      "scrollMode": "auto",
+      "lineIndex": 104
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78if0",
+      "lineText": "Therein thou wrong’st thy children mightily .",
+      "scrollMode": "auto",
+      "lineIndex": 105
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78igg",
+      "lineText": "Herein your Highness wrongs both them and me . But , mighty lord , this merry inclination Accords not with the sadness of my suit . Please you dismiss me either with ay or no .",
+      "scrollMode": "auto",
+      "lineIndex": 106
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78if0",
+      "lineText": "Ay , if thou wilt say ay to my request ; No , if thou dost say no to my demand .",
+      "scrollMode": "auto",
+      "lineIndex": 107
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78igg",
+      "lineText": "Then no , my lord ; my suit is at an end .",
+      "scrollMode": "auto",
+      "lineIndex": 108
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78id0",
+      "lineText": ", aside to Clarence",
+      "scrollMode": "auto",
+      "lineIndex": 109
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ifg",
+      "lineText": "The widow likes him not ; she knits her brows .",
+      "scrollMode": "auto",
+      "lineIndex": 110
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78id0",
+      "lineText": ", aside to Richard",
+      "scrollMode": "auto",
+      "lineIndex": 111
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ig0",
+      "lineText": "He is the bluntest wooer in Christendom .",
+      "scrollMode": "auto",
+      "lineIndex": 112
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78id0",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 113
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78if0",
+      "lineText": "Her looks doth argue her replete with modesty ; Her words doth show her wit incomparable ; All her perfections challenge sovereignty . One way or other , she is for a king , And she shall be my love or else my queen . — Say that King Edward take thee for his queen ?",
+      "scrollMode": "auto",
+      "lineIndex": 114
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78igg",
+      "lineText": "’Tis better said than done , my gracious lord . I am a subject fit to jest withal , But far unfit to be a sovereign .",
+      "scrollMode": "auto",
+      "lineIndex": 115
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78if0",
+      "lineText": "Sweet widow , by my state I swear to thee I speak no more than what my soul intends , And that is , to enjoy thee for my love .",
+      "scrollMode": "auto",
+      "lineIndex": 116
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78igg",
+      "lineText": "And that is more than I will yield unto . I know I am too mean to be your queen And yet too good to be your concubine .",
+      "scrollMode": "auto",
+      "lineIndex": 117
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78if0",
+      "lineText": "You cavil , widow ; I did mean my queen .",
+      "scrollMode": "auto",
+      "lineIndex": 118
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78igg",
+      "lineText": "’Twill grieve your Grace my sons should call you father .",
+      "scrollMode": "auto",
+      "lineIndex": 119
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78if0",
+      "lineText": "No more than when my daughters call thee mother . Thou art a widow and thou hast some children , And , by God’s mother , I , being but a bachelor , Have other some . Why , ’tis a happy thing To be the father unto many sons . Answer no more , for thou shalt be my queen .",
+      "scrollMode": "auto",
+      "lineIndex": 120
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78id0",
+      "lineText": ", aside to Clarence",
+      "scrollMode": "auto",
+      "lineIndex": 121
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ifg",
+      "lineText": "The ghostly father now hath done his shrift .",
+      "scrollMode": "auto",
+      "lineIndex": 122
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78id0",
+      "lineText": ", aside to Richard",
+      "scrollMode": "auto",
+      "lineIndex": 123
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ig0",
+      "lineText": "When he was made a shriver , ’twas for shift .",
+      "scrollMode": "auto",
+      "lineIndex": 124
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78if0",
+      "lineText": "Brothers , you muse what chat we two have had .",
+      "scrollMode": "auto",
+      "lineIndex": 125
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ifg",
+      "lineText": "The widow likes it not , for she looks very sad .",
+      "scrollMode": "auto",
+      "lineIndex": 126
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78if0",
+      "lineText": "You’d think it strange if I should marry her .",
+      "scrollMode": "auto",
+      "lineIndex": 127
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ig0",
+      "lineText": "To who , my lord ?",
+      "scrollMode": "auto",
+      "lineIndex": 128
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78if0",
+      "lineText": "Why , Clarence , to myself .",
+      "scrollMode": "auto",
+      "lineIndex": 129
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ifg",
+      "lineText": "That would be ten days’ wonder at the least .",
+      "scrollMode": "auto",
+      "lineIndex": 130
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ig0",
+      "lineText": "That’s a day longer than a wonder lasts .",
+      "scrollMode": "auto",
+      "lineIndex": 131
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ifg",
+      "lineText": "By so much is the wonder in extremes .",
+      "scrollMode": "auto",
+      "lineIndex": 132
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78if0",
+      "lineText": "Well , jest on , brothers . I can tell you both Her suit is granted for her husband’s lands .",
+      "scrollMode": "auto",
+      "lineIndex": 133
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78id0",
+      "lineText": "Enter a Nobleman .",
+      "scrollMode": "auto",
+      "lineIndex": 134
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ih0",
+      "lineText": "My gracious lord , Henry , your foe , is taken And brought your prisoner to your palace gate .",
+      "scrollMode": "auto",
+      "lineIndex": 135
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78id0",
+      "lineText": "Nobleman exits .",
+      "scrollMode": "auto",
+      "lineIndex": 136
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ih0",
+      "lineText": "Nobleman exits . And go we , brothers , to the man that took him , To question of his apprehension . — Widow , go you along . — Lords , use her honorably .",
+      "scrollMode": "auto",
+      "lineIndex": 137
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78id0",
+      "lineText": "They exit . Richard remains .",
+      "scrollMode": "auto",
+      "lineIndex": 138
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ifg",
+      "lineText": "Ay , Edward will use women honorably ! Would he were wasted — marrow , bones , and all — That from his loins no hopeful branch may spring To cross me from the golden time I look for . And yet , between my soul’s desire and me , The lustful Edward’s title burièd , Is Clarence , Henry , and his son , young Edward , And all the unlooked-for issue of their bodies To take their rooms ere I can place myself . A cold premeditation for my purpose . Why , then , I do but dream on sovereignty Like one that stands upon a promontory And spies a far-off shore where he would tread , Wishing his foot were equal with his eye , And chides the sea that sunders him from thence , Saying he’ll lade it dry to have his way . So do I wish the crown , being so far off , And so I chide the means that keeps me from it , And so , I say , I’ll cut the causes off , Flattering me with impossibilities . My eye’s too quick , my heart o’erweens too much , Unless my hand and strength could equal them . Well , say there is no kingdom then for Richard , What other pleasure can the world afford ? I’ll make my heaven in a lady’s lap And deck my body in gay ornaments , And ’witch sweet ladies with my words and looks . O miserable thought , and more unlikely Than to accomplish twenty golden crowns ! Why , Love forswore me in my mother’s womb , And , for I should not deal in her soft laws , She did corrupt frail Nature with some bribe To shrink mine arm up like a withered shrub ; To make an envious mountain on my back , ACT 3. SC. 2 Where sits Deformity to mock my body ; To shape my legs of an unequal size ; To disproportion me in every part , Like to a chaos , or an unlicked bear-whelp , That carries no impression like the dam . And am I then a man to be beloved ? O monstrous fault to harbor such a thought ! Then , since this Earth earth affords no joy to me But to command , to check , to o’erbear such As are of better person than myself , I’ll make my heaven to dream upon the crown , And , whiles I live , t’ account this world but hell Until my misshaped trunk that bears this head Be round impalèd with a glorious crown . And yet I know not how to get the crown , For many lives stand between me and home ; And I , like one lost in a thorny wood , That rents the thorns and is rent with the thorns , Seeking a way and straying from the way , Not knowing how to find the open air , But toiling desperately to find it out , Torment myself to catch the English crown . And from that torment I will free myself Or hew my way out with a bloody axe . Why , I can smile , and murder whiles I smile , And cry Content to that which grieves my heart , And wet my cheeks with artificial tears , And frame my face to all occasions . I’ll drown more sailors than the mermaid shall ; I’ll slay more gazers than the basilisk ; I’ll play the orator as well as Nestor , Deceive more slyly than Ulysses could , And , like a Sinon , take another Troy . I can add colors to the chameleon , Change shapes with Proteus for advantages , ACT 3. SC. 3 And set the murderous Machiavel to school . Can I do this and cannot get a crown ? Tut , were it farther off , I’ll pluck it down .",
+      "scrollMode": "auto",
+      "lineIndex": 139
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78id0",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 140
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78id0",
+      "lineText": "Flourish . Enter Lewis the French king , his sister the Lady Bona , his Admiral called Bourbon , Prince Edward , Queen Margaret , and the Earl of Oxford , the last three wearing the red rose .",
+      "scrollMode": "auto",
+      "lineIndex": 141
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78id0",
+      "lineText": "Lewis sits , and riseth up again .",
+      "scrollMode": "auto",
+      "lineIndex": 142
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ihg",
+      "lineText": "Fair Queen of England , worthy Margaret , Sit down with us . It ill befits thy state And birth that thou shouldst stand while Lewis doth sit .",
+      "scrollMode": "auto",
+      "lineIndex": 143
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ii0",
+      "lineText": "No , mighty King of France . Now Margaret Must strike her sail and learn awhile to serve Where kings command . I was , I must confess , Great Albion’s queen in former golden days , But now mischance hath trod my title down And with dishonor laid me on the ground , Where I must take like seat unto my fortune And to my humble seat conform myself .",
+      "scrollMode": "auto",
+      "lineIndex": 144
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ihg",
+      "lineText": "Why , say , fair queen , whence springs this deep despair ?",
+      "scrollMode": "auto",
+      "lineIndex": 145
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ii0",
+      "lineText": "From such a cause as fills mine eyes with tears And stops my tongue , while heart is drowned in cares .",
+      "scrollMode": "auto",
+      "lineIndex": 146
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78id0",
+      "lineText": "Seats her by him .",
+      "scrollMode": "auto",
+      "lineIndex": 147
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ii0",
+      "lineText": "Seats her by him . Yield not thy neck To Fortune’s yoke , but let thy dauntless mind Still ride in triumph over all mischance . Be plain , Queen Margaret , and tell thy grief . It shall be eased if France can yield relief .",
+      "scrollMode": "auto",
+      "lineIndex": 148
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ii0",
+      "lineText": "Those gracious words revive my drooping thoughts And give my tongue-tied sorrows leave to speak . Now therefore be it known to noble Lewis That Henry , sole possessor of my love , Is , of a king , become a banished man And forced to live in Scotland a forlorn ; While proud ambitious Edward , Duke of York , Usurps the regal title and the seat Of England’s true-anointed lawful king . This is the cause that I , poor Margaret , With this my son , Prince Edward , Henry’s heir , Am come to crave thy just and lawful aid ; And if thou fail us , all our hope is done . Scotland hath will to help but cannot help ; Our people and our peers are both misled , Our treasure seized , our soldiers put to flight , And , as thou seest , ourselves in heavy plight .",
+      "scrollMode": "auto",
+      "lineIndex": 149
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ihg",
+      "lineText": "Renownèd queen , with patience calm the storm While we bethink a means to break it off .",
+      "scrollMode": "auto",
+      "lineIndex": 150
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ii0",
+      "lineText": "The more we stay , the stronger grows our foe .",
+      "scrollMode": "auto",
+      "lineIndex": 151
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ihg",
+      "lineText": "The more I stay , the more I’ll succor thee .",
+      "scrollMode": "auto",
+      "lineIndex": 152
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78id0",
+      "lineText": "Enter Warwick , wearing the white rose .",
+      "scrollMode": "auto",
+      "lineIndex": 153
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78iig",
+      "lineText": "Enter Warwick , wearing the white rose . And see where comes the breeder of my sorrow .",
+      "scrollMode": "auto",
+      "lineIndex": 154
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ihg",
+      "lineText": "What’s he approacheth boldly to our presence ?",
+      "scrollMode": "auto",
+      "lineIndex": 155
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ii0",
+      "lineText": "Our Earl of Warwick , Edward’s greatest friend .",
+      "scrollMode": "auto",
+      "lineIndex": 156
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78id0",
+      "lineText": ", standing",
+      "scrollMode": "auto",
+      "lineIndex": 157
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78id0",
+      "lineText": "He descends . She ariseth .",
+      "scrollMode": "auto",
+      "lineIndex": 158
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ihg",
+      "lineText": "He descends . She ariseth .",
+      "scrollMode": "auto",
+      "lineIndex": 159
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78id0",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 160
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ii0",
+      "lineText": "Ay , now begins a second storm to rise , For this is he that moves both wind and tide .",
+      "scrollMode": "auto",
+      "lineIndex": 161
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78iig",
+      "lineText": "From worthy Edward , King of Albion , My lord and sovereign and thy vowèd friend , I come in kindness and unfeignèd love , First , to do greetings to thy royal person , And then to crave a league of amity , And , lastly , to confirm that amity With nuptial knot , if thou vouchsafe to grant That virtuous Lady Bona , thy fair sister , To England’s king in lawful marriage .",
+      "scrollMode": "auto",
+      "lineIndex": 162
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78id0",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 163
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ii0",
+      "lineText": "If that go forward , Henry’s hope is done .",
+      "scrollMode": "auto",
+      "lineIndex": 164
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78id0",
+      "lineText": ", speaking to Lady Bona",
+      "scrollMode": "auto",
+      "lineIndex": 165
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78iig",
+      "lineText": "And , gracious madam , in our king’s behalf , I am commanded , with your leave and favor , Humbly to kiss your hand , and with my tongue To tell the passion of my sovereign’s heart , Where fame , late ent’ring at his heedful ears , Hath placed thy beauty’s image and thy virtue .",
+      "scrollMode": "auto",
+      "lineIndex": 166
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ii0",
+      "lineText": "King Lewis and Lady Bona , hear me speak Before you answer Warwick . His demand Springs not from Edward’s well-meant honest love , ACT 3. SC. 3 But from deceit , bred by necessity ; For how can tyrants safely govern home Unless abroad they purchase great alliance ? To prove him tyrant , this reason may suffice : That Henry liveth still ; but were he dead , Yet here Prince Edward stands , King Henry’s son . Look , therefore , Lewis , that by this league and marriage Thou draw not on thy danger and dishonor ; For though usurpers sway the rule awhile , Yet heav’ns are just , and time suppresseth wrongs .",
+      "scrollMode": "auto",
+      "lineIndex": 167
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78iig",
+      "lineText": "Injurious Margaret !",
+      "scrollMode": "auto",
+      "lineIndex": 168
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ij0",
+      "lineText": "And why not Queen ?",
+      "scrollMode": "auto",
+      "lineIndex": 169
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78iig",
+      "lineText": "Because thy father Henry did usurp , And thou no more art prince than she is queen .",
+      "scrollMode": "auto",
+      "lineIndex": 170
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ijg",
+      "lineText": "Then Warwick disannuls great John of Gaunt , Which did subdue the greatest part of Spain ; And after John of Gaunt , Henry the Fourth , Whose wisdom was a mirror to the wisest ; And after that wise prince , Henry the Fifth , Who by his prowess conquerèd all France . From these our Henry lineally descends .",
+      "scrollMode": "auto",
+      "lineIndex": 171
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78iig",
+      "lineText": "Oxford , how haps it in this smooth discourse You told not how Henry the Sixth hath lost All that which Henry the Fifth had gotten . Methinks these peers of France should smile at that . But , for the rest : you tell a pedigree Of threescore and two years , a silly time To make prescription for a kingdom’s worth .",
+      "scrollMode": "auto",
+      "lineIndex": 172
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ijg",
+      "lineText": "Why , Warwick , canst thou speak against thy liege , Whom thou obeyed’st thirty and six years , And not bewray thy treason with a blush ?",
+      "scrollMode": "auto",
+      "lineIndex": 173
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78iig",
+      "lineText": "Can Oxford , that did ever fence the right , Now buckler falsehood with a pedigree ? For shame , leave Henry , and call Edward king .",
+      "scrollMode": "auto",
+      "lineIndex": 174
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ijg",
+      "lineText": "Call him my king , by whose injurious doom My elder brother , the Lord Aubrey Vere , Was done to death ? And more than so , my father , Even in the downfall of his mellowed years , When nature brought him to the door of death ? No , Warwick , no . While life upholds this arm , This arm upholds the house of Lancaster .",
+      "scrollMode": "auto",
+      "lineIndex": 175
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78iig",
+      "lineText": "And I the house of York .",
+      "scrollMode": "auto",
+      "lineIndex": 176
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ihg",
+      "lineText": "Queen Margaret , Prince Edward , and Oxford , Vouchsafe , at our request , to stand aside While I use further conference with Warwick .",
+      "scrollMode": "auto",
+      "lineIndex": 177
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78id0",
+      "lineText": "They stand aloof .",
+      "scrollMode": "auto",
+      "lineIndex": 178
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78id0",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 179
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ii0",
+      "lineText": "Heavens grant that Warwick’s words bewitch him not .",
+      "scrollMode": "auto",
+      "lineIndex": 180
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ihg",
+      "lineText": "Now , Warwick , tell me , even upon thy conscience , Is Edward your true king ? For I were loath To link with him that were not lawful chosen .",
+      "scrollMode": "auto",
+      "lineIndex": 181
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78iig",
+      "lineText": "Thereon I pawn my credit and mine honor .",
+      "scrollMode": "auto",
+      "lineIndex": 182
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ihg",
+      "lineText": "But is he gracious in the people’s eye ?",
+      "scrollMode": "auto",
+      "lineIndex": 183
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78iig",
+      "lineText": "The more that Henry was unfortunate .",
+      "scrollMode": "auto",
+      "lineIndex": 184
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ihg",
+      "lineText": "Then further , all dissembling set aside , Tell me for truth the measure of his love Unto our sister Bona .",
+      "scrollMode": "auto",
+      "lineIndex": 185
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78iig",
+      "lineText": "Such it seems As may beseem a monarch like himself . Myself have often heard him say and swear That this his love was an eternal plant , Whereof the root was fixed in virtue’s ground , The leaves and fruit maintained with beauty’s sun , Exempt from envy but not from disdain , Unless the Lady Bona quit his pain .",
+      "scrollMode": "auto",
+      "lineIndex": 186
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ihg",
+      "lineText": "Now , sister , let us hear your firm resolve .",
+      "scrollMode": "auto",
+      "lineIndex": 187
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78id0",
+      "lineText": "( Speaks to Warwick . )",
+      "scrollMode": "auto",
+      "lineIndex": 188
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ik0",
+      "lineText": "( Speaks to Warwick . ) Yet I confess that often ere this day , When I have heard your king’s desert recounted , Mine ear hath tempted judgment to desire .",
+      "scrollMode": "auto",
+      "lineIndex": 189
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ihg",
+      "lineText": "Then , Warwick , thus : our sister shall be Edward’s . And now forthwith shall articles be drawn Touching the jointure that your king must make , Which with her dowry shall be counterpoised . — Draw near , Queen Margaret , and be a witness That Bona shall be wife to the English king .",
+      "scrollMode": "auto",
+      "lineIndex": 190
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ij0",
+      "lineText": "To Edward , but not to the English king .",
+      "scrollMode": "auto",
+      "lineIndex": 191
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ii0",
+      "lineText": "Deceitful Warwick , it was thy device By this alliance to make void my suit . Before thy coming , Lewis was Henry’s friend .",
+      "scrollMode": "auto",
+      "lineIndex": 192
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ihg",
+      "lineText": "And still is friend to him and Margaret . But if your title to the crown be weak , As may appear by Edward’s good success , Then ’tis but reason that I be released From giving aid which late I promisèd . ACT 3. SC. 3 Yet shall you have all kindness at my hand That your estate requires and mine can yield .",
+      "scrollMode": "auto",
+      "lineIndex": 193
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78iig",
+      "lineText": "Henry now lives in Scotland at his ease , Where , having nothing , nothing can he lose . — And as for you yourself , our quondam queen , You have a father able to maintain you , And better ’twere you troubled him than France .",
+      "scrollMode": "auto",
+      "lineIndex": 194
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ii0",
+      "lineText": "Peace , impudent and shameless Warwick , Proud setter-up and puller-down of kings ! I will not hence till with my talk and tears , Both full of truth , I make King Lewis behold Thy sly conveyance and thy lord’s false love , For both of you are birds of selfsame feather .",
+      "scrollMode": "auto",
+      "lineIndex": 195
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78id0",
+      "lineText": "Post blowing a horn within .",
+      "scrollMode": "auto",
+      "lineIndex": 196
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ihg",
+      "lineText": "Warwick , this is some post to us or thee .",
+      "scrollMode": "auto",
+      "lineIndex": 197
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78id0",
+      "lineText": "Enter the Post .",
+      "scrollMode": "auto",
+      "lineIndex": 198
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78id0",
+      "lineText": "speaks to Warwick .",
+      "scrollMode": "auto",
+      "lineIndex": 199
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78id0",
+      "lineText": "( To Lewis . )",
+      "scrollMode": "auto",
+      "lineIndex": 200
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78id0",
+      "lineText": "( To Margaret . )",
+      "scrollMode": "auto",
+      "lineIndex": 201
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ikg",
+      "lineText": "( To Margaret . ) And , madam , these for you — from whom , I know not .",
+      "scrollMode": "auto",
+      "lineIndex": 202
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78id0",
+      "lineText": "They all read their letters .",
+      "scrollMode": "auto",
+      "lineIndex": 203
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78id0",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 204
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ijg",
+      "lineText": "I like it well that our fair queen and mistress Smiles at her news , while Warwick frowns at his .",
+      "scrollMode": "auto",
+      "lineIndex": 205
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78id0",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 206
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ij0",
+      "lineText": "Nay , mark how Lewis stamps as he were nettled . I hope all’s for the best .",
+      "scrollMode": "auto",
+      "lineIndex": 207
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ihg",
+      "lineText": "Warwick , what are thy news ? And yours , fair queen ?",
+      "scrollMode": "auto",
+      "lineIndex": 208
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ii0",
+      "lineText": "Mine , such as fill my heart with unhoped joys .",
+      "scrollMode": "auto",
+      "lineIndex": 209
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78iig",
+      "lineText": "Mine , full of sorrow and heart’s discontent .",
+      "scrollMode": "auto",
+      "lineIndex": 210
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ihg",
+      "lineText": "What , has your king married the Lady Grey , And now , to soothe your forgery and his , Sends me a paper to persuade me patience ? Is this th’ alliance that he seeks with France ? Dare he presume to scorn us in this manner ?",
+      "scrollMode": "auto",
+      "lineIndex": 211
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ii0",
+      "lineText": "I told your Majesty as much before . This proveth Edward’s love and Warwick’s honesty .",
+      "scrollMode": "auto",
+      "lineIndex": 212
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78id0",
+      "lineText": "He removes the white rose .",
+      "scrollMode": "auto",
+      "lineIndex": 213
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78iig",
+      "lineText": "He removes the white rose . My noble queen , let former grudges pass , And henceforth I am thy true servitor . I will revenge his wrong to Lady Bona And replant Henry in his former state .",
+      "scrollMode": "auto",
+      "lineIndex": 214
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ii0",
+      "lineText": "Warwick , these words have turned my hate to love , And I forgive and quite forget old faults , And joy that thou becom’st King Henry’s friend .",
+      "scrollMode": "auto",
+      "lineIndex": 215
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78iig",
+      "lineText": "So much his friend , ay , his unfeignèd friend , That if King Lewis vouchsafe to furnish us With some few bands of chosen soldiers , I’ll undertake to land them on our coast And force the tyrant from his seat by war . ’Tis not his new-made bride shall succor him . And as for Clarence , as my letters tell me , He’s very likely now to fall from him For matching more for wanton lust than honor , Or than for strength and safety of our country .",
+      "scrollMode": "auto",
+      "lineIndex": 216
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ik0",
+      "lineText": "Dear brother , how shall Bona be revenged But by thy help to this distressèd queen ?",
+      "scrollMode": "auto",
+      "lineIndex": 217
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ii0",
+      "lineText": "Renownèd prince , how shall poor Henry live Unless thou rescue him from foul despair ?",
+      "scrollMode": "auto",
+      "lineIndex": 218
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ik0",
+      "lineText": "My quarrel and this English queen’s are one .",
+      "scrollMode": "auto",
+      "lineIndex": 219
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78iig",
+      "lineText": "And mine , fair Lady Bona , joins with yours .",
+      "scrollMode": "auto",
+      "lineIndex": 220
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ihg",
+      "lineText": "And mine with hers and thine and Margaret’s . Therefore at last I firmly am resolved You shall have aid .",
+      "scrollMode": "auto",
+      "lineIndex": 221
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ii0",
+      "lineText": "Let me give humble thanks for all , at once .",
+      "scrollMode": "auto",
+      "lineIndex": 222
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ihg",
+      "lineText": "Then , England’s messenger , return in post , And tell false Edward , thy supposèd king , That Lewis of France is sending over maskers To revel it with him and his new bride . Thou seest what’s passed ; go fear thy king withal .",
+      "scrollMode": "auto",
+      "lineIndex": 223
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ik0",
+      "lineText": "Tell him , in hope he’ll prove a widower shortly , I wear the willow garland for his sake .",
+      "scrollMode": "auto",
+      "lineIndex": 224
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ii0",
+      "lineText": "Tell him my mourning weeds are laid aside And I am ready to put armor on .",
+      "scrollMode": "auto",
+      "lineIndex": 225
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78id0",
+      "lineText": "Gives money .",
+      "scrollMode": "auto",
+      "lineIndex": 226
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78iig",
+      "lineText": "Gives money . Be gone .",
+      "scrollMode": "auto",
+      "lineIndex": 227
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78id0",
+      "lineText": "Post exits .",
+      "scrollMode": "auto",
+      "lineIndex": 228
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ihg",
+      "lineText": "But , Warwick , Thou and Oxford with five thousand men Shall cross the seas and bid false Edward battle ; And as occasion serves , this noble queen And prince shall follow with a fresh supply . Yet ere thou go , but answer me one doubt : What pledge have we of thy firm loyalty ?",
+      "scrollMode": "auto",
+      "lineIndex": 229
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78iig",
+      "lineText": "This shall assure my constant loyalty : That if our queen and this young prince agree , I’ll join mine eldest daughter , and my joy , To him forthwith in holy wedlock bands .",
+      "scrollMode": "auto",
+      "lineIndex": 230
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ii0",
+      "lineText": "Yes , I agree , and thank you for your motion . Son Edward , she is fair and virtuous . Therefore , delay not ; give thy hand to Warwick , And with thy hand , thy faith irrevocable , That only Warwick’s daughter shall be thine .",
+      "scrollMode": "auto",
+      "lineIndex": 231
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ij0",
+      "lineText": "Yes , I accept her , for she well deserves it , And here , to pledge my vow , I give my hand .",
+      "scrollMode": "auto",
+      "lineIndex": 232
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78id0",
+      "lineText": "He gives his hand to Warwick .",
+      "scrollMode": "auto",
+      "lineIndex": 233
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ihg",
+      "lineText": "Why stay we now ? These soldiers shall be levied , And thou , Lord Bourbon , our High Admiral , Shall waft them over with our royal fleet . I long till Edward fall by war’s mischance For mocking marriage with a dame of France .",
+      "scrollMode": "auto",
+      "lineIndex": 234
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78id0",
+      "lineText": "All but Warwick exit .",
+      "scrollMode": "auto",
+      "lineIndex": 235
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78iig",
+      "lineText": "I came from Edward as ambassador , But I return his sworn and mortal foe . Matter of marriage was the charge he gave me , But dreadful war shall answer his demand . Had he none else to make a stale but me ? Then none but I shall turn his jest to sorrow . I was the chief that raised him to the crown , And I’ll be chief to bring him down again : Not that I pity Henry’s misery , But seek revenge on Edward’s mockery .",
+      "scrollMode": "auto",
+      "lineIndex": 236
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78id0",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 237
+    }
+  ],
+  "isPublic": true
+}

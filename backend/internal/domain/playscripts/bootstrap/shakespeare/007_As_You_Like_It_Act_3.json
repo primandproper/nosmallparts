@@ -1,0 +1,1886 @@
+{
+  "title": "As You Like It (Act 3)",
+  "description": "Folger Shakespeare Library edition",
+  "author": "William Shakespeare",
+  "castMembers": [
+    {
+      "id": "d68m11cn9qd8d2h78ku0",
+      "name": "Narrator",
+      "sortOrder": 0
+    },
+    {
+      "id": "d68m11cn9qd8d2h78kug",
+      "name": "Duke Frederick",
+      "description": "the usurping duke",
+      "sortOrder": 1
+    },
+    {
+      "id": "d68m11cn9qd8d2h78kv0",
+      "name": "Oliver",
+      "description": "his elder brother",
+      "sortOrder": 2
+    },
+    {
+      "id": "d68m11cn9qd8d2h78kvg",
+      "name": "Orlando",
+      "description": "youngest son of Sir Rowland de Boys",
+      "sortOrder": 3
+    },
+    {
+      "id": "d68m11cn9qd8d2h78l00",
+      "name": "Corin",
+      "description": "a shepherd",
+      "sortOrder": 4
+    },
+    {
+      "id": "d68m11cn9qd8d2h78l0g",
+      "name": "Touchstone",
+      "description": "a court Fool",
+      "sortOrder": 5
+    },
+    {
+      "id": "d68m11cn9qd8d2h78l10",
+      "name": "Rosalind",
+      "description": "daughter to Duke Senior",
+      "sortOrder": 6
+    },
+    {
+      "id": "d68m11cn9qd8d2h78l1g",
+      "name": "Celia",
+      "description": "Rosalind’s cousin, daughter to Duke Frederick",
+      "sortOrder": 7
+    },
+    {
+      "id": "d68m11cn9qd8d2h78l20",
+      "name": "Jaques",
+      "sortOrder": 8
+    },
+    {
+      "id": "d68m11cn9qd8d2h78l2g",
+      "name": "Audrey",
+      "description": "a goat-keeper",
+      "sortOrder": 9
+    },
+    {
+      "id": "d68m11cn9qd8d2h78l30",
+      "name": "Sir Oliver Martext",
+      "description": "a parish priest",
+      "sortOrder": 10
+    },
+    {
+      "id": "d68m11cn9qd8d2h78l3g",
+      "name": "Silvius",
+      "description": "a young shepherd in love",
+      "sortOrder": 11
+    },
+    {
+      "id": "d68m11cn9qd8d2h78l40",
+      "name": "Phoebe",
+      "description": "a disdainful shepherdess",
+      "sortOrder": 12
+    }
+  ],
+  "lines": [
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": "Enter Duke Frederick , Lords , and Oliver .",
+      "scrollMode": "auto",
+      "lineIndex": 0
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": ", to Oliver",
+      "scrollMode": "auto",
+      "lineIndex": 1
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kug",
+      "lineText": "Not see him since ? Sir , sir , that cannot be . But were I not the better part made mercy , I should not seek an absent argument Of my revenge , thou present . But look to it : Find out thy brother wheresoe’er he is . Seek him with candle . Bring him , dead or living , Within this twelvemonth , or turn thou no more To seek a living in our territory . Thy lands and all things that thou dost call thine , Worth seizure , do we seize into our hands Till thou canst quit thee by thy brother’s mouth Of what we think against thee .",
+      "scrollMode": "auto",
+      "lineIndex": 2
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kv0",
+      "lineText": "O , that your Highness knew my heart in this : I never loved my brother in my life .",
+      "scrollMode": "auto",
+      "lineIndex": 3
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kug",
+      "lineText": "More villain thou . — Well , push him out of doors , And let my officers of such a nature Make an extent upon his house and lands . Do this expediently , and turn him going .",
+      "scrollMode": "auto",
+      "lineIndex": 4
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 5
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": "Enter Orlando , with a paper .",
+      "scrollMode": "auto",
+      "lineIndex": 6
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kvg",
+      "lineText": "Hang there , my verse , in witness of my love . And thou , thrice-crownèd queen of night , survey With thy chaste eye , from thy pale sphere above , Thy huntress’ name that my full life doth sway . O Rosalind , these trees shall be my books , And in their barks my thoughts I’ll character , That every eye which in this forest looks Shall see thy virtue witnessed everywhere . Run , run , Orlando , carve on every tree The fair , the chaste , and unexpressive she .",
+      "scrollMode": "auto",
+      "lineIndex": 7
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 8
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": "Enter Corin and Touchstone .",
+      "scrollMode": "auto",
+      "lineIndex": 9
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l00",
+      "lineText": "And how like you this shepherd’s life , Master Touchstone ?",
+      "scrollMode": "auto",
+      "lineIndex": 10
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l0g",
+      "lineText": "Truly , shepherd , in respect of itself , it is a good life ; but in respect that it is a shepherd’s life , it is naught . In respect that it is solitary , I like it very well ; but in respect that it is private , it is a very vile life . Now in respect it is in the fields , it pleaseth me well ; but in respect it is not in the court , it is tedious . As it is a spare life , look you , it fits my humor well ; but as there is no more plenty in it , it goes much against my stomach . Hast any philosophy in thee , shepherd ?",
+      "scrollMode": "auto",
+      "lineIndex": 11
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l00",
+      "lineText": "No more but that I know the more one sickens , the worse at ease he is , and that he that wants money , means , and content is without three good friends ; that the property of rain is to wet , and fire to burn ; that good pasture makes fat sheep ; and that a great cause of the night is lack of the sun ; that he that hath learned no wit by nature nor art may ACT 3. SC. 2 complain of good breeding or comes of a very dull kindred .",
+      "scrollMode": "auto",
+      "lineIndex": 12
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l0g",
+      "lineText": "Such a one is a natural philosopher . Wast ever in court , shepherd ?",
+      "scrollMode": "auto",
+      "lineIndex": 13
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l00",
+      "lineText": "No , truly .",
+      "scrollMode": "auto",
+      "lineIndex": 14
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l0g",
+      "lineText": "Then thou art damned .",
+      "scrollMode": "auto",
+      "lineIndex": 15
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l00",
+      "lineText": "Nay , I hope .",
+      "scrollMode": "auto",
+      "lineIndex": 16
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l0g",
+      "lineText": "Truly , thou art damned , like an ill-roasted egg , all on one side .",
+      "scrollMode": "auto",
+      "lineIndex": 17
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l00",
+      "lineText": "For not being at court ? Your reason .",
+      "scrollMode": "auto",
+      "lineIndex": 18
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l0g",
+      "lineText": "Why , if thou never wast at court , thou never saw’st good manners ; if thou never saw’st good manners , then thy manners must be wicked , and wickedness is sin , and sin is damnation . Thou art in a parlous state , shepherd .",
+      "scrollMode": "auto",
+      "lineIndex": 19
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l00",
+      "lineText": "Not a whit , Touchstone . Those that are good manners at the court are as ridiculous in the country as the behavior of the country is most mockable at the court . You told me you salute not at the court but you kiss your hands . That courtesy would be uncleanly if courtiers were shepherds .",
+      "scrollMode": "auto",
+      "lineIndex": 20
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l0g",
+      "lineText": "Instance , briefly . Come , instance .",
+      "scrollMode": "auto",
+      "lineIndex": 21
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l00",
+      "lineText": "Why , we are still handling our ewes , and their fells , you know , are greasy .",
+      "scrollMode": "auto",
+      "lineIndex": 22
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l0g",
+      "lineText": "Why , do not your courtier’s hands sweat ? And is not the grease of a mutton as wholesome as the sweat of a man ? Shallow , shallow . A better instance , I say . Come .",
+      "scrollMode": "auto",
+      "lineIndex": 23
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l00",
+      "lineText": "Besides , our hands are hard .",
+      "scrollMode": "auto",
+      "lineIndex": 24
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l0g",
+      "lineText": "Your lips will feel them the sooner . Shallow again . A more sounder instance . Come .",
+      "scrollMode": "auto",
+      "lineIndex": 25
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l00",
+      "lineText": "And they are often tarred over with the surgery of our sheep ; and would you have us kiss tar ? The courtier’s hands are perfumed with civet .",
+      "scrollMode": "auto",
+      "lineIndex": 26
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l0g",
+      "lineText": "Most shallow man . Thou worms’ meat in respect of a good piece of flesh , indeed . Learn of the ACT 3. SC. 2 wise and perpend : civet is of a baser birth than tar , the very uncleanly flux of a cat . Mend the instance , shepherd .",
+      "scrollMode": "auto",
+      "lineIndex": 27
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l00",
+      "lineText": "You have too courtly a wit for me . I’ll rest .",
+      "scrollMode": "auto",
+      "lineIndex": 28
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l0g",
+      "lineText": "Wilt thou rest damned ? God help thee , shallow man . God make incision in thee ; thou art raw .",
+      "scrollMode": "auto",
+      "lineIndex": 29
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l00",
+      "lineText": "Sir , I am a true laborer . I earn that I eat , get that I wear , owe no man hate , envy no man’s happiness , glad of other men’s good , content with my harm , and the greatest of my pride is to see my ewes graze and my lambs suck .",
+      "scrollMode": "auto",
+      "lineIndex": 30
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l0g",
+      "lineText": "That is another simple sin in you , to bring the ewes and the rams together and to offer to get your living by the copulation of cattle ; to be bawd to a bell-wether and to betray a she-lamb of a twelvemonth to a crooked-pated old cuckoldly ram , out of all reasonable match . If thou be’st not damned for this , the devil himself will have no shepherds . I cannot see else how thou shouldst ’scape .",
+      "scrollMode": "auto",
+      "lineIndex": 31
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": "Enter Rosalind , as Ganymede .",
+      "scrollMode": "auto",
+      "lineIndex": 32
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l00",
+      "lineText": "Here comes young Master Ganymede , my new mistress’s brother .",
+      "scrollMode": "auto",
+      "lineIndex": 33
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": ", as Ganymede",
+      "scrollMode": "auto",
+      "lineIndex": 34
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": ", reading a paper",
+      "scrollMode": "auto",
+      "lineIndex": 35
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "From the east to western Ind No jewel is like Rosalind . Her worth being mounted on the wind , Through all the world bears Rosalind . All the pictures fairest lined Are but black to Rosalind . Let no face be kept in mind But the fair of Rosalind .",
+      "scrollMode": "auto",
+      "lineIndex": 36
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l0g",
+      "lineText": "I’ll rhyme you so eight years together , dinners and suppers and sleeping hours excepted . It is the right butter-women’s rank to market .",
+      "scrollMode": "auto",
+      "lineIndex": 37
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": ", as Ganymede",
+      "scrollMode": "auto",
+      "lineIndex": 38
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "Out , fool .",
+      "scrollMode": "auto",
+      "lineIndex": 39
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l0g",
+      "lineText": "For a taste : If a hart do lack a hind , Let him seek out Rosalind . If the cat will after kind , So be sure will Rosalind . Wintered garments must be lined ; So must slender Rosalind . They that reap must sheaf and bind ; Then to cart with Rosalind . Sweetest nut hath sourest rind ; Such a nut is Rosalind . He that sweetest rose will find Must find love’s prick , and Rosalind . This is the very false gallop of verses . Why do you infect yourself with them ?",
+      "scrollMode": "auto",
+      "lineIndex": 40
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": ", as Ganymede",
+      "scrollMode": "auto",
+      "lineIndex": 41
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "Peace , you dull fool . I found them on a tree .",
+      "scrollMode": "auto",
+      "lineIndex": 42
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l0g",
+      "lineText": "Truly , the tree yields bad fruit .",
+      "scrollMode": "auto",
+      "lineIndex": 43
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": ", as Ganymede",
+      "scrollMode": "auto",
+      "lineIndex": 44
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "I’ll graft it with you , and then I shall graft it with a medlar . Then it will be the earliest fruit i’ th’ country , for you’ll be rotten ere you be half ripe , and that’s the right virtue of the medlar .",
+      "scrollMode": "auto",
+      "lineIndex": 45
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l0g",
+      "lineText": "You have said , but whether wisely or no , let the forest judge .",
+      "scrollMode": "auto",
+      "lineIndex": 46
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": "Enter Celia , as Aliena , with a writing .",
+      "scrollMode": "auto",
+      "lineIndex": 47
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": ", as Ganymede",
+      "scrollMode": "auto",
+      "lineIndex": 48
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "Peace . Here comes my sister reading . Stand aside .",
+      "scrollMode": "auto",
+      "lineIndex": 49
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": "as Aliena",
+      "scrollMode": "auto",
+      "lineIndex": 50
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": "reads",
+      "scrollMode": "auto",
+      "lineIndex": 51
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l1g",
+      "lineText": "Why should this a desert be ? For it is unpeopled ? No . Tongues I’ll hang on every tree That shall civil sayings show . Some how brief the life of man Runs his erring pilgrimage , ACT 3. SC. 2 That the stretching of a span Buckles in his sum of age ; Some of violated vows ’Twixt the souls of friend and friend . But upon the fairest boughs , Or at every sentence’ sentence end , Will I Rosalinda write , Teaching all that read to know The quintessence of every sprite Heaven would in little show . Therefore heaven nature charged That one body should be filled With all graces wide-enlarged . Nature presently distilled Helen’s cheek , but not her heart , Cleopatra’s majesty , Atalanta’s better part , Sad Lucretia’s modesty . Thus Rosalind of many parts By heavenly synod was devised Of many faces , eyes , and hearts To have the touches dearest prized . Heaven would that she these gifts should have And I to live and die her slave .",
+      "scrollMode": "auto",
+      "lineIndex": 52
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": ", as Ganymede",
+      "scrollMode": "auto",
+      "lineIndex": 53
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "O most gentle Jupiter , what tedious homily of love have you wearied your parishioners withal , and never cried Have patience , good people ! .",
+      "scrollMode": "auto",
+      "lineIndex": 54
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": ", as Aliena",
+      "scrollMode": "auto",
+      "lineIndex": 55
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l1g",
+      "lineText": "How now ? — Back , friends . Shepherd , go off a little . — Go with him , sirrah .",
+      "scrollMode": "auto",
+      "lineIndex": 56
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l0g",
+      "lineText": "Come , shepherd , let us make an honorable retreat , though not with bag and baggage , yet with scrip and scrippage .",
+      "scrollMode": "auto",
+      "lineIndex": 57
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": "Touchstone and Corin exit .",
+      "scrollMode": "auto",
+      "lineIndex": 58
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l1g",
+      "lineText": "Didst thou hear these verses ?",
+      "scrollMode": "auto",
+      "lineIndex": 59
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "O yes , I heard them all , and more too , for ACT 3. SC. 2 some of them had in them more feet than the verses would bear .",
+      "scrollMode": "auto",
+      "lineIndex": 60
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l1g",
+      "lineText": "That’s no matter . The feet might bear the verses .",
+      "scrollMode": "auto",
+      "lineIndex": 61
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "Ay , but the feet were lame and could not bear themselves without the verse , and therefore stood lamely in the verse .",
+      "scrollMode": "auto",
+      "lineIndex": 62
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l1g",
+      "lineText": "But didst thou hear without wondering how thy name should be hanged and carved upon these trees ?",
+      "scrollMode": "auto",
+      "lineIndex": 63
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": "She shows the paper she read .",
+      "scrollMode": "auto",
+      "lineIndex": 64
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "She shows the paper she read . I was never so berhymed since Pythagoras’ time that I was an Irish rat , which I can hardly remember .",
+      "scrollMode": "auto",
+      "lineIndex": 65
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l1g",
+      "lineText": "Trow you who hath done this ?",
+      "scrollMode": "auto",
+      "lineIndex": 66
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "Is it a man ?",
+      "scrollMode": "auto",
+      "lineIndex": 67
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l1g",
+      "lineText": "And a chain , that you once wore , about his neck . Change you color ?",
+      "scrollMode": "auto",
+      "lineIndex": 68
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "I prithee , who ?",
+      "scrollMode": "auto",
+      "lineIndex": 69
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l1g",
+      "lineText": "O Lord , Lord , it is a hard matter for friends to meet , but mountains may be removed with earthquakes and so encounter .",
+      "scrollMode": "auto",
+      "lineIndex": 70
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "Nay , but who is it ?",
+      "scrollMode": "auto",
+      "lineIndex": 71
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l1g",
+      "lineText": "Is it possible ?",
+      "scrollMode": "auto",
+      "lineIndex": 72
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "Nay , I prithee now , with most petitionary vehemence , tell me who it is .",
+      "scrollMode": "auto",
+      "lineIndex": 73
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l1g",
+      "lineText": "O wonderful , wonderful , and most wonderful wonderful , and yet again wonderful , and after that out of all whooping !",
+      "scrollMode": "auto",
+      "lineIndex": 74
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "Good my complexion , dost thou think though I am caparisoned like a man , I have a doublet and hose in my disposition ? One inch of delay more is a South Sea of discovery . I prithee , tell me who is it quickly , and speak apace . I would thou couldst stammer , that thou might’st pour this ACT 3. SC. 2 concealed man out of thy mouth as wine comes out of a narrow-mouthed bottle — either too much at once , or none at all . I prithee take the cork out of thy mouth , that I may drink thy tidings .",
+      "scrollMode": "auto",
+      "lineIndex": 75
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l1g",
+      "lineText": "So you may put a man in your belly .",
+      "scrollMode": "auto",
+      "lineIndex": 76
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "Is he of God’s making ? What manner of man ? Is his head worth a hat , or his chin worth a beard ?",
+      "scrollMode": "auto",
+      "lineIndex": 77
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l1g",
+      "lineText": "Nay , he hath but a little beard .",
+      "scrollMode": "auto",
+      "lineIndex": 78
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "Why , God will send more , if the man will be thankful . Let me stay the growth of his beard , if thou delay me not the knowledge of his chin .",
+      "scrollMode": "auto",
+      "lineIndex": 79
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l1g",
+      "lineText": "It is young Orlando , that tripped up the wrestler’s heels and your heart both in an instant .",
+      "scrollMode": "auto",
+      "lineIndex": 80
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "Nay , but the devil take mocking . Speak sad brow and true maid .",
+      "scrollMode": "auto",
+      "lineIndex": 81
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l1g",
+      "lineText": "I’ faith , coz , ’tis he .",
+      "scrollMode": "auto",
+      "lineIndex": 82
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "Orlando ?",
+      "scrollMode": "auto",
+      "lineIndex": 83
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l1g",
+      "lineText": "Orlando .",
+      "scrollMode": "auto",
+      "lineIndex": 84
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "Alas the day , what shall I do with my doublet and hose ? What did he when thou saw’st him ? What said he ? How looked he ? Wherein went he ? What makes he here ? Did he ask for me ? Where remains he ? How parted he with thee ? And when shalt thou see him again ? Answer me in one word .",
+      "scrollMode": "auto",
+      "lineIndex": 85
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l1g",
+      "lineText": "You must borrow me Gargantua’s mouth first . ’Tis a word too great for any mouth of this age’s size . To say ay and no to these particulars is more than to answer in a catechism .",
+      "scrollMode": "auto",
+      "lineIndex": 86
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "But doth he know that I am in this forest and in man’s apparel ? Looks he as freshly as he did the day he wrestled ?",
+      "scrollMode": "auto",
+      "lineIndex": 87
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l1g",
+      "lineText": "It is as easy to count atomies as to resolve the propositions of a lover . But take a taste of my finding him , and relish it with good observance . I found him under a tree like a dropped acorn .",
+      "scrollMode": "auto",
+      "lineIndex": 88
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "It may well be called Jove’s tree when it drops forth such fruit .",
+      "scrollMode": "auto",
+      "lineIndex": 89
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l1g",
+      "lineText": "Give me audience , good madam .",
+      "scrollMode": "auto",
+      "lineIndex": 90
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "Proceed .",
+      "scrollMode": "auto",
+      "lineIndex": 91
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l1g",
+      "lineText": "There lay he , stretched along like a wounded knight .",
+      "scrollMode": "auto",
+      "lineIndex": 92
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "Though it be pity to see such a sight , it well becomes the ground .",
+      "scrollMode": "auto",
+      "lineIndex": 93
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l1g",
+      "lineText": "Cry holla to thy tongue , I prithee . It curvets unseasonably . He was furnished like a hunter .",
+      "scrollMode": "auto",
+      "lineIndex": 94
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "O , ominous ! He comes to kill my heart .",
+      "scrollMode": "auto",
+      "lineIndex": 95
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l1g",
+      "lineText": "I would sing my song without a burden . Thou bring’st me out of tune .",
+      "scrollMode": "auto",
+      "lineIndex": 96
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "Do you not know I am a woman ? When I think , I must speak . Sweet , say on .",
+      "scrollMode": "auto",
+      "lineIndex": 97
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": "Enter Orlando and Jaques .",
+      "scrollMode": "auto",
+      "lineIndex": 98
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kvg",
+      "lineText": "Enter Orlando and Jaques . Soft , comes he not here ?",
+      "scrollMode": "auto",
+      "lineIndex": 99
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "’Tis he . Slink by , and note him .",
+      "scrollMode": "auto",
+      "lineIndex": 100
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": "Rosalind and Celia step aside .",
+      "scrollMode": "auto",
+      "lineIndex": 101
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": ", to Orlando",
+      "scrollMode": "auto",
+      "lineIndex": 102
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l20",
+      "lineText": "I thank you for your company , but , good faith , I had as lief have been myself alone .",
+      "scrollMode": "auto",
+      "lineIndex": 103
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kvg",
+      "lineText": "And so had I , but yet , for fashion sake , I thank you too for your society .",
+      "scrollMode": "auto",
+      "lineIndex": 104
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l20",
+      "lineText": "God be wi’ you . Let’s meet as little as we can .",
+      "scrollMode": "auto",
+      "lineIndex": 105
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kvg",
+      "lineText": "I do desire we may be better strangers .",
+      "scrollMode": "auto",
+      "lineIndex": 106
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l20",
+      "lineText": "I pray you mar no more trees with writing love songs in their barks .",
+      "scrollMode": "auto",
+      "lineIndex": 107
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kvg",
+      "lineText": "I pray you mar no more of my verses with reading them ill-favoredly .",
+      "scrollMode": "auto",
+      "lineIndex": 108
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l20",
+      "lineText": "Rosalind is your love’s name ?",
+      "scrollMode": "auto",
+      "lineIndex": 109
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kvg",
+      "lineText": "Yes , just .",
+      "scrollMode": "auto",
+      "lineIndex": 110
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l20",
+      "lineText": "I do not like her name .",
+      "scrollMode": "auto",
+      "lineIndex": 111
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kvg",
+      "lineText": "There was no thought of pleasing you when she was christened .",
+      "scrollMode": "auto",
+      "lineIndex": 112
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l20",
+      "lineText": "What stature is she of ?",
+      "scrollMode": "auto",
+      "lineIndex": 113
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kvg",
+      "lineText": "Just as high as my heart .",
+      "scrollMode": "auto",
+      "lineIndex": 114
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l20",
+      "lineText": "You are full of pretty answers . Have you not been acquainted with goldsmiths’ wives and conned them out of rings ?",
+      "scrollMode": "auto",
+      "lineIndex": 115
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kvg",
+      "lineText": "Not so . But I answer you right painted cloth , from whence you have studied your questions .",
+      "scrollMode": "auto",
+      "lineIndex": 116
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l20",
+      "lineText": "You have a nimble wit . I think ’twas made of Atalanta’s heels . Will you sit down with me ? And we two will rail against our mistress the world and all our misery .",
+      "scrollMode": "auto",
+      "lineIndex": 117
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kvg",
+      "lineText": "I will chide no breather in the world but myself , against whom I know most faults .",
+      "scrollMode": "auto",
+      "lineIndex": 118
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l20",
+      "lineText": "The worst fault you have is to be in love .",
+      "scrollMode": "auto",
+      "lineIndex": 119
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kvg",
+      "lineText": "’Tis a fault I will not change for your best virtue . I am weary of you .",
+      "scrollMode": "auto",
+      "lineIndex": 120
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l20",
+      "lineText": "By my troth , I was seeking for a fool when I found you .",
+      "scrollMode": "auto",
+      "lineIndex": 121
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kvg",
+      "lineText": "He is drowned in the brook . Look but in , and you shall see him .",
+      "scrollMode": "auto",
+      "lineIndex": 122
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l20",
+      "lineText": "There I shall see mine own figure .",
+      "scrollMode": "auto",
+      "lineIndex": 123
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kvg",
+      "lineText": "Which I take to be either a fool or a cipher .",
+      "scrollMode": "auto",
+      "lineIndex": 124
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l20",
+      "lineText": "I’ll tarry no longer with you . Farewell , good Signior Love .",
+      "scrollMode": "auto",
+      "lineIndex": 125
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kvg",
+      "lineText": "I am glad of your departure . Adieu , good Monsieur Melancholy .",
+      "scrollMode": "auto",
+      "lineIndex": 126
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": "Jaques exits .",
+      "scrollMode": "auto",
+      "lineIndex": 127
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": ", aside to Celia",
+      "scrollMode": "auto",
+      "lineIndex": 128
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": "As Ganymede .",
+      "scrollMode": "auto",
+      "lineIndex": 129
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "As Ganymede . Do you hear , forester ?",
+      "scrollMode": "auto",
+      "lineIndex": 130
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kvg",
+      "lineText": "Very well . What would you ?",
+      "scrollMode": "auto",
+      "lineIndex": 131
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": ", as Ganymede",
+      "scrollMode": "auto",
+      "lineIndex": 132
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "I pray you , what is ’t o’clock ?",
+      "scrollMode": "auto",
+      "lineIndex": 133
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kvg",
+      "lineText": "You should ask me what time o’ day . There’s no clock in the forest .",
+      "scrollMode": "auto",
+      "lineIndex": 134
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": ", as Ganymede",
+      "scrollMode": "auto",
+      "lineIndex": 135
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "Then there is no true lover in the forest ; else sighing every minute and ACT 3. SC. 2 groaning every hour would detect the lazy foot of time as well as a clock .",
+      "scrollMode": "auto",
+      "lineIndex": 136
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kvg",
+      "lineText": "And why not the swift foot of time ? Had not that been as proper ?",
+      "scrollMode": "auto",
+      "lineIndex": 137
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": ", as Ganymede",
+      "scrollMode": "auto",
+      "lineIndex": 138
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "By no means , sir . Time travels in divers paces with divers persons . I’ll tell you who time ambles withal , who time trots withal , who time gallops withal , and who he stands still withal .",
+      "scrollMode": "auto",
+      "lineIndex": 139
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kvg",
+      "lineText": "I prithee , who doth he trot withal ?",
+      "scrollMode": "auto",
+      "lineIndex": 140
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": ", as Ganymede",
+      "scrollMode": "auto",
+      "lineIndex": 141
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "Marry , he trots hard with a young maid between the contract of her marriage and the day it is solemnized . If the interim be but a se’nnight , time’s pace is so hard that it seems the length of seven year .",
+      "scrollMode": "auto",
+      "lineIndex": 142
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kvg",
+      "lineText": "Who ambles time withal ?",
+      "scrollMode": "auto",
+      "lineIndex": 143
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": ", as Ganymede",
+      "scrollMode": "auto",
+      "lineIndex": 144
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "With a priest that lacks Latin and a rich man that hath not the gout , for the one sleeps easily because he cannot study , and the other lives merrily because he feels no pain — the one lacking the burden of lean and wasteful learning , the other knowing no burden of heavy tedious penury . These time ambles withal .",
+      "scrollMode": "auto",
+      "lineIndex": 145
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kvg",
+      "lineText": "Who doth he gallop withal ?",
+      "scrollMode": "auto",
+      "lineIndex": 146
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": ", as Ganymede",
+      "scrollMode": "auto",
+      "lineIndex": 147
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "With a thief to the gallows , for though he go as softly as foot can fall , he thinks himself too soon there .",
+      "scrollMode": "auto",
+      "lineIndex": 148
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kvg",
+      "lineText": "Who stays it still withal ?",
+      "scrollMode": "auto",
+      "lineIndex": 149
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": ", as Ganymede",
+      "scrollMode": "auto",
+      "lineIndex": 150
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "With lawyers in the vacation , for they sleep between term and term , and then they perceive not how time moves .",
+      "scrollMode": "auto",
+      "lineIndex": 151
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kvg",
+      "lineText": "Where dwell you , pretty youth ?",
+      "scrollMode": "auto",
+      "lineIndex": 152
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": ", as Ganymede",
+      "scrollMode": "auto",
+      "lineIndex": 153
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "With this shepherdess , my sister , here in the skirts of the forest , like fringe upon a petticoat .",
+      "scrollMode": "auto",
+      "lineIndex": 154
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kvg",
+      "lineText": "Are you native of this place ?",
+      "scrollMode": "auto",
+      "lineIndex": 155
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": ", as Ganymede",
+      "scrollMode": "auto",
+      "lineIndex": 156
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "As the cony that you see dwell where she is kindled .",
+      "scrollMode": "auto",
+      "lineIndex": 157
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kvg",
+      "lineText": "Your accent is something finer than you could purchase in so removed a dwelling .",
+      "scrollMode": "auto",
+      "lineIndex": 158
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": ", as Ganymede",
+      "scrollMode": "auto",
+      "lineIndex": 159
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "I have been told so of many . But indeed an old religious uncle of mine taught me to speak , who was in his youth an inland man , one that knew courtship too well , for there he fell in love . I have heard him read many lectures against it , and I thank God I am not a woman , to be touched with so many giddy offenses as he hath generally taxed their whole sex withal .",
+      "scrollMode": "auto",
+      "lineIndex": 160
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kvg",
+      "lineText": "Can you remember any of the principal evils that he laid to the charge of women ?",
+      "scrollMode": "auto",
+      "lineIndex": 161
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": ", as Ganymede",
+      "scrollMode": "auto",
+      "lineIndex": 162
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "There were none principal . They were all like one another as halfpence are , every one fault seeming monstrous till his fellow fault came to match it .",
+      "scrollMode": "auto",
+      "lineIndex": 163
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kvg",
+      "lineText": "I prithee recount some of them .",
+      "scrollMode": "auto",
+      "lineIndex": 164
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": ", as Ganymede",
+      "scrollMode": "auto",
+      "lineIndex": 165
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "No , I will not cast away my physic but on those that are sick . There is a man haunts the forest that abuses our young plants with carving Rosalind on their barks , hangs odes upon hawthorns and elegies on brambles , all , forsooth , deifying the name of Rosalind . If I could meet that fancy-monger , I would give him some good counsel , for he seems to have the quotidian of love upon him .",
+      "scrollMode": "auto",
+      "lineIndex": 166
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kvg",
+      "lineText": "I am he that is so love-shaked . I pray you tell me your remedy .",
+      "scrollMode": "auto",
+      "lineIndex": 167
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": ", as Ganymede",
+      "scrollMode": "auto",
+      "lineIndex": 168
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "There is none of my uncle’s marks upon you . He taught me how to know a man in love , in which cage of rushes I am sure you are not prisoner .",
+      "scrollMode": "auto",
+      "lineIndex": 169
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kvg",
+      "lineText": "What were his marks ?",
+      "scrollMode": "auto",
+      "lineIndex": 170
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": ", as Ganymede",
+      "scrollMode": "auto",
+      "lineIndex": 171
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "A lean cheek , which you ACT 3. SC. 2 have not ; a blue eye and sunken , which you have not ; an unquestionable spirit , which you have not ; a beard neglected , which you have not — but I pardon you for that , for simply your having in beard is a younger brother’s revenue . Then your hose should be ungartered , your bonnet unbanded , your sleeve unbuttoned , your shoe untied , and everything about you demonstrating a careless desolation . But you are no such man . You are rather point-device in your accouterments , as loving yourself than seeming the lover of any other .",
+      "scrollMode": "auto",
+      "lineIndex": 172
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kvg",
+      "lineText": "Fair youth , I would I could make thee believe I love .",
+      "scrollMode": "auto",
+      "lineIndex": 173
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": ", as Ganymede",
+      "scrollMode": "auto",
+      "lineIndex": 174
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "Me believe it ? You may as soon make her that you love believe it , which I warrant she is apter to do than to confess she does . That is one of the points in the which women still give the lie to their consciences . But , in good sooth , are you he that hangs the verses on the trees wherein Rosalind is so admired ?",
+      "scrollMode": "auto",
+      "lineIndex": 175
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kvg",
+      "lineText": "I swear to thee , youth , by the white hand of Rosalind , I am that he , that unfortunate he .",
+      "scrollMode": "auto",
+      "lineIndex": 176
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": ", as Ganymede",
+      "scrollMode": "auto",
+      "lineIndex": 177
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "But are you so much in love as your rhymes speak ?",
+      "scrollMode": "auto",
+      "lineIndex": 178
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kvg",
+      "lineText": "Neither rhyme nor reason can express how much .",
+      "scrollMode": "auto",
+      "lineIndex": 179
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": ", as Ganymede",
+      "scrollMode": "auto",
+      "lineIndex": 180
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "Love is merely a madness , and , I tell you , deserves as well a dark house and a whip as madmen do ; and the reason why they are not so punished and cured is that the lunacy is so ordinary that the whippers are in love too . Yet I profess curing it by counsel .",
+      "scrollMode": "auto",
+      "lineIndex": 181
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kvg",
+      "lineText": "Did you ever cure any so ?",
+      "scrollMode": "auto",
+      "lineIndex": 182
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": ", as Ganymede",
+      "scrollMode": "auto",
+      "lineIndex": 183
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "Yes , one , and in this manner . He was to imagine me his love , his mistress , and I set him every day to woo me ; at which time ACT 3. SC. 3 would I , being but a moonish youth , grieve , be effeminate , changeable , longing and liking , proud , fantastical , apish , shallow , inconstant , full of tears , full of smiles ; for every passion something , and for no passion truly anything , as boys and women are , for the most part , cattle of this color ; would now like him , now loathe him ; then entertain him , then forswear him ; now weep for him , then spit at him , that I drave my suitor from his mad humor of love to a living humor of madness , which was to forswear the full stream of the world and to live in a nook merely monastic . And thus I cured him , and this way will I take upon me to wash your liver as clean as a sound sheep’s heart , that there shall not be one spot of love in ’t .",
+      "scrollMode": "auto",
+      "lineIndex": 184
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kvg",
+      "lineText": "I would not be cured , youth .",
+      "scrollMode": "auto",
+      "lineIndex": 185
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": ", as Ganymede",
+      "scrollMode": "auto",
+      "lineIndex": 186
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "I would cure you if you would but call me Rosalind and come every day to my cote and woo me .",
+      "scrollMode": "auto",
+      "lineIndex": 187
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kvg",
+      "lineText": "Now , by the faith of my love , I will . Tell me where it is .",
+      "scrollMode": "auto",
+      "lineIndex": 188
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": ", as Ganymede",
+      "scrollMode": "auto",
+      "lineIndex": 189
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "Go with me to it , and I’ll show it you ; and by the way you shall tell me where in the forest you live . Will you go ?",
+      "scrollMode": "auto",
+      "lineIndex": 190
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kvg",
+      "lineText": "With all my heart , good youth .",
+      "scrollMode": "auto",
+      "lineIndex": 191
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": ", as Ganymede",
+      "scrollMode": "auto",
+      "lineIndex": 192
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "Nay , you must call me Rosalind . — Come , sister , will you go ?",
+      "scrollMode": "auto",
+      "lineIndex": 193
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 194
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": "Enter Touchstone and Audrey , followed by Jaques .",
+      "scrollMode": "auto",
+      "lineIndex": 195
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l0g",
+      "lineText": "Come apace , good Audrey . I will fetch up your goats , Audrey . And how , Audrey ? Am I the man yet ? Doth my simple feature content you ?",
+      "scrollMode": "auto",
+      "lineIndex": 196
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l2g",
+      "lineText": "Your features , Lord warrant us ! What features ?",
+      "scrollMode": "auto",
+      "lineIndex": 197
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l0g",
+      "lineText": "I am here with thee and thy goats , as the most capricious poet , honest Ovid , was among the Goths .",
+      "scrollMode": "auto",
+      "lineIndex": 198
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 199
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l20",
+      "lineText": "O knowledge ill-inhabited , worse than Jove in a thatched house .",
+      "scrollMode": "auto",
+      "lineIndex": 200
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l0g",
+      "lineText": "When a man’s verses cannot be understood , nor a man’s good wit seconded with the forward child , understanding , it strikes a man more dead than a great reckoning in a little room . Truly , I would the gods had made thee poetical .",
+      "scrollMode": "auto",
+      "lineIndex": 201
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l2g",
+      "lineText": "I do not know what poetical is . Is it honest in deed and word ? Is it a true thing ?",
+      "scrollMode": "auto",
+      "lineIndex": 202
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l0g",
+      "lineText": "No , truly , for the truest poetry is the most feigning , and lovers are given to poetry , and what they swear in poetry may be said as lovers they do feign .",
+      "scrollMode": "auto",
+      "lineIndex": 203
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l2g",
+      "lineText": "Do you wish , then , that the gods had made me poetical ?",
+      "scrollMode": "auto",
+      "lineIndex": 204
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l0g",
+      "lineText": "I do , truly , for thou swear’st to me thou art honest . Now if thou wert a poet , I might have some hope thou didst feign .",
+      "scrollMode": "auto",
+      "lineIndex": 205
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l2g",
+      "lineText": "Would you not have me honest ?",
+      "scrollMode": "auto",
+      "lineIndex": 206
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l0g",
+      "lineText": "No , truly , unless thou wert hard-favored ; for honesty coupled to beauty is to have honey a sauce to sugar .",
+      "scrollMode": "auto",
+      "lineIndex": 207
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 208
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l20",
+      "lineText": "A material fool .",
+      "scrollMode": "auto",
+      "lineIndex": 209
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l2g",
+      "lineText": "Well , I am not fair , and therefore I pray the gods make me honest .",
+      "scrollMode": "auto",
+      "lineIndex": 210
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l0g",
+      "lineText": "Truly , and to cast away honesty upon a foul slut were to put good meat into an unclean dish .",
+      "scrollMode": "auto",
+      "lineIndex": 211
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l2g",
+      "lineText": "I am not a slut , though I thank the gods I am foul .",
+      "scrollMode": "auto",
+      "lineIndex": 212
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l0g",
+      "lineText": "Well , praised be the gods for thy foulness ; ACT 3. SC. 3 sluttishness may come hereafter . But be it as it may be , I will marry thee ; and to that end I have been with Sir Oliver Martext , the vicar of the next village , who hath promised to meet me in this place of the forest and to couple us .",
+      "scrollMode": "auto",
+      "lineIndex": 213
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 214
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l20",
+      "lineText": "I would fain see this meeting .",
+      "scrollMode": "auto",
+      "lineIndex": 215
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l2g",
+      "lineText": "Well , the gods give us joy .",
+      "scrollMode": "auto",
+      "lineIndex": 216
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": "Enter Sir Oliver Martext .",
+      "scrollMode": "auto",
+      "lineIndex": 217
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l30",
+      "lineText": "Enter Sir Oliver Martext . Here comes Sir Oliver . — Sir Oliver Martext , you are well met . Will you dispatch us here under this tree , or shall we go with you to your chapel ?",
+      "scrollMode": "auto",
+      "lineIndex": 218
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l30",
+      "lineText": "Is there none here to give the woman ?",
+      "scrollMode": "auto",
+      "lineIndex": 219
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l0g",
+      "lineText": "I will not take her on gift of any man .",
+      "scrollMode": "auto",
+      "lineIndex": 220
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l30",
+      "lineText": "Truly , she must be given , or the marriage is not lawful .",
+      "scrollMode": "auto",
+      "lineIndex": 221
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": ", coming forward",
+      "scrollMode": "auto",
+      "lineIndex": 222
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l20",
+      "lineText": "Proceed , proceed . I’ll give her .",
+      "scrollMode": "auto",
+      "lineIndex": 223
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l0g",
+      "lineText": "Good even , good Monsieur What-you-call-’t . How do you , sir ? You are very well met . God ’ild you for your last company . I am very glad to see you . Even a toy in hand here , sir . Nay , pray be covered .",
+      "scrollMode": "auto",
+      "lineIndex": 224
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l20",
+      "lineText": "Will you be married , motley ?",
+      "scrollMode": "auto",
+      "lineIndex": 225
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l0g",
+      "lineText": "As the ox hath his bow , sir , the horse his curb , and the falcon her bells , so man hath his desires ; and as pigeons bill , so wedlock would be nibbling .",
+      "scrollMode": "auto",
+      "lineIndex": 226
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l20",
+      "lineText": "And will you , being a man of your breeding , be married under a bush like a beggar ? Get you to church , and have a good priest that can tell you what marriage is . This fellow will but join you together as they join wainscot . Then one of you will prove a shrunk panel and , like green timber , warp , warp .",
+      "scrollMode": "auto",
+      "lineIndex": 227
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l0g",
+      "lineText": "I am not in the mind but I were better to be married of him than of another , for he is not like to marry me well , and not being well married , it will be a good excuse for me hereafter to leave my wife .",
+      "scrollMode": "auto",
+      "lineIndex": 228
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l20",
+      "lineText": "Go thou with me , and let me counsel thee .",
+      "scrollMode": "auto",
+      "lineIndex": 229
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l0g",
+      "lineText": "Come , sweet Audrey . We must be married , or we must live in bawdry . — Farewell , good Master Oliver , not O sweet Oliver , O brave Oliver , Leave me not behind thee , But Wind away , Begone , I say , I will not to wedding with thee .",
+      "scrollMode": "auto",
+      "lineIndex": 230
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": "Audrey , Touchstone , and Jaques exit .",
+      "scrollMode": "auto",
+      "lineIndex": 231
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l30",
+      "lineText": "’Tis no matter . Ne’er a fantastical knave of them all shall flout me out of my calling .",
+      "scrollMode": "auto",
+      "lineIndex": 232
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 233
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": "Enter Rosalind , dressed as Ganymede , and Celia , dressed as Aliena .",
+      "scrollMode": "auto",
+      "lineIndex": 234
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "Never talk to me . I will weep .",
+      "scrollMode": "auto",
+      "lineIndex": 235
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l1g",
+      "lineText": "Do , I prithee , but yet have the grace to consider that tears do not become a man .",
+      "scrollMode": "auto",
+      "lineIndex": 236
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "But have I not cause to weep ?",
+      "scrollMode": "auto",
+      "lineIndex": 237
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l1g",
+      "lineText": "As good cause as one would desire . Therefore weep .",
+      "scrollMode": "auto",
+      "lineIndex": 238
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "His very hair is of the dissembling color .",
+      "scrollMode": "auto",
+      "lineIndex": 239
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l1g",
+      "lineText": "Something browner than Judas’s . Marry , his kisses are Judas’s own children .",
+      "scrollMode": "auto",
+      "lineIndex": 240
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "I’ faith , his hair is of a good color .",
+      "scrollMode": "auto",
+      "lineIndex": 241
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l1g",
+      "lineText": "An excellent color . Your chestnut was ever the only color .",
+      "scrollMode": "auto",
+      "lineIndex": 242
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "And his kissing is as full of sanctity as the touch of holy bread .",
+      "scrollMode": "auto",
+      "lineIndex": 243
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l1g",
+      "lineText": "He hath bought a pair of cast lips of Diana . A nun of winter’s sisterhood kisses not more religiously . The very ice of chastity is in them .",
+      "scrollMode": "auto",
+      "lineIndex": 244
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "But why did he swear he would come this morning , and comes not ?",
+      "scrollMode": "auto",
+      "lineIndex": 245
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l1g",
+      "lineText": "Nay , certainly , there is no truth in him .",
+      "scrollMode": "auto",
+      "lineIndex": 246
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "Do you think so ?",
+      "scrollMode": "auto",
+      "lineIndex": 247
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l1g",
+      "lineText": "Yes , I think he is not a pickpurse nor a horse-stealer , but for his verity in love , I do think him as concave as a covered goblet or a worm-eaten nut .",
+      "scrollMode": "auto",
+      "lineIndex": 248
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "Not true in love ?",
+      "scrollMode": "auto",
+      "lineIndex": 249
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l1g",
+      "lineText": "Yes , when he is in , but I think he is not in .",
+      "scrollMode": "auto",
+      "lineIndex": 250
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "You have heard him swear downright he was .",
+      "scrollMode": "auto",
+      "lineIndex": 251
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l1g",
+      "lineText": "Was is not is . Besides , the oath of a lover is no stronger than the word of a tapster . They are both the confirmer of false reckonings . He attends here in the forest on the Duke your father .",
+      "scrollMode": "auto",
+      "lineIndex": 252
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "I met the Duke yesterday and had much question with him . He asked me of what parentage I was . I told him , of as good as he . So he laughed and let me go . But what talk we of fathers when there is such a man as Orlando ?",
+      "scrollMode": "auto",
+      "lineIndex": 253
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": "Enter Corin .",
+      "scrollMode": "auto",
+      "lineIndex": 254
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l00",
+      "lineText": "Enter Corin . Who comes here ?",
+      "scrollMode": "auto",
+      "lineIndex": 255
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l00",
+      "lineText": "Mistress and master , you have oft inquired After the shepherd that complained of love , Who you saw sitting by me on the turf , Praising the proud disdainful shepherdess That was his mistress .",
+      "scrollMode": "auto",
+      "lineIndex": 256
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": ", as Aliena",
+      "scrollMode": "auto",
+      "lineIndex": 257
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l1g",
+      "lineText": "Well , and what of him ?",
+      "scrollMode": "auto",
+      "lineIndex": 258
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l00",
+      "lineText": "If you will see a pageant truly played Between the pale complexion of true love And the red glow of scorn and proud disdain , Go hence a little , and I shall conduct you If you will mark it .",
+      "scrollMode": "auto",
+      "lineIndex": 259
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": ", aside to Celia",
+      "scrollMode": "auto",
+      "lineIndex": 260
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": "As Ganymede ,",
+      "scrollMode": "auto",
+      "lineIndex": 261
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": "to Corin .",
+      "scrollMode": "auto",
+      "lineIndex": 262
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "to Corin . Bring us to this sight , and you shall say I’ll prove a busy actor in their play .",
+      "scrollMode": "auto",
+      "lineIndex": 263
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 264
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": "Enter Silvius and Phoebe .",
+      "scrollMode": "auto",
+      "lineIndex": 265
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l3g",
+      "lineText": "Sweet Phoebe , do not scorn me . Do not , Phoebe . Say that you love me not , but say not so In bitterness . The common executioner , Whose heart th’ accustomed sight of death makes hard , Falls not the axe upon the humbled neck But first begs pardon . Will you sterner be Than he that dies and lives by bloody drops ?",
+      "scrollMode": "auto",
+      "lineIndex": 266
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": "Enter , unobserved , Rosalind as Ganymede , Celia as Aliena , and Corin .",
+      "scrollMode": "auto",
+      "lineIndex": 267
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l40",
+      "lineText": "I would not be thy executioner . I fly thee , for I would not injure thee . Thou tell’st me there is murder in mine eye . ’Tis pretty , sure , and very probable That eyes , that are the frail’st and softest things , Who shut their coward gates on atomies , Should be called tyrants , butchers , murderers . Now I do frown on thee with all my heart , And if mine eyes can wound , now let them kill thee . Now counterfeit to swoon ; , why , now fall down ; Or if thou canst not , O , for shame , for shame , Lie not , to say mine eyes are murderers . Now show the wound mine eye hath made in thee . Scratch thee but with a pin , and there remains Some scar of it . Lean upon a rush , The cicatrice and capable impressure Thy palm some moment keeps . But now mine eyes , Which I have darted at thee , hurt thee not ; Nor I am sure there is no force in eyes That can do hurt .",
+      "scrollMode": "auto",
+      "lineIndex": 268
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l3g",
+      "lineText": "O dear Phoebe , If ever — as that ever may be near — You meet in some fresh cheek the power of fancy , Then shall you know the wounds invisible That love’s keen arrows make .",
+      "scrollMode": "auto",
+      "lineIndex": 269
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l40",
+      "lineText": "But till that time Come not thou near me . And when that time comes , Afflict me with thy mocks , pity me not , As till that time I shall not pity thee .",
+      "scrollMode": "auto",
+      "lineIndex": 270
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": "as Ganymede ,",
+      "scrollMode": "auto",
+      "lineIndex": 271
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": "coming forward",
+      "scrollMode": "auto",
+      "lineIndex": 272
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "And why , I pray you ? Who might be your mother , That you insult , exult , and all at once , Over the wretched ? What though you have no beauty — As , by my faith , I see no more in you Than without candle may go dark to bed — Must you be therefore proud and pitiless ? Why , what means this ? Why do you look on me ? I see no more in you than in the ordinary Of nature’s sale-work . — ’Od’s my little life , I think she means to tangle my eyes , too . — No , faith , proud mistress , hope not after it . ’Tis not your inky brows , your black silk hair , Your bugle eyeballs , nor your cheek of cream That can entame my spirits to your worship . — You foolish shepherd , wherefore do you follow her , Like foggy south puffing with wind and rain ? You are a thousand times a properer man Than she a woman . ’Tis such fools as you That makes the world full of ill-favored children . ’Tis not her glass but you that flatters her , And out of you she sees herself more proper Than any of her lineaments can show her . — But , mistress , know yourself . Down on your knees And thank heaven , fasting , for a good man’s love , ACT 3. SC. 5 For I must tell you friendly in your ear , Sell when you can ; you are not for all markets . Cry the man mercy , love him , take his offer . Foul is most foul , being foul to be a scoffer . — So take her to thee , shepherd . Fare you well .",
+      "scrollMode": "auto",
+      "lineIndex": 273
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l40",
+      "lineText": "Sweet youth , I pray you chide a year together . I had rather hear you chide than this man woo .",
+      "scrollMode": "auto",
+      "lineIndex": 274
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": ", as Ganymede",
+      "scrollMode": "auto",
+      "lineIndex": 275
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": "( To Silvius . )",
+      "scrollMode": "auto",
+      "lineIndex": 276
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": "( To Phoebe . )",
+      "scrollMode": "auto",
+      "lineIndex": 277
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "( To Phoebe . ) Why look you so upon me ?",
+      "scrollMode": "auto",
+      "lineIndex": 278
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l40",
+      "lineText": "For no ill will I bear you .",
+      "scrollMode": "auto",
+      "lineIndex": 279
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": ", as Ganymede",
+      "scrollMode": "auto",
+      "lineIndex": 280
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l10",
+      "lineText": "I pray you , do not fall in love with me , For I am falser than vows made in wine . Besides , I like you not . If you will know my house , ’Tis at the tuft of olives , here hard by . — Will you go , sister ? — Shepherd , ply her hard . — Come , sister . — Shepherdess , look on him better , And be not proud . Though all the world could see , None could be so abused in sight as he . — Come , to our flock .",
+      "scrollMode": "auto",
+      "lineIndex": 281
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": "She exits , with Celia and Corin .",
+      "scrollMode": "auto",
+      "lineIndex": 282
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 283
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l40",
+      "lineText": "Dead shepherd , now I find thy saw of might : Who ever loved that loved not at first sight ?",
+      "scrollMode": "auto",
+      "lineIndex": 284
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l3g",
+      "lineText": "Sweet Phoebe —",
+      "scrollMode": "auto",
+      "lineIndex": 285
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l40",
+      "lineText": "Ha , what sayst thou , Silvius ?",
+      "scrollMode": "auto",
+      "lineIndex": 286
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l3g",
+      "lineText": "Sweet Phoebe , pity me .",
+      "scrollMode": "auto",
+      "lineIndex": 287
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l40",
+      "lineText": "Why , I am sorry for thee , gentle Silvius .",
+      "scrollMode": "auto",
+      "lineIndex": 288
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l3g",
+      "lineText": "Wherever sorrow is , relief would be . ACT 3. SC. 5 If you do sorrow at my grief in love , By giving love your sorrow and my grief Were both extermined .",
+      "scrollMode": "auto",
+      "lineIndex": 289
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l40",
+      "lineText": "Thou hast my love . Is not that neighborly ?",
+      "scrollMode": "auto",
+      "lineIndex": 290
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l3g",
+      "lineText": "I would have you .",
+      "scrollMode": "auto",
+      "lineIndex": 291
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l40",
+      "lineText": "Why , that were covetousness . Silvius , the time was that I hated thee ; And yet it is not that I bear thee love ; , But since that thou canst talk of love so well , Thy company , which erst was irksome to me , I will endure , and I’ll employ thee too . But do not look for further recompense Than thine own gladness that thou art employed .",
+      "scrollMode": "auto",
+      "lineIndex": 292
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l3g",
+      "lineText": "So holy and so perfect is my love , And I in such a poverty of grace , That I shall think it a most plenteous crop To glean the broken ears after the man That the main harvest reaps . Loose now and then A scattered smile , and that I’ll live upon .",
+      "scrollMode": "auto",
+      "lineIndex": 293
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l40",
+      "lineText": "Know’st thou the youth that spoke to me erewhile ?",
+      "scrollMode": "auto",
+      "lineIndex": 294
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l3g",
+      "lineText": "Not very well , but I have met him oft , And he hath bought the cottage and the bounds That the old carlot once was master of .",
+      "scrollMode": "auto",
+      "lineIndex": 295
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l40",
+      "lineText": "Think not I love him , though I ask for him . ’Tis but a peevish boy — yet he talks well — But what care I for words ? Yet words do well When he that speaks them pleases those that hear . It is a pretty youth — not very pretty — But sure he’s proud — and yet his pride becomes him . ACT 3. SC. 5 He’ll make a proper man . The best thing in him Is his complexion ; and faster than his tongue Did make offense , his eye did heal it up . He is not very tall — yet for his years he’s tall . His leg is but so-so — and yet ’tis well . There was a pretty redness in his lip , A little riper and more lusty red Than that mixed in his cheek : ’twas just the difference Betwixt the constant red and mingled damask . There be some women , Silvius , had they marked him In parcels as I did , would have gone near To fall in love with him ; but for my part I love him not nor hate him not ; and yet I have more cause to hate him than to love him . For what had he to do to chide at me ? He said mine eyes were black and my hair black , And now I am remembered , scorned at me . I marvel why I answered not again . But that’s all one : omittance is no quittance . I’ll write to him a very taunting letter , And thou shalt bear it . Wilt thou , Silvius ?",
+      "scrollMode": "auto",
+      "lineIndex": 296
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l3g",
+      "lineText": "Phoebe , with all my heart .",
+      "scrollMode": "auto",
+      "lineIndex": 297
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78l40",
+      "lineText": "I’ll write it straight . The matter’s in my head and in my heart . I will be bitter with him and passing short . Go with me , Silvius .",
+      "scrollMode": "auto",
+      "lineIndex": 298
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ku0",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 299
+    }
+  ],
+  "isPublic": true
+}

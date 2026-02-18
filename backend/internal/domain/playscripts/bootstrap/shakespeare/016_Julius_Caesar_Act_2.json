@@ -1,0 +1,1243 @@
+{
+  "title": "Julius Caesar (Act 2)",
+  "description": "Folger Shakespeare Library edition",
+  "author": "William Shakespeare",
+  "castMembers": [
+    {
+      "id": "d68m11kn9qd8d2h7915g",
+      "name": "Narrator",
+      "sortOrder": 0
+    },
+    {
+      "id": "d68m11kn9qd8d2h79160",
+      "name": "Marcus Brutus",
+      "sortOrder": 1
+    },
+    {
+      "id": "d68m11kn9qd8d2h7916g",
+      "name": "Lucius",
+      "description": "their servant",
+      "sortOrder": 2
+    },
+    {
+      "id": "d68m11kn9qd8d2h79170",
+      "name": "Caius Cassius",
+      "sortOrder": 3
+    },
+    {
+      "id": "d68m11kn9qd8d2h7917g",
+      "name": "Decius Brutus",
+      "sortOrder": 4
+    },
+    {
+      "id": "d68m11kn9qd8d2h79180",
+      "name": "Casca",
+      "sortOrder": 5
+    },
+    {
+      "id": "d68m11kn9qd8d2h7918g",
+      "name": "Cinna",
+      "sortOrder": 6
+    },
+    {
+      "id": "d68m11kn9qd8d2h79190",
+      "name": "Metellus Cimber",
+      "sortOrder": 7
+    },
+    {
+      "id": "d68m11kn9qd8d2h7919g",
+      "name": "Trebonius",
+      "sortOrder": 8
+    },
+    {
+      "id": "d68m11kn9qd8d2h791a0",
+      "name": "Portia",
+      "description": "his wife",
+      "sortOrder": 9
+    },
+    {
+      "id": "d68m11kn9qd8d2h791ag",
+      "name": "Caius Ligarius",
+      "sortOrder": 10
+    },
+    {
+      "id": "d68m11kn9qd8d2h791b0",
+      "name": "Julius Caesar",
+      "sortOrder": 11
+    },
+    {
+      "id": "d68m11kn9qd8d2h791bg",
+      "name": "Servant to them",
+      "sortOrder": 12
+    },
+    {
+      "id": "d68m11kn9qd8d2h791c0",
+      "name": "Calphurnia",
+      "description": "his wife",
+      "sortOrder": 13
+    },
+    {
+      "id": "d68m11kn9qd8d2h791cg",
+      "name": "Publius",
+      "sortOrder": 14
+    },
+    {
+      "id": "d68m11kn9qd8d2h791d0",
+      "name": "Mark Antony",
+      "sortOrder": 15
+    },
+    {
+      "id": "d68m11kn9qd8d2h791dg",
+      "name": "Artemidorus",
+      "sortOrder": 16
+    },
+    {
+      "id": "d68m11kn9qd8d2h791e0",
+      "name": "A Soothsayer",
+      "sortOrder": 17
+    }
+  ],
+  "lines": [
+    {
+      "castMemberId": "d68m11kn9qd8d2h7915g",
+      "lineText": "Enter Brutus in his orchard .",
+      "scrollMode": "auto",
+      "lineIndex": 0
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79160",
+      "lineText": "What , Lucius , ho ! — I cannot by the progress of the stars Give guess how near to day . — Lucius , I say ! — I would it were my fault to sleep so soundly . — When , Lucius , when ? Awake , I say ! What , Lucius !",
+      "scrollMode": "auto",
+      "lineIndex": 1
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7915g",
+      "lineText": "Enter Lucius .",
+      "scrollMode": "auto",
+      "lineIndex": 2
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7916g",
+      "lineText": "Called you , my lord ?",
+      "scrollMode": "auto",
+      "lineIndex": 3
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79160",
+      "lineText": "Get me a taper in my study , Lucius . When it is lighted , come and call me here .",
+      "scrollMode": "auto",
+      "lineIndex": 4
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7916g",
+      "lineText": "I will , my lord .",
+      "scrollMode": "auto",
+      "lineIndex": 5
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7915g",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 6
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79160",
+      "lineText": "It must be by his death . And for my part I know no personal cause to spurn at him , But for the general . He would be crowned : How that might change his nature , there’s the question . It is the bright day that brings forth the adder , And that craves wary walking . Crown him that , And then I grant we put a sting in him That at his will he may do danger with . Th’ abuse of greatness is when it disjoins ACT 2. SC. 1 Remorse from power . And , to speak truth of Caesar , I have not known when his affections swayed More than his reason . But ’tis a common proof That lowliness is young ambition’s ladder , Whereto the climber-upward turns his face ; But , when he once attains the upmost round , He then unto the ladder turns his back , Looks in the clouds , scorning the base degrees By which he did ascend . So Caesar may . Then , lest he may , prevent . And since the quarrel Will bear no color for the thing he is , Fashion it thus : that what he is , augmented , Would run to these and these extremities . And therefore think him as a serpent’s egg , Which , hatched , would , as his kind , grow mischievous , And kill him in the shell .",
+      "scrollMode": "auto",
+      "lineIndex": 7
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7915g",
+      "lineText": "Enter Lucius .",
+      "scrollMode": "auto",
+      "lineIndex": 8
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7916g",
+      "lineText": "The taper burneth in your closet , sir . Searching the window for a flint , I found This paper , thus sealed up , and I am sure It did not lie there when I went to bed .",
+      "scrollMode": "auto",
+      "lineIndex": 9
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7915g",
+      "lineText": "Gives him the letter .",
+      "scrollMode": "auto",
+      "lineIndex": 10
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79160",
+      "lineText": "Get you to bed again . It is not day . Is not tomorrow , boy , the ides of March ?",
+      "scrollMode": "auto",
+      "lineIndex": 11
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7916g",
+      "lineText": "I know not , sir .",
+      "scrollMode": "auto",
+      "lineIndex": 12
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79160",
+      "lineText": "Look in the calendar , and bring me word .",
+      "scrollMode": "auto",
+      "lineIndex": 13
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7916g",
+      "lineText": "I will , sir .",
+      "scrollMode": "auto",
+      "lineIndex": 14
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7915g",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 15
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7915g",
+      "lineText": "Opens the letter and reads .",
+      "scrollMode": "auto",
+      "lineIndex": 16
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79160",
+      "lineText": "Opens the letter and reads . ACT 2. SC. 1 Brutus , thou sleep’st . Awake , and see thyself ! Shall Rome , etc. Speak , strike , redress ! Brutus , thou sleep’st . Awake . Such instigations have been often dropped Where I have took them up . Shall Rome , etc. Thus must I piece it out : Shall Rome stand under one man’s awe ? What , Rome ? My ancestors did from the streets of Rome The Tarquin drive when he was called a king . Speak , strike , redress ! Am I entreated To speak and strike ? O Rome , I make thee promise , If the redress will follow , thou receivest Thy full petition at the hand of Brutus .",
+      "scrollMode": "auto",
+      "lineIndex": 17
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7915g",
+      "lineText": "Enter Lucius .",
+      "scrollMode": "auto",
+      "lineIndex": 18
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7916g",
+      "lineText": "Sir , March is wasted fifteen days .",
+      "scrollMode": "auto",
+      "lineIndex": 19
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7915g",
+      "lineText": "Knock within .",
+      "scrollMode": "auto",
+      "lineIndex": 20
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7915g",
+      "lineText": "Lucius exits .",
+      "scrollMode": "auto",
+      "lineIndex": 21
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7916g",
+      "lineText": "Lucius exits . Since Cassius first did whet me against Caesar , I have not slept . Between the acting of a dreadful thing And the first motion , all the interim is Like a phantasma or a hideous dream . The genius and the mortal instruments Are then in council , and the state of man , Like to a little kingdom , suffers then The nature of an insurrection .",
+      "scrollMode": "auto",
+      "lineIndex": 22
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7915g",
+      "lineText": "Enter Lucius .",
+      "scrollMode": "auto",
+      "lineIndex": 23
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7916g",
+      "lineText": "Sir , ’tis your brother Cassius at the door , Who doth desire to see you .",
+      "scrollMode": "auto",
+      "lineIndex": 24
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79160",
+      "lineText": "Is he alone ?",
+      "scrollMode": "auto",
+      "lineIndex": 25
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7916g",
+      "lineText": "No , sir . There are more with him .",
+      "scrollMode": "auto",
+      "lineIndex": 26
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79160",
+      "lineText": "Do you know them ?",
+      "scrollMode": "auto",
+      "lineIndex": 27
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7916g",
+      "lineText": "No , sir . Their hats are plucked about their ears , And half their faces buried in their cloaks , That by no means I may discover them By any mark of favor .",
+      "scrollMode": "auto",
+      "lineIndex": 28
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7915g",
+      "lineText": "Lucius exits .",
+      "scrollMode": "auto",
+      "lineIndex": 29
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7916g",
+      "lineText": "Lucius exits . They are the faction . O conspiracy , Sham’st thou to show thy dang’rous brow by night , When evils are most free ? O , then , by day Where wilt thou find a cavern dark enough To mask thy monstrous visage ? Seek none , conspiracy . Hide it in smiles and affability ; For if thou path , thy native semblance on , Not Erebus itself were dim enough To hide thee from prevention .",
+      "scrollMode": "auto",
+      "lineIndex": 30
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7915g",
+      "lineText": "Enter the conspirators , Cassius , Casca , Decius , Cinna , Metellus , and Trebonius .",
+      "scrollMode": "auto",
+      "lineIndex": 31
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79170",
+      "lineText": "I think we are too bold upon your rest . Good morrow , Brutus . Do we trouble you ?",
+      "scrollMode": "auto",
+      "lineIndex": 32
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79160",
+      "lineText": "I have been up this hour , awake all night . Know I these men that come along with you ?",
+      "scrollMode": "auto",
+      "lineIndex": 33
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79170",
+      "lineText": "Yes , every man of them ; and no man here But honors you , and every one doth wish You had but that opinion of yourself Which every noble Roman bears of you . This is Trebonius .",
+      "scrollMode": "auto",
+      "lineIndex": 34
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79160",
+      "lineText": "He is welcome hither .",
+      "scrollMode": "auto",
+      "lineIndex": 35
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79170",
+      "lineText": "This , Decius Brutus .",
+      "scrollMode": "auto",
+      "lineIndex": 36
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79160",
+      "lineText": "He is welcome too .",
+      "scrollMode": "auto",
+      "lineIndex": 37
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79170",
+      "lineText": "This , Casca ; this , Cinna ; and this , Metellus Cimber .",
+      "scrollMode": "auto",
+      "lineIndex": 38
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79160",
+      "lineText": "They are all welcome . What watchful cares do interpose themselves Betwixt your eyes and night ?",
+      "scrollMode": "auto",
+      "lineIndex": 39
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79170",
+      "lineText": "Shall I entreat a word ?",
+      "scrollMode": "auto",
+      "lineIndex": 40
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7915g",
+      "lineText": "Brutus and Cassius whisper .",
+      "scrollMode": "auto",
+      "lineIndex": 41
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7917g",
+      "lineText": "Here lies the east ; doth not the day break here ?",
+      "scrollMode": "auto",
+      "lineIndex": 42
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79180",
+      "lineText": "No .",
+      "scrollMode": "auto",
+      "lineIndex": 43
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7918g",
+      "lineText": "O pardon , sir , it doth ; and yon gray lines That fret the clouds are messengers of day .",
+      "scrollMode": "auto",
+      "lineIndex": 44
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79180",
+      "lineText": "You shall confess that you are both deceived . Here , as I point my sword , the sun arises , Which is a great way growing on the south , Weighing the youthful season of the year . Some two months hence , up higher toward the north He first presents his fire , and the high east Stands , as the Capitol , directly here .",
+      "scrollMode": "auto",
+      "lineIndex": 45
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7915g",
+      "lineText": ", coming forward with Cassius",
+      "scrollMode": "auto",
+      "lineIndex": 46
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79160",
+      "lineText": "Give me your hands all over , one by one .",
+      "scrollMode": "auto",
+      "lineIndex": 47
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79170",
+      "lineText": "And let us swear our resolution .",
+      "scrollMode": "auto",
+      "lineIndex": 48
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79160",
+      "lineText": "No , not an oath . If not the face of men , The sufferance of our souls , the time’s abuse — If these be motives weak , break off betimes , And every man hence to his idle bed . So let high-sighted tyranny range on ACT 2. SC. 1 Till each man drop by lottery . But if these — As I am sure they do — bear fire enough To kindle cowards and to steel with valor The melting spirits of women , then , countrymen , What need we any spur but our own cause To prick us to redress ? What other bond Than secret Romans that have spoke the word And will not palter ? And what other oath Than honesty to honesty engaged That this shall be or we will fall for it ? Swear priests and cowards and men cautelous , Old feeble carrions , and such suffering souls That welcome wrongs ; unto bad causes swear Such creatures as men doubt ; but do not stain The even virtue of our enterprise , Nor th’ insuppressive mettle of our spirits , To think that or our cause or our performance Did need an oath , when every drop of blood That every Roman bears , and nobly bears , Is guilty of a several bastardy If he do break the smallest particle Of any promise that hath passed from him .",
+      "scrollMode": "auto",
+      "lineIndex": 49
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79170",
+      "lineText": "But what of Cicero ? Shall we sound him ? I think he will stand very strong with us .",
+      "scrollMode": "auto",
+      "lineIndex": 50
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79180",
+      "lineText": "Let us not leave him out .",
+      "scrollMode": "auto",
+      "lineIndex": 51
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7918g",
+      "lineText": "No , by no means .",
+      "scrollMode": "auto",
+      "lineIndex": 52
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79190",
+      "lineText": "O , let us have him , for his silver hairs Will purchase us a good opinion And buy men’s voices to commend our deeds . It shall be said his judgment ruled our hands . Our youths and wildness shall no whit appear , But all be buried in his gravity .",
+      "scrollMode": "auto",
+      "lineIndex": 53
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79160",
+      "lineText": "O , name him not ! Let us not break with him , For he will never follow anything That other men begin .",
+      "scrollMode": "auto",
+      "lineIndex": 54
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79170",
+      "lineText": "Then leave him out .",
+      "scrollMode": "auto",
+      "lineIndex": 55
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79180",
+      "lineText": "Indeed , he is not fit .",
+      "scrollMode": "auto",
+      "lineIndex": 56
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7917g",
+      "lineText": "Shall no man else be touched , but only Caesar ?",
+      "scrollMode": "auto",
+      "lineIndex": 57
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79170",
+      "lineText": "Decius , well urged . I think it is not meet Mark Antony , so well beloved of Caesar , Should outlive Caesar . We shall find of him A shrewd contriver ; and , you know , his means , If he improve them , may well stretch so far As to annoy us all ; which to prevent , Let Antony and Caesar fall together .",
+      "scrollMode": "auto",
+      "lineIndex": 58
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79160",
+      "lineText": "Our course will seem too bloody , Caius Cassius , To cut the head off and then hack the limbs , Like wrath in death and envy afterwards ; For Antony is but a limb of Caesar . Let’s be sacrificers , but not butchers , Caius . We all stand up against the spirit of Caesar , And in the spirit of men there is no blood . O , that we then could come by Caesar’s spirit And not dismember Caesar ! But , alas , Caesar must bleed for it . And , gentle friends , Let’s kill him boldly , but not wrathfully . Let’s carve him as a dish fit for the gods , Not hew him as a carcass fit for hounds . And let our hearts , as subtle masters do , Stir up their servants to an act of rage And after seem to chide ’em . This shall make Our purpose necessary and not envious ; Which so appearing to the common eyes , We shall be called purgers , not murderers . ACT 2. SC. 1 And for Mark Antony , think not of him , For he can do no more than Caesar’s arm When Caesar’s head is off .",
+      "scrollMode": "auto",
+      "lineIndex": 59
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79170",
+      "lineText": "Yet I fear him , For in the engrafted love he bears to Caesar —",
+      "scrollMode": "auto",
+      "lineIndex": 60
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79160",
+      "lineText": "Alas , good Cassius , do not think of him . If he love Caesar , all that he can do Is to himself : take thought and die for Caesar . And that were much he should , for he is given To sports , to wildness , and much company .",
+      "scrollMode": "auto",
+      "lineIndex": 61
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7919g",
+      "lineText": "There is no fear in him . Let him not die , For he will live and laugh at this hereafter .",
+      "scrollMode": "auto",
+      "lineIndex": 62
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7915g",
+      "lineText": "Clock strikes .",
+      "scrollMode": "auto",
+      "lineIndex": 63
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79160",
+      "lineText": "Peace , count the clock .",
+      "scrollMode": "auto",
+      "lineIndex": 64
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79170",
+      "lineText": "The clock hath stricken three .",
+      "scrollMode": "auto",
+      "lineIndex": 65
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7919g",
+      "lineText": "’Tis time to part .",
+      "scrollMode": "auto",
+      "lineIndex": 66
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79170",
+      "lineText": "But it is doubtful yet Whether Caesar will come forth today or no , For he is superstitious grown of late , Quite from the main opinion he held once Of fantasy , of dreams , and ceremonies . It may be these apparent prodigies , The unaccustomed terror of this night , And the persuasion of his augurers May hold him from the Capitol today .",
+      "scrollMode": "auto",
+      "lineIndex": 67
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7917g",
+      "lineText": "Never fear that . If he be so resolved , I can o’ersway him , for he loves to hear That unicorns may be betrayed with trees , And bears with glasses , elephants with holes , Lions with toils , and men with flatterers . ACT 2. SC. 1 But when I tell him he hates flatterers , He says he does , being then most flatterèd . Let me work , For I can give his humor the true bent , And I will bring him to the Capitol .",
+      "scrollMode": "auto",
+      "lineIndex": 68
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79170",
+      "lineText": "Nay , we will all of us be there to fetch him .",
+      "scrollMode": "auto",
+      "lineIndex": 69
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79160",
+      "lineText": "By the eighth hour , is that the uttermost ?",
+      "scrollMode": "auto",
+      "lineIndex": 70
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7918g",
+      "lineText": "Be that the uttermost , and fail not then .",
+      "scrollMode": "auto",
+      "lineIndex": 71
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79190",
+      "lineText": "Caius Ligarius doth bear Caesar hard , Who rated him for speaking well of Pompey . I wonder none of you have thought of him .",
+      "scrollMode": "auto",
+      "lineIndex": 72
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79160",
+      "lineText": "Now , good Metellus , go along by him . He loves me well , and I have given him reasons . Send him but hither , and I’ll fashion him .",
+      "scrollMode": "auto",
+      "lineIndex": 73
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79170",
+      "lineText": "The morning comes upon ’s . We’ll leave you , Brutus . And , friends , disperse yourselves , but all remember What you have said , and show yourselves true Romans .",
+      "scrollMode": "auto",
+      "lineIndex": 74
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7915g",
+      "lineText": "All but Brutus exit .",
+      "scrollMode": "auto",
+      "lineIndex": 75
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79170",
+      "lineText": "All but Brutus exit . Boy ! Lucius ! — Fast asleep ? It is no matter . Enjoy the honey-heavy dew of slumber . Thou hast no figures nor no fantasies ACT 2. SC. 1 Which busy care draws in the brains of men . Therefore thou sleep’st so sound .",
+      "scrollMode": "auto",
+      "lineIndex": 76
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7915g",
+      "lineText": "Enter Portia .",
+      "scrollMode": "auto",
+      "lineIndex": 77
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h791a0",
+      "lineText": "Brutus , my lord .",
+      "scrollMode": "auto",
+      "lineIndex": 78
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79160",
+      "lineText": "Portia ! What mean you ? Wherefore rise you now ? It is not for your health thus to commit Your weak condition to the raw cold morning .",
+      "scrollMode": "auto",
+      "lineIndex": 79
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h791a0",
+      "lineText": "Nor for yours neither . You’ve ungently , Brutus , Stole from my bed . And yesternight at supper You suddenly arose and walked about , Musing and sighing , with your arms across , And when I asked you what the matter was , You stared upon me with ungentle looks . I urged you further ; then you scratched your head And too impatiently stamped with your foot . Yet I insisted ; yet you answered not , But with an angry wafture of your hand Gave sign for me to leave you . So I did , Fearing to strengthen that impatience Which seemed too much enkindled , and withal Hoping it was but an effect of humor , Which sometime hath his hour with every man . It will not let you eat nor talk nor sleep , And could it work so much upon your shape As it hath much prevailed on your condition , I should not know you Brutus . Dear my lord , Make me acquainted with your cause of grief .",
+      "scrollMode": "auto",
+      "lineIndex": 80
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79160",
+      "lineText": "I am not well in health , and that is all .",
+      "scrollMode": "auto",
+      "lineIndex": 81
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h791a0",
+      "lineText": "Brutus is wise and , were he not in health , He would embrace the means to come by it .",
+      "scrollMode": "auto",
+      "lineIndex": 82
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79160",
+      "lineText": "Why so I do . Good Portia , go to bed .",
+      "scrollMode": "auto",
+      "lineIndex": 83
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7915g",
+      "lineText": "She kneels .",
+      "scrollMode": "auto",
+      "lineIndex": 84
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h791a0",
+      "lineText": "She kneels . And upon my knees I charm you , by my once commended beauty , By all your vows of love , and that great vow Which did incorporate and make us one , That you unfold to me , your self , your half , Why you are heavy , and what men tonight Have had resort to you ; for here have been Some six or seven who did hide their faces Even from darkness .",
+      "scrollMode": "auto",
+      "lineIndex": 85
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79160",
+      "lineText": "Kneel not , gentle Portia .",
+      "scrollMode": "auto",
+      "lineIndex": 86
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7915g",
+      "lineText": "He lifts her up .",
+      "scrollMode": "auto",
+      "lineIndex": 87
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h791a0",
+      "lineText": "I should not need , if you were gentle Brutus . Within the bond of marriage , tell me , Brutus , Is it excepted I should know no secrets That appertain to you ? Am I your self But , as it were , in sort or limitation , To keep with you at meals , comfort your bed , And talk to you sometimes ? Dwell I but in the suburbs Of your good pleasure ? If it be no more , Portia is Brutus’ harlot , not his wife .",
+      "scrollMode": "auto",
+      "lineIndex": 88
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79160",
+      "lineText": "You are my true and honorable wife , As dear to me as are the ruddy drops That visit my sad heart .",
+      "scrollMode": "auto",
+      "lineIndex": 89
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h791a0",
+      "lineText": "If this were true , then should I know this secret . I grant I am a woman , but withal A woman that Lord Brutus took to wife . I grant I am a woman , but withal A woman well-reputed , Cato’s daughter . Think you I am no stronger than my sex , Being so fathered and so husbanded ? Tell me your counsels ; I will not disclose ’em . I have made strong proof of my constancy , Giving myself a voluntary wound Here , in the thigh . Can I bear that with patience , And not my husband’s secrets ?",
+      "scrollMode": "auto",
+      "lineIndex": 90
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7915g",
+      "lineText": "Knock .",
+      "scrollMode": "auto",
+      "lineIndex": 91
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7915g",
+      "lineText": "Portia exits .",
+      "scrollMode": "auto",
+      "lineIndex": 92
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h791a0",
+      "lineText": "Portia exits . Lucius , who ’s that knocks ?",
+      "scrollMode": "auto",
+      "lineIndex": 93
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7915g",
+      "lineText": "Enter Lucius and Ligarius .",
+      "scrollMode": "auto",
+      "lineIndex": 94
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7916g",
+      "lineText": "Here is a sick man that would speak with you .",
+      "scrollMode": "auto",
+      "lineIndex": 95
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7915g",
+      "lineText": "Lucius exits .",
+      "scrollMode": "auto",
+      "lineIndex": 96
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7916g",
+      "lineText": "Lucius exits . Caius Ligarius , how ?",
+      "scrollMode": "auto",
+      "lineIndex": 97
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h791ag",
+      "lineText": "Vouchsafe good morrow from a feeble tongue .",
+      "scrollMode": "auto",
+      "lineIndex": 98
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79160",
+      "lineText": "O , what a time have you chose out , brave Caius , To wear a kerchief ! Would you were not sick !",
+      "scrollMode": "auto",
+      "lineIndex": 99
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h791ag",
+      "lineText": "I am not sick , if Brutus have in hand Any exploit worthy the name of honor .",
+      "scrollMode": "auto",
+      "lineIndex": 100
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79160",
+      "lineText": "Such an exploit have I in hand , Ligarius , Had you a healthful ear to hear of it .",
+      "scrollMode": "auto",
+      "lineIndex": 101
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7915g",
+      "lineText": "He takes off his kerchief .",
+      "scrollMode": "auto",
+      "lineIndex": 102
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h791ag",
+      "lineText": "He takes off his kerchief . Soul of Rome , Brave son derived from honorable loins , Thou like an exorcist hast conjured up My mortifièd spirit . Now bid me run , And I will strive with things impossible , Yea , get the better of them . What’s to do ?",
+      "scrollMode": "auto",
+      "lineIndex": 103
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79160",
+      "lineText": "A piece of work that will make sick men whole .",
+      "scrollMode": "auto",
+      "lineIndex": 104
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h791ag",
+      "lineText": "But are not some whole that we must make sick ?",
+      "scrollMode": "auto",
+      "lineIndex": 105
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79160",
+      "lineText": "That must we also . What it is , my Caius , I shall unfold to thee as we are going To whom it must be done .",
+      "scrollMode": "auto",
+      "lineIndex": 106
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h791ag",
+      "lineText": "Set on your foot , And with a heart new-fired I follow you To do I know not what ; but it sufficeth That Brutus leads me on .",
+      "scrollMode": "auto",
+      "lineIndex": 107
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7915g",
+      "lineText": "Thunder .",
+      "scrollMode": "auto",
+      "lineIndex": 108
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79160",
+      "lineText": "Follow me then .",
+      "scrollMode": "auto",
+      "lineIndex": 109
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7915g",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 110
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7915g",
+      "lineText": "Thunder and lightning .",
+      "scrollMode": "auto",
+      "lineIndex": 111
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7915g",
+      "lineText": "Enter Julius Caesar in his nightgown .",
+      "scrollMode": "auto",
+      "lineIndex": 112
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h791b0",
+      "lineText": "Nor heaven nor Earth earth have been at peace tonight . Thrice hath Calphurnia in her sleep cried out Help ho , they murder Caesar ! — Who’s within ?",
+      "scrollMode": "auto",
+      "lineIndex": 113
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7915g",
+      "lineText": "Enter a Servant .",
+      "scrollMode": "auto",
+      "lineIndex": 114
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h791bg",
+      "lineText": "My lord .",
+      "scrollMode": "auto",
+      "lineIndex": 115
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h791b0",
+      "lineText": "Go bid the priests do present sacrifice , And bring me their opinions of success .",
+      "scrollMode": "auto",
+      "lineIndex": 116
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h791bg",
+      "lineText": "I will , my lord .",
+      "scrollMode": "auto",
+      "lineIndex": 117
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7915g",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 118
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7915g",
+      "lineText": "Enter Calphurnia .",
+      "scrollMode": "auto",
+      "lineIndex": 119
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h791c0",
+      "lineText": "What mean you , Caesar ? Think you to walk forth ? You shall not stir out of your house today .",
+      "scrollMode": "auto",
+      "lineIndex": 120
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h791b0",
+      "lineText": "Caesar shall forth . The things that threatened me Ne’er looked but on my back . When they shall see The face of Caesar , they are vanishèd .",
+      "scrollMode": "auto",
+      "lineIndex": 121
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h791c0",
+      "lineText": "Caesar , I never stood on ceremonies , Yet now they fright me . There is one within , Besides the things that we have heard and seen , Recounts most horrid sights seen by the watch . A lioness hath whelpèd in the streets , And graves have yawned and yielded up their dead . Fierce fiery warriors fought upon the clouds In ranks and squadrons and right form of war , Which drizzled blood upon the Capitol . The noise of battle hurtled in the air , Horses did neigh , and dying men did groan , ACT 2. SC. 2 And ghosts did shriek and squeal about the streets . O Caesar , these things are beyond all use , And I do fear them .",
+      "scrollMode": "auto",
+      "lineIndex": 122
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h791b0",
+      "lineText": "What can be avoided Whose end is purposed by the mighty gods ? Yet Caesar shall go forth , for these predictions Are to the world in general as to Caesar .",
+      "scrollMode": "auto",
+      "lineIndex": 123
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h791c0",
+      "lineText": "When beggars die there are no comets seen ; The heavens themselves blaze forth the death of princes .",
+      "scrollMode": "auto",
+      "lineIndex": 124
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7915g",
+      "lineText": "Enter a Servant .",
+      "scrollMode": "auto",
+      "lineIndex": 125
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h791bg",
+      "lineText": "Enter a Servant . What say the augurers ?",
+      "scrollMode": "auto",
+      "lineIndex": 126
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h791bg",
+      "lineText": "They would not have you to stir forth today . Plucking the entrails of an offering forth , They could not find a heart within the beast .",
+      "scrollMode": "auto",
+      "lineIndex": 127
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h791b0",
+      "lineText": "The gods do this in shame of cowardice . Caesar should be a beast without a heart If he should stay at home today for fear . No , Caesar shall not . Danger knows full well That Caesar is more dangerous than he . We are two lions littered in one day , And I the elder and more terrible . And Caesar shall go forth .",
+      "scrollMode": "auto",
+      "lineIndex": 128
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h791c0",
+      "lineText": "Alas , my lord , Your wisdom is consumed in confidence . ACT 2. SC. 2 Do not go forth today . Call it my fear That keeps you in the house , and not your own . We’ll send Mark Antony to the Senate House , And he shall say you are not well today . Let me , upon my knee , prevail in this .",
+      "scrollMode": "auto",
+      "lineIndex": 129
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7915g",
+      "lineText": "She kneels .",
+      "scrollMode": "auto",
+      "lineIndex": 130
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7915g",
+      "lineText": "He lifts her up .",
+      "scrollMode": "auto",
+      "lineIndex": 131
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7915g",
+      "lineText": "Enter Decius .",
+      "scrollMode": "auto",
+      "lineIndex": 132
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7917g",
+      "lineText": "Enter Decius . Here’s Decius Brutus ; he shall tell them so .",
+      "scrollMode": "auto",
+      "lineIndex": 133
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7917g",
+      "lineText": "Caesar , all hail ! Good morrow , worthy Caesar . I come to fetch you to the Senate House .",
+      "scrollMode": "auto",
+      "lineIndex": 134
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h791b0",
+      "lineText": "And you are come in very happy time To bear my greeting to the Senators And tell them that I will not come today . Cannot is false , and that I dare not , falser . I will not come today . Tell them so , Decius .",
+      "scrollMode": "auto",
+      "lineIndex": 135
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h791c0",
+      "lineText": "Say he is sick .",
+      "scrollMode": "auto",
+      "lineIndex": 136
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h791b0",
+      "lineText": "Shall Caesar send a lie ? Have I in conquest stretched mine arm so far , To be afeard to tell graybeards the truth ? Decius , go tell them Caesar will not come .",
+      "scrollMode": "auto",
+      "lineIndex": 137
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7917g",
+      "lineText": "Most mighty Caesar , let me know some cause , Lest I be laughed at when I tell them so .",
+      "scrollMode": "auto",
+      "lineIndex": 138
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h791b0",
+      "lineText": "The cause is in my will . I will not come . That is enough to satisfy the Senate . But for your private satisfaction , Because I love you , I will let you know . Calphurnia here , my wife , stays me at home . ACT 2. SC. 2 She dreamt tonight she saw my statue , Which , like a fountain with an hundred spouts , Did run pure blood ; and many lusty Romans Came smiling and did bathe their hands in it . And these does she apply for warnings and portents And evils imminent , and on her knee Hath begged that I will stay at home today .",
+      "scrollMode": "auto",
+      "lineIndex": 139
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7917g",
+      "lineText": "This dream is all amiss interpreted . It was a vision fair and fortunate . Your statue spouting blood in many pipes , In which so many smiling Romans bathed , Signifies that from you great Rome shall suck Reviving blood , and that great men shall press For tinctures , stains , relics , and cognizance . This by Calphurnia’s dream is signified .",
+      "scrollMode": "auto",
+      "lineIndex": 140
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h791b0",
+      "lineText": "And this way have you well expounded it .",
+      "scrollMode": "auto",
+      "lineIndex": 141
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7917g",
+      "lineText": "I have , when you have heard what I can say . And know it now : the Senate have concluded To give this day a crown to mighty Caesar . If you shall send them word you will not come , Their minds may change . Besides , it were a mock Apt to be rendered , for someone to say Break up the Senate till another time , When Caesar’s wife shall meet with better dreams . If Caesar hide himself , shall they not whisper Lo , Caesar is afraid ? Pardon me , Caesar , for my dear dear love To your proceeding bids me tell you this , And reason to my love is liable .",
+      "scrollMode": "auto",
+      "lineIndex": 142
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7915g",
+      "lineText": "Enter Brutus , Ligarius , Metellus , Casca , Trebonius , Cinna , and Publius .",
+      "scrollMode": "auto",
+      "lineIndex": 143
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79160",
+      "lineText": "Enter Brutus , Ligarius , Metellus , Casca , Trebonius , Cinna , and Publius . And look where Publius is come to fetch me .",
+      "scrollMode": "auto",
+      "lineIndex": 144
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h791cg",
+      "lineText": "Good morrow , Caesar .",
+      "scrollMode": "auto",
+      "lineIndex": 145
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h791b0",
+      "lineText": "Welcome , Publius . — What , Brutus , are you stirred so early too ? — Good morrow , Casca . — Caius Ligarius , Caesar was ne’er so much your enemy As that same ague which hath made you lean . — What is ’t o’clock ?",
+      "scrollMode": "auto",
+      "lineIndex": 146
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79160",
+      "lineText": "Caesar , ’tis strucken eight .",
+      "scrollMode": "auto",
+      "lineIndex": 147
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7915g",
+      "lineText": "Enter Antony .",
+      "scrollMode": "auto",
+      "lineIndex": 148
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h791d0",
+      "lineText": "Enter Antony . See , Antony that revels long a-nights Is notwithstanding up . — Good morrow , Antony .",
+      "scrollMode": "auto",
+      "lineIndex": 149
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h791d0",
+      "lineText": "So to most noble Caesar .",
+      "scrollMode": "auto",
+      "lineIndex": 150
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7915g",
+      "lineText": ", to Servant",
+      "scrollMode": "auto",
+      "lineIndex": 151
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7915g",
+      "lineText": "Servant exits .",
+      "scrollMode": "auto",
+      "lineIndex": 152
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h791bg",
+      "lineText": "Servant exits . Now , Cinna . — Now , Metellus . — What , Trebonius , I have an hour’s talk in store for you . Remember that you call on me today ; Be near me that I may remember you .",
+      "scrollMode": "auto",
+      "lineIndex": 153
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7915g",
+      "lineText": "Aside .",
+      "scrollMode": "auto",
+      "lineIndex": 154
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7919g",
+      "lineText": "Aside . And so near will I be That your best friends shall wish I had been further .",
+      "scrollMode": "auto",
+      "lineIndex": 155
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h791b0",
+      "lineText": "Good friends , go in and taste some wine with me , And we , like friends , will straightway go together .",
+      "scrollMode": "auto",
+      "lineIndex": 156
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7915g",
+      "lineText": ", aside",
+      "scrollMode": "auto",
+      "lineIndex": 157
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h79160",
+      "lineText": "That every like is not the same , O Caesar , The heart of Brutus earns to think upon .",
+      "scrollMode": "auto",
+      "lineIndex": 158
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7915g",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 159
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7915g",
+      "lineText": "Enter Artemidorus reading a paper .",
+      "scrollMode": "auto",
+      "lineIndex": 160
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h791dg",
+      "lineText": "Caesar , beware of Brutus , take heed of Cassius , come not near Casca , have an eye to Cinna , trust not Trebonius , mark well Metellus Cimber . Decius Brutus loves thee not . Thou hast wronged Caius Ligarius . There is but one mind in all these men , and it is bent against Caesar . If thou beest not immortal , look about you . Security gives way to conspiracy . The mighty gods defend thee ! Thy lover , Artemidorus Here will I stand till Caesar pass along , And as a suitor will I give him this . My heart laments that virtue cannot live Out of the teeth of emulation . If thou read this , O Caesar , thou mayest live ; If not , the Fates with traitors do contrive .",
+      "scrollMode": "auto",
+      "lineIndex": 161
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7915g",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 162
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7915g",
+      "lineText": "Enter Portia and Lucius .",
+      "scrollMode": "auto",
+      "lineIndex": 163
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h791a0",
+      "lineText": "I prithee , boy , run to the Senate House . Stay not to answer me , but get thee gone . Why dost thou stay ?",
+      "scrollMode": "auto",
+      "lineIndex": 164
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7916g",
+      "lineText": "To know my errand , madam .",
+      "scrollMode": "auto",
+      "lineIndex": 165
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7915g",
+      "lineText": "Aside .",
+      "scrollMode": "auto",
+      "lineIndex": 166
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h791a0",
+      "lineText": "Aside . O constancy , be strong upon my side ; Set a huge mountain ’tween my heart and tongue . I have a man’s mind but a woman’s might . ACT 2. SC. 4 How hard it is for women to keep counsel ! — Art thou here yet ?",
+      "scrollMode": "auto",
+      "lineIndex": 167
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7916g",
+      "lineText": "Madam , what should I do ? Run to the Capitol , and nothing else ? And so return to you , and nothing else ?",
+      "scrollMode": "auto",
+      "lineIndex": 168
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h791a0",
+      "lineText": "Yes , bring me word , boy , if thy lord look well , For he went sickly forth . And take good note What Caesar doth , what suitors press to him . Hark , boy , what noise is that ?",
+      "scrollMode": "auto",
+      "lineIndex": 169
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7916g",
+      "lineText": "I hear none , madam .",
+      "scrollMode": "auto",
+      "lineIndex": 170
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h791a0",
+      "lineText": "Prithee , listen well . I heard a bustling rumor like a fray , And the wind brings it from the Capitol .",
+      "scrollMode": "auto",
+      "lineIndex": 171
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7916g",
+      "lineText": "Sooth , madam , I hear nothing .",
+      "scrollMode": "auto",
+      "lineIndex": 172
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7915g",
+      "lineText": "Enter the Soothsayer .",
+      "scrollMode": "auto",
+      "lineIndex": 173
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h791a0",
+      "lineText": "Come hither , fellow . Which way hast thou been ?",
+      "scrollMode": "auto",
+      "lineIndex": 174
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h791e0",
+      "lineText": "At mine own house , good lady .",
+      "scrollMode": "auto",
+      "lineIndex": 175
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h791a0",
+      "lineText": "What is ’t o’clock ?",
+      "scrollMode": "auto",
+      "lineIndex": 176
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h791e0",
+      "lineText": "About the ninth hour , lady .",
+      "scrollMode": "auto",
+      "lineIndex": 177
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h791a0",
+      "lineText": "Is Caesar yet gone to the Capitol ?",
+      "scrollMode": "auto",
+      "lineIndex": 178
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h791e0",
+      "lineText": "Madam , not yet . I go to take my stand To see him pass on to the Capitol .",
+      "scrollMode": "auto",
+      "lineIndex": 179
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h791a0",
+      "lineText": "Thou hast some suit to Caesar , hast thou not ?",
+      "scrollMode": "auto",
+      "lineIndex": 180
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h791e0",
+      "lineText": "That I have , lady . If it will please Caesar To be so good to Caesar as to hear me , I shall beseech him to befriend himself .",
+      "scrollMode": "auto",
+      "lineIndex": 181
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h791a0",
+      "lineText": "Why , know’st thou any harm’s harms intended towards him ?",
+      "scrollMode": "auto",
+      "lineIndex": 182
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h791e0",
+      "lineText": "None that I know will be , much that I fear may chance . Good morrow to you . — Here the street is narrow . The throng that follows Caesar at the heels , Of senators , of praetors , common suitors , Will crowd a feeble man almost to death . I’ll get me to a place more void , and there Speak to great Caesar as he comes along .",
+      "scrollMode": "auto",
+      "lineIndex": 183
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7915g",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 184
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7915g",
+      "lineText": "Aside .",
+      "scrollMode": "auto",
+      "lineIndex": 185
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7915g",
+      "lineText": "To Lucius .",
+      "scrollMode": "auto",
+      "lineIndex": 186
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7915g",
+      "lineText": "Aside .",
+      "scrollMode": "auto",
+      "lineIndex": 187
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h791a0",
+      "lineText": "Aside . O , I grow faint . — Run , Lucius , and commend me to my lord . Say I am merry . Come to me again And bring me word what he doth say to thee .",
+      "scrollMode": "auto",
+      "lineIndex": 188
+    },
+    {
+      "castMemberId": "d68m11kn9qd8d2h7915g",
+      "lineText": "They exit separately .",
+      "scrollMode": "auto",
+      "lineIndex": 189
+    }
+  ],
+  "isPublic": true
+}

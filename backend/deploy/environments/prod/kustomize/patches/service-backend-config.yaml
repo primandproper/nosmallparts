@@ -1,0 +1,6 @@
+# Attach BackendConfig to increase GCP Load Balancer timeout from 30s to 1 hour
+# (required for WebSocket /ws/stages connections)
+- op: add
+  path: /metadata/annotations
+  value:
+    cloud.google.com/backend-config: '{"default": "api-backend-config"}'

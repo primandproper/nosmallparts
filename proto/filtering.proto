@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package filtering;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/filtering";
+
+message QueryFilter {
+  optional string sort_by = 1;
+  optional google.protobuf.Timestamp created_after = 3;
+  optional google.protobuf.Timestamp created_before = 4;
+  optional google.protobuf.Timestamp updated_after = 5;
+  optional google.protobuf.Timestamp updated_before = 6;
+  optional uint32 max_response_size = 7;
+  optional bool include_archived = 8;
+  optional string cursor = 9;
+  optional string search_query = 10;
+}
+
+message Pagination {
+  uint32 max_response_size = 1;
+  uint64 filtered_count = 2;
+  uint64 total_count = 3;
+  string cursor = 4;
+  string previous_cursor = 5;
+  QueryFilter applied_query_filter = 6;
+}

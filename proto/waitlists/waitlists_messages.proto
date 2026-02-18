@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package waitlists;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/waitlists";
+
+message Waitlist {
+  google.protobuf.Timestamp created_at = 1;
+  google.protobuf.Timestamp last_updated_at = 2;
+  google.protobuf.Timestamp archived_at = 3;
+  string id = 4;
+  string name = 5;
+  string description = 6;
+  google.protobuf.Timestamp valid_until = 7;
+}
+
+message WaitlistSignup {
+  google.protobuf.Timestamp created_at = 1;
+  google.protobuf.Timestamp last_updated_at = 2;
+  google.protobuf.Timestamp archived_at = 3;
+  string id = 4;
+  string notes = 5;
+  string belongs_to_waitlist = 6;
+  string belongs_to_user = 7;
+  string belongs_to_account = 8;
+}

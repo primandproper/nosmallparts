@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package notifications;
+
+import "common.proto";
+import "filtering.proto";
+import "notifications/notifications_messages.proto";
+
+option go_package = "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/notifications";
+
+message GetUserNotificationRequest {
+  string user_notification_id = 1;
+}
+
+message GetUserNotificationResponse {
+  common.ResponseDetails response_details = 1;
+  UserNotification result = 2;
+}
+
+message GetUserNotificationsRequest {
+  filtering.QueryFilter filter = 1;
+}
+
+message GetUserNotificationsResponse {
+  common.ResponseDetails response_details = 1;
+  filtering.Pagination pagination = 2;
+  repeated UserNotification results = 3;
+}
+
+message UpdateUserNotificationRequest {
+  string user_notification_id = 1;
+  UserNotificationUpdateRequestInput input = 2;
+}
+
+message UpdateUserNotificationResponse {
+  common.ResponseDetails response_details = 1;
+  UserNotification updated = 2;
+}
+
+message UserNotificationCreationRequestInput {
+  string content = 1;
+  UserNotificationStatus status = 2;
+  string belongs_to_user = 3;
+}
+
+message UserNotificationUpdateRequestInput {
+  optional UserNotificationStatus status = 1;
+}

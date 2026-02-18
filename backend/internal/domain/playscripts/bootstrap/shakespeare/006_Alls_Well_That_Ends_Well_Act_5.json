@@ -1,0 +1,1209 @@
+{
+  "title": "All’s Well That Ends Well (Act 5)",
+  "description": "Folger Shakespeare Library edition",
+  "author": "William Shakespeare",
+  "castMembers": [
+    {
+      "id": "d68m11cn9qd8d2h78k80",
+      "name": "Narrator",
+      "sortOrder": 0
+    },
+    {
+      "id": "d68m11cn9qd8d2h78k8g",
+      "name": "Gentleman",
+      "description": "a “gentle Astringer”",
+      "sortOrder": 1
+    },
+    {
+      "id": "d68m11cn9qd8d2h78k90",
+      "name": "Helen",
+      "description": "a gentlewoman of Rossillion",
+      "sortOrder": 2
+    },
+    {
+      "id": "d68m11cn9qd8d2h78k9g",
+      "name": "Widow",
+      "sortOrder": 3
+    },
+    {
+      "id": "d68m11cn9qd8d2h78ka0",
+      "name": "Parolles",
+      "description": "companion to Bertram",
+      "sortOrder": 4
+    },
+    {
+      "id": "d68m11cn9qd8d2h78kag",
+      "name": "Fool",
+      "sortOrder": 5
+    },
+    {
+      "id": "d68m11cn9qd8d2h78kb0",
+      "name": "Lafew",
+      "description": "a French lord",
+      "sortOrder": 6
+    },
+    {
+      "id": "d68m11cn9qd8d2h78kbg",
+      "name": "King",
+      "sortOrder": 7
+    },
+    {
+      "id": "d68m11cn9qd8d2h78kc0",
+      "name": "Countess",
+      "description": "Bertram’s mother",
+      "sortOrder": 8
+    },
+    {
+      "id": "d68m11cn9qd8d2h78kcg",
+      "name": "ATTENDANTS.KING.0.1_AWW",
+      "sortOrder": 9
+    },
+    {
+      "id": "d68m11cn9qd8d2h78kd0",
+      "name": "Bertram",
+      "description": "Count of Rossillion",
+      "sortOrder": 10
+    },
+    {
+      "id": "d68m11cn9qd8d2h78kdg",
+      "name": "ATTENDANTS.KING.0.3_AWW",
+      "sortOrder": 11
+    },
+    {
+      "id": "d68m11cn9qd8d2h78ke0",
+      "name": "Diana",
+      "description": "the Widow’s daughter",
+      "sortOrder": 12
+    },
+    {
+      "id": "d68m11cn9qd8d2h78keg",
+      "name": "Epilogue_AWW",
+      "sortOrder": 13
+    }
+  ],
+  "lines": [
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k80",
+      "lineText": "Enter Helen , Widow , and Diana , with two Attendants .",
+      "scrollMode": "auto",
+      "lineIndex": 0
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k80",
+      "lineText": "Enter a Gentleman , a gentle Astringer .",
+      "scrollMode": "auto",
+      "lineIndex": 1
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k8g",
+      "lineText": "Enter a Gentleman , a gentle Astringer . In happy time ! This man may help me to his Majesty’s ear , If he would spend his power . — God save you , sir .",
+      "scrollMode": "auto",
+      "lineIndex": 2
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k8g",
+      "lineText": "And you .",
+      "scrollMode": "auto",
+      "lineIndex": 3
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k90",
+      "lineText": "Sir , I have seen you in the court of France .",
+      "scrollMode": "auto",
+      "lineIndex": 4
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k8g",
+      "lineText": "I have been sometimes there .",
+      "scrollMode": "auto",
+      "lineIndex": 5
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k90",
+      "lineText": "I do presume , sir , that you are not fall’n From the report that goes upon your goodness , And therefore , goaded with most sharp occasions Which lay nice manners by , I put you to The use of your own virtues , for the which I shall continue thankful .",
+      "scrollMode": "auto",
+      "lineIndex": 6
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k8g",
+      "lineText": "What’s your will ?",
+      "scrollMode": "auto",
+      "lineIndex": 7
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k80",
+      "lineText": ", taking out a paper",
+      "scrollMode": "auto",
+      "lineIndex": 8
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k90",
+      "lineText": "That it will please you To give this poor petition to the King And aid me with that store of power you have To come into his presence .",
+      "scrollMode": "auto",
+      "lineIndex": 9
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k8g",
+      "lineText": "The King’s not here .",
+      "scrollMode": "auto",
+      "lineIndex": 10
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k90",
+      "lineText": "Not here , sir ?",
+      "scrollMode": "auto",
+      "lineIndex": 11
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k8g",
+      "lineText": "Not indeed . He hence removed last night , and with more haste Than is his use .",
+      "scrollMode": "auto",
+      "lineIndex": 12
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k9g",
+      "lineText": "Lord , how we lose our pains !",
+      "scrollMode": "auto",
+      "lineIndex": 13
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k90",
+      "lineText": "All’s well that ends well yet , Though time seem so adverse and means unfit . — I do beseech you , whither is he gone ?",
+      "scrollMode": "auto",
+      "lineIndex": 14
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k8g",
+      "lineText": "Marry , as I take it , to Rossillion , Whither I am going .",
+      "scrollMode": "auto",
+      "lineIndex": 15
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k80",
+      "lineText": ", giving him the paper",
+      "scrollMode": "auto",
+      "lineIndex": 16
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k90",
+      "lineText": "I do beseech you , sir , Since you are like to see the King before me , Commend the paper to his gracious hand , Which I presume shall render you no blame But rather make you thank your pains for it . I will come after you with what good speed Our means will make us means .",
+      "scrollMode": "auto",
+      "lineIndex": 17
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k8g",
+      "lineText": "This I’ll do for you .",
+      "scrollMode": "auto",
+      "lineIndex": 18
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k90",
+      "lineText": "And you shall find yourself to be well thanked Whate’er falls more . We must to horse again . — Go , go , provide .",
+      "scrollMode": "auto",
+      "lineIndex": 19
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k80",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 20
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k80",
+      "lineText": "Enter Fool and Parolles .",
+      "scrollMode": "auto",
+      "lineIndex": 21
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k80",
+      "lineText": ", holding out a paper",
+      "scrollMode": "auto",
+      "lineIndex": 22
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ka0",
+      "lineText": "Good Monsieur Lavatch , give my lord Lafew this letter . I have ere now , sir , been better known to you , when I have held familiarity with fresher clothes . But I am now , sir , muddied in Fortune’s mood , and smell somewhat strong of her strong displeasure .",
+      "scrollMode": "auto",
+      "lineIndex": 23
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kag",
+      "lineText": "Truly , Fortune’s displeasure is but sluttish if it smell so strongly as thou speak’st of . I will henceforth eat no fish of Fortune’s butt’ring . Prithee , allow the wind .",
+      "scrollMode": "auto",
+      "lineIndex": 24
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ka0",
+      "lineText": "Nay , you need not to stop your nose , sir . I spake but by a metaphor .",
+      "scrollMode": "auto",
+      "lineIndex": 25
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kag",
+      "lineText": "Indeed , sir , if your metaphor stink I will stop my nose , or against any man’s metaphor . Prithee , get thee further .",
+      "scrollMode": "auto",
+      "lineIndex": 26
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ka0",
+      "lineText": "Pray you , sir , deliver me this paper .",
+      "scrollMode": "auto",
+      "lineIndex": 27
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k80",
+      "lineText": "Enter Lafew .",
+      "scrollMode": "auto",
+      "lineIndex": 28
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kb0",
+      "lineText": "Enter Lafew . Look , here he comes himself . — Here is a purr of Fortune’s , sir , or of Fortune’s cat — but not a musk-cat — that has fall’n into the unclean fishpond of her displeasure and , as he says , is muddied withal . Pray you , sir , use the carp as you may , for he looks like a poor , decayed , ingenious , foolish , rascally knave . I do pity his distress in my smiles of comfort , and leave him to your Lordship .",
+      "scrollMode": "auto",
+      "lineIndex": 29
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k80",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 30
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ka0",
+      "lineText": "My lord , I am a man whom Fortune hath cruelly scratched .",
+      "scrollMode": "auto",
+      "lineIndex": 31
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kb0",
+      "lineText": "And what would you have me to do ? ’Tis too late to pare her nails now . Wherein have you ACT 5. SC. 3 played the knave with Fortune that she should scratch you , who of herself is a good lady and would not have knaves thrive long under her ? There’s a cardecu for you . Let the justices make you and Fortune friends . I am for other business .",
+      "scrollMode": "auto",
+      "lineIndex": 32
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ka0",
+      "lineText": "I beseech your Honor to hear me one single word .",
+      "scrollMode": "auto",
+      "lineIndex": 33
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kb0",
+      "lineText": "You beg a single penny more . Come , you shall ha ’t . Save your word .",
+      "scrollMode": "auto",
+      "lineIndex": 34
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ka0",
+      "lineText": "My name , my good lord , is Parolles .",
+      "scrollMode": "auto",
+      "lineIndex": 35
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kb0",
+      "lineText": "You beg more than a word , then . Cock’s my passion ; give me your hand . How does your drum ?",
+      "scrollMode": "auto",
+      "lineIndex": 36
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ka0",
+      "lineText": "O my good lord , you were the first that found me .",
+      "scrollMode": "auto",
+      "lineIndex": 37
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kb0",
+      "lineText": "Was I , in sooth ? And I was the first that lost thee .",
+      "scrollMode": "auto",
+      "lineIndex": 38
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ka0",
+      "lineText": "It lies in you , my lord , to bring me in some grace , for you did bring me out .",
+      "scrollMode": "auto",
+      "lineIndex": 39
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k80",
+      "lineText": "Trumpets sound .",
+      "scrollMode": "auto",
+      "lineIndex": 40
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kb0",
+      "lineText": "Trumpets sound . The King’s coming . I know by his trumpets . Sirrah , inquire further after me . I had talk of you last night . Though you are a fool and a knave , you shall eat . Go to , follow .",
+      "scrollMode": "auto",
+      "lineIndex": 41
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ka0",
+      "lineText": "I praise God for you .",
+      "scrollMode": "auto",
+      "lineIndex": 42
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k80",
+      "lineText": "They exit .",
+      "scrollMode": "auto",
+      "lineIndex": 43
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k80",
+      "lineText": "Flourish . Enter King , Countess , Lafew , the two French Lords , with Attendants .",
+      "scrollMode": "auto",
+      "lineIndex": 44
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kbg",
+      "lineText": "We lost a jewel of her , and our esteem Was made much poorer by it . But your son , ACT 5. SC. 3 As mad in folly , lacked the sense to know Her estimation home .",
+      "scrollMode": "auto",
+      "lineIndex": 45
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kc0",
+      "lineText": "’Tis past , my liege , And I beseech your Majesty to make it Natural rebellion done i’ th’ blade of youth , When oil and fire , too strong for reason’s force , O’erbears it and burns on .",
+      "scrollMode": "auto",
+      "lineIndex": 46
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kbg",
+      "lineText": "My honored lady , I have forgiven and forgotten all , Though my revenges were high bent upon him And watched the time to shoot .",
+      "scrollMode": "auto",
+      "lineIndex": 47
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kb0",
+      "lineText": "This I must say — But first I beg my pardon : the young lord Did to his Majesty , his mother , and his lady Offense of mighty note , but to himself The greatest wrong of all . He lost a wife Whose beauty did astonish the survey Of richest eyes , whose words all ears took captive , Whose dear perfection hearts that scorned to serve Humbly called mistress .",
+      "scrollMode": "auto",
+      "lineIndex": 48
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kbg",
+      "lineText": "Praising what is lost Makes the remembrance dear . Well , call him hither . We are reconciled , and the first view shall kill All repetition . Let him not ask our pardon . The nature of his great offense is dead , And deeper than oblivion we do bury Th’ incensing relics of it . Let him approach A stranger , no offender , and inform him So ’tis our will he should .",
+      "scrollMode": "auto",
+      "lineIndex": 49
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kcg",
+      "lineText": "I shall , my liege .",
+      "scrollMode": "auto",
+      "lineIndex": 50
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k80",
+      "lineText": "He exits .",
+      "scrollMode": "auto",
+      "lineIndex": 51
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kbg",
+      "lineText": "What says he to your daughter ? Have you spoke ?",
+      "scrollMode": "auto",
+      "lineIndex": 52
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kb0",
+      "lineText": "All that he is hath reference to your Highness .",
+      "scrollMode": "auto",
+      "lineIndex": 53
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kbg",
+      "lineText": "Then shall we have a match . I have letters sent me That sets him high in fame .",
+      "scrollMode": "auto",
+      "lineIndex": 54
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k80",
+      "lineText": "Enter Count Bertram .",
+      "scrollMode": "auto",
+      "lineIndex": 55
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kb0",
+      "lineText": "He looks well on ’t .",
+      "scrollMode": "auto",
+      "lineIndex": 56
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kbg",
+      "lineText": "I am not a day of season , For thou mayst see a sunshine and a hail In me at once . But to the brightest beams Distracted clouds give way . So stand thou forth . The time is fair again .",
+      "scrollMode": "auto",
+      "lineIndex": 57
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kd0",
+      "lineText": "My high-repented blames , Dear sovereign , pardon to me .",
+      "scrollMode": "auto",
+      "lineIndex": 58
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kbg",
+      "lineText": "All is whole . Not one word more of the consumèd time . Let’s take the instant by the forward top , For we are old , and on our quick’st decrees Th’ inaudible and noiseless foot of time Steals ere we can effect them . You remember The daughter of this lord ?",
+      "scrollMode": "auto",
+      "lineIndex": 59
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kd0",
+      "lineText": "Admiringly , my liege . At first I stuck my choice upon her , ere my heart Durst make too bold a herald of my tongue ; Where the impression of mine eye infixing , Contempt his scornful perspective did lend me , Which warped the line of every other favor , Scorned a fair color or expressed it stol’n , Extended or contracted all proportions To a most hideous object . Thence it came That she whom all men praised and whom myself , Since I have lost , have loved , was in mine eye The dust that did offend it .",
+      "scrollMode": "auto",
+      "lineIndex": 60
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kbg",
+      "lineText": "Well excused . That thou didst love her strikes some scores away From the great compt . But love that comes too late , Like a remorseful pardon slowly carried , To the great sender turns a sour offense , Crying That’s good that’s gone ! Our rash faults Make trivial price of serious things we have , ACT 5. SC. 3 Not knowing them until we know their grave . Oft our displeasures , to ourselves unjust , Destroy our friends and after weep their dust . Our own love , waking , cries to see what’s done , While shameful hate sleeps out the afternoon . Be this sweet Helen’s knell , and now forget her . Send forth your amorous token for fair Maudlin . The main consents are had , and here we’ll stay To see our widower’s second marriage day .",
+      "scrollMode": "auto",
+      "lineIndex": 61
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kc0",
+      "lineText": "Which better than the first , O dear heaven , bless , Or , ere they meet , in me , O nature , cesse !",
+      "scrollMode": "auto",
+      "lineIndex": 62
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k80",
+      "lineText": "Bertram gives him a ring .",
+      "scrollMode": "auto",
+      "lineIndex": 63
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kd0",
+      "lineText": "Bertram gives him a ring . By my old beard And ev’ry hair that’s on ’t , Helen that’s dead Was a sweet creature . Such a ring as this , The last that e’er I took her leave at court , I saw upon her finger .",
+      "scrollMode": "auto",
+      "lineIndex": 64
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kd0",
+      "lineText": "Hers it was not .",
+      "scrollMode": "auto",
+      "lineIndex": 65
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k80",
+      "lineText": "Lafew passes the ring to the King .",
+      "scrollMode": "auto",
+      "lineIndex": 66
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k80",
+      "lineText": "To Bertram .",
+      "scrollMode": "auto",
+      "lineIndex": 67
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kb0",
+      "lineText": "To Bertram . Had you that craft to reave her Of what should stead her most ?",
+      "scrollMode": "auto",
+      "lineIndex": 68
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kd0",
+      "lineText": "My gracious sovereign , ACT 5. SC. 3 Howe’er it pleases you to take it so , The ring was never hers .",
+      "scrollMode": "auto",
+      "lineIndex": 69
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kc0",
+      "lineText": "Son , on my life , I have seen her wear it , and she reckoned it At her life’s rate .",
+      "scrollMode": "auto",
+      "lineIndex": 70
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kb0",
+      "lineText": "I am sure I saw her wear it .",
+      "scrollMode": "auto",
+      "lineIndex": 71
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kd0",
+      "lineText": "You are deceived , my lord . She never saw it . In Florence was it from a casement thrown me , Wrapped in a paper which contained the name Of her that threw it . Noble she was , and thought I stood ungaged , but when I had subscribed To mine own fortune and informed her fully I could not answer in that course of honor As she had made the overture , she ceased In heavy satisfaction and would never Receive the ring again .",
+      "scrollMode": "auto",
+      "lineIndex": 72
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kbg",
+      "lineText": "Plutus himself , That knows the tinct and multiplying med’cine , Hath not in nature’s mystery more science Than I have in this ring . ’Twas mine , ’twas Helen’s , Whoever gave it you . Then if you know That you are well acquainted with yourself , Confess ’twas hers and by what rough enforcement You got it from her . She called the saints to surety That she would never put it from her finger Unless she gave it to yourself in bed , Where you have never come , or sent it us Upon her great disaster .",
+      "scrollMode": "auto",
+      "lineIndex": 73
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kd0",
+      "lineText": "She never saw it .",
+      "scrollMode": "auto",
+      "lineIndex": 74
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kbg",
+      "lineText": "Thou speak’st it falsely , as I love mine honor , And mak’st conjectural fears to come into me Which I would fain shut out . If it should prove That thou art so inhuman — ’twill not prove so , And yet I know not . Thou didst hate her deadly , ACT 5. SC. 3 And she is dead , which nothing but to close Her eyes myself could win me to believe More than to see this ring . — Take him away . My forepast proofs , howe’er the matter fall , Shall tax my fears of little vanity , Having vainly feared too little . Away with him . We’ll sift this matter further .",
+      "scrollMode": "auto",
+      "lineIndex": 75
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kd0",
+      "lineText": "If you shall prove This ring was ever hers , you shall as easy Prove that I husbanded her bed in Florence , Where yet she never was .",
+      "scrollMode": "auto",
+      "lineIndex": 76
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k80",
+      "lineText": "He exits , under guard .",
+      "scrollMode": "auto",
+      "lineIndex": 77
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kbg",
+      "lineText": "I am wrapped in dismal thinkings .",
+      "scrollMode": "auto",
+      "lineIndex": 78
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k80",
+      "lineText": "Enter a Gentleman .",
+      "scrollMode": "auto",
+      "lineIndex": 79
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k80",
+      "lineText": "He gives the King a paper .",
+      "scrollMode": "auto",
+      "lineIndex": 80
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k8g",
+      "lineText": "He gives the King a paper . Here’s a petition from a Florentine Who hath for four or five removes come short To tender it herself . I undertook it , Vanquished thereto by the fair grace and speech Of the poor suppliant , who , by this , I know Is here attending . Her business looks in her With an importing visage , and she told me , In a sweet verbal brief , it did concern Your Highness with herself .",
+      "scrollMode": "auto",
+      "lineIndex": 81
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k80",
+      "lineText": "reads",
+      "scrollMode": "auto",
+      "lineIndex": 82
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kbg",
+      "lineText": "Upon his many protestations to marry me when his wife was dead , I blush to say it , he won me . Now is the Count Rossillion a widower , his vows are forfeited to me and my honor’s paid to him . He stole from Florence , taking no leave , and I follow him to his country for justice . Grant it me , O king . In you it best lies . Otherwise a seducer flourishes , and a poor maid is undone . Diana Capilet .",
+      "scrollMode": "auto",
+      "lineIndex": 83
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kb0",
+      "lineText": "I will buy me a son-in-law in a fair , and toll for this . I’ll none of him .",
+      "scrollMode": "auto",
+      "lineIndex": 84
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k80",
+      "lineText": "Gentleman and Attendants exit .",
+      "scrollMode": "auto",
+      "lineIndex": 85
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k8g",
+      "lineText": "Gentleman and Attendants exit . I am afeard the life of Helen , lady , Was foully snatched .",
+      "scrollMode": "auto",
+      "lineIndex": 86
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kc0",
+      "lineText": "Now justice on the doers !",
+      "scrollMode": "auto",
+      "lineIndex": 87
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k80",
+      "lineText": "Enter Bertram under guard .",
+      "scrollMode": "auto",
+      "lineIndex": 88
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k80",
+      "lineText": "Enter Widow and Diana .",
+      "scrollMode": "auto",
+      "lineIndex": 89
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k9g",
+      "lineText": "Enter Widow and Diana . What woman’s that ?",
+      "scrollMode": "auto",
+      "lineIndex": 90
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ke0",
+      "lineText": "I am , my lord , a wretched Florentine , Derivèd from the ancient Capilet . My suit , as I do understand , you know And therefore know how far I may be pitied .",
+      "scrollMode": "auto",
+      "lineIndex": 91
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k9g",
+      "lineText": "I am her mother , sir , whose age and honor Both suffer under this complaint we bring , And both shall cease without your remedy .",
+      "scrollMode": "auto",
+      "lineIndex": 92
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kbg",
+      "lineText": "Come hither , count . Do you know these women ?",
+      "scrollMode": "auto",
+      "lineIndex": 93
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kd0",
+      "lineText": "My lord , I neither can nor will deny But that I know them . Do they charge me further ?",
+      "scrollMode": "auto",
+      "lineIndex": 94
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ke0",
+      "lineText": "Why do you look so strange upon your wife ?",
+      "scrollMode": "auto",
+      "lineIndex": 95
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kd0",
+      "lineText": "She’s none of mine , my lord .",
+      "scrollMode": "auto",
+      "lineIndex": 96
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ke0",
+      "lineText": "If you shall marry , You give away this hand , and that is mine ; You give away heaven’s vows , and those are mine ; You give away myself , which is known mine , For I by vow am so embodied yours That she which marries you must marry me , Either both or none .",
+      "scrollMode": "auto",
+      "lineIndex": 97
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k80",
+      "lineText": ", to Bertram",
+      "scrollMode": "auto",
+      "lineIndex": 98
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kb0",
+      "lineText": "Your reputation comes too short for my daughter . You are no husband for her .",
+      "scrollMode": "auto",
+      "lineIndex": 99
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k80",
+      "lineText": ", to the King",
+      "scrollMode": "auto",
+      "lineIndex": 100
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kd0",
+      "lineText": "My lord , this is a fond and desp’rate creature Whom sometime I have laughed with . Let your Highness Lay a more noble thought upon mine honor Than for to think that I would sink it here .",
+      "scrollMode": "auto",
+      "lineIndex": 101
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kbg",
+      "lineText": "Sir , for my thoughts , you have them ill to friend Till your deeds gain them . Fairer prove your honor Than in my thought it lies .",
+      "scrollMode": "auto",
+      "lineIndex": 102
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ke0",
+      "lineText": "Good my lord , Ask him upon his oath if he does think He had not my virginity .",
+      "scrollMode": "auto",
+      "lineIndex": 103
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kbg",
+      "lineText": "What sayst thou to her ?",
+      "scrollMode": "auto",
+      "lineIndex": 104
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kd0",
+      "lineText": "She’s impudent , my lord , And was a common gamester to the camp .",
+      "scrollMode": "auto",
+      "lineIndex": 105
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ke0",
+      "lineText": "He does me wrong , my lord . If I were so , He might have bought me at a common price . Do not believe him . O , behold this ring , Whose high respect and rich validity Did lack a parallel . Yet for all that He gave it to a commoner o’ th’ camp , If I be one .",
+      "scrollMode": "auto",
+      "lineIndex": 106
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kc0",
+      "lineText": "He blushes , and ’tis hit . Of six preceding ancestors that gem , Conferred by testament to th’ sequent issue , Hath it been owed and worn . This is his wife . That ring’s a thousand proofs .",
+      "scrollMode": "auto",
+      "lineIndex": 107
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k80",
+      "lineText": ", to Diana",
+      "scrollMode": "auto",
+      "lineIndex": 108
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kbg",
+      "lineText": "Methought you said You saw one here in court could witness it .",
+      "scrollMode": "auto",
+      "lineIndex": 109
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ke0",
+      "lineText": "I did , my lord , but loath am to produce So bad an instrument . His name’s Parolles .",
+      "scrollMode": "auto",
+      "lineIndex": 110
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kb0",
+      "lineText": "I saw the man today , if man he be .",
+      "scrollMode": "auto",
+      "lineIndex": 111
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kbg",
+      "lineText": "Find him , and bring him hither .",
+      "scrollMode": "auto",
+      "lineIndex": 112
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k80",
+      "lineText": "Attendant exits .",
+      "scrollMode": "auto",
+      "lineIndex": 113
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kd0",
+      "lineText": "What of him ? He’s quoted for a most perfidious slave , With all the spots o’ th’ world taxed and debauched , Whose nature sickens but to speak a truth . Am I or that or this for what he’ll utter , That will speak anything ?",
+      "scrollMode": "auto",
+      "lineIndex": 114
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kbg",
+      "lineText": "She hath that ring of yours .",
+      "scrollMode": "auto",
+      "lineIndex": 115
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kd0",
+      "lineText": "I think she has . Certain it is I liked her And boarded her i’ th’ wanton way of youth . She knew her distance and did angle for me , Madding my eagerness with her restraint , As all impediments in fancy’s course Are motives of more fancy ; and in fine Her infinite cunning with her modern grace Subdued me to her rate . She got the ring , And I had that which any inferior might At market price have bought .",
+      "scrollMode": "auto",
+      "lineIndex": 116
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ke0",
+      "lineText": "I must be patient . You that have turned off a first so noble wife May justly diet me . I pray you yet — Since you lack virtue , I will lose a husband — ACT 5. SC. 3 Send for your ring . I will return it home , And give me mine again .",
+      "scrollMode": "auto",
+      "lineIndex": 117
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kd0",
+      "lineText": "I have it not .",
+      "scrollMode": "auto",
+      "lineIndex": 118
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k80",
+      "lineText": ", to Diana",
+      "scrollMode": "auto",
+      "lineIndex": 119
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kbg",
+      "lineText": "What ring was yours , I pray you ?",
+      "scrollMode": "auto",
+      "lineIndex": 120
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ke0",
+      "lineText": "Sir , much like the same upon your finger .",
+      "scrollMode": "auto",
+      "lineIndex": 121
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kbg",
+      "lineText": "Know you this ring ? This ring was his of late .",
+      "scrollMode": "auto",
+      "lineIndex": 122
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ke0",
+      "lineText": "And this was it I gave him , being abed .",
+      "scrollMode": "auto",
+      "lineIndex": 123
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kbg",
+      "lineText": "The story , then , goes false you threw it him Out of a casement ?",
+      "scrollMode": "auto",
+      "lineIndex": 124
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ke0",
+      "lineText": "I have spoke the truth .",
+      "scrollMode": "auto",
+      "lineIndex": 125
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k80",
+      "lineText": "Enter Parolles .",
+      "scrollMode": "auto",
+      "lineIndex": 126
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kd0",
+      "lineText": "My lord , I do confess the ring was hers .",
+      "scrollMode": "auto",
+      "lineIndex": 127
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kbg",
+      "lineText": "You boggle shrewdly . Every feather starts you . — Is this the man you speak of ?",
+      "scrollMode": "auto",
+      "lineIndex": 128
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ke0",
+      "lineText": "Ay , my lord .",
+      "scrollMode": "auto",
+      "lineIndex": 129
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kbg",
+      "lineText": "Tell me , sirrah — but tell me true , I charge you , Not fearing the displeasure of your master , Which , on your just proceeding , I’ll keep off — By him and by this woman here what know you ?",
+      "scrollMode": "auto",
+      "lineIndex": 130
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ka0",
+      "lineText": "So please your Majesty , my master hath been an honorable gentleman . Tricks he hath had in him which gentlemen have .",
+      "scrollMode": "auto",
+      "lineIndex": 131
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kbg",
+      "lineText": "Come , come , to th’ purpose . Did he love this woman ?",
+      "scrollMode": "auto",
+      "lineIndex": 132
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ka0",
+      "lineText": "Faith , sir , he did love her , but how ?",
+      "scrollMode": "auto",
+      "lineIndex": 133
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kbg",
+      "lineText": "How , I pray you ?",
+      "scrollMode": "auto",
+      "lineIndex": 134
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ka0",
+      "lineText": "He did love her , sir , as a gentleman loves a woman .",
+      "scrollMode": "auto",
+      "lineIndex": 135
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kbg",
+      "lineText": "How is that ?",
+      "scrollMode": "auto",
+      "lineIndex": 136
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ka0",
+      "lineText": "He loved her , sir , and loved her not .",
+      "scrollMode": "auto",
+      "lineIndex": 137
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kbg",
+      "lineText": "As thou art a knave and no knave . What an equivocal companion is this !",
+      "scrollMode": "auto",
+      "lineIndex": 138
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ka0",
+      "lineText": "I am a poor man , and at your Majesty’s command .",
+      "scrollMode": "auto",
+      "lineIndex": 139
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kb0",
+      "lineText": "He’s a good drum , my lord , but a naughty orator .",
+      "scrollMode": "auto",
+      "lineIndex": 140
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ke0",
+      "lineText": "Do you know he promised me marriage ?",
+      "scrollMode": "auto",
+      "lineIndex": 141
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ka0",
+      "lineText": "Faith , I know more than I’ll speak .",
+      "scrollMode": "auto",
+      "lineIndex": 142
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kbg",
+      "lineText": "But wilt thou not speak all thou know’st ?",
+      "scrollMode": "auto",
+      "lineIndex": 143
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ka0",
+      "lineText": "Yes , so please your Majesty . I did go between them , as I said ; but more than that he loved her , for indeed he was mad for her , and talked of Satan and of limbo and of furies and I know not what . Yet I was in that credit with them at that time , that I knew of their going to bed and of other motions , as promising her marriage , and things which would derive me ill will to speak of . Therefore I will not speak what I know .",
+      "scrollMode": "auto",
+      "lineIndex": 144
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k80",
+      "lineText": "To Diana .",
+      "scrollMode": "auto",
+      "lineIndex": 145
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kbg",
+      "lineText": "To Diana . This ring you say was yours ?",
+      "scrollMode": "auto",
+      "lineIndex": 146
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ke0",
+      "lineText": "Ay , my good lord .",
+      "scrollMode": "auto",
+      "lineIndex": 147
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kbg",
+      "lineText": "Where did you buy it ? Or who gave it you ?",
+      "scrollMode": "auto",
+      "lineIndex": 148
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ke0",
+      "lineText": "It was not given me , nor I did not buy it .",
+      "scrollMode": "auto",
+      "lineIndex": 149
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kbg",
+      "lineText": "Who lent it you ?",
+      "scrollMode": "auto",
+      "lineIndex": 150
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ke0",
+      "lineText": "It was not lent me neither .",
+      "scrollMode": "auto",
+      "lineIndex": 151
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kbg",
+      "lineText": "Where did you find it then ?",
+      "scrollMode": "auto",
+      "lineIndex": 152
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ke0",
+      "lineText": "I found it not .",
+      "scrollMode": "auto",
+      "lineIndex": 153
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kbg",
+      "lineText": "If it were yours by none of all these ways , How could you give it him ?",
+      "scrollMode": "auto",
+      "lineIndex": 154
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ke0",
+      "lineText": "I never gave it him .",
+      "scrollMode": "auto",
+      "lineIndex": 155
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kb0",
+      "lineText": "This woman’s an easy glove , my lord ; she goes off and on at pleasure .",
+      "scrollMode": "auto",
+      "lineIndex": 156
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kbg",
+      "lineText": "This ring was mine . I gave it his first wife .",
+      "scrollMode": "auto",
+      "lineIndex": 157
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ke0",
+      "lineText": "It might be yours or hers for aught I know .",
+      "scrollMode": "auto",
+      "lineIndex": 158
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k80",
+      "lineText": ", to Attendants",
+      "scrollMode": "auto",
+      "lineIndex": 159
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kbg",
+      "lineText": "Take her away . I do not like her now . To prison with her , and away with him . — Unless thou tell’st me where thou hadst this ring , Thou diest within this hour .",
+      "scrollMode": "auto",
+      "lineIndex": 160
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ke0",
+      "lineText": "I’ll never tell you .",
+      "scrollMode": "auto",
+      "lineIndex": 161
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kbg",
+      "lineText": "Take her away .",
+      "scrollMode": "auto",
+      "lineIndex": 162
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ke0",
+      "lineText": "I’ll put in bail , my liege .",
+      "scrollMode": "auto",
+      "lineIndex": 163
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kbg",
+      "lineText": "I think thee now some common customer .",
+      "scrollMode": "auto",
+      "lineIndex": 164
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k80",
+      "lineText": ", to Bertram",
+      "scrollMode": "auto",
+      "lineIndex": 165
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ke0",
+      "lineText": "By Jove , if ever I knew man , ’twas you .",
+      "scrollMode": "auto",
+      "lineIndex": 166
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kbg",
+      "lineText": "Wherefore hast thou accused him all this while ?",
+      "scrollMode": "auto",
+      "lineIndex": 167
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78ke0",
+      "lineText": "Because he’s guilty and he is not guilty . He knows I am no maid , and he’ll swear to ’t . I’ll swear I am a maid , and he knows not . Great king , I am no strumpet . By my life , I am either maid or else this old man’s wife .",
+      "scrollMode": "auto",
+      "lineIndex": 168
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kbg",
+      "lineText": "She does abuse our ears . To prison with her .",
+      "scrollMode": "auto",
+      "lineIndex": 169
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k80",
+      "lineText": "Widow exits .",
+      "scrollMode": "auto",
+      "lineIndex": 170
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k9g",
+      "lineText": "Widow exits . Stay , royal sir . ACT 5. SC. 3 The jeweler that owes the ring is sent for , And he shall surety me . But for this lord Who hath abused me as he knows himself , Though yet he never harmed me , here I quit him . He knows himself my bed he hath defiled , And at that time he got his wife with child . Dead though she be , she feels her young one kick . So there’s my riddle : one that’s dead is quick . And now behold the meaning .",
+      "scrollMode": "auto",
+      "lineIndex": 171
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k80",
+      "lineText": "Enter Helen and Widow .",
+      "scrollMode": "auto",
+      "lineIndex": 172
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kbg",
+      "lineText": "Is there no exorcist Beguiles the truer office of mine eyes ? Is ’t real that I see ?",
+      "scrollMode": "auto",
+      "lineIndex": 173
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k90",
+      "lineText": "No , my good lord , ’Tis but the shadow of a wife you see , The name and not the thing .",
+      "scrollMode": "auto",
+      "lineIndex": 174
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kd0",
+      "lineText": "Both , both . O , pardon !",
+      "scrollMode": "auto",
+      "lineIndex": 175
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k80",
+      "lineText": "She takes out a paper .",
+      "scrollMode": "auto",
+      "lineIndex": 176
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k90",
+      "lineText": "She takes out a paper . This it says : When from my finger you can get this ring And are by me with child , etc. This is done . Will you be mine now you are doubly won ?",
+      "scrollMode": "auto",
+      "lineIndex": 177
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kd0",
+      "lineText": "If she , my liege , can make me know this clearly , I’ll love her dearly , ever , ever dearly .",
+      "scrollMode": "auto",
+      "lineIndex": 178
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k90",
+      "lineText": "If it appear not plain and prove untrue , Deadly divorce step between me and you . — O my dear mother , do I see you living ?",
+      "scrollMode": "auto",
+      "lineIndex": 179
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k80",
+      "lineText": "To Parolles .",
+      "scrollMode": "auto",
+      "lineIndex": 180
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kb0",
+      "lineText": "To Parolles . Good Tom Drum , lend me a handkercher . ACT 5. SC. 3 So , I thank thee . Wait on me home . I’ll make sport with thee . Let thy courtesies alone . They are scurvy ones .",
+      "scrollMode": "auto",
+      "lineIndex": 181
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k80",
+      "lineText": "To Diana .",
+      "scrollMode": "auto",
+      "lineIndex": 182
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78kbg",
+      "lineText": "To Diana . If thou be’st yet a fresh uncroppèd flower , Choose thou thy husband , and I’ll pay thy dower . For I can guess that by thy honest aid Thou kept’st a wife herself , thyself a maid . Of that and all the progress more and less , Resolvedly more leisure shall express . All yet seems well , and if it end so meet , The bitter past , more welcome is the sweet .",
+      "scrollMode": "auto",
+      "lineIndex": 183
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k80",
+      "lineText": "Flourish .",
+      "scrollMode": "auto",
+      "lineIndex": 184
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78keg",
+      "lineText": "The King’s a beggar , now the play is done . All is well ended if this suit be won , That you express content , which we will pay , With strift to please you , day exceeding day . Ours be your patience , then , and yours our parts . Your gentle hands lend us , and take our hearts .",
+      "scrollMode": "auto",
+      "lineIndex": 185
+    },
+    {
+      "castMemberId": "d68m11cn9qd8d2h78k80",
+      "lineText": "All exit .",
+      "scrollMode": "auto",
+      "lineIndex": 186
+    }
+  ],
+  "isPublic": true
+}

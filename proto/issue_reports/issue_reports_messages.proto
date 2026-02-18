@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package issue_reports;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/issue_reports";
+
+message DataCollection {
+  map<string, IssueReport> issue_reports = 1;
+}
+
+message IssueReport {
+  google.protobuf.Timestamp created_at = 1;
+  google.protobuf.Timestamp archived_at = 2;
+  google.protobuf.Timestamp last_updated_at = 3;
+  string id = 4;
+  string issue_type = 5;
+  string details = 6;
+  string relevant_table = 7;
+  string relevant_record_id = 8;
+  string created_by_user = 9;
+  string belongs_to_account = 10;
+}

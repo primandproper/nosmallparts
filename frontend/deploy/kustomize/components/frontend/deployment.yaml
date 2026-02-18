@@ -1,0 +1,44 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: no-small-parts-frontend-deployment
+  labels:
+    app: no-small-parts-frontend
+    app.kubernetes.io/name: no-small-parts-frontend
+spec:
+  progressDeadlineSeconds: 1200
+  selector:
+    matchLabels:
+      app: no-small-parts-frontend
+      app.kubernetes.io/name: no-small-parts-frontend
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: no-small-parts-frontend
+        app.kubernetes.io/name: no-small-parts-frontend
+    spec:
+      containers:
+        - name: no-small-parts-frontend
+          image: no-small-parts-frontend
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
+              name: http
+          env:
+            - name: NODE_ENV
+              value: production
+          livenessProbe:
+            httpGet:
+              path: '/'
+              port: 3000
+            initialDelaySeconds: 15
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: '/'
+              port: 3000
+            initialDelaySeconds: 5
+            periodSeconds: 5
+---
