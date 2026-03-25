@@ -132,3 +132,12 @@ proto: format_proto proto_golang proto_typescript
 run:
 	$(CONTAINER_RUNNER) compose up --build
 
+# Fly.io deployment
+.PHONY: fly_deploy
+fly_deploy:
+	flyctl deploy --config fly/api/fly.toml --remote-only
+	flyctl deploy --config fly/frontend/fly.toml \
+		--dockerfile frontend/Dockerfile \
+		--build-arg NEXT_PUBLIC_WS_URL=wss://nosmall.parts/ws/stage \
+		frontend/
+

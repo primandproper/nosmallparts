@@ -1,0 +1,193 @@
+{
+	"queues": {
+		"dataChangesTopicName": "data_changes",
+		"outboundEmailsTopicName": "outbound_emails",
+		"searchIndexRequestsTopicName": "search_index_requests",
+		"userDataAggregationTopicName": "user_data_aggregation_requests",
+		"webhookExecutionRequestsTopicName": "webhook_execution_requests"
+	},
+	"liveKit": {},
+	"appleAppSiteAssociation": {
+		"bundleID": "com.nosmallparts.ios"
+	},
+	"routing": {
+		"chiConfig": {
+			"serviceName": "no_small_parts",
+			"enableCORSForLocalhost": false
+		},
+		"provider": "chi"
+	},
+	"encoding": {
+		"contentType": "application/json"
+	},
+	"events": {
+		"consumers": {},
+		"publishers": {}
+	},
+	"observability": {
+		"logging": {
+			"serviceName": "no_small_parts",
+			"level": "info",
+			"provider": "slog"
+		},
+		"metrics": {
+			"serviceName": "no_small_parts",
+			"provider": ""
+		},
+		"tracing": {
+			"service_name": "no_small_parts",
+			"provider": "",
+			"spanCollectionProbability": 1
+		}
+	},
+	"grpc": {
+		"port": 8001
+	},
+	"meta": {
+		"runMode": "production",
+		"debug": false
+	},
+	"analytics": {
+		"provider": "",
+		"circuitBreaker": {
+			"name": "analytics",
+			"circuitBreakerErrorPercentage": 0.5,
+			"circuitBreakerMinimumOccurrenceThreshold": 100
+		}
+	},
+	"email": {
+		"provider": "",
+		"circuitBreakerConfig": {
+			"name": "emailer",
+			"circuitBreakerErrorPercentage": 0.5,
+			"circuitBreakerMinimumOccurrenceThreshold": 100
+		}
+	},
+	"search": {
+		"provider": "",
+		"circuitBreakerConfig": {
+			"name": "text_searcher",
+			"circuitBreakerErrorPercentage": 0.5,
+			"circuitBreakerMinimumOccurrenceThreshold": 100
+		}
+	},
+	"featureFlags": {
+		"provider": "",
+		"circuitBreakingConfig": {
+			"name": "feature_flagger",
+			"circuitBreakerErrorPercentage": 0.5,
+			"circuitBreakerMinimumOccurrenceThreshold": 100
+		}
+	},
+	"http": {
+		"startupDeadline": 60000000000,
+		"port": 8000,
+		"debug": false
+	},
+	"auth": {
+		"sso": {
+			"google": {}
+		},
+		"tokens": {
+			"provider": "",
+			"audience": "",
+			"base64EncodedSigningKey": "",
+			"maxAccessTokenLifetime": 0,
+			"maxRefreshTokenLifetime": 0
+		}
+	},
+	"database": {
+		"oauth2TokenEncryptionKey": "",
+		"provider": "postgres",
+		"readConnection": {
+			"username": "placeholder",
+			"password": "placeholder",
+			"database": "no_small_parts",
+			"hostname": "placeholder",
+			"port": 5432,
+			"disableSSL": true
+		},
+		"writeConnection": {
+			"username": "placeholder",
+			"password": "placeholder",
+			"database": "no_small_parts",
+			"hostname": "placeholder",
+			"port": 5432,
+			"disableSSL": true
+		},
+		"maxPingAttempts": 50,
+		"pingWaitPeriod": 1000000000,
+		"debug": false,
+		"logQueries": false,
+		"runMigrations": true
+	},
+	"services": {
+		"users": {
+			"publicMediaURLPrefix": "",
+			"uploads": {
+				"storageConfig": {
+					"filesystem": {
+						"rootDirectory": "/uploads"
+					},
+					"bucketName": "avatars",
+					"uploadFilenameKey": "avatar",
+					"provider": "filesystem"
+				},
+				"debug": false
+			}
+		},
+		"dataPrivacy": {
+			"uploads": {
+				"storageConfig": {
+					"filesystem": {
+						"rootDirectory": "/uploads"
+					},
+					"bucketName": "userdata",
+					"provider": "filesystem"
+				},
+				"debug": false
+			}
+		},
+		"uploadedMedia": {
+			"uploads": {
+				"storageConfig": {
+					"filesystem": {
+						"rootDirectory": "/uploads"
+					},
+					"bucketName": "media",
+					"uploadFilenameKey": "media",
+					"provider": "filesystem"
+				},
+				"debug": false
+			}
+		},
+		"auth": {
+			"tokens": {
+				"provider": "paseto",
+				"audience": "https://api.nosmall.parts",
+				"base64EncodedSigningKey": "",
+				"maxAccessTokenLifetime": 604800000000000,
+				"maxRefreshTokenLifetime": 2592000000000000
+			},
+			"sso": {
+				"google": {
+					"callbackURL": "https://nosmall.parts/auth/google/callback"
+				}
+			},
+			"oauth2": {
+				"domain": "https://nosmall.parts",
+				"accessTokenLifespan": 3600000000000,
+				"refreshTokenLifespan": 3600000000000,
+				"debug": false
+			},
+			"jwtLifetime": 300000000000,
+			"debug": false,
+			"enableUserSignup": true,
+			"minimumUsernameLength": 3,
+			"minimumPasswordLength": 8
+		},
+		"oauth2Clients": {
+			"creationEnabled": false
+		}
+	}
+}
