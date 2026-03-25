@@ -100,7 +100,7 @@ func TestQuerier_Integration_UserNotifications(t *testing.T) {
 func TestQuerier_UserNotificationExists(T *testing.T) {
 	T.Parallel()
 
-	T.Run("with invalid user MealPlanTaskID", func(t *testing.T) {
+	T.Run("with invalid user ID", func(t *testing.T) {
 		t.Parallel()
 
 		ctx := t.Context()
@@ -112,7 +112,7 @@ func TestQuerier_UserNotificationExists(T *testing.T) {
 		assert.False(t, actual)
 	})
 
-	T.Run("with invalid user notification MealPlanTaskID", func(t *testing.T) {
+	T.Run("with invalid user notification ID", func(t *testing.T) {
 		t.Parallel()
 
 		ctx := t.Context()
@@ -128,7 +128,7 @@ func TestQuerier_UserNotificationExists(T *testing.T) {
 func TestQuerier_GetUserNotification(T *testing.T) {
 	T.Parallel()
 
-	T.Run("with invalid user MealPlanTaskID", func(t *testing.T) {
+	T.Run("with invalid user ID", func(t *testing.T) {
 		t.Parallel()
 
 		ctx := t.Context()
@@ -139,7 +139,7 @@ func TestQuerier_GetUserNotification(T *testing.T) {
 		assert.Nil(t, actual)
 	})
 
-	T.Run("with invalid user notification MealPlanTaskID", func(t *testing.T) {
+	T.Run("with invalid user notification ID", func(t *testing.T) {
 		t.Parallel()
 
 		ctx := t.Context()

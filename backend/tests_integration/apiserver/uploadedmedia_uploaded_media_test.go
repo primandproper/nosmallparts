@@ -19,7 +19,7 @@ import (
 func checkUploadedMediaEquality(t *testing.T, expected, actual *uploadedmedia.UploadedMedia) {
 	t.Helper()
 
-	assert.NotEmpty(t, actual.ID, "expected UploadedMedia to have MealPlanTaskID")
+	assert.NotEmpty(t, actual.ID, "expected UploadedMedia to have ID")
 	assert.NotZero(t, actual.CreatedAt, "expected UploadedMedia to have CreatedAt")
 
 	assert.Equal(t, expected.StoragePath, actual.StoragePath, "expected UploadedMedia StoragePath")

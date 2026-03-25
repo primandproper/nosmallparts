@@ -48,10 +48,7 @@ export async function POST(request: NextRequest): Promise<NextResponse<LoginResp
 
     // Exchange JWT for OAuth2 token; the gRPC auth interceptor only accepts OAuth2 tokens
     const { clientId, clientSecret } = getOAuth2ClientCredentials();
-    const httpBase = process.env.BACKEND_HTTP_URL;
-    if (!httpBase) {
-      throw new Error('BACKEND_HTTP_URL is required for OAuth2 token exchange');
-    }
+    const httpBase = process.env.BACKEND_HTTP_URL || 'http://localhost:8000';
 
     const oauth2Token = await exchangeJwtForOAuth2Token(httpBase, clientId, clientSecret, jwt);
 

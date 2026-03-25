@@ -64,7 +64,7 @@ func (s *AdminFrontendServer) IssueReportsList(_ http.ResponseWriter, req *http.
 			TableID: "issue-reports-table",
 			Palette: &design.StandardPalette,
 			Fields: []string{
-				"MealPlanTaskID",
+				"ID",
 				"IssueType",
 				"Details",
 				"RelevantTable",
@@ -78,7 +78,7 @@ func (s *AdminFrontendServer) IssueReportsList(_ http.ResponseWriter, req *http.
 			FieldReplacements: map[string]string{
 				"IssueType":        "Issue Type",
 				"RelevantTable":    "Table",
-				"RelevantRecordId": "Record MealPlanTaskID",
+				"RelevantRecordId": "Record ID",
 				"CreatedByUser":    "Reported By",
 				"BelongsToAccount": "Account",
 			},
@@ -174,7 +174,7 @@ func (s *AdminFrontendServer) IssueReportsSearch(_ http.ResponseWriter, req *htt
 		TableID: "issue-reports-table",
 		Palette: &design.StandardPalette,
 		Fields: []string{
-			"MealPlanTaskID",
+			"ID",
 			"IssueType",
 			"Details",
 			"RelevantTable",
@@ -188,7 +188,7 @@ func (s *AdminFrontendServer) IssueReportsSearch(_ http.ResponseWriter, req *htt
 		FieldReplacements: map[string]string{
 			"IssueType":        "Issue Type",
 			"RelevantTable":    "Table",
-			"RelevantRecordId": "Record MealPlanTaskID",
+			"RelevantRecordId": "Record ID",
 			"CreatedByUser":    "Reported By",
 			"BelongsToAccount": "Account",
 		},
@@ -243,7 +243,7 @@ func (s *AdminFrontendServer) IssueReportPage(_ http.ResponseWriter, req *http.R
 
 	issueReportID := s.issueReportIDRouteParamFetcher(req)
 	if issueReportID == "" {
-		return page("Issue Report", s.renderIssueReportsError("Error: No issue report MealPlanTaskID provided")), nil
+		return page("Issue Report", s.renderIssueReportsError("Error: No issue report ID provided")), nil
 	}
 
 	issueReportRes, err := c.GetIssueReport(ctx, &issuereportssvc.GetIssueReportRequest{IssueReportId: issueReportID})

@@ -17,7 +17,7 @@ import (
 func checkWebhookEquality(t *testing.T, expected, actual *webhooks.Webhook) {
 	t.Helper()
 
-	assert.NotEmpty(t, actual.ID, "expected Webhook to have MealPlanTaskID")
+	assert.NotEmpty(t, actual.ID, "expected Webhook to have ID")
 	assert.NotZero(t, actual.CreatedAt, "expected Webhook to have CreatedAt")
 
 	assert.Equal(t, expected.Name, actual.Name, "expected Webhook Name")
@@ -33,7 +33,7 @@ func checkWebhookEquality(t *testing.T, expected, actual *webhooks.Webhook) {
 		}
 
 		actualEvent := actual.Events[i]
-		assert.NotEmpty(t, actualEvent.ID, "expected Webhook Event %d to have MealPlanTaskID", i)
+		assert.NotEmpty(t, actualEvent.ID, "expected Webhook Event %d to have ID", i)
 		assert.NotZero(t, actualEvent.CreatedAt, "expected Webhook Event %d to have CreatedAt", i)
 		assert.Equal(t, expectedEvent.TriggerEvent, actualEvent.TriggerEvent, "expected Webhook Event %d TriggerEvent", i)
 		assert.Equal(t, actual.ID, actualEvent.BelongsToWebhook, "expected Webhook Event %d BelongsToWebhook", i)

@@ -101,7 +101,7 @@ func TestQuerier_Integration_AuditLogEntries(t *testing.T) {
 func TestQuerier_GetAuditLogEntry(T *testing.T) {
 	T.Parallel()
 
-	T.Run("with invalid audit log entry MealPlanTaskID", func(t *testing.T) {
+	T.Run("with invalid audit log entry ID", func(t *testing.T) {
 		t.Parallel()
 
 		ctx := t.Context()

@@ -15,15 +15,12 @@ import (
 
 // EnvironmentConfigSet contains a way of rendering a set of every config for a given environment to a given folder.
 type EnvironmentConfigSet struct {
-	RootConfig                               *APIServiceConfig
-	APIServiceConfigPath                     string
-	DBCleanerConfigPath                      string
-	MealPlanFinalizerConfigPath              string
-	MealPlanGroceryListInitializerConfigPath string
-	MealPlanTaskCreatorConfigPath            string
-	SearchDataIndexSchedulerConfigPath       string
-	AsyncMessageHandlerConfigPath            string
-	AdminWebappConfigPath                    string
+	RootConfig                         *APIServiceConfig
+	APIServiceConfigPath               string
+	DBCleanerConfigPath                string
+	SearchDataIndexSchedulerConfigPath string
+	AsyncMessageHandlerConfigPath      string
+	AdminWebappConfigPath              string
 }
 
 func stringOrDefault(s, defaultStr string) string {

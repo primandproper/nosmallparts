@@ -18,7 +18,7 @@ import (
 func checkIssueReportEquality(t *testing.T, expected, actual *issuereports.IssueReport) {
 	t.Helper()
 
-	assert.NotEmpty(t, actual.ID, "expected IssueReport to have MealPlanTaskID")
+	assert.NotEmpty(t, actual.ID, "expected IssueReport to have ID")
 	assert.NotZero(t, actual.CreatedAt, "expected IssueReport to have CreatedAt")
 
 	assert.Equal(t, expected.IssueType, actual.IssueType, "expected IssueReport IssueType")

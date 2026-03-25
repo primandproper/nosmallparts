@@ -6,7 +6,7 @@ import { IdentityServiceDefinition } from '@/generated/identity/identity_service
 function getGrpcBackendUrl(): string {
   const url = process.env.GRPC_BACKEND_URL;
   if (!url) {
-    return 'localhost:50051';
+    return 'localhost:8001';
   }
   return url;
 }
