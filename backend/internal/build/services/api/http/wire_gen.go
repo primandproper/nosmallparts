@@ -20,6 +20,7 @@ import (
 	metricscfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/metrics/config"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
 	tracingcfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing/config"
+	pusherpkg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/pusher"
 	routingcfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/routing/config"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/server/http"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/auditlogentries"
@@ -99,8 +100,9 @@ func Build(ctx context.Context, cfg *config.APIServiceConfig) (http.Server, erro
 	appleAppSiteAssociationConfig := cfg.AppleAppSiteAssociation
 	stagesRepository := stages.ProvideStagesRepository(logger, tracerProvider, client)
 	playscriptsRepository := playscripts.ProvidePlayScriptsRepository(logger, tracerProvider, repository, client)
-	connectionManager := stages2.ProvideConnectionManager(tracerProvider, logger)
-	handler := stages2.ProvideHandler(logger, tracerProvider, stagesRepository, playscriptsRepository, connectionManager)
+	pusherConfig := &cfg.Pusher
+	pusherClient := pusherpkg.ProvideClient(pusherConfig, logger, tracerProvider)
+	handler := stages2.ProvideHandler(logger, tracerProvider, stagesRepository, playscriptsRepository, pusherClient)
 	livekitConfig := &cfg.LiveKit
 	livekitHandler, err := livekit.NewHandler(ctx, livekitConfig, logger, tracerProvider, serverEncoderDecoder)
 	if err != nil {

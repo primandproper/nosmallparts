@@ -7,6 +7,7 @@
 		"webhookExecutionRequestsTopicName": "webhook_execution_requests"
 	},
 	"liveKit": {},
+	"pusher": {},
 	"appleAppSiteAssociation": {
 		"bundleID": "com.nosmallparts.ios"
 	},

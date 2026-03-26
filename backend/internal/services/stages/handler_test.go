@@ -1,12 +1,13 @@
 package stages
 
 import (
+	"bytes"
 	"context"
 	"database/sql"
+	"encoding/json"
 	"errors"
 	"net/http"
 	"net/http/httptest"
-	"net/url"
 	"testing"
 
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/playscripts"
@@ -15,9 +16,8 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/filtering"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
-	platformws "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/websocket"
+	pusherpkg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/pusher"
 
-	"github.com/gorilla/websocket"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
@@ -145,8 +145,8 @@ func buildTestHandler(t *testing.T, stagesRepo stagesdomain.Repository, playScri
 	t.Helper()
 	logger := logging.NewNoopLogger()
 	tracerProvider := tracing.NewNoopTracerProvider()
-	connections := platformws.NewConnectionManager(tracerProvider, logger)
-	return NewHandler(logger, tracerProvider, stagesRepo, playScriptsRepo, connections)
+	pusherClient := pusherpkg.NewClient(nil, logger, tracerProvider)
+	return NewHandler(logger, tracerProvider, stagesRepo, playScriptsRepo, pusherClient)
 }
 
 func TestNewHandler(t *testing.T) {
@@ -156,7 +156,7 @@ func TestNewHandler(t *testing.T) {
 	require.NotNil(t, h)
 	assert.NotNil(t, h.stagesRepo)
 	assert.NotNil(t, h.playScriptsRepo)
-	assert.NotNil(t, h.connections)
+	assert.NotNil(t, h.pusher)
 	assert.NotNil(t, h.logger)
 	assert.NotNil(t, h.tracer)
 }
@@ -244,38 +244,24 @@ func TestHandler_buildStageState(t *testing.T) {
 	})
 }
 
-func TestHandler_WebSocket_handleJoin(t *testing.T) {
+func TestHandler_JoinStageHTTP(t *testing.T) {
 	t.Parallel()
 
 	t.Run("empty_participant_name_returns_error", func(t *testing.T) {
 		t.Parallel()
 
-		stagesRepo := &fakeStagesRepo{}
-		playScriptsRepo := &playscriptsmock.Repository{}
-		h := buildTestHandler(t, stagesRepo, playScriptsRepo)
+		h := buildTestHandler(t, &fakeStagesRepo{}, &playscriptsmock.Repository{})
 
-		server := httptest.NewServer(h)
-		defer server.Close()
+		body, _ := json.Marshal(JoinStageRequest{ParticipantName: ""})
+		req := httptest.NewRequest(http.MethodPost, "/api/stages/join", bytes.NewReader(body))
+		rec := httptest.NewRecorder()
 
-		wsURL := "ws" + server.URL[4:] + "/"
-		conn, _, err := websocket.DefaultDialer.Dial(wsURL, http.Header{"Origin": {server.URL}})
-		require.NoError(t, err)
-		defer conn.Close()
+		h.JoinStageHTTP(rec, req)
 
-		err = conn.WriteJSON(&stagesdomain.ClientMessage{
-			Type:            stagesdomain.ClientMessageTypeJoin,
-			ParticipantName: "",
-		})
-		require.NoError(t, err)
-
-		var response stagesdomain.ServerMessage
-		err = conn.ReadJSON(&response)
-		require.NoError(t, err)
-		assert.Equal(t, stagesdomain.ServerMessageTypeError, response.Type)
-		assert.Contains(t, response.Error, "participant name")
+		assert.Equal(t, http.StatusBadRequest, rec.Code)
 	})
 
-	t.Run("successful_join_adds_connection_and_returns_joined", func(t *testing.T) {
+	t.Run("successful_join", func(t *testing.T) {
 		t.Parallel()
 
 		stageID := "stage-1"
@@ -298,15 +284,6 @@ func TestHandler_WebSocket_handleJoin(t *testing.T) {
 			GetStageByCodeFunc: func(ctx context.Context, code string) (*stagesdomain.Stage, error) {
 				return nil, sql.ErrNoRows
 			},
-			CreateStageFunc: func(ctx context.Context, input *stagesdomain.StageCreationInput) (*stagesdomain.Stage, error) {
-				return &stagesdomain.Stage{
-					ID:               stageID,
-					Code:             input.Code,
-					Phase:            stagesdomain.StagePhaseLobby,
-					Participants:     nil,
-					CurrentLineIndex: 0,
-				}, nil
-			},
 			AddParticipantFunc: func(ctx context.Context, input *stagesdomain.ParticipantCreationInput) (*stagesdomain.StageParticipant, error) {
 				return &stagesdomain.StageParticipant{
 					ID:          participantID,
@@ -327,58 +304,23 @@ func TestHandler_WebSocket_handleJoin(t *testing.T) {
 
 		h := buildTestHandler(t, stagesRepo, playScriptsRepo)
 
-		server := httptest.NewServer(h)
-		defer server.Close()
-
-		u, _ := url.Parse(server.URL)
-		u.Scheme = "ws"
-		wsURL := u.String() + "/"
-		conn, _, err := websocket.DefaultDialer.Dial(wsURL, http.Header{"Origin": {server.URL}})
-		require.NoError(t, err)
-		defer conn.Close()
-
-		err = conn.WriteJSON(&stagesdomain.ClientMessage{
-			Type:            stagesdomain.ClientMessageTypeJoin,
+		body, _ := json.Marshal(JoinStageRequest{
+			StageID:         stageID,
 			ParticipantName: "Alice",
 		})
-		require.NoError(t, err)
+		req := httptest.NewRequest(http.MethodPost, "/api/stages/join", bytes.NewReader(body))
+		rec := httptest.NewRecorder()
 
-		var response stagesdomain.ServerMessage
-		err = conn.ReadJSON(&response)
+		h.JoinStageHTTP(rec, req)
+
+		assert.Equal(t, http.StatusOK, rec.Code)
+
+		var response JoinStageResponse
+		err := json.NewDecoder(rec.Body).Decode(&response)
 		require.NoError(t, err)
-		assert.Equal(t, stagesdomain.ServerMessageTypeJoined, response.Type)
 		assert.Equal(t, participantID, response.ParticipantID)
 		assert.NotNil(t, response.StageState)
 		playScriptsRepo.AssertExpectations(t)
-	})
-
-	t.Run("unknown_message_type_returns_error", func(t *testing.T) {
-		t.Parallel()
-
-		stagesRepo := &fakeStagesRepo{}
-		playScriptsRepo := &playscriptsmock.Repository{}
-		h := buildTestHandler(t, stagesRepo, playScriptsRepo)
-
-		server := httptest.NewServer(h)
-		defer server.Close()
-
-		u, _ := url.Parse(server.URL)
-		u.Scheme = "ws"
-		wsURL := u.String() + "/"
-		conn, _, err := websocket.DefaultDialer.Dial(wsURL, http.Header{"Origin": {server.URL}})
-		require.NoError(t, err)
-		defer conn.Close()
-
-		err = conn.WriteJSON(&stagesdomain.ClientMessage{
-			Type: stagesdomain.ClientMessageType("unknownType"),
-		})
-		require.NoError(t, err)
-
-		var response stagesdomain.ServerMessage
-		err = conn.ReadJSON(&response)
-		require.NoError(t, err)
-		assert.Equal(t, stagesdomain.ServerMessageTypeError, response.Type)
-		assert.Contains(t, response.Error, "unknown message type")
 	})
 }
 

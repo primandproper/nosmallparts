@@ -19,6 +19,7 @@ import (
 	metricscfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/metrics/config"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
 	tracingcfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing/config"
+	pusherpkg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/pusher"
 	routingcfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/routing/config"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/server/http"
 	auditrepo "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/auditlogentries"
@@ -63,7 +64,8 @@ func Build(
 		playscriptsrepo.PlayScriptsRepoProviders,
 		stagesrepo.StagesRepoProviders,
 		// services
-		stagessvc.StagesWebSocketProviders,
+		pusherpkg.Providers,
+		stagessvc.StagesProviders,
 		livekitsvc.Providers,
 		ConfigProviders,
 		ProvideAPIRouter,

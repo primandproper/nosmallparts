@@ -1,18 +1,18 @@
 'use client';
 
 import { useState, useEffect, useRef, useCallback } from 'react';
+import Pusher, { Channel, PresenceChannel } from 'pusher-js';
 import {
   StageState,
   Play,
   PlayLine,
   CastMember,
   Participant,
-  ServerMessage,
   ChatMessage,
-  getConfig,
 } from '@/lib/types';
+import * as stageApi from '@/lib/stage-api';
 
-// The Go backend sends PlayScript objects over WebSocket with a different shape
+// The Go backend sends PlayScript objects with a different shape
 // than the frontend Play type. These functions convert between the two formats.
 
 interface BackendCastMember {
@@ -38,12 +38,10 @@ interface BackendPlayScript {
   author?: string;
   castMembers?: BackendCastMember[];
   lines?: BackendLine[];
-  // Frontend Play fields (in case data is already in frontend format)
   cast?: CastMember[];
 }
 
 function convertBackendPlay(raw: BackendPlayScript): Play {
-  // If the data already has 'cast', it's likely already in frontend format
   const cast: CastMember[] = raw.cast
     ? raw.cast
     : (raw.castMembers || [])
@@ -55,7 +53,6 @@ function convertBackendPlay(raw: BackendPlayScript): Play {
         }));
 
   const lines: PlayLine[] = (raw.lines || []).map((line) => {
-    // Handle both backend format (lineText/lineIndex) and frontend format (text/index)
     const result: PlayLine = {
       castMemberId: line.castMemberId,
       text: (line as any).text || line.lineText || '',
@@ -126,6 +123,8 @@ interface UsePlayStateReturn {
   resetPlay: () => void;
 }
 
+const POLL_INTERVAL_MS = 10_000;
+
 export function usePlayState({
   stageId,
   participantName,
@@ -137,78 +136,81 @@ export function usePlayState({
   const [isConnected, setIsConnected] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const wsRef = useRef<WebSocket | null>(null);
-  const isConnectingRef = useRef(false);
-  const intentionalCloseRef = useRef(false);
-  const [reconnectAttempt, setReconnectAttempt] = useState(0);
-  const reconnectTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const heartbeatIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const pusherRef = useRef<Pusher | null>(null);
+  const stageChannelRef = useRef<PresenceChannel | null>(null);
+  const castChannelRef = useRef<Channel | null>(null);
+  const pollIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const stageIdRef = useRef<string>('');
+  const participantIdRef = useRef<string | null>(null);
 
-  const HEARTBEAT_INTERVAL_MS = 5_000; // Reconcile sooner when state desyncs (e.g. missed lineAdvanced)
-
-  const sendMessage = useCallback((message: object) => {
-    if (wsRef.current?.readyState === WebSocket.OPEN) {
-      console.log('[WS] Sending:', message);
-      wsRef.current.send(JSON.stringify(message));
-    } else {
-      console.warn('[WS] Cannot send - not connected');
-    }
-  }, []);
+  // Keep refs in sync
+  useEffect(() => {
+    participantIdRef.current = participantId;
+  }, [participantId]);
 
   useEffect(() => {
-    if (!stageId || !participantName || isConnectingRef.current) return;
+    stageIdRef.current = stageId;
+  }, [stageId]);
 
-    intentionalCloseRef.current = false;
-    isConnectingRef.current = true;
+  // Join stage and set up Pusher
+  useEffect(() => {
+    if (!stageId || !participantName) return;
 
-    const handleMessage = (event: MessageEvent) => {
+    let cancelled = false;
+
+    async function init() {
       try {
-        const message: ServerMessage = JSON.parse(event.data);
-        console.log('[WS] Received:', message.type, message);
+        const result = await stageApi.joinStage(stageId, participantName);
+        if (cancelled) return;
 
-        switch (message.type) {
-          case 'joined':
-            {
-              const state = convertStageState(message.stageState);
-              console.log(
-                '[WS] Joined stage! participantId:',
-                message.participantId,
-                'participants:',
-                state.participants.length
-              );
-              setParticipantId(message.participantId);
-              setStageState(state);
-              // Start heartbeat to periodically reconcile state (recovers from missed lineAdvanced etc)
-              if (heartbeatIntervalRef.current) clearInterval(heartbeatIntervalRef.current);
-              heartbeatIntervalRef.current = setInterval(() => {
-                if (wsRef.current?.readyState === WebSocket.OPEN) {
-                  wsRef.current.send(JSON.stringify({ type: 'heartbeat' }));
-                }
-              }, HEARTBEAT_INTERVAL_MS);
-            }
-            break;
-          case 'stageState':
-            {
-              const state = convertStageState(message.state);
-              console.log(
-                '[WS] State update, participants:',
-                state.participants.map((p: any) => ({
-                  name: p.name,
-                  castMemberIds: p.castMemberIds,
-                }))
-              );
-              setStageState(state);
-            }
-            break;
-          case 'availablePlays':
-            setAvailablePlays((message.plays || []).map((play: any) => convertBackendPlay(play)));
-            break;
-          case 'castMembersUpdated':
+        const pid = result.participantId;
+        setParticipantId(pid);
+        participantIdRef.current = pid;
+
+        const state = convertStageState(result.stageState);
+        setStageState(state);
+
+        if (result.availablePlays) {
+          setAvailablePlays(result.availablePlays.map((p: any) => convertBackendPlay(p)));
+        }
+
+        // Set up Pusher if we have credentials
+        if (result.pusherKey) {
+          const pusher = new Pusher(result.pusherKey, {
+            cluster: result.pusherCluster,
+            authEndpoint: `${getApiUrlForPusher()}/api/pusher/auth`,
+            auth: {
+              params: { participant_id: pid },
+            },
+          });
+
+          pusherRef.current = pusher;
+
+          pusher.connection.bind('connected', () => {
+            setIsConnected(true);
+            setError(null);
+          });
+          pusher.connection.bind('disconnected', () => setIsConnected(false));
+          pusher.connection.bind('error', () => setIsConnected(false));
+
+          // Subscribe to presence channel
+          const stageChannel = pusher.subscribe(`presence-stage-${stageId}`) as PresenceChannel;
+          stageChannelRef.current = stageChannel;
+
+          stageChannel.bind('stage-state', (data: any) => {
+            setStageState(convertStageState(data));
+          });
+
+          stageChannel.bind('countdown-start', () => {
+            setStageState((prev) => (prev ? { ...prev, phase: 'countdown' } : null));
+          });
+
+          stageChannel.bind('cast-members-updated', (data: any) => {
             setStageState((prev) =>
               prev
                 ? {
                     ...prev,
-                    participants: (message.participants || []).map((p: any) => ({
+                    participants: (data.participants || []).map((p: any) => ({
                       id: p.id,
                       name: p.name,
                       castMemberIds: p.castMemberIds || [],
@@ -219,196 +221,167 @@ export function usePlayState({
                   }
                 : null
             );
-            break;
-          case 'playStarted':
-            // State will be updated via stageState message
-            break;
-          case 'lineAdvanced':
+          });
+
+          stageChannel.bind('chat-message', (data: any) => {
+            if (data.message) {
+              setChatMessages((prev) => [...prev, data.message]);
+            }
+          });
+
+          stageChannel.bind('play-started', () => {
+            // State will be updated via stage-state event
+          });
+
+          stageChannel.bind('line-advanced', (data: any) => {
             setStageState((prev) =>
-              prev ? { ...prev, currentLineIndex: message.currentLineIndex } : null
+              prev ? { ...prev, currentLineIndex: data.currentLineIndex } : null
             );
-            break;
-          case 'playEnded':
+          });
+
+          stageChannel.bind('play-ended', () => {
             setStageState((prev) => (prev ? { ...prev, phase: 'discussion' } : null));
-            break;
-          case 'countdownStart':
-            setStageState((prev) => (prev ? { ...prev, phase: 'countdown' } : null));
-            break;
-          case 'chatMessage':
-            setChatMessages((prev) => [...prev, message.message]);
-            break;
-          case 'error':
-            setError(message.message);
-            break;
+          });
+
+          // Subscribe to cast channel if not audience
+          const currentParticipant = state.participants.find((p) => p.id === pid);
+          if (!currentParticipant?.isAudience) {
+            const castCh = pusher.subscribe(`private-cast-${stageId}`);
+            castChannelRef.current = castCh;
+            castCh.bind('chat-message', (data: any) => {
+              if (data.message) {
+                setChatMessages((prev) => [...prev, data.message]);
+              }
+            });
+          }
+        } else {
+          // No Pusher credentials - still mark as connected for local dev
+          setIsConnected(true);
         }
+
+        // Start polling for state reconciliation
+        pollIntervalRef.current = setInterval(async () => {
+          try {
+            const stateData = await stageApi.getStageState(stageId);
+            setStageState(convertStageState(stateData));
+          } catch {
+            // Ignore polling errors
+          }
+        }, POLL_INTERVAL_MS);
       } catch (err) {
-        console.error('Failed to parse message:', err);
+        if (cancelled) return;
+        setError(err instanceof Error ? err.message : 'Failed to join stage');
       }
-    };
+    }
 
-    const wsUrl = getConfig().wsUrl;
-    console.log('[WS] Connecting to:', wsUrl, 'stageId:', stageId, 'as:', participantName);
-    const ws = new WebSocket(wsUrl);
-    wsRef.current = ws;
-
-    ws.onopen = () => {
-      console.log('[WS] Connected! Joining stage:', stageId);
-      setIsConnected(true);
-      setError(null);
-      // Do NOT reset reconnectAttempt here: the effect depends on it, so changing it
-      // triggers cleanup which closes this newly-opened connection (reconnect loop).
-      // Join the stage
-      ws.send(
-        JSON.stringify({
-          type: 'join',
-          stageId,
-          participantName,
-        })
-      );
-    };
-
-    ws.onmessage = handleMessage;
-
-    const scheduleReconnect = () => {
-      if (intentionalCloseRef.current) return;
-      const delay = Math.min(1000 * 2 ** reconnectAttempt, 30000); // 1s, 2s, 4s... capped at 30s
-      console.log('[WS] Scheduling reconnect in', delay, 'ms (attempt', reconnectAttempt + 1, ')');
-      reconnectTimeoutRef.current = setTimeout(() => {
-        reconnectTimeoutRef.current = null;
-        isConnectingRef.current = false;
-        setError(null);
-        setReconnectAttempt((a) => a + 1);
-      }, delay);
-    };
-
-    ws.onclose = (event: CloseEvent) => {
-      console.log('[WS] Stages WebSocket CLOSED', {
-        code: event.code,
-        reason: event.reason || '(none)',
-        wasClean: event.wasClean,
-        timestamp: new Date().toISOString(),
-      });
-      setIsConnected(false);
-      isConnectingRef.current = false;
-      if (!intentionalCloseRef.current) {
-        scheduleReconnect();
-      }
-    };
-
-    ws.onerror = () => {
-      console.log('[WS] Stages WebSocket ERROR', { timestamp: new Date().toISOString() });
-      setError(null); // Clear so we show "Connecting" not "Connection error" during retries
-      setIsConnected(false);
-      isConnectingRef.current = false;
-      if (!intentionalCloseRef.current) {
-        scheduleReconnect();
-      }
-    };
+    init();
 
     return () => {
-      intentionalCloseRef.current = true;
-      if (heartbeatIntervalRef.current) {
-        clearInterval(heartbeatIntervalRef.current);
-        heartbeatIntervalRef.current = null;
+      cancelled = true;
+
+      if (pollIntervalRef.current) {
+        clearInterval(pollIntervalRef.current);
+        pollIntervalRef.current = null;
       }
-      if (reconnectTimeoutRef.current) {
-        clearTimeout(reconnectTimeoutRef.current);
-        reconnectTimeoutRef.current = null;
+
+      // Leave stage
+      if (participantIdRef.current && stageId) {
+        stageApi.leaveStage(stageId, participantIdRef.current).catch(() => {});
       }
-      console.log(
-        '[WS] Effect cleanup: closing stages WebSocket (stageId/participant changed or unmount)',
-        {
-          timestamp: new Date().toISOString(),
-        }
-      );
-      ws.close();
-      wsRef.current = null;
-      isConnectingRef.current = false;
+
+      // Disconnect Pusher
+      if (pusherRef.current) {
+        pusherRef.current.disconnect();
+        pusherRef.current = null;
+      }
+      stageChannelRef.current = null;
+      castChannelRef.current = null;
     };
-  }, [stageId, participantName, reconnectAttempt]);
+  }, [stageId, participantName]);
+
+  // Manage cast channel subscription based on audience status
+  useEffect(() => {
+    if (!pusherRef.current || !stageState || !participantId) return;
+
+    const currentParticipant = stageState.participants.find((p) => p.id === participantId);
+    if (!currentParticipant) return;
+
+    if (currentParticipant.isAudience && castChannelRef.current) {
+      pusherRef.current.unsubscribe(`private-cast-${stageIdRef.current}`);
+      castChannelRef.current = null;
+    } else if (!currentParticipant.isAudience && !castChannelRef.current && pusherRef.current) {
+      const castCh = pusherRef.current.subscribe(`private-cast-${stageIdRef.current}`);
+      castChannelRef.current = castCh;
+      castCh.bind('chat-message', (data: any) => {
+        if (data.message) {
+          setChatMessages((prev) => [...prev, data.message]);
+        }
+      });
+    }
+  }, [stageState?.participants, participantId]);
 
   const toggleCastMember = useCallback(
     (castMemberId: string) => {
-      if (!participantId) return;
-      sendMessage({
-        type: 'toggleCastMember',
-        participantId,
-        castMemberId,
-      });
+      if (!participantId || !stageIdRef.current) return;
+      stageApi.toggleCastMember(stageIdRef.current, participantId, castMemberId).catch(console.error);
     },
-    [participantId, sendMessage]
+    [participantId]
   );
 
-  const setDirector = useCallback(
+  const setDirectorCb = useCallback(
     (isDirector: boolean) => {
-      if (!participantId) return;
-      sendMessage({
-        type: 'setDirector',
-        participantId,
-        isDirector,
-      });
+      if (!participantId || !stageIdRef.current) return;
+      stageApi.setDirector(stageIdRef.current, participantId, isDirector).catch(console.error);
     },
-    [participantId, sendMessage]
+    [participantId]
   );
 
-  const setReady = useCallback(
+  const setReadyCb = useCallback(
     (isReady: boolean) => {
-      if (!participantId) return;
-      sendMessage({
-        type: 'setReady',
-        participantId,
-        isReady,
-      });
+      if (!participantId || !stageIdRef.current) return;
+      stageApi.setReady(stageIdRef.current, participantId, isReady).catch(console.error);
     },
-    [participantId, sendMessage]
+    [participantId]
   );
 
-  const setAudience = useCallback(
+  const setAudienceCb = useCallback(
     (isAudience: boolean) => {
-      if (!participantId) return;
-      sendMessage({
-        type: 'setAudience',
-        participantId,
-        isAudience,
-      });
+      if (!participantId || !stageIdRef.current) return;
+      stageApi.setAudience(stageIdRef.current, participantId, isAudience).catch(console.error);
     },
-    [participantId, sendMessage]
+    [participantId]
   );
 
-  const selectPlay = useCallback(
+  const selectPlayCb = useCallback(
     (playId: string) => {
-      sendMessage({
-        type: 'selectPlay',
-        playId,
-      });
+      if (!stageIdRef.current) return;
+      stageApi.selectPlay(stageIdRef.current, playId).catch(console.error);
     },
-    [sendMessage]
+    []
   );
 
-  const sendChat = useCallback(
+  const sendChatCb = useCallback(
     (text: string, castOnly: boolean) => {
-      if (!participantId) return;
-      sendMessage({
-        type: 'sendChat',
-        participantId,
-        text,
-        castOnly,
-      });
+      if (!participantId || !stageIdRef.current) return;
+      stageApi.sendChat(stageIdRef.current, participantId, text, castOnly).catch(console.error);
     },
-    [participantId, sendMessage]
+    [participantId]
   );
 
-  const startPlay = useCallback(() => {
-    sendMessage({ type: 'startPlay' });
-  }, [sendMessage]);
+  const startPlayCb = useCallback(() => {
+    if (!stageIdRef.current) return;
+    stageApi.startPlay(stageIdRef.current).catch(console.error);
+  }, []);
 
-  const nextLine = useCallback(() => {
-    sendMessage({ type: 'nextLine' });
-  }, [sendMessage]);
+  const nextLineCb = useCallback(() => {
+    if (!stageIdRef.current) return;
+    stageApi.nextLine(stageIdRef.current).catch(console.error);
+  }, []);
 
-  const resetPlay = useCallback(() => {
-    sendMessage({ type: 'resetPlay' });
-  }, [sendMessage]);
+  const resetPlayCb = useCallback(() => {
+    if (!stageIdRef.current) return;
+    stageApi.resetPlay(stageIdRef.current).catch(console.error);
+  }, []);
 
   return {
     stageState,
@@ -418,13 +391,26 @@ export function usePlayState({
     isConnected,
     error,
     toggleCastMember,
-    setDirector,
-    setAudience,
-    setReady,
-    selectPlay,
-    sendChat,
-    startPlay,
-    nextLine,
-    resetPlay,
+    setDirector: setDirectorCb,
+    setAudience: setAudienceCb,
+    setReady: setReadyCb,
+    selectPlay: selectPlayCb,
+    sendChat: sendChatCb,
+    startPlay: startPlayCb,
+    nextLine: nextLineCb,
+    resetPlay: resetPlayCb,
   };
+}
+
+function getApiUrlForPusher(): string {
+  const envUrl = typeof process !== 'undefined' ? process.env.NEXT_PUBLIC_API_URL : undefined;
+  if (envUrl) return envUrl;
+
+  if (typeof window === 'undefined') return 'http://localhost:8000';
+
+  const { protocol, hostname } = window.location;
+  if (hostname === 'localhost' || hostname === '127.0.0.1') {
+    return `${protocol}//${hostname}:8000`;
+  }
+  return `${protocol}//api.${hostname.replace(/^www\./, '')}`;
 }

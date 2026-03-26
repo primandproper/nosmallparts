@@ -21,6 +21,7 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
+	pushercfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/pusher"
 	routingcfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/routing/config"
 	textsearchcfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/search/text/config"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/server/grpc"
@@ -66,6 +67,7 @@ type (
 		_                       struct{}                      `json:"-"`
 		Queues                  msgconfig.QueuesConfig        `envPrefix:"QUEUES_"        json:"queues"`
 		LiveKit                 livekitsvc.Config             `envPrefix:"LIVEKIT_"       json:"liveKit,omitempty"`
+		Pusher                  pushercfg.Config              `envPrefix:"PUSHER_"        json:"pusher,omitempty"`
 		AppleAppSiteAssociation AppleAppSiteAssociationConfig `envPrefix:"AASA_"          json:"appleAppSiteAssociation,omitempty"`
 		Routing                 routingcfg.Config             `envPrefix:"ROUTING_"       json:"routing"`
 		Encoding                encoding.Config               `envPrefix:"ENCODING_"      json:"encoding"`

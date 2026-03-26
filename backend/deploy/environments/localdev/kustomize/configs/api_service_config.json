@@ -7,6 +7,12 @@
 		"webhookExecutionRequestsTopicName": "webhook_execution_requests"
 	},
 	"liveKit": {},
+	"pusher": {
+		"appId": "",
+		"key": "",
+		"secret": "",
+		"cluster": ""
+	},
 	"appleAppSiteAssociation": {},
 	"routing": {
 		"chiConfig": {

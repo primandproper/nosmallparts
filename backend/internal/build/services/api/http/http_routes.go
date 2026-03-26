@@ -97,15 +97,28 @@ func ProvideAPIRouter(
 		})
 	}
 
-	// WebSocket endpoint for stages
-	router.Route("/ws", func(wsRouter routing.Router) {
-		wsRouter.Get("/stages", stagesHandler.ServeHTTP)
-	})
-
 	// REST endpoints for stages
 	router.Route("/api/stages", func(stagesRouter routing.Router) {
 		stagesRouter.Post("/", stagesHandler.CreateStageHTTP)
 		stagesRouter.Get("/{code}/exists", stagesHandler.CheckStageExists)
+		stagesRouter.Post("/join", stagesHandler.JoinStageHTTP)
+		stagesRouter.Post("/{stageID}/leave", stagesHandler.LeaveStageHTTP)
+		stagesRouter.Post("/{stageID}/toggle-cast-member", stagesHandler.ToggleCastMemberHTTP)
+		stagesRouter.Post("/{stageID}/set-director", stagesHandler.SetDirectorHTTP)
+		stagesRouter.Post("/{stageID}/set-audience", stagesHandler.SetAudienceHTTP)
+		stagesRouter.Post("/{stageID}/set-ready", stagesHandler.SetReadyHTTP)
+		stagesRouter.Post("/{stageID}/select-play", stagesHandler.SelectPlayHTTP)
+		stagesRouter.Post("/{stageID}/chat", stagesHandler.SendChatHTTP)
+		stagesRouter.Post("/{stageID}/start", stagesHandler.StartPlayHTTP)
+		stagesRouter.Post("/{stageID}/next-line", stagesHandler.NextLineHTTP)
+		stagesRouter.Post("/{stageID}/reset", stagesHandler.ResetPlayHTTP)
+		stagesRouter.Get("/{stageID}/state", stagesHandler.GetStageStateHTTP)
+	})
+
+	// Pusher auth and webhooks
+	router.Route("/api/pusher", func(pusherRouter routing.Router) {
+		pusherRouter.Post("/auth", stagesHandler.PusherAuthHTTP)
+		pusherRouter.Post("/webhook", stagesHandler.PusherWebhookHTTP)
 	})
 
 	// LiveKit token generation endpoint

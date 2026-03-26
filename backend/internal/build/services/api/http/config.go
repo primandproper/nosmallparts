@@ -27,6 +27,7 @@ var (
 			"Services",
 			"AppleAppSiteAssociation",
 			"LiveKit",
+			"Pusher",
 		),
 		wire.FieldsOf(
 			new(*config.ServicesConfig),

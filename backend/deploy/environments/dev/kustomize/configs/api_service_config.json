@@ -7,6 +7,12 @@
 		"webhookExecutionRequestsTopicName": ""
 	},
 	"liveKit": {},
+	"pusher": {
+		"appId": "",
+		"key": "",
+		"secret": "",
+		"cluster": ""
+	},
 	"appleAppSiteAssociation": {
 		"bundleID": "com.nosmallparts.ios"
 	},

@@ -462,14 +462,17 @@ func (s *serviceImpl) NextLine(ctx context.Context, req *stagessvc.NextLineReque
 			return nil, status.Error(codes.Internal, "failed to advance line")
 		}
 
-		stage, _ = s.stagesRepo.GetStageByID(ctx, stageID)
+		stage, err = s.stagesRepo.GetStageByID(ctx, stageID)
+		if err != nil {
+			return nil, status.Error(codes.Internal, "failed to get stage")
+		}
 		resp := &stagessvc.NextLineResponse{
 			StageState:   convertStageStateToGRPC(s.buildStageState(ctx, stage)),
 			LineAdvanced: false,
 			PlayEnded:    true,
 		}
 		if play.PrecedesID != nil && *play.PrecedesID != "" {
-			if nextPlay, err := s.playScriptsRepo.GetPlayScript(ctx, *play.PrecedesID, false); err == nil {
+			if nextPlay, nextPlayErr := s.playScriptsRepo.GetPlayScript(ctx, *play.PrecedesID, false); nextPlayErr == nil {
 				resp.NextPlay = playscriptsgrpc.ConvertPlayScriptToGRPCPlayScript(nextPlay)
 			}
 		}
@@ -482,7 +485,10 @@ func (s *serviceImpl) NextLine(ctx context.Context, req *stagessvc.NextLineReque
 		return nil, status.Error(codes.Internal, "failed to advance line")
 	}
 
-	stage, _ = s.stagesRepo.GetStageByID(ctx, stageID)
+	stage, err = s.stagesRepo.GetStageByID(ctx, stageID)
+	if err != nil {
+		return nil, status.Error(codes.Internal, "failed to get stage")
+	}
 	return &stagessvc.NextLineResponse{
 		StageState:       convertStageStateToGRPC(s.buildStageState(ctx, stage)),
 		LineAdvanced:     true,
@@ -515,9 +521,11 @@ func (s *serviceImpl) ResetPlay(ctx context.Context, req *stagessvc.ResetPlayReq
 	}
 	for _, p := range participants {
 		isReady := false
-		_ = s.stagesRepo.UpdateParticipant(ctx, p.ID, &stagesdomain.ParticipantUpdateInput{
+		if updateErr := s.stagesRepo.UpdateParticipant(ctx, p.ID, &stagesdomain.ParticipantUpdateInput{
 			IsReady: &isReady,
-		})
+		}); updateErr != nil {
+			observability.AcknowledgeError(updateErr, s.logger, span, "failed to update participant ready state")
+		}
 	}
 
 	stage, err := s.stagesRepo.GetStageByID(ctx, stageID)

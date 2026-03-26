@@ -88,6 +88,18 @@ const (
 	// MetaRunModeEnvVarKey is the environment variable name to set to override `config.Meta.RunMode`.
 	MetaRunModeEnvVarKey = "NO_SMALL_PARTS_META_RUN_MODE"
 
+	// PusherAppIDEnvVarKey is the environment variable name to set to override `config.Pusher.AppID`.
+	PusherAppIDEnvVarKey = "NO_SMALL_PARTS_PUSHER_APP_ID"
+
+	// PusherClusterEnvVarKey is the environment variable name to set to override `config.Pusher.Cluster`.
+	PusherClusterEnvVarKey = "NO_SMALL_PARTS_PUSHER_CLUSTER"
+
+	// PusherKeyEnvVarKey is the environment variable name to set to override `config.Pusher.Key`.
+	PusherKeyEnvVarKey = "NO_SMALL_PARTS_PUSHER_KEY"
+
+	// PusherSecretEnvVarKey is the environment variable name to set to override `config.Pusher.Secret`.
+	PusherSecretEnvVarKey = "NO_SMALL_PARTS_PUSHER_SECRET"
+
 	// ServerDebugEnvVarKey is the environment variable name to set to override `config.HTTPServer.Debug`.
 	ServerDebugEnvVarKey = "NO_SMALL_PARTS_SERVER_DEBUG"
 

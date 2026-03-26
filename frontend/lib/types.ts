@@ -232,34 +232,18 @@ export function getNextLineForParticipant(
   return { line: result.lines[0], linesAway: result.turnsAway };
 }
 
-// Frontend-specific configuration
-export interface StageConfig {
-  wsUrl: string;
-}
+// API URL configuration
+export function getApiUrl(): string {
+  const envUrl = typeof process !== 'undefined' ? process.env.NEXT_PUBLIC_API_URL : undefined;
+  if (envUrl) return envUrl;
 
-// Keep RoomConfig as alias for backward compatibility
-export type RoomConfig = StageConfig;
+  if (typeof window === 'undefined') return 'http://localhost:8000';
 
-function getWsUrl(): string {
-  // BFF WebSocket: same origin as Next.js (no cross-origin). Override for custom deployments.
-  const envUrl = typeof process !== 'undefined' ? process.env.NEXT_PUBLIC_WS_URL : undefined;
-  if (envUrl) {
-    return envUrl;
+  const { protocol, hostname } = window.location;
+  if (hostname === 'localhost' || hostname === '127.0.0.1') {
+    return `${protocol}//${hostname}:8000`;
   }
-
-  if (typeof window === 'undefined') {
-    return 'ws://localhost:3000/ws/stage';
-  }
-
-  const { protocol, host } = window.location;
-  const wsProtocol = protocol === 'https:' ? 'wss:' : 'ws:';
-  return `${wsProtocol}//${host}/ws/stage`;
-}
-
-export function getConfig(): StageConfig {
-  return {
-    wsUrl: getWsUrl(),
-  };
+  return `${protocol}//api.${hostname.replace(/^www\./, '')}`;
 }
 
 // localStorage utilities for draft scripts

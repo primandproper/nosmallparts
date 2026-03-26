@@ -52,6 +52,7 @@ require (
 	github.com/pinecone-io/go-pinecone/v2 v2.2.0
 	github.com/posthog/posthog-go v1.3.1
 	github.com/pquerna/otp v1.4.0
+	github.com/pusher/pusher-http-go/v5 v5.1.1
 	github.com/qdrant/go-client v1.13.0
 	github.com/riandyrn/otelchi v0.12.1
 	github.com/rs/xid v1.6.0
