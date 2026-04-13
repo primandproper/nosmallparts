@@ -6,8 +6,9 @@ import (
 	grpcconverters "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/converters"
 	waitlistssvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/waitlists"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/types"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/keys"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability"
+	platformkeys "github.com/verygoodsoftwarenotvirus/platform/v4/observability/keys"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/observability/keys"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/waitlists/grpc/converters"
 
 	"google.golang.org/grpc/codes"
@@ -197,7 +198,7 @@ func (s *serviceImpl) CreateWaitlistSignup(ctx context.Context, request *waitlis
 		return nil, observability.PrepareAndLogGRPCStatus(err, logger, span, codes.Unauthenticated, "failed to fetch session context data")
 	}
 	logger = logger.WithValue(keys.AccountIDKey, sessionContextData.ActiveAccountID)
-	logger = logger.WithValue(keys.UserIDKey, sessionContextData.GetUserID())
+	logger = logger.WithValue(platformkeys.UserIDKey, sessionContextData.GetUserID())
 
 	input := converters.ConvertGRPCWaitlistSignupCreationRequestInputToWaitlistSignupDatabaseCreationInput(request.Input)
 	input.BelongsToUser = sessionContextData.GetUserID()

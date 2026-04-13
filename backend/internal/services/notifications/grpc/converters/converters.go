@@ -6,7 +6,7 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/notifications"
 	grpcconverters "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/converters"
 	notificationssvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/notifications"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/pointer"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/pointer"
 )
 
 func ConvertStringToUserNotificationStatus(s string) notificationssvc.UserNotificationStatus {

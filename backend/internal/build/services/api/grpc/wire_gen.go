@@ -16,16 +16,16 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/auth/managers"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/identity/manager"
 	manager2 "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/oauth/manager"
-	databasecfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/config"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/postgres"
-	msgconfig "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/messagequeue/config"
-	loggingcfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging/config"
-	metricscfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/metrics/config"
-	tracingcfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing/config"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/qrcodes"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/random"
-	grpc15 "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/server/grpc"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/uploads/objectstorage"
+	databasecfg "github.com/verygoodsoftwarenotvirus/platform/v4/database/config"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database/postgres"
+	msgconfig "github.com/verygoodsoftwarenotvirus/platform/v4/messagequeue/config"
+	loggingcfg "github.com/verygoodsoftwarenotvirus/platform/v4/observability/logging/config"
+	metricscfg "github.com/verygoodsoftwarenotvirus/platform/v4/observability/metrics/config"
+	tracingcfg "github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing/config"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/qrcodes"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/random"
+	grpc15 "github.com/verygoodsoftwarenotvirus/platform/v4/server/grpc"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/uploads/objectstorage"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/auditlogentries"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/auth"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/dataprivacy"
@@ -72,9 +72,14 @@ func Build(ctx context.Context, cfg *config.APIServiceConfig) (*GRPCService, err
 	if err != nil {
 		return nil, err
 	}
+	metricscfgConfig := &observabilityConfig.Metrics
+	provider, err := metricscfg.ProvideMetricsProvider(ctx, logger, metricscfgConfig)
+	if err != nil {
+		return nil, err
+	}
 	databasecfgConfig := cfg.Database
 	clientConfig := databasecfg.ProvideClientConfig(databasecfgConfig)
-	client, err := postgres.ProvideDatabaseClient(ctx, logger, tracerProvider, clientConfig)
+	client, err := postgres.ProvideDatabaseClient(ctx, logger, tracerProvider, clientConfig, provider)
 	if err != nil {
 		return nil, err
 	}
@@ -127,11 +132,6 @@ func Build(ctx context.Context, cfg *config.APIServiceConfig) (*GRPCService, err
 	uploadManager := objectstorage.ProvideUploadManager(uploader)
 	dataPrivacyServiceServer := grpc3.NewDataPrivacyService(logger, tracerProvider, v, dataprivacyRepository, uploadManager)
 	hasher := authentication.ProvideHasher(authenticator)
-	metricscfgConfig := &observabilityConfig.Metrics
-	provider, err := metricscfg.ProvideMetricsProvider(ctx, logger, metricscfgConfig)
-	if err != nil {
-		return nil, err
-	}
 	textsearchcfgConfig := &cfg.TextSearch
 	userTextSearcher, err := ProvideUserTextSearcher(ctx, logger, tracerProvider, provider, textsearchcfgConfig)
 	if err != nil {
@@ -179,7 +179,7 @@ func Build(ctx context.Context, cfg *config.APIServiceConfig) (*GRPCService, err
 	stagesRepository := stages.ProvideStagesRepository(logger, tracerProvider, client)
 	stagesServiceServer := grpc14.NewService(logger, tracerProvider, stagesRepository, playscriptsRepository)
 	v4 := BuildRegistrationFuncs(auditServiceServer, authServiceServer, dataPrivacyServiceServer, identityServiceServer, internalOperationsServer, issueReportsServiceServer, userNotificationsServiceServer, oAuthServiceServer, settingsServiceServer, uploadedMediaServiceServer, waitlistsServiceServer, webhooksServiceServer, playScriptsServiceServer, stagesServiceServer)
-	server, err := grpc15.NewGRPCServer(grpcConfig, logger, v2, v3, v4...)
+	server, err := grpc15.NewGRPCServer(grpcConfig, logger, tracerProvider, v2, v3, v4...)
 	if err != nil {
 		return nil, err
 	}

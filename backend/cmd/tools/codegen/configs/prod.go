@@ -5,32 +5,32 @@ import (
 
 	tokenscfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/authentication/tokens/config"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/config"
-	analyticscfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/analytics/config"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/analytics/segment"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/circuitbreaking"
-	databasecfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/config"
-	emailcfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/email/config"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/email/sendgrid"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/encoding"
-	featureflagscfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/featureflags/config"
-	msgconfig "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/messagequeue/config"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/messagequeue/pubsub"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
-	loggingcfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging/config"
-	logotelgrpc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging/otelgrpc"
-	metricscfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/metrics/config"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/metrics/otelgrpc"
-	tracingcfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing/config"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing/oteltrace"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/routing/chi"
-	routingcfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/routing/config"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/search/text/algolia"
-	textsearchcfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/search/text/config"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/server/grpc"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/server/http"
-	uploadscfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/uploads/config"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/uploads/objectstorage"
+	analyticscfg "github.com/verygoodsoftwarenotvirus/platform/v4/analytics/config"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/analytics/segment"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/circuitbreaking"
+	databasecfg "github.com/verygoodsoftwarenotvirus/platform/v4/database/config"
+	emailcfg "github.com/verygoodsoftwarenotvirus/platform/v4/email/config"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/email/sendgrid"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/encoding"
+	featureflagscfg "github.com/verygoodsoftwarenotvirus/platform/v4/featureflags/config"
+	msgconfig "github.com/verygoodsoftwarenotvirus/platform/v4/messagequeue/config"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/messagequeue/pubsub"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/logging"
+	loggingcfg "github.com/verygoodsoftwarenotvirus/platform/v4/observability/logging/config"
+	logotelgrpc "github.com/verygoodsoftwarenotvirus/platform/v4/observability/logging/otelgrpc"
+	metricscfg "github.com/verygoodsoftwarenotvirus/platform/v4/observability/metrics/config"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/metrics/otelgrpc"
+	tracingcfg "github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing/config"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing/oteltrace"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/routing/chi"
+	routingcfg "github.com/verygoodsoftwarenotvirus/platform/v4/routing/config"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/search/text/algolia"
+	textsearchcfg "github.com/verygoodsoftwarenotvirus/platform/v4/search/text/config"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/server/grpc"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/server/http"
+	uploadscfg "github.com/verygoodsoftwarenotvirus/platform/v4/uploads/config"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/uploads/objectstorage"
 	authservice "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/auth/handlers/authentication"
 	dataprivacycfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/dataprivacy/config"
 	identitycfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/identity/config"
@@ -100,13 +100,15 @@ func buildProdEnvironmentServerConfig() *config.APIServiceConfig {
 			Sendgrid: &sendgrid.Config{},
 		},
 		Analytics: analyticscfg.Config{
-			Provider: "",
-			CircuitBreaker: circuitbreaking.Config{
-				Name:                   "dev_analytics",
-				ErrorRate:              .5,
-				MinimumSampleThreshold: 100,
+			SourceConfig: analyticscfg.SourceConfig{
+				Provider: "",
+				CircuitBreaker: circuitbreaking.Config{
+					Name:                   "dev_analytics",
+					ErrorRate:              .5,
+					MinimumSampleThreshold: 100,
+				},
+				Segment: &segment.Config{APIToken: ""},
 			},
-			Segment: &segment.Config{APIToken: ""},
 		},
 		HTTPServer: http.Config{
 			Debug:           true,

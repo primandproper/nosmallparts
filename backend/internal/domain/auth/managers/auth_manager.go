@@ -14,16 +14,17 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/audit"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/auth"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/identity"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/identifiers"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/internalerrors"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/messagequeue"
-	msgconfig "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/messagequeue/config"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/keys"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/qrcodes"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/random"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/identifiers"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/internalerrors"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/messagequeue"
+	msgconfig "github.com/verygoodsoftwarenotvirus/platform/v4/messagequeue/config"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability"
+	platformkeys "github.com/verygoodsoftwarenotvirus/platform/v4/observability/keys"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/observability/keys"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/logging"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/qrcodes"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/random"
 
 	"github.com/pquerna/otp/totp"
 	passwordvalidator "github.com/wagslane/go-password-validator"
@@ -71,8 +72,8 @@ func ProvideAuthManager(
 	}
 
 	return &AuthManager{
-		logger:                        logging.EnsureLogger(logger).WithName(o11yName),
-		tracer:                        tracing.NewTracer(tracing.EnsureTracerProvider(tracerProvider).Tracer(o11yName)),
+		logger:                        logging.NewNamedLogger(logger, o11yName),
+		tracer:                        tracing.NewNamedTracer(tracerProvider, o11yName),
 		passwordResetTokenDataManager: passwordResetTokenDataManager,
 		userDataManager:               userDataManager,
 		authenticator:                 authenticator,
@@ -97,7 +98,7 @@ func (l *AuthManager) Self(ctx context.Context) (*identity.User, error) {
 
 	// figure out who this is all for.
 	requester := sessionContextData.GetUserID()
-	tracing.AttachToSpan(span, keys.RequesterIDKey, requester)
+	tracing.AttachToSpan(span, platformkeys.RequesterIDKey, requester)
 
 	// fetch user data.
 	user, err := l.userDataManager.GetUser(ctx, requester)
@@ -144,7 +145,7 @@ func (l *AuthManager) TOTPSecretVerification(ctx context.Context, input *auth.TO
 		return observability.PrepareError(err, span, "provided input was invalid")
 	}
 
-	logger = logger.WithValue(keys.UserIDKey, input.UserID)
+	logger = logger.WithValue(platformkeys.UserIDKey, input.UserID)
 	logger.Info("validated input, getting user")
 
 	user, err := l.userDataManager.GetUserWithUnverifiedTwoFactorSecret(ctx, input.UserID)
@@ -152,9 +153,9 @@ func (l *AuthManager) TOTPSecretVerification(ctx context.Context, input *auth.TO
 		return observability.PrepareError(err, span, "fetching user to verify two factor secret")
 	}
 
-	tracing.AttachToSpan(span, keys.UserIDKey, user.ID)
-	tracing.AttachToSpan(span, keys.UsernameKey, user.Username)
-	logger = logger.WithValue(keys.UsernameKey, user.Username)
+	tracing.AttachToSpan(span, platformkeys.UserIDKey, user.ID)
+	tracing.AttachToSpan(span, platformkeys.UsernameKey, user.Username)
+	logger = logger.WithValue(platformkeys.UsernameKey, user.Username)
 
 	if user.TwoFactorSecretVerifiedAt != nil {
 		// I suppose if this happens too many times, we might want to keep track of that?
@@ -189,7 +190,7 @@ func (l *AuthManager) NewTOTPSecret(ctx context.Context, input *auth.TOTPSecretR
 	if err != nil {
 		return nil, observability.PrepareError(err, span, "failed to get session context data")
 	}
-	logger = logger.WithValue(keys.UserIDKey, sessionContextData.GetUserID())
+	logger = logger.WithValue(platformkeys.UserIDKey, sessionContextData.GetUserID())
 
 	if err = input.ValidateWithContext(ctx); err != nil {
 		return nil, observability.PrepareError(err, span, "provided input was invalid")
@@ -225,9 +226,9 @@ func (l *AuthManager) NewTOTPSecret(ctx context.Context, input *auth.TOTPSecretR
 	}
 
 	// document who this is for.
-	tracing.AttachToSpan(span, keys.RequesterIDKey, sessionCtxData.Requester.UserID)
-	tracing.AttachToSpan(span, keys.UsernameKey, user.Username)
-	logger = logger.WithValue(keys.UserIDKey, user.ID)
+	tracing.AttachToSpan(span, platformkeys.RequesterIDKey, sessionCtxData.Requester.UserID)
+	tracing.AttachToSpan(span, platformkeys.UsernameKey, user.Username)
+	logger = logger.WithValue(platformkeys.UserIDKey, user.ID)
 
 	// set the two factor secret.
 	tfs, err := l.secretGenerator.GenerateBase32EncodedString(ctx, totpSecretSize)
@@ -268,7 +269,7 @@ func (l *AuthManager) UpdatePassword(ctx context.Context, input *auth.PasswordUp
 	if err != nil {
 		return observability.PrepareError(err, span, "failed to get session context data")
 	}
-	logger = logger.WithValue(keys.UserIDKey, sessionContextData.GetUserID())
+	logger = logger.WithValue(platformkeys.UserIDKey, sessionContextData.GetUserID())
 
 	if err = input.ValidateWithContext(ctx, l.minimumPasswordLength); err != nil {
 		return observability.PrepareError(err, span, "provided input was invalid")
@@ -280,7 +281,7 @@ func (l *AuthManager) UpdatePassword(ctx context.Context, input *auth.PasswordUp
 	}
 
 	// determine relevant user ID.
-	tracing.AttachToSpan(span, keys.RequesterIDKey, sessionCtxData.Requester.UserID)
+	tracing.AttachToSpan(span, platformkeys.RequesterIDKey, sessionCtxData.Requester.UserID)
 	logger = sessionCtxData.AttachToLogger(logger)
 
 	user, err := l.validateCredentialsForUpdateRequest(
@@ -292,7 +293,7 @@ func (l *AuthManager) UpdatePassword(ctx context.Context, input *auth.PasswordUp
 	if err != nil {
 		return observability.PrepareError(err, span, "validating credentials")
 	}
-	tracing.AttachToSpan(span, keys.UsernameKey, user.Username)
+	tracing.AttachToSpan(span, platformkeys.UsernameKey, user.Username)
 
 	// ensure the password isn't garbage-tier
 	if err = passwordvalidator.Validate(input.NewPassword, minimumPasswordEntropy); err != nil {
@@ -330,7 +331,7 @@ func (l *AuthManager) UpdateUserEmailAddress(ctx context.Context, input *auth.Us
 	if err != nil {
 		return observability.PrepareError(err, span, "failed to get session context data")
 	}
-	logger = logger.WithValue(keys.UserIDKey, sessionContextData.GetUserID())
+	logger = logger.WithValue(platformkeys.UserIDKey, sessionContextData.GetUserID())
 
 	if err = input.ValidateWithContext(ctx); err != nil {
 		return observability.PrepareError(err, span, "provided input was invalid")
@@ -343,7 +344,7 @@ func (l *AuthManager) UpdateUserEmailAddress(ctx context.Context, input *auth.Us
 	}
 
 	// determine relevant user ID.
-	tracing.AttachToSpan(span, keys.RequesterIDKey, sessionCtxData.Requester.UserID)
+	tracing.AttachToSpan(span, platformkeys.RequesterIDKey, sessionCtxData.Requester.UserID)
 	logger = sessionCtxData.AttachToLogger(logger)
 
 	user, err := l.validateCredentialsForUpdateRequest(
@@ -381,12 +382,12 @@ func (l *AuthManager) UpdateUserUsername(ctx context.Context, input *auth.Userna
 	if err != nil {
 		return observability.PrepareError(err, span, "failed to get session context data")
 	}
-	logger = logger.WithValue(keys.UserIDKey, sessionContextData.GetUserID())
+	logger = logger.WithValue(platformkeys.UserIDKey, sessionContextData.GetUserID())
 
 	if err = input.ValidateWithContext(ctx); err != nil {
 		return observability.PrepareError(err, span, "provided input was invalid")
 	}
-	tracing.AttachToSpan(span, keys.UsernameKey, input.NewUsername)
+	tracing.AttachToSpan(span, platformkeys.UsernameKey, input.NewUsername)
 
 	sessionCtxData, err := l.sessionContextDataFetcher(ctx)
 	if err != nil {
@@ -394,7 +395,7 @@ func (l *AuthManager) UpdateUserUsername(ctx context.Context, input *auth.Userna
 	}
 
 	// determine relevant user ID.
-	tracing.AttachToSpan(span, keys.RequesterIDKey, sessionCtxData.Requester.UserID)
+	tracing.AttachToSpan(span, platformkeys.RequesterIDKey, sessionCtxData.Requester.UserID)
 	logger = sessionCtxData.AttachToLogger(logger)
 
 	user, err := l.validateCredentialsForUpdateRequest(
@@ -432,7 +433,7 @@ func (l *AuthManager) RequestUsernameReminder(ctx context.Context, input *auth.U
 	if err != nil {
 		return observability.PrepareError(err, span, "failed to get session context data")
 	}
-	logger = logger.WithValue(keys.UserIDKey, sessionContextData.GetUserID())
+	logger = logger.WithValue(platformkeys.UserIDKey, sessionContextData.GetUserID())
 
 	if err = input.ValidateWithContext(ctx); err != nil {
 		return observability.PrepareError(err, span, "provided input was invalid")
@@ -465,7 +466,7 @@ func (l *AuthManager) CreatePasswordResetToken(ctx context.Context, input *auth.
 	if err != nil {
 		return observability.PrepareError(err, span, "failed to get session context data")
 	}
-	logger = logger.WithValue(keys.UserIDKey, sessionContextData.GetUserID())
+	logger = logger.WithValue(platformkeys.UserIDKey, sessionContextData.GetUserID())
 
 	if err = input.ValidateWithContext(ctx); err != nil {
 		return observability.PrepareError(err, span, "provided input was invalid")
@@ -518,7 +519,7 @@ func (l *AuthManager) PasswordResetTokenRedemption(ctx context.Context, input *a
 	if err != nil {
 		return observability.PrepareError(err, span, "failed to get session context data")
 	}
-	logger = logger.WithValue(keys.UserIDKey, sessionContextData.GetUserID())
+	logger = logger.WithValue(platformkeys.UserIDKey, sessionContextData.GetUserID())
 
 	if err = input.ValidateWithContext(ctx); err != nil {
 		return observability.PrepareError(err, span, "provided input was invalid")
@@ -589,7 +590,7 @@ func (l *AuthManager) RequestEmailVerificationEmail(ctx context.Context) error {
 	if err != nil {
 		return observability.PrepareError(err, span, "failed to get session context data")
 	}
-	logger = logger.WithValue(keys.UserIDKey, sessionContextData.GetUserID())
+	logger = logger.WithValue(platformkeys.UserIDKey, sessionContextData.GetUserID())
 
 	verificationToken, err := l.userDataManager.GetEmailAddressVerificationTokenForUser(ctx, sessionContextData.Requester.UserID)
 	if err != nil && errors.Is(err, sql.ErrNoRows) {
@@ -619,7 +620,7 @@ func (l *AuthManager) VerifyUserEmailAddress(ctx context.Context, input *auth.Em
 	if err != nil {
 		return observability.PrepareError(err, span, "failed to get session context data")
 	}
-	logger = logger.WithValue(keys.UserIDKey, sessionContextData.GetUserID())
+	logger = logger.WithValue(platformkeys.UserIDKey, sessionContextData.GetUserID())
 
 	if err = input.ValidateWithContext(ctx); err != nil {
 		return observability.PrepareError(err, span, "provided input was invalid")
@@ -653,7 +654,7 @@ func (l *AuthManager) validateCredentialsForUpdateRequest(ctx context.Context, u
 	ctx, span := l.tracer.StartSpan(ctx)
 	defer span.End()
 
-	logger := l.logger.WithValue(keys.UserIDKey, userID)
+	logger := l.logger.WithValue(platformkeys.UserIDKey, userID)
 
 	// fetch user data.
 	user, err := l.userDataManager.GetUser(ctx, userID)

@@ -8,9 +8,9 @@ import (
 	identityfakes "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/identity/fakes"
 	grpcfiltering "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/filtering"
 	identitysvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/identity"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/filtering"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/reflection"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/testutils"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database/filtering"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/reflection"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/testutils"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"

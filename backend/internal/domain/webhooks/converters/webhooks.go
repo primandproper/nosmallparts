@@ -2,7 +2,7 @@ package converters
 
 import (
 	types "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/webhooks"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/identifiers"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/identifiers"
 )
 
 // ConvertWebhookToWebhookCreationRequestInput builds a WebhookCreationRequestInput from a Webhook.

@@ -10,10 +10,10 @@ import (
 	webhookmock "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/webhooks/mock"
 	grpcfiltering "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/filtering"
 	webhookssvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/webhooks"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/reflection"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/testutils"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/logging"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/reflection"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/testutils"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/webhooks/grpc/converters"
 
 	"github.com/stretchr/testify/assert"
@@ -25,7 +25,7 @@ import (
 func buildTestService(t *testing.T) (*serviceImpl, *webhookmock.Repository) {
 	t.Helper()
 
-	logger := logging.NewNoopLogger()
+	logger := loggingnoop.NewLogger()
 	tracer := tracing.NewTracerForTest(t.Name())
 	webhookRepo := &webhookmock.Repository{}
 
@@ -46,7 +46,7 @@ func buildTestService(t *testing.T) (*serviceImpl, *webhookmock.Repository) {
 func buildTestServiceWithSessionError(t *testing.T) *serviceImpl {
 	t.Helper()
 
-	logger := logging.NewNoopLogger()
+	logger := loggingnoop.NewLogger()
 	tracer := tracing.NewTracerForTest(t.Name())
 
 	service := &serviceImpl{

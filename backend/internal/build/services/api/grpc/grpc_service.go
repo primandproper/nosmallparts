@@ -14,7 +14,7 @@ import (
 	uploadedmediasvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/uploaded_media"
 	waitlistssvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/waitlists"
 	webhookssvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/webhooks"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/server/grpc"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/server/grpc"
 )
 
 type GRPCService struct {

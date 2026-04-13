@@ -2,7 +2,7 @@ package fakes
 
 import (
 	uploadedmedia "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/uploadedmedia"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/identifiers"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/identifiers"
 
 	fake "github.com/brianvoe/gofakeit/v7"
 )

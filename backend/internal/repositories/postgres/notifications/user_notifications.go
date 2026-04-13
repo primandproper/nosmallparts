@@ -5,12 +5,14 @@ import (
 
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/audit"
 	types "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/notifications"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/filtering"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/identifiers"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/keys"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database"
+	platformerrors "github.com/verygoodsoftwarenotvirus/platform/v4/errors"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database/filtering"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/identifiers"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability"
+	platformkeys "github.com/verygoodsoftwarenotvirus/platform/v4/observability/keys"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/observability/keys"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
 	generated "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/notifications/generated"
 )
 
@@ -30,13 +32,13 @@ func (q *repository) UserNotificationExists(ctx context.Context, userID, userNot
 	logger := q.logger.Clone()
 
 	if userID == "" {
-		return false, database.ErrInvalidIDProvided
+		return false, platformerrors.ErrInvalidIDProvided
 	}
-	logger = logger.WithValue(keys.UserIDKey, userID)
-	tracing.AttachToSpan(span, keys.UserIDKey, userID)
+	logger = logger.WithValue(platformkeys.UserIDKey, userID)
+	tracing.AttachToSpan(span, platformkeys.UserIDKey, userID)
 
 	if userNotificationID == "" {
-		return false, database.ErrInvalidIDProvided
+		return false, platformerrors.ErrInvalidIDProvided
 	}
 	logger = logger.WithValue(keys.UserNotificationIDKey, userNotificationID)
 	tracing.AttachToSpan(span, keys.UserNotificationIDKey, userNotificationID)
@@ -60,13 +62,13 @@ func (q *repository) GetUserNotification(ctx context.Context, userID, userNotifi
 	logger := q.logger.Clone()
 
 	if userID == "" {
-		return nil, database.ErrInvalidIDProvided
+		return nil, platformerrors.ErrInvalidIDProvided
 	}
-	logger = logger.WithValue(keys.UserIDKey, userID)
-	tracing.AttachToSpan(span, keys.UserIDKey, userID)
+	logger = logger.WithValue(platformkeys.UserIDKey, userID)
+	tracing.AttachToSpan(span, platformkeys.UserIDKey, userID)
 
 	if userNotificationID == "" {
-		return nil, database.ErrInvalidIDProvided
+		return nil, platformerrors.ErrInvalidIDProvided
 	}
 	logger = logger.WithValue(keys.UserNotificationIDKey, userNotificationID)
 	tracing.AttachToSpan(span, keys.UserNotificationIDKey, userNotificationID)
@@ -99,10 +101,10 @@ func (q *repository) GetUserNotifications(ctx context.Context, userID string, fi
 	logger := q.logger.Clone()
 
 	if userID == "" {
-		return nil, database.ErrInvalidIDProvided
+		return nil, platformerrors.ErrInvalidIDProvided
 	}
-	logger = logger.WithValue(keys.UserIDKey, userID)
-	tracing.AttachToSpan(span, keys.UserIDKey, userID)
+	logger = logger.WithValue(platformkeys.UserIDKey, userID)
+	tracing.AttachToSpan(span, platformkeys.UserIDKey, userID)
 
 	if filter == nil {
 		filter = filtering.DefaultQueryFilter()
@@ -158,7 +160,7 @@ func (q *repository) CreateUserNotification(ctx context.Context, input *types.Us
 	defer span.End()
 
 	if input == nil {
-		return nil, database.ErrNilInputProvided
+		return nil, platformerrors.ErrNilInputProvided
 	}
 	tracing.AttachToSpan(span, keys.UserNotificationIDKey, input.ID)
 	logger := q.logger.WithValue(keys.UserNotificationIDKey, input.ID)
@@ -212,7 +214,7 @@ func (q *repository) UpdateUserNotification(ctx context.Context, updated *types.
 	defer span.End()
 
 	if updated == nil {
-		return database.ErrNilInputProvided
+		return platformerrors.ErrNilInputProvided
 	}
 	logger := q.logger.WithValue(keys.UserNotificationIDKey, updated.ID)
 	tracing.AttachToSpan(span, keys.UserNotificationIDKey, updated.ID)

@@ -11,7 +11,7 @@ import (
 	authsvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/auth"
 	identitysvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/identity"
 	webhookssvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/webhooks"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/pointer"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/pointer"
 	identitygrpcconverters "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/identity/grpc/converters"
 
 	"github.com/stretchr/testify/assert"

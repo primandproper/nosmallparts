@@ -2,7 +2,7 @@ package converters
 
 import (
 	types "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/settings"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/identifiers"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/identifiers"
 )
 
 // ConvertServiceSettingCreationRequestInputToServiceSettingDatabaseCreationInput creates a ServiceSettingDatabaseCreationInput from a ServiceSettingCreationRequestInput.

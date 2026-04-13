@@ -20,8 +20,8 @@ import (
 	uploadedmediagrpc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/uploaded_media"
 	waitlistsgrpc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/waitlists"
 	webhooksgrpc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/webhooks"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/random"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/httptracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/random"
 
 	"golang.org/x/oauth2"
 	"google.golang.org/grpc"
@@ -148,7 +148,7 @@ func ExchangeJWTForOAuth2Token(
 	}
 	req.Header.Set("Authorization", "Bearer "+jwt)
 
-	c := tracing.BuildTracedHTTPClient()
+	c := httptracing.BuildTracedHTTPClient()
 	c.CheckRedirect = func(req *http.Request, via []*http.Request) error {
 		return http.ErrUseLastResponse
 	}

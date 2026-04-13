@@ -4,7 +4,7 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/audit"
 	grpcconverters "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/converters"
 	auditsvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/audit"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/pointer"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/pointer"
 )
 
 func ConvertAuditLogEntryToGRPCAuditLogEntry(entry *audit.AuditLogEntry) *auditsvc.AuditLogEntry {

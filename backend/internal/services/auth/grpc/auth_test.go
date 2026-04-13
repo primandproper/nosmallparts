@@ -13,7 +13,7 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/identity"
 	identityfakes "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/identity/fakes"
 	authsvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/auth"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/reflection"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/reflection"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"

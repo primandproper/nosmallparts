@@ -4,7 +4,7 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/issuereports"
 	grpcconverters "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/converters"
 	issuereportssvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/issue_reports"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/identifiers"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/identifiers"
 )
 
 func ConvertIssueReportToGRPCIssueReport(issueReport *issuereports.IssueReport) *issuereportssvc.IssueReport {

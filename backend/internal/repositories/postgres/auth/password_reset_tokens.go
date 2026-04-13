@@ -5,11 +5,12 @@ import (
 
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/audit"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/auth"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/identifiers"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/keys"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database"
+	platformerrors "github.com/verygoodsoftwarenotvirus/platform/v4/errors"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/identifiers"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/observability/keys"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/auth/generated"
 )
 
@@ -27,7 +28,7 @@ func (r *repository) GetPasswordResetTokenByToken(ctx context.Context, token str
 	defer span.End()
 
 	if token == "" {
-		return nil, database.ErrEmptyInputProvided
+		return nil, platformerrors.ErrEmptyInputProvided
 	}
 	tracing.AttachToSpan(span, keys.PasswordResetTokenIDKey, token)
 
@@ -55,7 +56,7 @@ func (r *repository) CreatePasswordResetToken(ctx context.Context, input *auth.P
 	defer span.End()
 
 	if input == nil {
-		return nil, database.ErrNilInputProvided
+		return nil, platformerrors.ErrNilInputProvided
 	}
 	logger := r.logger.WithValue(keys.PasswordResetTokenIDKey, input.ID)
 	tracing.AttachToSpan(span, keys.PasswordResetTokenIDKey, input.ID)
@@ -109,7 +110,7 @@ func (r *repository) RedeemPasswordResetToken(ctx context.Context, passwordReset
 	logger := r.logger.Clone()
 
 	if passwordResetTokenID == "" {
-		return database.ErrInvalidIDProvided
+		return platformerrors.ErrInvalidIDProvided
 	}
 	logger = logger.WithValue(keys.PasswordResetTokenIDKey, passwordResetTokenID)
 	tracing.AttachToSpan(span, keys.PasswordResetTokenIDKey, passwordResetTokenID)

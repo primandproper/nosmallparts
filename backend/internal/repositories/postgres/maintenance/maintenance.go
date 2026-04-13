@@ -3,7 +3,7 @@ package maintenance
 import (
 	"context"
 
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability"
 )
 
 // DeleteExpiredOAuth2ClientTokens deletes expired oauth2 client tokens.

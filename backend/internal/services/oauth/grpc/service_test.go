@@ -5,8 +5,8 @@ import (
 
 	managermock "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/oauth/manager/mock"
 	oauthsvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/oauth"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/logging"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
 
 	"github.com/stretchr/testify/assert"
 )
@@ -17,8 +17,8 @@ func TestNewService(t *testing.T) {
 	t.Run("standard", func(t *testing.T) {
 		t.Parallel()
 
-		logger := logging.NewNoopLogger()
-		tracerProvider := tracing.NewNoopTracerProvider()
+		logger := loggingnoop.NewLogger()
+		tracerProvider := tracingnoop.NewTracerProvider()
 		oauthManager := &managermock.OAuth2Manager{}
 
 		service := NewService(logger, tracerProvider, oauthManager)

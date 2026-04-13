@@ -3,10 +3,10 @@ package datachangemessagehandler
 import (
 	"context"
 
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/metrics"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
-	textsearchcfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/search/text/config"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/logging"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/metrics"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
+	textsearchcfg "github.com/verygoodsoftwarenotvirus/platform/v4/search/text/config"
 	identityindexing "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/identity/indexing"
 
 	"github.com/google/wire"

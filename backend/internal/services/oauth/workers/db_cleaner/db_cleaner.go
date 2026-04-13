@@ -4,9 +4,9 @@ import (
 	"context"
 
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/maintenance"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/metrics"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/logging"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/metrics"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
 
 	"go.opentelemetry.io/otel/attribute"
 	"go.opentelemetry.io/otel/metric"
@@ -35,8 +35,8 @@ func NewDBCleaner(
 	}
 
 	return &Job{
-		logger:                logging.EnsureLogger(logger).WithName(serviceName),
-		tracer:                tracing.NewTracer(tracing.EnsureTracerProvider(tracerProvider).Tracer(serviceName)),
+		logger:                logging.NewNamedLogger(logger, serviceName),
+		tracer:                tracing.NewNamedTracer(tracerProvider, serviceName),
 		handledRecordsCounter: handledRecordsCounter,
 		dataManager:           dataManager,
 	}, nil

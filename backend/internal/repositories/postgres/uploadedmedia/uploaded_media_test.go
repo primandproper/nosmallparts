@@ -8,8 +8,8 @@ import (
 
 	types "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/uploadedmedia"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/uploadedmedia/fakes"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/filtering"
-	pgtesting "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/postgres/testing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database/filtering"
+	pgtesting "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/testing"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

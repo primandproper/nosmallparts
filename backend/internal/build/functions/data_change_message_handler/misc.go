@@ -1,7 +1,7 @@
 package datachangemessagehandler
 
 import (
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/routing/chi"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/routing/chi"
 
 	"github.com/google/wire"
 )

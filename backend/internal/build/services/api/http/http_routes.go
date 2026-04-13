@@ -7,11 +7,11 @@ import (
 
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/config"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/auth"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/metrics"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/routing"
-	routingcfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/routing/config"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/logging"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/metrics"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/routing"
+	routingcfg "github.com/verygoodsoftwarenotvirus/platform/v4/routing/config"
 	livekitsvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/livekit"
 	stagessvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/stages"
 )

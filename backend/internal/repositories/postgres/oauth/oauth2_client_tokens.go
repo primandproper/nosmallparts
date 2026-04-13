@@ -4,10 +4,10 @@ import (
 	"context"
 
 	types "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/oauth"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/keys"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
+	platformerrors "github.com/verygoodsoftwarenotvirus/platform/v4/errors"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/observability/keys"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/oauth/generated"
 )
 
@@ -21,7 +21,7 @@ func (q *repository) GetOAuth2ClientTokenByCode(ctx context.Context, code string
 	logger := q.logger.Clone()
 
 	if code == "" {
-		return nil, database.ErrInvalidIDProvided
+		return nil, platformerrors.ErrInvalidIDProvided
 	}
 	logger = logger.WithValue(keys.OAuth2ClientTokenCodeKey, code)
 	tracing.AttachToSpan(span, keys.OAuth2ClientTokenCodeKey, code)
@@ -87,7 +87,7 @@ func (q *repository) GetOAuth2ClientTokenByAccess(ctx context.Context, access st
 	logger := q.logger.Clone()
 
 	if access == "" {
-		return nil, database.ErrInvalidIDProvided
+		return nil, platformerrors.ErrInvalidIDProvided
 	}
 	logger = logger.WithValue(keys.OAuth2ClientTokenAccessKey, access)
 	tracing.AttachToSpan(span, keys.OAuth2ClientTokenAccessKey, access)
@@ -153,7 +153,7 @@ func (q *repository) GetOAuth2ClientTokenByRefresh(ctx context.Context, refresh 
 	logger := q.logger.Clone()
 
 	if refresh == "" {
-		return nil, database.ErrInvalidIDProvided
+		return nil, platformerrors.ErrInvalidIDProvided
 	}
 	logger = logger.WithValue(keys.OAuth2ClientTokenRefreshKey, refresh)
 	tracing.AttachToSpan(span, keys.OAuth2ClientTokenRefreshKey, refresh)
@@ -217,7 +217,7 @@ func (q *repository) CreateOAuth2ClientToken(ctx context.Context, input *types.O
 	defer span.End()
 
 	if input == nil {
-		return nil, database.ErrNilInputProvided
+		return nil, platformerrors.ErrNilInputProvided
 	}
 
 	logger := q.logger.WithValue(keys.OAuth2ClientTokenIDKey, input.ID)
@@ -290,7 +290,7 @@ func (q *repository) DeleteOAuth2ClientTokenByAccess(ctx context.Context, access
 	logger := q.logger.Clone()
 
 	if access == "" {
-		return database.ErrInvalidIDProvided
+		return platformerrors.ErrInvalidIDProvided
 	}
 	logger = logger.WithValue(keys.OAuth2ClientTokenAccessKey, access)
 	tracing.AttachToSpan(span, keys.OAuth2ClientTokenAccessKey, access)
@@ -317,7 +317,7 @@ func (q *repository) DeleteOAuth2ClientTokenByCode(ctx context.Context, code str
 	logger := q.logger.Clone()
 
 	if code == "" {
-		return database.ErrInvalidIDProvided
+		return platformerrors.ErrInvalidIDProvided
 	}
 	logger = logger.WithValue(keys.OAuth2ClientTokenCodeKey, code)
 	tracing.AttachToSpan(span, keys.OAuth2ClientTokenCodeKey, code)
@@ -344,7 +344,7 @@ func (q *repository) DeleteOAuth2ClientTokenByRefresh(ctx context.Context, refre
 	logger := q.logger.Clone()
 
 	if refresh == "" {
-		return database.ErrInvalidIDProvided
+		return platformerrors.ErrInvalidIDProvided
 	}
 	logger = logger.WithValue(keys.OAuth2ClientTokenRefreshKey, refresh)
 	tracing.AttachToSpan(span, keys.OAuth2ClientTokenRefreshKey, refresh)

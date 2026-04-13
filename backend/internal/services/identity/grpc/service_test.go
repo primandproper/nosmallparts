@@ -12,8 +12,8 @@ import (
 	managermock "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/identity/manager/mock"
 	identitysvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/identity"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/types"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/logging"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
 
 	"github.com/stretchr/testify/assert"
 )
@@ -21,7 +21,7 @@ import (
 func buildTestService(t *testing.T) (*serviceImpl, *managermock.IdentityDataManager) {
 	t.Helper()
 
-	logger := logging.NewNoopLogger()
+	logger := loggingnoop.NewLogger()
 	tracer := tracing.NewTracerForTest(t.Name())
 	identityDataManager := &managermock.IdentityDataManager{}
 
@@ -50,7 +50,7 @@ func buildTestService(t *testing.T) (*serviceImpl, *managermock.IdentityDataMana
 func buildTestServiceWithSessionError(t *testing.T) *serviceImpl {
 	t.Helper()
 
-	logger := logging.NewNoopLogger()
+	logger := loggingnoop.NewLogger()
 	tracer := tracing.NewTracerForTest(t.Name())
 	identityDataManager := &managermock.IdentityDataManager{}
 
@@ -72,8 +72,8 @@ func TestNewService(t *testing.T) {
 	t.Run("standard", func(t *testing.T) {
 		t.Parallel()
 
-		logger := logging.NewNoopLogger()
-		tracerProvider := tracing.NewNoopTracerProvider()
+		logger := loggingnoop.NewLogger()
+		tracerProvider := tracingnoop.NewTracerProvider()
 		sessionContextDataFetcher := func(ctx context.Context) (*sessions.ContextData, error) {
 			return &sessions.ContextData{}, nil
 		}

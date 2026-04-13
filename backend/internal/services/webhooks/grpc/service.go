@@ -6,8 +6,8 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/authentication/sessions"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/webhooks"
 	webhookssvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/webhooks"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/logging"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
 )
 
 const (
@@ -32,8 +32,8 @@ func NewService(
 	webhookRepository webhooks.Repository,
 ) webhookssvc.WebhooksServiceServer {
 	return &serviceImpl{
-		logger:                    logging.EnsureLogger(logger).WithName(o11yName),
-		tracer:                    tracing.NewTracer(tracing.EnsureTracerProvider(tracerProvider).Tracer(o11yName)),
+		logger:                    logging.NewNamedLogger(logger, o11yName),
+		tracer:                    tracing.NewNamedTracer(tracerProvider, o11yName),
 		sessionContextDataFetcher: sessions.FetchContextDataFromContext,
 		webhookRepository:         webhookRepository,
 	}

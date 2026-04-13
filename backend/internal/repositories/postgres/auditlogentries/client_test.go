@@ -3,11 +3,11 @@ package auditlogentries
 import (
 	"testing"
 
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/postgres"
-	pgtesting "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/postgres/testing"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database/postgres"
+	pgtesting "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/testing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/logging"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/migrations"
 
 	"github.com/stretchr/testify/require"
@@ -23,13 +23,13 @@ func buildDatabaseClientForTest(t *testing.T) (*repository, *pgcontainers.Postgr
 
 	ctx := t.Context()
 	container, db, config := pgtesting.BuildDatabaseContainerForTest(t)
-	require.NoError(t, migrations.NewMigrator(logging.NewNoopLogger()).Migrate(ctx, db))
+	require.NoError(t, migrations.NewMigrator(loggingnoop.NewLogger()).Migrate(ctx, db))
 
-	pgc, err := postgres.ProvideDatabaseClient(ctx, logging.NewNoopLogger(), tracing.NewNoopTracerProvider(), config)
+	pgc, err := postgres.ProvideDatabaseClient(ctx, loggingnoop.NewLogger(), tracingnoop.NewTracerProvider(), config, nil)
 	require.NotNil(t, pgc)
 	require.NoError(t, err)
 
-	c := ProvideAuditLogRepository(logging.NewNoopLogger(), tracing.NewNoopTracerProvider(), pgc)
+	c := ProvideAuditLogRepository(loggingnoop.NewLogger(), tracingnoop.NewTracerProvider(), pgc)
 
 	return c.(*repository), container
 }
@@ -37,7 +37,7 @@ func buildDatabaseClientForTest(t *testing.T) (*repository, *pgcontainers.Postgr
 func buildInertClientForTest(t *testing.T) *repository {
 	t.Helper()
 
-	c := ProvideAuditLogRepository(logging.NewNoopLogger(), tracing.NewNoopTracerProvider(), &database.MockClient{})
+	c := ProvideAuditLogRepository(loggingnoop.NewLogger(), tracingnoop.NewTracerProvider(), &database.MockClient{})
 
 	return c.(*repository)
 }

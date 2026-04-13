@@ -6,8 +6,9 @@ import (
 	grpcconverters "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/converters"
 	settingssvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/settings"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/types"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/keys"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability"
+	platformkeys "github.com/verygoodsoftwarenotvirus/platform/v4/observability/keys"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/observability/keys"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/settings/grpc/converters"
 
 	"google.golang.org/grpc/codes"
@@ -117,7 +118,7 @@ func (s *serviceImpl) GetServiceSettingConfigurationsForUser(ctx context.Context
 	if err != nil {
 		return nil, observability.PrepareAndLogGRPCStatus(err, logger, span, codes.Unauthenticated, "failed to fetch session context data")
 	}
-	logger = logger.WithValue(keys.UserIDKey, sessionContextData.GetUserID())
+	logger = logger.WithValue(platformkeys.UserIDKey, sessionContextData.GetUserID())
 
 	filter := grpcconverters.ConvertGRPCQueryFilterToQueryFilter(request.Filter)
 	serviceSettingConfigs, err := s.serviceSettingsRepository.GetServiceSettingConfigurationsForUser(ctx, sessionContextData.GetUserID(), filter)

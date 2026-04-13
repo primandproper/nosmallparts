@@ -11,9 +11,9 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/authentication/sessions"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/authorization"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/identity"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/logging"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
 
 	"github.com/go-oauth2/oauth2/v4/manage"
 	"google.golang.org/grpc"
@@ -55,8 +55,8 @@ func ProvideAuthInterceptor(
 	aggregatedPermissions MethodPermissionsMap,
 ) *AuthInterceptor {
 	return &AuthInterceptor{
-		tracer:              tracing.NewTracer(tracing.EnsureTracerProvider(tracerProvider).Tracer(o11yName)),
-		logger:              logging.EnsureLogger(logger).WithName(o11yName),
+		tracer:              tracing.NewNamedTracer(tracerProvider, o11yName),
+		logger:              logging.NewNamedLogger(logger, o11yName),
 		identityRepository:  identityRepository,
 		oauth2ClientManager: oauth2ClientManager,
 		methodPermissions:   aggregatedPermissions,

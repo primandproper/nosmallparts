@@ -4,7 +4,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/pointer"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/pointer"
 
 	"github.com/stretchr/testify/assert"
 )

@@ -5,9 +5,9 @@ import (
 
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/audit"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/playscripts"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/logging"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/playscripts/generated"
 )
 
@@ -34,11 +34,11 @@ func ProvidePlayScriptsRepository(
 ) playscripts.Repository {
 	c := &repository{
 		Client:            client,
-		db:                client.DB(),
-		tracer:            tracing.NewTracer(tracing.EnsureTracerProvider(tracerProvider).Tracer(o11yName)),
+		db:                client.WriteDB(),
+		tracer:            tracing.NewNamedTracer(tracerProvider, o11yName),
 		generatedQuerier:  generated.New(),
 		auditLogEntryRepo: auditLogEntryRepo,
-		logger:            logging.EnsureLogger(logger).WithName(o11yName),
+		logger:            logging.NewNamedLogger(logger, o11yName),
 	}
 
 	return c

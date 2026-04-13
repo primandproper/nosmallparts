@@ -6,7 +6,7 @@ import (
 	"time"
 
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/authentication/cookies"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
 )
 
 func BuildCookie(ctx context.Context, tracer tracing.Tracer, cfg *cookies.Config, value string) *http.Cookie {

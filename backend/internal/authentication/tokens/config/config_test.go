@@ -4,9 +4,9 @@ import (
 	"encoding/base64"
 	"testing"
 
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/random"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/logging"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/random"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
@@ -47,14 +47,14 @@ func TestConfig_ProvideTokenIssuer(T *testing.T) {
 		t.Parallel()
 
 		ctx := t.Context()
-		logger := logging.NewNoopLogger()
+		logger := loggingnoop.NewLogger()
 		cfg := &Config{
 			Provider:                ProviderJWT,
 			Audience:                t.Name(),
 			Base64EncodedSigningKey: base64.URLEncoding.EncodeToString(random.MustGenerateRawBytes(ctx, 32)),
 		}
 
-		actual, err := cfg.ProvideTokenIssuer(logger, tracing.NewNoopTracerProvider())
+		actual, err := cfg.ProvideTokenIssuer(logger, tracingnoop.NewTracerProvider())
 		assert.NotNil(t, actual)
 		assert.NoError(t, err)
 	})
@@ -62,12 +62,12 @@ func TestConfig_ProvideTokenIssuer(T *testing.T) {
 	T.Run("with invalid provider", func(t *testing.T) {
 		t.Parallel()
 
-		logger := logging.NewNoopLogger()
+		logger := loggingnoop.NewLogger()
 		cfg := &Config{
 			Provider: "",
 		}
 
-		actual, err := cfg.ProvideTokenIssuer(logger, tracing.NewNoopTracerProvider())
+		actual, err := cfg.ProvideTokenIssuer(logger, tracingnoop.NewTracerProvider())
 		assert.Nil(t, actual)
 		assert.Error(t, err)
 	})

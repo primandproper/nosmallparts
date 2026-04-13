@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"time"
 
-	textsearch "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/search/text"
+	textsearch "github.com/verygoodsoftwarenotvirus/platform/v4/search/text"
 	coreindexing "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/identity/indexing"
 )
 

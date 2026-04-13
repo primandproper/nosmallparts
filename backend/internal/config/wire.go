@@ -1,7 +1,7 @@
 package config
 
 import (
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/server/http"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/server/http"
 
 	"github.com/google/wire"
 )

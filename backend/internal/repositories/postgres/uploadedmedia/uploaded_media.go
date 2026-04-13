@@ -6,12 +6,14 @@ import (
 
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/audit"
 	types "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/uploadedmedia"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/filtering"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/identifiers"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/keys"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database"
+	platformerrors "github.com/verygoodsoftwarenotvirus/platform/v4/errors"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database/filtering"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/identifiers"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability"
+	platformkeys "github.com/verygoodsoftwarenotvirus/platform/v4/observability/keys"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/observability/keys"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
 	generated "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/uploadedmedia/generated"
 )
 
@@ -31,7 +33,7 @@ func (r *repository) GetUploadedMedia(ctx context.Context, uploadedMediaID strin
 	logger := r.logger.Clone()
 
 	if uploadedMediaID == "" {
-		return nil, database.ErrInvalidIDProvided
+		return nil, platformerrors.ErrInvalidIDProvided
 	}
 	logger = logger.WithValue(keys.UploadedMediaIDKey, uploadedMediaID)
 	tracing.AttachToSpan(span, keys.UploadedMediaIDKey, uploadedMediaID)
@@ -62,7 +64,7 @@ func (r *repository) GetUploadedMediaWithIDs(ctx context.Context, ids []string) 
 	logger := r.logger.Clone()
 
 	if len(ids) == 0 {
-		return nil, database.ErrEmptyInputProvided
+		return nil, platformerrors.ErrEmptyInputProvided
 	}
 	logger = logger.WithValue("ids", ids)
 	tracing.AttachToSpan(span, "id_count", len(ids))
@@ -96,10 +98,10 @@ func (r *repository) GetUploadedMediaForUser(ctx context.Context, userID string,
 	logger := r.logger.Clone()
 
 	if userID == "" {
-		return nil, database.ErrInvalidIDProvided
+		return nil, platformerrors.ErrInvalidIDProvided
 	}
-	logger = logger.WithValue(keys.UserIDKey, userID)
-	tracing.AttachToSpan(span, keys.UserIDKey, userID)
+	logger = logger.WithValue(platformkeys.UserIDKey, userID)
+	tracing.AttachToSpan(span, platformkeys.UserIDKey, userID)
 
 	if filter == nil {
 		filter = filtering.DefaultQueryFilter()
@@ -161,10 +163,10 @@ func (r *repository) CreateUploadedMedia(ctx context.Context, input *types.Uploa
 	logger := r.logger.Clone()
 
 	if input == nil {
-		return nil, database.ErrNilInputProvided
+		return nil, platformerrors.ErrNilInputProvided
 	}
-	tracing.AttachToSpan(span, keys.UserIDKey, input.CreatedByUser)
-	logger = logger.WithValue(keys.UserIDKey, input.CreatedByUser)
+	tracing.AttachToSpan(span, platformkeys.UserIDKey, input.CreatedByUser)
+	logger = logger.WithValue(platformkeys.UserIDKey, input.CreatedByUser)
 
 	logger.Debug("CreateUploadedMedia invoked")
 
@@ -220,7 +222,7 @@ func (r *repository) UpdateUploadedMedia(ctx context.Context, uploadedMedia *typ
 	logger := r.logger.Clone()
 
 	if uploadedMedia == nil {
-		return database.ErrNilInputProvided
+		return platformerrors.ErrNilInputProvided
 	}
 	logger = logger.WithValue(keys.UploadedMediaIDKey, uploadedMedia.ID)
 	tracing.AttachToSpan(span, keys.UploadedMediaIDKey, uploadedMedia.ID)
@@ -273,7 +275,7 @@ func (r *repository) ArchiveUploadedMedia(ctx context.Context, uploadedMediaID s
 	logger := r.logger.Clone()
 
 	if uploadedMediaID == "" {
-		return database.ErrInvalidIDProvided
+		return platformerrors.ErrInvalidIDProvided
 	}
 	logger = logger.WithValue(keys.UploadedMediaIDKey, uploadedMediaID)
 	tracing.AttachToSpan(span, keys.UploadedMediaIDKey, uploadedMediaID)

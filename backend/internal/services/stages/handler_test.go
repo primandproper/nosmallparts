@@ -13,10 +13,10 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/playscripts"
 	playscriptsmock "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/playscripts/mock"
 	stagesdomain "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/stages"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/filtering"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
-	pusherpkg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/pusher"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database/filtering"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/logging"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
+	pusherpkg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/pusher"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
@@ -143,8 +143,8 @@ var _ stagesdomain.Repository = (*fakeStagesRepo)(nil)
 
 func buildTestHandler(t *testing.T, stagesRepo stagesdomain.Repository, playScriptsRepo playscripts.Repository) *Handler {
 	t.Helper()
-	logger := logging.NewNoopLogger()
-	tracerProvider := tracing.NewNoopTracerProvider()
+	logger := loggingnoop.NewLogger()
+	tracerProvider := tracingnoop.NewTracerProvider()
 	pusherClient := pusherpkg.NewClient(nil, logger, tracerProvider)
 	return NewHandler(logger, tracerProvider, stagesRepo, playScriptsRepo, pusherClient)
 }

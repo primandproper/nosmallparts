@@ -7,12 +7,13 @@ import (
 
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/audit"
 	types "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/playscripts"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/filtering"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/identifiers"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/keys"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database"
+	platformerrors "github.com/verygoodsoftwarenotvirus/platform/v4/errors"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database/filtering"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/identifiers"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/observability/keys"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
 	generated "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/playscripts/generated"
 )
 
@@ -32,7 +33,7 @@ func (r *repository) GetPlayScript(ctx context.Context, playScriptID string, inc
 	logger := r.logger.Clone()
 
 	if playScriptID == "" {
-		return nil, database.ErrInvalidIDProvided
+		return nil, platformerrors.ErrInvalidIDProvided
 	}
 	logger = logger.WithValue(keys.PlayScriptIDKey, playScriptID)
 	tracing.AttachToSpan(span, keys.PlayScriptIDKey, playScriptID)
@@ -229,7 +230,7 @@ func (r *repository) GetPlayScriptsForAccount(ctx context.Context, accountID str
 	logger := r.logger.Clone()
 
 	if accountID == "" {
-		return nil, database.ErrInvalidIDProvided
+		return nil, platformerrors.ErrInvalidIDProvided
 	}
 	logger = logger.WithValue(keys.AccountIDKey, accountID)
 	tracing.AttachToSpan(span, keys.AccountIDKey, accountID)
@@ -472,7 +473,7 @@ func (r *repository) CreatePlayScript(ctx context.Context, input *types.PlayScri
 	logger := r.logger.Clone()
 
 	if input == nil {
-		return nil, database.ErrNilInputProvided
+		return nil, platformerrors.ErrNilInputProvided
 	}
 	tracing.AttachToSpan(span, keys.AccountIDKey, input.BelongsToAccount)
 	logger = logger.WithValue(keys.AccountIDKey, input.BelongsToAccount)
@@ -597,7 +598,7 @@ func (r *repository) UpdatePlayScriptLine(ctx context.Context, line *types.PlayS
 	defer span.End()
 
 	if line == nil {
-		return database.ErrNilInputProvided
+		return platformerrors.ErrNilInputProvided
 	}
 	logger := r.logger.WithValue(keys.PlayScriptIDKey, line.PlayScriptID)
 	tracing.AttachToSpan(span, keys.PlayScriptIDKey, line.PlayScriptID)
@@ -633,7 +634,7 @@ func (r *repository) UpdatePlayScript(ctx context.Context, playScript *types.Pla
 	logger := r.logger.Clone()
 
 	if playScript == nil {
-		return database.ErrNilInputProvided
+		return platformerrors.ErrNilInputProvided
 	}
 	logger = logger.WithValue(keys.PlayScriptIDKey, playScript.ID)
 	tracing.AttachToSpan(span, keys.PlayScriptIDKey, playScript.ID)
@@ -685,7 +686,7 @@ func (r *repository) ArchivePlayScript(ctx context.Context, playScriptID string)
 	defer span.End()
 
 	if playScriptID == "" {
-		return database.ErrInvalidIDProvided
+		return platformerrors.ErrInvalidIDProvided
 	}
 	tracing.AttachToSpan(span, keys.PlayScriptIDKey, playScriptID)
 

@@ -7,9 +7,9 @@ import (
 
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/playscripts"
 	stagesdomain "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/stages"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
-	pusherpkg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/pusher"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/logging"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
+	pusherpkg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/pusher"
 )
 
 // Handler handles HTTP requests for stages.
@@ -33,8 +33,8 @@ func NewHandler(
 		stagesRepo:      stagesRepo,
 		playScriptsRepo: playScriptsRepo,
 		pusher:          pusher,
-		logger:          logging.EnsureLogger(logger).WithName("stages"),
-		tracer:          tracing.NewTracer(tracing.EnsureTracerProvider(tracerProvider).Tracer("stages")),
+		logger:          logging.NewNamedLogger(logger, "stages"),
+		tracer:          tracing.NewNamedTracer(tracerProvider, "stages"),
 	}
 }
 

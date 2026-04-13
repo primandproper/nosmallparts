@@ -7,10 +7,10 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/authorization"
 	settingssvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/internalops"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/types"
-	msgconfig "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/messagequeue/config"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
+	msgconfig "github.com/verygoodsoftwarenotvirus/platform/v4/messagequeue/config"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/logging"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
 
 	"google.golang.org/grpc/codes"
 )
@@ -38,8 +38,8 @@ func NewService(
 ) settingssvc.InternalOperationsServer {
 	return &serviceImpl{
 		msgConfig: msgConfig,
-		logger:    logging.EnsureLogger(logger).WithName(o11yName),
-		tracer:    tracing.NewTracer(tracing.EnsureTracerProvider(tracerProvider).Tracer(o11yName)),
+		logger:    logging.NewNamedLogger(logger, o11yName),
+		tracer:    tracing.NewNamedTracer(tracerProvider, o11yName),
 	}
 }
 
@@ -58,7 +58,7 @@ func (s serviceImpl) PublishArbitraryQueueMessage(ctx context.Context, request *
 		return nil, observability.PrepareAndLogGRPCStatus(err, logger, span, codes.Unauthenticated, "user is not permitted")
 	}
 
-	pp, err := msgconfig.ProvidePublisherProvider(ctx, s.logger, tracing.NewNoopTracerProvider(), s.msgConfig)
+	pp, err := msgconfig.ProvidePublisherProvider(ctx, s.logger, tracingnoop.NewTracerProvider(), s.msgConfig)
 	if err != nil {
 		return nil, observability.PrepareAndLogGRPCStatus(err, logger, span, codes.Internal, "establishing publisher provider")
 	}

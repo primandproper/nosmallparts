@@ -7,8 +7,9 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/email"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability"
+	localemail "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/email"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/email"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability"
 )
 
 func (a *AsyncDataChangeMessageHandler) OutboundEmailsEventHandler(ctx context.Context, rawMsg []byte) error {
@@ -46,7 +47,7 @@ func (a *AsyncDataChangeMessageHandler) handleEmailRequest(
 		observability.AcknowledgeError(err, a.logger, span, "sending email")
 	}
 
-	if err := a.analyticsEventReporter.EventOccurred(ctx, email.SentEventType, mail.UserID, map[string]any{
+	if err := a.analyticsEventReporter.EventOccurred(ctx, localemail.SentEventType, mail.UserID, map[string]any{
 		"toAddress":   mail.ToAddress,
 		"toName":      mail.ToName,
 		"fromAddress": mail.FromAddress,

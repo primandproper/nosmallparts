@@ -12,9 +12,9 @@ import (
 	authfakes "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/auth/fakes"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/identity"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/identity/fakes"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/encoding"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/encoding"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/logging"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
 
 	"github.com/stretchr/testify/require"
 )
@@ -65,7 +65,7 @@ func buildTestHelper(t *testing.T) *authServiceHTTPRoutesTestHelper {
 	}
 
 	helper.setContextFetcher(t)
-	helper.service.encoderDecoder = encoding.ProvideServerEncoderDecoder(logging.NewNoopLogger(), tracing.NewNoopTracerProvider(), encoding.ContentTypeJSON)
+	helper.service.encoderDecoder = encoding.ProvideServerEncoderDecoder(loggingnoop.NewLogger(), tracingnoop.NewTracerProvider(), encoding.ContentTypeJSON)
 
 	var err error
 

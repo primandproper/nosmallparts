@@ -8,7 +8,7 @@ import (
 	types "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/notifications"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/notifications/converters"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/notifications/fakes"
-	pgtesting "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/postgres/testing"
+	pgtesting "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/testing"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

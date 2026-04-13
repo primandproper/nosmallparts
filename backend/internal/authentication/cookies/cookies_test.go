@@ -4,7 +4,7 @@ import (
 	"encoding/base64"
 	"testing"
 
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
@@ -27,7 +27,7 @@ func TestNewCookieManager(T *testing.T) {
 	T.Run("standard", func(t *testing.T) {
 		t.Parallel()
 
-		m, err := NewCookieManager(buildConfigForTest(), tracing.NewNoopTracerProvider())
+		m, err := NewCookieManager(buildConfigForTest(), tracingnoop.NewTracerProvider())
 		assert.NoError(t, err)
 		assert.NotNil(t, m)
 	})
@@ -45,7 +45,7 @@ func Test_manager_Encode(T *testing.T) {
 
 		ctx := t.Context()
 
-		m, err := NewCookieManager(buildConfigForTest(), tracing.NewNoopTracerProvider())
+		m, err := NewCookieManager(buildConfigForTest(), tracingnoop.NewTracerProvider())
 		require.NoError(t, err)
 		require.NotNil(t, m)
 
@@ -63,7 +63,7 @@ func Test_manager_Decode(T *testing.T) {
 
 		ctx := t.Context()
 
-		m, err := NewCookieManager(buildConfigForTest(), tracing.NewNoopTracerProvider())
+		m, err := NewCookieManager(buildConfigForTest(), tracingnoop.NewTracerProvider())
 		require.NoError(t, err)
 		require.NotNil(t, m)
 

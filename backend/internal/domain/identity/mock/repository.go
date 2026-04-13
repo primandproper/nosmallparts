@@ -5,7 +5,7 @@ import (
 
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/authentication/sessions"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/identity"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/filtering"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database/filtering"
 
 	"github.com/stretchr/testify/mock"
 )

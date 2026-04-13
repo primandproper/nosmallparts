@@ -13,12 +13,12 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/audit"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/auth"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/identity"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/messagequeue"
-	msgconfig "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/messagequeue/config"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/keys"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/messagequeue"
+	msgconfig "github.com/verygoodsoftwarenotvirus/platform/v4/messagequeue/config"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/keys"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/logging"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
 
 	validation "github.com/go-ozzo/ozzo-validation/v4"
 	"github.com/go-ozzo/ozzo-validation/v4/is"
@@ -65,8 +65,8 @@ func NewManager(
 	m := &manager{
 		maxRefreshTokenLifetime: cfg.MaxRefreshTokenLifetime,
 		maxAccessTokenLifetime:  cfg.MaxAccessTokenLifetime,
-		tracer:                  tracing.NewTracer(tracing.EnsureTracerProvider(tracingProvider).Tracer(name)),
-		logger:                  logging.EnsureLogger(logger).WithName(name),
+		tracer:                  tracing.NewNamedTracer(tracingProvider, name),
+		logger:                  logging.NewNamedLogger(logger, name),
 		tokenIssuer:             tokenIssuer,
 		authenticator:           authenticator,
 		dataChangesPublisher:    dataChangesPublisher,

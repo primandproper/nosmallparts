@@ -8,7 +8,7 @@ import (
 	"time"
 
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/cmd/services/admin/design"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/filtering"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database/filtering"
 
 	g "maragu.dev/gomponents"
 	ghtml "maragu.dev/gomponents/html"

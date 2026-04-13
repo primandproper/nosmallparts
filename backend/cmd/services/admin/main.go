@@ -13,8 +13,8 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/config"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/config/envvars"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/oauth"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/encoding"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/routing/chi"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/encoding"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/routing/chi"
 )
 
 const (
@@ -60,10 +60,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	logger, tracerProvider, _, err := cfg.Observability.ProvideThreePillars(ctx)
+	pillars, err := cfg.Observability.ProvidePillars(ctx)
 	if err != nil {
 		log.Fatal(err)
 	}
+	logger := pillars.Logger
+	tracerProvider := pillars.TracerProvider
 
 	if err = cfg.ValidateWithContext(ctx); err != nil {
 		log.Fatal(err)

@@ -8,7 +8,7 @@ import (
 	uploadedmediafakes "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/uploadedmedia/fakes"
 	grpcfiltering "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/filtering"
 	uploadedmediasvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/uploaded_media"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/pointer"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/pointer"
 	grpcconverters "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/uploadedmedia/grpc/converters"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/pkg/client"
 

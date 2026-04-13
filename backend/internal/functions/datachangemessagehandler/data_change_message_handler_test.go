@@ -7,17 +7,17 @@ import (
 	dataprivacymock "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/dataprivacy/mock"
 	identitymock "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/identity/mock"
 	webhooksmock "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/webhooks/mock"
-	analyticsmock "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/analytics/mock"
-	emailmock "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/email/mock"
-	encodingmock "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/encoding/mock"
-	msgconfig "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/messagequeue/config"
-	msgqueuemock "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/messagequeue/mock"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/metrics"
-	mockmetrics "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/metrics/mock"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/reflection"
-	uploadsmock "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/uploads/mock"
+	analyticsmock "github.com/verygoodsoftwarenotvirus/platform/v4/analytics/mock"
+	emailmock "github.com/verygoodsoftwarenotvirus/platform/v4/email/mock"
+	encodingmock "github.com/verygoodsoftwarenotvirus/platform/v4/encoding/mock"
+	msgconfig "github.com/verygoodsoftwarenotvirus/platform/v4/messagequeue/config"
+	msgqueuemock "github.com/verygoodsoftwarenotvirus/platform/v4/messagequeue/mock"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/logging"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/metrics"
+	mockmetrics "github.com/verygoodsoftwarenotvirus/platform/v4/observability/metrics/mock"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/reflection"
+	uploadsmock "github.com/verygoodsoftwarenotvirus/platform/v4/uploads/mock"
 	identityindexing "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/identity/indexing"
 
 	"github.com/stretchr/testify/assert"
@@ -28,7 +28,7 @@ import (
 func buildTestAsyncDataChangeMessageHandler(t *testing.T) (*AsyncDataChangeMessageHandler, *identitymock.RepositoryMock, *webhooksmock.Repository, *msgqueuemock.ConsumerProvider, *msgqueuemock.PublisherProvider, *analyticsmock.EventReporter, *emailmock.Emailer, *uploadsmock.MockUploadManager, *mockmetrics.MetricsProvider, *encodingmock.EncoderDecoder, *dataprivacymock.Repository) {
 	t.Helper()
 
-	logger := logging.NewNoopLogger()
+	logger := loggingnoop.NewLogger()
 	tracer := tracing.NewTracerForTest(t.Name())
 
 	identityRepo := &identitymock.RepositoryMock{}
@@ -50,7 +50,7 @@ func buildTestAsyncDataChangeMessageHandler(t *testing.T) (*AsyncDataChangeMessa
 	publisherProvider.On(reflection.GetMethodName(publisherProvider.ProvidePublisher), mock.AnythingOfType("string")).Return(mockPublisher, nil).Maybe()
 
 	// Set up mock histograms
-	mockHistogram := metrics.NewNoopMetricsProvider()
+	mockHistogram := metricsnoop.NewMetricsProvider()
 	noop, _ := mockHistogram.NewFloat64Histogram("test")
 	metricsProvider.On(reflection.GetMethodName(metricsProvider.NewFloat64Histogram), mock.AnythingOfType("string"), mock.Anything).Return(noop, nil).Maybe()
 
@@ -89,8 +89,8 @@ func TestNewAsyncDataChangeMessageHandler(t *testing.T) {
 		t.Parallel()
 
 		ctx := t.Context()
-		logger := logging.NewNoopLogger()
-		tracerProvider := tracing.NewNoopTracerProvider()
+		logger := loggingnoop.NewLogger()
+		tracerProvider := tracingnoop.NewTracerProvider()
 		cfg := &config.AsyncMessageHandlerConfig{
 			Queues: msgconfig.QueuesConfig{
 				OutboundEmailsTopicName:           "outbound-emails",
@@ -111,7 +111,7 @@ func TestNewAsyncDataChangeMessageHandler(t *testing.T) {
 		coreDataIndexer := &identityindexing.UserDataIndexer{}
 
 		// Set up metrics expectations
-		mockHistogram := metrics.NewNoopMetricsProvider()
+		mockHistogram := metricsnoop.NewMetricsProvider()
 		noop, _ := mockHistogram.NewFloat64Histogram("test")
 		metricsProvider.On(reflection.GetMethodName(metricsProvider.NewFloat64Histogram), "data_changes_execution_time", mock.Anything).Return(noop, nil)
 		metricsProvider.On(reflection.GetMethodName(metricsProvider.NewFloat64Histogram), "outbound_emails_execution_time", mock.Anything).Return(noop, nil)

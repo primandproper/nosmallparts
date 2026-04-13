@@ -4,7 +4,7 @@ import (
 	"time"
 
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/identity"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/identifiers"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/identifiers"
 )
 
 // ConvertAccountInvitationCreationInputToAccountInvitationDatabaseCreationInput creates a AccountInvitationDatabaseCreationInput from a AccountInvitationCreationRequestInput.

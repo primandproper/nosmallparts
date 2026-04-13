@@ -11,11 +11,11 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/playscripts"
 	stagesdomain "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/stages"
 	stagessvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/stages"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/filtering"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/identifiers"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database/filtering"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/identifiers"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/logging"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
 	playscriptsgrpc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/playscripts/grpc/converters"
 
 	"google.golang.org/grpc/codes"
@@ -41,8 +41,8 @@ func NewService(
 	playScriptsRepo playscripts.Repository,
 ) stagessvc.StagesServiceServer {
 	return &serviceImpl{
-		logger:          logging.EnsureLogger(logger).WithName(o11yName),
-		tracer:          tracing.NewTracer(tracing.EnsureTracerProvider(tracerProvider).Tracer(o11yName)),
+		logger:          logging.NewNamedLogger(logger, o11yName),
+		tracer:          tracing.NewNamedTracer(tracerProvider, o11yName),
 		stagesRepo:      stagesRepo,
 		playScriptsRepo: playScriptsRepo,
 	}

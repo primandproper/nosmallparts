@@ -7,9 +7,9 @@ import (
 
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/authentication/sessions"
 	settingssvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/internalops"
-	msgconfig "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/messagequeue/config"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
+	msgconfig "github.com/verygoodsoftwarenotvirus/platform/v4/messagequeue/config"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/logging"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
 
 	"github.com/stretchr/testify/assert"
 	"google.golang.org/grpc/codes"
@@ -19,7 +19,7 @@ import (
 func buildTestService(t *testing.T) *serviceImpl {
 	t.Helper()
 
-	logger := logging.NewNoopLogger()
+	logger := loggingnoop.NewLogger()
 	tracer := tracing.NewTracerForTest(t.Name())
 	msgConfig := &msgconfig.Config{}
 
@@ -42,7 +42,7 @@ func buildTestService(t *testing.T) *serviceImpl {
 func buildTestServiceWithSessionError(t *testing.T) *serviceImpl {
 	t.Helper()
 
-	logger := logging.NewNoopLogger()
+	logger := loggingnoop.NewLogger()
 	tracer := tracing.NewTracerForTest(t.Name())
 	msgConfig := &msgconfig.Config{}
 
@@ -61,7 +61,7 @@ func buildTestServiceWithSessionError(t *testing.T) *serviceImpl {
 func buildTestServiceWithInsufficientPermissions(t *testing.T) *serviceImpl {
 	t.Helper()
 
-	logger := logging.NewNoopLogger()
+	logger := loggingnoop.NewLogger()
 	tracer := tracing.NewTracerForTest(t.Name())
 	msgConfig := &msgconfig.Config{}
 
@@ -87,8 +87,8 @@ func TestNewService(t *testing.T) {
 	t.Run("standard", func(t *testing.T) {
 		t.Parallel()
 
-		logger := logging.NewNoopLogger()
-		tracerProvider := tracing.NewNoopTracerProvider()
+		logger := loggingnoop.NewLogger()
+		tracerProvider := tracingnoop.NewTracerProvider()
 		msgConfig := &msgconfig.Config{}
 
 		service := NewService(logger, tracerProvider, msgConfig)

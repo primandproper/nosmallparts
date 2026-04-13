@@ -13,10 +13,10 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/notifications"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/oauth"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/localdev"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database"
-	databasecfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/config"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/identifiers"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/random"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database"
+	databasecfg "github.com/verygoodsoftwarenotvirus/platform/v4/database/config"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/identifiers"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/random"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/auditlogentries"
 	identityrepo "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/identity"
 	notificationsrepo "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/notifications"
@@ -83,10 +83,11 @@ func init() {
 
 	apiServiceConfig = cfg
 
-	logger, tracerProvider, _, err := cfg.Observability.ProvideThreePillars(ctx)
+	pillars, err := cfg.Observability.ProvidePillars(ctx)
 	if err != nil {
 		log.Fatal(err)
 	}
+	logger, tracerProvider := pillars.Logger, pillars.TracerProvider
 
 	var (
 		server *apiserver.Server

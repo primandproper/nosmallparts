@@ -7,9 +7,9 @@ import (
 	types "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/oauth"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/oauth/fakes"
 	oauthmock "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/oauth/mock"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/testutils"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/logging"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/testutils"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
@@ -22,8 +22,8 @@ func TestNewOAuth2ClientStore(T *testing.T) {
 		t.Parallel()
 
 		domain := "example.com"
-		logger := logging.NewNoopLogger()
-		tracer := tracing.NewTracer(tracing.NewNoopTracerProvider().Tracer("test"))
+		logger := loggingnoop.NewLogger()
+		tracer := tracing.NewTracer(tracingnoop.NewTracerProvider().Tracer("test"))
 		dataManager := &oauthmock.RepositoryMock{}
 
 		store := newOAuth2ClientStore(domain, logger, tracer, dataManager)
@@ -46,8 +46,8 @@ func TestOAuth2ClientStoreImpl_GetByID(T *testing.T) {
 
 		ctx := t.Context()
 		domain := "example.com"
-		logger := logging.NewNoopLogger()
-		tracer := tracing.NewTracer(tracing.NewNoopTracerProvider().Tracer("test"))
+		logger := loggingnoop.NewLogger()
+		tracer := tracing.NewTracer(tracingnoop.NewTracerProvider().Tracer("test"))
 
 		client := fakes.BuildFakeOAuth2Client()
 		dataManager := &oauthmock.RepositoryMock{}
@@ -81,8 +81,8 @@ func TestOAuth2ClientStoreImpl_GetByID(T *testing.T) {
 
 		ctx := t.Context()
 		domain := "example.com"
-		logger := logging.NewNoopLogger()
-		tracer := tracing.NewTracer(tracing.NewNoopTracerProvider().Tracer("test"))
+		logger := loggingnoop.NewLogger()
+		tracer := tracing.NewTracer(tracingnoop.NewTracerProvider().Tracer("test"))
 
 		clientID := "test-client-id"
 		dataManager := &oauthmock.RepositoryMock{}

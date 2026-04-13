@@ -9,16 +9,16 @@ import (
 	tokenscfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/authentication/tokens/config"
 	identitymock "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/identity/mock"
 	oauthmock "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/oauth/mock"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/analytics"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/encoding"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/featureflags"
-	msgconfig "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/messagequeue/config"
-	mockpublishers "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/messagequeue/mock"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/reflection"
-	mockrouting "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/routing/mock"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/testutils"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/analytics"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/encoding"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/featureflags"
+	msgconfig "github.com/verygoodsoftwarenotvirus/platform/v4/messagequeue/config"
+	mockpublishers "github.com/verygoodsoftwarenotvirus/platform/v4/messagequeue/mock"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/logging"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/reflection"
+	mockrouting "github.com/verygoodsoftwarenotvirus/platform/v4/routing/mock"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/testutils"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
@@ -29,8 +29,8 @@ func buildTestService(t *testing.T) *service {
 	t.Helper()
 
 	ctx := t.Context()
-	logger := logging.NewNoopLogger()
-	encoderDecoder := encoding.ProvideServerEncoderDecoder(logger, tracing.NewNoopTracerProvider(), encoding.ContentTypeJSON)
+	logger := loggingnoop.NewLogger()
+	encoderDecoder := encoding.ProvideServerEncoderDecoder(logger, tracingnoop.NewTracerProvider(), encoding.ContentTypeJSON)
 
 	cfg := &Config{
 		Tokens: tokenscfg.Config{
@@ -58,10 +58,10 @@ func buildTestService(t *testing.T) *service {
 		&oauthmock.RepositoryMock{},
 		&identitymock.RepositoryMock{},
 		encoderDecoder,
-		tracing.NewNoopTracerProvider(),
+		tracingnoop.NewTracerProvider(),
 		pp,
-		&featureflags.NoopFeatureFlagManager{},
-		analytics.NewNoopEventReporter(),
+		&featureflagsnoop.FeatureFlagManager{},
+		analyticsnoop.NewEventReporter(),
 		rpm,
 		queueCfg,
 	)
@@ -79,8 +79,8 @@ func TestProvideService(T *testing.T) {
 		t.Parallel()
 
 		ctx := t.Context()
-		logger := logging.NewNoopLogger()
-		encoderDecoder := encoding.ProvideServerEncoderDecoder(logger, tracing.NewNoopTracerProvider(), encoding.ContentTypeJSON)
+		logger := loggingnoop.NewLogger()
+		encoderDecoder := encoding.ProvideServerEncoderDecoder(logger, tracingnoop.NewTracerProvider(), encoding.ContentTypeJSON)
 
 		cfg := &Config{
 			Tokens: tokenscfg.Config{
@@ -108,10 +108,10 @@ func TestProvideService(T *testing.T) {
 			&oauthmock.RepositoryMock{},
 			&identitymock.RepositoryMock{},
 			encoderDecoder,
-			tracing.NewNoopTracerProvider(),
+			tracingnoop.NewTracerProvider(),
 			pp,
-			&featureflags.NoopFeatureFlagManager{},
-			analytics.NewNoopEventReporter(),
+			&featureflagsnoop.FeatureFlagManager{},
+			analyticsnoop.NewEventReporter(),
 			rpm,
 			queueCfg,
 		)

@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/filtering"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database/filtering"
 )
 
 // ScriptTag represents a tag that can be applied to play scripts (e.g. "profanity", "one-act").

@@ -6,12 +6,13 @@ import (
 
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/audit"
 	types "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/issuereports"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/filtering"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/identifiers"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/keys"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database"
+	platformerrors "github.com/verygoodsoftwarenotvirus/platform/v4/errors"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database/filtering"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/identifiers"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/observability/keys"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
 	generated "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/issuereports/generated"
 )
 
@@ -31,7 +32,7 @@ func (r *repository) GetIssueReport(ctx context.Context, issueReportID string) (
 	logger := r.logger.Clone()
 
 	if issueReportID == "" {
-		return nil, database.ErrInvalidIDProvided
+		return nil, platformerrors.ErrInvalidIDProvided
 	}
 	logger = logger.WithValue(keys.IssueReportIDKey, issueReportID)
 	tracing.AttachToSpan(span, keys.IssueReportIDKey, issueReportID)
@@ -126,7 +127,7 @@ func (r *repository) GetIssueReportsForAccount(ctx context.Context, accountID st
 	logger := r.logger.Clone()
 
 	if accountID == "" {
-		return nil, database.ErrInvalidIDProvided
+		return nil, platformerrors.ErrInvalidIDProvided
 	}
 	logger = logger.WithValue(keys.AccountIDKey, accountID)
 	tracing.AttachToSpan(span, keys.AccountIDKey, accountID)
@@ -194,7 +195,7 @@ func (r *repository) CreateIssueReport(ctx context.Context, input *types.IssueRe
 	logger := r.logger.Clone()
 
 	if input == nil {
-		return nil, database.ErrNilInputProvided
+		return nil, platformerrors.ErrNilInputProvided
 	}
 	tracing.AttachToSpan(span, keys.AccountIDKey, input.BelongsToAccount)
 	logger = logger.WithValue(keys.AccountIDKey, input.BelongsToAccount)
@@ -258,7 +259,7 @@ func (r *repository) UpdateIssueReport(ctx context.Context, issueReport *types.I
 	logger := r.logger.Clone()
 
 	if issueReport == nil {
-		return database.ErrNilInputProvided
+		return platformerrors.ErrNilInputProvided
 	}
 	logger = logger.WithValue(keys.IssueReportIDKey, issueReport.ID)
 	tracing.AttachToSpan(span, keys.IssueReportIDKey, issueReport.ID)
@@ -310,7 +311,7 @@ func (r *repository) GetIssueReportsForTable(ctx context.Context, tableName stri
 	logger := r.logger.Clone()
 
 	if tableName == "" {
-		return nil, database.ErrInvalidIDProvided
+		return nil, platformerrors.ErrInvalidIDProvided
 	}
 	logger = logger.WithValue("relevant_table", tableName)
 	tracing.AttachToSpan(span, "relevant_table", tableName)
@@ -378,13 +379,13 @@ func (r *repository) GetIssueReportsForRecord(ctx context.Context, tableName, re
 	logger := r.logger.Clone()
 
 	if tableName == "" {
-		return nil, database.ErrInvalidIDProvided
+		return nil, platformerrors.ErrInvalidIDProvided
 	}
 	logger = logger.WithValue("relevant_table", tableName)
 	tracing.AttachToSpan(span, "relevant_table", tableName)
 
 	if recordID == "" {
-		return nil, database.ErrInvalidIDProvided
+		return nil, platformerrors.ErrInvalidIDProvided
 	}
 	logger = logger.WithValue("relevant_record_id", recordID)
 	tracing.AttachToSpan(span, "relevant_record_id", recordID)
@@ -451,7 +452,7 @@ func (r *repository) ArchiveIssueReport(ctx context.Context, issueReportID strin
 	defer span.End()
 
 	if issueReportID == "" {
-		return database.ErrInvalidIDProvided
+		return platformerrors.ErrInvalidIDProvided
 	}
 	tracing.AttachToSpan(span, keys.IssueReportIDKey, issueReportID)
 

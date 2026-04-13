@@ -5,9 +5,9 @@ import (
 	"encoding/base64"
 	"fmt"
 
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/internalerrors"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/internalerrors"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
 
 	"github.com/gorilla/securecookie"
 )
@@ -40,7 +40,7 @@ func NewCookieManager(cfg *Config, tracerProvider tracing.TracerProvider) (Manag
 
 	return &manager{
 		secureCookie: securecookie.New(decodedHashkey, decodedBlockKey),
-		tracer:       tracing.NewTracer(tracing.EnsureTracerProvider(tracerProvider).Tracer("cookie_manager")),
+		tracer:       tracing.NewNamedTracer(tracerProvider, "cookie_manager"),
 	}, nil
 }
 

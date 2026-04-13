@@ -5,8 +5,9 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/email"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/reflection"
+	localemail "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/email"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/email"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/reflection"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
@@ -36,7 +37,7 @@ func TestAsyncDataChangeMessageHandler_OutboundEmailsEventHandler(t *testing.T) 
 		assert.NoError(t, err)
 
 		emailer.On(reflection.GetMethodName(emailer.SendEmail), mock.Anything, emailMessage).Return(nil)
-		analyticsEventReporter.On(reflection.GetMethodName(analyticsEventReporter.EventOccurred), mock.Anything, email.SentEventType, emailMessage.UserID, mock.MatchedBy(func(props map[string]any) bool {
+		analyticsEventReporter.On(reflection.GetMethodName(analyticsEventReporter.EventOccurred), mock.Anything, localemail.SentEventType, emailMessage.UserID, mock.MatchedBy(func(props map[string]any) bool {
 			return props["toAddress"] == emailMessage.ToAddress &&
 				props["toName"] == emailMessage.ToName &&
 				props["fromAddress"] == emailMessage.FromAddress &&
@@ -85,7 +86,7 @@ func TestAsyncDataChangeMessageHandler_OutboundEmailsEventHandler(t *testing.T) 
 
 		expectedError := errors.New("email sending error")
 		emailer.On(reflection.GetMethodName(emailer.SendEmail), mock.Anything, emailMessage).Return(expectedError)
-		analyticsEventReporter.On(reflection.GetMethodName(analyticsEventReporter.EventOccurred), mock.Anything, email.SentEventType, emailMessage.UserID, mock.AnythingOfType("map[string]interface {}")).Return(nil)
+		analyticsEventReporter.On(reflection.GetMethodName(analyticsEventReporter.EventOccurred), mock.Anything, localemail.SentEventType, emailMessage.UserID, mock.AnythingOfType("map[string]interface {}")).Return(nil)
 
 		err = handler.OutboundEmailsEventHandler(ctx, rawMsg)
 		assert.NoError(t, err) // Should not return error, just log it
@@ -115,7 +116,7 @@ func TestAsyncDataChangeMessageHandler_OutboundEmailsEventHandler(t *testing.T) 
 
 		emailer.On(reflection.GetMethodName(emailer.SendEmail), mock.Anything, emailMessage).Return(nil)
 		expectedError := errors.New("analytics error")
-		analyticsEventReporter.On(reflection.GetMethodName(analyticsEventReporter.EventOccurred), mock.Anything, email.SentEventType, emailMessage.UserID, mock.AnythingOfType("map[string]interface {}")).Return(expectedError)
+		analyticsEventReporter.On(reflection.GetMethodName(analyticsEventReporter.EventOccurred), mock.Anything, localemail.SentEventType, emailMessage.UserID, mock.AnythingOfType("map[string]interface {}")).Return(expectedError)
 
 		err = handler.OutboundEmailsEventHandler(ctx, rawMsg)
 		assert.NoError(t, err) // Should not return error, just log it
@@ -157,7 +158,7 @@ func TestAsyncDataChangeMessageHandler_handleEmailRequest(t *testing.T) {
 		}
 
 		emailer.On(reflection.GetMethodName(emailer.SendEmail), mock.Anything, emailMessage).Return(nil)
-		analyticsEventReporter.On(reflection.GetMethodName(analyticsEventReporter.EventOccurred), mock.Anything, email.SentEventType, emailMessage.UserID, mock.MatchedBy(func(props map[string]any) bool {
+		analyticsEventReporter.On(reflection.GetMethodName(analyticsEventReporter.EventOccurred), mock.Anything, localemail.SentEventType, emailMessage.UserID, mock.MatchedBy(func(props map[string]any) bool {
 			return props["toAddress"] == emailMessage.ToAddress &&
 				props["toName"] == emailMessage.ToName &&
 				props["fromAddress"] == emailMessage.FromAddress &&
@@ -190,7 +191,7 @@ func TestAsyncDataChangeMessageHandler_handleEmailRequest(t *testing.T) {
 
 		expectedError := errors.New("email sending error")
 		emailer.On(reflection.GetMethodName(emailer.SendEmail), mock.Anything, emailMessage).Return(expectedError)
-		analyticsEventReporter.On(reflection.GetMethodName(analyticsEventReporter.EventOccurred), mock.Anything, email.SentEventType, emailMessage.UserID, mock.AnythingOfType("map[string]interface {}")).Return(nil)
+		analyticsEventReporter.On(reflection.GetMethodName(analyticsEventReporter.EventOccurred), mock.Anything, localemail.SentEventType, emailMessage.UserID, mock.AnythingOfType("map[string]interface {}")).Return(nil)
 
 		err := handler.handleEmailRequest(ctx, emailMessage)
 		assert.NoError(t, err) // Should not return error, just log it
@@ -217,7 +218,7 @@ func TestAsyncDataChangeMessageHandler_handleEmailRequest(t *testing.T) {
 
 		emailer.On(reflection.GetMethodName(emailer.SendEmail), mock.Anything, emailMessage).Return(nil)
 		expectedError := errors.New("analytics error")
-		analyticsEventReporter.On(reflection.GetMethodName(analyticsEventReporter.EventOccurred), mock.Anything, email.SentEventType, emailMessage.UserID, mock.AnythingOfType("map[string]interface {}")).Return(expectedError)
+		analyticsEventReporter.On(reflection.GetMethodName(analyticsEventReporter.EventOccurred), mock.Anything, localemail.SentEventType, emailMessage.UserID, mock.AnythingOfType("map[string]interface {}")).Return(expectedError)
 
 		err := handler.handleEmailRequest(ctx, emailMessage)
 		assert.NoError(t, err) // Should not return error, just log it

@@ -5,12 +5,12 @@ import (
 
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/audit"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/oauth"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/cryptography/encryption"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/cryptography/encryption/salsa20"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database"
-	databasecfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/config"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/cryptography/encryption"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/cryptography/encryption/salsa20"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database"
+	databasecfg "github.com/verygoodsoftwarenotvirus/platform/v4/database/config"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/logging"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/oauth/generated"
 )
 
@@ -47,11 +47,11 @@ func ProvideOAuthRepository(
 		Client:                  client,
 		readDB:                  client.ReadDB(),
 		writeDB:                 client.WriteDB(),
-		tracer:                  tracing.NewTracer(tracing.EnsureTracerProvider(tracerProvider).Tracer(o11yName)),
+		tracer:                  tracing.NewNamedTracer(tracerProvider, o11yName),
 		generatedQuerier:        generated.New(),
 		auditLogEntryRepo:       auditLogEntryRepo,
 		oauth2ClientTokenEncDec: encDec,
-		logger:                  logging.EnsureLogger(logger).WithName(o11yName),
+		logger:                  logging.NewNamedLogger(logger, o11yName),
 	}
 
 	return c

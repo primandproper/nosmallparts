@@ -12,21 +12,21 @@ import (
 
 	authcfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/authentication/config"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/authentication/cookies"
-	analyticscfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/analytics/config"
-	databasecfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/config"
-	emailcfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/email/config"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/encoding"
-	featureflagscfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/featureflags/config"
-	msgconfig "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/messagequeue/config"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
-	pushercfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/pusher"
-	routingcfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/routing/config"
-	textsearchcfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/search/text/config"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/server/grpc"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/server/http"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/uploads/objectstorage"
+	analyticscfg "github.com/verygoodsoftwarenotvirus/platform/v4/analytics/config"
+	databasecfg "github.com/verygoodsoftwarenotvirus/platform/v4/database/config"
+	emailcfg "github.com/verygoodsoftwarenotvirus/platform/v4/email/config"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/encoding"
+	featureflagscfg "github.com/verygoodsoftwarenotvirus/platform/v4/featureflags/config"
+	msgconfig "github.com/verygoodsoftwarenotvirus/platform/v4/messagequeue/config"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/logging"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
+	pushercfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/pusher"
+	routingcfg "github.com/verygoodsoftwarenotvirus/platform/v4/routing/config"
+	textsearchcfg "github.com/verygoodsoftwarenotvirus/platform/v4/search/text/config"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/server/grpc"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/server/http"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/uploads/objectstorage"
 	livekitsvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/livekit"
 
 	validation "github.com/go-ozzo/ozzo-validation/v4"
@@ -336,7 +336,7 @@ func LoadConfigFromPath[T configurations](ctx context.Context, configurationFile
 		return nil, fmt.Errorf("failed to read api configuration file: %w", err)
 	}
 
-	decoder := encoding.ProvideServerEncoderDecoder(logging.NewNoopLogger(), tracing.NewNoopTracerProvider(), encoding.ContentTypeJSON)
+	decoder := encoding.ProvideServerEncoderDecoder(loggingnoop.NewLogger(), tracingnoop.NewTracerProvider(), encoding.ContentTypeJSON)
 
 	var x *T
 	if err = decoder.DecodeBytes(ctx, content, &x); err != nil {

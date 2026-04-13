@@ -47,7 +47,7 @@ func main() {
 	)
 
 	// Run server
-	go srv.Serve()
+	go srv.Serve(rootCtx)
 
 	// os.Interrupt
 	<-signalChan
@@ -58,5 +58,5 @@ func main() {
 	}()
 
 	logger.Info("shutting down")
-	srv.Shutdown()
+	srv.Shutdown(rootCtx)
 }

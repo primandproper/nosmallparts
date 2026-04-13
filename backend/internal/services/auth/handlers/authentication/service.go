@@ -11,15 +11,15 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/auth"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/identity"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/oauth"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/analytics"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/encoding"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/featureflags"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/internalerrors"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/messagequeue"
-	msgconfig "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/messagequeue/config"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/routing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/analytics"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/encoding"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/featureflags"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/internalerrors"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/messagequeue"
+	msgconfig "github.com/verygoodsoftwarenotvirus/platform/v4/messagequeue/config"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/logging"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/routing"
 
 	"github.com/go-oauth2/oauth2/v4/server"
 	"github.com/markbates/goth"
@@ -87,13 +87,13 @@ func ProvideService(
 	manager := ProvideOAuth2ClientManager(logger, tracerProvider, &cfg.OAuth2, oauthRepo)
 
 	svc := &service{
-		logger:                   logging.EnsureLogger(logger).WithName(serviceName),
+		logger:                   logging.NewNamedLogger(logger, serviceName),
 		encoderDecoder:           encoder,
 		config:                   cfg,
 		userDataManager:          identityRepo,
 		accountMembershipManager: identityRepo,
 		authenticator:            authenticator,
-		tracer:                   tracing.NewTracer(tracing.EnsureTracerProvider(tracerProvider).Tracer(serviceName)),
+		tracer:                   tracing.NewNamedTracer(tracerProvider, serviceName),
 		dataChangesPublisher:     dataChangesPublisher,
 		featureFlagManager:       featureFlagManager,
 		analyticsReporter:        analyticsReporter,

@@ -6,11 +6,13 @@ import (
 	"errors"
 
 	types "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/playscripts"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/identifiers"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/keys"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database"
+	platformerrors "github.com/verygoodsoftwarenotvirus/platform/v4/errors"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/identifiers"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability"
+	platformkeys "github.com/verygoodsoftwarenotvirus/platform/v4/observability/keys"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/observability/keys"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
 	generated "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/playscripts/generated"
 )
 
@@ -40,11 +42,11 @@ func (r *repository) RatePlayScript(ctx context.Context, userID, playScriptID st
 
 	logger := r.logger.Clone()
 	if userID == "" || playScriptID == "" {
-		return nil, database.ErrInvalidIDProvided
+		return nil, platformerrors.ErrInvalidIDProvided
 	}
-	logger = logger.WithValue(keys.PlayScriptIDKey, playScriptID).WithValue(keys.UserIDKey, userID)
+	logger = logger.WithValue(keys.PlayScriptIDKey, playScriptID).WithValue(platformkeys.UserIDKey, userID)
 	tracing.AttachToSpan(span, keys.PlayScriptIDKey, playScriptID)
-	tracing.AttachToSpan(span, keys.UserIDKey, userID)
+	tracing.AttachToSpan(span, platformkeys.UserIDKey, userID)
 
 	if rating < 1 || rating > 5 {
 		return nil, errors.New("rating must be between 1 and 5")
@@ -97,7 +99,7 @@ func (r *repository) GetUserRatingForPlayScript(ctx context.Context, userID, pla
 	defer span.End()
 
 	if userID == "" || playScriptID == "" {
-		return nil, database.ErrInvalidIDProvided
+		return nil, platformerrors.ErrInvalidIDProvided
 	}
 
 	row, err := r.generatedQuerier.GetActiveRatingForUserAndPlay(ctx, r.db, &generated.GetActiveRatingForUserAndPlayParams{
@@ -125,7 +127,7 @@ func (r *repository) GetRatingStatsForPlayScript(ctx context.Context, playScript
 	defer span.End()
 
 	if playScriptID == "" {
-		return nil, database.ErrInvalidIDProvided
+		return nil, platformerrors.ErrInvalidIDProvided
 	}
 
 	row, err := r.generatedQuerier.GetRatingStatsForPlayScript(ctx, r.db, playScriptID)

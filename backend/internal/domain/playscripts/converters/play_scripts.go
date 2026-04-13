@@ -2,7 +2,7 @@ package converters
 
 import (
 	types "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/playscripts"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/identifiers"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/identifiers"
 )
 
 // ConvertPlayScriptToPlayScriptUpdateRequestInput creates a PlayScriptUpdateRequestInput from a PlayScript.

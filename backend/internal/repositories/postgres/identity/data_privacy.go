@@ -4,10 +4,10 @@ import (
 	"context"
 	"database/sql"
 
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/keys"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
+	platformerrors "github.com/verygoodsoftwarenotvirus/platform/v4/errors"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/keys"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
 )
 
 // DeleteUser hard-deletes a user and all associated data via ON DELETE CASCADE.
@@ -16,7 +16,7 @@ func (r *repository) DeleteUser(ctx context.Context, userID string) error {
 	defer span.End()
 
 	if userID == "" {
-		return database.ErrInvalidIDProvided
+		return platformerrors.ErrInvalidIDProvided
 	}
 	tracing.AttachToSpan(span, keys.UserIDKey, userID)
 	logger := r.logger.WithValue(keys.UserIDKey, userID)

@@ -4,7 +4,7 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/settings"
 	grpcconverters "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/converters"
 	settingssvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/settings"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/identifiers"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/identifiers"
 )
 
 func ConvertGPRCServiceSettingCreationRequestInputToServiceSettingDatabaseCreationInput(input *settingssvc.ServiceSettingCreationRequestInput) *settings.ServiceSettingDatabaseCreationInput {

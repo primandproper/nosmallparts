@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/config"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/encoding"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/encoding"
 )
 
 const (

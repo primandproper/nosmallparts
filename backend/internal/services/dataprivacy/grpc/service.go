@@ -9,12 +9,13 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/dataprivacy"
 	dataprivacysvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/dataprivacy"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/types"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/identifiers"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/keys"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/uploads"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/identifiers"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability"
+	platformkeys "github.com/verygoodsoftwarenotvirus/platform/v4/observability/keys"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/observability/keys"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/logging"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/uploads"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/dataprivacy/grpc/converters"
 
 	"google.golang.org/grpc/codes"
@@ -46,8 +47,8 @@ func NewDataPrivacyService(
 	uploadManager uploads.UploadManager,
 ) dataprivacysvc.DataPrivacyServiceServer {
 	return &serviceImpl{
-		logger:                    logging.EnsureLogger(logger).WithName(o11yName),
-		tracer:                    tracing.NewTracer(tracing.EnsureTracerProvider(tracerProvider).Tracer(o11yName)),
+		logger:                    logging.NewNamedLogger(logger, o11yName),
+		tracer:                    tracing.NewNamedTracer(tracerProvider, o11yName),
 		sessionContextDataFetcher: sessionContextDataFetcher,
 		dataPrivacyRepo:           dataPrivacyRepo,
 		uploadManager:             uploadManager,
@@ -65,8 +66,8 @@ func (s *serviceImpl) AggregateUserDataReport(ctx context.Context, _ *dataprivac
 	}
 
 	userID := sessionContextData.Requester.UserID
-	logger := s.logger.WithValue(keys.UserIDKey, userID)
-	tracing.AttachToSpan(span, keys.UserIDKey, userID)
+	logger := s.logger.WithValue(platformkeys.UserIDKey, userID)
+	tracing.AttachToSpan(span, platformkeys.UserIDKey, userID)
 
 	// Generate a unique report ID
 	reportID := identifiers.New()
@@ -112,8 +113,8 @@ func (s *serviceImpl) DestroyAllUserData(ctx context.Context, _ *dataprivacysvc.
 	}
 
 	userID := sessionContextData.Requester.UserID
-	logger := s.logger.WithValue(keys.UserIDKey, userID)
-	tracing.AttachToSpan(span, keys.UserIDKey, userID)
+	logger := s.logger.WithValue(platformkeys.UserIDKey, userID)
+	tracing.AttachToSpan(span, platformkeys.UserIDKey, userID)
 
 	logger.Info("destroying all user data")
 

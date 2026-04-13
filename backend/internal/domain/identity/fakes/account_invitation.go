@@ -3,7 +3,7 @@ package fakes
 import (
 	types "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/identity"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/identity/converters"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/filtering"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database/filtering"
 
 	fake "github.com/brianvoe/gofakeit/v7"
 )

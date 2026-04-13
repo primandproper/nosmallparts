@@ -11,12 +11,14 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/authorization"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/audit"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/identity"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/filtering"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/identifiers"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/keys"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database"
+	platformerrors "github.com/verygoodsoftwarenotvirus/platform/v4/errors"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database/filtering"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/identifiers"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability"
+	platformkeys "github.com/verygoodsoftwarenotvirus/platform/v4/observability/keys"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/observability/keys"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/identity/generated"
 
 	"github.com/jackc/pgx/v5/pgconn"
@@ -41,10 +43,10 @@ func (r *repository) GetUser(ctx context.Context, userID string) (*identity.User
 	logger := r.logger.Clone()
 
 	if userID == "" {
-		return nil, database.ErrInvalidIDProvided
+		return nil, platformerrors.ErrInvalidIDProvided
 	}
-	logger = logger.WithValue(keys.UserIDKey, userID)
-	tracing.AttachToSpan(span, keys.UserIDKey, userID)
+	logger = logger.WithValue(platformkeys.UserIDKey, userID)
+	tracing.AttachToSpan(span, platformkeys.UserIDKey, userID)
 
 	result, err := r.generatedQuerier.GetUserByID(ctx, r.readDB, userID)
 	if err != nil {
@@ -84,9 +86,9 @@ func (r *repository) GetUserWithUnverifiedTwoFactorSecret(ctx context.Context, u
 	defer span.End()
 
 	if userID == "" {
-		return nil, database.ErrInvalidIDProvided
+		return nil, platformerrors.ErrInvalidIDProvided
 	}
-	tracing.AttachToSpan(span, keys.UserIDKey, userID)
+	tracing.AttachToSpan(span, platformkeys.UserIDKey, userID)
 
 	result, err := r.generatedQuerier.GetUserWithUnverifiedTwoFactor(ctx, r.readDB, userID)
 	if err != nil {
@@ -126,9 +128,9 @@ func (r *repository) GetUserByUsername(ctx context.Context, username string) (*i
 	defer span.End()
 
 	if username == "" {
-		return nil, database.ErrEmptyInputProvided
+		return nil, platformerrors.ErrEmptyInputProvided
 	}
-	tracing.AttachToSpan(span, keys.UsernameKey, username)
+	tracing.AttachToSpan(span, platformkeys.UsernameKey, username)
 
 	result, err := r.generatedQuerier.GetUserByUsername(ctx, r.readDB, username)
 	if err != nil {
@@ -168,9 +170,9 @@ func (r *repository) GetAdminUserByUsername(ctx context.Context, username string
 	defer span.End()
 
 	if username == "" {
-		return nil, database.ErrEmptyInputProvided
+		return nil, platformerrors.ErrEmptyInputProvided
 	}
-	tracing.AttachToSpan(span, keys.UsernameKey, username)
+	tracing.AttachToSpan(span, platformkeys.UsernameKey, username)
 
 	result, err := r.generatedQuerier.GetAdminUserByUsername(ctx, r.readDB, username)
 	if err != nil {
@@ -213,7 +215,7 @@ func (r *repository) GetUserByEmail(ctx context.Context, email string) (*identit
 	defer span.End()
 
 	if email == "" {
-		return nil, database.ErrEmptyInputProvided
+		return nil, platformerrors.ErrEmptyInputProvided
 	}
 	tracing.AttachToSpan(span, keys.UserEmailAddressKey, email)
 
@@ -257,10 +259,10 @@ func (r *repository) SearchForUsersByUsername(ctx context.Context, usernameQuery
 	logger := r.logger.WithSpan(span)
 
 	if usernameQuery == "" {
-		return nil, database.ErrEmptyInputProvided
+		return nil, platformerrors.ErrEmptyInputProvided
 	}
-	tracing.AttachToSpan(span, keys.SearchQueryKey, usernameQuery)
-	logger = logger.WithValue(keys.UsernameKey, usernameQuery)
+	tracing.AttachToSpan(span, platformkeys.SearchQueryKey, usernameQuery)
+	logger = logger.WithValue(platformkeys.UsernameKey, usernameQuery)
 
 	if filter == nil {
 		filter = filtering.DefaultQueryFilter()
@@ -407,7 +409,7 @@ func (r *repository) GetUsersForAccount(ctx context.Context, accountID string, f
 	logger := r.logger.Clone()
 
 	if accountID == "" {
-		return nil, database.ErrInvalidIDProvided
+		return nil, platformerrors.ErrInvalidIDProvided
 	}
 	logger = logger.WithValue(keys.AccountIDKey, accountID)
 	tracing.AttachToSpan(span, keys.AccountIDKey, accountID)
@@ -533,10 +535,10 @@ func (r *repository) MarkUserAsIndexed(ctx context.Context, userID string) error
 	logger := r.logger.Clone()
 
 	if userID == "" {
-		return database.ErrInvalidIDProvided
+		return platformerrors.ErrInvalidIDProvided
 	}
-	logger = logger.WithValue(keys.UserIDKey, userID)
-	tracing.AttachToSpan(span, keys.UserIDKey, userID)
+	logger = logger.WithValue(platformkeys.UserIDKey, userID)
+	tracing.AttachToSpan(span, platformkeys.UserIDKey, userID)
 
 	if _, err := r.generatedQuerier.UpdateUserLastIndexedAt(ctx, r.writeDB, userID); err != nil {
 		return observability.PrepareAndLogError(err, logger, span, "marking user as indexed")
@@ -553,12 +555,12 @@ func (r *repository) CreateUser(ctx context.Context, input *identity.UserDatabas
 	defer span.End()
 
 	if input == nil {
-		return nil, database.ErrNilInputProvided
+		return nil, platformerrors.ErrNilInputProvided
 	}
 
-	tracing.AttachToSpan(span, keys.UsernameKey, input.Username)
+	tracing.AttachToSpan(span, platformkeys.UsernameKey, input.Username)
 	logger := r.logger.WithValues(map[string]any{
-		keys.UsernameKey:               input.Username,
+		platformkeys.UsernameKey:               input.Username,
 		keys.UserEmailAddressKey:       input.EmailAddress,
 		keys.AccountInvitationTokenKey: input.InvitationToken,
 		"destination_account":          input.DestinationAccountID,
@@ -620,8 +622,8 @@ func (r *repository) CreateUser(ctx context.Context, input *identity.UserDatabas
 		ServiceRole:     authorization.ServiceUserRole.String(),
 		CreatedAt:       r.CurrentTime(),
 	}
-	logger = logger.WithValue(keys.UserIDKey, user.ID)
-	tracing.AttachToSpan(span, keys.UserIDKey, user.ID)
+	logger = logger.WithValue(platformkeys.UserIDKey, user.ID)
+	tracing.AttachToSpan(span, platformkeys.UserIDKey, user.ID)
 
 	if _, err = r.auditLogEntryRepo.CreateAuditLogEntry(ctx, tx, &audit.AuditLogEntryDatabaseCreationInput{
 		ID:            identifiers.New(),
@@ -775,16 +777,16 @@ func (r *repository) UpdateUserUsername(ctx context.Context, userID, newUsername
 	logger := r.logger.Clone()
 
 	if userID == "" {
-		return database.ErrInvalidIDProvided
+		return platformerrors.ErrInvalidIDProvided
 	}
-	logger = logger.WithValue(keys.UserIDKey, userID)
-	tracing.AttachToSpan(span, keys.UserIDKey, userID)
+	logger = logger.WithValue(platformkeys.UserIDKey, userID)
+	tracing.AttachToSpan(span, platformkeys.UserIDKey, userID)
 
 	if newUsername == "" {
-		return database.ErrEmptyInputProvided
+		return platformerrors.ErrEmptyInputProvided
 	}
-	logger = logger.WithValue(keys.UsernameKey, newUsername)
-	tracing.AttachToSpan(span, keys.UsernameKey, newUsername)
+	logger = logger.WithValue(platformkeys.UsernameKey, newUsername)
+	tracing.AttachToSpan(span, platformkeys.UsernameKey, newUsername)
 
 	tx, err := r.writeDB.BeginTx(ctx, nil)
 	if err != nil {
@@ -836,13 +838,13 @@ func (r *repository) UpdateUserEmailAddress(ctx context.Context, userID, newEmai
 	defer span.End()
 
 	if userID == "" {
-		return database.ErrInvalidIDProvided
+		return platformerrors.ErrInvalidIDProvided
 	}
-	logger := r.logger.WithValue(keys.UserEmailAddressKey, newEmailAddress).WithValue(keys.UserIDKey, userID)
-	tracing.AttachToSpan(span, keys.UserIDKey, userID)
+	logger := r.logger.WithValue(keys.UserEmailAddressKey, newEmailAddress).WithValue(platformkeys.UserIDKey, userID)
+	tracing.AttachToSpan(span, platformkeys.UserIDKey, userID)
 
 	if newEmailAddress == "" {
-		return database.ErrEmptyInputProvided
+		return platformerrors.ErrEmptyInputProvided
 	}
 	tracing.AttachToSpan(span, keys.UserEmailAddressKey, newEmailAddress)
 
@@ -896,14 +898,14 @@ func (r *repository) UpdateUserDetails(ctx context.Context, userID string, input
 	defer span.End()
 
 	if input == nil {
-		return database.ErrEmptyInputProvided
+		return platformerrors.ErrEmptyInputProvided
 	}
 
 	if userID == "" {
-		return database.ErrInvalidIDProvided
+		return platformerrors.ErrInvalidIDProvided
 	}
-	tracing.AttachToSpan(span, keys.UserIDKey, userID)
-	logger := r.logger.WithValue(keys.UserIDKey, userID)
+	tracing.AttachToSpan(span, platformkeys.UserIDKey, userID)
+	logger := r.logger.WithValue(platformkeys.UserIDKey, userID)
 
 	tx, err := r.writeDB.BeginTx(ctx, nil)
 	if err != nil {
@@ -965,14 +967,14 @@ func (r *repository) UpdateUserAvatar(ctx context.Context, userID, newAvatarSrc 
 	defer span.End()
 
 	if newAvatarSrc == "" {
-		return database.ErrEmptyInputProvided
+		return platformerrors.ErrEmptyInputProvided
 	}
 
 	if userID == "" {
-		return database.ErrInvalidIDProvided
+		return platformerrors.ErrInvalidIDProvided
 	}
-	tracing.AttachToSpan(span, keys.UserIDKey, userID)
-	logger := r.logger.WithValue(keys.UserIDKey, userID)
+	tracing.AttachToSpan(span, platformkeys.UserIDKey, userID)
+	logger := r.logger.WithValue(platformkeys.UserIDKey, userID)
 
 	tx, err := r.writeDB.BeginTx(ctx, nil)
 	if err != nil {
@@ -1016,14 +1018,14 @@ func (r *repository) UpdateUserPassword(ctx context.Context, userID, newHash str
 	defer span.End()
 
 	if newHash == "" {
-		return database.ErrEmptyInputProvided
+		return platformerrors.ErrEmptyInputProvided
 	}
 
 	if userID == "" {
-		return database.ErrInvalidIDProvided
+		return platformerrors.ErrInvalidIDProvided
 	}
-	tracing.AttachToSpan(span, keys.UserIDKey, userID)
-	logger := r.logger.WithValue(keys.UserIDKey, userID)
+	tracing.AttachToSpan(span, platformkeys.UserIDKey, userID)
+	logger := r.logger.WithValue(platformkeys.UserIDKey, userID)
 
 	tx, err := r.writeDB.BeginTx(ctx, nil)
 	if err != nil {
@@ -1067,14 +1069,14 @@ func (r *repository) UpdateUserTwoFactorSecret(ctx context.Context, userID, newS
 	defer span.End()
 
 	if newSecret == "" {
-		return database.ErrEmptyInputProvided
+		return platformerrors.ErrEmptyInputProvided
 	}
 
 	if userID == "" {
-		return database.ErrInvalidIDProvided
+		return platformerrors.ErrInvalidIDProvided
 	}
-	tracing.AttachToSpan(span, keys.UserIDKey, userID)
-	logger := r.logger.WithValue(keys.UserIDKey, userID)
+	tracing.AttachToSpan(span, platformkeys.UserIDKey, userID)
+	logger := r.logger.WithValue(platformkeys.UserIDKey, userID)
 
 	tx, err := r.writeDB.BeginTx(ctx, nil)
 	if err != nil {
@@ -1118,10 +1120,10 @@ func (r *repository) MarkUserTwoFactorSecretAsVerified(ctx context.Context, user
 	defer span.End()
 
 	if userID == "" {
-		return database.ErrInvalidIDProvided
+		return platformerrors.ErrInvalidIDProvided
 	}
-	tracing.AttachToSpan(span, keys.UserIDKey, userID)
-	logger := r.logger.WithValue(keys.UserIDKey, userID)
+	tracing.AttachToSpan(span, platformkeys.UserIDKey, userID)
+	logger := r.logger.WithValue(platformkeys.UserIDKey, userID)
 
 	tx, err := r.writeDB.BeginTx(ctx, nil)
 	if err != nil {
@@ -1164,14 +1166,14 @@ func (r *repository) MarkUserTwoFactorSecretAsUnverified(ctx context.Context, us
 	defer span.End()
 
 	if newSecret == "" {
-		return database.ErrEmptyInputProvided
+		return platformerrors.ErrEmptyInputProvided
 	}
 
 	if userID == "" {
-		return database.ErrInvalidIDProvided
+		return platformerrors.ErrInvalidIDProvided
 	}
-	tracing.AttachToSpan(span, keys.UserIDKey, userID)
-	logger := r.logger.WithValue(keys.UserIDKey, userID)
+	tracing.AttachToSpan(span, platformkeys.UserIDKey, userID)
+	logger := r.logger.WithValue(platformkeys.UserIDKey, userID)
 
 	tx, err := r.writeDB.BeginTx(ctx, nil)
 	if err != nil {
@@ -1228,10 +1230,10 @@ func (r *repository) ArchiveUser(ctx context.Context, userID string) error {
 	defer span.End()
 
 	if userID == "" {
-		return database.ErrInvalidIDProvided
+		return platformerrors.ErrInvalidIDProvided
 	}
-	tracing.AttachToSpan(span, keys.UserIDKey, userID)
-	logger := r.logger.WithValue(keys.UserIDKey, userID)
+	tracing.AttachToSpan(span, platformkeys.UserIDKey, userID)
+	logger := r.logger.WithValue(platformkeys.UserIDKey, userID)
 
 	// begin archive user transaction
 	tx, err := r.writeDB.BeginTx(ctx, nil)
@@ -1277,9 +1279,9 @@ func (r *repository) GetEmailAddressVerificationTokenForUser(ctx context.Context
 	defer span.End()
 
 	if userID == "" {
-		return "", database.ErrInvalidIDProvided
+		return "", platformerrors.ErrInvalidIDProvided
 	}
-	tracing.AttachToSpan(span, keys.UserIDKey, userID)
+	tracing.AttachToSpan(span, platformkeys.UserIDKey, userID)
 
 	result, err := r.generatedQuerier.GetEmailVerificationTokenByUserID(ctx, r.readDB, userID)
 	if err != nil {
@@ -1294,7 +1296,7 @@ func (r *repository) GetUserByEmailAddressVerificationToken(ctx context.Context,
 	defer span.End()
 
 	if token == "" {
-		return nil, database.ErrEmptyInputProvided
+		return nil, platformerrors.ErrEmptyInputProvided
 	}
 
 	result, err := r.generatedQuerier.GetUserByEmailAddressVerificationToken(ctx, r.readDB, database.NullStringFromString(token))
@@ -1336,12 +1338,12 @@ func (r *repository) MarkUserEmailAddressAsVerified(ctx context.Context, userID,
 	logger := r.logger.Clone()
 
 	if userID == "" {
-		return database.ErrInvalidIDProvided
+		return platformerrors.ErrInvalidIDProvided
 	}
-	logger = logger.WithValue(keys.UserIDKey, userID)
+	logger = logger.WithValue(platformkeys.UserIDKey, userID)
 
 	if token == "" {
-		return database.ErrEmptyInputProvided
+		return platformerrors.ErrEmptyInputProvided
 	}
 
 	tx, err := r.writeDB.BeginTx(ctx, nil)
@@ -1401,9 +1403,9 @@ func (r *repository) MarkUserEmailAddressAsUnverified(ctx context.Context, userI
 	logger := r.logger.Clone()
 
 	if userID == "" {
-		return database.ErrInvalidIDProvided
+		return platformerrors.ErrInvalidIDProvided
 	}
-	logger = logger.WithValue(keys.UserIDKey, userID)
+	logger = logger.WithValue(platformkeys.UserIDKey, userID)
 
 	tx, err := r.writeDB.BeginTx(ctx, nil)
 	if err != nil {
@@ -1458,11 +1460,11 @@ func (r *repository) UpdateUserAccountStatus(ctx context.Context, userID string,
 	defer span.End()
 
 	if userID == "" {
-		return database.ErrInvalidIDProvided
+		return platformerrors.ErrInvalidIDProvided
 	}
 
-	logger := r.logger.WithValue(keys.UserIDKey, userID)
-	tracing.AttachToSpan(span, keys.UserIDKey, userID)
+	logger := r.logger.WithValue(platformkeys.UserIDKey, userID)
+	tracing.AttachToSpan(span, platformkeys.UserIDKey, userID)
 
 	rowsChanged, err := r.generatedQuerier.SetUserAccountStatus(ctx, r.writeDB, &generated.SetUserAccountStatusParams{
 		UserAccountStatus:            input.NewStatus,

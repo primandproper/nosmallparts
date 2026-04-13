@@ -13,10 +13,11 @@ import (
 	"time"
 
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/webhooks"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/encoding"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/keys"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/httptracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/encoding"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/keys"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
 )
 
 func (a *AsyncDataChangeMessageHandler) WebhookExecutionRequestsEventHandler(ctx context.Context, rawMsg []byte) error {
@@ -93,7 +94,7 @@ func (a *AsyncDataChangeMessageHandler) handleWebhookExecutionRequest(
 	digest.Write(payloadBody)
 	req.Header.Set("X-Dinner-Done-Better-Signature", hex.EncodeToString(digest.Sum(nil)))
 
-	res, err := tracing.BuildTracedHTTPClient().Do(req)
+	res, err := httptracing.BuildTracedHTTPClient().Do(req)
 	if err != nil {
 		observability.AcknowledgeError(err, logger, span, "executing webhook request")
 		return nil

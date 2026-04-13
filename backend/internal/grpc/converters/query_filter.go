@@ -2,8 +2,8 @@ package grpcconverters
 
 import (
 	grpcfiltering "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/filtering"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/filtering"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/pointer"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database/filtering"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/pointer"
 )
 
 func ConvertGRPCQueryFilterToQueryFilter(qf *grpcfiltering.QueryFilter) *filtering.QueryFilter {
@@ -15,7 +15,6 @@ func ConvertGRPCQueryFilterToQueryFilter(qf *grpcfiltering.QueryFilter) *filteri
 		MaxResponseSize: pointer.To[uint8](50),
 		IncludeArchived: qf.IncludeArchived,
 		Cursor:          qf.Cursor,
-		SearchQuery:     qf.SearchQuery,
 		SortBy:          qf.SortBy,
 		CreatedAfter:    ConvertPBTimestampToTimePointer(qf.CreatedAfter),
 		CreatedBefore:   ConvertPBTimestampToTimePointer(qf.CreatedBefore),
@@ -48,7 +47,6 @@ func ConvertQueryFilterToGRPCQueryFilter(qf *filtering.QueryFilter, resultPagina
 	f := &grpcfiltering.QueryFilter{
 		IncludeArchived: qf.IncludeArchived,
 		Cursor:          cursor,
-		SearchQuery:     qf.SearchQuery,
 		SortBy:          qf.SortBy,
 		CreatedAfter:    ConvertTimePointerToPBTimestamp(qf.CreatedAfter),
 		CreatedBefore:   ConvertTimePointerToPBTimestamp(qf.CreatedBefore),

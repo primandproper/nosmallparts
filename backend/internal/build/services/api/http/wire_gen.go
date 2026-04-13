@@ -11,18 +11,18 @@ import (
 
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/authentication"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/config"
-	analyticscfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/analytics/config"
-	databasecfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/config"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/encoding"
-	featureflagscfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/featureflags/config"
-	msgconfig "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/messagequeue/config"
-	loggingcfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging/config"
-	metricscfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/metrics/config"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
-	tracingcfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing/config"
-	pusherpkg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/pusher"
-	routingcfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/routing/config"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/server/http"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/httptracing"
+	analyticscfg "github.com/verygoodsoftwarenotvirus/platform/v4/analytics/config"
+	databasecfg "github.com/verygoodsoftwarenotvirus/platform/v4/database/config"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/encoding"
+	featureflagscfg "github.com/verygoodsoftwarenotvirus/platform/v4/featureflags/config"
+	msgconfig "github.com/verygoodsoftwarenotvirus/platform/v4/messagequeue/config"
+	loggingcfg "github.com/verygoodsoftwarenotvirus/platform/v4/observability/logging/config"
+	metricscfg "github.com/verygoodsoftwarenotvirus/platform/v4/observability/metrics/config"
+	tracingcfg "github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing/config"
+	pusherpkg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/pusher"
+	routingcfg "github.com/verygoodsoftwarenotvirus/platform/v4/routing/config"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/server/http"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/auditlogentries"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/identity"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/migrations"
@@ -61,7 +61,7 @@ func Build(ctx context.Context, cfg *config.APIServiceConfig) (http.Server, erro
 	authenticator := authentication.ProvideArgon2Authenticator(logger, tracerProvider)
 	databasecfgConfig := &cfg.Database
 	migrator := migrations.NewMigrator(logger)
-	client, err := databasecfg.ProvideDatabase(ctx, logger, tracerProvider, databasecfgConfig, migrator)
+	client, err := databasecfg.ProvideDatabase(ctx, logger, tracerProvider, databasecfgConfig, migrator, provider)
 	if err != nil {
 		return nil, err
 	}
@@ -77,13 +77,13 @@ func Build(ctx context.Context, cfg *config.APIServiceConfig) (http.Server, erro
 		return nil, err
 	}
 	featureflagscfgConfig := &cfg.FeatureFlags
-	httpClient := tracing.BuildTracedHTTPClient()
-	featureFlagManager, err := featureflagscfg.ProvideFeatureFlagManager(featureflagscfgConfig, logger, tracerProvider, provider, httpClient)
+	httpClient := httptracing.BuildTracedHTTPClient()
+	featureFlagManager, err := featureflagscfg.ProvideFeatureFlagManager(ctx, featureflagscfgConfig, logger, tracerProvider, provider, httpClient)
 	if err != nil {
 		return nil, err
 	}
 	analyticscfgConfig := &cfg.Analytics
-	eventReporter, err := analyticscfg.ProvideEventReporter(analyticscfgConfig, logger, tracerProvider, provider)
+	eventReporter, err := analyticscfg.ProvideEventReporter(ctx, analyticscfgConfig, logger, tracerProvider, provider)
 	if err != nil {
 		return nil, err
 	}
@@ -112,7 +112,7 @@ func Build(ctx context.Context, cfg *config.APIServiceConfig) (http.Server, erro
 	if err != nil {
 		return nil, err
 	}
-	server, err := http.ProvideHTTPServer(httpConfig, logger, router, tracerProvider)
+	server, err := http.ProvideHTTPServer(httpConfig, logger, router, tracerProvider, "")
 	if err != nil {
 		return nil, err
 	}

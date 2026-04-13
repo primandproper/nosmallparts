@@ -12,7 +12,7 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/uploadedmedia"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/waitlists"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/webhooks"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/filtering"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database/filtering"
 )
 
 // UserDataDisclosureStatus represents the status of a user data disclosure request.

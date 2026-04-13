@@ -8,8 +8,9 @@ import (
 	grpcconverters "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/converters"
 	playscriptssvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/play_scripts"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/types"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/keys"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability"
+	platformkeys "github.com/verygoodsoftwarenotvirus/platform/v4/observability/keys"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/observability/keys"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/playscripts/grpc/converters"
 
 	"google.golang.org/grpc/codes"
@@ -25,7 +26,7 @@ func (s *serviceImpl) CreatePlayScript(ctx context.Context, request *playscripts
 	if err != nil {
 		return nil, observability.PrepareAndLogGRPCStatus(err, logger, span, codes.Unauthenticated, "failed to fetch session context data")
 	}
-	logger = logger.WithValue(keys.AccountIDKey, sessionContextData.ActiveAccountID).WithValue(keys.UserIDKey, sessionContextData.Requester.UserID)
+	logger = logger.WithValue(keys.AccountIDKey, sessionContextData.ActiveAccountID).WithValue(platformkeys.UserIDKey, sessionContextData.Requester.UserID)
 
 	playScriptInput, castMemberInputs, lineInputs := converters.ConvertGRPCPlayScriptCreationRequestInputToInputs(request.Input, sessionContextData.Requester.UserID, sessionContextData.GetActiveAccountID())
 	if err = playScriptInput.ValidateWithContext(ctx); err != nil {
@@ -320,7 +321,7 @@ func (s *serviceImpl) RatePlayScript(ctx context.Context, request *playscriptssv
 		return nil, observability.PrepareAndLogGRPCStatus(err, logger, span, codes.Unauthenticated, "failed to fetch session context data")
 	}
 	userID := sessionContextData.Requester.UserID
-	logger = logger.WithValue(keys.UserIDKey, userID)
+	logger = logger.WithValue(platformkeys.UserIDKey, userID)
 
 	rating := int(request.Rating)
 	if rating < 1 || rating > 5 {

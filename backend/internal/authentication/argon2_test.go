@@ -5,8 +5,8 @@ import (
 	"time"
 
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/authentication"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/logging"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
 
 	"github.com/pquerna/otp/totp"
 	"github.com/stretchr/testify/assert"
@@ -22,7 +22,7 @@ const (
 func TestArgon2_HashPassword(T *testing.T) {
 	T.Parallel()
 
-	x := authentication.ProvideArgon2Authenticator(logging.NewNoopLogger(), tracing.NewNoopTracerProvider())
+	x := authentication.ProvideArgon2Authenticator(loggingnoop.NewLogger(), tracingnoop.NewTracerProvider())
 
 	T.Run("standard", func(t *testing.T) {
 		t.Parallel()
@@ -38,7 +38,7 @@ func TestArgon2_HashPassword(T *testing.T) {
 func TestArgon2_ValidateLogin(T *testing.T) {
 	T.Parallel()
 
-	x := authentication.ProvideArgon2Authenticator(logging.NewNoopLogger(), tracing.NewNoopTracerProvider())
+	x := authentication.ProvideArgon2Authenticator(loggingnoop.NewLogger(), tracingnoop.NewTracerProvider())
 
 	T.Run("standard", func(t *testing.T) {
 		t.Parallel()
@@ -132,6 +132,6 @@ func TestProvideArgon2Authenticator(T *testing.T) {
 	T.Run("standard", func(t *testing.T) {
 		t.Parallel()
 
-		authentication.ProvideArgon2Authenticator(logging.NewNoopLogger(), tracing.NewNoopTracerProvider())
+		authentication.ProvideArgon2Authenticator(loggingnoop.NewLogger(), tracingnoop.NewTracerProvider())
 	})
 }

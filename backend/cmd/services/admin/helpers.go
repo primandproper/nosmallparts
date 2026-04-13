@@ -11,7 +11,7 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/cmd/services/admin/components"
 	grpcconverters "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/converters"
 	grpcfiltering "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/filtering"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/filtering"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database/filtering"
 
 	validation "github.com/go-ozzo/ozzo-validation/v4"
 	"google.golang.org/protobuf/types/known/timestamppb"

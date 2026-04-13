@@ -5,7 +5,7 @@ import (
 
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/authentication/sessions"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/authorization"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/logging"
 
 	"github.com/stretchr/testify/assert"
 )
@@ -35,7 +35,7 @@ func TestSessionContextData_AttachToLogger(T *testing.T) {
 			Requester: sessions.RequesterInfo{ServicePermissions: authorization.NewServiceRolePermissionChecker(t.Name())},
 		}
 
-		assert.NotNil(t, x.AttachToLogger(logging.NewNoopLogger()))
+		assert.NotNil(t, x.AttachToLogger(loggingnoop.NewLogger()))
 	})
 }
 

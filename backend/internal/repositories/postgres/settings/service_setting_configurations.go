@@ -7,12 +7,14 @@ import (
 
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/audit"
 	types "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/settings"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/filtering"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/identifiers"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/keys"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database"
+	platformerrors "github.com/verygoodsoftwarenotvirus/platform/v4/errors"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database/filtering"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/identifiers"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability"
+	platformkeys "github.com/verygoodsoftwarenotvirus/platform/v4/observability/keys"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/observability/keys"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/settings/generated"
 )
 
@@ -32,7 +34,7 @@ func (q *repository) ServiceSettingConfigurationExists(ctx context.Context, serv
 	logger := q.logger.Clone()
 
 	if serviceSettingConfigurationID == "" {
-		return false, database.ErrInvalidIDProvided
+		return false, platformerrors.ErrInvalidIDProvided
 	}
 	logger = logger.WithValue(keys.ServiceSettingConfigurationIDKey, serviceSettingConfigurationID)
 	tracing.AttachToSpan(span, keys.ServiceSettingConfigurationIDKey, serviceSettingConfigurationID)
@@ -53,7 +55,7 @@ func (q *repository) GetServiceSettingConfiguration(ctx context.Context, service
 	logger := q.logger.Clone()
 
 	if serviceSettingConfigurationID == "" {
-		return nil, database.ErrInvalidIDProvided
+		return nil, platformerrors.ErrInvalidIDProvided
 	}
 	tracing.AttachToSpan(span, keys.ServiceSettingConfigurationIDKey, serviceSettingConfigurationID)
 	logger = logger.WithValue(keys.ServiceSettingConfigurationIDKey, serviceSettingConfigurationID)
@@ -104,13 +106,13 @@ func (q *repository) GetServiceSettingConfigurationForUserByName(ctx context.Con
 	logger := q.logger.Clone()
 
 	if userID == "" {
-		return nil, database.ErrInvalidIDProvided
+		return nil, platformerrors.ErrInvalidIDProvided
 	}
-	tracing.AttachToSpan(span, keys.UserIDKey, userID)
-	logger = logger.WithValue(keys.UserIDKey, userID)
+	tracing.AttachToSpan(span, platformkeys.UserIDKey, userID)
+	logger = logger.WithValue(platformkeys.UserIDKey, userID)
 
 	if settingName == "" {
-		return nil, database.ErrInvalidIDProvided
+		return nil, platformerrors.ErrInvalidIDProvided
 	}
 	logger = logger.WithValue(keys.ServiceSettingNameKey, settingName)
 	tracing.AttachToSpan(span, keys.ServiceSettingNameKey, settingName)
@@ -164,13 +166,13 @@ func (q *repository) GetServiceSettingConfigurationForAccountByName(ctx context.
 	logger := q.logger.Clone()
 
 	if accountID == "" {
-		return nil, database.ErrInvalidIDProvided
+		return nil, platformerrors.ErrInvalidIDProvided
 	}
 	tracing.AttachToSpan(span, keys.AccountIDKey, accountID)
 	logger = logger.WithValue(keys.AccountIDKey, accountID)
 
 	if settingName == "" {
-		return nil, database.ErrInvalidIDProvided
+		return nil, platformerrors.ErrInvalidIDProvided
 	}
 	logger = logger.WithValue(keys.ServiceSettingNameKey, settingName)
 	tracing.AttachToSpan(span, keys.ServiceSettingNameKey, settingName)
@@ -224,10 +226,10 @@ func (q *repository) GetServiceSettingConfigurationsForUser(ctx context.Context,
 	logger := q.logger.Clone()
 
 	if userID == "" {
-		return nil, database.ErrInvalidIDProvided
+		return nil, platformerrors.ErrInvalidIDProvided
 	}
-	tracing.AttachToSpan(span, keys.UserIDKey, userID)
-	logger = logger.WithValue(keys.UserIDKey, userID)
+	tracing.AttachToSpan(span, platformkeys.UserIDKey, userID)
+	logger = logger.WithValue(platformkeys.UserIDKey, userID)
 
 	if filter == nil {
 		filter = filtering.DefaultQueryFilter()
@@ -310,7 +312,7 @@ func (q *repository) GetServiceSettingConfigurationsForAccount(ctx context.Conte
 	logger := q.logger.Clone()
 
 	if accountID == "" {
-		return nil, database.ErrInvalidIDProvided
+		return nil, platformerrors.ErrInvalidIDProvided
 	}
 	tracing.AttachToSpan(span, keys.AccountIDKey, accountID)
 	logger = logger.WithValue(keys.AccountIDKey, accountID)
@@ -394,7 +396,7 @@ func (q *repository) CreateServiceSettingConfiguration(ctx context.Context, inpu
 	defer span.End()
 
 	if input == nil {
-		return nil, database.ErrNilInputProvided
+		return nil, platformerrors.ErrNilInputProvided
 	}
 	tracing.AttachToSpan(span, keys.ServiceSettingConfigurationIDKey, input.ID)
 	logger := q.logger.WithValue(keys.ServiceSettingConfigurationIDKey, input.ID)
@@ -461,7 +463,7 @@ func (q *repository) UpdateServiceSettingConfiguration(ctx context.Context, upda
 	defer span.End()
 
 	if updated == nil {
-		return database.ErrNilInputProvided
+		return platformerrors.ErrNilInputProvided
 	}
 	logger := q.logger.WithValue(keys.ServiceSettingConfigurationIDKey, updated.ID)
 	tracing.AttachToSpan(span, keys.ServiceSettingConfigurationIDKey, updated.ID)
@@ -513,7 +515,7 @@ func (q *repository) ArchiveServiceSettingConfiguration(ctx context.Context, ser
 	logger := q.logger.Clone()
 
 	if serviceSettingConfigurationID == "" {
-		return database.ErrInvalidIDProvided
+		return platformerrors.ErrInvalidIDProvided
 	}
 	logger = logger.WithValue(keys.ServiceSettingConfigurationIDKey, serviceSettingConfigurationID)
 	tracing.AttachToSpan(span, keys.ServiceSettingConfigurationIDKey, serviceSettingConfigurationID)

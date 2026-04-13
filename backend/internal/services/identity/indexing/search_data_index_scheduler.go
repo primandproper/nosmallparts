@@ -2,7 +2,7 @@ package indexing
 
 import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/identity"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/search/text/indexing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/search/text/indexing"
 )
 
 const (

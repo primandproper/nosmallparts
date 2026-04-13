@@ -5,7 +5,7 @@ import (
 
 	types "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/webhooks"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/webhooks/converters"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/filtering"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database/filtering"
 
 	fake "github.com/brianvoe/gofakeit/v7"
 )

@@ -10,16 +10,16 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/dataprivacy"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/identity"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/webhooks"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/analytics"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/email"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/encoding"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/messagequeue"
-	msgconfig "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/messagequeue/config"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/metrics"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/uploads"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/analytics"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/email"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/encoding"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/messagequeue"
+	msgconfig "github.com/verygoodsoftwarenotvirus/platform/v4/messagequeue/config"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/logging"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/metrics"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/uploads"
 	identityindexing "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/identity/indexing"
 )
 
@@ -120,8 +120,8 @@ func NewAsyncDataChangeMessageHandler(
 	}
 
 	return &AsyncDataChangeMessageHandler{
-		tracer:                               tracing.NewTracer(tracing.EnsureTracerProvider(tracerProvider).Tracer(o11yName)),
-		logger:                               logging.EnsureLogger(logger).WithName(o11yName),
+		tracer:                               tracing.NewNamedTracer(tracerProvider, o11yName),
+		logger:                               logging.NewNamedLogger(logger, o11yName),
 		nonWebhookEventTypes:                 []string{},
 		identityRepo:                         identityRepo,
 		dataPrivacyRepo:                      dataPrivacyRepo,
@@ -199,11 +199,11 @@ func (a *AsyncDataChangeMessageHandler) ConsumeMessages(
 		return observability.PrepareAndLogError(err, a.logger, span, "configuring user data aggregation requests consumer")
 	}
 
-	go dataChangesConsumer.Consume(stopChan, errorsChan)
-	go outboundEmailsConsumer.Consume(stopChan, errorsChan)
-	go searchIndexRequestsConsumer.Consume(stopChan, errorsChan)
-	go webhookExecutionRequestsConsumer.Consume(stopChan, errorsChan)
-	go userDataAggregationConsumer.Consume(stopChan, errorsChan)
+	go dataChangesConsumer.Consume(ctx, stopChan, errorsChan)
+	go outboundEmailsConsumer.Consume(ctx, stopChan, errorsChan)
+	go searchIndexRequestsConsumer.Consume(ctx, stopChan, errorsChan)
+	go webhookExecutionRequestsConsumer.Consume(ctx, stopChan, errorsChan)
+	go userDataAggregationConsumer.Consume(ctx, stopChan, errorsChan)
 
 	go func() {
 		for e := range errorsChan {

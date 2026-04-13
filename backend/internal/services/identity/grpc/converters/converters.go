@@ -4,7 +4,7 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/identity"
 	grpcconverters "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/converters"
 	identitysvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/identity"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/pointer"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/pointer"
 )
 
 func ConvertGRPCUserDetailsUpdateRequestInputToUserDetailsUpdateRequestInput(input *identitysvc.UserDetailsUpdateRequestInput) *identity.UserDetailsUpdateRequestInput {

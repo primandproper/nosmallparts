@@ -7,9 +7,10 @@ import (
 	"time"
 
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/dataprivacy"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/keys"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability"
+	platformkeys "github.com/verygoodsoftwarenotvirus/platform/v4/observability/keys"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/observability/keys"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
 )
 
 // UserDataAggregationEventHandler handles user data aggregation requests for GDPR/CCPA compliance.
@@ -28,9 +29,9 @@ func (a *AsyncDataChangeMessageHandler) UserDataAggregationEventHandler(
 	}
 
 	logger := a.logger.WithValue(keys.UserDataAggregationReportIDKey, userDataCollectionRequest.ReportID).
-		WithValue(keys.UserIDKey, userDataCollectionRequest.UserID)
+		WithValue(platformkeys.UserIDKey, userDataCollectionRequest.UserID)
 	tracing.AttachToSpan(span, keys.UserDataAggregationReportIDKey, userDataCollectionRequest.ReportID)
-	tracing.AttachToSpan(span, keys.UserIDKey, userDataCollectionRequest.UserID)
+	tracing.AttachToSpan(span, platformkeys.UserIDKey, userDataCollectionRequest.UserID)
 	logger.Info("loaded payload, aggregating user data")
 
 	// Fetch the user's complete data collection

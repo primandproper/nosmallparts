@@ -9,8 +9,8 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/auth/managers"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/identity"
 	authsvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/auth"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/logging"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
 )
 
 const (
@@ -39,8 +39,8 @@ func NewAuthService(
 	authenticationManager authentication2.Manager,
 ) authsvc.AuthServiceServer {
 	return &serviceImpl{
-		logger:                logging.EnsureLogger(logger).WithName(o11yName),
-		tracer:                tracing.NewTracer(tracing.EnsureTracerProvider(tracerProvider).Tracer(o11yName)),
+		logger:                logging.NewNamedLogger(logger, o11yName),
+		tracer:                tracing.NewNamedTracer(tracerProvider, o11yName),
 		identityRepository:    identityRepository,
 		authManager:           authManager,
 		authenticationManager: authenticationManager,

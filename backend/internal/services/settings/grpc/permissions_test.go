@@ -5,7 +5,7 @@ import (
 	"testing"
 
 	settingssvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/settings"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/reflection"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/reflection"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

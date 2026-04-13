@@ -9,11 +9,13 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/authorization"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/audit"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/identity"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/identifiers"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/keys"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database"
+	platformerrors "github.com/verygoodsoftwarenotvirus/platform/v4/errors"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/identifiers"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability"
+	platformkeys "github.com/verygoodsoftwarenotvirus/platform/v4/observability/keys"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/observability/keys"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/identity/generated"
 )
 
@@ -31,11 +33,11 @@ func (r *repository) BuildSessionContextDataForUser(ctx context.Context, userID 
 	defer span.End()
 
 	if userID == "" {
-		return nil, database.ErrInvalidIDProvided
+		return nil, platformerrors.ErrInvalidIDProvided
 	}
 
-	logger := r.logger.WithValue(keys.UserIDKey, userID)
-	tracing.AttachToSpan(span, keys.UserIDKey, userID)
+	logger := r.logger.WithValue(platformkeys.UserIDKey, userID)
+	tracing.AttachToSpan(span, platformkeys.UserIDKey, userID)
 
 	results, err := r.generatedQuerier.GetAccountUserMembershipsForUser(ctx, r.readDB, userID)
 	if err != nil {
@@ -82,10 +84,10 @@ func (r *repository) GetDefaultAccountIDForUser(ctx context.Context, userID stri
 	logger := r.logger.Clone()
 
 	if userID == "" {
-		return "", database.ErrInvalidIDProvided
+		return "", platformerrors.ErrInvalidIDProvided
 	}
-	tracing.AttachToSpan(span, keys.UserIDKey, userID)
-	logger = logger.WithValue(keys.UserIDKey, userID)
+	tracing.AttachToSpan(span, platformkeys.UserIDKey, userID)
+	logger = logger.WithValue(platformkeys.UserIDKey, userID)
 
 	id, err := r.generatedQuerier.GetDefaultAccountIDForUser(ctx, r.readDB, userID)
 	if err != nil {
@@ -101,15 +103,15 @@ func (r *repository) markAccountAsUserDefault(ctx context.Context, querier datab
 	defer span.End()
 
 	if userID == "" || accountID == "" {
-		return database.ErrInvalidIDProvided
+		return platformerrors.ErrInvalidIDProvided
 	}
 
 	logger := r.logger.WithValues(map[string]any{
-		keys.UserIDKey:    userID,
+		platformkeys.UserIDKey:    userID,
 		keys.AccountIDKey: accountID,
 	})
 
-	tracing.AttachToSpan(span, keys.UserIDKey, userID)
+	tracing.AttachToSpan(span, platformkeys.UserIDKey, userID)
 	tracing.AttachToSpan(span, keys.AccountIDKey, accountID)
 
 	tx, err := r.writeDB.BeginTx(ctx, nil)
@@ -161,9 +163,9 @@ func (r *repository) UserIsMemberOfAccount(ctx context.Context, userID, accountI
 	defer span.End()
 
 	if userID == "" || accountID == "" {
-		return false, database.ErrInvalidIDProvided
+		return false, platformerrors.ErrInvalidIDProvided
 	}
-	tracing.AttachToSpan(span, keys.UserIDKey, userID)
+	tracing.AttachToSpan(span, platformkeys.UserIDKey, userID)
 	tracing.AttachToSpan(span, keys.AccountIDKey, accountID)
 
 	result, err := r.generatedQuerier.UserIsAccountMember(ctx, r.readDB, &generated.UserIsAccountMemberParams{
@@ -183,20 +185,20 @@ func (r *repository) ModifyUserPermissions(ctx context.Context, accountID, userI
 	defer span.End()
 
 	if accountID == "" || userID == "" {
-		return database.ErrInvalidIDProvided
+		return platformerrors.ErrInvalidIDProvided
 	}
 
 	if input == nil {
-		return database.ErrNilInputProvided
+		return platformerrors.ErrNilInputProvided
 	}
 
 	logger := r.logger.WithValues(map[string]any{
 		keys.AccountIDKey: accountID,
-		keys.UserIDKey:    userID,
+		platformkeys.UserIDKey:    userID,
 		"new_roles":       input.NewRole,
 	})
 
-	tracing.AttachToSpan(span, keys.UserIDKey, userID)
+	tracing.AttachToSpan(span, platformkeys.UserIDKey, userID)
 	tracing.AttachToSpan(span, keys.AccountIDKey, accountID)
 
 	tx, err := r.writeDB.BeginTx(ctx, nil)
@@ -260,11 +262,11 @@ func (r *repository) TransferAccountOwnership(ctx context.Context, accountID str
 	defer span.End()
 
 	if accountID == "" {
-		return database.ErrInvalidIDProvided
+		return platformerrors.ErrInvalidIDProvided
 	}
 
 	if input == nil {
-		return database.ErrNilInputProvided
+		return platformerrors.ErrNilInputProvided
 	}
 
 	logger := r.logger.WithValues(map[string]any{
@@ -273,7 +275,7 @@ func (r *repository) TransferAccountOwnership(ctx context.Context, accountID str
 		"new_owner":       input.NewOwner,
 	})
 
-	tracing.AttachToSpan(span, keys.UserIDKey, input.NewOwner)
+	tracing.AttachToSpan(span, platformkeys.UserIDKey, input.NewOwner)
 	tracing.AttachToSpan(span, keys.AccountIDKey, accountID)
 
 	tx, err := r.writeDB.BeginTx(ctx, nil)
@@ -350,15 +352,15 @@ func (r *repository) addUserToAccount(ctx context.Context, querier database.SQLQ
 	defer span.End()
 
 	if input == nil {
-		return database.ErrNilInputProvided
+		return platformerrors.ErrNilInputProvided
 	}
 
 	logger := r.logger.WithValues(map[string]any{
-		keys.UserIDKey:    input.UserID,
+		platformkeys.UserIDKey:    input.UserID,
 		keys.AccountIDKey: input.AccountID,
 	})
 
-	tracing.AttachToSpan(span, keys.UserIDKey, input.UserID)
+	tracing.AttachToSpan(span, platformkeys.UserIDKey, input.UserID)
 	tracing.AttachToSpan(span, keys.AccountIDKey, input.AccountID)
 
 	// create the membership.
@@ -392,13 +394,13 @@ func (r *repository) removeUserFromAccount(ctx context.Context, querier database
 	defer span.End()
 
 	if userID == "" || accountID == "" {
-		return database.ErrInvalidIDProvided
+		return platformerrors.ErrInvalidIDProvided
 	}
-	tracing.AttachToSpan(span, keys.UserIDKey, userID)
+	tracing.AttachToSpan(span, platformkeys.UserIDKey, userID)
 	tracing.AttachToSpan(span, keys.AccountIDKey, accountID)
 
 	logger := r.logger.WithValues(map[string]any{
-		keys.UserIDKey:    userID,
+		platformkeys.UserIDKey:    userID,
 		keys.AccountIDKey: accountID,
 	})
 
@@ -454,17 +456,17 @@ func (r *repository) RemoveUserFromAccount(ctx context.Context, userID, accountI
 	defer span.End()
 
 	if userID == "" {
-		return database.ErrInvalidIDProvided
+		return platformerrors.ErrInvalidIDProvided
 	}
-	tracing.AttachToSpan(span, keys.UserIDKey, userID)
+	tracing.AttachToSpan(span, platformkeys.UserIDKey, userID)
 
 	if accountID == "" {
-		return database.ErrInvalidIDProvided
+		return platformerrors.ErrInvalidIDProvided
 	}
 	tracing.AttachToSpan(span, keys.AccountIDKey, accountID)
 
 	logger := r.logger.WithValues(map[string]any{
-		keys.UserIDKey:    userID,
+		platformkeys.UserIDKey:    userID,
 		keys.AccountIDKey: accountID,
 	})
 

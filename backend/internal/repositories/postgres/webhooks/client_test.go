@@ -3,11 +3,11 @@ package webhooks
 import (
 	"testing"
 
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/postgres"
-	pgtesting "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/postgres/testing"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database/postgres"
+	pgtesting "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/testing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/logging"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/auditlogentries"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/migrations"
 
@@ -24,14 +24,14 @@ func buildDatabaseClientForTest(t *testing.T) (*repository, *pgcontainers.Postgr
 
 	ctx := t.Context()
 	container, db, config := pgtesting.BuildDatabaseContainerForTest(t)
-	require.NoError(t, migrations.NewMigrator(logging.NewNoopLogger()).Migrate(ctx, db))
+	require.NoError(t, migrations.NewMigrator(loggingnoop.NewLogger()).Migrate(ctx, db))
 
-	pgc, err := postgres.ProvideDatabaseClient(ctx, logging.NewNoopLogger(), tracing.NewNoopTracerProvider(), config)
+	pgc, err := postgres.ProvideDatabaseClient(ctx, loggingnoop.NewLogger(), tracingnoop.NewTracerProvider(), config, nil)
 	require.NotNil(t, pgc)
 	require.NoError(t, err)
 
-	auditLogEntryRepo := auditlogentries.ProvideAuditLogRepository(logging.NewNoopLogger(), tracing.NewNoopTracerProvider(), pgc)
-	c := ProvideWebhooksRepository(logging.NewNoopLogger(), tracing.NewNoopTracerProvider(), auditLogEntryRepo, pgc)
+	auditLogEntryRepo := auditlogentries.ProvideAuditLogRepository(loggingnoop.NewLogger(), tracingnoop.NewTracerProvider(), pgc)
+	c := ProvideWebhooksRepository(loggingnoop.NewLogger(), tracingnoop.NewTracerProvider(), auditLogEntryRepo, pgc)
 	require.NoError(t, err)
 
 	return c.(*repository), container
@@ -40,7 +40,7 @@ func buildDatabaseClientForTest(t *testing.T) (*repository, *pgcontainers.Postgr
 func buildInertClientForTest(t *testing.T) *repository {
 	t.Helper()
 
-	c := ProvideWebhooksRepository(logging.NewNoopLogger(), tracing.NewNoopTracerProvider(), nil, &database.MockClient{})
+	c := ProvideWebhooksRepository(loggingnoop.NewLogger(), tracingnoop.NewTracerProvider(), nil, &database.MockClient{})
 
 	return c.(*repository)
 }

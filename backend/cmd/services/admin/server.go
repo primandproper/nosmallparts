@@ -7,11 +7,11 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/cmd/services/admin/components"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/authentication/cookies"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/config"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/encoding"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/routing"
-	phttp "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/server/http"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/encoding"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/logging"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/routing"
+	phttp "github.com/verygoodsoftwarenotvirus/platform/v4/server/http"
 )
 
 const (
@@ -63,14 +63,14 @@ func NewAdminFrontendServer(
 		return nil, err
 	}
 
-	server, err := phttp.ProvideHTTPServer(cfg.HTTPServer, logger, router, tracerProvider)
+	server, err := phttp.ProvideHTTPServer(cfg.HTTPServer, logger, router, tracerProvider, "admin")
 	if err != nil {
 		return nil, err
 	}
 
 	s := &AdminFrontendServer{
-		tracer:                          tracing.NewTracer(tracing.EnsureTracerProvider(tracerProvider).Tracer(o11yName)),
-		logger:                          logging.EnsureLogger(logger).WithName(o11yName),
+		tracer:                          tracing.NewNamedTracer(tracerProvider, o11yName),
+		logger:                          logging.NewNamedLogger(logger, o11yName),
 		componentRenderer:               components.NewComponentRenderer(),
 		userIDRouteParamFetcher:         rpm.BuildRouteParamStringIDFetcher(userIDURLParamKey),
 		accountIDRouteParamFetcher:      rpm.BuildRouteParamStringIDFetcher(accountIDURLParamKey),

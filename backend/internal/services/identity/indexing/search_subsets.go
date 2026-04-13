@@ -2,7 +2,7 @@ package indexing
 
 import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/identity"
-	textsearch "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/search/text"
+	textsearch "github.com/verygoodsoftwarenotvirus/platform/v4/search/text"
 )
 
 type UserTextSearcher textsearch.Index[UserSearchSubset]

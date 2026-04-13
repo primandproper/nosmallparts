@@ -10,13 +10,13 @@ import (
 	"context"
 
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/config"
-	databasecfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/config"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/postgres"
-	msgconfig "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/messagequeue/config"
-	loggingcfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging/config"
-	metricscfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/metrics/config"
-	tracingcfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing/config"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/search/text/indexing"
+	databasecfg "github.com/verygoodsoftwarenotvirus/platform/v4/database/config"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database/postgres"
+	msgconfig "github.com/verygoodsoftwarenotvirus/platform/v4/messagequeue/config"
+	loggingcfg "github.com/verygoodsoftwarenotvirus/platform/v4/observability/logging/config"
+	metricscfg "github.com/verygoodsoftwarenotvirus/platform/v4/observability/metrics/config"
+	tracingcfg "github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing/config"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/search/text/indexing"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/auditlogentries"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/identity"
 )
@@ -48,14 +48,15 @@ func Build(ctx context.Context, cfg *config.SearchDataIndexSchedulerConfig) (*in
 	}
 	databasecfgConfig := cfg.Database
 	clientConfig := databasecfg.ProvideClientConfig(databasecfgConfig)
-	client, err := postgres.ProvideDatabaseClient(ctx, logger, tracerProvider, clientConfig)
+	client, err := postgres.ProvideDatabaseClient(ctx, logger, tracerProvider, clientConfig, provider)
 	if err != nil {
 		return nil, err
 	}
 	repository := auditlogentries.ProvideAuditLogRepository(logger, tracerProvider, client)
 	identityRepository := identity.ProvideIdentityRepository(logger, tracerProvider, repository, client)
 	v := ProvideIndexFunctions(identityRepository)
-	indexScheduler, err := indexing.NewIndexScheduler(ctx, logger, tracerProvider, provider, publisherProvider, v)
+	queuesConfig := &cfg.Queues
+	indexScheduler, err := indexing.NewIndexScheduler(ctx, logger, tracerProvider, provider, publisherProvider, queuesConfig, v)
 	if err != nil {
 		return nil, err
 	}

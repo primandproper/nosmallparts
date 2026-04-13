@@ -2,7 +2,7 @@ package converters
 
 import (
 	types "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/waitlists"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/identifiers"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/identifiers"
 )
 
 // ConvertWaitlistToWaitlistUpdateRequestInput creates a WaitlistUpdateRequestInput from a Waitlist.

@@ -6,10 +6,10 @@ import (
 	"time"
 
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/authentication/mocks"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/reflection"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/testutils"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/logging"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/reflection"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/testutils"
 
 	"github.com/golang-jwt/jwt/v5"
 	"github.com/stretchr/testify/assert"
@@ -30,7 +30,7 @@ func Test_signer_IssueJWT(T *testing.T) {
 	T.Run("standard", func(t *testing.T) {
 		t.Parallel()
 
-		s, err := NewJWTSigner(logging.NewNoopLogger(), tracing.NewNoopTracerProvider(), t.Name(), []byte(exampleSigningKey))
+		s, err := NewJWTSigner(loggingnoop.NewLogger(), tracingnoop.NewTracerProvider(), t.Name(), []byte(exampleSigningKey))
 		require.NoError(t, err)
 
 		ctx := t.Context()
@@ -54,7 +54,7 @@ func Test_signer_ParseJWT(T *testing.T) {
 	T.Run("standard", func(t *testing.T) {
 		t.Parallel()
 
-		s, err := NewJWTSigner(logging.NewNoopLogger(), tracing.NewNoopTracerProvider(), t.Name(), []byte(exampleSigningKey))
+		s, err := NewJWTSigner(loggingnoop.NewLogger(), tracingnoop.NewTracerProvider(), t.Name(), []byte(exampleSigningKey))
 		require.NoError(t, err)
 
 		ctx := t.Context()
@@ -82,7 +82,7 @@ func Test_signer_ParseJWT(T *testing.T) {
 
 		ctx := t.Context()
 
-		s, err := NewJWTSigner(logging.NewNoopLogger(), tracing.NewNoopTracerProvider(), t.Name(), []byte(exampleSigningKey))
+		s, err := NewJWTSigner(loggingnoop.NewLogger(), tracingnoop.NewTracerProvider(), t.Name(), []byte(exampleSigningKey))
 		require.NoError(t, err)
 
 		actual, err := s.ParseUserIDFromToken(ctx, tokenString)
@@ -93,7 +93,7 @@ func Test_signer_ParseJWT(T *testing.T) {
 	T.Run("with invalid key", func(t *testing.T) {
 		t.Parallel()
 
-		s, err := NewJWTSigner(logging.NewNoopLogger(), tracing.NewNoopTracerProvider(), t.Name(), []byte(exampleSigningKey))
+		s, err := NewJWTSigner(loggingnoop.NewLogger(), tracingnoop.NewTracerProvider(), t.Name(), []byte(exampleSigningKey))
 		require.NoError(t, err)
 
 		s.(*signer).signingKey = nil

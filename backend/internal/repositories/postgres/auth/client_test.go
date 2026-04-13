@@ -3,11 +3,11 @@ package auth
 import (
 	"testing"
 
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/postgres"
-	pgtesting "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/postgres/testing"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database/postgres"
+	pgtesting "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/testing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/logging"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/auditlogentries"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/auth/generated"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/migrations"
@@ -40,7 +40,7 @@ func buildMockSQLTestClient(t *testing.T) (*repository, *sqlmockExpecterWrapper)
 	c := &repository{
 		readDB:           fakeDB,
 		writeDB:          fakeDB,
-		logger:           logging.NewNoopLogger(),
+		logger:           loggingnoop.NewLogger(),
 		generatedQuerier: generated.New(),
 		tracer:           tracing.NewTracerForTest("test"),
 	}
@@ -53,15 +53,15 @@ func buildDatabaseClientForTest(t *testing.T) (*repository, *pgcontainers.Postgr
 
 	ctx := t.Context()
 	container, db, config := pgtesting.BuildDatabaseContainerForTest(t)
-	require.NoError(t, migrations.NewMigrator(logging.NewNoopLogger()).Migrate(ctx, db))
+	require.NoError(t, migrations.NewMigrator(loggingnoop.NewLogger()).Migrate(ctx, db))
 
-	pgc, err := postgres.ProvideDatabaseClient(ctx, logging.NewNoopLogger(), tracing.NewNoopTracerProvider(), config)
+	pgc, err := postgres.ProvideDatabaseClient(ctx, loggingnoop.NewLogger(), tracingnoop.NewTracerProvider(), config, nil)
 	require.NotNil(t, pgc)
 	require.NoError(t, err)
 
-	auditLogRepo := auditlogentries.ProvideAuditLogRepository(logging.NewNoopLogger(), tracing.NewNoopTracerProvider(), pgc)
+	auditLogRepo := auditlogentries.ProvideAuditLogRepository(loggingnoop.NewLogger(), tracingnoop.NewTracerProvider(), pgc)
 
-	c := ProvideAuthRepository(logging.NewNoopLogger(), tracing.NewNoopTracerProvider(), auditLogRepo, pgc)
+	c := ProvideAuthRepository(loggingnoop.NewLogger(), tracingnoop.NewTracerProvider(), auditLogRepo, pgc)
 	require.NoError(t, err)
 
 	return c.(*repository), container
@@ -70,7 +70,7 @@ func buildDatabaseClientForTest(t *testing.T) (*repository, *pgcontainers.Postgr
 func buildInertClientForTest(t *testing.T) *repository {
 	t.Helper()
 
-	c := ProvideAuthRepository(logging.NewNoopLogger(), tracing.NewNoopTracerProvider(), nil, &database.MockClient{})
+	c := ProvideAuthRepository(loggingnoop.NewLogger(), tracingnoop.NewTracerProvider(), nil, &database.MockClient{})
 
 	return c.(*repository)
 }

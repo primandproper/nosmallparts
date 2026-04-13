@@ -5,9 +5,9 @@ import (
 
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/audit"
 	types "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/uploadedmedia"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/logging"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
 	generated "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/uploadedmedia/generated"
 )
 
@@ -37,10 +37,10 @@ func ProvideUploadedMediaRepository(
 		Client:            client,
 		readDB:            client.ReadDB(),
 		writeDB:           client.WriteDB(),
-		tracer:            tracing.NewTracer(tracing.EnsureTracerProvider(tracerProvider).Tracer(o11yName)),
+		tracer:            tracing.NewNamedTracer(tracerProvider, o11yName),
 		generatedQuerier:  generated.New(),
 		auditLogEntryRepo: auditLogEntryRepo,
-		logger:            logging.EnsureLogger(logger).WithName(o11yName),
+		logger:            logging.NewNamedLogger(logger, o11yName),
 	}
 
 	return c

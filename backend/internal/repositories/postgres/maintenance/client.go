@@ -4,9 +4,9 @@ import (
 	"database/sql"
 
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/maintenance"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/logging"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/maintenance/generated"
 )
 
@@ -30,9 +30,9 @@ func ProvideMaintenanceRepository(logger logging.Logger, tracerProvider tracing.
 		Client:           client,
 		readDB:           client.ReadDB(),
 		writeDB:          client.WriteDB(),
-		tracer:           tracing.NewTracer(tracing.EnsureTracerProvider(tracerProvider).Tracer(o11yName)),
+		tracer:           tracing.NewNamedTracer(tracerProvider, o11yName),
 		generatedQuerier: generated.New(),
-		logger:           logging.EnsureLogger(logger).WithName(o11yName),
+		logger:           logging.NewNamedLogger(logger, o11yName),
 	}
 
 	// these are here for future use

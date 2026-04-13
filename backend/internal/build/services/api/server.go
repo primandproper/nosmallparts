@@ -11,8 +11,8 @@ import (
 	grpcapi "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/build/services/api/grpc"
 	httpapi "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/build/services/api/http"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/config"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/server/http"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/logging"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/server/http"
 )
 
 type Server struct {
@@ -52,7 +52,7 @@ func (s *Server) Run() {
 
 	// Run servers
 	go s.httpServer.Serve()
-	go s.grpcServer.Serve()
+	go s.grpcServer.Serve(context.Background())
 
 	// Wait for shutdown signal
 	sig := <-signalChan
@@ -67,5 +67,5 @@ func (s *Server) Run() {
 		s.logger.Error("shutting down HTTP server", err)
 	}
 
-	s.grpcServer.Shutdown()
+	s.grpcServer.Shutdown(cancelCtx)
 }

@@ -7,15 +7,16 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/identity"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/identity/fakes"
 	identitymock "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/identity/mock"
-	msgconfig "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/messagequeue/config"
-	mockpublishers "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/messagequeue/mock"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/keys"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
-	randommock "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/random/mock"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/reflection"
-	mocksearch "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/search/text/mock"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/testutils"
+	msgconfig "github.com/verygoodsoftwarenotvirus/platform/v4/messagequeue/config"
+	mockpublishers "github.com/verygoodsoftwarenotvirus/platform/v4/messagequeue/mock"
+	platformkeys "github.com/verygoodsoftwarenotvirus/platform/v4/observability/keys"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/observability/keys"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/logging"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
+	randommock "github.com/verygoodsoftwarenotvirus/platform/v4/random/mock"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/reflection"
+	mocksearch "github.com/verygoodsoftwarenotvirus/platform/v4/search/text/mock"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/testutils"
 	identityindexing "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/identity/indexing"
 
 	"github.com/stretchr/testify/assert"
@@ -36,8 +37,8 @@ func buildIdentityDataManagerForTest(t *testing.T) *manager {
 
 	m, err := NewIdentityDataManager(
 		ctx,
-		tracing.NewNoopTracerProvider(),
-		logging.NewNoopLogger(),
+		tracingnoop.NewTracerProvider(),
+		loggingnoop.NewLogger(),
 		mpp,
 		&identitymock.RepositoryMock{},
 		&randommock.Generator{},
@@ -227,7 +228,7 @@ func TestIdentityDataManager_ArchiveAccount(T *testing.T) {
 			nil,
 			nil,
 			map[string][]string{
-				identity.AccountArchivedServiceEventType: {keys.AccountIDKey, keys.UserIDKey},
+				identity.AccountArchivedServiceEventType: {keys.AccountIDKey, platformkeys.UserIDKey},
 			},
 		)
 
@@ -260,7 +261,7 @@ func TestIdentityDataManager_ArchiveUserMembership(T *testing.T) {
 			nil,
 			nil,
 			map[string][]string{
-				identity.AccountMemberRemovedServiceEventType: {keys.AccountIDKey, keys.UserIDKey},
+				identity.AccountMemberRemovedServiceEventType: {keys.AccountIDKey, platformkeys.UserIDKey},
 			},
 		)
 
@@ -292,7 +293,7 @@ func TestIdentityDataManager_ArchiveUser(T *testing.T) {
 			nil,
 			nil,
 			map[string][]string{
-				identity.UserArchivedServiceEventType: {keys.UserIDKey},
+				identity.UserArchivedServiceEventType: {platformkeys.UserIDKey},
 			},
 		)
 
@@ -364,7 +365,7 @@ func TestIdentityDataManager_CreateAccountInvitation(T *testing.T) {
 			nil,
 			nil,
 			map[string][]string{
-				identity.AccountInvitationCreatedServiceEventType: {keys.AccountInvitationIDKey, keys.UserIDKey, "destination_account"},
+				identity.AccountInvitationCreatedServiceEventType: {keys.AccountInvitationIDKey, platformkeys.UserIDKey, "destination_account"},
 			},
 		)
 
@@ -408,7 +409,7 @@ func TestIdentityDataManager_CreateUser(T *testing.T) {
 			},
 			nil,
 			map[string][]string{
-				identity.UserSignedUpServiceEventType: {keys.AccountIDKey, keys.UserIDKey, keys.UserEmailVerificationTokenKey},
+				identity.UserSignedUpServiceEventType: {keys.AccountIDKey, platformkeys.UserIDKey, keys.UserEmailVerificationTokenKey},
 			},
 		)
 
@@ -761,7 +762,7 @@ func TestIdentityDataManager_SetDefaultAccount(T *testing.T) {
 			nil,
 			nil,
 			map[string][]string{
-				identity.AccountSetAsDefaultServiceEventType: {keys.AccountIDKey, keys.UserIDKey},
+				identity.AccountSetAsDefaultServiceEventType: {keys.AccountIDKey, platformkeys.UserIDKey},
 			},
 		)
 
@@ -897,7 +898,7 @@ func TestIdentityDataManager_UpdateUserDetails(T *testing.T) {
 			nil,
 			nil,
 			map[string][]string{
-				identity.UserDetailsChangedEventType: {keys.UserIDKey},
+				identity.UserDetailsChangedEventType: {platformkeys.UserIDKey},
 			},
 		)
 
@@ -930,7 +931,7 @@ func TestIdentityDataManager_UpdateUserEmailAddress(T *testing.T) {
 			nil,
 			nil,
 			map[string][]string{
-				identity.EmailAddressChangedEventType: {keys.UserIDKey},
+				identity.EmailAddressChangedEventType: {platformkeys.UserIDKey},
 			},
 		)
 
@@ -963,7 +964,7 @@ func TestIdentityDataManager_UpdateUserUsername(T *testing.T) {
 			nil,
 			nil,
 			map[string][]string{
-				identity.UsernameChangedEventType: {keys.UserIDKey},
+				identity.UsernameChangedEventType: {platformkeys.UserIDKey},
 			},
 		)
 
@@ -996,7 +997,7 @@ func TestIdentityDataManager_UploadUserAvatar(T *testing.T) {
 			nil,
 			nil,
 			map[string][]string{
-				identity.UserAvatarChangedEventType: {keys.UserIDKey},
+				identity.UserAvatarChangedEventType: {platformkeys.UserIDKey},
 			},
 		)
 
@@ -1031,7 +1032,7 @@ func TestIdentityDataManager_AdminUpdateUserStatus(T *testing.T) {
 			nil,
 			nil,
 			map[string][]string{
-				identity.UserStatusChangedServiceEventType: {keys.UserIDKey},
+				identity.UserStatusChangedServiceEventType: {platformkeys.UserIDKey},
 			},
 		)
 

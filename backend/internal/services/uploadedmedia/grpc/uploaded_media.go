@@ -12,9 +12,10 @@ import (
 	grpcconverters "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/converters"
 	uploadedmediasvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/uploaded_media"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/types"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/identifiers"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/keys"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/identifiers"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability"
+	platformkeys "github.com/verygoodsoftwarenotvirus/platform/v4/observability/keys"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/observability/keys"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/uploadedmedia/grpc/converters"
 
 	"google.golang.org/grpc/codes"
@@ -36,7 +37,7 @@ func (s *serviceImpl) Upload(stream uploadedmediasvc.UploadedMediaService_Upload
 	if err != nil {
 		return observability.PrepareAndLogGRPCStatus(err, logger, span, codes.Unauthenticated, "failed to fetch session context data")
 	}
-	logger = logger.WithValue(keys.UserIDKey, sessionContextData.Requester.UserID)
+	logger = logger.WithValue(platformkeys.UserIDKey, sessionContextData.Requester.UserID)
 
 	// Receive first message which should contain metadata
 	firstReq, err := stream.Recv()
@@ -201,7 +202,7 @@ func (s *serviceImpl) CreateUploadedMedia(ctx context.Context, request *uploaded
 	if err != nil {
 		return nil, observability.PrepareAndLogGRPCStatus(err, logger, span, codes.Unauthenticated, "failed to fetch session context data")
 	}
-	logger = logger.WithValue(keys.UserIDKey, sessionContextData.Requester.UserID)
+	logger = logger.WithValue(platformkeys.UserIDKey, sessionContextData.Requester.UserID)
 
 	input := converters.ConvertGRPCUploadedMediaCreationRequestInputToUploadedMediaDatabaseCreationInput(request.Input, sessionContextData.Requester.UserID)
 	if err = input.ValidateWithContext(ctx); err != nil {
@@ -234,7 +235,7 @@ func (s *serviceImpl) GetUploadedMedia(ctx context.Context, request *uploadedmed
 	if err != nil {
 		return nil, observability.PrepareAndLogGRPCStatus(err, logger, span, codes.Unauthenticated, "failed to fetch session context data")
 	}
-	logger = logger.WithValue(keys.UserIDKey, sessionContextData.Requester.UserID)
+	logger = logger.WithValue(platformkeys.UserIDKey, sessionContextData.Requester.UserID)
 
 	uploadedMedia, err := s.uploadedMediaRepository.GetUploadedMedia(ctx, request.UploadedMediaId)
 	if err != nil {
@@ -267,7 +268,7 @@ func (s *serviceImpl) GetUploadedMediaWithIDs(ctx context.Context, request *uplo
 	if err != nil {
 		return nil, observability.PrepareAndLogGRPCStatus(err, logger, span, codes.Unauthenticated, "failed to fetch session context data")
 	}
-	logger = logger.WithValue(keys.UserIDKey, sessionContextData.Requester.UserID)
+	logger = logger.WithValue(platformkeys.UserIDKey, sessionContextData.Requester.UserID)
 
 	if len(request.Ids) == 0 {
 		return nil, observability.PrepareAndLogGRPCStatus(errors.New("no IDs provided"), logger, span, codes.InvalidArgument, "no IDs provided")
@@ -299,7 +300,7 @@ func (s *serviceImpl) GetUploadedMediaForUser(ctx context.Context, request *uplo
 	ctx, span := s.tracer.StartSpan(ctx)
 	defer span.End()
 
-	logger := s.logger.WithSpan(span).WithValue(keys.UserIDKey, request.UserId)
+	logger := s.logger.WithSpan(span).WithValue(platformkeys.UserIDKey, request.UserId)
 
 	sessionContextData, err := s.sessionContextDataFetcher(ctx)
 	if err != nil {
@@ -343,7 +344,7 @@ func (s *serviceImpl) UpdateUploadedMedia(ctx context.Context, request *uploaded
 	if err != nil {
 		return nil, observability.PrepareAndLogGRPCStatus(err, logger, span, codes.Unauthenticated, "failed to fetch session context data")
 	}
-	logger = logger.WithValue(keys.UserIDKey, sessionContextData.Requester.UserID)
+	logger = logger.WithValue(platformkeys.UserIDKey, sessionContextData.Requester.UserID)
 
 	// Fetch the existing uploaded media
 	uploadedMedia, err := s.uploadedMediaRepository.GetUploadedMedia(ctx, request.UploadedMediaId)
@@ -389,7 +390,7 @@ func (s *serviceImpl) ArchiveUploadedMedia(ctx context.Context, request *uploade
 	if err != nil {
 		return nil, observability.PrepareAndLogGRPCStatus(err, logger, span, codes.Unauthenticated, "failed to fetch session context data")
 	}
-	logger = logger.WithValue(keys.UserIDKey, sessionContextData.Requester.UserID)
+	logger = logger.WithValue(platformkeys.UserIDKey, sessionContextData.Requester.UserID)
 
 	// Fetch the existing uploaded media to verify ownership
 	uploadedMedia, err := s.uploadedMediaRepository.GetUploadedMedia(ctx, request.UploadedMediaId)

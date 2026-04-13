@@ -11,17 +11,17 @@ import (
 
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/config"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/functions/datachangemessagehandler"
-	analyticscfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/analytics/config"
-	databasecfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/config"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/postgres"
-	emailcfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/email/config"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/encoding"
-	msgconfig "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/messagequeue/config"
-	loggingcfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging/config"
-	metricscfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/metrics/config"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
-	tracingcfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing/config"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/uploads/objectstorage"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/httptracing"
+	analyticscfg "github.com/verygoodsoftwarenotvirus/platform/v4/analytics/config"
+	databasecfg "github.com/verygoodsoftwarenotvirus/platform/v4/database/config"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database/postgres"
+	emailcfg "github.com/verygoodsoftwarenotvirus/platform/v4/email/config"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/encoding"
+	msgconfig "github.com/verygoodsoftwarenotvirus/platform/v4/messagequeue/config"
+	loggingcfg "github.com/verygoodsoftwarenotvirus/platform/v4/observability/logging/config"
+	metricscfg "github.com/verygoodsoftwarenotvirus/platform/v4/observability/metrics/config"
+	tracingcfg "github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing/config"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/uploads/objectstorage"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/auditlogentries"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/dataprivacy"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/identity"
@@ -49,9 +49,14 @@ func Build(ctx context.Context, cfg *config.AsyncMessageHandlerConfig) (*datacha
 	if err != nil {
 		return nil, err
 	}
+	metricscfgConfig := &observabilityConfig.Metrics
+	provider, err := metricscfg.ProvideMetricsProvider(ctx, logger, metricscfgConfig)
+	if err != nil {
+		return nil, err
+	}
 	databasecfgConfig := cfg.Database
 	clientConfig := databasecfg.ProvideClientConfig(databasecfgConfig)
-	client, err := postgres.ProvideDatabaseClient(ctx, logger, tracerProvider, clientConfig)
+	client, err := postgres.ProvideDatabaseClient(ctx, logger, tracerProvider, clientConfig, provider)
 	if err != nil {
 		return nil, err
 	}
@@ -65,7 +70,7 @@ func Build(ctx context.Context, cfg *config.AsyncMessageHandlerConfig) (*datacha
 	webhooksRepository := webhooks.ProvideWebhooksRepository(logger, tracerProvider, repository, client)
 	dataprivacyRepository := dataprivacy.ProvideDataPrivacyRepository(logger, tracerProvider, repository, identityRepository, issuereportsRepository, notificationsRepository, settingsRepository, uploadedmediaRepository, waitlistsRepository, webhooksRepository, client)
 	msgconfigConfig := &cfg.Events
-	consumerProvider, err := msgconfig.ProvideConsumerProvider(ctx, logger, msgconfigConfig)
+	consumerProvider, err := msgconfig.ProvideConsumerProvider(ctx, logger, tracerProvider, msgconfigConfig)
 	if err != nil {
 		return nil, err
 	}
@@ -74,18 +79,13 @@ func Build(ctx context.Context, cfg *config.AsyncMessageHandlerConfig) (*datacha
 		return nil, err
 	}
 	analyticscfgConfig := &cfg.Analytics
-	metricscfgConfig := &observabilityConfig.Metrics
-	provider, err := metricscfg.ProvideMetricsProvider(ctx, logger, metricscfgConfig)
-	if err != nil {
-		return nil, err
-	}
-	eventReporter, err := analyticscfg.ProvideEventReporter(analyticscfgConfig, logger, tracerProvider, provider)
+	eventReporter, err := analyticscfg.ProvideEventReporter(ctx, analyticscfgConfig, logger, tracerProvider, provider)
 	if err != nil {
 		return nil, err
 	}
 	emailcfgConfig := &cfg.Email
-	httpClient := tracing.BuildTracedHTTPClient()
-	emailer, err := emailcfg.ProvideEmailer(emailcfgConfig, logger, tracerProvider, provider, httpClient)
+	httpClient := httptracing.BuildTracedHTTPClient()
+	emailer, err := emailcfg.ProvideEmailer(ctx, emailcfgConfig, logger, tracerProvider, provider, httpClient)
 	if err != nil {
 		return nil, err
 	}

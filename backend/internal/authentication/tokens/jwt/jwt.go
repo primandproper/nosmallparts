@@ -6,9 +6,9 @@ import (
 	"time"
 
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/authentication/tokens"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/identifiers"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/identifiers"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/logging"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
 
 	"github.com/golang-jwt/jwt/v5"
 )
@@ -31,7 +31,7 @@ func NewJWTSigner(logger logging.Logger, tracerProvider tracing.TracerProvider, 
 		audience:   audience,
 		signingKey: signingKey,
 		logger:     logging.EnsureLogger(logger),
-		tracer:     tracing.NewTracer(tracing.EnsureTracerProvider(tracerProvider).Tracer("jwt_signer")),
+		tracer:     tracing.NewNamedTracer(tracerProvider, "jwt_signer"),
 	}
 
 	return s, nil

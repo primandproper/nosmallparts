@@ -8,12 +8,14 @@ import (
 
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/authorization"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/identity"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/filtering"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/identifiers"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/keys"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database"
+	platformerrors "github.com/verygoodsoftwarenotvirus/platform/v4/errors"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database/filtering"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/identifiers"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability"
+	platformkeys "github.com/verygoodsoftwarenotvirus/platform/v4/observability/keys"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/observability/keys"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/identity/generated"
 )
 
@@ -29,7 +31,7 @@ func (r *repository) AccountInvitationExists(ctx context.Context, accountInvitat
 	logger := r.logger.Clone()
 
 	if accountInvitationID == "" {
-		return false, database.ErrInvalidIDProvided
+		return false, platformerrors.ErrInvalidIDProvided
 	}
 	logger = logger.WithValue(keys.AccountInvitationIDKey, accountInvitationID)
 	tracing.AttachToSpan(span, keys.AccountInvitationIDKey, accountInvitationID)
@@ -50,13 +52,13 @@ func (r *repository) GetAccountInvitationByAccountAndID(ctx context.Context, acc
 	logger := r.logger.Clone()
 
 	if accountID == "" {
-		return nil, database.ErrInvalidIDProvided
+		return nil, platformerrors.ErrInvalidIDProvided
 	}
 	logger = logger.WithValue(keys.AccountIDKey, accountID)
 	tracing.AttachToSpan(span, keys.AccountIDKey, accountID)
 
 	if accountInvitationID == "" {
-		return nil, database.ErrInvalidIDProvided
+		return nil, platformerrors.ErrInvalidIDProvided
 	}
 	logger = logger.WithValue(keys.AccountInvitationIDKey, accountInvitationID)
 	tracing.AttachToSpan(span, keys.AccountInvitationIDKey, accountInvitationID)
@@ -139,11 +141,11 @@ func (r *repository) GetAccountInvitationByTokenAndID(ctx context.Context, token
 	logger := r.logger.Clone()
 
 	if token == "" {
-		return nil, database.ErrInvalidIDProvided
+		return nil, platformerrors.ErrInvalidIDProvided
 	}
 
 	if invitationID == "" {
-		return nil, database.ErrInvalidIDProvided
+		return nil, platformerrors.ErrInvalidIDProvided
 	}
 	logger = logger.WithValue(keys.AccountInvitationIDKey, invitationID)
 	tracing.AttachToSpan(span, keys.AccountInvitationIDKey, invitationID)
@@ -228,7 +230,7 @@ func (r *repository) GetAccountInvitationByToken(ctx context.Context, token stri
 	logger := r.logger.Clone()
 
 	if token == "" {
-		return nil, database.ErrInvalidIDProvided
+		return nil, platformerrors.ErrInvalidIDProvided
 	}
 
 	logger.Debug("fetching account invitation")
@@ -308,13 +310,13 @@ func (r *repository) GetAccountInvitationByEmailAndToken(ctx context.Context, em
 	logger := r.logger.Clone()
 
 	if emailAddress == "" {
-		return nil, database.ErrInvalidIDProvided
+		return nil, platformerrors.ErrInvalidIDProvided
 	}
 	logger = logger.WithValue(keys.UserEmailAddressKey, emailAddress)
 	tracing.AttachToSpan(span, keys.UserEmailAddressKey, emailAddress)
 
 	if token == "" {
-		return nil, database.ErrInvalidIDProvided
+		return nil, platformerrors.ErrInvalidIDProvided
 	}
 	logger = logger.WithValue(keys.AccountInvitationTokenKey, token)
 	tracing.AttachToSpan(span, keys.AccountInvitationTokenKey, token)
@@ -395,7 +397,7 @@ func (r *repository) CreateAccountInvitation(ctx context.Context, input *identit
 	defer span.End()
 
 	if input == nil {
-		return nil, database.ErrNilInputProvided
+		return nil, platformerrors.ErrNilInputProvided
 	}
 
 	logger := r.logger.WithValue(keys.AccountInvitationIDKey, input.ID)
@@ -452,7 +454,7 @@ func (r *repository) GetPendingAccountInvitationsFromUser(ctx context.Context, u
 	if filter == nil {
 		filter = filtering.DefaultQueryFilter()
 	}
-	logger := r.logger.WithValue(keys.UserIDKey, userID)
+	logger := r.logger.WithValue(platformkeys.UserIDKey, userID)
 	filter.AttachToLogger(logger)
 
 	results, err := r.generatedQuerier.GetPendingInvitesFromUser(ctx, r.readDB, &generated.GetPendingInvitesFromUserParams{
@@ -559,7 +561,7 @@ func (r *repository) GetPendingAccountInvitationsForUser(ctx context.Context, us
 	if filter == nil {
 		filter = filtering.DefaultQueryFilter()
 	}
-	logger := r.logger.WithValue(keys.UserIDKey, userID)
+	logger := r.logger.WithValue(platformkeys.UserIDKey, userID)
 	filter.AttachToLogger(logger)
 
 	results, err := r.generatedQuerier.GetPendingInvitesForUser(ctx, r.readDB, &generated.GetPendingInvitesForUserParams{
@@ -665,7 +667,7 @@ func (r *repository) setInvitationStatus(ctx context.Context, querier database.S
 	logger := r.logger.WithValue("new_status", status)
 
 	if accountInvitationID == "" {
-		return database.ErrInvalidIDProvided
+		return platformerrors.ErrInvalidIDProvided
 	}
 	logger = logger.WithValue(keys.AccountInvitationIDKey, accountInvitationID)
 	tracing.AttachToSpan(span, keys.AccountInvitationIDKey, accountInvitationID)
@@ -696,13 +698,13 @@ func (r *repository) AcceptAccountInvitation(ctx context.Context, accountID, acc
 	logger := r.logger.Clone()
 
 	if accountInvitationID == "" {
-		return database.ErrInvalidIDProvided
+		return platformerrors.ErrInvalidIDProvided
 	}
 	logger = logger.WithValue(keys.AccountInvitationIDKey, accountInvitationID)
 	tracing.AttachToSpan(span, keys.AccountInvitationIDKey, accountInvitationID)
 
 	if token == "" {
-		return database.ErrNilInputProvided
+		return platformerrors.ErrNilInputProvided
 	}
 
 	tx, err := r.writeDB.BeginTx(ctx, nil)
@@ -754,15 +756,15 @@ func (r *repository) attachInvitationsToUser(ctx context.Context, querier databa
 	logger := r.logger
 
 	if userEmail == "" {
-		return database.ErrInvalidIDProvided
+		return platformerrors.ErrInvalidIDProvided
 	}
 	logger = logger.WithValue(keys.UserEmailAddressKey, userEmail)
 	tracing.AttachToSpan(span, keys.AccountIDKey, userEmail)
 
 	if userID == "" {
-		return database.ErrInvalidIDProvided
+		return platformerrors.ErrInvalidIDProvided
 	}
-	logger = logger.WithValue(keys.UserIDKey, userID)
+	logger = logger.WithValue(platformkeys.UserIDKey, userID)
 	tracing.AttachToSpan(span, keys.AccountInvitationIDKey, userID)
 
 	rowCount, err := r.generatedQuerier.AttachAccountInvitationsToUserID(ctx, querier, &generated.AttachAccountInvitationsToUserIDParams{
@@ -782,7 +784,7 @@ func (r *repository) acceptInvitationForUser(ctx context.Context, querier databa
 	ctx, span := r.tracer.StartSpan(ctx)
 	defer span.End()
 
-	logger := r.logger.WithValue(keys.UsernameKey, input.Username).WithValue(keys.UserEmailAddressKey, input.EmailAddress)
+	logger := r.logger.WithValue(platformkeys.UsernameKey, input.Username).WithValue(keys.UserEmailAddressKey, input.EmailAddress)
 
 	invitation, tokenCheckErr := r.GetAccountInvitationByToken(ctx, input.InvitationToken)
 	if tokenCheckErr != nil {

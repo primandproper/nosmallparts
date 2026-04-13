@@ -5,7 +5,7 @@ import (
 
 	types "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/waitlists"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/waitlists/converters"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/filtering"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database/filtering"
 )
 
 // BuildFakeWaitlist builds a fake waitlist.

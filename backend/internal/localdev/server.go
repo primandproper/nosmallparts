@@ -18,14 +18,15 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/settings"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/webhooks"
 	authsvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/auth"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database"
-	databasecfg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/config"
-	pgtesting "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/postgres/testing"
-	msgconfig "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/messagequeue/config"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/messagequeue/redis"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/random"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/httptracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database"
+	databasecfg "github.com/verygoodsoftwarenotvirus/platform/v4/database/config"
+	pgtesting "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/testing"
+	msgconfig "github.com/verygoodsoftwarenotvirus/platform/v4/messagequeue/config"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/messagequeue/redis"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/logging"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/random"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/auditlogentries"
 	authrepo "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/auth"
@@ -68,7 +69,7 @@ func CreatePremadeAdminUser(
 	}
 
 	// one-off query because I really don't want to make this functionality concrete
-	if _, err = dbClient.DB().Exec(fmt.Sprintf("UPDATE users SET service_role='service_admin' WHERE id='%s'", user.ID)); err != nil {
+	if _, err = dbClient.WriteDB().Exec(fmt.Sprintf("UPDATE users SET service_role='service_admin' WHERE id='%s'", user.ID)); err != nil {
 		return nil, fmt.Errorf("failed to update user: %w", err)
 	}
 
@@ -97,10 +98,11 @@ func CreateOAuth2ClientForService(ctx context.Context, pgc database.Client, dbCf
 }
 
 func BuildInProcessServer(ctx context.Context, cfg *config.APIServiceConfig) (server *apiserver.Server, databaseClient database.Client, dbCfg *databasecfg.Config, err error) {
-	logger, _, _, err := cfg.Observability.ProvideThreePillars(ctx)
+	pillars, err := cfg.Observability.ProvidePillars(ctx)
 	if err != nil {
 		return nil, nil, nil, fmt.Errorf("setting up logger: %w", err)
 	}
+	logger := pillars.Logger
 
 	redisConfig, _, err := redis.BuildContainerBackedRedisConfig(ctx)
 	if err != nil {
@@ -118,9 +120,9 @@ func BuildInProcessServer(ctx context.Context, cfg *config.APIServiceConfig) (se
 	cfg.Database.WriteConnection = dbCfg.WriteConnection
 	cfg.Database.ReadConnection = dbCfg.ReadConnection
 
-	tracerProvider := tracing.NewNoopTracerProvider()
+	tracerProvider := tracingnoop.NewTracerProvider()
 	migrator := repositories.ProvideMigrator(&cfg.Database, logger)
-	databaseClient, err = databasecfg.ProvideDatabase(ctx, logger, tracerProvider, &cfg.Database, migrator)
+	databaseClient, err = databasecfg.ProvideDatabase(ctx, logger, tracerProvider, &cfg.Database, migrator, nil)
 	if err != nil {
 		return nil, nil, nil, fmt.Errorf("initializing database client: %w", err)
 	}
@@ -208,10 +210,11 @@ func AllInOne(ctx context.Context, cfg *config.APIServiceConfig, initFuncs ...Da
 
 	log.Printf("%sDATABASE CONNECTION URL: %s%s", strings.Repeat("\n", 10), dbCfg.ReadConnection.URI(), strings.Repeat("\n", 10))
 
-	logger, tracerProvider, _, err := cfg.Observability.ProvideThreePillars(ctx)
+	pillars2, err := cfg.Observability.ProvidePillars(ctx)
 	if err != nil {
 		return nil, fmt.Errorf("getting o11y pillars: %w", err)
 	}
+	logger, tracerProvider := pillars2.Logger, pillars2.TracerProvider
 
 	// Run all database initialization functions
 	for i, initFunc := range initFuncs {
@@ -266,7 +269,7 @@ func BuildInsecureOAuthedGRPCClient(
 	req.Header.Set("Authorization", "Bearer "+token)
 	req.Header.Set("Location", "localhost")
 
-	httpClient := tracing.BuildTracedHTTPClient()
+	httpClient := httptracing.BuildTracedHTTPClient()
 	httpClient.CheckRedirect = func(req *http.Request, via []*http.Request) error {
 		return http.ErrUseLastResponse
 	}

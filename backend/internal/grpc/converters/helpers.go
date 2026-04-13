@@ -3,7 +3,7 @@ package grpcconverters
 import (
 	"time"
 
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/pointer"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/pointer"
 
 	"google.golang.org/protobuf/types/known/timestamppb"
 )

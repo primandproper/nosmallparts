@@ -7,11 +7,13 @@ import (
 	"strings"
 
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/audit"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/filtering"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/keys"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database"
+	platformerrors "github.com/verygoodsoftwarenotvirus/platform/v4/errors"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database/filtering"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability"
+	platformkeys "github.com/verygoodsoftwarenotvirus/platform/v4/observability/keys"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/observability/keys"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/auditlogentries/generated"
 )
 
@@ -27,7 +29,7 @@ func (q *repository) GetAuditLogEntry(ctx context.Context, auditLogEntryID strin
 	logger := q.logger.Clone()
 
 	if auditLogEntryID == "" {
-		return nil, database.ErrInvalidIDProvided
+		return nil, platformerrors.ErrInvalidIDProvided
 	}
 	logger = logger.WithValue(keys.AuditLogEntryIDKey, auditLogEntryID)
 	tracing.AttachToSpan(span, keys.AuditLogEntryIDKey, auditLogEntryID)
@@ -62,10 +64,10 @@ func (q *repository) GetAuditLogEntriesForUser(ctx context.Context, userID strin
 	logger := q.logger.Clone()
 
 	if userID == "" {
-		return nil, database.ErrInvalidIDProvided
+		return nil, platformerrors.ErrInvalidIDProvided
 	}
-	logger = logger.WithValue(keys.UserIDKey, userID)
-	tracing.AttachToSpan(span, keys.UserIDKey, userID)
+	logger = logger.WithValue(platformkeys.UserIDKey, userID)
+	tracing.AttachToSpan(span, platformkeys.UserIDKey, userID)
 
 	if filter == nil {
 		filter = filtering.DefaultQueryFilter()
@@ -129,13 +131,13 @@ func (q *repository) GetAuditLogEntriesForUserAndResourceTypes(ctx context.Conte
 	logger := q.logger.Clone()
 
 	if userID == "" {
-		return nil, database.ErrInvalidIDProvided
+		return nil, platformerrors.ErrInvalidIDProvided
 	}
-	logger = logger.WithValue(keys.UserIDKey, userID)
-	tracing.AttachToSpan(span, keys.UserIDKey, userID)
+	logger = logger.WithValue(platformkeys.UserIDKey, userID)
+	tracing.AttachToSpan(span, platformkeys.UserIDKey, userID)
 
 	if len(resourceTypes) == 0 {
-		return nil, database.ErrEmptyInputProvided
+		return nil, platformerrors.ErrEmptyInputProvided
 	}
 	logger = logger.WithValue(keys.AuditLogEntryResourceTypesKey, resourceTypes)
 	tracing.AttachToSpan(span, keys.AuditLogEntryResourceTypesKey, resourceTypes)
@@ -203,7 +205,7 @@ func (q *repository) GetAuditLogEntriesForAccount(ctx context.Context, accountID
 	logger := q.logger.Clone()
 
 	if accountID == "" {
-		return nil, database.ErrInvalidIDProvided
+		return nil, platformerrors.ErrInvalidIDProvided
 	}
 	logger = logger.WithValue(keys.AccountIDKey, accountID)
 	tracing.AttachToSpan(span, keys.AccountIDKey, accountID)
@@ -270,13 +272,13 @@ func (q *repository) GetAuditLogEntriesForAccountAndResourceTypes(ctx context.Co
 	logger := q.logger.Clone()
 
 	if accountID == "" {
-		return nil, database.ErrInvalidIDProvided
+		return nil, platformerrors.ErrInvalidIDProvided
 	}
 	logger = logger.WithValue(keys.AccountIDKey, accountID)
 	tracing.AttachToSpan(span, keys.AccountIDKey, accountID)
 
 	if len(resourceTypes) == 0 {
-		return nil, database.ErrEmptyInputProvided
+		return nil, platformerrors.ErrEmptyInputProvided
 	}
 	logger = logger.WithValue(keys.AuditLogEntryResourceTypesKey, resourceTypes)
 	tracing.AttachToSpan(span, keys.AuditLogEntryResourceTypesKey, resourceTypes)
@@ -344,14 +346,14 @@ func (q *repository) CreateAuditLogEntry(ctx context.Context, querier database.S
 	logger := q.logger.Clone()
 
 	if input == nil {
-		return nil, database.ErrNilInputProvided
+		return nil, platformerrors.ErrNilInputProvided
 	}
 
 	tracing.AttachToSpan(span, keys.AccountIDKey, input.BelongsToAccount)
 	logger = logger.WithValue(keys.AccountIDKey, input.BelongsToAccount)
 
-	tracing.AttachToSpan(span, keys.UserIDKey, input.BelongsToUser)
-	logger = logger.WithValue(keys.UserIDKey, input.BelongsToUser)
+	tracing.AttachToSpan(span, platformkeys.UserIDKey, input.BelongsToUser)
+	logger = logger.WithValue(platformkeys.UserIDKey, input.BelongsToUser)
 
 	marshaledChanges, err := json.Marshal(input.Changes)
 	if err != nil {

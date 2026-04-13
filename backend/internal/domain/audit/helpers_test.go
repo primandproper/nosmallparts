@@ -5,8 +5,8 @@ import (
 	"testing"
 
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/authentication/sessions"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/identifiers"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/identifiers"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/logging"
 
 	"github.com/stretchr/testify/assert"
 )
@@ -34,7 +34,7 @@ func Test_buildDataChangeMessageFromContext(T *testing.T) {
 			AccountID: sessionContextData.ActiveAccountID,
 		}
 
-		actual := BuildDataChangeMessageFromContext(ctx, logging.NewNoopLogger(), expected.EventType, expected.Context)
+		actual := BuildDataChangeMessageFromContext(ctx, loggingnoop.NewLogger(), expected.EventType, expected.Context)
 
 		assert.Equal(t, expected, actual)
 	})

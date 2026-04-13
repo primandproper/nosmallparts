@@ -5,7 +5,7 @@ import (
 	"math"
 	"time"
 
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/identifiers"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/identifiers"
 
 	fake "github.com/brianvoe/gofakeit/v7"
 )

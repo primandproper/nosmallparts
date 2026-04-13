@@ -10,10 +10,11 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/authentication/tokens"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/identity"
 	types "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/oauth"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/keys"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability"
+	platformkeys "github.com/verygoodsoftwarenotvirus/platform/v4/observability/keys"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/observability/keys"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/logging"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
 
 	"github.com/go-oauth2/oauth2/v4"
 	"github.com/go-oauth2/oauth2/v4/errors"
@@ -30,7 +31,7 @@ func ProvideOAuth2ClientManager(
 ) *manage.Manager {
 	manager := manage.NewManager()
 
-	tracer := tracing.NewTracer(tracing.EnsureTracerProvider(tracerProvider).Tracer("oauth2_client_manager"))
+	tracer := tracing.NewNamedTracer(tracerProvider, "oauth2_client_manager")
 
 	// we don't care at the moment
 	manager.SetValidateURIHandler(func(_, _ string) error {
@@ -73,7 +74,7 @@ func ProvideOAuth2ServerImplementation(
 
 	oauth2Server := server.NewServer(oauth2ServerConfig, manager)
 
-	tracer := tracing.NewTracer(tracing.EnsureTracerProvider(tracerProvider).Tracer("oauth2_server_impl"))
+	tracer := tracing.NewNamedTracer(tracerProvider, "oauth2_server_impl")
 
 	oauth2Server.AuthorizeScopeHandler = AuthorizeScopeHandler(logger)
 	oauth2Server.AccessTokenExpHandler = AccessTokenExpHandler(logger)
@@ -128,7 +129,7 @@ func buildClientInfoHandler() func(*http.Request) (string, string, error) {
 
 func buildPasswordAuthorizationHandler(logger logging.Logger, authenticator authentication.Authenticator, dataManager identity.Repository) func(context.Context, string, string, string) (string, error) {
 	return func(ctx context.Context, clientID, username, password string) (userID string, err error) {
-		l := logger.WithValue(keys.OAuth2ClientIDKey, clientID).WithValue(keys.UsernameKey, username)
+		l := logger.WithValue(keys.OAuth2ClientIDKey, clientID).WithValue(platformkeys.UsernameKey, username)
 		l.Info("PasswordAuthorizationHandler invoked")
 
 		user, err := dataManager.GetUserByUsername(ctx, username)

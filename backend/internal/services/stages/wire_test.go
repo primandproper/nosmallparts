@@ -4,9 +4,9 @@ import (
 	"testing"
 
 	playscriptsmock "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/playscripts/mock"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
-	pusherpkg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/pusher"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/logging"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
+	pusherpkg "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/pusher"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
@@ -15,8 +15,8 @@ import (
 func TestProvideHandler(t *testing.T) {
 	t.Parallel()
 
-	logger := logging.NewNoopLogger()
-	tracerProvider := tracing.NewNoopTracerProvider()
+	logger := loggingnoop.NewLogger()
+	tracerProvider := tracingnoop.NewTracerProvider()
 	stagesRepo := &fakeStagesRepo{}
 	playScriptsRepo := &playscriptsmock.Repository{}
 	pusherClient := pusherpkg.NewClient(nil, logger, tracerProvider)

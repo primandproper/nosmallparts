@@ -15,11 +15,12 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/auth"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/identity"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/webhooks"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/email"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/encoding"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/keys"
-	textsearch "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/search/text"
+	localemail "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/email"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/email"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/encoding"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/observability/keys"
+	textsearch "github.com/verygoodsoftwarenotvirus/platform/v4/search/text"
 	coreemails "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/identity/emails"
 	coreindexing "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/identity/indexing"
 )
@@ -157,9 +158,9 @@ func (a *AsyncDataChangeMessageHandler) handleOutboundNotifications(
 		return errors.New("nil data change message")
 	}
 
-	envCfg := email.GetConfigForEnvironment(os.Getenv("NO_SMALL_PARTS_SERVICE_ENVIRONMENT"))
+	envCfg := localemail.GetConfigForEnvironment(os.Getenv("NO_SMALL_PARTS_SERVICE_ENVIRONMENT"))
 	if envCfg == nil {
-		return observability.PrepareAndLogError(email.ErrMissingEnvCfg, a.logger, span, "getting environment queuesConfig")
+		return observability.PrepareAndLogError(localemail.ErrMissingEnvCfg, a.logger, span, "getting environment queuesConfig")
 	}
 
 	logger := a.logger.WithValue("event_type", changeMessage.EventType)

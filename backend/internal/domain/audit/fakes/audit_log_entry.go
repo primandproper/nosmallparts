@@ -2,7 +2,7 @@ package fakes
 
 import (
 	types "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/audit"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/filtering"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database/filtering"
 )
 
 // BuildFakeAuditLogEntry builds a faked valid instrument.

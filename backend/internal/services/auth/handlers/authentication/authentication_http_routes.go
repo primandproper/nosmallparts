@@ -9,9 +9,9 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/audit"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/identity"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/oauth"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/types"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/types"
 
 	"github.com/markbates/goth"
 	"github.com/markbates/goth/gothic"
@@ -40,10 +40,6 @@ func (s *service) postLogin(ctx context.Context, user *identity.User, defaultAcc
 		"last_name":       user.LastName,
 	}); err != nil {
 		return http.StatusAccepted, observability.PrepareError(err, span, "identifying user for analytics")
-	}
-
-	if err := s.featureFlagManager.Identify(ctx, user); err != nil {
-		return http.StatusAccepted, observability.PrepareError(err, span, "identifying user in feature flag manager")
 	}
 
 	return http.StatusAccepted, nil

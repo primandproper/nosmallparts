@@ -2,7 +2,7 @@ package converters
 
 import (
 	types "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/oauth"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/identifiers"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/identifiers"
 )
 
 func ConvertOAuth2ClientCreationRequestInputToOAuth2ClientDatabaseCreationInput(x *types.OAuth2ClientCreationRequestInput) *types.OAuth2ClientDatabaseCreationInput {

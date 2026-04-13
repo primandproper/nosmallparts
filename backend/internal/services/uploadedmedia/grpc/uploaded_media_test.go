@@ -12,12 +12,12 @@ import (
 	uploadedmediamock "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/uploadedmedia/mock"
 	grpcfiltering "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/filtering"
 	uploadedmediasvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/uploaded_media"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/filtering"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/reflection"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/testutils"
-	mockuploads "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/uploads/mock"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database/filtering"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/logging"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/reflection"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/testutils"
+	mockuploads "github.com/verygoodsoftwarenotvirus/platform/v4/uploads/mock"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/uploadedmedia/grpc/converters"
 
 	"github.com/stretchr/testify/assert"
@@ -30,7 +30,7 @@ import (
 func buildTestService(t *testing.T) (*serviceImpl, *uploadedmediamock.Repository, *mockuploads.MockUploadManager) {
 	t.Helper()
 
-	logger := logging.NewNoopLogger()
+	logger := loggingnoop.NewLogger()
 	tracer := tracing.NewTracerForTest(t.Name())
 	uploadedMediaRepo := &uploadedmediamock.Repository{}
 	uploadManager := &mockuploads.MockUploadManager{}
@@ -56,7 +56,7 @@ func buildTestService(t *testing.T) (*serviceImpl, *uploadedmediamock.Repository
 func buildTestServiceWithSessionError(t *testing.T) *serviceImpl {
 	t.Helper()
 
-	logger := logging.NewNoopLogger()
+	logger := loggingnoop.NewLogger()
 	tracer := tracing.NewTracerForTest(t.Name())
 
 	service := &serviceImpl{

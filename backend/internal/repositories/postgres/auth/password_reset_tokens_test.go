@@ -7,7 +7,7 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/auth"
 	authconverters "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/auth/converters"
 	authfakes "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/auth/fakes"
-	pgtesting "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/postgres/testing"
+	pgtesting "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/testing"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

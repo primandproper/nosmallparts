@@ -6,12 +6,13 @@ import (
 
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/audit"
 	types "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/webhooks"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/filtering"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/identifiers"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/keys"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database"
+	platformerrors "github.com/verygoodsoftwarenotvirus/platform/v4/errors"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database/filtering"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/identifiers"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/observability/keys"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
 	generated "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/webhooks/generated"
 )
 
@@ -32,13 +33,13 @@ func (r *repository) WebhookExists(ctx context.Context, webhookID, accountID str
 	logger := r.logger.Clone()
 
 	if webhookID == "" {
-		return false, database.ErrInvalidIDProvided
+		return false, platformerrors.ErrInvalidIDProvided
 	}
 	logger = logger.WithValue(keys.WebhookIDKey, webhookID)
 	tracing.AttachToSpan(span, keys.WebhookIDKey, webhookID)
 
 	if accountID == "" {
-		return false, database.ErrInvalidIDProvided
+		return false, platformerrors.ErrInvalidIDProvided
 	}
 	logger = logger.WithValue(keys.AccountIDKey, accountID)
 	tracing.AttachToSpan(span, keys.AccountIDKey, accountID)
@@ -62,13 +63,13 @@ func (r *repository) GetWebhook(ctx context.Context, webhookID, accountID string
 	logger := r.logger.Clone()
 
 	if webhookID == "" {
-		return nil, database.ErrInvalidIDProvided
+		return nil, platformerrors.ErrInvalidIDProvided
 	}
 	logger = logger.WithValue(keys.WebhookIDKey, webhookID)
 	tracing.AttachToSpan(span, keys.WebhookIDKey, webhookID)
 
 	if accountID == "" {
-		return nil, database.ErrInvalidIDProvided
+		return nil, platformerrors.ErrInvalidIDProvided
 	}
 	logger = logger.WithValue(keys.AccountIDKey, accountID)
 	tracing.AttachToSpan(span, keys.AccountIDKey, accountID)
@@ -125,7 +126,7 @@ func (r *repository) GetWebhooks(ctx context.Context, accountID string, filter *
 	logger := r.logger.Clone()
 
 	if accountID == "" {
-		return nil, database.ErrInvalidIDProvided
+		return nil, platformerrors.ErrInvalidIDProvided
 	}
 	logger = logger.WithValue(keys.AccountIDKey, accountID)
 	tracing.AttachToSpan(span, keys.AccountIDKey, accountID)
@@ -192,7 +193,7 @@ func (r *repository) GetWebhooksForAccountAndEvent(ctx context.Context, accountI
 	logger := r.logger.Clone()
 
 	if accountID == "" {
-		return nil, database.ErrInvalidIDProvided
+		return nil, platformerrors.ErrInvalidIDProvided
 	}
 	logger = logger.WithValue(keys.AccountIDKey, accountID)
 	tracing.AttachToSpan(span, keys.AccountIDKey, accountID)
@@ -231,7 +232,7 @@ func (r *repository) CreateWebhook(ctx context.Context, input *types.WebhookData
 	logger := r.logger.Clone()
 
 	if input == nil {
-		return nil, database.ErrNilInputProvided
+		return nil, platformerrors.ErrNilInputProvided
 	}
 	tracing.AttachToSpan(span, keys.AccountIDKey, input.BelongsToAccount)
 	logger = logger.WithValue(keys.AccountIDKey, input.BelongsToAccount)
@@ -306,12 +307,12 @@ func (r *repository) createWebhookTriggerEvent(ctx context.Context, querier data
 	logger := r.logger.Clone()
 
 	if input == nil {
-		return nil, database.ErrNilInputProvided
+		return nil, platformerrors.ErrNilInputProvided
 	}
 	tracing.AttachToSpan(span, keys.WebhookIDKey, input.BelongsToWebhook)
 
 	if accountID == "" {
-		return nil, database.ErrInvalidIDProvided
+		return nil, platformerrors.ErrInvalidIDProvided
 	}
 	tracing.AttachToSpan(span, keys.AccountIDKey, accountID)
 	logger = logger.WithValue(keys.AccountIDKey, accountID)
@@ -351,12 +352,12 @@ func (r *repository) ArchiveWebhook(ctx context.Context, webhookID, accountID st
 	defer span.End()
 
 	if webhookID == "" {
-		return database.ErrInvalidIDProvided
+		return platformerrors.ErrInvalidIDProvided
 	}
 	tracing.AttachToSpan(span, keys.WebhookIDKey, webhookID)
 
 	if accountID == "" {
-		return database.ErrInvalidIDProvided
+		return platformerrors.ErrInvalidIDProvided
 	}
 	tracing.AttachToSpan(span, keys.AccountIDKey, accountID)
 
@@ -407,12 +408,12 @@ func (r *repository) AddWebhookTriggerEvent(ctx context.Context, accountID strin
 	defer span.End()
 
 	if accountID == "" {
-		return nil, database.ErrInvalidIDProvided
+		return nil, platformerrors.ErrInvalidIDProvided
 	}
 	tracing.AttachToSpan(span, keys.AccountIDKey, accountID)
 
 	if input == nil {
-		return nil, database.ErrNilInputProvided
+		return nil, platformerrors.ErrNilInputProvided
 	}
 	tracing.AttachToSpan(span, keys.WebhookIDKey, input.BelongsToWebhook)
 
@@ -446,12 +447,12 @@ func (r *repository) ArchiveWebhookTriggerEvent(ctx context.Context, webhookID, 
 	defer span.End()
 
 	if webhookID == "" {
-		return database.ErrInvalidIDProvided
+		return platformerrors.ErrInvalidIDProvided
 	}
 	tracing.AttachToSpan(span, keys.WebhookIDKey, webhookID)
 
 	if webhookTriggerEventID == "" {
-		return database.ErrInvalidIDProvided
+		return platformerrors.ErrInvalidIDProvided
 	}
 	tracing.AttachToSpan(span, keys.WebhookTriggerEventIDKey, webhookTriggerEventID)
 

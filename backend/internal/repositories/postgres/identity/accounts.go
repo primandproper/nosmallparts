@@ -8,12 +8,14 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/authorization"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/audit"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/identity"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/filtering"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/identifiers"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/keys"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database"
+	platformerrors "github.com/verygoodsoftwarenotvirus/platform/v4/errors"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database/filtering"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/identifiers"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability"
+	platformkeys "github.com/verygoodsoftwarenotvirus/platform/v4/observability/keys"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/observability/keys"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
 	generated "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/identity/generated"
 )
 
@@ -31,7 +33,7 @@ func (r *repository) GetAccount(ctx context.Context, accountID string) (*identit
 	defer span.End()
 
 	if accountID == "" {
-		return nil, database.ErrInvalidIDProvided
+		return nil, platformerrors.ErrInvalidIDProvided
 	}
 	tracing.AttachToSpan(span, keys.AccountIDKey, accountID)
 
@@ -114,10 +116,10 @@ func (r *repository) getAccountsForUser(ctx context.Context, querier database.SQ
 	logger := r.logger.Clone()
 
 	if userID == "" {
-		return nil, database.ErrInvalidIDProvided
+		return nil, platformerrors.ErrInvalidIDProvided
 	}
-	tracing.AttachToSpan(span, keys.UserIDKey, userID)
-	logger = logger.WithValue(keys.UserIDKey, userID)
+	tracing.AttachToSpan(span, platformkeys.UserIDKey, userID)
+	logger = logger.WithValue(platformkeys.UserIDKey, userID)
 
 	if filter == nil {
 		filter = filtering.DefaultQueryFilter()
@@ -198,10 +200,10 @@ func (r *repository) CreateAccount(ctx context.Context, input *identity.AccountD
 	defer span.End()
 
 	if input == nil {
-		return nil, database.ErrNilInputProvided
+		return nil, platformerrors.ErrNilInputProvided
 	}
 
-	logger := r.logger.WithValue(keys.UserIDKey, input.BelongsToUser)
+	logger := r.logger.WithValue(platformkeys.UserIDKey, input.BelongsToUser)
 
 	// begin account creation transaction
 	tx, err := r.writeDB.BeginTx(ctx, nil)
@@ -298,7 +300,7 @@ func (r *repository) UpdateAccount(ctx context.Context, updated *identity.Accoun
 	defer span.End()
 
 	if updated == nil {
-		return database.ErrNilInputProvided
+		return platformerrors.ErrNilInputProvided
 	}
 	logger := r.logger.WithValue(keys.AccountIDKey, updated.ID)
 	tracing.AttachToSpan(span, keys.AccountIDKey, updated.ID)
@@ -437,10 +439,10 @@ func (r *repository) ArchiveAccount(ctx context.Context, accountID, ownerID stri
 	logger := r.logger.Clone()
 
 	if accountID == "" || ownerID == "" {
-		return database.ErrInvalidIDProvided
+		return platformerrors.ErrInvalidIDProvided
 	}
-	tracing.AttachToSpan(span, keys.UserIDKey, ownerID)
-	logger = logger.WithValue(keys.UserIDKey, ownerID)
+	tracing.AttachToSpan(span, platformkeys.UserIDKey, ownerID)
+	logger = logger.WithValue(platformkeys.UserIDKey, ownerID)
 	tracing.AttachToSpan(span, keys.AccountIDKey, accountID)
 	logger = logger.WithValue(keys.AccountIDKey, accountID)
 

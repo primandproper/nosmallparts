@@ -7,8 +7,9 @@ import (
 	grpcconverters "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/converters"
 	issuereportssvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/issue_reports"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/types"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/keys"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability"
+	platformkeys "github.com/verygoodsoftwarenotvirus/platform/v4/observability/keys"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/observability/keys"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/issuereports/grpc/converters"
 
 	"google.golang.org/grpc/codes"
@@ -24,7 +25,7 @@ func (s *serviceImpl) CreateIssueReport(ctx context.Context, request *issuerepor
 	if err != nil {
 		return nil, observability.PrepareAndLogGRPCStatus(err, logger, span, codes.Unauthenticated, "failed to fetch session context data")
 	}
-	logger = logger.WithValue(keys.AccountIDKey, sessionContextData.ActiveAccountID).WithValue(keys.UserIDKey, sessionContextData.Requester.UserID)
+	logger = logger.WithValue(keys.AccountIDKey, sessionContextData.ActiveAccountID).WithValue(platformkeys.UserIDKey, sessionContextData.Requester.UserID)
 
 	input := converters.ConvertGRPCIssueReportCreationRequestInputToIssueReportDatabaseCreationInput(request.Input, sessionContextData.Requester.UserID, sessionContextData.GetActiveAccountID())
 	if err = input.ValidateWithContext(ctx); err != nil {

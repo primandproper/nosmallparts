@@ -3,7 +3,7 @@ package fakes
 import (
 	types "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/notifications"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/notifications/converters"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/filtering"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database/filtering"
 )
 
 // BuildFakeUserNotification builds a faked valid ingredient.

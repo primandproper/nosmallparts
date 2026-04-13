@@ -5,7 +5,7 @@ import (
 
 	identityconverters "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/identity/converters"
 	identitysvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/identity"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability"
 
 	"google.golang.org/grpc/codes"
 )

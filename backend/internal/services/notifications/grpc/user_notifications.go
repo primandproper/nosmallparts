@@ -7,9 +7,10 @@ import (
 	grpcconverters "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/converters"
 	notificationssvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/notifications"
 	grpctypes "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/types"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/keys"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/pointer"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability"
+	platformkeys "github.com/verygoodsoftwarenotvirus/platform/v4/observability/keys"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/observability/keys"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/pointer"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/notifications/grpc/converters"
 
 	"google.golang.org/grpc/codes"
@@ -54,7 +55,7 @@ func (s *serviceImpl) GetUserNotifications(ctx context.Context, request *notific
 
 	filter := grpcconverters.ConvertGRPCQueryFilterToQueryFilter(request.Filter)
 
-	logger = logger.WithValue(keys.UserIDKey, sessionContextData.GetUserID())
+	logger = logger.WithValue(platformkeys.UserIDKey, sessionContextData.GetUserID())
 
 	notifs, err := s.notificationsRepository.GetUserNotifications(ctx, sessionContextData.GetUserID(), filter)
 	if err != nil {

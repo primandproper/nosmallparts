@@ -7,9 +7,10 @@ import (
 	"net/http"
 
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/authorization"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/keys"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/routing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/keys"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/logging"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/routing"
 )
 
 func init() {
@@ -66,7 +67,13 @@ func (x *ContextData) GetUserID() string {
 }
 
 // GetServicePermissions is a simple getter.
-func (x *ContextData) GetServicePermissions() authorization.ServiceRolePermissionChecker {
+// Returns tracing.ServicePermissionChecker to satisfy tracing.SessionContextDataForTracing.
+func (x *ContextData) GetServicePermissions() tracing.ServicePermissionChecker {
+	return x.Requester.ServicePermissions
+}
+
+// GetServiceRolePermissions returns the full authorization.ServiceRolePermissionChecker.
+func (x *ContextData) GetServiceRolePermissions() authorization.ServiceRolePermissionChecker {
 	return x.Requester.ServicePermissions
 }
 

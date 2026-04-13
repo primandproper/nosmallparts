@@ -6,9 +6,9 @@ import (
 	"math"
 	"runtime"
 
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/logging"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
 
 	"github.com/alexedwards/argon2id"
 	"github.com/pquerna/otp/totp"
@@ -47,8 +47,8 @@ type (
 // ProvideArgon2Authenticator returns an argon2 powered Argon2Authenticator.
 func ProvideArgon2Authenticator(logger logging.Logger, tracerProvider tracing.TracerProvider) Authenticator {
 	ba := &Argon2Authenticator{
-		logger: logging.EnsureLogger(logger).WithName(serviceName),
-		tracer: tracing.NewTracer(tracing.EnsureTracerProvider(tracerProvider).Tracer(serviceName)),
+		logger: logging.NewNamedLogger(logger, serviceName),
+		tracer: tracing.NewNamedTracer(tracerProvider, serviceName),
 	}
 
 	return ba

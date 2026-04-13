@@ -14,16 +14,17 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/audit"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/identity"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/identity/converters"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/filtering"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/identifiers"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/messagequeue"
-	msgconfig "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/messagequeue/config"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/keys"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/random"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database/filtering"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/identifiers"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/messagequeue"
+	msgconfig "github.com/verygoodsoftwarenotvirus/platform/v4/messagequeue/config"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability"
+	platformkeys "github.com/verygoodsoftwarenotvirus/platform/v4/observability/keys"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/observability/keys"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/logging"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/random"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/services/identity/indexing"
 
 	"github.com/boombuler/barcode"
@@ -83,8 +84,8 @@ func NewIdentityDataManager(
 	}
 
 	return &manager{
-		tracer:               tracing.NewTracer(tracing.EnsureTracerProvider(tracerProvider).Tracer(o11yName)),
-		logger:               logging.EnsureLogger(logger).WithName(o11yName),
+		tracer:               tracing.NewNamedTracer(tracerProvider, o11yName),
+		logger:               logging.NewNamedLogger(logger, o11yName),
 		identityRepo:         identityRepo,
 		dataChangesPublisher: publisher,
 		secretGenerator:      secretGenerator,
@@ -197,7 +198,7 @@ func (m *manager) ArchiveAccount(ctx context.Context, accountID, ownerID string)
 
 	logger := observability.ObserveValues(map[string]any{
 		keys.AccountIDKey: accountID,
-		keys.UserIDKey:    ownerID,
+		platformkeys.UserIDKey:    ownerID,
 	}, span, m.logger)
 
 	if err := m.identityRepo.ArchiveAccount(ctx, accountID, ownerID); err != nil {
@@ -206,7 +207,7 @@ func (m *manager) ArchiveAccount(ctx context.Context, accountID, ownerID string)
 
 	m.dataChangesPublisher.PublishAsync(ctx, audit.BuildDataChangeMessageFromContext(ctx, logger, identity.AccountArchivedServiceEventType, map[string]any{
 		keys.AccountIDKey: accountID,
-		keys.UserIDKey:    ownerID,
+		platformkeys.UserIDKey:    ownerID,
 	}))
 
 	return nil
@@ -222,7 +223,7 @@ func (m *manager) ArchiveUserMembership(ctx context.Context, userID, accountID s
 
 	logger := observability.ObserveValues(map[string]any{
 		keys.AccountIDKey: accountID,
-		keys.UserIDKey:    userID,
+		platformkeys.UserIDKey:    userID,
 	}, span, m.logger)
 
 	if err := m.identityRepo.RemoveUserFromAccount(ctx, userID, accountID); err != nil {
@@ -231,7 +232,7 @@ func (m *manager) ArchiveUserMembership(ctx context.Context, userID, accountID s
 
 	m.dataChangesPublisher.PublishAsync(ctx, audit.BuildDataChangeMessageFromContext(ctx, logger, identity.AccountMemberRemovedServiceEventType, map[string]any{
 		keys.AccountIDKey: accountID,
-		keys.UserIDKey:    userID,
+		platformkeys.UserIDKey:    userID,
 	}))
 
 	return nil
@@ -246,7 +247,7 @@ func (m *manager) ArchiveUser(ctx context.Context, userID string) error {
 	}
 
 	logger := observability.ObserveValues(map[string]any{
-		keys.UserIDKey: userID,
+		platformkeys.UserIDKey: userID,
 	}, span, m.logger)
 
 	if err := m.identityRepo.ArchiveUser(ctx, userID); err != nil {
@@ -254,7 +255,7 @@ func (m *manager) ArchiveUser(ctx context.Context, userID string) error {
 	}
 
 	m.dataChangesPublisher.PublishAsync(ctx, audit.BuildDataChangeMessageFromContext(ctx, logger, identity.UserArchivedServiceEventType, map[string]any{
-		keys.UserIDKey: userID,
+		platformkeys.UserIDKey: userID,
 	}))
 
 	return nil
@@ -307,7 +308,7 @@ func (m *manager) CreateAccountInvitation(ctx context.Context, userID, accountID
 	}
 
 	logger := observability.ObserveValues(map[string]any{
-		keys.UserIDKey:    userID,
+		platformkeys.UserIDKey:    userID,
 		keys.AccountIDKey: accountID,
 	}, span, m.logger)
 
@@ -325,7 +326,7 @@ func (m *manager) CreateAccountInvitation(ctx context.Context, userID, accountID
 
 	m.dataChangesPublisher.PublishAsync(ctx, audit.BuildDataChangeMessageFromContext(ctx, logger, identity.AccountInvitationCreatedServiceEventType, map[string]any{
 		keys.AccountInvitationIDKey: created.ID,
-		keys.UserIDKey:              userID,
+		platformkeys.UserIDKey:              userID,
 		"destination_account":       accountID,
 	}))
 
@@ -341,24 +342,24 @@ func (m *manager) CreateUser(ctx context.Context, input *identity.UserRegistrati
 	}
 
 	logger := observability.ObserveValues(map[string]any{
-		keys.UsernameKey: input.Username,
+		platformkeys.UsernameKey: input.Username,
 	}, span, m.logger)
 
 	input.Username = strings.TrimSpace(input.Username)
-	tracing.AttachToSpan(span, keys.UsernameKey, input.Username)
+	tracing.AttachToSpan(span, platformkeys.UsernameKey, input.Username)
 	input.EmailAddress = strings.TrimSpace(strings.ToLower(input.EmailAddress))
 	tracing.AttachToSpan(span, keys.UserEmailAddressKey, input.EmailAddress)
 	input.Password = strings.TrimSpace(input.Password)
 
 	logger = logger.WithValues(map[string]any{
-		keys.UsernameKey:               input.Username,
+		platformkeys.UsernameKey:               input.Username,
 		keys.UserEmailAddressKey:       input.EmailAddress,
 		keys.AccountInvitationIDKey:    input.InvitationID,
 		keys.AccountInvitationTokenKey: input.InvitationToken,
 	})
 
 	if err := input.ValidateWithContext(ctx); err != nil {
-		logger.WithValue(keys.ValidationErrorKey, err).Debug("provided dbInput was invalid")
+		logger.WithValue(platformkeys.ValidationErrorKey, err).Debug("provided dbInput was invalid")
 		return nil, observability.PrepareError(err, span, "invalid user creation dbInput provided")
 	}
 
@@ -437,11 +438,11 @@ func (m *manager) CreateUser(ctx context.Context, input *identity.UserRegistrati
 	}
 
 	// notify the relevant parties.
-	tracing.AttachToSpan(span, keys.UserIDKey, user.ID)
+	tracing.AttachToSpan(span, platformkeys.UserIDKey, user.ID)
 
 	m.dataChangesPublisher.PublishAsync(ctx, audit.BuildDataChangeMessageFromContext(ctx, logger, identity.UserSignedUpServiceEventType, map[string]any{
 		keys.AccountIDKey:                  defaultAccountID,
-		keys.UserIDKey:                     user.ID,
+		platformkeys.UserIDKey:                     user.ID,
 		keys.UserEmailVerificationTokenKey: emailVerificationToken,
 	}))
 
@@ -531,7 +532,7 @@ func (m *manager) GetAccounts(ctx context.Context, userID string, filter *filter
 	}
 
 	logger := observability.ObserveValues(map[string]any{
-		keys.UserIDKey: userID,
+		platformkeys.UserIDKey: userID,
 	}, span, m.logger)
 
 	accounts, err := m.identityRepo.GetAccounts(ctx, userID, filter)
@@ -555,7 +556,7 @@ func (m *manager) GetReceivedAccountInvitations(ctx context.Context, userID stri
 	}
 
 	logger := observability.ObserveValues(map[string]any{
-		keys.UserIDKey: userID,
+		platformkeys.UserIDKey: userID,
 	}, span, m.logger)
 
 	invites, err := m.identityRepo.GetPendingAccountInvitationsForUser(ctx, userID, filter)
@@ -579,7 +580,7 @@ func (m *manager) GetSentAccountInvitations(ctx context.Context, userID string, 
 	}
 
 	logger := observability.ObserveValues(map[string]any{
-		keys.UserIDKey: userID,
+		platformkeys.UserIDKey: userID,
 	}, span, m.logger)
 
 	invites, err := m.identityRepo.GetPendingAccountInvitationsFromUser(ctx, userID, filter)
@@ -599,7 +600,7 @@ func (m *manager) GetUser(ctx context.Context, userID string) (*identity.User, e
 	}
 
 	logger := observability.ObserveValues(map[string]any{
-		keys.UserIDKey: userID,
+		platformkeys.UserIDKey: userID,
 	}, span, m.logger)
 
 	user, err := m.identityRepo.GetUser(ctx, userID)
@@ -659,7 +660,7 @@ func (m *manager) SearchForUsers(ctx context.Context, query string, useSearchSer
 	}
 
 	logger := observability.ObserveValues(map[string]any{
-		keys.UseDatabaseKey: !useSearchService,
+		platformkeys.UseDatabaseKey: !useSearchService,
 	}, span, m.logger)
 
 	if !useSearchService {
@@ -705,7 +706,7 @@ func (m *manager) SetDefaultAccount(ctx context.Context, userID, accountID strin
 	}
 
 	logger := observability.ObserveValues(map[string]any{
-		keys.UserIDKey:    userID,
+		platformkeys.UserIDKey:    userID,
 		keys.AccountIDKey: accountID,
 	}, span, m.logger)
 
@@ -716,7 +717,7 @@ func (m *manager) SetDefaultAccount(ctx context.Context, userID, accountID strin
 
 	m.dataChangesPublisher.PublishAsync(ctx, audit.BuildDataChangeMessageFromContext(ctx, logger, identity.AccountSetAsDefaultServiceEventType, map[string]any{
 		keys.AccountIDKey: accountID,
-		keys.UserIDKey:    userID,
+		platformkeys.UserIDKey:    userID,
 	}))
 
 	return nil
@@ -811,7 +812,7 @@ func (m *manager) UpdateAccountMemberPermissions(ctx context.Context, accountID,
 	}
 
 	logger := observability.ObserveValues(map[string]any{
-		keys.UserIDKey: userID,
+		platformkeys.UserIDKey: userID,
 	}, span, m.logger)
 
 	if err := input.ValidateWithContext(ctx); err != nil {
@@ -846,7 +847,7 @@ func (m *manager) UpdateUserDetails(ctx context.Context, userID string, input *i
 	}
 
 	logger := observability.ObserveValues(map[string]any{
-		keys.UserIDKey: userID,
+		platformkeys.UserIDKey: userID,
 	}, span, m.logger)
 
 	if err := m.identityRepo.UpdateUserDetails(ctx, userID, converters.ConvertUserDetailsUpdateRequestInputToUserDetailsUpdateInput(input)); err != nil {
@@ -854,7 +855,7 @@ func (m *manager) UpdateUserDetails(ctx context.Context, userID string, input *i
 	}
 
 	m.dataChangesPublisher.PublishAsync(ctx, audit.BuildDataChangeMessageFromContext(ctx, logger, identity.UserDetailsChangedEventType, map[string]any{
-		keys.UserIDKey: userID,
+		platformkeys.UserIDKey: userID,
 	}))
 
 	return nil
@@ -869,7 +870,7 @@ func (m *manager) UpdateUserEmailAddress(ctx context.Context, userID, newEmail s
 	}
 
 	logger := observability.ObserveValues(map[string]any{
-		keys.UserIDKey: userID,
+		platformkeys.UserIDKey: userID,
 	}, span, m.logger)
 
 	if err := m.identityRepo.UpdateUserEmailAddress(ctx, userID, newEmail); err != nil {
@@ -877,7 +878,7 @@ func (m *manager) UpdateUserEmailAddress(ctx context.Context, userID, newEmail s
 	}
 
 	m.dataChangesPublisher.PublishAsync(ctx, audit.BuildDataChangeMessageFromContext(ctx, logger, identity.EmailAddressChangedEventType, map[string]any{
-		keys.UserIDKey: userID,
+		platformkeys.UserIDKey: userID,
 	}))
 
 	return nil
@@ -896,7 +897,7 @@ func (m *manager) UpdateUserUsername(ctx context.Context, userID, newUsername st
 	}
 
 	logger := observability.ObserveValues(map[string]any{
-		keys.UserIDKey: userID,
+		platformkeys.UserIDKey: userID,
 	}, span, m.logger)
 
 	if err := m.identityRepo.UpdateUserUsername(ctx, userID, newUsername); err != nil {
@@ -904,7 +905,7 @@ func (m *manager) UpdateUserUsername(ctx context.Context, userID, newUsername st
 	}
 
 	m.dataChangesPublisher.PublishAsync(ctx, audit.BuildDataChangeMessageFromContext(ctx, logger, identity.UsernameChangedEventType, map[string]any{
-		keys.UserIDKey: userID,
+		platformkeys.UserIDKey: userID,
 	}))
 
 	return nil
@@ -919,7 +920,7 @@ func (m *manager) UploadUserAvatar(ctx context.Context, userID, base64EncodedIma
 	}
 
 	logger := observability.ObserveValues(map[string]any{
-		keys.UserIDKey: userID,
+		platformkeys.UserIDKey: userID,
 	}, span, m.logger)
 
 	data, err := userAvatarBase64Encoding.DecodeString(base64EncodedImageData)
@@ -936,7 +937,7 @@ func (m *manager) UploadUserAvatar(ctx context.Context, userID, base64EncodedIma
 	}
 
 	m.dataChangesPublisher.PublishAsync(ctx, audit.BuildDataChangeMessageFromContext(ctx, logger, identity.UserAvatarChangedEventType, map[string]any{
-		keys.UserIDKey: userID,
+		platformkeys.UserIDKey: userID,
 	}))
 
 	return nil
@@ -951,8 +952,8 @@ func (m *manager) AdminUpdateUserStatus(ctx context.Context, input *identity.Use
 	}
 
 	logger := observability.ObserveValues(map[string]any{
-		keys.UserIDKey: input.TargetUserID,
-		keys.ReasonKey: input.Reason,
+		platformkeys.UserIDKey: input.TargetUserID,
+		platformkeys.ReasonKey: input.Reason,
 	}, span, m.logger)
 
 	if err := m.identityRepo.UpdateUserAccountStatus(ctx, input.TargetUserID, input); err != nil {
@@ -960,7 +961,7 @@ func (m *manager) AdminUpdateUserStatus(ctx context.Context, input *identity.Use
 	}
 
 	m.dataChangesPublisher.PublishAsync(ctx, audit.BuildDataChangeMessageFromContext(ctx, logger, identity.UserStatusChangedServiceEventType, map[string]any{
-		keys.UserIDKey: input.TargetUserID,
+		platformkeys.UserIDKey: input.TargetUserID,
 	}))
 
 	return nil
@@ -972,7 +973,7 @@ func (m *manager) buildQRCode(ctx context.Context, username, twoFactorSecret str
 	defer span.End()
 
 	logger := observability.ObserveValues(map[string]any{
-		keys.UsernameKey: username,
+		platformkeys.UsernameKey: username,
 	}, span, m.logger)
 
 	// "otpauth://totp/{{ .Issuer }}:{{ .EnsureUsername }}?secret={{ .Secret }}&issuer={{ .Issuer }}",

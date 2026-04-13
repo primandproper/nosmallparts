@@ -5,12 +5,12 @@ import (
 
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/identity/fakes"
 	identitymock "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/identity/mock"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/reflection"
-	textsearch "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/search/text"
-	mocksearch "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/search/text/mock"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/testutils"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/logging"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/reflection"
+	textsearch "github.com/verygoodsoftwarenotvirus/platform/v4/search/text"
+	mocksearch "github.com/verygoodsoftwarenotvirus/platform/v4/search/text/mock"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/testutils"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
@@ -25,7 +25,7 @@ func TestHandleIndexRequest(T *testing.T) {
 		exampleUser := fakes.BuildFakeUser()
 
 		ctx := t.Context()
-		logger := logging.NewNoopLogger()
+		logger := loggingnoop.NewLogger()
 
 		identityRepo := &identitymock.RepositoryMock{}
 		identityRepo.On(reflection.GetMethodName(identityRepo.GetUser), testutils.ContextMatcher, exampleUser.ID).Return(exampleUser, nil)
@@ -38,7 +38,7 @@ func TestHandleIndexRequest(T *testing.T) {
 
 		cdi := NewCoreDataIndexer(
 			logger,
-			tracing.NewNoopTracerProvider(),
+			tracingnoop.NewTracerProvider(),
 			identityRepo,
 			mim,
 		)
@@ -60,7 +60,7 @@ func TestHandleIndexRequest(T *testing.T) {
 		exampleUser := fakes.BuildFakeUser()
 
 		ctx := t.Context()
-		logger := logging.NewNoopLogger()
+		logger := loggingnoop.NewLogger()
 
 		identityRepo := &identitymock.RepositoryMock{}
 		identityRepo.On(reflection.GetMethodName(identityRepo.GetUser), testutils.ContextMatcher, exampleUser.ID).Return(exampleUser, nil)
@@ -70,7 +70,7 @@ func TestHandleIndexRequest(T *testing.T) {
 
 		cdi := NewCoreDataIndexer(
 			logger,
-			tracing.NewNoopTracerProvider(),
+			tracingnoop.NewTracerProvider(),
 			identityRepo,
 			mim,
 		)

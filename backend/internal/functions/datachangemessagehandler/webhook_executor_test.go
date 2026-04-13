@@ -9,7 +9,7 @@ import (
 	identityfakes "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/identity/fakes"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/webhooks"
 	webhooksfakes "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/webhooks/fakes"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/reflection"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/reflection"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"

@@ -6,7 +6,7 @@ import (
 	"sort"
 	"time"
 
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/filtering"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database/filtering"
 
 	validation "github.com/go-ozzo/ozzo-validation/v4"
 )

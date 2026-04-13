@@ -5,10 +5,11 @@ import (
 	"database/sql"
 
 	types "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/stages"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/keys"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database"
+	platformerrors "github.com/verygoodsoftwarenotvirus/platform/v4/errors"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/observability/keys"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
 	generated "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/stages/generated"
 )
 
@@ -24,7 +25,7 @@ func (r *repository) CreateStage(ctx context.Context, input *types.StageCreation
 	logger := r.logger.Clone()
 
 	if input == nil {
-		return nil, database.ErrNilInputProvided
+		return nil, platformerrors.ErrNilInputProvided
 	}
 	tracing.AttachToSpan(span, keys.StageIDKey, input.ID)
 	logger = logger.WithValue(keys.StageIDKey, input.ID)
@@ -56,7 +57,7 @@ func (r *repository) GetStageByID(ctx context.Context, stageID string) (*types.S
 	logger := r.logger.Clone()
 
 	if stageID == "" {
-		return nil, database.ErrInvalidIDProvided
+		return nil, platformerrors.ErrInvalidIDProvided
 	}
 	logger = logger.WithValue(keys.StageIDKey, stageID)
 	tracing.AttachToSpan(span, keys.StageIDKey, stageID)
@@ -86,7 +87,7 @@ func (r *repository) GetStageByCode(ctx context.Context, code string) (*types.St
 	logger := r.logger.Clone()
 
 	if code == "" {
-		return nil, database.ErrInvalidIDProvided
+		return nil, platformerrors.ErrInvalidIDProvided
 	}
 	logger = logger.WithValue("code", code)
 	tracing.AttachToSpan(span, "code", code)
@@ -116,7 +117,7 @@ func (r *repository) UpdateStage(ctx context.Context, stageID string, input *typ
 	logger := r.logger.Clone()
 
 	if stageID == "" {
-		return database.ErrInvalidIDProvided
+		return platformerrors.ErrInvalidIDProvided
 	}
 	logger = logger.WithValue(keys.StageIDKey, stageID)
 	tracing.AttachToSpan(span, keys.StageIDKey, stageID)
@@ -153,7 +154,7 @@ func (r *repository) ArchiveStage(ctx context.Context, stageID string) error {
 	defer span.End()
 
 	if stageID == "" {
-		return database.ErrInvalidIDProvided
+		return platformerrors.ErrInvalidIDProvided
 	}
 	tracing.AttachToSpan(span, keys.StageIDKey, stageID)
 
@@ -179,7 +180,7 @@ func (r *repository) AddParticipant(ctx context.Context, input *types.Participan
 	logger := r.logger.Clone()
 
 	if input == nil {
-		return nil, database.ErrNilInputProvided
+		return nil, platformerrors.ErrNilInputProvided
 	}
 	tracing.AttachToSpan(span, keys.StageIDKey, input.StageID)
 	logger = logger.WithValue(keys.StageIDKey, input.StageID)
@@ -216,7 +217,7 @@ func (r *repository) GetParticipant(ctx context.Context, participantID string) (
 	logger := r.logger.Clone()
 
 	if participantID == "" {
-		return nil, database.ErrInvalidIDProvided
+		return nil, platformerrors.ErrInvalidIDProvided
 	}
 	logger = logger.WithValue("participantID", participantID)
 	tracing.AttachToSpan(span, "participantID", participantID)
@@ -246,7 +247,7 @@ func (r *repository) GetActiveParticipantsForStage(ctx context.Context, stageID 
 	logger := r.logger.Clone()
 
 	if stageID == "" {
-		return nil, database.ErrInvalidIDProvided
+		return nil, platformerrors.ErrInvalidIDProvided
 	}
 	logger = logger.WithValue(keys.StageIDKey, stageID)
 	tracing.AttachToSpan(span, keys.StageIDKey, stageID)
@@ -281,7 +282,7 @@ func (r *repository) UpdateParticipant(ctx context.Context, participantID string
 	logger := r.logger.Clone()
 
 	if participantID == "" {
-		return database.ErrInvalidIDProvided
+		return platformerrors.ErrInvalidIDProvided
 	}
 	logger = logger.WithValue("participantID", participantID)
 	tracing.AttachToSpan(span, "participantID", participantID)
@@ -320,7 +321,7 @@ func (r *repository) RejoinParticipant(ctx context.Context, stageID, displayName
 	logger := r.logger.Clone()
 
 	if stageID == "" || displayName == "" {
-		return nil, database.ErrInvalidIDProvided
+		return nil, platformerrors.ErrInvalidIDProvided
 	}
 	logger = logger.WithValue(keys.StageIDKey, stageID).WithValue("displayName", displayName)
 	tracing.AttachToSpan(span, keys.StageIDKey, stageID)
@@ -350,7 +351,7 @@ func (r *repository) SetParticipantLeft(ctx context.Context, participantID strin
 	defer span.End()
 
 	if participantID == "" {
-		return database.ErrInvalidIDProvided
+		return platformerrors.ErrInvalidIDProvided
 	}
 	tracing.AttachToSpan(span, "participantID", participantID)
 
@@ -376,7 +377,7 @@ func (r *repository) AddParticipantRole(ctx context.Context, participantID, cast
 	logger := r.logger.Clone()
 
 	if participantID == "" || castMemberID == "" {
-		return database.ErrInvalidIDProvided
+		return platformerrors.ErrInvalidIDProvided
 	}
 	logger = logger.WithValue("participantID", participantID).WithValue("castMemberID", castMemberID)
 	tracing.AttachToSpan(span, "participantID", participantID)
@@ -400,7 +401,7 @@ func (r *repository) RemoveParticipantRole(ctx context.Context, participantID, c
 	logger := r.logger.Clone()
 
 	if participantID == "" || castMemberID == "" {
-		return database.ErrInvalidIDProvided
+		return platformerrors.ErrInvalidIDProvided
 	}
 	logger = logger.WithValue("participantID", participantID).WithValue("castMemberID", castMemberID)
 	tracing.AttachToSpan(span, "participantID", participantID)
@@ -425,7 +426,7 @@ func (r *repository) GetParticipantRoles(ctx context.Context, participantID stri
 	logger := r.logger.Clone()
 
 	if participantID == "" {
-		return nil, database.ErrInvalidIDProvided
+		return nil, platformerrors.ErrInvalidIDProvided
 	}
 	logger = logger.WithValue("participantID", participantID)
 	tracing.AttachToSpan(span, "participantID", participantID)

@@ -3,8 +3,8 @@ package fakes
 import (
 	types "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/settings"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/settings/converters"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/filtering"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/pointer"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database/filtering"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/pointer"
 )
 
 // BuildFakeServiceSetting builds a faked service setting.

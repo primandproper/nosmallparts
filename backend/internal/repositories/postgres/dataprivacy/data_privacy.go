@@ -8,7 +8,7 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/notifications"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/settings"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/webhooks"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability"
 )
 
 // FetchUserDataCollection retrieves all user-associated data for GDPR/CCPA disclosure.

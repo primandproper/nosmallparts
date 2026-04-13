@@ -7,12 +7,13 @@ import (
 
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/audit"
 	types "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/oauth"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/filtering"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/identifiers"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/keys"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database"
+	platformerrors "github.com/verygoodsoftwarenotvirus/platform/v4/errors"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database/filtering"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/identifiers"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability"
+	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/observability/keys"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/oauth/generated"
 )
 
@@ -32,7 +33,7 @@ func (q *repository) GetOAuth2ClientByClientID(ctx context.Context, clientID str
 	logger := q.logger.Clone()
 
 	if clientID == "" {
-		return nil, database.ErrEmptyInputProvided
+		return nil, platformerrors.ErrEmptyInputProvided
 	}
 	logger = logger.WithValue(keys.OAuth2ClientClientIDKey, clientID)
 	tracing.AttachToSpan(span, keys.OAuth2ClientClientIDKey, clientID)
@@ -63,7 +64,7 @@ func (q *repository) GetOAuth2ClientByDatabaseID(ctx context.Context, clientID s
 	logger := q.logger.Clone()
 
 	if clientID == "" {
-		return nil, database.ErrEmptyInputProvided
+		return nil, platformerrors.ErrEmptyInputProvided
 	}
 	logger = logger.WithValue(keys.OAuth2ClientClientIDKey, clientID)
 	tracing.AttachToSpan(span, keys.OAuth2ClientClientIDKey, clientID)
@@ -147,7 +148,7 @@ func (q *repository) CreateOAuth2Client(ctx context.Context, input *types.OAuth2
 	defer span.End()
 
 	if input == nil {
-		return nil, database.ErrNilInputProvided
+		return nil, platformerrors.ErrNilInputProvided
 	}
 
 	logger := q.logger.WithValues(map[string]any{
@@ -205,7 +206,7 @@ func (q *repository) ArchiveOAuth2Client(ctx context.Context, clientID string) e
 	defer span.End()
 
 	if clientID == "" {
-		return database.ErrNilInputProvided
+		return platformerrors.ErrNilInputProvided
 	}
 	tracing.AttachToSpan(span, keys.OAuth2ClientClientIDKey, clientID)
 	logger := q.logger.WithValue(keys.OAuth2ClientIDKey, clientID)

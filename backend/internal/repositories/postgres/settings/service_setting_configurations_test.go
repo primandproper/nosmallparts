@@ -9,8 +9,8 @@ import (
 	types "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/settings"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/settings/converters"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/settings/fakes"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/filtering"
-	pgtesting "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/database/postgres/testing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/database/filtering"
+	pgtesting "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/testing"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/repositories/postgres/identity/generated"
 
 	"github.com/stretchr/testify/assert"

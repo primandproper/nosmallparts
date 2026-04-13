@@ -7,7 +7,7 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/cmd/services/admin/components"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/cmd/services/admin/design"
 	identitysvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/identity"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability"
 
 	g "maragu.dev/gomponents"
 	ghtml "maragu.dev/gomponents/html"

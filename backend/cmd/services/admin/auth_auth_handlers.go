@@ -6,7 +6,7 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/cmd/services/admin/components"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/auth"
 	authsvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/auth"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/pkg/client"
 
 	g "maragu.dev/gomponents"

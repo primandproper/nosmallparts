@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/routing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/routing"
 
 	ghttp "maragu.dev/gomponents/http"
 )

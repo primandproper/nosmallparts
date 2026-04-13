@@ -10,8 +10,8 @@ import (
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/authentication/tokens"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/authentication/tokens/jwt"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/authentication/tokens/paseto"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/logging"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
 
 	validation "github.com/go-ozzo/ozzo-validation/v4"
 )

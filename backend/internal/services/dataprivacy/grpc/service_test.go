@@ -10,10 +10,10 @@ import (
 	dataprivacymock "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/dataprivacy/mock"
 	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/domain/identity"
 	dataprivacysvc "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/grpc/generated/services/dataprivacy"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/identifiers"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/logging"
-	"github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/observability/tracing"
-	mockuploads "github.com/verygoodsoftwarenotvirus/nosmallparts/backend/internal/platform/uploads/mock"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/identifiers"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/logging"
+	"github.com/verygoodsoftwarenotvirus/platform/v4/observability/tracing"
+	mockuploads "github.com/verygoodsoftwarenotvirus/platform/v4/uploads/mock"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
@@ -22,7 +22,7 @@ import (
 func buildTestService(t *testing.T) (*serviceImpl, *dataprivacymock.Repository, *mockuploads.MockUploadManager) {
 	t.Helper()
 
-	logger := logging.NewNoopLogger()
+	logger := loggingnoop.NewLogger()
 	tracer := tracing.NewTracerForTest(t.Name())
 	mockRepo := &dataprivacymock.Repository{}
 	mockUploads := &mockuploads.MockUploadManager{}
@@ -53,8 +53,8 @@ func TestNewDataPrivacyService(t *testing.T) {
 	t.Run("standard", func(t *testing.T) {
 		t.Parallel()
 
-		logger := logging.NewNoopLogger()
-		tracerProvider := tracing.NewNoopTracerProvider()
+		logger := loggingnoop.NewLogger()
+		tracerProvider := tracingnoop.NewTracerProvider()
 		mockRepo := &dataprivacymock.Repository{}
 		mockUploads := &mockuploads.MockUploadManager{}
 		sessionFetcher := func(ctx context.Context) (*sessions.ContextData, error) {
