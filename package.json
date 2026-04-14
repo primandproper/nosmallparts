@@ -1,0 +1,25 @@
+{
+  "name": "nosmallparts",
+  "version": "0.0.0",
+  "private": true,
+  "packageManager": "pnpm@10.33.0",
+  "scripts": {
+    "dev": "pnpm -r --parallel --filter=@nsp/server --filter=@nsp/app run dev",
+    "dev:server": "pnpm --filter @nsp/server dev",
+    "dev:app": "pnpm --filter @nsp/app dev",
+    "build": "pnpm -r run build",
+    "typecheck": "pnpm -r run typecheck",
+    "db:generate": "pnpm --filter @nsp/server db:generate",
+    "db:migrate": "pnpm --filter @nsp/server db:migrate",
+    "db:seed": "pnpm --filter @nsp/server db:seed"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "better-sqlite3",
+      "esbuild"
+    ]
+  }
+}

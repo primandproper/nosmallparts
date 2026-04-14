@@ -1,9 +1,0 @@
-# Editor/IDE
-# .idea/
-# .vscode/
-
-.DS_Store
-node_modules
-dist
-.next
-.npm-cache

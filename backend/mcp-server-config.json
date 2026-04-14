@@ -1,8 +1,0 @@
-{
-  "mcpServers": {
-    "default-server": {
-      "type": "streamable-http",
-      "url": "http://localhost:8888"
-    }
-  }
-}

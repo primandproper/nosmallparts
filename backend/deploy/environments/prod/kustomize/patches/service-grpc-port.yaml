@@ -1,8 +1,0 @@
-# Expose gRPC port 8001 for frontend and other in-cluster consumers
-- op: add
-  path: "/spec/ports/-"
-  value:
-    name: grpc
-    port: 8001
-    protocol: TCP
-    targetPort: grpc
