@@ -8,6 +8,7 @@ import {
 } from '@nsp/shared';
 import type { Play, StageState, SystemMessage } from '@nsp/shared';
 import { HostControls } from './HostControls';
+import { confirm } from '../lib/confirm';
 
 interface Props {
   state: StageState;
@@ -260,8 +261,31 @@ export function Lobby({
               <View className="mt-1 flex-row flex-wrap gap-1">
                 <RowAction label={p.forceMuted ? 'Unmute' : 'Mute'} onPress={() => onHostMute(p.id, !p.forceMuted)} />
                 <RowAction label="Make host" onPress={() => onHostTransferHost(p.id)} />
-                <RowAction label="Kick" onPress={() => onHostKick(p.id)} />
-                <RowAction label="Ban" onPress={() => onHostBan(p.id)} danger />
+                <RowAction
+                  label="Kick"
+                  onPress={async () => {
+                    const ok = await confirm({
+                      title: `Remove ${p.name}?`,
+                      message: 'They will be disconnected. They can rejoin if they want.',
+                      confirmLabel: 'Remove',
+                      destructive: true,
+                    });
+                    if (ok) onHostKick(p.id);
+                  }}
+                />
+                <RowAction
+                  label="Ban"
+                  danger
+                  onPress={async () => {
+                    const ok = await confirm({
+                      title: `Ban ${p.name}?`,
+                      message: 'They cannot rejoin this stage.',
+                      confirmLabel: 'Ban',
+                      destructive: true,
+                    });
+                    if (ok) onHostBan(p.id);
+                  }}
+                />
               </View>
             ) : null}
             {p.id === participantId && p.forceMuted ? (

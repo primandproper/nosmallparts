@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import type { StageState } from '@nsp/shared';
+import { confirm } from '../lib/confirm';
 
 interface Props {
   state: StageState;
@@ -52,7 +53,23 @@ export function HostControls({
           />
           <ActionButton label="Back" disabled={!performing} onPress={onBackLine} />
           <ActionButton label="Skip" disabled={!performing} onPress={onSkipLine} />
-          <ActionButton label="End play" disabled={!canEnd} onPress={onEndPlay} />
+          <ActionButton
+            label="End play"
+            disabled={!canEnd}
+            onPress={async () => {
+              // Only confirm mid-scene; in discussion the play already ended naturally.
+              if (performing) {
+                const ok = await confirm({
+                  title: 'End play?',
+                  message: 'Progress will be lost.',
+                  confirmLabel: 'End play',
+                  destructive: true,
+                });
+                if (!ok) return;
+              }
+              onEndPlay();
+            }}
+          />
           <ActionButton
             label={state.directorMode ? 'Exit director mode' : 'Director mode'}
             disabled={!inLobby || !onToggleDirectorMode}
