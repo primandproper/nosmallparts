@@ -43,9 +43,10 @@ export interface Participant {
   id: string;
   name: string;
   castMemberIds: string[];
-  isDirector: boolean;
   isReady: boolean;
   isAudience: boolean;
+  isHost: boolean;
+  forceMuted: boolean;
 }
 
 export type StagePhase = 'lobby' | 'countdown' | 'performing' | 'discussion';
@@ -57,6 +58,8 @@ export interface StageState {
   selectedPlay: Play | null;
   currentLineIndex: number;
   phase: StagePhase;
+  pausedByHost: boolean;
+  directorMode: boolean;
 }
 
 export interface ChatMessage {
@@ -68,19 +71,37 @@ export interface ChatMessage {
   timestamp: number;
 }
 
+export interface SystemMessage {
+  id: string;
+  text: string;
+  timestamp: number;
+}
+
 // Client -> Server WebSocket messages
 export type ClientMessage =
   | { type: 'join'; stageId: string; participantName: string }
   | { type: 'heartbeat' }
   | { type: 'toggleCastMember'; participantId: string; castMemberId: string }
-  | { type: 'setDirector'; participantId: string; isDirector: boolean }
   | { type: 'setAudience'; participantId: string; isAudience: boolean }
   | { type: 'selectPlay'; playId: string }
   | { type: 'setReady'; participantId: string; isReady: boolean }
   | { type: 'sendChat'; participantId: string; text: string; castOnly: boolean }
   | { type: 'startPlay' }
   | { type: 'nextLine' }
-  | { type: 'resetPlay' };
+  | { type: 'resetPlay' }
+  // Host actions (server gates on requireHost)
+  | { type: 'hostPause' }
+  | { type: 'hostResume' }
+  | { type: 'hostBackLine' }
+  | { type: 'hostSkipLine' }
+  | { type: 'hostEndPlay' }
+  | { type: 'hostReassignRole'; targetParticipantId: string; castMemberId: string }
+  | { type: 'hostUnassignRole'; targetParticipantId: string; castMemberId: string }
+  | { type: 'hostTransferHost'; targetParticipantId: string }
+  | { type: 'hostKick'; targetParticipantId: string }
+  | { type: 'hostBan'; targetParticipantId: string }
+  | { type: 'hostMute'; targetParticipantId: string; muted: boolean }
+  | { type: 'hostToggleDirectorMode'; enabled: boolean };
 
 // Server -> Client WebSocket messages
 export type ServerMessage =
@@ -91,6 +112,7 @@ export type ServerMessage =
   | { type: 'countdownStart'; duration: number }
   | { type: 'castMembersUpdated'; participants: Participant[] }
   | { type: 'chatMessage'; message: ChatMessage }
+  | { type: 'systemMessage'; message: SystemMessage }
   | { type: 'playStarted' }
   | { type: 'lineAdvanced'; currentLineIndex: number }
   | { type: 'playEnded' };

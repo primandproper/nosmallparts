@@ -1,44 +1,149 @@
+import { useEffect, useRef, useState } from 'react';
 import { Pressable, ScrollView, Text, View } from 'react-native';
+import * as Clipboard from 'expo-clipboard';
 import {
   areAllCastMembersAssigned,
   areAllParticipantsReady,
   canStartPlay,
 } from '@nsp/shared';
-import type { Play, StageState } from '@nsp/shared';
+import type { Play, StageState, SystemMessage } from '@nsp/shared';
+import { HostControls } from './HostControls';
 
 interface Props {
   state: StageState;
   availablePlays: Play[];
   participantId: string | null;
+  systemMessages?: SystemMessage[];
   onSelectPlay: (playId: string) => void;
   onToggleRole: (castMemberId: string) => void;
-  onToggleDirector: (v: boolean) => void;
   onToggleAudience: (v: boolean) => void;
   onToggleReady: (v: boolean) => void;
   onStart: () => void;
+  // Host actions
+  onHostPause: () => void;
+  onHostResume: () => void;
+  onHostBackLine: () => void;
+  onHostSkipLine: () => void;
+  onHostEndPlay: () => void;
+  onHostTransferHost: (targetParticipantId: string) => void;
+  onHostKick: (targetParticipantId: string) => void;
+  onHostBan: (targetParticipantId: string) => void;
+  onHostMute: (targetParticipantId: string, muted: boolean) => void;
+  onHostToggleDirectorMode: (enabled: boolean) => void;
 }
 
 export function Lobby({
   state,
   availablePlays,
   participantId,
+  systemMessages,
   onSelectPlay,
   onToggleRole,
-  onToggleDirector,
   onToggleAudience,
   onToggleReady,
   onStart,
+  onHostPause,
+  onHostResume,
+  onHostBackLine,
+  onHostSkipLine,
+  onHostEndPlay,
+  onHostTransferHost,
+  onHostKick,
+  onHostBan,
+  onHostMute,
+  onHostToggleDirectorMode,
 }: Props) {
   const me = state.participants.find((p) => p.id === participantId);
+  const iAmHost = !!me?.isHost;
+  const directorMode = state.directorMode;
+  const meIsDirector = iAmHost && directorMode;
   const play = state.selectedPlay;
-  const canStart = canStartPlay(state);
-  const hasDirector = state.participants.some((p) => p.isDirector);
+  const allAssigned = areAllCastMembersAssigned(state);
+  const allReady = areAllParticipantsReady(state);
+  const performers = state.participants.filter((p) => !p.isAudience);
+  const unreadyPerformers = performers.filter((p) => !p.isReady);
+  const firstPerformerId = performers[0]?.id;
+  const [copied, setCopied] = useState(false);
+  const copiedTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (copiedTimer.current) clearTimeout(copiedTimer.current);
+    };
+  }, []);
+
+  const copyCode = async () => {
+    await Clipboard.setStringAsync(state.code);
+    setCopied(true);
+    if (copiedTimer.current) clearTimeout(copiedTimer.current);
+    copiedTimer.current = setTimeout(() => setCopied(false), 1500);
+  };
+
+  // Auto-start when everyone is ready and director mode is OFF. With director
+  // mode on, the host (director) starts the play explicitly. One client (the
+  // first performer, by stable server-broadcast order) issues the auto-start
+  // so we don't stampede the server with duplicate startPlay messages.
+  const shouldAutoStart =
+    state.phase === 'lobby' &&
+    !!play &&
+    allAssigned &&
+    allReady &&
+    !directorMode &&
+    !!participantId &&
+    firstPerformerId === participantId;
+  useEffect(() => {
+    if (shouldAutoStart) onStart();
+  }, [shouldAutoStart, onStart]);
+
+  const status = getStatus({
+    play,
+    me,
+    allAssigned,
+    allReady,
+    directorMode,
+    iAmHost,
+    unreadyCount: unreadyPerformers.length,
+    onStart,
+    onToggleReady,
+  });
 
   return (
     <ScrollView className="flex-1 bg-stage-bg" contentContainerStyle={{ padding: 16, gap: 16 }}>
-      <View className="items-center gap-1">
-        <Text className="text-xs text-stage-muted">Stage code</Text>
-        <Text className="text-3xl font-serif tracking-widest text-stage-gold">{state.code}</Text>
+      <HostControls
+        state={state}
+        participantId={participantId}
+        onPause={onHostPause}
+        onResume={onHostResume}
+        onBackLine={onHostBackLine}
+        onSkipLine={onHostSkipLine}
+        onEndPlay={onHostEndPlay}
+        onToggleDirectorMode={onHostToggleDirectorMode}
+      />
+
+      {directorMode ? (
+        <View className="rounded-md border border-stage-gold bg-stage-surface px-3 py-2">
+          <Text className="text-xs uppercase tracking-widest text-stage-gold">Director mode</Text>
+          <Text className="text-xs text-stage-muted mt-1">
+            The host advances lines. Actors just read.
+          </Text>
+        </View>
+      ) : null}
+
+      <View className="items-center gap-2">
+        <Text className="text-xs uppercase tracking-widest text-stage-muted">Stage code</Text>
+        <Pressable
+          onPress={copyCode}
+          accessibilityRole="button"
+          accessibilityLabel={`Copy stage code ${state.code}`}
+          className="rounded-md border border-stage-border bg-stage-surface px-5 py-2 active:opacity-70"
+        >
+          <Text className="text-4xl font-mono font-semibold tracking-[0.3em] text-stage-gold">
+            {state.code}
+          </Text>
+        </Pressable>
+        <Text className="text-xs text-stage-muted">
+          {copied ? 'Copied to clipboard' : 'Tap code to copy'}
+        </Text>
       </View>
 
       <View>
@@ -76,27 +181,15 @@ export function Lobby({
         )}
       </View>
 
-      {play && me ? (
+      {play && me && !meIsDirector ? (
         <View>
           <Text className="mb-2 text-lg font-serif text-stage-gold">Your role</Text>
           <View className="gap-2 rounded-md border border-stage-border bg-stage-surface p-3">
             <View className="flex-row flex-wrap gap-2">
               <Toggle
-                label="Director"
-                active={me.isDirector}
-                disabled={me.isAudience}
-                onPress={() => onToggleDirector(!me.isDirector)}
-              />
-              <Toggle
                 label="Audience"
                 active={me.isAudience}
                 onPress={() => onToggleAudience(!me.isAudience)}
-              />
-              <Toggle
-                label={me.isReady ? 'Ready ✓' : 'Not ready'}
-                active={me.isReady}
-                disabled={me.isAudience}
-                onPress={() => onToggleReady(!me.isReady)}
               />
             </View>
             {!me.isAudience ? (
@@ -141,48 +234,125 @@ export function Lobby({
           Participants ({state.participants.length})
         </Text>
         {state.participants.map((p) => (
-          <View key={p.id} className="flex-row items-center justify-between py-1">
-            <Text className="text-stage-text">
-              {p.name}
-              {p.id === participantId ? ' (you)' : ''}
-            </Text>
-            <Text className="text-xs text-stage-muted">
-              {p.isAudience
-                ? 'audience'
-                : [
-                    p.isDirector && 'director',
-                    p.castMemberIds.length > 0 &&
-                      `${p.castMemberIds.length} role${p.castMemberIds.length === 1 ? '' : 's'}`,
-                    p.isReady ? 'ready' : 'waiting',
-                  ]
-                    .filter(Boolean)
-                    .join(' · ')}
-            </Text>
+          <View key={p.id} className="py-1">
+            <View className="flex-row items-center justify-between">
+              <Text className="text-stage-text">
+                {p.isHost ? '★ ' : ''}
+                {p.name}
+                {p.id === participantId ? ' (you)' : ''}
+              </Text>
+              <Text className="text-xs text-stage-muted">
+                {p.isAudience
+                  ? 'audience'
+                  : [
+                      p.isHost && (directorMode ? 'host · director' : 'host'),
+                      p.forceMuted && 'muted',
+                      p.castMemberIds.length > 0 &&
+                        `${p.castMemberIds.length} role${p.castMemberIds.length === 1 ? '' : 's'}`,
+                      // The host-as-director isn't a performer and shouldn't be tagged ready/waiting.
+                      !(p.isHost && directorMode) && (p.isReady ? 'ready' : 'waiting'),
+                    ]
+                      .filter(Boolean)
+                      .join(' · ')}
+              </Text>
+            </View>
+            {iAmHost && p.id !== participantId ? (
+              <View className="mt-1 flex-row flex-wrap gap-1">
+                <RowAction label={p.forceMuted ? 'Unmute' : 'Mute'} onPress={() => onHostMute(p.id, !p.forceMuted)} />
+                <RowAction label="Make host" onPress={() => onHostTransferHost(p.id)} />
+                <RowAction label="Kick" onPress={() => onHostKick(p.id)} />
+                <RowAction label="Ban" onPress={() => onHostBan(p.id)} danger />
+              </View>
+            ) : null}
+            {p.id === participantId && p.forceMuted ? (
+              <Text className="mt-1 text-xs text-red-400">You are muted by the host.</Text>
+            ) : null}
           </View>
         ))}
       </View>
 
+      {systemMessages && systemMessages.length > 0 ? (
+        <View className="rounded-md border border-stage-border bg-stage-surface p-3">
+          <Text className="mb-1 text-xs uppercase tracking-widest text-stage-muted">Notices</Text>
+          {systemMessages.slice(-3).map((m) => (
+            <Text key={m.id} className="text-xs text-stage-muted">
+              · {m.text}
+            </Text>
+          ))}
+        </View>
+      ) : null}
+
       <Pressable
-        onPress={onStart}
-        disabled={!canStart}
-        className={`rounded-md px-4 py-3 ${canStart ? 'bg-stage-gold' : 'bg-stage-border'}`}
+        onPress={status.onPress ?? undefined}
+        disabled={!status.onPress}
+        className={`rounded-md px-4 py-3 ${status.primary ? 'bg-stage-gold' : status.onPress ? 'bg-stage-goldDim' : 'bg-stage-border'}`}
       >
         <Text
-          className={`text-center font-semibold ${canStart ? 'text-stage-bg' : 'text-stage-muted'}`}
+          className={`text-center font-semibold ${status.primary ? 'text-stage-bg' : status.onPress ? 'text-stage-bg' : 'text-stage-muted'}`}
         >
-          {!play
-            ? 'Select a play to continue'
-            : !areAllCastMembersAssigned(state)
-              ? 'Assign all characters to start'
-              : !areAllParticipantsReady(state)
-                ? 'Waiting for performers to be ready'
-                : hasDirector
-                  ? 'Begin performance'
-                  : 'Start'}
+          {status.label}
         </Text>
       </Pressable>
     </ScrollView>
   );
+}
+
+interface StatusInput {
+  play: Play | null | undefined;
+  me: StageState['participants'][number] | undefined;
+  allAssigned: boolean;
+  allReady: boolean;
+  directorMode: boolean;
+  iAmHost: boolean;
+  unreadyCount: number;
+  onStart: () => void;
+  onToggleReady: (v: boolean) => void;
+}
+
+interface StatusOutput {
+  label: string;
+  onPress: (() => void) | null;
+  primary: boolean;
+}
+
+function getStatus(i: StatusInput): StatusOutput {
+  const { play, me, allAssigned, allReady, directorMode, iAmHost, unreadyCount, onStart, onToggleReady } = i;
+
+  if (!play) return { label: 'Select a play to continue', onPress: null, primary: false };
+  if (!allAssigned) return { label: 'Waiting for all characters to be cast', onPress: null, primary: false };
+  if (!me) return { label: 'Joining…', onPress: null, primary: false };
+
+  // Host-as-director: they start the play once everyone's ready.
+  if (directorMode && iAmHost) {
+    if (!allReady) return { label: 'Waiting for cast to ready up', onPress: null, primary: false };
+    return { label: 'Begin performance', onPress: onStart, primary: true };
+  }
+
+  if (me.isAudience) {
+    if (!allReady) return { label: 'Waiting for performers to ready up', onPress: null, primary: false };
+    return {
+      label: directorMode ? 'Waiting for director to begin' : 'Starting…',
+      onPress: null,
+      primary: false,
+    };
+  }
+
+  // Performer (cast member, not audience, not host-as-director)
+  if (!me.isReady) return { label: 'Ready up', onPress: () => onToggleReady(true), primary: true };
+  if (!allReady) {
+    const waiting =
+      unreadyCount === 1 ? '1 other' : `${unreadyCount} others`;
+    return {
+      label: `Ready ✓ · Waiting on ${waiting} (tap to unready)`,
+      onPress: () => onToggleReady(false),
+      primary: false,
+    };
+  }
+  return {
+    label: directorMode ? 'Waiting for director to begin' : 'Starting…',
+    onPress: null,
+    primary: false,
+  };
 }
 
 function Toggle({
@@ -205,6 +375,25 @@ function Toggle({
       } ${disabled ? 'opacity-40' : ''}`}
     >
       <Text className={active ? 'text-stage-bg font-semibold' : 'text-stage-text'}>{label}</Text>
+    </Pressable>
+  );
+}
+
+function RowAction({
+  label,
+  onPress,
+  danger,
+}: {
+  label: string;
+  onPress: () => void;
+  danger?: boolean;
+}) {
+  return (
+    <Pressable
+      onPress={onPress}
+      className={`rounded border px-2 py-0.5 ${danger ? 'border-red-500' : 'border-stage-border'}`}
+    >
+      <Text className={`text-xs ${danger ? 'text-red-400' : 'text-stage-muted'}`}>{label}</Text>
     </Pressable>
   );
 }

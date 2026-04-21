@@ -29,7 +29,7 @@ export function areAllCastMembersAssigned(state: StageState): boolean {
 
 export function areAllParticipantsReady(state: StageState): boolean {
   const performers = getPerformers(state);
-  return performers.length > 0 && performers.every((p) => p.isReady || p.isDirector);
+  return performers.length > 0 && performers.every((p) => p.isReady);
 }
 
 export function canStartPlay(state: StageState): boolean {

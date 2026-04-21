@@ -7,9 +7,9 @@ import { Lobby } from '../../components/Lobby';
 import { Countdown } from '../../components/Countdown';
 import { Stage } from '../../components/Stage';
 import { Discussion } from '../../components/Discussion';
+import { HostControls } from '../../components/HostControls';
 import { VideoRoom } from '../../components/VideoRoom';
-
-const PLAYER_NAME_KEY = 'nsp:playerName';
+import { PLAYER_NAME_KEY } from '../../lib/player-name';
 
 export default function StageScreen() {
   const { stageId } = useLocalSearchParams<{ stageId: string }>();
@@ -27,16 +27,26 @@ export default function StageScreen() {
     stageState,
     participantId,
     availablePlays,
+    systemMessages,
     isConnected,
     error,
     toggleCastMember,
-    setDirector,
     setAudience,
     setReady,
     selectPlay,
     startPlay,
     nextLine,
     resetPlay,
+    hostPause,
+    hostResume,
+    hostBackLine,
+    hostSkipLine,
+    hostEndPlay,
+    hostTransferHost,
+    hostKick,
+    hostBan,
+    hostMute,
+    hostToggleDirectorMode,
   } = usePlayState({
     stageIdOrCode: String(stageId),
     participantName: playerName ?? '',
@@ -74,17 +84,39 @@ export default function StageScreen() {
           state={stageState}
           availablePlays={availablePlays}
           participantId={participantId}
+          systemMessages={systemMessages}
           onSelectPlay={selectPlay}
           onToggleRole={toggleCastMember}
-          onToggleDirector={setDirector}
           onToggleAudience={setAudience}
           onToggleReady={setReady}
           onStart={startPlay}
+          onHostPause={hostPause}
+          onHostResume={hostResume}
+          onHostBackLine={hostBackLine}
+          onHostSkipLine={hostSkipLine}
+          onHostEndPlay={hostEndPlay}
+          onHostTransferHost={hostTransferHost}
+          onHostKick={hostKick}
+          onHostBan={hostBan}
+          onHostMute={hostMute}
+          onHostToggleDirectorMode={hostToggleDirectorMode}
         />
       )}
       {stageState.phase === 'countdown' && <Countdown />}
       {stageState.phase === 'performing' && (
         <View className="flex-1">
+          <View className="px-3 pt-3">
+            <HostControls
+              state={stageState}
+              participantId={participantId}
+              onPause={hostPause}
+              onResume={hostResume}
+              onBackLine={hostBackLine}
+              onSkipLine={hostSkipLine}
+              onEndPlay={hostEndPlay}
+              onToggleDirectorMode={hostToggleDirectorMode}
+            />
+          </View>
           <VideoRoom
             stageId={stageState.id}
             participantId={participantId}
@@ -96,7 +128,21 @@ export default function StageScreen() {
         </View>
       )}
       {stageState.phase === 'discussion' && (
-        <Discussion state={stageState} onReset={resetPlay} />
+        <View className="flex-1">
+          <View className="px-3 pt-3">
+            <HostControls
+              state={stageState}
+              participantId={participantId}
+              onPause={hostPause}
+              onResume={hostResume}
+              onBackLine={hostBackLine}
+              onSkipLine={hostSkipLine}
+              onEndPlay={hostEndPlay}
+              onToggleDirectorMode={hostToggleDirectorMode}
+            />
+          </View>
+          <Discussion state={stageState} onReset={resetPlay} />
+        </View>
       )}
     </View>
   );

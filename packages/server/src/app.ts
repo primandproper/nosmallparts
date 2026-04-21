@@ -6,6 +6,7 @@ import type { AuthUser, Session } from './auth.js';
 import { playScriptsRouter, tagsRouter } from './routes/play-scripts.js';
 import { stagesRouter } from './routes/stages.js';
 import { livekitRouter } from './routes/livekit.js';
+import { mintGuestId, resolveIdentity } from './identity.js';
 
 export type AppVariables = {
   user: AuthUser | null;
@@ -48,6 +49,15 @@ app.get('/api/me', (c) => {
   const user = c.get('user');
   if (!user) return c.json({ user: null }, 200);
   return c.json({ user });
+});
+
+app.get('/api/identity', async (c) => {
+  const identity = await resolveIdentity(c);
+  if (identity.userId) {
+    return c.json({ userId: identity.userId, guestId: null });
+  }
+  const guestId = identity.guestId ?? mintGuestId(c);
+  return c.json({ userId: null, guestId });
 });
 
 app.route('/api/play-scripts', playScriptsRouter);

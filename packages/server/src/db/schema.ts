@@ -171,6 +171,10 @@ export const stages = sqliteTable('stages', {
   phase: text('phase', { enum: ['lobby', 'countdown', 'performing', 'discussion'] })
     .notNull()
     .default('lobby'),
+  hostUserId: text('host_user_id').references(() => user.id, { onDelete: 'set null' }),
+  hostGuestId: text('host_guest_id'),
+  pausedByHost: integer('paused_by_host', { mode: 'boolean' }).notNull().default(false),
+  directorMode: integer('director_mode', { mode: 'boolean' }).notNull().default(false),
   createdAt: integer('created_at', { mode: 'timestamp_ms' })
     .notNull()
     .$defaultFn(() => new Date()),
@@ -185,14 +189,29 @@ export const stageParticipants = sqliteTable('stage_participants', {
     .notNull()
     .references(() => stages.id, { onDelete: 'cascade' }),
   userId: text('user_id').references(() => user.id, { onDelete: 'set null' }),
+  guestId: text('guest_id'),
   displayName: text('display_name').notNull(),
-  isDirector: integer('is_director', { mode: 'boolean' }).notNull().default(false),
   isReady: integer('is_ready', { mode: 'boolean' }).notNull().default(false),
   isAudience: integer('is_audience', { mode: 'boolean' }).notNull().default(false),
+  forceMutedByHost: integer('force_muted_by_host', { mode: 'boolean' })
+    .notNull()
+    .default(false),
   createdAt: integer('created_at', { mode: 'timestamp_ms' })
     .notNull()
     .$defaultFn(() => new Date()),
   leftAt: integer('left_at', { mode: 'timestamp_ms' }),
+});
+
+export const stageBans = sqliteTable('stage_bans', {
+  id: text('id').primaryKey(),
+  stageId: text('stage_id')
+    .notNull()
+    .references(() => stages.id, { onDelete: 'cascade' }),
+  userId: text('user_id').references(() => user.id, { onDelete: 'set null' }),
+  guestId: text('guest_id'),
+  bannedAt: integer('banned_at', { mode: 'timestamp_ms' })
+    .notNull()
+    .$defaultFn(() => new Date()),
 });
 
 export const stageParticipantRoles = sqliteTable(

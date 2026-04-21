@@ -6,28 +6,83 @@
 import type { Context } from 'hono';
 import type { WSContext, WSEvents } from 'hono/ws';
 import { ulid } from 'ulid';
+import type { AppVariables } from '../app.js';
+import { resolveIdentity, type Identity } from '../identity.js';
+import { livekitRemoveParticipant, livekitSetMuted } from '../livekit-admin.js';
 import { listPlayScripts } from '../repos/play-scripts.js';
 import {
+  addBan,
+  backLine,
+  clearParticipantRoles,
+  clearStageHost,
+  getParticipant,
+  getStageById,
   getStageByIdOrCode,
+  getStageHost,
   getStageState,
+  identityMatches,
   incrementLine,
+  isBanned,
   joinStage,
   leaveStage,
+  markParticipantLeft,
+  participantDisplayName,
+  pickSuccessorIdentity,
+  reassignRole,
   resetStage,
+  setDirectorMode,
+  setForceMuted,
+  setPausedByHost,
+  setPlayhead,
   setSelectedPlay,
+  setStageHost,
   setStagePhase,
   toggleParticipantRole,
+  unassignRole,
   updateParticipantFlags,
+  type HostIdentity,
 } from '../repos/stages.js';
 
-type Conn = { ws: WSContext; participantId: string };
+const HOST_GRACE_MS = 15_000;
+
+type Conn = { ws: WSContext; participantId: string; identity: Identity };
 
 // stageId -> participantId -> connection
 const connections = new Map<string, Map<string, Conn>>();
 
-function registerConn(stageId: string, participantId: string, ws: WSContext) {
+// stageId -> pending succession timer (set while host is disconnected within grace).
+const hostGraceTimers = new Map<string, ReturnType<typeof setTimeout>>();
+
+function cancelHostGrace(stageId: string) {
+  const t = hostGraceTimers.get(stageId);
+  if (t) {
+    clearTimeout(t);
+    hostGraceTimers.delete(stageId);
+  }
+}
+
+function isIdentityConnected(stageId: string, identity: HostIdentity): boolean {
+  const stage = connections.get(stageId);
+  if (!stage) return false;
+  for (const { identity: connId } of stage.values()) {
+    if (identityMatches(connId, identity)) return true;
+  }
+  return false;
+}
+
+async function isHostIdentity(stageId: string, identity: Identity): Promise<boolean> {
+  const host = await getStageHost(stageId);
+  if (!host) return false;
+  return identityMatches(host, identity);
+}
+
+function getConn(stageId: string, participantId: string): Conn | undefined {
+  return connections.get(stageId)?.get(participantId);
+}
+
+function registerConn(stageId: string, participantId: string, ws: WSContext, identity: Identity) {
   if (!connections.has(stageId)) connections.set(stageId, new Map());
-  connections.get(stageId)!.set(participantId, { ws, participantId });
+  connections.get(stageId)!.set(participantId, { ws, participantId, identity });
 }
 
 function removeConn(stageId: string, participantId: string) {
@@ -70,10 +125,55 @@ async function broadcastCurrentState(stageId: string, excludeParticipantId?: str
   broadcastToStage(stageId, { type: 'stageState', state }, { excludeParticipantId });
 }
 
-export function createStageWsHandler(): (c: Context) => Promise<WSEvents> {
-  return async () => {
+function broadcastSystem(stageId: string, text: string) {
+  broadcastToStage(stageId, {
+    type: 'systemMessage',
+    message: { id: ulid(), text, timestamp: Date.now() },
+  });
+}
+
+async function scheduleHostSuccession(stageId: string, leavingHost: HostIdentity, leavingHostName: string) {
+  cancelHostGrace(stageId);
+  const timer = setTimeout(() => {
+    hostGraceTimers.delete(stageId);
+    void promoteSuccessor(stageId, leavingHost, leavingHostName);
+  }, HOST_GRACE_MS);
+  hostGraceTimers.set(stageId, timer);
+}
+
+async function promoteSuccessor(stageId: string, leavingHost: HostIdentity, leavingHostName: string) {
+  // If the leaving host has reconnected during grace, nothing to do.
+  if (isIdentityConnected(stageId, leavingHost)) return;
+
+  const stageConns = connections.get(stageId);
+  const pids = stageConns ? Array.from(stageConns.keys()) : [];
+  const successor = await pickSuccessorIdentity(stageId, pids, leavingHost);
+  if (!successor) {
+    // No one left — clear host, stage is effectively idle.
+    await clearStageHost(stageId);
+    return;
+  }
+  await setStageHost(stageId, successor);
+
+  let successorName = 'someone';
+  if (stageConns) {
+    for (const { participantId, identity } of stageConns.values()) {
+      if (identityMatches(identity, successor)) {
+        successorName = (await participantDisplayName(participantId)) ?? successorName;
+        break;
+      }
+    }
+  }
+  broadcastSystem(stageId, `${leavingHostName} left. ${successorName} is now host.`);
+  await broadcastCurrentState(stageId);
+}
+
+export function createStageWsHandler(): (c: Context<{ Variables: AppVariables }>) => Promise<WSEvents> {
+  return async (c) => {
+    const identity = await resolveIdentity(c);
     let stageId: string | null = null;
     let participantId: string | null = null;
+    let authorized = false;
 
     return {
       async onMessage(event, ws) {
@@ -88,67 +188,100 @@ export function createStageWsHandler(): (c: Context) => Promise<WSEvents> {
         }
 
         try {
-          switch (msg.type) {
-            case 'join': {
-              const idOrCode = String(msg.stageId || '');
-              const name = String(msg.participantName || '').trim() || 'Performer';
-              const stage = await getStageByIdOrCode(idOrCode);
-              if (!stage) {
-                sendError(ws, 'Stage not found');
-                return;
-              }
-              const joined = await joinStage(stage.id, name, null);
-              stageId = joined.stageId;
-              participantId = joined.participantId;
-              registerConn(stageId, participantId, ws);
+          if (msg.type === 'join') {
+            if (!identity.userId && !identity.guestId) {
+              sendError(ws, 'Identity required. Call /api/identity before connecting.');
+              ws.close();
+              return;
+            }
+            const idOrCode = String(msg.stageId || '');
+            const name = String(msg.participantName || '').trim() || 'Performer';
+            const stage = await getStageByIdOrCode(idOrCode);
+            if (!stage) {
+              sendError(ws, 'Stage not found');
+              return;
+            }
+            if (await isBanned(stage.id, identity)) {
+              sendError(ws, 'You have been removed from this stage.');
+              ws.close();
+              return;
+            }
+            const joined = await joinStage(stage.id, name, identity);
+            stageId = joined.stageId;
+            participantId = joined.participantId;
+            authorized = true;
+            registerConn(stageId, participantId, ws, identity);
 
-              const state = await getStageState(stageId);
-              if (!state) {
-                sendError(ws, 'Failed to load stage state');
-                return;
+            // Host assignment: if stage has no host, this joiner becomes host.
+            // If they ARE the host identity returning during grace, cancel succession.
+            const currentHost = await getStageHost(stageId);
+            let hostAnnouncement: string | null = null;
+            if (!currentHost) {
+              await setStageHost(stageId, identity);
+              hostAnnouncement = `${name} is host.`;
+            } else if (identityMatches(currentHost, identity)) {
+              if (hostGraceTimers.has(stageId)) {
+                cancelHostGrace(stageId);
+                hostAnnouncement = `${name} (host) reconnected.`;
               }
-              sendToClient(ws, { type: 'joined', participantId, stageState: state });
-              // Send list of public plays the user can choose from.
-              const plays = await listPlayScripts({ userId: null });
-              sendToClient(ws, { type: 'availablePlays', plays });
-              // Notify others of new participant.
-              broadcastToStage(stageId, { type: 'stageState', state }, { excludeParticipantId: participantId });
-              break;
             }
 
+            const state = await getStageState(stageId);
+            if (!state) {
+              sendError(ws, 'Failed to load stage state');
+              return;
+            }
+            sendToClient(ws, { type: 'joined', participantId, stageState: state });
+            const plays = await listPlayScripts({ userId: identity.userId ?? null });
+            sendToClient(ws, { type: 'availablePlays', plays });
+            broadcastToStage(stageId, { type: 'stageState', state }, { excludeParticipantId: participantId });
+            if (hostAnnouncement) broadcastSystem(stageId, hostAnnouncement);
+            return;
+          }
+
+          if (!authorized || !stageId || !participantId) {
+            sendError(ws, 'Must join before sending messages');
+            return;
+          }
+
+          // Messages that carry a participantId are locked to the connection's own.
+          // Host-on-others actions (reassign, kick, etc.) arrive as distinct message types
+          // in a later chunk and are gated separately.
+          const lockedSelfPid = participantId;
+
+          switch (msg.type) {
             case 'heartbeat': {
-              if (!stageId) return;
               const state = await getStageState(stageId);
               if (state) sendToClient(ws, { type: 'stageState', state });
               break;
             }
 
             case 'toggleCastMember': {
-              if (!stageId || !participantId) return;
-              await toggleParticipantRole(
-                stageId,
-                String(msg.participantId),
-                String(msg.castMemberId)
-              );
+              // In director mode, the host cannot take a role.
+              const stage = await getStageById(stageId);
+              if (
+                stage?.directorMode &&
+                (await isHostIdentity(stageId, identity))
+              ) {
+                sendError(ws, 'Exit director mode to take a role.');
+                break;
+              }
+              await toggleParticipantRole(stageId, lockedSelfPid, String(msg.castMemberId));
               await broadcastCurrentState(stageId);
               break;
             }
 
-            case 'setDirector':
             case 'setAudience':
             case 'setReady': {
-              if (!stageId) return;
-              const patch: { isDirector?: boolean; isAudience?: boolean; isReady?: boolean } = {};
-              if (msg.type === 'setDirector') patch.isDirector = Boolean(msg.isDirector);
+              const patch: { isAudience?: boolean; isReady?: boolean } = {};
               if (msg.type === 'setAudience') patch.isAudience = Boolean(msg.isAudience);
               if (msg.type === 'setReady') patch.isReady = Boolean(msg.isReady);
-              await updateParticipantFlags(String(msg.participantId), patch);
+              await updateParticipantFlags(lockedSelfPid, patch);
               await broadcastCurrentState(stageId);
               break;
             }
 
             case 'selectPlay': {
-              if (!stageId) return;
               const playId = String(msg.playId || '') || null;
               await setSelectedPlay(stageId, playId);
               await broadcastCurrentState(stageId);
@@ -156,17 +289,15 @@ export function createStageWsHandler(): (c: Context) => Promise<WSEvents> {
             }
 
             case 'sendChat': {
-              if (!stageId) return;
               const chat = {
                 id: ulid(),
-                senderId: String(msg.participantId || ''),
-                senderName: await participantNameFor(stageId, String(msg.participantId || '')),
+                senderId: lockedSelfPid,
+                senderName: await participantNameFor(stageId, lockedSelfPid),
                 text: String(msg.text || ''),
                 castOnly: Boolean(msg.castOnly),
                 timestamp: Date.now(),
               };
               if (chat.castOnly) {
-                // Only broadcast to non-audience participants.
                 const state = await getStageState(stageId);
                 if (!state) return;
                 const allowed = new Set(state.participants.filter((p) => !p.isAudience).map((p) => p.id));
@@ -190,7 +321,6 @@ export function createStageWsHandler(): (c: Context) => Promise<WSEvents> {
             }
 
             case 'startPlay': {
-              if (!stageId) return;
               const sid = stageId;
               await setStagePhase(sid, 'countdown', 0);
               const countdownState = await getStageState(sid);
@@ -210,7 +340,15 @@ export function createStageWsHandler(): (c: Context) => Promise<WSEvents> {
             }
 
             case 'nextLine': {
-              if (!stageId) return;
+              const stage = await getStageById(stageId);
+              if (stage?.pausedByHost) {
+                sendError(ws, 'Play is paused by host.');
+                break;
+              }
+              if (stage?.directorMode && !(await isHostIdentity(stageId, identity))) {
+                sendError(ws, 'Director controls line advance.');
+                break;
+              }
               const { currentLineIndex, playEnded } = await incrementLine(stageId);
               if (playEnded) {
                 broadcastToStage(stageId, { type: 'playEnded' });
@@ -222,9 +360,242 @@ export function createStageWsHandler(): (c: Context) => Promise<WSEvents> {
             }
 
             case 'resetPlay': {
-              if (!stageId) return;
+              if (!(await isHostIdentity(stageId, identity))) {
+                sendError(ws, 'Only the host can reset the play.');
+                break;
+              }
               await resetStage(stageId);
+              await setPausedByHost(stageId, false);
               await broadcastCurrentState(stageId);
+              break;
+            }
+
+            // ===== Host actions =====
+            case 'hostPause':
+            case 'hostResume': {
+              if (!(await isHostIdentity(stageId, identity))) {
+                sendError(ws, 'Host only.');
+                break;
+              }
+              const paused = msg.type === 'hostPause';
+              await setPausedByHost(stageId, paused);
+              await broadcastCurrentState(stageId);
+              broadcastSystem(stageId, paused ? 'Host paused the play.' : 'Host resumed the play.');
+              break;
+            }
+
+            case 'hostBackLine': {
+              if (!(await isHostIdentity(stageId, identity))) {
+                sendError(ws, 'Host only.');
+                break;
+              }
+              const stage = await getStageById(stageId);
+              if (!stage || stage.phase !== 'performing') {
+                sendError(ws, 'Not currently performing.');
+                break;
+              }
+              const idx = await backLine(stageId);
+              broadcastToStage(stageId, { type: 'lineAdvanced', currentLineIndex: idx });
+              await broadcastCurrentState(stageId);
+              broadcastSystem(stageId, 'Host went back a line.');
+              break;
+            }
+
+            case 'hostSkipLine': {
+              if (!(await isHostIdentity(stageId, identity))) {
+                sendError(ws, 'Host only.');
+                break;
+              }
+              const stage = await getStageById(stageId);
+              if (!stage || stage.phase !== 'performing') {
+                sendError(ws, 'Not currently performing.');
+                break;
+              }
+              const { currentLineIndex, playEnded } = await incrementLine(stageId);
+              if (playEnded) {
+                broadcastToStage(stageId, { type: 'playEnded' });
+              } else {
+                broadcastToStage(stageId, { type: 'lineAdvanced', currentLineIndex });
+              }
+              await broadcastCurrentState(stageId);
+              broadcastSystem(stageId, 'Host skipped a line.');
+              break;
+            }
+
+            case 'hostEndPlay': {
+              if (!(await isHostIdentity(stageId, identity))) {
+                sendError(ws, 'Host only.');
+                break;
+              }
+              await resetStage(stageId);
+              await setPausedByHost(stageId, false);
+              await broadcastCurrentState(stageId);
+              broadcastSystem(stageId, 'Host ended the play.');
+              break;
+            }
+
+            case 'hostReassignRole': {
+              if (!(await isHostIdentity(stageId, identity))) {
+                sendError(ws, 'Host only.');
+                break;
+              }
+              const targetPid = String(msg.targetParticipantId);
+              const target = await getParticipant(targetPid);
+              if (!target || target.stageId !== stageId) {
+                sendError(ws, 'Target participant not found.');
+                break;
+              }
+              const stage = await getStageById(stageId);
+              const wasPerforming = stage?.phase === 'performing';
+              if (wasPerforming) await setPausedByHost(stageId, true);
+              await reassignRole(stageId, targetPid, String(msg.castMemberId));
+              await broadcastCurrentState(stageId);
+              broadcastSystem(
+                stageId,
+                wasPerforming
+                  ? `Host reassigned a role to ${target.displayName}. Play is paused.`
+                  : `Host reassigned a role to ${target.displayName}.`
+              );
+              break;
+            }
+
+            case 'hostUnassignRole': {
+              if (!(await isHostIdentity(stageId, identity))) {
+                sendError(ws, 'Host only.');
+                break;
+              }
+              await unassignRole(String(msg.targetParticipantId), String(msg.castMemberId));
+              await broadcastCurrentState(stageId);
+              broadcastSystem(stageId, 'Host unassigned a role.');
+              break;
+            }
+
+            case 'hostTransferHost': {
+              if (!(await isHostIdentity(stageId, identity))) {
+                sendError(ws, 'Host only.');
+                break;
+              }
+              const targetPid = String(msg.targetParticipantId);
+              const targetConn = getConn(stageId, targetPid);
+              if (!targetConn) {
+                sendError(ws, 'Target is no longer connected.');
+                break;
+              }
+              const targetIdentity = targetConn.identity;
+              if (!targetIdentity.userId && !targetIdentity.guestId) {
+                sendError(ws, 'Target has no identity.');
+                break;
+              }
+              cancelHostGrace(stageId);
+              await setStageHost(stageId, targetIdentity);
+              const targetName = (await participantDisplayName(targetPid)) ?? 'Someone';
+              await broadcastCurrentState(stageId);
+              broadcastSystem(stageId, `Host transferred to ${targetName}.`);
+              break;
+            }
+
+            case 'hostKick':
+            case 'hostBan': {
+              if (!(await isHostIdentity(stageId, identity))) {
+                sendError(ws, 'Host only.');
+                break;
+              }
+              const targetPid = String(msg.targetParticipantId);
+              if (targetPid === participantId) {
+                sendError(ws, "Can't kick yourself.");
+                break;
+              }
+              const target = await getParticipant(targetPid);
+              if (!target || target.stageId !== stageId) {
+                sendError(ws, 'Target not found.');
+                break;
+              }
+              const targetName = target.displayName;
+              const targetIdentity: HostIdentity = {
+                userId: target.userId ?? null,
+                guestId: target.guestId ?? null,
+              };
+              if (msg.type === 'hostBan') {
+                await addBan(stageId, targetIdentity);
+              }
+              await markParticipantLeft(targetPid);
+              const targetConn = getConn(stageId, targetPid);
+              if (targetConn) {
+                sendToClient(targetConn.ws, {
+                  type: 'error',
+                  message: msg.type === 'hostBan' ? 'You were banned by the host.' : 'You were removed by the host.',
+                });
+                try {
+                  targetConn.ws.close();
+                } catch {
+                  /* ignore */
+                }
+                removeConn(stageId, targetPid);
+              }
+              await livekitRemoveParticipant(stageId, targetPid);
+              await broadcastCurrentState(stageId);
+              broadcastSystem(
+                stageId,
+                msg.type === 'hostBan'
+                  ? `${targetName} was banned by the host.`
+                  : `${targetName} was removed by the host.`
+              );
+              break;
+            }
+
+            case 'hostToggleDirectorMode': {
+              if (!(await isHostIdentity(stageId, identity))) {
+                sendError(ws, 'Host only.');
+                break;
+              }
+              const stage = await getStageById(stageId);
+              if (!stage) break;
+              if (stage.phase !== 'lobby') {
+                sendError(ws, 'Director mode can only be toggled from the lobby.');
+                break;
+              }
+              const enabled = Boolean(msg.enabled);
+              await setDirectorMode(stageId, enabled);
+              if (enabled) {
+                // Host exits the cast when entering director mode.
+                const stagePids = connections.get(stageId);
+                if (stagePids) {
+                  for (const { participantId: pid, identity: connId } of stagePids.values()) {
+                    if (identityMatches(connId, identity)) {
+                      await clearParticipantRoles(pid);
+                    }
+                  }
+                }
+              }
+              await broadcastCurrentState(stageId);
+              broadcastSystem(
+                stageId,
+                enabled ? 'Director mode enabled. Host will advance lines.' : 'Director mode disabled.'
+              );
+              break;
+            }
+
+            case 'hostMute': {
+              if (!(await isHostIdentity(stageId, identity))) {
+                sendError(ws, 'Host only.');
+                break;
+              }
+              const targetPid = String(msg.targetParticipantId);
+              const muted = Boolean(msg.muted);
+              const target = await getParticipant(targetPid);
+              if (!target || target.stageId !== stageId) {
+                sendError(ws, 'Target not found.');
+                break;
+              }
+              await setForceMuted(targetPid, muted);
+              await livekitSetMuted(stageId, targetPid, muted);
+              await broadcastCurrentState(stageId);
+              broadcastSystem(
+                stageId,
+                muted
+                  ? `Host muted ${target.displayName}.`
+                  : `Host unmuted ${target.displayName}.`
+              );
               break;
             }
 
@@ -241,9 +612,23 @@ export function createStageWsHandler(): (c: Context) => Promise<WSEvents> {
         if (stageId && participantId) {
           const sid = stageId;
           const pid = participantId;
+          const leavingIdentity = { ...identity };
+          const leavingName = (await participantDisplayName(pid)) ?? 'Host';
           removeConn(sid, pid);
           await leaveStage(sid, pid).catch(() => {});
           await broadcastCurrentState(sid);
+
+          // If the departing connection was the host's identity AND no other
+          // connection for that identity remains, start a grace timer before
+          // transferring host.
+          const host = await getStageHost(sid).catch(() => null);
+          if (
+            host &&
+            identityMatches(host, leavingIdentity) &&
+            !isIdentityConnected(sid, leavingIdentity)
+          ) {
+            await scheduleHostSuccession(sid, leavingIdentity, leavingName);
+          }
         }
       },
 

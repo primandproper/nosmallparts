@@ -26,7 +26,7 @@ export function Stage({ state, participantId, onNextLine }: Props) {
   const speakerIds = new Set(getCurrentSpeakerCastMemberIds(state));
   const speakers = play.cast.filter((c) => speakerIds.has(c.id));
   const isSpeaking = me ? isParticipantSpeaking(state, me.id) : false;
-  const isDirector = me?.isDirector ?? false;
+  const isDirector = state.directorMode && !!me?.isHost;
   const next = me ? getNextLinesForParticipant(state, me.id) : null;
 
   const totalIndices = getLineIndices(play).length;
@@ -36,6 +36,7 @@ export function Stage({ state, participantId, onNextLine }: Props) {
       <View className="flex-row items-center justify-between border-b border-stage-border bg-stage-surface px-4 py-3">
         <Text className="text-stage-muted text-xs">
           Turn {state.currentLineIndex + 1} of {totalIndices}
+          {state.pausedByHost ? '  ·  ⏸ Paused by host' : ''}
         </Text>
         <Text className="text-stage-muted text-xs">Code: {state.code}</Text>
       </View>
@@ -96,15 +97,21 @@ export function Stage({ state, participantId, onNextLine }: Props) {
       <View className="border-t border-stage-border bg-stage-surface p-3">
         <Pressable
           onPress={onNextLine}
-          disabled={!isDirector && !isSpeaking}
-          className={`rounded-md px-4 py-3 ${isDirector || isSpeaking ? 'bg-stage-gold' : 'bg-stage-border'}`}
+          disabled={state.pausedByHost || (state.directorMode ? !isDirector : !isSpeaking)}
+          className={`rounded-md px-4 py-3 ${
+            !state.pausedByHost && (state.directorMode ? isDirector : isSpeaking)
+              ? 'bg-stage-gold'
+              : 'bg-stage-border'
+          }`}
         >
           <Text
             className={`text-center font-semibold ${
-              isDirector || isSpeaking ? 'text-stage-bg' : 'text-stage-muted'
+              !state.pausedByHost && (state.directorMode ? isDirector : isSpeaking)
+                ? 'text-stage-bg'
+                : 'text-stage-muted'
             }`}
           >
-            Next line
+            {state.directorMode && isDirector ? 'Advance' : 'Next line'}
           </Text>
         </Pressable>
       </View>
