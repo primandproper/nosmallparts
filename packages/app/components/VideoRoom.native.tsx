@@ -31,6 +31,7 @@ export function VideoRoom({ stageId, participantId, state }: Props) {
   const [participants, setParticipants] = useState<(LocalParticipant | RemoteParticipant)[]>([]);
   const me = state.participants.find((p) => p.id === participantId);
   const isAudience = me?.isAudience ?? false;
+  const forceMuted = me?.forceMuted ?? false;
 
   useEffect(() => {
     if (!credentials) return;
@@ -69,6 +70,18 @@ export function VideoRoom({ stageId, participantId, state }: Props) {
       roomRef.current = null;
     };
   }, [credentials, isAudience]);
+
+  // Defensive enforcement: keep the mic disabled while the host has muted us.
+  // The server-side mutePublishedTrack should already propagate, but this
+  // re-asserts on every render in case the SDK or a future user gesture
+  // re-enables the track locally.
+  useEffect(() => {
+    const room = roomRef.current;
+    if (!room || isAudience) return;
+    if (forceMuted) {
+      room.localParticipant.setMicrophoneEnabled(false).catch(() => {});
+    }
+  }, [forceMuted, isAudience, participants]);
 
   if (unavailable) {
     return (

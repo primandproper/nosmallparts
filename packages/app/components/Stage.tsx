@@ -41,6 +41,14 @@ export function Stage({ state, participantId, onNextLine }: Props) {
         <Text className="text-stage-muted text-xs">Code: {state.code}</Text>
       </View>
 
+      {me?.forceMuted ? (
+        <View className="border-b border-red-500 bg-stage-surface px-4 py-2">
+          <Text className="text-xs text-red-400">
+            🔇 You are muted by the host. You can still see and read the play.
+          </Text>
+        </View>
+      ) : null}
+
       <ScrollView contentContainerStyle={{ padding: 20, gap: 16 }} className="flex-1">
         {isSpeaking && myLines.length > 0 ? (
           <View>

@@ -6,10 +6,12 @@ import { ratePlayScript } from '../lib/scripts-api';
 
 interface Props {
   state: StageState;
+  participantId?: string | null;
   onReset: () => void;
 }
 
-export function Discussion({ state, onReset }: Props) {
+export function Discussion({ state, participantId, onReset }: Props) {
+  const me = participantId ? state.participants.find((p) => p.id === participantId) : null;
   const { data: session } = useSession();
   const [rating, setRating] = useState<number | null>(null);
   const [saving, setSaving] = useState(false);
@@ -32,6 +34,9 @@ export function Discussion({ state, onReset }: Props) {
 
   return (
     <View className="flex-1 items-center justify-center bg-stage-bg px-6 gap-5">
+      {me?.forceMuted ? (
+        <Text className="text-xs text-red-400">🔇 You are muted by the host.</Text>
+      ) : null}
       <Text className="text-5xl font-serif text-stage-gold">Bravo!</Text>
       {play ? <Text className="text-stage-muted">That was "{play.title}"</Text> : null}
 

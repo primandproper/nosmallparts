@@ -153,7 +153,7 @@ export default function StageScreen() {
               onUnassignRole={hostUnassignRole}
             />
           </View>
-          <Discussion state={stageState} onReset={resetPlay} />
+          <Discussion state={stageState} participantId={participantId} onReset={resetPlay} />
         </View>
       )}
     </View>
