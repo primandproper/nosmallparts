@@ -4,6 +4,8 @@ import { ActivityIndicator, Pressable, ScrollView, Text, View } from 'react-nati
 import type { Play } from '@nsp/shared';
 import { getPlayScriptById, ratePlayScript } from '../../lib/scripts-api';
 import { useSession } from '../../lib/auth-client';
+import { api } from '../../lib/api';
+import { getStoredPlayerName } from '../../lib/player-name';
 
 export default function ScriptDetail() {
   const { id } = useLocalSearchParams<{ id: string }>();
@@ -14,6 +16,7 @@ export default function ScriptDetail() {
   const [error, setError] = useState<string | null>(null);
   const [rating, setRating] = useState<number | null>(null);
   const [savingRating, setSavingRating] = useState(false);
+  const [startingStage, setStartingStage] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
@@ -128,11 +131,29 @@ export default function ScriptDetail() {
       ) : null}
 
       <Pressable
-        onPress={() => router.push({ pathname: '/', params: { script: play.id } })}
-        className="mt-6 rounded-md bg-stage-gold px-4 py-3"
+        onPress={async () => {
+          if (startingStage) return;
+          setStartingStage(true);
+          try {
+            const name = await getStoredPlayerName();
+            if (!name) {
+              router.push({ pathname: '/', params: { s: play.id } });
+              return;
+            }
+            const res = await api<{ id: string; code: string }>('/api/stages', {
+              method: 'POST',
+              body: JSON.stringify({ playScriptId: play.id }),
+            });
+            router.replace(`/stage/${res.code}`);
+          } finally {
+            setStartingStage(false);
+          }
+        }}
+        disabled={startingStage}
+        className={`mt-6 rounded-md px-4 py-3 ${startingStage ? 'bg-stage-goldDim' : 'bg-stage-gold'}`}
       >
         <Text className="text-center font-semibold text-stage-bg">
-          Start a stage with this script
+          {startingStage ? '…' : 'Start a stage with this script'}
         </Text>
       </Pressable>
 

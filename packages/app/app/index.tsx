@@ -1,14 +1,14 @@
-import { Link, useRouter } from 'expo-router';
+import { Link, useLocalSearchParams, useRouter } from 'expo-router';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useEffect, useState } from 'react';
 import { Pressable, Text, TextInput, View } from 'react-native';
 import { useSession, signOut } from '../lib/auth-client';
 import { api } from '../lib/api';
-
-const PLAYER_NAME_KEY = 'nsp:playerName';
+import { PLAYER_NAME_KEY } from '../lib/player-name';
 
 export default function Home() {
   const router = useRouter();
+  const { s: script } = useLocalSearchParams<{ s?: string }>();
   const { data, isPending } = useSession();
   const user = data?.user;
 
@@ -45,13 +45,13 @@ export default function Home() {
           setError("Stage not found. Leave code blank to create one.");
           return;
         }
-        router.push(`/stage/${res.code}`);
+        router.replace(`/stage/${res.code}`);
       } else {
         const res = await api<{ id: string; code: string }>('/api/stages', {
           method: 'POST',
-          body: JSON.stringify({}),
+          body: JSON.stringify(script ? { playScriptId: script } : {}),
         });
-        router.push(`/stage/${res.code}`);
+        router.replace(`/stage/${res.code}`);
       }
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Failed');

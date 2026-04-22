@@ -17,6 +17,7 @@ module.exports = {
       },
       fontFamily: {
         serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+        mono: ['Menlo', 'Monaco', 'Courier New', 'monospace'],
       },
     },
   },
