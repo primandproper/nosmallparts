@@ -44,6 +44,7 @@ import {
 } from '../repos/stages.js';
 
 const HOST_GRACE_MS = 15_000;
+const MAX_PARTICIPANTS_PER_STAGE = 12;
 
 type Conn = { ws: WSContext; participantId: string; identity: Identity };
 
@@ -242,6 +243,12 @@ export function createStageWsHandler(): (c: Context<{ Variables: AppVariables }>
             }
             if (await isBanned(stage.id, identity)) {
               sendError(ws, 'You have been removed from this stage.');
+              ws.close();
+              return;
+            }
+            const currentCount = connections.get(stage.id)?.size ?? 0;
+            if (currentCount >= MAX_PARTICIPANTS_PER_STAGE) {
+              sendError(ws, `Stage is full (${MAX_PARTICIPANTS_PER_STAGE} max).`);
               ws.close();
               return;
             }
