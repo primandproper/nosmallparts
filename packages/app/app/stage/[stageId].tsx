@@ -8,6 +8,7 @@ import { Countdown } from '../../components/Countdown';
 import { Stage } from '../../components/Stage';
 import { Discussion } from '../../components/Discussion';
 import { HostControls } from '../../components/HostControls';
+import { RoleOfferPrompt } from '../../components/RoleOfferPrompt';
 import { VideoRoom } from '../../components/VideoRoom';
 import { PLAYER_NAME_KEY } from '../../lib/player-name';
 
@@ -28,6 +29,7 @@ export default function StageScreen() {
     participantId,
     availablePlays,
     systemMessages,
+    roleOffers,
     isConnected,
     error,
     toggleCastMember,
@@ -47,6 +49,9 @@ export default function StageScreen() {
     hostBan,
     hostMute,
     hostToggleDirectorMode,
+    hostReassignRole,
+    hostUnassignRole,
+    respondRoleOffer,
   } = usePlayState({
     stageIdOrCode: String(stageId),
     participantName: playerName ?? '',
@@ -79,6 +84,7 @@ export default function StageScreen() {
   return (
     <View className="flex-1 bg-stage-bg">
       <Stack.Screen options={{ title: screenTitle }} />
+      <RoleOfferPrompt offers={roleOffers} onRespond={respondRoleOffer} />
       {stageState.phase === 'lobby' && (
         <Lobby
           state={stageState}
@@ -100,6 +106,8 @@ export default function StageScreen() {
           onHostBan={hostBan}
           onHostMute={hostMute}
           onHostToggleDirectorMode={hostToggleDirectorMode}
+          onHostReassignRole={hostReassignRole}
+          onHostUnassignRole={hostUnassignRole}
         />
       )}
       {stageState.phase === 'countdown' && <Countdown />}
@@ -115,6 +123,8 @@ export default function StageScreen() {
               onSkipLine={hostSkipLine}
               onEndPlay={hostEndPlay}
               onToggleDirectorMode={hostToggleDirectorMode}
+              onReassignRole={hostReassignRole}
+              onUnassignRole={hostUnassignRole}
             />
           </View>
           <VideoRoom
@@ -139,6 +149,8 @@ export default function StageScreen() {
               onSkipLine={hostSkipLine}
               onEndPlay={hostEndPlay}
               onToggleDirectorMode={hostToggleDirectorMode}
+              onReassignRole={hostReassignRole}
+              onUnassignRole={hostUnassignRole}
             />
           </View>
           <Discussion state={stageState} onReset={resetPlay} />

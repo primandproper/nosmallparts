@@ -53,6 +53,45 @@ const connections = new Map<string, Map<string, Conn>>();
 // stageId -> pending succession timer (set while host is disconnected within grace).
 const hostGraceTimers = new Map<string, ReturnType<typeof setTimeout>>();
 
+// Mid-play role reassignment offers that are awaiting accept/decline.
+// stageId -> offerId -> offer
+type PendingOffer = {
+  offerId: string;
+  castMemberId: string;
+  castMemberName: string;
+  targetParticipantId: string;
+  createdAt: number;
+};
+const pendingOffers = new Map<string, Map<string, PendingOffer>>();
+
+function addPendingOffer(stageId: string, offer: PendingOffer) {
+  if (!pendingOffers.has(stageId)) pendingOffers.set(stageId, new Map());
+  pendingOffers.get(stageId)!.set(offer.offerId, offer);
+}
+
+function removePendingOffer(stageId: string, offerId: string): PendingOffer | undefined {
+  const map = pendingOffers.get(stageId);
+  if (!map) return undefined;
+  const offer = map.get(offerId);
+  if (offer) map.delete(offerId);
+  if (map.size === 0) pendingOffers.delete(stageId);
+  return offer;
+}
+
+function clearOffersForParticipant(stageId: string, participantId: string): PendingOffer[] {
+  const map = pendingOffers.get(stageId);
+  if (!map) return [];
+  const dropped: PendingOffer[] = [];
+  for (const [id, offer] of map) {
+    if (offer.targetParticipantId === participantId) {
+      dropped.push(offer);
+      map.delete(id);
+    }
+  }
+  if (map.size === 0) pendingOffers.delete(stageId);
+  return dropped;
+}
+
 function cancelHostGrace(stageId: string) {
   const t = hostGraceTimers.get(stageId);
   if (t) {
@@ -440,22 +479,89 @@ export function createStageWsHandler(): (c: Context<{ Variables: AppVariables }>
                 break;
               }
               const targetPid = String(msg.targetParticipantId);
+              const castMemberId = String(msg.castMemberId);
               const target = await getParticipant(targetPid);
               if (!target || target.stageId !== stageId) {
                 sendError(ws, 'Target participant not found.');
                 break;
               }
-              const stage = await getStageById(stageId);
-              const wasPerforming = stage?.phase === 'performing';
-              if (wasPerforming) await setPausedByHost(stageId, true);
-              await reassignRole(stageId, targetPid, String(msg.castMemberId));
+              const state = await getStageState(stageId);
+              const cast = state?.selectedPlay?.cast.find((c) => c.id === castMemberId);
+              if (!cast) {
+                sendError(ws, 'Cast member not found in current play.');
+                break;
+              }
+              const wasPerforming = state?.phase === 'performing';
+
+              // Lobby reassignment: switch immediately.
+              if (!wasPerforming) {
+                await reassignRole(stageId, targetPid, castMemberId);
+                await broadcastCurrentState(stageId);
+                broadcastSystem(
+                  stageId,
+                  `Host assigned ${cast.name} to ${target.displayName}.`
+                );
+                break;
+              }
+
+              // Mid-play: pause and send the target an offer they can accept/decline.
+              const targetConn = getConn(stageId, targetPid);
+              if (!targetConn) {
+                sendError(ws, 'Target is no longer connected.');
+                break;
+              }
+              await setPausedByHost(stageId, true);
+              const offer: PendingOffer = {
+                offerId: ulid(),
+                castMemberId,
+                castMemberName: cast.name,
+                targetParticipantId: targetPid,
+                createdAt: Date.now(),
+              };
+              addPendingOffer(stageId, offer);
+              sendToClient(targetConn.ws, {
+                type: 'roleOffer',
+                offer: {
+                  offerId: offer.offerId,
+                  castMemberId: offer.castMemberId,
+                  castMemberName: offer.castMemberName,
+                },
+              });
               await broadcastCurrentState(stageId);
               broadcastSystem(
                 stageId,
-                wasPerforming
-                  ? `Host reassigned a role to ${target.displayName}. Play is paused.`
-                  : `Host reassigned a role to ${target.displayName}.`
+                `Host offered ${cast.name} to ${target.displayName}. Play is paused.`
               );
+              break;
+            }
+
+            case 'respondRoleOffer': {
+              const offerId = String(msg.offerId);
+              const offer = pendingOffers.get(stageId)?.get(offerId);
+              if (!offer) {
+                sendError(ws, 'Offer not found or already resolved.');
+                break;
+              }
+              if (offer.targetParticipantId !== participantId) {
+                sendError(ws, 'Not your offer to respond to.');
+                break;
+              }
+              removePendingOffer(stageId, offerId);
+              broadcastToStage(stageId, { type: 'roleOfferCleared', offerId });
+              const targetName = (await participantDisplayName(participantId)) ?? 'Someone';
+              if (msg.accept) {
+                await reassignRole(stageId, participantId, offer.castMemberId);
+                await broadcastCurrentState(stageId);
+                broadcastSystem(
+                  stageId,
+                  `${targetName} accepted ${offer.castMemberName}. Resume when ready.`
+                );
+              } else {
+                broadcastSystem(
+                  stageId,
+                  `${targetName} declined ${offer.castMemberName}. Play stays paused.`
+                );
+              }
               break;
             }
 
@@ -616,6 +722,17 @@ export function createStageWsHandler(): (c: Context<{ Variables: AppVariables }>
           const leavingName = (await participantDisplayName(pid)) ?? 'Host';
           removeConn(sid, pid);
           await leaveStage(sid, pid).catch(() => {});
+
+          // Auto-decline any pending role offers held by the leaving participant.
+          const dropped = clearOffersForParticipant(sid, pid);
+          for (const offer of dropped) {
+            broadcastToStage(sid, { type: 'roleOfferCleared', offerId: offer.offerId });
+            broadcastSystem(
+              sid,
+              `${leavingName} disconnected before responding to ${offer.castMemberName}. Play stays paused.`
+            );
+          }
+
           await broadcastCurrentState(sid);
 
           // If the departing connection was the host's identity AND no other

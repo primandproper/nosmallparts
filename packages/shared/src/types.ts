@@ -77,6 +77,12 @@ export interface SystemMessage {
   timestamp: number;
 }
 
+export interface RoleOffer {
+  offerId: string;
+  castMemberId: string;
+  castMemberName: string;
+}
+
 // Client -> Server WebSocket messages
 export type ClientMessage =
   | { type: 'join'; stageId: string; participantName: string }
@@ -101,7 +107,8 @@ export type ClientMessage =
   | { type: 'hostKick'; targetParticipantId: string }
   | { type: 'hostBan'; targetParticipantId: string }
   | { type: 'hostMute'; targetParticipantId: string; muted: boolean }
-  | { type: 'hostToggleDirectorMode'; enabled: boolean };
+  | { type: 'hostToggleDirectorMode'; enabled: boolean }
+  | { type: 'respondRoleOffer'; offerId: string; accept: boolean };
 
 // Server -> Client WebSocket messages
 export type ServerMessage =
@@ -113,6 +120,8 @@ export type ServerMessage =
   | { type: 'castMembersUpdated'; participants: Participant[] }
   | { type: 'chatMessage'; message: ChatMessage }
   | { type: 'systemMessage'; message: SystemMessage }
+  | { type: 'roleOffer'; offer: RoleOffer }
+  | { type: 'roleOfferCleared'; offerId: string }
   | { type: 'playStarted' }
   | { type: 'lineAdvanced'; currentLineIndex: number }
   | { type: 'playEnded' };

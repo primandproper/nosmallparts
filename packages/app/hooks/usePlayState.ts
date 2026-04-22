@@ -1,5 +1,12 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import type { ChatMessage, Play, ServerMessage, StageState, SystemMessage } from '@nsp/shared';
+import type {
+  ChatMessage,
+  Play,
+  RoleOffer,
+  ServerMessage,
+  StageState,
+  SystemMessage,
+} from '@nsp/shared';
 import { getWsUrl } from '../lib/config';
 import { ensureIdentity, getSessionToken } from '../lib/identity';
 
@@ -15,6 +22,7 @@ export interface UsePlayStateReturn {
   availablePlays: Play[];
   chatMessages: ChatMessage[];
   systemMessages: SystemMessage[];
+  roleOffers: RoleOffer[];
   isConnected: boolean;
   error: string | null;
   toggleCastMember: (castMemberId: string) => void;
@@ -38,6 +46,7 @@ export interface UsePlayStateReturn {
   hostBan: (targetParticipantId: string) => void;
   hostMute: (targetParticipantId: string, muted: boolean) => void;
   hostToggleDirectorMode: (enabled: boolean) => void;
+  respondRoleOffer: (offerId: string, accept: boolean) => void;
 }
 
 const HEARTBEAT_MS = 5000;
@@ -52,6 +61,7 @@ export function usePlayState({
   const [availablePlays, setAvailablePlays] = useState<Play[]>([]);
   const [chatMessages, setChatMessages] = useState<ChatMessage[]>([]);
   const [systemMessages, setSystemMessages] = useState<SystemMessage[]>([]);
+  const [roleOffers, setRoleOffers] = useState<RoleOffer[]>([]);
   const [isConnected, setIsConnected] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [reconnectAttempt, setReconnectAttempt] = useState(0);
@@ -166,6 +176,14 @@ export function usePlayState({
           case 'systemMessage':
             setSystemMessages((prev) => [...prev, msg.message]);
             break;
+          case 'roleOffer':
+            setRoleOffers((prev) =>
+              prev.some((o) => o.offerId === msg.offer.offerId) ? prev : [...prev, msg.offer]
+            );
+            break;
+          case 'roleOfferCleared':
+            setRoleOffers((prev) => prev.filter((o) => o.offerId !== msg.offerId));
+            break;
           case 'error':
             setError(msg.message);
             break;
@@ -267,6 +285,11 @@ export function usePlayState({
     (enabled: boolean) => send({ type: 'hostToggleDirectorMode', enabled }),
     [send]
   );
+  const respondRoleOffer = useCallback(
+    (offerId: string, accept: boolean) =>
+      send({ type: 'respondRoleOffer', offerId, accept }),
+    [send]
+  );
 
   return {
     stageState,
@@ -274,6 +297,7 @@ export function usePlayState({
     availablePlays,
     chatMessages,
     systemMessages,
+    roleOffers,
     isConnected,
     error,
     toggleCastMember,
@@ -296,5 +320,6 @@ export function usePlayState({
     hostBan,
     hostMute,
     hostToggleDirectorMode,
+    respondRoleOffer,
   };
 }

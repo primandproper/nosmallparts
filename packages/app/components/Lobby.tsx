@@ -31,6 +31,8 @@ interface Props {
   onHostBan: (targetParticipantId: string) => void;
   onHostMute: (targetParticipantId: string, muted: boolean) => void;
   onHostToggleDirectorMode: (enabled: boolean) => void;
+  onHostReassignRole: (targetParticipantId: string, castMemberId: string) => void;
+  onHostUnassignRole: (targetParticipantId: string, castMemberId: string) => void;
 }
 
 export function Lobby({
@@ -53,6 +55,8 @@ export function Lobby({
   onHostBan,
   onHostMute,
   onHostToggleDirectorMode,
+  onHostReassignRole,
+  onHostUnassignRole,
 }: Props) {
   const me = state.participants.find((p) => p.id === participantId);
   const iAmHost = !!me?.isHost;
@@ -119,6 +123,8 @@ export function Lobby({
         onSkipLine={onHostSkipLine}
         onEndPlay={onHostEndPlay}
         onToggleDirectorMode={onHostToggleDirectorMode}
+        onReassignRole={onHostReassignRole}
+        onUnassignRole={onHostUnassignRole}
       />
 
       {directorMode ? (
