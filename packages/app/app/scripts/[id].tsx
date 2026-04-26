@@ -77,7 +77,15 @@ export default function ScriptDetail() {
   const sortedLines = [...play.lines].sort((a, b) => a.index - b.index);
 
   return (
-    <ScrollView className="flex-1 bg-stage-bg" contentContainerStyle={{ padding: 16 }}>
+    <ScrollView
+      className="flex-1 bg-stage-bg"
+      contentContainerStyle={{
+        padding: 16,
+        width: '100%',
+        maxWidth: 768,
+        alignSelf: 'center',
+      }}
+    >
       <Stack.Screen options={{ title: play.title }} />
 
       <Text className="text-3xl font-serif text-stage-gold">{play.title}</Text>

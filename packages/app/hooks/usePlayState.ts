@@ -25,6 +25,8 @@ export interface UsePlayStateReturn {
   roleOffers: RoleOffer[];
   isConnected: boolean;
   error: string | null;
+  wasReplaced: boolean;
+  reconnect: () => void;
   toggleCastMember: (castMemberId: string) => void;
   setAudience: (isAudience: boolean) => void;
   setReady: (isReady: boolean) => void;
@@ -64,6 +66,7 @@ export function usePlayState({
   const [roleOffers, setRoleOffers] = useState<RoleOffer[]>([]);
   const [isConnected, setIsConnected] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [wasReplaced, setWasReplaced] = useState(false);
   const [reconnectAttempt, setReconnectAttempt] = useState(0);
 
   const wsRef = useRef<WebSocket | null>(null);
@@ -187,6 +190,13 @@ export function usePlayState({
           case 'error':
             setError(msg.message);
             break;
+          case 'sessionReplaced':
+            // Another tab/device joined this stage with the same identity.
+            // Stop reconnecting so we don't ping-pong displacing each other.
+            intentionalCloseRef.current = true;
+            setWasReplaced(true);
+            setError(null);
+            break;
         }
       };
 
@@ -210,6 +220,12 @@ export function usePlayState({
       wsRef.current = null;
     };
   }, [stageIdOrCode, participantName, reconnectAttempt, enabled]);
+
+  const reconnect = useCallback(() => {
+    setError(null);
+    setWasReplaced(false);
+    setReconnectAttempt((a) => a + 1);
+  }, []);
 
   const toggleCastMember = useCallback(
     (castMemberId: string) => {
@@ -300,6 +316,8 @@ export function usePlayState({
     roleOffers,
     isConnected,
     error,
+    wasReplaced,
+    reconnect,
     toggleCastMember,
     setAudience,
     setReady,

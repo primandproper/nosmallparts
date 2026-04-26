@@ -124,4 +124,5 @@ export type ServerMessage =
   | { type: 'roleOfferCleared'; offerId: string }
   | { type: 'playStarted' }
   | { type: 'lineAdvanced'; currentLineIndex: number }
-  | { type: 'playEnded' };
+  | { type: 'playEnded' }
+  | { type: 'sessionReplaced' };

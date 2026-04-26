@@ -48,7 +48,7 @@ export default function ScriptsLibrary() {
           ),
         }}
       />
-      <View className="px-4 pt-3">
+      <View className="mx-auto w-full max-w-3xl px-4 pt-3">
         <TextInput
           placeholder="Search title, author, cast, tag…"
           placeholderTextColor="#8a8374"
@@ -72,7 +72,13 @@ export default function ScriptsLibrary() {
         <FlatList
           data={combined}
           keyExtractor={(p) => p.id}
-          contentContainerStyle={{ padding: 16, gap: 10 }}
+          contentContainerStyle={{
+            padding: 16,
+            gap: 10,
+            width: '100%',
+            maxWidth: 768,
+            alignSelf: 'center',
+          }}
           ListEmptyComponent={
             <Text className="text-center text-stage-muted mt-12">No scripts yet.</Text>
           }

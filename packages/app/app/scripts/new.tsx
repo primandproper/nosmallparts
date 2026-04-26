@@ -208,7 +208,15 @@ export default function ScriptEditor() {
       behavior={Platform.OS === 'ios' ? 'padding' : undefined}
     >
       <Stack.Screen options={{ title: editingRemoteId ? 'Edit script' : 'New script' }} />
-      <ScrollView contentContainerStyle={{ padding: 16, gap: 14 }}>
+      <ScrollView
+        contentContainerStyle={{
+          padding: 16,
+          gap: 14,
+          width: '100%',
+          maxWidth: 768,
+          alignSelf: 'center',
+        }}
+      >
         <TextInput
           value={title}
           onChangeText={setTitle}

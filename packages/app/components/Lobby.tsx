@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Pressable, ScrollView, Text, View } from 'react-native';
 import * as Clipboard from 'expo-clipboard';
+import * as Linking from 'expo-linking';
 import {
   areAllCastMembersAssigned,
   areAllParticipantsReady,
@@ -77,8 +78,9 @@ export function Lobby({
     };
   }, []);
 
-  const copyCode = async () => {
-    await Clipboard.setStringAsync(state.code);
+  const copyInviteLink = async () => {
+    const url = Linking.createURL(`/stage/${state.code}`);
+    await Clipboard.setStringAsync(url);
     setCopied(true);
     if (copiedTimer.current) clearTimeout(copiedTimer.current);
     copiedTimer.current = setTimeout(() => setCopied(false), 1500);
@@ -113,7 +115,10 @@ export function Lobby({
   });
 
   return (
-    <ScrollView className="flex-1 bg-stage-bg" contentContainerStyle={{ padding: 16, gap: 16 }}>
+    <ScrollView className="flex-1 bg-stage-bg" contentContainerStyle={{ padding: 16 }}>
+      <View className="mx-auto w-full max-w-[1400px] gap-4">
+        <View className="gap-4 lg:flex-row lg:items-start lg:gap-8">
+          <View className="flex-1 gap-4">
       <HostControls
         state={state}
         participantId={participantId}
@@ -129,7 +134,9 @@ export function Lobby({
 
       {directorMode ? (
         <View className="rounded-md border border-stage-gold bg-stage-surface px-3 py-2">
-          <Text className="text-xs uppercase tracking-widest text-stage-gold">Director mode</Text>
+          <Text className="text-xs uppercase tracking-widest text-stage-gold">
+            Director mode {iAmHost ? '· You are the director' : `· ${state.participants.find((p) => p.isHost)?.name ?? 'The host'} is the director`}
+          </Text>
           <Text className="text-xs text-stage-muted mt-1">
             The host advances lines. Actors just read.
           </Text>
@@ -138,19 +145,21 @@ export function Lobby({
 
       <View className="items-center gap-2">
         <Text className="text-xs uppercase tracking-widest text-stage-muted">Stage code</Text>
-        <Pressable
-          onPress={copyCode}
-          accessibilityRole="button"
-          accessibilityLabel={`Copy stage code ${state.code}`}
-          className="rounded-md border border-stage-border bg-stage-surface px-5 py-2 active:opacity-70"
-        >
+        <View className="rounded-md border border-stage-border bg-stage-surface px-5 py-2">
           <Text className="text-4xl font-mono font-semibold tracking-[0.3em] text-stage-gold">
             {state.code}
           </Text>
+        </View>
+        <Pressable
+          onPress={copyInviteLink}
+          accessibilityRole="button"
+          accessibilityLabel="Copy invite link"
+          className="rounded-md border border-stage-border px-3 py-1.5 active:opacity-70"
+        >
+          <Text className="text-xs text-stage-text">
+            {copied ? 'Invite link copied' : 'Copy invite link'}
+          </Text>
         </Pressable>
-        <Text className="text-xs text-stage-muted">
-          {copied ? 'Copied to clipboard' : 'Tap code to copy'}
-        </Text>
       </View>
 
       <View>
@@ -235,7 +244,9 @@ export function Lobby({
           </View>
         </View>
       ) : null}
+          </View>
 
+          <View className="flex-1 gap-4">
       <View>
         <Text className="mb-2 text-lg font-serif text-stage-gold">
           Participants ({state.participants.length})
@@ -243,11 +254,20 @@ export function Lobby({
         {state.participants.map((p) => (
           <View key={p.id} className="py-1">
             <View className="flex-row items-center justify-between">
-              <Text className="text-stage-text">
-                {p.isHost ? '★ ' : ''}
-                {p.name}
-                {p.id === participantId ? ' (you)' : ''}
-              </Text>
+              <View className="flex-row items-center gap-2">
+                <Text className="text-stage-text">
+                  {p.isHost ? '★ ' : ''}
+                  {p.name}
+                  {p.id === participantId ? ' (you)' : ''}
+                </Text>
+                {p.isHost && directorMode ? (
+                  <View className="rounded border border-stage-gold px-1.5 py-0.5">
+                    <Text className="text-[10px] uppercase tracking-wider text-stage-gold font-semibold">
+                      Director
+                    </Text>
+                  </View>
+                ) : null}
+              </View>
               <Text className="text-xs text-stage-muted">
                 {p.isAudience
                   ? 'audience'
@@ -311,7 +331,10 @@ export function Lobby({
           ))}
         </View>
       ) : null}
+          </View>
+        </View>
 
+        <View className="lg:mx-auto lg:w-full lg:max-w-md">
       <Pressable
         onPress={status.onPress ?? undefined}
         disabled={!status.onPress}
@@ -323,6 +346,8 @@ export function Lobby({
           {status.label}
         </Text>
       </Pressable>
+        </View>
+      </View>
     </ScrollView>
   );
 }

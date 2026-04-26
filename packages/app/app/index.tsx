@@ -61,13 +61,17 @@ export default function Home() {
   }
 
   return (
-    <View className="flex-1 items-center bg-stage-bg px-6 pt-16">
-      <Text className="mb-2 text-4xl font-serif text-stage-gold">No Small Parts</Text>
-      <Text className="mb-10 text-center text-stage-muted">
-        Perform short scripts together in real time.
-      </Text>
+    <View className="flex-1 items-center bg-stage-bg px-6 pt-16 lg:flex-row lg:items-center lg:justify-center lg:gap-16 lg:px-12 lg:pt-0">
+      <View className="lg:max-w-md lg:flex-1 lg:items-start">
+        <Text className="mb-2 text-center text-4xl font-serif text-stage-gold lg:text-left lg:text-6xl">
+          No Small Parts
+        </Text>
+        <Text className="mb-10 text-center text-stage-muted lg:mb-0 lg:text-left lg:text-lg">
+          Perform short scripts together in real time.
+        </Text>
+      </View>
 
-      <View className="w-full max-w-sm gap-3">
+      <View className="w-full max-w-sm gap-3 lg:max-w-md">
         <TextInput
           value={name}
           onChangeText={setName}

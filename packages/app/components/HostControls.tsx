@@ -48,15 +48,16 @@ export function HostControls({
     <View className="rounded-md border border-stage-gold bg-stage-surface">
       <Pressable
         onPress={() => setOpen((v) => !v)}
-        className="flex-row items-center justify-between px-3 py-2"
+        className="flex-row items-center justify-between px-3 py-2 lg:cursor-default"
       >
         <Text className="text-xs uppercase tracking-widest text-stage-gold">
           ★ Host controls
         </Text>
-        <Text className="text-xs text-stage-muted">{open ? '▾' : '▸'}</Text>
+        <Text className="text-xs text-stage-muted lg:hidden">{open ? '▾' : '▸'}</Text>
       </Pressable>
-      {open ? (
-        <View className="flex-row flex-wrap gap-2 border-t border-stage-border px-3 py-3">
+      <View
+        className={`flex-row flex-wrap gap-2 border-t border-stage-border px-3 py-3 ${open ? 'flex' : 'hidden'} lg:flex`}
+      >
           <ActionButton
             label={paused ? 'Resume' : 'Pause'}
             disabled={!performing}
@@ -95,9 +96,8 @@ export function HostControls({
             />
           ) : null}
         </View>
-      ) : null}
 
-      {open && castOpen && play && onReassignRole ? (
+      {castOpen && play && onReassignRole ? (
         <View className="border-t border-stage-border px-3 py-2 gap-2">
           {play.cast.map((cm) => {
             const assignee = state.participants.find((p) => p.castMemberIds.includes(cm.id));

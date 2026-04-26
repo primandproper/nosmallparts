@@ -15,6 +15,7 @@ import {
   backLine,
   clearParticipantRoles,
   clearStageHost,
+  findActiveParticipantByIdentity,
   getParticipant,
   getStageById,
   getStageByIdOrCode,
@@ -33,6 +34,7 @@ import {
   setDirectorMode,
   setForceMuted,
   setPausedByHost,
+  setParticipantDisplayName,
   setPlayhead,
   setSelectedPlay,
   setStageHost,
@@ -46,7 +48,7 @@ import {
 const HOST_GRACE_MS = 15_000;
 const MAX_PARTICIPANTS_PER_STAGE = 12;
 
-type Conn = { ws: WSContext; participantId: string; identity: Identity };
+type Conn = { ws: WSContext; participantId: string; identity: Identity; displaced?: boolean };
 
 // stageId -> participantId -> connection
 const connections = new Map<string, Map<string, Conn>>();
@@ -214,6 +216,7 @@ export function createStageWsHandler(): (c: Context<{ Variables: AppVariables }>
     let stageId: string | null = null;
     let participantId: string | null = null;
     let authorized = false;
+    let myConn: Conn | null = null;
 
     return {
       async onMessage(event, ws) {
@@ -246,17 +249,36 @@ export function createStageWsHandler(): (c: Context<{ Variables: AppVariables }>
               ws.close();
               return;
             }
-            const currentCount = connections.get(stage.id)?.size ?? 0;
-            if (currentCount >= MAX_PARTICIPANTS_PER_STAGE) {
-              sendError(ws, `Stage is full (${MAX_PARTICIPANTS_PER_STAGE} max).`);
-              ws.close();
-              return;
+            // Reuse an existing participant row if this identity is already on
+            // the stage (e.g. a second browser tab). Displace any prior live
+            // connection so the same person doesn't appear twice.
+            const existing = await findActiveParticipantByIdentity(stage.id, identity);
+            if (existing) {
+              const prev = getConn(stage.id, existing.id);
+              if (prev) {
+                prev.displaced = true;
+                sendToClient(prev.ws, { type: 'sessionReplaced' });
+                try { prev.ws.close(); } catch { /* ignore */ }
+              }
+              if (existing.displayName !== name) {
+                await setParticipantDisplayName(existing.id, name);
+              }
+              stageId = stage.id;
+              participantId = existing.id;
+            } else {
+              const currentCount = connections.get(stage.id)?.size ?? 0;
+              if (currentCount >= MAX_PARTICIPANTS_PER_STAGE) {
+                sendError(ws, `Stage is full (${MAX_PARTICIPANTS_PER_STAGE} max).`);
+                ws.close();
+                return;
+              }
+              const joined = await joinStage(stage.id, name, identity);
+              stageId = joined.stageId;
+              participantId = joined.participantId;
             }
-            const joined = await joinStage(stage.id, name, identity);
-            stageId = joined.stageId;
-            participantId = joined.participantId;
             authorized = true;
             registerConn(stageId, participantId, ws, identity);
+            myConn = getConn(stageId, participantId) ?? null;
 
             // Host assignment: if stage has no host, this joiner becomes host.
             // If they ARE the host identity returning during grace, cancel succession.
@@ -723,6 +745,10 @@ export function createStageWsHandler(): (c: Context<{ Variables: AppVariables }>
 
       async onClose() {
         if (stageId && participantId) {
+          // If this socket was displaced by a newer connection from the same
+          // identity (e.g. another tab), the participant is still present
+          // under the same id — don't run the leave/host-grace flow.
+          if (myConn?.displaced) return;
           const sid = stageId;
           const pid = participantId;
           const leavingIdentity = { ...identity };
