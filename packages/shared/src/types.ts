@@ -7,7 +7,10 @@ export interface CastMember {
 }
 
 export interface PlayLine {
-  castMemberId: string;
+  // Speakers for this utterance. Length >1 means unison (multiple cast members
+  // speaking the same text together). Multiple PlayLine rows sharing the same
+  // `index` represent overlapping/talk-over dialogue.
+  castMemberIds: string[];
   text: string;
   index: number;
   direction?: string; // Stage direction/emotion, e.g., "skeptically"

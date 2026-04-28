@@ -8,6 +8,7 @@ import { samplePlays } from '@nsp/shared';
 import { db } from './index.js';
 import {
   playScriptCastMembers,
+  playScriptLineSpeakers,
   playScriptLines,
   playScripts,
   user,
@@ -55,16 +56,22 @@ async function seedPlay(p: (typeof samplePlays)[number]) {
     });
   }
   for (const l of p.lines) {
+    const lineId = ulid();
     await db.insert(playScriptLines).values({
-      id: ulid(),
+      id: lineId,
       playScriptId: p.id,
-      castMemberId: `${p.id}:${l.castMemberId}`,
       lineText: l.text,
       lineIndex: l.index,
       direction: l.direction ?? null,
       scrollMode: l.scrollMode ?? 'auto',
       autoScrollWpm: l.autoScrollWpm ?? null,
     });
+    for (const sid of l.castMemberIds) {
+      await db.insert(playScriptLineSpeakers).values({
+        lineId,
+        castMemberId: `${p.id}:${sid}`,
+      });
+    }
   }
   console.log(`seeded: ${p.title}`);
 }

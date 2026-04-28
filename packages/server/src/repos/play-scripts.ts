@@ -4,6 +4,7 @@ import type { Play } from '@nsp/shared';
 import { db } from '../db/index.js';
 import {
   playScriptCastMembers,
+  playScriptLineSpeakers,
   playScriptLines,
   playScriptRatings,
   playScriptTags,
@@ -19,7 +20,7 @@ export interface PlayScriptInput {
   isPublic?: boolean;
   cast: Array<{ id?: string; name: string; description?: string | null }>;
   lines: Array<{
-    castMemberId: string;
+    castMemberIds: string[];
     text: string;
     index: number;
     direction?: string | null;
@@ -44,6 +45,20 @@ async function hydrate(playScriptId: string): Promise<Play | null> {
     .select()
     .from(playScriptLines)
     .where(eq(playScriptLines.playScriptId, playScriptId));
+
+  const lineIds = lns.map((l) => l.id);
+  const speakerRows = lineIds.length
+    ? await db
+        .select()
+        .from(playScriptLineSpeakers)
+        .where(inArray(playScriptLineSpeakers.lineId, lineIds))
+    : [];
+  const speakersByLine = new Map<string, string[]>();
+  for (const r of speakerRows) {
+    const arr = speakersByLine.get(r.lineId) ?? [];
+    arr.push(r.castMemberId);
+    speakersByLine.set(r.lineId, arr);
+  }
 
   const tagJoin = await db
     .select({ tag: scriptTags })
@@ -74,7 +89,7 @@ async function hydrate(playScriptId: string): Promise<Play | null> {
     })),
     lines: lns
       .map((l) => ({
-        castMemberId: l.castMemberId,
+        castMemberIds: speakersByLine.get(l.id) ?? [],
         text: l.lineText,
         index: l.lineIndex,
         direction: l.direction ?? undefined,
@@ -163,17 +178,22 @@ export async function createPlayScript(userId: string, input: PlayScriptInput): 
   }
 
   for (const l of input.lines) {
-    const realCastId = castIdMap.get(l.castMemberId) ?? l.castMemberId;
+    const lineId = ulid();
     await db.insert(playScriptLines).values({
-      id: ulid(),
+      id: lineId,
       playScriptId: id,
-      castMemberId: realCastId,
       lineText: l.text,
       lineIndex: l.index,
       direction: l.direction ?? null,
       scrollMode: l.scrollMode ?? 'auto',
       autoScrollWpm: l.autoScrollWpm ?? null,
     });
+    const speakerIds = Array.from(
+      new Set((l.castMemberIds || []).map((sid) => castIdMap.get(sid) ?? sid).filter(Boolean))
+    );
+    for (const sid of speakerIds) {
+      await db.insert(playScriptLineSpeakers).values({ lineId, castMemberId: sid });
+    }
   }
 
   if (input.tagIds?.length) {
@@ -226,17 +246,22 @@ export async function updatePlayScript(
     });
   }
   for (const l of input.lines) {
-    const realCastId = castIdMap.get(l.castMemberId) ?? l.castMemberId;
+    const lineId = ulid();
     await db.insert(playScriptLines).values({
-      id: ulid(),
+      id: lineId,
       playScriptId: id,
-      castMemberId: realCastId,
       lineText: l.text,
       lineIndex: l.index,
       direction: l.direction ?? null,
       scrollMode: l.scrollMode ?? 'auto',
       autoScrollWpm: l.autoScrollWpm ?? null,
     });
+    const speakerIds = Array.from(
+      new Set((l.castMemberIds || []).map((sid) => castIdMap.get(sid) ?? sid).filter(Boolean))
+    );
+    for (const sid of speakerIds) {
+      await db.insert(playScriptLineSpeakers).values({ lineId, castMemberId: sid });
+    }
   }
 
   if (input.tagIds) {

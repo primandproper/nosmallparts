@@ -8,7 +8,7 @@ export interface PlayPayload {
   isPublic?: boolean;
   cast: Array<{ id?: string; name: string; description?: string | null }>;
   lines: Array<{
-    castMemberId: string;
+    castMemberIds: string[];
     text: string;
     index: number;
     direction?: string | null;

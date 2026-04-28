@@ -297,7 +297,7 @@ function LineQueue({
       const idx = upcomingIndices[i];
       if (idx === undefined) continue;
       const lines = getLinesAtIndex(play, idx);
-      if (lines.some((l) => myCastIds.has(l.castMemberId))) return i;
+      if (lines.some((l) => (l.castMemberIds || []).some((id) => myCastIds.has(id)))) return i;
     }
     return null;
   })();
@@ -342,7 +342,9 @@ function LineQueue({
         {upcomingIndices.map((idx, i) => {
           const lines = getLinesAtIndex(play, idx);
           const isCurrent = i === 0;
-          const isMine = lines.some((l) => myCastIds.has(l.castMemberId));
+          const isMine = lines.some((l) =>
+            (l.castMemberIds || []).some((id) => myCastIds.has(id))
+          );
           return (
             <QueueEntry
               key={`${idx}-${i}`}

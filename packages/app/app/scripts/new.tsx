@@ -78,7 +78,7 @@ export default function ScriptEditor() {
     setLines(
       p.lines.map((l, i) => ({
         ...l,
-        key: `l-${i}-${l.castMemberId}-${l.index}`,
+        key: `l-${i}-${l.index}`,
       }))
     );
   }
@@ -119,7 +119,14 @@ export default function ScriptEditor() {
     const removed = cast.find((c) => c.key === key);
     setCast((prev) => prev.filter((c) => c.key !== key));
     if (removed) {
-      setLines((prev) => prev.filter((l) => l.castMemberId !== removed.id));
+      setLines((prev) =>
+        prev
+          .map((l) => ({
+            ...l,
+            castMemberIds: (l.castMemberIds || []).filter((id) => id !== removed.id),
+          }))
+          .filter((l) => l.castMemberIds.length > 0)
+      );
     }
   }
 
@@ -130,14 +137,42 @@ export default function ScriptEditor() {
       ...prev,
       {
         key: `l-${Date.now()}`,
-        castMemberId: firstCast?.id ?? '',
+        castMemberIds: firstCast ? [firstCast.id] : [],
         text: '',
         index: nextIndex,
       },
     ]);
   }
+  function addOverlappingLine(atIndex: number) {
+    const used = new Set(
+      lines.filter((l) => l.index === atIndex).flatMap((l) => l.castMemberIds || [])
+    );
+    const remaining = cast.find((c) => !used.has(c.id)) ?? cast[0];
+    setLines((prev) => [
+      ...prev,
+      {
+        key: `l-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`,
+        castMemberIds: remaining ? [remaining.id] : [],
+        text: '',
+        index: atIndex,
+      },
+    ]);
+  }
   function updateLine(key: string, patch: Partial<PlayLine>) {
     setLines((prev) => prev.map((l) => (l.key === key ? { ...l, ...patch } : l)));
+  }
+  function toggleSpeaker(key: string, castMemberId: string) {
+    setLines((prev) =>
+      prev.map((l) => {
+        if (l.key !== key) return l;
+        const has = (l.castMemberIds || []).includes(castMemberId);
+        const next = has
+          ? l.castMemberIds.filter((id) => id !== castMemberId)
+          : [...(l.castMemberIds || []), castMemberId];
+        // Don't allow removing the last speaker.
+        return { ...l, castMemberIds: next.length === 0 ? l.castMemberIds : next };
+      })
+    );
   }
   function removeLine(key: string) {
     setLines((prev) => prev.filter((l) => l.key !== key));
@@ -307,61 +342,95 @@ export default function ScriptEditor() {
               {cast.length === 0 ? 'Add a character first.' : 'No lines yet.'}
             </Text>
           ) : (
-            <View className="mt-2 gap-2">
-              {[...lines]
-                .sort((a, b) => a.index - b.index)
-                .map((l) => (
-                  <View
-                    key={l.key}
-                    className="rounded-md border border-stage-border bg-stage-surface p-3"
-                  >
-                    <View className="flex-row gap-2 items-center">
-                      <Text className="text-xs text-stage-muted">Turn {l.index + 1}</Text>
-                      <View className="flex-row flex-wrap gap-1">
-                        {cast.map((c) => {
-                          const selected = l.castMemberId === c.id;
-                          return (
-                            <Pressable
-                              key={c.id}
-                              onPress={() => updateLine(l.key, { castMemberId: c.id })}
-                              className={`rounded-full border px-2 py-0.5 ${
-                                selected
-                                  ? 'border-stage-gold bg-stage-goldDim'
-                                  : 'border-stage-border'
-                              }`}
-                            >
-                              <Text
-                                className={`text-xs ${
-                                  selected ? 'text-stage-bg' : 'text-stage-muted'
-                                }`}
-                              >
-                                {c.name}
-                              </Text>
-                            </Pressable>
-                          );
-                        })}
+            <View className="mt-2 gap-3">
+              {Array.from(new Set(lines.map((l) => l.index)))
+                .sort((a, b) => a - b)
+                .map((turnIndex) => {
+                  const groupLines = lines.filter((l) => l.index === turnIndex);
+                  return (
+                    <View key={`turn-${turnIndex}`} className="gap-1.5">
+                      <View className="flex-row items-center justify-between">
+                        <Text className="text-xs text-stage-muted">
+                          Turn {turnIndex + 1}
+                          {groupLines.length > 1 ? ' · overlapping' : ''}
+                        </Text>
+                        <Pressable
+                          onPress={() => addOverlappingLine(turnIndex)}
+                          disabled={cast.length === 0}
+                          className="px-2 py-0.5"
+                        >
+                          <Text
+                            className={`text-xs ${
+                              cast.length === 0 ? 'text-stage-muted' : 'text-stage-gold'
+                            }`}
+                          >
+                            + Overlap
+                          </Text>
+                        </Pressable>
                       </View>
+                      {groupLines.map((l) => {
+                        const selectedIds = new Set(l.castMemberIds || []);
+                        const isUnison = selectedIds.size > 1;
+                        return (
+                          <View
+                            key={l.key}
+                            className="rounded-md border border-stage-border bg-stage-surface p-3"
+                          >
+                            <View className="flex-row flex-wrap items-center gap-1">
+                              {isUnison ? (
+                                <Text className="mr-1 text-[10px] uppercase tracking-wider text-stage-gold font-semibold">
+                                  Unison
+                                </Text>
+                              ) : null}
+                              {cast.map((c) => {
+                                const selected = selectedIds.has(c.id);
+                                return (
+                                  <Pressable
+                                    key={c.id}
+                                    onPress={() => toggleSpeaker(l.key, c.id)}
+                                    className={`rounded-full border px-2 py-0.5 ${
+                                      selected
+                                        ? 'border-stage-gold bg-stage-goldDim'
+                                        : 'border-stage-border'
+                                    }`}
+                                  >
+                                    <Text
+                                      className={`text-xs ${
+                                        selected ? 'text-stage-bg' : 'text-stage-muted'
+                                      }`}
+                                    >
+                                      {c.name}
+                                    </Text>
+                                  </Pressable>
+                                );
+                              })}
+                            </View>
+                            <TextInput
+                              value={l.direction ?? ''}
+                              onChangeText={(v) =>
+                                updateLine(l.key, { direction: v || undefined })
+                              }
+                              placeholder="Stage direction (optional)"
+                              placeholderTextColor="#8a8374"
+                              className="mt-2 italic text-stage-muted"
+                            />
+                            <TextInput
+                              value={l.text}
+                              onChangeText={(v) => updateLine(l.key, { text: v })}
+                              placeholder="Line text"
+                              placeholderTextColor="#8a8374"
+                              multiline
+                              className="mt-1 text-stage-text"
+                            />
+                            <Pressable onPress={() => removeLine(l.key)} className="mt-2 self-end">
+                              <Text className="text-red-400 text-sm">Remove</Text>
+                            </Pressable>
+                          </View>
+                        );
+                      })}
                     </View>
-                    <TextInput
-                      value={l.direction ?? ''}
-                      onChangeText={(v) => updateLine(l.key, { direction: v || undefined })}
-                      placeholder="Stage direction (optional)"
-                      placeholderTextColor="#8a8374"
-                      className="mt-2 italic text-stage-muted"
-                    />
-                    <TextInput
-                      value={l.text}
-                      onChangeText={(v) => updateLine(l.key, { text: v })}
-                      placeholder="Line text"
-                      placeholderTextColor="#8a8374"
-                      multiline
-                      className="mt-1 text-stage-text"
-                    />
-                    <Pressable onPress={() => removeLine(l.key)} className="mt-2 self-end">
-                      <Text className="text-red-400 text-sm">Remove</Text>
-                    </Pressable>
-                  </View>
-                ))}
+                  );
+                })}
             </View>
           )}
         </View>

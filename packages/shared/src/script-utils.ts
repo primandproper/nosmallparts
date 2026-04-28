@@ -24,10 +24,14 @@ export function getSortedLineIndices(lines: PlayLine[]): number[] {
 }
 
 export function getUsedCastMemberIds(lines: PlayLine[], lineIndex: number): string[] {
-  return lines
-    .filter((l) => l.index === lineIndex)
-    .map((l) => l.castMemberId)
-    .filter(Boolean);
+  const ids = new Set<string>();
+  for (const l of lines) {
+    if (l.index !== lineIndex) continue;
+    for (const id of l.castMemberIds || []) {
+      if (id) ids.add(id);
+    }
+  }
+  return Array.from(ids);
 }
 
 export function getAvailableCastMembers(
@@ -58,7 +62,11 @@ export function hasSimultaneousSpeakers(lines: PlayLine[], lineIndex: number): b
 }
 
 export function getInvalidLineIndices(lines: PlayLine[]): Set<number> {
-  return new Set(lines.filter((l) => !l.castMemberId || !l.text.trim()).map((l) => l.index));
+  return new Set(
+    lines
+      .filter((l) => !(l.castMemberIds || []).some((id) => !!id) || !l.text.trim())
+      .map((l) => l.index)
+  );
 }
 
 export function validatePlay(

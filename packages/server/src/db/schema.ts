@@ -102,9 +102,6 @@ export const playScriptLines = sqliteTable('play_script_lines', {
   playScriptId: text('play_script_id')
     .notNull()
     .references(() => playScripts.id, { onDelete: 'cascade' }),
-  castMemberId: text('cast_member_id')
-    .notNull()
-    .references(() => playScriptCastMembers.id, { onDelete: 'cascade' }),
   lineText: text('line_text').notNull(),
   lineIndex: integer('line_index').notNull(),
   direction: text('direction'),
@@ -114,6 +111,20 @@ export const playScriptLines = sqliteTable('play_script_lines', {
     .notNull()
     .$defaultFn(() => new Date()),
 });
+
+// Join: which cast members speak a given line. >1 row per line = unison.
+export const playScriptLineSpeakers = sqliteTable(
+  'play_script_line_speakers',
+  {
+    lineId: text('line_id')
+      .notNull()
+      .references(() => playScriptLines.id, { onDelete: 'cascade' }),
+    castMemberId: text('cast_member_id')
+      .notNull()
+      .references(() => playScriptCastMembers.id, { onDelete: 'cascade' }),
+  },
+  (t) => [primaryKey({ columns: [t.lineId, t.castMemberId] })]
+);
 
 export const scriptTags = sqliteTable('script_tags', {
   id: text('id').primaryKey(),
@@ -251,16 +262,24 @@ export const playScriptCastMembersRelations = relations(playScriptCastMembers, (
     fields: [playScriptCastMembers.playScriptId],
     references: [playScripts.id],
   }),
-  lines: many(playScriptLines),
+  lineSpeakers: many(playScriptLineSpeakers),
 }));
 
-export const playScriptLinesRelations = relations(playScriptLines, ({ one }) => ({
+export const playScriptLinesRelations = relations(playScriptLines, ({ one, many }) => ({
   playScript: one(playScripts, {
     fields: [playScriptLines.playScriptId],
     references: [playScripts.id],
   }),
+  speakers: many(playScriptLineSpeakers),
+}));
+
+export const playScriptLineSpeakersRelations = relations(playScriptLineSpeakers, ({ one }) => ({
+  line: one(playScriptLines, {
+    fields: [playScriptLineSpeakers.lineId],
+    references: [playScriptLines.id],
+  }),
   castMember: one(playScriptCastMembers, {
-    fields: [playScriptLines.castMemberId],
+    fields: [playScriptLineSpeakers.castMemberId],
     references: [playScriptCastMembers.id],
   }),
 }));

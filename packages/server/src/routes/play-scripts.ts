@@ -20,7 +20,7 @@ const castMemberSchema = z.object({
 });
 
 const lineSchema = z.object({
-  castMemberId: z.string().min(1),
+  castMemberIds: z.array(z.string().min(1)).min(1),
   text: z.string(),
   index: z.number().int().nonnegative(),
   direction: z.string().nullish(),

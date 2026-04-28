@@ -7,9 +7,16 @@ export function getCastMemberById(play: Play, castMemberId: string): CastMember 
   return (play.cast || []).find((c) => c.id === castMemberId);
 }
 
+export function getCastMemberNamesForLine(play: Play, line: PlayLine): string[] {
+  return (line.castMemberIds || [])
+    .map((id) => getCastMemberById(play, id)?.name)
+    .filter((n): n is string => !!n);
+}
+
 export function getCastMemberNameForLine(play: Play, line: PlayLine): string {
-  const castMember = getCastMemberById(play, line.castMemberId);
-  return castMember?.name || 'Unknown';
+  const names = getCastMemberNamesForLine(play, line);
+  if (names.length === 0) return 'Unknown';
+  return names.join(' & ');
 }
 
 export function getPerformers(state: StageState): Participant[] {
@@ -55,7 +62,11 @@ export function getCurrentLines(state: StageState): PlayLine[] {
 }
 
 export function getCurrentSpeakerCastMemberIds(state: StageState): string[] {
-  return getCurrentLines(state).map((l) => l.castMemberId);
+  const ids = new Set<string>();
+  for (const l of getCurrentLines(state)) {
+    for (const id of l.castMemberIds || []) ids.add(id);
+  }
+  return Array.from(ids);
 }
 
 export function getCurrentSpeakers(state: StageState): Participant[] {
@@ -76,7 +87,9 @@ export function getCurrentLinesForParticipant(
   const currentLines = getCurrentLines(state);
   const participant = (state.participants || []).find((p) => p.id === participantId);
   if (!participant) return [];
-  return currentLines.filter((l) => (participant.castMemberIds || []).includes(l.castMemberId));
+  return currentLines.filter((l) =>
+    (l.castMemberIds || []).some((id) => (participant.castMemberIds || []).includes(id))
+  );
 }
 
 export function getNextLinesForParticipant(
@@ -93,7 +106,7 @@ export function getNextLinesForParticipant(
     if (idx === undefined) continue;
     const linesAtIndex = getLinesAtIndex(state.selectedPlay, idx);
     const participantLines = linesAtIndex.filter((l) =>
-      (participant.castMemberIds || []).includes(l.castMemberId)
+      (l.castMemberIds || []).some((id) => (participant.castMemberIds || []).includes(id))
     );
     if (participantLines.length > 0) {
       return { lines: participantLines, turnsAway: i - state.currentLineIndex };

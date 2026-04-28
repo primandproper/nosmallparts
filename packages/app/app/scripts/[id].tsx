@@ -167,10 +167,27 @@ export default function ScriptDetail() {
 
       <Text className="mt-8 mb-2 text-xl font-serif text-stage-gold">Script</Text>
       {sortedLines.map((l, i) => {
-        const c = castById.get(l.castMemberId);
+        const names = (l.castMemberIds || [])
+          .map((id) => castById.get(id)?.name)
+          .filter((n): n is string => !!n);
+        const isUnison = names.length > 1;
+        const prev = i > 0 ? sortedLines[i - 1] : null;
+        const isOverlap = prev != null && prev.index === l.index;
         return (
-          <View key={`${l.castMemberId}-${i}`} className="mb-3">
-            <Text className="text-stage-gold">{c?.name || 'Unknown'}</Text>
+          <View key={`${l.index}-${i}`} className="mb-3">
+            <View className="flex-row items-center gap-2">
+              <Text className="text-stage-gold">{names.join(' & ') || 'Unknown'}</Text>
+              {isUnison ? (
+                <Text className="text-[10px] uppercase tracking-wider text-stage-muted">
+                  unison
+                </Text>
+              ) : null}
+              {isOverlap ? (
+                <Text className="text-[10px] uppercase tracking-wider text-stage-muted">
+                  overlapping
+                </Text>
+              ) : null}
+            </View>
             {l.direction ? (
               <Text className="italic text-stage-muted">({l.direction})</Text>
             ) : null}
