@@ -1,7 +1,7 @@
-import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
+import { Stack, useLocalSearchParams } from 'expo-router';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useEffect, useState } from 'react';
-import { ActivityIndicator, Pressable, Text, View } from 'react-native';
+import { ActivityIndicator, Pressable, Text, TextInput, View } from 'react-native';
 import { usePlayState } from '../../hooks/usePlayState';
 import { Lobby } from '../../components/Lobby';
 import { Countdown } from '../../components/Countdown';
@@ -14,15 +14,17 @@ import { PLAYER_NAME_KEY } from '../../lib/player-name';
 
 export default function StageScreen() {
   const { stageId } = useLocalSearchParams<{ stageId: string }>();
-  const router = useRouter();
   const [playerName, setPlayerName] = useState<string | null>(null);
+  const [nameInput, setNameInput] = useState('');
+  const [nameError, setNameError] = useState<string | null>(null);
+  const [nameChecked, setNameChecked] = useState(false);
 
   useEffect(() => {
     AsyncStorage.getItem(PLAYER_NAME_KEY).then((v) => {
       if (v) setPlayerName(v);
-      else router.replace('/');
+      setNameChecked(true);
     });
-  }, [router]);
+  }, []);
 
   const {
     stageState,
@@ -60,7 +62,44 @@ export default function StageScreen() {
     enabled: !!playerName,
   });
 
-  if (!playerName) return null;
+  async function onJoin() {
+    const trimmed = nameInput.trim();
+    if (!trimmed) {
+      setNameError('Enter your name to join');
+      return;
+    }
+    await AsyncStorage.setItem(PLAYER_NAME_KEY, trimmed);
+    setPlayerName(trimmed);
+  }
+
+  if (!nameChecked) return null;
+
+  if (!playerName) {
+    return (
+      <View className="flex-1 items-center justify-center bg-stage-bg px-6">
+        <Stack.Screen options={{ title: 'Join Stage' }} />
+        <Text className="mb-6 text-2xl font-serif text-stage-gold">Enter your name to join</Text>
+        <View className="w-full max-w-sm gap-3">
+          <TextInput
+            value={nameInput}
+            onChangeText={setNameInput}
+            placeholder="Your name"
+            placeholderTextColor="#8a8374"
+            autoFocus
+            onSubmitEditing={onJoin}
+            className="rounded-md border border-stage-border bg-stage-surface px-3 py-3 text-stage-text"
+          />
+          {nameError ? <Text className="text-red-400 text-sm">{nameError}</Text> : null}
+          <Pressable
+            onPress={onJoin}
+            className="rounded-md bg-stage-gold px-4 py-3"
+          >
+            <Text className="text-center font-semibold text-stage-bg">Join</Text>
+          </Pressable>
+        </View>
+      </View>
+    );
+  }
 
   if (!stageState) {
     return (

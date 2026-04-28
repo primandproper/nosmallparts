@@ -1,4 +1,4 @@
-import { and, asc, eq, inArray, isNull } from 'drizzle-orm';
+import { and, asc, desc, eq, inArray, isNull } from 'drizzle-orm';
 import { ulid } from 'ulid';
 import type { Participant, StagePhase, StageState } from '@nsp/shared';
 import { db } from '../db/index.js';
@@ -366,25 +366,25 @@ export async function pickSuccessorIdentity(
 }
 
 /**
- * Find an existing un-left participant on this stage that matches the given
- * identity. Used to dedupe joins from the same person (e.g. a second tab)
- * so they don't appear twice in the participants list.
+ * Find the most recent participant row on this stage that matches the given
+ * identity. Used to dedupe joins from the same person (e.g. a second tab or
+ * a reconnect after a dropped WebSocket) so they don't lose their role
+ * selections. leftAt is intentionally not filtered here — a disconnected
+ * participant (leftAt set by onClose) must be re-admitted via rejoinParticipant
+ * so their role rows survive the reconnect.
  */
 export async function findActiveParticipantByIdentity(
   stageId: string,
   identity: { userId: string | null; guestId: string | null }
 ): Promise<{ id: string; displayName: string } | null> {
   if (!identity.userId && !identity.guestId) return null;
-  const baseConds = [
-    eq(stageParticipants.stageId, stageId),
-    isNull(stageParticipants.leftAt),
-  ];
+  const baseConds = [eq(stageParticipants.stageId, stageId)];
   if (identity.userId) {
     const [row] = await db
       .select({ id: stageParticipants.id, displayName: stageParticipants.displayName })
       .from(stageParticipants)
       .where(and(...baseConds, eq(stageParticipants.userId, identity.userId)))
-      .orderBy(asc(stageParticipants.createdAt))
+      .orderBy(desc(stageParticipants.createdAt))
       .limit(1);
     if (row) return row;
   }
@@ -393,11 +393,22 @@ export async function findActiveParticipantByIdentity(
       .select({ id: stageParticipants.id, displayName: stageParticipants.displayName })
       .from(stageParticipants)
       .where(and(...baseConds, eq(stageParticipants.guestId, identity.guestId)))
-      .orderBy(asc(stageParticipants.createdAt))
+      .orderBy(desc(stageParticipants.createdAt))
       .limit(1);
     if (row) return row;
   }
   return null;
+}
+
+/**
+ * Clear leftAt so a reconnecting participant is visible in stageState again.
+ * Safe to call even if leftAt is already null.
+ */
+export async function rejoinParticipant(participantId: string): Promise<void> {
+  await db
+    .update(stageParticipants)
+    .set({ leftAt: null })
+    .where(eq(stageParticipants.id, participantId));
 }
 
 export async function setParticipantDisplayName(participantId: string, name: string): Promise<void> {

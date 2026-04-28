@@ -21,6 +21,10 @@ export function getApiBaseUrl(): string {
     return `http://${host}:3001`;
   }
 
+  if (Platform.OS === 'web' && typeof window !== 'undefined') {
+    return `${window.location.protocol}//${window.location.hostname}:3001`;
+  }
+
   return 'http://localhost:3001';
 }
 

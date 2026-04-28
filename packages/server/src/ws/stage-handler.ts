@@ -30,6 +30,7 @@ import {
   participantDisplayName,
   pickSuccessorIdentity,
   reassignRole,
+  rejoinParticipant,
   resetStage,
   setDirectorMode,
   setForceMuted,
@@ -263,6 +264,9 @@ export function createStageWsHandler(): (c: Context<{ Variables: AppVariables }>
               if (existing.displayName !== name) {
                 await setParticipantDisplayName(existing.id, name);
               }
+              // Re-admit the participant in case their WS dropped and onClose
+              // already set leftAt (which would hide them from stageState).
+              await rejoinParticipant(existing.id);
               stageId = stage.id;
               participantId = existing.id;
             } else {
@@ -428,7 +432,13 @@ export function createStageWsHandler(): (c: Context<{ Variables: AppVariables }>
             }
 
             case 'resetPlay': {
-              if (!(await isHostIdentity(stageId, identity))) {
+              const stage = await getStageById(stageId);
+              const isHost = await isHostIdentity(stageId, identity);
+              // From the discussion phase (play just ended), anyone can request
+              // "perform again" — the reset just sends everyone back to lobby
+              // with cast assignments preserved. From any other phase, only the
+              // host can reset (avoids accidental mid-performance resets).
+              if (!isHost && stage?.phase !== 'discussion') {
                 sendError(ws, 'Only the host can reset the play.');
                 break;
               }
