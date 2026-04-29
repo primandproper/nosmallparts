@@ -13,6 +13,9 @@ import {
 } from '@nsp/shared';
 import type { PlayLine, StageState } from '@nsp/shared';
 import { useLiveKitToken } from '../hooks/useLiveKitToken';
+import { TeleprompterLine } from './TeleprompterLine';
+
+const DEFAULT_WPM = 150;
 
 interface Props {
   stageId: string;
@@ -52,6 +55,7 @@ export function VideoRoom({ stageId, participantId, state }: Props) {
     <WebLiveKitRoom
       credentials={credentials}
       state={state}
+      participantId={participantId}
       publishVideo={publishVideo}
       publishAudio={publishAudio}
     />
@@ -61,11 +65,13 @@ export function VideoRoom({ stageId, participantId, state }: Props) {
 function WebLiveKitRoom({
   credentials,
   state,
+  participantId,
   publishVideo,
   publishAudio,
 }: {
   credentials: { token: string; url: string };
   state: StageState;
+  participantId: string | null;
   publishVideo: boolean;
   publishAudio: boolean;
 }) {
@@ -82,12 +88,18 @@ function WebLiveKitRoom({
       style={{ flex: 1, display: 'flex', flexDirection: 'column', minHeight: 0 }}
     >
       <RoomAudioRenderer />
-      <SpotlightStage state={state} />
+      <SpotlightStage state={state} participantId={participantId} />
     </LiveKitRoom>
   );
 }
 
-function SpotlightStage({ state }: { state: StageState }) {
+function SpotlightStage({
+  state,
+  participantId,
+}: {
+  state: StageState;
+  participantId: string | null;
+}) {
   const { useTracks } = require('@livekit/components-react');
   const { Track } = require('livekit-client');
   const tracks: Array<{ participant: { identity: string; name?: string } }> = useTracks(
@@ -116,6 +128,7 @@ function SpotlightStage({ state }: { state: StageState }) {
                 key={trackRef.participant.identity}
                 trackRef={trackRef}
                 lines={getCurrentLinesForParticipant(state, trackRef.participant.identity)}
+                isMine={trackRef.participant.identity === participantId}
               />
             ))}
           </View>
@@ -137,9 +150,11 @@ function SpotlightStage({ state }: { state: StageState }) {
 function SpotlightTile({
   trackRef,
   lines,
+  isMine,
 }: {
   trackRef: object;
   lines: PlayLine[];
+  isMine: boolean;
 }) {
   const { ParticipantTile } = require('@livekit/components-react');
   return (
@@ -147,7 +162,7 @@ function SpotlightTile({
       <View className="absolute inset-0">
         <ParticipantTile trackRef={trackRef} />
       </View>
-      {lines.length > 0 ? <LineOverlay lines={lines} /> : null}
+      {lines.length > 0 ? <LineOverlay lines={lines} isMine={isMine} /> : null}
     </View>
   );
 }
@@ -176,23 +191,44 @@ function MiniTile({ trackRef }: { trackRef: object }) {
   );
 }
 
-function LineOverlay({ lines }: { lines: PlayLine[] }) {
-  // Keyed by line text so the scroll container resets when the line changes,
-  // putting the start of the new line back at the top.
+function LineOverlay({ lines, isMine }: { lines: PlayLine[]; isMine: boolean }) {
+  // Keyed by line text so the teleprompter / scroll container resets when the
+  // line changes, putting the start of the new line back at the top.
   const key = lines.map((l) => l.text).join('|');
+
+  if (isMine) {
+    return (
+      <View
+        key={key}
+        className="absolute inset-x-0 bottom-0 bg-black/65 px-4 py-3 md:px-6 md:py-4"
+      >
+        {lines.map((line, i) => (
+          <View key={i} className={i > 0 ? 'mt-2' : undefined}>
+            <TeleprompterLine
+              variant="overlay"
+              text={line.text}
+              direction={line.direction}
+              wpm={line.autoScrollWpm ?? DEFAULT_WPM}
+              autoScroll={(line.scrollMode ?? 'auto') === 'auto'}
+            />
+          </View>
+        ))}
+      </View>
+    );
+  }
+
   return (
     <View
       key={key}
       className="absolute inset-x-0 bottom-0 max-h-[60%] bg-black/65 px-4 py-3 md:px-6 md:py-4"
-      // overflow-y-auto only takes effect on web; native ignores it.
       style={{ overflowY: 'auto' } as object}
     >
       {lines.map((line, i) => (
         <View key={i} className={i > 0 ? 'mt-2' : undefined}>
           {line.direction ? (
-            <Text className="italic text-stage-muted">({line.direction})</Text>
+            <Text className="italic text-stage-muted text-xs">({line.direction})</Text>
           ) : null}
-          <Text className="text-2xl leading-snug text-stage-gold md:text-3xl lg:text-4xl">
+          <Text className="text-base leading-snug text-stage-gold md:text-lg xl:text-xl 2xl:text-2xl">
             {line.text}
           </Text>
         </View>

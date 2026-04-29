@@ -254,6 +254,53 @@ export const samplePlays: Play[] = [
     ],
   },
   {
+    id: 'mark-antony-funeral',
+    title: 'Julius Caesar - Friends, Romans, Countrymen',
+    description:
+      "Mark Antony's funeral oration over Caesar's body. A single sustained monologue — useful for testing long-line rendering and auto-scroll.",
+    author: 'William Shakespeare',
+    cast: [
+      { id: 'antony', name: 'Mark Antony' },
+      { id: 'plebeian', name: 'Plebeian' },
+    ],
+    lines: [
+      {
+        castMemberIds: ['antony'],
+        text: "Friends, Romans, countrymen, lend me your ears; I come to bury Caesar, not to praise him. The evil that men do lives after them; the good is oft interred with their bones; so let it be with Caesar. The noble Brutus hath told you Caesar was ambitious: if it were so, it was a grievous fault, and grievously hath Caesar answer'd it. Here, under leave of Brutus and the rest— for Brutus is an honourable man; so are they all, all honourable men— come I to speak in Caesar's funeral. He was my friend, faithful and just to me: but Brutus says he was ambitious; and Brutus is an honourable man. He hath brought many captives home to Rome whose ransoms did the general coffers fill: did this in Caesar seem ambitious? When that the poor have cried, Caesar hath wept: ambition should be made of sterner stuff: yet Brutus says he was ambitious; and Brutus is an honourable man. You all did see that on the Lupercal I thrice presented him a kingly crown, which he did thrice refuse: was this ambition? Yet Brutus says he was ambitious; and, sure, he is an honourable man. I speak not to disprove what Brutus spoke, but here I am to speak what I do know. You all did love him once, not without cause: what cause withholds you then, to mourn for him? O judgment! thou art fled to brutish beasts, and men have lost their reason. Bear with me; my heart is in the coffin there with Caesar, and I must pause till it come back to me.",
+        index: 0,
+        direction: "addressing the crowd over Caesar's bier",
+        scrollMode: 'auto',
+        autoScrollWpm: 130,
+      },
+      {
+        castMemberIds: ['plebeian'],
+        text: 'Methinks there is much reason in his sayings.',
+        index: 1,
+        direction: 'murmuring',
+      },
+      {
+        castMemberIds: ['antony'],
+        text: "But yesterday the word of Caesar might have stood against the world; now lies he there, and none so poor to do him reverence. O masters, if I were disposed to stir your hearts and minds to mutiny and rage, I should do Brutus wrong, and Cassius wrong, who, you all know, are honourable men: I will not do them wrong; I rather choose to wrong the dead, to wrong myself and you, than I will wrong such honourable men. But here's a parchment with the seal of Caesar; I found it in his closet, 'tis his will: let but the commons hear this testament— which, pardon me, I do not mean to read— and they would go and kiss dead Caesar's wounds and dip their napkins in his sacred blood, yea, beg a hair of him for memory, and, dying, mention it within their wills, bequeathing it as a rich legacy unto their issue.",
+        index: 2,
+        direction: 'producing the will',
+        scrollMode: 'auto',
+        autoScrollWpm: 130,
+      },
+      {
+        castMemberIds: ['plebeian'],
+        text: "We'll hear the will: read it, Mark Antony.",
+        index: 3,
+        direction: 'shouting',
+      },
+      {
+        castMemberIds: ['antony'],
+        text: "Have patience, gentle friends, I must not read it; it is not meet you know how Caesar loved you. You are not wood, you are not stones, but men; and, being men, hearing the will of Caesar, it will inflame you, it will make you mad: 'tis good you know not that you are his heirs; for, if you should, O, what would come of it!",
+        index: 4,
+        direction: 'feigning reluctance',
+      },
+    ],
+  },
+  {
     id: 'hamlet-soliloquy',
     title: 'Hamlet - To Be Or Not To Be',
     description:

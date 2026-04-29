@@ -11,6 +11,9 @@ import {
   getLinesAtIndex,
 } from '@nsp/shared';
 import type { PlayLine, StageState } from '@nsp/shared';
+import { TeleprompterLine } from './TeleprompterLine';
+
+const DEFAULT_WPM = 150;
 
 interface Props {
   state: StageState;
@@ -224,12 +227,12 @@ function ScriptPanel({
             </Text>
             {myLines.map((line, i) => (
               <View key={i} className="mb-3">
-                {line.direction ? (
-                  <Text className="italic text-stage-muted">({line.direction})</Text>
-                ) : null}
-                <Text className="text-2xl text-stage-gold leading-snug">
-                  {line.text}
-                </Text>
+                <TeleprompterLine
+                  text={line.text}
+                  direction={line.direction}
+                  wpm={line.autoScrollWpm ?? DEFAULT_WPM}
+                  autoScroll={(line.scrollMode ?? 'auto') === 'auto'}
+                />
               </View>
             ))}
           </View>
@@ -238,7 +241,7 @@ function ScriptPanel({
             <Text className="text-stage-muted text-xs uppercase tracking-wider mb-2">
               Now speaking
             </Text>
-            <Text className="mb-2 text-stage-gold text-base">
+            <Text className="mb-2 text-stage-gold text-sm xl:text-base">
               {speakers.map((s) => s.name).join(', ') || '—'}
             </Text>
             {currentLines.map((line, i) => (
@@ -250,9 +253,11 @@ function ScriptPanel({
                   {getCastMemberNameForLine(play, line)}
                 </Text>
                 {line.direction ? (
-                  <Text className="italic text-stage-muted">({line.direction})</Text>
+                  <Text className="italic text-stage-muted text-xs">({line.direction})</Text>
                 ) : null}
-                <Text className="text-base text-stage-text">{line.text}</Text>
+                <Text className="text-sm xl:text-base text-stage-text leading-snug">
+                  {line.text}
+                </Text>
               </View>
             ))}
           </View>
@@ -391,10 +396,10 @@ function QueueEntry({
     : 'text-stage-muted text-xs uppercase tracking-wider';
 
   const textClass = isCurrent
-    ? 'text-stage-text text-base leading-snug'
+    ? 'text-stage-text text-sm xl:text-base leading-snug'
     : isMine
-      ? 'text-stage-text text-sm leading-snug'
-      : 'text-stage-muted text-sm leading-snug';
+      ? 'text-stage-text text-xs xl:text-sm leading-snug'
+      : 'text-stage-muted text-xs xl:text-sm leading-snug';
 
   return (
     <View className={containerClass}>
@@ -406,14 +411,21 @@ function QueueEntry({
           {isCurrent ? 'NOW' : `+${distance}`}
         </Text>
       </View>
-      {lines.map((line, i) => (
-        <View key={i} className={i > 0 ? 'mt-1' : undefined}>
-          {line.direction ? (
-            <Text className="italic text-stage-muted text-xs">({line.direction})</Text>
-          ) : null}
-          <Text className={textClass}>{line.text}</Text>
-        </View>
-      ))}
+      <View
+        className="overflow-hidden"
+        style={{ maxHeight: isCurrent ? 160 : 72 }}
+      >
+        {lines.map((line, i) => (
+          <View key={i} className={i > 0 ? 'mt-1' : undefined}>
+            {line.direction ? (
+              <Text className="italic text-stage-muted text-xs">({line.direction})</Text>
+            ) : null}
+            <Text className={textClass} numberOfLines={isCurrent ? 6 : 3}>
+              {line.text}
+            </Text>
+          </View>
+        ))}
+      </View>
     </View>
   );
 }

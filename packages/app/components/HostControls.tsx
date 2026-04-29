@@ -29,7 +29,7 @@ export function HostControls({
   onUnassignRole,
 }: Props) {
   const me = state.participants.find((p) => p.id === participantId);
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
   const [castOpen, setCastOpen] = useState(false);
   const [pickerForCastId, setPickerForCastId] = useState<string | null>(null);
   if (!me?.isHost) return null;
@@ -48,15 +48,17 @@ export function HostControls({
     <View className="rounded-md border border-stage-gold bg-stage-surface">
       <Pressable
         onPress={() => setOpen((v) => !v)}
-        className="flex-row items-center justify-between px-3 py-2 lg:cursor-default"
+        accessibilityRole="button"
+        accessibilityLabel={open ? 'Hide host controls' : 'Show host controls'}
+        className="flex-row items-center justify-between px-3 py-2"
       >
         <Text className="text-xs uppercase tracking-widest text-stage-gold">
           ★ Host controls
         </Text>
-        <Text className="text-xs text-stage-muted lg:hidden">{open ? '▾' : '▸'}</Text>
+        <Text className="text-xs text-stage-muted">{open ? '▾' : '▸'}</Text>
       </Pressable>
       <View
-        className={`flex-row flex-wrap gap-2 border-t border-stage-border px-3 py-3 ${open ? 'flex' : 'hidden'} lg:flex`}
+        className={`flex-row flex-wrap gap-2 border-t border-stage-border px-3 py-3 ${open ? 'flex' : 'hidden'}`}
       >
           <ActionButton
             label={paused ? 'Resume' : 'Pause'}
@@ -97,7 +99,7 @@ export function HostControls({
           ) : null}
         </View>
 
-      {castOpen && play && onReassignRole ? (
+      {open && castOpen && play && onReassignRole ? (
         <View className="border-t border-stage-border px-3 py-2 gap-2">
           {play.cast.map((cm) => {
             const assignee = state.participants.find((p) => p.castMemberIds.includes(cm.id));
