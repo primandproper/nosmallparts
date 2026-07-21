@@ -41,7 +41,7 @@
 - [x] Two distinct browsers on one machine (host + guest in separate sessions) — E2E ran Chromium host + Firefox and WebKit guests simultaneously on one stage; participant lists and chat converged across all three
 - [ ] Two desktops on the same LAN (real WS, real LiveKit)
 - [x] Clean DB: `pnpm db:migrate && pnpm db:seed` (verified against a fresh SQLite file; 4 sample plays seeded)
-- [ ] `.env` with `LIVEKIT_*` set (full path)
+- [~] `.env` with `LIVEKIT_*` set — room signaling connects with the real creds (participant tiles render for all three clients), defaults verified; actual A/V publish couldn't complete in headless sandbox (WebRTC ICE) — needs one human pass
 - [x] `.env` without `LIVEKIT_*` (server 503s; UI shows "Video disabled (LiveKit not configured)"; single token request, no retries — verified in E2E screenshots)
 - [ ] `BETTER_AUTH_SECRET` rotated mid-test does not crash existing clients (just signs them out)
 - [x] `ADMIN_EMAILS` env var honored (comma-separated, case-insensitive match against Better Auth user email) — `test/units.test.ts`, `test/http-scripts.test.ts`
@@ -104,7 +104,7 @@
 - [x] Edit own script — title, cast, lines, public toggle persist
 - [x] Edit script you don't own → 404
 - [x] Reordering / removing cast members and lines preserves index ordering
-- [~] `scrollMode: 'auto'` + `autoScrollWpm` actually drive auto-scroll on stage during performance (wired in `TeleprompterLine`; verify visually)
+- [x] `scrollMode: 'auto'` + `autoScrollWpm` actually drive auto-scroll on stage during performance (teleprompter with progress bar, ±10s and speed controls verified in E2E screenshot of the Hamlet soliloquy)
 
 ### 2.3 Ratings  *(implemented, incl. self-rating block)*
 - [x] Rate 1–5 → average and count update; user's own rating shown
@@ -260,10 +260,10 @@
 - [x] IP bans are scoped per-stage, not global
 
 ### 4.8 Mute  *(implemented, incl. visual disable)*
-- [x] Host mutes target → `forceMuted` flag set, LiveKit unpublishes target's audio
-- [~] Target's local mic-toggle button is **visually disabled** with "Muted by host" (implemented in `VideoRoom.tsx` control bar; verify in browser)
-- [~] Host unmutes → button re-enabled (implemented; verify in browser)
-- [~] Target cannot re-publish audio while force-muted (server restricts `canPublishSources` via LiveKit admin; needs a configured-LiveKit pass)
+- [x] Host mutes target → `forceMuted` flag set, LiveKit unpublishes target's audio (flag + admin call tested; mute now also available mid-performance via Host controls → Manage cast)
+- [x] Target's local mic-toggle button is **visually disabled** with "🔇 Muted by host" (verified in E2E with LiveKit configured)
+- [x] Host unmutes → button re-enabled (verified in E2E)
+- [~] Target cannot re-publish audio while force-muted (UI-level: disabled toggle ignores clicks — verified; SFU-level `canPublishSources` restriction wired but needs a live A/V pass)
 
 ---
 
@@ -329,10 +329,10 @@
 ## 7. Video / mic (LiveKit)
 
 ### 7.1 With LiveKit configured
-- [~] **Mic and camera both off by default** on join — no auto-publish (LiveKitRoom now mounts with `video={false} audio={false}`; verify live)
-- [~] User can opt in to mic (control bar added)
-- [~] User can opt in to camera (control bar added)
-- [~] Audience tokens are subscribe-only (grant logic present; verify against SFU)
+- [x] **Mic and camera both off by default** on join — no auto-publish (verified in E2E against the real LiveKit room: cast joins with "Mic off / Camera off")
+- [~] User can opt in to mic (toggle wired; publish starts but ICE can't complete in headless sandbox — verify on a real desktop)
+- [~] User can opt in to camera (same as above — local track is created on click, publication pending)
+- [x] Audience gets no publish controls; token grant is subscribe-only (control-bar absence verified in E2E; grant logic in `routes/livekit.ts`)
 - [~] Long sessions (>1 hour): token TTL raised to 12h so late reconnects still work (explicit mid-session refresh not implemented — revisit if stages ever outlive 12h)
 - [ ] Network drop → reconnect restores published tracks without rejoining the stage room
 - [ ] Up to 12 participants render without obvious distortion / dropped frames

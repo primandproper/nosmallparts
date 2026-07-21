@@ -231,6 +231,7 @@ export default function StageScreen() {
               onToggleDirectorMode={hostToggleDirectorMode}
               onReassignRole={hostReassignRole}
               onUnassignRole={hostUnassignRole}
+              onMute={hostMute}
             />
           </View>
           <Stage
@@ -261,6 +262,7 @@ export default function StageScreen() {
               onToggleDirectorMode={hostToggleDirectorMode}
               onReassignRole={hostReassignRole}
               onUnassignRole={hostUnassignRole}
+              onMute={hostMute}
             />
           </View>
           <Discussion state={stageState} participantId={participantId} onReset={resetPlay} />

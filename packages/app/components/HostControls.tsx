@@ -14,6 +14,7 @@ interface Props {
   onToggleDirectorMode?: (enabled: boolean) => void;
   onReassignRole?: (targetParticipantId: string, castMemberId: string) => void;
   onUnassignRole?: (targetParticipantId: string, castMemberId: string) => void;
+  onMute?: (targetParticipantId: string, muted: boolean) => void;
 }
 
 export function HostControls({
@@ -27,6 +28,7 @@ export function HostControls({
   onToggleDirectorMode,
   onReassignRole,
   onUnassignRole,
+  onMute,
 }: Props) {
   const me = state.participants.find((p) => p.id === participantId);
   const [open, setOpen] = useState(true);
@@ -145,6 +147,27 @@ export function HostControls({
               </View>
             );
           })}
+          {onMute ? (
+            <View className="rounded-md border border-stage-border p-2">
+              <Text className="text-xs uppercase tracking-wider text-stage-muted mb-1">
+                Participants
+              </Text>
+              {state.participants
+                .filter((p) => p.id !== participantId)
+                .map((p) => (
+                  <View key={p.id} className="flex-row items-center justify-between py-0.5">
+                    <Text className="text-xs text-stage-text">
+                      {p.name}
+                      {p.forceMuted ? ' · 🔇 muted' : ''}
+                    </Text>
+                    <TinyAction
+                      label={p.forceMuted ? 'Unmute' : 'Mute'}
+                      onPress={() => onMute(p.id, !p.forceMuted)}
+                    />
+                  </View>
+                ))}
+            </View>
+          ) : null}
         </View>
       ) : null}
     </View>
