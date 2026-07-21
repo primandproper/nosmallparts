@@ -35,6 +35,10 @@ export interface Play {
   description: string;
   author?: string;
   isPublic?: boolean;
+  /** Admin kill-switch (§2.4). Disabled scripts are hidden from non-admins. */
+  enabled?: boolean;
+  /** Better Auth user id of the script owner. Used to block self-rating. */
+  createdByUserId?: string;
   cast: CastMember[];
   lines: PlayLine[];
   tags?: ScriptTag[];
@@ -86,6 +90,14 @@ export interface RoleOffer {
   castMemberName: string;
 }
 
+/** Broadcast when a role-holder disconnects mid-performance (§4.5). */
+export interface RoleVacancy {
+  castMemberId: string;
+  castMemberName: string;
+  /** Epoch ms deadline by which an audience member may claim the role. Null in director mode (no countdown). */
+  claimDeadline: number | null;
+}
+
 // Client -> Server WebSocket messages
 export type ClientMessage =
   | { type: 'join'; stageId: string; participantName: string }
@@ -111,7 +123,9 @@ export type ClientMessage =
   | { type: 'hostBan'; targetParticipantId: string }
   | { type: 'hostMute'; targetParticipantId: string; muted: boolean }
   | { type: 'hostToggleDirectorMode'; enabled: boolean }
-  | { type: 'respondRoleOffer'; offerId: string; accept: boolean };
+  | { type: 'respondRoleOffer'; offerId: string; accept: boolean }
+  // Audience member claims a vacant role during the 45s vacancy countdown (§4.5)
+  | { type: 'audienceClaimRole'; castMemberId: string };
 
 // Server -> Client WebSocket messages
 export type ServerMessage =
@@ -128,4 +142,6 @@ export type ServerMessage =
   | { type: 'playStarted' }
   | { type: 'lineAdvanced'; currentLineIndex: number }
   | { type: 'playEnded' }
-  | { type: 'sessionReplaced' };
+  | { type: 'sessionReplaced' }
+  | { type: 'roleVacated'; vacancy: RoleVacancy }
+  | { type: 'roleVacancyCleared'; castMemberId: string };

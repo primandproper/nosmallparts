@@ -1,6 +1,9 @@
+import { readFile } from 'node:fs/promises';
+import { join } from 'node:path';
 import { Hono } from 'hono';
 import { cors } from 'hono/cors';
 import { logger } from 'hono/logger';
+import { serveStatic } from '@hono/node-server/serve-static';
 import { auth } from './auth.js';
 import type { AuthUser, Session } from './auth.js';
 import { playScriptsRouter, tagsRouter } from './routes/play-scripts.js';
@@ -20,14 +23,22 @@ const trustedOrigins = (process.env.TRUSTED_ORIGINS || 'http://localhost:8081')
   .map((s) => s.trim())
   .filter(Boolean);
 
-app.use('*', logger());
+// Logging hygiene (§5.5, §12.3): stage codes must not appear in INFO logs.
+// Mask the :code segment of stage lookups and the /stage/:code app route.
+function redactStageCodes(str: string): string {
+  return str
+    .replace(/(\/api\/stages\/)[A-Za-z0-9]{4,12}(?=\/|\s|$|\?)/g, '$1:code')
+    .replace(/(\/stage\/)[A-Za-z0-9]{4,12}(?=\/|\s|$|\?)/g, '$1:code');
+}
+
+app.use('*', logger((str, ...rest) => console.log(redactStageCodes(str), ...rest)));
 app.use(
   '*',
   cors({
     origin: trustedOrigins,
     credentials: true,
     allowHeaders: ['Content-Type', 'Authorization'],
-    allowMethods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowMethods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
     exposeHeaders: ['Set-Cookie'],
   })
 );
@@ -64,3 +75,19 @@ app.route('/api/play-scripts', playScriptsRouter);
 app.route('/api/tags', tagsRouter);
 app.route('/api/stages', stagesRouter);
 app.route('/api/livekit', livekitRouter);
+
+const webDir = process.env.WEB_STATIC_DIR;
+if (webDir) {
+  const isAppRoute = (path: string) => !path.startsWith('/api/') && !path.startsWith('/ws/');
+  const staticHandler = serveStatic({ root: webDir });
+  app.use('/*', async (c, next) => (isAppRoute(c.req.path) ? staticHandler(c, next) : next()));
+  app.get('/*', async (c) => {
+    if (!isAppRoute(c.req.path)) return c.notFound();
+    try {
+      const html = await readFile(join(webDir, 'index.html'), 'utf8');
+      return c.html(html);
+    } catch {
+      return c.notFound();
+    }
+  });
+}

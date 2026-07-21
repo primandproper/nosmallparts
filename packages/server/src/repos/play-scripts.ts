@@ -82,6 +82,8 @@ async function hydrate(playScriptId: string): Promise<Play | null> {
     description: ps.description ?? '',
     author: ps.author ?? undefined,
     isPublic: ps.isPublic,
+    enabled: ps.enabled,
+    createdByUserId: ps.createdByUser,
     cast: cm.map((c) => ({
       id: c.id,
       name: c.name,
@@ -116,13 +118,17 @@ export async function getPlayScript(id: string): Promise<Play | null> {
 export async function listPlayScripts(opts: {
   userId?: string | null;
   search?: string;
+  /** Admins see every script, including disabled and private ones. */
+  admin?: boolean;
 }): Promise<Play[]> {
-  const { userId, search } = opts;
+  const { userId, search, admin } = opts;
 
-  // Public scripts OR scripts owned by the current user.
-  const where = userId
+  // Public scripts OR scripts owned by the current user. Non-admins never see
+  // disabled scripts (not even their own — §2.1). Admins see everything.
+  const visibility = userId
     ? or(eq(playScripts.isPublic, true), eq(playScripts.createdByUser, userId))
     : eq(playScripts.isPublic, true);
+  const where = admin ? undefined : and(visibility, eq(playScripts.enabled, true));
 
   const rows = await db
     .select({ id: playScripts.id })
@@ -280,6 +286,42 @@ export async function deletePlayScript(userId: string, id: string): Promise<bool
     .where(and(eq(playScripts.id, id), eq(playScripts.createdByUser, userId)))
     .returning({ id: playScripts.id });
   return result.length > 0;
+}
+
+/** Admin delete — no ownership check (§2.4). */
+export async function adminDeletePlayScript(id: string): Promise<boolean> {
+  const result = await db
+    .delete(playScripts)
+    .where(eq(playScripts.id, id))
+    .returning({ id: playScripts.id });
+  return result.length > 0;
+}
+
+/** Admin toggle for the enabled kill-switch (§2.4). */
+export async function setPlayScriptEnabled(id: string, enabled: boolean): Promise<boolean> {
+  const result = await db
+    .update(playScripts)
+    .set({ enabled, updatedAt: new Date() })
+    .where(eq(playScripts.id, id))
+    .returning({ id: playScripts.id });
+  return result.length > 0;
+}
+
+export async function getPlayScriptOwner(id: string): Promise<string | null> {
+  const [row] = await db
+    .select({ createdByUser: playScripts.createdByUser })
+    .from(playScripts)
+    .where(eq(playScripts.id, id));
+  return row?.createdByUser ?? null;
+}
+
+/** Enabled check used to gate new stage creation (live stages are unaffected). */
+export async function isPlayScriptEnabled(id: string): Promise<boolean> {
+  const [row] = await db
+    .select({ enabled: playScripts.enabled })
+    .from(playScripts)
+    .where(eq(playScripts.id, id));
+  return row?.enabled ?? false;
 }
 
 export async function ownedBy(userId: string, id: string): Promise<boolean> {

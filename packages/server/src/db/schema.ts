@@ -73,6 +73,7 @@ export const playScripts = sqliteTable('play_scripts', {
   description: text('description').notNull().default(''),
   author: text('author'),
   isPublic: integer('is_public', { mode: 'boolean' }).notNull().default(false),
+  enabled: integer('enabled', { mode: 'boolean' }).notNull().default(true),
   createdByUser: text('created_by_user')
     .notNull()
     .references(() => user.id, { onDelete: 'cascade' }),
@@ -220,6 +221,17 @@ export const stageBans = sqliteTable('stage_bans', {
     .references(() => stages.id, { onDelete: 'cascade' }),
   userId: text('user_id').references(() => user.id, { onDelete: 'set null' }),
   guestId: text('guest_id'),
+  bannedAt: integer('banned_at', { mode: 'timestamp_ms' })
+    .notNull()
+    .$defaultFn(() => new Date()),
+});
+
+export const stageIpBans = sqliteTable('stage_ip_bans', {
+  id: text('id').primaryKey(),
+  stageId: text('stage_id')
+    .notNull()
+    .references(() => stages.id, { onDelete: 'cascade' }),
+  ip: text('ip').notNull(),
   bannedAt: integer('banned_at', { mode: 'timestamp_ms' })
     .notNull()
     .$defaultFn(() => new Date()),

@@ -9,6 +9,7 @@
     "dev:app": "pnpm --filter @nsp/app dev",
     "build": "pnpm -r run build",
     "typecheck": "pnpm -r run typecheck",
+    "test": "pnpm --filter @nsp/server test",
     "db:generate": "pnpm --filter @nsp/server db:generate",
     "db:migrate": "pnpm --filter @nsp/server db:migrate",
     "db:seed": "pnpm --filter @nsp/server db:seed"

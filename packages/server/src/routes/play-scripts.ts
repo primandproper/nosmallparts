@@ -1,14 +1,17 @@
 import { Hono } from 'hono';
 import { z } from 'zod';
+import { isAdminEmail } from '../admin.js';
 import type { AppVariables } from '../app.js';
 import { requireAuth } from '../middleware/require-auth.js';
 import {
+  adminDeletePlayScript,
   createPlayScript,
-  deletePlayScript,
   getPlayScript,
+  getPlayScriptOwner,
   getUserRatings,
   listPlayScripts,
   ratePlayScript,
+  setPlayScriptEnabled,
   updatePlayScript,
 } from '../repos/play-scripts.js';
 import { listTags, upsertTagByName } from '../repos/tags.js';
@@ -41,11 +44,15 @@ const playScriptSchema = z.object({
 
 export const playScriptsRouter = new Hono<{ Variables: AppVariables }>();
 
-// List scripts (public + own).
+// List scripts (public + own; admins see everything including disabled).
 playScriptsRouter.get('/', async (c) => {
   const search = c.req.query('search') || undefined;
   const user = c.get('user');
-  const plays = await listPlayScripts({ userId: user?.id ?? null, search });
+  const plays = await listPlayScripts({
+    userId: user?.id ?? null,
+    search,
+    admin: isAdminEmail(user?.email),
+  });
   if (user) {
     const ratings = await getUserRatings(
       user.id,
@@ -59,12 +66,15 @@ playScriptsRouter.get('/', async (c) => {
   return c.json({ plays });
 });
 
-// Get one script by id.
+// Get one script by id. Disabled scripts are invisible to non-admins (§2.4).
 playScriptsRouter.get('/:id', async (c) => {
   const id = c.req.param('id');
   const play = await getPlayScript(id);
   if (!play) return c.json({ error: 'not_found' }, 404);
   const user = c.get('user');
+  if (play.enabled === false && !isAdminEmail(user?.email)) {
+    return c.json({ error: 'not_found' }, 404);
+  }
   if (user) {
     const ratings = await getUserRatings(user.id, [id]);
     const r = ratings.get(id);
@@ -88,7 +98,7 @@ playScriptsRouter.post('/', requireAuth, async (c) => {
       if (name.trim()) resolvedTagIds.push(await upsertTagByName(name));
     }
   }
-  const play = await createPlayScript(user.id, { ...rest, tagIds: resolvedTagIds });
+  const play = await createPlayScript(user.id, { ...rest, tagIds: [...new Set(resolvedTagIds)] });
   return c.json({ play }, 201);
 });
 
@@ -108,21 +118,36 @@ playScriptsRouter.put('/:id', requireAuth, async (c) => {
       if (name.trim()) resolvedTagIds.push(await upsertTagByName(name));
     }
   }
-  const play = await updatePlayScript(user.id, id, { ...rest, tagIds: resolvedTagIds });
+  const play = await updatePlayScript(user.id, id, { ...rest, tagIds: [...new Set(resolvedTagIds)] });
   if (!play) return c.json({ error: 'not_found' }, 404);
   return c.json({ play });
 });
 
-// Delete.
+// Delete — admin-only (§2.4). Even the script's owner gets 403.
 playScriptsRouter.delete('/:id', requireAuth, async (c) => {
   const user = c.get('user')!;
+  if (!isAdminEmail(user.email)) return c.json({ error: 'forbidden' }, 403);
   const id = c.req.param('id');
-  const ok = await deletePlayScript(user.id, id);
+  const ok = await adminDeletePlayScript(id);
   if (!ok) return c.json({ error: 'not_found' }, 404);
   return c.json({ ok: true });
 });
 
-// Rate.
+// Admin toggle for the enabled flag (§2.4).
+const enabledSchema = z.object({ enabled: z.boolean() });
+playScriptsRouter.patch('/:id/enabled', requireAuth, async (c) => {
+  const user = c.get('user')!;
+  if (!isAdminEmail(user.email)) return c.json({ error: 'forbidden' }, 403);
+  const id = c.req.param('id');
+  const body = await c.req.json().catch(() => ({}));
+  const parsed = enabledSchema.safeParse(body);
+  if (!parsed.success) return c.json({ error: 'invalid' }, 400);
+  const ok = await setPlayScriptEnabled(id, parsed.data.enabled);
+  if (!ok) return c.json({ error: 'not_found' }, 404);
+  return c.json({ ok: true, enabled: parsed.data.enabled });
+});
+
+// Rate. Authors cannot rate their own scripts (§2.3).
 const rateSchema = z.object({ rating: z.number().int().min(1).max(5) });
 playScriptsRouter.post('/:id/rate', requireAuth, async (c) => {
   const user = c.get('user')!;
@@ -130,6 +155,11 @@ playScriptsRouter.post('/:id/rate', requireAuth, async (c) => {
   const body = await c.req.json();
   const parsed = rateSchema.safeParse(body);
   if (!parsed.success) return c.json({ error: 'invalid' }, 400);
+  const owner = await getPlayScriptOwner(id);
+  if (!owner) return c.json({ error: 'not_found' }, 404);
+  if (owner === user.id) {
+    return c.json({ error: 'self_rating_forbidden', message: "Authors can't rate their own work." }, 403);
+  }
   const stats = await ratePlayScript(user.id, id, parsed.data.rating);
   return c.json(stats);
 });

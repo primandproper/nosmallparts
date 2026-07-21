@@ -1,9 +1,10 @@
-import { and, asc, desc, eq, inArray, isNull } from 'drizzle-orm';
+import { and, asc, desc, eq, inArray, isNull, max } from 'drizzle-orm';
 import { ulid } from 'ulid';
 import type { Participant, StagePhase, StageState } from '@nsp/shared';
 import { db } from '../db/index.js';
 import {
   stageBans,
+  stageIpBans,
   stageParticipantRoles,
   stageParticipants,
   stages,
@@ -54,7 +55,8 @@ export async function createStage(playScriptId?: string | null): Promise<{ id: s
 }
 
 export async function getStageByCode(code: string) {
-  const [row] = await db.select().from(stages).where(eq(stages.code, code));
+  // Codes are stored uppercase; joins are case-insensitive (§3.1).
+  const [row] = await db.select().from(stages).where(eq(stages.code, code.toUpperCase()));
   return row ?? null;
 }
 
@@ -70,7 +72,8 @@ export async function getStageByIdOrCode(idOrCode: string) {
 export async function joinStage(
   idOrCode: string,
   participantName: string,
-  identity: { userId: string | null; guestId: string | null }
+  identity: { userId: string | null; guestId: string | null },
+  opts: { isAudience?: boolean } = {}
 ): Promise<{ stageId: string; participantId: string }> {
   if (!identity.userId && !identity.guestId) {
     throw new Error('identity required');
@@ -85,10 +88,31 @@ export async function joinStage(
     guestId: identity.guestId,
     displayName: participantName,
     isReady: false,
-    isAudience: false,
+    isAudience: opts.isAudience ?? false,
     createdAt: new Date(),
   });
   return { stageId: stage.id, participantId };
+}
+
+/** Display names of participants currently on the stage (for uniqueness checks). */
+export async function activeDisplayNames(
+  stageId: string,
+  excludeParticipantId?: string
+): Promise<string[]> {
+  const rows = await db
+    .select({ id: stageParticipants.id, name: stageParticipants.displayName })
+    .from(stageParticipants)
+    .where(and(eq(stageParticipants.stageId, stageId), isNull(stageParticipants.leftAt)));
+  return rows.filter((r) => r.id !== excludeParticipantId).map((r) => r.name);
+}
+
+/** Cast-member ids currently held by a participant. */
+export async function getParticipantRoleIds(participantId: string): Promise<string[]> {
+  const rows = await db
+    .select({ castMemberId: stageParticipantRoles.castMemberId })
+    .from(stageParticipantRoles)
+    .where(eq(stageParticipantRoles.stageParticipantId, participantId));
+  return rows.map((r) => r.castMemberId);
 }
 
 export async function leaveStage(stageId: string, participantId: string): Promise<void> {
@@ -359,7 +383,8 @@ export async function pickSuccessorIdentity(
       guestId: row.guestId ?? null,
     };
     if (excludeIdentity && identityMatches(identity, excludeIdentity)) continue;
-    if (!identity.userId && !identity.guestId) continue;
+    // Only signed-in users can host (§1.4) — guests are skipped during election.
+    if (!identity.userId) continue;
     return identity;
   }
   return null;
@@ -544,6 +569,73 @@ export async function isBanned(stageId: string, identity: HostIdentity): Promise
     if (identity.guestId && r.guestId && r.guestId === identity.guestId) return true;
   }
   return false;
+}
+
+// IP bans are scoped per-stage, not global (§4.7).
+export async function addIpBan(stageId: string, ip: string): Promise<void> {
+  if (!ip) return;
+  await db.insert(stageIpBans).values({
+    id: ulid(),
+    stageId,
+    ip,
+    bannedAt: new Date(),
+  });
+}
+
+export async function isIpBanned(stageId: string, ip: string | null): Promise<boolean> {
+  if (!ip) return false;
+  const [row] = await db
+    .select({ id: stageIpBans.id })
+    .from(stageIpBans)
+    .where(and(eq(stageIpBans.stageId, stageId), eq(stageIpBans.ip, ip)));
+  return !!row;
+}
+
+/**
+ * Hard-delete a stage and all dependents (§10.2). FK cascades remove
+ * participants, roles, bans, and IP bans.
+ */
+export async function deleteStageDeep(stageId: string): Promise<void> {
+  await db.delete(stages).where(eq(stages.id, stageId));
+}
+
+/**
+ * Stages whose last activity (stage update, participant join, or participant
+ * leave) is older than the cutoff. Used by the idle reaper (§10.2); caller is
+ * responsible for excluding stages with live connections.
+ */
+export async function findIdleStageIds(cutoff: Date): Promise<string[]> {
+  const rows = await db
+    .select({
+      id: stages.id,
+      updatedAt: stages.updatedAt,
+      lastJoin: max(stageParticipants.createdAt),
+      lastLeave: max(stageParticipants.leftAt),
+    })
+    .from(stages)
+    .leftJoin(stageParticipants, eq(stageParticipants.stageId, stages.id))
+    .groupBy(stages.id);
+  const cutoffMs = cutoff.getTime();
+  return rows
+    .filter((r) => {
+      const latest = Math.max(
+        r.updatedAt?.getTime() ?? 0,
+        r.lastJoin ? new Date(r.lastJoin).getTime() : 0,
+        r.lastLeave ? new Date(r.lastLeave).getTime() : 0
+      );
+      return latest < cutoffMs;
+    })
+    .map((r) => r.id);
+}
+
+/** True if the stage has any participant rows with leftAt unset. */
+export async function hasLiveParticipants(stageId: string): Promise<boolean> {
+  const [row] = await db
+    .select({ id: stageParticipants.id })
+    .from(stageParticipants)
+    .where(and(eq(stageParticipants.stageId, stageId), isNull(stageParticipants.leftAt)))
+    .limit(1);
+  return !!row;
 }
 
 export { identityMatches };
