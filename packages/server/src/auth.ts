@@ -19,6 +19,11 @@ export const auth = betterAuth({
     requireEmailVerification: false,
     minPasswordLength: 8,
   },
+  // Better Auth's built-in rate limiting (sign-in/register etc). Enabled in
+  // production; left off elsewhere so dev and tests aren't throttled.
+  rateLimit: {
+    enabled: process.env.NODE_ENV === 'production',
+  },
   trustedOrigins: [...trustedOrigins, 'nosmallparts://'],
   plugins: [expo()],
   advanced: {

@@ -16,6 +16,9 @@ export function RoleOfferPrompt({ offers, onRespond }: Props) {
       <Text className="mt-1 text-stage-text">
         The host has offered you <Text className="font-semibold">{offer.castMemberName}</Text>.
       </Text>
+      <Text className="mt-0.5 text-xs text-stage-muted">
+        Accepting puts you in the cast — you can enable your camera and mic to perform.
+      </Text>
       <View className="mt-2 flex-row gap-2">
         <Pressable
           onPress={() => onRespond(offer.offerId, true)}

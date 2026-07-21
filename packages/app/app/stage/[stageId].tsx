@@ -1,4 +1,4 @@
-import { Stack, useLocalSearchParams } from 'expo-router';
+import { Link, Stack, useLocalSearchParams } from 'expo-router';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useEffect, useState } from 'react';
 import { ActivityIndicator, Pressable, Text, TextInput, View } from 'react-native';
@@ -123,6 +123,14 @@ export default function StageScreen() {
           >
             <Text className="text-center font-semibold text-stage-bg">Join</Text>
           </Pressable>
+          {/* Optional — guests can join without an account (§5.3). */}
+          <Link href="/login" asChild>
+            <Pressable className="self-center py-1 active:opacity-70">
+              <Text className="text-xs text-stage-muted underline">
+                Sign in (optional — needed to host or rate)
+              </Text>
+            </Pressable>
+          </Link>
         </View>
       </View>
     );

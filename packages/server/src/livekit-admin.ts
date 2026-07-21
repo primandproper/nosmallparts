@@ -1,4 +1,4 @@
-import { RoomServiceClient, TrackType } from 'livekit-server-sdk';
+import { RoomServiceClient, TrackSource, TrackType } from 'livekit-server-sdk';
 
 function getAdminClient(): RoomServiceClient | null {
   const apiKey = process.env.LIVEKIT_API_KEY;
@@ -31,6 +31,24 @@ export async function livekitSetMuted(
         await client.mutePublishedTrack(roomName, identity, track.sid, muted).catch(() => {});
       }
     }
+    // Also restrict publishable sources so a force-muted participant cannot
+    // simply re-publish audio (§4.8). Unmuting restores the full set.
+    const sources = muted
+      ? [TrackSource.CAMERA, TrackSource.SCREEN_SHARE]
+      : [
+          TrackSource.CAMERA,
+          TrackSource.MICROPHONE,
+          TrackSource.SCREEN_SHARE,
+          TrackSource.SCREEN_SHARE_AUDIO,
+        ];
+    await client
+      .updateParticipant(roomName, identity, undefined, {
+        canSubscribe: true,
+        canPublish: true,
+        canPublishData: true,
+        canPublishSources: sources,
+      })
+      .catch(() => {});
   } catch (err) {
     console.warn('[livekit] setMuted failed', err);
   }

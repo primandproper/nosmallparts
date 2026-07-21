@@ -39,7 +39,9 @@ livekitRouter.post('/token', async (c) => {
   const at = new AccessToken(apiKey, apiSecret, {
     identity: participant.id,
     name: participant.name,
-    ttl: 60 * 60, // 1h
+    // Long TTL so a network-drop reconnect late in a long session still works
+    // (stages live at most a few hours; the room is torn down with the stage).
+    ttl: 12 * 60 * 60,
   });
   at.addGrant({
     room: stage.id,

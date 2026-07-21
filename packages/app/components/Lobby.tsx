@@ -74,6 +74,8 @@ export function Lobby({
   const assignedIds = new Set(performers.flatMap((p) => p.castMemberIds));
   const unfilledRoles = play ? play.cast.filter((c) => !assignedIds.has(c.id)).length : 0;
   const [copied, setCopied] = useState(false);
+  // Clipboard can fail (e.g. insecure context) — fall back to showing the URL.
+  const [copyFallbackUrl, setCopyFallbackUrl] = useState<string | null>(null);
   const copiedTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
@@ -84,10 +86,15 @@ export function Lobby({
 
   const copyInviteLink = async () => {
     const url = Linking.createURL(`/stage/${state.code}`);
-    await Clipboard.setStringAsync(url);
-    setCopied(true);
-    if (copiedTimer.current) clearTimeout(copiedTimer.current);
-    copiedTimer.current = setTimeout(() => setCopied(false), 1500);
+    try {
+      await Clipboard.setStringAsync(url);
+      setCopied(true);
+      setCopyFallbackUrl(null);
+      if (copiedTimer.current) clearTimeout(copiedTimer.current);
+      copiedTimer.current = setTimeout(() => setCopied(false), 1500);
+    } catch {
+      setCopyFallbackUrl(url);
+    }
   };
 
   // Auto-start when everyone is ready and director mode is OFF. With director
@@ -179,6 +186,14 @@ export function Lobby({
             {copied ? 'Invite link copied' : 'Copy invite link'}
           </Text>
         </Pressable>
+        {copyFallbackUrl ? (
+          <View className="rounded-md border border-stage-border bg-stage-surface px-3 py-1.5">
+            <Text className="text-[10px] text-stage-muted">Copy this link manually:</Text>
+            <Text selectable className="text-xs text-stage-text">
+              {copyFallbackUrl}
+            </Text>
+          </View>
+        ) : null}
       </View>
 
       <View>
