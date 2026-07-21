@@ -35,10 +35,10 @@
 ---
 
 ## 0. Setup matrix
-- [ ] Chrome (latest stable)
-- [ ] Safari (latest stable)
-- [ ] Firefox (latest stable)
-- [ ] Two distinct browsers on one machine (host + guest in separate sessions)
+- [~] Chrome (latest stable) — headless Chromium engine verified via E2E; branded-Chrome eyeball pass still recommended
+- [~] Safari (latest stable) — headless WebKit engine verified via E2E (join, lobby, chat); branded-Safari pass still recommended
+- [~] Firefox (latest stable) — headless Firefox engine verified via E2E (join, lobby, chat); branded pass still recommended
+- [x] Two distinct browsers on one machine (host + guest in separate sessions) — E2E ran Chromium host + Firefox and WebKit guests simultaneously on one stage; participant lists and chat converged across all three
 - [ ] Two desktops on the same LAN (real WS, real LiveKit)
 - [x] Clean DB: `pnpm db:migrate && pnpm db:seed` (verified against a fresh SQLite file; 4 sample plays seeded)
 - [ ] `.env` with `LIVEKIT_*` set (full path)
@@ -388,7 +388,7 @@
 ## 11. UX / polish (desktop)
 - [ ] All error toasts dismissable; do not stack indefinitely
 - [x] Disabled-button visual state distinct (already wired in `HostControls.ActionButton`)
-- [ ] Layout works at 1280×720 minimum and at ≥1920×1080
+- [~] Layout works at 1280×720 minimum (verified headless: no horizontal scroll, lobby lays out cleanly — screenshot in scratchpad) and at ≥1920×1080 (not yet checked)
 - [ ] Dark theme contrast meets WCAG AA on all key text
 - [ ] Keyboard navigation: Tab cycles inputs/buttons sensibly
 - [ ] Loading spinners present for any await > 200 ms (`api()` calls, WS connect)
