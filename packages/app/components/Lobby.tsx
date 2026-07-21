@@ -69,6 +69,10 @@ export function Lobby({
   const performers = state.participants.filter((p) => !p.isAudience);
   const unreadyPerformers = performers.filter((p) => !p.isReady);
   const firstPerformerId = performers[0]?.id;
+  // Only signed-in users can host; a guest-only stage waits for one (§1.4).
+  const hasHost = state.participants.some((p) => p.isHost);
+  const assignedIds = new Set(performers.flatMap((p) => p.castMemberIds));
+  const unfilledRoles = play ? play.cast.filter((c) => !assignedIds.has(c.id)).length : 0;
   const [copied, setCopied] = useState(false);
   const copiedTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -93,6 +97,7 @@ export function Lobby({
   const shouldAutoStart =
     state.phase === 'lobby' &&
     !!play &&
+    hasHost &&
     allAssigned &&
     allReady &&
     !directorMode &&
@@ -105,10 +110,12 @@ export function Lobby({
   const status = getStatus({
     play,
     me,
+    hasHost,
     allAssigned,
     allReady,
     directorMode,
     iAmHost,
+    unfilledRoles,
     unreadyCount: unreadyPerformers.length,
     onStart,
     onToggleReady,
@@ -131,6 +138,18 @@ export function Lobby({
         onReassignRole={onHostReassignRole}
         onUnassignRole={onHostUnassignRole}
       />
+
+      {!hasHost ? (
+        <View className="rounded-md border border-amber-500 bg-stage-surface px-3 py-2">
+          <Text className="text-xs uppercase tracking-widest text-amber-400">
+            Waiting for a signed-in user to host
+          </Text>
+          <Text className="mt-1 text-xs text-stage-muted">
+            Guests can join and claim roles, but the play can't start until someone signs in to
+            host this stage.
+          </Text>
+        </View>
+      ) : null}
 
       {directorMode ? (
         <View className="rounded-md border border-stage-gold bg-stage-surface px-3 py-2">
@@ -355,10 +374,12 @@ export function Lobby({
 interface StatusInput {
   play: Play | null | undefined;
   me: StageState['participants'][number] | undefined;
+  hasHost: boolean;
   allAssigned: boolean;
   allReady: boolean;
   directorMode: boolean;
   iAmHost: boolean;
+  unfilledRoles: number;
   unreadyCount: number;
   onStart: () => void;
   onToggleReady: (v: boolean) => void;
@@ -371,15 +392,29 @@ interface StatusOutput {
 }
 
 function getStatus(i: StatusInput): StatusOutput {
-  const { play, me, allAssigned, allReady, directorMode, iAmHost, unreadyCount, onStart, onToggleReady } = i;
+  const { play, me, hasHost, allAssigned, allReady, directorMode, iAmHost, unfilledRoles, unreadyCount, onStart, onToggleReady } = i;
 
+  if (!hasHost) {
+    return { label: 'Waiting for a signed-in user to host', onPress: null, primary: false };
+  }
   if (!play) return { label: 'Select a play to continue', onPress: null, primary: false };
-  if (!allAssigned) return { label: 'Waiting for all characters to be cast', onPress: null, primary: false };
+  if (!allAssigned) {
+    // Spell out what's missing (§3.4).
+    const parts = [`${unfilledRoles} unfilled role${unfilledRoles === 1 ? '' : 's'}`];
+    if (unreadyCount > 0) parts.push(`${unreadyCount} not ready`);
+    return { label: `Waiting: ${parts.join(', ')}`, onPress: null, primary: false };
+  }
   if (!me) return { label: 'Joining…', onPress: null, primary: false };
 
   // Host-as-director: they start the play once everyone's ready.
   if (directorMode && iAmHost) {
-    if (!allReady) return { label: 'Waiting for cast to ready up', onPress: null, primary: false };
+    if (!allReady) {
+      return {
+        label: `Waiting: ${unreadyCount} not ready`,
+        onPress: null,
+        primary: false,
+      };
+    }
     return { label: 'Begin performance', onPress: onStart, primary: true };
   }
 

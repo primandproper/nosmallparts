@@ -5,7 +5,8 @@
 // current line(s) directly on top of their video tile (teleprompter style).
 // Built from LiveKit's lower-level primitives instead.
 
-import { Text, View } from 'react-native';
+import { useEffect } from 'react';
+import { Pressable, Text, View } from 'react-native';
 import {
   getCurrentLines,
   getCurrentLinesForParticipant,
@@ -30,9 +31,10 @@ export function VideoRoom({ stageId, participantId, state }: Props) {
   });
 
   const me = state.participants.find((p) => p.id === participantId);
-  // Audience watches without publishing; cast members publish video and (unless force-muted) audio.
-  const publishVideo = !!me && !me.isAudience;
-  const publishAudio = !!me && !me.isAudience && !me.forceMuted;
+  // Mic and camera are OFF by default (§7.1) — participants opt in via the
+  // control bar. Audience gets a subscribe-only token and no controls.
+  const canPublish = !!me && !me.isAudience;
+  const forceMuted = !!me?.forceMuted;
 
   if (unavailable) {
     return (
@@ -56,8 +58,8 @@ export function VideoRoom({ stageId, participantId, state }: Props) {
       credentials={credentials}
       state={state}
       participantId={participantId}
-      publishVideo={publishVideo}
-      publishAudio={publishAudio}
+      canPublish={canPublish}
+      forceMuted={forceMuted}
     />
   );
 }
@@ -66,14 +68,14 @@ function WebLiveKitRoom({
   credentials,
   state,
   participantId,
-  publishVideo,
-  publishAudio,
+  canPublish,
+  forceMuted,
 }: {
   credentials: { token: string; url: string };
   state: StageState;
   participantId: string | null;
-  publishVideo: boolean;
-  publishAudio: boolean;
+  canPublish: boolean;
+  forceMuted: boolean;
 }) {
   const { LiveKitRoom, RoomAudioRenderer } = require('@livekit/components-react');
   require('@livekit/components-styles');
@@ -82,14 +84,76 @@ function WebLiveKitRoom({
       token={credentials.token}
       serverUrl={credentials.url}
       connect
-      video={publishVideo}
-      audio={publishAudio}
+      // No auto-publish (§7.1): both stay off until the user opts in below.
+      video={false}
+      audio={false}
       // Use the host element as a flex column so the spotlight + strip fill height.
       style={{ flex: 1, display: 'flex', flexDirection: 'column', minHeight: 0 }}
     >
       <RoomAudioRenderer />
       <SpotlightStage state={state} participantId={participantId} />
+      {canPublish ? <MediaControls forceMuted={forceMuted} /> : null}
     </LiveKitRoom>
+  );
+}
+
+function MediaControls({ forceMuted }: { forceMuted: boolean }) {
+  const { useLocalParticipant } = require('@livekit/components-react');
+  const { localParticipant, isMicrophoneEnabled, isCameraEnabled } = useLocalParticipant();
+
+  // Host force-mute (§4.8): server unpublishes on the SFU; mirror it locally
+  // so the track doesn't come back on reconnect, and lock the toggle.
+  useEffect(() => {
+    if (forceMuted && isMicrophoneEnabled) {
+      void localParticipant?.setMicrophoneEnabled(false);
+    }
+  }, [forceMuted, isMicrophoneEnabled, localParticipant]);
+
+  const micDisabled = forceMuted;
+  const micOn = isMicrophoneEnabled && !forceMuted;
+
+  return (
+    <View className="flex-row items-center justify-center gap-2 border-t border-stage-border bg-stage-surface px-3 py-2">
+      <Pressable
+        onPress={() => void localParticipant?.setMicrophoneEnabled(!micOn)}
+        disabled={micDisabled}
+        accessibilityRole="button"
+        accessibilityLabel={
+          micDisabled ? 'Microphone muted by host' : micOn ? 'Turn microphone off' : 'Turn microphone on'
+        }
+        className={`rounded-md border px-3 py-1.5 ${
+          micDisabled
+            ? 'border-red-500 opacity-50'
+            : micOn
+              ? 'border-stage-gold bg-stage-goldDim'
+              : 'border-stage-border'
+        }`}
+      >
+        <Text
+          className={`text-xs font-semibold ${
+            micDisabled ? 'text-red-400' : micOn ? 'text-stage-bg' : 'text-stage-text'
+          }`}
+        >
+          {micDisabled ? '🔇 Muted by host' : micOn ? '🎙 Mic on' : '🎙 Mic off'}
+        </Text>
+      </Pressable>
+      <Pressable
+        onPress={() => void localParticipant?.setCameraEnabled(!isCameraEnabled)}
+        accessibilityRole="button"
+        accessibilityLabel={isCameraEnabled ? 'Turn camera off' : 'Turn camera on'}
+        className={`rounded-md border px-3 py-1.5 ${
+          isCameraEnabled ? 'border-stage-gold bg-stage-goldDim' : 'border-stage-border'
+        }`}
+      >
+        <Text
+          className={`text-xs font-semibold ${
+            isCameraEnabled ? 'text-stage-bg' : 'text-stage-text'
+          }`}
+        >
+          {isCameraEnabled ? '📷 Camera on' : '📷 Camera off'}
+        </Text>
+      </Pressable>
+    </View>
   );
 }
 

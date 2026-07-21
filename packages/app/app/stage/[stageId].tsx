@@ -3,14 +3,24 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useEffect, useState } from 'react';
 import { ActivityIndicator, Pressable, Text, TextInput, View } from 'react-native';
 import { usePlayState } from '../../hooks/usePlayState';
+import { ChatPanel } from '../../components/ChatPanel';
 import { Lobby } from '../../components/Lobby';
 import { Countdown } from '../../components/Countdown';
 import { Stage } from '../../components/Stage';
 import { Discussion } from '../../components/Discussion';
 import { HostControls } from '../../components/HostControls';
 import { RoleOfferPrompt } from '../../components/RoleOfferPrompt';
+import { VacancyBanner } from '../../components/VacancyBanner';
 import { VideoRoom } from '../../components/VideoRoom';
 import { PLAYER_NAME_KEY } from '../../lib/player-name';
+
+// Server-side display-name policy errors (§12.4) send the user back to the
+// name prompt instead of looping reconnect attempts with a rejected name.
+const NAME_ERRORS = [
+  'Please enter a name.',
+  'Please choose a different name.',
+  'Name is too long',
+];
 
 export default function StageScreen() {
   const { stageId } = useLocalSearchParams<{ stageId: string }>();
@@ -30,8 +40,10 @@ export default function StageScreen() {
     stageState,
     participantId,
     availablePlays,
+    chatMessages,
     systemMessages,
     roleOffers,
+    roleVacancies,
     isConnected,
     error,
     wasReplaced,
@@ -40,6 +52,7 @@ export default function StageScreen() {
     setAudience,
     setReady,
     selectPlay,
+    sendChat,
     startPlay,
     nextLine,
     resetPlay,
@@ -56,11 +69,23 @@ export default function StageScreen() {
     hostReassignRole,
     hostUnassignRole,
     respondRoleOffer,
+    audienceClaimRole,
   } = usePlayState({
     stageIdOrCode: String(stageId),
     participantName: playerName ?? '',
     enabled: !!playerName,
   });
+
+  const [chatOpen, setChatOpen] = useState(false);
+
+  // A name rejected by the server's policy sends the user back to the prompt.
+  useEffect(() => {
+    if (playerName && error && NAME_ERRORS.some((e) => error.startsWith(e))) {
+      setNameInput(playerName);
+      setPlayerName(null);
+      setNameError(error);
+    }
+  }, [error, playerName]);
 
   async function onJoin() {
     const trimmed = nameInput.trim();
@@ -68,6 +93,7 @@ export default function StageScreen() {
       setNameError('Enter your name to join');
       return;
     }
+    setNameError(null);
     await AsyncStorage.setItem(PLAYER_NAME_KEY, trimmed);
     setPlayerName(trimmed);
   }
@@ -86,6 +112,7 @@ export default function StageScreen() {
             placeholder="Your name"
             placeholderTextColor="#8a8374"
             autoFocus
+            maxLength={32}
             onSubmitEditing={onJoin}
             className="rounded-md border border-stage-border bg-stage-surface px-3 py-3 text-stage-text"
           />
@@ -136,6 +163,8 @@ export default function StageScreen() {
           ? 'Starting…'
           : 'Discussion';
 
+  const meParticipant = stageState.participants.find((p) => p.id === participantId);
+
   return (
     <View className="flex-1 bg-stage-bg">
       <Stack.Screen options={{ title: screenTitle }} />
@@ -146,6 +175,11 @@ export default function StageScreen() {
         onReconnect={reconnect}
       />
       <RoleOfferPrompt offers={roleOffers} onRespond={respondRoleOffer} />
+      <VacancyBanner
+        vacancies={roleVacancies}
+        isAudience={!!meParticipant?.isAudience}
+        onClaim={audienceClaimRole}
+      />
       {stageState.phase === 'lobby' && (
         <Lobby
           state={stageState}
@@ -221,6 +255,34 @@ export default function StageScreen() {
           <Discussion state={stageState} participantId={participantId} onReset={resetPlay} />
         </View>
       )}
+
+      {/* Chat: floating toggle + docked panel (§6). */}
+      {chatOpen ? (
+        <View className="absolute bottom-16 right-3 z-20 h-80 w-80 max-w-full overflow-hidden rounded-md border border-stage-border bg-stage-bg shadow-lg">
+          <View className="flex-row items-center justify-between border-b border-stage-border bg-stage-surface px-3 py-2">
+            <Text className="text-xs uppercase tracking-widest text-stage-gold">Chat</Text>
+            <Pressable onPress={() => setChatOpen(false)} accessibilityRole="button">
+              <Text className="text-xs text-stage-muted">Close</Text>
+            </Pressable>
+          </View>
+          <ChatPanel
+            messages={chatMessages}
+            systemMessages={systemMessages}
+            isAudience={!!meParticipant?.isAudience}
+            onSend={sendChat}
+          />
+        </View>
+      ) : null}
+      <Pressable
+        onPress={() => setChatOpen((v) => !v)}
+        accessibilityRole="button"
+        accessibilityLabel={chatOpen ? 'Close chat' : 'Open chat'}
+        className="absolute bottom-3 right-3 z-20 rounded-full border border-stage-border bg-stage-surface px-4 py-2 shadow-lg active:opacity-80"
+      >
+        <Text className="text-xs font-semibold text-stage-text">
+          {chatOpen ? '💬 Hide chat' : '💬 Chat'}
+        </Text>
+      </Pressable>
     </View>
   );
 }

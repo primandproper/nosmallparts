@@ -100,6 +100,9 @@ function ScriptCard({ play, isDraft }: { play: Play; isDraft: boolean }) {
           <Text className="flex-1 text-lg font-semibold text-stage-text" numberOfLines={1}>
             {play.title || 'Untitled'}
           </Text>
+          {play.enabled === false ? (
+            <Text className="rounded bg-red-900 px-2 py-0.5 text-xs text-red-200">disabled</Text>
+          ) : null}
           {isDraft ? (
             <Text className="rounded bg-stage-border px-2 py-0.5 text-xs text-stage-muted">
               draft

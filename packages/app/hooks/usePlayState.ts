@@ -3,6 +3,7 @@ import type {
   ChatMessage,
   Play,
   RoleOffer,
+  RoleVacancy,
   ServerMessage,
   StageState,
   SystemMessage,
@@ -23,6 +24,7 @@ export interface UsePlayStateReturn {
   chatMessages: ChatMessage[];
   systemMessages: SystemMessage[];
   roleOffers: RoleOffer[];
+  roleVacancies: RoleVacancy[];
   isConnected: boolean;
   error: string | null;
   wasReplaced: boolean;
@@ -49,6 +51,7 @@ export interface UsePlayStateReturn {
   hostMute: (targetParticipantId: string, muted: boolean) => void;
   hostToggleDirectorMode: (enabled: boolean) => void;
   respondRoleOffer: (offerId: string, accept: boolean) => void;
+  audienceClaimRole: (castMemberId: string) => void;
 }
 
 const HEARTBEAT_MS = 5000;
@@ -64,6 +67,7 @@ export function usePlayState({
   const [chatMessages, setChatMessages] = useState<ChatMessage[]>([]);
   const [systemMessages, setSystemMessages] = useState<SystemMessage[]>([]);
   const [roleOffers, setRoleOffers] = useState<RoleOffer[]>([]);
+  const [roleVacancies, setRoleVacancies] = useState<RoleVacancy[]>([]);
   const [isConnected, setIsConnected] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [wasReplaced, setWasReplaced] = useState(false);
@@ -152,6 +156,8 @@ export function usePlayState({
             break;
           case 'stageState':
             setStageState(msg.state);
+            // Vacancies only exist while performing.
+            if (msg.state.phase !== 'performing') setRoleVacancies([]);
             break;
           case 'availablePlays':
             setAvailablePlays(msg.plays);
@@ -166,6 +172,16 @@ export function usePlayState({
             break;
           case 'playEnded':
             setStageState((prev) => (prev ? { ...prev, phase: 'discussion' } : null));
+            setRoleVacancies([]);
+            break;
+          case 'roleVacated':
+            setRoleVacancies((prev) => [
+              ...prev.filter((v) => v.castMemberId !== msg.vacancy.castMemberId),
+              msg.vacancy,
+            ]);
+            break;
+          case 'roleVacancyCleared':
+            setRoleVacancies((prev) => prev.filter((v) => v.castMemberId !== msg.castMemberId));
             break;
           case 'countdownStart':
             setStageState((prev) => (prev ? { ...prev, phase: 'countdown' } : null));
@@ -306,6 +322,10 @@ export function usePlayState({
       send({ type: 'respondRoleOffer', offerId, accept }),
     [send]
   );
+  const audienceClaimRole = useCallback(
+    (castMemberId: string) => send({ type: 'audienceClaimRole', castMemberId }),
+    [send]
+  );
 
   return {
     stageState,
@@ -314,6 +334,7 @@ export function usePlayState({
     chatMessages,
     systemMessages,
     roleOffers,
+    roleVacancies,
     isConnected,
     error,
     wasReplaced,
@@ -339,5 +360,6 @@ export function usePlayState({
     hostMute,
     hostToggleDirectorMode,
     respondRoleOffer,
+    audienceClaimRole,
   };
 }

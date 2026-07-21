@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
+import { Link } from 'expo-router';
 import type { StageState } from '@nsp/shared';
 import { useSession } from '../lib/auth-client';
 import { ratePlayScript } from '../lib/scripts-api';
@@ -16,17 +17,23 @@ export function Discussion({ state, participantId, onReset }: Props) {
   const [rating, setRating] = useState<number | null>(null);
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);
+  const [rateError, setRateError] = useState<string | null>(null);
 
   const play = state.selectedPlay;
+  const isAuthor =
+    !!session?.user && !!play?.createdByUserId && session.user.id === play.createdByUserId;
+
   async function submit(r: number) {
     if (!play) return;
     setRating(r);
     setSaving(true);
+    setRateError(null);
     try {
       await ratePlayScript(play.id, r);
       setSaved(true);
     } catch {
-      // ignore
+      setRateError('Could not save your rating.');
+      setRating(null);
     } finally {
       setSaving(false);
     }
@@ -47,31 +54,64 @@ export function Discussion({ state, participantId, onReset }: Props) {
           .map((p) => (
             <Text key={p.id} className="text-stage-text">
               {p.name}
+              {play
+                ? ` — ${p.castMemberIds
+                    .map((id) => play.cast.find((c) => c.id === id)?.name)
+                    .filter(Boolean)
+                    .join(', ')}`
+                : ''}
             </Text>
           ))}
       </View>
 
-      {session?.user && play ? (
-        <View className="items-center gap-2">
-          <Text className="text-stage-muted">Rate this script:</Text>
-          <View className="flex-row gap-2">
-            {[1, 2, 3, 4, 5].map((n) => (
-              <Pressable
-                key={n}
-                onPress={() => submit(n)}
-                disabled={saving || saved}
-                className="rounded-md border border-stage-border px-3 py-1"
-              >
-                <Text
-                  className={rating && n <= rating ? 'text-stage-gold' : 'text-stage-muted'}
-                >
-                  ★ {n}
-                </Text>
+      {play ? (
+        session?.user ? (
+          isAuthor ? (
+            <View className="items-center gap-1">
+              <View className="flex-row gap-2 opacity-40">
+                {[1, 2, 3, 4, 5].map((n) => (
+                  <View key={n} className="rounded-md border border-stage-border px-3 py-1">
+                    <Text className="text-stage-muted">★ {n}</Text>
+                  </View>
+                ))}
+              </View>
+              <Text className="text-xs text-stage-muted">Authors can't rate their own work.</Text>
+            </View>
+          ) : (
+            <View className="items-center gap-2">
+              <Text className="text-stage-muted">Rate this script:</Text>
+              <View className="flex-row gap-2">
+                {[1, 2, 3, 4, 5].map((n) => (
+                  <Pressable
+                    key={n}
+                    onPress={() => submit(n)}
+                    disabled={saving || saved}
+                    className="rounded-md border border-stage-border px-3 py-1"
+                  >
+                    <Text
+                      className={rating && n <= rating ? 'text-stage-gold' : 'text-stage-muted'}
+                    >
+                      ★ {n}
+                    </Text>
+                  </Pressable>
+                ))}
+              </View>
+              {saved ? <Text className="text-xs text-stage-muted">Thanks!</Text> : null}
+              {rateError ? <Text className="text-xs text-red-400">{rateError}</Text> : null}
+            </View>
+          )
+        ) : (
+          <View className="items-center gap-1">
+            <Link href="/login" asChild>
+              <Pressable className="rounded-md border border-stage-gold px-4 py-2 active:opacity-70">
+                <Text className="font-semibold text-stage-gold">Sign in to rate</Text>
               </Pressable>
-            ))}
+            </Link>
+            <Text className="text-xs text-stage-muted">
+              Only signed-in users can rate scripts.
+            </Text>
           </View>
-          {saved ? <Text className="text-xs text-stage-muted">Thanks!</Text> : null}
-        </View>
+        )
       ) : null}
 
       <Pressable onPress={onReset} className="mt-6 rounded-md bg-stage-gold px-5 py-3">

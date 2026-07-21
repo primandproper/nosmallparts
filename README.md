@@ -40,6 +40,13 @@ Copy `packages/server/.env.example` to `packages/server/.env` and set at least:
 
 - `BETTER_AUTH_SECRET` — any long random string
 - `LIVEKIT_API_KEY`, `LIVEKIT_API_SECRET`, `LIVEKIT_URL` — optional; unset disables video with a friendly fallback
+- `ADMIN_EMAILS` — comma-separated, case-insensitive list of admin emails. Admins can delete any script and toggle the `enabled` flag; no DB column, evaluated per request.
+
+### Ops notes
+
+- **Rate limiting:** `GET /api/stages/:code/exists` is limited to **30 requests / minute / IP** (in-process middleware). Overage returns `429` with a `Retry-After` header.
+- **Client IP & reverse proxies:** the server derives the client IP from the **last** entry of `X-Forwarded-For` (falling back to the socket address) for per-stage IP bans and rate limiting. If the app runs behind a reverse proxy that does **not** set `X-Forwarded-For`, all clients appear to share the proxy's IP — a single host-issued ban or a burst of lookups would then block *everyone* (including the deployer). Make sure the proxy sets the header before going live.
+- **Stage cleanup:** stages are hard-deleted ~5s after the last participant disconnects, and a background reaper removes stages idle for 10+ minutes (survives restarts; recovered from the DB).
 
 ### Environment variables (app)
 
