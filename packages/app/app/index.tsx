@@ -54,7 +54,13 @@ export default function Home() {
         router.replace(`/stage/${res.code}`);
       }
     } catch (e) {
-      setError(e instanceof Error ? e.message : 'Failed');
+      const msg = e instanceof Error ? e.message : 'Failed';
+      // Creating a stage requires an account (§1.4); joining doesn't.
+      setError(
+        !user && msg.toLowerCase().includes('unauthorized')
+          ? 'Sign in to create a stage — or enter a code to join one as a guest.'
+          : msg
+      );
     } finally {
       setBusy(false);
     }

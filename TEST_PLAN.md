@@ -12,9 +12,14 @@
 > **Status note (2026-07-21):** every Appendix A implementation gap is now built. An automated
 > integration suite lives in `packages/server/test/` (88 tests: `pnpm test` from the repo root) and
 > covers the server-side behavior end-to-end (HTTP via Hono `app.request`, WS via a handler-level
-> harness with real SQLite). In this pass, `[x]` means verified by that suite or by a scripted smoke
-> check; `[~]` means implemented but still needing a human in a real browser (visuals, LiveKit A/V,
-> multi-machine). Untouched manual items remain `[ ]`.
+> harness with real SQLite). In addition, a headless-Chromium E2E pass (Playwright, three concurrent
+> browser contexts against `expo start --web` + the real server) exercised: register → create stage →
+> lobby, reserved-name rejection, guest join by lowercase code, chat markdown rendering, role
+> claim/ready/auto-start/countdown/performing sync, speaker-only advance UI, mid-play vacancy
+> countdown + audience claim, discussion ratings (stars for signed-in non-authors, "Sign in to rate"
+> for guests), and perform-again. Screenshots + driver scripts in the session scratchpad
+> (`e2e/drive1.js`, `e2e/drive2.js`). `[x]` = verified by suite, smoke check, or that E2E pass;
+> `[~]` = implemented but still needing a human pass (real LiveKit A/V, multi-machine, visual QA).
 
 ---
 
@@ -37,7 +42,7 @@
 - [ ] Two desktops on the same LAN (real WS, real LiveKit)
 - [x] Clean DB: `pnpm db:migrate && pnpm db:seed` (verified against a fresh SQLite file; 4 sample plays seeded)
 - [ ] `.env` with `LIVEKIT_*` set (full path)
-- [~] `.env` without `LIVEKIT_*` (server returns 503 `livekit_not_configured`, token hook does not retry, UI placeholder implemented — needs eyeball pass)
+- [x] `.env` without `LIVEKIT_*` (server 503s; UI shows "Video disabled (LiveKit not configured)"; single token request, no retries — verified in E2E screenshots)
 - [ ] `BETTER_AUTH_SECRET` rotated mid-test does not crash existing clients (just signs them out)
 - [x] `ADMIN_EMAILS` env var honored (comma-separated, case-insensitive match against Better Auth user email) — `test/units.test.ts`, `test/http-scripts.test.ts`
 - [x] Server runs behind a reverse proxy with `X-Forwarded-For` set; client IP captured for ban/rate-limit purposes (last hop; see README ops notes) — `test/ws-host.test.ts`, `test/rate-limit.test.ts`
@@ -160,7 +165,7 @@
 - [x] Lobby disables the Start button when preconditions fail and shows what's missing ("3 unfilled roles, 2 not ready") — server error message + `Lobby.tsx` status label
 
 ### 3.5 Countdown → Performing
-- [~] `countdownStart` shows a 3-second countdown to all clients within ~200 ms of each other (single broadcast; timing needs a two-machine check)
+- [x] `countdownStart` shows a 3-second countdown to all clients (verified with 3 concurrent browser contexts locally; cross-machine ~200ms timing not measured)
 - [x] After countdown, `playStarted` arrives; clients render Stage with line 0 highlighted
 - [x] Audience members see the same play view but no advance affordance (server rejects; UI hides the button)
 
@@ -266,12 +271,12 @@
 
 ### 5.1 Invite link button
 - [x] "Copy invite link" button in `Lobby.tsx` copies a working URL to clipboard
-- [~] Pasting the URL in a new tab/browser lands the recipient on `/stage/:code` (route exists; verify in browser)
+- [x] Pasting the URL in a new tab/browser lands the recipient on `/stage/:code` (E2E: fresh context navigated straight to the stage)
 - [x] Toast/feedback "Invite link copied" appears on success
 - [x] On clipboard API failure (e.g., insecure context), a fallback shows the URL for manual copy
 
 ### 5.2 Logged-in user clicks invite link
-- [~] Lands directly on `/stage/:code`, prompted only for display name (no registration prompt) — flow implemented; verify in browser
+- [x] Lands directly on `/stage/:code`, prompted only for display name (verified in E2E)
 - [x] No registration prompt
 - [x] Joins as audience if stage is past lobby (§3.9), else can claim cast roles
 
@@ -299,10 +304,10 @@
 - [x] Public chat reaches everyone including audience
 - [x] Cast-only chat reaches only non-audience participants
 - [x] Toggling to/from audience changes whether you receive future cast-only messages
-- [~] System messages render distinctly (no sender, italic style) — implemented in `ChatPanel.tsx`; verify visually
+- [x] System messages render distinctly (no sender, italic style) — verified in E2E screenshot
 
 ### 6.2 Formatting
-- [x] Bold (`**x**`), italic (`*x*` and `_x_`), inline code (`` `x` ``), strikethrough (`~~x~~`) all render (allowlist parser in `@nsp/shared`, unit-tested)
+- [x] Bold (`**x**`), italic (`*x*` and `_x_`), inline code (`` `x` ``), strikethrough (`~~x~~`) all render (unit-tested parser + verified rendered in E2E screenshot; link markdown shown literally, bare URLs produce 0 anchor tags)
 - [x] Links (`[text](url)`) render as **plain text** (never clickable)
 - [x] Bare URLs (`https://example.com`) are not autolinked
 - [x] Images (`![alt](url)`) render as plain text
@@ -334,8 +339,8 @@
 - [~] Force-mute (§4.8) actually unpublishes the target's audio track on the SFU (mute + `canPublishSources` restriction wired; verify live)
 
 ### 7.2 Without LiveKit configured
-- [x] App shows the friendly fallback message; rest of stage features still work (server 503 verified; hook does not retry)
-- [~] No console errors or repeated token request attempts (single fetch per mount by design; verify console in browser)
+- [x] App shows the friendly fallback message; rest of stage features still work (full performance flow ran with LiveKit unset in E2E)
+- [x] No repeated token request attempts (verified: exactly one 503 per client in the browser console — the unavoidable network-error log for that single request — and no retries)
 
 ---
 
@@ -387,7 +392,7 @@
 - [ ] Dark theme contrast meets WCAG AA on all key text
 - [ ] Keyboard navigation: Tab cycles inputs/buttons sensibly
 - [ ] Loading spinners present for any await > 200 ms (`api()` calls, WS connect)
-- [~] Empty states for: no scripts in browse ("No scripts yet."), no participants in lobby (verify visually)
+- [x] Empty states for: no scripts in browse ("No scripts yet."), no participants in lobby (single-participant lobby verified in E2E screenshot)
 - [x] "Copy invite link" button is prominent in lobby
 - [~] Force-mute disabled mic icon is unambiguous ("🔇 Muted by host" label; verify visually)
 
@@ -428,7 +433,7 @@
 ---
 
 ## 13. Deployment smoke
-- [~] `pnpm dev` clean run: server :3001 + Expo :8081 (server boots clean; Expo needs a manual run)
+- [x] Server :3001 + Expo web :8081 both run cleanly (launched individually for the E2E pass; `pnpm dev` runs the same two commands in parallel)
 - [x] `pnpm db:migrate` from a fresh SQLite file applies all migrations cleanly
 - [x] `pnpm db:seed` produces the documented sample plays
 - [ ] Production build of web app loads against deployed server

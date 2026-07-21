@@ -94,6 +94,9 @@ export default function StageScreen() {
       return;
     }
     setNameError(null);
+    // Clear any stale connection error (e.g. a previously rejected name) so
+    // the name-policy effect doesn't immediately bounce us back here.
+    reconnect();
     await AsyncStorage.setItem(PLAYER_NAME_KEY, trimmed);
     setPlayerName(trimmed);
   }
