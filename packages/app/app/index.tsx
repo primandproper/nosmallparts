@@ -1,7 +1,7 @@
 import { Link, useLocalSearchParams, useRouter } from 'expo-router';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useEffect, useState } from 'react';
-import { Pressable, Text, TextInput, View } from 'react-native';
+import { ActivityIndicator, Pressable, Text, TextInput, View } from 'react-native';
 import { useSession, signOut } from '../lib/auth-client';
 import { api } from '../lib/api';
 import { PLAYER_NAME_KEY } from '../lib/player-name';
@@ -97,10 +97,11 @@ export default function Home() {
         <Pressable
           onPress={onEnter}
           disabled={busy}
-          className={`rounded-md px-4 py-3 ${busy ? 'bg-stage-goldDim' : 'bg-stage-gold'}`}
+          className={`flex-row items-center justify-center gap-2 rounded-md px-4 py-3 ${busy ? 'bg-stage-goldDim' : 'bg-stage-gold'}`}
         >
+          {busy ? <ActivityIndicator color="#0a0a0a" size="small" /> : null}
           <Text className="text-center font-semibold text-stage-bg">
-            {busy ? '…' : code ? 'Join stage' : 'Create stage'}
+            {busy ? 'Working…' : code ? 'Join stage' : 'Create stage'}
           </Text>
         </Pressable>
 

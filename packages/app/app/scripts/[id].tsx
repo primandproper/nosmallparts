@@ -109,7 +109,10 @@ export default function ScriptDetail() {
 
       {session?.user ? (
         <View className="mt-6">
-          <Text className="mb-2 text-stage-muted">Your rating:</Text>
+          <View className="mb-2 flex-row items-center gap-2">
+            <Text className="text-stage-muted">Your rating:</Text>
+            {savingRating ? <ActivityIndicator color="#d4af37" size="small" /> : null}
+          </View>
           <View className="flex-row gap-2">
             {[1, 2, 3, 4, 5].map((n) => (
               <Pressable
@@ -158,10 +161,11 @@ export default function ScriptDetail() {
           }
         }}
         disabled={startingStage}
-        className={`mt-6 rounded-md px-4 py-3 ${startingStage ? 'bg-stage-goldDim' : 'bg-stage-gold'}`}
+        className={`mt-6 flex-row items-center justify-center gap-2 rounded-md px-4 py-3 ${startingStage ? 'bg-stage-goldDim' : 'bg-stage-gold'}`}
       >
+        {startingStage ? <ActivityIndicator color="#0a0a0a" size="small" /> : null}
         <Text className="text-center font-semibold text-stage-bg">
-          {startingStage ? '…' : 'Start a stage with this script'}
+          {startingStage ? 'Starting…' : 'Start a stage with this script'}
         </Text>
       </Pressable>
 

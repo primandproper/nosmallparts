@@ -17,6 +17,12 @@ interface Options {
   enabled?: boolean;
 }
 
+/** A transient, dismissable notice (e.g. a rejected action while already joined). */
+export interface Toast {
+  id: number;
+  message: string;
+}
+
 export interface UsePlayStateReturn {
   stageState: StageState | null;
   participantId: string | null;
@@ -27,6 +33,8 @@ export interface UsePlayStateReturn {
   roleVacancies: RoleVacancy[];
   isConnected: boolean;
   error: string | null;
+  toasts: Toast[];
+  dismissToast: (id: number) => void;
   wasReplaced: boolean;
   reconnect: () => void;
   toggleCastMember: (castMemberId: string) => void;
@@ -55,6 +63,9 @@ export interface UsePlayStateReturn {
 }
 
 const HEARTBEAT_MS = 5000;
+// Transient toasts auto-dismiss and never pile up beyond this many at once.
+const TOAST_MS = 4000;
+const MAX_TOASTS = 3;
 
 export function usePlayState({
   stageIdOrCode,
@@ -70,6 +81,7 @@ export function usePlayState({
   const [roleVacancies, setRoleVacancies] = useState<RoleVacancy[]>([]);
   const [isConnected, setIsConnected] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [toasts, setToasts] = useState<Toast[]>([]);
   const [wasReplaced, setWasReplaced] = useState(false);
   const [reconnectAttempt, setReconnectAttempt] = useState(0);
 
@@ -77,6 +89,39 @@ export function usePlayState({
   const intentionalCloseRef = useRef(false);
   const heartbeatRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const reconnectTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  // True once we've successfully joined; controls whether a server `error`
+  // surfaces as a dismissable toast (in-stage) vs the connection error (pre-join).
+  const joinedRef = useRef(false);
+  const toastIdRef = useRef(0);
+  const toastTimersRef = useRef<Map<number, ReturnType<typeof setTimeout>>>(new Map());
+
+  const dismissToast = useCallback((id: number) => {
+    const timer = toastTimersRef.current.get(id);
+    if (timer) {
+      clearTimeout(timer);
+      toastTimersRef.current.delete(id);
+    }
+    setToasts((prev) => prev.filter((t) => t.id !== id));
+  }, []);
+
+  const pushToast = useCallback((message: string) => {
+    const id = ++toastIdRef.current;
+    setToasts((prev) => [...prev, { id, message }].slice(-MAX_TOASTS));
+    const timer = setTimeout(() => {
+      toastTimersRef.current.delete(id);
+      setToasts((prev) => prev.filter((t) => t.id !== id));
+    }, TOAST_MS);
+    toastTimersRef.current.set(id, timer);
+  }, []);
+
+  // Clear any pending toast timers when the hook unmounts.
+  useEffect(() => {
+    const timers = toastTimersRef.current;
+    return () => {
+      for (const timer of timers.values()) clearTimeout(timer);
+      timers.clear();
+    };
+  }, []);
 
   const send = useCallback((msg: object) => {
     if (wsRef.current?.readyState === WebSocket.OPEN) {
@@ -145,6 +190,7 @@ export function usePlayState({
         }
         switch (msg.type) {
           case 'joined':
+            joinedRef.current = true;
             setParticipantId(msg.participantId);
             setStageState(msg.stageState);
             if (heartbeatRef.current) clearInterval(heartbeatRef.current);
@@ -204,12 +250,18 @@ export function usePlayState({
             setRoleOffers((prev) => prev.filter((o) => o.offerId !== msg.offerId));
             break;
           case 'error':
-            setError(msg.message);
+            // Once joined, action rejections ("Not your line", host-gated
+            // actions, etc.) are transient — show them as a dismissable toast
+            // rather than the sticky connection error. Pre-join errors (name
+            // policy, stage full, banned) still drive the join screen.
+            if (joinedRef.current) pushToast(msg.message);
+            else setError(msg.message);
             break;
           case 'sessionReplaced':
             // Another tab/device joined this stage with the same identity.
             // Stop reconnecting so we don't ping-pong displacing each other.
             intentionalCloseRef.current = true;
+            joinedRef.current = false;
             setWasReplaced(true);
             setError(null);
             break;
@@ -217,6 +269,7 @@ export function usePlayState({
       };
 
       ws.onclose = () => {
+        joinedRef.current = false;
         setIsConnected(false);
         if (!intentionalCloseRef.current) scheduleReconnect();
       };
@@ -337,6 +390,8 @@ export function usePlayState({
     roleVacancies,
     isConnected,
     error,
+    toasts,
+    dismissToast,
     wasReplaced,
     reconnect,
     toggleCastMember,

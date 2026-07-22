@@ -11,6 +11,7 @@ import { Discussion } from '../../components/Discussion';
 import { HostControls } from '../../components/HostControls';
 import { RoleOfferPrompt } from '../../components/RoleOfferPrompt';
 import { VacancyBanner } from '../../components/VacancyBanner';
+import { ToastHost } from '../../components/Toasts';
 import { VideoRoom } from '../../components/VideoRoom';
 import { PLAYER_NAME_KEY } from '../../lib/player-name';
 
@@ -46,6 +47,8 @@ export default function StageScreen() {
     roleVacancies,
     isConnected,
     error,
+    toasts,
+    dismissToast,
     wasReplaced,
     reconnect,
     toggleCastMember,
@@ -296,6 +299,7 @@ export default function StageScreen() {
           {chatOpen ? '💬 Hide chat' : '💬 Chat'}
         </Text>
       </Pressable>
+      <ToastHost toasts={toasts} onDismiss={dismissToast} />
     </View>
   );
 }

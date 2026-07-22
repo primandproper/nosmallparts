@@ -1,6 +1,6 @@
 import { useRouter } from 'expo-router';
 import { useState } from 'react';
-import { Pressable, Text, TextInput, View } from 'react-native';
+import { ActivityIndicator, Pressable, Text, TextInput, View } from 'react-native';
 import { signUp } from '../lib/auth-client';
 
 export default function Register() {
@@ -61,10 +61,11 @@ export default function Register() {
         />
         {error ? <Text className="text-red-400">{error}</Text> : null}
         <Pressable
-          className="rounded-md bg-stage-gold px-4 py-3 disabled:opacity-50"
+          className="flex-row items-center justify-center gap-2 rounded-md bg-stage-gold px-4 py-3 disabled:opacity-50"
           onPress={onSubmit}
           disabled={busy || !name || !email || password.length < 8}
         >
+          {busy ? <ActivityIndicator color="#0a0a0a" size="small" /> : null}
           <Text className="text-center font-semibold text-stage-bg">
             {busy ? 'Creating…' : 'Create account'}
           </Text>

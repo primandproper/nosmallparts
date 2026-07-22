@@ -386,12 +386,12 @@
 ---
 
 ## 11. UX / polish (desktop)
-- [ ] All error toasts dismissable; do not stack indefinitely
+- [x] All error toasts dismissable; do not stack indefinitely — in-stage action rejections ("Not your line", host-gated actions, etc.) now route through a dedicated toast channel in `usePlayState` (separate from the sticky connection error). `ToastHost` (`components/Toasts.tsx`) renders a top-center stack that auto-dismisses after 4s, is tap-to-dismiss, and is hard-capped at 3 (`MAX_TOASTS`) so notices can never pile up. Per-screen form errors are single-slot (replaced, not stacked) by construction. **E2E-verified** (headless Chromium): fired 1 pause + 4 rejected advances in one synchronous batch → exactly 3 toasts shown (4th dropped), tap-dismiss took it to 2, and all cleared to 0 after the 4s window. Note: because every rejectable action is client-gated (buttons disable rather than send a doomed request), in practice the toast is a safety-net for server-side races — the E2E deliberately induced one to exercise it.
 - [x] Disabled-button visual state distinct (already wired in `HostControls.ActionButton`)
 - [~] Layout works at 1280×720 minimum (verified headless: no horizontal scroll, lobby lays out cleanly — screenshot in scratchpad) and at ≥1920×1080 (not yet checked)
-- [ ] Dark theme contrast meets WCAG AA on all key text
-- [ ] Keyboard navigation: Tab cycles inputs/buttons sensibly
-- [ ] Loading spinners present for any await > 200 ms (`api()` calls, WS connect)
+- [x] Dark theme contrast meets WCAG AA on all key text — measured contrast ratios against `stage.bg` (#0a0a0a) / `stage.surface` (#141414): `text` 15.9/14.8, `gold` 9.4/8.8, `muted` 5.3/4.9, `goldDim` 5.1/4.7, `red-400` errors 7.2 — every key text token clears the 4.5:1 AA threshold for normal text (tightest is goldDim-on-surface at 4.73). Palette left unchanged.
+- [x] Keyboard navigation: Tab cycles inputs/buttons sensibly — React Native Web renders `Pressable`/`TextInput` as natively focusable elements so Tab order follows source order; added an app-wide `:focus-visible` gold focus ring in `global.css` (mouse/touch focus stays ring-free). **E2E-verified**: tabbing on Home moved focus and rendered the gold ring around the focused control (screenshot). A full tab-through of every screen is still a nice human pass but the mechanism is confirmed.
+- [x] Loading spinners present for any await > 200 ms (`api()` calls, WS connect) — page-level loads already used `ActivityIndicator` (scripts list/detail, stage connect); added inline spinners to every async-button path (home create/join, start-stage, rate, sign in, register) that previously showed only a "…" or text. **E2E-verified**: the create-stage button rendered the spinner + "Working…" mid-request (artificial latency added in the driver to catch it).
 - [x] Empty states for: no scripts in browse ("No scripts yet."), no participants in lobby (single-participant lobby verified in E2E screenshot)
 - [x] "Copy invite link" button is prominent in lobby
 - [~] Force-mute disabled mic icon is unambiguous ("🔇 Muted by host" label; verify visually)
