@@ -1,0 +1,33 @@
+app = "nosmallparts"
+primary_region = "ord"
+
+[build]
+
+[env]
+  PORT = "3001"
+  NODE_ENV = "production"
+  DATABASE_URL = "/data/nosmallparts.db"
+  WEB_STATIC_DIR = "/app/web"
+  TRUSTED_ORIGINS = "https://nosmallparts.fly.dev"
+
+[http_service]
+  internal_port = 3001
+  force_https = true
+  auto_stop_machines = "stop"
+  auto_start_machines = true
+  min_machines_running = 0
+
+  [[http_service.checks]]
+    grace_period = "10s"
+    interval = "30s"
+    method = "GET"
+    path = "/api/health"
+    timeout = "5s"
+
+[[mounts]]
+  source = "nosmallparts_data"
+  destination = "/data"
+
+[[vm]]
+  size = "shared-cpu-1x"
+  memory = "512mb"

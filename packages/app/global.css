@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Keyboard navigation (§11): React Native Web renders Pressable/TextInput as
+ * natively focusable elements, so Tab order already follows source order. This
+ * restores a clearly visible focus ring for keyboard users (mouse/touch focus
+ * stays ring-free via :focus-visible) using the stage gold accent.
+ */
+@media (hover: hover) {
+  [tabindex],
+  a,
+  button,
+  input,
+  textarea,
+  select,
+  [role='button'] {
+    outline: none;
+  }
+
+  :focus-visible {
+    outline: 2px solid #d4af37;
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+}
