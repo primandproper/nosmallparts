@@ -4,11 +4,11 @@
   "private": true,
   "packageManager": "pnpm@10.33.0",
   "scripts": {
-    "dev": "pnpm -r --parallel --filter=@nsp/server --filter=@nsp/app run dev",
+    "dev": "pnpm --filter @nsp/shared build && pnpm -r --parallel --filter=@nsp/shared --filter=@nsp/server --filter=@nsp/app run dev",
     "dev:server": "pnpm --filter @nsp/server dev",
     "dev:app": "pnpm --filter @nsp/app dev",
     "build": "pnpm -r run build",
-    "typecheck": "pnpm -r run typecheck",
+    "typecheck": "pnpm --filter @nsp/shared build && pnpm -r run typecheck",
     "test": "pnpm --filter @nsp/server test",
     "db:generate": "pnpm --filter @nsp/server db:generate",
     "db:migrate": "pnpm --filter @nsp/server db:migrate",

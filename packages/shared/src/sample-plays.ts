@@ -1,4 +1,4 @@
-import type { Play } from './types';
+import type { Play } from './types.js';
 
 // Sample plays seeded into the DB. Kept deterministic so ids don't drift between
 // seeds. The server imports these on startup (or via `pnpm db:seed`).

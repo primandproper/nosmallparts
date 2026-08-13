@@ -1,7 +1,7 @@
 // Pure logic shared by server and app: resolving speakers, lines, readiness, etc.
 // No platform dependencies.
 
-import type { CastMember, Participant, Play, PlayLine, StageState } from './types';
+import type { CastMember, Participant, Play, PlayLine, StageState } from './types.js';
 
 export function getCastMemberById(play: Play, castMemberId: string): CastMember | undefined {
   return (play.cast || []).find((c) => c.id === castMemberId);

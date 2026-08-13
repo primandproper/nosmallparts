@@ -20,6 +20,7 @@ docker-run:
 		-e BETTER_AUTH_SECRET="$${BETTER_AUTH_SECRET:-dev-secret-not-for-prod}" \
 		-e LIVEKIT_API_KEY -e LIVEKIT_API_SECRET -e LIVEKIT_URL \
 		-e TRUSTED_ORIGINS="http://localhost:$(PORT)" \
+		-e WEB_STATIC_DIR=/app/web \
 		-v $(CURDIR)/.docker-data:/data \
 		$(IMAGE)
 

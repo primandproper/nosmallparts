@@ -8,7 +8,9 @@ RUN apt-get update \
  && apt-get install -y --no-install-recommends python3 make g++ \
  && rm -rf /var/lib/apt/lists/*
 WORKDIR /app
-COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
+# .npmrc pins node-linker=hoisted; without it pnpm's isolated layout hides
+# undeclared peer deps (react-native-helmet-async) from metro at export time.
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml .npmrc ./
 COPY packages/server/package.json packages/server/
 COPY packages/app/package.json packages/app/
 COPY packages/shared/package.json packages/shared/
@@ -30,7 +32,6 @@ COPY --from=builder /app/packages/server/dist ./packages/server/dist
 COPY --from=builder /app/packages/server/node_modules ./packages/server/node_modules
 COPY --from=builder /app/packages/shared/package.json ./packages/shared/
 COPY --from=builder /app/packages/shared/dist ./packages/shared/dist
-COPY --from=builder /app/packages/shared/node_modules ./packages/shared/node_modules
 COPY --from=builder /app/packages/app/dist-web /app/web
 WORKDIR /app/packages/server
 EXPOSE 3001

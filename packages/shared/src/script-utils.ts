@@ -1,6 +1,6 @@
 // Pure helpers for editing & validating play scripts. No platform deps.
 
-import type { CastMember, PlayLine } from './types';
+import type { CastMember, PlayLine } from './types.js';
 
 export function groupLinesByIndex(
   lines: PlayLine[]
