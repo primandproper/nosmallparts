@@ -13,6 +13,14 @@ jobs:
     timeout-minutes: 20
     runs-on: ubuntu-latest
     steps:
+      # golangci-lint builds the whole dependency graph inside its container,
+      # beside the host's own Go cache, which outgrows a stock runner's disk.
+      # These are SDKs this job never uses.
+      - name: Free disk space
+        run: |
+          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL
+          df -h /
+
       - name: Checkout code
         uses: actions/checkout@v5
 
