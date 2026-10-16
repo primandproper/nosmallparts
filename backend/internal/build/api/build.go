@@ -26,6 +26,7 @@ import (
 	scriptsgrpc "github.com/primandproper/nosmallparts/backend/internal/services/scripts/grpc"
 	stagesgrpc "github.com/primandproper/nosmallparts/backend/internal/services/stages/grpc"
 	"github.com/primandproper/nosmallparts/backend/internal/services/stages/ws"
+	"github.com/primandproper/nosmallparts/backend/internal/web"
 
 	"github.com/primandproper/platform-go/v15/authentication/signin"
 	signingrpc "github.com/primandproper/platform-go/v15/authentication/signin/grpc"
@@ -578,8 +579,9 @@ func invokeChain(i do.Injector) (*signingrpc.PrincipalExtractor, *signingrpc.Aut
 
 // mountHTTPRoutes puts the routes that are not gRPC on the router: the guest
 // identity route, which resolves the caller through the same extractor the
-// gRPC server does so a signed-in visitor is answered as themselves, and the
-// stage socket, which settles who is connecting itself.
+// gRPC server does so a signed-in visitor is answered as themselves, the
+// stage socket, which settles who is connecting itself, and the web app, which
+// answers every GET nothing more specific claims.
 func mountHTTPRoutes(i do.Injector, hub *ws.Hub) error {
 	router, err := do.Invoke[*routing.Router](i)
 	if err != nil {
@@ -598,8 +600,14 @@ func mountHTTPRoutes(i do.Injector, hub *ws.Hub) error {
 
 	handler := guests.NewHandler(signingrpc.PrincipalFromContext, pillars.Logger)
 
+	app, err := web.NewHandler(pillars.Logger)
+	if err != nil {
+		return platformerrors.Wrap(err, "building the web app handler")
+	}
+
 	router.Handle(http.MethodGet, IdentityRoute, extractor.HTTPMiddleware(handler))
 	router.Handle(http.MethodGet, ws.Route, hub)
+	router.Handle(http.MethodGet, web.Route, app)
 
 	if err = router.Err(); err != nil {
 		return platformerrors.Wrap(err, "mounting the HTTP routes")

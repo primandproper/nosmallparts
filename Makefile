@@ -14,7 +14,7 @@ format: format_proto
 	pnpm --filter @nsp/web format
 
 .PHONY: lint
-lint: lint_proto check_proto
+lint: lint_proto check_proto lint_scripts
 	$(MAKE) -C backend lint
 	pnpm --filter @nsp/web typecheck
 	pnpm --filter @nsp/web format:check
@@ -26,6 +26,10 @@ test:
 	$(MAKE) -C backend test
 	pnpm --filter @nsp/web test
 	pnpm test
+
+.PHONY: lint_scripts
+lint_scripts:
+	shellcheck scripts/*.sh
 
 ## PROTOBUF
 
@@ -53,7 +57,22 @@ check_proto: proto
 	@test -z "$$(git ls-files --others --exclude-standard -- $(GENERATED_PROTO_PATHS))" || \
 		{ echo "generated files are not committed: run make proto and commit the result" >&2; exit 1; }
 
-## RUNNING
+## BUILDING AND RUNNING
+
+# web builds the web app into the directory the Go binary embeds it from.
+.PHONY: web
+web:
+	./scripts/web.sh
+
+# build produces the one binary that serves everything, web app included.
+.PHONY: build
+build: web
+	$(MAKE) -C backend build
+
+# dev runs the Go server and the Vite dev server; open the Vite URL.
+.PHONY: dev
+dev:
+	./scripts/dev.sh
 
 .PHONY: lan-info
 lan-info:
@@ -67,14 +86,17 @@ lan-info:
 docker-build:
 	docker build -t $(IMAGE) .
 
+# docker-run serves the production image locally, with localdev's keys (no
+# secret: they are in backend/config/localdev.json) in place of the ones a
+# deploy sets. LiveKit stays off unless its variables are set.
 .PHONY: docker-run
 docker-run:
 	@mkdir -p .docker-data
 	docker run --rm -it -p $(PORT):3001 \
-		-e BETTER_AUTH_SECRET="$${BETTER_AUTH_SECRET:-dev-secret-not-for-prod}" \
-		-e LIVEKIT_API_KEY -e LIVEKIT_API_SECRET -e LIVEKIT_URL \
-		-e TRUSTED_ORIGINS="http://localhost:$(PORT)" \
-		-e WEB_STATIC_DIR=/app/web \
+		-e NOSMALLPARTS_TOKENS_SIGNING_KEY=bm9zbWFsbHBhcnRzLWxvY2FsZGV2LXNpZ25pbmctMDA= \
+		-e NOSMALLPARTS_COOKIES_HASH_KEY=bm9zbWFsbHBhcnRzLWxvY2FsZGV2LWNvb2tpZS1oYXNoLWtleS0wMDA= \
+		-e NOSMALLPARTS_COOKIES_BLOCK_KEY=bm9zbWFsbHBhcnRzLWxvY2FsZGV2LWJsb2Nra2V5MDA= \
+		-e NOSMALLPARTS_LIVEKIT_API_KEY -e NOSMALLPARTS_LIVEKIT_API_SECRET -e NOSMALLPARTS_LIVEKIT_URL \
 		-v $(CURDIR)/.docker-data:/data \
 		$(IMAGE)
 

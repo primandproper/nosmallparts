@@ -5,6 +5,11 @@ node_modules/
 # Build outputs
 dist/
 /build/
+# make web copies the frontend build here for the binary to embed; only the
+# note explaining that is committed.
+!/backend/internal/web/dist/
+/backend/internal/web/dist/*
+!/backend/internal/web/dist/README.md
 .next/
 .expo/
 

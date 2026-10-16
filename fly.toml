@@ -3,12 +3,11 @@ primary_region = "ord"
 
 [build]
 
-[env]
-  PORT = "3001"
-  NODE_ENV = "production"
-  DATABASE_URL = "/data/nosmallparts.db"
-  WEB_STATIC_DIR = "/app/web"
-  TRUSTED_ORIGINS = "https://nosmallparts.fly.dev"
+# The image carries its config. Secrets are set with `fly secrets set`, never
+# here: NOSMALLPARTS_TOKENS_SIGNING_KEY, NOSMALLPARTS_COOKIES_HASH_KEY and
+# NOSMALLPARTS_COOKIES_BLOCK_KEY (base64), NOSMALLPARTS_LIVEKIT_API_KEY,
+# NOSMALLPARTS_LIVEKIT_API_SECRET and NOSMALLPARTS_LIVEKIT_URL for video, and
+# NOSMALLPARTS_ADMIN_EMAILS (comma-separated) for admins.
 
 [http_service]
   internal_port = 3001
@@ -21,7 +20,7 @@ primary_region = "ord"
     grace_period = "10s"
     interval = "30s"
     method = "GET"
-    path = "/api/health"
+    path = "/readyz"
     timeout = "5s"
 
 [[mounts]]
