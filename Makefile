@@ -4,6 +4,7 @@ IMAGE ?= nosmallparts:local
 PWD                   := $(shell pwd)
 RUN_CONTAINER_AS_USER := docker run --rm --volume $(PWD):$(PWD) --workdir=$(PWD) --user $(shell id -u):$(shell id -g)
 PROTOLINT             := $(RUN_CONTAINER_AS_USER) yoheimuta/protolint:0.57.0
+SHELLCHECK            := $(RUN_CONTAINER_AS_USER) koalaman/shellcheck:v0.11.0
 GENERATED_PROTO_PATHS := backend/internal/proto frontend/src/generated
 
 ## FORMATTING, LINTING, TESTING
@@ -26,7 +27,7 @@ test:
 
 .PHONY: lint_scripts
 lint_scripts:
-	shellcheck scripts/*.sh
+	$(SHELLCHECK) scripts/*.sh
 
 # e2e runs the Playwright suite against the built binary on a fresh database.
 .PHONY: e2e
