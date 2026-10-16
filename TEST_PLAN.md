@@ -9,17 +9,25 @@
 - `[!]` blocker found
 - `[blocked: needs impl]` test depends on functionality not yet built — see the **Implementation Gaps** appendix
 
-> **Status note (2026-07-21):** every Appendix A implementation gap is now built. An automated
-> integration suite lives in `packages/server/test/` (88 tests: `pnpm test` from the repo root) and
-> covers the server-side behavior end-to-end (HTTP via Hono `app.request`, WS via a handler-level
-> harness with real SQLite). In addition, a headless-Chromium E2E pass (Playwright, three concurrent
-> browser contexts against `expo start --web` + the real server) exercised: register → create stage →
-> lobby, reserved-name rejection, guest join by lowercase code, chat markdown rendering, role
-> claim/ready/auto-start/countdown/performing sync, speaker-only advance UI, mid-play vacancy
-> countdown + audience claim, discussion ratings (stars for signed-in non-authors, "Sign in to rate"
-> for guests), and perform-again. Screenshots + driver scripts in the session scratchpad
-> (`e2e/drive1.js`, `e2e/drive2.js`). `[x]` = verified by suite, smoke check, or that E2E pass;
-> `[~]` = implemented but still needing a human pass (real LiveKit A/V, multi-machine, visual QA).
+> **Status note (2026-10-15):** every Appendix A implementation gap is built, and three automated
+> suites cover it:
+>
+> - **Go** (`make test`): the server's behavior end to end against a real server on loopback with a
+>   fresh SQLite file per test, over native gRPC, HTTP and the stage socket. The 84 server cases of
+>   the original TypeScript suite live here under their original names, mostly in
+>   `backend/internal/build/api/`.
+> - **Frontend unit** (`make test`): vitest under `frontend/src`, including the 4 chat-markdown
+>   cases of the original suite.
+> - **End to end** (`make e2e`): Playwright under `frontend/e2e`, against the built binary on a
+>   fresh database. Three browser contexts (host, signed-in performer, guest) cover register →
+>   write a script → open a stage → join by invite link and by lowercase code → chat markdown →
+>   role claim, ready, auto-start, countdown → speaker-only advance → discussion ratings (stars for
+>   signed-in non-authors, "Sign in to rate" for guests) → perform again; plus a reload staying
+>   signed in, two tabs surviving a token refresh, and an unreachable server offering a retry.
+>
+> `[x]` = verified by a suite, a smoke check, or the 2026-07-21 manual E2E pass (which also covered
+> reserved-name rejection and the mid-play vacancy claim); `[~]` = implemented but still needing a
+> human pass (real LiveKit A/V, multi-machine, visual QA).
 
 ---
 

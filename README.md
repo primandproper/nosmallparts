@@ -1,82 +1,114 @@
 # No Small Parts
 
-Real-time collaborative theater — create scripts and perform them together with friends in sync. Full-stack TypeScript, runs on iOS, Android, and the web.
+Real-time collaborative theater: write scripts and perform them together with friends, in sync, in the browser.
 
 ## Stack
 
-| Layer      | Tech                                                                     |
-| ---------- | ------------------------------------------------------------------------ |
-| Monorepo   | pnpm workspaces                                                          |
-| Client     | Expo (Expo Router) + React Native + NativeWind                           |
-| Server     | Hono on Node (HTTP + WebSocket via `@hono/node-ws`)                      |
-| Database   | SQLite via `better-sqlite3` + Drizzle ORM                                |
-| Auth       | [Better Auth](https://better-auth.com) (email/password; SSO-ready)       |
-| Real-time  | WebSocket (stage state + line advancement)                               |
-| Video/mic  | LiveKit (optional; server mints tokens, client uses native + web SDKs)   |
+| Layer     | Tech                                                                                       |
+| --------- | ------------------------------------------------------------------------------------------ |
+| Server    | Go on [platform-go](https://github.com/primandproper/platform-go): gRPC, gRPC-web, HTTP    |
+| Database  | SQLite (modernc, pure Go) with sqlc                                                        |
+| Auth      | platform sign-in: email and password, a short-lived access token, a refresh-token cookie  |
+| Client    | React 19 + Vite + React Router + Tailwind 4, on `@primandproper/platform-client`           |
+| Contracts | Protobuf under `proto/`, generated into Go and TypeScript                                  |
+| Real-time | WebSocket carrying protojson frames (stage state and line advancement)                     |
+| Video/mic | LiveKit (optional; the server mints tokens, the client uses the web SDK)                   |
 
-## Packages
+## Layout
 
 ```
-packages/
-  shared/   @nsp/shared  Pure TS types, stage logic, script utilities, sample plays
-  server/   @nsp/server  Hono API, Drizzle schema, Better Auth, WebSocket stage handler
-  app/      @nsp/app     Expo Router app — home, auth, scripts, stage, video
+backend/    the Go module: cmd/main (serve, seed), internal/ (domain, services, web, ...)
+frontend/   the web app; e2e/ holds the Playwright suite
+proto/      the schema both halves are generated from
+scripts/    the logic behind the root make targets
 ```
+
+The server is one binary on one origin: it embeds the built web app and serves it, gRPC-web under `/grpc`, the guest
+identity route and the stage socket, all on port 3001.
 
 ## Getting started
 
+Needs Go (the version in `backend/go.mod`), Node 22, pnpm 10 and Docker (the linters run in containers). Regenerating
+the protos also needs the protoc toolchain `scripts/proto.sh` pins.
+
 ```bash
 pnpm install
-pnpm db:migrate
-pnpm db:seed      # seeds the built-in sample plays
-pnpm dev          # starts server on :3001 and Expo on :8081 in parallel
+make seed   # the built-in sample plays
+make dev
 ```
 
-Open <http://localhost:8081> for web, or press `i` / `a` in the Expo CLI to launch a native simulator.
+`make dev` runs the Go server and the Vite dev server; open the URL Vite prints. Vite forwards `/grpc`, `/api` and
+`/ws` to Go, so development is same-origin like production and the refresh-token cookie works on `localhost`.
 
-### Environment variables (server)
+| Target                     | What it does                                                            |
+| -------------------------- | ----------------------------------------------------------------------- |
+| `make format lint test`    | formats, lints and tests both halves                                    |
+| `make seed`                | seeds the sample plays into the dev database                            |
+| `make e2e`                 | builds the binary and runs the Playwright suite against a fresh database |
+| `make build`               | builds the web app into the binary (`backend/artifacts/nosmallparts`)   |
+| `make proto`               | regenerates the Go and TypeScript code from `proto/`                    |
+| `make docker-build docker-run` | builds the production image and serves it on :3001 with dev keys    |
 
-Copy `packages/server/.env.example` to `packages/server/.env` and set at least:
+## Configuration
 
-- `BETTER_AUTH_SECRET` — any long random string
-- `LIVEKIT_API_KEY`, `LIVEKIT_API_SECRET`, `LIVEKIT_URL` — optional; unset disables video with a friendly fallback
-- `ADMIN_EMAILS` — comma-separated, case-insensitive list of admin emails. Admins can delete any script and toggle the `enabled` flag; no DB column, evaluated per request.
+The server reads a JSON config (`--config`, or `NOSMALLPARTS_CONFIG_FILEPATH`): `backend/config/localdev.json` for
+development, `backend/config/production.json` in the image. Both are generated by `make -C backend configs`. Any
+`NOSMALLPARTS_`-prefixed environment variable wins over the file; `backend/internal/config/envvars` lists them all.
+
+A deploy sets these as secrets:
+
+- `NOSMALLPARTS_TOKENS_SIGNING_KEY`, `NOSMALLPARTS_COOKIES_HASH_KEY`, `NOSMALLPARTS_COOKIES_BLOCK_KEY`: base64 keys.
+  The production config holds placeholders, never real values.
+- `NOSMALLPARTS_LIVEKIT_API_KEY`, `NOSMALLPARTS_LIVEKIT_API_SECRET`, `NOSMALLPARTS_LIVEKIT_URL`: optional. Unset,
+  video answers `FAILED_PRECONDITION` and the app shows a friendly placeholder.
+- `NOSMALLPARTS_ADMIN_EMAILS`: comma-separated, case-insensitive. Admins can delete any script and toggle its
+  `enabled` flag; evaluated per request, no database column.
 
 ### Ops notes
 
-- **Rate limiting:** `GET /api/stages/:code/exists` is limited to **30 requests / minute / IP** (in-process middleware). Overage returns `429` with a `Retry-After` header.
-- **Client IP & reverse proxies:** the server derives the client IP from the **last** entry of `X-Forwarded-For` (falling back to the socket address) for per-stage IP bans and rate limiting. If the app runs behind a reverse proxy that does **not** set `X-Forwarded-For`, all clients appear to share the proxy's IP — a single host-issued ban or a burst of lookups would then block *everyone* (including the deployer). Make sure the proxy sets the header before going live.
-- **Stage cleanup:** stages are hard-deleted ~5s after the last participant disconnects, and a background reaper removes stages idle for 10+ minutes (survives restarts; recovered from the DB).
-
-### Environment variables (app)
-
-- `EXPO_PUBLIC_API_URL` — override the server URL if not `http://<lan>:3001`
+- **Rate limiting:** `StagesService.StageExists` allows 30 lookups a minute per IP, in process. Past that it answers
+  `RESOURCE_EXHAUSTED` with a `google.rpc.RetryInfo`.
+- **Client IP behind a proxy:** the client IP is the **last** `X-Forwarded-For` entry, falling back to the socket
+  address, for per-stage IP bans and the rate limit. Behind a proxy that does not set the header, every client shares
+  the proxy's IP, so one ban or one burst of lookups blocks everyone. Make sure the proxy sets it before going live.
+- **Stage cleanup:** a stage is deleted about 5s after its last participant leaves, and a reaper removes stages idle
+  for 10 minutes; stage state lives in SQLite, so both survive a restart.
+- **Health:** `/readyz` answers once the server is ready; Fly checks it.
 
 ## Data model
 
-SQLite tables, managed by Drizzle migrations in `packages/server/src/db/migrations/`:
+Migrations live in `backend/internal/database/migrations`: platform's identity, refresh-token and recovery-code tables
+first, then the app's from `00020`:
 
-- Better Auth: `user`, `session`, `account`, `verification`
-- Content: `play_scripts`, `play_script_cast_members`, `play_script_lines`, `script_tags`, `play_script_tags`, `play_script_ratings`
-- Real-time: `stages`, `stage_participants`, `stage_participant_roles`
+- Content: play scripts, their cast members, lines, tags and ratings
+- Real-time: stages, their participants and the roles they hold
 
 ## API
 
-- `GET /api/health` — liveness
-- `GET /api/me` — current session
-- `POST /api/auth/*` — Better Auth (sign up, sign in, sign out, etc.)
-- `GET|POST|PUT|DELETE /api/play-scripts` — script CRUD
-- `POST /api/play-scripts/:id/rate` — 1–5 star ratings
-- `GET /api/tags` — tag list
-- `POST /api/stages`, `GET /api/stages/:code/exists` — stage HTTP
-- `WS  /ws/stage` — real-time stage protocol (see `packages/shared/src/types.ts`)
-- `POST /api/livekit/token` — mint scoped LiveKit tokens (audience = subscribe-only)
+gRPC services, served natively (`:50051`, internal) and as gRPC-web under `/grpc`:
+
+- `nosmallparts.scripts.v1.PlayScriptsService`: script CRUD, the enabled flag, 1 to 5 star ratings, tags
+- `nosmallparts.stage.v1.StagesService`: `CreateStage`, `StageExists`
+- `nosmallparts.livekit.v1.LiveKitService`: `MintToken`, scoped to a participant the caller owns (the audience gets
+  subscribe-only)
+- platform's `SignInService`: register, sign in, refresh, sign out, `GetSelf`
+
+HTTP:
+
+- `GET /api/identity`: who the visitor is, minting the `nsp_guest_id` cookie for a guest
+- `GET /ws/stage`: the stage socket
+- `GET /readyz`: readiness
+- `GET /*`: the web app, `index.html` for any client-side route
 
 ## Real-time protocol
 
-Messages are typed in `@nsp/shared` (`ClientMessage` / `ServerMessage`). The lifecycle:
+`proto/nosmallparts/stage/v1/stage.proto` defines `ClientMessage` and `ServerMessage`; each socket frame is one of
+them in protojson. The socket's subprotocol is `nsp.v1`, and a signed-in client sends its access token as a second
+subprotocol, `bearer.<token>`, since a browser cannot set an `Authorization` header on a WebSocket; a guest is known by
+the cookie. The lifecycle:
 
-`lobby` (pick play, claim roles, toggle ready) → `countdown` (3s) → `performing` (director/speaker advances lines) → `discussion` (cast list, rate, perform again).
+`lobby` (pick a play, claim roles, ready up) → `countdown` (3s) → `performing` (the speaker, or the director, advances
+lines) → `discussion` (cast list, ratings, perform again).
 
 Heartbeats every 5s let clients reconcile missed updates.
 

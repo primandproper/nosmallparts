@@ -71,6 +71,12 @@ web:
 build: web
 	$(MAKE) -C backend build
 
+# seed writes the built-in sample plays into the localdev database.
+.PHONY: seed
+seed:
+	@mkdir -p backend/data
+	$(MAKE) -C backend run ARGS="--config config/localdev.json seed"
+
 # dev runs the Go server and the Vite dev server; open the Vite URL.
 .PHONY: dev
 dev:
