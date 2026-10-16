@@ -1,5 +1,7 @@
 ---
-on: [pull_request]
+on:
+  push:
+  pull_request:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
@@ -8,11 +10,17 @@ concurrency:
 name: ci
 jobs:
   check:
-    timeout-minutes: 15
+    timeout-minutes: 20
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v5
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: backend/go.mod
+          cache-dependency-path: backend/go.sum
 
       - name: Install pnpm
         uses: pnpm/action-setup@v4
@@ -20,20 +28,74 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
+          cache: 'pnpm'
+
+      # The versions scripts/proto.sh asserts: check_proto regenerates the
+      # protos, and another protoc stamps another version into every file.
+      - name: Setup protoc
+        uses: arduino/setup-protoc@v3
+        with:
+          version: '33.1'
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Install protoc plugins
+        run: |
+          go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.36.4
+          go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.5.1
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Format
+        run: |
+          make format
+          git diff --exit-code || { echo "make format changed files: run it and commit the result" >&2; exit 1; }
+
+      - name: Lint
+        run: make lint
+
+      - name: Test
+        run: make test
+
+  e2e:
+    timeout-minutes: 20
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: backend/go.mod
+          cache-dependency-path: backend/go.sum
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
           cache: 'pnpm'
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Typecheck
-        run: pnpm typecheck
+      - name: Install Chromium
+        run: pnpm --filter @nsp/web exec playwright install --with-deps chromium
 
-      - name: Test
-        run: pnpm test
+      - name: End-to-end
+        run: make e2e
 
-      - name: Build
-        run: pnpm build
+      - name: Keep the traces of failed tests
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-test-results
+          path: frontend/test-results/
+          retention-days: 7
 
   docker:
     timeout-minutes: 20
@@ -46,7 +108,7 @@ jobs:
         uses: docker/setup-buildx-action@v3
 
       # The production image is what `fly deploy` builds, so a broken Dockerfile
-      # only shows up at release time unless it is exercised on every PR.
+      # only shows up at release time unless it is exercised on every change.
       - name: Build production image
         uses: docker/build-push-action@v6
         with:

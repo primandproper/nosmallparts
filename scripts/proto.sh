@@ -23,7 +23,7 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 BACKEND_MODULE="github.com/primandproper/nosmallparts/backend"
 GO_OUT="${ROOT}/backend/internal/proto"
 TS_OUT="${ROOT}/frontend/src/generated"
-TS_PLUGIN="${ROOT}/node_modules/.bin/protoc-gen-ts_proto"
+TS_PLUGIN="${ROOT}/frontend/node_modules/.bin/protoc-gen-ts_proto"
 
 assert_version() {
   local tool="$1" want="$2" fix="$3" got
