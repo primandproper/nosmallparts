@@ -1,0 +1,41 @@
+@import 'tailwindcss';
+@import '@livekit/components-styles';
+
+@theme {
+  --color-stage-bg: #0a0a0a;
+  --color-stage-surface: #141414;
+  --color-stage-border: #2a2a2a;
+  --color-stage-gold: #d4af37;
+  --color-stage-goldDim: #9a7e27;
+  --color-stage-text: #ede6d0;
+  --color-stage-muted: #8a8374;
+
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-mono: Menlo, Monaco, 'Courier New', monospace;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  background-color: var(--color-stage-bg);
+  color: var(--color-stage-text);
+}
+
+/*
+ * Keyboard navigation (§11): a clearly visible focus ring for keyboard users,
+ * in the stage gold, while mouse and touch focus stay ring-free.
+ */
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-stage-gold);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}

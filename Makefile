@@ -11,17 +11,20 @@ GENERATED_PROTO_PATHS := backend/internal/proto frontend/src/generated
 .PHONY: format
 format: format_proto
 	$(MAKE) -C backend format
+	pnpm --filter @nsp/web format
 
 .PHONY: lint
 lint: lint_proto check_proto
 	$(MAKE) -C backend lint
 	pnpm --filter @nsp/web typecheck
+	pnpm --filter @nsp/web format:check
 
 # test runs the Go suite and the TypeScript server's suite, which stays until the
 # TypeScript server is deleted, once every one of its cases has a ported counterpart.
 .PHONY: test
 test:
 	$(MAKE) -C backend test
+	pnpm --filter @nsp/web test
 	pnpm test
 
 ## PROTOBUF
