@@ -30,5 +30,7 @@ export default defineConfig({
   },
   test: {
     environment: 'node',
+    // e2e/ is Playwright's, run against a server by `make e2e`.
+    include: ['src/**/*.test.ts'],
   },
 });

@@ -31,6 +31,11 @@ test:
 lint_scripts:
 	shellcheck scripts/*.sh
 
+# e2e runs the Playwright suite against the built binary on a fresh database.
+.PHONY: e2e
+e2e: build
+	./scripts/e2e.sh
+
 ## PROTOBUF
 
 # proto formats what it generates with the backend's formatters, which touch the

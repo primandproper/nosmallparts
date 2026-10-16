@@ -10,6 +10,8 @@ dist/
 !/backend/internal/web/dist/
 /backend/internal/web/dist/*
 !/backend/internal/web/dist/README.md
+frontend/test-results/
+frontend/playwright-report/
 .next/
 .expo/
 
