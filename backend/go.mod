@@ -17,6 +17,7 @@ require (
 	github.com/BurntSushi/toml v1.6.0 // indirect
 	github.com/GoogleCloudPlatform/opentelemetry-operations-go/exporter/trace v1.31.0 // indirect
 	github.com/GoogleCloudPlatform/opentelemetry-operations-go/internal/resourcemapping v0.55.0 // indirect
+	github.com/KimMachineGun/automemlimit v0.7.5 // indirect
 	github.com/alfatraining/structtag v1.0.0 // indirect
 	github.com/caarlos0/env/v11 v11.4.1 // indirect
 	github.com/cenkalti/backoff/v5 v5.0.3 // indirect
@@ -26,6 +27,7 @@ require (
 	github.com/cockroachdb/redact v1.1.8 // indirect
 	github.com/codemodus/kace v0.5.1 // indirect
 	github.com/daixiang0/gci v0.14.0 // indirect
+	github.com/dkorunic/betteralign v0.14.3 // indirect
 	github.com/ebitengine/purego v0.10.0 // indirect
 	github.com/felixge/httpsnoop v1.1.0 // indirect
 	github.com/fxamacker/cbor/v2 v2.9.2 // indirect
@@ -36,6 +38,7 @@ require (
 	github.com/go-ozzo/ozzo-validation/v4 v4.3.0 // indirect
 	github.com/gogo/protobuf v1.3.2 // indirect
 	github.com/google/go-cmp v0.7.0 // indirect
+	github.com/google/renameio/v2 v2.0.2 // indirect
 	github.com/google/s2a-go v0.1.9 // indirect
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/googleapis/enterprise-certificate-proxy v0.3.17 // indirect
@@ -55,6 +58,7 @@ require (
 	github.com/mattn/go-colorable v0.1.14 // indirect
 	github.com/mattn/go-isatty v0.0.24 // indirect
 	github.com/mssola/useragent v1.0.0 // indirect
+	github.com/pbnjay/memory v0.0.0-20210728143218-7b4eea64cf58 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/power-devops/perfstat v0.0.0-20240221224432-82ca36839d55 // indirect
 	github.com/rogpeppe/go-internal v1.14.1 // indirect
@@ -114,6 +118,6 @@ require (
 tool (
 	github.com/4meepo/tagalign/cmd/tagalign
 	github.com/daixiang0/gci
+	github.com/dkorunic/betteralign/cmd/betteralign
 	golang.org/x/tools/cmd/goimports
-	golang.org/x/tools/go/analysis/passes/fieldalignment/cmd/fieldalignment
 )
