@@ -27,7 +27,7 @@ func TestNew(t *testing.T) {
 		test.Eq(t, loggingcfg.ProviderSlog, cfg.Observability.Logging.Provider)
 		test.Eq(t, logging.InfoLevel, cfg.Observability.Logging.Level)
 
-		must.NoError(t, cfg.Validate(context.Background()))
+		must.NoError(t, cfg.ValidateWithContext(context.Background()))
 
 		pillars, err := cfg.Observability.NewPillars(context.Background())
 		must.NoError(t, err)
@@ -42,7 +42,7 @@ func TestNew(t *testing.T) {
 
 		test.Eq(t, "custom", cfg.Observability.Logging.ServiceName)
 		test.Eq(t, logging.DebugLevel, cfg.Observability.Logging.Level)
-		must.NoError(t, cfg.Validate(context.Background()))
+		must.NoError(t, cfg.ValidateWithContext(context.Background()))
 	})
 }
 
@@ -113,10 +113,9 @@ func TestLoadFromFile(t *testing.T) {
 		must.Error(t, err)
 	})
 
-	t.Run("a file omitting the service name is valid for a stdout provider", func(t *testing.T) {
-		// The platform requires a service name only for the providers that ship
-		// telemetry somewhere (otelslog); slog writes to stdout, so a file that
-		// omits it loads cleanly.
+	t.Run("a file omitting the service name takes the default", func(t *testing.T) {
+		// The service is named DefaultServiceName, and the platform names each
+		// pillar after the service when the pillar names nothing itself.
 		path := filepath.Join(t.TempDir(), "config.json")
 		must.NoError(t, os.WriteFile(path, []byte(
 			`{"observability":{"logging":{"provider":"slog"}}}`,
@@ -124,7 +123,23 @@ func TestLoadFromFile(t *testing.T) {
 
 		cfg, err := LoadFromFile(context.Background(), path)
 		must.NoError(t, err)
-		test.Eq(t, "", cfg.Observability.Logging.ServiceName)
+		test.Eq(t, DefaultServiceName, cfg.Name)
+		test.Eq(t, DefaultServiceName, cfg.Observability.Logging.ServiceName)
+	})
+
+	t.Run("a file's database provider survives the environment overlay", func(t *testing.T) {
+		// The database block defaults its provider to postgres for an unset
+		// variable; keepFileDatabaseProvider is what stops that default beating
+		// the file.
+		path := filepath.Join(t.TempDir(), "config.json")
+		must.NoError(t, os.WriteFile(path, []byte(
+			`{"database":{"provider":"sqlite","readConnection":{"database":"x.db"},"writeConnection":{"database":"x.db"}}}`,
+		), 0o600))
+
+		cfg, err := LoadFromFile(context.Background(), path)
+		must.NoError(t, err)
+		must.NotNil(t, cfg.Database)
+		test.Eq(t, "sqlite", cfg.Database.Provider)
 	})
 
 	t.Run("a missing file is an error", func(t *testing.T) {
@@ -169,6 +184,10 @@ func TestCheckedInConfigsLoad(t *testing.T) {
 			must.NoError(t, err)
 			test.Eq(t, DefaultServiceName, cfg.Observability.Logging.ServiceName)
 			test.Eq(t, loggingcfg.ProviderSlog, cfg.Observability.Logging.Provider)
+
+			// Each file is a config somebody serves with.
+			must.NoError(t, cfg.ValidateForServing(t.Context()))
+			test.Eq(t, "sqlite", cfg.Database.Provider)
 		})
 	}
 }

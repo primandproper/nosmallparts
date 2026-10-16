@@ -1,5 +1,16 @@
-// Package config assembles the application's configuration, most notably the
-// observability settings that the primitives-go observability suite consumes.
+// Package config assembles the application's configuration.
+//
+// The configuration has two halves. The platform half is platform-go's
+// service.Config, embedded so its fields promote onto Config: the service name,
+// the observability pillars, and one pointer sub-config per platform subsystem
+// (database, identity, sign-in, tokens, cookies, the servers, gRPC-web). A
+// subsystem is composed into the process by being present in the config and by
+// nothing else; see platform-go's service package for the rule. The
+// nosmallparts half is what no platform package owns: who the admins are.
+//
+// A config that names no database, no identity and no servers is still valid,
+// which is what `nosmallparts version` boots with. One that serves has to name
+// all of them, and ValidateForServing is that check.
 //
 // The configuration is built in Go with sensible, zero-dependency defaults so
 // the binary boots out of the box: structured slog logging, and tracing,
@@ -27,17 +38,24 @@ package config
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"log/slog"
+	"os"
+	"slices"
 	"strings"
 
+	"github.com/primandproper/platform-go/v15/service"
 	primitivesconfig "github.com/primandproper/primitives-go/v2/config"
+	platformerrors "github.com/primandproper/primitives-go/v2/errors"
 	"github.com/primandproper/primitives-go/v2/observability"
 	"github.com/primandproper/primitives-go/v2/observability/logging"
 	loggingcfg "github.com/primandproper/primitives-go/v2/observability/logging/config"
 	metricsnoop "github.com/primandproper/primitives-go/v2/observability/metrics/noop"
 	profilingnoop "github.com/primandproper/primitives-go/v2/observability/profiling/noop"
 	tracingnoop "github.com/primandproper/primitives-go/v2/observability/tracing/noop"
+
+	validation "github.com/go-ozzo/ozzo-validation/v4"
 )
 
 // DefaultServiceName is the service name reported by the observability suite
@@ -70,15 +88,25 @@ type configurations interface {
 	Config
 }
 
-// Config is the application configuration. It wraps the primitives-go
-// observability configuration; add your own fields here as the application grows.
+// Config is the application configuration.
 //
-// The struct tags let primitives-go's config package populate the config from
-// environment variables (envPrefix) and JSON files (json). Give new fields both
-// tags so they participate in Load and LoadFromFile.
+// service.Config is embedded rather than named so that its fields promote: the
+// JSON a deployment mounts has "name", "observability" and "database" as
+// siblings, and the environment reads NOSMALLPARTS_DATABASE_* rather than
+// NOSMALLPARTS_PLATFORM_DATABASE_*. The embed carries no env tag on purpose:
+// caarlos0/env reads through an anonymous embedded struct and still composes
+// the nested envPrefix tags, and encoding/json promotes the fields on its own.
 type Config struct {
-	Observability observability.Config `envPrefix:"OBSERVABILITY_" json:"observability"`
+
+	// AdminEmails are the addresses whose holders may delete any script and
+	// switch one off. They are matched case-insensitively against the signed-in
+	// user's address, on every request, so a change takes effect on restart
+	// with no data to migrate.
+	AdminEmails []string `env:"ADMIN_EMAILS" json:"adminEmails,omitempty"`
+	service.Config
 }
+
+var _ validation.ValidatableWithContext = (*Config)(nil)
 
 // Options tune the values that most deployments care about. Empty fields fall
 // back to the built-in defaults.
@@ -97,18 +125,18 @@ func New(opts Options) *Config {
 		serviceName = DefaultServiceName
 	}
 
-	cfg := &Config{
-		Observability: observability.Config{
-			// slog logging to stdout as structured JSON.
-			Logging: loggingcfg.Config{
-				Provider:    loggingcfg.ProviderSlog,
-				ServiceName: serviceName,
-				Level:       levelFromString(opts.LogLevel),
-			},
-			// Tracing, Metrics, and Profiling are left at their zero values.
-			// An empty provider is the documented opt-out into a noop, so the
-			// binary stays quiet and dependency-free until one is named.
+	cfg := &Config{}
+	cfg.Name = serviceName
+	cfg.Observability = observability.Config{
+		// slog logging to stdout as structured JSON.
+		Logging: loggingcfg.Config{
+			Provider:    loggingcfg.ProviderSlog,
+			ServiceName: serviceName,
+			Level:       levelFromString(opts.LogLevel),
 		},
+		// Tracing, Metrics, and Profiling are left at their zero values.
+		// An empty provider is the documented opt-out into a noop, so the
+		// binary stays quiet and dependency-free until one is named.
 	}
 
 	return cfg
@@ -144,7 +172,7 @@ func Load(ctx context.Context, opts Options) (*Config, error) {
 		return nil, fmt.Errorf("applying environment variables: %w", err)
 	}
 
-	if err := cfg.Validate(ctx); err != nil {
+	if err := cfg.ValidateWithContext(ctx); err != nil {
 		return nil, fmt.Errorf("validating configuration: %w", err)
 	}
 
@@ -166,11 +194,55 @@ func LoadFromFile(ctx context.Context, path string) (*Config, error) {
 		return nil, err
 	}
 
-	if err = cfg.Validate(ctx); err != nil {
+	if err = keepFileDatabaseProvider(path, cfg); err != nil {
+		return nil, err
+	}
+
+	if err = cfg.ValidateWithContext(ctx); err != nil {
 		return nil, fmt.Errorf("validating configuration: %w", err)
 	}
 
 	return cfg, nil
+}
+
+// databaseProviderEnvVar is the variable that may still choose the database
+// provider over the file.
+const databaseProviderEnvVar = EnvVarPrefix + "DATABASE_PROVIDER"
+
+// keepFileDatabaseProvider puts the file's database provider back after the
+// environment overlay replaced it.
+//
+// The overlay assigns a field's envDefault whenever its variable is unset,
+// over whatever the file said, and primitives-go's database block defaults its
+// provider to postgres. So a file naming sqlite loads as postgres unless the
+// deployment also sets the variable, which makes the checked-in config a lie
+// about the one setting that decides which database this is. The variable still
+// wins when it is set; only its absence stops overriding the file.
+func keepFileDatabaseProvider(path string, cfg *Config) error {
+	if _, set := os.LookupEnv(databaseProviderEnvVar); set || cfg.Database == nil {
+		return nil
+	}
+
+	raw, err := os.ReadFile(path)
+	if err != nil {
+		return fmt.Errorf("rereading the configuration file: %w", err)
+	}
+
+	var file struct {
+		Database *struct {
+			Provider string `json:"provider"`
+		} `json:"database"`
+	}
+
+	if err = json.Unmarshal(raw, &file); err != nil {
+		return fmt.Errorf("rereading the configuration file's database provider: %w", err)
+	}
+
+	if file.Database != nil && file.Database.Provider != "" {
+		cfg.Database.Provider = file.Database.Provider
+	}
+
+	return nil
 }
 
 // loadFromJSONFile is the decode every loadable configuration struct goes
@@ -186,9 +258,64 @@ func loadFromJSONFile[T configurations](ctx context.Context, path string) (*T, e
 	return cfg, nil
 }
 
-// Validate confirms the assembled configuration is internally consistent.
-func (c *Config) Validate(ctx context.Context) error {
-	return c.Observability.ValidateWithContext(ctx)
+// ValidateWithContext confirms the assembled configuration is internally
+// consistent. It shadows the embedded service.Config's method so that a caller
+// reaching for the conventional name validates the whole config rather than
+// half of it. The platform half validates itself, which is also what releases
+// the sub-configs environment parsing allocated and nobody filled in.
+func (c *Config) ValidateWithContext(ctx context.Context) error {
+	// A file that names no service takes the default name, as New does.
+	if strings.TrimSpace(c.Name) == "" {
+		c.Name = DefaultServiceName
+	}
+
+	if err := c.Config.ValidateWithContext(ctx); err != nil {
+		return err
+	}
+
+	for _, email := range c.AdminEmails {
+		if strings.TrimSpace(email) == "" {
+			return platformerrors.New("adminEmails holds an empty address")
+		}
+	}
+
+	return nil
+}
+
+// ValidateForServing is the stricter check `serve` makes: every platform
+// subsystem the service is built from has to be present. It is separate from
+// ValidateWithContext because `version` is a valid program over a config that
+// names none of them.
+func (c *Config) ValidateForServing(ctx context.Context) error {
+	if err := c.ValidateWithContext(ctx); err != nil {
+		return err
+	}
+
+	var missing []string
+
+	for name, present := range map[string]bool{
+		"database":   c.Database != nil,
+		"identity":   c.Identity != nil,
+		"signIn":     c.SignIn != nil,
+		"tokens":     c.Tokens != nil,
+		"cookies":    c.Cookies != nil,
+		"routing":    c.Routing != nil,
+		"httpServer": c.HTTPServer != nil,
+		"grpcServer": c.GRPCServer != nil,
+		"grpcWeb":    c.GRPCWeb != nil,
+	} {
+		if !present {
+			missing = append(missing, name)
+		}
+	}
+
+	if len(missing) > 0 {
+		slices.Sort(missing)
+
+		return platformerrors.Newf("serving requires these config blocks, which are absent: %s", strings.Join(missing, ", "))
+	}
+
+	return nil
 }
 
 // NewPillars builds the observability pillars for the application.

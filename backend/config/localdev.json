@@ -1,9 +1,84 @@
 {
+	"cookies": {
+		"base64EncodedHashKey": "bm9zbWFsbHBhcnRzLWxvY2FsZGV2LWNvb2tpZS1oYXNoLWtleS0wMDA=",
+		"base64EncodedBlockKey": "bm9zbWFsbHBhcnRzLWxvY2FsZGV2LWJsb2Nra2V5MDA=",
+		"lifetime": 2592000000000000
+	},
+	"database": {
+		"provider": "sqlite",
+		"readConnection": {
+			"database": "data/nosmallparts.db"
+		},
+		"writeConnection": {
+			"database": "data/nosmallparts.db"
+		},
+		"pingWaitPeriod": 1000000000,
+		"maxPingAttempts": 50,
+		"connMaxLifetime": 1800000000000,
+		"maxIdleConns": 5,
+		"maxOpenConns": 7,
+		"runMigrations": true
+	},
+	"encoding": {
+		"contentType": "application/json"
+	},
+	"grpcServer": {
+		"port": 50051
+	},
+	"grpcWeb": {
+		"pathPrefix": "/grpc"
+	},
+	"httpServer": {
+		"port": 3001
+	},
+	"identity": {
+		"invitationTTL": 604800000000000,
+		"maxInvitationTTL": 2592000000000000
+	},
+	"routing": {
+		"stdlibConfig": {
+			"serviceName": "nosmallparts"
+		},
+		"provider": "stdlib"
+	},
+	"signIn": {
+		"recoveryCodes": {},
+		"defaultOwnerRoles": [
+			"owner"
+		],
+		"refreshTokens": {
+			"sweepInterval": 300000000000,
+			"sweepJob": {
+				"interval": 300000000000,
+				"leaseTTL": 60000000000
+			},
+			"ttl": 2592000000000000
+		},
+		"registration": {},
+		"tokenTTL": 900000000000
+	},
+	"tokens": {
+		"provider": "jwt",
+		"issuer": "nosmallparts",
+		"audience": "nosmallparts",
+		"base64EncodedSigningKey": "bm9zbWFsbHBhcnRzLWxvY2FsZGV2LXNpZ25pbmctMDA="
+	},
+	"name": "nosmallparts",
 	"observability": {
+		"profiling": {
+			"serviceName": "nosmallparts"
+		},
 		"logging": {
 			"serviceName": "nosmallparts",
 			"level": "debug",
 			"provider": "slog"
+		},
+		"metrics": {
+			"serviceName": "nosmallparts"
+		},
+		"tracing": {
+			"service_name": "nosmallparts"
 		}
-	}
+	},
+	"shutdownTimeout": 30000000000
 }
