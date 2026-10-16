@@ -16,8 +16,6 @@ node_modules
 frontend/dist
 backend/internal/web/dist
 backend/artifacts
-dist-web
-**/.expo
 
 .env
 .env.local
@@ -32,5 +30,4 @@ backend/data
 npm-debug.log*
 pnpm-debug.log*
 
-packages
 TEST_PLAN.md

@@ -10,12 +10,6 @@ const backend = process.env.NSP_BACKEND_URL ?? 'http://localhost:3001';
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  // The workspace hoists for Expo, whose older React sits at the root, so a
-  // hoisted dependency like react-router gets a copy of its own; two Reacts
-  // in one page break every hook.
-  resolve: {
-    dedupe: ['react', 'react-dom'],
-  },
   server: {
     proxy: {
       '/grpc': { target: backend },

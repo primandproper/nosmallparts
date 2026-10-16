@@ -19,13 +19,10 @@ lint: lint_proto check_proto lint_scripts
 	pnpm --filter @nsp/web typecheck
 	pnpm --filter @nsp/web format:check
 
-# test runs the Go suite and the TypeScript server's suite, which stays until the
-# TypeScript server is deleted, once every one of its cases has a ported counterpart.
 .PHONY: test
 test:
 	$(MAKE) -C backend test
 	pnpm --filter @nsp/web test
-	pnpm test
 
 .PHONY: lint_scripts
 lint_scripts:

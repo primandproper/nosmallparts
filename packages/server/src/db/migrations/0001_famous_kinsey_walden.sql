@@ -1,1 +1,0 @@
-ALTER TABLE `stage_participants` ADD `guest_id` text;
