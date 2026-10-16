@@ -45,6 +45,8 @@ import (
 	"slices"
 	"strings"
 
+	"github.com/primandproper/nosmallparts/backend/internal/livekit"
+
 	"github.com/primandproper/platform-go/v15/service"
 	primitivesconfig "github.com/primandproper/primitives-go/v2/config"
 	platformerrors "github.com/primandproper/primitives-go/v2/errors"
@@ -97,6 +99,11 @@ type configurations interface {
 // caarlos0/env reads through an anonymous embedded struct and still composes
 // the nested envPrefix tags, and encoding/json promotes the fields on its own.
 type Config struct {
+
+	// LiveKit names the video server. Its key and secret come from the
+	// environment, never a checked-in file; a deployment naming none runs
+	// without video.
+	LiveKit livekit.Config `envPrefix:"LIVEKIT_" json:"livekit"`
 
 	// AdminEmails are the addresses whose holders may delete any script and
 	// switch one off. They are matched case-insensitively against the signed-in
@@ -278,6 +285,10 @@ func (c *Config) ValidateWithContext(ctx context.Context) error {
 	}
 
 	if err := c.Stages.ValidateWithContext(ctx); err != nil {
+		return err
+	}
+
+	if err := c.LiveKit.ValidateWithContext(ctx); err != nil {
 		return err
 	}
 

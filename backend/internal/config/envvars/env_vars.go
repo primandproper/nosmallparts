@@ -996,6 +996,18 @@ const (
 	// `Config.Config.Links.TokenBytes`.
 	LinksTokenBytesEnvVarKey = "NOSMALLPARTS_LINKS_TOKEN_BYTES"
 
+	// LivekitAPIKeyEnvVarKey is the environment variable name to set to override
+	// `Config.LiveKit.APIKey`.
+	LivekitAPIKeyEnvVarKey = "NOSMALLPARTS_LIVEKIT_API_KEY"
+
+	// LivekitAPISecretEnvVarKey is the environment variable name to set to override
+	// `Config.LiveKit.APISecret`.
+	LivekitAPISecretEnvVarKey = "NOSMALLPARTS_LIVEKIT_API_SECRET"
+
+	// LivekitURLEnvVarKey is the environment variable name to set to override
+	// `Config.LiveKit.URL`.
+	LivekitURLEnvVarKey = "NOSMALLPARTS_LIVEKIT_URL"
+
 	// LlmAnthropicAPIKeyEnvVarKey is the environment variable name to set to override
 	// `Config.Config.LLM.Anthropic.APIKey`.
 	LlmAnthropicAPIKeyEnvVarKey = "NOSMALLPARTS_LLM_ANTHROPIC_API_KEY"

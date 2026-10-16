@@ -12,6 +12,7 @@ import (
 
 	"github.com/primandproper/nosmallparts/backend/internal/build/api"
 	"github.com/primandproper/nosmallparts/backend/internal/config"
+	"github.com/primandproper/nosmallparts/backend/internal/proto/livekitpb"
 	"github.com/primandproper/nosmallparts/backend/internal/proto/scriptspb"
 	"github.com/primandproper/nosmallparts/backend/internal/proto/stagepb"
 
@@ -53,6 +54,7 @@ type harness struct {
 	signIn   signinpb.SignInServiceClient
 	scripts  scriptspb.PlayScriptsServiceClient
 	stages   stagepb.StagesServiceClient
+	livekit  livekitpb.LiveKitServiceClient
 	http     *http.Client
 	httpURL  string
 	users    atomic.Int64
@@ -120,13 +122,18 @@ func testConfig(dir string) *config.Config {
 	}
 }
 
-// newHarness starts a server and stops it when the test ends.
-func newHarness(t *testing.T) *harness {
+// newHarness starts a server and stops it when the test ends. Each edit
+// changes the config before the server is built from it.
+func newHarness(t *testing.T, edits ...func(*config.Config)) *harness {
 	t.Helper()
 
 	ctx, cancel := context.WithCancel(context.WithoutCancel(t.Context()))
 
 	cfg := testConfig(t.TempDir())
+	for _, edit := range edits {
+		edit(cfg)
+	}
+
 	must.NoError(t, cfg.ValidateWithContext(ctx))
 
 	i, err := api.BuildInjector(ctx, cfg)
@@ -166,6 +173,7 @@ func newHarness(t *testing.T) *harness {
 		signIn:   signinpb.NewSignInServiceClient(conn),
 		scripts:  scriptspb.NewPlayScriptsServiceClient(conn),
 		stages:   stagepb.NewStagesServiceClient(conn),
+		livekit:  livekitpb.NewLiveKitServiceClient(conn),
 		http:     &http.Client{Timeout: 10 * time.Second},
 		httpURL:  "http://" + httpAddr.String(),
 	}

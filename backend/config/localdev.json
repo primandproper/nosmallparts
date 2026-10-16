@@ -88,5 +88,6 @@
 		"idleAfter": 600000000000,
 		"reaperInterval": 60000000000,
 		"countdown": 3000000000
-	}
+	},
+	"livekit": {}
 }

@@ -20,7 +20,9 @@ import (
 	"github.com/primandproper/nosmallparts/backend/internal/domain/scripts"
 	"github.com/primandproper/nosmallparts/backend/internal/domain/stages"
 	"github.com/primandproper/nosmallparts/backend/internal/guests"
+	"github.com/primandproper/nosmallparts/backend/internal/livekit"
 	"github.com/primandproper/nosmallparts/backend/internal/seed"
+	livekitgrpc "github.com/primandproper/nosmallparts/backend/internal/services/livekit/grpc"
 	scriptsgrpc "github.com/primandproper/nosmallparts/backend/internal/services/scripts/grpc"
 	stagesgrpc "github.com/primandproper/nosmallparts/backend/internal/services/stages/grpc"
 	"github.com/primandproper/nosmallparts/backend/internal/services/stages/ws"
@@ -82,6 +84,7 @@ func BuildInjector(ctx context.Context, cfg *config.Config) (*do.RootScope, erro
 	registerAuth(i)
 	registerScripts(i, cfg)
 	registerStages(i, cfg)
+	registerLiveKit(i, cfg)
 	registerInterceptors(i)
 
 	service.RegisterTransports(i, &service.Transports{
@@ -90,6 +93,7 @@ func BuildInjector(ctx context.Context, cfg *config.Config) (*do.RootScope, erro
 		Registrations: []grpcserver.RegistrationFunc{
 			func(srv *grpc.Server) { do.MustInvoke[*scriptsgrpc.Server](i).RegisterOn(srv) },
 			func(srv *grpc.Server) { do.MustInvoke[*stagesgrpc.Server](i).RegisterOn(srv) },
+			func(srv *grpc.Server) { do.MustInvoke[*livekitgrpc.Server](i).RegisterOn(srv) },
 		},
 		// The identity surface is account and membership administration, which
 		// nothing here offers; sign-in's Register is how people join.
@@ -122,6 +126,10 @@ func New(i do.Injector) (*service.Service, error) {
 
 	if _, err := do.Invoke[*stagesgrpc.Server](i); err != nil {
 		return nil, platformerrors.Wrap(err, "building the stages server")
+	}
+
+	if _, err := do.Invoke[*livekitgrpc.Server](i); err != nil {
+		return nil, platformerrors.Wrap(err, "building the livekit server")
 	}
 
 	hub, err := do.Invoke[*ws.Hub](i)
@@ -398,6 +406,41 @@ func registerStages(i do.Injector, cfg *config.Config) {
 	})
 }
 
+// registerLiveKit registers the video half: the token minter, the admin calls
+// a host's kick and mute make, and LiveKitService. With no server configured
+// the minter refuses and the admin does nothing.
+func registerLiveKit(i do.Injector, cfg *config.Config) {
+	do.ProvideValue(i, livekit.NewMinter(&cfg.LiveKit))
+
+	do.Provide(i, func(i do.Injector) (livekit.Admin, error) {
+		pillars, err := observability.InvokePillars(i)
+		if err != nil {
+			return nil, err
+		}
+
+		return livekit.NewAdmin(&cfg.LiveKit, pillars), nil
+	})
+
+	do.Provide(i, func(i do.Injector) (*livekitgrpc.Server, error) {
+		pillars, err := observability.InvokePillars(i)
+		if err != nil {
+			return nil, err
+		}
+
+		client, err := do.Invoke[database.Client](i)
+		if err != nil {
+			return nil, err
+		}
+
+		store, err := do.Invoke[stages.Store](i)
+		if err != nil {
+			return nil, err
+		}
+
+		return livekitgrpc.NewServer(client, store, do.MustInvoke[*livekit.Minter](i), signingrpc.PrincipalFromContext, pillars)
+	})
+}
+
 // healthMethods are the gRPC health service's, which a probe calls with no
 // credential.
 var healthMethods = []string{
@@ -414,6 +457,7 @@ func AuthenticationRequirements() (*signingrpc.AuthenticationRequirements, error
 	b := signingrpc.RequireAuthentication(signingrpc.NewAuthenticationRequirements())
 	scriptsgrpc.RequireAuthentication(b)
 	stagesgrpc.RequireAuthentication(b)
+	livekitgrpc.RequireAuthentication(b)
 	b.Declare(signingrpc.AuthenticationAnonymous, healthMethods...)
 
 	return b.Build()
@@ -428,6 +472,7 @@ func AuthorizationRequirements() (*authzgrpc.Requirements, error) {
 	signingrpc.Require(b)
 	scriptsgrpc.Require(b)
 	stagesgrpc.Require(b)
+	livekitgrpc.Require(b)
 
 	for _, method := range healthMethods {
 		b.Public(method)

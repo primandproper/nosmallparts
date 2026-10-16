@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package nosmallparts.livekit.v1;
+
+option go_package = "github.com/primandproper/nosmallparts/backend/internal/proto/livekitpb";
+
+message MintTokenRequest {
+  // stage_id is the stage whose video room to join; the room is named for it.
+  string stage_id = 1;
+  // participant_id is who to join as, which must be the caller's own.
+  string participant_id = 2;
+}
+
+message MintTokenResponse {
+  // token admits the participant to the room: publishing and subscribing for a
+  // performer, subscribing only for the audience.
+  string token = 1;
+  // url is the LiveKit server to connect to.
+  string url = 2;
+  // room is the room the token admits to.
+  string room = 3;
+}
+
+// LiveKitService admits a stage's participants to its video room.
+service LiveKitService {
+  // MintToken answers FAILED_PRECONDITION when video is not configured,
+  // NOT_FOUND for a stage or participant that is not there, and
+  // PERMISSION_DENIED for a participant who is not the caller: a signed-in
+  // user, or a guest by their nsp_guest_id cookie.
+  rpc MintToken(MintTokenRequest) returns (MintTokenResponse);
+}

@@ -8,6 +8,7 @@
 package guests
 
 import (
+	"context"
 	"encoding/json"
 	"net/http"
 	"regexp"
@@ -18,6 +19,7 @@ import (
 	"github.com/primandproper/primitives-go/v2/observability/logging"
 
 	"github.com/oklog/ulid/v2"
+	"google.golang.org/grpc/metadata"
 )
 
 // CookieName is the cookie a guest identity travels in.
@@ -46,6 +48,30 @@ func FromRequest(r *http.Request) (string, bool) {
 	}
 
 	return cookie.Value, true
+}
+
+// FromContext is the guest identity a gRPC call carries: the cookie header a
+// browser sends with a gRPC-web request arrives as metadata.
+func FromContext(ctx context.Context) (string, bool) {
+	md, ok := metadata.FromIncomingContext(ctx)
+	if !ok {
+		return "", false
+	}
+
+	for _, header := range md.Get("cookie") {
+		cookies, err := http.ParseCookie(header)
+		if err != nil {
+			continue
+		}
+
+		for _, cookie := range cookies {
+			if cookie.Name == CookieName && validID.MatchString(cookie.Value) {
+				return cookie.Value, true
+			}
+		}
+	}
+
+	return "", false
 }
 
 // Mint gives the response a new guest identity and returns it.
