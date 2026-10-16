@@ -63,6 +63,33 @@ jobs:
       - name: Lint
         run: make lint
 
+  # Apart from lint, which takes about ten minutes alone: the race-enabled
+  # build of the whole dependency graph is the slow part of the tests.
+  test:
+    timeout-minutes: 30
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: backend/go.mod
+          cache-dependency-path: backend/go.sum
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
       - name: Test
         run: make test
 
