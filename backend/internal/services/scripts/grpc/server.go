@@ -107,7 +107,7 @@ func (s *Server) ListPlayScripts(ctx context.Context, req *scriptspb.ListPlayScr
 
 	out := &scriptspb.ListPlayScriptsResponse{Plays: make([]*scriptspb.Play, 0, len(plays))}
 	for _, play := range plays {
-		out.Plays = append(out.Plays, convertPlay(play))
+		out.Plays = append(out.Plays, ConvertPlay(play))
 	}
 
 	return out, nil
@@ -123,7 +123,7 @@ func (s *Server) GetPlayScript(ctx context.Context, req *scriptspb.GetPlayScript
 		return nil, s.status(op, err, "reading a script")
 	}
 
-	return &scriptspb.GetPlayScriptResponse{Play: convertPlay(play)}, nil
+	return &scriptspb.GetPlayScriptResponse{Play: ConvertPlay(play)}, nil
 }
 
 // CreatePlayScript implements PlayScriptsServiceServer.
@@ -136,7 +136,7 @@ func (s *Server) CreatePlayScript(ctx context.Context, req *scriptspb.CreatePlay
 		return nil, s.status(op, err, "creating a script")
 	}
 
-	return &scriptspb.CreatePlayScriptResponse{Play: convertPlay(play)}, nil
+	return &scriptspb.CreatePlayScriptResponse{Play: ConvertPlay(play)}, nil
 }
 
 // UpdatePlayScript implements PlayScriptsServiceServer.
@@ -149,7 +149,7 @@ func (s *Server) UpdatePlayScript(ctx context.Context, req *scriptspb.UpdatePlay
 		return nil, s.status(op, err, "updating a script")
 	}
 
-	return &scriptspb.UpdatePlayScriptResponse{Play: convertPlay(play)}, nil
+	return &scriptspb.UpdatePlayScriptResponse{Play: ConvertPlay(play)}, nil
 }
 
 // DeletePlayScript implements PlayScriptsServiceServer.

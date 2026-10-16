@@ -18,9 +18,12 @@ import (
 	"github.com/primandproper/nosmallparts/backend/internal/config"
 	"github.com/primandproper/nosmallparts/backend/internal/database/migrations"
 	"github.com/primandproper/nosmallparts/backend/internal/domain/scripts"
+	"github.com/primandproper/nosmallparts/backend/internal/domain/stages"
 	"github.com/primandproper/nosmallparts/backend/internal/guests"
 	"github.com/primandproper/nosmallparts/backend/internal/seed"
 	scriptsgrpc "github.com/primandproper/nosmallparts/backend/internal/services/scripts/grpc"
+	stagesgrpc "github.com/primandproper/nosmallparts/backend/internal/services/stages/grpc"
+	"github.com/primandproper/nosmallparts/backend/internal/services/stages/ws"
 
 	"github.com/primandproper/platform-go/v15/authentication/signin"
 	signingrpc "github.com/primandproper/platform-go/v15/authentication/signin/grpc"
@@ -35,6 +38,7 @@ import (
 	platformerrors "github.com/primandproper/primitives-go/v2/errors"
 	grpcerrors "github.com/primandproper/primitives-go/v2/errors/grpc"
 	"github.com/primandproper/primitives-go/v2/observability"
+	"github.com/primandproper/primitives-go/v2/ratelimiting"
 	"github.com/primandproper/primitives-go/v2/routing"
 	grpcserver "github.com/primandproper/primitives-go/v2/server/grpc"
 
@@ -77,6 +81,7 @@ func BuildInjector(ctx context.Context, cfg *config.Config) (*do.RootScope, erro
 
 	registerAuth(i)
 	registerScripts(i, cfg)
+	registerStages(i, cfg)
 	registerInterceptors(i)
 
 	service.RegisterTransports(i, &service.Transports{
@@ -84,6 +89,7 @@ func BuildInjector(ctx context.Context, cfg *config.Config) (*do.RootScope, erro
 		TenantOf:  service.DirectoryTenant,
 		Registrations: []grpcserver.RegistrationFunc{
 			func(srv *grpc.Server) { do.MustInvoke[*scriptsgrpc.Server](i).RegisterOn(srv) },
+			func(srv *grpc.Server) { do.MustInvoke[*stagesgrpc.Server](i).RegisterOn(srv) },
 		},
 		// The identity surface is account and membership administration, which
 		// nothing here offers; sign-in's Register is how people join.
@@ -106,19 +112,36 @@ func NewServer(ctx context.Context, cfg *config.Config) (*service.Service, error
 // New mounts the routes that are not gRPC on an injector BuildInjector
 // returned, and builds the service over it. It is separate from NewServer so a
 // caller holding the injector can reach what the service is built from, such
-// as the address a server bound. The script server is resolved ahead of
-// service.New so a misconfiguration in it is an error with a name rather than
+// as the address a server bound. Our own servers are resolved ahead of
+// service.New so a misconfiguration in one is an error with a name rather than
 // a panic inside a registration function.
 func New(i do.Injector) (*service.Service, error) {
 	if _, err := do.Invoke[*scriptsgrpc.Server](i); err != nil {
 		return nil, platformerrors.Wrap(err, "building the scripts server")
 	}
 
-	if err := mountHTTPRoutes(i); err != nil {
+	if _, err := do.Invoke[*stagesgrpc.Server](i); err != nil {
+		return nil, platformerrors.Wrap(err, "building the stages server")
+	}
+
+	hub, err := do.Invoke[*ws.Hub](i)
+	if err != nil {
+		return nil, platformerrors.Wrap(err, "building the stage socket")
+	}
+
+	limiter, err := do.Invoke[*ratelimiting.InMemoryRateLimiter](i)
+	if err != nil {
+		return nil, platformerrors.Wrap(err, "building the stage lookup limiter")
+	}
+
+	if err = mountHTTPRoutes(i, hub); err != nil {
 		return nil, err
 	}
 
-	return service.New(i)
+	return service.New(i,
+		service.WithRunners(hub),
+		service.WithFlush("stage lookup limiter", func(context.Context) error { return limiter.Close() }),
+	)
 }
 
 // Seed writes the sample plays into the configured database, migrating it
@@ -283,6 +306,98 @@ func registerScripts(i do.Injector, cfg *config.Config) {
 	})
 }
 
+// registerStages registers the stage half: its store, StagesService, the
+// limiter the code lookup spends from, and the stage socket.
+func registerStages(i do.Injector, cfg *config.Config) {
+	do.Provide(i, func(i do.Injector) (stages.Store, error) {
+		pillars, err := observability.InvokePillars(i)
+		if err != nil {
+			return nil, err
+		}
+
+		client, err := do.Invoke[database.Client](i)
+		if err != nil {
+			return nil, err
+		}
+
+		store, err := stages.NewSQLStore(client, stages.WithPillars(pillars))
+		if err != nil {
+			return nil, err
+		}
+
+		return store, nil
+	})
+
+	do.Provide(i, func(_ do.Injector) (*ratelimiting.InMemoryRateLimiter, error) {
+		return stagesgrpc.NewExistsLimiter()
+	})
+
+	do.Provide(i, func(i do.Injector) (*stagesgrpc.Server, error) {
+		pillars, err := observability.InvokePillars(i)
+		if err != nil {
+			return nil, err
+		}
+
+		client, err := do.Invoke[database.Client](i)
+		if err != nil {
+			return nil, err
+		}
+
+		store, err := do.Invoke[stages.Store](i)
+		if err != nil {
+			return nil, err
+		}
+
+		library, err := do.Invoke[*scripts.Service](i)
+		if err != nil {
+			return nil, err
+		}
+
+		return stagesgrpc.NewServer(client, store, library, signingrpc.PrincipalFromContext, pillars)
+	})
+
+	do.Provide(i, func(i do.Injector) (*ws.Hub, error) {
+		pillars, err := observability.InvokePillars(i)
+		if err != nil {
+			return nil, err
+		}
+
+		client, err := do.Invoke[database.Client](i)
+		if err != nil {
+			return nil, err
+		}
+
+		store, err := do.Invoke[stages.Store](i)
+		if err != nil {
+			return nil, err
+		}
+
+		plays, err := do.Invoke[scripts.Store](i)
+		if err != nil {
+			return nil, err
+		}
+
+		library, err := do.Invoke[*scripts.Service](i)
+		if err != nil {
+			return nil, err
+		}
+
+		extractor, err := do.Invoke[*signingrpc.PrincipalExtractor](i)
+		if err != nil {
+			return nil, err
+		}
+
+		return ws.NewHub(client, store, plays, library, extractor, ws.Timings{
+			HostGrace:      cfg.Stages.HostGrace,
+			VacancyClaim:   cfg.Stages.VacancyClaim,
+			CleanupDelay:   cfg.Stages.CleanupDelay,
+			IdleAfter:      cfg.Stages.IdleAfter,
+			ReaperInterval: cfg.Stages.ReaperInterval,
+			Countdown:      cfg.Stages.Countdown,
+		}, pillars)
+	})
+}
+
 // healthMethods are the gRPC health service's, which a probe calls with no
 // credential.
 var healthMethods = []string{
@@ -298,6 +413,7 @@ var healthMethods = []string{
 func AuthenticationRequirements() (*signingrpc.AuthenticationRequirements, error) {
 	b := signingrpc.RequireAuthentication(signingrpc.NewAuthenticationRequirements())
 	scriptsgrpc.RequireAuthentication(b)
+	stagesgrpc.RequireAuthentication(b)
 	b.Declare(signingrpc.AuthenticationAnonymous, healthMethods...)
 
 	return b.Build()
@@ -311,6 +427,7 @@ func AuthorizationRequirements() (*authzgrpc.Requirements, error) {
 	b := authzgrpc.NewRequirements()
 	signingrpc.Require(b)
 	scriptsgrpc.Require(b)
+	stagesgrpc.Require(b)
 
 	for _, method := range healthMethods {
 		b.Public(method)
@@ -320,9 +437,11 @@ func AuthorizationRequirements() (*authzgrpc.Requirements, error) {
 }
 
 // registerInterceptors registers the chains the gRPC server is built from,
-// after the recovery it installs for itself: authentication, then
-// authorization, which reads what authentication resolved, then the error
-// encoder that turns a platform sentinel into a considered status code.
+// after the recovery it installs for itself: the stage lookup's rate limit,
+// which needs nobody resolved and so refuses a flood before it costs a token
+// check; authentication; authorization, which reads what authentication
+// resolved; and the error encoder that turns a platform sentinel into a
+// considered status code.
 func registerInterceptors(i do.Injector) {
 	do.Provide(i, func(_ do.Injector) (*signingrpc.AuthenticationRequirements, error) {
 		return AuthenticationRequirements()
@@ -356,7 +475,23 @@ func registerInterceptors(i do.Injector) {
 			return nil, err
 		}
 
+		pillars, err := observability.InvokePillars(i)
+		if err != nil {
+			return nil, err
+		}
+
+		limiter, err := do.Invoke[*ratelimiting.InMemoryRateLimiter](i)
+		if err != nil {
+			return nil, err
+		}
+
+		existsLimit, err := stagesgrpc.ExistsRateLimit(limiter, pillars)
+		if err != nil {
+			return nil, err
+		}
+
 		return []grpc.UnaryServerInterceptor{
+			existsLimit,
 			extractor.UnaryServerInterceptor(reqs),
 			enforcer.UnaryServerInterceptor(),
 			grpcerrors.UnaryErrorEncodingInterceptor(),
@@ -396,10 +531,11 @@ func invokeChain(i do.Injector) (*signingrpc.PrincipalExtractor, *signingrpc.Aut
 	return extractor, reqs, enforcer, nil
 }
 
-// mountHTTPRoutes puts the routes that are not gRPC on the router: today, the
-// guest identity route. It resolves the caller through the same extractor the
-// gRPC server does, so a signed-in visitor is answered as themselves.
-func mountHTTPRoutes(i do.Injector) error {
+// mountHTTPRoutes puts the routes that are not gRPC on the router: the guest
+// identity route, which resolves the caller through the same extractor the
+// gRPC server does so a signed-in visitor is answered as themselves, and the
+// stage socket, which settles who is connecting itself.
+func mountHTTPRoutes(i do.Injector, hub *ws.Hub) error {
 	router, err := do.Invoke[*routing.Router](i)
 	if err != nil {
 		return platformerrors.Wrap(err, "resolving the router")
@@ -418,9 +554,10 @@ func mountHTTPRoutes(i do.Injector) error {
 	handler := guests.NewHandler(signingrpc.PrincipalFromContext, pillars.Logger)
 
 	router.Handle(http.MethodGet, IdentityRoute, extractor.HTTPMiddleware(handler))
+	router.Handle(http.MethodGet, ws.Route, hub)
 
 	if err = router.Err(); err != nil {
-		return platformerrors.Wrap(err, "mounting the guest identity route")
+		return platformerrors.Wrap(err, "mounting the HTTP routes")
 	}
 
 	return nil

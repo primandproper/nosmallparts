@@ -103,7 +103,11 @@ type Config struct {
 	// user's address, on every request, so a change takes effect on restart
 	// with no data to migrate.
 	AdminEmails []string `env:"ADMIN_EMAILS" json:"adminEmails,omitempty"`
+
 	service.Config
+
+	// Stages is how long the timed parts of a stage take.
+	Stages StagesConfig `envPrefix:"STAGES_" json:"stages"`
 }
 
 var _ validation.ValidatableWithContext = (*Config)(nil)
@@ -270,6 +274,10 @@ func (c *Config) ValidateWithContext(ctx context.Context) error {
 	}
 
 	if err := c.Config.ValidateWithContext(ctx); err != nil {
+		return err
+	}
+
+	if err := c.Stages.ValidateWithContext(ctx); err != nil {
 		return err
 	}
 

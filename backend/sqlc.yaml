@@ -18,7 +18,7 @@ sql:
     queries:
       - "internal/domain/scripts/sqlc_queries"
     gen:
-      go:
+      go: &gen
         package: "generated"
         out: "internal/domain/scripts/generated"
         emit_db_tags: false
@@ -41,3 +41,12 @@ sql:
         query_parameter_limit: 1
         rename:
           ids: "IDs"
+
+  - engine: "sqlite"
+    schema: "internal/database/migrations/migration_files"
+    queries:
+      - "internal/domain/stages/sqlc_queries"
+    gen:
+      go:
+        <<: *gen
+        out: "internal/domain/stages/generated"

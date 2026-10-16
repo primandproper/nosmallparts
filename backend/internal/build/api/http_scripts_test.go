@@ -18,6 +18,7 @@ import (
 	"github.com/primandproper/nosmallparts/backend/internal/build/api"
 	"github.com/primandproper/nosmallparts/backend/internal/guests"
 	"github.com/primandproper/nosmallparts/backend/internal/proto/scriptspb"
+	"github.com/primandproper/nosmallparts/backend/internal/proto/stagepb"
 
 	"github.com/primandproper/platform-go/v15/authentication/signin/signinpb"
 	"github.com/primandproper/primitives-go/v2/pointer"
@@ -227,6 +228,16 @@ func TestAuthGates(T *testing.T) {
 		h := newHarness(t)
 
 		_, err := h.scripts.CreatePlayScript(t.Context(), &scriptspb.CreatePlayScriptRequest{Play: sampleScript()})
+		must.Error(t, err)
+		test.EqOp(t, codes.Unauthenticated, status.Code(err))
+	})
+
+	T.Run("POST /api/stages requires user (guest gets 401)", func(t *testing.T) {
+		t.Parallel()
+
+		h := newHarness(t)
+
+		_, err := h.stages.CreateStage(t.Context(), &stagepb.CreateStageRequest{})
 		must.Error(t, err)
 		test.EqOp(t, codes.Unauthenticated, status.Code(err))
 	})
@@ -492,9 +503,10 @@ func TestAdminAndEnabledFlag(T *testing.T) {
 		must.Error(t, err)
 		test.EqOp(t, codes.NotFound, status.Code(err))
 
-		// The old case also refused a new stage against the disabled script.
-		// Stage creation arrives with the stages service (#5), which carries
-		// that assertion in its own port of this case.
+		// A new stage cannot be created against it.
+		_, err = h.stages.CreateStage(as(t.Context(), owner), &stagepb.CreateStageRequest{PlayScriptId: pointer.To(play.GetId())})
+		must.Error(t, err)
+		test.EqOp(t, codes.InvalidArgument, status.Code(err))
 
 		// Re-enabling restores the listing.
 		_, err = h.scripts.SetPlayScriptEnabled(as(t.Context(), admin), &scriptspb.SetPlayScriptEnabledRequest{Id: play.GetId(), Enabled: true})
@@ -549,5 +561,39 @@ func TestTags(T *testing.T) {
 		}
 
 		test.EqOp(t, 1, dramas)
+	})
+}
+
+var stageCodePattern = regexp.MustCompile(`^[A-HJKMNP-Z2-9]{6}$`)
+
+func TestStageCreation(T *testing.T) {
+	T.Parallel()
+
+	T.Run("creates a stage for a signed-in user with an unambiguous code", func(t *testing.T) {
+		t.Parallel()
+
+		h := newHarness(t)
+		owner := h.signUpUser(t, "")
+
+		res, err := h.stages.CreateStage(as(t.Context(), owner), &stagepb.CreateStageRequest{})
+		must.NoError(t, err)
+		test.True(t, stageCodePattern.MatchString(res.GetCode()), test.Sprintf("code %q", res.GetCode()))
+		test.False(t, strings.ContainsAny(res.GetCode(), "01OIL"))
+
+		// The lookup ignores case.
+		exists, err := h.stages.StageExists(t.Context(), &stagepb.StageExistsRequest{Code: strings.ToLower(res.GetCode())})
+		must.NoError(t, err)
+		test.True(t, exists.GetExists())
+		test.EqOp(t, res.GetId(), exists.GetId())
+	})
+
+	T.Run("nonexistent code reports exists:false", func(t *testing.T) {
+		t.Parallel()
+
+		h := newHarness(t)
+
+		exists, err := h.stages.StageExists(t.Context(), &stagepb.StageExistsRequest{Code: "ZZZZ99"})
+		must.NoError(t, err)
+		test.False(t, exists.GetExists())
 	})
 }

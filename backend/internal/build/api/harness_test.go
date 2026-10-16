@@ -13,6 +13,7 @@ import (
 	"github.com/primandproper/nosmallparts/backend/internal/build/api"
 	"github.com/primandproper/nosmallparts/backend/internal/config"
 	"github.com/primandproper/nosmallparts/backend/internal/proto/scriptspb"
+	"github.com/primandproper/nosmallparts/backend/internal/proto/stagepb"
 
 	signincfg "github.com/primandproper/platform-go/v15/authentication/signin/config"
 	"github.com/primandproper/platform-go/v15/authentication/signin/signinpb"
@@ -48,11 +49,13 @@ const testPassword = "password-123"
 // harness is one running server over a fresh database: the gRPC services on
 // one loopback port and the HTTP routes on another.
 type harness struct {
-	signIn  signinpb.SignInServiceClient
-	scripts scriptspb.PlayScriptsServiceClient
-	http    *http.Client
-	httpURL string
-	users   atomic.Int64
+	injector do.Injector
+	signIn   signinpb.SignInServiceClient
+	scripts  scriptspb.PlayScriptsServiceClient
+	stages   stagepb.StagesServiceClient
+	http     *http.Client
+	httpURL  string
+	users    atomic.Int64
 }
 
 // testConfig is a whole serving config over a database in dir, with every
@@ -101,6 +104,19 @@ func testConfig(dir string) *config.Config {
 		GRPCServer:  &grpcserver.Config{MaxReceiveMessageSize: grpcserver.DefaultMaxMessageSize},
 		GRPCWeb:     &service.GRPCWebConfig{PathPrefix: "/grpc"},
 		AdminEmails: testAdminEmails,
+		// The TypeScript suite's shortened timers, so the timed cases run fast.
+		// The cleanup delay and the vacancy claim window are longer than its
+		// 100ms and 150ms: a real socket reconnecting or claiming under the
+		// race detector can take longer than that, where the old suite's fake
+		// one was instant, and those cases are about acting inside the window.
+		Stages: config.StagesConfig{
+			HostGrace:      80 * time.Millisecond,
+			VacancyClaim:   600 * time.Millisecond,
+			CleanupDelay:   500 * time.Millisecond,
+			IdleAfter:      5 * time.Minute,
+			ReaperInterval: time.Minute,
+			Countdown:      40 * time.Millisecond,
+		},
 	}
 }
 
@@ -146,10 +162,12 @@ func newHarness(t *testing.T) *harness {
 	t.Cleanup(func() { must.NoError(t, conn.Close()) })
 
 	return &harness{
-		signIn:  signinpb.NewSignInServiceClient(conn),
-		scripts: scriptspb.NewPlayScriptsServiceClient(conn),
-		http:    &http.Client{Timeout: 10 * time.Second},
-		httpURL: "http://" + httpAddr.String(),
+		injector: i,
+		signIn:   signinpb.NewSignInServiceClient(conn),
+		scripts:  scriptspb.NewPlayScriptsServiceClient(conn),
+		stages:   stagepb.NewStagesServiceClient(conn),
+		http:     &http.Client{Timeout: 10 * time.Second},
+		httpURL:  "http://" + httpAddr.String(),
 	}
 }
 

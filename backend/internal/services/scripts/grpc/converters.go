@@ -5,7 +5,9 @@ import (
 	"github.com/primandproper/nosmallparts/backend/internal/proto/scriptspb"
 )
 
-func convertPlay(play *scripts.Play) *scriptspb.Play {
+// ConvertPlay is a play as the wire carries it, for the scripts service and
+// for the stage that embeds the selected one.
+func ConvertPlay(play *scripts.Play) *scriptspb.Play {
 	out := &scriptspb.Play{
 		Id:          play.ID,
 		Title:       play.Title,
