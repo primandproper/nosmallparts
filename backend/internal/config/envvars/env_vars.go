@@ -2168,6 +2168,30 @@ const (
 	// `Config.Config.SignIn.TOTPIssuer`.
 	SignInTotpIssuerEnvVarKey = "NOSMALLPARTS_SIGN_IN_TOTP_ISSUER"
 
+	// StagesCleanupDelayEnvVarKey is the environment variable name to set to override
+	// `Config.Stages.CleanupDelay`.
+	StagesCleanupDelayEnvVarKey = "NOSMALLPARTS_STAGES_CLEANUP_DELAY"
+
+	// StagesCountdownEnvVarKey is the environment variable name to set to override
+	// `Config.Stages.Countdown`.
+	StagesCountdownEnvVarKey = "NOSMALLPARTS_STAGES_COUNTDOWN"
+
+	// StagesHostGraceEnvVarKey is the environment variable name to set to override
+	// `Config.Stages.HostGrace`.
+	StagesHostGraceEnvVarKey = "NOSMALLPARTS_STAGES_HOST_GRACE"
+
+	// StagesIdleAfterEnvVarKey is the environment variable name to set to override
+	// `Config.Stages.IdleAfter`.
+	StagesIdleAfterEnvVarKey = "NOSMALLPARTS_STAGES_IDLE_AFTER"
+
+	// StagesReaperIntervalEnvVarKey is the environment variable name to set to override
+	// `Config.Stages.ReaperInterval`.
+	StagesReaperIntervalEnvVarKey = "NOSMALLPARTS_STAGES_REAPER_INTERVAL"
+
+	// StagesVacancyClaimEnvVarKey is the environment variable name to set to override
+	// `Config.Stages.VacancyClaim`.
+	StagesVacancyClaimEnvVarKey = "NOSMALLPARTS_STAGES_VACANCY_CLAIM"
+
 	// TokensAudienceEnvVarKey is the environment variable name to set to override
 	// `Config.Config.Tokens.Audience`.
 	TokensAudienceEnvVarKey = "NOSMALLPARTS_TOKENS_AUDIENCE"

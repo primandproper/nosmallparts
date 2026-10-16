@@ -81,5 +81,13 @@
 			"service_name": "nosmallparts"
 		}
 	},
-	"shutdownTimeout": 30000000000
+	"shutdownTimeout": 30000000000,
+	"stages": {
+		"hostGrace": 15000000000,
+		"vacancyClaim": 45000000000,
+		"cleanupDelay": 5000000000,
+		"idleAfter": 600000000000,
+		"reaperInterval": 60000000000,
+		"countdown": 3000000000
+	}
 }
