@@ -1,0 +1,9 @@
+{
+	"observability": {
+		"logging": {
+			"serviceName": "nosmallparts",
+			"level": "debug",
+			"provider": "slog"
+		}
+	}
+}
