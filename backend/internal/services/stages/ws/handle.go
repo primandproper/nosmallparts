@@ -166,6 +166,26 @@ func (h *Hub) dispatch(ctx context.Context, r *room, c *conn, msg *stagepb.Clien
 		return h.hostPause(ctx, r, c, false)
 	case *stagepb.ClientMessage_HostEndPlay_:
 		return h.hostEndPlay(ctx, r, c)
+	case *stagepb.ClientMessage_HostBackLine_:
+		return h.hostMoveLine(ctx, r, c, false)
+	case *stagepb.ClientMessage_HostSkipLine_:
+		return h.hostMoveLine(ctx, r, c, true)
+	case *stagepb.ClientMessage_HostReassignRole_:
+		return h.hostReassignRole(ctx, r, c, m.HostReassignRole)
+	case *stagepb.ClientMessage_HostUnassignRole_:
+		return h.hostUnassignRole(ctx, r, c, m.HostUnassignRole)
+	case *stagepb.ClientMessage_RespondRoleOffer_:
+		return h.respondRoleOffer(ctx, r, c, m.RespondRoleOffer)
+	case *stagepb.ClientMessage_HostTransferHost_:
+		return h.hostTransferHost(ctx, r, c, m.HostTransferHost)
+	case *stagepb.ClientMessage_HostKick_:
+		return h.hostRemove(ctx, r, c, m.HostKick.GetTargetParticipantId(), false)
+	case *stagepb.ClientMessage_HostBan_:
+		return h.hostRemove(ctx, r, c, m.HostBan.GetTargetParticipantId(), true)
+	case *stagepb.ClientMessage_HostMute_:
+		return h.hostMute(ctx, r, c, m.HostMute)
+	case *stagepb.ClientMessage_HostToggleDirectorMode_:
+		return h.hostToggleDirectorMode(ctx, r, c, m.HostToggleDirectorMode)
 	default:
 		c.sendError("Unknown message type: " + string(msg.ProtoReflect().WhichOneof(msg.ProtoReflect().Descriptor().Oneofs().ByName("message")).Name()))
 
@@ -279,6 +299,10 @@ func (h *Hub) join(ctx context.Context, c *conn, j *stagepb.ClientMessage_Join) 
 	hostAnnouncement, err := h.claimHost(ctx, r, c, before.stage, name)
 	if err != nil {
 		return err
+	}
+
+	if hostAnnouncement == "" {
+		hostAnnouncement = r.returningHost(before.stage, c.identity, name)
 	}
 
 	after, err := h.snapshot(ctx, stage.ID)
@@ -899,7 +923,9 @@ func (h *Hub) disconnected(ctx context.Context, c *conn) {
 	}
 }
 
-// depart marks a participant gone and opens vacancies for the roles they held.
+// depart marks a participant gone, withdraws offers awaiting their answer,
+// opens vacancies for the roles they held, and, when they were the host's
+// last socket, starts the host's grace period.
 func (h *Hub) depart(ctx context.Context, r *room, c *conn) error {
 	before, err := h.snapshot(ctx, r.id)
 	if err != nil {
@@ -908,21 +934,32 @@ func (h *Hub) depart(ctx context.Context, r *room, c *conn) error {
 
 	leaving := before.participant(c.participantID)
 
+	name := "Host"
+	if leaving != nil {
+		name = leaving.DisplayName
+	}
+
 	if err = h.tx(ctx, func(tx database.Tx) error {
 		return h.store.SetLeftAt(ctx, tx, c.participantID, new(h.now()))
 	}); err != nil {
 		return err
 	}
 
+	h.withdrawOffersTo(r, c.participantID, name)
+
 	if err = h.broadcastState(ctx, r); err != nil {
 		return err
 	}
 
-	if leaving == nil {
-		return nil
+	if leaving != nil {
+		if err = h.openVacancies(ctx, r, before, leaving); err != nil {
+			return err
+		}
 	}
 
-	return h.openVacancies(ctx, r, before, leaving)
+	h.hostLeft(r, before, c, name)
+
+	return nil
 }
 
 // openVacancies pauses a performance whose role-holder left, and opens a

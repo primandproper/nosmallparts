@@ -453,6 +453,129 @@ func TestStartPlay(T *testing.T) {
 	})
 }
 
+func TestStartPlayHostControls(T *testing.T) {
+	T.Parallel()
+
+	T.Run("pause blocks advancement; resume restores; back/skip are host-gated", func(t *testing.T) {
+		t.Parallel()
+
+		h := newHarness(t)
+		play := h.makePlay(t)
+		stage := h.makeStage(t, play.GetId())
+		a, b := castIDs(play)
+
+		host := h.joinClient(t, h.userIdentity(t), stage.ID, "Hosty")
+		partner := h.joinClient(t, guestIdentity(), stage.ID, "Partner")
+
+		host.send(toggleCastMember(a))
+		partner.send(toggleCastMember(b))
+		host.send(setReady(true))
+		partner.send(setReady(true))
+		host.waitFor("everybody ready", func() bool {
+			p := participantIn(host.lastState(), partner.participantID())
+
+			return host.me().GetIsReady() && p.GetIsReady() && len(p.GetCastMemberIds()) == 1 && len(host.me().GetCastMemberIds()) == 1
+		})
+
+		host.send(startPlay())
+		host.waitFor("the performance", func() bool { return phaseOf(host) == stagepb.StagePhase_STAGE_PHASE_PERFORMING })
+
+		host.send(hostPause())
+		host.waitFor("the pause", func() bool { return host.lastState().GetPausedByHost() })
+
+		host.send(nextLine())
+		host.waitFor("the refusal", func() bool { return host.hasError("Play is paused by host.") })
+
+		partner.send(hostResume())
+		partner.waitFor("the refusal", func() bool { return partner.hasError(errHostOnly) })
+
+		host.send(hostResume())
+		host.waitFor("the resume", func() bool { return !host.lastState().GetPausedByHost() })
+
+		// Back clamps at the first line.
+		host.send(hostBackLine())
+		host.waitFor("the step back", func() bool { return host.hasSystemMessageContaining("Host went back a line") })
+		test.EqOp(t, int32(0), host.lastState().GetCurrentLineIndex())
+
+		partner.send(hostBackLine())
+		partner.waitFor("the refusal", func() bool {
+			return len(slices.DeleteFunc(partner.errors(), func(e string) bool { return e != errHostOnly })) == 2
+		})
+
+		// Skip advances; skipping past the last line ends the play.
+		for range 3 {
+			host.send(hostSkipLine())
+		}
+
+		host.waitFor("the end", func() bool {
+			return host.count(isKind((*stagepb.ServerMessage).GetPlayEnded)) == 1 &&
+				phaseOf(host) == stagepb.StagePhase_STAGE_PHASE_DISCUSSION
+		})
+
+		// A reset from the discussion returns everybody to the lobby, unready.
+		partner.send(resetPlay())
+		partner.waitFor("the lobby", func() bool { return phaseOf(partner) == stagepb.StagePhase_STAGE_PHASE_LOBBY })
+
+		for _, p := range partner.lastState().GetParticipants() {
+			test.False(t, p.GetIsReady())
+		}
+	})
+
+	T.Run("director mode: only director starts and advances; host cannot claim roles", func(t *testing.T) {
+		t.Parallel()
+
+		h := newHarness(t)
+		play := h.makePlay(t)
+		stage := h.makeStage(t, play.GetId())
+		a, b := castIDs(play)
+
+		host := h.joinClient(t, h.userIdentity(t), stage.ID, "Directed")
+		p1 := h.joinClient(t, guestIdentity(), stage.ID, "ActorOne")
+		p2 := h.joinClient(t, guestIdentity(), stage.ID, "ActorTwo")
+
+		host.send(hostToggleDirectorMode(true))
+		host.waitFor("director mode", func() bool { return host.lastState().GetDirectorMode() })
+
+		// The director cannot take a role.
+		host.send(toggleCastMember(a))
+		host.waitFor("the refusal", func() bool { return host.hasError("Exit director mode to take a role.") })
+
+		p1.send(toggleCastMember(a))
+		p2.send(toggleCastMember(b))
+
+		for _, c := range []*wsClient{host, p1, p2} {
+			c.send(setReady(true))
+		}
+
+		host.waitFor("everybody ready", func() bool {
+			state := host.lastState()
+			one := participantIn(state, p1.participantID())
+			two := participantIn(state, p2.participantID())
+
+			return host.me().GetIsReady() && one.GetIsReady() && two.GetIsReady() &&
+				len(one.GetCastMemberIds()) == 1 && len(two.GetCastMemberIds()) == 1
+		})
+
+		// Somebody else starting is refused.
+		p1.send(startPlay())
+		p1.waitFor("the refusal", func() bool { return p1.hasError("Only the director can start the play.") })
+
+		host.send(startPlay())
+		host.waitFor("the performance", func() bool { return phaseOf(host) == stagepb.StagePhase_STAGE_PHASE_PERFORMING })
+
+		// The speaker cannot advance; only the director.
+		p1.send(nextLine())
+		p1.waitFor("the refusal", func() bool { return p1.hasError("Director controls line advance.") })
+
+		host.send(nextLine())
+		host.waitFor("line 1", func() bool { return host.lastState().GetCurrentLineIndex() == 1 })
+
+		// Director mode is switched from the lobby only.
+		host.send(hostToggleDirectorMode(false))
+		host.waitFor("the refusal", func() bool { return host.hasError("Director mode can only be toggled from the lobby.") })
+	})
+}
+
 func TestLateJoiners(T *testing.T) {
 	T.Parallel()
 

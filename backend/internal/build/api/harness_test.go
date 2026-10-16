@@ -6,12 +6,15 @@ import (
 	"fmt"
 	"net/http"
 	"path/filepath"
+	"slices"
+	"sync"
 	"sync/atomic"
 	"testing"
 	"time"
 
 	"github.com/primandproper/nosmallparts/backend/internal/build/api"
 	"github.com/primandproper/nosmallparts/backend/internal/config"
+	"github.com/primandproper/nosmallparts/backend/internal/livekit"
 	"github.com/primandproper/nosmallparts/backend/internal/proto/livekitpb"
 	"github.com/primandproper/nosmallparts/backend/internal/proto/scriptspb"
 	"github.com/primandproper/nosmallparts/backend/internal/proto/stagepb"
@@ -51,6 +54,7 @@ const testPassword = "password-123"
 // one loopback port and the HTTP routes on another.
 type harness struct {
 	injector do.Injector
+	video    *fakeVideo
 	signIn   signinpb.SignInServiceClient
 	scripts  scriptspb.PlayScriptsServiceClient
 	stages   stagepb.StagesServiceClient
@@ -107,12 +111,13 @@ func testConfig(dir string) *config.Config {
 		GRPCWeb:     &service.GRPCWebConfig{PathPrefix: "/grpc"},
 		AdminEmails: testAdminEmails,
 		// The TypeScript suite's shortened timers, so the timed cases run fast.
-		// The cleanup delay and the vacancy claim window are longer than its
-		// 100ms and 150ms: a real socket reconnecting or claiming under the
-		// race detector can take longer than that, where the old suite's fake
-		// one was instant, and those cases are about acting inside the window.
+		// The host grace, the cleanup delay and the vacancy claim window are
+		// longer than its 80ms, 100ms and 150ms: a real socket reconnecting or
+		// claiming under the race detector can take longer than that, where the
+		// old suite's fake one was instant, and those cases are about acting
+		// inside the window.
 		Stages: config.StagesConfig{
-			HostGrace:      80 * time.Millisecond,
+			HostGrace:      500 * time.Millisecond,
 			VacancyClaim:   600 * time.Millisecond,
 			CleanupDelay:   500 * time.Millisecond,
 			IdleAfter:      5 * time.Minute,
@@ -138,6 +143,9 @@ func newHarness(t *testing.T, edits ...func(*config.Config)) *harness {
 
 	i, err := api.BuildInjector(ctx, cfg)
 	must.NoError(t, err)
+
+	video := &fakeVideo{}
+	do.OverrideValue[livekit.Admin](i, video)
 
 	svc, err := api.New(i)
 	must.NoError(t, err)
@@ -170,6 +178,7 @@ func newHarness(t *testing.T, edits ...func(*config.Config)) *harness {
 
 	return &harness{
 		injector: i,
+		video:    video,
 		signIn:   signinpb.NewSignInServiceClient(conn),
 		scripts:  scriptspb.NewPlayScriptsServiceClient(conn),
 		stages:   stagepb.NewStagesServiceClient(conn),
@@ -268,4 +277,48 @@ func (h *harness) createScript(t *testing.T, user *testUser, edit func(*scriptsp
 	must.NoError(t, err)
 
 	return res.GetPlay()
+}
+
+// fakeVideo is livekit.Admin recording what a host's kick and mute asked of
+// the video room.
+type fakeVideo struct {
+	muted   map[string]bool
+	removed []string
+	mu      sync.Mutex
+}
+
+var _ livekit.Admin = (*fakeVideo)(nil)
+
+func (f *fakeVideo) RemoveParticipant(_ context.Context, room, identity string) {
+	f.mu.Lock()
+	defer f.mu.Unlock()
+
+	f.removed = append(f.removed, room+"/"+identity)
+}
+
+func (f *fakeVideo) SetMuted(_ context.Context, room, identity string, muted bool) {
+	f.mu.Lock()
+	defer f.mu.Unlock()
+
+	if f.muted == nil {
+		f.muted = map[string]bool{}
+	}
+
+	f.muted[room+"/"+identity] = muted
+}
+
+func (f *fakeVideo) wasRemoved(room, identity string) bool {
+	f.mu.Lock()
+	defer f.mu.Unlock()
+
+	return slices.Contains(f.removed, room+"/"+identity)
+}
+
+func (f *fakeVideo) mutedState(room, identity string) (muted, set bool) {
+	f.mu.Lock()
+	defer f.mu.Unlock()
+
+	muted, set = f.muted[room+"/"+identity]
+
+	return muted, set
 }

@@ -23,6 +23,7 @@ import (
 	"github.com/primandproper/nosmallparts/backend/internal/domain/scripts"
 	"github.com/primandproper/nosmallparts/backend/internal/domain/stages"
 	"github.com/primandproper/nosmallparts/backend/internal/guests"
+	"github.com/primandproper/nosmallparts/backend/internal/livekit"
 
 	signingrpc "github.com/primandproper/platform-go/v15/authentication/signin/grpc"
 	"github.com/primandproper/primitives-go/v2/database"
@@ -75,6 +76,7 @@ type Hub struct {
 	store  stages.Store
 	plays  scripts.Store
 	auth   Authenticator
+	video  livekit.Admin
 
 	// ctx is what timers and the reaper run under; Close cancels it.
 	ctx     context.Context //nolint:containedctx // a Runner's work outlives any one call's context.
@@ -101,6 +103,11 @@ type room struct {
 	cleanup   *time.Timer
 	countdown *time.Timer
 	vacancies map[string]*vacancy // by cast member ID
+	offers    map[string]*offer   // by offer ID
+
+	// hostGrace runs while a disconnected host may still come back, and hands
+	// the role on when it fires.
+	hostGrace *time.Timer
 
 	id string
 	mu sync.Mutex
@@ -117,10 +124,11 @@ func NewHub(
 	plays scripts.Store,
 	library *scripts.Service,
 	auth Authenticator,
+	video livekit.Admin,
 	timings Timings,
 	pillars *observability.Pillars,
 ) (*Hub, error) {
-	if client == nil || store == nil || plays == nil || library == nil || auth == nil {
+	if client == nil || store == nil || plays == nil || library == nil || auth == nil || video == nil {
 		return nil, platformerrors.Wrap(platformerrors.ErrNilInputParameter, "building the stage socket hub")
 	}
 
@@ -138,6 +146,7 @@ func NewHub(
 		plays:   plays,
 		library: library,
 		auth:    auth,
+		video:   video,
 		timings: timings,
 		// CheckOrigin is left at gorilla's default, which admits a same-origin
 		// browser and a client that sends no Origin, and refuses anything
@@ -257,7 +266,7 @@ func (h *Hub) room(stageID string) *room {
 
 	r, ok := h.rooms[stageID]
 	if !ok {
-		r = &room{id: stageID, conns: map[string]*conn{}, vacancies: map[string]*vacancy{}}
+		r = &room{id: stageID, conns: map[string]*conn{}, vacancies: map[string]*vacancy{}, offers: map[string]*offer{}}
 		h.rooms[stageID] = r
 	}
 
@@ -292,13 +301,14 @@ func (h *Hub) deleteStage(ctx context.Context, r *room) error {
 }
 
 func (r *room) stopTimers() {
-	for _, timer := range []*time.Timer{r.cleanup, r.countdown} {
+	for _, timer := range []*time.Timer{r.cleanup, r.countdown, r.hostGrace} {
 		if timer != nil {
 			timer.Stop()
 		}
 	}
 
-	r.cleanup, r.countdown = nil, nil
+	r.cleanup, r.countdown, r.hostGrace = nil, nil, nil
+	clear(r.offers)
 
 	for id := range r.vacancies {
 		r.clearVacancy(id)

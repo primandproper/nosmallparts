@@ -395,7 +395,7 @@ func registerStages(i do.Injector, cfg *config.Config) {
 			return nil, err
 		}
 
-		return ws.NewHub(client, store, plays, library, extractor, ws.Timings{
+		return ws.NewHub(client, store, plays, library, extractor, do.MustInvoke[livekit.Admin](i), ws.Timings{
 			HostGrace:      cfg.Stages.HostGrace,
 			VacancyClaim:   cfg.Stages.VacancyClaim,
 			CleanupDelay:   cfg.Stages.CleanupDelay,

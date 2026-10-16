@@ -35,6 +35,7 @@ const (
 	cleanupWait    = 1250 * time.Millisecond
 	pollEvery      = 5 * time.Millisecond
 	vacancyMessage = "is vacant"
+	graceWait      = 1250 * time.Millisecond
 )
 
 // wsIdentity is who a test socket connects as: a signed-in user's token, a
@@ -47,6 +48,10 @@ type wsIdentity struct {
 
 func guestIdentity() wsIdentity {
 	return wsIdentity{guestID: ulid.Make().String()}
+}
+
+func guestAt(ip string) wsIdentity {
+	return wsIdentity{guestID: ulid.Make().String(), ip: ip}
 }
 
 func (h *harness) userIdentity(t *testing.T) wsIdentity {
