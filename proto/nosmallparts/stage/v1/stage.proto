@@ -1,0 +1,262 @@
+syntax = "proto3";
+
+package nosmallparts.stage.v1;
+
+import "google/protobuf/timestamp.proto";
+import "nosmallparts/scripts/v1/scripts.proto";
+
+option go_package = "github.com/primandproper/nosmallparts/backend/internal/proto/stagepb";
+
+message Participant {
+  string id = 1;
+  string name = 2;
+  repeated string cast_member_ids = 3;
+  bool is_ready = 4;
+  bool is_audience = 5;
+  bool is_host = 6;
+  bool force_muted = 7;
+}
+
+enum StagePhase {
+  STAGE_PHASE_UNSPECIFIED = 0;
+  STAGE_PHASE_LOBBY = 1;
+  STAGE_PHASE_COUNTDOWN = 2;
+  STAGE_PHASE_PERFORMING = 3;
+  STAGE_PHASE_DISCUSSION = 4;
+}
+
+message StageState {
+  string id = 1;
+  string code = 2;
+  repeated Participant participants = 3;
+  // selected_play is unset until someone picks one.
+  nosmallparts.scripts.v1.Play selected_play = 4;
+  int32 current_line_index = 5;
+  StagePhase phase = 6;
+  bool paused_by_host = 7;
+  bool director_mode = 8;
+}
+
+message ChatMessage {
+  string id = 1;
+  string sender_id = 2;
+  string sender_name = 3;
+  string text = 4;
+  bool cast_only = 5;
+  google.protobuf.Timestamp timestamp = 6;
+}
+
+message SystemMessage {
+  string id = 1;
+  string text = 2;
+  google.protobuf.Timestamp timestamp = 3;
+}
+
+message RoleOffer {
+  string offer_id = 1;
+  string cast_member_id = 2;
+  string cast_member_name = 3;
+}
+
+// RoleVacancy is broadcast when a role-holder disconnects mid-performance.
+message RoleVacancy {
+  string cast_member_id = 1;
+  string cast_member_name = 2;
+  // claim_deadline is when an audience member stops being able to claim the
+  // role. Unset in director mode, which runs no countdown.
+  google.protobuf.Timestamp claim_deadline = 3;
+}
+
+// ClientMessage is one frame a client sends on the stage WebSocket, as protojson.
+// A message naming a participant must name the connection's own.
+message ClientMessage {
+  message Join {
+    string stage_id = 1;
+    string participant_name = 2;
+  }
+  message Heartbeat {
+  }
+  message ToggleCastMember {
+    string participant_id = 1;
+    string cast_member_id = 2;
+  }
+  message SetAudience {
+    string participant_id = 1;
+    bool is_audience = 2;
+  }
+  message SelectPlay {
+    string play_id = 1;
+  }
+  message SetReady {
+    string participant_id = 1;
+    bool is_ready = 2;
+  }
+  message SendChat {
+    string participant_id = 1;
+    string text = 2;
+    bool cast_only = 3;
+  }
+  message StartPlay {
+  }
+  message NextLine {
+  }
+  message ResetPlay {
+  }
+  message HostPause {
+  }
+  message HostResume {
+  }
+  message HostBackLine {
+  }
+  message HostSkipLine {
+  }
+  message HostEndPlay {
+  }
+  message HostReassignRole {
+    string target_participant_id = 1;
+    string cast_member_id = 2;
+  }
+  message HostUnassignRole {
+    string target_participant_id = 1;
+    string cast_member_id = 2;
+  }
+  message HostTransferHost {
+    string target_participant_id = 1;
+  }
+  message HostKick {
+    string target_participant_id = 1;
+  }
+  message HostBan {
+    string target_participant_id = 1;
+  }
+  message HostMute {
+    string target_participant_id = 1;
+    bool muted = 2;
+  }
+  message HostToggleDirectorMode {
+    bool enabled = 1;
+  }
+  message RespondRoleOffer {
+    string offer_id = 1;
+    bool accept = 2;
+  }
+  // AudienceClaimRole claims a vacant role during the vacancy countdown.
+  message AudienceClaimRole {
+    string cast_member_id = 1;
+  }
+
+  oneof message {
+    Join join = 1;
+    Heartbeat heartbeat = 2;
+    ToggleCastMember toggle_cast_member = 3;
+    SetAudience set_audience = 4;
+    SelectPlay select_play = 5;
+    SetReady set_ready = 6;
+    SendChat send_chat = 7;
+    StartPlay start_play = 8;
+    NextLine next_line = 9;
+    ResetPlay reset_play = 10;
+    // The host actions. The server refuses each from anyone but the host.
+    HostPause host_pause = 11;
+    HostResume host_resume = 12;
+    HostBackLine host_back_line = 13;
+    HostSkipLine host_skip_line = 14;
+    HostEndPlay host_end_play = 15;
+    HostReassignRole host_reassign_role = 16;
+    HostUnassignRole host_unassign_role = 17;
+    HostTransferHost host_transfer_host = 18;
+    HostKick host_kick = 19;
+    HostBan host_ban = 20;
+    HostMute host_mute = 21;
+    HostToggleDirectorMode host_toggle_director_mode = 22;
+    RespondRoleOffer respond_role_offer = 23;
+    AudienceClaimRole audience_claim_role = 24;
+  }
+}
+
+// ServerMessage is one frame the server sends on the stage WebSocket, as protojson.
+message ServerMessage {
+  message Joined {
+    string participant_id = 1;
+    StageState stage_state = 2;
+  }
+  message Error {
+    string message = 1;
+  }
+  message AvailablePlays {
+    repeated nosmallparts.scripts.v1.Play plays = 1;
+  }
+  message CountdownStart {
+    int32 duration_seconds = 1;
+  }
+  message CastMembersUpdated {
+    repeated Participant participants = 1;
+  }
+  message PlayStarted {
+  }
+  message LineAdvanced {
+    int32 current_line_index = 1;
+  }
+  message PlayEnded {
+  }
+  // SessionReplaced tells a connection another tab of the same identity took its place.
+  message SessionReplaced {
+  }
+  message RoleOfferCleared {
+    string offer_id = 1;
+  }
+  message RoleVacancyCleared {
+    string cast_member_id = 1;
+  }
+
+  oneof message {
+    StageState stage_state = 1;
+    Joined joined = 2;
+    Error error = 3;
+    AvailablePlays available_plays = 4;
+    CountdownStart countdown_start = 5;
+    CastMembersUpdated cast_members_updated = 6;
+    ChatMessage chat_message = 7;
+    SystemMessage system_message = 8;
+    RoleOffer role_offer = 9;
+    RoleOfferCleared role_offer_cleared = 10;
+    PlayStarted play_started = 11;
+    LineAdvanced line_advanced = 12;
+    PlayEnded play_ended = 13;
+    SessionReplaced session_replaced = 14;
+    RoleVacancy role_vacated = 15;
+    RoleVacancyCleared role_vacancy_cleared = 16;
+  }
+}
+
+message CreateStageRequest {
+  // play_script_id preselects a play; it must name an enabled script.
+  optional string play_script_id = 1;
+}
+
+message CreateStageResponse {
+  string id = 1;
+  // code is what people type to join: short, uppercase, free of look-alike characters.
+  string code = 2;
+}
+
+message StageExistsRequest {
+  // code is matched case-insensitively.
+  string code = 1;
+}
+
+message StageExistsResponse {
+  bool exists = 1;
+  string id = 2;
+  string code = 3;
+}
+
+// StagesService creates stages and resolves join codes. Everything after joining
+// happens on the stage WebSocket.
+service StagesService {
+  // CreateStage needs a signed-in user.
+  rpc CreateStage(CreateStageRequest) returns (CreateStageResponse);
+  // StageExists is rate-limited per client IP (30 a minute), answering
+  // RESOURCE_EXHAUSTED past it.
+  rpc StageExists(StageExistsRequest) returns (StageExistsResponse);
+}

@@ -1,0 +1,13 @@
+# Configuration for protolint (github.com/yoheimuta/protolint), which formats and
+# lints the .proto files under proto/ via `make format_proto` and `make lint_proto`.
+# Generation stays on protoc.
+lint:
+  rules:
+    remove:
+      # protolint wraps at 80 columns and its fixer cannot rewrap; the findings are
+      # go_package options and doc comments, which are copied verbatim into the
+      # generated Go and TypeScript.
+      - MAX_LINE_LENGTH
+      # Wants `repeated CastMember cast` to become `casts`. A play's cast is already
+      # plural, and the name is the wire-visible JSON key and the generated field.
+      - REPEATED_FIELD_NAMES_PLURALIZED

@@ -1,0 +1,163 @@
+syntax = "proto3";
+
+package nosmallparts.scripts.v1;
+
+option go_package = "github.com/primandproper/nosmallparts/backend/internal/proto/scriptspb";
+
+// CastMember is one role in a play.
+message CastMember {
+  string id = 1;
+  string name = 2;
+  optional string description = 3;
+}
+
+// ScrollMode is how the teleprompter moves through a line.
+enum ScrollMode {
+  SCROLL_MODE_UNSPECIFIED = 0;
+  SCROLL_MODE_AUTO = 1;
+  SCROLL_MODE_MANUAL = 2;
+}
+
+// PlayLine is one utterance. More than one speaker means unison; several lines
+// sharing an index are overlapping, talk-over dialogue.
+message PlayLine {
+  repeated string cast_member_ids = 1;
+  string text = 2;
+  int32 index = 3;
+  // direction is a stage direction or emotion, e.g. "skeptically".
+  optional string direction = 4;
+  ScrollMode scroll_mode = 5;
+  optional int32 auto_scroll_wpm = 6;
+}
+
+message PlayRatingStats {
+  double average_rating = 1;
+  int32 rating_count = 2;
+}
+
+message ScriptTag {
+  string id = 1;
+  string name = 2;
+  optional string description = 3;
+}
+
+// Play is a script as stored, with the caller's view of its ratings.
+message Play {
+  string id = 1;
+  string title = 2;
+  string description = 3;
+  optional string author = 4;
+  bool is_public = 5;
+  // enabled is the admin kill switch: a disabled script is hidden from everyone
+  // but admins, its owner included.
+  bool enabled = 6;
+  // created_by_user_id is the owner, which is what blocks self-rating.
+  optional string created_by_user_id = 7;
+  repeated CastMember cast = 8;
+  repeated PlayLine lines = 9;
+  repeated ScriptTag tags = 10;
+  PlayRatingStats rating_stats = 11;
+  // user_rating is the caller's own rating, when signed in and rated.
+  optional int32 user_rating = 12;
+}
+
+// PlayInput is a script as an author writes it. A cast member's id is kept when
+// given, so lines can refer to it, and minted when not.
+message PlayInput {
+  string title = 1;
+  string description = 2;
+  optional string author = 3;
+  bool is_public = 4;
+  repeated CastMember cast = 5;
+  repeated PlayLine lines = 6;
+  repeated string tag_ids = 7;
+  // tag_names are created when no tag has the name, matched case-insensitively.
+  repeated string tag_names = 8;
+}
+
+message ListPlayScriptsRequest {
+  // search filters case-insensitively across title, description and author.
+  optional string search = 1;
+}
+
+message ListPlayScriptsResponse {
+  repeated Play plays = 1;
+}
+
+message GetPlayScriptRequest {
+  string id = 1;
+}
+
+message GetPlayScriptResponse {
+  Play play = 1;
+}
+
+message CreatePlayScriptRequest {
+  PlayInput play = 1;
+}
+
+message CreatePlayScriptResponse {
+  Play play = 1;
+}
+
+message UpdatePlayScriptRequest {
+  string id = 1;
+  PlayInput play = 2;
+}
+
+message UpdatePlayScriptResponse {
+  Play play = 1;
+}
+
+message DeletePlayScriptRequest {
+  string id = 1;
+}
+
+message DeletePlayScriptResponse {
+}
+
+message SetPlayScriptEnabledRequest {
+  string id = 1;
+  bool enabled = 2;
+}
+
+message SetPlayScriptEnabledResponse {
+  bool enabled = 1;
+}
+
+message RatePlayScriptRequest {
+  string id = 1;
+  // rating is 1 to 5.
+  int32 rating = 2;
+}
+
+message RatePlayScriptResponse {
+  PlayRatingStats rating_stats = 1;
+}
+
+message ListTagsRequest {
+}
+
+message ListTagsResponse {
+  repeated ScriptTag tags = 1;
+}
+
+// PlayScriptsService is the script library. Reads are open to anyone, and show
+// an anonymous caller only public, enabled scripts; writes need a signed-in user.
+service PlayScriptsService {
+  rpc ListPlayScripts(ListPlayScriptsRequest) returns (ListPlayScriptsResponse);
+  // GetPlayScript answers NOT_FOUND for a disabled script unless the caller is
+  // an admin.
+  rpc GetPlayScript(GetPlayScriptRequest) returns (GetPlayScriptResponse);
+  rpc CreatePlayScript(CreatePlayScriptRequest) returns (CreatePlayScriptResponse);
+  // UpdatePlayScript answers NOT_FOUND for a script the caller does not own.
+  rpc UpdatePlayScript(UpdatePlayScriptRequest) returns (UpdatePlayScriptResponse);
+  // DeletePlayScript is admin-only, the owner included.
+  rpc DeletePlayScript(DeletePlayScriptRequest) returns (DeletePlayScriptResponse);
+  // SetPlayScriptEnabled is admin-only.
+  rpc SetPlayScriptEnabled(SetPlayScriptEnabledRequest) returns (SetPlayScriptEnabledResponse);
+  // RatePlayScript records or replaces the caller's rating. An author cannot
+  // rate their own script.
+  rpc RatePlayScript(RatePlayScriptRequest) returns (RatePlayScriptResponse);
+  rpc ListTags(ListTagsRequest) returns (ListTagsResponse);
+}
