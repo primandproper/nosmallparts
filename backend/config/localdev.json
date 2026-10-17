@@ -1,4 +1,5 @@
 {
+	"livekit": {},
 	"cookies": {
 		"base64EncodedHashKey": "bm9zbWFsbHBhcnRzLWxvY2FsZGV2LWNvb2tpZS1oYXNoLWtleS0wMDA=",
 		"base64EncodedBlockKey": "bm9zbWFsbHBhcnRzLWxvY2FsZGV2LWJsb2Nra2V5MDA=",
@@ -88,6 +89,5 @@
 		"idleAfter": 600000000000,
 		"reaperInterval": 60000000000,
 		"countdown": 3000000000
-	},
-	"livekit": {}
+	}
 }
