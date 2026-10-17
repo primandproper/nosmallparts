@@ -8,8 +8,8 @@ require (
 	github.com/livekit/protocol v1.51.1-0.20260910121219-271d9cde3897
 	github.com/livekit/server-sdk-go/v2 v2.19.0
 	github.com/oklog/ulid/v2 v2.1.2
-	github.com/primandproper/platform-go/v15 v15.3.1
-	github.com/primandproper/primitives-go/v2 v2.17.0
+	github.com/primandproper/platform-go/v15 v15.3.2
+	github.com/primandproper/primitives-go/v2 v2.17.1
 	github.com/samber/do/v2 v2.1.0
 	github.com/shoenig/test v1.13.2
 	github.com/spf13/cobra v1.10.2
