@@ -129,8 +129,7 @@ func TestLoadFromFile(t *testing.T) {
 
 	t.Run("a file's database provider survives the environment overlay", func(t *testing.T) {
 		// The database block defaults its provider to postgres for an unset
-		// variable; keepFileDatabaseProvider is what stops that default beating
-		// the file.
+		// variable, and primitives-go lets the file's value stand over it.
 		path := filepath.Join(t.TempDir(), "config.json")
 		must.NoError(t, os.WriteFile(path, []byte(
 			`{"database":{"provider":"sqlite","readConnection":{"database":"x.db"},"writeConnection":{"database":"x.db"}}}`,

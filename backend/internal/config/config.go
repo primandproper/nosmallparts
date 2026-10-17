@@ -38,10 +38,8 @@ package config
 
 import (
 	"context"
-	"encoding/json"
 	"fmt"
 	"log/slog"
-	"os"
 	"slices"
 	"strings"
 
@@ -198,14 +196,11 @@ func Load(ctx context.Context, opts Options) (*Config, error) {
 // that validation is permissive about omissions — an empty logging provider is
 // the documented opt-out into noop logging, and a service name is required only
 // by the providers that export telemetry — so a sparse file loads rather than
-// failing, and takes the zero value for whatever it leaves out.
+// failing, and takes a field's envDefault, or else its zero value, for whatever
+// it leaves out.
 func LoadFromFile(ctx context.Context, path string) (*Config, error) {
 	cfg, err := loadFromJSONFile[Config](ctx, path)
 	if err != nil {
-		return nil, err
-	}
-
-	if err = keepFileDatabaseProvider(path, cfg); err != nil {
 		return nil, err
 	}
 
@@ -214,46 +209,6 @@ func LoadFromFile(ctx context.Context, path string) (*Config, error) {
 	}
 
 	return cfg, nil
-}
-
-// databaseProviderEnvVar is the variable that may still choose the database
-// provider over the file.
-const databaseProviderEnvVar = EnvVarPrefix + "DATABASE_PROVIDER"
-
-// keepFileDatabaseProvider puts the file's database provider back after the
-// environment overlay replaced it.
-//
-// The overlay assigns a field's envDefault whenever its variable is unset,
-// over whatever the file said, and primitives-go's database block defaults its
-// provider to postgres. So a file naming sqlite loads as postgres unless the
-// deployment also sets the variable, which makes the checked-in config a lie
-// about the one setting that decides which database this is. The variable still
-// wins when it is set; only its absence stops overriding the file.
-func keepFileDatabaseProvider(path string, cfg *Config) error {
-	if _, set := os.LookupEnv(databaseProviderEnvVar); set || cfg.Database == nil {
-		return nil
-	}
-
-	raw, err := os.ReadFile(path)
-	if err != nil {
-		return fmt.Errorf("rereading the configuration file: %w", err)
-	}
-
-	var file struct {
-		Database *struct {
-			Provider string `json:"provider"`
-		} `json:"database"`
-	}
-
-	if err = json.Unmarshal(raw, &file); err != nil {
-		return fmt.Errorf("rereading the configuration file's database provider: %w", err)
-	}
-
-	if file.Database != nil && file.Database.Provider != "" {
-		cfg.Database.Provider = file.Database.Provider
-	}
-
-	return nil
 }
 
 // loadFromJSONFile is the decode every loadable configuration struct goes
